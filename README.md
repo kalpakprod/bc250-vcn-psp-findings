@@ -23,7 +23,6 @@ research/                 Reports, experiment history, plans and context
 code/                     DXE/probe sources, analyzers, models, builders and tests
 evidence/                 Sanitized outputs from recorded experiments
 references/               Sources, attribution, licences and missing inputs
-REPLY.md                  English reply to share with this repository
 ```
 
 The folders retain the original relative paths. For example, `scripts/psp_ps1_verify.py` is now at `code/scripts/psp_ps1_verify.py`. The private originals stayed in place. Markdown links point to the public copies where available, while quoted paths keep their historical names. Some scripts still need the original workspace layout and BIOS inputs that are not included here.
