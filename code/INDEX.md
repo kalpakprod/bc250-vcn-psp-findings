@@ -1,6 +1,6 @@
 # Code index
 
-These are research materials, not a hardware-ready release. Historical conclusions may be superseded. See the root STATUS and catalog.
+Read the root STATUS before using an old conclusion. This index lists research materials, not a hardware-ready release. The catalog records each source path and any later exclusions.
 
 ## .procoder/tmp
 

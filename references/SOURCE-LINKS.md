@@ -1,6 +1,6 @@
 # Source links
 
-Historical provenance leads extracted from included materials, not fresh remote verification. Preserve author attribution; a URL is not evidence of a working BC250 unlock.
+These URLs come from the included reports. They were not freshly checked. Keep the author attribution when citing them, and do not treat a link as proof of a working BC250 unlock.
 
 - http://4pda.to/\n — `research/archives/imported/recon-evidence/legacy-tmp-bc250-recon/4pda_search_bc250_raw.txt`
 - http://devicetree.org/meta-schemas/core.yaml#\n — `research/archives/imported/recon-evidence/legacy-tmp-bc250-recon/linux-kiq-diff/compare.json`

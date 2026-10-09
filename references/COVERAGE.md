@@ -1,19 +1,19 @@
-# Coverage and disclosure decisions
+# What's included and what's kept private
 
-The snapshot contains **3,552 included source records** and **55,561 individually indexed exclusions** across **59,113 paths**, plus **45 subtree exclusions**. The catalog and section indexes are the acceptance record; these counts are not a claim that every original byte was semantically reviewed.
+The catalog covers **59,113 paths**: **3,552 included source records** and **55,561 individual exclusions**. It also lists **45 excluded source subtrees**. Use the catalog and section indexes to check what was included. The counts do not mean that every original byte received a scientific review.
 
-## Selection
+## How the material was selected
 
-Canonical registries, topic-path candidates, UTF-8 topic searches, related firmware/reconstruction collections and iterative local-file reference closure were used. Related policy/clock/CU research is retained when it helps explain the same firmware paths. Generic dependency mirrors, machine caches, rollback/source snapshots and unrelated DLSS/game work do not become additional findings merely by being present locally.
+We started with the source registries, searched topic paths and UTF-8 text, included related firmware/reconstruction collections, and followed local file references. Policy, clock and CU research is included where it helps explain the same firmware paths. Generic dependency mirrors, machine caches, rollback/source snapshots and unrelated DLSS/game work are not additional findings.
 
-## What remains local
+## Material that remains local
 
-Private chats/sessions, machine-home exports, credential stores, boardview originals, vendor firmware/bodies, third-party article collections, generic upstream trees and uncertain-licence derived code are withheld. Individual exclusions have a reason in the catalog; excluded subtrees have a scope-level reason and source prefix. Private source subtrees were not opened wholesale to publish personal data.
+Private chats and sessions, machine-home exports, credential stores, original boardviews, vendor firmware bodies, third-party article collections, generic upstream trees and derived code with uncertain licences were withheld. Each individual exclusion has a reason in the catalog. Excluded subtrees have a reason and source prefix. We did not open private subtrees wholesale to publish personal data.
 
-Personal paths, LAN addresses, MAC addresses and local infrastructure hostnames are neutralized in public copies. Historical Markdown links are adapted or explicitly cataloged as missing inputs. These transformations mean public copies are not asserted byte-identical to original evidence. Firmware version/image-specific conclusions still belong to their recorded original samples.
+Public copies neutralize personal paths, LAN and MAC addresses, and local infrastructure hostnames. Historical Markdown links were adapted or recorded as missing inputs. As a result, these copies are not claimed byte-identical to the original evidence. A firmware-version or image-specific conclusion still applies to its recorded sample.
 
-## Verification boundary
+## What the checks cover
 
-Public artifact checks cover catalog outcomes, released-path existence, JSON/Python syntax where applicable, Markdown navigation, credential candidate review and publication readback by clean clone. Saved scientific/hardware test outcomes are **historical records**, not fresh PASS results.
+The checks cover catalog outcomes, the existence of public files, JSON/Python syntax where applicable, Markdown navigation, credential candidates and publication readback through a clean clone. Saved scientific and hardware results remain historical records. They are not new PASS results.
 
-Full manual semantic review of every report and complete redistributability of every withheld original remain outside this release. New research or hardware validation must be recorded separately rather than inferred from packaging.
+We have not manually reviewed every report's meaning or established redistribution rights for every withheld original. New research and hardware validation need their own records.

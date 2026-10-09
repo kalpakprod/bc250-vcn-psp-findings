@@ -1,18 +1,22 @@
-# Sources and provenance
+# Sources
 
-## Local basis
+## Local records
 
-- [Workspace source registry](../research/docs/knowledge-sources.md): trust classes and primary corpus paths.
-- [Import routing catalog](../research/docs/import-catalog.md): old/current paths, historical campaigns and scope of previous byte verification.
-- [Corpus notes](../research/memory/corpus.md): preserved source collections and exclusions.
-- [CATALOG.json](../CATALOG.json): this snapshot's original relative paths, output paths, selection reason, provenance class, source size/date where recorded, sanitization and exclusion decisions. It does not claim a new byte-identity/hardware audit.
+- [Workspace source registry](../research/docs/knowledge-sources.md) describes the evidence classes and primary corpus paths.
+- [Import routing catalog](../research/docs/import-catalog.md) records old and current paths, historical campaigns and the limits of earlier byte verification.
+- [Corpus notes](../research/memory/corpus.md) describe the preserved collections and exclusions.
+- [CATALOG.json](../CATALOG.json) maps original relative paths to public copies. It includes selection reasons, provenance classes, source sizes/dates where recorded, sanitization and exclusion decisions. It does not claim a new byte-identity or hardware audit.
 
-## External basis
+## External sources
 
-- Positive Technologies pAMDora article: https://habr.com/ru/companies/pt/articles/979470/ . Our article notes are authored summaries; the complete article, illustrations and rewritten article collections are not republished.
-- 39C3 “Opening pAMDora's box”, tihmstar and collaborators: the original talk/transcript provenance is preserved in our dated research notes. Full transcript copies are not required to treat our interpretations as facts.
-- SomnacinDumper / PicoModchip: https://github.com/ProjectSomnacin/SomnacinDumper . Historical pointer; repository/licence API returned 404 on 2026-10-09. It is not claimed currently accessible.
-- AMD BC250 community documentation: https://elektricm.github.io/amd-bc250-docs/ and https://github.com/elektricM/amd-bc250-docs . Revision/retrieval data recorded in the local source registry; full mirrors are withheld.
-- Our separate release repository: https://github.com/kalpakprod/amd-bc250-bios-unlock . Not a substitute for the evidence limits of this research collection.
+The notes on Positive Technologies' [pAMDora article](https://habr.com/ru/companies/pt/articles/979470/) are authored summaries. We did not republish the complete article, illustrations or rewritten article collections.
 
-[All extracted source URLs](SOURCE-LINKS.md) retain their originating released paths. They were not all re-fetched for this handoff. A dead, historical or participant-report URL remains a provenance lead, not independent confirmation. The recipient's PS5 Linux news was not independently verified, and is not evidence of a BC250 unlock.
+The dated research notes retain the talk and transcript provenance for 39C3 “Opening pAMDora's box” by tihmstar and collaborators. A full transcript copy does not make our interpretation a verified fact.
+
+[SomnacinDumper / PicoModchip](https://github.com/ProjectSomnacin/SomnacinDumper) is a historical pointer. The repository/licence API returned 404 on 2026-10-09, so we do not claim that the source is currently accessible.
+
+The local source registry records revision and retrieval information for [AMD BC250 community documentation](https://elektricm.github.io/amd-bc250-docs/) and [its source repository](https://github.com/elektricM/amd-bc250-docs). Full mirrors are withheld.
+
+Our [separate release repository](https://github.com/kalpakprod/amd-bc250-bios-unlock) does not replace the evidence limits recorded here.
+
+[All extracted source URLs](SOURCE-LINKS.md) retain the public paths where they were cited. We did not re-fetch every URL for the original collection. Dead or historical links and participant reports remain leads, not independent confirmation. The recipient's PS5 Linux news was not independently checked and does not establish a BC250 unlock.
