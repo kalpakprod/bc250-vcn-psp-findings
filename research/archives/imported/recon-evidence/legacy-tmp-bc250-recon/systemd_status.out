@@ -1,0 +1,19 @@
+=== is-system-running ===
+degraded
+=== reboot.target status ===
+○ reboot.target - System Reboot
+     Loaded: loaded (/usr/lib/systemd/system/reboot.target; disabled; preset: enabled)
+     Active: inactive (dead)
+       Docs: man:systemd.special(7)
+=== jobs (reboot/restart) ===
+=== last reboot times ===
+reboot   system boot  7.2.0-1.1-cachy* Tue Aug 25 17:07   still running
+reboot   system boot  7.2.0-1.1-cachy* Tue Aug 25 14:18 - 14:40  (00:22)
+reboot   system boot  7.2.0-1.1-cachy* Tue Aug 25 14:09 - crash  (00:08)
+reboot   system boot  7.2.0-1.1-cachy* Tue Aug 25 14:04 - crash  (00:04)
+reboot   system boot  7.2.0-1.1-cachy* Tue Aug 25 13:49 - crash  (00:15)
+=== systemctl show reboot.target ===
+ActiveState=inactive
+SubState=dead
+UnitFileState=disabled
+=== done ===

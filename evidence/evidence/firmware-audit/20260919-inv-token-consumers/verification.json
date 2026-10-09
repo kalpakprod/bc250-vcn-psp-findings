@@ -1,0 +1,2172 @@
+{
+  "passed": 517,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "ROM hash and size",
+      "passed": true
+    },
+    {
+      "check": "233 exact predecessor identities",
+      "passed": true
+    },
+    {
+      "check": "42 HOB GUID and exactly two NVTB bodies",
+      "passed": true
+    },
+    {
+      "check": "body digest RomLayoutDxe-b5400e808ec4",
+      "passed": true
+    },
+    {
+      "check": "body digest DxeCore-2f1d8056b0da",
+      "passed": true
+    },
+    {
+      "check": "body digest Bds-f7cd209b8afb",
+      "passed": true
+    },
+    {
+      "check": "body digest DataHubDxe-e503b9c876ab",
+      "passed": true
+    },
+    {
+      "check": "body digest DevicePathDxe-08cc9820cf71",
+      "passed": true
+    },
+    {
+      "check": "body digest EnglishDxe-a66341b34380",
+      "passed": true
+    },
+    {
+      "check": "body digest EbcDxe-f4776f100100",
+      "passed": true
+    },
+    {
+      "check": "body digest HiiDatabase-489fc01869bd",
+      "passed": true
+    },
+    {
+      "check": "body digest SecurityStubDxe-9b014f049b54",
+      "passed": true
+    },
+    {
+      "check": "body digest TimestampDxe-8c96247042e4",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuIo2Dxe-95852565b4d7",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuDxe-4fe9d6dc6dfe",
+      "passed": true
+    },
+    {
+      "check": "body digest GnbDxe-6eb06f5fc9c4",
+      "passed": true
+    },
+    {
+      "check": "body digest NbDxe-741b3e575c5c",
+      "passed": true
+    },
+    {
+      "check": "body digest SbDxe-4b9d66aa46b8",
+      "passed": true
+    },
+    {
+      "check": "body digest SmBusSmm-44b9e44d8885",
+      "passed": true
+    },
+    {
+      "check": "body digest SbInterfaceDxe-6bd689800694",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCcxVhAriDxe-d9bc6337e3d0",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdIdsDebugPrintDxe-e177833c8a19",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdErrorLogDxe-76da20592893",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdFabricAriDxe-b9702a29ed28",
+      "passed": true
+    },
+    {
+      "check": "body digest FchDxe-9adfd93323df",
+      "passed": true
+    },
+    {
+      "check": "body digest FchDxeAux-8b8a7aa7c303",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdMemSmbiosV2Dxe-6885edb46452",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioGfxARIDxe-a1b5855a3398",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioIOMMUARIDxe-3588d51cac5d",
+      "passed": true
+    },
+    {
+      "check": "body digest CARSystemHubDxe-4fd04b58fdb3",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioAlibARIDxe-cba4607ffcc4",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioBaseARIDxe-8de29ee97dae",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioPcieARIDxe-e0d4d4415777",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioSmuV10Dxe-b158f039f48d",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdPspDxeV2-554e1b4bc50d",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdApcbObrDxe-e0bc6cb78646",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdSocBl5AriDxe-008e2638bd8f",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdAcpiDxe-4b87626749f1",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdSmbiosDxe-a5f9422313bb",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdVersionDxe-1b1dda19832f",
+      "passed": true
+    },
+    {
+      "check": "body digest AmiAgesaDxe-f1d2a369d102",
+      "passed": true
+    },
+    {
+      "check": "body digest AmiApcbLibInterface-4d65e6dc2ca8",
+      "passed": true
+    },
+    {
+      "check": "body digest CbsSetupDxe-7ff717d51c9a",
+      "passed": true
+    },
+    {
+      "check": "body digest CbsBaseDxe-d2e9ba4e9da7",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmOemInitDxe-2f0bb9d2aeae",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmGpioInitDxe-70a6130e9bfe",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmInitDxe-89a016d6a95b",
+      "passed": true
+    },
+    {
+      "check": "body digest Setup-10cc728ae3f8",
+      "passed": true
+    },
+    {
+      "check": "body digest ACPI-d73a4c23e02f",
+      "passed": true
+    },
+    {
+      "check": "body digest S3SaveStateDxe-e0770fa9e6b5",
+      "passed": true
+    },
+    {
+      "check": "body digest BootScriptExecutorDxe-c6d31e6e00bf",
+      "passed": true
+    },
+    {
+      "check": "body digest AcpiS3SaveDxe-cfad87d90a2d",
+      "passed": true
+    },
+    {
+      "check": "body digest SioDxeInit-13ba455c441c",
+      "passed": true
+    },
+    {
+      "check": "body digest SioDynamicSetup-03f359d8a525",
+      "passed": true
+    },
+    {
+      "check": "body digest IdeBusBoard-671575888e9d",
+      "passed": true
+    },
+    {
+      "check": "body digest OA3-f04739a4063d",
+      "passed": true
+    },
+    {
+      "check": "body digest PciRootBridge-904653780c70",
+      "passed": true
+    },
+    {
+      "check": "body digest PciDxeInit-4669fe7de87e",
+      "passed": true
+    },
+    {
+      "check": "body digest DpcDxe-7f0caeb9c588",
+      "passed": true
+    },
+    {
+      "check": "body digest NetworkStackSetupScreen-5d5df30f45eb",
+      "passed": true
+    },
+    {
+      "check": "body digest AmiBoardInfo2-3f43a97e4452",
+      "passed": true
+    },
+    {
+      "check": "body digest ReFlash-01a7193d2d87",
+      "passed": true
+    },
+    {
+      "check": "body digest CryptoPkgTest-4502c000a550",
+      "passed": true
+    },
+    {
+      "check": "body digest HardwareSignatureEntry-d823c6a7b5a8",
+      "passed": true
+    },
+    {
+      "check": "body digest EsrtDxe-681862dffcd1",
+      "passed": true
+    },
+    {
+      "check": "body digest NvmeDynamicSetup-8910d2625b50",
+      "passed": true
+    },
+    {
+      "check": "body digest RsdpPlus-0607aa4379b1",
+      "passed": true
+    },
+    {
+      "check": "body digest SmbiosBoard-488f370982b1",
+      "passed": true
+    },
+    {
+      "check": "body digest Uhcd-11b620c52cea",
+      "passed": true
+    },
+    {
+      "check": "body digest UsbRtDxe-301513b93e04",
+      "passed": true
+    },
+    {
+      "check": "body digest PspPlatform-48199863fd80",
+      "passed": true
+    },
+    {
+      "check": "body digest PspDxe-73f374d80f09",
+      "passed": true
+    },
+    {
+      "check": "body digest PspResource-5fc986c26b8e",
+      "passed": true
+    },
+    {
+      "check": "body digest FanTuningDxe-da9c3b869d99",
+      "passed": true
+    },
+    {
+      "check": "body digest OEMBOARDDxe-a762c5eb6d68",
+      "passed": true
+    },
+    {
+      "check": "body digest RealtekLanDxeDxe-adaa78018ac1",
+      "passed": true
+    },
+    {
+      "check": "body digest CapsuleRuntimeDxe-5d5ddcec47a4",
+      "passed": true
+    },
+    {
+      "check": "body digest RuntimeDxe-0b32fb440716",
+      "passed": true
+    },
+    {
+      "check": "body digest PiSmmIpl-f875d7f85c20",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuIoDxe-170bb81fd6c6",
+      "passed": true
+    },
+    {
+      "check": "body digest SbRun-49e976ead033",
+      "passed": true
+    },
+    {
+      "check": "body digest SataController-0f8399ab45e8",
+      "passed": true
+    },
+    {
+      "check": "body digest PataController-7d6f61be2399",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdSmmControl-2f614cc047c1",
+      "passed": true
+    },
+    {
+      "check": "body digest CryptoDXE-7e192d707a0b",
+      "passed": true
+    },
+    {
+      "check": "body digest NTFS-116a75548877",
+      "passed": true
+    },
+    {
+      "check": "body digest SmiFlashDxe-dead57e6697b",
+      "passed": true
+    },
+    {
+      "check": "body digest ConSplitter-3bf3d34a5412",
+      "passed": true
+    },
+    {
+      "check": "body digest GraphicsConsole-2739c97eddea",
+      "passed": true
+    },
+    {
+      "check": "body digest DiskIoDxe-ba4132c228af",
+      "passed": true
+    },
+    {
+      "check": "body digest PartitionDxe-d70f42726da8",
+      "passed": true
+    },
+    {
+      "check": "body digest Ahci-cbd12c411fed",
+      "passed": true
+    },
+    {
+      "check": "body digest GenericSio-f037edf1de57",
+      "passed": true
+    },
+    {
+      "check": "body digest IdeBusSrc-4d641ea5245b",
+      "passed": true
+    },
+    {
+      "check": "body digest OA2-501c767e17f3",
+      "passed": true
+    },
+    {
+      "check": "body digest PciBus-0fb8ddcaeb47",
+      "passed": true
+    },
+    {
+      "check": "body digest PlatformToDriver-f78e93bf57d5",
+      "passed": true
+    },
+    {
+      "check": "body digest Ps2Main-ad73e54f640f",
+      "passed": true
+    },
+    {
+      "check": "body digest SnpDxe-61482da0a98f",
+      "passed": true
+    },
+    {
+      "check": "body digest MnpDxe-2c4761be206e",
+      "passed": true
+    },
+    {
+      "check": "body digest ArpDxe-b121bd9facdb",
+      "passed": true
+    },
+    {
+      "check": "body digest TcpDxe-ebb61e94294b",
+      "passed": true
+    },
+    {
+      "check": "body digest UefiPxeBcDxe-f74802d4dd67",
+      "passed": true
+    },
+    {
+      "check": "body digest HttpBootDxe-5fb4e80fc8ac",
+      "passed": true
+    },
+    {
+      "check": "body digest HttpDxe-3ae5c5f87f09",
+      "passed": true
+    },
+    {
+      "check": "body digest DnsDxe-93b48db685ee",
+      "passed": true
+    },
+    {
+      "check": "body digest HttpUtilitiesDxe-d43995e6e33f",
+      "passed": true
+    },
+    {
+      "check": "body digest Dhcp4Dxe-4eb18deb822d",
+      "passed": true
+    },
+    {
+      "check": "body digest Ip4Dxe-0721c0deb5af",
+      "passed": true
+    },
+    {
+      "check": "body digest Mtftp4Dxe-2bb759be09f8",
+      "passed": true
+    },
+    {
+      "check": "body digest Udp4Dxe-80593d46a9ae",
+      "passed": true
+    },
+    {
+      "check": "body digest Ip6Dxe-563d7af58418",
+      "passed": true
+    },
+    {
+      "check": "body digest Udp6Dxe-2b859e744af7",
+      "passed": true
+    },
+    {
+      "check": "body digest Dhcp6Dxe-74f4a0283ffa",
+      "passed": true
+    },
+    {
+      "check": "body digest Mtftp6Dxe-39911136e449",
+      "passed": true
+    },
+    {
+      "check": "body digest FastBootOption-0b1096799a80",
+      "passed": true
+    },
+    {
+      "check": "body digest Fat-4a3f6d42f838",
+      "passed": true
+    },
+    {
+      "check": "body digest Nvme-67a94f675aa8",
+      "passed": true
+    },
+    {
+      "check": "body digest PiSmmCore-590d07cb6c18",
+      "passed": true
+    },
+    {
+      "check": "body digest FlashDriverSmm-98ea449c3662",
+      "passed": true
+    },
+    {
+      "check": "body digest NvramSmm-5e0d8f9526b3",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuIo2Smm-375819eb4533",
+      "passed": true
+    },
+    {
+      "check": "body digest SmmLockBox-6d5d35ed30d7",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuSmm-ceed10ef6a42",
+      "passed": true
+    },
+    {
+      "check": "body digest SbRunSmm-39b78b664887",
+      "passed": true
+    },
+    {
+      "check": "body digest SleepSmi-3004a8268b47",
+      "passed": true
+    },
+    {
+      "check": "body digest PeriodicSmiControl-3522889438cc",
+      "passed": true
+    },
+    {
+      "check": "body digest AcpiModeEnable-49e103b8e867",
+      "passed": true
+    },
+    {
+      "check": "body digest SmmChildDispatcher2-e9cbe71883d6",
+      "passed": true
+    },
+    {
+      "check": "body digest AhciSmm-e28881316352",
+      "passed": true
+    },
+    {
+      "check": "body digest PiSmmCommunicationSmm-413ef59f8246",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCcxVhAriSmm-419e9d6c325a",
+      "passed": true
+    },
+    {
+      "check": "body digest FchSmmInit-42e781946f06",
+      "passed": true
+    },
+    {
+      "check": "body digest FchSmmDispatcher-62210a140085",
+      "passed": true
+    },
+    {
+      "check": "body digest FchPcieWakeWA-7e60d64598a3",
+      "passed": true
+    },
+    {
+      "check": "body digest FchImcControl-f2ed4fd07b45",
+      "passed": true
+    },
+    {
+      "check": "body digest Usb3PortProtectWA-d4f4bba485f1",
+      "passed": true
+    },
+    {
+      "check": "body digest CardinalSystemHubSmmInit-38eb715e932f",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdPspP2CmboxV2-8d87b78dff82",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdPspSmmV2-0228ebbd214d",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdApcbObrSmm-3237d2836e5d",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdSmmCommunication-a5f8bb3677ec",
+      "passed": true
+    },
+    {
+      "check": "body digest BctBaseSmm-6487b63dfc7e",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmOemSmm-f3eb0d038965",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmGpioInitSmm-07cb9a277872",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmInitSmm-9cae175a00b6",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuSmm-60ac586e5631",
+      "passed": true
+    },
+    {
+      "check": "body digest CryptoSMM-d9a16a60a636",
+      "passed": true
+    },
+    {
+      "check": "body digest SmmS3SaveState-3329a9fbc888",
+      "passed": true
+    },
+    {
+      "check": "body digest SmmGenericSio-207198666177",
+      "passed": true
+    },
+    {
+      "check": "body digest OA3_SMM-aa6b75ea4853",
+      "passed": true
+    },
+    {
+      "check": "body digest SmmPciRbIo-92671d2adef6",
+      "passed": true
+    },
+    {
+      "check": "body digest RuntimeSmm-38e7e1024f45",
+      "passed": true
+    },
+    {
+      "check": "body digest NvmeSmm-fbe94f53c5b6",
+      "passed": true
+    },
+    {
+      "check": "body digest Ofbd-dbb20722e4c3",
+      "passed": true
+    },
+    {
+      "check": "body digest SmbiosDmiEdit-3af697d1c69a",
+      "passed": true
+    },
+    {
+      "check": "body digest SmiFlash-c44fa437b032",
+      "passed": true
+    },
+    {
+      "check": "body digest UsbRtSmm-6011e29ef191",
+      "passed": true
+    },
+    {
+      "check": "body digest PspS3Smm-9af3d4af1a4a",
+      "passed": true
+    },
+    {
+      "check": "body digest CrbSmi-9684e2eb2cb4",
+      "passed": true
+    },
+    {
+      "check": "body digest OEMBOARDSmm-6b2e794fddeb",
+      "passed": true
+    },
+    {
+      "check": "body digest StatusCodeDxe-53b3a4d92529",
+      "passed": true
+    },
+    {
+      "check": "body digest StatusCodeSmm-6e1c49c855c0",
+      "passed": true
+    },
+    {
+      "check": "body digest FlashDriver-22f4359a142e",
+      "passed": true
+    },
+    {
+      "check": "body digest NvramDxe-eebdaa0bad92",
+      "passed": true
+    },
+    {
+      "check": "body digest PcdDxe-c8bb4c592b5f",
+      "passed": true
+    },
+    {
+      "check": "body digest SmBusDxe-bafbdcaa691d",
+      "passed": true
+    },
+    {
+      "check": "body digest Smbios-bb6f3dab767b",
+      "passed": true
+    },
+    {
+      "check": "body digest CmosDxe-c952cb0f0b6e",
+      "passed": true
+    },
+    {
+      "check": "body digest FastBootRuntime-5c9859da1a78",
+      "passed": true
+    },
+    {
+      "check": "body digest PeiRamBootDxe-76b5e14aeb93",
+      "passed": true
+    },
+    {
+      "check": "body digest CrbDxe-afa1e28a674b",
+      "passed": true
+    },
+    {
+      "check": "body digest RealtekUefiDriver-e8c6cf703a77",
+      "passed": true
+    },
+    {
+      "check": "body digest AMITSE-9cc06fc7f734",
+      "passed": true
+    },
+    {
+      "check": "body digest A0327FE0-1FDA-4E5B-905D-B510C45A61D0-a014267d5e97",
+      "passed": true
+    },
+    {
+      "check": "body digest RomLayoutPei-e7d221ed0b72",
+      "passed": true
+    },
+    {
+      "check": "body digest PeiCore-e3aae31cd48e",
+      "passed": true
+    },
+    {
+      "check": "body digest CapsulePei-45091113ac3e",
+      "passed": true
+    },
+    {
+      "check": "body digest DxeIpl-17a64547bd9d",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuIoPei-8f55548e5e08",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuPei-69d0bca8e11d",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuSetAgesaPcd-00816c19d891",
+      "passed": true
+    },
+    {
+      "check": "body digest PciTableInit-25746f8b7d73",
+      "passed": true
+    },
+    {
+      "check": "body digest GnbPei-05d1364a0861",
+      "passed": true
+    },
+    {
+      "check": "body digest NbPei-7ce155eea0eb",
+      "passed": true
+    },
+    {
+      "check": "body digest MemDetect-6ba86d23491b",
+      "passed": true
+    },
+    {
+      "check": "body digest SbPei-ac72a3b20e49",
+      "passed": true
+    },
+    {
+      "check": "body digest PiSmmCommunicationPei-824be9696fe0",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCcxVhAriPei-973624f3cf5c",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdIdsDebugPrintPei-e768208e3868",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdErrorPei-c41fd9c5ac19",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdFabricAriPei-c5b99650a442",
+      "passed": true
+    },
+    {
+      "check": "body digest FchPei-08493ca078e7",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdMemAm4Pei-1ef4e7b94467",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdMemSmbiosV2Pei-a70b4d80e8db",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioGfxARIPei-63413be2ac29",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioIOMMUARIPei-8bce36bd28d5",
+      "passed": true
+    },
+    {
+      "check": "body digest CARSystemHubPei-ee71967713cb",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioBaseARIPei-51d96c1e5a5e",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioPcieARIPei-62b1398c4ba9",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioSmuV10Pei-905b8be68afd",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdPspPeiV2-1158720bbf95",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdSocBl5AriPei-79e13211d5ae",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdMemoryHobInfoPeim-aad3f828ccef",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdVersionPei-30fc2585cd30",
+      "passed": true
+    },
+    {
+      "check": "body digest AmiAgesaPei-2e40ead69096",
+      "passed": true
+    },
+    {
+      "check": "body digest CbsBasePei-6ff112922ad8",
+      "passed": true
+    },
+    {
+      "check": "body digest PlatformCustomizePei-5b410845607f",
+      "passed": true
+    },
+    {
+      "check": "body digest PlatformMemoryConfigurationPei-6a1ab7fe72ad",
+      "passed": true
+    },
+    {
+      "check": "body digest S3Resume2Pei-d0dd189cea85",
+      "passed": true
+    },
+    {
+      "check": "body digest AmiPspRecovery-37d1369b8131",
+      "passed": true
+    },
+    {
+      "check": "body digest FanTuningPei-7b4c4ccd8b47",
+      "passed": true
+    },
+    {
+      "check": "body digest OEMBOARDPei-c0e1480ca2ae",
+      "passed": true
+    },
+    {
+      "check": "body digest ISL69247-3e1f753a6279",
+      "passed": true
+    },
+    {
+      "check": "body digest ISL95712-c0cc17d2d54f",
+      "passed": true
+    },
+    {
+      "check": "body digest StatusCodePei-2f7f8494107c",
+      "passed": true
+    },
+    {
+      "check": "body digest NvramPei-cbc1def3ce53",
+      "passed": true
+    },
+    {
+      "check": "body digest CapsuleX64-f2e3f541af3c",
+      "passed": true
+    },
+    {
+      "check": "body digest PcdPeim-ab509a6d18b8",
+      "passed": true
+    },
+    {
+      "check": "body digest NCT6686DPeiInit-f648720f09ab",
+      "passed": true
+    },
+    {
+      "check": "body digest SmBusPei-e2a0b655a09b",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmOemInitPeim-ffce8c84718b",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmInitPeim-25b14a638a17",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmGpioInitPeim-392635bc56b2",
+      "passed": true
+    },
+    {
+      "check": "body digest SbInterfacePei-9c3de774835b",
+      "passed": true
+    },
+    {
+      "check": "body digest CryptoPPI-860378d8b98e",
+      "passed": true
+    },
+    {
+      "check": "body digest Recovery-3810b57ccf3c",
+      "passed": true
+    },
+    {
+      "check": "body digest FsRecovery-0e3a196067dc",
+      "passed": true
+    },
+    {
+      "check": "body digest IdeRecovery-a6fa8f4b8566",
+      "passed": true
+    },
+    {
+      "check": "body digest CmosPei-6efef942cadf",
+      "passed": true
+    },
+    {
+      "check": "body digest PeiRamBootPei-e202ac7f7953",
+      "passed": true
+    },
+    {
+      "check": "body digest PeiRamBootCacheRdy-6bd4ae7bc9c1",
+      "passed": true
+    },
+    {
+      "check": "body digest UsbPei-9ab79c5d64cc",
+      "passed": true
+    },
+    {
+      "check": "body digest CrbPei-30e770549a3f",
+      "passed": true
+    },
+    {
+      "check": "body digest PcatSingleSegmentPciCfg2Pei-eab6e773b262",
+      "passed": true
+    },
+    {
+      "check": "body digest 1BA0062E-C779-4582-8566-336AE8F78F09-93ea4e943d9d",
+      "passed": true
+    },
+    {
+      "check": "AmdFabricAriPei 0x1eb0 68ff100000",
+      "passed": true
+    },
+    {
+      "check": "AmdFabricAriPei 0x1ebd e87afeffff",
+      "passed": true
+    },
+    {
+      "check": "AmdFabricAriPei 0x1f8b 6804110000",
+      "passed": true
+    },
+    {
+      "check": "AmdFabricAriPei 0x1f94 e8a3fdffff",
+      "passed": true
+    },
+    {
+      "check": "AmdFabricAriPei 0x1d4d bb4e565442",
+      "passed": true
+    },
+    {
+      "check": "AmdFabricAriPei 0x1dfc 813e24494e56",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5adc 440fb7e1",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5ae9 be4e565442",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5bbe 813b24494e56",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5ca0 b900100000",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5ca5 e81afeffff",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5cec b901100000",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5cf1 e8cefdffff",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5c32 66443923",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5c3b 6644392b",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5cbc b9291001c0",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5cc3 49c1e00e",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5cd1 4181e000400000",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5ce5 0f30",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5d05 b9231001c0",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5d10 49c1e02d",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5d17 48ba0000000000200000",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5d34 0f30",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x3cbf 4883c018",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x3ccd 813848454150",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x3cda 0fb6400d",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x3d00 4883c210",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x3d09 4883c120",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x3d0d e8baf8ffff",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x7a09 b9feffffff",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0xaef 8d4a02",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0xaf2 e81d4f0000",
+      "passed": true
+    },
+    {
+      "check": "AmdCcxVhAriDxe 0x5a73 ff5708",
+      "passed": true
+    },
+    {
+      "check": "CCX IDS handler table",
+      "passed": true
+    },
+    {
+      "check": "closed direct argument slice AmdFabricAriPei 0x1ebd",
+      "passed": true
+    },
+    {
+      "check": "stack argument unchanged 0x1ebd",
+      "passed": true
+    },
+    {
+      "check": "closed direct argument slice AmdFabricAriPei 0x1f94",
+      "passed": true
+    },
+    {
+      "check": "stack argument unchanged 0x1f94",
+      "passed": true
+    },
+    {
+      "check": "closed direct argument slice AmdCcxVhAriDxe 0x5ca5",
+      "passed": true
+    },
+    {
+      "check": "CX constant immediately precedes call 0x5ca5",
+      "passed": true
+    },
+    {
+      "check": "closed direct argument slice AmdCcxVhAriDxe 0x5cf1",
+      "passed": true
+    },
+    {
+      "check": "CX constant immediately precedes call 0x5cf1",
+      "passed": true
+    },
+    {
+      "check": "no target among all four direct requests",
+      "passed": true
+    },
+    {
+      "check": "all raw E8/E9 entries agree AmdCcxVhAriDxe",
+      "passed": true
+    },
+    {
+      "check": "no exact stored reader pointer/materialization AmdCcxVhAriDxe",
+      "passed": true
+    },
+    {
+      "check": "all raw E8/E9 entries agree AmdFabricAriPei",
+      "passed": true
+    },
+    {
+      "check": "no exact stored reader pointer/materialization AmdFabricAriPei",
+      "passed": true
+    },
+    {
+      "check": "49 serializer IDs",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdFabricAriPei 0xcd97",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdFabricAriPei 0xd224",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdFabricAriPei 0x10f40",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdFabricAriPei 0x11924",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdFabricAriPei 0x11956",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdFabricAriPei 0x11c66",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdFabricAriPei 0x11c98",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioGfxARIPei 0xaf67",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioGfxARIPei 0xb3f4",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioGfxARIPei 0xf110",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioGfxARIPei 0xfaf4",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioGfxARIPei 0xfb26",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioGfxARIPei 0xfe36",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioGfxARIPei 0xfe68",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioBaseARIPei 0xdba7",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioBaseARIPei 0xe034",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioBaseARIPei 0x11d50",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioBaseARIPei 0x12734",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioBaseARIPei 0x12766",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioBaseARIPei 0x12a76",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioBaseARIPei 0x12aa8",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioPcieARIPei 0xe6b7",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioPcieARIPei 0xeb44",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioPcieARIPei 0x12860",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioPcieARIPei 0x13244",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioPcieARIPei 0x13276",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioPcieARIPei 0x13586",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioPcieARIPei 0x135b8",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioSmuV10Pei 0xb8b7",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioSmuV10Pei 0xbd44",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioSmuV10Pei 0xfa60",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioSmuV10Pei 0x10444",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioSmuV10Pei 0x10476",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioSmuV10Pei 0x10786",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdNbioSmuV10Pei 0x107b8",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdSocBl5AriPei 0xb5f7",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdSocBl5AriPei 0xba84",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdSocBl5AriPei 0xf7a0",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdSocBl5AriPei 0x10184",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdSocBl5AriPei 0x101b6",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdSocBl5AriPei 0x104c6",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx AmdSocBl5AriPei 0x104f8",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx CbsBasePei 0x9837",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx CbsBasePei 0x9cc4",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx CbsBasePei 0xd9e0",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx CbsBasePei 0xe3c4",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx CbsBasePei 0xe3f6",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx CbsBasePei 0xe706",
+      "passed": true
+    },
+    {
+      "check": "serializer mov edx; mov eax,[ebp-8]; mov [eax],dx CbsBasePei 0xe738",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ac4",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ac7",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5acb",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5acf",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ad3",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ad4",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ad6",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ad8",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5adc",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ae0",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ae3",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ae7",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ae9",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5aee",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5af0",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5af4",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5af7",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5afc",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b01",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b03",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b09",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b11",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b13",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b1a",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b1f",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b26",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b28",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b2a",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b2d",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b32",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b35",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b3a",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b3c",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b40",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b45",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b4a",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b4e",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b53",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b58",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b5b",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b5d",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b62",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b67",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b6c",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b73",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b78",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b80",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b85",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b8a",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b8f",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b91",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b93",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b98",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5b9d",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ba4",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ba9",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bad",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5baf",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bb4",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bb9",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bbe",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bc4",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bc6",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bcb",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bd0",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bd3",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bd7",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bdd",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bdf",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5be3",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5be6",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5be8",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bea",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bed",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bef",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bf2",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bf4",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bf7",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bf9",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5bfe",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c03",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c05",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c09",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c0e",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c10",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c13",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c18",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c1a",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c1e",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c23",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c25",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c29",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c2e",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c32",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c36",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c38",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c3b",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c3f",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c41",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c45",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c49",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c4b",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c50",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c54",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c58",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c5c",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c5f",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c61",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c63",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c64",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c65",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c66",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c67",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c68",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c6a",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c6e",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c73",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c75",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c79",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c7b",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c7e",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c82",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c84",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c8a",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c91",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c96",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5c9b",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ca0",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ca5",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5caa",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cac",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cae",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cb3",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cba",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cbc",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cc1",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cc3",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cc7",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ccb",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cce",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cd1",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cd8",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cdb",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cde",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ce1",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ce5",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5ce7",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cec",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cf1",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cf6",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cf8",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cfa",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5cff",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5d03",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5d05",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5d0a",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5d0c",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5d10",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5d14",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5d17",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5d21",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5d24",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5d27",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5d2a",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5d2d",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5d30",
+      "passed": true
+    },
+    {
+      "check": "LLVM bytes 0x5d34",
+      "passed": true
+    },
+    {
+      "check": "LLVM decoded reader and both MSR edges",
+      "passed": true
+    },
+    {
+      "check": "actual displacement control",
+      "passed": true
+    },
+    {
+      "check": "actual immediate control",
+      "passed": true
+    },
+    {
+      "check": "transformed token arithmetic control",
+      "passed": true
+    },
+    {
+      "check": "imm8 sign-extension control",
+      "passed": true
+    },
+    {
+      "check": "MSR masked synthetic 14 0x0",
+      "passed": true
+    },
+    {
+      "check": "MSR masked synthetic 45 0x0",
+      "passed": true
+    },
+    {
+      "check": "MSR masked synthetic 14 0x1",
+      "passed": true
+    },
+    {
+      "check": "MSR masked synthetic 45 0x1",
+      "passed": true
+    },
+    {
+      "check": "MSR masked synthetic 14 0x2",
+      "passed": true
+    },
+    {
+      "check": "MSR masked synthetic 45 0x2",
+      "passed": true
+    },
+    {
+      "check": "MSR masked synthetic 14 0x3",
+      "passed": true
+    },
+    {
+      "check": "MSR masked synthetic 45 0x3",
+      "passed": true
+    },
+    {
+      "check": "MSR masked synthetic 14 0x1364",
+      "passed": true
+    },
+    {
+      "check": "MSR masked synthetic 45 0x1364",
+      "passed": true
+    },
+    {
+      "check": "MSR masked synthetic 14 0xffffffffffffffff",
+      "passed": true
+    },
+    {
+      "check": "MSR masked synthetic 45 0xffffffffffffffff",
+      "passed": true
+    }
+  ],
+  "requests": [
+    {
+      "module": "AmdFabricAriPei",
+      "call_rva": 7869,
+      "token": 4351,
+      "instructions": [
+        {
+          "rva": 7856,
+          "bytes": "68ff100000",
+          "mnemonic": "push",
+          "operands": "0x10ff"
+        },
+        {
+          "rva": 7861,
+          "bytes": "8d7c2414",
+          "mnemonic": "lea",
+          "operands": "edi,[esp+0x14]"
+        },
+        {
+          "rva": 7865,
+          "bytes": "89742410",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [esp+0x10],esi"
+        },
+        {
+          "rva": 7869,
+          "bytes": "e87afeffff",
+          "mnemonic": "call",
+          "operands": "0x1d3c"
+        }
+      ]
+    },
+    {
+      "module": "AmdFabricAriPei",
+      "call_rva": 8084,
+      "token": 4356,
+      "instructions": [
+        {
+          "rva": 8075,
+          "bytes": "6804110000",
+          "mnemonic": "push",
+          "operands": "0x1104"
+        },
+        {
+          "rva": 8080,
+          "bytes": "8d7c240c",
+          "mnemonic": "lea",
+          "operands": "edi,[esp+0xc]"
+        },
+        {
+          "rva": 8084,
+          "bytes": "e8a3fdffff",
+          "mnemonic": "call",
+          "operands": "0x1d3c"
+        }
+      ]
+    },
+    {
+      "module": "AmdCcxVhAriDxe",
+      "call_rva": 23717,
+      "token": 4096,
+      "instructions": [
+        {
+          "rva": 23712,
+          "bytes": "b900100000",
+          "mnemonic": "mov",
+          "operands": "ecx,0x1000"
+        },
+        {
+          "rva": 23717,
+          "bytes": "e81afeffff",
+          "mnemonic": "call",
+          "operands": "0x5ac4"
+        }
+      ]
+    },
+    {
+      "module": "AmdCcxVhAriDxe",
+      "call_rva": 23793,
+      "token": 4097,
+      "instructions": [
+        {
+          "rva": 23788,
+          "bytes": "b901100000",
+          "mnemonic": "mov",
+          "operands": "ecx,0x1001"
+        },
+        {
+          "rva": 23793,
+          "bytes": "e8cefdffff",
+          "mnemonic": "call",
+          "operands": "0x5ac4"
+        }
+      ]
+    }
+  ],
+  "llvm_byte_rows": 167,
+  "limits": "No execution of firmware; fixtures are host-only. Arbitrary computed indirect destinations, runtime code and GUIDs remain unresolved."
+}

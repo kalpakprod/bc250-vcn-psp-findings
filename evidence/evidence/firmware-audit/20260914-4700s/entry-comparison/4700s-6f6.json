@@ -1,0 +1,215 @@
+{
+  "generated_at": "2026-09-14T12:02:41.367005+00:00",
+  "tool": "scripts/trace_te_entry.py",
+  "pypcode_version": "4.0.0",
+  "input": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260914-4700s/extracted/modules/0200_AmdNbioGfxARIPei_te.bin",
+    "size": 6720,
+    "sha256": "73915b610491853db8bf81622f4acfd17e125959e5ab324e55e3a362489bd156"
+  },
+  "te": {
+    "machine": "0x14C",
+    "stripped_size": "0x1C8",
+    "delta": "0x1A0",
+    "entry_rva": "0x240",
+    "trace_start_rva": "0x6F6",
+    "sections": [
+      {
+        "name": ".text",
+        "virtual_address": "0x240",
+        "virtual_size": 5759,
+        "raw_size": 5760,
+        "file_offset": "0xA0"
+      },
+      {
+        "name": ".data",
+        "virtual_address": "0x18C0",
+        "virtual_size": 640,
+        "raw_size": 640,
+        "file_offset": "0x1720"
+      },
+      {
+        "name": ".reloc",
+        "virtual_address": "0x1B40",
+        "virtual_size": 156,
+        "raw_size": 160,
+        "file_offset": "0x19A0"
+      }
+    ]
+  },
+  "trace": {
+    "instruction_count": 25,
+    "instructions": [
+      {
+        "address": "0x6F6",
+        "length": 1,
+        "mnemonic": "PUSH",
+        "body": "EBP"
+      },
+      {
+        "address": "0x6F7",
+        "length": 2,
+        "mnemonic": "MOV",
+        "body": "EBP,ESP"
+      },
+      {
+        "address": "0x6F9",
+        "length": 1,
+        "mnemonic": "PUSH",
+        "body": "ECX"
+      },
+      {
+        "address": "0x6FA",
+        "length": 1,
+        "mnemonic": "PUSH",
+        "body": "ECX"
+      },
+      {
+        "address": "0x6FB",
+        "length": 5,
+        "mnemonic": "OR",
+        "body": "EAX,0xb0000000"
+      },
+      {
+        "address": "0x700",
+        "length": 3,
+        "mnemonic": "MOV",
+        "body": "dword ptr [EBP + -0x4],EAX"
+      },
+      {
+        "address": "0x703",
+        "length": 2,
+        "mnemonic": "PUSH",
+        "body": "0x3"
+      },
+      {
+        "address": "0x705",
+        "length": 3,
+        "mnemonic": "LEA",
+        "body": "EAX,[EBP + -0x4]"
+      },
+      {
+        "address": "0x708",
+        "length": 5,
+        "mnemonic": "MOV",
+        "body": "EDX,0x80"
+      },
+      {
+        "address": "0x70D",
+        "length": 1,
+        "mnemonic": "POP",
+        "body": "ECX"
+      },
+      {
+        "address": "0x70E",
+        "length": 5,
+        "mnemonic": "CALL",
+        "body": "0xa08"
+      },
+      {
+        "address": "0x713",
+        "length": 5,
+        "mnemonic": "MOV",
+        "body": "EDX,0xcf8"
+      },
+      {
+        "address": "0x718",
+        "length": 5,
+        "mnemonic": "MOV",
+        "body": "EAX,0x80000068"
+      },
+      {
+        "address": "0x71D",
+        "length": 1,
+        "mnemonic": "OUT",
+        "body": "DX,EAX"
+      },
+      {
+        "address": "0x71E",
+        "length": 3,
+        "mnemonic": "MOV",
+        "body": "EAX,dword ptr [EBP + -0x4]"
+      },
+      {
+        "address": "0x721",
+        "length": 3,
+        "mnemonic": "ADD",
+        "body": "EDX,0x4"
+      },
+      {
+        "address": "0x724",
+        "length": 1,
+        "mnemonic": "OUT",
+        "body": "DX,EAX"
+      },
+      {
+        "address": "0x725",
+        "length": 1,
+        "mnemonic": "PUSH",
+        "body": "EAX"
+      },
+      {
+        "address": "0x726",
+        "length": 5,
+        "mnemonic": "PUSH",
+        "body": "0x9e2bb44"
+      },
+      {
+        "address": "0x72B",
+        "length": 5,
+        "mnemonic": "PUSH",
+        "body": "0x40000"
+      },
+      {
+        "address": "0x730",
+        "length": 2,
+        "mnemonic": "PUSH",
+        "body": "0x0"
+      },
+      {
+        "address": "0x732",
+        "length": 5,
+        "mnemonic": "CALL",
+        "body": "0x9a8"
+      },
+      {
+        "address": "0x737",
+        "length": 3,
+        "mnemonic": "ADD",
+        "body": "ESP,0x10"
+      },
+      {
+        "address": "0x73A",
+        "length": 1,
+        "mnemonic": "LEAVE",
+        "body": ""
+      },
+      {
+        "address": "0x73B",
+        "length": 1,
+        "mnemonic": "RET",
+        "body": ""
+      }
+    ],
+    "direct_calls": [
+      {
+        "site": "0x70E",
+        "target": "0xA08",
+        "body": "0xa08"
+      },
+      {
+        "site": "0x732",
+        "target": "0x9A8",
+        "body": "0x9a8"
+      }
+    ],
+    "indirect_calls": [],
+    "exits": [
+      {
+        "address": "0x73B",
+        "kind": "RET"
+      }
+    ],
+    "errors": []
+  }
+}

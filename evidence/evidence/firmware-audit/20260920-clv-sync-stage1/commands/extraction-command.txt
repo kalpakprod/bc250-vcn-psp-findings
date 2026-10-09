@@ -1,0 +1,16 @@
+set -o pipefail
+STAGE='evidence/firmware-audit/20260920-clv-sync-stage1'
+SRC='/home/OWNER/Downloads/AyuGram Desktop/ChatExport_2026-09-20/files'
+mkdir -p "$STAGE/archive-members/files.zip" "$STAGE/archive-members/oc_profiles.rar" "$STAGE/archive-members/oc_profiles-1.rar" "$STAGE/archive-members/ultimate.rar" "$STAGE/loose"
+cp -- "$SRC"/*.bin "$STAGE/loose/"
+unzip -p "$SRC/files.zip" README.md > "$STAGE/archive-members/files.zip/README.md"
+unzip -p "$SRC/files.zip" dfg_idx06_up_130.bin > "$STAGE/archive-members/files.zip/dfg_idx06_up_130.bin"
+unzip -p "$SRC/files.zip" dfg_idx06_down_70.bin > "$STAGE/archive-members/files.zip/dfg_idx06_down_70.bin"
+unzip -p "$SRC/files.zip" dfg_idx08_up_50.bin > "$STAGE/archive-members/files.zip/dfg_idx08_up_50.bin"
+unzip -p "$SRC/files.zip" dfg_idx08_down_20.bin > "$STAGE/archive-members/files.zip/dfg_idx08_down_20.bin"
+bsdtar -xOf "$SRC/oc_profiles.rar" <member> > <stage member>
+bsdtar -xOf "$SRC/oc_profiles (1).rar" <member> > <stage member>
+bsdtar -xOf "$SRC/03_BC250_ULTIMATE_LOW_LATENCY_StockCPU.rar" <member> > <stage member>
+printf 'stage=%s\n' "$STAGE"
+printf 'extracted_files=%s\n' "$(find "$STAGE" -type f | wc -l)"
+printf 'status=0\n'

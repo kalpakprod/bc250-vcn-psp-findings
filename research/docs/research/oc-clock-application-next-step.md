@@ -1,0 +1,8 @@
+## Clock application and independent measurement discrimination — 2026-09-19
+
+- Provenance & Telemetry: In driver source (`cyan_skillfish_ppt.c`), `SMU_FCLK` and `SMU_MCLK` map to `METRICS_CURR_UCLK` (`MemclkFrequency`). Reading `pp_dpm_fclk` and `pp_dpm_mclk` yields identical values by driver construction in that source code; this is a source-specific historical finding and cannot be asserted universally about the running kernel or independent hardware sources unless actually checked.
+- SMU Mailbox Command Analysis (Robin-5 PMFW `cae8617c...` byte-level dispatch):
+  - Queue 0, ID `0x13`: mapped in dispatch table (`0x7100`) to handler `0x0001E988`. Named `PPSMC_MSG_QueryDfPstate` in community tables; exact command semantics and byte execution show it reading internal data structures at `0xcee0` (`0x171ec` literal base `0xcee0`), returning an index/count. Exact semantic identity remains unverified against hardware.
+  - Queue 0, ID `0x11`: mapped in dispatch table (`0x70F0`) to handler `0x0002EA74`. Named `PPSMC_MSG_QueryVddcrSocClock` in community tables; handler truncates float telemetry from `0x13eec` struct offset. Exact semantic identity remains unverified against hardware.
+  - Queue 0, ID `0x1A`: mapped in dispatch table (`0x7138`) to handler `0x0002B634` in Robin 5 (and `0x0002B2F4` in Robin 3). Named `PPSMC_MSG_SetMaxDeepSleepDfllGfxDiv` in community tables. NOTE: This command controls GFX DFLL divider (`DfllGfxDiv`), NOT UCLK or memory divider; GFX divider must not be implied or confused with UCLK/MCLK divider.
+- Status: Builder profile `df1420_stock` removed (profile was redundant with source baseline and had no necessary tested use). Builder strictly retains single-variable `df1400` profile without voltage or multi-variable expansions.

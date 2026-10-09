@@ -1,0 +1,8 @@
+BC250_vcn-driver-STUB_no-hw-ops_early-slot.bin
+Old technical name (alias): v006r-noop
+SHA-256: 6500bea5b01ea1dcc540939d65faa9cc0ec0f2505a5fcb3e358622803b85bb27
+Built by: scripts/build_STUB_no_hw_ops_early_slot.py
+What is inside: FULL_lzma-FIXED_early-slot + entry stub (xor eax,eax; ret) in the VCN PE32; same FFS offset/size, same FV layout, recompressed capsule, explicit LZMA
+Question it answers: does DXE complete with a passive driver in this slot?
+Verdict: BOOTS to Linux (2026-09-24, kernel 7.2.6-1.206-cachyos-bc250, amdgpu up). DXE completes; insertion surgery innocent, driver code guilty.
+Вердикт: ЗАГРУЖАЕТСЯ в Linux (2026-09-24). DXE завершается; вставка невиновна, виноват код драйвера.

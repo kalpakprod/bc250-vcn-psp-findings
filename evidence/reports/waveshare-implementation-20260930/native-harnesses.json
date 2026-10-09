@@ -1,0 +1,107 @@
+[
+  {
+    "command": [
+      "g++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "candidates/waveshare-adapter-safe-v001/src/bridge",
+      "reports/waveshare-implementation-20260930/host-tests/usb_identity_test.cpp",
+      "-o",
+      "reports/waveshare-implementation-20260930/host-tests/usb_identity_test"
+    ],
+    "stdout": "",
+    "stderr": "",
+    "exit_status": 0
+  },
+  {
+    "command": [
+      "reports/waveshare-implementation-20260930/host-tests/usb_identity_test"
+    ],
+    "stdout": "USB readiness gate, wraparound, retry, suspend and bounded copy: PASS\n",
+    "stderr": "",
+    "exit_status": 0
+  },
+  {
+    "command": [
+      "cc",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "candidates/waveshare-adapter-safe-v001/src",
+      "reports/waveshare-implementation-20260930/host-tests/network_config_test.c",
+      "-o",
+      "reports/waveshare-implementation-20260930/host-tests/network_config_test"
+    ],
+    "stdout": "",
+    "stderr": "",
+    "exit_status": 0
+  },
+  {
+    "command": [
+      "reports/waveshare-implementation-20260930/host-tests/network_config_test"
+    ],
+    "stdout": "Network config CRC, bounds, token, flash-slot independent record: PASS\n",
+    "stderr": "",
+    "exit_status": 0
+  },
+  {
+    "command": [
+      "cc",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "candidates/waveshare-adapter-safe-v001/src",
+      "reports/waveshare-implementation-20260930/host-tests/metrics_test.c",
+      "candidates/waveshare-adapter-safe-v001/src/adapter_metrics.c",
+      "-o",
+      "reports/waveshare-implementation-20260930/host-tests/metrics_test"
+    ],
+    "stdout": "",
+    "stderr": "",
+    "exit_status": 0
+  },
+  {
+    "command": [
+      "reports/waveshare-implementation-20260930/host-tests/metrics_test"
+    ],
+    "stdout": "Metrics null/stale/source/units and no inferred off-state: PASS\n",
+    "stderr": "",
+    "exit_status": 0
+  },
+  {
+    "command": [
+      "cc",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "reports/waveshare-implementation-20260930/host-tests/include",
+      "-I",
+      "candidates/waveshare-adapter-safe-v001/src",
+      "reports/waveshare-implementation-20260930/host-tests/cdc_test.c",
+      "candidates/waveshare-adapter-safe-v001/src/cdc_dispatch.c",
+      "candidates/waveshare-adapter-safe-v001/src/adapter_metrics.c",
+      "-o",
+      "reports/waveshare-implementation-20260930/host-tests/cdc_test"
+    ],
+    "stdout": "",
+    "stderr": "",
+    "exit_status": 0
+  },
+  {
+    "command": [
+      "reports/waveshare-implementation-20260930/host-tests/cdc_test"
+    ],
+    "stdout": "CDC partial TX, overflow, read-only status and unsupported mutation: PASS\n",
+    "stderr": "",
+    "exit_status": 0
+  }
+]

@@ -1,0 +1,203 @@
+{
+  "classification": "emulated-exact-code",
+  "cases": [
+    {
+      "target": "0x900c004",
+      "width": 1,
+      "status": 0,
+      "writes": [
+        {
+          "address": "0x100c004",
+          "size": 1,
+          "value": "0xa5"
+        }
+      ],
+      "hooks": [
+        "hardware_selector_skipped"
+      ]
+    },
+    {
+      "target": "0x900c004",
+      "width": 2,
+      "status": 0,
+      "writes": [
+        {
+          "address": "0x100c004",
+          "size": 2,
+          "value": "0xa5a5"
+        }
+      ],
+      "hooks": [
+        "hardware_selector_skipped"
+      ]
+    },
+    {
+      "target": "0x900c004",
+      "width": 4,
+      "status": 0,
+      "writes": [
+        {
+          "address": "0x100c004",
+          "size": 4,
+          "value": "0xa5a5a5a5"
+        }
+      ],
+      "hooks": [
+        "hardware_selector_skipped"
+      ]
+    },
+    {
+      "target": "0x900c004",
+      "width": 3,
+      "status": 5,
+      "writes": [],
+      "hooks": [
+        "hardware_selector_skipped"
+      ]
+    },
+    {
+      "target": "0x3700000",
+      "width": 1,
+      "status": 0,
+      "writes": [
+        {
+          "address": "0x0",
+          "size": 1,
+          "value": "0xa5"
+        }
+      ],
+      "hooks": []
+    },
+    {
+      "target": "0x3700000",
+      "width": 2,
+      "status": 0,
+      "writes": [
+        {
+          "address": "0x0",
+          "size": 2,
+          "value": "0xa5a5"
+        }
+      ],
+      "hooks": []
+    },
+    {
+      "target": "0x3700000",
+      "width": 4,
+      "status": 0,
+      "writes": [
+        {
+          "address": "0x0",
+          "size": 4,
+          "value": "0xa5a5a5a5"
+        }
+      ],
+      "hooks": []
+    },
+    {
+      "target": "0x3700000",
+      "width": 3,
+      "status": 5,
+      "writes": [],
+      "hooks": []
+    },
+    {
+      "target": "0x3900000",
+      "width": 1,
+      "status": 0,
+      "writes": [
+        {
+          "address": "0x0",
+          "size": 1,
+          "value": "0xa5"
+        }
+      ],
+      "hooks": []
+    },
+    {
+      "target": "0x3900000",
+      "width": 2,
+      "status": 0,
+      "writes": [
+        {
+          "address": "0x0",
+          "size": 2,
+          "value": "0xa5a5"
+        }
+      ],
+      "hooks": []
+    },
+    {
+      "target": "0x3900000",
+      "width": 4,
+      "status": 0,
+      "writes": [
+        {
+          "address": "0x0",
+          "size": 4,
+          "value": "0xa5a5a5a5"
+        }
+      ],
+      "hooks": []
+    },
+    {
+      "target": "0x3900000",
+      "width": 3,
+      "status": 5,
+      "writes": [],
+      "hooks": []
+    },
+    {
+      "target": "0xfffffffc",
+      "width": 1,
+      "status": 0,
+      "writes": [
+        {
+          "address": "0x0",
+          "size": 1,
+          "value": "0xa5"
+        }
+      ],
+      "hooks": []
+    },
+    {
+      "target": "0xfffffffc",
+      "width": 2,
+      "status": 0,
+      "writes": [
+        {
+          "address": "0x0",
+          "size": 2,
+          "value": "0xa5a5"
+        }
+      ],
+      "hooks": []
+    },
+    {
+      "target": "0xfffffffc",
+      "width": 4,
+      "status": 0,
+      "writes": [
+        {
+          "address": "0x0",
+          "size": 4,
+          "value": "0xa5a5a5a5"
+        }
+      ],
+      "hooks": []
+    },
+    {
+      "target": "0xfffffffc",
+      "width": 3,
+      "status": 5,
+      "writes": [],
+      "hooks": []
+    }
+  ],
+  "limitations": [
+    "Synthetic writable address0",
+    "Hardware selector stubbed for accepted control",
+    "Caller authorization and live VBAR not tested",
+    "No VCN unlock proof"
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 23,
+    "total": 23
+  },
+  "checks_detail": [
+    {
+      "expected": "a0ad8bffb3c07ec3824d306aff49c77bc40057f8760aec7a76ee58a60cc8e6a2",
+      "got": "a0ad8bffb3c07ec3824d306aff49c77bc40057f8760aec7a76ee58a60cc8e6a2",
+      "label": "offset-header-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "cba20414ecf02e91bafdcfbff7d4ba686326f0bdaf236d1a883364f08410c167",
+      "got": "cba20414ecf02e91bafdcfbff7d4ba686326f0bdaf236d1a883364f08410c167",
+      "label": "mask-header-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "254c224c10e086db5fd5f71381d381e23e39c1180ff741fb53bd583028ba7a89",
+      "got": "254c224c10e086db5fd5f71381d381e23e39c1180ff741fb53bd583028ba7a89",
+      "label": "frequency-report-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "8a1af511412e517a6451d30bd0f6cc3425278e99271ff4f4b75efa6174f36a8c",
+      "got": "8a1af511412e517a6451d30bd0f6cc3425278e99271ff4f4b75efa6174f36a8c",
+      "label": "actuator-report-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": 19504,
+      "got": 19504,
+      "label": "offset:mmRLC_CLK_COUNT_GFXCLK_LSB",
+      "status": "PASS"
+    },
+    {
+      "expected": 19505,
+      "got": 19505,
+      "label": "offset:mmRLC_CLK_COUNT_GFXCLK_MSB",
+      "status": "PASS"
+    },
+    {
+      "expected": 19506,
+      "got": 19506,
+      "label": "offset:mmRLC_CLK_COUNT_REFCLK_LSB",
+      "status": "PASS"
+    },
+    {
+      "expected": 19507,
+      "got": 19507,
+      "label": "offset:mmRLC_CLK_COUNT_REFCLK_MSB",
+      "status": "PASS"
+    },
+    {
+      "expected": 19508,
+      "got": 19508,
+      "label": "offset:mmRLC_CLK_COUNT_CTRL",
+      "status": "PASS"
+    },
+    {
+      "expected": 19509,
+      "got": 19509,
+      "label": "offset:mmRLC_CLK_COUNT_STAT",
+      "status": "PASS"
+    },
+    {
+      "expected": 6,
+      "got": 6,
+      "label": "counter-registers-distinct",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x4c31",
+      "got": "0x4c31",
+      "label": "gfxclk-counter-adjacent",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x4c33",
+      "got": "0x4c33",
+      "label": "refclk-counter-adjacent",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x00000001L",
+      "got": "0x00000001L",
+      "label": "mask:RLC_CLK_COUNT_CTRL__GFXCLK_RUN_MASK",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x00000002L",
+      "got": "0x00000002L",
+      "label": "mask:RLC_CLK_COUNT_CTRL__GFXCLK_RESET_MASK",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x00000004L",
+      "got": "0x00000004L",
+      "label": "mask:RLC_CLK_COUNT_CTRL__GFXCLK_SAMPLE_MASK",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x00000008L",
+      "got": "0x00000008L",
+      "label": "mask:RLC_CLK_COUNT_CTRL__REFCLK_RUN_MASK",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x00000010L",
+      "got": "0x00000010L",
+      "label": "mask:RLC_CLK_COUNT_CTRL__REFCLK_RESET_MASK",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x00000020L",
+      "got": "0x00000020L",
+      "label": "mask:RLC_CLK_COUNT_CTRL__REFCLK_SAMPLE_MASK",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x00000001L",
+      "got": "0x00000001L",
+      "label": "mask:RLC_CLK_COUNT_STAT__GFXCLK_VALID_MASK",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x00000002L",
+      "got": "0x00000002L",
+      "label": "mask:RLC_CLK_COUNT_STAT__REFCLK_VALID_MASK",
+      "status": "PASS"
+    },
+    {
+      "expected": "software alias",
+      "got": "present",
+      "label": "software-alias-negative",
+      "status": "PASS"
+    },
+    {
+      "expected": "Does NOT sample hardware PLL counters",
+      "got": "present",
+      "label": "smu-query-negative",
+      "status": "PASS"
+    }
+  ],
+  "counter_route": {
+    "control_masks": {
+      "RLC_CLK_COUNT_CTRL__GFXCLK_RESET_MASK": "0x00000002L",
+      "RLC_CLK_COUNT_CTRL__GFXCLK_RUN_MASK": "0x00000001L",
+      "RLC_CLK_COUNT_CTRL__GFXCLK_SAMPLE_MASK": "0x00000004L",
+      "RLC_CLK_COUNT_CTRL__REFCLK_RESET_MASK": "0x00000010L",
+      "RLC_CLK_COUNT_CTRL__REFCLK_RUN_MASK": "0x00000008L",
+      "RLC_CLK_COUNT_CTRL__REFCLK_SAMPLE_MASK": "0x00000020L",
+      "RLC_CLK_COUNT_STAT__GFXCLK_VALID_MASK": "0x00000001L",
+      "RLC_CLK_COUNT_STAT__REFCLK_VALID_MASK": "0x00000002L"
+    },
+    "measured_pair": "RLC GFXCLK counter vs RLC REFCLK counter",
+    "non_alias_property": "separate hardware counter registers and shared run/reset/sample control; ratio = sampled GFXCLK count / sampled REFCLK count",
+    "registers": {
+      "mmRLC_CLK_COUNT_CTRL": "0x4c34",
+      "mmRLC_CLK_COUNT_GFXCLK_LSB": "0x4c30",
+      "mmRLC_CLK_COUNT_GFXCLK_MSB": "0x4c31",
+      "mmRLC_CLK_COUNT_REFCLK_LSB": "0x4c32",
+      "mmRLC_CLK_COUNT_REFCLK_MSB": "0x4c33",
+      "mmRLC_CLK_COUNT_STAT": "0x4c35"
+    },
+    "status_masks": {
+      "GFXCLK_VALID": "0x1",
+      "REFCLK_VALID": "0x2"
+    }
+  },
+  "input_hashes": {
+    "actuator_report": "8a1af511412e517a6451d30bd0f6cc3425278e99271ff4f4b75efa6174f36a8c",
+    "frequency_report": "254c224c10e086db5fd5f71381d381e23e39c1180ff741fb53bd583028ba7a89",
+    "mask_header": "cba20414ecf02e91bafdcfbff7d4ba686326f0bdaf236d1a883364f08410c167",
+    "offset_header": "a0ad8bffb3c07ec3824d306aff49c77bc40057f8760aec7a76ee58a60cc8e6a2"
+  },
+  "limits": [
+    "Offline register-map evidence only; no live reads.",
+    "RLC GFXCLK is not relabelled FCLK.",
+    "No hardware/calibration, clock units, training, or synchronization claim."
+  ],
+  "next_route": "Recover exact CLV UMC/MCLK, UCLK, and DF/FCLK counter/status register addresses from the ABL/SMU/driver path; then compare all domains against a common reference window. Do not use the RLC GFXCLK pair as an MCLK/UCLK/FCLK identity claim.",
+  "scope_decision": {
+    "not_proven": "the retained map does not bind these counters to exact CLV MCLK/UCLK/FCLK; no UMC/DF/UCLK counter/status register was recovered in this bounded check",
+    "proven_offline": "an independent hardware-counter mechanism exists in the retained register map for GFXCLK/REFCLK",
+    "synchronous_crossing_requirement": "requires a dedicated UMC/DF mode/status bit or divider/crossing selector plus independent counter ratios; equal software values or one counter alias are insufficient"
+  },
+  "status": "PASS"
+}

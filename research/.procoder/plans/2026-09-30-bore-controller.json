@@ -1,0 +1,25 @@
+{
+  "ACTIVE_OBJECT": "Windows192.168.1.254:/home/OWNER/bc250-ux-build-20260930",
+  "LAST_CONFIRMED_RESULT": "kernel candidate packages transferred to console .245; hashes match; current kernel7.2.6 and fallback7.2.6-bore-vcn remain; not installed",
+  "NEXT_EXECUTABLE_ACTION": "await explicit approval, then pacman install side-by-side and inspect boot entry; no removal before boot/game validation",
+  "INPUT_PATHS": [
+    "/home/OWNER/bc250-ux-build-20260930/mesa-git/resume1.exit",
+    "/home/OWNER/bc250-ux-build-20260930/mesa-git/resume1-build.log",
+    ".procoder/plans/2026-09-30-bc250-coverage-matrix.json",
+    "/home/OWNER/.cache/bc250-bore-full-stack/native-telemetry/native-telemetry.diff",
+    "/home/OWNER/.cache/bc250-bore-full-stack/native-telemetry/VERIFICATION.txt",
+    "/home/OWNER/bc250-ux-build-20260930/kernel-with-0016/PKGBUILD",
+    "/home/OWNER/bc250-ux-build-20260930/kernel-with-0016/packages-resume1.sha256"
+  ],
+  "ACCEPTANCE_EVENT": "Mesa exit0 plus32/64 package hashes and runtime checks, then remaining integration/installation gates",
+  "command": [
+    "tty7",
+    "procs",
+    "%339"
+  ],
+  "run_identity": "kernel-0016-resume1",
+  "pane": 339,
+  "scope_gate": "MISSING_INTEGRATIONS_NOT_IMPLEMENTED",
+  "transport_blocker": "all network sockets denied by current session",
+  "transport_note": "package transfer succeeded via ssh stream"
+}

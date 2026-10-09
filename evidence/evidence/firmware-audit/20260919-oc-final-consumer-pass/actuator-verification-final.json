@@ -1,0 +1,215 @@
+{
+  "status": "PASS",
+  "identities": [
+    {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5",
+      "size": 262400,
+      "sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37"
+    },
+    {
+      "path": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "size": 16777216,
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    }
+  ],
+  "rom_body_offset": "0x8fef00",
+  "instruction_counts": {
+    "actuator-pass1.txt": 23,
+    "actuator-pass10.txt": 656,
+    "actuator-pass11.txt": 549,
+    "actuator-pass2.txt": 312,
+    "actuator-pass3.txt": 155,
+    "actuator-pass4.txt": 59,
+    "actuator-pass5.txt": 635,
+    "actuator-pass6.txt": 242,
+    "actuator-pass7.txt": 526,
+    "actuator-pass8.txt": 332,
+    "actuator-pass9.txt": 465,
+    "scaling-consumers-followup.txt": 306
+  },
+  "independent_call8_target_checks": 280,
+  "independent_l32r_target_checks": 393,
+  "warnings": [
+    {
+      "file": "actuator-pass7.txt",
+      "line": "===== 00020b08 NO EXISTING FUNCTION ====="
+    }
+  ],
+  "rejected_semantic_entries": [
+    "actuator-pass7.txt:20758 is interior code, not a function entry; do not use decompile",
+    "actuator-pass7.txt:20b08 is interior code, not a function entry; do not use decompile"
+  ],
+  "literals": [
+    {
+      "address": "0x170ac",
+      "raw": "6f12833a",
+      "u32": "0x3a83126f",
+      "f32": 0.0010000000474974513
+    },
+    {
+      "address": "0x17124",
+      "raw": "74340100",
+      "u32": "0x13474",
+      "f32": 1.1065213193694486e-40
+    },
+    {
+      "address": "0x1714c",
+      "raw": "188b0000",
+      "u32": "0x8b18",
+      "f32": 4.989743571767809e-41
+    },
+    {
+      "address": "0x171a4",
+      "raw": "009e1501",
+      "u32": "0x1159e00",
+      "f32": 2.74803372956514e-38
+    },
+    {
+      "address": "0x17278",
+      "raw": "6666c63f",
+      "u32": "0x3fc66666",
+      "f32": 1.5499999523162842
+    },
+    {
+      "address": "0x1727c",
+      "raw": "00002043",
+      "u32": "0x43200000",
+      "f32": 160.0
+    },
+    {
+      "address": "0x17280",
+      "raw": "acc52737",
+      "u32": "0x3727c5ac",
+      "f32": 9.999999747378752e-06
+    },
+    {
+      "address": "0x17338",
+      "raw": "cdccccbb",
+      "u32": "0xbbcccccd",
+      "f32": -0.0062500000931322575
+    },
+    {
+      "address": "0x17320",
+      "raw": "00320100",
+      "u32": "0x13200",
+      "f32": 1.0977211650134887e-40
+    },
+    {
+      "address": "0x175f0",
+      "raw": "7cee0000",
+      "u32": "0xee7c",
+      "f32": 8.555207384395873e-41
+    },
+    {
+      "address": "0x175fc",
+      "raw": "b8ee0000",
+      "u32": "0xeeb8",
+      "f32": 8.563615175181822e-41
+    },
+    {
+      "address": "0x17604",
+      "raw": "dcfa0000",
+      "u32": "0xfadc",
+      "f32": 8.999138737893975e-41
+    },
+    {
+      "address": "0x17614",
+      "raw": "58d30000",
+      "u32": "0xd358",
+      "f32": 7.58158521138299e-41
+    },
+    {
+      "address": "0x17618",
+      "raw": "70400100",
+      "u32": "0x14070",
+      "f32": 1.149513156254934e-40
+    },
+    {
+      "address": "0x178a8",
+      "raw": "98ee0000",
+      "u32": "0xee98",
+      "f32": 8.559131020095983e-41
+    },
+    {
+      "address": "0x17aa8",
+      "raw": "70410100",
+      "u32": "0x14170",
+      "f32": 1.1531004803236055e-40
+    },
+    {
+      "address": "0x180cc",
+      "raw": "fc3d0100",
+      "u32": "0x13dfc",
+      "f32": 1.140713001898974e-40
+    },
+    {
+      "address": "0x180d0",
+      "raw": "703e0100",
+      "u32": "0x13e70",
+      "f32": 1.1423385081175909e-40
+    },
+    {
+      "address": "0x180d4",
+      "raw": "2f335e40",
+      "u32": "0x405e332f",
+      "f32": 3.4718739986419678
+    },
+    {
+      "address": "0x180d8",
+      "raw": "c3fbfa3f",
+      "u32": "0x3ffafbc3",
+      "f32": 1.9608081579208374
+    },
+    {
+      "address": "0x180dc",
+      "raw": "130ebdc5",
+      "u32": "0xc5bd0e13",
+      "f32": -6049.75927734375
+    },
+    {
+      "address": "0x180e0",
+      "raw": "e7682640",
+      "u32": "0x402668e7",
+      "f32": 2.6001527309417725
+    },
+    {
+      "address": "0x180e4",
+      "raw": "00000060",
+      "u32": "0x60000000",
+      "f32": 3.6893488147419103e+19
+    },
+    {
+      "address": "0x18148",
+      "raw": "0ad7a33c",
+      "u32": "0x3ca3d70a",
+      "f32": 0.019999999552965164
+    }
+  ],
+  "synthetic_f32_encoder_vectors": [
+    {
+      "volts": 0.8,
+      "vid": 120
+    },
+    {
+      "volts": 1.0,
+      "vid": 88
+    },
+    {
+      "volts": 1.1,
+      "vid": 71
+    },
+    {
+      "volts": 1.15,
+      "vid": 64
+    },
+    {
+      "volts": 1.25,
+      "vid": 48
+    },
+    {
+      "volts": 1.55,
+      "vid": 0
+    }
+  ],
+  "limits": "Byte/target correspondence does not independently validate all Ghidra instruction semantics; no hardware/emulator test or CPU/SoC pad mapping"
+}

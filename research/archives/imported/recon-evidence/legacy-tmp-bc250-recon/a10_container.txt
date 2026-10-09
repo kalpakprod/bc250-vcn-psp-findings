@@ -1,0 +1,92 @@
+== 1) container type 0x28 @0x984f00: $PS1 sub-modules ==
+markers at: ['0x16a98', '0x16fd4', '0x19f10']
+
+---- $PS1 @body+0x16a98 env=+0x16a88: size=0x4770200000e18906 total=0xf5a21b00 plausible=False ----
+   (implausible - raw ctx: f0e700001c1ae000607be90000407900245053310689e1000020704770b505464ff000040800114609d041b14218a2f58072a1f58071faf7adfb10b106e00448)
+
+---- $PS1 @body+0x16fd4 env=+0x16fc4: size=0xe182d8ffff000b total=0x215068a5 plausible=False ----
+   (implausible - raw ctx: 6cdf13b03046bde8f08f00007841e500245053310b00ffffd882e10010b500240248012104227cdf204610bda4f801002de9f04f87b004468b460846f3f740fb)
+
+---- $PS1 @body+0x19f10 env=+0x19f00: size=0x570 total=0x0 plausible=False ----
+   (implausible - raw ctx: 00000000000000000000000000000000245053317005000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
+
+== 2) SecOS (0x08) readable parts ==
+-- 0x201-table @0x75a0: hexdump 0x7560-0x76a0 --
+   000000005474020006000000dc490200060000005cba010006000000fcba010006000000f0c2010006000000f07a020006000000547b020006000000947c020001020000c07c020001020000d87c020001020000f87c0200010200001c7d020001020000347d020001020000547d020001020000f47d020001020000187e020001020000bcd70200060000007c6e020006000000c46e020006000000f46e02000600000044bc01000600000014db01000600000088bd020006000000acbd0200060000002ce601000600000064e60100060000009ce6010006000000082b02000600000078da010006000000c4da010006000000f4b901000600000010ba0100060000000c75020006000000b8ee010006000000d4e7020006000000402b020006000000c4b1020006000000b42a020006000000a8e7010006000000e82a0200
+-- decode as {type,count} groups from 0x75a0 --
+   +0x75a0: grp 0x0201 count 163008
+-- SecOS head (0x0-0x400) disasm (first 60) --
+   0x000000  lsls     r0, r0, #0x18
+   0x000002  lsls     r0, r3, #1
+   0x000004  lsls     r0, r0, #0x18
+   0x000006  lsls     r0, r3, #1
+   0x000008  movs     r0, r0
+   0x00000a  movs     r0, r0
+   0x00000c  movs     r0, r0
+   0x00000e  movs     r0, r0
+   0x000010  movs     r0, r0
+   0x000012  movs     r0, r0
+   0x000014  movs     r0, r0
+   0x000016  movs     r0, r0
+   0x000018  movs     r0, r0
+   0x00001a  movs     r0, r0
+   0x00001c  movs     r0, r0
+   0x00001e  movs     r0, r0
+   0x000020  movs     r0, r0
+   0x000022  movs     r0, r0
+   0x000024  movs     r0, r0
+   0x000026  movs     r0, r0
+   0x000028  movs     r0, r0
+   0x00002a  movs     r0, r0
+   0x00002c  movs     r0, r0
+   0x00002e  movs     r0, r0
+   0x000030  movs     r0, r0
+   0x000032  movs     r0, r0
+   0x000034  movs     r0, r0
+   0x000036  movs     r0, r0
+   0x000038  movs     r0, r0
+   0x00003a  movs     r0, r0
+   0x00003c  movs     r0, r0
+   0x00003e  movs     r0, r0
+   0x000040  movs     r0, r0
+   0x000042  movs     r0, r0
+   0x000044  movs     r0, r0
+   0x000046  movs     r0, r0
+   0x000048  movs     r0, r0
+   0x00004a  movs     r0, r0
+   0x00004c  movs     r0, r0
+   0x00004e  movs     r0, r0
+   0x000050  movs     r0, r0
+   0x000052  movs     r0, r0
+   0x000054  movs     r0, r0
+   0x000056  movs     r0, r0
+   0x000058  movs     r0, r0
+   0x00005a  movs     r0, r0
+   0x00005c  movs     r0, r0
+   0x00005e  movs     r0, r0
+   0x000060  movs     r0, r0
+   0x000062  movs     r0, r0
+   0x000064  movs     r0, r0
+   0x000066  movs     r0, r0
+   0x000068  movs     r0, r0
+   0x00006a  movs     r0, r0
+   0x00006c  movs     r0, r0
+   0x00006e  movs     r0, r0
+   0x000070  movs     r0, r0
+   0x000072  movs     r0, r0
+   0x000074  movs     r0, r0
+   0x000076  movs     r0, r0
+-- SecOS svc 0xF2 cmd-ids in READABLE region (<0x19000) --
+-- SecOS readable-region REG scan --
+
+== 3) gap 0x9C3F10-0x9CA400 and 0x4F ==
+gap len=0x64f0 entropy=4.92 nonzero=16406 head=578f7df5fb7f9a431a71dafe6633096a245053310030000000000000000000000000000000000000000000000000000001000000000000009ace85d9b8084270
+0x4F: entropy=4.77; $PS1-count=0; push-lr-density in low-ent scan:
+   +0x0..0x1000: push-lr=0 svc=0
+   +0x1000..0x2000: push-lr=0 svc=0
+   +0x2000..0x4000: push-lr=0 svc=0
+
+== 4) full raw REG scan (container body + SecOS readable + 0x4F) ==
+   container     : none
+   secos<0x19000 : none
+   0x4F          : none

@@ -1,0 +1,557 @@
+{
+  "status": "PASS",
+  "checks": 58,
+  "route": "complete token/value record-cursor lifetime for 0x1331/0x1332 in Cbs and SMU builders",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "modules": {
+    "CbsBasePei": {
+      "stem": "CbsBasePei-6ff112922ad8",
+      "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "records": {
+        "0x1331": {
+          "token_rva": "0xd9e0",
+          "source_operands": "al,BYTE PTR [edx+0x6a3]",
+          "source_rva": "0xda00",
+          "token_destination": "[ebp-0x8] -> record+0",
+          "value_destination": "[ebp-0x8] -> record+3",
+          "cursor_advance": "+4 bytes",
+          "chronology": [
+            {
+              "role": "token_ptr",
+              "instruction": "0D9E5 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "body_bytes": "8b45f8"
+            },
+            {
+              "role": "token_store",
+              "instruction": "0D9E8 668910 mov WORD PTR [eax],dx",
+              "body_bytes": "668910"
+            },
+            {
+              "role": "cursor_ptr",
+              "instruction": "0D9EB 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "body_bytes": "8b4df8"
+            },
+            {
+              "role": "source_load",
+              "instruction": "0DA00 8a82a3060000 mov al,BYTE PTR [edx+0x6a3]",
+              "body_bytes": "8a82a3060000"
+            },
+            {
+              "role": "value_store",
+              "instruction": "0DA06 884103 mov BYTE PTR [ecx+0x3],al",
+              "body_bytes": "884103"
+            },
+            {
+              "role": "cursor_add",
+              "instruction": "0DA0C 83c104 add ecx,0x4",
+              "body_bytes": "83c104"
+            },
+            {
+              "role": "cursor_store",
+              "instruction": "0DA0F 894df8 mov DWORD PTR [ebp-0x8],ecx",
+              "body_bytes": "894df8"
+            }
+          ]
+        },
+        "0x1332": {
+          "token_rva": "0xda12",
+          "source_operands": "al,BYTE PTR [edx+0x6a4]",
+          "source_rva": "0xda32",
+          "token_destination": "[ebp-0x8] -> record+0",
+          "value_destination": "[ebp-0x8] -> record+3",
+          "cursor_advance": "+4 bytes",
+          "chronology": [
+            {
+              "role": "token_ptr",
+              "instruction": "0DA17 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "body_bytes": "8b45f8"
+            },
+            {
+              "role": "token_store",
+              "instruction": "0DA1A 668910 mov WORD PTR [eax],dx",
+              "body_bytes": "668910"
+            },
+            {
+              "role": "cursor_ptr",
+              "instruction": "0DA1D 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "body_bytes": "8b4df8"
+            },
+            {
+              "role": "source_load",
+              "instruction": "0DA32 8a82a4060000 mov al,BYTE PTR [edx+0x6a4]",
+              "body_bytes": "8a82a4060000"
+            },
+            {
+              "role": "value_store",
+              "instruction": "0DA38 884103 mov BYTE PTR [ecx+0x3],al",
+              "body_bytes": "884103"
+            },
+            {
+              "role": "cursor_add",
+              "instruction": "0DA3E 83c104 add ecx,0x4",
+              "body_bytes": "83c104"
+            },
+            {
+              "role": "cursor_store",
+              "instruction": "0DA41 894df8 mov DWORD PTR [ebp-0x8],ecx",
+              "body_bytes": "894df8"
+            }
+          ]
+        }
+      }
+    },
+    "AmdNbioSmuV10Pei": {
+      "stem": "AmdNbioSmuV10Pei-905b8be68afd",
+      "sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "records": {
+        "0x1331": {
+          "token_rva": "0xfa60",
+          "source_operands": "al,BYTE PTR [edx+0x6a3]",
+          "source_rva": "0xfa80",
+          "token_destination": "[ebp-0x8] -> record+0",
+          "value_destination": "[ebp-0x8] -> record+3",
+          "cursor_advance": "+4 bytes",
+          "chronology": [
+            {
+              "role": "token_ptr",
+              "instruction": "0FA65 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "body_bytes": "8b45f8"
+            },
+            {
+              "role": "token_store",
+              "instruction": "0FA68 668910 mov WORD PTR [eax],dx",
+              "body_bytes": "668910"
+            },
+            {
+              "role": "cursor_ptr",
+              "instruction": "0FA6B 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "body_bytes": "8b4df8"
+            },
+            {
+              "role": "source_load",
+              "instruction": "0FA80 8a82a3060000 mov al,BYTE PTR [edx+0x6a3]",
+              "body_bytes": "8a82a3060000"
+            },
+            {
+              "role": "value_store",
+              "instruction": "0FA86 884103 mov BYTE PTR [ecx+0x3],al",
+              "body_bytes": "884103"
+            },
+            {
+              "role": "cursor_add",
+              "instruction": "0FA8C 83c104 add ecx,0x4",
+              "body_bytes": "83c104"
+            },
+            {
+              "role": "cursor_store",
+              "instruction": "0FA8F 894df8 mov DWORD PTR [ebp-0x8],ecx",
+              "body_bytes": "894df8"
+            }
+          ]
+        },
+        "0x1332": {
+          "token_rva": "0xfa92",
+          "source_operands": "al,BYTE PTR [edx+0x6a4]",
+          "source_rva": "0xfab2",
+          "token_destination": "[ebp-0x8] -> record+0",
+          "value_destination": "[ebp-0x8] -> record+3",
+          "cursor_advance": "+4 bytes",
+          "chronology": [
+            {
+              "role": "token_ptr",
+              "instruction": "0FA97 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "body_bytes": "8b45f8"
+            },
+            {
+              "role": "token_store",
+              "instruction": "0FA9A 668910 mov WORD PTR [eax],dx",
+              "body_bytes": "668910"
+            },
+            {
+              "role": "cursor_ptr",
+              "instruction": "0FA9D 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "body_bytes": "8b4df8"
+            },
+            {
+              "role": "source_load",
+              "instruction": "0FAB2 8a82a4060000 mov al,BYTE PTR [edx+0x6a4]",
+              "body_bytes": "8a82a4060000"
+            },
+            {
+              "role": "value_store",
+              "instruction": "0FAB8 884103 mov BYTE PTR [ecx+0x3],al",
+              "body_bytes": "884103"
+            },
+            {
+              "role": "cursor_add",
+              "instruction": "0FABE 83c104 add ecx,0x4",
+              "body_bytes": "83c104"
+            },
+            {
+              "role": "cursor_store",
+              "instruction": "0FAC1 894df8 mov DWORD PTR [ebp-0x8],ecx",
+              "body_bytes": "894df8"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "canonical_matrix_sha256": "b92adb04686bc35ddbd8dc4cee11fab97528c9ac135939308a9ecb02446f2b42",
+  "fresh_result": "Complete instruction chronology proves header token and value source share the same record cursor: token is written at record+0, Setup byte is loaded later and stored at record+3, then cursor advances by 4. In both CbsBasePei and AmdNbioSmuV10Pei, 0x1331 maps to Setup+0x6A3 and 0x1332 maps to Setup+0x6A4. The canonical matrix labels FclkDpm +0x6A3 -> 0x1332, so field semantics remain contradictory even though record identity/lifetime is proven.",
+  "limits": "No requester/consumer proof beyond prior bounded reader map; no semantic field rename, firmware execution, hardware or shared-state change.",
+  "checks_detail": [
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ROM size",
+      "passed": true,
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "check": "CbsBasePei hash",
+      "passed": true,
+      "got": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    {
+      "check": "CbsBasePei token 0x1331 count",
+      "passed": true,
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "check": "CbsBasePei 0x1331 token_ptr present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1331 token_store present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1331 cursor_ptr present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1331 source present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1331 value_store present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1331 cursor_add present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1331 cursor_store present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1331 token before source",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1331 source before value",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1331 value before cursor advance",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1331 token store bytes",
+      "passed": true,
+      "got": "668910",
+      "expected": "668910"
+    },
+    {
+      "check": "CbsBasePei 0x1331 value store bytes",
+      "passed": true,
+      "got": "884103",
+      "expected": "884103"
+    },
+    {
+      "check": "CbsBasePei token 0x1332 count",
+      "passed": true,
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "check": "CbsBasePei 0x1332 token_ptr present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1332 token_store present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1332 cursor_ptr present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1332 source present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1332 value_store present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1332 cursor_add present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1332 cursor_store present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1332 token before source",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1332 source before value",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1332 value before cursor advance",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei 0x1332 token store bytes",
+      "passed": true,
+      "got": "668910",
+      "expected": "668910"
+    },
+    {
+      "check": "CbsBasePei 0x1332 value store bytes",
+      "passed": true,
+      "got": "884103",
+      "expected": "884103"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei hash",
+      "passed": true,
+      "got": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "expected": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei token 0x1331 count",
+      "passed": true,
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1331 token_ptr present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1331 token_store present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1331 cursor_ptr present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1331 source present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1331 value_store present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1331 cursor_add present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1331 cursor_store present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1331 token before source",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1331 source before value",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1331 value before cursor advance",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1331 token store bytes",
+      "passed": true,
+      "got": "668910",
+      "expected": "668910"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1331 value store bytes",
+      "passed": true,
+      "got": "884103",
+      "expected": "884103"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei token 0x1332 count",
+      "passed": true,
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1332 token_ptr present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1332 token_store present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1332 cursor_ptr present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1332 source present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1332 value_store present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1332 cursor_add present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1332 cursor_store present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1332 token before source",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1332 source before value",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1332 value before cursor advance",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1332 token store bytes",
+      "passed": true,
+      "got": "668910",
+      "expected": "668910"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei 0x1332 value store bytes",
+      "passed": true,
+      "got": "884103",
+      "expected": "884103"
+    },
+    {
+      "check": "canonical matrix token 0x1332",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "observed record pair differs by source field",
+      "passed": true,
+      "got": true,
+      "expected": true
+    }
+  ]
+}

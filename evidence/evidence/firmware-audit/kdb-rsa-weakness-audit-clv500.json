@@ -1,0 +1,182 @@
+{
+  "tool": "scripts/kdb_rsa_weakness_audit.py (corrected offsets for 5.00 clv)",
+  "note": "stale tracked report used 0x9DAD00/0x9DBB00 which yield 0 records on this image",
+  "input": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "input_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "specs": {
+    "t50": {
+      "base": "0x9DB400",
+      "records": 8
+    },
+    "t51": {
+      "base": "0x9DC200",
+      "records": 3
+    }
+  },
+  "record_count": 11,
+  "unique_moduli": 10,
+  "exponents": [
+    65537
+  ],
+  "bits": [
+    2048
+  ],
+  "shared_nontrivial_factors": [],
+  "weak_key_findings": 0,
+  "keys": [
+    {
+      "source": "t50",
+      "record_offset": "0x9db550",
+      "index": 1,
+      "kid": "39bfc1922fa14ef285d9ae87e696d2b2",
+      "bits": 2048,
+      "obs": 2048,
+      "e": 65537,
+      "enc": "little",
+      "mod_sha": "238e1f6b7f3663186a9b105fc8c07864b770e84f9b416c8454631a7e77fb2ee5",
+      "small": null,
+      "wiener": false,
+      "fermat": false
+    },
+    {
+      "source": "t50",
+      "record_offset": "0x9db6a0",
+      "index": 1,
+      "kid": "537b4c2ef4704afb9eced5d78d04a505",
+      "bits": 2048,
+      "obs": 2048,
+      "e": 65537,
+      "enc": "little",
+      "mod_sha": "ab7184b66f6f4cf36ac78189e600483538886c1a84d59e9810f438083387d301",
+      "small": null,
+      "wiener": false,
+      "fermat": false
+    },
+    {
+      "source": "t50",
+      "record_offset": "0x9db7f0",
+      "index": 1,
+      "kid": "5a3587b59f4a4537a4c4c877db0ef505",
+      "bits": 2048,
+      "obs": 2048,
+      "e": 65537,
+      "enc": "little",
+      "mod_sha": "5361184e9ee6248a1aa54fcfa1bc31e7dc001a76ad4b4ea70e0f6f2770c5dd90",
+      "small": null,
+      "wiener": false,
+      "fermat": false
+    },
+    {
+      "source": "t50",
+      "record_offset": "0x9db940",
+      "index": 1,
+      "kid": "663ca5220aad4b569fc565d36e2e4ed7",
+      "bits": 2048,
+      "obs": 2048,
+      "e": 65537,
+      "enc": "little",
+      "mod_sha": "43d4bd1b7dc3b5380ab3b2e28785ce32be71ff65097dd519828950810fca734b",
+      "small": null,
+      "wiener": false,
+      "fermat": false
+    },
+    {
+      "source": "t50",
+      "record_offset": "0x9dba90",
+      "index": 1,
+      "kid": "8b8df41e2a6649beb8f232cef3133650",
+      "bits": 2048,
+      "obs": 2048,
+      "e": 65537,
+      "enc": "little",
+      "mod_sha": "53743e25644294bd855686edce96f73aa15b25ade63f314d62332fe82df03ba8",
+      "small": null,
+      "wiener": false,
+      "fermat": false
+    },
+    {
+      "source": "t50",
+      "record_offset": "0x9dbbe0",
+      "index": 1,
+      "kid": "96ea7cfec59d4c2a991e2c1f10d33bd8",
+      "bits": 2048,
+      "obs": 2048,
+      "e": 65537,
+      "enc": "little",
+      "mod_sha": "bd4d51fb34c83a9321653790483d7f1c3b89b234ac46de9d323078d32146ce3b",
+      "small": null,
+      "wiener": false,
+      "fermat": false
+    },
+    {
+      "source": "t50",
+      "record_offset": "0x9dbd30",
+      "index": 1,
+      "kid": "9ace85d9b8084270af98d5483e11d800",
+      "bits": 2048,
+      "obs": 2048,
+      "e": 65537,
+      "enc": "little",
+      "mod_sha": "aecffabed865faa20301ebc5dc0c875e963734233a7cd63887e23537fe46b630",
+      "small": null,
+      "wiener": false,
+      "fermat": false
+    },
+    {
+      "source": "t50",
+      "record_offset": "0x9dbe80",
+      "index": 1,
+      "kid": "9f0d38309c0f4509993b7781cf643ef3",
+      "bits": 2048,
+      "obs": 2048,
+      "e": 65537,
+      "enc": "little",
+      "mod_sha": "a096f788ce99c5c01997b63dbe45b561690d78206a1d55df606b0d2d190006e5",
+      "small": null,
+      "wiener": false,
+      "fermat": false
+    },
+    {
+      "source": "t51",
+      "record_offset": "0x9dc350",
+      "index": 1,
+      "kid": "30b8865125424499aeff3ac35ce621a6",
+      "bits": 2048,
+      "obs": 2048,
+      "e": 65537,
+      "enc": "little",
+      "mod_sha": "4664bed619bddcb92a9e05e2017f9382183343c3ef1b22e5826a45940e0ce95e",
+      "small": null,
+      "wiener": false,
+      "fermat": false
+    },
+    {
+      "source": "t51",
+      "record_offset": "0x9dc4a0",
+      "index": 1,
+      "kid": "9ace85d9b8084270af98d5483e11d800",
+      "bits": 2048,
+      "obs": 2048,
+      "e": 65537,
+      "enc": "little",
+      "mod_sha": "aecffabed865faa20301ebc5dc0c875e963734233a7cd63887e23537fe46b630",
+      "small": null,
+      "wiener": false,
+      "fermat": false
+    },
+    {
+      "source": "t51",
+      "record_offset": "0x9dc5f0",
+      "index": 1,
+      "kid": "cc7d248a744643a79b05916c8c128358",
+      "bits": 2048,
+      "obs": 2048,
+      "e": 65537,
+      "enc": "little",
+      "mod_sha": "5c4aad785603dc702da3a87aee8017de255743671a5b5b0c56a7de10747e7cc2",
+      "small": null,
+      "wiener": false,
+      "fermat": false
+    }
+  ]
+}

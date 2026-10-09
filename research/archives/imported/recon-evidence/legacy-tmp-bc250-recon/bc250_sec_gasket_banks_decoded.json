@@ -1,0 +1,4438 @@
+{
+  "source": "tmp_bc250\\recon\\robin3_sec_gasket_parsed.json",
+  "group": "0x201",
+  "banks": [
+    {
+      "bank_base": "0x09003000",
+      "bank_id": 3,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09004000",
+      "bank_id": 4,
+      "write_count": 33,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x0000001f"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x0005a100"
+            ],
+            "range_end": [
+              "0x0005a303"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x0005a590"
+            ],
+            "range_end": [
+              "0x0005a6cf"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x0005a818"
+            ],
+            "range_end": [
+              "0x0005a86b"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x0005ac40"
+            ],
+            "range_end": [
+              "0x0005acc7"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x0005a594"
+            ],
+            "range_end": [
+              "0x0005a59b"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09005000",
+      "bank_id": 5,
+      "write_count": 9,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "access_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09006000",
+      "bank_id": 6,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000101"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09007000",
+      "bank_id": 7,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09008000",
+      "bank_id": 8,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09009000",
+      "bank_id": 9,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x0900b000",
+      "bank_id": 11,
+      "write_count": 64,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x0003ffff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x000007ff"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x0003e000"
+            ],
+            "range_end": [
+              "0x0003ffff"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x000080e8"
+            ],
+            "range_end": [
+              "0x000080ef"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x0003ed50"
+            ],
+            "range_end": [
+              "0x0003ed53"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x0003e288"
+            ],
+            "range_end": [
+              "0x0003ed4f"
+            ],
+            "attributes": [
+              "0x0000010f"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "fields": {
+            "selector": [
+              "0x0000020f"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x0003e180"
+            ],
+            "range_end": [
+              "0x0003e1ff"
+            ],
+            "attributes": [
+              "0x0000010f"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "fields": {
+            "selector": [
+              "0x0000020f"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x0003a000"
+            ],
+            "range_end": [
+              "0x0003afff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00033b00"
+            ],
+            "range_end": [
+              "0x00033bff"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00030600"
+            ],
+            "range_end": [
+              "0x000306ff"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00008120"
+            ],
+            "range_end": [
+              "0x0000813f"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x0000ac0c"
+            ],
+            "range_end": [
+              "0x0000ac0f"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00031000"
+            ],
+            "range_end": [
+              "0x00031067"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x0900f000",
+      "bank_id": 15,
+      "write_count": 23,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x0003ffff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000007"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00024850"
+            ],
+            "range_end": [
+              "0x000249ff"
+            ],
+            "attributes": [
+              "0x0000030f"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x0000030f"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00015798"
+            ],
+            "range_end": [
+              "0x00015798"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00015b98"
+            ],
+            "range_end": [
+              "0x00015b98"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09010000",
+      "bank_id": 16,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x0003ffff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09012000",
+      "bank_id": 18,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x0003ffff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09018000",
+      "bank_id": 24,
+      "write_count": 26,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000007"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x13b103f8"
+            ],
+            "range_end": [
+              "0x13b10fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x13b18000"
+            ],
+            "range_end": [
+              "0x13b18fff"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x13b23000"
+            ],
+            "range_end": [
+              "0x13b23fff"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x0901c000",
+      "bank_id": 28,
+      "write_count": 13,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000001"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x13ffe000"
+            ],
+            "range_end": [
+              "0x13ffffff"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09022000",
+      "bank_id": 34,
+      "write_count": 24,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x0003ffff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000007"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x0006885c"
+            ],
+            "range_end": [
+              "0x0006895b"
+            ],
+            "attributes": [
+              "0x00000301"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x00000320",
+              "0x0000033f"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x000681c8"
+            ],
+            "range_end": [
+              "0x000682c7"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00069a80"
+            ],
+            "range_end": [
+              "0x00069a83"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09023000",
+      "bank_id": 35,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x0003ffff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09024000",
+      "bank_id": 36,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000101"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09025000",
+      "bank_id": 37,
+      "write_count": 9,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000101"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09028000",
+      "bank_id": 40,
+      "write_count": 30,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "access_mask_0": [
+          "0x00fffffc"
+        ],
+        "access_mask_1": [
+          "0x00fffffc"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x0003ffff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x0000000f"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00004880"
+            ],
+            "range_end": [
+              "0x000048b3"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x000048b8"
+            ],
+            "range_end": [
+              "0x00004953"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00004958"
+            ],
+            "range_end": [
+              "0x0000497f"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00004880"
+            ],
+            "range_end": [
+              "0x0000497f"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09029000",
+      "bank_id": 41,
+      "write_count": 13,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x0003ffff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000001"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00003c80"
+            ],
+            "range_end": [
+              "0x00003d7f"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x0902d000",
+      "bank_id": 45,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000101"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x0902e000",
+      "bank_id": 46,
+      "write_count": 16,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001",
+          "0x00000001"
+        ],
+        "access_mask_0": [
+          "0x00497fff"
+        ],
+        "access_mask_2": [
+          "0x00492492"
+        ],
+        "policy_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x0902f000",
+      "bank_id": 47,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09031000",
+      "bank_id": 49,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000101"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09032000",
+      "bank_id": 50,
+      "write_count": 13,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000001"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x147fe000"
+            ],
+            "range_end": [
+              "0x147fffff"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09033000",
+      "bank_id": 51,
+      "write_count": 13,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000001"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x148fe000"
+            ],
+            "range_end": [
+              "0x148fffff"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09046000",
+      "bank_id": 70,
+      "write_count": 13,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x0003ffff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000001"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x11180600"
+            ],
+            "range_end": [
+              "0x111806ff"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x0904f000",
+      "bank_id": 79,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000101"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09050000",
+      "bank_id": 80,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09058000",
+      "bank_id": 88,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000101"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09064000",
+      "bank_id": 100,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x0906c000",
+      "bank_id": 108,
+      "write_count": 14,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000001"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x10133000"
+            ],
+            "range_end": [
+              "0x10133fff"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x0907c000",
+      "bank_id": 124,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09080000",
+      "bank_id": 128,
+      "write_count": 18,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x000001ff"
+        ],
+        "range_enable_bitmap": [
+          "0x00000003"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x01403c00"
+            ],
+            "range_end": [
+              "0x01403cff"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00003c00"
+            ],
+            "range_end": [
+              "0x00003cff"
+            ],
+            "attributes": [
+              "0x00000101"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000201"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09096000",
+      "bank_id": 150,
+      "write_count": 71,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000000",
+          "0x00000001",
+          "0x00000001"
+        ],
+        "access_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00005f5f"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00050000"
+            ],
+            "range_end": [
+              "0x000500ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00050130"
+            ],
+            "range_end": [
+              "0x00050133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00050140"
+            ],
+            "range_end": [
+              "0x00050143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00050d00"
+            ],
+            "range_end": [
+              "0x00050dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00050f00"
+            ],
+            "range_end": [
+              "0x00050fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "fields": {
+            "range_start": [
+              "0x000531f0"
+            ],
+            "range_end": [
+              "0x000531f3"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "fields": {
+            "range_start": [
+              "0x00052000"
+            ],
+            "range_end": [
+              "0x000520ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00052130"
+            ],
+            "range_end": [
+              "0x00052133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00052140"
+            ],
+            "range_end": [
+              "0x00052143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00052d00"
+            ],
+            "range_end": [
+              "0x00052dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 12,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00052f00"
+            ],
+            "range_end": [
+              "0x00052fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 13,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 14,
+          "fields": {
+            "range_start": [
+              "0x00053a40"
+            ],
+            "range_end": [
+              "0x00053a63"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 15,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09097000",
+      "bank_id": 151,
+      "write_count": 69,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "access_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00005f5f"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00150000"
+            ],
+            "range_end": [
+              "0x001500ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00150130"
+            ],
+            "range_end": [
+              "0x00150133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00150140"
+            ],
+            "range_end": [
+              "0x00150143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00150d00"
+            ],
+            "range_end": [
+              "0x00150dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00150f00"
+            ],
+            "range_end": [
+              "0x00150fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "fields": {
+            "range_start": [
+              "0x001531f0"
+            ],
+            "range_end": [
+              "0x001531f3"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "fields": {
+            "range_start": [
+              "0x00152000"
+            ],
+            "range_end": [
+              "0x001520ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00152130"
+            ],
+            "range_end": [
+              "0x00152133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00152140"
+            ],
+            "range_end": [
+              "0x00152143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00152d00"
+            ],
+            "range_end": [
+              "0x00152dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 12,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00152f00"
+            ],
+            "range_end": [
+              "0x00152fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 13,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 14,
+          "fields": {
+            "range_start": [
+              "0x00153a40"
+            ],
+            "range_end": [
+              "0x00153a63"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 15,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09098000",
+      "bank_id": 152,
+      "write_count": 69,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "access_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00005f5f"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00250000"
+            ],
+            "range_end": [
+              "0x002500ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00250130"
+            ],
+            "range_end": [
+              "0x00250133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00250140"
+            ],
+            "range_end": [
+              "0x00250143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00250d00"
+            ],
+            "range_end": [
+              "0x00250dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00250f00"
+            ],
+            "range_end": [
+              "0x00250fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "fields": {
+            "range_start": [
+              "0x002531f0"
+            ],
+            "range_end": [
+              "0x002531f3"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "fields": {
+            "range_start": [
+              "0x00252000"
+            ],
+            "range_end": [
+              "0x002520ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00252130"
+            ],
+            "range_end": [
+              "0x00252133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00252140"
+            ],
+            "range_end": [
+              "0x00252143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00252d00"
+            ],
+            "range_end": [
+              "0x00252dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 12,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00252f00"
+            ],
+            "range_end": [
+              "0x00252fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 13,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 14,
+          "fields": {
+            "range_start": [
+              "0x00253a40"
+            ],
+            "range_end": [
+              "0x00253a63"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 15,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x09099000",
+      "bank_id": 153,
+      "write_count": 69,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "access_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00005f5f"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00350000"
+            ],
+            "range_end": [
+              "0x003500ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00350130"
+            ],
+            "range_end": [
+              "0x00350133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00350140"
+            ],
+            "range_end": [
+              "0x00350143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00350d00"
+            ],
+            "range_end": [
+              "0x00350dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00350f00"
+            ],
+            "range_end": [
+              "0x00350fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "fields": {
+            "range_start": [
+              "0x003531f0"
+            ],
+            "range_end": [
+              "0x003531f3"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "fields": {
+            "range_start": [
+              "0x00352000"
+            ],
+            "range_end": [
+              "0x003520ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00352130"
+            ],
+            "range_end": [
+              "0x00352133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00352140"
+            ],
+            "range_end": [
+              "0x00352143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00352d00"
+            ],
+            "range_end": [
+              "0x00352dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 12,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00352f00"
+            ],
+            "range_end": [
+              "0x00352fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 13,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 14,
+          "fields": {
+            "range_start": [
+              "0x00353a40"
+            ],
+            "range_end": [
+              "0x00353a63"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 15,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x0909a000",
+      "bank_id": 154,
+      "write_count": 69,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "access_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00005f5f"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00450000"
+            ],
+            "range_end": [
+              "0x004500ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00450130"
+            ],
+            "range_end": [
+              "0x00450133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00450140"
+            ],
+            "range_end": [
+              "0x00450143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00450d00"
+            ],
+            "range_end": [
+              "0x00450dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00450f00"
+            ],
+            "range_end": [
+              "0x00450fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "fields": {
+            "range_start": [
+              "0x004531f0"
+            ],
+            "range_end": [
+              "0x004531f3"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "fields": {
+            "range_start": [
+              "0x00452000"
+            ],
+            "range_end": [
+              "0x004520ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00452130"
+            ],
+            "range_end": [
+              "0x00452133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00452140"
+            ],
+            "range_end": [
+              "0x00452143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00452d00"
+            ],
+            "range_end": [
+              "0x00452dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 12,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00452f00"
+            ],
+            "range_end": [
+              "0x00452fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 13,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 14,
+          "fields": {
+            "range_start": [
+              "0x00453a40"
+            ],
+            "range_end": [
+              "0x00453a63"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 15,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x0909b000",
+      "bank_id": 155,
+      "write_count": 69,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "access_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00005f5f"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00550000"
+            ],
+            "range_end": [
+              "0x005500ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00550130"
+            ],
+            "range_end": [
+              "0x00550133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00550140"
+            ],
+            "range_end": [
+              "0x00550143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00550d00"
+            ],
+            "range_end": [
+              "0x00550dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00550f00"
+            ],
+            "range_end": [
+              "0x00550fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "fields": {
+            "range_start": [
+              "0x005531f0"
+            ],
+            "range_end": [
+              "0x005531f3"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "fields": {
+            "range_start": [
+              "0x00552000"
+            ],
+            "range_end": [
+              "0x005520ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00552130"
+            ],
+            "range_end": [
+              "0x00552133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00552140"
+            ],
+            "range_end": [
+              "0x00552143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00552d00"
+            ],
+            "range_end": [
+              "0x00552dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 12,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00552f00"
+            ],
+            "range_end": [
+              "0x00552fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 13,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 14,
+          "fields": {
+            "range_start": [
+              "0x00553a40"
+            ],
+            "range_end": [
+              "0x00553a63"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 15,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x0909c000",
+      "bank_id": 156,
+      "write_count": 69,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "access_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00005f5f"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00650000"
+            ],
+            "range_end": [
+              "0x006500ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00650130"
+            ],
+            "range_end": [
+              "0x00650133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00650140"
+            ],
+            "range_end": [
+              "0x00650143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00650d00"
+            ],
+            "range_end": [
+              "0x00650dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00650f00"
+            ],
+            "range_end": [
+              "0x00650fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "fields": {
+            "range_start": [
+              "0x006531f0"
+            ],
+            "range_end": [
+              "0x006531f3"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "fields": {
+            "range_start": [
+              "0x00652000"
+            ],
+            "range_end": [
+              "0x006520ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00652130"
+            ],
+            "range_end": [
+              "0x00652133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00652140"
+            ],
+            "range_end": [
+              "0x00652143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00652d00"
+            ],
+            "range_end": [
+              "0x00652dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 12,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00652f00"
+            ],
+            "range_end": [
+              "0x00652fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 13,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 14,
+          "fields": {
+            "range_start": [
+              "0x00653a40"
+            ],
+            "range_end": [
+              "0x00653a63"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 15,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x0909d000",
+      "bank_id": 157,
+      "write_count": 69,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "access_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_0": [
+          "0x00497fff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00005f5f"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00750000"
+            ],
+            "range_end": [
+              "0x007500ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00750130"
+            ],
+            "range_end": [
+              "0x00750133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00750140"
+            ],
+            "range_end": [
+              "0x00750143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00750d00"
+            ],
+            "range_end": [
+              "0x00750dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00750f00"
+            ],
+            "range_end": [
+              "0x00750fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "fields": {
+            "range_start": [
+              "0x007531f0"
+            ],
+            "range_end": [
+              "0x007531f3"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "fields": {
+            "range_start": [
+              "0x00752000"
+            ],
+            "range_end": [
+              "0x007520ff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00752130"
+            ],
+            "range_end": [
+              "0x00752133"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00752140"
+            ],
+            "range_end": [
+              "0x00752143"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00752d00"
+            ],
+            "range_end": [
+              "0x00752dff"
+            ],
+            "attributes": [
+              "0x000001ff"
+            ]
+          }
+        },
+        {
+          "index": 12,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ],
+            "range_start": [
+              "0x00752f00"
+            ],
+            "range_end": [
+              "0x00752fff"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 13,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        },
+        {
+          "index": 14,
+          "fields": {
+            "range_start": [
+              "0x00753a40"
+            ],
+            "range_end": [
+              "0x00753a63"
+            ],
+            "attributes": [
+              "0x00000107"
+            ]
+          }
+        },
+        {
+          "index": 15,
+          "fields": {
+            "selector": [
+              "0x00000207"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x090aa000",
+      "bank_id": 170,
+      "write_count": 2,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ]
+      },
+      "descriptors": []
+    },
+    {
+      "bank_base": "0x090ab000",
+      "bank_id": 171,
+      "write_count": 2,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ]
+      },
+      "descriptors": []
+    },
+    {
+      "bank_base": "0x090b6000",
+      "bank_id": 182,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x090b7000",
+      "bank_id": 183,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "bank_base": "0x090b8000",
+      "bank_id": 184,
+      "write_count": 8,
+      "controls": {
+        "program_commit": [
+          "0x00000000",
+          "0x00000001"
+        ],
+        "policy_mask_0": [
+          "0x004bffff"
+        ],
+        "policy_mask_1": [
+          "0x00001fff"
+        ],
+        "policy_class_mask": [
+          "0x00000107"
+        ],
+        "range_enable_bitmap": [
+          "0x00000000"
+        ]
+      },
+      "descriptors": [
+        {
+          "index": 0,
+          "fields": {
+            "selector": [
+              "0x000002ff"
+            ],
+            "policy_mode": [
+              "0x00000036"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

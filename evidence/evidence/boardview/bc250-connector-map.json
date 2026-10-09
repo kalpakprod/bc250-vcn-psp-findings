@@ -1,0 +1,336 @@
+{
+  "generated_at": "2026-09-11T04:08:12.550624+00:00",
+  "source_cad": "import/from-windows/Users/kukuruza/Downloads/AyuGram Desktop/ASRock AMD BC-250_ISL_X5R r1.00.cad",
+  "source_cad_sha256": "decef01f78b7416bb1e51ffc7c9ea03a556a3b7e2443b98fd441ed92959c65d8",
+  "source_parse": "import/from-windows/Users/kukuruza/tmp_bc250/recon/boardview-parse.json",
+  "source_parse_sha256": "cf11baa257b81ae26b6288162b49f436d50fe0f4ad1a59c2c9703b4527fa8caf",
+  "historical_findings": "import/from-windows/Users/kukuruza/Documents/Codex/2026-08-30/x20/bc250-uefi-capture/analysis/bios-breakdown-phase23/boardview-hardware-findings.md",
+  "historical_findings_sha256": "2261b1e640d034161771702926c6df4a4fdf412e7373af9ee45f5ee19e694452",
+  "connectors": {
+    "J2": {
+      "role": "CPU JTAG/debug header (CAD-derived; physical state unverified)",
+      "device_description": "CON_2X10_SAMTEC_FTSH",
+      "pins": {
+        "1": [
+          "+1.8V"
+        ],
+        "2": [
+          "CPU_TCK"
+        ],
+        "3": [
+          "GND"
+        ],
+        "4": [
+          "CPU_TMS"
+        ],
+        "5": [
+          "GND"
+        ],
+        "6": [
+          "N22562912"
+        ],
+        "7": [
+          "GND"
+        ],
+        "8": [
+          "CPU_TDO"
+        ],
+        "9": [
+          "N22563682"
+        ],
+        "10": [
+          "APU_PWROK_BUF"
+        ],
+        "11": [
+          "N22563876"
+        ],
+        "12": [
+          "APU_LDT_RST_L_BUF"
+        ],
+        "13": [
+          "N22563873"
+        ],
+        "14": [
+          "NC"
+        ],
+        "15": [
+          "N22563870"
+        ],
+        "16": [
+          "N22563082"
+        ],
+        "17": [
+          "GND"
+        ],
+        "18": [
+          "N22563086"
+        ],
+        "19": [
+          "+1.8V"
+        ],
+        "20": [
+          "N22563091"
+        ]
+      }
+    },
+    "J4004": {
+      "role": "SPI/programmer header (CAD-derived)",
+      "device_description": "HEADER 2X4P S/T 2.54MM K7 BK PINREX/210-82-04GB02",
+      "pins": {
+        "1": [
+          "+3.3V_SB"
+        ],
+        "2": [
+          "GND"
+        ],
+        "3": [
+          "SB_RSPI_CS#"
+        ],
+        "4": [
+          "SB_SPI_CLK"
+        ],
+        "5": [
+          "SB_SPI_DI"
+        ],
+        "6": [
+          "SB_SPI_DO"
+        ],
+        "8": [
+          "PROGRAM#"
+        ]
+      }
+    },
+    "J5": {
+      "role": "UART header (CAD-derived)",
+      "device_description": "HD_1X4P_100_PINREX_LFA",
+      "pins": {
+        "1": [
+          "+3.3V_SB"
+        ],
+        "2": [
+          "GND"
+        ],
+        "3": [
+          "U_TX"
+        ],
+        "4": [
+          "U_RX"
+        ]
+      }
+    },
+    "TPMS1": {
+      "role": "LPC/POST debug header (CAD-derived)",
+      "device_description": "HEADER 2X9P S/T 2.00MM K13 L&S/1111812213",
+      "pins": {
+        "1": [
+          "PCLK_S4"
+        ],
+        "2": [
+          "GND"
+        ],
+        "3": [
+          "LFRAME#"
+        ],
+        "4": [
+          "SMBCLK"
+        ],
+        "5": [
+          "A_RST#"
+        ],
+        "6": [
+          "SMBDATA"
+        ],
+        "7": [
+          "LAD3"
+        ],
+        "8": [
+          "LAD2"
+        ],
+        "9": [
+          "+3.3V_RUN"
+        ],
+        "10": [
+          "LAD1"
+        ],
+        "11": [
+          "LAD0"
+        ],
+        "12": [
+          "GND"
+        ],
+        "14": [
+          "LPC_PD#"
+        ],
+        "15": [
+          "+3.3V_SB"
+        ],
+        "16": [
+          "SERIRQ"
+        ],
+        "17": [
+          "GND"
+        ],
+        "18": [
+          "F_CLKRUN#"
+        ]
+      }
+    },
+    "I2C_HEADER1": {
+      "role": "SMBus/I2C header (CAD-derived)",
+      "device_description": "HEADER 1X3P S/T 2.54MM BK SMT FULLTECH/PH03R33BAAD35",
+      "pins": {
+        "1": [
+          "SMB0_DA_ISO"
+        ],
+        "2": [
+          "SMB0_CL_ISO"
+        ],
+        "3": [
+          "GND"
+        ]
+      }
+    },
+    "BIOS_A1": {
+      "role": "primary SPI flash (CAD-derived)",
+      "device_description": "FLASH MXIC MX25L12872FM2I-10G 128MB/SPI/3V/SOP-8(200MIL)",
+      "pins": {
+        "1": [
+          "SB_RSPI_CS#"
+        ],
+        "2": [
+          "SB_SPI_DI"
+        ],
+        "3": [
+          "BIOS_ROM_WP#"
+        ],
+        "4": [
+          "GND"
+        ],
+        "5": [
+          "SB_SPI_DO"
+        ],
+        "6": [
+          "SB_SPI_CLK"
+        ],
+        "7": [
+          "SB_SPI_HOLD#"
+        ],
+        "8": [
+          "+3.3V_SB"
+        ]
+      }
+    },
+    "BIOS_S_A1": {
+      "role": "unpopulated/alternate SPI socket footprint (CAD-derived)",
+      "device_description": "SOCKET_8P_50_LOT",
+      "pins": {
+        "1": [
+          "SB_RSPI_CS#"
+        ],
+        "2": [
+          "SB_SPI_DI"
+        ],
+        "3": [
+          "BIOS_ROM_WP#"
+        ],
+        "4": [
+          "GND"
+        ],
+        "5": [
+          "SB_SPI_DO"
+        ],
+        "6": [
+          "SB_SPI_CLK"
+        ],
+        "7": [
+          "SB_SPI_HOLD#"
+        ],
+        "8": [
+          "+3.3V_SB"
+        ]
+      }
+    }
+  },
+  "physical_verification": false,
+  "safety_notes": [
+    "CAD-derived net names do not prove live pin voltage, orientation, population, debug security state, or signal integrity.",
+    "J2 is CAD-derived CPU JTAG wiring: TCK/TMS/TDO are direct labelled nets and TDI/TRST# are traced through series components; verify pin-1/orientation, live +1.8 V, reset behavior, and debug authorization before attach.",
+    "J4004 is SPI, TPMS1 is LPC/POST, J5 is UART, and I2C_HEADER1 is SMBus; do not use them as JTAG based on naming alone.",
+    "Do not use the connector map alone to authorize a programmer write or powered debug session."
+  ],
+  "evidence_class": "observed-bytes/static-analysis of imported CAD parse; historical wiring evidence",
+  "jtag_bridges": [
+    {
+      "j2_pin": "6",
+      "intermediate_net": "N22562912",
+      "series_component": "R19",
+      "cpu_signal": "CPU_TDI",
+      "source_connections": {
+        "intermediate": [
+          [
+            "J2",
+            "6"
+          ],
+          [
+            "R19",
+            "1"
+          ]
+        ],
+        "cpu": [
+          [
+            "C70",
+            "1"
+          ],
+          [
+            "R19",
+            "2"
+          ],
+          [
+            "R62",
+            "2"
+          ],
+          [
+            "U25",
+            "BA18"
+          ]
+        ]
+      }
+    },
+    {
+      "j2_pin": "9",
+      "intermediate_net": "N22563682",
+      "series_component": "R120",
+      "cpu_signal": "CPU_TRST#",
+      "source_connections": {
+        "intermediate": [
+          [
+            "J2",
+            "9"
+          ],
+          [
+            "R120",
+            "2"
+          ]
+        ],
+        "cpu": [
+          [
+            "C79",
+            "1"
+          ],
+          [
+            "R120",
+            "1"
+          ],
+          [
+            "R65",
+            "2"
+          ],
+          [
+            "U25",
+            "BA19"
+          ]
+        ]
+      }
+    }
+  ]
+}

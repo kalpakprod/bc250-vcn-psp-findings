@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-09-11T18:04:06+05:00",
+  "board_id": "BC250-01",
+  "operation": "APCB DFG-only candidate SPI write and independent full-chip readback",
+  "programmer": {
+    "backend": "ch347_spi",
+    "spi_speed": "1.875M",
+    "flashrom_version": "v1.8.0 (git:v1.8.0)",
+    "flashrom_binary_sha256": "5ee0b2e4ea215a81ec08997dad99c469bd9f2335d5237d623388dee29875573c",
+    "chip": "Winbond W25Q128.V",
+    "capacity_bytes": 16777216
+  },
+  "prewrite": {
+    "path": "evidence/programmer/reads/20260911/read-c-prewrite.bin",
+    "sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+    "matches_read_a": true,
+    "matches_read_b": true
+  },
+  "candidate": {
+    "path": "candidates/BC250_APCB_DFG_only_v001_from_read-a.bin",
+    "sha256": "6b1fe8ef504142d5d5273a85b6c9febdf0b1fb8fc08ebab2593281c320cb9d70",
+    "size": 16777216,
+    "changed_offsets_from_stock": [
+      "0xAB1010",
+      "0xAB1132",
+      "0xAB116E"
+    ]
+  },
+  "write": {
+    "flashrom_exit": 0,
+    "flashrom_builtin_verify": "VERIFIED",
+    "log": "evidence/programmer/reads/20260911/write-apcb-v001.flashrom.log",
+    "log_sha256": "17248ec2e3454a4a8a85ce9821251a26bda1fea9208becd5cd9ca32e5b6474ed"
+  },
+  "postwrite_readback": {
+    "path": "evidence/programmer/reads/20260911/postwrite-apcb-v001.bin",
+    "sha256": "6b1fe8ef504142d5d5273a85b6c9febdf0b1fb8fc08ebab2593281c320cb9d70",
+    "size": 16777216,
+    "byte_identical_to_candidate": true,
+    "firmware_parser_pass": true,
+    "apcb_parser_pass": true,
+    "psp_checksum_match": true,
+    "bhd_checksum_match": true,
+    "apcb_checksum_match": true,
+    "firmware_volume_count": 4,
+    "dfg_words": {
+      "0x130": "0x007FFF00",
+      "0x16C": "0x007FFF00"
+    }
+  },
+  "evidence_class": "hardware-verified at programmer write/readback layer",
+  "unrun_checks": [
+    "cold boot",
+    "PSP acceptance",
+    "video output",
+    "Linux VCN discovery and ring tests",
+    "codec decode/encode",
+    "stability"
+  ],
+  "rollback": {
+    "available": true,
+    "stock_path": "evidence/programmer/reads/20260911/read-a.bin",
+    "stock_sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0"
+  }
+}

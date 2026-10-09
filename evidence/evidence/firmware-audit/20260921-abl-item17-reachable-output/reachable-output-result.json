@@ -1,0 +1,60 @@
+{
+  "status": "PASS_BOUNDED_STATIC_WITH_UNRESOLVED_ALIASES",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "target": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-reachable-output/ABL1-clv-full-thumb.elf.o",
+    "sha256": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+    "isa": "Thumb-2"
+  },
+  "input_rom": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "size": 16777216
+  },
+  "prior_state": {
+    "item17_result": "PASS 136 checks",
+    "candidate_base": "0x57100 conditional only",
+    "helper_gate": "0x6D10 returns 1, but 0x6B78 at 0x963A fills R4+0x278..+0x2B7 with 0xFF before the SP+0x164 compare; alias with SP+0x160..+0x178 unresolved"
+  },
+  "local_output_edge": {
+    "branch": "conditional non-alias/no-clobber route 0x95FC -> 0x984E",
+    "aggregate_write": "0x989A stores runtime table U16 to context+0x2BC when table loop runs",
+    "caller_read": "0x7E40 loads root+0x2BC into R6",
+    "consumer_call": "0x7E74 passes R0=R4, R1=R5, R2=R6 to 0x5E68",
+    "consumer_store": "0x5E68 saves R0 as R5 and R2 as R4; 0x5FBA stores derived halfword to [R5+0x78]",
+    "next_channel_read": "0x7E7E loads [channel+0x20] and compares raw 0x6D6"
+  },
+  "post_7fc2_pointer": {
+    "explicit_adjustments": [
+      "0x7F4C ADD.W R4,R4,#0x2C0",
+      "0x7FC2 SUB.W R4,R4,#0x2C0"
+    ],
+    "call_argument": "0x8426 copies current R4 to R0; 0x8428 calls 0x10200 only if [R4+0x0C] -> [channel+0x28] is nonzero",
+    "same_object_as_7E74": "UNRESOLVED; intermediate indirect dispatch at 0x83B0 -> 0x10958 can use callback [current+0x660]; callback target/base and R4 preservation are not established"
+  },
+  "nearest_field_consumer": {
+    "handler": "0x10200 copies input R0 to R4 at 0x10208",
+    "load": "0x107E4 loads halfword [R4+0x78]",
+    "raw_selectors": {
+      "comparands": [
+        "0x3E8",
+        "0x4B0"
+      ],
+      "selected_values": [
+        "0",
+        "0x260",
+        "0x264",
+        "0x464"
+      ]
+    },
+    "next_dispatch": "0x10820 -> 0x10958 indirect callback; target/effect unresolved"
+  },
+  "limits": [
+    "The 0x984E branch is conditional pending stack/context fill alias proof.",
+    "The 0x8428 object is current R4 after observed +/-0x2C0 adjustments and intervening callbacks; same identity with the 0x7E74 context is not proven.",
+    "No units, frequency names, training outcome, register/PLL programming, or hardware behavior is established."
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "generated_at": "2026-09-14T12:02:41.524658+00:00",
+  "tool": "scripts/trace_te_entry.py",
+  "pypcode_version": "4.0.0",
+  "input": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260914-4700s/extracted/modules/0200_AmdNbioGfxARIPei_te.bin",
+    "size": 6720,
+    "sha256": "73915b610491853db8bf81622f4acfd17e125959e5ab324e55e3a362489bd156"
+  },
+  "te": {
+    "machine": "0x14C",
+    "stripped_size": "0x1C8",
+    "delta": "0x1A0",
+    "entry_rva": "0x240",
+    "trace_start_rva": "0x9A8",
+    "sections": [
+      {
+        "name": ".text",
+        "virtual_address": "0x240",
+        "virtual_size": 5759,
+        "raw_size": 5760,
+        "file_offset": "0xA0"
+      },
+      {
+        "name": ".data",
+        "virtual_address": "0x18C0",
+        "virtual_size": 640,
+        "raw_size": 640,
+        "file_offset": "0x1720"
+      },
+      {
+        "name": ".reloc",
+        "virtual_address": "0x1B40",
+        "virtual_size": 156,
+        "raw_size": 160,
+        "file_offset": "0x19A0"
+      }
+    ]
+  },
+  "trace": {
+    "instruction_count": 21,
+    "instructions": [
+      {
+        "address": "0x9A8",
+        "length": 1,
+        "mnemonic": "PUSH",
+        "body": "EBP"
+      },
+      {
+        "address": "0x9A9",
+        "length": 2,
+        "mnemonic": "MOV",
+        "body": "EBP,ESP"
+      },
+      {
+        "address": "0x9AB",
+        "length": 1,
+        "mnemonic": "PUSH",
+        "body": "ECX"
+      },
+      {
+        "address": "0x9AC",
+        "length": 3,
+        "mnemonic": "LEA",
+        "body": "EAX,[EBP + -0x4]"
+      },
+      {
+        "address": "0x9AF",
+        "length": 1,
+        "mnemonic": "PUSH",
+        "body": "EAX"
+      },
+      {
+        "address": "0x9B0",
+        "length": 5,
+        "mnemonic": "PUSH",
+        "body": "0x9e2b998"
+      },
+      {
+        "address": "0x9B5",
+        "length": 5,
+        "mnemonic": "CALL",
+        "body": "0x98d"
+      },
+      {
+        "address": "0x9BA",
+        "length": 1,
+        "mnemonic": "POP",
+        "body": "ECX"
+      },
+      {
+        "address": "0x9BB",
+        "length": 1,
+        "mnemonic": "POP",
+        "body": "ECX"
+      },
+      {
+        "address": "0x9BC",
+        "length": 2,
+        "mnemonic": "TEST",
+        "body": "EAX,EAX"
+      },
+      {
+        "address": "0x9BE",
+        "length": 2,
+        "mnemonic": "JL",
+        "body": "0x9d5"
+      },
+      {
+        "address": "0x9C0",
+        "length": 3,
+        "mnemonic": "LEA",
+        "body": "EAX,[EBP + 0x14]"
+      },
+      {
+        "address": "0x9C3",
+        "length": 1,
+        "mnemonic": "PUSH",
+        "body": "EAX"
+      },
+      {
+        "address": "0x9C4",
+        "length": 3,
+        "mnemonic": "PUSH",
+        "body": "dword ptr [EBP + 0x10]"
+      },
+      {
+        "address": "0x9C7",
+        "length": 3,
+        "mnemonic": "MOV",
+        "body": "EAX,dword ptr [EBP + -0x4]"
+      },
+      {
+        "address": "0x9CA",
+        "length": 3,
+        "mnemonic": "PUSH",
+        "body": "dword ptr [EBP + 0xc]"
+      },
+      {
+        "address": "0x9CD",
+        "length": 3,
+        "mnemonic": "PUSH",
+        "body": "dword ptr [EBP + 0x8]"
+      },
+      {
+        "address": "0x9D0",
+        "length": 2,
+        "mnemonic": "CALL",
+        "body": "dword ptr [EAX]"
+      },
+      {
+        "address": "0x9D2",
+        "length": 3,
+        "mnemonic": "ADD",
+        "body": "ESP,0x10"
+      },
+      {
+        "address": "0x9D5",
+        "length": 1,
+        "mnemonic": "LEAVE",
+        "body": ""
+      },
+      {
+        "address": "0x9D6",
+        "length": 1,
+        "mnemonic": "RET",
+        "body": ""
+      }
+    ],
+    "direct_calls": [
+      {
+        "site": "0x9B5",
+        "target": "0x98D",
+        "body": "0x98d"
+      }
+    ],
+    "indirect_calls": [
+      {
+        "site": "0x9D0",
+        "target": null,
+        "body": "dword ptr [EAX]"
+      }
+    ],
+    "exits": [
+      {
+        "address": "0x9D6",
+        "kind": "RET"
+      }
+    ],
+    "errors": []
+  }
+}

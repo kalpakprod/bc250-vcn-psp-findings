@@ -1,0 +1,276 @@
+{
+  "status": "PASS",
+  "checks": 32,
+  "route": "exact ABL1 runtime heap table boundary for UCLK descriptor 0x20",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "abl1": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "prior_provider_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-apcb-consumer-resume/abl1-apcb-consumer-result.json",
+    "apcb_report": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-apcb-abl-apob-interface/apcb-detail.json"
+  },
+  "hashes": {
+    "rom": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "abl1": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "prior_provider_result": "3950e5136254db2aa9c96c91caba4d48da4a11c369b38a36703c9f54cef45ee9",
+    "apcb_report": "503e4f525f4372903b23ea9320c77f7b0b39250f310d80a1b7565eb98b39f394"
+  },
+  "chain": {
+    "descriptor": "first ordered UCLK descriptor entry 0x20 -> helper 0x4800",
+    "provider_selector": "0x0f",
+    "runtime_record_key": "0xa04e",
+    "lookup": "0x6374 uses runtime table pointer literal 0x73000 and HEAP sentinel; matches [input] key and returns body pointer/length",
+    "heap_helper": "0x6238 uses runtime table pointer literal 0x73000 and HEAP sentinel",
+    "apcb_contrast": "CBSG raw rows observed at 0xAB14D8/0xAB14E8/0xAB1500/0xAB185C; schema not decoded",
+    "direct_rom_key_match": "0xA04E absent as aligned little-endian scalar"
+  },
+  "fresh_result": "For the exact first UCLK descriptor 0x20, provider case 0x0f constructs runtime key 0xA04E and writes it into the descriptor passed to 0x6374. Exact 0x6374 is a HEAP-linked-list lookup at runtime table pointer 0x73000, returning body pointer/length on key match; 0x6238 is a second runtime HEAP allocator/block boundary with HEAP tag and the same runtime table pointer literal 0x73000. The key 0xA04E is absent from the pinned ROM, so no direct APCB flash row can be assigned as its backing record. Raw CBSG rows with 0x20/0x21 values are recorded without schema claims.",
+  "unresolved_edge": "Runtime population of the HEAP records keyed by 0xA04E and the conversion from raw CBSG/APCB records to that runtime table remain unresolved. No frequency/enum/voltage/pointer semantic assignment or MCLK=UCLK=FCLK proof follows.",
+  "checks_detail": [
+    {
+      "check": "ROM exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ABL1 exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "ABL1 sha256",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "prior provider result exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "prior provider result sha256",
+      "passed": true,
+      "got": "3950e5136254db2aa9c96c91caba4d48da4a11c369b38a36703c9f54cef45ee9",
+      "expected": "3950e5136254db2aa9c96c91caba4d48da4a11c369b38a36703c9f54cef45ee9"
+    },
+    {
+      "check": "prior APCB report exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "prior APCB report sha256",
+      "passed": true,
+      "got": "503e4f525f4372903b23ea9320c77f7b0b39250f310d80a1b7565eb98b39f394",
+      "expected": "503e4f525f4372903b23ea9320c77f7b0b39250f310d80a1b7565eb98b39f394"
+    },
+    {
+      "check": "prior provider result PASS",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "prior provider checks",
+      "passed": true,
+      "got": 36,
+      "expected": 36
+    },
+    {
+      "check": "case 0x0f selector immediate",
+      "passed": true,
+      "got": "hex:0f2240f2",
+      "expected": "hex:0f2240f2"
+    },
+    {
+      "check": "case 0x0f runtime key immediate 0xa04e",
+      "passed": true,
+      "got": "hex:4af24e06",
+      "expected": "hex:4af24e06"
+    },
+    {
+      "check": "provider stores runtime key to descriptor sp+0x24",
+      "passed": true,
+      "got": "hex:09a82999099601f0",
+      "expected": "hex:09a82999099601f0"
+    },
+    {
+      "check": "0x6374 global runtime-table literal 0x73000",
+      "passed": true,
+      "got": "hex:00300700",
+      "expected": "hex:00300700"
+    },
+    {
+      "check": "0x6374 runtime-table sentinel HEAP",
+      "passed": true,
+      "got": "hex:48454150",
+      "expected": "hex:48454150"
+    },
+    {
+      "check": "0x6374 loads runtime table head and compares sentinel",
+      "passed": true,
+      "got": "hex:1c4af8b51c4f01261368bb4204d0",
+      "expected": "hex:1c4af8b51c4f01261368bb4204d0"
+    },
+    {
+      "check": "0x6374 compares input key against table entry",
+      "passed": true,
+      "got": "hex:05681c68ac4204d0db685c1c0bd0",
+      "expected": "hex:05681c68ac4204d0db685c1c0bd0"
+    },
+    {
+      "check": "0x6374 returns body pointer and length on match",
+      "passed": true,
+      "got": "hex:46b1597a5a18103282605a68511a41600020",
+      "expected": "hex:46b1597a5a18103282605a68511a41600020"
+    },
+    {
+      "check": "0x6238 prologue and descriptor input",
+      "passed": true,
+      "got": "hex:2de9f84f0446484f00208a46e0602068",
+      "expected": "hex:2de9f84f0446484f00208a46e0602068"
+    },
+    {
+      "check": "0x6238 runtime table pointer literal 0x73000",
+      "passed": true,
+      "got": "hex:00300700",
+      "expected": "hex:00300700"
+    },
+    {
+      "check": "0x6238 heap sentinel HEAP",
+      "passed": true,
+      "got": "hex:48454150",
+      "expected": "hex:48454150"
+    },
+    {
+      "check": "0x6238 loads heap signature and compares",
+      "passed": true,
+      "got": "hex:38688842",
+      "expected": "hex:38688842"
+    },
+    {
+      "check": "0x6238 branches to existing heap on match",
+      "passed": true,
+      "got": "hex:05d0",
+      "expected": "hex:05d0"
+    },
+    {
+      "check": "0x6238 loads global heap head state",
+      "passed": true,
+      "got": "hex:b86807f11008",
+      "expected": "hex:b86807f11008"
+    },
+    {
+      "check": "0x6238 enters entry scan",
+      "passed": true,
+      "got": "hex:d8f80030934203d1",
+      "expected": "hex:d8f80030934203d1"
+    },
+    {
+      "check": "APCB parser checksum match",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "APCB parser offset",
+      "passed": true,
+      "got": "0xAB1000",
+      "expected": "0xAB1000"
+    },
+    {
+      "check": "APCB parser size",
+      "passed": true,
+      "got": 2972,
+      "expected": 2972
+    },
+    {
+      "check": "CBSG group id present",
+      "passed": true,
+      "got": "0x1707",
+      "expected": "0x1707"
+    },
+    {
+      "check": "CBSG subgroup count",
+      "passed": true,
+      "got": 2,
+      "expected": 2
+    },
+    {
+      "check": "raw CBSG candidate rows with second u16 0x20/0x21",
+      "passed": true,
+      "got": [
+        {
+          "absolute": "0xab14d8",
+          "raw": "01302000",
+          "u16_0": "0x3001",
+          "u16_1": "0x20"
+        },
+        {
+          "absolute": "0xab14e8",
+          "raw": "01422000",
+          "u16_0": "0x4201",
+          "u16_1": "0x20"
+        },
+        {
+          "absolute": "0xab1500",
+          "raw": "01782000",
+          "u16_0": "0x7801",
+          "u16_1": "0x20"
+        },
+        {
+          "absolute": "0xab185c",
+          "raw": "01602100",
+          "u16_0": "0x6001",
+          "u16_1": "0x21"
+        }
+      ],
+      "expected": [
+        {
+          "absolute": "0xab14d8",
+          "raw": "01302000",
+          "u16_0": "0x3001",
+          "u16_1": "0x20"
+        },
+        {
+          "absolute": "0xab14e8",
+          "raw": "01422000",
+          "u16_0": "0x4201",
+          "u16_1": "0x20"
+        },
+        {
+          "absolute": "0xab1500",
+          "raw": "01782000",
+          "u16_0": "0x7801",
+          "u16_1": "0x20"
+        },
+        {
+          "absolute": "0xab185c",
+          "raw": "01602100",
+          "u16_0": "0x6001",
+          "u16_1": "0x21"
+        }
+      ]
+    },
+    {
+      "check": "aligned ROM literal 0x0000a04e absent",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    }
+  ]
+}

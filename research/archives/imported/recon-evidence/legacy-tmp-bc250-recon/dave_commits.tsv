@@ -1,0 +1,9 @@
+﻿gh : failed to parse jq expression (line 1, column 63)
+At line:1 char:1
++ gh api repos/daveconde/bc250-vcn-enable/commits --paginate --jq '.[]  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (failed to parse...e 1, column 63):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    .[] | [.sha[0:7], .commit.author.date, (.commit.message|split(\`n)[0])] | @tsv
+                                                                  ^  unexpected token "\\"

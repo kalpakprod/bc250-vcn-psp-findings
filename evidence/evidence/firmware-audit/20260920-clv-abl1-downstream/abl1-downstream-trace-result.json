@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "checks": 6,
+  "route": "fresh exact ABL1 full Thumb disassembly -> direct caller search for function 0x95FC",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "input": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+  "abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+  "command": [
+    "llvm-objdump",
+    "-D",
+    "--triple=thumbv7",
+    "--start-address=0",
+    "--stop-address=0x17320",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+  ],
+  "command_exit": 0,
+  "disassembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+  "stderr": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.stderr",
+  "direct_calls_95fc": [],
+  "fresh_result": "Fresh LLVM Thumb disassembly of the exact ABL1 body found no direct BL/BLX call to 0x95FC. The exact function remains internally traced through its selected aggregate writeback and channel writes, but the downstream caller is not present as a direct call in this body; indirect/vector/closed-component ownership remains unresolved.",
+  "limits": "No historical global offset assumption; no imported source used as proof; no firmware execution, runtime, hardware or shared-state change.",
+  "checks_detail": [
+    {
+      "check": "reviewed ABL1 hash",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "review doc hash lead",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "llvm-objcopy exit",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "llvm-objdump exit",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "fresh disassembly nonempty",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "direct callsite count to 0x95FC",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    }
+  ]
+}

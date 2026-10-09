@@ -1,0 +1,137 @@
+{
+  "revision": "dd840cb126f26d8874f85d905b60435e914bd6e4",
+  "patches": [
+    {
+      "family": "linux-cachyos",
+      "name": "0001-bc250-8core-telemetry-gpu-activity.patch",
+      "sha256": "633eb29662b233e7c972b6089596177fbe5145e4a027cd97d9500a2ec78824c8",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "linux-cachyos",
+      "name": "0002-nct6687d-hwmon.patch",
+      "sha256": "c87527195e7eef21dffa1c12e10525ff9cf416f0aef95d6a862535d3caee2456",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "linux-cachyos",
+      "name": "0003-gfx1013-pasid-tlb-invalidation.patch",
+      "sha256": "ca0a6fef1b7a8c5588e451ead23e6dde8414f3c1d74475b7d6b3e0187f0e0972",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "linux-cachyos",
+      "name": "0004-gfx1013-compute-gfxoff-guard.patch",
+      "sha256": "214f3c69a3951e2f5d9fde961d148c185ce408edd1b106bb1de361d4d5749b73",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "linux-cachyos",
+      "name": "0005-bc250-kfd-flush-tlb-by-runlist.patch",
+      "sha256": "77da11aa6f862704bddb5ef5a4c752cf31e2179dedfeb492bbf5da453334467b",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "linux-cachyos",
+      "name": "0006-amdgpu-ttm-null-page-guard.patch",
+      "sha256": "70153fc6f9aa9f96f0ee6d4a9f62a62aa76a8d16f3ca557a087ad5a2dbb52af4",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "linux-cachyos",
+      "name": "0007-cyan-skillfish-sclk-range.patch",
+      "sha256": "8bc7ad42dc33363aeff566208b914fab65ad6c6641deeee44868a63e7634adff",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "linux-cachyos",
+      "name": "0008-bc250-40cu-unlock.patch",
+      "sha256": "e89ac4783de277b627749bf8351f6c64c434c467eaa18c0cbe0b9e2ace1a66ab",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "linux-cachyos",
+      "name": "0009-dcn201-hdmi21-pcon.patch",
+      "sha256": "7713e4d09e229bd244bf8c58325b88ebb242fc8c38d2b2e0d31a48d4309e91e0",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "linux-cachyos",
+      "name": "0010-dcn201-enable-dsc.patch",
+      "sha256": "39305d69aeb87d4b351e0826ba6d3b185fb23d3f1da71c9930f944cfe6773837",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "linux-cachyos",
+      "name": "0011-cs-relink-after-long-blank.patch",
+      "sha256": "22832214e332c581247458ef385cfe73b91fe32a1e5bbe74992e96c4f0ccb5e5",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "linux-cachyos",
+      "name": "0012-ch7218-pcon-quirk.patch",
+      "sha256": "cc3b35961c20fb459294b3c9337821c4a84f4722bf5236dba7013b3dbe1bd341",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "linux-cachyos",
+      "name": "0013-ch7218-dsc-restore.patch",
+      "sha256": "737494a179a2cbace772e83de75ac5bab784591606ef2b4858d8cbc80bd12216",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "linux-cachyos",
+      "name": "0014-pcon-force-dsc.patch",
+      "sha256": "f61c81f6f7de70ba030d0ec30f8b019e94bfe1aab4c3023a8b49259aa7682d93",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "linux-cachyos",
+      "name": "0015-bc250-psp-ccp.patch",
+      "sha256": "e3c133eac5a5250800a324b96440502b11a574c8de4d111e0044cdaa6cfa7a3b",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "mesa-git",
+      "name": "0001-gfx1013-compute-queue-fix.patch",
+      "sha256": "40928eb33765e8647361e62fabddcf8021e1d4b6396f61d31c9667d706ab1141",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "mesa-git",
+      "name": "0002-bc250-directmesh.patch",
+      "sha256": "abc146b5d57e221d3f5e33d74ee059715fcf04aa1d8bbf9e066c8797820a65f3",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "mesa-git",
+      "name": "0003-bc250-fsr4-v3.patch",
+      "sha256": "c8b68b16ac4f39650b9e28ed66ba43433ba6dcd458b5196d461604e7719b451b",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "mesa-git",
+      "name": "0004-bc250-fsr4-combined-unroll.patch",
+      "sha256": "1978fdd5933862fc01bcf1274bc98e4c9c68d0d4ce6ce84bf8bbbfb8a1f77c5f",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "mesa-git",
+      "name": "0005-bc250-fsr4-imageprep-texture.patch",
+      "sha256": "a2b51061c3faca237e2c529dc06888ece7bec42d6080795df1f2bcbbd59e0a33",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "mesa-git",
+      "name": "0006-bc250-fsr4-resolution-variants.patch",
+      "sha256": "85e1884f5ca612f910804dd3598f8d51c76eabc6d8b748a37cb76af952a1474d",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    },
+    {
+      "family": "mesa-git",
+      "name": "0007-bc250-fsr4-production-defaults.patch",
+      "sha256": "d8f21b4a5e8a32c56033e8bc352512f5fbf29b5b0d15a97ae6d7848540e7cbc1",
+      "review_state": "catalogued, not compatibility/hardware verified"
+    }
+  ]
+}

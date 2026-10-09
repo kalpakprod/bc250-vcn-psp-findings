@@ -1,0 +1,212 @@
+{
+  "boundary": "The branch polarity and nearest context+0x40 producer are exact static facts; active dispatcher object identity, runtime HEAP contents, runtime context bytes, SVC#4 translation, physical register and hardware effect remain unresolved. No firmware/hardware write.",
+  "branch": {
+    "heap_helper_status0": "match found: 0x63B6 returns R0=0, B23E CBZ takes B264/B266 existing-body install and B268 early return",
+    "heap_helper_status2": "no matching node: 0x63E2 returns R0=2, B23E falls through B240/B252 allocation then B26A/B274 fallback install",
+    "status7": "invalid HEAP signature path returns nonzero and does not take B264; exact downstream behavior is outside this bounded branch"
+  },
+  "checks": 37,
+  "checks_detail": [
+    {
+      "detail": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "payload_hash",
+      "ok": true
+    },
+    {
+      "detail": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "name": "listing_hash",
+      "ok": true
+    },
+    {
+      "detail": "31e2c2952d6d4074ddaf52fea5bed68f7656ec6a0867e225e06aab7b432f6a5c",
+      "name": "prior_join_hash",
+      "ok": true
+    },
+    {
+      "detail": "cf16bf73c370bac1c4426f7c79e64890898a11da7743304528ddeccfe3cd7ecb",
+      "name": "prior_callback_hash",
+      "ok": true
+    },
+    {
+      "detail": "0x6374 ldr\tr2, [pc, #0x70]",
+      "name": "heap_lookup_table_literal",
+      "ok": true
+    },
+    {
+      "detail": "0x63A6 cbz\tr6, 0x63ba",
+      "name": "heap_match_success_guard",
+      "ok": true
+    },
+    {
+      "detail": "0x63AE str\tr2, [r0, #0x8]",
+      "name": "heap_match_body_return",
+      "ok": true
+    },
+    {
+      "detail": "0x63B0 ldr\tr2, [r3, #0x4]",
+      "name": "heap_match_size_read",
+      "ok": true
+    },
+    {
+      "detail": "0x63B4 str\tr1, [r0, #0x4]",
+      "name": "heap_match_length_return",
+      "ok": true
+    },
+    {
+      "detail": "0x63B6 movs\tr0, #0x0",
+      "name": "heap_match_status_zero",
+      "ok": true
+    },
+    {
+      "detail": "0x63B8 pop\t{r3, r4, r5, r6, r7, pc}",
+      "name": "heap_match_return",
+      "ok": true
+    },
+    {
+      "detail": "0x63E2 movs\tr0, #0x2",
+      "name": "heap_notfound_status_two",
+      "ok": true
+    },
+    {
+      "detail": "0x63E4 pop\t{r3, r4, r5, r6, r7, pc}",
+      "name": "heap_notfound_return",
+      "ok": true
+    },
+    {
+      "detail": "0xB23A bl\t0x6374",
+      "name": "B228_heap_lookup",
+      "ok": true
+    },
+    {
+      "detail": "0xB23E cbz\tr0, 0xb264",
+      "name": "B228_zero_status_existing_path",
+      "ok": true
+    },
+    {
+      "detail": "0xB264 ldr\tr0, [sp, #0x18]",
+      "name": "B264_heap_payload_pointer",
+      "ok": true
+    },
+    {
+      "detail": "0xB266 str\tr0, [r4, #0x44]",
+      "name": "B266_existing_context44_install",
+      "ok": true
+    },
+    {
+      "detail": "0xB268 b\t0xb25e",
+      "name": "B268_existing_early_return",
+      "ok": true
+    },
+    {
+      "detail": "0xB240 movw\tr0, #0x26c0",
+      "name": "B240_fallback_size",
+      "ok": true
+    },
+    {
+      "detail": "0xB244 strd\tr0, r5, [sp]",
+      "name": "B244_fallback_key",
+      "ok": true
+    },
+    {
+      "detail": "0xB248 movs\tr0, #0x4",
+      "name": "B248_fallback_type4",
+      "ok": true
+    },
+    {
+      "detail": "0xB252 bl\t0x6238",
+      "name": "B252_fallback_allocator",
+      "ok": true
+    },
+    {
+      "detail": "0xB26A ldr\tr1, [sp, #0xc]",
+      "name": "B26A_fallback_pointer",
+      "ok": true
+    },
+    {
+      "detail": "0xB274 str\tr1, [r4, #0x44]",
+      "name": "B274_fallback_context44_install",
+      "ok": true
+    },
+    {
+      "detail": "0x7378 push.w\t{r4, r5, r6, r7, r8, r9, lr}",
+      "name": "context_producer_entry",
+      "ok": true
+    },
+    {
+      "detail": "0x737C mov\tr5, r0",
+      "name": "context_parent_R5",
+      "ok": true
+    },
+    {
+      "detail": "0x7384 mov\tr6, r1",
+      "name": "context_source_arg_R6",
+      "ok": true
+    },
+    {
+      "detail": "0x739E str\tr6, [r5]",
+      "name": "context_root_store",
+      "ok": true
+    },
+    {
+      "detail": "0x73AE ldr.w\tr4, [r6, #0x3c4]",
+      "name": "context_child_pointer_load",
+      "ok": true
+    },
+    {
+      "detail": "0x73B2 str\tr4, [r5, #0x8]",
+      "name": "context_child_pointer_store",
+      "ok": true
+    },
+    {
+      "detail": "0x73B6 ldr\tr0, [r4, #0x4]",
+      "name": "context40_source_field_load",
+      "ok": true
+    },
+    {
+      "detail": "0x73B8 str\tr0, [r5, #0x40]",
+      "name": "context40_store",
+      "ok": true
+    },
+    {
+      "detail": "0x9B82 ldr\tr0, [r5, #0x40]",
+      "name": "callback_context40_read",
+      "ok": true
+    },
+    {
+      "detail": "0x9B88 bfi\tr6, r1, #15, #5",
+      "name": "callback_context40_midfield_merge",
+      "ok": true
+    },
+    {
+      "detail": "0x9B98 bfi\tr6, r0, #28, #4",
+      "name": "callback_context40_highfield_merge",
+      "ok": true
+    },
+    {
+      "detail": "0x1095A ldr.w\tr4, [r0, #0x660]",
+      "name": "active_dispatch_slot_load",
+      "ok": true
+    },
+    {
+      "detail": "0x10958 current R0 object is not statically joined here to the 0x7378 R5 initializer object",
+      "name": "active_dispatch_not_joined",
+      "ok": true
+    }
+  ],
+  "context40": {
+    "child_pointer": "R4=[R6+0x3C4] at 0x73AE and [R5+0x8] at 0x73B2",
+    "consumer": "callback reads [R5+0x40] at 0x9B82 and BFI-merges bits15..19 and28..31 into descriptor",
+    "parent_context": "R5=R0 at 0x737C",
+    "producer_function": "0x7378",
+    "source_argument": "R6=R1 at 0x7384",
+    "stored_value": "context+0x40 <- [R4+0x4] at 0x73B6/0x73B8"
+  },
+  "inputs": {
+    "listing_sha256": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+    "payload_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "prior_callback_sha256": "cf16bf73c370bac1c4426f7c79e64890898a11da7743304528ddeccfe3cd7ecb",
+    "prior_join_sha256": "31e2c2952d6d4074ddaf52fea5bed68f7656ec6a0867e225e06aab7b432f6a5c"
+  },
+  "passed": 37,
+  "status": "PASS"
+}

@@ -1,0 +1,375 @@
+{
+    "id": 101,
+    "jsonrpc": "2.0",
+    "result": {
+        "tools": [
+            {
+                "description": "Check Cutter server health and the current seek address.",
+                "inputSchema": {
+                    "properties": {
+                    },
+                    "required": [
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_health"
+            },
+            {
+                "description": "List functions in the loaded binary.",
+                "inputSchema": {
+                    "properties": {
+                        "limit": {
+                            "default": 100,
+                            "description": "Maximum number of items",
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "default": 0,
+                            "description": "Page offset",
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_list_functions"
+            },
+            {
+                "description": "Get detailed info about a function including its xrefs.",
+                "inputSchema": {
+                    "properties": {
+                        "addr": {
+                            "default": null,
+                            "description": "Function address",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "addr"
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_function_detail"
+            },
+            {
+                "description": "Decompile a function to pseudocode.",
+                "inputSchema": {
+                    "properties": {
+                        "addr": {
+                            "default": null,
+                            "description": "Function address",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "addr"
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_decompile"
+            },
+            {
+                "description": "Disassemble a function (fmt: text or json).",
+                "inputSchema": {
+                    "properties": {
+                        "addr": {
+                            "default": null,
+                            "description": "Function address",
+                            "type": "string"
+                        },
+                        "fmt": {
+                            "default": "text",
+                            "description": "text or json",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "addr"
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_disasm"
+            },
+            {
+                "description": "Print N disassembly instructions at an address (fmt: text or json).",
+                "inputSchema": {
+                    "properties": {
+                        "addr": {
+                            "default": null,
+                            "description": "Address",
+                            "type": "string"
+                        },
+                        "count": {
+                            "default": 32,
+                            "description": "Number of instructions",
+                            "type": "integer"
+                        },
+                        "fmt": {
+                            "default": "text",
+                            "description": "text or json",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "addr"
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_pd"
+            },
+            {
+                "description": "List strings found in the binary.",
+                "inputSchema": {
+                    "properties": {
+                        "contains": {
+                            "default": null,
+                            "description": "Only strings containing this substring",
+                            "type": "string"
+                        },
+                        "limit": {
+                            "default": 100,
+                            "description": "Maximum number of items",
+                            "type": "integer"
+                        },
+                        "min_length": {
+                            "default": 0,
+                            "description": "Minimum string length",
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "default": 0,
+                            "description": "Page offset",
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_list_strings"
+            },
+            {
+                "description": "List memory segments of the binary.",
+                "inputSchema": {
+                    "properties": {
+                        "limit": {
+                            "default": 100,
+                            "description": "Maximum number of items",
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "default": 0,
+                            "description": "Page offset",
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_list_segments"
+            },
+            {
+                "description": "Read raw bytes at an address.",
+                "inputSchema": {
+                    "properties": {
+                        "addr": {
+                            "default": null,
+                            "description": "Address",
+                            "type": "string"
+                        },
+                        "size": {
+                            "default": 64,
+                            "description": "Number of bytes to read",
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "addr"
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_read_bytes"
+            },
+            {
+                "description": "List variables of a function.",
+                "inputSchema": {
+                    "properties": {
+                        "addr": {
+                            "default": null,
+                            "description": "Function address",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "addr"
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_list_vars"
+            },
+            {
+                "description": "Get the current seek address in Cutter.",
+                "inputSchema": {
+                    "properties": {
+                    },
+                    "required": [
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_current_address"
+            },
+            {
+                "description": "Get info about the function at the current address.",
+                "inputSchema": {
+                    "properties": {
+                    },
+                    "required": [
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_current_function"
+            },
+            {
+                "description": "Get cross-references pointing to an address.",
+                "inputSchema": {
+                    "properties": {
+                        "addr": {
+                            "default": null,
+                            "description": "Address",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "addr"
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_xrefs"
+            },
+            {
+                "description": "List symbols/globals (typ filter: FUNC, OBJ, etc).",
+                "inputSchema": {
+                    "properties": {
+                        "limit": {
+                            "default": 100,
+                            "description": "Maximum number of items",
+                            "type": "integer"
+                        },
+                        "name_contains": {
+                            "default": null,
+                            "description": "Only symbols whose name contains this",
+                            "type": "string"
+                        },
+                        "offset": {
+                            "default": 0,
+                            "description": "Page offset",
+                            "type": "integer"
+                        },
+                        "typ": {
+                            "default": null,
+                            "description": "Symbol type filter: FUNC, OBJ, etc",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_list_globals"
+            },
+            {
+                "description": "List binary entrypoints.",
+                "inputSchema": {
+                    "properties": {
+                    },
+                    "required": [
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_entrypoints"
+            },
+            {
+                "description": "List types known to rizin.",
+                "inputSchema": {
+                    "properties": {
+                    },
+                    "required": [
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_types"
+            },
+            {
+                "description": "Rename a function.",
+                "inputSchema": {
+                    "properties": {
+                        "addr": {
+                            "default": null,
+                            "description": "Function address",
+                            "type": "string"
+                        },
+                        "new_name": {
+                            "default": null,
+                            "description": "The new function name",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "addr",
+                        "new_name"
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_rename_function"
+            },
+            {
+                "description": "Add a comment at an address.",
+                "inputSchema": {
+                    "properties": {
+                        "addr": {
+                            "default": null,
+                            "description": "Address",
+                            "type": "string"
+                        },
+                        "text": {
+                            "default": null,
+                            "description": "Comment text",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "addr",
+                        "text"
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_add_comment"
+            },
+            {
+                "description": "Set a function prototype/signature.",
+                "inputSchema": {
+                    "properties": {
+                        "addr": {
+                            "default": null,
+                            "description": "Function address",
+                            "type": "string"
+                        },
+                        "prototype": {
+                            "default": null,
+                            "description": "New prototype/signature",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "addr",
+                        "prototype"
+                    ],
+                    "type": "object"
+                },
+                "name": "cutter_set_prototype"
+            }
+        ]
+    }
+}

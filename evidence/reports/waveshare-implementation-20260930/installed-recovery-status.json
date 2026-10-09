@@ -1,0 +1,58 @@
+{
+  "device_selection": {
+    "bus": 1,
+    "address": 18,
+    "vid": "2e8a",
+    "pid": "000f"
+  },
+  "operations": [
+    {
+      "command": [
+        "/home/OWNER/.cache/waveshare-picotool-usb/picotool",
+        "save",
+        "-a",
+        "-v",
+        "/home/OWNER/.cache/waveshare-recovery-20260930/installed-read-1.bin",
+        "-t",
+        "bin",
+        "--bus",
+        "1",
+        "--address",
+        "18"
+      ],
+      "exit_status": 0,
+      "private_stdout": "/home/OWNER/.cache/waveshare-recovery-20260930/read-1.stdout",
+      "private_stderr": "/home/OWNER/.cache/waveshare-recovery-20260930/read-1.stderr",
+      "path": "/home/OWNER/.cache/waveshare-recovery-20260930/installed-read-1.bin",
+      "size": 16777216,
+      "sha256": "d3dec91fadd5a86982f6a6d80090cc431dcf539fdeebe220de1b83de503b8379"
+    },
+    {
+      "command": [
+        "/home/OWNER/.cache/waveshare-picotool-usb/picotool",
+        "save",
+        "-a",
+        "-v",
+        "/home/OWNER/.cache/waveshare-recovery-20260930/installed-read-2.bin",
+        "-t",
+        "bin",
+        "--bus",
+        "1",
+        "--address",
+        "18"
+      ],
+      "exit_status": 0,
+      "private_stdout": "/home/OWNER/.cache/waveshare-recovery-20260930/read-2.stdout",
+      "private_stderr": "/home/OWNER/.cache/waveshare-recovery-20260930/read-2.stderr",
+      "path": "/home/OWNER/.cache/waveshare-recovery-20260930/installed-read-2.bin",
+      "size": 16777216,
+      "sha256": "d3dec91fadd5a86982f6a6d80090cc431dcf539fdeebe220de1b83de503b8379"
+    }
+  ],
+  "classification": "owned Waveshare installed flash recovery only",
+  "readbacks_equal": true,
+  "size_16_mib": true,
+  "recovery_upload_tested": false,
+  "installed_prefix_equals_preserved_bin": false,
+  "restore_writing_tested": false
+}

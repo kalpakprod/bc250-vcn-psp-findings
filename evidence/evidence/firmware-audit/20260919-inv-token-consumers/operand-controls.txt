@@ -1,0 +1,14 @@
+
+/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/operand-controls.code:     file format binary
+
+
+Disassembly of section .data:
+
+00000000 <.data>:
+   0:	8b 83 64 13 00 00                               	mov    eax,DWORD PTR [ebx+0x1364]
+   6:	b9 64 13 00 00                                  	mov    ecx,0x1364
+   b:	66 b9 64 13                                     	mov    cx,0x1364
+   f:	b9 60 13 00 00                                  	mov    ecx,0x1360
+  14:	83 c1 04                                        	add    ecx,0x4
+  17:	68 fe ff ff ff                                  	push   0xfffffffe
+  1c:	6a fe                                           	push   0xfffffffe

@@ -1,0 +1,30 @@
+{
+  "classification": "offline-candidate",
+  "source": "evidence/programmer/reads/20260912/d11-rollback/post-rollback-d10r.bin",
+  "source_size": 16777216,
+  "source_sha256": "addef28800ce0102df4e207a28f0f671fa8c2b91e7d2c8864beb08dd1b6d85cd",
+  "replacement": "candidates/d18-gasket-masks-without-open/Bc250EarlyUnlockReadyGasketMasksDxe.efi",
+  "replacement_size": 12288,
+  "replacement_sha256": "1d1edfb7ab0764ba39f05fff7da180744c0efc1ac56795e16b5bc24155d078b0",
+  "original_pe32_size": 12288,
+  "original_pe32_sha256": "1f921f07d9a785a6d357b997f97f2c57fed385f5dcfd91c03fc2499089d2ec21",
+  "output": "candidates/d18-gasket-masks-without-open/BC250_D18_GASKET_MASKS_WITHOUT_OPEN_from_d10r.bin",
+  "output_size": 16777216,
+  "output_sha256": "3111d97702867cb8c32d10804b4ac87fa17c70bf255cbed33fcf1d85e45ce7a0",
+  "target_ffs_guid": "2F3D426D-6A54-4A6B-82D0-1207CC5B6D92",
+  "target_ffs_offset_in_decompressed_fv": "0x88",
+  "target_pe32_payload_offset_in_decompressed_fv": "0xa4",
+  "decompressed_fv_size_unchanged": true,
+  "decompressed_bytes_outside_target_pe32_identical": true,
+  "lzma_header_hex": "5d000000011000420000000000",
+  "lzma_header_uncompressed_size": 4325392,
+  "signed_psp_region_0x8e0000_0xae0000_identical": true,
+  "old_capsule_size": 1337154,
+  "new_capsule_size": 1337039,
+  "unrun": [
+    "BC-250 cold boot",
+    "DXE dispatch",
+    "SMU unlock readback",
+    "VCN function"
+  ]
+}

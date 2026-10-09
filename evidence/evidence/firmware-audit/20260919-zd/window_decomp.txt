@@ -1,0 +1,439 @@
+===== FUNCTION 0x2a74 : FUN_00002a74 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00002a74(uint param_1,uint param_2,undefined4 param_3,int param_4)
+
+{
+  uint *puVar1;
+  int iVar2;
+  undefined4 uVar3;
+  uint uVar4;
+  uint in_t0;
+  undefined1 uVar5;
+  undefined4 uStack_30;
+  
+  puVar1 = _DAT_00000d30;
+  uVar3 = rsil(2);
+  *_DAT_00000d30 = param_2;
+  puVar1[1] = param_1;
+  uVar5 = 0;
+  func_0x000030b0(puVar1,8);
+  iVar2 = _DAT_00000d34;
+  uVar4 = _DAT_00000bd8;
+  memw();
+  uStack_30 = CONCAT22((short)((uint)*_DAT_00000d38 >> 0x10),
+                       (short)(CONCAT44(param_1,param_2) >> 0x14));
+  memw();
+  *_DAT_00000d38 = uStack_30;
+  memw();
+  if (param_4 == 0) {
+    memw();
+    *(char *)((param_2 & uVar4) + iVar2 + 0x80) = (char)param_3;
+  }
+  else if (param_4 == 1) {
+    memw();
+    *(short *)((param_2 & uVar4) + iVar2 + 0x80) = (short)param_3;
+  }
+  else {
+    if (param_4 != 2) {
+      memw();
+      uVar4 = in_t0;
+      iVar2 = func_0x00001b78(0xb,1,param_4,*(undefined4 *)(_DAT_00000b68 + 0x228));
+    }
+    memw();
+    *(undefined4 *)((param_2 & uVar4) + iVar2 + 0x80) = param_3;
+  }
+  wsr(uVar5,uVar3);
+  return;
+}
+
+
+===== FUNCTION 0x29f8 : FUN_000029f8 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+uint FUN_000029f8(uint param_1,uint param_2,int param_3)
+
+{
+  uint *puVar1;
+  int iVar2;
+  uint uVar3;
+  undefined4 uVar4;
+  uint in_t0;
+  undefined1 uVar5;
+  undefined4 uStack_30;
+  
+  puVar1 = _DAT_00000d30;
+  uVar4 = rsil(2);
+  *_DAT_00000d30 = param_2;
+  puVar1[1] = param_1;
+  uVar5 = 0;
+  func_0x000030b0(puVar1,8);
+  iVar2 = _DAT_00000d34;
+  uVar3 = _DAT_00000bd8;
+  memw();
+  uStack_30 = CONCAT22((short)((uint)*_DAT_00000d38 >> 0x10),
+                       (short)(CONCAT44(param_1,param_2) >> 0x14));
+  memw();
+  *_DAT_00000d38 = uStack_30;
+  memw();
+  if (param_3 == 0) {
+    memw();
+    uVar3 = (uint)*(byte *)((param_2 & uVar3) + iVar2 + 0x80);
+  }
+  else if (param_3 == 1) {
+    memw();
+    uVar3 = (uint)*(ushort *)((param_2 & uVar3) + iVar2 + 0x80);
+  }
+  else {
+    if (param_3 != 2) {
+      memw();
+      uVar3 = in_t0;
+      iVar2 = func_0x00001b78(0xb,1,param_3,*(undefined4 *)(_DAT_00000b68 + 0x228));
+    }
+    memw();
+    uVar3 = *(uint *)((param_2 & uVar3) + iVar2 + 0x80);
+  }
+  wsr(uVar5,uVar4);
+  return uVar3;
+}
+
+
+===== FUNCTION 0x233e8 : FUN_000233e8 =====
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_000233e8(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+===== FUNCTION 0x2268 : FUN_00002268 =====
+
+/* WARNING: Removing unreachable block (ram,0x000022b5) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00002268(uint param_1)
+
+{
+  byte bVar1;
+  int iVar2;
+  int iVar3;
+  undefined4 unaff_retaddr;
+  undefined4 uVar4;
+  uint uVar5;
+  int iVar6;
+  uint uVar7;
+  int iVar8;
+  undefined1 uVar9;
+  undefined1 in_MISC1;
+  
+  iVar3 = _DAT_00000d00;
+  uVar9 = 0;
+  uVar4 = rsil(2);
+  uVar7 = *(uint *)(_DAT_00000d00 + 0x40);
+  uVar5 = *(uint *)(uVar7 + 0x2c);
+  if ((param_1 & uVar5) != 0) {
+    memw();
+    uVar9 = 0;
+    uVar7 = param_1;
+    uVar5 = func_0x00001b78(1,3,param_1,*(undefined4 *)(_DAT_00000b68 + 0x228));
+  }
+  *(uint *)(uVar7 + 0x2c) = uVar5 | param_1;
+  if ((*(uint *)(iVar3 + 0x68) & param_1) == 0) {
+    *(uint *)(iVar3 + 0x68) = *(uint *)(iVar3 + 0x68) | param_1;
+    wsr(uVar9,uVar4);
+    return;
+  }
+  func_0x00001f74(*(undefined4 *)(iVar3 + 0x40),2);
+  iVar2 = _DAT_00000cfc;
+  uVar7 = 0;
+  *(uint *)(*(int *)(iVar3 + 0x40) + 0x30) = param_1;
+  iVar8 = 4;
+  while( true ) {
+    iVar6 = *(int *)(uVar7 * 4 + iVar2 + 8);
+    uVar7 = uVar7 + 1 & 0xff;
+    if (((*(char *)(iVar6 + 0x28) != '\0') &&
+        (bVar1 = *(byte *)(*(int *)(iVar3 + 0x40) + 0x29),
+        (*(uint *)(*(int *)(iVar3 + 0x40) + 0x2c) & *(uint *)(iVar6 + 0x2c)) != 0)) &&
+       (bVar1 < *(byte *)(iVar6 + 0x29))) {
+      *(byte *)(iVar6 + 0x29) = bVar1;
+    }
+    if (iVar8 == 0) break;
+    iVar8 = iVar8 + -1;
+  }
+  wsr(uVar9,uVar4);
+  wsr(in_MISC1,unaff_retaddr);
+  func_0x00002de8(param_1,iVar3,uVar4);
+  return;
+}
+
+
+===== FUNCTION 0x231c : FUN_0000231c =====
+
+/* WARNING: Removing unreachable block (ram,0x00002365) */
+/* WARNING: Removing unreachable block (ram,0x000023d5) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0000231c(uint param_1)
+
+{
+  int iVar1;
+  bool bVar2;
+  undefined4 unaff_retaddr;
+  bool bVar3;
+  bool bVar4;
+  uint uVar5;
+  undefined4 uVar6;
+  int iVar7;
+  byte bVar8;
+  int iVar9;
+  int iVar10;
+  uint uVar11;
+  undefined1 uVar12;
+  uint uVar13;
+  undefined1 in_MISC1;
+  
+  iVar10 = _DAT_00000d20;
+  uVar13 = 0;
+  uVar6 = rsil(2);
+  iVar9 = *(int *)(_DAT_00000d20 + 0x3c);
+  uVar11 = *(uint *)(iVar9 + 0x2c);
+  if ((~uVar11 & param_1) != 0) {
+    memw();
+    uVar13 = 0;
+    uVar6 = func_0x00001b78(1,10,param_1,*(undefined4 *)(_DAT_00000b68 + 0x228));
+  }
+  iVar1 = _DAT_00000cfc;
+  uVar5 = 0;
+  bVar4 = false;
+  *(uint *)(iVar10 + 100) = *(uint *)(iVar10 + 100) & (param_1 ^ 0xffffffff);
+  *(uint *)(iVar9 + 0x2c) = uVar11 & (param_1 ^ 0xffffffff);
+  do {
+    uVar12 = (undefined1)uVar13;
+    uVar11 = 0;
+    bVar8 = 8;
+    bVar3 = false;
+    iVar9 = 4;
+    while( true ) {
+      iVar7 = *(int *)(uVar11 * 4 + iVar1 + 8);
+      if ((*(char *)(iVar7 + 0x28) == '\x02') &&
+         ((*(uint *)(iVar7 + 0x30) & *(uint *)(iVar10 + 100)) == 0)) {
+        bVar3 = true;
+        if (*(byte *)(iVar7 + 0x29) < bVar8) {
+          uVar5 = uVar11;
+          bVar8 = *(byte *)(iVar7 + 0x29);
+        }
+      }
+      uVar11 = uVar11 + 1 & 0xff;
+      if (iVar9 == 0) break;
+      iVar9 = iVar9 + -1;
+    }
+    if (!bVar3) break;
+    iVar9 = uVar5 * 4 + iVar1;
+    *(uint *)(iVar10 + 100) = *(uint *)(*(int *)(iVar9 + 8) + 0x2c) | *(uint *)(iVar10 + 100);
+    uVar13 = uVar13 & 0xffffcfff;
+    func_0x00001f74(*(undefined4 *)(iVar9 + 8),1);
+    uVar12 = (undefined1)uVar13;
+    iVar9 = *(int *)(iVar9 + 8);
+    *(undefined4 *)(iVar9 + 0x30) = 0;
+    bVar2 = true;
+    if (*(byte *)(*(int *)(iVar10 + 0x3c) + 0x29) < *(byte *)(iVar9 + 0x29)) {
+      bVar2 = bVar4;
+    }
+    bVar4 = bVar2;
+  } while (bVar3);
+  *(undefined1 *)(*(int *)(iVar10 + 0x3c) + 0x29) = *(undefined1 *)(*(int *)(iVar10 + 0x3c) + 0x2a);
+  iVar10 = *(int *)(iVar10 + 0x3c);
+  bVar3 = false;
+  if (*(uint *)(iVar10 + 0x2c) != 0) {
+    bVar8 = *(byte *)(iVar10 + 0x29);
+    uVar13 = (uint)*(byte *)(iVar10 + 0x14);
+    uVar11 = 0;
+    iVar9 = 4;
+    while( true ) {
+      iVar7 = *(int *)(uVar11 * 4 + iVar1 + 8);
+      if (((*(char *)(iVar7 + 0x28) == '\x02') &&
+          ((*(uint *)(iVar10 + 0x2c) & *(uint *)(iVar7 + 0x2c)) != 0)) &&
+         (*(byte *)(iVar7 + 0x29) < bVar8)) {
+        bVar3 = true;
+        uVar13 = uVar11;
+        bVar8 = *(byte *)(iVar7 + 0x29);
+      }
+      uVar11 = uVar11 + 1 & 0xff;
+      if (iVar9 == 0) break;
+      iVar9 = iVar9 + -1;
+    }
+    if (bVar3) {
+      *(undefined1 *)(iVar10 + 0x29) = *(undefined1 *)(*(int *)(uVar13 * 4 + iVar1 + 8) + 0x29);
+    }
+  }
+  if (bVar4) {
+    wsr(uVar12,uVar6);
+    wsr(in_MISC1,unaff_retaddr);
+    func_0x00002de8();
+    return;
+  }
+  wsr(uVar12,uVar6);
+  return;
+}
+
+
+===== FUNCTION 0xffc : FUN_00000ffc =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 FUN_00000ffc(int param_1)
+
+{
+  memw();
+  return **(undefined4 **)(param_1 * 0xc + _DAT_00000ba0 + 0xc);
+}
+
+
+===== FUNCTION 0xfa8 : FUN_00000fa8 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00000fa8(int param_1,undefined4 param_2)
+
+{
+  memw();
+  **(undefined4 **)(param_1 * 0xc + _DAT_00000ba0 + 0x10) = param_2;
+  return;
+}
+
+
+===== FUNCTION 0xfe4 : FUN_00000fe4 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00000fe4(int param_1,undefined4 param_2)
+
+{
+  memw();
+  **(undefined4 **)(param_1 * 0xc + _DAT_00000ba0 + 0xc) = param_2;
+  return;
+}
+
+
+===== FUNCTION 0xf78 : FUN_00000f78 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 FUN_00000f78(int param_1,int param_2)
+
+{
+  memw();
+  return *(undefined4 *)(param_2 * 4 + *(int *)(param_1 * 0xc + _DAT_00000ba0 + 0xc));
+}
+
+
+===== FUNCTION 0x23c78 : FUN_00023c78 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 FUN_00023c78(undefined4 param_1,undefined4 param_2)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  float fVar3;
+  undefined4 uVar4;
+  
+  fVar3 = (float)func_0x0002360c(param_1);
+  fVar3 = (float)func_0x0003acf8(fVar3 * _DAT_00017924 * _DAT_00017928,param_2);
+  uVar1 = (ulonglong)(fVar3 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  uVar4 = func_0x00023ecc(((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar3) || bVar2))
+                          + (uint)((!NAN(fVar3) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1 +
+                          0x3f);
+  return uVar4;
+}
+
+
+===== FUNCTION 0x23790 : NULL =====
+===== FUNCTION 0x23b14 : FUN_00023b14 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00023b14(undefined4 param_1,uint param_2,undefined4 param_3,undefined4 param_4,int param_5)
+
+{
+  int unaff_retaddr;
+  int iVar1;
+  int iVar2;
+  undefined4 uVar3;
+  int unaff_a9;
+  int unaff_a10;
+  int unaff_a11;
+  
+  memw();
+  iVar2 = *(int *)(unaff_a9 + 0x94);
+  *(undefined4 *)(unaff_a11 + 4) = *(undefined4 *)(unaff_a10 + param_5 + 0x200);
+  memw();
+  uVar3 = *(undefined4 *)((iVar2 + 0x20U & unaff_retaddr + unaff_a10) + _DAT_0001716c);
+  *(byte *)(unaff_a9 + 0x98) = (byte)uVar3 & 7;
+  *(byte *)(unaff_a9 + 0x99) = (byte)((uint)uVar3 >> 0x10) & 3;
+  func_0x00023ef8(param_2);
+  iVar1 = 0;
+  iVar2 = _DAT_000178c4;
+  do {
+    if (*(byte *)(iVar2 + 0x7c) == param_2) {
+      memw();
+      *(byte *)(iVar2 + 0x7e) =
+           (byte)(*(uint *)((*(int *)(iVar2 + 0x90) + 0x24U & unaff_retaddr + unaff_a10) + param_5 +
+                           0x200) >> 0x14) & 0x7f;
+      func_0x00023f18(iVar1);
+    }
+    iVar2 = iVar2 + 0x1c;
+    iVar1 = iVar1 + 1;
+  } while (iVar1 != 0x1b);
+  return;
+}
+
+
+===== FUNCTION 0x23744 : NULL =====
+===== FUNCTION 0x23b20 : FUN_00023b20 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00023b20(undefined4 param_1,uint param_2,undefined4 param_3,undefined4 param_4,int param_5,
+                 uint param_6)
+
+{
+  int iVar1;
+  int iVar2;
+  int unaff_a8;
+  undefined4 uVar3;
+  int unaff_a9;
+  int unaff_a10;
+  int unaff_a11;
+  
+  *(undefined4 *)(unaff_a11 + 4) = *(undefined4 *)(unaff_a10 + 0x200);
+  memw();
+  uVar3 = *(undefined4 *)((unaff_a8 + 0x20U & param_6) + _DAT_0001716c);
+  *(byte *)(unaff_a9 + 0x98) = (byte)uVar3 & 7;
+  *(byte *)(unaff_a9 + 0x99) = (byte)((uint)uVar3 >> 0x10) & 3;
+  func_0x00023ef8(param_2);
+  iVar2 = 0;
+  iVar1 = _DAT_000178c4;
+  do {
+    if (*(byte *)(iVar1 + 0x7c) == param_2) {
+      memw();
+      *(byte *)(iVar1 + 0x7e) =
+           (byte)(*(uint *)((*(int *)(iVar1 + 0x90) + 0x24U & param_6) + param_5 + 0x200) >> 0x14) &
+           0x7f;
+      func_0x00023f18(iVar2);
+    }
+    iVar1 = iVar1 + 0x1c;
+    iVar2 = iVar2 + 1;
+  } while (iVar2 != 0x1b);
+  return;
+}
+
+

@@ -1,0 +1,21 @@
+; Passive 32-bit SPI prefix capture on the Waveshare board's default SPI0 pins.
+; Samples on CLK rising edges (mode-0 assumption, not hardware-verified).
+; This program never drives MISO or any other GPIO.
+.program spi_header_capture
+
+.wrap_target
+wait_for_cs_low:
+    jmp pin wait_for_cs_low
+
+    set x, 31
+read_header_bit:
+    wait 1 gpio 18
+    in pins, 1
+    wait 0 gpio 18
+    jmp x--, read_header_bit
+
+    push noblock
+wait_for_cs_high:
+    jmp pin wait_for_cs_low
+    jmp wait_for_cs_high
+.wrap

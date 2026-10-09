@@ -1,0 +1,320 @@
+{
+  "checks": [
+    {
+      "check": "question:Memory Clock Speed",
+      "details": {
+        "expected": [
+          "0x20f",
+          "0x702c",
+          "0x10",
+          "0x5",
+          []
+        ],
+        "module_offset": "0x10ee1",
+        "observed": [
+          "0x20f",
+          "0x702c",
+          "0x10",
+          "0x5",
+          []
+        ],
+        "raw": "0591f504f6040f0200501603101002ff00"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "question:UclkDiv1M0",
+      "details": {
+        "expected": [
+          "0x229",
+          "0x702f",
+          "0x10",
+          "0x5",
+          []
+        ],
+        "module_offset": "0x11a4c",
+        "observed": [
+          "0x229",
+          "0x702f",
+          "0x10",
+          "0x5",
+          []
+        ],
+        "raw": "0591a005a105290200503003101001ff00"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "question:Memory P-state",
+      "details": {
+        "expected": [
+          "0x25e",
+          "0x7032",
+          "0x10",
+          "0x5",
+          []
+        ],
+        "module_offset": "0x12870",
+        "observed": [
+          "0x25e",
+          "0x7032",
+          "0x10",
+          "0x5",
+          []
+        ],
+        "raw": "05911a061b065e0200506d03101000ff00"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "question:FCLK_DPM",
+      "details": {
+        "expected": [
+          "0x7045",
+          "0x703e",
+          "0x14",
+          "0x5",
+          []
+        ],
+        "module_offset": "0x15aa5",
+        "observed": [
+          "0x7045",
+          "0x703e",
+          "0x14",
+          "0x5",
+          []
+        ],
+        "raw": "05912208230845700050a3061410000f00"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "question:DF Clock Override Control",
+      "details": {
+        "expected": [
+          "0x37d",
+          "0x703f",
+          "0x10",
+          "0x5",
+          []
+        ],
+        "module_offset": "0x16608",
+        "observed": [
+          "0x37d",
+          "0x703f",
+          "0x10",
+          "0x5",
+          []
+        ],
+        "raw": "0591ac08ad087d0300500307101001ff00"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "question:DF Clock Override",
+      "details": {
+        "expected": [
+          "0x37e",
+          "0x703f",
+          "0x10",
+          "0x7",
+          []
+        ],
+        "module_offset": "0x16635",
+        "observed": [
+          "0x37e",
+          "0x703f",
+          "0x10",
+          "0x7",
+          []
+        ],
+        "raw": "0794ae08af087e030050040710110000d0070000"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "donor-byte:Memory Clock Speed",
+      "details": {
+        "body_offset": "0x316",
+        "expected": "24",
+        "observed": "24",
+        "rom_offset": "0x7e5"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "donor-byte:UclkDiv1M0",
+      "details": {
+        "body_offset": "0x330",
+        "expected": "01",
+        "observed": "01",
+        "rom_offset": "0x7ff"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "donor-byte:Memory P-state",
+      "details": {
+        "body_offset": "0x36d",
+        "expected": "ff",
+        "observed": "ff",
+        "rom_offset": "0x83c"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "donor-byte:FCLK_DPM",
+      "details": {
+        "body_offset": "0x6a3",
+        "expected": "0f",
+        "observed": "0f",
+        "rom_offset": "0xb72"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "donor-byte:DF Clock Override Control",
+      "details": {
+        "body_offset": "0x703",
+        "expected": "01",
+        "observed": "01",
+        "rom_offset": "0xbd2"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "donor-byte:DF Clock Override",
+      "details": {
+        "body_offset": "0x704",
+        "expected": "8c05",
+        "observed": "8c05",
+        "rom_offset": "0xbd3"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "ref:0x7007->0x7028",
+      "details": {
+        "conditions": [],
+        "module_offset": "0x10e66",
+        "raw": "0f0ff004f0040c020000ffff002870"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "ref:0x7028->0x702a",
+      "details": {
+        "conditions": [],
+        "module_offset": "0x10e8f",
+        "raw": "0f0ff204f2040d020000ffff002a70"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "ref:0x702a->0x702c",
+      "details": {
+        "conditions": [],
+        "module_offset": "0x10eb8",
+        "raw": "0f0ff404f4040e020000ffff002c70"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "ref:0x7000->0x7008",
+      "details": {
+        "conditions": [],
+        "module_offset": "0xb468",
+        "raw": "0f0f0b000b0001000000ffff000870"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "ref:0x7008->0x702e",
+      "details": {
+        "conditions": [],
+        "module_offset": "0x119af",
+        "raw": "0f0f9a059a0524020000ffff002e70"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "ref:0x702e->0x702f",
+      "details": {
+        "conditions": [],
+        "module_offset": "0x119d8",
+        "raw": "0f0f9b059b0525020000ffff002f70"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "ref:0x702e->0x7030",
+      "details": {
+        "conditions": [],
+        "module_offset": "0x119e7",
+        "raw": "0f0f9c059c0526020000ffff003070"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "ref:0x7030->0x7032",
+      "details": {
+        "conditions": [],
+        "module_offset": "0x1221c",
+        "raw": "0f0fc805c8053d020000ffff003270"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "ref:0x7009->0x703e",
+      "details": {
+        "conditions": [],
+        "module_offset": "0x159a5",
+        "raw": "0f0f1608160853030000ffff003e70"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "ref:0x7009->0x703f",
+      "details": {
+        "conditions": [],
+        "module_offset": "0x159b4",
+        "raw": "0f0f1708170854030000ffff003f70"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "no-package-local-incoming-ref:0x7007",
+      "details": {
+        "incoming_refs": []
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "no-package-local-incoming-ref:0x7009",
+      "details": {
+        "incoming_refs": []
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "RouteConfig-SetVariable-slot+0x58",
+      "details": {
+        "expected": "ff5058",
+        "meaning": "indirect call through EFI_RUNTIME_SERVICES->SetVariable",
+        "module_offset": "0x919",
+        "observed": "ff5058"
+      },
+      "status": "PASS"
+    }
+  ],
+  "module_sha256": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8",
+  "package_span": [
+    "0xb2d4",
+    "0x1a009"
+  ],
+  "questions_checked": 6,
+  "refs_checked": 10,
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "status": "PASS",
+  "stored_fields_checked": 6
+}

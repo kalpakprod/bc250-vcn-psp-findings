@@ -1,0 +1,72 @@
+=== PART3 firmware/services/smu ===
+--- cyan_skillfish blobs ---
+-rw-r--r-- 1 root root  3786 Там 15 21:39 /lib/firmware/amdgpu/cyan_skillfish2_ce.bin.zst
+-rw-r--r-- 1 root root  8090 Там 15 21:39 /lib/firmware/amdgpu/cyan_skillfish2_me.bin.zst
+lrwxrwxrwx 1 root root    27 Там 15 21:39 /lib/firmware/amdgpu/cyan_skillfish2_mec2.bin.zst -> cyan_skillfish2_mec.bin.zst
+-rw-r--r-- 1 root root 32753 Там 15 21:39 /lib/firmware/amdgpu/cyan_skillfish2_mec.bin.zst
+-rw-r--r-- 1 root root 13895 Там 15 21:39 /lib/firmware/amdgpu/cyan_skillfish2_pfp.bin.zst
+-rw-r--r-- 1 root root  8837 Там 15 21:39 /lib/firmware/amdgpu/cyan_skillfish2_rlc.bin.zst
+-rw-r--r-- 1 root root  9960 Там 15 21:39 /lib/firmware/amdgpu/cyan_skillfish2_sdma1.bin.zst
+-rw-r--r-- 1 root root  9959 Там 15 21:39 /lib/firmware/amdgpu/cyan_skillfish2_sdma.bin.zst
+--- vcn blobs ---
+-rw-r--r-- 1 root root 281855 Там 15 21:39 /lib/firmware/amdgpu/aldebaran_vcn.bin.zst
+-rw-r--r-- 1 root root 281318 Там 15 21:39 /lib/firmware/amdgpu/arcturus_vcn.bin.zst
+-rw-r--r-- 1 root root 395575 Там 15 21:39 /lib/firmware/amdgpu/beige_goby_vcn.bin.zst
+lrwxrwxrwx 1 root root     22 Там 15 21:39 /lib/firmware/amdgpu/dimgrey_cavefish_vcn.bin.zst -> beige_goby_vcn.bin.zst
+-rw-r--r-- 1 root root 274534 Там 15 21:39 /lib/firmware/amdgpu/green_sardine_vcn.bin.zst
+-rw-r--r-- 1 root root 274506 Там 15 21:39 /lib/firmware/amdgpu/navi10_vcn.bin.zst
+lrwxrwxrwx 1 root root     18 Там 15 21:39 /lib/firmware/amdgpu/navi12_vcn.bin.zst -> navi10_vcn.bin.zst
+lrwxrwxrwx 1 root root     18 Там 15 21:39 /lib/firmware/amdgpu/navi14_vcn.bin.zst -> navi10_vcn.bin.zst
+lrwxrwxrwx 1 root root     22 Там 15 21:39 /lib/firmware/amdgpu/navy_flounder_vcn.bin.zst -> beige_goby_vcn.bin.zst
+-rw-r--r-- 1 root root 245470 Там 15 21:39 /lib/firmware/amdgpu/picasso_vcn.bin.zst
+lrwxrwxrwx 1 root root     19 Там 15 21:39 /lib/firmware/amdgpu/raven2_vcn.bin.zst -> picasso_vcn.bin.zst
+lrwxrwxrwx 1 root root     19 Там 15 21:39 /lib/firmware/amdgpu/raven_vcn.bin.zst -> picasso_vcn.bin.zst
+lrwxrwxrwx 1 root root     25 Там 15 21:39 /lib/firmware/amdgpu/renoir_vcn.bin.zst -> green_sardine_vcn.bin.zst
+lrwxrwxrwx 1 root root     22 Там 15 21:39 /lib/firmware/amdgpu/sienna_cichlid_vcn.bin.zst -> beige_goby_vcn.bin.zst
+-rw-r--r-- 1 root root 389668 Там 15 21:39 /lib/firmware/amdgpu/vangogh_vcn.bin.zst
+-rw-r--r-- 1 root root 389798 Там 15 21:39 /lib/firmware/amdgpu/vcn_3_1_2.bin.zst
+-rw-r--r-- 1 root root 282033 Там 15 21:39 /lib/firmware/amdgpu/vcn_4_0_0.bin.zst
+lrwxrwxrwx 1 root root     17 Там 15 21:39 /lib/firmware/amdgpu/vcn_4_0_2.bin.zst -> vcn_4_0_0.bin.zst
+-rw-r--r-- 1 root root 252119 Там 15 21:39 /lib/firmware/amdgpu/vcn_4_0_3.bin.zst
+lrwxrwxrwx 1 root root     17 Там 15 21:39 /lib/firmware/amdgpu/vcn_4_0_4.bin.zst -> vcn_4_0_0.bin.zst
+-rw-r--r-- 1 root root 281207 Там 15 21:39 /lib/firmware/amdgpu/vcn_4_0_5.bin.zst
+-rw-r--r-- 1 root root 281205 Там 15 21:39 /lib/firmware/amdgpu/vcn_4_0_6_1.bin.zst
+lrwxrwxrwx 1 root root     17 Там 15 21:39 /lib/firmware/amdgpu/vcn_4_0_6.bin.zst -> vcn_4_0_5.bin.zst
+-rw-r--r-- 1 root root 302266 Там 15 21:39 /lib/firmware/amdgpu/vcn_5_0_0.bin.zst
+-rw-r--r-- 1 root root 156365 Там 15 21:39 /lib/firmware/amdgpu/vcn_5_0_1.bin.zst
+-rw-r--r-- 1 root root 389673 Там 15 21:39 /lib/firmware/amdgpu/yellow_carp_vcn.bin.zst
+--- find skillfish/cyan vcn ---
+--- services ---
+active
+active
+active
+active
+active
+  bc250-boot-forensics.service                          loaded    active     exited       BC-250 post-mortem of the previous boot
+  bc250-cpu-oc.service                                  loaded    active     exited       BC-250 CPU overclock (validated point, extra voltage kept enabled)
+  bc250-cpu-performance.service                         loaded    active     exited       Pin CPU governor to performance (BC-250 console)
+  bc250-cu-layout.service                               loaded    active     exited       BC-250 stable 38-CU dispatch layout
+  bc250-cu-live-manager.service                         loaded    active     exited       BC-250 CU saved enumeration and dispatch
+  bc250-dpwatch.service                                 loaded    active     running      BC-250 fast DP link watcher (200 ms)
+  bc250-fan.service                                     loaded    active     running      BC-250 blower fan curve (nct6687 pwm2 <- amdgpu edge temp)
+  bc250-gpu-fixed.service                               loaded    active     exited       BC-250 fixed GPU frequency and voltage
+  bc250-gpu-watchdog.service                            loaded    active     running      BC-250 GPU thermal rollback watchdog
+● bc250-metrics.service                                 loaded    activating auto-restart BC-250 SMU metrics sampler (CPU/GPU power split, throttle status)
+  bc250-netconsole.service                              loaded    active     exited       BC-250 netconsole target (kernel log -> UDP off-box)
+  bc250-pwrwatch.service                                loaded    active     running      BC-250 200 ms power peak sampler
+  bc250-smu-oc.service                                  loaded    inactive   dead         AMD BC-250 CPU Overclock
+  bc250-telemetry.service                               loaded    active     running      BC-250 lightweight telemetry logger (GPU/CPU temp, voltage, power, clocks)
+  bc250-userlog.service                                 loaded    active     running      BC-250 userspace journal shipping to UDP 6667
+  bc250-watchdog-load.service                           loaded    active     exited       BC-250 load sp5100_tco (denylisted by nowatchdog; tuner needs /dev/watchdog)
+  bc250-zram.service                                    loaded    active     exited       BC-250 zram swap (8G, lz4) instead of zswap
+  cyan-skillfish-governor-smu.service                   loaded    inactive   dead         Cyan Skillfish GPU Governor
+--- gpu fixed conf ---
+FREQUENCY_MHZ=2000
+VOLTAGE_MV=1013
+FALLBACK_FREQUENCY_MHZ=2000
+FALLBACK_VOLTAGE_MV=960
+THERMAL_LIMIT_C=100
+THERMAL_RECOVERY_C=75
+--- SMU safe reads ---
+import_fail No module named 'bc250_smu'
+=== PART3 DONE ===

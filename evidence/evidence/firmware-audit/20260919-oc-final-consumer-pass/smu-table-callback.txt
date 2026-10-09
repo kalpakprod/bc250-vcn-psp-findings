@@ -1,0 +1,128 @@
+PASS: entire loaded program memory equals clv-matching robin-5 body, bytes=262400
+# Audit note (2026-09-19): Traced for DF table population at 0xCF0C / 0xCEE0.
+# Findings: FUN_0001bc80 only handles PPTable (0x7B5C) and actuator struct 0x13474;
+# it does NOT access or populate DF P-state table at 0xCF0C / struct 0xCEE0.
+===== 0001bc80 FUN_0001bc80 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 FUN_0001bc80(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  int iVar3;
+  float fVar4;
+  
+  iVar3 = func_0x0002a018(8);
+  uVar1 = _DAT_00017118;
+  if (iVar3 == 0) {
+    func_0x0003abdc(param_1,_DAT_00017118,0x49c);
+    iVar3 = func_0x0001bd20(uVar1);
+    if (iVar3 == 0) {
+      return 0;
+    }
+    func_0x0001cc7c(uVar1,_DAT_0001711c,0x49c);
+    iVar2 = _DAT_00017124;
+    iVar3 = _DAT_00017120;
+    fVar4 = ((float)*(int *)(_DAT_00017120 + 0x84) / 1.0) * _DAT_000170ac;
+    *(float *)(_DAT_00017124 + 0x14) = ((float)*(int *)(_DAT_00017120 + 0x80) / 1.0) * _DAT_000170ac
+    ;
+    *(float *)(iVar2 + 0x30) = fVar4;
+    func_0x00021e8c();
+    if (*(char *)(iVar3 + 0x7e) != '\0') {
+      func_0x0001e010();
+    }
+  }
+  return 1;
+}
+
+
+0001bc80 364100 entry a1,0x20
+0001bc83 0c8a movi.n a10,0x8
+0001bc85 25390e call8 0x0002a018
+0001bc88 561a05 bnez a10,0x0001bcdd
+0001bc8b ad02 mov.n a10,a2
+0001bc8d 2122ed l32r a2,0x00017118
+0001bc90 c2a49c movi a12,0x49c
+0001bc93 bd02 mov.n a11,a2
+0001bc95 65f41e call8 0x0003abdc
+0001bc98 ad02 mov.n a10,a2
+0001bc9a 650800 call8 0x0001bd20
+0001bc9d cc2a bnez.n a10,0x0001bca3
+0001bc9f 0c02 movi.n a2,0x0
+0001bca1 1df0 retw.n
+0001bca3 ad02 mov.n a10,a2
+0001bca5 b11ded l32r a11,0x0001711c
+0001bca8 c2a49c movi a12,0x49c
+0001bcab 25fd00 call8 0x0001cc7c
+0001bcae 211ced l32r a2,0x00017120
+0001bcb1 811ced l32r a8,0x00017124
+0001bcb4 b1feec l32r a11,0x000170ac
+0001bcb7 a22220 l32i a10,a2,0x80
+0001bcba 922221 l32i a9,a2,0x84
+0001bcbd 503bfa wfr f3,a11
+0001bcc0 004aca float.s f4,a10,0x0
+0001bcc3 0029ca float.s f2,a9,0x0
+0001bcc6 30142a mul.s f1,f4,f3
+0001bcc9 30022a mul.s f0,f2,f3
+0001bccc 134805 ssi f1,a8,0x14
+0001bccf 03480c ssi f0,a8,0x30
+0001bcd2 a51b06 call8 0x00021e8c
+0001bcd5 c2027e l8ui a12,a2,0x7e
+0001bcd8 8c1c beqz.n a12,0x0001bcdd
+0001bcda 653302 call8 0x0001e010
+0001bcdd 0c12 movi.n a2,0x1
+0001bcdf 1df0 retw.n
+===== 00039c14 FUN_00039c14 =====
+
+void FUN_00039c14(undefined4 *param_1,undefined4 param_2)
+
+{
+  *param_1 = param_2;
+  *(byte *)((int)param_1 + 0xb) = *(byte *)((int)param_1 + 0xb) | 1;
+  return;
+}
+
+
+00039c14 364100 entry a1,0x20
+00039c17 42020b l8ui a4,a2,0xb
+00039c1a 3902 s32i.n a3,a2,0x0
+00039c1c 0c15 movi.n a5,0x1
+00039c1e 504420 or a4,a4,a5
+00039c21 42420b s8i a4,a2,0xb
+00039c24 1df0 retw.n
+===== 00039c28 FUN_00039c28 =====
+
+void FUN_00039c28(int param_1,undefined4 param_2)
+
+{
+  *(undefined4 *)(param_1 + 4) = param_2;
+  *(byte *)(param_1 + 0xb) = *(byte *)(param_1 + 0xb) | 2;
+  return;
+}
+
+
+00039c28 364100 entry a1,0x20
+00039c2b 42020b l8ui a4,a2,0xb
+00039c2e 3912 s32i.n a3,a2,0x4
+00039c30 0c25 movi.n a5,0x2
+00039c32 504420 or a4,a4,a5
+00039c35 42420b s8i a4,a2,0xb
+00039c38 1df0 retw.n
+===== 00039c3c FUN_00039c3c =====
+
+bool FUN_00039c3c(int param_1)
+
+{
+  return *(char *)(param_1 + 0xb) == '\x03';
+}
+
+
+00039c3c 364100 entry a1,0x20
+00039c3f 42020b l8ui a4,a2,0xb
+00039c42 0c03 movi.n a3,0x0
+00039c44 0c12 movi.n a2,0x1
+00039c46 42c4fd addi a4,a4,-0x3
+00039c49 402393 movnez a2,a3,a4
+00039c4c 1df0 retw.n

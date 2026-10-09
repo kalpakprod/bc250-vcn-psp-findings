@@ -1,0 +1,64 @@
+[*] SMU alive
+[*] secure access open (unlocked SMU debug path active)
+[*] dom6 state word @0xf714 = 0x00010101 (state byte = 0x01)
+[*] per-slot state, BEFORE:
+    slot 0x16  dom=6  table: cur(+130)= 18 remembered(+134)= 18   gate@0x06d100
+        +0x00 clock   = 0x00000012    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x01290050 READY(bit16)
+    slot 0x17  dom=6  table: cur(+130)= 32 remembered(+134)= 32   gate@0x06d128
+        +0x00 clock   = 0x00000020    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x02090050 READY(bit16)
+    slot 0x18  dom=6  table: cur(+130)= 20 remembered(+134)= 20   gate@0x06d150
+        +0x00 clock   = 0x00000014    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x01490050 READY(bit16)
+[*] manual dom6 power-up (window stores, bounded polls):
+    state byte @0xf714 = 0x01
+    BEFORE: cmd=0x00000000 rail=0x00000000 status=0x01010101 ctrl=0x00000002
+    [0] ctrl  0x6d0f8: 0x00000002 -> 0x00000000  (release gate slot 0x17(bit1))
+        -> LANDED: all domain gate bits released (first real ctrl change ever on this card -- the gate bit that survived every prior run is clear)
+    [1] cmd   0x6d17c: 0x00000000 -> 0x00000001  (bit0 = up request)
+        cmd reads back 0x00000000 (bit0 CLEAR -- taken-and-self-cleared, or the store never landed: cmd read 0 BEFORE the write, so the read-back cannot distinguish)
+    [~] status was ALREADY nonzero before CMD (now 0x01010101:
+        boot up-ack residue) -- ack poll VACUOUS; a fresh ack is
+        indistinguishable from residue on this domain.
+    [3] rail  0x6d184: 0x00000000 -> 0x00010000  (bit16 = rail-up cmd)
+        -> read-back UNCHANGED -- but the ctrl store in step
+           [0] LANDED, so this store landed too: the FAVORED
+           reading is an already-up rail consuming the one-
+           shot command instantly (powered dom0-3 read 0)
+    [~] bit16 read CLEAR throughout but the write never showed in
+        read-back -- poll VACUOUS (store sat dirty, or consumed
+        instantly on an already-up rail)
+        (the ctrl store in step [0] LANDED -- this rail
+         store landed too; already-up rail consuming the
+         one-shot is the favored reading)
+    [5] state byte already 0x01
+    AFTER: cmd=0x00000000 rail=0x00000000 status=0x01010101 ctrl=0x00000000
+    [+] VERDICT: ctrl LANDED and HELD through the run (0x00000002 -> 0x00000000) --
+        the first real sequencer state change on this card, via
+        window stores. Night-1's 'stores sat dirty on the
+        sequencer' theory is DEAD: these stores land. By extension
+        the cmd/rail stores in this run landed too -- their vacuous
+        read-backs (one-shot/self-clear semantics) now read as
+        TAKEN on an already-up rail. With status carrying the
+        powered-domain up-ack residue, the SMU-side power state is
+        as complete as this oracle can make it: clocks programmed
+        + enables ON + gates released + rail vacuously taken.
+        THE arbiter is now the VCN register block itself:
+        sudo python3 enable_vcn.py --direct-load
+        (first POWER_STATUS MMIO read: real values = island live;
+         all-ones = isolation, clean abort; hang = cold cycle)
+        Confirm ctrl persistence first with --vcn-power-regs (cross-process).
+
+[*] arbiters, in order of information:
+    1. the ctrl read-back inside this run (a LANDED
+       0x02->0x00 is itself the first real state change;
+       confirm cross-process persistence with
+       --vcn-power-regs)
+    2. THE arbiter -- the VCN MMIO read:
+       sudo python3 enable_vcn.py --direct-load
+       (the fire is a designed no-op on a converged
+        table; its first POWER_STATUS read answers
+        everything: real values = island live -> fw
+        boot + ring test; all-ones = isolation, clean
+        abort (measured 2026-08-20 behavior); hang =
+        cold cycle (July, pre-clock-work only). The
+        0x024 slice probe is dead on this box -- MMIO
+        is the only VCN window left)

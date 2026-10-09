@@ -1,0 +1,457 @@
+{
+  "status": "PASS",
+  "checks_passed": 66,
+  "checks_failed": 0,
+  "timestamp": "2026-09-21T14:51:43.809187+05:00",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "rom": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "size": 16777216
+    },
+    "abl1": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+      "sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "size": 94624
+    },
+    "object": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o",
+      "sha256": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135",
+      "size": 95312
+    },
+    "apcb_detail": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-apcb-abl-apob-interface/apcb-detail.json",
+      "sha256": "503e4f525f4372903b23ea9320c77f7b0b39250f310d80a1b7565eb98b39f394"
+    }
+  },
+  "new_dataflow_edge": {
+    "caller": "0x5FA4 seeds local 0x4B0; 0x5FAA sets R1=0x0F; 0x5FAC passes SP+0x04; 0x5FAE BL 0x463C; 0x5FBA stores returned halfword to context+0x78 (R5 preserved from caller R0 at 0x5E70).",
+    "reader": "FCLK 0x463C leaves R1=0x0F unchanged into 0x1FB4; reader 0x1FBE saves R1 in R8 and 0x1FDE restores it before BL 0x4800.",
+    "helper": "0x4800 saves reader R1 in R5, sets selector R0=0x0F, moves R5 to provider R2 at 0x4818, and moves token R4 to provider R1 at 0x481A.",
+    "provider": "0x49CC dispatches selector 0x0F; its case overwrites the token-derived provider path with literal 0x1707 and fixed lookup key 0xA04E at 0x4A1E/0x4B1A, then calls HEAP lookup 0x6374 at 0x4B3A. The provider type pointer is stack arg0 and receives a returned width/type byte at 0x4BF0..0x4BFA.",
+    "heap": "0x6374 compares descriptor key [R0] against HEAP node key and returns payload pointer/length through descriptor +8/+4; selected key is therefore fixed 0xA04E in this selector case."
+  },
+  "namespace_correlation": {
+    "provider_literal_0x1707": "Exact APCB parser also reports CBSG gid 0x1707 (instances 13 and 15; instance15 row body offset 0x160 has u8_0=1,u8_1=189,u16_le=96). This is a numeric static correspondence only; no schema/runtime join to AmdSetup INV 0x1373/0x1374 or ABL1 key 0x015F/0x0160 is proven."
+  },
+  "limits": {
+    "not_proven": [
+      "FCLK token 0x015F/0x0160 semantic unit/frequency",
+      "AmdSetup INV 0x1373/0x1374 delivery into ABL1 HEAP",
+      "runtime loader/base/execution",
+      "divider/PLL actuation",
+      "physical clock or hardware behavior"
+    ],
+    "first_unresolved": "The ABL1 provider selector-0x0F path reaches HEAP key 0xA04E, but the producer/populator of the matching HEAP node and any source bridge from native INV 0x1373/0x1374 remain unresolved."
+  },
+  "checks": [
+    {
+      "name": "input_BC250_5.00_clv.bin",
+      "status": "PASS",
+      "detail": "size=16777216; sha256=ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "name": "input_ABL1-clv-decompressed.bin",
+      "status": "PASS",
+      "detail": "size=94624; sha256=af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "name": "input_ABL1-exact.o",
+      "status": "PASS",
+      "detail": "size=95312; sha256=54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135"
+    },
+    {
+      "name": "apcb_exact_1707_group",
+      "status": "PASS",
+      "detail": "gid=0x1707; subgroups=2"
+    },
+    {
+      "name": "apcb_1707_subgroup15_row160_observed",
+      "status": "PASS",
+      "detail": "row={'body_offset': '0x160', 'u8_0': 1, 'u8_1': 189, 'u16_le': 96}"
+    },
+    {
+      "name": "caller_5fa4_seeds_0x4b0",
+      "status": "PASS",
+      "detail": "ABL1+0x5FA4: got=40f2b040 expected=40f2b040"
+    },
+    {
+      "name": "caller_5fa8_stores_seed_to_sp4",
+      "status": "PASS",
+      "detail": "ABL1+0x5FA8: got=0190 expected=0190"
+    },
+    {
+      "name": "caller_5faa_sets_selector_0x0f",
+      "status": "PASS",
+      "detail": "ABL1+0x5FAA: got=0f21 expected=0f21"
+    },
+    {
+      "name": "caller_5fac_passes_sp4_as_output_pointer",
+      "status": "PASS",
+      "detail": "ABL1+0x5FAC: got=01a8 expected=01a8"
+    },
+    {
+      "name": "caller_5fae_calls_fclk_463c",
+      "status": "PASS",
+      "detail": "ABL1+0x5FAE: got=fef745fb expected=fef745fb"
+    },
+    {
+      "name": "caller_5fb2_reloads_fclk_result",
+      "status": "PASS",
+      "detail": "ABL1+0x5FB2: got=019b expected=019b"
+    },
+    {
+      "name": "caller_5fba_stores_halfword_to_context_plus_0x78",
+      "status": "PASS",
+      "detail": "ABL1+0x5FBA: got=a5f87830 expected=a5f87830"
+    },
+    {
+      "name": "caller_5e70_preserves_context_r0_in_r5",
+      "status": "PASS",
+      "detail": "ABL1+0x5E70: got=0546 expected=0546"
+    },
+    {
+      "name": "fclk_4648_gates_selector_0x0f",
+      "status": "PASS",
+      "detail": "ABL1+0x4648: got=0f29 expected=0f29"
+    },
+    {
+      "name": "fclk_464e_builds_key_0x015f",
+      "status": "PASS",
+      "detail": "ABL1+0x464E: got=40f25f10 expected=40f25f10"
+    },
+    {
+      "name": "fclk_4656_increments_to_0x0160",
+      "status": "PASS",
+      "detail": "ABL1+0x4656: got=401c expected=401c"
+    },
+    {
+      "name": "fclk_465c_sets_type_ptr_sp_plus_0x0c",
+      "status": "PASS",
+      "detail": "ABL1+0x465C: got=03ab expected=03ab"
+    },
+    {
+      "name": "fclk_466a_calls_reader_1fb4",
+      "status": "PASS",
+      "detail": "ABL1+0x466A: got=fdf7a3fc expected=fdf7a3fc"
+    },
+    {
+      "name": "reader_1fbe_preserves_input_r1_as_r8",
+      "status": "PASS",
+      "detail": "ABL1+0x1FBE: got=8846 expected=8846"
+    },
+    {
+      "name": "reader_1fd2_forwards_r9_to_helper_stack_arg",
+      "status": "PASS",
+      "detail": "ABL1+0x1FD2: got=cdf80090 expected=cdf80090"
+    },
+    {
+      "name": "reader_1fd6_sets_helper_output_pointer",
+      "status": "PASS",
+      "detail": "ABL1+0x1FD6: got=02aa expected=02aa"
+    },
+    {
+      "name": "reader_1fde_restores_r1_from_r8",
+      "status": "PASS",
+      "detail": "ABL1+0x1FDE: got=4146 expected=4146"
+    },
+    {
+      "name": "reader_1fe0_calls_helper_4800",
+      "status": "PASS",
+      "detail": "ABL1+0x1FE0: got=02f00efc expected=02f00efc"
+    },
+    {
+      "name": "helper_4804_saves_reader_r1_as_r5",
+      "status": "PASS",
+      "detail": "ABL1+0x4804: got=0d46 expected=0d46"
+    },
+    {
+      "name": "helper_4808_loads_reader_stack_arg",
+      "status": "PASS",
+      "detail": "ABL1+0x4808: got=0699 expected=0699"
+    },
+    {
+      "name": "helper_4810_sets_provider_selector_0x0f",
+      "status": "PASS",
+      "detail": "ABL1+0x4810: got=0f20 expected=0f20"
+    },
+    {
+      "name": "helper_4812_writes_provider_stack_args",
+      "status": "PASS",
+      "detail": "ABL1+0x4812: got=cde90031 expected=cde90031"
+    },
+    {
+      "name": "helper_4816_moves_reader_output_to_provider_r3",
+      "status": "PASS",
+      "detail": "ABL1+0x4816: got=1346 expected=1346"
+    },
+    {
+      "name": "helper_4818_moves_fclk_selector_to_provider_r2",
+      "status": "PASS",
+      "detail": "ABL1+0x4818: got=2a46 expected=2a46"
+    },
+    {
+      "name": "helper_481a_moves_token_to_provider_r1",
+      "status": "PASS",
+      "detail": "ABL1+0x481A: got=2146 expected=2146"
+    },
+    {
+      "name": "helper_481c_calls_provider_49cc",
+      "status": "PASS",
+      "detail": "ABL1+0x481C: got=00f0d6f8 expected=00f0d6f8"
+    },
+    {
+      "name": "provider_49dc_loads_table_pointer_overwriting_r1_token",
+      "status": "PASS",
+      "detail": "ABL1+0x49DC: got=fc49 expected=fc49"
+    },
+    {
+      "name": "provider_4a1e_prepares_literal_0x1707",
+      "status": "PASS",
+      "detail": "ABL1+0x4A1E: got=41f20771 expected=41f20771"
+    },
+    {
+      "name": "provider_4b0e_reasserts_selector_0x0f",
+      "status": "PASS",
+      "detail": "ABL1+0x4B0E: got=0f22 expected=0f22"
+    },
+    {
+      "name": "provider_4b1a_replaces_token_with_key_0xa04e",
+      "status": "PASS",
+      "detail": "ABL1+0x4B1A: got=4af24e06 expected=4af24e06"
+    },
+    {
+      "name": "provider_4b1e_stores_selector_and_0x1707_pair",
+      "status": "PASS",
+      "detail": "ABL1+0x4B1E: got=cde90121 expected=cde90121"
+    },
+    {
+      "name": "provider_4b34_builds_lookup_descriptor_sp24",
+      "status": "PASS",
+      "detail": "ABL1+0x4B34: got=09a8 expected=09a8"
+    },
+    {
+      "name": "provider_4b36_loads_stack_arg1_for_lookup",
+      "status": "PASS",
+      "detail": "ABL1+0x4B36: got=2999 expected=2999"
+    },
+    {
+      "name": "provider_4b3a_calls_heap_lookup_6374",
+      "status": "PASS",
+      "detail": "ABL1+0x4B3A: got=01f01bfc expected=01f01bfc"
+    },
+    {
+      "name": "provider_4bf0_loads_type_pointer_stack_arg0",
+      "status": "PASS",
+      "detail": "ABL1+0x4BF0: got=289a expected=289a"
+    },
+    {
+      "name": "provider_4bf2_extracts_returned_type",
+      "status": "PASS",
+      "detail": "ABL1+0x4BF2: got=c1f38201 expected=c1f38201"
+    },
+    {
+      "name": "provider_4bfa_stores_returned_type_byte",
+      "status": "PASS",
+      "detail": "ABL1+0x4BFA: got=1170 expected=1170"
+    },
+    {
+      "name": "heap_lookup_637c_reads_heap_header",
+      "status": "PASS",
+      "detail": "ABL1+0x637C: got=1368 expected=1368"
+    },
+    {
+      "name": "heap_lookup_6394_reads_requested_key_from_descriptor",
+      "status": "PASS",
+      "detail": "ABL1+0x6394: got=0568 expected=0568"
+    },
+    {
+      "name": "heap_lookup_6396_reads_node_key",
+      "status": "PASS",
+      "detail": "ABL1+0x6396: got=1c68 expected=1c68"
+    },
+    {
+      "name": "heap_lookup_6398_compares_key",
+      "status": "PASS",
+      "detail": "ABL1+0x6398: got=ac42 expected=ac42"
+    },
+    {
+      "name": "heap_lookup_63a8_reads_metadata_byte",
+      "status": "PASS",
+      "detail": "ABL1+0x63A8: got=597a expected=597a"
+    },
+    {
+      "name": "heap_lookup_63ae_stores_payload_pointer",
+      "status": "PASS",
+      "detail": "ABL1+0x63AE: got=8260 expected=8260"
+    },
+    {
+      "name": "caller_5e68_exit_and_stderr",
+      "status": "PASS",
+      "detail": "exit=0; stderr_bytes=0"
+    },
+    {
+      "name": "caller_5e68_listing_anchors",
+      "status": "PASS",
+      "detail": "anchors=['5fa4:', 'movw\\tr0, #0x4b0', '5fae:', 'bl\\t0x463c', '5fba:', 'strh.w\\tr3, [r5, #0x78]']"
+    },
+    {
+      "name": "fclk_463c_exit_and_stderr",
+      "status": "PASS",
+      "detail": "exit=0; stderr_bytes=0"
+    },
+    {
+      "name": "fclk_463c_listing_anchors",
+      "status": "PASS",
+      "detail": "anchors=['4648:', 'cmp\\tr1, #0xf', '464e:', 'movw\\tr0, #0x15f', '466a:', 'bl\\t0x1fb4']"
+    },
+    {
+      "name": "reader_1fb4_exit_and_stderr",
+      "status": "PASS",
+      "detail": "exit=0; stderr_bytes=0"
+    },
+    {
+      "name": "reader_1fb4_listing_anchors",
+      "status": "PASS",
+      "detail": "anchors=['1fbe:', 'mov\\tr8, r1', '1fde:', 'mov\\tr1, r8', '1fe0:', 'bl\\t0x4800']"
+    },
+    {
+      "name": "helper_4800_exit_and_stderr",
+      "status": "PASS",
+      "detail": "exit=0; stderr_bytes=0"
+    },
+    {
+      "name": "helper_4800_listing_anchors",
+      "status": "PASS",
+      "detail": "anchors=['4810:', 'movs\\tr0, #0xf', '4818:', 'mov\\tr2, r5', '481a:', 'mov\\tr1, r4', '481c:', 'bl\\t0x49cc']"
+    },
+    {
+      "name": "provider_49cc_exit_and_stderr",
+      "status": "PASS",
+      "detail": "exit=0; stderr_bytes=0"
+    },
+    {
+      "name": "provider_49cc_listing_anchors",
+      "status": "PASS",
+      "detail": "anchors=['4a1e:', 'movw\\tr1, #0x1707', '4b0e:', 'movs\\tr2, #0xf', '4b1a:', 'movw\\tr6, #0xa04e', '4b3a:', 'bl\\t0x6374', '4bfa:', 'strb\\tr1, [r2]']"
+    },
+    {
+      "name": "heap_6374_exit_and_stderr",
+      "status": "PASS",
+      "detail": "exit=0; stderr_bytes=0"
+    },
+    {
+      "name": "heap_6374_listing_anchors",
+      "status": "PASS",
+      "detail": "anchors=['6394:', 'ldr\\tr5, [r0]', '6398:', 'cmp\\tr4, r5', '63ae:', 'str\\tr2, [r0, #0x8]']"
+    },
+    {
+      "name": "caller_5e68_decoded_bytes_match_abl1",
+      "status": "PASS",
+      "detail": "instructions=133"
+    },
+    {
+      "name": "fclk_463c_decoded_bytes_match_abl1",
+      "status": "PASS",
+      "detail": "instructions=35"
+    },
+    {
+      "name": "reader_1fb4_decoded_bytes_match_abl1",
+      "status": "PASS",
+      "detail": "instructions=18"
+    },
+    {
+      "name": "helper_4800_decoded_bytes_match_abl1",
+      "status": "PASS",
+      "detail": "instructions=20"
+    },
+    {
+      "name": "provider_49cc_decoded_bytes_match_abl1",
+      "status": "PASS",
+      "detail": "instructions=221"
+    },
+    {
+      "name": "heap_6374_decoded_bytes_match_abl1",
+      "status": "PASS",
+      "detail": "instructions=37"
+    }
+  ],
+  "commands": [
+    {
+      "name": "caller_5e68",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x5e68",
+        "--stop-address=0x5fc0",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0
+    },
+    {
+      "name": "fclk_463c",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x463c",
+        "--stop-address=0x4696",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0
+    },
+    {
+      "name": "reader_1fb4",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x1fb4",
+        "--stop-address=0x1fe4",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0
+    },
+    {
+      "name": "helper_4800",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x4800",
+        "--stop-address=0x4830",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0
+    },
+    {
+      "name": "provider_49cc",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x49cc",
+        "--stop-address=0x4c0c",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0
+    },
+    {
+      "name": "heap_6374",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x6374",
+        "--stop-address=0x63c0",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0
+    }
+  ]
+}

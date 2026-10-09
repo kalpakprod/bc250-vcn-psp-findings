@@ -1,0 +1,37 @@
+{
+  "independent_review": "ACCEPTED_BOUNDED_SOURCE_REVIEW",
+  "attempts": [
+    {
+      "task": "clv_clock_observer_review",
+      "expected_receipt": "clv_clock_observer_review-9147",
+      "observed_receipt": "token_review-4189",
+      "verdict": "wrong task"
+    },
+    {
+      "task": "clv_clock_observer_review_retry",
+      "expected_receipt": "clv_clock_observer_review_retry-9148",
+      "observed_receipt": "token_review-4189",
+      "verdict": "wrong task"
+    },
+    {
+      "task": "observer_independent_gemini",
+      "expected_receipt": "observer_independent_gemini-6372",
+      "observed_receipt": null,
+      "verdict": "unrelated collector/game summary, no requested EFI code review"
+    }
+  ],
+  "root_review": "transport-root-review.json",
+  "hardware_go": false,
+  "remaining": [
+    "selectorreadbackfix independently reviewed if required for release",
+    "exacthostregisterapplicability",
+    "currenttargetfirmwareidentity and recoveryplan",
+    "separatehardwareapproval"
+  ],
+  "accepted": {
+    "task": "observer_fresh_review",
+    "receipt": "observer_fresh_review-8056",
+    "report": "independent-review.md",
+    "scope": "parser,targetgates,protocolABI,writeclasses; root-owned selectorreadbackfix excluded"
+  }
+}

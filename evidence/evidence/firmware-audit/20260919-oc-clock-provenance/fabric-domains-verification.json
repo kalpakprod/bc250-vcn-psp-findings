@@ -1,0 +1,661 @@
+{
+  "hashes": {
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "smu_sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+    "smu_rom_offset": "0x8fef00",
+    "evidence_classification": "observed/static"
+  },
+  "clock_groups": [
+    {
+      "group_index": 0,
+      "offset": "0xf568",
+      "base_reg": "0x5b000",
+      "smn_base": "0x115b000",
+      "vco_scale_word4": 0.10000000149011612,
+      "evidence_classification": "observed/static"
+    },
+    {
+      "group_index": 1,
+      "offset": "0xf5b0",
+      "base_reg": "0x5b800",
+      "smn_base": "0x115b800",
+      "vco_scale_word4": 0.10000000149011612,
+      "evidence_classification": "observed/static"
+    },
+    {
+      "group_index": 2,
+      "offset": "0xf5f8",
+      "base_reg": "0x5c000",
+      "smn_base": "0x115c000",
+      "vco_scale_word4": 0.10000000149011612,
+      "evidence_classification": "observed/static"
+    },
+    {
+      "group_index": 3,
+      "offset": "0xf640",
+      "base_reg": "0x5c800",
+      "smn_base": "0x115c800",
+      "vco_scale_word4": 0.10000000149011612,
+      "evidence_classification": "observed/static"
+    },
+    {
+      "group_index": 4,
+      "offset": "0xf688",
+      "base_reg": "0x6c000",
+      "smn_base": "0x116c000",
+      "vco_scale_word4": 0.10000000149011612,
+      "evidence_classification": "observed/static"
+    },
+    {
+      "group_index": 5,
+      "offset": "0xf6d0",
+      "base_reg": "0x6c800",
+      "smn_base": "0x116c800",
+      "vco_scale_word4": 0.10000000149011612,
+      "evidence_classification": "observed/static"
+    },
+    {
+      "group_index": 6,
+      "offset": "0xf718",
+      "base_reg": "0x6d000",
+      "smn_base": "0x116d000",
+      "vco_scale_word4": 0.10000000149011612,
+      "evidence_classification": "observed/static"
+    },
+    {
+      "group_index": 7,
+      "offset": "0xf760",
+      "base_reg": "0x5f800",
+      "smn_base": "0x115f800",
+      "vco_scale_word4": 0.10000000149011612,
+      "evidence_classification": "observed/static"
+    }
+  ],
+  "clock_domains": [
+    {
+      "domain_id": "0x0",
+      "offset": "0xf7a8",
+      "group_index": 0,
+      "smn_program_reg": "0x115b114",
+      "smn_poll_reg": "0x115b138",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_0",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x1",
+      "offset": "0xf7c4",
+      "group_index": 0,
+      "smn_program_reg": "0x115b13c",
+      "smn_poll_reg": "0x115b160",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_0",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x2",
+      "offset": "0xf7e0",
+      "group_index": 0,
+      "smn_program_reg": "0x115b164",
+      "smn_poll_reg": "0x115b188",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_0",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x3",
+      "offset": "0xf7fc",
+      "group_index": 0,
+      "smn_program_reg": "0x115b18c",
+      "smn_poll_reg": "0x115b1b0",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_0",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x4",
+      "offset": "0xf818",
+      "group_index": 0,
+      "smn_program_reg": "0x115b1b4",
+      "smn_poll_reg": "0x115b1d8",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_0",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x5",
+      "offset": "0xf834",
+      "group_index": 0,
+      "smn_program_reg": "0x115b1dc",
+      "smn_poll_reg": "0x115b200",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_0",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x6",
+      "offset": "0xf850",
+      "group_index": 0,
+      "smn_program_reg": "0x115b204",
+      "smn_poll_reg": "0x115b228",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_0",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x7",
+      "offset": "0xf86c",
+      "group_index": 0,
+      "smn_program_reg": "0x115b22c",
+      "smn_poll_reg": "0x115b250",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_0",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x8",
+      "offset": "0xf888",
+      "group_index": 1,
+      "smn_program_reg": "0x115b90c",
+      "smn_poll_reg": "0x115b930",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_1",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x9",
+      "offset": "0xf8a4",
+      "group_index": 1,
+      "smn_program_reg": "0x115b934",
+      "smn_poll_reg": "0x115b958",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_1",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0xa",
+      "offset": "0xf8c0",
+      "group_index": 1,
+      "smn_program_reg": "0x115b95c",
+      "smn_poll_reg": "0x115b980",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_1",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0xb",
+      "offset": "0xf8dc",
+      "group_index": 1,
+      "smn_program_reg": "0x115b984",
+      "smn_poll_reg": "0x115b9a8",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_1",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0xc",
+      "offset": "0xf8f8",
+      "group_index": 1,
+      "smn_program_reg": "0x115b9ac",
+      "smn_poll_reg": "0x115b9d0",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_1",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0xd",
+      "offset": "0xf914",
+      "group_index": 1,
+      "smn_program_reg": "0x115b9d4",
+      "smn_poll_reg": "0x115b9f8",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_1",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0xe",
+      "offset": "0xf930",
+      "group_index": 2,
+      "smn_program_reg": "0x115c0fc",
+      "smn_poll_reg": "0x115c120",
+      "in_generic_20_pstate_array": false,
+      "observed_group_membership": "Group_2",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0xf",
+      "offset": "0xf94c",
+      "group_index": 3,
+      "smn_program_reg": "0x115c8fc",
+      "smn_poll_reg": "0x115c920",
+      "in_generic_20_pstate_array": false,
+      "observed_group_membership": "Group_3",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x10",
+      "offset": "0xf968",
+      "group_index": 3,
+      "smn_program_reg": "0x115c924",
+      "smn_poll_reg": "0x115c948",
+      "in_generic_20_pstate_array": false,
+      "observed_group_membership": "Group_3",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x11",
+      "offset": "0xf984",
+      "group_index": 4,
+      "smn_program_reg": "0x116c0fc",
+      "smn_poll_reg": "0x116c120",
+      "in_generic_20_pstate_array": false,
+      "observed_group_membership": "Group_4",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x12",
+      "offset": "0xf9a0",
+      "group_index": 4,
+      "smn_program_reg": "0x116c124",
+      "smn_poll_reg": "0x116c148",
+      "in_generic_20_pstate_array": false,
+      "observed_group_membership": "Group_4",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x13",
+      "offset": "0xf9bc",
+      "group_index": 5,
+      "smn_program_reg": "0x116c900",
+      "smn_poll_reg": "0x116c924",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_5",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x14",
+      "offset": "0xf9d8",
+      "group_index": 5,
+      "smn_program_reg": "0x116c928",
+      "smn_poll_reg": "0x116c94c",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_5",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x15",
+      "offset": "0xf9f4",
+      "group_index": 5,
+      "smn_program_reg": "0x116c950",
+      "smn_poll_reg": "0x116c974",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_5",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x16",
+      "offset": "0xfa10",
+      "group_index": 6,
+      "smn_program_reg": "0x116d100",
+      "smn_poll_reg": "0x116d124",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_6",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x17",
+      "offset": "0xfa2c",
+      "group_index": 6,
+      "smn_program_reg": "0x116d128",
+      "smn_poll_reg": "0x116d14c",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_6",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x18",
+      "offset": "0xfa48",
+      "group_index": 6,
+      "smn_program_reg": "0x116d150",
+      "smn_poll_reg": "0x116d174",
+      "in_generic_20_pstate_array": true,
+      "observed_group_membership": "Group_6",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x19",
+      "offset": "0xfa64",
+      "group_index": 7,
+      "smn_program_reg": "0x115f8fc",
+      "smn_poll_reg": "0x115f920",
+      "in_generic_20_pstate_array": false,
+      "observed_group_membership": "Group_7",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "domain_id": "0x1a",
+      "offset": "0xfa80",
+      "group_index": 7,
+      "smn_program_reg": "0x115f924",
+      "smn_poll_reg": "0x115f948",
+      "in_generic_20_pstate_array": false,
+      "observed_group_membership": "Group_7",
+      "physical_domain_meaning": "UNKNOWN_WITHOUT_RUNTIME_CONFIRMATION",
+      "evidence_classification": "observed/static"
+    }
+  ],
+  "df_pstates": [
+    {
+      "pstate": 0,
+      "offset": "0xcf0c",
+      "raw_bytes": {
+        "b0": "0x1e",
+        "b1": "0x30",
+        "b2": "0x0",
+        "b3": "0x0",
+        "b8": "0x24",
+        "b9": "0x40",
+        "b10": "0x0",
+        "b11": "0x60",
+        "b12": "0x0"
+      },
+      "stored_floats": {
+        "offset_0x04": 250.0,
+        "offset_0x10": 225.0,
+        "offset_0x14": 112.5,
+        "offset_0x18": 450.0
+      },
+      "decoded_domain_rates": {
+        "domain_0x0e": {
+          "vco_ghz": 3.0,
+          "did": 12.0,
+          "computed_rate_mhz": 250.0
+        },
+        "domains_0x0f_and_0x11": {
+          "vco_ghz": 3.6,
+          "did": 16.0,
+          "computed_rate_mhz": 225.0
+        },
+        "domains_0x10_and_0x12": {
+          "vco_ghz": 3.6,
+          "did": 32.0,
+          "computed_rate_mhz": 112.5
+        }
+      },
+      "semantic_labels_status": "UNPROVEN_PHYSICAL_MAPPING (stored float offsets 0x04/0x10/0x14/0x18 correlate with computed rates, physical clock assignment unverified)",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "pstate": 1,
+      "offset": "0xcf34",
+      "raw_bytes": {
+        "b0": "0x1e",
+        "b1": "0x30",
+        "b2": "0x0",
+        "b3": "0x0",
+        "b8": "0x24",
+        "b9": "0x40",
+        "b10": "0x0",
+        "b11": "0x60",
+        "b12": "0x0"
+      },
+      "stored_floats": {
+        "offset_0x04": 250.0,
+        "offset_0x10": 225.0,
+        "offset_0x14": 112.5,
+        "offset_0x18": 450.0
+      },
+      "decoded_domain_rates": {
+        "domain_0x0e": {
+          "vco_ghz": 3.0,
+          "did": 12.0,
+          "computed_rate_mhz": 250.0
+        },
+        "domains_0x0f_and_0x11": {
+          "vco_ghz": 3.6,
+          "did": 16.0,
+          "computed_rate_mhz": 225.0
+        },
+        "domains_0x10_and_0x12": {
+          "vco_ghz": 3.6,
+          "did": 32.0,
+          "computed_rate_mhz": 112.5
+        }
+      },
+      "semantic_labels_status": "UNPROVEN_PHYSICAL_MAPPING (stored float offsets 0x04/0x10/0x14/0x18 correlate with computed rates, physical clock assignment unverified)",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "pstate": 2,
+      "offset": "0xcf5c",
+      "raw_bytes": {
+        "b0": "0x1e",
+        "b1": "0x10",
+        "b2": "0x0",
+        "b3": "0x0",
+        "b8": "0x22",
+        "b9": "0x20",
+        "b10": "0x0",
+        "b11": "0x60",
+        "b12": "0x0"
+      },
+      "stored_floats": {
+        "offset_0x04": 750.0,
+        "offset_0x10": 425.0,
+        "offset_0x14": 106.25,
+        "offset_0x18": 850.0
+      },
+      "decoded_domain_rates": {
+        "domain_0x0e": {
+          "vco_ghz": 3.0,
+          "did": 4.0,
+          "computed_rate_mhz": 750.0
+        },
+        "domains_0x0f_and_0x11": {
+          "vco_ghz": 3.4000000000000004,
+          "did": 8.0,
+          "computed_rate_mhz": 425.00000000000006
+        },
+        "domains_0x10_and_0x12": {
+          "vco_ghz": 3.4000000000000004,
+          "did": 32.0,
+          "computed_rate_mhz": 106.25000000000001
+        }
+      },
+      "semantic_labels_status": "UNPROVEN_PHYSICAL_MAPPING (stored float offsets 0x04/0x10/0x14/0x18 correlate with computed rates, physical clock assignment unverified)",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "pstate": 3,
+      "offset": "0xcf84",
+      "raw_bytes": {
+        "b0": "0x27",
+        "b1": "0xd",
+        "b2": "0x0",
+        "b3": "0x0",
+        "b8": "0x23",
+        "b9": "0x10",
+        "b10": "0x0",
+        "b11": "0x60",
+        "b12": "0x0"
+      },
+      "stored_floats": {
+        "offset_0x04": 1200.0,
+        "offset_0x10": 875.0,
+        "offset_0x14": 109.375,
+        "offset_0x18": 1750.0
+      },
+      "decoded_domain_rates": {
+        "domain_0x0e": {
+          "vco_ghz": 3.9000000000000004,
+          "did": 3.25,
+          "computed_rate_mhz": 1200.0000000000002
+        },
+        "domains_0x0f_and_0x11": {
+          "vco_ghz": 3.5,
+          "did": 4.0,
+          "computed_rate_mhz": 875.0
+        },
+        "domains_0x10_and_0x12": {
+          "vco_ghz": 3.5,
+          "did": 32.0,
+          "computed_rate_mhz": 109.375
+        }
+      },
+      "semantic_labels_status": "UNPROVEN_PHYSICAL_MAPPING (stored float offsets 0x04/0x10/0x14/0x18 correlate with computed rates, physical clock assignment unverified)",
+      "evidence_classification": "observed/static"
+    },
+    {
+      "pstate": 4,
+      "offset": "0xcfac",
+      "raw_bytes": {
+        "b0": "0x1e",
+        "b1": "0x48",
+        "b2": "0x0",
+        "b3": "0x0",
+        "b8": "0x1e",
+        "b9": "0x50",
+        "b10": "0x0",
+        "b11": "0x50",
+        "b12": "0x0"
+      },
+      "stored_floats": {
+        "offset_0x04": 150.0,
+        "offset_0x10": 125.0,
+        "offset_0x14": 125.0,
+        "offset_0x18": 250.0
+      },
+      "decoded_domain_rates": {
+        "domain_0x0e": {
+          "vco_ghz": 3.0,
+          "did": 20.0,
+          "computed_rate_mhz": 150.0
+        },
+        "domains_0x0f_and_0x11": {
+          "vco_ghz": 3.0,
+          "did": 24.0,
+          "computed_rate_mhz": 125.0
+        },
+        "domains_0x10_and_0x12": {
+          "vco_ghz": 3.0,
+          "did": 24.0,
+          "computed_rate_mhz": 125.0
+        }
+      },
+      "semantic_labels_status": "UNPROVEN_PHYSICAL_MAPPING (stored float offsets 0x04/0x10/0x14/0x18 correlate with computed rates, physical clock assignment unverified)",
+      "evidence_classification": "observed/static"
+    }
+  ],
+  "df_dispatch": {
+    "queue_5_msg_0x07": {
+      "handler": "0x1e720",
+      "symbol": "SetDfPstate",
+      "target": "FUN_0001e720"
+    },
+    "queue_0_msg_0x13": {
+      "handler": "0x1e988",
+      "symbol": "QueryDfPstate",
+      "target": "FUN_0001e988"
+    },
+    "df_applier": "0x0001e448",
+    "df_actuator_helpers": {
+      "0x00023b7c": {
+        "target_domain": "0x0E",
+        "group": 2,
+        "smn_prog": "0x0115c0fc",
+        "caller_arguments": {
+          "param_1": "row[2]",
+          "param_2": "row[0]",
+          "param_3": "row[1]"
+        }
+      },
+      "0x00023ba8": {
+        "target_domains": [
+          "0x0F",
+          "0x11"
+        ],
+        "groups": [
+          3,
+          4
+        ],
+        "smn_prog": [
+          "0x0115c8fc",
+          "0x0116c0fc"
+        ],
+        "caller_arguments": {
+          "param_1": "row[10]",
+          "param_2": "row[8]",
+          "param_3": "row[9]"
+        }
+      },
+      "0x00023bf4": {
+        "target_domains": [
+          "0x10",
+          "0x12"
+        ],
+        "groups": [
+          3,
+          4
+        ],
+        "smn_prog": [
+          "0x0115c924",
+          "0x0116c124"
+        ],
+        "caller_arguments": {
+          "param_1": "row[12]",
+          "param_2": "row[8]",
+          "param_3": "row[11]"
+        }
+      }
+    },
+    "evidence_classification": "observed/static"
+  },
+  "arithmetic_conversion_helpers": {
+    "0x0002360c": {
+      "type": "U9.16_fixed_to_float",
+      "integer_mask": "0x000001FF",
+      "fraction_shift": 16,
+      "fraction_scale": "1/65536.0 (literal 0x17460 = 0x37800000)",
+      "ignored_bits": "15:9",
+      "evidence_classification": "observed/static"
+    },
+    "0x0001cad8": {
+      "type": "dfs_did_divider_decode",
+      "scaling_literal_0x17270": 0.25,
+      "clamp_literal_0x17274": 128.0,
+      "ranges": [
+        "<=0x40: x*0.25",
+        "<=0x60: (2x-64)*0.25",
+        "<=0x7E: (4x-256)*0.25",
+        ">=0x7F: 128.0"
+      ],
+      "evidence_classification": "observed/static"
+    }
+  }
+}

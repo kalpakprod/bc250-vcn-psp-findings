@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-09-11T05:19:57.747898+00:00",
+  "status": "calculation-only-preview_not_candidate",
+  "source": {
+    "path": "dump/2.bin",
+    "sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+    "apcb_offset": "0xAB1000",
+    "apcb_size": 2928
+  },
+  "proposed_transform": {
+    "relative_ranges": [
+      "0x130..0x133",
+      "0x16C..0x16F"
+    ],
+    "old_values": {
+      "0x130": "0x001FFF00",
+      "0x16C": "0x001FFF00"
+    },
+    "new_values": {
+      "0x130": "0x007FFF00",
+      "0x16C": "0x007FFF00"
+    },
+    "checksum_relative_offset": "0x10",
+    "old_checksum": "0xF2",
+    "new_checksum": "0x32"
+  },
+  "changed_bytes": [
+    {
+      "offset": "0x10",
+      "old": "0xF2",
+      "new": "0x32"
+    },
+    {
+      "offset": "0x132",
+      "old": "0x1F",
+      "new": "0x7F"
+    },
+    {
+      "offset": "0x16E",
+      "old": "0x1F",
+      "new": "0x7F"
+    }
+  ],
+  "temporary_apcb": {
+    "path": "/tmp/bc250-apcb-only-preview.bin",
+    "sha256": "e81bfe70e58b853999bc1b5e6669be464fa46cf7d9075bcf2ec0f7e7821df36d",
+    "parser_report": "/tmp/bc250-apcb-only-preview-parse.json"
+  },
+  "parser_result": {
+    "checksum_match": true,
+    "size": 2928,
+    "group_count": 6,
+    "dfg_words": {
+      "0x130": "0x007FFF00",
+      "0x16C": "0x007FFF00"
+    }
+  },
+  "safety": [
+    "This is not a full BIOS candidate and is not derived from two fresh matching reads.",
+    "No PSP/$PS1/UEFI bytes were changed in this preview.",
+    "A valid APCB checksum does not prove PSP acceptance or bootability."
+  ],
+  "evidence_class": "observed-bytes/static-analysis"
+}

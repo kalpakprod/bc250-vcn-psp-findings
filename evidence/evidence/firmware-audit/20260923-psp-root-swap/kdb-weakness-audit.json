@@ -1,0 +1,21 @@
+{
+  "tool": "scripts/kdb_rsa_weakness_audit.py",
+  "input": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "input_size": 16777216,
+  "input_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "key_count": 0,
+  "unique_modulus_hashes": 0,
+  "shared_nontrivial_factors": [],
+  "bounds": {
+    "small_prime_limit": 100000,
+    "fermat_steps": 1000000
+  },
+  "keys": [],
+  "not_applicable_without_additional_evidence": [
+    "small-e ciphertext attacks",
+    "common-modulus ciphertext attack",
+    "padding oracle",
+    "CRT fault",
+    "partial-prime Coppersmith"
+  ]
+}

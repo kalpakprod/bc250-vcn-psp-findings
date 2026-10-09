@@ -1,0 +1,377 @@
+{
+  "status": "PASS",
+  "checks": 20,
+  "route": "wrapper registration candidates + indirect dispatch boundary for 0x4DF0/0x5740",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "modules": {
+    "AmdNbioGfxARIPei": {
+      "stem": "AmdNbioGfxARIPei-63413be2ac29",
+      "body_sha256": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+      "wrapper": "0x4df0",
+      "wrapper_va": "0x9e41a24",
+      "descriptor_body_off": "0x14ee8",
+      "descriptor_rva": "0x15080",
+      "provider_pointer_body_off": "0x14f58",
+      "provider_rva": "0x15080",
+      "wrapper_pointer_hits": [
+        {
+          "body_off": "0x14ef8",
+          "rva": "0x15090",
+          "section": "non-code",
+          "around": "ffffffff000000000000000000000000241ae409feffffff000000000000000000000000"
+        }
+      ],
+      "event_fffffffe_hits": [
+        {
+          "body_off": "0x14efc",
+          "rva": "0x15094",
+          "around": "d0be369effffffff000000000000000000000000241ae409feffffff0000000000000000000000000000000000000000"
+        }
+      ],
+      "event_hits_near_wrapper": [
+        {
+          "body_off": "0x14efc",
+          "rva": "0x15094",
+          "around": "d0be369effffffff000000000000000000000000241ae409feffffff0000000000000000000000000000000000000000"
+        }
+      ],
+      "provider_table_candidates": [
+        {
+          "wrapper_body_off": "0x14ef8",
+          "provider_rva": "0x15080",
+          "provider_pointer_hits": [
+            {
+              "body_off": "0x14f58",
+              "rva": "0x150f0"
+            }
+          ]
+        }
+      ],
+      "indirect_call_count": 28,
+      "indirect_calls_sample": [
+        {
+          "rva": "0x294",
+          "operands": "DWORD PTR [eax+0x20]",
+          "bytes": "ff5020"
+        },
+        {
+          "rva": "0x2a4",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        },
+        {
+          "rva": "0x2e9",
+          "operands": "DWORD PTR [ecx+0x30]",
+          "bytes": "ff5130"
+        },
+        {
+          "rva": "0x41f",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        },
+        {
+          "rva": "0x4e8",
+          "operands": "DWORD PTR [eax+0x48]",
+          "bytes": "ff5048"
+        },
+        {
+          "rva": "0x69a",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        },
+        {
+          "rva": "0x99b",
+          "operands": "DWORD PTR [eax+0x3c]",
+          "bytes": "ff503c"
+        },
+        {
+          "rva": "0x9b2",
+          "operands": "DWORD PTR [eax+0x40]",
+          "bytes": "ff5040"
+        },
+        {
+          "rva": "0x9ca",
+          "operands": "DWORD PTR [eax+0x44]",
+          "bytes": "ff5044"
+        },
+        {
+          "rva": "0x9e1",
+          "operands": "DWORD PTR [eax+0x50]",
+          "bytes": "ff5050"
+        },
+        {
+          "rva": "0x9ff",
+          "operands": "DWORD PTR [ecx+0x20]",
+          "bytes": "ff5120"
+        },
+        {
+          "rva": "0xa2e",
+          "operands": "DWORD PTR [eax]",
+          "bytes": "ff10"
+        }
+      ],
+      "classification": "callback descriptor and provider-table pointer are byte-backed; actual indirect dispatch dataflow remains unresolved"
+    },
+    "AmdNbioSmuV10Pei": {
+      "stem": "AmdNbioSmuV10Pei-905b8be68afd",
+      "body_sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "wrapper": "0x5740",
+      "wrapper_va": "0x9e8e71c",
+      "descriptor_body_off": "0x158e0",
+      "descriptor_rva": "0x15a70",
+      "provider_pointer_body_off": "0x15950",
+      "provider_rva": "0x15a70",
+      "wrapper_pointer_hits": [
+        {
+          "body_off": "0x158f0",
+          "rva": "0x15a80",
+          "section": "non-code",
+          "around": "ffffffff0000000000000000000000001ce7e809feffffff000000000000000000000000"
+        }
+      ],
+      "event_fffffffe_hits": [
+        {
+          "body_off": "0x116b",
+          "rva": "0x12fb",
+          "around": "a302000083c4148365f8008d45ec50ff36b82800b103e81ffeffffff75ecff75f86804f0e909680000002053e8760200"
+        },
+        {
+          "body_off": "0x158f4",
+          "rva": "0x15a84",
+          "around": "d0be369effffffff0000000000000000000000001ce7e809feffffff0000000000000000000000000000000000000000"
+        }
+      ],
+      "event_hits_near_wrapper": [
+        {
+          "body_off": "0x158f4",
+          "rva": "0x15a84",
+          "around": "d0be369effffffff0000000000000000000000001ce7e809feffffff0000000000000000000000000000000000000000"
+        }
+      ],
+      "provider_table_candidates": [
+        {
+          "wrapper_body_off": "0x158f0",
+          "provider_rva": "0x15a70",
+          "provider_pointer_hits": [
+            {
+              "body_off": "0x15950",
+              "rva": "0x15ae0"
+            }
+          ]
+        }
+      ],
+      "indirect_call_count": 36,
+      "indirect_calls_sample": [
+        {
+          "rva": "0x26b",
+          "operands": "DWORD PTR [eax+0x18]",
+          "bytes": "ff5018"
+        },
+        {
+          "rva": "0x28f",
+          "operands": "DWORD PTR [eax+0x18]",
+          "bytes": "ff5018"
+        },
+        {
+          "rva": "0x35e",
+          "operands": "DWORD PTR [eax+0x24]",
+          "bytes": "ff5024"
+        },
+        {
+          "rva": "0x372",
+          "operands": "DWORD PTR [eax+0x20]",
+          "bytes": "ff5020"
+        },
+        {
+          "rva": "0x396",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        },
+        {
+          "rva": "0x410",
+          "operands": "DWORD PTR [ecx+0x20]",
+          "bytes": "ff5120"
+        },
+        {
+          "rva": "0x436",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        },
+        {
+          "rva": "0x51c",
+          "operands": "DWORD PTR [ecx+0x20]",
+          "bytes": "ff5120"
+        },
+        {
+          "rva": "0x542",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        },
+        {
+          "rva": "0x70a",
+          "operands": "DWORD PTR [ecx+0x30]",
+          "bytes": "ff5130"
+        },
+        {
+          "rva": "0xb26",
+          "operands": "DWORD PTR [ecx+0x20]",
+          "bytes": "ff5120"
+        },
+        {
+          "rva": "0xb40",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        }
+      ],
+      "classification": "callback descriptor and provider-table pointer are byte-backed; actual indirect dispatch dataflow remains unresolved"
+    }
+  },
+  "fresh_result": "Wrapper function pointers were byte-scanned in the exact module bodies and mapped to registration-table candidates; event FFFFFFFE occurrences and indirect call sites were retained without promoting a dispatch edge unless the pointer/table relationship joined. The wrapper itself remains an adapter; no final token-0x1204 consumer is claimed.",
+  "limits": "This is restricted to the two wrapper functions and their module-local pointer/event candidates. It does not assert census-wide absence and does not resolve arbitrary computed pointers, cross-module dispatch, DMA, HOB migration or hardware behavior.",
+  "checks_detail": [
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ROM size",
+      "passed": true,
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "check": "AmdNbioGfxARIPei body census hash",
+      "passed": true,
+      "got": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+      "expected": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8"
+    },
+    {
+      "check": "AmdNbioGfxARIPei wrapper bytes",
+      "passed": true,
+      "got": "558bec",
+      "expected": "558bec"
+    },
+    {
+      "check": "AmdNbioGfxARIPei wrapper pointer literal count positive",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioGfxARIPei wrapper pointer mapped",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioGfxARIPei callback descriptor wildcard/event",
+      "passed": true,
+      "got": [
+        4294967295,
+        0,
+        165943844,
+        4294967294
+      ],
+      "expected": [
+        4294967295,
+        0,
+        165943844,
+        4294967294
+      ]
+    },
+    {
+      "check": "AmdNbioGfxARIPei provider pointer value",
+      "passed": true,
+      "got": 166010036,
+      "expected": 166010036
+    },
+    {
+      "check": "AmdNbioGfxARIPei descriptor wrapper field",
+      "passed": true,
+      "got": 165943844,
+      "expected": 165943844
+    },
+    {
+      "check": "AmdNbioGfxARIPei descriptor event field",
+      "passed": true,
+      "got": 4294967294,
+      "expected": 4294967294
+    },
+    {
+      "check": "AmdNbioGfxARIPei indirect metadata retained",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei body census hash",
+      "passed": true,
+      "got": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "expected": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei wrapper bytes",
+      "passed": true,
+      "got": "558bec",
+      "expected": "558bec"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei wrapper pointer literal count positive",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei wrapper pointer mapped",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei callback descriptor wildcard/event",
+      "passed": true,
+      "got": [
+        4294967295,
+        0,
+        166258460,
+        4294967294
+      ],
+      "expected": [
+        4294967295,
+        0,
+        166258460,
+        4294967294
+      ]
+    },
+    {
+      "check": "AmdNbioSmuV10Pei provider pointer value",
+      "passed": true,
+      "got": 166324812,
+      "expected": 166324812
+    },
+    {
+      "check": "AmdNbioSmuV10Pei descriptor wrapper field",
+      "passed": true,
+      "got": 166258460,
+      "expected": 166258460
+    },
+    {
+      "check": "AmdNbioSmuV10Pei descriptor event field",
+      "passed": true,
+      "got": 4294967294,
+      "expected": 4294967294
+    },
+    {
+      "check": "AmdNbioSmuV10Pei indirect metadata retained",
+      "passed": true,
+      "got": true,
+      "expected": true
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "source": "/home/OWNER/orca/projects/bc250/evidence/hardware/ASRock AMD BC-250_ISL_X5R r1.00.cad",
+  "cad_sha256": "decef01f78b7416bb1e51ffc7c9ea03a556a3b7e2443b98fd441ed92959c65d8",
+  "observed_nets": {
+    "SB_RSPI_CS#": [
+      [
+        "BIOS_A1",
+        "1"
+      ],
+      [
+        "BIOS_S_A1",
+        "1"
+      ],
+      [
+        "J4004",
+        "3"
+      ],
+      [
+        "SR424",
+        "1"
+      ],
+      [
+        "SU1",
+        "T6"
+      ]
+    ],
+    "SB_SPI_CLK": [
+      [
+        "BIOS_A1",
+        "6"
+      ],
+      [
+        "BIOS_S_A1",
+        "6"
+      ],
+      [
+        "J4004",
+        "4"
+      ],
+      [
+        "SU1",
+        "V3"
+      ]
+    ],
+    "SB_SPI_DI": [
+      [
+        "BIOS_A1",
+        "2"
+      ],
+      [
+        "BIOS_S_A1",
+        "2"
+      ],
+      [
+        "J4004",
+        "5"
+      ],
+      [
+        "SU1",
+        "V6"
+      ]
+    ],
+    "SB_SPI_DO": [
+      [
+        "BIOS_A1",
+        "5"
+      ],
+      [
+        "BIOS_S_A1",
+        "5"
+      ],
+      [
+        "J4004",
+        "6"
+      ],
+      [
+        "SU1",
+        "V5"
+      ]
+    ],
+    "PROGRAM#": [
+      [
+        "D606",
+        "1"
+      ],
+      [
+        "J4004",
+        "8"
+      ],
+      [
+        "R678",
+        "2"
+      ]
+    ]
+  },
+  "flash_reference": "MX25L12872FM2I-10G from CAD device table; actual installed chip variant unverified",
+  "pin_roles": {
+    "J4004.3": "CS#",
+    "J4004.4": "clock",
+    "J4004.5": "MISO / flash SO pin2 / FCH input",
+    "J4004.6": "MOSI / flash SI pin5 / FCH output"
+  },
+  "vendor_pdf_mirror": {
+    "url": "https://smdua.in.ua/image/pdf/MX25L12872FM2I-10G.pdf",
+    "sha256": "386d7f6037bc4d88c72205f7d85d584c3c3d793dcd33a7e42a90a93911a56b14",
+    "revision": "1.1, 2021-04-09",
+    "section": "3/4, page6",
+    "official_origin_fetch": "curl timeout exit28; mirror not established byte-identical to official"
+  },
+  "program_pin": "J4004.8 -> D606.1; D606.2 -> RESETCON#; R678 10k to+3.3V_SB. Reset coupling, not demonstrated bus isolation.",
+  "bus_isolation_verified": false,
+  "live_master_reads_performed": false,
+  "hardware_acceptance": false,
+  "available_usb_programmer": "no recognized CH341/CH347 in lsusb snapshot; RP2350 in BOOTSEL",
+  "coverage_limit": "J4004 does not expose SIO2/SIO3; cannot presume full quad/QPI boot capture from two data lines"
+}

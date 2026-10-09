@@ -1,0 +1,54 @@
+{
+  "tool": "/home/OWNER/orca/projects/bc250/scripts/repro_smu_globals.py",
+  "smu_body_path": "import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5",
+  "smu_body_size": 262400,
+  "smu_body_sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+  "image": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "image_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "psp_type_08_payload_equals_body_plus_0x100_prefix": true,
+  "address_convention": "file == SRAM",
+  "ghidra_reference_match": {
+    "file == SRAM": "8/8",
+    "file == SRAM - 0x100": "0/8",
+    "file == SRAM + 0x100": "0/8"
+  },
+  "cited_globals": {
+    "0x017134": {
+      "file_offset": "0x017134",
+      "value": "0x000FFFFF",
+      "supports": "ZD-3/ZD-4 mask applied to the polled domain register"
+    },
+    "0x017160": {
+      "file_offset": "0x017160",
+      "value": "0x010FFE00",
+      "supports": "ZD-3/ZD-4 window base added to the masked register"
+    },
+    "0x0181B0": {
+      "file_offset": "0x0181B0",
+      "value": "0x000188A0",
+      "supports": "ZD-1 ring-record base (asserted 0x000188A0; confirmed by direct read)"
+    },
+    "0x0178B8": {
+      "file_offset": "0x0178B8",
+      "value": "0x0005AFFF",
+      "supports": "FUN_000235c8 second-core window lower bound"
+    },
+    "0x0178BC": {
+      "file_offset": "0x0178BC",
+      "value": "0x0005B7FF",
+      "supports": "FUN_000235c8 second-core window upper bound"
+    }
+  },
+  "derived_smn_base": {
+    "formula": "(addr & DAT_17134) + DAT_17160 + 0x200",
+    "DAT_17134": "0x000FFFFF",
+    "DAT_17160": "0x010FFE00",
+    "base": "0x1100000"
+  },
+  "assertions_checked": {
+    "DAT_181B0 == 0x000188A0 (ZD-1 ring base)": true,
+    "DAT_17134 == 0x000FFFFF (ZD-3/4 mask)": true,
+    "DAT_17160 base derives 0x01100000 (ZD-3/4 window)": true,
+    "DAT_178B8..DAT_178BC == 0x5B000..0x5B7FF (second-core window, D-R1 cross-check)": true
+  }
+}

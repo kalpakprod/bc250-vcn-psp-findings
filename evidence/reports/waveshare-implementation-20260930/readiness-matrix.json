@@ -1,0 +1,125 @@
+{
+  "objective": "исполни план до конца",
+  "completion_proven": false,
+  "active_goal": true,
+  "candidate_sha256": "bca9f65b9722d3a0d8e4591b8c56d6e0e4dc5e91ea79854bd9c0105c04818fc4",
+  "requirements": [
+    {
+      "id": "recovery",
+      "requirement": "Сохранить установленную Waveshare и возможность возврата",
+      "status": "PARTIAL",
+      "authoritative_evidence_or_gap": "installed-recovery-status.json: два чтения совпали, запись восстановления не испытана"
+    },
+    {
+      "id": "source",
+      "requirement": "Одна сборка, прежние исходники и настройки не перезаписаны",
+      "status": "OFFLINE_PROVEN",
+      "authoritative_evidence_or_gap": "VERIFICATION.txt original_pico_source_unchanged, manifests/source hashes"
+    },
+    {
+      "id": "controller",
+      "requirement": "DualSense: ввод, звук, микрофон, haptics, triggers, reconnect",
+      "status": "CODE_BUILT_HARDWARE_PENDING",
+      "authoritative_evidence_or_gap": "candidate-tests и literal-callback/native tests: не доказывают игровой результат"
+    },
+    {
+      "id": "concurrency",
+      "requirement": "Одновременная работа контроллера, сети, мониторинга",
+      "status": "CODE_BUILT_HARDWARE_PENDING",
+      "authoritative_evidence_or_gap": "goal-last-build, polling loop: нагрузка/радиосовместимость требуют платы"
+    },
+    {
+      "id": "network",
+      "requirement": "Wi-Fi, авторизованный HTTP, MQTT, сбои/свежесть",
+      "status": "OFFLINE_PROVEN_RUNTIME_PENDING",
+      "authoritative_evidence_or_gap": "goal native/host tests, MQTT age regression, CRC/token/private config, no live credentials; exact native HTTP source mocked, socketpair MQTT wire transport tests and browser Russian panel fixtures now pass; no live deployment"
+    },
+    {
+      "id": "metrics",
+      "requirement": "Достоверные метрики, единицы, источник, stale/null",
+      "status": "OFFLINE_PROVEN_AMD_PENDING",
+      "authoritative_evidence_or_gap": "host metrics tests, firmware metrics harness, DMI gate; реальная AMD не опрошена; actual SuperIO nct6686 name regression reproduced and fixed, module name is not control capability; native CDC+metrics, real PTY command test and VM panel fan RPM pass; actual AMD capture unavailable at earlier IP, not off proof"
+    },
+    {
+      "id": "power_on",
+      "requirement": "PS включает через разрешённый канал, без повтора/старых событий",
+      "status": "OFFLINE_PROVEN_RUNTIME_PENDING",
+      "authoritative_evidence_or_gap": "PS gate/MQTT/HA fake API tests; реальные HA/relay не вызывались"
+    },
+    {
+      "id": "shutdown",
+      "requirement": "Штатное выключение Linux без аварийного отключения",
+      "status": "OFFLINE_PROVEN_RUNTIME_PENDING",
+      "authoritative_evidence_or_gap": "test_waveshare_shutdown.py fake executor; wrong DMI/dry run do not act; no real shutdown"
+    },
+    {
+      "id": "decky",
+      "requirement": "Общая телеметрия Decky и панели",
+      "status": "BUILD_PROVEN_INSTALL_PENDING",
+      "authoritative_evidence_or_gap": "Decky typecheck/build, backend freshness/source tests; не установлен на AMD"
+    },
+    {
+      "id": "uart",
+      "requirement": "UART RX, журнал, без записи в AMD",
+      "status": "CODE_PROVEN_ELECTRICAL_PENDING",
+      "authoritative_evidence_or_gap": "uart-net-trace.json: authoritative CAD and Nuvoton confirm J5.4 output to GP9 physical12, design3.3V via O12p3/supplies; no multimeter requested; actual installation/orientation/runtime remain unverified"
+    },
+    {
+      "id": "bios",
+      "requirement": "Снимки/диагностика BIOS, сохранность подписанных регионов",
+      "status": "PARTIAL_EXTERNAL_READ_UNPROVEN",
+      "authoritative_evidence_or_gap": "offline file audit/source intact; живое чтение SPI и signed-region acceptance не выполнены"
+    },
+    {
+      "id": "gpio",
+      "requirement": "Все полезные доступные разъёмы и электрическая безопасность",
+      "status": "EVIDENCE_PARTIAL",
+      "authoritative_evidence_or_gap": "CAD registry18 + vendor pins; кабели, уровни, колодки экземпляра не приняты"
+    },
+    {
+      "id": "guide",
+      "requirement": "Подробная офлайн HTML инструкция, две платы, кабели, проверки",
+      "status": "DRAFT_RENDER_PROVEN_FINAL_PENDING",
+      "authoritative_evidence_or_gap": "CONNECT.html desktop/mobile native hover/touch QA, vendor image and conditional RX diagram; не финальное разрешение на проводку"
+    },
+    {
+      "id": "rollbacks",
+      "requirement": "Патч, проверка, самодостаточный откат с наблюдёнными тремя состояниями",
+      "status": "OFFLINE_PROVEN",
+      "authoritative_evidence_or_gap": "same four roles plus firmware pristine delta/archive, actual restored callback test"
+    },
+    {
+      "id": "upload",
+      "requirement": "Только финальный точный образ, затем аппаратная проверка",
+      "status": "NOT_AUTHORIZED",
+      "authoritative_evidence_or_gap": "user declined intermediate upload; physical device remains BOOTSEL"
+    },
+    {
+      "id": "acceptance",
+      "requirement": "Холодные старты, ввод/звук, игровая сессия, сутки наблюдения",
+      "status": "NOT_RUN",
+      "authoritative_evidence_or_gap": "No post-upload/AMD hardware observations"
+    },
+    {
+      "id": "psp_boundary",
+      "requirement": "Анализ PSP без автономного обхода защиты",
+      "status": "STATIC_ONLY_APPROVED_EXCLUSION",
+      "authoritative_evidence_or_gap": "PSP/BHD summary; PSP bypass excluded from approved plan, never implemented"
+    }
+  ],
+  "next_safe_action": "Finish exact preconnection package/cable checks and validate source/runtime protocols; no final/all-hardware claim or intermediate upload",
+  "constraints": [
+    "root only",
+    "existing equipment only",
+    "no solder/cuts",
+    "no secret output",
+    "no intermediate upload",
+    "signed PSP untouched"
+  ],
+  "latest_integration_evidence": "Controlled transport and native HTTP callback tests pass; no real broker/HA/device actions.",
+  "candidate_source_build_id": "59c2e731d38e",
+  "portable_package_proven": true,
+  "private_profile_staging": "synthetic tests passed; real source names/permissions checked; no actual values copied or device provisioning",
+  "upload_authorized": false,
+  "source_fingerprint": "eada3bf5c3a8"
+}

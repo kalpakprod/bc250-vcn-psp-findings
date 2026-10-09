@@ -1,0 +1,10 @@
+PWD=/home/OWNER/vcn_unlock
+--- exact dir name (cat -A) ---
+ls: невозможно получить доступ к './dadeonde-bc250-vcn-enable': Нет такого файла или каталога
+--- cd + ls -la inside ---
+--- stat barefile ---
+bash: строка 1: cd: ./dadeonde-bc250-vcn-enable: Нет такого файла или каталога
+stat: не удалось выполнить statx для 'enable_vcn.py': Нет такого файла или каталога
+--- try run --verify directly ---
+VERIFY2_RC=2
+python3: can't open file '/home/OWNER/vcn_unlock/./enable_vcn.py': [Errno 2] No such file or directory

@@ -1,0 +1,117 @@
+VERIFICATION — isolated ABL1 outer+0x864 correction rerun
+
+Timestamp: 2026-09-21T17:18:00+05:00 (Asia/Almaty)
+Evidence class: observed-bytes; static-analysis; host-tested verifier process
+TARGET/MODIFIED_FILE: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/outer864_origin_verify.py
+BASELINE_FILE: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/BASELINE.outer864_origin_verify.py
+DIFF_FILE: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/DIFF_FILE.patch
+ROLLBACK_FILE: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/ROLLBACK.sh
+
+INPUTS (absolute paths and SHA-256)
+- ROM: /home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin | 16777216 bytes | ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8
+- ABL1 payload: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin | 94624 bytes | af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a
+- ELF object: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o | 95312 bytes | 54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135
+- full Thumb listing: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt | 2586986 bytes | b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65
+- failed verifier source: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin/outer864_origin_verify.py | 19392 bytes | 9e3ae148c72c333a0816e7b90ba70d359691eef297e537d89a2be655fec05241
+- prior 34-check result: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-heap-populator/heap-populator-result.json | 8701 bytes | acad9717893994744064d2f9573661aec0ad65024fd2816f39296e811d81a617
+
+PATCH / CHANGED SYMBOLS
+- `OUT` changed only from the mixed-owner origin directory to this isolated directory.
+- `toolver` initialized with `llvm-objdump --version` subprocess result; no instruction expectation changed.
+- JSON result serialization gained a bytes-to-hex default so existing byte-valued checks can be emitted as parseable JSON; no check predicate or expected firmware fact changed.
+- `ROLLBACK.sh` accepts one target copy and restores sibling `BASELINE.outer864_origin_verify.py`.
+
+COMMAND 1 — corrected verifier
+PYTHONDONTWRITEBYTECODE=1 python3 -B /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/outer864_origin_verify.py
+Exit status: 0
+Literal stdout:
+{"status":"PASS","checks_passed":102,"checks_failed":0,"pointer":"0x006CD4D0 not mapped into ABL1 by exact header or conditional 0x57100 base; runtime map unresolved","fclk_provider_aux":"zero","fill_semantics":"0x6B78 repeats R1 byte; FCLK call sets R1=0; not memcpy","first_unresolved":"upstream/runtime map of outer object and any bridge to APOB/INV"}
+Literal stderr:
+<empty>
+
+Observed verifier result summary:
+{
+  "status": "PASS",
+  "checks_passed": 102,
+  "checks_failed": 0,
+  "checks_total": 102,
+  "tool_version": "LLVM (http://llvm.org/):\n  LLVM version 22.1.8\n  Optimized build.\n\n\n  Registered Targets:\n    aarch64     - AArch64 (little endian)\n    aarch64_32  - AArch64 (little endian ILP32)\n    aarch64_be  - AArch64 (big endian)\n    amdgcn      - AMD GCN GPUs\n    arm         - ARM\n    arm64       - ARM64 (little endian)\n    arm64_32    - ARM64 (little endian ILP32)\n    armeb       - ARM (big endian)\n    avr         - Atmel AVR Microcontroller\n    bpf         - BPF (host endian)\n    bpfeb       - BPF (big endian)\n    bpfel       - BPF (little endian)\n    hexagon     - Hexagon\n    lanai       - Lanai\n    loongarch32 - 32-bit LoongArch\n    loongarch64 - 64-bit LoongArch\n    mips        - MIPS (32-bit big endian)\n    mips64      - MIPS (64-bit big endian)\n    mips64el    - MIPS (64-bit little endian)\n    mipsel      - MIPS (32-bit little endian)\n    msp430      - MSP430 [experimental]\n    nvptx       - NVIDIA PTX 32-bit\n    nvptx64     - NVIDIA PTX 64-bit\n    ppc32       - PowerPC 32\n    ppc32le     - PowerPC 32 LE\n    ppc64       - PowerPC 64\n    ppc64le     - PowerPC 64 LE\n    r600        - AMD GPUs HD2XXX-HD6XXX\n    riscv32     - 32-bit RISC-V\n    riscv32be   - 32-bit big endian RISC-V\n    riscv64     - 64-bit RISC-V\n    riscv64be   - 64-bit big endian RISC-V\n    sparc       - Sparc\n    sparcel     - Sparc LE\n    sparcv9     - Sparc V9\n    spirv       - SPIR-V Logical\n    spirv32     - SPIR-V 32-bit\n    spirv64     - SPIR-V 64-bit\n    systemz     - SystemZ\n    thumb       - Thumb\n    thumbeb     - Thumb (big endian)\n    ve          - VE\n    wasm32      - WebAssembly 32-bit\n    wasm64      - WebAssembly 64-bit\n    x86         - 32-bit X86: Pentium-Pro and above\n    x86-64      - 64-bit X86: EM64T and AMD64\n    xcore       - XCore"
+}
+All 13 stored LLVM windows: exit status 0 and empty stderr.
+Machine result: PASS; no hardware/firmware execution claimed.
+
+COMMAND 2 — independent single-case 0x6B78 LLVM window
+llvm-objdump -D --section=.data --triple=thumbv7 --start-address=0x6b78 --stop-address=0x6b84 /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o
+Exit status: 0
+Literal stdout:
+
+/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o:	file format elf32-littlearm
+
+Disassembly of section .data:
+
+00000000 <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start>:
+    6b78: e001         	b	0x6b7e <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x6b7e> @ imm = #0x2
+    6b7a: f800 1b01    	strb	r1, [r0], #1
+    6b7e: 1e52         	subs	r2, r2, #0x1
+    6b80: d2fb         	bhs	0x6b7a <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x6b7a> @ imm = #-0xa
+    6b82: 4770         	bx	lr
+Literal stderr:
+<empty>
+
+COMMAND 3 — independent raw-byte window
+od -An -tx1 -v -j 0x6b78 -N 0x0c /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin
+Exit status: 0
+Literal stdout: 01 e0 00 f8 01 1b 52 1e fb d2 70 47
+Literal stderr: <empty>
+
+COMMAND 4 — rollback on separate disposable copy
+/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/ROLLBACK.sh /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/rollback-target.outer864_origin_verify.py
+Exit status: 0
+Literal stdout:
+rollback restored /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/rollback-target.outer864_origin_verify.py from /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/BASELINE.outer864_origin_verify.py
+Literal stderr:
+<empty>
+Rollback hash equality: BASELINE == rollback-target (observed SHA-256 below); MODIFIED_FILE remains distinct.
+
+OBSERVED STATE TRANSITIONS
+- Prior failed original run: exit 1 with literal `NameError: name 'toolver' is not defined`; preserved in the mixed-owner origin directory.
+- First isolated rerun after OUT/toolver correction: exit 1 at result serialization with literal `TypeError: Object of type bytes is not JSON serializable`; preserved as `verifier-first-rerun.*`.
+- Final isolated modified rerun after serialization-only compatibility fix: exit 0, machine result PASS, 102/102 checks passed, empty stderr.
+- Independent helper check: exit 0; 0x6B78 is `B`, `STRB R1,[R0],#1`, `SUBS R2,#1`, `BHS`, `BX LR`; independent raw bytes are `01 e0 00 f8 01 1b 52 1e fb d2 70 47`.
+- Rollback: exit 0; disposable target restored byte-for-byte to baseline; no source input changed.
+
+SEMANTIC RESULT
+- FCLK caller zeroes both outgoing stack words; reader forwards R9=0; provider frame [SP+0xA4] resolves to entry-SP+4, the second provider stack argument, equal to zero on this path.
+- 0x6238 sets fill byte R1=0, destination R0=node+0x10, length R2=node length, and passes R10 in R3.
+- 0x6B78 consumes R0/R1/R2 and does not read R3: the inspected operation is zero-fill, not memcpy from R10/outer+0x864.
+- Constructor C00 [SP+0xA4] and provider 49CC [SP+0xA4] are separate frames; numeric offset equality is not pointer identity.
+
+LIMITS
+- Static/host evidence only. No ABL1/HEAP execution, runtime relocation/load-base proof, APOB/INV join, firmware write, hardware probe, or clock/training result.
+- Alias/indirect/DMA writes to outer+0x864 are not excluded.
+- Native CLV MemoryClockSpeed=0x24 request and prior APOB/INV boundaries are unchanged context, not revalidated here.
+
+OUTPUT ROLE HASHES (excluding this file and final manifest; generated after final rerun)
+- BASELINE.outer864_origin_verify.py: 19392 bytes | 9e3ae148c72c333a0816e7b90ba70d359691eef297e537d89a2be655fec05241
+- outer864_origin_verify.py: 19578 bytes | 16fb872d550a5f09d482c56f78375e447e77f91de382feef91a3550c3640bb3f
+- DIFF_FILE.patch: 2328 bytes | b14a93d48cee3ce12a86a37cba26d3356331fc6147415e83dda59bc6f9eee89d
+- ROLLBACK.sh: 513 bytes | 4a88ae89cdb3fa1d621af8ae9cfcb73a0ec1647b9957755b5c7dd9b1c0e8717a
+- outer864-origin-result.json: 31267 bytes | 8b673285ed7642a2a25f81669ceeed6f9c522b9a874daa567c7defc1e8d2ea6a
+- verifier.stdout: 355 bytes | 14247e5db3a02d14239b1b3b91cd0c1870f4da2f945e4e4e6fcd8d96296201df
+- verifier.stderr: 0 bytes | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- verifier.exit: 2 bytes | 9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa
+- independent-6b78.stdout: 792 bytes | ad8b88858a851ef9dd93570e1bb80315a905c4db8d8301e10ddb41bebf6237e9
+- independent-6b78.stderr: 0 bytes | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- independent-6b78.exit: 2 bytes | 9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa
+- independent-6b78-raw.stdout: 37 bytes | fdd8472c56a1f52176946602b389578f1d0543c38016793a6d1e6b960afb3ab4
+- independent-6b78-raw.stderr: 0 bytes | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- independent-6b78-raw.exit: 2 bytes | 9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa
+- rollback-target.outer864_origin_verify.py: 19392 bytes | 9e3ae148c72c333a0816e7b90ba70d359691eef297e537d89a2be655fec05241
+- rollback.stdout: 304 bytes | ab1d7d017fb8eda1d5eacb1d8da0915e83f4ecfc5276cd99d540cf34644d0b7e
+- rollback.stderr: 0 bytes | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- rollback.exit: 2 bytes | 9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa
+
+FINAL MANIFEST
+- Command: `cd /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated && sha256sum -c SHA256SUMS.final`
+- The final manifest is generated after all role/output writes; a direct final check is run after generation. Expected/result: every listed entry `OK`, exit status 0, stderr empty.
+- `SHA256SUMS.final` excludes itself to avoid self-reference.

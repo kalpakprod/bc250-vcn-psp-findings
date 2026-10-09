@@ -1,0 +1,655 @@
+{
+  "abl_payloads": [
+    {
+      "arm_entry_bytes": "18d09fe518209fe532ff2fe100d0a0e1",
+      "compressed": 1,
+      "container_sha256": "0859507cd52585ff1139498236d3ec5a73185c90fbc6a6324b50ea60b99824bb",
+      "container_size": 1312,
+      "decompressed_first_16": "18d09fe518209fe532ff2fe100d0a0e1",
+      "decompressed_payload_length": 7952,
+      "decompressed_payload_sha256": "3405551617c13dc7b1db464edd74e0f7a4240a80b37ed068c7650ccfe2d19e29",
+      "decompression_error": null,
+      "encrypted": 0,
+      "historical_robin5": {
+        "exact_robin5_container": true,
+        "references": [
+          {
+            "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin5_psp_bodies/ABL0~0x30_22.4.6.0.body",
+            "relation": "clv_blob[0x100:] == preserved extracted body+signature tail",
+            "sha256": "6894809e22cb764cda0cb97c8b4a76d39eadb8cebb37c0be0fe8aa91caadcb44",
+            "size": 1056
+          },
+          {
+            "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin5_sec_gasket/ABL0~0x30_22.4.6.0",
+            "relation": "byte-identical full $PS1 container",
+            "sha256": "0859507cd52585ff1139498236d3ec5a73185c90fbc6a6324b50ea60b99824bb",
+            "size": 1312
+          }
+        ],
+        "robin5_body_after_0x100_exact": true
+      },
+      "historical_source": {
+        "source_binary_identity": "UNPROVEN",
+        "status": "no historical decompiled source in scoped corpus"
+      },
+      "index": 9,
+      "is_ps1": true,
+      "isa_classification": "32-bit ARM little-endian; ARM-state entry/trampoline with Thumb BX-LR markers",
+      "key_id": "663ca5220aad4b569fc565d36e2e4ed7",
+      "load_address": "0x00000000",
+      "magic": "$PS1",
+      "payload_id": "ABL0",
+      "rom_size_field": 1312,
+      "signature_tail_length": 256,
+      "signature_tail_sha256": "01a68dd98086ca0f5630bde3519b791b7f482f298d37a9eee54f7ddd9ac181a2",
+      "signature_verification_evidence": "evidence/firmware-audit/20260920-clv-sync-stage1/psp-verify/BC250_5.00_clv.bin.stdout",
+      "signed_body_sha256": "daf62b80c598c89f2a83fb762e071db0ad3ac8733212ec5f3b3336dad3c37d5a",
+      "signed_length": 800,
+      "spi_offset": "0x99F700",
+      "thumb_bx_lr_markers": [
+        {
+          "bytes": "70470020704708b5",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 434
+        },
+        {
+          "bytes": "704708b506486a46",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 438
+        }
+      ],
+      "type": "0x30",
+      "uncompressed_length": 7952,
+      "version": "22.4.6.0",
+      "zlib_size": 791
+    },
+    {
+      "arm_entry_bytes": "10402de904209fe532ff2fe11080bde8",
+      "compressed": 1,
+      "container_sha256": "95ae7826a69ea56b8c52ac703b85f181d45bdc309de334c2b7f9f4130376d515",
+      "container_size": 49184,
+      "decompressed_first_16": "10402de904209fe532ff2fe11080bde8",
+      "decompressed_payload_length": 94624,
+      "decompressed_payload_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "decompression_error": null,
+      "encrypted": 0,
+      "historical_robin5": {
+        "exact_robin5_container": true,
+        "references": [
+          {
+            "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin5_psp_bodies/ABL1~0x31_22.4.6.0.body",
+            "relation": "clv_blob[0x100:] == preserved extracted body+signature tail",
+            "sha256": "877a938d71f41b0bb4f0b16da88336464c07ed192a1aa5ea0f3344f297bcda9c",
+            "size": 48928
+          },
+          {
+            "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin5_sec_gasket/ABL1~0x31_22.4.6.0",
+            "relation": "byte-identical full $PS1 container",
+            "sha256": "95ae7826a69ea56b8c52ac703b85f181d45bdc309de334c2b7f9f4130376d515",
+            "size": 49184
+          }
+        ],
+        "robin5_body_after_0x100_exact": true
+      },
+      "historical_source": {
+        "header_line": "/* Decompiled from: d00_e09_ABL1~0x31_22.4.6.0 */",
+        "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/lorek123_psp/ABL1_decompiled.c",
+        "sha256": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b",
+        "size": 149324,
+        "source_binary_identity": "UNPROVEN \u2014 source text has no binary hash/provenance link in this corpus",
+        "status": "historical decompiled source present",
+        "version_label_matches_clv_ps1": true
+      },
+      "index": 10,
+      "is_ps1": true,
+      "isa_classification": "32-bit ARM little-endian; ARM-state entry/trampoline with Thumb BX-LR markers",
+      "key_id": "663ca5220aad4b569fc565d36e2e4ed7",
+      "load_address": "0x00000000",
+      "magic": "$PS1",
+      "payload_id": "ABL1",
+      "rom_size_field": 49184,
+      "signature_tail_length": 256,
+      "signature_tail_sha256": "fddd22d57e3cfc164e1ec2479025f5546f7acb8fd248b377a916b973f54dbb64",
+      "signature_verification_evidence": "evidence/firmware-audit/20260920-clv-sync-stage1/psp-verify/BC250_5.00_clv.bin.stdout",
+      "signed_body_sha256": "b440571499d268e61bf5ab2d43966c121fa21283ac88395c99b6b26f6a268401",
+      "signed_length": 48672,
+      "spi_offset": "0x99FD00",
+      "thumb_bx_lr_markers": [
+        {
+          "bytes": "70477047000070b5",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 5466
+        },
+        {
+          "bytes": "7047000070b588b0",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 5468
+        },
+        {
+          "bytes": "7047000031e10600",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 5812
+        },
+        {
+          "bytes": "7047b187050084e2",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 20690
+        }
+      ],
+      "type": "0x31",
+      "uncompressed_length": 94624,
+      "version": "22.4.6.0",
+      "zlib_size": 48672
+    },
+    {
+      "arm_entry_bytes": "10402de904209fe532ff2fe11080bde8",
+      "compressed": 1,
+      "container_sha256": "e8e90a60d473291ba35e7349a66b7eb7793092ffb033db282ba42171747af3ed",
+      "container_size": 16576,
+      "decompressed_first_16": "10402de904209fe532ff2fe11080bde8",
+      "decompressed_payload_length": 30336,
+      "decompressed_payload_sha256": "6fcae35368554127c48863169e660c27e19d9fb705871d918dbbbf933c3fbd32",
+      "decompression_error": null,
+      "encrypted": 0,
+      "historical_robin5": {
+        "exact_robin5_container": true,
+        "references": [
+          {
+            "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin5_psp_bodies/ABL2~0x32_22.4.6.0.body",
+            "relation": "clv_blob[0x100:] == preserved extracted body+signature tail",
+            "sha256": "269b095050c6f02aff78eaa09ccf1c6aa827431fd2c489f52f5635abe8d430e4",
+            "size": 16320
+          },
+          {
+            "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin5_sec_gasket/ABL2~0x32_22.4.6.0",
+            "relation": "byte-identical full $PS1 container",
+            "sha256": "e8e90a60d473291ba35e7349a66b7eb7793092ffb033db282ba42171747af3ed",
+            "size": 16576
+          }
+        ],
+        "robin5_body_after_0x100_exact": true
+      },
+      "historical_source": {
+        "source_binary_identity": "UNPROVEN",
+        "status": "no historical decompiled source in scoped corpus"
+      },
+      "index": 11,
+      "is_ps1": true,
+      "isa_classification": "32-bit ARM little-endian; ARM-state entry/trampoline with Thumb BX-LR markers",
+      "key_id": "663ca5220aad4b569fc565d36e2e4ed7",
+      "load_address": "0x00000000",
+      "magic": "$PS1",
+      "payload_id": "ABL2",
+      "rom_size_field": 16576,
+      "signature_tail_length": 256,
+      "signature_tail_sha256": "0257537b9c52ca673ea62fa930ad2d61970842f8f88a66026abb6845d10fd7ea",
+      "signature_verification_evidence": "evidence/firmware-audit/20260920-clv-sync-stage1/psp-verify/BC250_5.00_clv.bin.stdout",
+      "signed_body_sha256": "f533c7454313850dbd30f6b8feb6f85a319200ca663e6208a83e8697c70c7610",
+      "signed_length": 16064,
+      "spi_offset": "0x9ABE00",
+      "thumb_bx_lr_markers": [
+        {
+          "bytes": "70477047000070b5",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 5290
+        },
+        {
+          "bytes": "7047000070b588b0",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 5292
+        },
+        {
+          "bytes": "7047000025e60500",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 5636
+        },
+        {
+          "bytes": "70470187050070e7",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 9554
+        }
+      ],
+      "type": "0x32",
+      "uncompressed_length": 30336,
+      "version": "22.4.6.0",
+      "zlib_size": 16059
+    },
+    {
+      "arm_entry_bytes": "10402de904209fe532ff2fe11080bde8",
+      "compressed": 1,
+      "container_sha256": "d22643385895c0482b2fd0cdd3cd14db291443c9416d18588dd15506b88c1f39",
+      "container_size": 41632,
+      "decompressed_first_16": "10402de904209fe532ff2fe11080bde8",
+      "decompressed_payload_length": 85200,
+      "decompressed_payload_sha256": "3f5890b3a830725a11e169861fcfa208fa3f5fab37a38fc7f994a221a1f213be",
+      "decompression_error": null,
+      "encrypted": 0,
+      "historical_robin5": {
+        "exact_robin5_container": true,
+        "references": [
+          {
+            "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin5_psp_bodies/ABL3~0x33_22.4.6.0.body",
+            "relation": "clv_blob[0x100:] == preserved extracted body+signature tail",
+            "sha256": "1e3cb256e4a3c199aa8b9be7b57c1358b7dde109541ff3b6b333a1674262e11e",
+            "size": 41376
+          },
+          {
+            "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin5_sec_gasket/ABL3~0x33_22.4.6.0",
+            "relation": "byte-identical full $PS1 container",
+            "sha256": "d22643385895c0482b2fd0cdd3cd14db291443c9416d18588dd15506b88c1f39",
+            "size": 41632
+          }
+        ],
+        "robin5_body_after_0x100_exact": true
+      },
+      "historical_source": {
+        "header_line": "/* Decompiled from: d00_e11_ABL3~0x33_22.4.6.0 */",
+        "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/lorek123_psp/ABL3_decompiled.c",
+        "sha256": "ecd1bfb8be3fe15257038c4db6fd927ab72ca97a920a4639ad10cece04d3e22f",
+        "size": 173483,
+        "source_binary_identity": "UNPROVEN \u2014 source text has no binary hash/provenance link in this corpus",
+        "status": "historical decompiled source present",
+        "version_label_matches_clv_ps1": true
+      },
+      "index": 12,
+      "is_ps1": true,
+      "isa_classification": "32-bit ARM little-endian; ARM-state entry/trampoline with Thumb BX-LR markers",
+      "key_id": "663ca5220aad4b569fc565d36e2e4ed7",
+      "load_address": "0x00000000",
+      "magic": "$PS1",
+      "payload_id": "ABL3",
+      "rom_size_field": 41632,
+      "signature_tail_length": 256,
+      "signature_tail_sha256": "fa2c5e0d2b6155467593bacaa32d41f2ef9d42a6b8a9b989635fd3b05ef77d87",
+      "signature_verification_evidence": "evidence/firmware-audit/20260920-clv-sync-stage1/psp-verify/BC250_5.00_clv.bin.stdout",
+      "signed_body_sha256": "e831d606b05245223e14d4ba3f3166ac44ec34312cf385b0be011e063b1aa691",
+      "signed_length": 41120,
+      "spi_offset": "0x9AFF00",
+      "thumb_bx_lr_markers": [
+        {
+          "bytes": "704700fa03f14ff0",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 46
+        },
+        {
+          "bytes": "7047000010402de9",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 56
+        },
+        {
+          "bytes": "704748bf20f8022b",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 218
+        },
+        {
+          "bytes": "70470000013090e1",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 236
+        }
+      ],
+      "type": "0x33",
+      "uncompressed_length": 85200,
+      "version": "22.4.6.0",
+      "zlib_size": 41112
+    },
+    {
+      "arm_entry_bytes": "10402de904209fe532ff2fe11080bde8",
+      "compressed": 1,
+      "container_sha256": "3398a5d859967197ceb871a6c8bd0ec8451e6d73650cf38d9cb59d3f9b1b4c82",
+      "container_size": 41424,
+      "decompressed_first_16": "10402de904209fe532ff2fe11080bde8",
+      "decompressed_payload_length": 92096,
+      "decompressed_payload_sha256": "1d60a34f1641204423024857249781d9184b2c9c5342f4dd8dbc070df6c5150b",
+      "decompression_error": null,
+      "encrypted": 0,
+      "historical_robin5": {
+        "exact_robin5_container": true,
+        "references": [
+          {
+            "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin5_psp_bodies/ABL4~0x34_22.4.6.0.body",
+            "relation": "clv_blob[0x100:] == preserved extracted body+signature tail",
+            "sha256": "9958a4a91fa6bc5544c576118982133ce12e86c3e733453fbbbf481264d4e482",
+            "size": 41168
+          },
+          {
+            "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin5_sec_gasket/ABL4~0x34_22.4.6.0",
+            "relation": "byte-identical full $PS1 container",
+            "sha256": "3398a5d859967197ceb871a6c8bd0ec8451e6d73650cf38d9cb59d3f9b1b4c82",
+            "size": 41424
+          }
+        ],
+        "robin5_body_after_0x100_exact": true
+      },
+      "historical_source": {
+        "header_line": "/* Decompiled from: d00_e12_ABL4~0x34_22.4.6.0 */",
+        "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/lorek123_psp/ABL4_decompiled.c",
+        "sha256": "0fcffa6fa8501e6186b74ade298b0e51f0d8e3268101c68ebd07e27b5fcff566",
+        "size": 140614,
+        "source_binary_identity": "UNPROVEN \u2014 source text has no binary hash/provenance link in this corpus",
+        "status": "historical decompiled source present",
+        "version_label_matches_clv_ps1": true
+      },
+      "index": 13,
+      "is_ps1": true,
+      "isa_classification": "32-bit ARM little-endian; ARM-state entry/trampoline with Thumb BX-LR markers",
+      "key_id": "663ca5220aad4b569fc565d36e2e4ed7",
+      "load_address": "0x00000000",
+      "magic": "$PS1",
+      "payload_id": "ABL4",
+      "rom_size_field": 41424,
+      "signature_tail_length": 256,
+      "signature_tail_sha256": "5ceb0396226e6e49ab5c7ec31e33dbe2d8ca126746d9111021af2e23ebd59956",
+      "signature_verification_evidence": "evidence/firmware-audit/20260920-clv-sync-stage1/psp-verify/BC250_5.00_clv.bin.stdout",
+      "signed_body_sha256": "d449012329c64e7e840897136f4faedb26451780cffa3e1e22cc369106c9cc21",
+      "signed_length": 40912,
+      "spi_offset": "0x9BA200",
+      "thumb_bx_lr_markers": [
+        {
+          "bytes": "704700fa03f14ff0",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 46
+        },
+        {
+          "bytes": "7047000010402de9",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 56
+        },
+        {
+          "bytes": "70477047000070b5",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 9022
+        },
+        {
+          "bytes": "7047000070b588b0",
+          "interpretation": "Thumb BX LR marker",
+          "offset": 9024
+        }
+      ],
+      "type": "0x34",
+      "uncompressed_length": 92096,
+      "version": "22.4.6.0",
+      "zlib_size": 40900
+    }
+  ],
+  "coverage_limits": [
+    "The existing 233-module census covers extracted x86 PE32/TE UEFI executables, not PSP/ABL payloads.",
+    "ABL0-ABL4 are compressed non-x86 PSP payloads; their ARM/Thumb entry markers are classified statically, not executed.",
+    "Historical ABL1/ABL3/ABL4 decompilation files are version-label aligned and the CLV containers are byte-identical to preserved Robin-5 containers, but source-text-to-current-binary identity is not independently proven.",
+    "No exact AmdSetup+0x316-to-ABL/APOB field path or memory-training actuator is established by this inventory.",
+    "Type 0x01 PSP bootloader and type 0x02 trusted OS have no plaintext $PS1/ISA inventory here; non-container/opaque payload boundaries remain closed."
+  ],
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis",
+    "historical-report qualification"
+  ],
+  "input": {
+    "expected_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "hash_match": true,
+    "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "size": 16777216
+  },
+  "psp_directory": {
+    "count": 19,
+    "entries": [
+      {
+        "container_sha256": "0bfbd84a89fc07ecd6fbfadde9e49f0af58aa42a87212b84e252313716efd851",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 0,
+        "location_tagged": "0xFF8E0400",
+        "payload_id": "PSP_BOOTLOADER",
+        "size": 46592,
+        "spi_offset": "0x8E0400",
+        "subprogram": 0,
+        "type": "0x01",
+        "type_num": 1
+      },
+      {
+        "container_sha256": "cbc99cc0d1b25d97258d5db81959531ce791f0bec6b358be683ae0a6f2017527",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 1,
+        "location_tagged": "0xFF8EBA00",
+        "payload_id": "PSP_FW_TRUSTED_OS",
+        "size": 78672,
+        "spi_offset": "0x8EBA00",
+        "subprogram": 0,
+        "type": "0x02",
+        "type_num": 2
+      },
+      {
+        "container_sha256": "13c93c081333110e725661d8046e67175ee3490ed05e68647b501e71c0fc3a25",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 2,
+        "location_tagged": "0xFF8FEE00",
+        "payload_id": "SMU_OFFCHIP_FW",
+        "size": 262656,
+        "spi_offset": "0x8FEE00",
+        "subprogram": 0,
+        "type": "0x08",
+        "type_num": 8
+      },
+      {
+        "container_sha256": "347eb437947a9f41c65bb764e331afd0ac4e368738217c3b3bf3c61499723ba0",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 3,
+        "location_tagged": "0xFF93F000",
+        "payload_id": "UNNAMED_TYPE_09",
+        "size": 1088,
+        "spi_offset": "0x93F000",
+        "subprogram": 0,
+        "type": "0x09",
+        "type_num": 9
+      },
+      {
+        "container_sha256": "b9a7b42c1a233f2805d7106f59a05d8a04f1e31458e2c660e6276b7f3121ae21",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 4,
+        "location_tagged": "0xFF93F500",
+        "payload_id": "SMU_OFF_CHIP_FW_2",
+        "size": 262656,
+        "spi_offset": "0x93F500",
+        "subprogram": 0,
+        "type": "0x12",
+        "type_num": 18
+      },
+      {
+        "container_sha256": "d21f7eeda1af91c9c350e21767d6379f0e768e2269ce6fa2c3a03abfd67e321a",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 5,
+        "location_tagged": "0xFF97F700",
+        "payload_id": "DEBUG_UNLOCK",
+        "size": 8512,
+        "spi_offset": "0x97F700",
+        "subprogram": 0,
+        "type": "0x13",
+        "type_num": 19
+      },
+      {
+        "container_sha256": "d64943c125658784fd192607e15544e509616ee050c576bdccb3be2e370267a9",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 6,
+        "location_tagged": "0xFF981900",
+        "payload_id": "HARDWARE_IP_CONFIG",
+        "size": 1616,
+        "spi_offset": "0x981900",
+        "subprogram": 0,
+        "type": "0x20",
+        "type_num": 32
+      },
+      {
+        "container_sha256": "b365d5b135da12b097a4ef5aecc47a284f1ccd49ac3d251b35b2c0a6de8c9e55",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 7,
+        "location_tagged": "0xFF982000",
+        "payload_id": "SEC_GASKET",
+        "size": 11856,
+        "spi_offset": "0x982000",
+        "subprogram": 0,
+        "type": "0x24",
+        "type_num": 36
+      },
+      {
+        "container_sha256": "5b6828bff3f10f1b120b279932af156438e1bdd724508e44b7630fce9716251f",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 8,
+        "location_tagged": "0xFF984F00",
+        "payload_id": "DRIVER_ENTRIES",
+        "size": 108400,
+        "spi_offset": "0x984F00",
+        "subprogram": 0,
+        "type": "0x28",
+        "type_num": 40
+      },
+      {
+        "container_sha256": "0859507cd52585ff1139498236d3ec5a73185c90fbc6a6324b50ea60b99824bb",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 9,
+        "location_tagged": "0xFF99F700",
+        "payload_id": "ABL0",
+        "size": 1312,
+        "spi_offset": "0x99F700",
+        "subprogram": 0,
+        "type": "0x30",
+        "type_num": 48
+      },
+      {
+        "container_sha256": "95ae7826a69ea56b8c52ac703b85f181d45bdc309de334c2b7f9f4130376d515",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 10,
+        "location_tagged": "0xFF99FD00",
+        "payload_id": "ABL1",
+        "size": 49184,
+        "spi_offset": "0x99FD00",
+        "subprogram": 0,
+        "type": "0x31",
+        "type_num": 49
+      },
+      {
+        "container_sha256": "e8e90a60d473291ba35e7349a66b7eb7793092ffb033db282ba42171747af3ed",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 11,
+        "location_tagged": "0xFF9ABE00",
+        "payload_id": "ABL2",
+        "size": 16576,
+        "spi_offset": "0x9ABE00",
+        "subprogram": 0,
+        "type": "0x32",
+        "type_num": 50
+      },
+      {
+        "container_sha256": "d22643385895c0482b2fd0cdd3cd14db291443c9416d18588dd15506b88c1f39",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 12,
+        "location_tagged": "0xFF9AFF00",
+        "payload_id": "ABL3",
+        "size": 41632,
+        "spi_offset": "0x9AFF00",
+        "subprogram": 0,
+        "type": "0x33",
+        "type_num": 51
+      },
+      {
+        "container_sha256": "3398a5d859967197ceb871a6c8bd0ec8451e6d73650cf38d9cb59d3f9b1b4c82",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 13,
+        "location_tagged": "0xFF9BA200",
+        "payload_id": "ABL4",
+        "size": 41424,
+        "spi_offset": "0x9BA200",
+        "subprogram": 0,
+        "type": "0x34",
+        "type_num": 52
+      },
+      {
+        "container_sha256": "4d8b8d271acc4bd9bb98992a6dafc823066e8b014cfb86d272281a8212fec9f0",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 14,
+        "location_tagged": "0xFF9C4400",
+        "payload_id": "FW_XHCI",
+        "size": 26128,
+        "spi_offset": "0x9C4400",
+        "subprogram": 0,
+        "type": "0x44",
+        "type_num": 68
+      },
+      {
+        "container_sha256": "272514c082e604915f1f48bd1ef1ce1c439011cdb1b2240271e9608bbe6f9931",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 15,
+        "location_tagged": "0xFF9CAB00",
+        "payload_id": "TOS_SECURITY_POLICY",
+        "size": 1760,
+        "spi_offset": "0x9CAB00",
+        "subprogram": 0,
+        "type": "0x45",
+        "type_num": 69
+      },
+      {
+        "container_sha256": "4435c945ce914b29cc45965ea48a59d2e4d8deb584292e316ebc5258fbd4cf57",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 16,
+        "location_tagged": "0xFF9CB200",
+        "payload_id": "UNNAMED_RAW_TYPE_4F",
+        "size": 66048,
+        "spi_offset": "0x9CB200",
+        "subprogram": 0,
+        "type": "0x4F",
+        "type_num": 79
+      },
+      {
+        "container_sha256": "78c3fe9b99ca6c815715303c440de2a5ece6ef267ee5b50c89f559fe59eb963a",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 17,
+        "location_tagged": "0xFF9DB400",
+        "payload_id": "BL_PUBLIC_KEY",
+        "size": 3536,
+        "spi_offset": "0x9DB400",
+        "subprogram": 0,
+        "type": "0x50",
+        "type_num": 80
+      },
+      {
+        "container_sha256": "1ca4d22f6eb87b0806aeb3061e0e4a31c567ea2c1b21df3d2132a1c4b90c0ede",
+        "flags": 0,
+        "in_bounds": true,
+        "index": 18,
+        "location_tagged": "0xFF9DC200",
+        "payload_id": "TOS_PUBLIC_KEY",
+        "size": 1856,
+        "spi_offset": "0x9DC200",
+        "subprogram": 0,
+        "type": "0x51",
+        "type_num": 81
+      }
+    ],
+    "offset": "0x8E0000"
+  },
+  "report": "CLV PSP/ABL payload provenance inventory",
+  "reproduction": {
+    "existing_parsers": [
+      "scripts/firmware_audit.py",
+      "scripts/psp_ps1_verify.py"
+    ],
+    "script": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-psp-abl-provenance/clv_psp_abl_inventory.py",
+    "signature_output": "evidence/firmware-audit/20260920-clv-sync-stage1/psp-verify/BC250_5.00_clv.bin.stdout"
+  }
+}

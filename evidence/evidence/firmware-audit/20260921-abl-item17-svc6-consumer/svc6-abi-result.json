@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "scope": "fresh bounded ABL1 SVC #6 ABI and item-0x17 conditional caller inspection; no hardware action",
+  "target": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-consumer/ABL1-clv-full-thumb.elf.o",
+    "sha256": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+    "isa": "Thumb-2"
+  },
+  "prior_state": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-consumer/item17-consumer-result.json",
+    "status": "PASS",
+    "checks": 136,
+    "conditional_base": "0x57100",
+    "helper_6d10_return": 1
+  },
+  "command": {
+    "tool": "/usr/bin/llvm-objdump",
+    "version": "LLVM 22.1.8",
+    "args": [
+      "-D",
+      "--section=.data",
+      "--triple=thumbv7",
+      "--start-address=0x0d00",
+      "--stop-address=0x1300",
+      "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-consumer/ABL1-clv-full-thumb.elf.o"
+    ],
+    "exit": 0,
+    "stderr_bytes": 0
+  },
+  "svc6_wrapper": {
+    "entry": "0x12AC",
+    "svc_site": "0x12C0",
+    "svc_immediate": "#0x6",
+    "entry_observations": [
+      "r2 is copied to r4",
+      "r0 is set to SP for helper 0x6C20",
+      "r0 then loads literal 0x0006A41C from 0x12C8",
+      "byte [r4+0x40] is cleared",
+      "r5 is set to zero before SVC and moved to r0 after SVC; zero return assumes SVC preserves callee-saved r5"
+    ],
+    "literal": "0x0006A41C",
+    "candidate_payload_offset": "0x1331C under conditional base 0x57100",
+    "literal_correlation": "candidate offset contains newline Slave: ABL, return result newline NUL; correlation does not define SVC semantics"
+  },
+  "candidate_item17_callers": {
+    "exact_local_gate": "0x6D10 returns 1; 0x95FC takes 0x9646 -> 0x9744 -> 0x984E and does not reach SVC alternatives",
+    "paths": [
+      {
+        "from": "0x9780",
+        "to": "0x0DD4",
+        "selector_setup": "r1=0x0B",
+        "next": "0x0DD4 -> 0x0FB8; no SVC #6 in visible 0x0FB8 body"
+      },
+      {
+        "from": "0x97E4",
+        "to": "0x118C",
+        "selector_setup": "0x11E6: r1=0x0C, r2=SP",
+        "next": "0x118C -> 0x12AC -> SVC #6"
+      },
+      {
+        "from": "0x9800",
+        "to": "0x10C0",
+        "selector_setup": "0x10FA: r1=0x0B, r2=SP",
+        "next": "0x10C0 -> 0x12AC -> SVC #6"
+      }
+    ]
+  },
+  "classification": {
+    "bounded_direct_pll_or_clock_selector_write": "NOT_OBSERVED",
+    "abl_side": "opaque-service forwarding preparation",
+    "final_consumer": "UNRESOLVED outside extracted ABL1; SVC handler/recipient absent",
+    "register_abi_limit": "0x6C20 and its subcalls occur before SVC; exact post-helper r1-r3 values are not established from this payload",
+    "return_value_limit": "The disassembly copies r5 to r0 after SVC; source-level zero return is contingent on SVC preserving r5, which this extract cannot independently establish."
+  },
+  "limits": [
+    "No loader/runtime-base proof beyond conditional 0x57100.",
+    "No SVC handler semantics, PLL, UMC, SMU, physical MCLK, training, voltage, or hardware result.",
+    "Bounded negative is limited to the inspected wrapper/caller window; not an ABL1-wide MMIO census."
+  ]
+}

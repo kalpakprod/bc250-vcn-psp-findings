@@ -1,0 +1,252 @@
+{
+  "checks": 45,
+  "checks_detail": [
+    {
+      "detail": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "name": "rom_hash",
+      "ok": true
+    },
+    {
+      "detail": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "name": "fabric_hash",
+      "ok": true
+    },
+    {
+      "detail": "77b1d4be4393fbbf920847398ae5667c42b3841066d40c2aaace1b49036c81e1",
+      "name": "instruction_hash",
+      "ok": true
+    },
+    {
+      "detail": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-token1204-hob-boundary-xhigh/token1204-hob-boundary-result.json",
+      "name": "prior_hob_reopened",
+      "ok": true
+    },
+    {
+      "detail": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-fabric-provider-266f-xhigh/provider-266f-result.json",
+      "name": "prior_prov_reopened",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9683, 'bytes': '55', 'mnemonic': 'push', 'operands': 'ebp'}",
+      "name": "prov_entry_55",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9684, 'bytes': '8bec', 'mnemonic': 'mov', 'operands': 'ebp,esp'}",
+      "name": "prov_prolog_8bec",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9689, 'bytes': '8d45f4', 'mnemonic': 'lea', 'operands': 'eax,[ebp-0xc]'}",
+      "name": "prov_lea_idtr_local",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9698, 'bytes': '0f0108', 'mnemonic': 'sidtd', 'operands': '[eax]'}",
+      "name": "prov_sidt_op",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9701, 'bytes': '8b45f6', 'mnemonic': 'mov', 'operands': 'eax,DWORD PTR [ebp-0xa]'}",
+      "name": "prov_mov_idtr_base",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9704, 'bytes': '8b40fc', 'mnemonic': 'mov', 'operands': 'eax,DWORD PTR [eax-0x4]'}",
+      "name": "prov_mov_obj_ptr_base_minus_4",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9707, 'bytes': 'c9', 'mnemonic': 'leave', 'operands': ''}",
+      "name": "prov_leave",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9708, 'bytes': 'c3', 'mnemonic': 'ret', 'operands': ''}",
+      "name": "prov_ret",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9839, 'bytes': '55', 'mnemonic': 'push', 'operands': 'ebp'}",
+      "name": "wrap_entry_55",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9843, 'bytes': 'e85bffffff', 'mnemonic': 'call', 'operands': '0x25d3'}",
+      "name": "wrap_call_25d3",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9848, 'bytes': '8b08', 'mnemonic': 'mov', 'operands': 'ecx,DWORD PTR [eax]'}",
+      "name": "wrap_mov_ecx_vtable",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9850, 'bytes': '8d55fc', 'mnemonic': 'lea', 'operands': 'edx,[ebp-0x4]'}",
+      "name": "wrap_lea_out_buf",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9853, 'bytes': '52', 'mnemonic': 'push', 'operands': 'edx'}",
+      "name": "wrap_push_out_buf",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9854, 'bytes': 'ff750c', 'mnemonic': 'push', 'operands': 'DWORD PTR [ebp+0xc]'}",
+      "name": "wrap_push_arg2",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9857, 'bytes': 'ff7508', 'mnemonic': 'push', 'operands': 'DWORD PTR [ebp+0x8]'}",
+      "name": "wrap_push_arg1",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9860, 'bytes': '50', 'mnemonic': 'push', 'operands': 'eax'}",
+      "name": "wrap_push_obj_this",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9861, 'bytes': 'ff5134', 'mnemonic': 'call', 'operands': 'DWORD PTR [ecx+0x34]'}",
+      "name": "wrap_call_vtable_34",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9867, 'bytes': '85c0', 'mnemonic': 'test', 'operands': 'eax,eax'}",
+      "name": "wrap_test_status",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9871, 'bytes': '8365fc00', 'mnemonic': 'and', 'operands': 'DWORD PTR [ebp-0x4],0x0'}",
+      "name": "wrap_status_zero_on_neg",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9875, 'bytes': '8b45fc', 'mnemonic': 'mov', 'operands': 'eax,DWORD PTR [ebp-0x4]'}",
+      "name": "wrap_mov_ret_val",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9880, 'bytes': '8d4718', 'mnemonic': 'lea', 'operands': 'eax,[edi+0x18]'}",
+      "name": "c1_lea_edi_18",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9883, 'bytes': '50', 'mnemonic': 'push', 'operands': 'eax'}",
+      "name": "c1_push_eax",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9884, 'bytes': '6a04', 'mnemonic': 'push', 'operands': '0x4'}",
+      "name": "c1_push_04",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9886, 'bytes': 'e8ccffffff', 'mnemonic': 'call', 'operands': '0x266f'}",
+      "name": "c1_call_266f",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9893, 'bytes': '85c0', 'mnemonic': 'test', 'operands': 'eax,eax'}",
+      "name": "c1_test_eax",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9897, 'bytes': '83c018', 'mnemonic': 'add', 'operands': 'eax,0x18'}",
+      "name": "c1_add_eax_18",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9900, 'bytes': '8b0e', 'mnemonic': 'mov', 'operands': 'ecx,DWORD PTR [esi]'}",
+      "name": "c1_copy_w0",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9902, 'bytes': '8948f0', 'mnemonic': 'mov', 'operands': 'DWORD PTR [eax-0x10],ecx'}",
+      "name": "c1_store_w0",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9905, 'bytes': '8b4e04', 'mnemonic': 'mov', 'operands': 'ecx,DWORD PTR [esi+0x4]'}",
+      "name": "c1_copy_w1",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9908, 'bytes': '8948f4', 'mnemonic': 'mov', 'operands': 'DWORD PTR [eax-0xc],ecx'}",
+      "name": "c1_store_w1",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9911, 'bytes': '8b4e08', 'mnemonic': 'mov', 'operands': 'ecx,DWORD PTR [esi+0x8]'}",
+      "name": "c1_copy_w2",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9914, 'bytes': '8948f8', 'mnemonic': 'mov', 'operands': 'DWORD PTR [eax-0x8],ecx'}",
+      "name": "c1_store_w2",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9917, 'bytes': '8b4e0c', 'mnemonic': 'mov', 'operands': 'ecx,DWORD PTR [esi+0xc]'}",
+      "name": "c1_copy_w3",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9920, 'bytes': '8948fc', 'mnemonic': 'mov', 'operands': 'DWORD PTR [eax-0x4],ecx'}",
+      "name": "c1_store_w3",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9941, 'bytes': '56', 'mnemonic': 'push', 'operands': 'esi'}",
+      "name": "c2_push_esi",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9942, 'bytes': '6a30', 'mnemonic': 'push', 'operands': '0x30'}",
+      "name": "c2_push_30",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9944, 'bytes': '6a02', 'mnemonic': 'push', 'operands': '0x2'}",
+      "name": "c2_push_02",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9946, 'bytes': 'e890ffffff', 'mnemonic': 'call', 'operands': '0x266f'}",
+      "name": "c2_call_266f",
+      "ok": true
+    },
+    {
+      "detail": "no direct 0x1204 argument in 0x25D3..0x26DA",
+      "name": "no_direct_1204_in_provider_window",
+      "ok": true
+    },
+    {
+      "detail": "no push 0x00001204 in entire AmdFabricAriPei",
+      "name": "no_direct_push_1204_whole_module",
+      "ok": true
+    }
+  ],
+  "failed": 0,
+  "inputs": {
+    "fabric_sha256": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+    "instructions_sha256": "77b1d4be4393fbbf920847398ae5667c42b3841066d40c2aaace1b49036c81e1",
+    "prior_hob_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-token1204-hob-boundary-xhigh/token1204-hob-boundary-result.json",
+    "prior_provider_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-fabric-provider-266f-xhigh/provider-266f-result.json",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+  },
+  "passed": 45,
+  "provider_analysis": {
+    "callers": {
+      "caller_0x2698": "Passes immediate 4 (selector) and output pointer [EDI+0x18]. Copies 4 DWORDs on success.",
+      "caller_0x26D5": "Passes immediate 2 (selector), size 0x30, and buffer ESI."
+    },
+    "dispatch": "Wrapper 0x266F calls indirect method [ECX+0x34] on the acquired provider object.",
+    "nature": "Provider object pointer is retrieved from the pre-PEI/CAR execution context anchor at [IDTR.Base - 4], not via PEI LocatePpi or static GUID table.",
+    "source": "SIDT local at 0x25E2, loads IDTR base at [ebp-0xa], dereferences [base - 4] at 0x25E8",
+    "token1204_status": "No reference to token 0x1204, UclkDiv1M0, or clock/divider structure exists in this provider edge.",
+    "verdict": "NON-DISCRIMINATING for token 0x1204. The edge represents a generic runtime platform service dispatch; token 0x1204 dataflow terminates at the NVTB/HOB generic reader boundary without entering this provider path."
+  },
+  "route": "AmdFabricAriPei 0x266F -> 0x25D3 (SIDT IDTR base - 4) -> [ECX+0x34]",
+  "status": "PASS"
+}

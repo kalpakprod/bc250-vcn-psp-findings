@@ -1,0 +1,120 @@
++ SP=/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc
++ echo '=== bc250-detect ==='
+=== bc250-detect ===
++ bc250-detect
++ head -50
+usage: bc250-detect [-h] -f MHz -v mV [-t °C] [-k] [-c path]
+bc250-detect: error: the following arguments are required: -f/--frequency, -v/--vid
++ echo '=== bc250-apply help ==='
+=== bc250-apply help ===
++ bc250-apply --help
++ head -30
+usage: bc250-apply [-h] [-a] [-i] [-u] [path]
+
+Apply CPU overclock settings on AMD BC-250
+
+positional arguments:
+  path             configuration path
+
+options:
+  -h, --help       show this help message and exit
+  -a, --apply      Apply overclock configuration
+  -i, --install    Install overclock configuration as service
+  -u, --uninstall  Uninstall configuration
++ echo '=== bc250-smu-oc bin ==='
+=== bc250-smu-oc bin ===
++ ls -la /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/bin
+итого 48
+drwxr-xr-x 1 steammachine steammachine  198 Там 16 18:37 .
+drwxr-xr-x 1 steammachine steammachine  112 Там 16 18:37 ..
+-rw-r--r-- 1 steammachine steammachine 2252 Там 16 18:37 activate
+-rw-r--r-- 1 steammachine steammachine 1001 Там 16 18:37 activate.csh
+-rw-r--r-- 1 steammachine steammachine 2231 Там 16 18:37 activate.fish
+-rw-r--r-- 1 steammachine steammachine 9031 Там 16 18:37 Activate.ps1
+-rwxr-xr-x 1 steammachine steammachine  211 Там 16 18:37 bc250-apply
+-rwxr-xr-x 1 steammachine steammachine  212 Там 16 18:37 bc250-detect
+lrwxrwxrwx 1 steammachine steammachine   10 Там 16 18:37 python -> python3.14
+lrwxrwxrwx 1 steammachine steammachine   10 Там 16 18:37 python3 -> python3.14
+lrwxrwxrwx 1 steammachine steammachine   19 Там 16 18:37 python3.14 -> /usr/bin/python3.14
+lrwxrwxrwx 1 steammachine steammachine   10 Там 16 18:37 𝜋thon -> python3.14
++ echo '=== SMU PCI config window (01:00.0) ==='
+=== SMU PCI config window (01:00.0) ===
++ lspci -xxx -s 01:00.0
++ sed -n 1,40p
+01:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Cyan Skillfish [BC-250]
+00: 02 10 fe 13 07 04 10 08 00 00 00 03 10 00 80 00
+10: 0c 00 00 c0 00 00 00 00 0c 00 00 d0 00 00 00 00
+20: 01 e0 00 00 00 00 80 fe 00 00 00 00 22 10 00 00
+30: 00 00 00 00 48 00 00 00 00 00 00 00 ff 01 00 00
+
++ echo '=== debugfs mount ==='
+=== debugfs mount ===
++ mount
++ grep debugfs
+debugfs on /sys/kernel/debug type debugfs (rw,nosuid,nodev,noexec,relatime)
++ echo '=== dri0 listing (vcn/smn/reg) ==='
+=== dri0 listing (vcn/smn/reg) ===
++ ls -la /sys/kernel/debug/dri0/
++ grep -iE 'vcn|smn|reg|pm|clk'
++ head -40
++ echo '=== gpu_metrics (clocks) ==='
+=== gpu_metrics (clocks) ===
++ cat /sys/kernel/debug/dri0/amdgpu_gpu_metrics
++ head -60
++ echo '=== dmesg VCN/amdgpu/psp/clock (sudo) ==='
+=== dmesg VCN/amdgpu/psp/clock (sudo) ===
++ sudo dmesg
++ grep -iE 'vcn|amdgpu|skillfish|psp|clock|clk|dpm|domain'
++ tail -50
+[ 7321.095741] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7321.095778] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7325.330299] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7325.330336] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7329.581551] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7329.581585] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7333.622073] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7333.622113] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7337.755622] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7337.755662] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7341.997068] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7341.997094] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7346.297443] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7346.297485] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7350.521855] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7350.521896] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7354.836804] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7354.836834] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7359.000335] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7359.000373] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7363.076921] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7363.076957] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7367.252056] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7367.252093] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7371.514821] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7371.514854] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7375.633830] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7375.633856] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7379.725654] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7379.725690] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7383.902378] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7383.902406] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7388.142448] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7388.142475] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7392.639524] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7392.639560] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7396.846218] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7396.846243] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7401.041255] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7401.041290] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7405.234540] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7405.234573] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7409.420517] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7409.420546] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7413.595840] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7413.595865] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7417.867273] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7417.867311] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+[ 7422.082839] amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+[ 7422.082882] amdgpu 0000:01:00.0: Failed to export SMU metrics table!
++ echo '=== done ==='
+=== done ===

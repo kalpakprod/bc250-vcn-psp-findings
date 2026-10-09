@@ -1,0 +1,64 @@
+{
+  "cases": [
+    {
+      "case": "stock_caller",
+      "entry": "0xd8ae",
+      "svc": [
+        {
+          "pc": "0x9598",
+          "selector": 7,
+          "argument": 256,
+          "response_pointer": 3178476
+        }
+      ],
+      "executed_topology_helpers": [
+        "0xa418",
+        "0xa450"
+      ],
+      "instructions": 55,
+      "code_unchanged": true
+    },
+    {
+      "case": "modified_argument",
+      "entry": "0x9564",
+      "svc": [
+        {
+          "pc": "0x9598",
+          "selector": 7,
+          "argument": 257,
+          "response_pointer": 3178476
+        }
+      ],
+      "executed_topology_helpers": [
+        "0xa418",
+        "0xa450"
+      ],
+      "instructions": 53,
+      "code_unchanged": true
+    },
+    {
+      "case": "restored_argument",
+      "entry": "0x9564",
+      "svc": [
+        {
+          "pc": "0x9598",
+          "selector": 7,
+          "argument": 256,
+          "response_pointer": 3178476
+        }
+      ],
+      "executed_topology_helpers": [
+        "0xa418",
+        "0xa450"
+      ],
+      "instructions": 53,
+      "code_unchanged": true
+    }
+  ],
+  "limits": [
+    "No SVC28 hardware implementation modeled, success response fixture",
+    "Phase ordering inferred from ABL module identities and exact callsites, not whole boot execution",
+    "0x100 is packed raw argument, not frequency or proven pstate number",
+    "Later software/firmware can change state again"
+  ]
+}

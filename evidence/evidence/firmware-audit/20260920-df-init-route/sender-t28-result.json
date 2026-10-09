@@ -1,0 +1,691 @@
+{
+  "status": "PASS",
+  "input_psp_type": "0x28",
+  "input_sha256": "5b6828bff3f10f1b120b279932af156438e1bdd724508e44b7630fce9716251f",
+  "rom_base": "0x984f00",
+  "size": 108400,
+  "function_relative": "0x118e8",
+  "function_rom": "0x9967e8",
+  "command": [
+    "llvm-mc",
+    "--disassemble",
+    "--triple=thumbv7",
+    "--show-encoding"
+  ],
+  "direct_BL_sites": [
+    "0xc526",
+    "0xfb58",
+    "0xfba8",
+    "0xfc8a"
+  ],
+  "windows": [
+    {
+      "start": "0x118e8",
+      "end": "0x11994",
+      "instructions": [
+        {
+          "relative": "0x118e8",
+          "rom": "0x9967e8",
+          "bytes": "2de9ff4f",
+          "instruction": "push.w\t{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}"
+        },
+        {
+          "relative": "0x118ec",
+          "rom": "0x9967ec",
+          "bytes": "2948",
+          "instruction": "ldr\tr0, [pc, #164]",
+          "literal_rom": "0x996894",
+          "literal_value": "0xe18978"
+        },
+        {
+          "relative": "0x118ee",
+          "rom": "0x9967ee",
+          "bytes": "0025",
+          "instruction": "movs\tr5, #0"
+        },
+        {
+          "relative": "0x118f0",
+          "rom": "0x9967f0",
+          "bytes": "9246",
+          "instruction": "mov\tr10, r2"
+        },
+        {
+          "relative": "0x118f2",
+          "rom": "0x9967f2",
+          "bytes": "1c46",
+          "instruction": "mov\tr4, r3"
+        },
+        {
+          "relative": "0x118f4",
+          "rom": "0x9967f4",
+          "bytes": "4ff02009",
+          "instruction": "mov.w\tr9, #32"
+        },
+        {
+          "relative": "0x118f8",
+          "rom": "0x9967f8",
+          "bytes": "0068",
+          "instruction": "ldr\tr0, [r0]"
+        },
+        {
+          "relative": "0x118fa",
+          "rom": "0x9967fa",
+          "bytes": "5edf",
+          "instruction": "svc\t#94"
+        },
+        {
+          "relative": "0x118fc",
+          "rom": "0x9967fc",
+          "bytes": "2648",
+          "instruction": "ldr\tr0, [pc, #152]",
+          "literal_rom": "0x996898",
+          "literal_value": "0x3b10700"
+        },
+        {
+          "relative": "0x118fe",
+          "rom": "0x9967fe",
+          "bytes": "4946",
+          "instruction": "mov\tr1, r9"
+        },
+        {
+          "relative": "0x11900",
+          "rom": "0x996800",
+          "bytes": "7ddf",
+          "instruction": "svc\t#125"
+        },
+        {
+          "relative": "0x11902",
+          "rom": "0x996802",
+          "bytes": "0700",
+          "instruction": "movs\tr7, r0"
+        },
+        {
+          "relative": "0x11904",
+          "rom": "0x996804",
+          "bytes": "0ad0",
+          "instruction": "beq\t#20"
+        },
+        {
+          "relative": "0x11906",
+          "rom": "0x996806",
+          "bytes": "380d",
+          "instruction": "lsrs\tr0, r7, #20"
+        },
+        {
+          "relative": "0x11908",
+          "rom": "0x996808",
+          "bytes": "2449",
+          "instruction": "ldr\tr1, [pc, #144]",
+          "literal_rom": "0x99689c",
+          "literal_value": "0x10718"
+        },
+        {
+          "relative": "0x1190a",
+          "rom": "0x99680a",
+          "bytes": "4ff00008",
+          "instruction": "mov.w\tr8, #0"
+        },
+        {
+          "relative": "0x1190e",
+          "rom": "0x99680e",
+          "bytes": "0005",
+          "instruction": "lsls\tr0, r0, #20"
+        },
+        {
+          "relative": "0x11910",
+          "rom": "0x996810",
+          "bytes": "00eb010b",
+          "instruction": "add.w\tr11, r0, r1"
+        },
+        {
+          "relative": "0x11914",
+          "rom": "0x996814",
+          "bytes": "2149",
+          "instruction": "ldr\tr1, [pc, #132]",
+          "literal_rom": "0x99689c",
+          "literal_value": "0x10718"
+        },
+        {
+          "relative": "0x11916",
+          "rom": "0x996816",
+          "bytes": "1439",
+          "instruction": "subs\tr1, #20"
+        },
+        {
+          "relative": "0x11918",
+          "rom": "0x996818",
+          "bytes": "4618",
+          "instruction": "adds\tr6, r0, r1"
+        },
+        {
+          "relative": "0x1191a",
+          "rom": "0x99681a",
+          "bytes": "09e0",
+          "instruction": "b\t#18"
+        },
+        {
+          "relative": "0x1191c",
+          "rom": "0x99681c",
+          "bytes": "204d",
+          "instruction": "ldr\tr5, [pc, #128]",
+          "literal_rom": "0x9968a0",
+          "literal_value": "0xffff000c"
+        },
+        {
+          "relative": "0x1191e",
+          "rom": "0x99681e",
+          "bytes": "2ee0",
+          "instruction": "b\t#92"
+        },
+        {
+          "relative": "0x11920",
+          "rom": "0x996820",
+          "bytes": "0120",
+          "instruction": "movs\tr0, #1"
+        },
+        {
+          "relative": "0x11922",
+          "rom": "0x996822",
+          "bytes": "56df",
+          "instruction": "svc\t#86"
+        },
+        {
+          "relative": "0x11924",
+          "rom": "0x996824",
+          "bytes": "601c",
+          "instruction": "adds\tr0, r4, #1"
+        },
+        {
+          "relative": "0x11926",
+          "rom": "0x996826",
+          "bytes": "03d0",
+          "instruction": "beq\t#6"
+        },
+        {
+          "relative": "0x11928",
+          "rom": "0x996828",
+          "bytes": "08f10108",
+          "instruction": "add.w\tr8, r8, #1"
+        },
+        {
+          "relative": "0x1192c",
+          "rom": "0x99682c",
+          "bytes": "a045",
+          "instruction": "cmp\tr8, r4"
+        },
+        {
+          "relative": "0x1192e",
+          "rom": "0x99682e",
+          "bytes": "15d8",
+          "instruction": "bhi\t#42"
+        },
+        {
+          "relative": "0x11930",
+          "rom": "0x996830",
+          "bytes": "3068",
+          "instruction": "ldr\tr0, [r6]"
+        },
+        {
+          "relative": "0x11932",
+          "rom": "0x996832",
+          "bytes": "0028",
+          "instruction": "cmp\tr0, #0"
+        },
+        {
+          "relative": "0x11934",
+          "rom": "0x996834",
+          "bytes": "f4d0",
+          "instruction": "beq\t#-24"
+        },
+        {
+          "relative": "0x11936",
+          "rom": "0x996836",
+          "bytes": "15bb",
+          "instruction": "cbnz\tr5, #68"
+        },
+        {
+          "relative": "0x11938",
+          "rom": "0x996838",
+          "bytes": "0020",
+          "instruction": "movs\tr0, #0"
+        },
+        {
+          "relative": "0x1193a",
+          "rom": "0x99683a",
+          "bytes": "3060",
+          "instruction": "str\tr0, [r6]"
+        },
+        {
+          "relative": "0x1193c",
+          "rom": "0x99683c",
+          "bytes": "0198",
+          "instruction": "ldr\tr0, [sp, #4]"
+        },
+        {
+          "relative": "0x1193e",
+          "rom": "0x99683e",
+          "bytes": "3860",
+          "instruction": "str\tr0, [r7]"
+        },
+        {
+          "relative": "0x11940",
+          "rom": "0x996840",
+          "bytes": "0098",
+          "instruction": "ldr\tr0, [sp]"
+        },
+        {
+          "relative": "0x11942",
+          "rom": "0x996842",
+          "bytes": "cbf80000",
+          "instruction": "str.w\tr0, [r11]"
+        },
+        {
+          "relative": "0x11946",
+          "rom": "0x996846",
+          "bytes": "4ff00008",
+          "instruction": "mov.w\tr8, #0"
+        },
+        {
+          "relative": "0x1194a",
+          "rom": "0x99684a",
+          "bytes": "09e0",
+          "instruction": "b\t#18"
+        },
+        {
+          "relative": "0x1194c",
+          "rom": "0x99684c",
+          "bytes": "0120",
+          "instruction": "movs\tr0, #1"
+        },
+        {
+          "relative": "0x1194e",
+          "rom": "0x99684e",
+          "bytes": "56df",
+          "instruction": "svc\t#86"
+        },
+        {
+          "relative": "0x11950",
+          "rom": "0x996850",
+          "bytes": "601c",
+          "instruction": "adds\tr0, r4, #1"
+        },
+        {
+          "relative": "0x11952",
+          "rom": "0x996852",
+          "bytes": "05d0",
+          "instruction": "beq\t#10"
+        },
+        {
+          "relative": "0x11954",
+          "rom": "0x996854",
+          "bytes": "08f10108",
+          "instruction": "add.w\tr8, r8, #1"
+        },
+        {
+          "relative": "0x11958",
+          "rom": "0x996858",
+          "bytes": "a045",
+          "instruction": "cmp\tr8, r4"
+        },
+        {
+          "relative": "0x1195a",
+          "rom": "0x99685a",
+          "bytes": "01d9",
+          "instruction": "bls\t#2"
+        },
+        {
+          "relative": "0x1195c",
+          "rom": "0x99685c",
+          "bytes": "114d",
+          "instruction": "ldr\tr5, [pc, #68]",
+          "literal_rom": "0x9968a4",
+          "literal_value": "0x80000306"
+        },
+        {
+          "relative": "0x1195e",
+          "rom": "0x99685e",
+          "bytes": "0ee0",
+          "instruction": "b\t#28"
+        },
+        {
+          "relative": "0x11960",
+          "rom": "0x996860",
+          "bytes": "3068",
+          "instruction": "ldr\tr0, [r6]"
+        },
+        {
+          "relative": "0x11962",
+          "rom": "0x996862",
+          "bytes": "0028",
+          "instruction": "cmp\tr0, #0"
+        },
+        {
+          "relative": "0x11964",
+          "rom": "0x996864",
+          "bytes": "f2d0",
+          "instruction": "beq\t#-28"
+        },
+        {
+          "relative": "0x11966",
+          "rom": "0x996866",
+          "bytes": "55b9",
+          "instruction": "cbnz\tr5, #20"
+        },
+        {
+          "relative": "0x11968",
+          "rom": "0x996868",
+          "bytes": "3068",
+          "instruction": "ldr\tr0, [r6]"
+        },
+        {
+          "relative": "0x1196a",
+          "rom": "0x99686a",
+          "bytes": "0128",
+          "instruction": "cmp\tr0, #1"
+        },
+        {
+          "relative": "0x1196c",
+          "rom": "0x99686c",
+          "bytes": "01d0",
+          "instruction": "beq\t#2"
+        },
+        {
+          "relative": "0x1196e",
+          "rom": "0x99686e",
+          "bytes": "0d4d",
+          "instruction": "ldr\tr5, [pc, #52]",
+          "literal_rom": "0x9968a4",
+          "literal_value": "0x80000306"
+        },
+        {
+          "relative": "0x11970",
+          "rom": "0x996870",
+          "bytes": "6d1c",
+          "instruction": "adds\tr5, r5, #1"
+        },
+        {
+          "relative": "0x11972",
+          "rom": "0x996872",
+          "bytes": "baf1000f",
+          "instruction": "cmp.w\tr10, #0"
+        },
+        {
+          "relative": "0x11976",
+          "rom": "0x996876",
+          "bytes": "02d0",
+          "instruction": "beq\t#4"
+        },
+        {
+          "relative": "0x11978",
+          "rom": "0x996878",
+          "bytes": "3968",
+          "instruction": "ldr\tr1, [r7]"
+        },
+        {
+          "relative": "0x1197a",
+          "rom": "0x99687a",
+          "bytes": "caf80010",
+          "instruction": "str.w\tr1, [r10]"
+        },
+        {
+          "relative": "0x1197e",
+          "rom": "0x99687e",
+          "bytes": "0548",
+          "instruction": "ldr\tr0, [pc, #20]",
+          "literal_rom": "0x996894",
+          "literal_value": "0xe18978"
+        },
+        {
+          "relative": "0x11980",
+          "rom": "0x996880",
+          "bytes": "0068",
+          "instruction": "ldr\tr0, [r0]"
+        },
+        {
+          "relative": "0x11982",
+          "rom": "0x996882",
+          "bytes": "5fdf",
+          "instruction": "svc\t#95"
+        },
+        {
+          "relative": "0x11984",
+          "rom": "0x996884",
+          "bytes": "17b1",
+          "instruction": "cbz\tr7, #4"
+        },
+        {
+          "relative": "0x11986",
+          "rom": "0x996886",
+          "bytes": "3846",
+          "instruction": "mov\tr0, r7"
+        },
+        {
+          "relative": "0x11988",
+          "rom": "0x996888",
+          "bytes": "4946",
+          "instruction": "mov\tr1, r9"
+        },
+        {
+          "relative": "0x1198a",
+          "rom": "0x99688a",
+          "bytes": "7edf",
+          "instruction": "svc\t#126"
+        },
+        {
+          "relative": "0x1198c",
+          "rom": "0x99688c",
+          "bytes": "04b0",
+          "instruction": "add\tsp, #16"
+        },
+        {
+          "relative": "0x1198e",
+          "rom": "0x99688e",
+          "bytes": "2846",
+          "instruction": "mov\tr0, r5"
+        },
+        {
+          "relative": "0x11990",
+          "rom": "0x996890",
+          "bytes": "bde8f08f",
+          "instruction": "pop.w\t{r4, r5, r6, r7, r8, r9, r10, r11, pc}"
+        }
+      ]
+    },
+    {
+      "start": "0xc51c",
+      "end": "0xc52a",
+      "instructions": [
+        {
+          "relative": "0xc51c",
+          "rom": "0x99141c",
+          "bytes": "04f13800",
+          "instruction": "add.w\tr0, r4, #56"
+        },
+        {
+          "relative": "0xc520",
+          "rom": "0x991420",
+          "bytes": "04f14402",
+          "instruction": "add.w\tr2, r4, #68"
+        },
+        {
+          "relative": "0xc524",
+          "rom": "0x991424",
+          "bytes": "0bc8",
+          "instruction": "ldm\tr0, {r0, r1, r3}"
+        },
+        {
+          "relative": "0xc526",
+          "rom": "0x991426",
+          "bytes": "05f0dff9",
+          "instruction": "bl\t#21438"
+        }
+      ]
+    },
+    {
+      "start": "0xfb48",
+      "end": "0xfb5e",
+      "instructions": [
+        {
+          "relative": "0xfb48",
+          "rom": "0x994a48",
+          "bytes": "5edf",
+          "instruction": "svc\t#94"
+        },
+        {
+          "relative": "0xfb4a",
+          "rom": "0x994a4a",
+          "bytes": "0c4d",
+          "instruction": "ldr\tr5, [pc, #48]",
+          "literal_rom": "0x994a7c",
+          "literal_value": "0xe182b4"
+        },
+        {
+          "relative": "0xfb4c",
+          "rom": "0x994a4c",
+          "bytes": "2878",
+          "instruction": "ldrb\tr0, [r5]"
+        },
+        {
+          "relative": "0xfb4e",
+          "rom": "0x994a4e",
+          "bytes": "30b9",
+          "instruction": "cbnz\tr0, #12"
+        },
+        {
+          "relative": "0xfb50",
+          "rom": "0x994a50",
+          "bytes": "0022",
+          "instruction": "movs\tr2, #0"
+        },
+        {
+          "relative": "0xfb52",
+          "rom": "0x994a52",
+          "bytes": "3b46",
+          "instruction": "mov\tr3, r7"
+        },
+        {
+          "relative": "0xfb54",
+          "rom": "0x994a54",
+          "bytes": "0121",
+          "instruction": "movs\tr1, #1"
+        },
+        {
+          "relative": "0xfb56",
+          "rom": "0x994a56",
+          "bytes": "1020",
+          "instruction": "movs\tr0, #16"
+        },
+        {
+          "relative": "0xfb58",
+          "rom": "0x994a58",
+          "bytes": "01f0c6fe",
+          "instruction": "bl\t#7564"
+        },
+        {
+          "relative": "0xfb5c",
+          "rom": "0x994a5c",
+          "bytes": "0446",
+          "instruction": "mov\tr4, r0"
+        }
+      ]
+    },
+    {
+      "start": "0xfb9e",
+      "end": "0xfbae",
+      "instructions": [
+        {
+          "relative": "0xfb9e",
+          "rom": "0x994a9e",
+          "bytes": "06d1",
+          "instruction": "bne\t#12"
+        },
+        {
+          "relative": "0xfba0",
+          "rom": "0x994aa0",
+          "bytes": "0022",
+          "instruction": "movs\tr2, #0"
+        },
+        {
+          "relative": "0xfba2",
+          "rom": "0x994aa2",
+          "bytes": "3346",
+          "instruction": "mov\tr3, r6"
+        },
+        {
+          "relative": "0xfba4",
+          "rom": "0x994aa4",
+          "bytes": "1020",
+          "instruction": "movs\tr0, #16"
+        },
+        {
+          "relative": "0xfba6",
+          "rom": "0x994aa6",
+          "bytes": "1146",
+          "instruction": "mov\tr1, r2"
+        },
+        {
+          "relative": "0xfba8",
+          "rom": "0x994aa8",
+          "bytes": "01f09efe",
+          "instruction": "bl\t#7484"
+        },
+        {
+          "relative": "0xfbac",
+          "rom": "0x994aac",
+          "bytes": "0546",
+          "instruction": "mov\tr5, r0"
+        }
+      ]
+    },
+    {
+      "start": "0xfc80",
+      "end": "0xfc90",
+      "instructions": [
+        {
+          "relative": "0xfc80",
+          "rom": "0x994b80",
+          "bytes": "6f49",
+          "instruction": "ldr\tr1, [pc, #444]",
+          "literal_rom": "0x994d40",
+          "literal_value": "0xfffdfb80"
+        },
+        {
+          "relative": "0xfc82",
+          "rom": "0x994b82",
+          "bytes": "0320",
+          "instruction": "movs\tr0, #3"
+        },
+        {
+          "relative": "0xfc84",
+          "rom": "0x994b84",
+          "bytes": "01aa",
+          "instruction": "add\tr2, sp, #4"
+        },
+        {
+          "relative": "0xfc86",
+          "rom": "0x994b86",
+          "bytes": "40f2e833",
+          "instruction": "movw\tr3, #1000"
+        },
+        {
+          "relative": "0xfc8a",
+          "rom": "0x994b8a",
+          "bytes": "01f02dfe",
+          "instruction": "bl\t#7258"
+        },
+        {
+          "relative": "0xfc8e",
+          "rom": "0x994b8e",
+          "bytes": "0546",
+          "instruction": "mov\tr5, r0"
+        }
+      ]
+    }
+  ],
+  "conclusion": "Generic Queue5 transport found in PSP type28; C526 loads message/argument/timeout from caller structure. No constant message9 producer identified.",
+  "limits": [
+    "Static code only; SVC mapping implementation and live availability unverified.",
+    "Relative addresses refer to complete PSP entry, not an assumed stripped body.",
+    "Indirect/tail callers not exhaustively enumerated."
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "status": "PASS",
+  "checks": {
+    "passed": 33,
+    "failed": 0,
+    "total": 33
+  },
+  "inputs": {
+    "abl1_raw": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "abl1_raw_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "abl1_elf": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o",
+    "abl1_elf_sha256": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+    "abl1_raw_size": 94624
+  },
+  "trace": {
+    "selected_prior_edge": "conditional prior path 0x984E -> 0x130C -> 0x1354 (reused, not rechecked)",
+    "list_base_pointer_literal": "0x6e27c at ABL1 RVA 0x141c",
+    "list_provider": "0x54fc receives list base, calls 0x50c0, stores record pointer 0x6e284 to list[0], stores null to list[1]",
+    "record_initializer": "0x50c0 writes callback record fields at 0x6e284: [0]=0x587b1, [1]=0x58659, [2]=0x5865d, [3]=0x58661",
+    "populated_list": "[0x6e284, 0x00000000] (one descriptor then terminator)",
+    "BLX_R0_site": "0x133e",
+    "direct_BLX_R0_target": "0x587b1 (Thumb pointer); first record word only",
+    "target_window": "under conditional base 0x57100 only, pointer maps to ABL1 RVA 0x16b0; bytes decode as LDR literal, LDRB, BX LR; literal at RVA 0x16b8 is 0x6e131",
+    "conditional_base": "0x57100 is reused from prior review; runtime loader base remains unproven",
+    "sibling_record_fields_not_followed": [
+      "0x58659",
+      "0x5865d",
+      "0x58661"
+    ]
+  },
+  "limits": [
+    "static observed bytes/disassembly only",
+    "does not prove runtime provider execution or callback reachability",
+    "does not identify the byte read at 0x6e131",
+    "does not interpret callback as a clock/SVC handler",
+    "does not follow the sibling fields or the separate 0x10958 track"
+  ],
+  "checks_detail": [
+    {
+      "name": "raw_payload_sha256",
+      "passed": true,
+      "observed": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "name": "raw_payload_size",
+      "passed": true,
+      "observed": 94624,
+      "expected": 94624
+    },
+    {
+      "name": "ELF_object_sha256",
+      "passed": true,
+      "observed": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+      "expected": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6"
+    },
+    {
+      "name": "ELF_data_bytes_equal_raw_payload",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "caller_table_pointer_literal_0x141c",
+      "passed": true,
+      "observed": 451196,
+      "expected": 451196
+    },
+    {
+      "name": "list_provider_record_literal_0x5510",
+      "passed": true,
+      "observed": 451204,
+      "expected": 451204
+    },
+    {
+      "name": "record_initializer_pointer_literals_0x50d4",
+      "passed": true,
+      "observed": [
+        362417,
+        362073,
+        362077,
+        362081
+      ],
+      "expected": [
+        362417,
+        362073,
+        362077,
+        362081
+      ]
+    },
+    {
+      "name": "callback_list_words_at_RVA_0x1717c",
+      "passed": true,
+      "observed": [
+        451204,
+        0
+      ],
+      "expected": [
+        451204,
+        0
+      ]
+    },
+    {
+      "name": "descriptor_function_fields_at_RVA_0x17184",
+      "passed": true,
+      "observed": [
+        362417,
+        362073,
+        362077,
+        362081
+      ],
+      "expected": [
+        362417,
+        362073,
+        362077,
+        362081
+      ]
+    },
+    {
+      "name": "BLX_R0_target_is_Thumb_pointer",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "conditional_table_base_maps_to_RVA_0x1717c",
+      "passed": true,
+      "observed": 94588,
+      "expected": 94588
+    },
+    {
+      "name": "conditional_record_pointer_maps_to_RVA_0x17184",
+      "passed": true,
+      "observed": 94596,
+      "expected": 94596
+    },
+    {
+      "name": "conditional_target_maps_to_RVA_0x16b0",
+      "passed": true,
+      "observed": 5808,
+      "expected": 5808
+    },
+    {
+      "name": "target_entry_bytes_at_RVA_0x16b0",
+      "passed": true,
+      "observed": "014800787047",
+      "expected": "014800787047"
+    },
+    {
+      "name": "callback_literal_at_RVA_0x16b8",
+      "passed": true,
+      "observed": 450865,
+      "expected": 450865
+    },
+    {
+      "name": "caller_LLVM_exit",
+      "passed": true,
+      "observed": "0",
+      "expected": "0"
+    },
+    {
+      "name": "caller_LLVM_stderr_empty",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "list_provider_LLVM_exit",
+      "passed": true,
+      "observed": "0",
+      "expected": "0"
+    },
+    {
+      "name": "list_provider_LLVM_stderr_empty",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "record_initializer_LLVM_exit",
+      "passed": true,
+      "observed": "0",
+      "expected": "0"
+    },
+    {
+      "name": "record_initializer_LLVM_stderr_empty",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "target_entry_LLVM_exit",
+      "passed": true,
+      "observed": "0",
+      "expected": "0"
+    },
+    {
+      "name": "target_entry_LLVM_stderr_empty",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "callsite_133e_BLX_R0",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "caller_1370_calls_list_provider",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "caller_1376_calls_enumerator",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "enumerator_loads_callback_pointer",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "list_provider_calls_record_initializer",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "list_provider_stores_record_pointer",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "list_provider_stores_null_sentinel",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "record_initializer_stores_first_target",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "target_loads_byte_then_returns",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "target_returns",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    }
+  ]
+}

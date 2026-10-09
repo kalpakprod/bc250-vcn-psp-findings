@@ -1,0 +1,278 @@
+{
+  "address_interpretation_from_completed_result": {
+    "array_entry": 10,
+    "domain_id": "0x18",
+    "internal_group": 6,
+    "poll_smn_address": "0x0116D174",
+    "program_smn_address": "0x0116D150",
+    "raw_program_offset": "0x6D150",
+    "selector_index": 11,
+    "target_slot": "0x140B0"
+  },
+  "checks": {
+    "failed": 0,
+    "passed": 4,
+    "total": 4
+  },
+  "checks_detail": [
+    {
+      "expected": "PASS",
+      "name": "selector-report-completed-pass",
+      "observed": "PASS",
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "domain_id": "0x18",
+        "internal_group": 6,
+        "selector_index": 11,
+        "smu_window_poll": "0x116d174",
+        "smu_window_program": "0x116d150"
+      },
+      "name": "accepted-example-addresses-match-bound-evidence",
+      "observed": {
+        "domain_id": "0x18",
+        "internal_group": 6,
+        "selector_index": 11,
+        "smu_window_poll": "0x116d174",
+        "smu_window_program": "0x116d150"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "size": 16777216
+      },
+      "name": "exact-clv-identity",
+      "observed": {
+        "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "size": 16777216
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "byte": "0x24",
+        "label": "1800MHz"
+      },
+      "name": "preserve-clv-1800-request",
+      "observed": {
+        "byte": "0x24",
+        "offset": "0x7E5"
+      },
+      "status": "PASS"
+    }
+  ],
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "explicit_clock_domain_symbol_lines": [
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_offset.h",
+      "line": 9373,
+      "text": "#define mmRLC_CLK_COUNT_REFCLK_LSB                                                                     0x4c32"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_offset.h",
+      "line": 9374,
+      "text": "#define mmRLC_CLK_COUNT_REFCLK_LSB_BASE_IDX                                                            1"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_offset.h",
+      "line": 9375,
+      "text": "#define mmRLC_CLK_COUNT_REFCLK_MSB                                                                     0x4c33"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_offset.h",
+      "line": 9376,
+      "text": "#define mmRLC_CLK_COUNT_REFCLK_MSB_BASE_IDX                                                            1"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33459,
+      "text": "//RLC_CLK_COUNT_REFCLK_LSB"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33460,
+      "text": "#define RLC_CLK_COUNT_REFCLK_LSB__COUNTER__SHIFT                                                              0x0"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33461,
+      "text": "#define RLC_CLK_COUNT_REFCLK_LSB__COUNTER_MASK                                                                0xFFFFFFFFL"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33462,
+      "text": "//RLC_CLK_COUNT_REFCLK_MSB"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33463,
+      "text": "#define RLC_CLK_COUNT_REFCLK_MSB__COUNTER__SHIFT                                                              0x0"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33464,
+      "text": "#define RLC_CLK_COUNT_REFCLK_MSB__COUNTER_MASK                                                                0xFFFFFFFFL"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33469,
+      "text": "#define RLC_CLK_COUNT_CTRL__REFCLK_RUN__SHIFT                                                                 0x3"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33470,
+      "text": "#define RLC_CLK_COUNT_CTRL__REFCLK_RESET__SHIFT                                                               0x4"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33471,
+      "text": "#define RLC_CLK_COUNT_CTRL__REFCLK_SAMPLE__SHIFT                                                              0x5"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33475,
+      "text": "#define RLC_CLK_COUNT_CTRL__REFCLK_RUN_MASK                                                                   0x00000008L"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33476,
+      "text": "#define RLC_CLK_COUNT_CTRL__REFCLK_RESET_MASK                                                                 0x00000010L"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33477,
+      "text": "#define RLC_CLK_COUNT_CTRL__REFCLK_SAMPLE_MASK                                                                0x00000020L"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33480,
+      "text": "#define RLC_CLK_COUNT_STAT__REFCLK_VALID__SHIFT                                                               0x1"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33481,
+      "text": "#define RLC_CLK_COUNT_STAT__REFCLK_RUN_RESYNC__SHIFT                                                          0x2"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33482,
+      "text": "#define RLC_CLK_COUNT_STAT__REFCLK_RESET_RESYNC__SHIFT                                                        0x3"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33483,
+      "text": "#define RLC_CLK_COUNT_STAT__REFCLK_SAMPLE_RESYNC__SHIFT                                                       0x4"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33486,
+      "text": "#define RLC_CLK_COUNT_STAT__REFCLK_VALID_MASK                                                                 0x00000002L"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33487,
+      "text": "#define RLC_CLK_COUNT_STAT__REFCLK_RUN_RESYNC_MASK                                                            0x00000004L"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33488,
+      "text": "#define RLC_CLK_COUNT_STAT__REFCLK_RESET_RESYNC_MASK                                                          0x00000008L"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "line": 33489,
+      "text": "#define RLC_CLK_COUNT_STAT__REFCLK_SAMPLE_RESYNC_MASK                                                         0x00000010L"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/smu_v11_8_pmfw.h",
+      "line": 37,
+      "text": "#define FEATURE_FCLK_DPM_BIT              5"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/smu_v11_8_pmfw.h",
+      "line": 43,
+      "text": "#define FEATURE_G6_SSC_BIT                11 //G6 memory UCLK and UCLK_DIV SS"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/smu_v11_8_pmfw.h",
+      "line": 103,
+      "text": "#define FEATURE_FCLK_DPM_MASK         (1 << FEATURE_FCLK_DPM_BIT)"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/smu_v11_8_pmfw.h",
+      "line": 128,
+      "text": "uint32_t CurrLevel_FCLK    : 4;"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/smu_v11_8_pmfw.h",
+      "line": 130,
+      "text": "uint32_t CurrLevel_DCEFCLK : 4;"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/smu_v11_8_pmfw.h",
+      "line": 137,
+      "text": "uint32_t TargLevel_FCLK    : 4;"
+    },
+    {
+      "header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/smu_v11_8_pmfw.h",
+      "line": 139,
+      "text": "uint32_t TargLevel_DCEFCLK : 4;"
+    }
+  ],
+  "inputs": {
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "rom_size": 16777216,
+    "selector_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-smu-domain-selector/selector-result.json",
+    "selector_result_sha256": "97be0a4254c76123235dd23ea7dbf196b77e183c392083c91aaee42c832a0a38"
+  },
+  "literal_address_matches": [],
+  "local_register_headers": [
+    {
+      "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_offset.h",
+      "sha256": "a0ad8bffb3c07ec3824d306aff49c77bc40057f8760aec7a76ee58a60cc8e6a2",
+      "size": 1199658
+    },
+    {
+      "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h",
+      "sha256": "cba20414ecf02e91bafdcfbff7d4ba686326f0bdaf236d1a883364f08410c167",
+      "size": 4645520
+    },
+    {
+      "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gmc_10_0_0_offset.h",
+      "sha256": "e45906ce02e79f16fb87a838d86bb4e497e37a9591f97608fa013bbcd8b9cbc2",
+      "size": 127
+    },
+    {
+      "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/gmc_10_0_0_sh_mask.h",
+      "sha256": "e45906ce02e79f16fb87a838d86bb4e497e37a9591f97608fa013bbcd8b9cbc2",
+      "size": 127
+    },
+    {
+      "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/smu_v11_8_pmfw.h",
+      "sha256": "8893329478e28c2f36b0298b2aeb0fc4b5902a77e76e82db57e2884fe0a82966",
+      "size": 6518
+    }
+  ],
+  "scope": "bounded literal/name comparison only; no disassembly rerun, hardware, network, sysfs, or writes",
+  "selector_example": {
+    "array_entry": 10,
+    "domain_id": "0x18",
+    "internal_group": 6,
+    "raw_program_offset": "0x6d150",
+    "selector_index": 11,
+    "smu_window_poll": "0x116d174",
+    "smu_window_program": "0x116d150",
+    "status": 1,
+    "target_slot": "0x140b0"
+  },
+  "semantic_limit": "A miss is only a bounded literal absence. The source set does not independently map Group 6/domain 0x18 or SMN 0x0116D150/0x0116D174 to MCLK, UCLK, FCLK, DF, UMC, a divider, or a crossing selector.",
+  "status": "PASS",
+  "verdict": "NO_DIRECT_HEADER_MATCH"
+}

@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "checks": {
+    "passed": 12,
+    "failed": 0,
+    "total": 12
+  },
+  "inputs": {
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "rom_size": 16777216,
+    "abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "abl1_size": 94624,
+    "elf_sha256": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+    "data_section_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "wrapper_range": "0x10958..0x1096A",
+    "wrapper_bytes": "30b4d0f8604613460a46a44630bc01216047"
+  },
+  "wrapper_instructions": [
+    {
+      "address": 67928,
+      "mnemonic": "push",
+      "operands": "{r4, r5}",
+      "raw_line": "10958: b430         \tpush\t{r4, r5}"
+    },
+    {
+      "address": 67930,
+      "mnemonic": "ldr.w",
+      "operands": "r4, [r0, #0x660]",
+      "raw_line": "1095a: f8d0 4660    \tldr.w\tr4, [r0, #0x660]"
+    },
+    {
+      "address": 67934,
+      "mnemonic": "mov",
+      "operands": "r3, r2",
+      "raw_line": "1095e: 4613         \tmov\tr3, r2"
+    },
+    {
+      "address": 67936,
+      "mnemonic": "mov",
+      "operands": "r2, r1",
+      "raw_line": "10960: 460a         \tmov\tr2, r1"
+    },
+    {
+      "address": 67938,
+      "mnemonic": "mov",
+      "operands": "r12, r4",
+      "raw_line": "10962: 46a4         \tmov\tr12, r4"
+    },
+    {
+      "address": 67940,
+      "mnemonic": "pop",
+      "operands": "{r4, r5}",
+      "raw_line": "10964: bc30         \tpop\t{r4, r5}"
+    },
+    {
+      "address": 67942,
+      "mnemonic": "movs",
+      "operands": "r1, #0x1",
+      "raw_line": "10966: 2101         \tmovs\tr1, #0x1"
+    },
+    {
+      "address": 67944,
+      "mnemonic": "bx",
+      "operands": "r12",
+      "raw_line": "10968: 4760         \tbx\tr12"
+    }
+  ],
+  "AAPCS_trace": {
+    "entry_r0": "pointer-like base used by LDR [r0,#0x660]",
+    "callback_target": "loaded from entry_r0+0x660 into r4 then r12",
+    "callback_r0": "same incoming r0; no destination write to r0 in wrapper",
+    "callback_r1": "constant 1",
+    "callback_r2": "entry r1",
+    "callback_r3": "entry r2",
+    "lr": "preserved; final BX R12 is a tail branch",
+    "stack": "push/pop r4,r5 balanced before tail branch"
+  },
+  "accepted_claim": "Within bytes 0x10958..0x1096A, the wrapper preserves incoming R0 for the indirect callback and does not write through that pointer.",
+  "rejected_claim": "The wrapper itself mutates the pointee addressed by incoming R0.",
+  "limits": [
+    "A callback invoked through [R0+0x660] may mutate the pointee; this wrapper-only window cannot decide callback effects.",
+    "No caller/initializer semantics or callback-target body is included.",
+    "No runtime, SVC handler, MMIO/PLL, physical clock, or hardware result."
+  ],
+  "checks_detail": [
+    {
+      "name": "ROM exact pinned CLV hash",
+      "passed": true
+    },
+    {
+      "name": "ABL1 exact hash",
+      "passed": true
+    },
+    {
+      "name": "ABL1 size",
+      "passed": true
+    },
+    {
+      "name": "ELF .data dump length equals ABL1",
+      "passed": true
+    },
+    {
+      "name": "ELF .data byte-identical to exact ABL1",
+      "passed": true
+    },
+    {
+      "name": "wrapper byte slice equals expected Thumb bytes",
+      "passed": true
+    },
+    {
+      "name": "wrapper disassembly has eight rows",
+      "passed": true
+    },
+    {
+      "name": "wrapper instructions match exact AAPCS sequence",
+      "passed": true
+    },
+    {
+      "name": "incoming r0 is not an instruction destination",
+      "passed": true
+    },
+    {
+      "name": "no store instruction through r0",
+      "passed": true
+    },
+    {
+      "name": "callee-saved stack push/pop balanced",
+      "passed": true
+    },
+    {
+      "name": "tail branch uses loaded callback in r12",
+      "passed": true
+    }
+  ]
+}

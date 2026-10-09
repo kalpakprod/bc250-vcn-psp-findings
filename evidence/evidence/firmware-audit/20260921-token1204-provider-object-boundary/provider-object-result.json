@@ -1,0 +1,176 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 26,
+    "total": 26
+  },
+  "checks_detail": [
+    {
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "name": "ROM_hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "got": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "name": "FAB_hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "558bec83ec0c8d45f48945fc8b45fc",
+      "got": "558bec83ec0c8d45f48945fc8b45fc",
+      "name": "get_pei_services_prologue_and_lea",
+      "status": "PASS"
+    },
+    {
+      "expected": "0f0108",
+      "got": "0f0108",
+      "name": "sidtd_at_0x25E2",
+      "status": "PASS"
+    },
+    {
+      "expected": "8b45f68b40fcc9c3",
+      "got": "8b45f68b40fcc9c3",
+      "name": "load_idtr_base_and_read_peiservices_ptr",
+      "status": "PASS"
+    },
+    {
+      "expected": "558bec51",
+      "got": "558bec51",
+      "name": "create_hob_prologue",
+      "status": "PASS"
+    },
+    {
+      "expected": "e85bffffff",
+      "got": "e85bffffff",
+      "name": "call_get_pei_services_0x25d3",
+      "status": "PASS"
+    },
+    {
+      "expected": "8b08",
+      "got": "8b08",
+      "name": "load_pei_services_table",
+      "status": "PASS"
+    },
+    {
+      "expected": "8d55fc52",
+      "got": "8d55fc52",
+      "name": "lea_hob_out_and_push",
+      "status": "PASS"
+    },
+    {
+      "expected": "ff750c",
+      "got": "ff750c",
+      "name": "push_length_arg",
+      "status": "PASS"
+    },
+    {
+      "expected": "ff7508",
+      "got": "ff7508",
+      "name": "push_type_arg",
+      "status": "PASS"
+    },
+    {
+      "expected": "50",
+      "got": "50",
+      "name": "push_pei_services_table_ptr",
+      "status": "PASS"
+    },
+    {
+      "expected": "ff5134",
+      "got": "ff5134",
+      "name": "call_peiservices_createhob_slot_0x34",
+      "status": "PASS"
+    },
+    {
+      "expected": "83c41085c07d048365fc008b45fcc9c3",
+      "got": "83c41085c07d048365fc008b45fcc9c3",
+      "name": "cleanup_check_status_return",
+      "status": "PASS"
+    },
+    {
+      "expected": "8d4718506a04",
+      "got": "8d4718506a04",
+      "name": "build_guid_hob_push_len_and_type_0x4",
+      "status": "PASS"
+    },
+    {
+      "expected": "e8ccffffff",
+      "got": "e8ccffffff",
+      "name": "call_create_hob_0x266f",
+      "status": "PASS"
+    },
+    {
+      "expected": "83c018",
+      "got": "83c018",
+      "name": "advance_to_guid_field",
+      "status": "PASS"
+    },
+    {
+      "expected": "8b0e8948f08b4e048948f48b4e088948f88b4e0c8948fc",
+      "got": "8b0e8948f08b4e048948f48b4e088948f88b4e0c8948fc",
+      "name": "copy_16byte_guid",
+      "status": "PASS"
+    },
+    {
+      "expected": "566a306a02",
+      "got": "566a306a02",
+      "name": "build_mem_alloc_hob_push_len_0x30_and_type_0x2",
+      "status": "PASS"
+    },
+    {
+      "expected": "e890ffffff",
+      "got": "e890ffffff",
+      "name": "call_create_hob_0x266f_from_mem_alloc",
+      "status": "PASS"
+    },
+    {
+      "expected": "8d46086a1050e88e440100",
+      "got": "8d46086a1050e88e440100",
+      "name": "zeromem_guid_descriptor",
+      "status": "PASS"
+    },
+    {
+      "expected": "c746280a000000",
+      "got": "c746280a000000",
+      "name": "set_memory_type_0xA",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "no_1204_in_25d3",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "no_1204_in_266f",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "no_1204_in_2698",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "no_1204_in_26d5",
+      "status": "PASS"
+    }
+  ],
+  "discriminating_result": "The edge 0x266F -> 0x25D3 -> [ECX+0x34] is the standard EDK II PI PEI PeiServices->CreateHob dispatch via IDT-based PeiServicesTablePointerLib. It creates generic HOBs (GUID HOBs and Memory Allocation HOBs) and does not consume, evaluate, or actuate token 0x1204 (UclkDiv1M0) or any clock/divider setting.",
+  "identity": {
+    "function_0x25D3": "GetPeiServicesTablePointer (PeiServicesTablePointerLibIdt / sidtd [eax] -> IDTR.Base -> [Base-4])",
+    "function_0x266F": "PeiServicesCreateHob (calls PeiServices->CreateHob at vtable offset 0x34)",
+    "function_0x2698": "BuildGuidHob (calls CreateHob with Type 0x4 = EFI_HOB_TYPE_GUID_EXTENSION)",
+    "function_0x26D5": "BuildMemoryAllocationHob (calls CreateHob with Type 0x2 = EFI_HOB_TYPE_MEMORY_ALLOCATION, Length 0x30, MemoryType 0xA)",
+    "hash": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+    "module": "AmdFabricAriPei"
+  },
+  "status": "PASS",
+  "token1204_status": "NOT_CONSUMED"
+}

@@ -1,0 +1,1922 @@
+{
+  "review": "independent_safety_review_1800MHz_and_1.15V",
+  "actor": "/root/ds_independent_safety_review",
+  "inputs": {
+    "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin": {
+      "size": 16777216,
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    "evidence/firmware-audit/20260919-inv-token-consumers/CbsSetupDxe-7ff717d51c9a.bin": {
+      "size": 264160,
+      "sha256": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8"
+    },
+    "import/from-windows/Users/kukuruza/bc250-bios/tools/uefi/e1_ifr_dump.py": {
+      "sha256": "480aa6fc70ed12e8d1dbec2c32dfb45ddadcd7c2f9075ceac6dad6486bc50ebb"
+    },
+    "evidence/firmware-audit/20260920-clv-voltage-offset-consumer-boundary/voltage-offset-boundary-result.json": {
+      "sha256": "4026f8cebb814fc11fddb58eb5f5fd4e1e41fc878dbba3d3745161ddb7667bd3"
+    }
+  },
+  "literal_fields": {
+    "MemoryClockSpeed": {
+      "amdsetup_offset": "0x316",
+      "absolute_offset": "0x7e5",
+      "width_bytes": 1,
+      "ikind": "one_of",
+      "raw_hex": "24",
+      "value": 36,
+      "ifr": {
+        "qid": "0x20f",
+        "prompt": "Memory Clock Speed",
+        "record_offset": "0x10ee1",
+        "option_count": 23,
+        "label_for_stored_value": "1800MHz"
+      }
+    },
+    "UclkDiv1M0": {
+      "amdsetup_offset": "0x330",
+      "absolute_offset": "0x7ff",
+      "width_bytes": 1,
+      "ikind": "one_of",
+      "raw_hex": "01",
+      "value": 1,
+      "ifr": {
+        "qid": "0x229",
+        "prompt": "UclkDiv1M0",
+        "record_offset": "0x11a4c",
+        "option_count": 2,
+        "label_for_stored_value": "Enabled"
+      }
+    },
+    "FclkDpm": {
+      "amdsetup_offset": "0x6a3",
+      "absolute_offset": "0xb72",
+      "width_bytes": 1,
+      "ikind": "one_of",
+      "raw_hex": "0f",
+      "value": 15,
+      "ifr": {
+        "qid": "0x7045",
+        "prompt": "FCLK_DPM",
+        "record_offset": "0x15aa5",
+        "option_count": 3,
+        "label_for_stored_value": "Auto"
+      }
+    },
+    "VddcrVddOffsetControl": {
+      "amdsetup_offset": "0x6e5",
+      "absolute_offset": "0xbb4",
+      "width_bytes": 1,
+      "ikind": "one_of",
+      "raw_hex": "00",
+      "value": 0,
+      "ifr": {
+        "qid": "0x36b",
+        "prompt": "VDDCR_VDD Voltage Offset Control",
+        "record_offset": "0x16356",
+        "option_count": 2,
+        "label_for_stored_value": "Auto"
+      }
+    },
+    "VddcrVddOffset": {
+      "amdsetup_offset": "0x6e6",
+      "absolute_offset": "0xbb5",
+      "width_bytes": 4,
+      "ikind": "numeric",
+      "raw_hex": "00 00 00 00",
+      "value": 0,
+      "ifr": {
+        "qid": "0x36c",
+        "prompt": "VDDCR_VDD Voltage Offset",
+        "record_offset": "0x16383",
+        "option_count": 0
+      }
+    },
+    "VddcrGfxOffsetControl": {
+      "amdsetup_offset": "0x6ea",
+      "absolute_offset": "0xbb9",
+      "width_bytes": 1,
+      "ikind": "one_of",
+      "raw_hex": "00",
+      "value": 0,
+      "ifr": {
+        "qid": "0x36d",
+        "prompt": "VDDCR_GFX Voltage Offset Control",
+        "record_offset": "0x163aa",
+        "option_count": 2,
+        "label_for_stored_value": "Auto"
+      }
+    },
+    "VddcrGfxOffset": {
+      "amdsetup_offset": "0x6eb",
+      "absolute_offset": "0xbba",
+      "width_bytes": 4,
+      "ikind": "numeric",
+      "raw_hex": "00 00 00 00",
+      "value": 0,
+      "ifr": {
+        "qid": "0x36e",
+        "prompt": "VDDCR_GFX Voltage Offset",
+        "record_offset": "0x163d7",
+        "option_count": 0
+      }
+    },
+    "ForceCpuFrequency": {
+      "amdsetup_offset": "0x701",
+      "absolute_offset": "0xbd0",
+      "width_bytes": 2,
+      "ikind": "numeric",
+      "raw_hex": "90 0e",
+      "value": 3728,
+      "ifr": {
+        "qid": "0x37c",
+        "prompt": "Force CPU Frequency",
+        "record_offset": "0x165e9",
+        "option_count": 0
+      }
+    },
+    "DfClockOverrideControl": {
+      "amdsetup_offset": "0x703",
+      "absolute_offset": "0xbd2",
+      "width_bytes": 1,
+      "ikind": "one_of",
+      "raw_hex": "01",
+      "value": 1,
+      "ifr": {
+        "qid": "0x37d",
+        "prompt": "DF Clock Override Control",
+        "record_offset": "0x16608",
+        "option_count": 2,
+        "label_for_stored_value": "Manual"
+      }
+    },
+    "DfClockOvrd": {
+      "amdsetup_offset": "0x704",
+      "absolute_offset": "0xbd3",
+      "width_bytes": 2,
+      "ikind": "numeric",
+      "raw_hex": "8c 05",
+      "value": 1420,
+      "ifr": {
+        "qid": "0x37e",
+        "prompt": "DF Clock Override",
+        "record_offset": "0x16635",
+        "option_count": 0
+      }
+    }
+  },
+  "independent_checks": {
+    "donor_stores_memory_clock_option_0x24": true,
+    "clv_ifr_labels_0x24_as_1800MHz": true,
+    "clv_ifr_labels_0x23_as_1750MHz": true,
+    "donor_vdd_offset_control_auto": true,
+    "donor_vdd_offset_zero": true,
+    "donor_gfx_offset_control_auto": true,
+    "donor_gfx_offset_zero": true,
+    "donor_df_override_manual_1420": true,
+    "memory_clock_question_is_qid_527_at_0x316": true,
+    "vdd_offset_question_is_numeric_qid_876_at_0x6E6": true,
+    "pinned_consumer_boundary_status_is_partial": true,
+    "pinned_reader_has_two_direct_tokens": true,
+    "pinned_reader_does_not_request_0x1364": true
+  },
+  "candidate_count": 41,
+  "candidates_on_pinned_clv": 10,
+  "voltage_changing_candidates": [
+    "BC250_5.00_clv_MeiMeiDXE_SteamLogo_Sync1to1_v001.bin",
+    "BC250_5.00_clv_OC_sync1750_vdd80_v001.bin",
+    "BC250_5.00_clv_OC_vdd80_v001.bin",
+    "BC250_5.00_clv_OC_vdd80_v002.bin",
+    "BC250_M2_C0A_MEMG_BC250_v001_from_C0A-stock.bin",
+    "BC250_M2full_C0A_APCB-native_v001_from_C0A-stock.bin",
+    "BC250_M4_M2full_BL-native_v001.bin"
+  ],
+  "deliberate_voltage_request_candidates": [
+    "BC250_5.00_clv_MeiMeiDXE_SteamLogo_Sync1to1_v001.bin",
+    "BC250_5.00_clv_OC_sync1750_vdd80_v001.bin",
+    "BC250_5.00_clv_OC_vdd80_v001.bin",
+    "BC250_5.00_clv_OC_vdd80_v002.bin"
+  ],
+  "unset_lineage_0xff_candidates": [
+    "BC250_M2_C0A_MEMG_BC250_v001_from_C0A-stock.bin",
+    "BC250_M2full_C0A_APCB-native_v001_from_C0A-stock.bin",
+    "BC250_M4_M2full_BL-native_v001.bin"
+  ],
+  "manifest_disagreements": [],
+  "candidates": [
+    {
+      "image": "BC250_5.00_clv_DF1400_REQUEST_ONLY_v003.bin",
+      "sha256": "4811e1bdc95fa96a74fc7d6e688d6d44aa2cc306c52803c89c635d81917df841",
+      "changed_byte_count": 1,
+      "changed_offsets_head": [
+        "0xbd3"
+      ],
+      "base_lineage": "pinned_clv",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOvrd"
+      ],
+      "manifest_present": true,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": false,
+      "manifest_status": "EXPERIMENTAL_REQUEST_ONLY_NOT_FLASH_APPROVED",
+      "manifest_changed_offsets": [
+        "0xbd3"
+      ]
+    },
+    {
+      "image": "BC250_5.00_clv_FirstMarker_v001.bin",
+      "sha256": "7d420c9f2d46f39131f90827d2dd7b6ee8c7e3558ad8ef8a1d1e2c2a94bccb35",
+      "changed_byte_count": 1326837,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae0231",
+        "0xae0232",
+        "0xae0233",
+        "0xae0234",
+        "0xae0235",
+        "0xae0236",
+        "0xae0237"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_LogoStubControl_v001.bin",
+      "sha256": "3d7c1e5710884ae97769d4552c90ba371064245d9a0e72e56f66e114cf9e5146",
+      "changed_byte_count": 1326790,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae0231",
+        "0xae0232",
+        "0xae0233",
+        "0xae0234",
+        "0xae0235",
+        "0xae0236",
+        "0xae0237"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_MeiMeiDXE_SteamLogo_StockNVRAM_v001.bin",
+      "sha256": "45b3acb2afa90a140f6da735803cf71349b2c23708cc4b13982e58b786b29e3c",
+      "changed_byte_count": 1337254,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae00ae",
+        "0xae00af",
+        "0xae00bd",
+        "0xae00be",
+        "0xae00bf",
+        "0xae00c0",
+        "0xae00c1"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_MeiMeiDXE_SteamLogo_StockNVRAM_v002.bin",
+      "sha256": "1a0e41ef83b6e2f15676673ee18d7d514e3f4013bd3ded9f86d38e3037995f31",
+      "changed_byte_count": 1337236,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae00ae",
+        "0xae00af",
+        "0xae00bd",
+        "0xae00be",
+        "0xae00bf",
+        "0xae00c0",
+        "0xae00c1"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_MeiMeiDXE_SteamLogo_Sync1to1_v001.bin",
+      "sha256": "ec91aaa202905354433473c2f7eaea9c40ec96fd275f2d4e7337c7066a3c34d9",
+      "changed_byte_count": 1340274,
+      "changed_offsets_head": [
+        "0x8f",
+        "0x42a",
+        "0x42b",
+        "0x42c",
+        "0x440",
+        "0x44a",
+        "0x44b",
+        "0x44c",
+        "0x466",
+        "0x467",
+        "0x468",
+        "0x46e"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {
+        "VddcrVddOffsetControl": {
+          "offsets": [
+            "0xbb4"
+          ],
+          "donor": "00",
+          "candidate": "01"
+        },
+        "VddcrVddOffset": {
+          "offsets": [
+            "0xbb5"
+          ],
+          "donor": "00 00 00 00",
+          "candidate": "50 00 00 00"
+        }
+      },
+      "requests_voltage_change": true,
+      "voltage_request": {
+        "vdd_control_byte": 1,
+        "vdd_value_le": "50 00 00 00",
+        "vdd_class": "deliberate_nonzero_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOvrd",
+        "FclkDpm",
+        "ForceCpuFrequency",
+        "MemoryClockSpeed",
+        "VddcrVddOffset",
+        "VddcrVddOffsetControl"
+      ],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_MeiMeiDXEv3-drivers-only_v001.bin",
+      "sha256": "0968a70c4d6fbb51f43d3e0fb5e4b3783dec41e881246356a75c66dc5f19c554",
+      "changed_byte_count": 1342158,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae00ad",
+        "0xae00ae",
+        "0xae00af",
+        "0xae00b0",
+        "0xae00b1",
+        "0xae00b2",
+        "0xae00b3"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": true,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_OC_df1430_v002.bin",
+      "sha256": "5c33e7472ecd9a1d5ece84028bb9e51dbe1ec6d65f9d72ebe6d86cfb1e5b46f4",
+      "changed_byte_count": 1,
+      "changed_offsets_head": [
+        "0xbd3"
+      ],
+      "base_lineage": "pinned_clv",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOvrd"
+      ],
+      "manifest_present": true,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": false,
+      "manifest_status": null,
+      "manifest_changed_offsets": [
+        "0xbd3"
+      ]
+    },
+    {
+      "image": "BC250_5.00_clv_OC_df1450_v002.bin",
+      "sha256": "c34cb22948f7b95d7b35433d48ff6e1421fbf4220775d8db1d93348b5453eb76",
+      "changed_byte_count": 1,
+      "changed_offsets_head": [
+        "0xbd3"
+      ],
+      "base_lineage": "pinned_clv",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOvrd"
+      ],
+      "manifest_present": true,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": false,
+      "manifest_status": null,
+      "manifest_changed_offsets": [
+        "0xbd3"
+      ]
+    },
+    {
+      "image": "BC250_5.00_clv_OC_df1470_v002.bin",
+      "sha256": "c2607b2e74f775505e77e8ee76da52020a1646ba92458941183c9073886f7ac4",
+      "changed_byte_count": 1,
+      "changed_offsets_head": [
+        "0xbd3"
+      ],
+      "base_lineage": "pinned_clv",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOvrd"
+      ],
+      "manifest_present": true,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": false,
+      "manifest_status": null,
+      "manifest_changed_offsets": [
+        "0xbd3"
+      ]
+    },
+    {
+      "image": "BC250_5.00_clv_OC_df1500_v002.bin",
+      "sha256": "01768effc0a19ab03853121d69c4c91e30d11aa961f687f12132637c417bf10e",
+      "changed_byte_count": 1,
+      "changed_offsets_head": [
+        "0xbd3"
+      ],
+      "base_lineage": "pinned_clv",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOvrd"
+      ],
+      "manifest_present": true,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": false,
+      "manifest_status": null,
+      "manifest_changed_offsets": [
+        "0xbd3"
+      ]
+    },
+    {
+      "image": "BC250_5.00_clv_OC_sync1750_v001.bin",
+      "sha256": "983fb80fd952ac90d2fff78425175c805da383078c468ed91f906f97255f308a",
+      "changed_byte_count": 6,
+      "changed_offsets_head": [
+        "0x7e5",
+        "0x7e6",
+        "0x7fc",
+        "0xb72",
+        "0xbd3",
+        "0xbd4"
+      ],
+      "base_lineage": "pinned_clv",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOvrd",
+        "FclkDpm",
+        "MemoryClockSpeed"
+      ],
+      "manifest_present": true,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": false,
+      "manifest_status": null,
+      "manifest_changed_offsets": [
+        "0x7e5",
+        "0x7e6",
+        "0x7fc",
+        "0xb72",
+        "0xbd3",
+        "0xbd4"
+      ]
+    },
+    {
+      "image": "BC250_5.00_clv_OC_sync1750_vdd80_v001.bin",
+      "sha256": "f2ae4b768f2dd33eacbe06c5c482c5ac9843e434ed81d1d8ff08197d806c4e52",
+      "changed_byte_count": 8,
+      "changed_offsets_head": [
+        "0x7e5",
+        "0x7e6",
+        "0x7fc",
+        "0xb72",
+        "0xbb4",
+        "0xbb5",
+        "0xbd3",
+        "0xbd4"
+      ],
+      "base_lineage": "pinned_clv",
+      "voltage_touching": {
+        "VddcrVddOffsetControl": {
+          "offsets": [
+            "0xbb4"
+          ],
+          "donor": "00",
+          "candidate": "01"
+        },
+        "VddcrVddOffset": {
+          "offsets": [
+            "0xbb5"
+          ],
+          "donor": "00 00 00 00",
+          "candidate": "50 00 00 00"
+        }
+      },
+      "requests_voltage_change": true,
+      "voltage_request": {
+        "vdd_control_byte": 1,
+        "vdd_value_le": "50 00 00 00",
+        "vdd_class": "deliberate_nonzero_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOvrd",
+        "FclkDpm",
+        "MemoryClockSpeed",
+        "VddcrVddOffset",
+        "VddcrVddOffsetControl"
+      ],
+      "manifest_present": true,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": true,
+      "manifest_status": null,
+      "manifest_changed_offsets": [
+        "0x7e5",
+        "0x7e6",
+        "0x7fc",
+        "0xb72",
+        "0xbb4",
+        "0xbb5",
+        "0xbd3",
+        "0xbd4"
+      ]
+    },
+    {
+      "image": "BC250_5.00_clv_OC_sync_v002.bin",
+      "sha256": "544b3c24d4b969c3b9b5ab7bbcb873b552f2757808a5855806b5324239749b27",
+      "changed_byte_count": 4,
+      "changed_offsets_head": [
+        "0x7e5",
+        "0x7fc",
+        "0xb72",
+        "0xbd3"
+      ],
+      "base_lineage": "pinned_clv",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOvrd",
+        "FclkDpm",
+        "MemoryClockSpeed"
+      ],
+      "manifest_present": true,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": false,
+      "manifest_status": null,
+      "manifest_changed_offsets": [
+        "0x7e5",
+        "0x7fc",
+        "0xb72",
+        "0xbd3"
+      ]
+    },
+    {
+      "image": "BC250_5.00_clv_OC_vdd80_v001.bin",
+      "sha256": "3891f8a6240b594bddc393d8ee55c971229414bad08ca17c7d5883e2357a4948",
+      "changed_byte_count": 2,
+      "changed_offsets_head": [
+        "0xbb4",
+        "0xbb5"
+      ],
+      "base_lineage": "pinned_clv",
+      "voltage_touching": {
+        "VddcrVddOffsetControl": {
+          "offsets": [
+            "0xbb4"
+          ],
+          "donor": "00",
+          "candidate": "01"
+        },
+        "VddcrVddOffset": {
+          "offsets": [
+            "0xbb5"
+          ],
+          "donor": "00 00 00 00",
+          "candidate": "50 00 00 00"
+        }
+      },
+      "requests_voltage_change": true,
+      "voltage_request": {
+        "vdd_control_byte": 1,
+        "vdd_value_le": "50 00 00 00",
+        "vdd_class": "deliberate_nonzero_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "VddcrVddOffset",
+        "VddcrVddOffsetControl"
+      ],
+      "manifest_present": true,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": true,
+      "manifest_status": null,
+      "manifest_changed_offsets": [
+        "0xbb4",
+        "0xbb5"
+      ]
+    },
+    {
+      "image": "BC250_5.00_clv_OC_vdd80_v002.bin",
+      "sha256": "3891f8a6240b594bddc393d8ee55c971229414bad08ca17c7d5883e2357a4948",
+      "changed_byte_count": 2,
+      "changed_offsets_head": [
+        "0xbb4",
+        "0xbb5"
+      ],
+      "base_lineage": "pinned_clv",
+      "voltage_touching": {
+        "VddcrVddOffsetControl": {
+          "offsets": [
+            "0xbb4"
+          ],
+          "donor": "00",
+          "candidate": "01"
+        },
+        "VddcrVddOffset": {
+          "offsets": [
+            "0xbb5"
+          ],
+          "donor": "00 00 00 00",
+          "candidate": "50 00 00 00"
+        }
+      },
+      "requests_voltage_change": true,
+      "voltage_request": {
+        "vdd_control_byte": 1,
+        "vdd_value_le": "50 00 00 00",
+        "vdd_class": "deliberate_nonzero_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "VddcrVddOffset",
+        "VddcrVddOffsetControl"
+      ],
+      "manifest_present": true,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": true,
+      "manifest_status": null,
+      "manifest_changed_offsets": [
+        "0xbb4",
+        "0xbb5"
+      ]
+    },
+    {
+      "image": "BC250_5.00_clv_PURE_RECOMPRESS_CONTROL_v001.bin",
+      "sha256": "f694ef6dbe3200ab668bd06e590c515f7c748765c1b6280c6e1dc44e5ca94f37",
+      "changed_byte_count": 1326841,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae0231",
+        "0xae0232",
+        "0xae0233",
+        "0xae0234",
+        "0xae0235",
+        "0xae0236",
+        "0xae0237"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_PURE_REPACK_TEST.bin",
+      "sha256": "1d2f287d4dc20718b594acbd457a35379f31b0aa15522f6a4a917dd4f18942fd",
+      "changed_byte_count": 1326841,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae0231",
+        "0xae0232",
+        "0xae0233",
+        "0xae0234",
+        "0xae0235",
+        "0xae0236",
+        "0xae0237"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_Recovery_FirstMarker.bin",
+      "sha256": "7d420c9f2d46f39131f90827d2dd7b6ee8c7e3558ad8ef8a1d1e2c2a94bccb35",
+      "changed_byte_count": 1326837,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae0231",
+        "0xae0232",
+        "0xae0233",
+        "0xae0234",
+        "0xae0235",
+        "0xae0236",
+        "0xae0237"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_VcnDispatchProbe_v001.bin",
+      "sha256": "351905cc9f3f6ebcd48ed65ff6874b40c376fcb58d6f0ace44c722d7ba5bc129",
+      "changed_byte_count": 1326826,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae0231",
+        "0xae0232",
+        "0xae0233",
+        "0xae0234",
+        "0xae0235",
+        "0xae0236",
+        "0xae0237"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_VcnSlot_v001.bin",
+      "sha256": "2339aa2f57359f7185db9dde2326e14a47e8fb5cdeaf982920e6de1c9019b19e",
+      "changed_byte_count": 1326828,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae0231",
+        "0xae0232",
+        "0xae0233",
+        "0xae0234",
+        "0xae0235",
+        "0xae0236",
+        "0xae0237"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_VcnSlot_v002.bin",
+      "sha256": "60e54270866dd85d5bd298fed25176b86d7fa8bdf84eb2feed7f106e45ab5461",
+      "changed_byte_count": 1326819,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae0231",
+        "0xae0232",
+        "0xae0233",
+        "0xae0234",
+        "0xae0235",
+        "0xae0236",
+        "0xae0237"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_VcnSlot_v003.bin",
+      "sha256": "d0d4c861b528668d8f82a1b46a02de6be5566d54d42337e8c2ba6ce7ebb8ade7",
+      "changed_byte_count": 1326847,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae0231",
+        "0xae0232",
+        "0xae0233",
+        "0xae0234",
+        "0xae0235",
+        "0xae0236",
+        "0xae0237"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_VcnTelemetry_v001.bin",
+      "sha256": "f3304557a83a25a16dcbc71d85424e7748b0788c5178fbd1cdfe76ad7073a170",
+      "changed_byte_count": 1326870,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae0231",
+        "0xae0232",
+        "0xae0233",
+        "0xae0234",
+        "0xae0235",
+        "0xae0236",
+        "0xae0237"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_VcnUnlockDxe_v001.bin",
+      "sha256": "55096d62ec2031bf023b19b5bcac9ad031bf678037754db23c35c001dc858bca",
+      "changed_byte_count": 1326793,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae0231",
+        "0xae0232",
+        "0xae0233",
+        "0xae0234",
+        "0xae0235",
+        "0xae0236",
+        "0xae0237"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_VcnUnlock_GlitchSigned_v001.bin",
+      "sha256": "91de01eb7cb8e97014294adc8692eb8be66c3f95ce8481c234805544c0ddd517",
+      "changed_byte_count": 14009,
+      "changed_offsets_head": [
+        "0x8e0004",
+        "0x8e0005",
+        "0x8e0006",
+        "0x8e0007",
+        "0x8e0084",
+        "0x8e0085",
+        "0x8e0089",
+        "0x8e008a",
+        "0x8e0104",
+        "0x8e0105",
+        "0x8e0109",
+        "0x8e010a"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_5.00_clv_VcnUnlock_W9_v001.bin",
+      "sha256": "3c50bc9a65194b75ca805e6ed31c5778369de1fe8eca4600f44e15fae3b40fc3",
+      "changed_byte_count": 1326833,
+      "changed_offsets_head": [
+        "0xae0088",
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae0231",
+        "0xae0232",
+        "0xae0233",
+        "0xae0234",
+        "0xae0235",
+        "0xae0236",
+        "0xae0237"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_APCB_DFG_only_v001_from_read-a.bin",
+      "sha256": "6b1fe8ef504142d5d5273a85b6c9febdf0b1fb8fc08ebab2593281c320cb9d70",
+      "changed_byte_count": 1988556,
+      "changed_offsets_head": [
+        "0x8f",
+        "0xab",
+        "0xac",
+        "0xb0",
+        "0xb2",
+        "0xb3",
+        "0xb4",
+        "0xb5",
+        "0xb6",
+        "0xb7",
+        "0xb8",
+        "0xb9"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOverrideControl",
+        "DfClockOvrd",
+        "ForceCpuFrequency",
+        "MemoryClockSpeed",
+        "UclkDiv1M0"
+      ],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_M2_C0A_MEMG_BC250_v001_from_C0A-stock.bin",
+      "sha256": "049419cb890eec48d36b6c27b6fe0c20dc5574fea83175ef398584a9cd10e275",
+      "changed_byte_count": 3377711,
+      "changed_offsets_head": [
+        "0x94",
+        "0x95",
+        "0xab",
+        "0xc0",
+        "0xc1",
+        "0xc2",
+        "0xc3",
+        "0xc4",
+        "0xc5",
+        "0xc7",
+        "0xcb",
+        "0xcd"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {
+        "VddcrVddOffsetControl": {
+          "offsets": [
+            "0xbb4"
+          ],
+          "donor": "00",
+          "candidate": "ff"
+        },
+        "VddcrVddOffset": {
+          "offsets": [
+            "0xbb5",
+            "0xbb6",
+            "0xbb7",
+            "0xbb8"
+          ],
+          "donor": "00 00 00 00",
+          "candidate": "ff ff ff ff"
+        },
+        "VddcrGfxOffsetControl": {
+          "offsets": [
+            "0xbb9"
+          ],
+          "donor": "00",
+          "candidate": "ff"
+        },
+        "VddcrGfxOffset": {
+          "offsets": [
+            "0xbba",
+            "0xbbb",
+            "0xbbc",
+            "0xbbd"
+          ],
+          "donor": "00 00 00 00",
+          "candidate": "ff ff ff ff"
+        }
+      },
+      "requests_voltage_change": true,
+      "voltage_request": {
+        "vdd_control_byte": 255,
+        "vdd_value_le": "ff ff ff ff",
+        "vdd_class": "unset_lineage_bytes_0xff_not_a_request",
+        "gfx_control_byte": 255,
+        "gfx_value_le": "ff ff ff ff",
+        "gfx_class": "unset_lineage_bytes_0xff_not_a_request"
+      },
+      "field_values_changed": [
+        "DfClockOverrideControl",
+        "DfClockOvrd",
+        "FclkDpm",
+        "ForceCpuFrequency",
+        "MemoryClockSpeed",
+        "UclkDiv1M0",
+        "VddcrGfxOffset",
+        "VddcrGfxOffsetControl",
+        "VddcrVddOffset",
+        "VddcrVddOffsetControl"
+      ],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_M2full_C0A_APCB-native_v001_from_C0A-stock.bin",
+      "sha256": "72acddadafe2cd588d9e6b10f2c901dd72b0009431c6e7145b1f710f3e51bc77",
+      "changed_byte_count": 3376264,
+      "changed_offsets_head": [
+        "0x94",
+        "0x95",
+        "0xab",
+        "0xc0",
+        "0xc1",
+        "0xc2",
+        "0xc3",
+        "0xc4",
+        "0xc5",
+        "0xc7",
+        "0xcb",
+        "0xcd"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {
+        "VddcrVddOffsetControl": {
+          "offsets": [
+            "0xbb4"
+          ],
+          "donor": "00",
+          "candidate": "ff"
+        },
+        "VddcrVddOffset": {
+          "offsets": [
+            "0xbb5",
+            "0xbb6",
+            "0xbb7",
+            "0xbb8"
+          ],
+          "donor": "00 00 00 00",
+          "candidate": "ff ff ff ff"
+        },
+        "VddcrGfxOffsetControl": {
+          "offsets": [
+            "0xbb9"
+          ],
+          "donor": "00",
+          "candidate": "ff"
+        },
+        "VddcrGfxOffset": {
+          "offsets": [
+            "0xbba",
+            "0xbbb",
+            "0xbbc",
+            "0xbbd"
+          ],
+          "donor": "00 00 00 00",
+          "candidate": "ff ff ff ff"
+        }
+      },
+      "requests_voltage_change": true,
+      "voltage_request": {
+        "vdd_control_byte": 255,
+        "vdd_value_le": "ff ff ff ff",
+        "vdd_class": "unset_lineage_bytes_0xff_not_a_request",
+        "gfx_control_byte": 255,
+        "gfx_value_le": "ff ff ff ff",
+        "gfx_class": "unset_lineage_bytes_0xff_not_a_request"
+      },
+      "field_values_changed": [
+        "DfClockOverrideControl",
+        "DfClockOvrd",
+        "FclkDpm",
+        "ForceCpuFrequency",
+        "MemoryClockSpeed",
+        "UclkDiv1M0",
+        "VddcrGfxOffset",
+        "VddcrGfxOffsetControl",
+        "VddcrVddOffset",
+        "VddcrVddOffsetControl"
+      ],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_M4_M2full_BL-native_v001.bin",
+      "sha256": "856af24bceb04ef06da34c82e906570147c4c207da3ee9d785233435981a47a3",
+      "changed_byte_count": 3419109,
+      "changed_offsets_head": [
+        "0x94",
+        "0x95",
+        "0xab",
+        "0xc0",
+        "0xc1",
+        "0xc2",
+        "0xc3",
+        "0xc4",
+        "0xc5",
+        "0xc7",
+        "0xcb",
+        "0xcd"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {
+        "VddcrVddOffsetControl": {
+          "offsets": [
+            "0xbb4"
+          ],
+          "donor": "00",
+          "candidate": "ff"
+        },
+        "VddcrVddOffset": {
+          "offsets": [
+            "0xbb5",
+            "0xbb6",
+            "0xbb7",
+            "0xbb8"
+          ],
+          "donor": "00 00 00 00",
+          "candidate": "ff ff ff ff"
+        },
+        "VddcrGfxOffsetControl": {
+          "offsets": [
+            "0xbb9"
+          ],
+          "donor": "00",
+          "candidate": "ff"
+        },
+        "VddcrGfxOffset": {
+          "offsets": [
+            "0xbba",
+            "0xbbb",
+            "0xbbc",
+            "0xbbd"
+          ],
+          "donor": "00 00 00 00",
+          "candidate": "ff ff ff ff"
+        }
+      },
+      "requests_voltage_change": true,
+      "voltage_request": {
+        "vdd_control_byte": 255,
+        "vdd_value_le": "ff ff ff ff",
+        "vdd_class": "unset_lineage_bytes_0xff_not_a_request",
+        "gfx_control_byte": 255,
+        "gfx_value_le": "ff ff ff ff",
+        "gfx_class": "unset_lineage_bytes_0xff_not_a_request"
+      },
+      "field_values_changed": [
+        "DfClockOverrideControl",
+        "DfClockOvrd",
+        "FclkDpm",
+        "ForceCpuFrequency",
+        "MemoryClockSpeed",
+        "UclkDiv1M0",
+        "VddcrGfxOffset",
+        "VddcrGfxOffsetControl",
+        "VddcrVddOffset",
+        "VddcrVddOffsetControl"
+      ],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_M5_M4_PEI-native_v001.bin",
+      "sha256": "3a80f9a873fdf34980267934f59da93fa133dfe8d48344a7b6d3b97f02048003",
+      "changed_byte_count": 2429560,
+      "changed_offsets_head": [
+        "0x8f",
+        "0xab",
+        "0xac",
+        "0xb0",
+        "0xb2",
+        "0xb3",
+        "0xb4",
+        "0xb5",
+        "0xb6",
+        "0xb7",
+        "0xb8",
+        "0xb9"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOverrideControl",
+        "DfClockOvrd",
+        "ForceCpuFrequency",
+        "MemoryClockSpeed",
+        "UclkDiv1M0"
+      ],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_M6_native_M4PSP_v001.bin",
+      "sha256": "3e75177e96e21a8a25814a0d16613453662d497ca88afbcb9a0c92e43da6868b",
+      "changed_byte_count": 2426198,
+      "changed_offsets_head": [
+        "0x8f",
+        "0xab",
+        "0xac",
+        "0xb0",
+        "0xb2",
+        "0xb3",
+        "0xb4",
+        "0xb5",
+        "0xb6",
+        "0xb7",
+        "0xb8",
+        "0xb9"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOverrideControl",
+        "DfClockOvrd",
+        "ForceCpuFrequency",
+        "MemoryClockSpeed",
+        "UclkDiv1M0"
+      ],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_MemoryClock_1750_only_v001_from_read-a.bin",
+      "sha256": "63cd074197ce26bafe7d2f943eeceb69b331cdba94f12662820de710fc193fee",
+      "changed_byte_count": 1988554,
+      "changed_offsets_head": [
+        "0x8f",
+        "0xab",
+        "0xac",
+        "0xb0",
+        "0xb2",
+        "0xb3",
+        "0xb4",
+        "0xb5",
+        "0xb6",
+        "0xb7",
+        "0xb8",
+        "0xb9"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOverrideControl",
+        "DfClockOvrd",
+        "ForceCpuFrequency",
+        "MemoryClockSpeed",
+        "UclkDiv1M0"
+      ],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_O1prep_T1down_memclk-1000MHz_v001_from_pre-m0.bin",
+      "sha256": "a8a813b903d3c79aa87ac0d96b55e005e51b299735afd2eaa18e1b174f37260f",
+      "changed_byte_count": 1953245,
+      "changed_offsets_head": [
+        "0x8f",
+        "0xab",
+        "0xac",
+        "0xb0",
+        "0xb2",
+        "0xb3",
+        "0xb4",
+        "0xb5",
+        "0xb6",
+        "0xb7",
+        "0xb8",
+        "0xb9"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOverrideControl",
+        "DfClockOvrd",
+        "ForceCpuFrequency",
+        "MemoryClockSpeed",
+        "UclkDiv1M0"
+      ],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_T1_mem1750_from_pre-m0.bin",
+      "sha256": "b803cb4ca8e4374e31e52a75cfc8d6575eee71573bd7b0c9c2302bd7afc87589",
+      "changed_byte_count": 1953245,
+      "changed_offsets_head": [
+        "0x8f",
+        "0xab",
+        "0xac",
+        "0xb0",
+        "0xb2",
+        "0xb3",
+        "0xb4",
+        "0xb5",
+        "0xb6",
+        "0xb7",
+        "0xb8",
+        "0xb9"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOverrideControl",
+        "DfClockOvrd",
+        "ForceCpuFrequency",
+        "MemoryClockSpeed",
+        "UclkDiv1M0"
+      ],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_VCN_D3B2_combined_v001_from_read-a.bin",
+      "sha256": "439e248141ef6a9c1313bc7815696d570be8fed5471262596186f3da8914747d",
+      "changed_byte_count": 2002284,
+      "changed_offsets_head": [
+        "0x8f",
+        "0xab",
+        "0xac",
+        "0xb0",
+        "0xb2",
+        "0xb3",
+        "0xb4",
+        "0xb5",
+        "0xb6",
+        "0xb7",
+        "0xb8",
+        "0xb9"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOverrideControl",
+        "DfClockOvrd",
+        "ForceCpuFrequency",
+        "MemoryClockSpeed",
+        "UclkDiv1M0"
+      ],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_VCN_DXE_only_v001_from_read-a.bin",
+      "sha256": "9d0f7ca14952369833f8f87f9092cad4edd27df62f01d0df28b20d55c49eb497",
+      "changed_byte_count": 1986623,
+      "changed_offsets_head": [
+        "0x8f",
+        "0xab",
+        "0xac",
+        "0xb0",
+        "0xb2",
+        "0xb3",
+        "0xb4",
+        "0xb5",
+        "0xb6",
+        "0xb7",
+        "0xb8",
+        "0xb9"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOverrideControl",
+        "DfClockOvrd",
+        "ForceCpuFrequency",
+        "MemoryClockSpeed",
+        "UclkDiv1M0"
+      ],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_VCN_fulltransplant_v001_from_read-a.bin",
+      "sha256": "439e248141ef6a9c1313bc7815696d570be8fed5471262596186f3da8914747d",
+      "changed_byte_count": 2002284,
+      "changed_offsets_head": [
+        "0x8f",
+        "0xab",
+        "0xac",
+        "0xb0",
+        "0xb2",
+        "0xb3",
+        "0xb4",
+        "0xb5",
+        "0xb6",
+        "0xb7",
+        "0xb8",
+        "0xb9"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOverrideControl",
+        "DfClockOvrd",
+        "ForceCpuFrequency",
+        "MemoryClockSpeed",
+        "UclkDiv1M0"
+      ],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_VCN_policy_only_v001_from_read-a.bin",
+      "sha256": "8cd9d19912ad80d2d6a8c5a1ca1a25379054f80f4c62ff528643e0a8193921b1",
+      "changed_byte_count": 2002282,
+      "changed_offsets_head": [
+        "0x8f",
+        "0xab",
+        "0xac",
+        "0xb0",
+        "0xb2",
+        "0xb3",
+        "0xb4",
+        "0xb5",
+        "0xb6",
+        "0xb7",
+        "0xb8",
+        "0xb9"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [
+        "DfClockOverrideControl",
+        "DfClockOvrd",
+        "ForceCpuFrequency",
+        "MemoryClockSpeed",
+        "UclkDiv1M0"
+      ],
+      "manifest_present": false,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": null
+    },
+    {
+      "image": "BC250_clv_MeiMeiDXEv3_8c_omarchy_v001.bin",
+      "sha256": "af53102601bc85027d3b62a9035d2b1767811833ee688d33568fcbaf91dae152",
+      "changed_byte_count": 1328487,
+      "changed_offsets_head": [
+        "0xae008c",
+        "0xae008d",
+        "0xae0090",
+        "0xae0091",
+        "0xae00ad",
+        "0xae00ae",
+        "0xae00af",
+        "0xae00b0",
+        "0xae00b1",
+        "0xae00b2",
+        "0xae00b3",
+        "0xae00b4"
+      ],
+      "base_lineage": "other_base",
+      "voltage_touching": {},
+      "requests_voltage_change": false,
+      "voltage_request": {
+        "vdd_control_byte": 0,
+        "vdd_value_le": "00 00 00 00",
+        "vdd_class": "auto_and_zero_no_request",
+        "gfx_control_byte": 0,
+        "gfx_value_le": "00 00 00 00",
+        "gfx_class": "auto_and_zero_no_request"
+      },
+      "field_values_changed": [],
+      "manifest_present": true,
+      "manifest_changed_offsets_match_recomputed": true,
+      "manifest_voltage_changed": null,
+      "manifest_status": "BUILT_OFFLINE_STATIC_VERIFIED"
+    }
+  ],
+  "safety_claim_matrix": {
+    "target_1800MHz": {
+      "stored_request_representable_in_pinned_rom": "PASS",
+      "clv_ifr_option_label_matches_1800MHz": "PASS",
+      "applied_mclk_measured_on_hardware": "UNRUN",
+      "mclk_uclk_fclk_synchronization_proven": "UNRUN",
+      "boot_and_stability_with_1800_stored": "INCONCLUSIVE",
+      "thermal_or_power_margin_measured": "UNRUN",
+      "historical_df1800_recipe_usable_under_ceiling": "FAIL",
+      "note": "The pinned clv donor already persists MemoryClockSpeed option 0x24 ('1800MHz'); this is a stored request, not an applied clock, and no hardware measurement of MCLK/UCLK/FCLK exists. The historical DF1800 report is associated with a physical feedback modification and a reported SoC above the 1.15 V ceiling, so it is not a reproducible recipe."
+    },
+    "target_SoC_1.15V": {
+      "voltage_field_located_and_typed": "PASS",
+      "unit_sign_encoding_established": "FAIL",
+      "smc_consumer_of_record_0x1364_established": "INCONCLUSIVE",
+      "board_specific_safe_rating_evidence": "FAIL",
+      "rail_voltage_measured_under_load": "UNRUN",
+      "candidate_requests_nonzero_voltage": "YES_IN_4_UNFLASHED_CANDIDATES_SEE_RESULT",
+      "note": "No board-specific measurement establishes 1.15 V as a rating; the field unit/sign/encoding is unresolved and the applied consumer is not located. No repository candidate requests a nonzero VDDCR_VDD/GFX offset."
+    }
+  },
+  "verdict": {
+    "overall": "NO_GO_FOR_VOLTAGE_CHANGE_AND_UNPROVEN_FOR_1800MHz",
+    "flash_approval_recommendation": "NOT_RECOMMENDED",
+    "decisive_missing_tests": [
+      "Rail-voltage measurement under load on the target board with a known-good baseline image and a verified recovery image.",
+      "Independent clock measurement (hardware counter or equivalent) proving applied MCLK/UCLK/FCLK, not displayed values.",
+      "A located and traced consumer for $INV record 0x1364 before any voltage request is treated as an applied voltage."
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "llvm-objdump",
+    "-D",
+    "--triple=thumbv7m-none-eabi",
+    "--start-address=0x4800",
+    "--stop-address=0x4850",
+    "evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o"
+  ],
+  "exit": 0,
+  "stderr": ""
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_waveshare_panel.py",
+    "-v"
+  ],
+  "stdout": "",
+  "stderr": "test_exact_header_matches_html_and_tcp_window (test_waveshare_panel.TestPanel.test_exact_header_matches_html_and_tcp_window) ... ok\ntest_readonly_fixed_endpoint_no_storage_or_external_assets (test_waveshare_panel.TestPanel.test_readonly_fixed_endpoint_no_storage_or_external_assets) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+  "exit_status": 0,
+  "evidence_class": "controlled_fixture_not_live_runtime"
+}

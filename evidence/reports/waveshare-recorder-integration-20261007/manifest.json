@@ -1,0 +1,56 @@
+{
+  "state": "INCOMPLETE_NOT_FOR_FLASH",
+  "build_date": "2026-10-07T00:00:00Z",
+  "artifact": {
+    "path": "Waveshare-RP2350B-Plus-W-BC250-Recorder-Watchdog-INCOMPLETE.uf2",
+    "sha256": "42b12ab85d4ce1c65c641fd2e9f7098a133d499362f93e36a96d71dfe3aaa999"
+  },
+  "rollback": "waveshare-recorder-integration-before-20261007.zip",
+  "source_hashes": {
+    "candidates/waveshare-adapter-safe-v001/CMakeLists.txt": "8417b5f06b907af639ae5ae0bc15b470c9a979fa3311ccd5643873bdcedf9aae",
+    "candidates/waveshare-adapter-safe-v001/src/main.c": "4b4a15f692187a30cbedfe2d4d4f676587df5d36d9ce042f09d3c3a456db9b11",
+    "candidates/waveshare-adapter-safe-v001/src/cdc_dispatch.c": "f7d201351470b00bda77a4c954864818779a6906bd89ed1e525d3fffc9fa8ac8",
+    "candidates/waveshare-adapter-safe-v001/src/adapter_network.c": "f3e1b46d73d05f984b9186c5bafda085a4773f8f618acbab846cc7de4a6ed4c0",
+    "candidates/waveshare-adapter-safe-v001/src/adapter_recorder.c": "75a7921c0b79e647885544f7ceed0bffc09560d2a90c8c62b97a36257b78f3eb",
+    "candidates/waveshare-adapter-safe-v001/src/adapter_recorder.h": "6db58056e780c33fdcd6f9148b2b8c82c8aaa3706685125703df5ff9f739d2ba",
+    "candidates/waveshare-adapter-safe-v001/src/adapter_watchdog.c": "f588eaa9a46871d8a3348462cfbfaf03c81a6a2450ca2da68ff980f958ba68b3",
+    "candidates/waveshare-adapter-safe-v001/src/adapter_watchdog.h": "78ee4bdf8323502b88c4d2909247e727572b7ae5be50eae1d04e1eb569d121d7"
+  },
+  "compiler": "arm-none-eabi-gcc (Arch Repository) 16.2.0",
+  "cmake": "cmake version 4.4.3",
+  "sdk_commit": "079c6f39023649b154152db30f1d781e884879bc",
+  "verification": {
+    "firmware_build": true,
+    "ram_relocation_gate": true,
+    "uf2_structure": true,
+    "native_recorder_watchdog_test": true,
+    "native_fault_sensitivity": true,
+    "waveshare_suite": {
+      "run": 91,
+      "passed": 91,
+      "errors": 0
+    },
+    "contract_gate": true,
+    "contract_failure": "AGENTS.md project block has no expected text map",
+    "procoder_gate": false,
+    "hardware_acceptance": false,
+    "deterministic_two_builds": true,
+    "deterministic_builds": {
+      "build_1_sha256": "42b12ab85d4ce1c65c641fd2e9f7098a133d499362f93e36a96d71dfe3aaa999",
+      "build_2_sha256": "42b12ab85d4ce1c65c641fd2e9f7098a133d499362f93e36a96d71dfe3aaa999",
+      "byte_identical": true
+    },
+    "procoder_failure": "Formatting/SDK include context/pytest collection reported by adopted procoder run; targeted tests/build pass.",
+    "artifact_status": "INCOMPLETE_NOT_FOR_FLASH",
+    "review": {
+      "different_family_independent_review": "NOT_AVAILABLE",
+      "reason": "Muse reviewer hit provider usage limit before writing its report"
+    }
+  },
+  "unrun": [
+    "USB/HOST_ALIVE/HTTP real-device acceptance",
+    "physical voltage measurement",
+    "independent-power/reboot storage acceptance",
+    "full controller/audio/PSP/TOCTOU acceptance"
+  ]
+}

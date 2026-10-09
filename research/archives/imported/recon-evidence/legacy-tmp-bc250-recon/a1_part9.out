@@ -1,0 +1,409 @@
+=== PART9 ts=2026-08-25T18:49:47+05:00 ===
+--- libexec listing ---
+-rwxr-xr-x 1 root root 45859 Там 25 00:48 /usr/local/bin/bc250-cu-live-manager
+-rwxr-xr-x 1 root root  3689 Там 25 14:40 /usr/local/bin/bc250-fan.sh
+-rwxr-xr-x 1 root root  2325 Там 18 13:07 /usr/local/bin/bc250-fan.sh.bak.1787040477
+-rwxr-xr-x 1 root root  2491 Там 18 13:07 /usr/local/bin/bc250-fan.sh.pre-aggressive-20260819T194714
+-rwxr-xr-x 1 root root  1939 Там 24 21:50 /usr/local/bin/bc250-fan.sh.pre-powerfloor
+-rwxr-xr-x 1 root root  3630 Там 24 21:50 /usr/local/bin/bc250-fan.sh.pre-quiet-87-20260825T144007
+-rwxr-xr-x 1 root root  1777 Там 24 20:31 /usr/local/libexec/bc250-bench.sh
+-rwxr-xr-x 1 root root  2203 Там 24 18:10 /usr/local/libexec/bc250-boot-forensics.sh
+-rwxr-xr-x 1 root root   828 Там 24 20:21 /usr/local/libexec/bc250-cpu-oc.py
+-rwxr-xr-x 1 root root   973 Там 25 00:40 /usr/local/libexec/bc250-cu-layout.sh
+-rwxr-xr-x 1 root root   687 Там 24 17:19 /usr/local/libexec/bc250-dpwatch.sh
+-rw-r--r-- 1 root root   879 Там 24 20:18 /usr/local/libexec/bc250-dvdt-toggle.py
+-rwxr-xr-x 1 root root   614 Там 21 13:50 /usr/local/libexec/bc250-gpu-fixed.sh
+-rwxr-xr-x 1 root root  3020 Там 21 13:50 /usr/local/libexec/bc250-gpu-set.py
+-rwxr-xr-x 1 root root   887 Там 21 13:50 /usr/local/libexec/bc250-gpu-watchdog.sh
+-rwxr-xr-x 1 root root  3636 Там 24 18:09 /usr/local/libexec/bc250-metrics.py
+-rwxr-xr-x 1 root root  1490 Там 24 14:30 /usr/local/libexec/bc250-netconsole.sh
+-rwxr-xr-x 1 root root  1855 Там 24 16:57 /usr/local/libexec/bc250-psu-soak.sh
+-rwxr-xr-x 1 root root  2883 Там 24 16:43 /usr/local/libexec/bc250-psu-stress.sh
+-rwxr-xr-x 1 root root   473 Там 24 16:43 /usr/local/libexec/bc250-pwrwatch.sh
+-rwxr-xr-x 1 root root  2790 Там 24 14:37 /usr/local/libexec/bc250-repro-loop.sh
+-rwxr-xr-x 1 root root  2368 Там 24 23:21 /usr/local/libexec/bc250-telemetry.sh
+-rwxr-xr-x 1 root root  1127 Там 24 14:30 /usr/local/libexec/bc250-telemetry.sh.bak
+-rwxr-xr-x 1 root root  1668 Там 24 18:03 /usr/local/libexec/bc250-telemetry.sh.bak.1787576585
+-rwxr-xr-x 1 root root  1275 Там 24 15:37 /usr/local/libexec/bc250-telemetry.sh.bak2
+-rwxr-xr-x 1 root root   422 Там 24 17:19 /usr/local/libexec/bc250-userlog.sh
+-rwxr-xr-x 1 root root  1279 Там 24 21:14 /usr/local/libexec/bc250-vramsoak-sample.sh
+-rwxr-xr-x 1 root root  1988 Там 24 16:53 /usr/local/libexec/bc250-vram-stress.sh
+-rwxr-xr-x 1 root root   928 Там 24 17:06 /usr/local/libexec/bc250-zram.sh
+--- metrics.py (full, read-only) ---
+#!/usr/bin/env python3
+"""Sample amdgpu gpu_metrics_v2_2 and ship it to /dev/kmsg (and thus netconsole)."""
+import struct, time, sys
+
+SRC = "/sys/class/drm/card1/device/gpu_metrics"
+KMSG = "/dev/kmsg"
+LAYOUT = "<HBB" + "HH" + "8H" + "2H" + "HH" + "Q" + "HHHH" + "8H" + "6H" + "6H" + "8H" + "2H" + "I" + "H" + "3H" + "Q"
+
+FIELDS = [
+    "size", "fmt", "cont",
+    "t_gfx", "t_soc",
+    *[f"t_core{i}" for i in range(8)],
+    "t_l3_0", "t_l3_1",
+    "act_gfx", "act_mm",
+    "clock_counter",
+    "p_socket", "p_cpu", "p_soc", "p_gfx",
+    *[f"p_core{i}" for i in range(8)],
+    "avg_gfxclk", "avg_socclk", "avg_uclk", "avg_fclk", "avg_vclk", "avg_dclk",
+    "cur_gfxclk", "cur_socclk", "cur_uclk", "cur_fclk", "cur_vclk", "cur_dclk",
+    *[f"coreclk{i}" for i in range(8)],
+    "l3clk_0", "l3clk_1",
+    "throttle", "fan_pwm",
+    "pad0", "pad1", "pad2",
+    "indep_throttle",
+]
+
+def valid(v, bad=0xFFFF):
+    return None if v is None or v >= bad else v
+
+def kmsg(line):
+    try:
+        with open(KMSG, "w") as f:
+            f.write(line + "\n")
+    except Exception:
+        pass
+
+def read():
+    with open(SRC, "rb") as f:
+        raw = f.read()
+    if len(raw) < struct.calcsize(LAYOUT):
+        return None
+    vals = struct.unpack_from(LAYOUT, raw, 0)
+    return dict(zip(FIELDS, vals))
+
+def main():
+    period = float(sys.argv[1]) if len(sys.argv) > 1 else 1.0
+    last_throttle = None
+    first = read()
+    if not first:
+        kmsg("<3>BC250-METRICS unusable gpu_metrics table")
+        return 1
+    kmsg("<3>BC250-METRICS start size=%d fmt=%d.%d period=%.2fs" %
+         (first["size"], first["fmt"], first["cont"], period))
+    while True:
+        m = read()
+        if m:
+            cores = [valid(m[f"coreclk{i}"]) for i in range(8)]
+            cores = [c for c in cores if c]
+            ctemps = [valid(m[f"t_core{i}"]) for i in range(8)]
+            ctemps = [c for c in ctemps if c]
+            pcores = [valid(m[f"p_core{i}"]) for i in range(8)]
+            pcores = [p for p in pcores if p]
+            thr = m["throttle"]
+            ind = m["indep_throttle"]
+            fields = [
+                "p_socket_mW=%s" % (valid(m["p_socket"], 0xFFFE) or "NA"),
+                "p_cpu_mW=%s" % (valid(m["p_cpu"], 0xFFFE) or "NA"),
+                "p_soc_mW=%s" % (valid(m["p_soc"], 0xFFFE) or "NA"),
+                "p_gfx_mW=%s" % (valid(m["p_gfx"], 0xFFFE) or "NA"),
+                "p_cores_mW=%d" % sum(pcores) if pcores else "p_cores_mW=NA",
+                "t_gfx_cC=%s" % (valid(m["t_gfx"]) or "NA"),
+                "t_soc_cC=%s" % (valid(m["t_soc"]) or "NA"),
+                "t_core_max_cC=%s" % (max(ctemps) if ctemps else "NA"),
+                "gfxclk=%s" % (valid(m["cur_gfxclk"]) or "NA"),
+                "socclk=%s" % (valid(m["cur_socclk"]) or "NA"),
+                "uclk=%s" % (valid(m["cur_uclk"]) or "NA"),
+                "fclk=%s" % (valid(m["cur_fclk"]) or "NA"),
+                "coreclk_max=%s" % (max(cores) if cores else "NA"),
+                "act_gfx=%s" % (valid(m["act_gfx"]) or 0),
+                "throttle=0x%x" % thr,
+                "indep_throttle=0x%x" % ind,
+            ]
+            kmsg("<5>BC250-METRICS " + " ".join(str(x) for x in fields))
+            if thr != last_throttle:
+                kmsg("<3>BC250-THROTTLE-CHANGE from=%s to=0x%x indep=0x%x p_cpu_mW=%s p_gfx_mW=%s" %
+                     ("NA" if last_throttle is None else hex(last_throttle), thr, ind,
+                      valid(m["p_cpu"], 0xFFFE) or "NA", valid(m["p_gfx"], 0xFFFE) or "NA"))
+                last_throttle = thr
+        time.sleep(period)
+
+if __name__ == "__main__":
+    sys.exit(main())
+--- metrics.py grep vclk/dclk/vcn/smu ---
+11:    "t_gfx", "t_soc",
+14:    "act_gfx", "act_mm",
+16:    "p_socket", "p_cpu", "p_soc", "p_gfx",
+18:    "avg_gfxclk", "avg_socclk", "avg_uclk", "avg_fclk", "avg_vclk", "avg_dclk",
+19:    "cur_gfxclk", "cur_socclk", "cur_uclk", "cur_fclk", "cur_vclk", "cur_dclk",
+69:                "p_gfx_mW=%s" % (valid(m["p_gfx"], 0xFFFE) or "NA"),
+71:                "t_gfx_cC=%s" % (valid(m["t_gfx"]) or "NA"),
+74:                "gfxclk=%s" % (valid(m["cur_gfxclk"]) or "NA"),
+79:                "act_gfx=%s" % (valid(m["act_gfx"]) or 0),
+85:                kmsg("<3>BC250-THROTTLE-CHANGE from=%s to=0x%x indep=0x%x p_cpu_mW=%s p_gfx_mW=%s" %
+87:                      valid(m["p_cpu"], 0xFFFE) or "NA", valid(m["p_gfx"], 0xFFFE) or "NA"))
+--- pwrwatch.sh ---
+#!/usr/bin/env bash
+set -u
+H=/sys/class/drm/card1/device/hwmon/hwmon1
+DP=/sys/class/drm/card1-DP-1/status
+max=0; n=0; sum=0
+while true; do
+  p=$(cat "$H/power1_input" 2>/dev/null || echo 0)
+  [ "$p" -gt "$max" ] 2>/dev/null && max=$p
+  sum=$((sum+p)); n=$((n+1))
+  if [ $((n % 25)) -eq 0 ]; then
+    echo "<4>BC250-PWRMAX win_max_W=$((max/1000000)) win_avg_W=$((sum/n/1000000)) dp=$(cat $DP 2>/dev/null)" > /dev/kmsg 2>/dev/null
+    max=0; sum=0; n=0
+  fi
+  sleep 0.2
+done
+--- telemetry.sh ---
+#!/usr/bin/env bash
+set -u
+LOG=/var/log/bc250-telemetry.log
+GPU_HWMON=""
+CPU_HWMON=""
+NCT_HWMON=""
+for h in /sys/class/hwmon/hwmon*; do
+  case "$(cat "$h/name" 2>/dev/null)" in
+    amdgpu) GPU_HWMON="$h" ;;
+    k10temp) CPU_HWMON="$h" ;;
+    nct6686) NCT_HWMON="$h" ;;
+  esac
+done
+DP_STATUS=/sys/class/drm/card1-DP-1/status
+FAN_NODE="$NCT_HWMON/fan2_input"
+i=0
+while true; do
+  ts=$(date -Is)
+  gtemp=$(cat "$GPU_HWMON/temp1_input" 2>/dev/null || echo NA)
+  gpow=$(cat "$GPU_HWMON/power1_average" 2>/dev/null || echo NA)
+  gpow_input=$(cat "$GPU_HWMON/power1_input" 2>/dev/null || echo NA)
+  gvolt=$(cat "$GPU_HWMON/in0_input" 2>/dev/null || echo NA)
+  vddcr_vdd=$(cat "$GPU_HWMON/in1_input" 2>/dev/null || echo NA)
+  gfreq=$(cat "$GPU_HWMON/freq1_input" 2>/dev/null || echo NA)
+  ctemp=NA
+  if [[ -n "$CPU_HWMON" ]]; then
+    ctemp=$(cat "$CPU_HWMON/temp1_input" 2>/dev/null || echo NA)
+  fi
+  dp=NA
+  [[ -r "$DP_STATUS" ]] && dp=$(cat "$DP_STATUS" 2>/dev/null || echo NA)
+  fan=$(cat "$FAN_NODE" 2>/dev/null || echo NA)
+  psi=$(awk -F"[= ]" "/^some/{print \$3; exit}" /proc/pressure/cpu 2>/dev/null)
+  psi_io=$(awk -F"[= ]" "/^some/{print \$3; exit}" /proc/pressure/io 2>/dev/null)
+  psi_mem=$(awk -F"[= ]" "/^some/{print \$3; exit}" /proc/pressure/memory 2>/dev/null)
+  load=$(cut -d' ' -f1-3 /proc/loadavg)
+  vram=$(cat /sys/class/drm/card1/device/mem_info_vram_used 2>/dev/null || echo NA)
+  gtt=$(cat /sys/class/drm/card1/device/mem_info_gtt_used 2>/dev/null || echo NA)
+  memav=$(grep MemAvailable /proc/meminfo | tr -dc '0-9')
+  swpf=$(grep SwapFree /proc/meminfo | tr -dc '0-9')
+  echo "$ts,gtemp_mC=$gtemp,gpow_uW=$gpow,gpow_input_uW=$gpow_input,gvolt_mV=$gvolt,vddcr_vdd_mV=$vddcr_vdd,gfreq_Hz=$gfreq,ctemp_mC=$ctemp,dp=$dp,vram_B=$vram,gtt_B=$gtt,memav_kB=$memav,swapfree_kB=$swpf,fan_rpm=$fan,psi_cpu=$psi,psi_io=$psi_io,psi_mem=$psi_mem,load=$load" >> "$LOG"
+  echo "<5>BC250-TELEMETRY gtemp_mC=$gtemp gpow_uW=$gpow gpow_input_uW=$gpow_input gvolt_mV=$gvolt vddcr_vdd_mV=$vddcr_vdd gfreq_Hz=$gfreq ctemp_mC=$ctemp dp=$dp vram_B=$vram gtt_B=$gtt memav_kB=$memav swapfree_kB=$swpf fan_rpm=$fan psi_cpu=$psi psi_io=$psi_io psi_mem=$psi_mem load=$load" > /dev/kmsg 2>/dev/null
+  i=$((i+1))
+  sync
+  if [[ -f "$LOG" ]]; then
+    sz=$(stat -c%s "$LOG" 2>/dev/null || echo 0)
+    if (( sz > 20000000 )); then
+      mv "$LOG" "$LOG.1"
+    fi
+  fi
+  sleep 2
+done
+9:    amdgpu) GPU_HWMON="$h" ;;
+--- gpu-watchdog.sh head ---
+#!/usr/bin/env bash
+set -Eeuo pipefail
+source /etc/bc250-gpu-fixed.conf
+hwmon=
+for path in /sys/class/drm/card[0-9]*/device/hwmon/hwmon*; do
+  [[ -r "$path/name" ]] || continue
+  [[ $(<"$path/name") == amdgpu ]] && hwmon=$path && break
+done
+[[ -n "$hwmon" ]]
+tripped=0
+while true; do
+  temp_mC=$(<"$hwmon/temp1_input")
+  temp_C=$((temp_mC / 1000))
+  if (( temp_C >= THERMAL_LIMIT_C && tripped == 0 )); then
+    logger -p daemon.crit -t bc250-gpu-watchdog "thermal rollback at ${temp_C}C: ${FREQUENCY_MHZ} MHz -> ${FALLBACK_FREQUENCY_MHZ} MHz"
+    /usr/local/libexec/bc250-gpu-fixed.sh fallback
+    touch /run/bc250-gpu-thermal-rollback
+    tripped=1
+  fi
+  if (( temp_C <= THERMAL_RECOVERY_C && tripped == 1 )); then
+    logger -p daemon.warning -t bc250-gpu-watchdog "temperature recovered to ${temp_C}C; fallback remains until reboot or manual apply"
+    tripped=2
+  fi
+  sleep 2
+done
+--- unit files ExecStart ---
+#### bc250-metrics ####
+# /etc/systemd/system/bc250-metrics.service
+[Unit]
+Description=BC-250 SMU metrics sampler (CPU/GPU power split, throttle status)
+After=bc250-netconsole.service
+Wants=bc250-netconsole.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/libexec/bc250-metrics.py 1.0
+Restart=always
+RestartSec=2
+Nice=-5
+
+[Install]
+WantedBy=multi-user.target
+#### bc250-pwrwatch ####
+# /etc/systemd/system/bc250-pwrwatch.service
+[Unit]
+Description=BC-250 200 ms power peak sampler
+After=network-online.target bc250-netconsole.service
+Wants=bc250-netconsole.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/libexec/bc250-pwrwatch.sh
+Restart=always
+RestartSec=2
+Nice=-5
+
+[Install]
+WantedBy=multi-user.target
+#### bc250-telemetry ####
+# /etc/systemd/system/bc250-telemetry.service
+[Unit]
+Description=BC-250 lightweight telemetry logger (GPU/CPU temp, voltage, power, clocks)
+After=bc250-gpu-fixed.service
+Wants=bc250-gpu-fixed.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/libexec/bc250-telemetry.sh
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
+#### bc250-gpu-fixed ####
+# /etc/systemd/system/bc250-gpu-fixed.service
+[Unit]
+Description=BC-250 fixed GPU frequency and voltage
+Wants=bc250-fan.service
+After=bc250-smu-oc.service systemd-modules-load.service
+Conflicts=cyan-skillfish-governor-smu.service
+Before=graphical.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/libexec/bc250-gpu-fixed.sh apply
+ExecStop=/usr/local/libexec/bc250-gpu-fixed.sh fallback
+RemainAfterExit=yes
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+#### bc250-netconsole ####
+# /etc/systemd/system/bc250-netconsole.service
+[Unit]
+Description=BC-250 netconsole target (kernel log -> UDP off-box)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/libexec/bc250-netconsole.sh
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
+#### bc250-cu-layout ####
+# /etc/systemd/system/bc250-cu-layout.service
+[Unit]
+Description=BC-250 stable 38-CU dispatch layout
+After=systemd-modules-load.service
+Before=bc250-gpu-fixed.service display-manager.service graphical.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/libexec/bc250-cu-layout.sh 38
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+--- gpu_metrics binary parse (timeout, no pp_dpm) ---
+--- debugfs list ---
+no_debugfs
+--- amdgpu params subset ---
+aspm=-1
+
+compute_multipipe=-1
+
+damageclips=-1
+
+discovery=-1
+
+fw_load_type=-1
+
+ip_block_mask=4294967295
+
+mes_log_enable=0
+
+runpm=-1
+
+smu_memory_pool_size=0
+
+smu_pptable_id=-1
+
+umsch_mm_fwlog=0
+
+uni_mes=1
+
+vcnfw_log=0
+
+--- netconsole / log destinations ---
+/etc/systemd/system/multi-user.target.wants/bc250-netconsole.service:2:Description=BC-250 netconsole target (kernel log -> UDP off-box)
+/etc/systemd/system/multi-user.target.wants/bc250-netconsole.service:9:ExecStart=/usr/local/libexec/bc250-netconsole.sh
+/etc/systemd/system/multi-user.target.wants/bc250-dpwatch.service:3:After=network-online.target bc250-netconsole.service
+/etc/systemd/system/multi-user.target.wants/bc250-dpwatch.service:4:Wants=bc250-netconsole.service
+/etc/systemd/system/multi-user.target.wants/bc250-userlog.service:3:After=network-online.target bc250-netconsole.service
+/etc/systemd/system/multi-user.target.wants/bc250-userlog.service:4:Wants=bc250-netconsole.service
+/etc/systemd/system/multi-user.target.wants/bc250-pwrwatch.service:3:After=network-online.target bc250-netconsole.service
+/etc/systemd/system/multi-user.target.wants/bc250-pwrwatch.service:4:Wants=bc250-netconsole.service
+/etc/systemd/system/multi-user.target.wants/bc250-boot-forensics.service:3:After=bc250-netconsole.service systemd-journald.service
+/etc/systemd/system/multi-user.target.wants/bc250-boot-forensics.service:4:Wants=bc250-netconsole.service
+/etc/systemd/system/multi-user.target.wants/bc250-metrics.service:3:After=bc250-netconsole.service
+/etc/systemd/system/multi-user.target.wants/bc250-metrics.service:4:Wants=bc250-netconsole.service
+/etc/systemd/system/bc250-netconsole.service:2:Description=BC-250 netconsole target (kernel log -> UDP off-box)
+/etc/systemd/system/bc250-netconsole.service:9:ExecStart=/usr/local/libexec/bc250-netconsole.sh
+/etc/systemd/system/bc250-dpwatch.service:3:After=network-online.target bc250-netconsole.service
+/etc/systemd/system/bc250-dpwatch.service:4:Wants=bc250-netconsole.service
+/etc/systemd/system/bc250-userlog.service:3:After=network-online.target bc250-netconsole.service
+/etc/systemd/system/bc250-userlog.service:4:Wants=bc250-netconsole.service
+/etc/systemd/system/bc250-pwrwatch.service:3:After=network-online.target bc250-netconsole.service
+/etc/systemd/system/bc250-pwrwatch.service:4:Wants=bc250-netconsole.service
+--- packaging patch vclk/dclk emit context ---
+30-+	uint16_t GfxTemperature;		/* 0x46 */
+31-+	uint16_t SocclkFrequency;		/* 0x48 */
+32:+	uint16_t VclkFrequency;			/* 0x4a */
+33:+	uint16_t DclkFrequency;			/* 0x4c */
+34-+	uint16_t MemclkFrequency;		/* 0x4e */
+35-+	uint32_t Voltage[2];			/* 0x50 */
+--
+392-+			      metrics->Current.SocclkFrequency,
+393-+			      metrics->Current.SocTemperature / 100);
+394:+	size += sysfs_emit_at(buf, size, "vclk:  %5uMHz\n",
+395:+			      metrics->Current.VclkFrequency);
+396:+	size += sysfs_emit_at(buf, size, "dclk:  %5uMHz\n",
+397:+			      metrics->Current.DclkFrequency);
+398-+	size += sysfs_emit_at(buf, size, "mem:   %5uMHz\n",
+399-+			      metrics->Current.MemclkFrequency);
+--
+505- 	gpu_metrics->average_socclk_frequency = metrics.Average.SocclkFrequency;
+506-@@ -411,17 +743,48 @@ static ssize_t cyan_skillfish_get_gpu_metrics(struct smu_context *smu,
+507: 	gpu_metrics->average_vclk_frequency = metrics.Average.VclkFrequency;
+508: 	gpu_metrics->average_dclk_frequency = metrics.Average.DclkFrequency;
+509- 
+510--	gpu_metrics->current_gfxclk = metrics.Current.GfxclkFrequency;
+--
+518- 	gpu_metrics->current_uclk = metrics.Current.MemclkFrequency;
+519- 	gpu_metrics->current_fclk = metrics.Current.MemclkFrequency;
+520: 	gpu_metrics->current_vclk = metrics.Current.VclkFrequency;
+521: 	gpu_metrics->current_dclk = metrics.Current.DclkFrequency;
+522- 
+523--	for (i = 0; i < 6; i++) {
+=== PART9 DONE ===

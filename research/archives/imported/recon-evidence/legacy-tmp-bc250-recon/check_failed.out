@@ -1,0 +1,48 @@
+=== failed units (all) ===
+  UNIT                  LOAD   ACTIVE SUB    DESCRIPTION
+● bc250-metrics.service loaded failed failed BC-250 SMU metrics sampler (CPU/GPU power split, throttle status)
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+1 loaded units listed.
+To show all installed unit files use 'systemctl list-unit-files'.
+=== failed services ===
+  UNIT                  LOAD   ACTIVE SUB    DESCRIPTION
+● bc250-metrics.service loaded failed failed BC-250 SMU metrics sampler (CPU/GPU power split, throttle status)
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+1 loaded units listed.
+To show all installed unit files use 'systemctl list-unit-files'.
+=== failed timers ===
+=== journal: last 25 err/warn ===
+Там 25 19:44:43 cachyos systemd[985]: steam-launcher.service: Failed to load environment files: No such file or directory
+Там 25 19:44:43 cachyos systemd[985]: Failed to start Steam Launcher.
+Там 25 19:44:43 cachyos systemd[985]: steam-notif-daemon.service: Failed to load environment files: No such file or directory
+Там 25 19:44:43 cachyos systemd[985]: Failed to start Steam Notification Daemon.
+Там 25 19:44:43 cachyos systemd[985]: gamescope-mangoapp.service: Failed to load environment files: No such file or directory
+Там 25 19:44:43 cachyos systemd[985]: Failed to start mangoapp.
+Там 25 19:44:47 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+Там 25 19:44:47 cachyos kernel: in params:00000000
+Там 25 19:44:52 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+Там 25 19:44:52 cachyos kernel: in params:00000000
+Там 25 19:44:52 cachyos systemd[985]: Failed to start Gamescope Session.
+Там 25 19:44:52 cachyos systemd[985]: gamescope-mangoapp.service: Failed to load environment files: No such file or directory
+Там 25 19:44:52 cachyos systemd[985]: Failed to start mangoapp.
+Там 25 19:44:52 cachyos systemd[985]: gamescope-xbindkeys.service: Failed to load environment files: No such file or directory
+Там 25 19:44:52 cachyos systemd[985]: Failed to start Xbindkeys for Gamescope session.
+Там 25 19:44:52 cachyos systemd[985]: ibus-gamescope.service: Failed to load environment files: No such file or directory
+Там 25 19:44:52 cachyos systemd[985]: Failed to start Wrapper for Ibus.
+Там 25 19:44:52 cachyos systemd[985]: steam-launcher.service: Failed to load environment files: No such file or directory
+Там 25 19:44:52 cachyos systemd[985]: Failed to start Steam Launcher.
+Там 25 19:44:52 cachyos systemd[985]: steam-notif-daemon.service: Failed to load environment files: No such file or directory
+Там 25 19:44:52 cachyos systemd[985]: Failed to start Steam Notification Daemon.
+Там 25 19:44:52 cachyos systemd[985]: gamescope-mangoapp.service: Failed to load environment files: No such file or directory
+Там 25 19:44:52 cachyos systemd[985]: Failed to start mangoapp.
+Там 25 19:44:56 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 38 resp_reg: 0
+Там 25 19:44:56 cachyos kernel: in params:00000000
+=== done ===

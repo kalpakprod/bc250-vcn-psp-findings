@@ -1,0 +1,66 @@
+   860	/// Specification inconsistency here:
+   861	/// In the PI1.0 specification, there is a typo error in PEI_SERVICES_REVISION. In the specification the definition is
+   862	/// #define ((PEI_SPECIFICATION_MAJOR_REVISION<<16) |(PEI_SPECIFICATION_MINOR_REVISION))
+   863	/// and it should be as follows:
+   864	///
+   865	#define PEI_SERVICES_REVISION  ((PEI_SPECIFICATION_MAJOR_REVISION<<16) | (PEI_SPECIFICATION_MINOR_REVISION))
+   866	
+   867	///
+   868	/// EFI_PEI_SERVICES is a collection of functions whose implementation is provided by the PEI
+   869	/// Foundation. These services fall into various classes, including the following:
+   870	/// - Managing the boot mode
+   871	/// - Allocating both early and permanent memory
+   872	/// - Supporting the Firmware File System (FFS)
+   873	/// - Abstracting the PPI database abstraction
+   874	/// - Creating Hand-Off Blocks (HOBs).
+   875	///
+   876	struct _EFI_PEI_SERVICES {
+   877	  ///
+   878	  /// The table header for the PEI Services Table.
+   879	  ///
+   880	  EFI_TABLE_HEADER                  Hdr;
+   881	
+   882	  //
+   883	  // PPI Functions
+   884	  //
+   885	  EFI_PEI_INSTALL_PPI               InstallPpi;
+   886	  EFI_PEI_REINSTALL_PPI             ReInstallPpi;
+   887	  EFI_PEI_LOCATE_PPI                LocatePpi;
+   888	  EFI_PEI_NOTIFY_PPI                NotifyPpi;
+   889	
+   890	  //
+   891	  // Boot Mode Functions
+   892	  //
+   893	  EFI_PEI_GET_BOOT_MODE             GetBootMode;
+   894	  EFI_PEI_SET_BOOT_MODE             SetBootMode;
+   895	
+   896	  //
+   897	  // HOB Functions
+   898	  //
+   899	  EFI_PEI_GET_HOB_LIST              GetHobList;
+   900	  EFI_PEI_CREATE_HOB                CreateHob;
+   901	
+   902	  //
+   903	  // Firmware Volume Functions
+   904	  //
+   905	  EFI_PEI_FFS_FIND_NEXT_VOLUME2     FfsFindNextVolume;
+   906	  EFI_PEI_FFS_FIND_NEXT_FILE2       FfsFindNextFile;
+   907	  EFI_PEI_FFS_FIND_SECTION_DATA2    FfsFindSectionData;
+   908	
+   909	  //
+   910	  // PEI Memory Functions
+   911	  //
+   912	  EFI_PEI_INSTALL_PEI_MEMORY        InstallPeiMemory;
+   913	  EFI_PEI_ALLOCATE_PAGES            AllocatePages;
+   914	  EFI_PEI_ALLOCATE_POOL             AllocatePool;
+   915	  EFI_PEI_COPY_MEM                  CopyMem;
+   916	  EFI_PEI_SET_MEM                   SetMem;
+   917	
+   918	  //
+   919	  // Status Code
+   920	  //
+   921	  EFI_PEI_REPORT_STATUS_CODE        ReportStatusCode;
+   922	
+   923	  //
+   924	  // Reset
+   925	  //

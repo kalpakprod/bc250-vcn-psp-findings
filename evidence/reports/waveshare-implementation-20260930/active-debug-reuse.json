@@ -1,0 +1,41 @@
+{
+  "target": "/home/OWNER/orca/projects/bc250/candidates/waveshare-adapter-safe-v001",
+  "sdk_commit": "079c6f39023649b154152db30f1d781e884879bc",
+  "sdk_files": {
+    "/home/OWNER/pico-bc250/lib/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h": "e24ecff0cfeff25e2dbed797133eb33d715f2f4ecb8d0000c161e7f338ca294a",
+    "/home/OWNER/pico-bc250/lib/pico-sdk/src/rp2_common/hardware_spi/include/hardware/spi.h": "0271ec086f2194e596d8d1cf540e0f9830c4c3aab3a7c1127da09dbf0da5afe1",
+    "/home/OWNER/pico-bc250/lib/pico-sdk/LICENSE.TXT": "483f865953435b66c443dee7558debe3cc3cf8fcbb6a112fd9fc6a795d53f1f6"
+  },
+  "UART": {
+    "decision": "ADAPT existing SDK and adapter_uart; no new dependency",
+    "observations": [
+      "uart_putc_raw delegates blocking uart_write_blocking",
+      "blocking loop waits uart_is_writable without local timeout",
+      "adapter_uart uses uart1 RX GP9 and clears TXE"
+    ],
+    "design_requirements": [
+      "bounded nonblocking TX queue and per-loop budget",
+      "explicit diagnostic selection and wiring confirmation before TX pin assignment",
+      "TX disarm to input on exit/disconnect/timeout",
+      "no TX payload/raw data via network"
+    ]
+  },
+  "SPI": {
+    "decision": "ADAPT hardware_spi SDK for conventional commands only after confirmed exclusive bus ownership",
+    "observations": [
+      "spi_init defaults to master",
+      "spi_read_blocking emits repeated TX bytes while clocking input",
+      "shared bus can be driven even during a read operation"
+    ],
+    "design_requirements": [
+      "bus ownership check before spi_init or GPIO outputs",
+      "bound exact supported chip/protocol/size, reject out-of-range reads",
+      "read-only commands distinct from write-enable/erase/program",
+      "no generic unbounded raw command endpoint",
+      "no PSP replacement/injection/race engine"
+    ]
+  },
+  "scope_decision_pending": null,
+  "live_execution": false,
+  "scope_decision": "A: include conventional BIOS erase/program/verify; exact physical approval remains separate"
+}

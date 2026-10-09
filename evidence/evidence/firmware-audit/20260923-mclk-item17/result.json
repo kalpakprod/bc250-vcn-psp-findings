@@ -1,0 +1,16 @@
+{
+  "status": "BYTE_ANCHORS_PASS_CONDITIONAL_INTERPRETATION",
+  "payload_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+  "table_pointer": "0x6e224",
+  "assumed_base": "0x57100",
+  "table_offset_if_base": "0x17124",
+  "item17_entry_offset_if_base": "0x17134",
+  "entry_pointer": "0x606fd",
+  "handler_offset_if_base": "0x95fc",
+  "observed_handler_window": "loads u16 from current-channel pointer +0x20 and stores u32 at outer+[channel*4]+0x278; 0x20 earlier is fill length, NOT a descriptor key",
+  "limits": [
+    "Load base not proven",
+    "Not a validated hardware clock writer",
+    "Only listed byte anchors verified, not whole function semantics"
+  ]
+}

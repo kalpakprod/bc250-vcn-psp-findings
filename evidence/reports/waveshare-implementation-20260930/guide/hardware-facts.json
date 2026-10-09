@@ -1,0 +1,1447 @@
+{
+  "board": "ASRock AMD BC-250 ISL_X5R r1.00 CAD reference",
+  "cad_sha256": "decef01f78b7416bb1e51ffc7c9ea03a556a3b7e2443b98fd441ed92959c65d8",
+  "cad_bounds": [
+    0,
+    0,
+    11994.41,
+    5510.83
+  ],
+  "hardware_acceptance": false,
+  "connectors": [
+    {
+      "name": "I2C_HEADER1",
+      "pins": {
+        "1": [
+          "SMB0_DA_ISO"
+        ],
+        "2": [
+          "SMB0_CL_ISO"
+        ],
+        "3": [
+          "GND"
+        ]
+      },
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 11682.87,
+          "y": 2135.83
+        },
+        {
+          "number": 2,
+          "x": 11826.569,
+          "y": 2235.83
+        },
+        {
+          "number": 3,
+          "x": 11682.87,
+          "y": 2335.83
+        }
+      ],
+      "center": [
+        11730.769666666667,
+        2235.83
+      ],
+      "description": "HEADER 1X3P S/T 2.54MM BK SMT FULLTECH/PH03R33BAAD35",
+      "connection_state": "NOT_APPROVED",
+      "reason": "External GPIO functionality disabled in this controller candidate; levels/connector fit/board orientation not accepted."
+    },
+    {
+      "name": "TPMS1",
+      "pins": {
+        "1": [
+          "PCLK_S4"
+        ],
+        "2": [
+          "GND"
+        ],
+        "3": [
+          "LFRAME#"
+        ],
+        "4": [
+          "SMBCLK"
+        ],
+        "5": [
+          "A_RST#"
+        ],
+        "6": [
+          "SMBDATA"
+        ],
+        "7": [
+          "LAD3"
+        ],
+        "8": [
+          "LAD2"
+        ],
+        "9": [
+          "+3.3V_RUN"
+        ],
+        "10": [
+          "LAD1"
+        ],
+        "11": [
+          "LAD0"
+        ],
+        "12": [
+          "GND"
+        ],
+        "14": [
+          "LPC_PD#"
+        ],
+        "15": [
+          "+3.3V_SB"
+        ],
+        "16": [
+          "SERIRQ"
+        ],
+        "17": [
+          "GND"
+        ],
+        "18": [
+          "F_CLKRUN#"
+        ]
+      },
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 630.04,
+          "y": 953.47
+        },
+        {
+          "number": 2,
+          "x": 630.04,
+          "y": 1032.21
+        },
+        {
+          "number": 3,
+          "x": 708.78,
+          "y": 953.47
+        },
+        {
+          "number": 4,
+          "x": 708.78,
+          "y": 1032.21
+        },
+        {
+          "number": 5,
+          "x": 787.52,
+          "y": 953.47
+        },
+        {
+          "number": 6,
+          "x": 787.52,
+          "y": 1032.21
+        },
+        {
+          "number": 7,
+          "x": 866.26,
+          "y": 953.47
+        },
+        {
+          "number": 8,
+          "x": 866.26,
+          "y": 1032.21
+        },
+        {
+          "number": 9,
+          "x": 945.0,
+          "y": 953.47
+        },
+        {
+          "number": 10,
+          "x": 945.0,
+          "y": 1032.21
+        },
+        {
+          "number": 11,
+          "x": 1023.74,
+          "y": 953.47
+        },
+        {
+          "number": 12,
+          "x": 1023.74,
+          "y": 1032.21
+        },
+        {
+          "number": 14,
+          "x": 1102.48,
+          "y": 1032.21
+        },
+        {
+          "number": 15,
+          "x": 1181.22,
+          "y": 953.47
+        },
+        {
+          "number": 16,
+          "x": 1181.22,
+          "y": 1032.21
+        },
+        {
+          "number": 17,
+          "x": 1259.96,
+          "y": 953.47
+        },
+        {
+          "number": 18,
+          "x": 1259.96,
+          "y": 1032.21
+        }
+      ],
+      "center": [
+        935.7364705882353,
+        995.1558823529413
+      ],
+      "description": "HEADER 2X9P S/T 2.00MM K13 L&S/1111812213",
+      "connection_state": "NOT_APPROVED",
+      "reason": "External GPIO functionality disabled in this controller candidate; levels/connector fit/board orientation not accepted."
+    },
+    {
+      "name": "J5",
+      "pins": {
+        "1": [
+          "+3.3V_SB"
+        ],
+        "2": [
+          "GND"
+        ],
+        "3": [
+          "U_TX"
+        ],
+        "4": [
+          "U_RX"
+        ]
+      },
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 2650.0,
+          "y": 967.84
+        },
+        {
+          "number": 2,
+          "x": 2750.0,
+          "y": 967.84
+        },
+        {
+          "number": 3,
+          "x": 2850.0,
+          "y": 967.84
+        },
+        {
+          "number": 4,
+          "x": 2950.0,
+          "y": 967.84
+        }
+      ],
+      "center": [
+        2800.0,
+        967.84
+      ],
+      "description": "HD_1X4P_100_PINREX_LFA",
+      "connection_state": "DIRECTION_DOCUMENTED_LEVEL_ACCEPTANCE_PENDING",
+      "reason": "Confirmed: AMD transmit is J5.4 U_RX via zero-ohm R9558 to NCT6686D pin34 SOUTA; J5.3 U_TX via R9557 to pin33 SINA is input. Header labels are external-adapter viewpoint.",
+      "firmware_capability": "default-disabled input-only UART1 receive on Waveshare GP9 / physical12",
+      "net_trace": {
+        "U_TX": [
+          [
+            "J5",
+            "3"
+          ],
+          [
+            "R9557",
+            "1"
+          ]
+        ],
+        "RXD1": [
+          [
+            "R9557",
+            "2"
+          ],
+          [
+            "UIO1",
+            "33"
+          ]
+        ],
+        "U_RX": [
+          [
+            "J5",
+            "4"
+          ],
+          [
+            "R9558",
+            "1"
+          ]
+        ],
+        "TXD1": [
+          [
+            "R9558",
+            "2"
+          ],
+          [
+            "UIO1",
+            "34"
+          ]
+        ]
+      },
+      "board_uart_transmit_pin": 4,
+      "board_uart_receive_pin": 3
+    },
+    {
+      "name": "J4004",
+      "pins": {
+        "1": [
+          "+3.3V_SB"
+        ],
+        "2": [
+          "GND"
+        ],
+        "3": [
+          "SB_RSPI_CS#"
+        ],
+        "4": [
+          "SB_SPI_CLK"
+        ],
+        "5": [
+          "SB_SPI_DI"
+        ],
+        "6": [
+          "SB_SPI_DO"
+        ],
+        "8": [
+          "PROGRAM#"
+        ]
+      },
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 2225.0,
+          "y": 967.84
+        },
+        {
+          "number": 2,
+          "x": 2225.0,
+          "y": 1067.84
+        },
+        {
+          "number": 3,
+          "x": 2325.0,
+          "y": 967.84
+        },
+        {
+          "number": 4,
+          "x": 2325.0,
+          "y": 1067.84
+        },
+        {
+          "number": 5,
+          "x": 2425.0,
+          "y": 967.84
+        },
+        {
+          "number": 6,
+          "x": 2425.0,
+          "y": 1067.84
+        },
+        {
+          "number": 8,
+          "x": 2525.0,
+          "y": 1067.84
+        }
+      ],
+      "center": [
+        2353.5714285714284,
+        1024.9828571428573
+      ],
+      "description": "HEADER 2X4P S/T 2.54MM K7 BK PINREX/210-82-04GB02",
+      "connection_state": "SHARED_BUS_NO_MASTER_ACCESS_WHILE_RUNNING",
+      "reason": "Shared FCH/flash bus; no proven isolation. DI is FCH input (MISO), DO FCH output (MOSI). PROGRAM# couples to reset, not a demonstrated safe bus disconnect.",
+      "pin_roles": {
+        "J4004.3": "CS#",
+        "J4004.4": "clock",
+        "J4004.5": "MISO / flash SO pin2 / FCH input",
+        "J4004.6": "MOSI / flash SI pin5 / FCH output"
+      }
+    },
+    {
+      "name": "J2",
+      "pins": {
+        "1": [
+          "+1.8V"
+        ],
+        "2": [
+          "CPU_TCK"
+        ],
+        "3": [
+          "GND"
+        ],
+        "4": [
+          "CPU_TMS"
+        ],
+        "5": [
+          "GND"
+        ],
+        "6": [
+          "N22562912"
+        ],
+        "7": [
+          "GND"
+        ],
+        "8": [
+          "CPU_TDO"
+        ],
+        "9": [
+          "N22563682"
+        ],
+        "10": [
+          "APU_PWROK_BUF"
+        ],
+        "11": [
+          "N22563876"
+        ],
+        "12": [
+          "APU_LDT_RST_L_BUF"
+        ],
+        "13": [
+          "N22563873"
+        ],
+        "14": [
+          "NC"
+        ],
+        "15": [
+          "N22563870"
+        ],
+        "16": [
+          "N22563082"
+        ],
+        "17": [
+          "GND"
+        ],
+        "18": [
+          "N22563086"
+        ],
+        "19": [
+          "+1.8V"
+        ],
+        "20": [
+          "N22563091"
+        ]
+      },
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 2380.0,
+          "y": 5187.92
+        },
+        {
+          "number": 2,
+          "x": 2380.0,
+          "y": 5347.76
+        },
+        {
+          "number": 3,
+          "x": 2330.0,
+          "y": 5187.92
+        },
+        {
+          "number": 4,
+          "x": 2330.0,
+          "y": 5347.76
+        },
+        {
+          "number": 5,
+          "x": 2280.0,
+          "y": 5187.92
+        },
+        {
+          "number": 6,
+          "x": 2280.0,
+          "y": 5347.76
+        },
+        {
+          "number": 7,
+          "x": 2230.0,
+          "y": 5187.92
+        },
+        {
+          "number": 8,
+          "x": 2230.0,
+          "y": 5347.76
+        },
+        {
+          "number": 9,
+          "x": 2180.0,
+          "y": 5187.92
+        },
+        {
+          "number": 10,
+          "x": 2180.0,
+          "y": 5347.76
+        },
+        {
+          "number": 11,
+          "x": 2130.0,
+          "y": 5187.92
+        },
+        {
+          "number": 12,
+          "x": 2130.0,
+          "y": 5347.76
+        },
+        {
+          "number": 13,
+          "x": 2080.0,
+          "y": 5187.92
+        },
+        {
+          "number": 14,
+          "x": 2080.0,
+          "y": 5347.76
+        },
+        {
+          "number": 15,
+          "x": 2030.0,
+          "y": 5187.92
+        },
+        {
+          "number": 16,
+          "x": 2030.0,
+          "y": 5347.76
+        },
+        {
+          "number": 17,
+          "x": 1980.0,
+          "y": 5187.92
+        },
+        {
+          "number": 18,
+          "x": 1980.0,
+          "y": 5347.76
+        },
+        {
+          "number": 19,
+          "x": 1930.0,
+          "y": 5187.92
+        },
+        {
+          "number": 20,
+          "x": 1930.0,
+          "y": 5347.76
+        }
+      ],
+      "center": [
+        2155.0,
+        5267.84
+      ],
+      "description": "CON_2X10_SAMTEC_FTSH",
+      "connection_state": "NOT_APPROVED",
+      "reason": "External GPIO functionality disabled in this controller candidate; levels/connector fit/board orientation not accepted."
+    },
+    {
+      "name": "BIOS_A1",
+      "pins": {
+        "1": [
+          "SB_RSPI_CS#"
+        ],
+        "2": [
+          "SB_SPI_DI"
+        ],
+        "3": [
+          "BIOS_ROM_WP#"
+        ],
+        "4": [
+          "GND"
+        ],
+        "5": [
+          "SB_SPI_DO"
+        ],
+        "6": [
+          "SB_SPI_CLK"
+        ],
+        "7": [
+          "SB_SPI_HOLD#"
+        ],
+        "8": [
+          "+3.3V_SB"
+        ]
+      },
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 1882.51,
+          "y": 1022.84
+        },
+        {
+          "number": 2,
+          "x": 1882.51,
+          "y": 1072.84
+        },
+        {
+          "number": 3,
+          "x": 1882.51,
+          "y": 1122.84
+        },
+        {
+          "number": 4,
+          "x": 1882.51,
+          "y": 1172.84
+        },
+        {
+          "number": 5,
+          "x": 1597.49,
+          "y": 1172.84
+        },
+        {
+          "number": 6,
+          "x": 1597.49,
+          "y": 1122.84
+        },
+        {
+          "number": 7,
+          "x": 1597.49,
+          "y": 1072.84
+        },
+        {
+          "number": 8,
+          "x": 1597.49,
+          "y": 1022.84
+        }
+      ],
+      "center": [
+        1740.0,
+        1097.84
+      ],
+      "description": "FLASH MXIC MX25L12872FM2I-10G 128MB/SPI/3V/SOP-8(200MIL)",
+      "connection_state": "NOT_APPROVED",
+      "reason": "External GPIO functionality disabled in this controller candidate; levels/connector fit/board orientation not accepted."
+    },
+    {
+      "name": "CPU_FAN1",
+      "pins": {},
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 11428.26,
+          "y": 577.21
+        },
+        {
+          "number": 2,
+          "x": 11428.26,
+          "y": 477.21
+        },
+        {
+          "number": 3,
+          "x": 11428.26,
+          "y": 377.21
+        },
+        {
+          "number": 4,
+          "x": 11428.26,
+          "y": 277.21
+        },
+        {
+          "number": 5,
+          "x": 11513.3,
+          "y": 277.21
+        }
+      ],
+      "center": [
+        11445.268,
+        397.21
+      ],
+      "description": "CAD placement only",
+      "connection_state": "NOT_APPROVED",
+      "reason": "External GPIO functionality disabled in this controller candidate; levels/connector fit/board orientation not accepted."
+    },
+    {
+      "name": "J1000",
+      "pins": {},
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 9453.06,
+          "y": 431.93
+        },
+        {
+          "number": 2,
+          "x": 9453.06,
+          "y": 597.29
+        },
+        {
+          "number": 3,
+          "x": 9287.71,
+          "y": 431.93
+        },
+        {
+          "number": 4,
+          "x": 9287.71,
+          "y": 597.29
+        },
+        {
+          "number": 5,
+          "x": 9122.35,
+          "y": 431.93
+        },
+        {
+          "number": 6,
+          "x": 9122.35,
+          "y": 597.29
+        },
+        {
+          "number": 7,
+          "x": 8957.0,
+          "y": 431.93
+        },
+        {
+          "number": 8,
+          "x": 8957.0,
+          "y": 597.29
+        },
+        {
+          "number": 9,
+          "x": 9453.06,
+          "y": 144.53
+        },
+        {
+          "number": 10,
+          "x": 8957.0,
+          "y": 144.53
+        }
+      ],
+      "center": [
+        9205.03,
+        440.59399999999994
+      ],
+      "description": "CAD placement only",
+      "connection_state": "NOT_APPROVED",
+      "reason": "External GPIO functionality disabled in this controller candidate; levels/connector fit/board orientation not accepted."
+    },
+    {
+      "name": "USB1",
+      "description": "USB ports, external connector; CAD reference",
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 446.57,
+          "y": 4186.99
+        },
+        {
+          "number": 2,
+          "x": 446.57,
+          "y": 4088.57
+        },
+        {
+          "number": 3,
+          "x": 446.57,
+          "y": 4009.83
+        },
+        {
+          "number": 4,
+          "x": 446.57,
+          "y": 3911.4
+        },
+        {
+          "number": 5,
+          "x": 549.72,
+          "y": 4186.99
+        },
+        {
+          "number": 6,
+          "x": 549.72,
+          "y": 4088.57
+        },
+        {
+          "number": 7,
+          "x": 549.72,
+          "y": 4009.83
+        },
+        {
+          "number": 8,
+          "x": 549.72,
+          "y": 3911.4
+        },
+        {
+          "number": 9,
+          "x": 339.88,
+          "y": 3790.53
+        },
+        {
+          "number": 10,
+          "x": 339.88,
+          "y": 4307.86
+        },
+        {
+          "number": 11,
+          "x": 563.5,
+          "y": 3790.53
+        },
+        {
+          "number": 12,
+          "x": 563.5,
+          "y": 4307.86
+        }
+      ],
+      "center": [
+        482.66,
+        4049.1966666666667
+      ],
+      "connection_state": "existing_USB_only",
+      "reason": "Existing board interfaces preserved; no additional external wiring approved."
+    },
+    {
+      "name": "USB2",
+      "description": "USB ports, external connector; CAD reference",
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 418.61,
+          "y": 2690.93
+        },
+        {
+          "number": 2,
+          "x": 418.61,
+          "y": 2592.5
+        },
+        {
+          "number": 3,
+          "x": 418.61,
+          "y": 2513.76
+        },
+        {
+          "number": 4,
+          "x": 418.61,
+          "y": 2415.33
+        },
+        {
+          "number": 5,
+          "x": 544.59,
+          "y": 2690.93
+        },
+        {
+          "number": 6,
+          "x": 544.59,
+          "y": 2592.5
+        },
+        {
+          "number": 7,
+          "x": 544.59,
+          "y": 2513.76
+        },
+        {
+          "number": 8,
+          "x": 544.59,
+          "y": 2415.33
+        },
+        {
+          "number": 9,
+          "x": 339.87,
+          "y": 2811.79
+        },
+        {
+          "number": 10,
+          "x": 339.87,
+          "y": 2294.47
+        },
+        {
+          "number": 11,
+          "x": 563.49,
+          "y": 2811.79
+        },
+        {
+          "number": 12,
+          "x": 563.49,
+          "y": 2294.47
+        }
+      ],
+      "center": [
+        471.6266666666667,
+        2553.1299999999997
+      ],
+      "connection_state": "existing_USB_only",
+      "reason": "Existing board interfaces preserved; no additional external wiring approved."
+    },
+    {
+      "name": "USB_3_4",
+      "description": "USB3 external ports; CAD reference",
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 418.61,
+          "y": 2690.93
+        },
+        {
+          "number": 2,
+          "x": 418.61,
+          "y": 2592.5
+        },
+        {
+          "number": 3,
+          "x": 418.61,
+          "y": 2513.76
+        },
+        {
+          "number": 4,
+          "x": 418.61,
+          "y": 2415.33
+        },
+        {
+          "number": 5,
+          "x": 477.67,
+          "y": 2395.65
+        },
+        {
+          "number": 6,
+          "x": 477.67,
+          "y": 2474.39
+        },
+        {
+          "number": 7,
+          "x": 477.67,
+          "y": 2553.13
+        },
+        {
+          "number": 8,
+          "x": 477.67,
+          "y": 2631.87
+        },
+        {
+          "number": 9,
+          "x": 477.67,
+          "y": 2710.61
+        },
+        {
+          "number": 10,
+          "x": 544.59,
+          "y": 2690.93
+        },
+        {
+          "number": 11,
+          "x": 544.59,
+          "y": 2592.5
+        },
+        {
+          "number": 12,
+          "x": 544.59,
+          "y": 2513.76
+        },
+        {
+          "number": 13,
+          "x": 544.59,
+          "y": 2415.33
+        },
+        {
+          "number": 14,
+          "x": 603.65,
+          "y": 2395.65
+        },
+        {
+          "number": 15,
+          "x": 603.65,
+          "y": 2474.39
+        },
+        {
+          "number": 16,
+          "x": 603.65,
+          "y": 2553.13
+        },
+        {
+          "number": 17,
+          "x": 603.65,
+          "y": 2631.87
+        },
+        {
+          "number": 18,
+          "x": 603.65,
+          "y": 2710.61
+        },
+        {
+          "number": 19,
+          "x": 563.49,
+          "y": 2811.79
+        },
+        {
+          "number": 20,
+          "x": 339.87,
+          "y": 2811.79
+        },
+        {
+          "number": 21,
+          "x": 563.49,
+          "y": 2294.47
+        },
+        {
+          "number": 22,
+          "x": 339.87,
+          "y": 2294.47
+        }
+      ],
+      "center": [
+        503.0054545454546,
+        2553.13
+      ],
+      "connection_state": "existing_USB_only",
+      "reason": "Existing board interfaces preserved; no additional external wiring approved."
+    },
+    {
+      "name": "LAN1",
+      "description": "Ethernet connector",
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 507.2,
+          "y": 2032.49
+        },
+        {
+          "number": 2,
+          "x": 507.2,
+          "y": 1420.29
+        },
+        {
+          "number": 3,
+          "x": 387.12,
+          "y": 1951.39
+        },
+        {
+          "number": 4,
+          "x": 387.12,
+          "y": 1501.39
+        }
+      ],
+      "center": [
+        447.15999999999997,
+        1726.39
+      ],
+      "connection_state": "NOT_APPROVED",
+      "reason": "Existing board interfaces preserved; no additional external wiring approved."
+    },
+    {
+      "name": "J4002",
+      "description": "DisplayPort",
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 509.72,
+          "y": 3084.72
+        },
+        {
+          "number": 2,
+          "x": 509.72,
+          "y": 3104.41
+        },
+        {
+          "number": 3,
+          "x": 509.72,
+          "y": 3124.09
+        },
+        {
+          "number": 4,
+          "x": 509.72,
+          "y": 3143.78
+        },
+        {
+          "number": 5,
+          "x": 509.72,
+          "y": 3163.46
+        },
+        {
+          "number": 6,
+          "x": 509.72,
+          "y": 3183.15
+        },
+        {
+          "number": 7,
+          "x": 509.72,
+          "y": 3202.83
+        },
+        {
+          "number": 8,
+          "x": 509.72,
+          "y": 3222.52
+        },
+        {
+          "number": 9,
+          "x": 509.72,
+          "y": 3242.2
+        },
+        {
+          "number": 10,
+          "x": 509.72,
+          "y": 3261.89
+        },
+        {
+          "number": 11,
+          "x": 509.72,
+          "y": 3281.57
+        },
+        {
+          "number": 12,
+          "x": 509.72,
+          "y": 3301.26
+        },
+        {
+          "number": 13,
+          "x": 509.72,
+          "y": 3320.95
+        },
+        {
+          "number": 14,
+          "x": 509.72,
+          "y": 3340.63
+        },
+        {
+          "number": 15,
+          "x": 509.72,
+          "y": 3360.32
+        },
+        {
+          "number": 16,
+          "x": 509.72,
+          "y": 3380.0
+        },
+        {
+          "number": 17,
+          "x": 509.72,
+          "y": 3399.69
+        },
+        {
+          "number": 18,
+          "x": 509.72,
+          "y": 3419.37
+        },
+        {
+          "number": 19,
+          "x": 509.72,
+          "y": 3439.06
+        },
+        {
+          "number": 20,
+          "x": 509.72,
+          "y": 3458.74
+        },
+        {
+          "number": 21,
+          "x": 140.43,
+          "y": 3626.06
+        },
+        {
+          "number": 22,
+          "x": 140.43,
+          "y": 2976.46
+        },
+        {
+          "number": 23,
+          "x": 407.36,
+          "y": 3626.06
+        },
+        {
+          "number": 24,
+          "x": 407.36,
+          "y": 2976.46
+        },
+        {
+          "number": 25,
+          "x": 105.0,
+          "y": 3301.26
+        }
+      ],
+      "center": [
+        455.79920000000004,
+        3277.6376
+      ],
+      "connection_state": "NOT_APPROVED",
+      "reason": "Existing board interfaces preserved; no additional external wiring approved."
+    },
+    {
+      "name": "AUTO_PWRON1",
+      "description": "auto-power jumper",
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 9609.72,
+          "y": 5355.83
+        },
+        {
+          "number": 2,
+          "x": 9709.72,
+          "y": 5355.83
+        },
+        {
+          "number": 3,
+          "x": 9809.72,
+          "y": 5355.83
+        }
+      ],
+      "center": [
+        9709.72,
+        5355.83
+      ],
+      "connection_state": "NOT_APPROVED",
+      "reason": "Existing board interfaces preserved; no additional external wiring approved."
+    },
+    {
+      "name": "CLRCMOS1",
+      "description": "CMOS reset jumper",
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 10030.0,
+          "y": 5357.84
+        },
+        {
+          "number": 2,
+          "x": 10130.0,
+          "y": 5357.84
+        },
+        {
+          "number": 3,
+          "x": 10230.0,
+          "y": 5357.84
+        }
+      ],
+      "center": [
+        10130.0,
+        5357.84
+      ],
+      "connection_state": "NOT_APPROVED",
+      "reason": "Existing board interfaces preserved; no additional external wiring approved."
+    },
+    {
+      "name": "J4003",
+      "description": "fan logic header",
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 11824.729,
+          "y": 100.0
+        },
+        {
+          "number": 2,
+          "x": 11724.729,
+          "y": 100.0
+        },
+        {
+          "number": 3,
+          "x": 11824.729,
+          "y": 200.0
+        },
+        {
+          "number": 4,
+          "x": 11724.729,
+          "y": 200.0
+        },
+        {
+          "number": 5,
+          "x": 11824.729,
+          "y": 300.0
+        },
+        {
+          "number": 6,
+          "x": 11724.729,
+          "y": 300.0
+        },
+        {
+          "number": 7,
+          "x": 11824.729,
+          "y": 400.0
+        },
+        {
+          "number": 8,
+          "x": 11724.729,
+          "y": 400.0
+        },
+        {
+          "number": 9,
+          "x": 11824.729,
+          "y": 500.0
+        },
+        {
+          "number": 10,
+          "x": 11724.729,
+          "y": 500.0
+        },
+        {
+          "number": 11,
+          "x": 11824.729,
+          "y": 600.0
+        },
+        {
+          "number": 12,
+          "x": 11724.729,
+          "y": 600.0
+        },
+        {
+          "number": 13,
+          "x": 11824.729,
+          "y": 700.0
+        },
+        {
+          "number": 14,
+          "x": 11724.729,
+          "y": 700.0
+        },
+        {
+          "number": 15,
+          "x": 11824.729,
+          "y": 800.0
+        }
+      ],
+      "center": [
+        11778.062333333333,
+        426.6666666666667
+      ],
+      "connection_state": "NOT_APPROVED",
+      "reason": "Existing board interfaces preserved; no additional external wiring approved."
+    },
+    {
+      "name": "J2000",
+      "description": "alternative PSU input",
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 9892.83,
+          "y": 578.78
+        },
+        {
+          "number": 2,
+          "x": 10010.939,
+          "y": 578.78
+        },
+        {
+          "number": 3,
+          "x": 10129.06,
+          "y": 578.78
+        },
+        {
+          "number": 4,
+          "x": 10247.17,
+          "y": 578.78
+        },
+        {
+          "number": 5,
+          "x": 9892.83,
+          "y": 460.67
+        },
+        {
+          "number": 6,
+          "x": 10010.939,
+          "y": 460.67
+        },
+        {
+          "number": 7,
+          "x": 10129.06,
+          "y": 460.67
+        },
+        {
+          "number": 8,
+          "x": 10247.17,
+          "y": 460.67
+        },
+        {
+          "number": 9,
+          "x": 9977.479,
+          "y": 124.84
+        },
+        {
+          "number": 10,
+          "x": 10162.52,
+          "y": 124.84
+        }
+      ],
+      "center": [
+        10069.9997,
+        440.74799999999993
+      ],
+      "connection_state": "NOT_APPROVED",
+      "reason": "Existing board interfaces preserved; no additional external wiring approved."
+    },
+    {
+      "name": "J2001",
+      "description": "alternative PSU input",
+      "coordinates": [
+        {
+          "number": 1,
+          "x": 10680.229,
+          "y": 578.78
+        },
+        {
+          "number": 2,
+          "x": 10798.34,
+          "y": 578.78
+        },
+        {
+          "number": 3,
+          "x": 10916.46,
+          "y": 578.78
+        },
+        {
+          "number": 4,
+          "x": 11034.569,
+          "y": 578.78
+        },
+        {
+          "number": 5,
+          "x": 10680.229,
+          "y": 460.67
+        },
+        {
+          "number": 6,
+          "x": 10798.34,
+          "y": 460.67
+        },
+        {
+          "number": 7,
+          "x": 10916.46,
+          "y": 460.67
+        },
+        {
+          "number": 8,
+          "x": 11034.569,
+          "y": 460.67
+        },
+        {
+          "number": 9,
+          "x": 10764.88,
+          "y": 124.84
+        },
+        {
+          "number": 10,
+          "x": 10949.92,
+          "y": 124.84
+        }
+      ],
+      "center": [
+        10857.3996,
+        440.74799999999993
+      ],
+      "connection_state": "NOT_APPROVED",
+      "reason": "Existing board interfaces preserved; no additional external wiring approved."
+    }
+  ],
+  "wiring_profile": "USB_ONLY_UNTIL_ELECTRICAL_ACCEPTANCE",
+  "wave_reserved_gpio": [
+    36,
+    37,
+    38,
+    39,
+    43
+  ],
+  "source_evidence_class": "CAD_reference_not_specimen_measurement",
+  "waveshare_pin_evidence": {
+    "vendor_asset": "vendor/waveshare-official-pinout.png",
+    "orientation": "component side, USB-C above radio module",
+    "uart_receive": {
+      "gpio": 9,
+      "physical_header_pin": 12,
+      "board_label": "GP9",
+      "side": "left"
+    },
+    "uart_ground": {
+      "physical_header_pin": 13,
+      "board_label": "GND",
+      "side": "left"
+    },
+    "output_pins_connected": false,
+    "specimen_measurement": "pending"
+  }
+}

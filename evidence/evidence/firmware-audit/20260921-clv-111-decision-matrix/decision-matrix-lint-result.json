@@ -1,0 +1,202 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 38,
+    "total": 38
+  },
+  "details": [
+    {
+      "detail": "LF and no trailing whitespace",
+      "name": "utf8-lf-no-trailing-whitespace",
+      "status": "PASS"
+    },
+    {
+      "detail": "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]",
+      "name": "section-numbers-consecutive-unique",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:DRAFT",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:NOT READY",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:NO-GO",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:UNRUN",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:Exact native menu map",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:Candidate-setting decisions",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:Required operator readbacks",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:Rollback and stop conditions",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:Evidence ledger",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:0x20F",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:0x229",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:0x25E",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:0x7045",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:0x37D",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:0x37E",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:0x5CBE",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:0xFE60",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:0x7E3A",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:0x5FBA",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "required:Hardware acceptance",
+      "status": "PASS"
+    },
+    {
+      "detail": "absent=True",
+      "name": "no-unqualified:PHYSICAL_1TO1TO1_PASS",
+      "status": "PASS"
+    },
+    {
+      "detail": "absent=True",
+      "name": "no-unqualified:SoC 1.15 V is safe",
+      "status": "PASS"
+    },
+    {
+      "detail": "absent=True",
+      "name": "no-unqualified:1.15 V recommended",
+      "status": "PASS"
+    },
+    {
+      "detail": "absent=True",
+      "name": "no-unqualified:1:1:1 PASS",
+      "status": "PASS"
+    },
+    {
+      "detail": "expected=ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8 actual=ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "name": "source:evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "status": "PASS"
+    },
+    {
+      "detail": "expected=03a7239adf248a32558ea8fc0bea801325cb010035a41198df888350aa8236e6 actual=03a7239adf248a32558ea8fc0bea801325cb010035a41198df888350aa8236e6",
+      "name": "source:docs/research/2026-09-20-clv-native-menu-1to1-guide.md",
+      "status": "PASS"
+    },
+    {
+      "detail": "expected=6441b5c1cc7f5e19d478be690a0136a608e83ab4f1ac770fde8a8b5d74973841 actual=6441b5c1cc7f5e19d478be690a0136a608e83ab4f1ac770fde8a8b5d74973841",
+      "name": "source:docs/research/2026-09-20-clv-sync-configuration-domain-matrix.md",
+      "status": "PASS"
+    },
+    {
+      "detail": "expected=7c9b494697581339beb3f4af3423f7852bf4eee6e50ef1964f959c2e1a11812c actual=7c9b494697581339beb3f4af3423f7852bf4eee6e50ef1964f959c2e1a11812c",
+      "name": "source:docs/research/2026-09-21-hardware-baseline-consolidated.md",
+      "status": "PASS"
+    },
+    {
+      "detail": "expected=d130ba9663cdfa3cdf67b07ba11f33fcf3b1c483cc33d815f82b7abcaeb4d7d7 actual=d130ba9663cdfa3cdf67b07ba11f33fcf3b1c483cc33d815f82b7abcaeb4d7d7",
+      "name": "source:docs/research/2026-09-21-baseline-nvram-ledger.md",
+      "status": "PASS"
+    },
+    {
+      "detail": "expected=e43bb1d0108bb58ab8a81bb87bb5768e76ccf42d1b958424540c111a9926cb9d actual=e43bb1d0108bb58ab8a81bb87bb5768e76ccf42d1b958424540c111a9926cb9d",
+      "name": "source:docs/research/2026-09-21-manual-voltage-safety-matrix.md",
+      "status": "PASS"
+    },
+    {
+      "detail": "expected=9dda181dc478400d8e06313296674572fdb00bebb50dfedc4d2bee8703b91d36 actual=9dda181dc478400d8e06313296674572fdb00bebb50dfedc4d2bee8703b91d36",
+      "name": "source:docs/research/2026-09-21-voltage-evidence-integration.md",
+      "status": "PASS"
+    },
+    {
+      "detail": "expected=11d15b3a2158c71290e917ee0339bfc000bf2a74655b94fe0e4979f7d75ebcfb actual=11d15b3a2158c71290e917ee0339bfc000bf2a74655b94fe0e4979f7d75ebcfb",
+      "name": "source:docs/research/2026-09-21-latency-protocol-reviewed.md",
+      "status": "PASS"
+    },
+    {
+      "detail": "expected=c15b43356e66dcdad621e0cf2f89a61af43dc00d84b32d8a8b15fc1bb79952c8 actual=c15b43356e66dcdad621e0cf2f89a61af43dc00d84b32d8a8b15fc1bb79952c8",
+      "name": "source:docs/research/2026-09-21-abl7378-indirect-entry.md",
+      "status": "PASS"
+    },
+    {
+      "detail": "expected=6c3c528cc2b8669d48a7a98067b3241c0adb9daf983b9dca539f80f06d597122 actual=6c3c528cc2b8669d48a7a98067b3241c0adb9daf983b9dca539f80f06d597122",
+      "name": "source:docs/research/2026-09-21-abl-item17-reachable-output.md",
+      "status": "PASS"
+    },
+    {
+      "detail": "expected=13f9575b8ffcd6cb275cf19e87d714334d81ca749327fe3b4988aafbbb2821d2 actual=13f9575b8ffcd6cb275cf19e87d714334d81ca749327fe3b4988aafbbb2821d2",
+      "name": "source:docs/research/2026-09-21-apob-abl-outer864-root-verification.md",
+      "status": "PASS"
+    },
+    {
+      "detail": "original guide hash stable",
+      "name": "original-guide-unchanged",
+      "status": "PASS"
+    }
+  ],
+  "output": "/home/OWNER/orca/projects/bc250/docs/guides/bc250-clv-111-decision-matrix.md",
+  "output_sha256": "fee0e7d2177b1f929879cbf6a9951568d50d1818c0aa7bbe214e65ed8b5b04c3",
+  "status": "PASS"
+}

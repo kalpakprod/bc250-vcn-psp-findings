@@ -1,0 +1,208 @@
+{
+  "status": "PASS",
+  "checks": 21,
+  "route": "CbsBasePei method 0x250 event selection -> callback +0x10 -> adapter 0x36c0 -> INV output buffer",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis",
+    "emulated-or-host-tested"
+  ],
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "module_sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+  "dispatch": {
+    "outer_descriptor_body_off": "0x13c90",
+    "inner_descriptor_body_off": "0x13c30",
+    "event": "0xfffffffe",
+    "callback_rva": "0x36c0",
+    "dispatcher_rva": "0x47d",
+    "method_entry": "0x250"
+  },
+  "argument_flow": {
+    "dispatcher": "[ebp-0x8c8] local Setup, [ebp+0xc] descriptor, [ebp+0x8] context -> callback field +0x10",
+    "adapter": "descriptor +0x4 -> D; D+0x4 size pointer, D+0 buffer, [ebp+0x10] Setup -> builder 0x36f0"
+  },
+  "fresh_result": "The Cbs dispatcher statically selects the wildcard/event descriptor for FFFFFFFE, loads callback field +0x10 and passes the local Setup/context plus descriptor to 0x36C0. The adapter forwards the descriptor-owned output buffer and size pointer, then Setup, to serializer 0x36F0, which emits $INV. This establishes output ownership and callback argument flow; runtime invocation and downstream FCLK 0x1331/UCLK 0x1204 requester remain unverified.",
+  "limits": "No runtime execution, hardware, requester proof or token semantic claim; host selection model mirrors only checked wildcard/event predicates.",
+  "checks_detail": [
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ROM size",
+      "passed": true,
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "check": "Cbs hash",
+      "passed": true,
+      "got": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    {
+      "check": "outer wildcard descriptor",
+      "passed": true,
+      "got": [
+        4294967295,
+        0
+      ],
+      "expected": [
+        4294967295,
+        0
+      ]
+    },
+    {
+      "check": "inner callback descriptor",
+      "passed": true,
+      "got": [
+        4294967295,
+        0
+      ],
+      "expected": [
+        4294967295,
+        0
+      ]
+    },
+    {
+      "check": "inner callback event",
+      "passed": true,
+      "got": 4294967294,
+      "expected": 4294967294
+    },
+    {
+      "check": "inner callback pointer",
+      "passed": true,
+      "got": 166451020,
+      "expected": 166451020
+    },
+    {
+      "check": "dispatcher arg/callback bytes",
+      "passed": true,
+      "got": "8d9538f7ffff528b450c508b4d08518b9518f7ffff8b4210ffd083c40c",
+      "expected": "8d9538f7ffff528b450c508b4d08518b9518f7ffff8b4210ffd083c40c"
+    },
+    {
+      "check": "callback adapter bytes",
+      "passed": true,
+      "got": "558bec518b450c8b4804894dfc8b55fc8b4204508b4dfc8b11528b451050e80d00000083",
+      "expected": "558bec518b450c8b4804894dfc8b55fc8b4204508b4dfc8b11528b451050e80d00000083"
+    },
+    {
+      "check": "dispatcher local Setup push",
+      "passed": true,
+      "got": "8d9538f7ffff",
+      "expected": "8d9538f7ffff"
+    },
+    {
+      "check": "dispatcher descriptor push",
+      "passed": true,
+      "got": "52",
+      "expected": "52"
+    },
+    {
+      "check": "dispatcher context push",
+      "passed": true,
+      "got": "8b450c508b4d",
+      "expected": "8b450c508b4d"
+    },
+    {
+      "check": "adapter descriptor buffer load",
+      "passed": true,
+      "got": "8b4804894dfc",
+      "expected": "8b4804894dfc"
+    },
+    {
+      "check": "adapter size pointer push",
+      "passed": true,
+      "got": "8b55fc8b420450",
+      "expected": "8b55fc8b420450"
+    },
+    {
+      "check": "adapter output buffer push",
+      "passed": true,
+      "got": "8b4dfc8b1152",
+      "expected": "8b4dfc8b1152"
+    },
+    {
+      "check": "adapter Setup/context push",
+      "passed": true,
+      "got": "8b451050",
+      "expected": "8b451050"
+    },
+    {
+      "check": "adapter builder call",
+      "passed": true,
+      "got": "e80d000000",
+      "expected": "e80d000000"
+    },
+    {
+      "check": "serializer size gate",
+      "passed": true,
+      "got": "39017314e876e100",
+      "expected": "39017314e876e100"
+    },
+    {
+      "check": "serializer INV header",
+      "passed": true,
+      "got": "c70224494e56",
+      "expected": "c70224494e56"
+    },
+    {
+      "check": "method post-callback window",
+      "passed": true,
+      "got": "8b8d18f7ffff83c118898d18f7ffffe967ffffff8b9530f7ffff83c214899530f7ffffe9e2feffff33c08be55dc3cccc",
+      "expected": "8b8d18f7ffff83c118898d18f7ffffe967ffffff8b9530f7ffff83c214899530f7ffffe9e2feffff33c08be55dc3cccc"
+    },
+    {
+      "check": "host wildcard/event selection",
+      "passed": true,
+      "got": [
+        {
+          "cpu": 4294967295,
+          "event": 4294967294,
+          "selected": true
+        },
+        {
+          "cpu": 4294967295,
+          "event": 4294967295,
+          "selected": false
+        },
+        {
+          "cpu": 8654592,
+          "event": 4294967294,
+          "selected": false
+        },
+        {
+          "cpu": 8654592,
+          "event": 4294967295,
+          "selected": false
+        }
+      ],
+      "expected": [
+        {
+          "cpu": 4294967295,
+          "event": 4294967294,
+          "selected": true
+        },
+        {
+          "cpu": 4294967295,
+          "event": 4294967295,
+          "selected": false
+        },
+        {
+          "cpu": 8654592,
+          "event": 4294967294,
+          "selected": false
+        },
+        {
+          "cpu": 8654592,
+          "event": 4294967295,
+          "selected": false
+        }
+      ]
+    }
+  ]
+}

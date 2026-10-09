@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-08-25T21:16:41Z",
+  "mode": "control",
+  "control_before": "0x00000000",
+  "control_after": "0x00000001",
+  "all_ones_before": true,
+  "all_ones_after": true,
+  "mmio_before": {
+    "UVD_PGFSM_CONFIG": "0xffffffff",
+    "UVD_PGFSM_STATUS": "0xffffffff",
+    "UVD_POWER_STATUS": "0xffffffff",
+    "CC_UVD_HARVESTING": "0xffffffff",
+    "UVD_JPEG_POWER_STATUS": "0xffffffff",
+    "UVD_MASTINT_EN": "0xffffffff",
+    "UVD_STATUS": "0xffffffff",
+    "UVD_VERSION": "0xffffffff",
+    "UVD_NO_OP": "0xffffffff",
+    "UVD_JPEG_CNTL": "0xffffffff",
+    "UVD_JRBC_STATUS": "0xffffffff"
+  },
+  "mmio_after": {
+    "UVD_PGFSM_CONFIG": "0xffffffff",
+    "UVD_PGFSM_STATUS": "0xffffffff",
+    "UVD_POWER_STATUS": "0xffffffff",
+    "CC_UVD_HARVESTING": "0xffffffff",
+    "UVD_JPEG_POWER_STATUS": "0xffffffff",
+    "UVD_MASTINT_EN": "0xffffffff",
+    "UVD_STATUS": "0xffffffff",
+    "UVD_VERSION": "0xffffffff",
+    "UVD_NO_OP": "0xffffffff",
+    "UVD_JPEG_CNTL": "0xffffffff",
+    "UVD_JRBC_STATUS": "0xffffffff"
+  },
+  "writes": [
+    {
+      "idx": 0,
+      "group": "0x201",
+      "address": "0x0900c234",
+      "value": "0x00000000"
+    },
+    {
+      "idx": 1,
+      "group": "0x201",
+      "address": "0x0900c234",
+      "value": "0x00000001"
+    }
+  ]
+}

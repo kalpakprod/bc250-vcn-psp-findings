@@ -1,0 +1,24 @@
+0x246f4: entry      a1, 0x20
+0x246f7: l32r       a13, 0x400017148
+0x246fa: l32r       a11, 0x40001711c
+0x246fd: l32r       a15, 0x4000178ac
+0x24700: movi.n     a12, 0x1
+0x24702: subx8      a14, a2, a2
+0x24705: addx4      a14, a14, a15
+0x24708: l8ui       a8, a14, 0x80
+0x2470b: l32r       a15, 0x400017434
+0x2470e: l8ui       a14, a14, 0x81
+0x24711: addx8      a10, a8, a8
+0x24714: slli       a10, a10, 0x3
+0x24717: add.n      a10, a10, a15
+0x24719: l32i       a10, a10, 0x44
+0x2471c: ssl        a14
+0x2471f: sll        a12, a12
+0x24722: and        a11, a10, a11
+0x24725: add.n      a11, a11, a13
+0x24727: bnez.n     a8, 0x24737
+0x24729: memw       
+0x2472c: l32i       a11, a11, 0x200
+0x2472f: or         a11, a11, a12
+0x24732: call8      0x1b514
+0x24735: retw.n     

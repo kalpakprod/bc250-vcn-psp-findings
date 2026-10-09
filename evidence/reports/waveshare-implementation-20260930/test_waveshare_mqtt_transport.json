@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_waveshare_mqtt_transport.py",
+    "-v"
+  ],
+  "stdout": "",
+  "stderr": "test_auth_subscribe_skip_stale_receive_fresh_disconnect (test_waveshare_mqtt_transport.TestMQTTTransport.test_auth_subscribe_skip_stale_receive_fresh_disconnect) ... ok\ntest_fragmented_receive_and_deadline (test_waveshare_mqtt_transport.TestMQTTTransport.test_fragmented_receive_and_deadline) ... ok\ntest_rejected_auth_never_subscribes (test_waveshare_mqtt_transport.TestMQTTTransport.test_rejected_auth_never_subscribes) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.028s\n\nOK\n",
+  "exit_status": 0,
+  "evidence_class": "controlled_fixture_not_live_runtime"
+}

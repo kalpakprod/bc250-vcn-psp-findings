@@ -1,0 +1,22 @@
+{
+  "HOST": "127.0.0.1",
+  "liveness_command": [
+    "scripts/board_liveness.sh",
+    "127.0.0.1"
+  ],
+  "liveness_stdout": "time: 2026-09-30T17:19:10+05:00\ntarget: 127.0.0.1\nping: UP\nbooted: 2026-09-30 16:46:26\nkernel: 7.2.6-1.206-cachyos-bc250\nhost: cachyos\nbios-version: P3.00\nbios-date: 12/09/2021\n",
+  "liveness_stderr": "",
+  "liveness_exit": 0,
+  "identity_metric_stdout": "board: AMD BC-250\nproduct: AMD BC-250\nsensor: amdgpu\ntemp1_input=57000\nsensor: nct6686\nfan1_input=0\nfan2_input=2312\nfan3_input=0\nfan4_input=0\nfan5_input=0\nfan6_input=0\nfan7_input=0\nfan8_input=0\ntemp1_input=64000\ntemp2_input=41000\ntemp3_input=42000\ntemp4_input=0\ntemp5_input=0\ntemp6_input=0\ntemp7_input=0\nsensor: k10temp\ntemp1_input=64625\n",
+  "identity_metric_exit": 0,
+  "board_DMI": "AMD BC-250",
+  "power_operation": false,
+  "socket_read": {
+    "host": "rozetka.lan",
+    "resolved_IP": "127.0.0.1",
+    "POWER": "ON",
+    "identity_label": "rtl87x0C203EDD80_1",
+    "exclusive_load_independently_verified": false
+  },
+  "flash_performed": false
+}

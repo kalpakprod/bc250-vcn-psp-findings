@@ -1,0 +1,71 @@
+{
+  "status": "PASS_BINARY_TARGET_RESOLUTION",
+  "candidate_sha256": "476076f280ca6385024db1bf643e042629153afff8bab2f9a52cc61c221e411e",
+  "links": [
+    {
+      "source_guid": "63c4aed9-3e29-4ddf-877b-34eceadc7a85",
+      "source_form": 1,
+      "target_guid": "b04535e3-3004-4946-9eb7-149428983053",
+      "target_form": 28679,
+      "target_title": "UMC Common Options"
+    },
+    {
+      "source_guid": "63c4aed9-3e29-4ddf-877b-34eceadc7a85",
+      "source_form": 1,
+      "target_guid": "b04535e3-3004-4946-9eb7-149428983053",
+      "target_form": 28680,
+      "target_title": "UMC Debug Options"
+    },
+    {
+      "source_guid": "63c4aed9-3e29-4ddf-877b-34eceadc7a85",
+      "source_form": 1,
+      "target_guid": "b04535e3-3004-4946-9eb7-149428983053",
+      "target_form": 28681,
+      "target_title": "SMU Debug Options"
+    },
+    {
+      "source_guid": "63c4aed9-3e29-4ddf-877b-34eceadc7a85",
+      "source_form": 1,
+      "target_guid": "b04535e3-3004-4946-9eb7-149428983053",
+      "target_form": 28677,
+      "target_title": "NBIO Common Options"
+    },
+    {
+      "source_guid": "63c4aed9-3e29-4ddf-877b-34eceadc7a85",
+      "source_form": 1,
+      "target_guid": "7b59104a-c00d-4158-87ff-f04d6396a915",
+      "target_form": 10474,
+      "target_title": "Voltage Configuration"
+    }
+  ],
+  "setup_entry_present": true,
+  "predicates": [
+    {
+      "ffs_offset": "0x11ef7",
+      "form": "0x28ea",
+      "scope": [
+        "0xe",
+        "0x1",
+        "0x19"
+      ],
+      "expression": "FALSE FALSE OR = FALSE"
+    },
+    {
+      "ffs_offset": "0x1202a",
+      "form": "0x28ea",
+      "scope": [
+        "0xe",
+        "0x1",
+        "0x19",
+        "0xa"
+      ],
+      "expression": "FALSE FALSE OR = FALSE"
+    }
+  ],
+  "limits": [
+    "Static resolution only",
+    "Original malformed predicate interpretation by AMI remains unknown",
+    "FALSE replacement is not proof of identical UI behavior",
+    "No SoC or clock actuation proof"
+  ]
+}

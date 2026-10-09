@@ -1,0 +1,156 @@
+Қыр 11 23:50:52 cachyos kernel: Linux version 7.2.0-1.92-cachyos-vcn-bc250 (linux-cachyos-vcn-bc250@cachyos) (clang version 22.1.8, LLD 22.1.8) #1 SMP PREEMPT_DYNAMIC Wed, 26 Aug 2026 17:00:00 +0000
+Қыр 11 23:50:52 cachyos kernel: Command line: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=14fe5cec-acf0-4986-8103-251a5706bbac video=DP-1:1920x1080@60 amdgpu.sg_display=0 ttm.pages_limit=1048576 systemd.zram=0 loglevel=0 mitigations=off acpi_enforce_resources=lax amdgpu.bc250_vcn_mode=1
+Қыр 11 23:50:52 cachyos kernel: Kernel command line: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=14fe5cec-acf0-4986-8103-251a5706bbac video=DP-1:1920x1080@60 amdgpu.sg_display=0 ttm.pages_limit=1048576 systemd.zram=0 loglevel=0 mitigations=off acpi_enforce_resources=lax amdgpu.bc250_vcn_mode=1
+Қыр 11 23:50:52 cachyos kernel: usb usb1: Manufacturer: Linux 7.2.0-1.92-cachyos-vcn-bc250 ehci_hcd
+Қыр 11 23:50:52 cachyos kernel: usb usb2: Manufacturer: Linux 7.2.0-1.92-cachyos-vcn-bc250 ohci_hcd
+Қыр 11 23:50:52 cachyos kernel: usb usb3: Manufacturer: Linux 7.2.0-1.92-cachyos-vcn-bc250 ehci_hcd
+Қыр 11 23:50:52 cachyos kernel: usb usb4: Manufacturer: Linux 7.2.0-1.92-cachyos-vcn-bc250 ohci_hcd
+Қыр 11 23:50:52 cachyos kernel: usb usb5: Manufacturer: Linux 7.2.0-1.92-cachyos-vcn-bc250 ohci_hcd
+Қыр 11 23:50:52 cachyos kernel: usb usb6: Manufacturer: Linux 7.2.0-1.92-cachyos-vcn-bc250 xhci-hcd
+Қыр 11 23:50:52 cachyos kernel: usb usb7: Manufacturer: Linux 7.2.0-1.92-cachyos-vcn-bc250 xhci-hcd
+Қыр 11 23:50:52 cachyos systemd[1]: Create List of Static Device Nodes skipped, unmet condition check ConditionFileNotEmpty=/lib/modules/7.2.0-1.92-cachyos-vcn-bc250/modules.devname
+Қыр 11 23:50:57 cachyos kernel: amdgpu: Virtual CRAT table created for CPU
+Қыр 11 23:50:57 cachyos kernel: amdgpu: Topology: Add CPU node
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: enabling device (0006 -> 0007)
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: initializing kernel modesetting (CYAN_SKILLFISH 0x1002:0x13FE 0x1022:0x0000 0x00).
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: register mmio base: 0xFE800000
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: register mmio size: 524288
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: detected ip block number 0 <common_v1_0_0> (nv_common)
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: detected ip block number 1 <gmc_v10_0_0> (gmc_v10_0)
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: detected ip block number 2 <ih_v5_0_0> (navi10_ih)
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: detected ip block number 3 <psp_v11_0_8> (psp)
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: detected ip block number 4 <smu_v11_0_0> (smu)
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: detected ip block number 5 <dce_v1_0_0> (dm)
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: detected ip block number 6 <gfx_v10_0_0> (gfx_v10_0)
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: detected ip block number 7 <sdma_v5_0_0> (sdma_v5_0)
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: detected ip block number 8 <vcn_v2_0_0> (vcn_v2_0_probe)
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: Fetched VBIOS from VFCT
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: [drm] ATOM BIOS: 113-AMDRBN-003, build: 584828  , ver: 016.002.000.006.000000, 2021/09/10
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: vgaarb: deactivate vga console
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: Trusted Memory Zone (TMZ) feature disabled as experimental (default)
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: vm size is 262144 GB, 4 levels, block size is 9-bit, fragment size is 9-bit
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: VRAM: 6144M 0x000000F400000000 - 0x000000F57FFFFFFF (6144M used)
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: GART: 512M 0x0000000000000000 - 0x000000001FFFFFFF
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: [drm] Detected VRAM RAM=6144M, BAR=6144M
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: [drm] RAM width 1024bits UNKNOWN
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0:  6144M of VRAM memory ready
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0:  4096M of GTT memory ready.
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: [drm] GART: num cpu pages 131072, num gpu pages 131072
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: GFX1013/BC-250: using MMIO PASID TLB flushes
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: GFX1013/BC-250: PASID-only CPU type-0 invalidation
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: [drm] PCIE GART of 512M enabled (table at 0x000000F57FE00000).
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: [VCN instance 0] Found VCN firmware Version ENC: 1.24 DEC: 8 VEP: 0 Revision: 9
+Қыр 11 23:50:57 cachyos kernel: amdgpu 0000:01:00.0: reserve 0x400000 from 0xf57f800000 for PSP TMR
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: smu driver if version = 0x00000008, smu fw if version = 0x00000008, smu fw program = 0, smu fw version = 0x00580600 (88.6.0)
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: SMU is initialized successfully!
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] Display Core v3.2.384 initialized on DCN 2.0.1
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 3
+Қыр 11 23:50:58 cachyos kernel: WARNING: drivers/gpu/drm/amd/amdgpu/../display/dc/irq/irq_service.c:169 at dal_irq_service_ack+0xeb/0x100 [amdgpu], CPU#11: (udev-worker)/201
+Қыр 11 23:50:58 cachyos kernel: Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp nvme drm_ttm_helper ttm nvme_core drm_display_helper nvme_keyring nvme_auth video serio_raw cec wmi
+Қыр 11 23:50:58 cachyos kernel: CPU: 11 UID: 0 PID: 201 Comm: (udev-worker) Not tainted 7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+Қыр 11 23:50:58 cachyos kernel: RIP: 0010:dal_irq_service_ack+0xeb/0x100 [amdgpu]
+Қыр 11 23:50:58 cachyos kernel:  dal_irq_service_set+0x3e/0x140 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  amdgpu_dm_hpd_init+0x7d/0x650 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  dm_hw_init.llvm.9010742086856577308+0x2aff/0x2dc0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  ? __pfx_enable_assr+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  ? __pfx_update_config+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  amdgpu_device_ip_init+0x3c3/0x590 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  amdgpu_device_init+0x1f12/0x22b0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  amdgpu_driver_load_kms+0x1a/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 3, st: 0
+Қыр 11 23:50:58 cachyos kernel: WARNING: drivers/gpu/drm/amd/amdgpu/../display/dc/irq/irq_service.c:129 at dal_irq_service_set+0x121/0x140 [amdgpu], CPU#11: (udev-worker)/201
+Қыр 11 23:50:58 cachyos kernel: Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp nvme drm_ttm_helper ttm nvme_core drm_display_helper nvme_keyring nvme_auth video serio_raw cec wmi
+Қыр 11 23:50:58 cachyos kernel: CPU: 11 UID: 0 PID: 201 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+Қыр 11 23:50:58 cachyos kernel: RIP: 0010:dal_irq_service_set+0x121/0x140 [amdgpu]
+Қыр 11 23:50:58 cachyos kernel:  amdgpu_dm_hpd_init+0x7d/0x650 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  dm_hw_init.llvm.9010742086856577308+0x2aff/0x2dc0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  ? __pfx_enable_assr+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  ? __pfx_update_config+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  amdgpu_device_ip_init+0x3c3/0x590 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  amdgpu_device_init+0x1f12/0x22b0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  amdgpu_driver_load_kms+0x1a/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel:  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=3 on init
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 4
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 4, st: 0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=4 on init
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 5
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 5, st: 0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=5 on init
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 6
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 6, st: 0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=6 on init
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 9
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 9, st: 0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=9 on init
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 10
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 10, st: 0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=10 on init
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 11
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 11, st: 0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=11 on init
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 12
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 12, st: 0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=12 on init
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: bc250-40cu-enable: mode=3 se=0 sh=0 CC=0xfff80000->0xffe00000 SPI=0x00000007->0x0000001f
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: bc250-40cu-enable: mode=3 se=0 sh=1 CC=0xfff80000->0xffe00000 SPI=0x00000007->0x0000001f
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: bc250-40cu-enable: mode=3 se=1 sh=0 CC=0xfff80000->0xffe00000 SPI=0x00000007->0x0000001f
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: bc250-40cu-enable: mode=3 se=1 sh=1 CC=0xfff80000->0xffe00000 SPI=0x00000007->0x0000001f
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: kiq ring mec 2 pipe 1 q 0
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: VCN probe: fw_version=0x08118009 fw_size=404544 vcpu_bo_size=1064960/n
+Қыр 11 23:50:58 cachyos kernel: amdgpu 0000:01:00.0: Fence fallback timer expired on ring sdma0
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: Fence fallback timer expired on ring sdma0
+Қыр 11 23:50:59 cachyos kernel: amdgpu: Virtual CRAT table created for GPU
+Қыр 11 23:50:59 cachyos kernel: amdgpu: Topology: Add GPU node [0x1002:0x13fe]
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: SE 2, SH per SE 2, CU per SH 10, active_cu_number 40
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: ring gfx_0.0.0 uses VM inv eng 0 on hub 0
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: ring comp_1.0.0 uses VM inv eng 1 on hub 0
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: ring comp_1.1.0 uses VM inv eng 4 on hub 0
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: ring comp_1.2.0 uses VM inv eng 5 on hub 0
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: ring comp_1.3.0 uses VM inv eng 6 on hub 0
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: ring comp_1.0.1 uses VM inv eng 7 on hub 0
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: ring comp_1.1.1 uses VM inv eng 8 on hub 0
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: ring comp_1.2.1 uses VM inv eng 9 on hub 0
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: ring comp_1.3.1 uses VM inv eng 10 on hub 0
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: ring kiq_0.2.1.0 uses VM inv eng 11 on hub 0
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: ring sdma0 uses VM inv eng 12 on hub 0
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: ring sdma1 uses VM inv eng 13 on hub 0
+Қыр 11 23:50:59 cachyos kernel: amdgpu: HMM registered 6144MB device memory
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: Runtime PM not available
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: [drm] Registered 2 planes with drm panic
+Қыр 11 23:50:59 cachyos kernel: [drm] Initialized amdgpu 3.64.0 for 0000:01:00.0 on minor 1
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: [drm] Failed to setup vendor infoframe on connector DP-1: -22
+Қыр 11 23:50:59 cachyos kernel: fbcon: amdgpudrmfb (fb0) is primary device
+Қыр 11 23:50:59 cachyos kernel: amdgpu 0000:01:00.0: [drm] fb0: amdgpudrmfb frame buffer device
+Қыр 11 23:51:01 cachyos kernel: snd_hda_intel 0000:01:00.1: bound 0000:01:00.0 (ops amdgpu_dm_audio_component_bind_ops [amdgpu])
+Қыр 11 23:51:13 cachyos kernel: amdgpu 0000:01:00.0: Unsupported clock type
+Қыр 11 23:51:13 cachyos kernel: amdgpu 0000:01:00.0: Unsupported clock type
+Қыр 11 23:51:13 cachyos kernel: amdgpu 0000:01:00.0: Unsupported clock type
+Қыр 11 23:51:13 cachyos kernel: amdgpu 0000:01:00.0: Unsupported clock type
+Қыр 11 23:51:14 cachyos kernel: amdgpu 0000:01:00.0: Unsupported clock type
+Қыр 11 23:51:14 cachyos kernel: amdgpu 0000:01:00.0: Unsupported clock type
+Қыр 11 23:51:14 cachyos kernel: amdgpu 0000:01:00.0: Unsupported clock type
+Қыр 11 23:51:14 cachyos kernel: amdgpu 0000:01:00.0: Unsupported clock type
+Қыр 11 23:51:15 cachyos kernel: amdgpu 0000:01:00.0: Unsupported clock type
+Қыр 11 23:51:15 cachyos kernel: amdgpu 0000:01:00.0: Unsupported clock type
+Қыр 11 23:51:15 cachyos kernel: amdgpu 0000:01:00.0: Unsupported clock type
+Қыр 11 23:51:15 cachyos kernel: amdgpu 0000:01:00.0: Unsupported clock type

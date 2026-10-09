@@ -1,0 +1,125 @@
+{
+  "cases": [
+    {
+      "case": "baseline",
+      "svcs": [
+        {
+          "pc": "0x50",
+          "svc": 45,
+          "type": 96,
+          "destination": "0x7b000",
+          "capacity": 8192,
+          "service_is_fixture": true
+        },
+        {
+          "pc": "0xc8",
+          "svc": 6
+        },
+        {
+          "pc": "0x112",
+          "svc": 6
+        },
+        {
+          "pc": "0x66",
+          "svc": 6
+        }
+      ],
+      "pc": "0x18000",
+      "return": 0,
+      "code_unchanged": true,
+      "loaded_sha256": "c9aff11e180ca80fde0e6f6cbc973b43ca70ad48ab096ea25c7689e620d6d19e"
+    },
+    {
+      "case": "bad_checksum",
+      "svcs": [
+        {
+          "pc": "0x50",
+          "svc": 45,
+          "type": 96,
+          "destination": "0x7b000",
+          "capacity": 8192,
+          "service_is_fixture": true
+        },
+        {
+          "pc": "0xc8",
+          "svc": 6
+        },
+        {
+          "pc": "0x108",
+          "svc": 6
+        },
+        {
+          "pc": "0x5e",
+          "svc": 6
+        },
+        {
+          "pc": "0x62",
+          "svc": 0
+        }
+      ],
+      "fatal_code": 16,
+      "pc": "0x64",
+      "return": 16,
+      "code_unchanged": true
+    },
+    {
+      "case": "service_failure",
+      "svcs": [
+        {
+          "pc": "0x50",
+          "svc": 45,
+          "type": 96,
+          "destination": "0x7b000",
+          "capacity": 8192,
+          "service_is_fixture": true
+        },
+        {
+          "pc": "0x5e",
+          "svc": 6
+        },
+        {
+          "pc": "0x62",
+          "svc": 0
+        }
+      ],
+      "fatal_code": 16,
+      "pc": "0x64",
+      "return": 16,
+      "code_unchanged": true
+    },
+    {
+      "case": "restored",
+      "svcs": [
+        {
+          "pc": "0x50",
+          "svc": 45,
+          "type": 96,
+          "destination": "0x7b000",
+          "capacity": 8192,
+          "service_is_fixture": true
+        },
+        {
+          "pc": "0xc8",
+          "svc": 6
+        },
+        {
+          "pc": "0x112",
+          "svc": 6
+        },
+        {
+          "pc": "0x66",
+          "svc": 6
+        }
+      ],
+      "pc": "0x18000",
+      "return": 0,
+      "code_unchanged": true,
+      "loaded_sha256": "c9aff11e180ca80fde0e6f6cbc973b43ca70ad48ab096ea25c7689e620d6d19e"
+    }
+  ],
+  "limits": [
+    "SVC2D handler mocked; actual selected flash region or runtime overlay not proven",
+    "SVC6 treated as logging without register mutation",
+    "Synthetic context/stack, not full boot"
+  ]
+}

@@ -1,0 +1,1 @@
+for f in "$SRC"/*.zip "$SRC"/*.rar; do bsdtar -tvf "$f" > <stage inventory> 2> <stage inventory>.stderr; done

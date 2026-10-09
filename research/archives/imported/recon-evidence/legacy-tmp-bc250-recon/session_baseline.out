@@ -1,0 +1,42 @@
++ echo '=== 0.1 BIOS / kernel / netconsole ==='
+=== 0.1 BIOS / kernel / netconsole ===
++ cat /sys/class/dmi/id/bios_version
+P3.00
++ uname -r
+7.2.0-1.1-cachyos-bc250
++ systemctl is-active bc250-netconsole
+active
++ echo '--- netconsole target ---'
+--- netconsole target ---
++ systemctl cat bc250-netconsole
++ grep -iE 'destination|src|udp|6666'
++ head
+Description=BC-250 netconsole target (kernel log -> UDP off-box)
++ echo '--- netconsole pulse (ss udp) ---'
+--- netconsole pulse (ss udp) ---
++ ss -u -n -a
++ grep -i 6666
++ head
++ echo '=== SMU version / test ==='
+=== SMU version / test ===
++ SP=/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc
++ /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/bin/python -
+Traceback (most recent call last):
+  File "<stdin>", line 4, in <module>
+  File "/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py", line 33, in __init__
+    self._transport.open()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/transport.py", line 15, in open
+    self._fd = os.open(self._config_path, os.O_RDWR | os.O_CLOEXEC)
+               ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/sys/bus/pci/devices/0000:01:00.0/config'
++ echo '=== 0.3 gpu_metrics (raw) ==='
+=== 0.3 gpu_metrics (raw) ===
++ cat /sys/kernel/debug/dri0/amdgpu_gpu_metrics
++ head -40
++ echo '=== CU / features ==='
+=== CU / features ===
++ cat /sys/kernel/debug/dri0/amdgpu_pm_info
++ head -30
++ echo '=== done ==='
+=== done ===

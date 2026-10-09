@@ -1,0 +1,35 @@
+{
+  "base": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "base_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "out": "candidates/BC250_5.00_clv_NO_GASKET_v001.bin",
+  "out_sha256": "02d6e33f3c8a99db27a003b1da8d093163ad4583181e958a5cda214c19e3127c",
+  "removed_entries": {
+    "0x24": {
+      "index": 7,
+      "was_size": 11856,
+      "was_location": "0xff982000"
+    },
+    "0x45": {
+      "index": 15,
+      "was_size": 1760,
+      "was_location": "0xff9cab00"
+    }
+  },
+  "fletcher": {
+    "was": "0x17aa38b9",
+    "now": "0x2cc838e9",
+    "span": [
+      "0x8e0008",
+      "0x8e0140"
+    ]
+  },
+  "checks": {
+    "lock_types_absent": true,
+    "remaining_entry_count": 17,
+    "fletcher_ok": true,
+    "diff_confinement": true,
+    "changed_bytes": 33
+  },
+  "gate": "PASS",
+  "claim_boundary": "static candidate only; PSP boot behavior UNRUN; no flash"
+}

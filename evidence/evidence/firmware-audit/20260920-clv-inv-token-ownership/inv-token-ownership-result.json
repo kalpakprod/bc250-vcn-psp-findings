@@ -1,0 +1,3404 @@
+{
+  "status": "PRODUCER_ONLY_IN_MODULE_SET",
+  "question": "consumer/requester of $INV record 0x1364 in the pinned CLV UEFI module set",
+  "inputs": {
+    "rom": {
+      "path": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "size": 16777216,
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    "corpus": {
+      "path": "evidence/firmware-audit/20260919-inv-token-consumers",
+      "records": 233,
+      "manifest_file": "SHA256SUMS",
+      "manifest_ok_lines": 952,
+      "manifest_failed_lines": 1,
+      "manifest_failed_paths": [
+        "docs/research/2026-09-19-inv-token-consumers.md"
+      ]
+    }
+  },
+  "producer_census": {
+    "0x11ed": {
+      "amdsetup_offset": "0x316",
+      "sites": {
+        "AmdFabricAriPei-c5b99650a442": "0xcd97",
+        "AmdNbioBaseARIPei-51d96c1e5a5e": "0xdba7",
+        "AmdNbioGfxARIPei-63413be2ac29": "0xaf67",
+        "AmdNbioPcieARIPei-62b1398c4ba9": "0xe6b7",
+        "AmdNbioSmuV10Pei-905b8be68afd": "0xb8b7",
+        "AmdSocBl5AriPei-79e13211d5ae": "0xb5f7",
+        "CbsBasePei-6ff112922ad8": "0x9837"
+      }
+    },
+    "0x1204": {
+      "amdsetup_offset": "0x330",
+      "sites": {
+        "AmdFabricAriPei-c5b99650a442": "0xd224",
+        "AmdNbioBaseARIPei-51d96c1e5a5e": "0xe034",
+        "AmdNbioGfxARIPei-63413be2ac29": "0xb3f4",
+        "AmdNbioPcieARIPei-62b1398c4ba9": "0xeb44",
+        "AmdNbioSmuV10Pei-905b8be68afd": "0xbd44",
+        "AmdSocBl5AriPei-79e13211d5ae": "0xba84",
+        "CbsBasePei-6ff112922ad8": "0x9cc4"
+      }
+    },
+    "0x1331": {
+      "amdsetup_offset": "0x6a3",
+      "sites": {
+        "AmdFabricAriPei-c5b99650a442": "0x10f40",
+        "AmdNbioBaseARIPei-51d96c1e5a5e": "0x11d50",
+        "AmdNbioGfxARIPei-63413be2ac29": "0xf110",
+        "AmdNbioPcieARIPei-62b1398c4ba9": "0x12860",
+        "AmdNbioSmuV10Pei-905b8be68afd": "0xfa60",
+        "AmdSocBl5AriPei-79e13211d5ae": "0xf7a0",
+        "CbsBasePei-6ff112922ad8": "0xd9e0"
+      }
+    },
+    "0x1363": {
+      "amdsetup_offset": "0x6e5",
+      "sites": {
+        "AmdFabricAriPei-c5b99650a442": "0x11924",
+        "AmdNbioBaseARIPei-51d96c1e5a5e": "0x12734",
+        "AmdNbioGfxARIPei-63413be2ac29": "0xfaf4",
+        "AmdNbioPcieARIPei-62b1398c4ba9": "0x13244",
+        "AmdNbioSmuV10Pei-905b8be68afd": "0x10444",
+        "AmdSocBl5AriPei-79e13211d5ae": "0x10184",
+        "CbsBasePei-6ff112922ad8": "0xe3c4"
+      }
+    },
+    "0x1364": {
+      "amdsetup_offset": "0x6e6",
+      "sites": {
+        "AmdFabricAriPei-c5b99650a442": "0x11956",
+        "AmdNbioBaseARIPei-51d96c1e5a5e": "0x12766",
+        "AmdNbioGfxARIPei-63413be2ac29": "0xfb26",
+        "AmdNbioPcieARIPei-62b1398c4ba9": "0x13276",
+        "AmdNbioSmuV10Pei-905b8be68afd": "0x10476",
+        "AmdSocBl5AriPei-79e13211d5ae": "0x101b6",
+        "CbsBasePei-6ff112922ad8": "0xe3f6"
+      }
+    },
+    "0x1373": {
+      "amdsetup_offset": "0x703",
+      "sites": {
+        "AmdFabricAriPei-c5b99650a442": "0x11c66",
+        "AmdNbioBaseARIPei-51d96c1e5a5e": "0x12a76",
+        "AmdNbioGfxARIPei-63413be2ac29": "0xfe36",
+        "AmdNbioPcieARIPei-62b1398c4ba9": "0x13586",
+        "AmdNbioSmuV10Pei-905b8be68afd": "0x10786",
+        "AmdSocBl5AriPei-79e13211d5ae": "0x104c6",
+        "CbsBasePei-6ff112922ad8": "0xe706"
+      }
+    },
+    "0x1374": {
+      "amdsetup_offset": "0x704",
+      "sites": {
+        "AmdFabricAriPei-c5b99650a442": "0x11c98",
+        "AmdNbioBaseARIPei-51d96c1e5a5e": "0x12aa8",
+        "AmdNbioGfxARIPei-63413be2ac29": "0xfe68",
+        "AmdNbioPcieARIPei-62b1398c4ba9": "0x135b8",
+        "AmdNbioSmuV10Pei-905b8be68afd": "0x107b8",
+        "AmdSocBl5AriPei-79e13211d5ae": "0x104f8",
+        "CbsBasePei-6ff112922ad8": "0xe738"
+      }
+    }
+  },
+  "producer_structure": {
+    "0x1363": {
+      "AmdFabricAriPei-c5b99650a442": "0x11924",
+      "AmdNbioGfxARIPei-63413be2ac29": "0xfaf4",
+      "AmdNbioBaseARIPei-51d96c1e5a5e": "0x12734",
+      "AmdNbioPcieARIPei-62b1398c4ba9": "0x13244",
+      "AmdNbioSmuV10Pei-905b8be68afd": "0x10444",
+      "AmdSocBl5AriPei-79e13211d5ae": "0x10184",
+      "CbsBasePei-6ff112922ad8": "0xe3c4"
+    },
+    "0x1364": {
+      "AmdFabricAriPei-c5b99650a442": "0x11956",
+      "AmdNbioGfxARIPei-63413be2ac29": "0xfb26",
+      "AmdNbioBaseARIPei-51d96c1e5a5e": "0x12766",
+      "AmdNbioPcieARIPei-62b1398c4ba9": "0x13276",
+      "AmdNbioSmuV10Pei-905b8be68afd": "0x10476",
+      "AmdSocBl5AriPei-79e13211d5ae": "0x101b6",
+      "CbsBasePei-6ff112922ad8": "0xe3f6"
+    }
+  },
+  "request_census": {
+    "0x11ed": 0,
+    "0x1204": 0,
+    "0x1331": 0,
+    "0x1363": 0,
+    "0x1364": 0,
+    "0x1373": 0,
+    "0x1374": 0
+  },
+  "request_census_positive_control": {
+    "0x1000": 14,
+    "0x1388": 11,
+    "0x10ff": 1,
+    "0x1104": 1
+  },
+  "address_mentions_not_tokens": {
+    "0x11ed": [
+      {
+        "module": "NvramSmm-5e0d8f9526b3",
+        "rva": 4529,
+        "mnemonic": "jmp",
+        "operands": "0x11ed"
+      }
+    ],
+    "0x1204": [
+      {
+        "module": "SbDxe-4b9d66aa46b8",
+        "rva": 3074,
+        "mnemonic": "lea",
+        "operands": "r8,[rip+0x5fb]        # 0x1204"
+      },
+      {
+        "module": "AmdCcxVhAriDxe-d9bc6337e3d0",
+        "rva": 4590,
+        "mnemonic": "jge",
+        "operands": "0x1204"
+      },
+      {
+        "module": "CryptoDXE-7e192d707a0b",
+        "rva": 4128,
+        "mnemonic": "call",
+        "operands": "0x1204"
+      },
+      {
+        "module": "DiskIoDxe-ba4132c228af",
+        "rva": 5061,
+        "mnemonic": "jne",
+        "operands": "0x1204"
+      },
+      {
+        "module": "Ps2Main-ad73e54f640f",
+        "rva": 5992,
+        "mnemonic": "call",
+        "operands": "0x1204"
+      },
+      {
+        "module": "Ps2Main-ad73e54f640f",
+        "rva": 8451,
+        "mnemonic": "call",
+        "operands": "0x1204"
+      },
+      {
+        "module": "Ps2Main-ad73e54f640f",
+        "rva": 8649,
+        "mnemonic": "call",
+        "operands": "0x1204"
+      },
+      {
+        "module": "SmmChildDispatcher2-e9cbe71883d6",
+        "rva": 1221,
+        "mnemonic": "mov",
+        "operands": "QWORD PTR [rip+0x1204],rax        # 0x16d0"
+      },
+      {
+        "module": "AmdCcxVhAriSmm-419e9d6c325a",
+        "rva": 4605,
+        "mnemonic": "je",
+        "operands": "0x1204"
+      },
+      {
+        "module": "Usb3PortProtectWA-d4f4bba485f1",
+        "rva": 4605,
+        "mnemonic": "je",
+        "operands": "0x1204"
+      },
+      {
+        "module": "UsbRtSmm-6011e29ef191",
+        "rva": 4724,
+        "mnemonic": "lea",
+        "operands": "rdx,[rip+0xffffffffffffff89]        # 0x1204"
+      },
+      {
+        "module": "UsbRtSmm-6011e29ef191",
+        "rva": 21100,
+        "mnemonic": "lea",
+        "operands": "rcx,[rip+0xffffffffffffbf91]        # 0x1204"
+      },
+      {
+        "module": "A0327FE0-1FDA-4E5B-905D-B510C45A61D0-a014267d5e97",
+        "rva": 4499,
+        "mnemonic": "je",
+        "operands": "0x1204"
+      }
+    ],
+    "0x1331": [
+      {
+        "module": "HiiDatabase-489fc01869bd",
+        "rva": 4897,
+        "mnemonic": "je",
+        "operands": "0x1331"
+      },
+      {
+        "module": "GnbDxe-6eb06f5fc9c4",
+        "rva": 1360,
+        "mnemonic": "lea",
+        "operands": "rax,[rip+0x1331]        # 0x1888"
+      },
+      {
+        "module": "AmdSmbiosDxe-a5f9422313bb",
+        "rva": 4896,
+        "mnemonic": "jns",
+        "operands": "0x1331"
+      },
+      {
+        "module": "PciRootBridge-904653780c70",
+        "rva": 19368,
+        "mnemonic": "lea",
+        "operands": "rcx,[rip+0x1331]        # 0x5ee0"
+      },
+      {
+        "module": "PspDxe-73f374d80f09",
+        "rva": 4901,
+        "mnemonic": "jne",
+        "operands": "0x1331"
+      },
+      {
+        "module": "CapsuleRuntimeDxe-5d5ddcec47a4",
+        "rva": 4929,
+        "mnemonic": "jb",
+        "operands": "0x1331"
+      },
+      {
+        "module": "MnpDxe-2c4761be206e",
+        "rva": 4349,
+        "mnemonic": "jmp",
+        "operands": "0x1331"
+      },
+      {
+        "module": "Fat-4a3f6d42f838",
+        "rva": 4908,
+        "mnemonic": "jbe",
+        "operands": "0x1331"
+      },
+      {
+        "module": "FlashDriverSmm-98ea449c3662",
+        "rva": 4845,
+        "mnemonic": "jne",
+        "operands": "0x1331"
+      }
+    ],
+    "0x1363": [
+      {
+        "module": "AmiApcbLibInterface-4d65e6dc2ca8",
+        "rva": 3862,
+        "mnemonic": "mov",
+        "operands": "rax,QWORD PTR [rip+0x1363]        # 0x2280"
+      },
+      {
+        "module": "CapsulePei-45091113ac3e",
+        "rva": 4938,
+        "mnemonic": "je",
+        "operands": "0x1363"
+      },
+      {
+        "module": "CapsulePei-45091113ac3e",
+        "rva": 4944,
+        "mnemonic": "je",
+        "operands": "0x1363"
+      },
+      {
+        "module": "FchPei-08493ca078e7",
+        "rva": 4925,
+        "mnemonic": "jmp",
+        "operands": "0x1363"
+      }
+    ],
+    "0x1364": [
+      {
+        "module": "EbcDxe-f4776f100100",
+        "rva": 4944,
+        "mnemonic": "jne",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmiApcbLibInterface-4d65e6dc2ca8",
+        "rva": 3277,
+        "mnemonic": "lea",
+        "operands": "rdx,[rip+0x1364]        # 0x2038"
+      },
+      {
+        "module": "AmdCpmInitDxe-89a016d6a95b",
+        "rva": 10132,
+        "mnemonic": "lea",
+        "operands": "rcx,[rip+0xffffffffffffebc9]        # 0x1364"
+      },
+      {
+        "module": "BootScriptExecutorDxe-c6d31e6e00bf",
+        "rva": 8589,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "NvmeDynamicSetup-8910d2625b50",
+        "rva": 4693,
+        "mnemonic": "js",
+        "operands": "0x1364"
+      },
+      {
+        "module": "NvmeDynamicSetup-8910d2625b50",
+        "rva": 4753,
+        "mnemonic": "js",
+        "operands": "0x1364"
+      },
+      {
+        "module": "NvmeDynamicSetup-8910d2625b50",
+        "rva": 4792,
+        "mnemonic": "js",
+        "operands": "0x1364"
+      },
+      {
+        "module": "NvmeDynamicSetup-8910d2625b50",
+        "rva": 4941,
+        "mnemonic": "js",
+        "operands": "0x1364"
+      },
+      {
+        "module": "PspDxe-73f374d80f09",
+        "rva": 977,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "PspDxe-73f374d80f09",
+        "rva": 2524,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 4922,
+        "mnemonic": "lea",
+        "operands": "rcx,[rip+0x23]        # 0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5306,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5375,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5422,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5433,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5444,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5455,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5466,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5477,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5488,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5499,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5510,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5524,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5535,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5546,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5596,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5607,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "RuntimeDxe-0b32fb440716",
+        "rva": 5618,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "Udp4Dxe-80593d46a9ae",
+        "rva": 10048,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "CapsulePei-45091113ac3e",
+        "rva": 2922,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "CapsulePei-45091113ac3e",
+        "rva": 2938,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 5064,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 5172,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 5283,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 5370,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 5477,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 5584,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 5669,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 5776,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 5883,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 5968,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 6075,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 6182,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 6267,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 6377,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 6487,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      },
+      {
+        "module": "AmdCpmInitPeim-25b14a638a17",
+        "rva": 6758,
+        "mnemonic": "call",
+        "operands": "0x1364"
+      }
+    ],
+    "0x1373": [
+      {
+        "module": "AmdNbioGfxARIDxe-a1b5855a3398",
+        "rva": 5558,
+        "mnemonic": "lea",
+        "operands": "rcx,[rip+0x1373]        # 0x2930"
+      }
+    ],
+    "0x1374": [
+      {
+        "module": "HttpDxe-3ae5c5f87f09",
+        "rva": 8637,
+        "mnemonic": "lea",
+        "operands": "rdx,[rip+0x1374]        # 0x3538"
+      },
+      {
+        "module": "Dhcp4Dxe-4eb18deb822d",
+        "rva": 5728,
+        "mnemonic": "call",
+        "operands": "0x1374"
+      },
+      {
+        "module": "Dhcp4Dxe-4eb18deb822d",
+        "rva": 6267,
+        "mnemonic": "call",
+        "operands": "0x1374"
+      },
+      {
+        "module": "Dhcp4Dxe-4eb18deb822d",
+        "rva": 6999,
+        "mnemonic": "call",
+        "operands": "0x1374"
+      },
+      {
+        "module": "SmmS3SaveState-3329a9fbc888",
+        "rva": 5888,
+        "mnemonic": "call",
+        "operands": "0x1374"
+      },
+      {
+        "module": "SmmS3SaveState-3329a9fbc888",
+        "rva": 6264,
+        "mnemonic": "call",
+        "operands": "0x1374"
+      },
+      {
+        "module": "SmmPciRbIo-92671d2adef6",
+        "rva": 4746,
+        "mnemonic": "js",
+        "operands": "0x1374"
+      },
+      {
+        "module": "SmmPciRbIo-92671d2adef6",
+        "rva": 4806,
+        "mnemonic": "js",
+        "operands": "0x1374"
+      },
+      {
+        "module": "SmmPciRbIo-92671d2adef6",
+        "rva": 4822,
+        "mnemonic": "je",
+        "operands": "0x1374"
+      },
+      {
+        "module": "SmmPciRbIo-92671d2adef6",
+        "rva": 4868,
+        "mnemonic": "js",
+        "operands": "0x1374"
+      },
+      {
+        "module": "PcdDxe-c8bb4c592b5f",
+        "rva": 5445,
+        "mnemonic": "mov",
+        "operands": "DWORD PTR [rip+0x1374],r8d        # 0x28c0"
+      },
+      {
+        "module": "PcdPeim-ab509a6d18b8",
+        "rva": 4963,
+        "mnemonic": "jne",
+        "operands": "0x1374"
+      }
+    ]
+  },
+  "rom_raw_census": {
+    "0x1363": [
+      {
+        "offset": "0xe2d4a5",
+        "prefix": "83c104894df8ba",
+        "suffix": "8b45f8"
+      },
+      {
+        "offset": "0xe4c729",
+        "prefix": "83c104894df8ba",
+        "suffix": "8b45f8"
+      },
+      {
+        "offset": "0xe6718d",
+        "prefix": "83c104894df8ba",
+        "suffix": "8b45f8"
+      },
+      {
+        "offset": "0xe81879",
+        "prefix": "83c104894df8ba",
+        "suffix": "8b45f8"
+      },
+      {
+        "offset": "0xe99421",
+        "prefix": "83c104894df8ba",
+        "suffix": "8b45f8"
+      },
+      {
+        "offset": "0xeb2079",
+        "prefix": "83c104894df8ba",
+        "suffix": "8b45f8"
+      },
+      {
+        "offset": "0xec8451",
+        "prefix": "83c104894df8ba",
+        "suffix": "8b45f8"
+      }
+    ],
+    "0x1364": [
+      {
+        "offset": "0xe2d4d7",
+        "prefix": "83c104894df8ba",
+        "suffix": "8b45f8"
+      },
+      {
+        "offset": "0xe4c75b",
+        "prefix": "83c104894df8ba",
+        "suffix": "8b45f8"
+      },
+      {
+        "offset": "0xe671bf",
+        "prefix": "83c104894df8ba",
+        "suffix": "8b45f8"
+      },
+      {
+        "offset": "0xe818ab",
+        "prefix": "83c104894df8ba",
+        "suffix": "8b45f8"
+      },
+      {
+        "offset": "0xe99453",
+        "prefix": "83c104894df8ba",
+        "suffix": "8b45f8"
+      },
+      {
+        "offset": "0xeb20ab",
+        "prefix": "83c104894df8ba",
+        "suffix": "8b45f8"
+      },
+      {
+        "offset": "0xec8483",
+        "prefix": "83c104894df8ba",
+        "suffix": "8b45f8"
+      }
+    ]
+  },
+  "rom_attribution": {
+    "0x1363": [
+      {
+        "offset": "0xe2d4a5",
+        "module": "AmdFabricAriPei-c5b99650a442"
+      },
+      {
+        "offset": "0xe4c729",
+        "module": "AmdNbioGfxARIPei-63413be2ac29"
+      },
+      {
+        "offset": "0xe6718d",
+        "module": "AmdNbioBaseARIPei-51d96c1e5a5e"
+      },
+      {
+        "offset": "0xe81879",
+        "module": "AmdNbioPcieARIPei-62b1398c4ba9"
+      },
+      {
+        "offset": "0xe99421",
+        "module": "AmdNbioSmuV10Pei-905b8be68afd"
+      },
+      {
+        "offset": "0xeb2079",
+        "module": "AmdSocBl5AriPei-79e13211d5ae"
+      },
+      {
+        "offset": "0xec8451",
+        "module": "CbsBasePei-6ff112922ad8"
+      }
+    ],
+    "0x1364": [
+      {
+        "offset": "0xe2d4d7",
+        "module": "AmdFabricAriPei-c5b99650a442"
+      },
+      {
+        "offset": "0xe4c75b",
+        "module": "AmdNbioGfxARIPei-63413be2ac29"
+      },
+      {
+        "offset": "0xe671bf",
+        "module": "AmdNbioBaseARIPei-51d96c1e5a5e"
+      },
+      {
+        "offset": "0xe818ab",
+        "module": "AmdNbioPcieARIPei-62b1398c4ba9"
+      },
+      {
+        "offset": "0xe99453",
+        "module": "AmdNbioSmuV10Pei-905b8be68afd"
+      },
+      {
+        "offset": "0xeb20ab",
+        "module": "AmdSocBl5AriPei-79e13211d5ae"
+      },
+      {
+        "offset": "0xec8483",
+        "module": "CbsBasePei-6ff112922ad8"
+      }
+    ]
+  },
+  "verdict": "Every one of the seven AmdSetup-to-$INV field records is emitted by seven identical inline serializer copies and is never passed as an immediate token argument anywhere in the 233-module CLV UEFI extraction; the 32-bit token encodings occur exactly seven times each in the whole 16 MiB image, all at those producer stores. No UEFI consumer of record 0x1364 is present in this image.",
+  "limits": [
+    "No immediate token argument and no 32-bit little-endian token encoding elsewhere does not exclude a computed/indirect or 16-bit-encoded consumer.",
+    "Non-UEFI firmware (PSP/$PS1, ABL1, SMU/TOS) was not searched in this bounded trace.",
+    "No voltage, rail, clock, unit, synchronization or hardware effect is established.",
+    "Read-only: no ROM, NVRAM, register, hardware or candidate mutation."
+  ],
+  "checks_passed": 644,
+  "checks": [
+    {
+      "check": "ROM size 16777216",
+      "passed": true
+    },
+    {
+      "check": "ROM sha256",
+      "passed": true
+    },
+    {
+      "check": "233 extraction records",
+      "passed": true
+    },
+    {
+      "check": "233 distinct body digests",
+      "passed": true
+    },
+    {
+      "check": "archive SHA256SUMS covers 953 files",
+      "passed": true
+    },
+    {
+      "check": "archive manifest failures are documentation-only, never extraction inputs",
+      "passed": true
+    },
+    {
+      "check": "no extraction module body failed",
+      "passed": true
+    },
+    {
+      "check": "body digest RomLayoutDxe-b5400e808ec4",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present RomLayoutDxe-b5400e808ec4",
+      "passed": true
+    },
+    {
+      "check": "body digest DxeCore-2f1d8056b0da",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present DxeCore-2f1d8056b0da",
+      "passed": true
+    },
+    {
+      "check": "body digest Bds-f7cd209b8afb",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Bds-f7cd209b8afb",
+      "passed": true
+    },
+    {
+      "check": "body digest DataHubDxe-e503b9c876ab",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present DataHubDxe-e503b9c876ab",
+      "passed": true
+    },
+    {
+      "check": "body digest DevicePathDxe-08cc9820cf71",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present DevicePathDxe-08cc9820cf71",
+      "passed": true
+    },
+    {
+      "check": "body digest EnglishDxe-a66341b34380",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present EnglishDxe-a66341b34380",
+      "passed": true
+    },
+    {
+      "check": "body digest EbcDxe-f4776f100100",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present EbcDxe-f4776f100100",
+      "passed": true
+    },
+    {
+      "check": "body digest HiiDatabase-489fc01869bd",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present HiiDatabase-489fc01869bd",
+      "passed": true
+    },
+    {
+      "check": "body digest SecurityStubDxe-9b014f049b54",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SecurityStubDxe-9b014f049b54",
+      "passed": true
+    },
+    {
+      "check": "body digest TimestampDxe-8c96247042e4",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present TimestampDxe-8c96247042e4",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuIo2Dxe-95852565b4d7",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CpuIo2Dxe-95852565b4d7",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuDxe-4fe9d6dc6dfe",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CpuDxe-4fe9d6dc6dfe",
+      "passed": true
+    },
+    {
+      "check": "body digest GnbDxe-6eb06f5fc9c4",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present GnbDxe-6eb06f5fc9c4",
+      "passed": true
+    },
+    {
+      "check": "body digest NbDxe-741b3e575c5c",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present NbDxe-741b3e575c5c",
+      "passed": true
+    },
+    {
+      "check": "body digest SbDxe-4b9d66aa46b8",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SbDxe-4b9d66aa46b8",
+      "passed": true
+    },
+    {
+      "check": "body digest SmBusSmm-44b9e44d8885",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SmBusSmm-44b9e44d8885",
+      "passed": true
+    },
+    {
+      "check": "body digest SbInterfaceDxe-6bd689800694",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SbInterfaceDxe-6bd689800694",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCcxVhAriDxe-d9bc6337e3d0",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdCcxVhAriDxe-d9bc6337e3d0",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdIdsDebugPrintDxe-e177833c8a19",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdIdsDebugPrintDxe-e177833c8a19",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdErrorLogDxe-76da20592893",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdErrorLogDxe-76da20592893",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdFabricAriDxe-b9702a29ed28",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdFabricAriDxe-b9702a29ed28",
+      "passed": true
+    },
+    {
+      "check": "body digest FchDxe-9adfd93323df",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present FchDxe-9adfd93323df",
+      "passed": true
+    },
+    {
+      "check": "body digest FchDxeAux-8b8a7aa7c303",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present FchDxeAux-8b8a7aa7c303",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdMemSmbiosV2Dxe-6885edb46452",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdMemSmbiosV2Dxe-6885edb46452",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioGfxARIDxe-a1b5855a3398",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdNbioGfxARIDxe-a1b5855a3398",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioIOMMUARIDxe-3588d51cac5d",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdNbioIOMMUARIDxe-3588d51cac5d",
+      "passed": true
+    },
+    {
+      "check": "body digest CARSystemHubDxe-4fd04b58fdb3",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CARSystemHubDxe-4fd04b58fdb3",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioAlibARIDxe-cba4607ffcc4",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdNbioAlibARIDxe-cba4607ffcc4",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioBaseARIDxe-8de29ee97dae",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdNbioBaseARIDxe-8de29ee97dae",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioPcieARIDxe-e0d4d4415777",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdNbioPcieARIDxe-e0d4d4415777",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioSmuV10Dxe-b158f039f48d",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdNbioSmuV10Dxe-b158f039f48d",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdPspDxeV2-554e1b4bc50d",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdPspDxeV2-554e1b4bc50d",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdApcbObrDxe-e0bc6cb78646",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdApcbObrDxe-e0bc6cb78646",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdSocBl5AriDxe-008e2638bd8f",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdSocBl5AriDxe-008e2638bd8f",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdAcpiDxe-4b87626749f1",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdAcpiDxe-4b87626749f1",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdSmbiosDxe-a5f9422313bb",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdSmbiosDxe-a5f9422313bb",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdVersionDxe-1b1dda19832f",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdVersionDxe-1b1dda19832f",
+      "passed": true
+    },
+    {
+      "check": "body digest AmiAgesaDxe-f1d2a369d102",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmiAgesaDxe-f1d2a369d102",
+      "passed": true
+    },
+    {
+      "check": "body digest AmiApcbLibInterface-4d65e6dc2ca8",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmiApcbLibInterface-4d65e6dc2ca8",
+      "passed": true
+    },
+    {
+      "check": "body digest CbsSetupDxe-7ff717d51c9a",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CbsSetupDxe-7ff717d51c9a",
+      "passed": true
+    },
+    {
+      "check": "body digest CbsBaseDxe-d2e9ba4e9da7",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CbsBaseDxe-d2e9ba4e9da7",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmOemInitDxe-2f0bb9d2aeae",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdCpmOemInitDxe-2f0bb9d2aeae",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmGpioInitDxe-70a6130e9bfe",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdCpmGpioInitDxe-70a6130e9bfe",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmInitDxe-89a016d6a95b",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdCpmInitDxe-89a016d6a95b",
+      "passed": true
+    },
+    {
+      "check": "body digest Setup-10cc728ae3f8",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Setup-10cc728ae3f8",
+      "passed": true
+    },
+    {
+      "check": "body digest ACPI-d73a4c23e02f",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present ACPI-d73a4c23e02f",
+      "passed": true
+    },
+    {
+      "check": "body digest S3SaveStateDxe-e0770fa9e6b5",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present S3SaveStateDxe-e0770fa9e6b5",
+      "passed": true
+    },
+    {
+      "check": "body digest BootScriptExecutorDxe-c6d31e6e00bf",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present BootScriptExecutorDxe-c6d31e6e00bf",
+      "passed": true
+    },
+    {
+      "check": "body digest AcpiS3SaveDxe-cfad87d90a2d",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AcpiS3SaveDxe-cfad87d90a2d",
+      "passed": true
+    },
+    {
+      "check": "body digest SioDxeInit-13ba455c441c",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SioDxeInit-13ba455c441c",
+      "passed": true
+    },
+    {
+      "check": "body digest SioDynamicSetup-03f359d8a525",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SioDynamicSetup-03f359d8a525",
+      "passed": true
+    },
+    {
+      "check": "body digest IdeBusBoard-671575888e9d",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present IdeBusBoard-671575888e9d",
+      "passed": true
+    },
+    {
+      "check": "body digest OA3-f04739a4063d",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present OA3-f04739a4063d",
+      "passed": true
+    },
+    {
+      "check": "body digest PciRootBridge-904653780c70",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PciRootBridge-904653780c70",
+      "passed": true
+    },
+    {
+      "check": "body digest PciDxeInit-4669fe7de87e",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PciDxeInit-4669fe7de87e",
+      "passed": true
+    },
+    {
+      "check": "body digest DpcDxe-7f0caeb9c588",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present DpcDxe-7f0caeb9c588",
+      "passed": true
+    },
+    {
+      "check": "body digest NetworkStackSetupScreen-5d5df30f45eb",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present NetworkStackSetupScreen-5d5df30f45eb",
+      "passed": true
+    },
+    {
+      "check": "body digest AmiBoardInfo2-3f43a97e4452",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmiBoardInfo2-3f43a97e4452",
+      "passed": true
+    },
+    {
+      "check": "body digest ReFlash-01a7193d2d87",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present ReFlash-01a7193d2d87",
+      "passed": true
+    },
+    {
+      "check": "body digest CryptoPkgTest-4502c000a550",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CryptoPkgTest-4502c000a550",
+      "passed": true
+    },
+    {
+      "check": "body digest HardwareSignatureEntry-d823c6a7b5a8",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present HardwareSignatureEntry-d823c6a7b5a8",
+      "passed": true
+    },
+    {
+      "check": "body digest EsrtDxe-681862dffcd1",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present EsrtDxe-681862dffcd1",
+      "passed": true
+    },
+    {
+      "check": "body digest NvmeDynamicSetup-8910d2625b50",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present NvmeDynamicSetup-8910d2625b50",
+      "passed": true
+    },
+    {
+      "check": "body digest RsdpPlus-0607aa4379b1",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present RsdpPlus-0607aa4379b1",
+      "passed": true
+    },
+    {
+      "check": "body digest SmbiosBoard-488f370982b1",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SmbiosBoard-488f370982b1",
+      "passed": true
+    },
+    {
+      "check": "body digest Uhcd-11b620c52cea",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Uhcd-11b620c52cea",
+      "passed": true
+    },
+    {
+      "check": "body digest UsbRtDxe-301513b93e04",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present UsbRtDxe-301513b93e04",
+      "passed": true
+    },
+    {
+      "check": "body digest PspPlatform-48199863fd80",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PspPlatform-48199863fd80",
+      "passed": true
+    },
+    {
+      "check": "body digest PspDxe-73f374d80f09",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PspDxe-73f374d80f09",
+      "passed": true
+    },
+    {
+      "check": "body digest PspResource-5fc986c26b8e",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PspResource-5fc986c26b8e",
+      "passed": true
+    },
+    {
+      "check": "body digest FanTuningDxe-da9c3b869d99",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present FanTuningDxe-da9c3b869d99",
+      "passed": true
+    },
+    {
+      "check": "body digest OEMBOARDDxe-a762c5eb6d68",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present OEMBOARDDxe-a762c5eb6d68",
+      "passed": true
+    },
+    {
+      "check": "body digest RealtekLanDxeDxe-adaa78018ac1",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present RealtekLanDxeDxe-adaa78018ac1",
+      "passed": true
+    },
+    {
+      "check": "body digest CapsuleRuntimeDxe-5d5ddcec47a4",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CapsuleRuntimeDxe-5d5ddcec47a4",
+      "passed": true
+    },
+    {
+      "check": "body digest RuntimeDxe-0b32fb440716",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present RuntimeDxe-0b32fb440716",
+      "passed": true
+    },
+    {
+      "check": "body digest PiSmmIpl-f875d7f85c20",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PiSmmIpl-f875d7f85c20",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuIoDxe-170bb81fd6c6",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CpuIoDxe-170bb81fd6c6",
+      "passed": true
+    },
+    {
+      "check": "body digest SbRun-49e976ead033",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SbRun-49e976ead033",
+      "passed": true
+    },
+    {
+      "check": "body digest SataController-0f8399ab45e8",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SataController-0f8399ab45e8",
+      "passed": true
+    },
+    {
+      "check": "body digest PataController-7d6f61be2399",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PataController-7d6f61be2399",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdSmmControl-2f614cc047c1",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdSmmControl-2f614cc047c1",
+      "passed": true
+    },
+    {
+      "check": "body digest CryptoDXE-7e192d707a0b",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CryptoDXE-7e192d707a0b",
+      "passed": true
+    },
+    {
+      "check": "body digest NTFS-116a75548877",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present NTFS-116a75548877",
+      "passed": true
+    },
+    {
+      "check": "body digest SmiFlashDxe-dead57e6697b",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SmiFlashDxe-dead57e6697b",
+      "passed": true
+    },
+    {
+      "check": "body digest ConSplitter-3bf3d34a5412",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present ConSplitter-3bf3d34a5412",
+      "passed": true
+    },
+    {
+      "check": "body digest GraphicsConsole-2739c97eddea",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present GraphicsConsole-2739c97eddea",
+      "passed": true
+    },
+    {
+      "check": "body digest DiskIoDxe-ba4132c228af",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present DiskIoDxe-ba4132c228af",
+      "passed": true
+    },
+    {
+      "check": "body digest PartitionDxe-d70f42726da8",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PartitionDxe-d70f42726da8",
+      "passed": true
+    },
+    {
+      "check": "body digest Ahci-cbd12c411fed",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Ahci-cbd12c411fed",
+      "passed": true
+    },
+    {
+      "check": "body digest GenericSio-f037edf1de57",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present GenericSio-f037edf1de57",
+      "passed": true
+    },
+    {
+      "check": "body digest IdeBusSrc-4d641ea5245b",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present IdeBusSrc-4d641ea5245b",
+      "passed": true
+    },
+    {
+      "check": "body digest OA2-501c767e17f3",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present OA2-501c767e17f3",
+      "passed": true
+    },
+    {
+      "check": "body digest PciBus-0fb8ddcaeb47",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PciBus-0fb8ddcaeb47",
+      "passed": true
+    },
+    {
+      "check": "body digest PlatformToDriver-f78e93bf57d5",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PlatformToDriver-f78e93bf57d5",
+      "passed": true
+    },
+    {
+      "check": "body digest Ps2Main-ad73e54f640f",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Ps2Main-ad73e54f640f",
+      "passed": true
+    },
+    {
+      "check": "body digest SnpDxe-61482da0a98f",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SnpDxe-61482da0a98f",
+      "passed": true
+    },
+    {
+      "check": "body digest MnpDxe-2c4761be206e",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present MnpDxe-2c4761be206e",
+      "passed": true
+    },
+    {
+      "check": "body digest ArpDxe-b121bd9facdb",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present ArpDxe-b121bd9facdb",
+      "passed": true
+    },
+    {
+      "check": "body digest TcpDxe-ebb61e94294b",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present TcpDxe-ebb61e94294b",
+      "passed": true
+    },
+    {
+      "check": "body digest UefiPxeBcDxe-f74802d4dd67",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present UefiPxeBcDxe-f74802d4dd67",
+      "passed": true
+    },
+    {
+      "check": "body digest HttpBootDxe-5fb4e80fc8ac",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present HttpBootDxe-5fb4e80fc8ac",
+      "passed": true
+    },
+    {
+      "check": "body digest HttpDxe-3ae5c5f87f09",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present HttpDxe-3ae5c5f87f09",
+      "passed": true
+    },
+    {
+      "check": "body digest DnsDxe-93b48db685ee",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present DnsDxe-93b48db685ee",
+      "passed": true
+    },
+    {
+      "check": "body digest HttpUtilitiesDxe-d43995e6e33f",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present HttpUtilitiesDxe-d43995e6e33f",
+      "passed": true
+    },
+    {
+      "check": "body digest Dhcp4Dxe-4eb18deb822d",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Dhcp4Dxe-4eb18deb822d",
+      "passed": true
+    },
+    {
+      "check": "body digest Ip4Dxe-0721c0deb5af",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Ip4Dxe-0721c0deb5af",
+      "passed": true
+    },
+    {
+      "check": "body digest Mtftp4Dxe-2bb759be09f8",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Mtftp4Dxe-2bb759be09f8",
+      "passed": true
+    },
+    {
+      "check": "body digest Udp4Dxe-80593d46a9ae",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Udp4Dxe-80593d46a9ae",
+      "passed": true
+    },
+    {
+      "check": "body digest Ip6Dxe-563d7af58418",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Ip6Dxe-563d7af58418",
+      "passed": true
+    },
+    {
+      "check": "body digest Udp6Dxe-2b859e744af7",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Udp6Dxe-2b859e744af7",
+      "passed": true
+    },
+    {
+      "check": "body digest Dhcp6Dxe-74f4a0283ffa",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Dhcp6Dxe-74f4a0283ffa",
+      "passed": true
+    },
+    {
+      "check": "body digest Mtftp6Dxe-39911136e449",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Mtftp6Dxe-39911136e449",
+      "passed": true
+    },
+    {
+      "check": "body digest FastBootOption-0b1096799a80",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present FastBootOption-0b1096799a80",
+      "passed": true
+    },
+    {
+      "check": "body digest Fat-4a3f6d42f838",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Fat-4a3f6d42f838",
+      "passed": true
+    },
+    {
+      "check": "body digest Nvme-67a94f675aa8",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Nvme-67a94f675aa8",
+      "passed": true
+    },
+    {
+      "check": "body digest PiSmmCore-590d07cb6c18",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PiSmmCore-590d07cb6c18",
+      "passed": true
+    },
+    {
+      "check": "body digest FlashDriverSmm-98ea449c3662",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present FlashDriverSmm-98ea449c3662",
+      "passed": true
+    },
+    {
+      "check": "body digest NvramSmm-5e0d8f9526b3",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present NvramSmm-5e0d8f9526b3",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuIo2Smm-375819eb4533",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CpuIo2Smm-375819eb4533",
+      "passed": true
+    },
+    {
+      "check": "body digest SmmLockBox-6d5d35ed30d7",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SmmLockBox-6d5d35ed30d7",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuSmm-ceed10ef6a42",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CpuSmm-ceed10ef6a42",
+      "passed": true
+    },
+    {
+      "check": "body digest SbRunSmm-39b78b664887",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SbRunSmm-39b78b664887",
+      "passed": true
+    },
+    {
+      "check": "body digest SleepSmi-3004a8268b47",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SleepSmi-3004a8268b47",
+      "passed": true
+    },
+    {
+      "check": "body digest PeriodicSmiControl-3522889438cc",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PeriodicSmiControl-3522889438cc",
+      "passed": true
+    },
+    {
+      "check": "body digest AcpiModeEnable-49e103b8e867",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AcpiModeEnable-49e103b8e867",
+      "passed": true
+    },
+    {
+      "check": "body digest SmmChildDispatcher2-e9cbe71883d6",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SmmChildDispatcher2-e9cbe71883d6",
+      "passed": true
+    },
+    {
+      "check": "body digest AhciSmm-e28881316352",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AhciSmm-e28881316352",
+      "passed": true
+    },
+    {
+      "check": "body digest PiSmmCommunicationSmm-413ef59f8246",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PiSmmCommunicationSmm-413ef59f8246",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCcxVhAriSmm-419e9d6c325a",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdCcxVhAriSmm-419e9d6c325a",
+      "passed": true
+    },
+    {
+      "check": "body digest FchSmmInit-42e781946f06",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present FchSmmInit-42e781946f06",
+      "passed": true
+    },
+    {
+      "check": "body digest FchSmmDispatcher-62210a140085",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present FchSmmDispatcher-62210a140085",
+      "passed": true
+    },
+    {
+      "check": "body digest FchPcieWakeWA-7e60d64598a3",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present FchPcieWakeWA-7e60d64598a3",
+      "passed": true
+    },
+    {
+      "check": "body digest FchImcControl-f2ed4fd07b45",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present FchImcControl-f2ed4fd07b45",
+      "passed": true
+    },
+    {
+      "check": "body digest Usb3PortProtectWA-d4f4bba485f1",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Usb3PortProtectWA-d4f4bba485f1",
+      "passed": true
+    },
+    {
+      "check": "body digest CardinalSystemHubSmmInit-38eb715e932f",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CardinalSystemHubSmmInit-38eb715e932f",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdPspP2CmboxV2-8d87b78dff82",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdPspP2CmboxV2-8d87b78dff82",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdPspSmmV2-0228ebbd214d",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdPspSmmV2-0228ebbd214d",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdApcbObrSmm-3237d2836e5d",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdApcbObrSmm-3237d2836e5d",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdSmmCommunication-a5f8bb3677ec",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdSmmCommunication-a5f8bb3677ec",
+      "passed": true
+    },
+    {
+      "check": "body digest BctBaseSmm-6487b63dfc7e",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present BctBaseSmm-6487b63dfc7e",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmOemSmm-f3eb0d038965",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdCpmOemSmm-f3eb0d038965",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmGpioInitSmm-07cb9a277872",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdCpmGpioInitSmm-07cb9a277872",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmInitSmm-9cae175a00b6",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdCpmInitSmm-9cae175a00b6",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuSmm-60ac586e5631",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CpuSmm-60ac586e5631",
+      "passed": true
+    },
+    {
+      "check": "body digest CryptoSMM-d9a16a60a636",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CryptoSMM-d9a16a60a636",
+      "passed": true
+    },
+    {
+      "check": "body digest SmmS3SaveState-3329a9fbc888",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SmmS3SaveState-3329a9fbc888",
+      "passed": true
+    },
+    {
+      "check": "body digest SmmGenericSio-207198666177",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SmmGenericSio-207198666177",
+      "passed": true
+    },
+    {
+      "check": "body digest OA3_SMM-aa6b75ea4853",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present OA3_SMM-aa6b75ea4853",
+      "passed": true
+    },
+    {
+      "check": "body digest SmmPciRbIo-92671d2adef6",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SmmPciRbIo-92671d2adef6",
+      "passed": true
+    },
+    {
+      "check": "body digest RuntimeSmm-38e7e1024f45",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present RuntimeSmm-38e7e1024f45",
+      "passed": true
+    },
+    {
+      "check": "body digest NvmeSmm-fbe94f53c5b6",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present NvmeSmm-fbe94f53c5b6",
+      "passed": true
+    },
+    {
+      "check": "body digest Ofbd-dbb20722e4c3",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Ofbd-dbb20722e4c3",
+      "passed": true
+    },
+    {
+      "check": "body digest SmbiosDmiEdit-3af697d1c69a",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SmbiosDmiEdit-3af697d1c69a",
+      "passed": true
+    },
+    {
+      "check": "body digest SmiFlash-c44fa437b032",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SmiFlash-c44fa437b032",
+      "passed": true
+    },
+    {
+      "check": "body digest UsbRtSmm-6011e29ef191",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present UsbRtSmm-6011e29ef191",
+      "passed": true
+    },
+    {
+      "check": "body digest PspS3Smm-9af3d4af1a4a",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PspS3Smm-9af3d4af1a4a",
+      "passed": true
+    },
+    {
+      "check": "body digest CrbSmi-9684e2eb2cb4",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CrbSmi-9684e2eb2cb4",
+      "passed": true
+    },
+    {
+      "check": "body digest OEMBOARDSmm-6b2e794fddeb",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present OEMBOARDSmm-6b2e794fddeb",
+      "passed": true
+    },
+    {
+      "check": "body digest StatusCodeDxe-53b3a4d92529",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present StatusCodeDxe-53b3a4d92529",
+      "passed": true
+    },
+    {
+      "check": "body digest StatusCodeSmm-6e1c49c855c0",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present StatusCodeSmm-6e1c49c855c0",
+      "passed": true
+    },
+    {
+      "check": "body digest FlashDriver-22f4359a142e",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present FlashDriver-22f4359a142e",
+      "passed": true
+    },
+    {
+      "check": "body digest NvramDxe-eebdaa0bad92",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present NvramDxe-eebdaa0bad92",
+      "passed": true
+    },
+    {
+      "check": "body digest PcdDxe-c8bb4c592b5f",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PcdDxe-c8bb4c592b5f",
+      "passed": true
+    },
+    {
+      "check": "body digest SmBusDxe-bafbdcaa691d",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SmBusDxe-bafbdcaa691d",
+      "passed": true
+    },
+    {
+      "check": "body digest Smbios-bb6f3dab767b",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Smbios-bb6f3dab767b",
+      "passed": true
+    },
+    {
+      "check": "body digest CmosDxe-c952cb0f0b6e",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CmosDxe-c952cb0f0b6e",
+      "passed": true
+    },
+    {
+      "check": "body digest FastBootRuntime-5c9859da1a78",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present FastBootRuntime-5c9859da1a78",
+      "passed": true
+    },
+    {
+      "check": "body digest PeiRamBootDxe-76b5e14aeb93",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PeiRamBootDxe-76b5e14aeb93",
+      "passed": true
+    },
+    {
+      "check": "body digest CrbDxe-afa1e28a674b",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CrbDxe-afa1e28a674b",
+      "passed": true
+    },
+    {
+      "check": "body digest RealtekUefiDriver-e8c6cf703a77",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present RealtekUefiDriver-e8c6cf703a77",
+      "passed": true
+    },
+    {
+      "check": "body digest AMITSE-9cc06fc7f734",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AMITSE-9cc06fc7f734",
+      "passed": true
+    },
+    {
+      "check": "body digest A0327FE0-1FDA-4E5B-905D-B510C45A61D0-a014267d5e97",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present A0327FE0-1FDA-4E5B-905D-B510C45A61D0-a014267d5e97",
+      "passed": true
+    },
+    {
+      "check": "body digest RomLayoutPei-e7d221ed0b72",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present RomLayoutPei-e7d221ed0b72",
+      "passed": true
+    },
+    {
+      "check": "body digest PeiCore-e3aae31cd48e",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PeiCore-e3aae31cd48e",
+      "passed": true
+    },
+    {
+      "check": "body digest CapsulePei-45091113ac3e",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CapsulePei-45091113ac3e",
+      "passed": true
+    },
+    {
+      "check": "body digest DxeIpl-17a64547bd9d",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present DxeIpl-17a64547bd9d",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuIoPei-8f55548e5e08",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CpuIoPei-8f55548e5e08",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuPei-69d0bca8e11d",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CpuPei-69d0bca8e11d",
+      "passed": true
+    },
+    {
+      "check": "body digest CpuSetAgesaPcd-00816c19d891",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CpuSetAgesaPcd-00816c19d891",
+      "passed": true
+    },
+    {
+      "check": "body digest PciTableInit-25746f8b7d73",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PciTableInit-25746f8b7d73",
+      "passed": true
+    },
+    {
+      "check": "body digest GnbPei-05d1364a0861",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present GnbPei-05d1364a0861",
+      "passed": true
+    },
+    {
+      "check": "body digest NbPei-7ce155eea0eb",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present NbPei-7ce155eea0eb",
+      "passed": true
+    },
+    {
+      "check": "body digest MemDetect-6ba86d23491b",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present MemDetect-6ba86d23491b",
+      "passed": true
+    },
+    {
+      "check": "body digest SbPei-ac72a3b20e49",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SbPei-ac72a3b20e49",
+      "passed": true
+    },
+    {
+      "check": "body digest PiSmmCommunicationPei-824be9696fe0",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PiSmmCommunicationPei-824be9696fe0",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCcxVhAriPei-973624f3cf5c",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdCcxVhAriPei-973624f3cf5c",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdIdsDebugPrintPei-e768208e3868",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdIdsDebugPrintPei-e768208e3868",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdErrorPei-c41fd9c5ac19",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdErrorPei-c41fd9c5ac19",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdFabricAriPei-c5b99650a442",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdFabricAriPei-c5b99650a442",
+      "passed": true
+    },
+    {
+      "check": "body digest FchPei-08493ca078e7",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present FchPei-08493ca078e7",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdMemAm4Pei-1ef4e7b94467",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdMemAm4Pei-1ef4e7b94467",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdMemSmbiosV2Pei-a70b4d80e8db",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdMemSmbiosV2Pei-a70b4d80e8db",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioGfxARIPei-63413be2ac29",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdNbioGfxARIPei-63413be2ac29",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioIOMMUARIPei-8bce36bd28d5",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdNbioIOMMUARIPei-8bce36bd28d5",
+      "passed": true
+    },
+    {
+      "check": "body digest CARSystemHubPei-ee71967713cb",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CARSystemHubPei-ee71967713cb",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioBaseARIPei-51d96c1e5a5e",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdNbioBaseARIPei-51d96c1e5a5e",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioPcieARIPei-62b1398c4ba9",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdNbioPcieARIPei-62b1398c4ba9",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdNbioSmuV10Pei-905b8be68afd",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdNbioSmuV10Pei-905b8be68afd",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdPspPeiV2-1158720bbf95",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdPspPeiV2-1158720bbf95",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdSocBl5AriPei-79e13211d5ae",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdSocBl5AriPei-79e13211d5ae",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdMemoryHobInfoPeim-aad3f828ccef",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdMemoryHobInfoPeim-aad3f828ccef",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdVersionPei-30fc2585cd30",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdVersionPei-30fc2585cd30",
+      "passed": true
+    },
+    {
+      "check": "body digest AmiAgesaPei-2e40ead69096",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmiAgesaPei-2e40ead69096",
+      "passed": true
+    },
+    {
+      "check": "body digest CbsBasePei-6ff112922ad8",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CbsBasePei-6ff112922ad8",
+      "passed": true
+    },
+    {
+      "check": "body digest PlatformCustomizePei-5b410845607f",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PlatformCustomizePei-5b410845607f",
+      "passed": true
+    },
+    {
+      "check": "body digest PlatformMemoryConfigurationPei-6a1ab7fe72ad",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PlatformMemoryConfigurationPei-6a1ab7fe72ad",
+      "passed": true
+    },
+    {
+      "check": "body digest S3Resume2Pei-d0dd189cea85",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present S3Resume2Pei-d0dd189cea85",
+      "passed": true
+    },
+    {
+      "check": "body digest AmiPspRecovery-37d1369b8131",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmiPspRecovery-37d1369b8131",
+      "passed": true
+    },
+    {
+      "check": "body digest FanTuningPei-7b4c4ccd8b47",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present FanTuningPei-7b4c4ccd8b47",
+      "passed": true
+    },
+    {
+      "check": "body digest OEMBOARDPei-c0e1480ca2ae",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present OEMBOARDPei-c0e1480ca2ae",
+      "passed": true
+    },
+    {
+      "check": "body digest ISL69247-3e1f753a6279",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present ISL69247-3e1f753a6279",
+      "passed": true
+    },
+    {
+      "check": "body digest ISL95712-c0cc17d2d54f",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present ISL95712-c0cc17d2d54f",
+      "passed": true
+    },
+    {
+      "check": "body digest StatusCodePei-2f7f8494107c",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present StatusCodePei-2f7f8494107c",
+      "passed": true
+    },
+    {
+      "check": "body digest NvramPei-cbc1def3ce53",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present NvramPei-cbc1def3ce53",
+      "passed": true
+    },
+    {
+      "check": "body digest CapsuleX64-f2e3f541af3c",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CapsuleX64-f2e3f541af3c",
+      "passed": true
+    },
+    {
+      "check": "body digest PcdPeim-ab509a6d18b8",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PcdPeim-ab509a6d18b8",
+      "passed": true
+    },
+    {
+      "check": "body digest NCT6686DPeiInit-f648720f09ab",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present NCT6686DPeiInit-f648720f09ab",
+      "passed": true
+    },
+    {
+      "check": "body digest SmBusPei-e2a0b655a09b",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SmBusPei-e2a0b655a09b",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmOemInitPeim-ffce8c84718b",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdCpmOemInitPeim-ffce8c84718b",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmInitPeim-25b14a638a17",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdCpmInitPeim-25b14a638a17",
+      "passed": true
+    },
+    {
+      "check": "body digest AmdCpmGpioInitPeim-392635bc56b2",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present AmdCpmGpioInitPeim-392635bc56b2",
+      "passed": true
+    },
+    {
+      "check": "body digest SbInterfacePei-9c3de774835b",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present SbInterfacePei-9c3de774835b",
+      "passed": true
+    },
+    {
+      "check": "body digest CryptoPPI-860378d8b98e",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CryptoPPI-860378d8b98e",
+      "passed": true
+    },
+    {
+      "check": "body digest Recovery-3810b57ccf3c",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present Recovery-3810b57ccf3c",
+      "passed": true
+    },
+    {
+      "check": "body digest FsRecovery-0e3a196067dc",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present FsRecovery-0e3a196067dc",
+      "passed": true
+    },
+    {
+      "check": "body digest IdeRecovery-a6fa8f4b8566",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present IdeRecovery-a6fa8f4b8566",
+      "passed": true
+    },
+    {
+      "check": "body digest CmosPei-6efef942cadf",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CmosPei-6efef942cadf",
+      "passed": true
+    },
+    {
+      "check": "body digest PeiRamBootPei-e202ac7f7953",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PeiRamBootPei-e202ac7f7953",
+      "passed": true
+    },
+    {
+      "check": "body digest PeiRamBootCacheRdy-6bd4ae7bc9c1",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PeiRamBootCacheRdy-6bd4ae7bc9c1",
+      "passed": true
+    },
+    {
+      "check": "body digest UsbPei-9ab79c5d64cc",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present UsbPei-9ab79c5d64cc",
+      "passed": true
+    },
+    {
+      "check": "body digest CrbPei-30e770549a3f",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present CrbPei-30e770549a3f",
+      "passed": true
+    },
+    {
+      "check": "body digest PcatSingleSegmentPciCfg2Pei-eab6e773b262",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present PcatSingleSegmentPciCfg2Pei-eab6e773b262",
+      "passed": true
+    },
+    {
+      "check": "body digest 1BA0062E-C779-4582-8566-336AE8F78F09-93ea4e943d9d",
+      "passed": true
+    },
+    {
+      "check": "instruction rows present 1BA0062E-C779-4582-8566-336AE8F78F09-93ea4e943d9d",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x11ed",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1204",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1331",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1363",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1364",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1373",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1374",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x11ed",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1204",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1331",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1363",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1364",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1373",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1374",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x11ed",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1204",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1331",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1363",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1364",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1373",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1374",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x11ed",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1204",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1331",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1363",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1364",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1373",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1374",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x11ed",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1204",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1331",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1363",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1364",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1373",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1374",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x11ed",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1204",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1331",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1363",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1364",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1373",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1374",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x11ed",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1204",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1331",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1363",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1364",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1373",
+      "passed": true
+    },
+    {
+      "check": "only mov edx immediate form for 0x1374",
+      "passed": true
+    },
+    {
+      "check": "exactly seven producer modules for 0x11ed",
+      "passed": true
+    },
+    {
+      "check": "one producer site per module for 0x11ed",
+      "passed": true
+    },
+    {
+      "check": "exactly seven producer modules for 0x1204",
+      "passed": true
+    },
+    {
+      "check": "one producer site per module for 0x1204",
+      "passed": true
+    },
+    {
+      "check": "exactly seven producer modules for 0x1331",
+      "passed": true
+    },
+    {
+      "check": "one producer site per module for 0x1331",
+      "passed": true
+    },
+    {
+      "check": "exactly seven producer modules for 0x1363",
+      "passed": true
+    },
+    {
+      "check": "one producer site per module for 0x1363",
+      "passed": true
+    },
+    {
+      "check": "exactly seven producer modules for 0x1364",
+      "passed": true
+    },
+    {
+      "check": "one producer site per module for 0x1364",
+      "passed": true
+    },
+    {
+      "check": "exactly seven producer modules for 0x1373",
+      "passed": true
+    },
+    {
+      "check": "one producer site per module for 0x1373",
+      "passed": true
+    },
+    {
+      "check": "exactly seven producer modules for 0x1374",
+      "passed": true
+    },
+    {
+      "check": "one producer site per module for 0x1374",
+      "passed": true
+    },
+    {
+      "check": "identical producer module set for all seven field tokens",
+      "passed": true
+    },
+    {
+      "check": "producer immediate bytes AmdFabricAriPei-c5b99650a442 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer word store AmdFabricAriPei-c5b99650a442 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer payload copy AmdFabricAriPei-c5b99650a442 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer immediate bytes AmdNbioGfxARIPei-63413be2ac29 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer word store AmdNbioGfxARIPei-63413be2ac29 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer payload copy AmdNbioGfxARIPei-63413be2ac29 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer immediate bytes AmdNbioBaseARIPei-51d96c1e5a5e 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer word store AmdNbioBaseARIPei-51d96c1e5a5e 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer payload copy AmdNbioBaseARIPei-51d96c1e5a5e 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer immediate bytes AmdNbioPcieARIPei-62b1398c4ba9 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer word store AmdNbioPcieARIPei-62b1398c4ba9 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer payload copy AmdNbioPcieARIPei-62b1398c4ba9 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer immediate bytes AmdNbioSmuV10Pei-905b8be68afd 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer word store AmdNbioSmuV10Pei-905b8be68afd 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer payload copy AmdNbioSmuV10Pei-905b8be68afd 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer immediate bytes AmdSocBl5AriPei-79e13211d5ae 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer word store AmdSocBl5AriPei-79e13211d5ae 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer payload copy AmdSocBl5AriPei-79e13211d5ae 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer immediate bytes CbsBasePei-6ff112922ad8 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer word store CbsBasePei-6ff112922ad8 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer payload copy CbsBasePei-6ff112922ad8 0x1363",
+      "passed": true
+    },
+    {
+      "check": "producer immediate bytes AmdFabricAriPei-c5b99650a442 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer word store AmdFabricAriPei-c5b99650a442 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer payload copy AmdFabricAriPei-c5b99650a442 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer width flag or-2 AmdFabricAriPei-c5b99650a442",
+      "passed": true
+    },
+    {
+      "check": "producer immediate bytes AmdNbioGfxARIPei-63413be2ac29 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer word store AmdNbioGfxARIPei-63413be2ac29 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer payload copy AmdNbioGfxARIPei-63413be2ac29 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer width flag or-2 AmdNbioGfxARIPei-63413be2ac29",
+      "passed": true
+    },
+    {
+      "check": "producer immediate bytes AmdNbioBaseARIPei-51d96c1e5a5e 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer word store AmdNbioBaseARIPei-51d96c1e5a5e 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer payload copy AmdNbioBaseARIPei-51d96c1e5a5e 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer width flag or-2 AmdNbioBaseARIPei-51d96c1e5a5e",
+      "passed": true
+    },
+    {
+      "check": "producer immediate bytes AmdNbioPcieARIPei-62b1398c4ba9 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer word store AmdNbioPcieARIPei-62b1398c4ba9 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer payload copy AmdNbioPcieARIPei-62b1398c4ba9 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer width flag or-2 AmdNbioPcieARIPei-62b1398c4ba9",
+      "passed": true
+    },
+    {
+      "check": "producer immediate bytes AmdNbioSmuV10Pei-905b8be68afd 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer word store AmdNbioSmuV10Pei-905b8be68afd 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer payload copy AmdNbioSmuV10Pei-905b8be68afd 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer width flag or-2 AmdNbioSmuV10Pei-905b8be68afd",
+      "passed": true
+    },
+    {
+      "check": "producer immediate bytes AmdSocBl5AriPei-79e13211d5ae 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer word store AmdSocBl5AriPei-79e13211d5ae 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer payload copy AmdSocBl5AriPei-79e13211d5ae 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer width flag or-2 AmdSocBl5AriPei-79e13211d5ae",
+      "passed": true
+    },
+    {
+      "check": "producer immediate bytes CbsBasePei-6ff112922ad8 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer word store CbsBasePei-6ff112922ad8 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer payload copy CbsBasePei-6ff112922ad8 0x1364",
+      "passed": true
+    },
+    {
+      "check": "producer width flag or-2 CbsBasePei-6ff112922ad8",
+      "passed": true
+    },
+    {
+      "check": "no immediate request site for 0x11ed",
+      "passed": true
+    },
+    {
+      "check": "no immediate request site for 0x1204",
+      "passed": true
+    },
+    {
+      "check": "no immediate request site for 0x1331",
+      "passed": true
+    },
+    {
+      "check": "no immediate request site for 0x1363",
+      "passed": true
+    },
+    {
+      "check": "no immediate request site for 0x1364",
+      "passed": true
+    },
+    {
+      "check": "no immediate request site for 0x1373",
+      "passed": true
+    },
+    {
+      "check": "no immediate request site for 0x1374",
+      "passed": true
+    },
+    {
+      "check": "positive control request sites for 0x1000",
+      "passed": true
+    },
+    {
+      "check": "positive control request sites for 0x1388",
+      "passed": true
+    },
+    {
+      "check": "positive control request sites for 0x10ff",
+      "passed": true
+    },
+    {
+      "check": "positive control request sites for 0x1104",
+      "passed": true
+    },
+    {
+      "check": "exactly seven ROM occurrences of 0x1363",
+      "passed": true
+    },
+    {
+      "check": "ROM producer prefix 0x1363 @0xe2d4a5",
+      "passed": true
+    },
+    {
+      "check": "ROM producer suffix 0x1363 @0xe2d4a5",
+      "passed": true
+    },
+    {
+      "check": "ROM producer prefix 0x1363 @0xe4c729",
+      "passed": true
+    },
+    {
+      "check": "ROM producer suffix 0x1363 @0xe4c729",
+      "passed": true
+    },
+    {
+      "check": "ROM producer prefix 0x1363 @0xe6718d",
+      "passed": true
+    },
+    {
+      "check": "ROM producer suffix 0x1363 @0xe6718d",
+      "passed": true
+    },
+    {
+      "check": "ROM producer prefix 0x1363 @0xe81879",
+      "passed": true
+    },
+    {
+      "check": "ROM producer suffix 0x1363 @0xe81879",
+      "passed": true
+    },
+    {
+      "check": "ROM producer prefix 0x1363 @0xe99421",
+      "passed": true
+    },
+    {
+      "check": "ROM producer suffix 0x1363 @0xe99421",
+      "passed": true
+    },
+    {
+      "check": "ROM producer prefix 0x1363 @0xeb2079",
+      "passed": true
+    },
+    {
+      "check": "ROM producer suffix 0x1363 @0xeb2079",
+      "passed": true
+    },
+    {
+      "check": "ROM producer prefix 0x1363 @0xec8451",
+      "passed": true
+    },
+    {
+      "check": "ROM producer suffix 0x1363 @0xec8451",
+      "passed": true
+    },
+    {
+      "check": "exactly seven ROM occurrences of 0x1364",
+      "passed": true
+    },
+    {
+      "check": "ROM producer prefix 0x1364 @0xe2d4d7",
+      "passed": true
+    },
+    {
+      "check": "ROM producer suffix 0x1364 @0xe2d4d7",
+      "passed": true
+    },
+    {
+      "check": "ROM producer prefix 0x1364 @0xe4c75b",
+      "passed": true
+    },
+    {
+      "check": "ROM producer suffix 0x1364 @0xe4c75b",
+      "passed": true
+    },
+    {
+      "check": "ROM producer prefix 0x1364 @0xe671bf",
+      "passed": true
+    },
+    {
+      "check": "ROM producer suffix 0x1364 @0xe671bf",
+      "passed": true
+    },
+    {
+      "check": "ROM producer prefix 0x1364 @0xe818ab",
+      "passed": true
+    },
+    {
+      "check": "ROM producer suffix 0x1364 @0xe818ab",
+      "passed": true
+    },
+    {
+      "check": "ROM producer prefix 0x1364 @0xe99453",
+      "passed": true
+    },
+    {
+      "check": "ROM producer suffix 0x1364 @0xe99453",
+      "passed": true
+    },
+    {
+      "check": "ROM producer prefix 0x1364 @0xeb20ab",
+      "passed": true
+    },
+    {
+      "check": "ROM producer suffix 0x1364 @0xeb20ab",
+      "passed": true
+    },
+    {
+      "check": "ROM producer prefix 0x1364 @0xec8483",
+      "passed": true
+    },
+    {
+      "check": "ROM producer suffix 0x1364 @0xec8483",
+      "passed": true
+    },
+    {
+      "check": "seven producer records carry ffs offsets",
+      "passed": true
+    },
+    {
+      "check": "single FFS owner for 0x1363 @0xe2d4a5",
+      "passed": true
+    },
+    {
+      "check": "single FFS owner for 0x1363 @0xe4c729",
+      "passed": true
+    },
+    {
+      "check": "single FFS owner for 0x1363 @0xe6718d",
+      "passed": true
+    },
+    {
+      "check": "single FFS owner for 0x1363 @0xe81879",
+      "passed": true
+    },
+    {
+      "check": "single FFS owner for 0x1363 @0xe99421",
+      "passed": true
+    },
+    {
+      "check": "single FFS owner for 0x1363 @0xeb2079",
+      "passed": true
+    },
+    {
+      "check": "single FFS owner for 0x1363 @0xec8451",
+      "passed": true
+    },
+    {
+      "check": "ROM occurrences map one-to-one onto the seven producer modules 0x1363",
+      "passed": true
+    },
+    {
+      "check": "single FFS owner for 0x1364 @0xe2d4d7",
+      "passed": true
+    },
+    {
+      "check": "single FFS owner for 0x1364 @0xe4c75b",
+      "passed": true
+    },
+    {
+      "check": "single FFS owner for 0x1364 @0xe671bf",
+      "passed": true
+    },
+    {
+      "check": "single FFS owner for 0x1364 @0xe818ab",
+      "passed": true
+    },
+    {
+      "check": "single FFS owner for 0x1364 @0xe99453",
+      "passed": true
+    },
+    {
+      "check": "single FFS owner for 0x1364 @0xeb20ab",
+      "passed": true
+    },
+    {
+      "check": "single FFS owner for 0x1364 @0xec8483",
+      "passed": true
+    },
+    {
+      "check": "ROM occurrences map one-to-one onto the seven producer modules 0x1364",
+      "passed": true
+    }
+  ]
+}

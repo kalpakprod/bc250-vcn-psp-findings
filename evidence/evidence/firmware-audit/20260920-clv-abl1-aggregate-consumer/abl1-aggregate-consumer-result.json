@@ -1,0 +1,124 @@
+{
+  "status": "PASS",
+  "checks": 18,
+  "route": "ABL1 aggregate +0x2BC load at 0x7E40 -> policy classifier 0x751C -> class/result service call 0x130C",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "input": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+  "abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+  "disassembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+  "fresh_result": "A concrete downstream consumer is proven outside function 0x95FC: containing function 0x75CC receives a context in r0, preserves it in r6, loads root=[r6] at 0x7E3E, then loads aggregate [root+0x2BC] at 0x7E40. It passes the aggregate as r1 to classifier 0x751C, which compares against an 8-entry halfword table and returns class 0 or 7 based on r0; the result is converted/stored and passed onward through call 0x130C. This is a control-class consumer, not a MHz or 1:1 clock proof.",
+  "limits": "Exact ABL1 static path only; units, runtime base, external caller, downstream service semantics, memory clock identity, synchronization and hardware remain unknown.",
+  "checks_detail": [
+    {
+      "check": "ABL1 hash",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "fresh disassembly exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "aggregate load listing exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "caller context load root",
+      "passed": true,
+      "got": "3068",
+      "expected": "3068"
+    },
+    {
+      "check": "aggregate consumer load",
+      "passed": true,
+      "got": "d0f8bc62",
+      "expected": "d0f8bc62"
+    },
+    {
+      "check": "aggregate passed as r1",
+      "passed": true,
+      "got": "3146",
+      "expected": "3146"
+    },
+    {
+      "check": "consumer call 0x751c listing",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "consumer result conversion",
+      "passed": true,
+      "got": "c7b2",
+      "expected": "c7b2"
+    },
+    {
+      "check": "consumer result stored stack",
+      "passed": true,
+      "got": "0096",
+      "expected": "0096"
+    },
+    {
+      "check": "consumer next service call",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "consumer function prologue",
+      "passed": true,
+      "got": "30b5",
+      "expected": "30b5"
+    },
+    {
+      "check": "consumer PC-relative table load",
+      "passed": true,
+      "got": "084b",
+      "expected": "084b"
+    },
+    {
+      "check": "consumer policy table bytes",
+      "passed": true,
+      "got": "04db06002de9f041456806462c682146",
+      "expected": "04db06002de9f041456806462c682146"
+    },
+    {
+      "check": "consumer aggregate compare listing",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "consumer class branch listing",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "consumer returns class7 bytes",
+      "passed": true,
+      "got": "072030bd",
+      "expected": "072030bd"
+    },
+    {
+      "check": "containing function prologue",
+      "passed": true,
+      "got": "2de9f04f",
+      "expected": "2de9f04f"
+    },
+    {
+      "check": "containing r0->r6 provenance",
+      "passed": true,
+      "got": "0646",
+      "expected": "0646"
+    }
+  ]
+}

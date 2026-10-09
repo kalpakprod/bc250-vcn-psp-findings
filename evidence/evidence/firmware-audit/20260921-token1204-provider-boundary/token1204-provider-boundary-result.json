@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "peim_sha256": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+  "checks": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0
+  },
+  "findings": {
+    "provider_object_resolution": "0x25d3 executes `sidtd` to obtain IDT base address from [ebp-0xa], then loads [IDT_BASE - 4] which is the standard EDK II PeiServicesTablePointerLibIdt mechanism.",
+    "service_slot_0x30": "0x25ed calls [ecx+0x30] which corresponds to EFI_PEI_SERVICES.GetHobList.",
+    "service_slot_0x34": "0x266f calls [ecx+0x34] which corresponds to EFI_PEI_SERVICES.CreateHob.",
+    "call_site_0x2698": "Calls CreateHob with Type=4 (EFI_HOB_TYPE_GUID_EXTENSION) and Length=[edi+0x18].",
+    "call_site_0x26d5": "Calls CreateHob with Type=2 (EFI_HOB_TYPE_RESOURCE_DESCRIPTOR) and Length=0x30.",
+    "token_1204_association": "No token 0x1204 literal or clock/divider operand is present. This edge is generic EDK II HOB creation, not a token 0x1204 consumer or clock actuator."
+  },
+  "checks_detail": [
+    {
+      "name": "peim_sha256",
+      "actual": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "expected": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "status": "PASS"
+    },
+    {
+      "name": "te_signature",
+      "actual": "VZ",
+      "expected": "VZ",
+      "status": "PASS"
+    },
+    {
+      "name": "raw_25d3_hex",
+      "actual": "558bec83ec0c8d45f48945fc8b45fc0f01088b45f68b40fcc9c3",
+      "expected": "558bec83ec0c8d45f48945fc8b45fc0f01088b45f68b40fcc9c3",
+      "status": "PASS"
+    },
+    {
+      "name": "raw_25ed_hex",
+      "actual": "558bec51e8ddffffff8b088d55fc5250ff51308b45fc",
+      "expected": "558bec51e8ddffffff8b088d55fc5250ff51308b45fc",
+      "status": "PASS"
+    },
+    {
+      "name": "raw_266f_hex",
+      "actual": "558bec51e85bffffff8b088d55fc52ff750cff750850ff513483c41085c07d048365fc008b45fcc9c3",
+      "expected": "558bec51e85bffffff8b088d55fc52ff750cff750850ff513483c41085c07d048365fc008b45fcc9c3",
+      "status": "PASS"
+    },
+    {
+      "name": "raw_2698_hex",
+      "actual": "8d4718506a04e8ccffffff",
+      "expected": "8d4718506a04e8ccffffff",
+      "status": "PASS"
+    },
+    {
+      "name": "raw_26d5_hex",
+      "actual": "566a306a02e890ffffff",
+      "expected": "566a306a02e890ffffff",
+      "status": "PASS"
+    },
+    {
+      "name": "no_token_1204_in_provider_boundary",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    }
+  ]
+}

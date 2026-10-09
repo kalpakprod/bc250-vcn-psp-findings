@@ -1,0 +1,176 @@
+PASS: entire loaded program memory equals clv-matching robin-5 body, bytes=262400
+===== 00027ef4 FUN_00027ef4 =====
+
+void FUN_00027ef4(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  undefined4 auStack_30 [12];
+  
+  uVar1 = func_0x00000ffc(param_1);
+  iVar2 = func_0x00039fd4(uVar1,auStack_30);
+  if (iVar2 == 1) {
+    func_0x00000fe4(param_1,auStack_30[0]);
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+
+00027ef4 366100 entry a1,0x30
+00027ef7 ad02 mov.n a10,a2
+00027ef9 2510d9 call8 0x00000ffc
+00027efc bd01 mov.n a11,a1
+00027efe 650d12 call8 0x00039fd4
+00027f01 661a0f bnei a10,0x1,0x00027f14
+00027f04 ad02 mov.n a10,a2
+00027f06 b801 l32i.n a11,a1,0x0
+00027f08 a50dd9 call8 0x00000fe4
+00027f0b ad02 mov.n a10,a2
+00027f0d 0c1b movi.n a11,0x1
+00027f0f a509d9 call8 0x00000fa8
+00027f12 1df0 retw.n
+00027f14 ad02 mov.n a10,a2
+00027f16 b2a0ff movi a11,0xff
+00027f19 e508d9 call8 0x00000fa8
+00027f1c 1df0 retw.n
+===== 00027f20 FUN_00027f20 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00027f20(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  *_DAT_00017e68 = uVar1;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+
+00027f20 364100 entry a1,0x20
+00027f23 ad02 mov.n a10,a2
+00027f25 650dd9 call8 0x00000ffc
+00027f28 81d0bf l32r a8,0x00017e68
+00027f2b 0c1b movi.n a11,0x1
+00027f2d a908 s32i.n a10,a8,0x0
+00027f2f ad02 mov.n a10,a2
+00027f31 6507d9 call8 0x00000fa8
+00027f34 1df0 retw.n
+===== 00027f38 FUN_00027f38 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00027f38(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  memw();
+  *(undefined4 *)*_DAT_00017e68 = uVar1;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+
+00027f38 364100 entry a1,0x20
+00027f3b ad02 mov.n a10,a2
+00027f3d e50bd9 call8 0x00000ffc
+00027f40 91cabf l32r a9,0x00017e68
+00027f43 8d0a mov.n a8,a10
+00027f45 ad02 mov.n a10,a2
+00027f47 9809 l32i.n a9,a9,0x0
+00027f49 c02000 memw
+00027f4c 0c1b movi.n a11,0x1
+00027f4e 8909 s32i.n a8,a9,0x0
+00027f50 6505d9 call8 0x00000fa8
+00027f53 1df0 retw.n
+===== 00027f58 FUN_00027f58 =====
+
+void FUN_00027f58(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  uVar1 = func_0x000029f8(0,uVar1,2);
+  func_0x00000fe4(param_1,uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+
+00027f58 364100 entry a1,0x20
+00027f5b ad02 mov.n a10,a2
+00027f5d e509d9 call8 0x00000ffc
+00027f60 bd0a mov.n a11,a10
+00027f62 0c2c movi.n a12,0x2
+00027f64 0c0a movi.n a10,0x0
+00027f66 25a9da call8 0x000029f8
+00027f69 bd0a mov.n a11,a10
+00027f6b ad02 mov.n a10,a2
+00027f6d 6507d9 call8 0x00000fe4
+00027f70 ad02 mov.n a10,a2
+00027f72 0c1b movi.n a11,0x1
+00027f74 2503d9 call8 0x00000fa8
+00027f77 1df0 retw.n
+===== 00027f7c FUN_00027f7c =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00027f7c(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  *(undefined4 *)(_DAT_00017e68 + 4) = uVar1;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+
+00027f7c 364100 entry a1,0x20
+00027f7f ad02 mov.n a10,a2
+00027f81 a507d9 call8 0x00000ffc
+00027f84 81b9bf l32r a8,0x00017e68
+00027f87 0c1b movi.n a11,0x1
+00027f89 a918 s32i.n a10,a8,0x4
+00027f8b ad02 mov.n a10,a2
+00027f8d a501d9 call8 0x00000fa8
+00027f90 1df0 retw.n
+===== 00027f94 FUN_00027f94 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00027f94(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  func_0x00002a74(0,*(undefined4 *)(_DAT_00017e68 + 4),uVar1,2);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+
+00027f94 364100 entry a1,0x20
+00027f97 ad02 mov.n a10,a2
+00027f99 2506d9 call8 0x00000ffc
+00027f9c b1b3bf l32r a11,0x00017e68
+00027f9f cd0a mov.n a12,a10
+00027fa1 0c2d movi.n a13,0x2
+00027fa3 0c0a movi.n a10,0x0
+00027fa5 b81b l32i.n a11,a11,0x4
+00027fa7 e5acda call8 0x00002a74
+00027faa ad02 mov.n a10,a2
+00027fac 0c1b movi.n a11,0x1
+00027fae a5ffd8 call8 0x00000fa8
+00027fb1 1df0 retw.n

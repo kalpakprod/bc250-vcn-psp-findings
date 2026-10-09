@@ -1,0 +1,291 @@
+{
+  "source_id": "4f8b59ef6f97",
+  "algorithm": "sha256 canonical per-file sorted path/hash JSON; own GIT_HASH normalized SOURCE_ID; excludes src/rig",
+  "files": [
+    {
+      "path": "CMakeLists.txt",
+      "sha256": "177b9ef73b75dc8dd7a8c5fa9cf46df3e26c76a04fde6e95c6335f87adbfcc4e"
+    },
+    {
+      "path": "src/adapter_flash_authority.c",
+      "sha256": "c84ae8faca64d6d7d0ea27189c313e2a6aea966887bc37ecf57fa645b22d39f4"
+    },
+    {
+      "path": "src/adapter_flash_authority.h",
+      "sha256": "1dd14eadd36d20a70d2186a834fc5d1f9d33244ec79e19be57f1385262e29a4f"
+    },
+    {
+      "path": "src/adapter_flash_engine.c",
+      "sha256": "c1ab0d51a7d6fc635aaac3732cab4fde1416d1fa8622ea4e2d04e89bd340ffab"
+    },
+    {
+      "path": "src/adapter_flash_engine.h",
+      "sha256": "0d09025a145d72cedd28965bbc1eea36e9d9761ac43c7166a8611da99b26f24d"
+    },
+    {
+      "path": "src/adapter_flash_frames.c",
+      "sha256": "5e196ea422a43a9967d016d16cf8cc550f7a9dc1c954e3030cdce861f2d7654b"
+    },
+    {
+      "path": "src/adapter_flash_frames.h",
+      "sha256": "323d6c0ee595ee3aeeb116cf5cb064aafdde5a0191a4b528ecfe5dea7e8314ec"
+    },
+    {
+      "path": "src/adapter_flash_protocol.c",
+      "sha256": "02d8cbb98c1a8b3538fd7fee00db67d893bdda686248d6e1eef50942eb724099"
+    },
+    {
+      "path": "src/adapter_flash_protocol.h",
+      "sha256": "d2f4b9852a08b147e31f20707944bee6c131f40c9a52f51e6ddb3b63713b5bc8"
+    },
+    {
+      "path": "src/adapter_flash_service.c",
+      "sha256": "4d61f10e26fcd04f20f26de8b105544498313de75d41649b0e808f7d96bea8c2"
+    },
+    {
+      "path": "src/adapter_flash_service.h",
+      "sha256": "647249713d5b6e0951115202cf55ea027651e8725889df2835369a4be485e6bc"
+    },
+    {
+      "path": "src/adapter_flash_transport.c",
+      "sha256": "180a2e615e6136b12f93b770455b945fd2fd76d7a31b618c701b9c1c575dd2ed"
+    },
+    {
+      "path": "src/adapter_flash_transport.h",
+      "sha256": "22a6520d0b21abb27d63e44488197237a5086ab982083d3c15b48a32a71b0a45"
+    },
+    {
+      "path": "src/adapter_metrics.c",
+      "sha256": "18ba1f2d908ae8d8722fd4f7759c6270aa09267fc0fe2be9e0d36d872379d916"
+    },
+    {
+      "path": "src/adapter_metrics.h",
+      "sha256": "67dc01f16516e7d9f04abe0ebbe0262c6af14ee822db9fe2d4a93eaacd16d936"
+    },
+    {
+      "path": "src/adapter_network.c",
+      "sha256": "b9a3f5ea382fde9fe1ea77aac26284afa1763ec945942c1731d5ca7ee7376b7e"
+    },
+    {
+      "path": "src/adapter_network.h",
+      "sha256": "a6e259a7d03672f6cbbbb25362dc52d8b3c266edc6367a6150548305ef8b69e7"
+    },
+    {
+      "path": "src/adapter_spi_capture.c",
+      "sha256": "1827624c971ebb2bbee9d3cd0ae01a74e63081fe47cc61de00af1c7276e80e53"
+    },
+    {
+      "path": "src/adapter_spi_capture.h",
+      "sha256": "7e9730a987db46f8a1c744c5972feb489be9ca782cf2b52cb7fe74692bf3e2e9"
+    },
+    {
+      "path": "src/adapter_spi_capture.pio",
+      "sha256": "6e7668cf0a671b3ba48ccd766985c8d904dfb74b0cccf17ea70b6e1d858a5c1f"
+    },
+    {
+      "path": "src/adapter_uart.c",
+      "sha256": "39620f4e3abfe4eb9b03a27f015efda2dbdc807aea302769065d1ddc3a59a28a"
+    },
+    {
+      "path": "src/adapter_uart.h",
+      "sha256": "8ef7fa43dde1cb57c6a524f3e6ec16361db9a28b603652e16a45639a313f1ffa"
+    },
+    {
+      "path": "src/bridge/CMakeLists.txt",
+      "sha256": "da0397369d9156f22c05a1f1826e13fd2419072a42b850e518c3e5094c109215"
+    },
+    {
+      "path": "src/bridge/audio.cpp",
+      "sha256": "709bd93debd198df69e17e2b57bd1273d9355ff206ca3810ff3d6d7605472d19"
+    },
+    {
+      "path": "src/bridge/audio.h",
+      "sha256": "554d50acf94df985c2a57d9d79afa52412d2a1d1fdb13f71f76404d4ac6b21ca"
+    },
+    {
+      "path": "src/bridge/battery_led.cpp",
+      "sha256": "ab60c18d1466dc825ea3fbf766986fb5bebbd07def5959bb6604cb05df15087e"
+    },
+    {
+      "path": "src/bridge/battery_led.h",
+      "sha256": "433bfca81f288b5e0990264eac6d4b0a6b402a3b4a3eb625e0e9d5a42512392a"
+    },
+    {
+      "path": "src/bridge/boards/build_waveshare_rp2350b_plus_w.sh",
+      "sha256": "804d89e55e5aa487aead728b15a03d4016b4b4ec992420f58fabdce103e37491"
+    },
+    {
+      "path": "src/bridge/boards/headers/waveshare_rp2350b_plus_w.h",
+      "sha256": "0a656bd82c06fa9381dcda6f485dba7dc7f502fdf6f623fa3e013c3d38902c93"
+    },
+    {
+      "path": "src/bridge/bridge.h",
+      "sha256": "857668369455f7cf114b5fe6162f3ae8cefac6c3f72a6d12067c4f7b1a97ec70"
+    },
+    {
+      "path": "src/bridge/bridge_main.cpp",
+      "sha256": "1e8397b447d17504636b610767f707135c6e7fc050444a86d89315d26628a750"
+    },
+    {
+      "path": "src/bridge/bt.cpp",
+      "sha256": "9394df2038105a1821e2b87891580c0a68199e17dce80057c0cb18aa3765d07b"
+    },
+    {
+      "path": "src/bridge/bt.h",
+      "sha256": "fe4b4de5a3110819c8a205417c334e91b98458c77d528d4da4f1856aa07604b7"
+    },
+    {
+      "path": "src/bridge/btstack_config.h",
+      "sha256": "f6823fb381fcf4956d733ed192ff9fe28188698ec9f118999764721c694c4844"
+    },
+    {
+      "path": "src/bridge/button_functions.cpp",
+      "sha256": "64c50d9640a5bf1c6fe0736f91611dd2f18e3be816f5178a8f27340c64533513"
+    },
+    {
+      "path": "src/bridge/button_functions.h",
+      "sha256": "e867595ff238c866c423383cc20cad6d50b05a169ba76c21546707c98ef4c694"
+    },
+    {
+      "path": "src/bridge/cmd.cpp",
+      "sha256": "10bfe4f131b1603beee9b09de9bdb42877d24fbcc07b569b81fd1949fc655d67"
+    },
+    {
+      "path": "src/bridge/cmd.h",
+      "sha256": "789f12421aba5b2d7f43f2652b81c7d0a7d09c420948c85fd74e6d9e8e7de6a1"
+    },
+    {
+      "path": "src/bridge/config.cpp",
+      "sha256": "1bf195c044367cbb899f590e0097cba8370bdb778417b748746a40d83d7bf430"
+    },
+    {
+      "path": "src/bridge/config.h",
+      "sha256": "649487b5dd147410a24d8b990fc5e7cb10505932bce64e71a6b78e797dcad5dc"
+    },
+    {
+      "path": "src/bridge/dse.cpp",
+      "sha256": "34dfa3d1dcf052db8396431e330c63be9dc810ea2df3463b20387f8ed30fda75"
+    },
+    {
+      "path": "src/bridge/dse.h",
+      "sha256": "cb0cf0161420ee9caac8dff0da558bbbe100b48143cf1ad26e24d8a981e90b4a"
+    },
+    {
+      "path": "src/bridge/lwipopts.h",
+      "sha256": "8e2bd3fb30b10b2a90db3767add39afc9c810617fe1a460a6e34d1f219a1ea62"
+    },
+    {
+      "path": "src/bridge/ps_event_gate.h",
+      "sha256": "790de33b7b1c7a08c6919a721971fe8fb26684a0829ec44b80f32283f2dab0a6"
+    },
+    {
+      "path": "src/bridge/ps_shortcut.cpp",
+      "sha256": "21b15e0acb5cf28d20e7ac921f67045a03a730c36d59d987850402a91da953c8"
+    },
+    {
+      "path": "src/bridge/ps_shortcut.h",
+      "sha256": "0f013e3a41df0080508243bdd8eff6690751c41b8344f550f281d763299341ed"
+    },
+    {
+      "path": "src/bridge/ram_mem.c",
+      "sha256": "d49bdc03e51008bc9fd6635b73db4cad67f4f1663b436aa1b7d168ae8613fedf"
+    },
+    {
+      "path": "src/bridge/secrets.h",
+      "sha256": "31fbe9cbbc99c3f0f16ba991b28d821eaa4e73f85e0c51846a001e165bd89b51"
+    },
+    {
+      "path": "src/bridge/state_mgr.cpp",
+      "sha256": "db0b5030ed7b9cbe493879bc7ee45c7f6e926d271edfcf80e720a4496d1b0ed4"
+    },
+    {
+      "path": "src/bridge/state_mgr.h",
+      "sha256": "a154d4209b1baf320be27c39bca856e0fa813251e4e3dba9eb1b5e3b83c9437b"
+    },
+    {
+      "path": "src/bridge/tusb_config.h",
+      "sha256": "ef6406119c44adb9b6d9250f90eaa7a577ec89f49a7a58e758c33ab9580c1ec9"
+    },
+    {
+      "path": "src/bridge/usb.cpp",
+      "sha256": "28350d69bda25fc1c365fd226c9f430c460429eee9403e666feb6c83caa898db"
+    },
+    {
+      "path": "src/bridge/usb.h",
+      "sha256": "304932e6a63bef3ebcebe13b0bc52e5c78f29cc6bb045a670aeca68134764d68"
+    },
+    {
+      "path": "src/bridge/usb_descriptors.cpp",
+      "sha256": "e93b7d5001cadd8296a8586dd666406851b78416e44b502134835edf4a518cc2"
+    },
+    {
+      "path": "src/bridge/usb_identity_gate.h",
+      "sha256": "dee40ed2011459f457056842397971566a17d9acdea184f0b6472f4e906357aa"
+    },
+    {
+      "path": "src/bridge/utils.h",
+      "sha256": "37526ef0d38f190f029966adfbd2860c02aeb598319734b5ca798ff58bc55538"
+    },
+    {
+      "path": "src/bridge/wake.cpp",
+      "sha256": "3d88caefc5761be6f82e07366c17f921339167abba8b1028573f089f9ea3f467"
+    },
+    {
+      "path": "src/bridge/wake.h",
+      "sha256": "92bb321fd225b9b356d26d6758b2210cb66befacc3bbff4f85bc37b2adbfaa30"
+    },
+    {
+      "path": "src/bridge/wol.cpp",
+      "sha256": "e05e4681eacb4fb910d62270951ff6a3e6c1031bc8a45ccd15c9ef5e9923e236"
+    },
+    {
+      "path": "src/bridge/wol.h",
+      "sha256": "b6dd07eda97dc3d4634008d0e9df727e6ed615771532e57b5c1e8deb4298bb6e"
+    },
+    {
+      "path": "src/cdc_dispatch.c",
+      "sha256": "db2d34715d584e24570a65173d7ee36cf06c41c007f9082db7934cc8d7e0eb0e"
+    },
+    {
+      "path": "src/cdc_dispatch.h",
+      "sha256": "5994fc4206c70f174c5616dc95b0fea5d4e3b3090d2dc8d4d3b7a454e86e29fc"
+    },
+    {
+      "path": "src/main.c",
+      "sha256": "4f492867598ea271af9d68efabe13e70f528aee713ffcf9602cd40380a76b82c"
+    },
+    {
+      "path": "src/mode/CMakeLists.txt",
+      "sha256": "6fc0bf522d33761ef95802acced365a7f544218bd81806dbcce0188da13c5311"
+    },
+    {
+      "path": "src/mode/flash_config.c",
+      "sha256": "dbf46ee5818b3eb2ee83163d379f3d7276f307a19de7093c7488eda4c6f1caf6"
+    },
+    {
+      "path": "src/mode/flash_config.h",
+      "sha256": "ec30002e4f2fff2d938f89dd209edcbceeb2d7aafbc3b7dfa343d18f78e8e0b0"
+    },
+    {
+      "path": "src/mode/mode.c",
+      "sha256": "6838bd6685ff77d2188627b778c982716e16db06ab4b05504acd240b4c74b0fc"
+    },
+    {
+      "path": "src/mode/mode.h",
+      "sha256": "534a8776de7816ece9a5214dc0584a858de9e24457f647924d98b5a37d8b6477"
+    },
+    {
+      "path": "src/network_config.h",
+      "sha256": "9b223e6e07b1005368eeac0e7db5fdd24559dc4729106ceba09b9f55d077fd0a"
+    },
+    {
+      "path": "src/network_panel.h",
+      "sha256": "3355f55763adf937d17e11f9759ee84b50564d53a69074b84f83bc38d3dd0df0"
+    },
+    {
+      "path": "src/network_panel.html",
+      "sha256": "2197f41da12abb372bae2ba1826bf7988f6b740f2735aaaa0665d86075134df5"
+    }
+  ],
+  "hardware_acceptance": false
+}

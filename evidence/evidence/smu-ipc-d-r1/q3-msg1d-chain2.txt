@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/disasm_xtensa.py", line 43, in <module>
+    main()
+    ~~~~^^
+  File "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/disasm_xtensa.py", line 22, in main
+    result = context.disassemble(
+        data,
+    ...<2 lines>...
+        max_bytes=args.size,
+    )
+pypcode.pypcode_native.BadDataError: r0x0002e700: Unable to resolve constructor

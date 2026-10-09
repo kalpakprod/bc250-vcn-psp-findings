@@ -1,0 +1,294 @@
+{
+  "status": "PASS",
+  "checks": 18,
+  "route": "provider-table pointer -> callback descriptor -> module-local registration/dispatcher join",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "modules": {
+    "AmdNbioGfxARIPei": {
+      "stem": "AmdNbioGfxARIPei-63413be2ac29",
+      "base": "0x9e3cc34",
+      "wrapper_va": "0x9e41a24",
+      "descriptor_va": "0x9e51cb4",
+      "provider_va": "0x9e51d24",
+      "descriptor_rva": "0x15080",
+      "provider_rva": "0x150f0",
+      "descriptor_body_off": "0x14ee8",
+      "provider_pointer_body_off": "0x14f58",
+      "descriptor_pointer_hits": [
+        {
+          "body_off": "0x14f58",
+          "rva": "0x150f0"
+        }
+      ],
+      "provider_pointer_hits": [],
+      "wrapper_pointer_hits": [
+        {
+          "body_off": "0x14ef8",
+          "rva": "0x15090"
+        }
+      ],
+      "executable_operand_refs": [],
+      "indirect_call_count": 28,
+      "service_slot_candidates": [
+        {
+          "rva": "0x294",
+          "operands": "DWORD PTR [eax+0x20]",
+          "bytes": "ff5020"
+        },
+        {
+          "rva": "0x2a4",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        },
+        {
+          "rva": "0x41f",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        },
+        {
+          "rva": "0x69a",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        },
+        {
+          "rva": "0x9ff",
+          "operands": "DWORD PTR [ecx+0x20]",
+          "bytes": "ff5120"
+        }
+      ],
+      "registration_neighborhood": "ffffffff000000000000000000000000241ae409feffffff000000000000000000000000000000000000000000000000000f840000000000000000000000000094d8e309010000b0000000000000000000000000000000000000000000000000ffffffff000000000000000000000000b41ce509000f84000000000000000000",
+      "classification": "static descriptor/provider pointer is proven; no module-local executable operand joins to descriptor/provider/wrapper VA in this bounded exact scan; installed/invoked state unresolved"
+    },
+    "AmdNbioSmuV10Pei": {
+      "stem": "AmdNbioSmuV10Pei-905b8be68afd",
+      "base": "0x9e88fdc",
+      "wrapper_va": "0x9e8e71c",
+      "descriptor_va": "0x9e9ea4c",
+      "provider_va": "0x9e9eabc",
+      "descriptor_rva": "0x15a70",
+      "provider_rva": "0x15ae0",
+      "descriptor_body_off": "0x158e0",
+      "provider_pointer_body_off": "0x15950",
+      "descriptor_pointer_hits": [
+        {
+          "body_off": "0x15950",
+          "rva": "0x15ae0"
+        }
+      ],
+      "provider_pointer_hits": [],
+      "wrapper_pointer_hits": [
+        {
+          "body_off": "0x158f0",
+          "rva": "0x15a80"
+        }
+      ],
+      "executable_operand_refs": [],
+      "indirect_call_count": 36,
+      "service_slot_candidates": [
+        {
+          "rva": "0x26b",
+          "operands": "DWORD PTR [eax+0x18]",
+          "bytes": "ff5018"
+        },
+        {
+          "rva": "0x28f",
+          "operands": "DWORD PTR [eax+0x18]",
+          "bytes": "ff5018"
+        },
+        {
+          "rva": "0x372",
+          "operands": "DWORD PTR [eax+0x20]",
+          "bytes": "ff5020"
+        },
+        {
+          "rva": "0x396",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        },
+        {
+          "rva": "0x410",
+          "operands": "DWORD PTR [ecx+0x20]",
+          "bytes": "ff5120"
+        },
+        {
+          "rva": "0x436",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        },
+        {
+          "rva": "0x51c",
+          "operands": "DWORD PTR [ecx+0x20]",
+          "bytes": "ff5120"
+        },
+        {
+          "rva": "0x542",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        },
+        {
+          "rva": "0xb26",
+          "operands": "DWORD PTR [ecx+0x20]",
+          "bytes": "ff5120"
+        },
+        {
+          "rva": "0xb40",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        },
+        {
+          "rva": "0xc22",
+          "operands": "DWORD PTR [ecx+0x20]",
+          "bytes": "ff5120"
+        },
+        {
+          "rva": "0xc3c",
+          "operands": "DWORD PTR [eax+0x4]",
+          "bytes": "ff5004"
+        },
+        {
+          "rva": "0x1583",
+          "operands": "DWORD PTR [ecx+0x20]",
+          "bytes": "ff5120"
+        }
+      ],
+      "registration_neighborhood": "ffffffff0000000000000000000000001ce7e809feffffff000000000000000000000000000000000000000000000000000f8400000000000000000000000000bca7e809010000b0000000000000000000000000000000000000000000000000ffffffff0000000000000000000000004ceae909000f84000000000000000000",
+      "classification": "static descriptor/provider pointer is proven; no module-local executable operand joins to descriptor/provider/wrapper VA in this bounded exact scan; installed/invoked state unresolved"
+    }
+  },
+  "fresh_result": "Both provider-table fields point exactly to wildcard/event callback descriptors for wrappers 0x4DF0/0x5740. All module-local executable operand references to the descriptor/provider/wrapper VA set were checked and none joined; indirect call/service-slot candidates remain unbound. This proves a static registration structure, not installed or invoked dispatch.",
+  "limits": "Coverage is restricted to the two exact module bodies, their decoded instruction metadata, and the pointer neighborhoods; no census-wide negative, arbitrary computed pointer, cross-module PEI service, DMA/HOB migration or hardware claim.",
+  "checks_detail": [
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ROM size",
+      "passed": true,
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "check": "AmdNbioGfxARIPei body sha256",
+      "passed": true,
+      "got": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+      "expected": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8"
+    },
+    {
+      "check": "AmdNbioGfxARIPei descriptor bytes",
+      "passed": true,
+      "got": [
+        4294967295,
+        0,
+        165943844,
+        4294967294
+      ],
+      "expected": [
+        4294967295,
+        0,
+        165943844,
+        4294967294
+      ]
+    },
+    {
+      "check": "AmdNbioGfxARIPei provider pointer value",
+      "passed": true,
+      "got": 166010036,
+      "expected": 166010036
+    },
+    {
+      "check": "AmdNbioGfxARIPei descriptor pointer hit includes provider field",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioGfxARIPei provider pointer hit includes table field",
+      "passed": true,
+      "got": false,
+      "expected": false
+    },
+    {
+      "check": "AmdNbioGfxARIPei executable operand join count",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "AmdNbioGfxARIPei registration neighborhood nonempty",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioGfxARIPei indirect inventory retained",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei body sha256",
+      "passed": true,
+      "got": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "expected": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei descriptor bytes",
+      "passed": true,
+      "got": [
+        4294967295,
+        0,
+        166258460,
+        4294967294
+      ],
+      "expected": [
+        4294967295,
+        0,
+        166258460,
+        4294967294
+      ]
+    },
+    {
+      "check": "AmdNbioSmuV10Pei provider pointer value",
+      "passed": true,
+      "got": 166324812,
+      "expected": 166324812
+    },
+    {
+      "check": "AmdNbioSmuV10Pei descriptor pointer hit includes provider field",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei provider pointer hit includes table field",
+      "passed": true,
+      "got": false,
+      "expected": false
+    },
+    {
+      "check": "AmdNbioSmuV10Pei executable operand join count",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "AmdNbioSmuV10Pei registration neighborhood nonempty",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei indirect inventory retained",
+      "passed": true,
+      "got": true,
+      "expected": true
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+# Read-only BC-250 VCN state probe (clock plan, bitmap, statuses).
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = Bc250VcnProbe2
+  FILE_GUID                      = e14a3821-2026-4c91-992a-b62507802b0c
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+[Sources]
+  Bc250VcnProbe2.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  Bc250VcnUnlockPkg/Bc250VcnUnlockPkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  UefiLib
+  BaseLib
+  BaseMemoryLib
+  PciSegmentLib
+  IoLib
+  PrintLib

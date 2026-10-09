@@ -1,0 +1,31 @@
+{
+  "candidate": "candidates/BC250_clv_MeiMeiDXEv3_8c_omarchy_vcn_v001.bin",
+  "base": {
+    "path": "candidates/BC250_clv_MeiMeiDXEv3_8c_omarchy_v001.bin",
+    "sha256": "af53102601bc85027d3b62a9035d2b1767811833ee688d33568fcbaf91dae152"
+  },
+  "blob": {
+    "path": "candidates/vcn-unlock-driver-v000-DRAFT/bin/Bc250VcnUnlockDxe.ffs",
+    "sha256": "0a4c997bc352e45c90f6f87b7b17c91892f073f969d5908f7aea1beb2990a20a"
+  },
+  "output_sha256": "56c1b089836ab8d8cb08c1cb9258f24a973e9897121fff8220b0a17c14816400",
+  "inner_fv": {
+    "old_len": "0x433000",
+    "new_len": "0x437000",
+    "old_files": 193,
+    "new_files": 194
+  },
+  "injected": [
+    {
+      "guid": "B6250780-7E00-4203-900C-23443B1413FE",
+      "name": "Bc250VcnUnlockDxe",
+      "fv_off": "0x433000",
+      "size": "0x301c"
+    }
+  ],
+  "changed_range": {
+    "first": "0xae0088",
+    "last": "0xc25ce6",
+    "ndiff": 1329164
+  }
+}

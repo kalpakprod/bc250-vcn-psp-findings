@@ -1,0 +1,313 @@
+{
+  "status": "PASS",
+  "checks": 42,
+  "route": "exact ABL1 UCLK/FCLK common-reader boundary",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "abl1": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "disassembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+    "completed_branch_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-fclk-uclk-branch-xhigh/abl1-fclk-uclk-branch-result.json"
+  },
+  "hashes": {
+    "rom": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "abl1": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "disassembly": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+    "completed_branch_result": "d6d053b5e4a74a5b4fe0526e4d4659d22a500601074baad751977ab21e2ecdfa"
+  },
+  "reader": {
+    "payload_offset": "0x1fb4",
+    "role": "descriptor-driven typed configuration/APCB lookup boundary",
+    "descriptor_pairs": {
+      "UclkDiv1M0": [
+        "0x20",
+        "0x21"
+      ],
+      "UclkDiv1M1": [
+        "0x20",
+        "0x22"
+      ],
+      "UclkDiv1M2": [
+        "0x20",
+        "0x23"
+      ],
+      "UclkDiv1M3": [
+        "0x20",
+        "0x24"
+      ],
+      "Fclk": [
+        "0x15f",
+        "0x160"
+      ]
+    },
+    "helper": "payload+0x4800",
+    "typed_outputs": {
+      "1": "byte [r6]",
+      "2": "halfword [r6]",
+      "4": "word [r6]",
+      "8": "doubleword [r6]"
+    },
+    "success": "r0=1 at 0x2092",
+    "failure": "r0=0 at 0x209a"
+  },
+  "fresh_result": "The exact 0x1fb4 edge is a descriptor-driven typed parameter reader: UclkDiv1 descriptors [0x20,0x21..0x24] and Fclk [0x15f,0x160] are iterated, each entry is queried through exact helper 0x4800, and the result is copied into a caller output as byte/halfword/word/doubleword according to caller type. This is a configuration/APCB lookup boundary, not a divider/PLL write.",
+  "unresolved_edge": "payload+0x4800 and its external/indirect parameter provider remain the first consumer edge. No MCLK=UCLK=FCLK, ratio, PLL, training, synchronous-crossing, runtime, physical-clock, or hardware claim follows.",
+  "limits": "Completed exact branch result was revalidated and reused; no duplicate branch search, no hardware/runtime action, no firmware/settings/shared-state changes.",
+  "checks_detail": [
+    {
+      "check": "ROM exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "exact ABL1 exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "exact ABL1 sha256",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "exact disassembly exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "exact disassembly sha256",
+      "passed": true,
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    {
+      "check": "completed branch result exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "completed branch result sha256",
+      "passed": true,
+      "got": "d6d053b5e4a74a5b4fe0526e4d4659d22a500601074baad751977ab21e2ecdfa",
+      "expected": "d6d053b5e4a74a5b4fe0526e4d4659d22a500601074baad751977ab21e2ecdfa"
+    },
+    {
+      "check": "completed prior branch status",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "completed prior branch checks",
+      "passed": true,
+      "got": 53,
+      "expected": 53
+    },
+    {
+      "check": "reader prologue push",
+      "passed": true,
+      "got": "hex:2de9ff47",
+      "expected": "hex:2de9ff47"
+    },
+    {
+      "check": "reader preserves descriptor pointer r0->r5",
+      "passed": true,
+      "got": "hex:0546",
+      "expected": "hex:0546"
+    },
+    {
+      "check": "reader reads descriptor first halfword",
+      "passed": true,
+      "got": "hex:0088",
+      "expected": "hex:0088"
+    },
+    {
+      "check": "reader preserves output pointer r2->r6",
+      "passed": true,
+      "got": "hex:1646",
+      "expected": "hex:1646"
+    },
+    {
+      "check": "reader preserves type pointer r3->r10",
+      "passed": true,
+      "got": "hex:9a46",
+      "expected": "hex:9a46"
+    },
+    {
+      "check": "reader rejects zero descriptor",
+      "passed": true,
+      "got": "hex:18bb",
+      "expected": "hex:18bb"
+    },
+    {
+      "check": "UclkDiv1M0 key immediate 0x21",
+      "passed": true,
+      "got": "hex:2120",
+      "expected": "hex:2120"
+    },
+    {
+      "check": "UclkDiv1M0 stores key into descriptor +0x46",
+      "passed": true,
+      "got": "hex:adf84600",
+      "expected": "hex:adf84600"
+    },
+    {
+      "check": "Uclk descriptor first halfword 0x20",
+      "passed": true,
+      "got": "hex:adf84400",
+      "expected": "hex:adf84400"
+    },
+    {
+      "check": "Uclk descriptor terminator zero at +0x48",
+      "passed": true,
+      "got": "hex:adf84880",
+      "expected": "hex:adf84880"
+    },
+    {
+      "check": "UclkDiv1M1 key immediate 0x22",
+      "passed": true,
+      "got": "hex:2220",
+      "expected": "hex:2220"
+    },
+    {
+      "check": "UclkDiv1M1 stores key into descriptor +0x46",
+      "passed": true,
+      "got": "hex:adf84600",
+      "expected": "hex:adf84600"
+    },
+    {
+      "check": "UclkDiv1M2 key immediate 0x23",
+      "passed": true,
+      "got": "hex:2320",
+      "expected": "hex:2320"
+    },
+    {
+      "check": "UclkDiv1M2 stores key into descriptor +0x46",
+      "passed": true,
+      "got": "hex:adf84600",
+      "expected": "hex:adf84600"
+    },
+    {
+      "check": "UclkDiv1M3 key immediate 0x24",
+      "passed": true,
+      "got": "hex:2420",
+      "expected": "hex:2420"
+    },
+    {
+      "check": "UclkDiv1M3 stores key into descriptor +0x46",
+      "passed": true,
+      "got": "hex:adf84600",
+      "expected": "hex:adf84600"
+    },
+    {
+      "check": "Fclk descriptor first immediate 0x15f",
+      "passed": true,
+      "got": "hex:40f25f10",
+      "expected": "hex:40f25f10"
+    },
+    {
+      "check": "Fclk descriptor second stored halfword 0x160",
+      "passed": true,
+      "got": "hex:401cadf81420",
+      "expected": "hex:401cadf81420"
+    },
+    {
+      "check": "reader first helper call BL 0x4800",
+      "passed": true,
+      "got": "hex:35f814005346414602f00efc",
+      "expected": "hex:35f814005346414602f00efc"
+    },
+    {
+      "check": "reader success tests returned helper status",
+      "passed": true,
+      "got": "hex:68b10298c0b2",
+      "expected": "hex:68b10298c0b2"
+    },
+    {
+      "check": "reader second descriptor loop load",
+      "passed": true,
+      "got": "hex:05eb44004088",
+      "expected": "hex:05eb44004088"
+    },
+    {
+      "check": "reader second helper call BL 0x4800",
+      "passed": true,
+      "got": "hex:02aa35f814005346414602f0e1fb",
+      "expected": "hex:02aa35f814005346414602f0e1fb"
+    },
+    {
+      "check": "type dispatch loads caller type",
+      "passed": true,
+      "got": "hex:9af800000128",
+      "expected": "hex:9af800000128"
+    },
+    {
+      "check": "type 1 stores byte to r6",
+      "passed": true,
+      "got": "hex:0298c143c9b239431bd03070",
+      "expected": "hex:0298c143c9b239431bd03070"
+    },
+    {
+      "check": "type 2 stores halfword to r6",
+      "passed": true,
+      "got": "hex:0298c14389b2394314d03080",
+      "expected": "hex:0298c14389b2394314d03080"
+    },
+    {
+      "check": "type 4 stores word to r6",
+      "passed": true,
+      "got": "hex:029877ea00010ed03060",
+      "expected": "hex:029877ea00010ed03060"
+    },
+    {
+      "check": "type 8 stores doubleword to r6",
+      "passed": true,
+      "got": "hex:dde90210ca4372ea000200d12fb1c6e90010",
+      "expected": "hex:dde90210ca4372ea000200d12fb1c6e90010"
+    },
+    {
+      "check": "reader returns success after typed store",
+      "passed": true,
+      "got": "hex:012004b0bde8f087",
+      "expected": "hex:012004b0bde8f087"
+    },
+    {
+      "check": "reader returns failure path",
+      "passed": true,
+      "got": "hex:0020fae7",
+      "expected": "hex:0020fae7"
+    },
+    {
+      "check": "exact ABL1 string lead APCB parameter disabled: Token %04x, Timepoint %04x",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "exact ABL1 string lead Config parameter %04x mapped to CBS token %04x",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "exact ABL1 string lead Get config parameter: token %04x, timepoint %04x",
+      "passed": true,
+      "got": true,
+      "expected": true
+    }
+  ]
+}

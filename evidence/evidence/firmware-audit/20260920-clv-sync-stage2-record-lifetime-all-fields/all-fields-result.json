@@ -1,0 +1,612 @@
+{
+  "status": "PASS",
+  "checks": 29,
+  "route": "all remaining Setup field record-lifetime mapping in Cbs and SMU serializers",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "modules": {
+    "CbsBasePei": {
+      "stem": "CbsBasePei-6ff112922ad8",
+      "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "records": {
+        "0x316": [
+          {
+            "field": "0x316",
+            "token": "0x11ed",
+            "token_rva": "0x9837",
+            "token_ptr": "0983C 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_store": "0983F 668910 mov WORD PTR [eax],dx",
+            "source": "09857 8a8216030000 mov al,BYTE PTR [edx+0x316]",
+            "source_rva": "0x9857",
+            "cursor_ptr": "09842 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "value_store": "0985D 884103 mov BYTE PTR [ecx+0x3],al",
+            "value_store_rva": "0x985d",
+            "cursor_add": "09863 83c104 add ecx,0x4",
+            "cursor_store": "09866 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "source_before_value": true,
+            "value_before_advance": true,
+            "value_width": "u8",
+            "chronology": [
+              "0983C 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "0983F 668910 mov WORD PTR [eax],dx",
+              "09842 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "09857 8a8216030000 mov al,BYTE PTR [edx+0x316]",
+              "0985D 884103 mov BYTE PTR [ecx+0x3],al",
+              "09863 83c104 add ecx,0x4",
+              "09866 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ]
+          }
+        ],
+        "0x330": [
+          {
+            "field": "0x330",
+            "token": "0x1204",
+            "token_rva": "0x9cc4",
+            "token_ptr": "09CC9 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_store": "09CCC 668910 mov WORD PTR [eax],dx",
+            "source": "09CE4 8a8230030000 mov al,BYTE PTR [edx+0x330]",
+            "source_rva": "0x9ce4",
+            "cursor_ptr": "09CCF 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "value_store": "09CEA 884103 mov BYTE PTR [ecx+0x3],al",
+            "value_store_rva": "0x9cea",
+            "cursor_add": "09CF0 83c104 add ecx,0x4",
+            "cursor_store": "09CF3 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "source_before_value": true,
+            "value_before_advance": true,
+            "value_width": "u8",
+            "chronology": [
+              "09CC9 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "09CCC 668910 mov WORD PTR [eax],dx",
+              "09CCF 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "09CE4 8a8230030000 mov al,BYTE PTR [edx+0x330]",
+              "09CEA 884103 mov BYTE PTR [ecx+0x3],al",
+              "09CF0 83c104 add ecx,0x4",
+              "09CF3 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ]
+          }
+        ],
+        "0x703": [
+          {
+            "field": "0x703",
+            "token": "0x1373",
+            "token_rva": "0xe706",
+            "token_ptr": "0E70B 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_store": "0E70E 668910 mov WORD PTR [eax],dx",
+            "source": "0E726 8a8203070000 mov al,BYTE PTR [edx+0x703]",
+            "source_rva": "0xe726",
+            "cursor_ptr": "0E711 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "value_store": "0E72C 884103 mov BYTE PTR [ecx+0x3],al",
+            "value_store_rva": "0xe72c",
+            "cursor_add": "0E732 83c104 add ecx,0x4",
+            "cursor_store": "0E735 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "source_before_value": true,
+            "value_before_advance": true,
+            "value_width": "u8",
+            "chronology": [
+              "0E70B 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "0E70E 668910 mov WORD PTR [eax],dx",
+              "0E711 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "0E726 8a8203070000 mov al,BYTE PTR [edx+0x703]",
+              "0E72C 884103 mov BYTE PTR [ecx+0x3],al",
+              "0E732 83c104 add ecx,0x4",
+              "0E735 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ]
+          }
+        ],
+        "0x704": [
+          {
+            "field": "0x704",
+            "token": "0x1374",
+            "token_rva": "0xe738",
+            "token_ptr": "0E73D 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_store": "0E740 668910 mov WORD PTR [eax],dx",
+            "source": "0E75B 668b8204070000 mov ax,WORD PTR [edx+0x704]",
+            "source_rva": "0xe75b",
+            "cursor_ptr": "0E743 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "value_store": "0E762 66894103 mov WORD PTR [ecx+0x3],ax",
+            "value_store_rva": "0xe762",
+            "cursor_add": "0E769 83c105 add ecx,0x5",
+            "cursor_store": "0E76C 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "source_before_value": true,
+            "value_before_advance": true,
+            "value_width": "u16",
+            "chronology": [
+              "0E73D 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "0E740 668910 mov WORD PTR [eax],dx",
+              "0E743 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "0E75B 668b8204070000 mov ax,WORD PTR [edx+0x704]",
+              "0E762 66894103 mov WORD PTR [ecx+0x3],ax",
+              "0E769 83c105 add ecx,0x5",
+              "0E76C 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ]
+          }
+        ],
+        "0x36d": [
+          {
+            "field": "0x36d",
+            "token": "0x123c",
+            "token_rva": "0xa7c1",
+            "token_ptr": "0A7C6 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_store": "0A7C9 668910 mov WORD PTR [eax],dx",
+            "source": "0A7E1 8a826d030000 mov al,BYTE PTR [edx+0x36d]",
+            "source_rva": "0xa7e1",
+            "cursor_ptr": "0A7CC 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "value_store": "0A7E7 884103 mov BYTE PTR [ecx+0x3],al",
+            "value_store_rva": "0xa7e7",
+            "cursor_add": "0A7ED 83c104 add ecx,0x4",
+            "cursor_store": "0A7F0 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "source_before_value": true,
+            "value_before_advance": true,
+            "value_width": "u8",
+            "chronology": [
+              "0A7C6 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "0A7C9 668910 mov WORD PTR [eax],dx",
+              "0A7CC 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "0A7E1 8a826d030000 mov al,BYTE PTR [edx+0x36d]",
+              "0A7E7 884103 mov BYTE PTR [ecx+0x3],al",
+              "0A7ED 83c104 add ecx,0x4",
+              "0A7F0 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ]
+          }
+        ],
+        "0x368": [
+          {
+            "field": "0x368",
+            "token": "0x1237",
+            "token_rva": "0xa6c7",
+            "token_ptr": "0A6CC 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_store": "0A6CF 668910 mov WORD PTR [eax],dx",
+            "source": "0A6E7 8a8268030000 mov al,BYTE PTR [edx+0x368]",
+            "source_rva": "0xa6e7",
+            "cursor_ptr": "0A6D2 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "value_store": "0A6ED 884103 mov BYTE PTR [ecx+0x3],al",
+            "value_store_rva": "0xa6ed",
+            "cursor_add": "0A6F3 83c104 add ecx,0x4",
+            "cursor_store": "0A6F6 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "source_before_value": true,
+            "value_before_advance": true,
+            "value_width": "u8",
+            "chronology": [
+              "0A6CC 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "0A6CF 668910 mov WORD PTR [eax],dx",
+              "0A6D2 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "0A6E7 8a8268030000 mov al,BYTE PTR [edx+0x368]",
+              "0A6ED 884103 mov BYTE PTR [ecx+0x3],al",
+              "0A6F3 83c104 add ecx,0x4",
+              "0A6F6 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ]
+          }
+        ]
+      }
+    },
+    "AmdNbioSmuV10Pei": {
+      "stem": "AmdNbioSmuV10Pei-905b8be68afd",
+      "sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "records": {
+        "0x316": [
+          {
+            "field": "0x316",
+            "token": "0x11ed",
+            "token_rva": "0xb8b7",
+            "token_ptr": "0B8BC 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_store": "0B8BF 668910 mov WORD PTR [eax],dx",
+            "source": "0B8D7 8a8216030000 mov al,BYTE PTR [edx+0x316]",
+            "source_rva": "0xb8d7",
+            "cursor_ptr": "0B8C2 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "value_store": "0B8DD 884103 mov BYTE PTR [ecx+0x3],al",
+            "value_store_rva": "0xb8dd",
+            "cursor_add": "0B8E3 83c104 add ecx,0x4",
+            "cursor_store": "0B8E6 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "source_before_value": true,
+            "value_before_advance": true,
+            "value_width": "u8",
+            "chronology": [
+              "0B8BC 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "0B8BF 668910 mov WORD PTR [eax],dx",
+              "0B8C2 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "0B8D7 8a8216030000 mov al,BYTE PTR [edx+0x316]",
+              "0B8DD 884103 mov BYTE PTR [ecx+0x3],al",
+              "0B8E3 83c104 add ecx,0x4",
+              "0B8E6 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ]
+          }
+        ],
+        "0x330": [
+          {
+            "field": "0x330",
+            "token": "0x1204",
+            "token_rva": "0xbd44",
+            "token_ptr": "0BD49 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_store": "0BD4C 668910 mov WORD PTR [eax],dx",
+            "source": "0BD64 8a8230030000 mov al,BYTE PTR [edx+0x330]",
+            "source_rva": "0xbd64",
+            "cursor_ptr": "0BD4F 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "value_store": "0BD6A 884103 mov BYTE PTR [ecx+0x3],al",
+            "value_store_rva": "0xbd6a",
+            "cursor_add": "0BD70 83c104 add ecx,0x4",
+            "cursor_store": "0BD73 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "source_before_value": true,
+            "value_before_advance": true,
+            "value_width": "u8",
+            "chronology": [
+              "0BD49 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "0BD4C 668910 mov WORD PTR [eax],dx",
+              "0BD4F 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "0BD64 8a8230030000 mov al,BYTE PTR [edx+0x330]",
+              "0BD6A 884103 mov BYTE PTR [ecx+0x3],al",
+              "0BD70 83c104 add ecx,0x4",
+              "0BD73 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ]
+          }
+        ],
+        "0x703": [
+          {
+            "field": "0x703",
+            "token": "0x1373",
+            "token_rva": "0x10786",
+            "token_ptr": "1078B 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_store": "1078E 668910 mov WORD PTR [eax],dx",
+            "source": "107A6 8a8203070000 mov al,BYTE PTR [edx+0x703]",
+            "source_rva": "0x107a6",
+            "cursor_ptr": "10791 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "value_store": "107AC 884103 mov BYTE PTR [ecx+0x3],al",
+            "value_store_rva": "0x107ac",
+            "cursor_add": "107B2 83c104 add ecx,0x4",
+            "cursor_store": "107B5 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "source_before_value": true,
+            "value_before_advance": true,
+            "value_width": "u8",
+            "chronology": [
+              "1078B 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "1078E 668910 mov WORD PTR [eax],dx",
+              "10791 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "107A6 8a8203070000 mov al,BYTE PTR [edx+0x703]",
+              "107AC 884103 mov BYTE PTR [ecx+0x3],al",
+              "107B2 83c104 add ecx,0x4",
+              "107B5 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ]
+          }
+        ],
+        "0x704": [
+          {
+            "field": "0x704",
+            "token": "0x1374",
+            "token_rva": "0x107b8",
+            "token_ptr": "107BD 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_store": "107C0 668910 mov WORD PTR [eax],dx",
+            "source": "107DB 668b8204070000 mov ax,WORD PTR [edx+0x704]",
+            "source_rva": "0x107db",
+            "cursor_ptr": "107C3 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "value_store": "107E2 66894103 mov WORD PTR [ecx+0x3],ax",
+            "value_store_rva": "0x107e2",
+            "cursor_add": "107E9 83c105 add ecx,0x5",
+            "cursor_store": "107EC 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "source_before_value": true,
+            "value_before_advance": true,
+            "value_width": "u16",
+            "chronology": [
+              "107BD 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "107C0 668910 mov WORD PTR [eax],dx",
+              "107C3 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "107DB 668b8204070000 mov ax,WORD PTR [edx+0x704]",
+              "107E2 66894103 mov WORD PTR [ecx+0x3],ax",
+              "107E9 83c105 add ecx,0x5",
+              "107EC 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ]
+          }
+        ],
+        "0x36d": [
+          {
+            "field": "0x36d",
+            "token": "0x123c",
+            "token_rva": "0xc841",
+            "token_ptr": "0C846 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_store": "0C849 668910 mov WORD PTR [eax],dx",
+            "source": "0C861 8a826d030000 mov al,BYTE PTR [edx+0x36d]",
+            "source_rva": "0xc861",
+            "cursor_ptr": "0C84C 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "value_store": "0C867 884103 mov BYTE PTR [ecx+0x3],al",
+            "value_store_rva": "0xc867",
+            "cursor_add": "0C86D 83c104 add ecx,0x4",
+            "cursor_store": "0C870 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "source_before_value": true,
+            "value_before_advance": true,
+            "value_width": "u8",
+            "chronology": [
+              "0C846 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "0C849 668910 mov WORD PTR [eax],dx",
+              "0C84C 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "0C861 8a826d030000 mov al,BYTE PTR [edx+0x36d]",
+              "0C867 884103 mov BYTE PTR [ecx+0x3],al",
+              "0C86D 83c104 add ecx,0x4",
+              "0C870 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ]
+          }
+        ],
+        "0x368": [
+          {
+            "field": "0x368",
+            "token": "0x1237",
+            "token_rva": "0xc747",
+            "token_ptr": "0C74C 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_store": "0C74F 668910 mov WORD PTR [eax],dx",
+            "source": "0C767 8a8268030000 mov al,BYTE PTR [edx+0x368]",
+            "source_rva": "0xc767",
+            "cursor_ptr": "0C752 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "value_store": "0C76D 884103 mov BYTE PTR [ecx+0x3],al",
+            "value_store_rva": "0xc76d",
+            "cursor_add": "0C773 83c104 add ecx,0x4",
+            "cursor_store": "0C776 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "source_before_value": true,
+            "value_before_advance": true,
+            "value_width": "u8",
+            "chronology": [
+              "0C74C 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "0C74F 668910 mov WORD PTR [eax],dx",
+              "0C752 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "0C767 8a8268030000 mov al,BYTE PTR [edx+0x368]",
+              "0C76D 884103 mov BYTE PTR [ecx+0x3],al",
+              "0C773 83c104 add ecx,0x4",
+              "0C776 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "fresh_result": "Complete cursor-lifetime traces recover actual token IDs, same-record value stores and cursor advances for fields +0x316, +0x330, +0x703, +0x704, +0x36D and +0x368 in both modules. Cbs and SMU mappings agree; no historical matrix label is used to assign IDs. The +0x6A3/+0x1332 contradiction remains explicit from the prior reconciliation.",
+  "limits": "Serializer ownership only; no requester/consumer or hardware claim, no firmware execution, no shared-state change.",
+  "checks_detail": [
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ROM size",
+      "passed": true,
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "check": "CbsBasePei hash",
+      "passed": true,
+      "got": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    {
+      "check": "CbsBasePei field 0x316 token/value chronology 0x9857",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei field 0x316 value width 0x9857",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei field 0x330 token/value chronology 0x9ce4",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei field 0x330 value width 0x9ce4",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei field 0x703 token/value chronology 0xe726",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei field 0x703 value width 0xe726",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei field 0x704 token/value chronology 0xe75b",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei field 0x704 value width 0xe75b",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei field 0x36d token/value chronology 0xa7e1",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei field 0x36d value width 0xa7e1",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei field 0x368 token/value chronology 0xa6e7",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CbsBasePei field 0x368 value width 0xa6e7",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei hash",
+      "passed": true,
+      "got": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "expected": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei field 0x316 token/value chronology 0xb8d7",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei field 0x316 value width 0xb8d7",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei field 0x330 token/value chronology 0xbd64",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei field 0x330 value width 0xbd64",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei field 0x703 token/value chronology 0x107a6",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei field 0x703 value width 0x107a6",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei field 0x704 token/value chronology 0x107db",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei field 0x704 value width 0x107db",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei field 0x36d token/value chronology 0xc861",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei field 0x36d value width 0xc861",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei field 0x368 token/value chronology 0xc767",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "AmdNbioSmuV10Pei field 0x368 value width 0xc767",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "Cbs/SMU field-token identity",
+      "passed": true,
+      "got": [
+        [
+          790,
+          [
+            "0x11ed"
+          ]
+        ],
+        [
+          816,
+          [
+            "0x1204"
+          ]
+        ],
+        [
+          1795,
+          [
+            "0x1373"
+          ]
+        ],
+        [
+          1796,
+          [
+            "0x1374"
+          ]
+        ],
+        [
+          877,
+          [
+            "0x123c"
+          ]
+        ],
+        [
+          872,
+          [
+            "0x1237"
+          ]
+        ]
+      ],
+      "expected": [
+        [
+          790,
+          [
+            "0x11ed"
+          ]
+        ],
+        [
+          816,
+          [
+            "0x1204"
+          ]
+        ],
+        [
+          1795,
+          [
+            "0x1373"
+          ]
+        ],
+        [
+          1796,
+          [
+            "0x1374"
+          ]
+        ],
+        [
+          877,
+          [
+            "0x123c"
+          ]
+        ],
+        [
+          872,
+          [
+            "0x1237"
+          ]
+        ]
+      ]
+    }
+  ]
+}

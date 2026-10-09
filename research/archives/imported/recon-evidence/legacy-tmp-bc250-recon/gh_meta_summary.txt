@@ -1,0 +1,84 @@
+== dave_commits.json exists=True size=65313
+commits 18
+  7c511b7 2026-08-24 Fixes
+  6b35a83 2026-08-24 Fixes
+  c50675d 2026-08-24 Fixes
+  f1835b4 2026-08-24 Fixes
+  0d94731 2026-08-24 Fixes
+  db733ae 2026-08-24 Fixes
+  ade5f22 2026-08-24 Fixes
+  ca9c457 2026-08-24 Fixes
+  fe26886 2026-08-24 Fixes
+  bccd5b2 2026-08-24 More updates
+  d101976 2026-08-23 More register updates
+  6f1cd1c 2026-08-23 Add vcn register mapping
+  9cd3b01 2026-08-23 Add VCN IP info
+  1983682 2026-08-21 Update README.md
+  05b6a98 2026-08-21 Create enable_vcn.py
+  e0f7fdb 2026-08-21 Create README.md
+  1c5e39d 2026-08-21 Create .gitignore
+  fe8e2af 2026-08-21 Initial commit
+== thelamer_commits.json exists=True size=9772
+commits 2
+  e53aa40 2026-08-18 initial notes
+  bda356f 2026-08-18 main branch
+== gh_bc250_repos.json exists=True size=10062
+repos 40
+  2026-08-25 ★30 MastaG/linux-cachyos-bc250 CachyOS linux kernel with cherrypicks for the ASrock BC-250 board.
+  2026-08-25 ★2 peterdk31/bc250_ws2812b_controller A small controller + receiver (esp32) for controlling a string of ws28
+  2026-08-25 ★1 Kieni1/amd-bc-250-llm A .rpm to facilitate running LLMs on an amd bc 250 / Fedora 44 with ol
+  2026-08-25 ★65 rpf16rj/bc250-steamos-real-toolkit 
+  2026-08-24 ★5 tmghd272/bc250-batocera-tools Optimizing Batocera for the BC-250
+  2026-08-24 ★7 katzzero/bc250-unofficial-community-guide Unofficial community guide for the AMD BC-250 (Cyan Skillfish) mining 
+  2026-08-24 ★36 keyboardspecialist/bc250-steamos Yet Another SteamOS Toolkit
+  2026-08-24 ★0 Naster17/bc250fc BC-250 Fan Control
+  2026-08-25 ★1 4claps/bc250-llama-cluster Automating a two-node AMD BC250 Fedora llama.cpp Vulkan/RPC inference 
+  2026-08-24 ★1 RescueMei/BC250-DXEv3-Core-Unlock My v3 SMU Core Unlock DXE Driver. Now uses arbitrary writes to the cor
+  2026-08-24 ★0 RescueMei/BC250-DXEv3-SMU-Unlock DXE driver for the BC250 that performs rw-r-r-0644's SMU unlock to unl
+  2026-08-24 ★15 RescueMei/BC250-DXEv2-BIOSMOD Central repo for the v2 of my bios patch, including two DXE drivers fo
+  2026-08-24 ★1 coderredlab/bc250-8core-unlock 
+  2026-08-24 ★3 daveconde/bc250-vcn-enable Spike to enable VCN on a BC250
+  2026-08-25 ★23 62fixolab/Latest-Bazzite-AMD-BC-250-Patched-Images Latest Bazzite Deck, GNOME, and KDE images for AMD BC-250 boards with 
+  2026-08-24 ★6 Necrosiak/bc250-toolkit-decky DeckyLoader plugin for ASRock BC-250 — community game optimizer
+  2026-08-24 ★10 TesseractCat/bc250-nixos NixOS config for the BC-250 board
+  2026-08-24 ★8 RescueMei/BC250-DXEv3-BIOSMOD Central repo for my V3 of my bios mod with DXE drivers for ACPI patchi
+  2026-08-24 ★0 RescueMei/BC250-DXEv3-Menu-Driver Driver for my v3 bios to add options that will not interfere with exis
+  2026-08-24 ★11 MTSistemi/SkillFishOS Steampunk gaming Linux distro for the AMD BC-250 (BC250, gfx1013 / Cya
+  2026-08-23 ★0 RescueMei/BC250-DXEv3-SMU-Patch DXE driver to patch the SMU on the BC250 to fix the 8-core reporting. 
+  2026-08-23 ★0 RescueMei/BC250-DXEv3-Cold-Boot Updated cold boot driver, only real change is it can now receive strin
+  2026-08-23 ★0 RescueMei/BC250-DXEv3-ACPI-Driver DXE Driver to install acpi fixes on the BC250. Made it a separate v3 b
+  2026-08-24 ★18 dmorazasanchez/bc250-fsr4 
+  2026-08-23 ★0 bc250400485ana-ctrl/bc250400485ana-ctrl 
+== smu_re_commits.json exists=True size=105586
+commits 30
+  3f47768 2025-12-30 Added flowchart
+  b61f9fb 2025-12-30 Added AI generated summary of firmware architecture
+  2df8c61 2025-12-30 Added ackn
+  35ea995 2025-12-30 update known messages
+  1544770 2025-12-12 update min gfx clk
+  a025910 2025-12-12 add patches for easier access to full smu metrics
+  2ec31b7 2025-12-09 removed exploit because it doesnt work on real hardware + confirmed with disassembly
+  c05e401 2025-12-07 fix some wrongly assigned message handlers
+  bae7eb9 2025-12-05 fix typo
+  3c44a71 2025-12-05 initial draft of exploit
+  3e96017 2025-12-05 initial draft of exploit
+  e7f70cd 2025-12-05 update known message handlers
+  1aef327 2025-12-04 Update set_smu_tick_handler_slots.txt
+  9af79b4 2025-12-04 add smu tick handler slot table
+  43cd0a8 2025-11-28 change ssiu instruction to ssip
+  e8275bc 2025-11-28 change ssiu instruction to ssip, clean backup files
+  292782a 2025-11-28 change ssiu instruction to ssip, clean backup files
+  3c1da1b 2025-11-28 Update smu_message_helper.py for better support on other smu firmware, add smu_function_helper.py
+  5fd2a47 2025-11-27 Fixes loopgtz and loop instructions
+  ef4a295 2025-11-24 List known message ids in smu firmware v5
+== core_unlock_commits.json exists=True size=31022
+commits 9
+  fb7e5bc 2026-07-31 update/adjust README
+  c45d6fb 2026-07-31 add -f option to ignore non-0x77 core mask
+  fd130ee 2026-07-31 write to base 0x5A870 rather than 0x115A870 mirror
+  ba45eb5 2026-07-31 minore non-functional changes
+  46c5252 2026-07-30 cleanup
+  908734b 2026-07-29 note that only 0x77 masks are acted on, other masks are left alone
+  8864fcb 2026-07-29 note the gpu clock reporting issue: cosmetic, gpu and smu are fine
+  0d8a973 2026-07-29 add chmod for users that download the zip file
+  87ec098 2026-07-29 bc250 core unlock: enable the 2 disabled cpu cores

@@ -1,0 +1,119 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 11,
+    "total": 11
+  },
+  "checks_detail": [
+    {
+      "details": {
+        "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+      },
+      "label": "pinned-rom",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "9259ad3ff6f660fe97ca7ea68f9b7e5f5d185982f0d3341180bd880442f030f1",
+        "observed": "9259ad3ff6f660fe97ca7ea68f9b7e5f5d185982f0d3341180bd880442f030f1"
+      },
+      "label": "driver-hash",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "metric-uclk-reads-memclk",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "clock-fclk-mclk-select-uclk",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "gpu-average-alias",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "gpu-current-alias",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "gfx-mclk-alias",
+      "status": "PASS"
+    },
+    {
+      "details": "0-based index (0..19). Reads internal software committed frequency float at 0x13eec + 0x5c + index*12 (0x13f48 + index*12); returns utrunc.s(float). No PLL hardware sampling or physical frequency measurement.",
+      "label": "handler-software-state",
+      "status": "PASS"
+    },
+    {
+      "details": "Returns (byte[0xcee0 + 0xf7] - byte[0xcee0 + 0xd] - 1); state index delta, NOT a frequency measurement.",
+      "label": "handler-df-query-not-frequency",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "domain_count": 27
+      },
+      "label": "domain-physical-unknown",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "uclk-divisor-unestablished",
+      "status": "PASS"
+    }
+  ],
+  "demonstrated_mapping": {
+    "domain_map": {
+      "mapping": "Existing fabric-domain evidence provides SMN apertures/group assignments but marks physical domain meaning unknown without runtime confirmation.",
+      "status": "STATIC_GROUPS_ONLY"
+    },
+    "firmware_query": {
+      "mapping": "Queue0 0x11 handler 0x2EA74 returns an internal committed-frequency float indexed through the 20-domain table; Queue0 0x13 returns a P-state index delta/count.",
+      "not_proven": [
+        "hardware PLL/clock sampling",
+        "physical domain identity for MCLK/UCLK/FCLK"
+      ],
+      "status": "SOFTWARE_STATE_ONLY"
+    },
+    "host_driver": {
+      "mapping": "SMU_FCLK and SMU_MCLK select METRICS_CURR_UCLK; that metric reads Current.MemclkFrequency; gpu_metrics current/average UCLK and FCLK also copy MemclkFrequency.",
+      "not_proven": [
+        "independent physical FCLK/UCLK/MCLK",
+        "GDDR6 unit conversion",
+        "synchronous crossing"
+      ],
+      "status": "SOURCE_ALIAS_ONLY"
+    }
+  },
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis",
+    "emulated-or-host-tested"
+  ],
+  "inputs": {
+    "domains": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-clock-provenance/fabric-domains-verification.json",
+    "driver": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/cyan_skillfish_ppt.c",
+    "driver_sha256": "9259ad3ff6f660fe97ca7ea68f9b7e5f5d185982f0d3341180bd880442f030f1",
+    "handlers": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-clock-provenance/clock-handlers-verification.json",
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+  },
+  "limits": [
+    "No new parser or dependency; no firmware/hardware/telemetry action.",
+    "This check does not resolve GDDR6 edge/data-rate conversion, actual physical domain identity, training range, or synchronization."
+  ],
+  "smallest_offline_discriminating_check": {
+    "executed": true,
+    "interpretation": "The available host metrics are aliased software values, and the available firmware clock query is software committed state. Neither supplies an independent MCLK/UCLK/FCLK physical mapping.",
+    "method": "Exact source-fragment alias check plus retained byte-verified handler/domain-result assertions; no sysfs or live telemetry.",
+    "result": "PASS_STATIC_REJECTS_INDEPENDENT_METRIC_CLAIM"
+  },
+  "status": "PASS"
+}

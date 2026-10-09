@@ -1,0 +1,185 @@
+{
+  "generated_at": "2026-09-11T18:04:06+05:00",
+  "objective": "Full evidence-bounded BC250 audit and verifiable separate BIOS candidates",
+  "overall_status": "ACTIVE_INCOMPLETE",
+  "entries": [
+    {
+      "id": "G1",
+      "area": "inventory/provenance",
+      "status": "PASS",
+      "evidence": [
+        "import/IMPORT_SUMMARY.md",
+        "docs/action-logs/2026-09-10-project-contour-bootstrap.md",
+        "dump/2.bin"
+      ],
+      "next_test": null
+    },
+    {
+      "id": "G2",
+      "area": "fresh SPI baseline",
+      "status": "PASS at readback layer",
+      "evidence": [
+        "evidence/programmer/reads/20260911/manifest.json",
+        "evidence/programmer/probe-20260911.txt"
+      ],
+      "next_test": "None for baseline; detach programmer before stock boot"
+    },
+    {
+      "id": "G3",
+      "area": "format/parser audit",
+      "status": "PASS",
+      "evidence": [
+        "evidence/programmer/reads/20260911/firmware-audit/inventory.json",
+        "evidence/programmer/reads/20260911/firmware-audit/read-a-inventory-with-extract.json",
+        "evidence/programmer/reads/20260911/firmware-audit/read-a-nvar-primary.json"
+      ],
+      "next_test": null
+    },
+    {
+      "id": "G4",
+      "area": "Cutter/Rizin/MCP stack",
+      "status": "PASS for platform/Rizin/CoreUnlock MCP; INCONCLUSIVE for pending module MCP context",
+      "evidence": [
+        "evidence/firmware-audit/rizin/module-triage.json",
+        "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/manifest.json",
+        "docs/action-logs/2026-09-10-cutter-mcp-runtime-trial.md"
+      ],
+      "next_test": "Controlled GUI/module session or keep Rizin static evidence explicitly bounded"
+    },
+    {
+      "id": "G5",
+      "area": "VCN descriptor/policy/static path",
+      "status": "PASS static; runtime UNRUN",
+      "evidence": [
+        "evidence/firmware-audit/vcn-evidence-map.json",
+        "evidence/firmware-audit/ip-discovery/read-a-hardware-ip-config.json",
+        "evidence/firmware-audit/ps1/sec-gasket-summary.json"
+      ],
+      "next_test": "Fresh stock boot telemetry and VCN ring/codec logs"
+    },
+    {
+      "id": "G6",
+      "area": "memory-controller/static path",
+      "status": "PASS static field/group map; consumer/training INCONCLUSIVE",
+      "evidence": [
+        "evidence/firmware-audit/memory-soc-voltage-evidence-map.json",
+        "specs/2026-09-11-memory-soc-candidate.md"
+      ],
+      "next_test": "Read-only Cutter/Rizin caller context and stock training/clock telemetry"
+    },
+    {
+      "id": "G7",
+      "area": "SoC-voltage semantics",
+      "status": "NO-GO candidate / INCONCLUSIVE units and consumer",
+      "evidence": [
+        "evidence/firmware-audit/soc-voltage-static-review-root.md",
+        "evidence/firmware-audit/soc-voltage-encoding-comparison.json",
+        "evidence/firmware-audit/memory-soc-voltage-evidence-map.json"
+      ],
+      "next_test": "Static consumer trace plus stock telemetry; do not guess value"
+    },
+    {
+      "id": "G8",
+      "area": "APCB DFG-only VCN candidate",
+      "status": "PASS static + SPI write/readback; first boot video FAIL, boot stage INCONCLUSIVE",
+      "evidence": [
+        "candidates/BC250_APCB_DFG_only_v001_from_read-a.bin",
+        "evidence/candidates/BC250_APCB_DFG_only_v001/independent-review-gemini.md",
+        "evidence/programmer/reads/20260911/apcb-v001-hardware-trial-manifest.json"
+      ],
+      "next_test": "Superseded by G8B combined-candidate trial; retain this failed observation without rerunning"
+    },
+    {
+      "id": "G8B",
+      "area": "combined D3-B2 VCN candidate",
+      "status": "PASS static + independent review + SPI write/readback; first boot video FAIL, boot stage INCONCLUSIVE",
+      "evidence": [
+        "candidates/BC250_VCN_D3B2_combined_v001_from_read-a.bin",
+        "evidence/candidates/BC250_VCN_D3B2_combined_v001/independent-review-claude-opus5.md",
+        "evidence/programmer/reads/20260911/d3b2-v001-hardware-trial-manifest.json"
+      ],
+      "next_test": "Build/review policy-only variant with stock APCB to isolate the common APCB change while retaining a possible VCN unlock path"
+    },
+    {
+      "id": "G9",
+      "area": "offline memory candidate",
+      "status": "PASS static + independent review",
+      "evidence": [
+        "candidates/BC250_MemoryClock_1750_only_v001_from_read-a.bin",
+        "evidence/candidates/BC250_MemoryClock_1750_only_v001/independent-review-gemini.md"
+      ],
+      "next_test": "No hardware test without stock boot baseline and exact approval"
+    },
+    {
+      "id": "G10",
+      "area": "DXE/UEFI component validation",
+      "status": "STATIC_ONLY / build-runtime UNRUN",
+      "evidence": [
+        "evidence/firmware-audit/rizin/dxe/manifest.json",
+        "import/from-windows/Users/kukuruza/tmp_bc250/dxe"
+      ],
+      "next_test": "Build only if a read-only probe is required and toolchain/review are available"
+    },
+    {
+      "id": "G11",
+      "area": "host/emulated tests",
+      "status": "HOST PARSER PASS; historical runtime only; QEMU/current boot UNRUN",
+      "evidence": [
+        "scripts/firmware_audit.py",
+        "scripts/nvar_audit.py",
+        "import/from-windows/Users/kukuruza/tmp_bc250/recon/vcn-probe-mode1_2026-08-26.out",
+        "evidence/firmware-audit/soc-voltage-static-review-root.md",
+        "scripts/collect_stock_runtime_readonly.py",
+        "evidence/firmware-audit/collector-fixture-test.json"
+      ],
+      "next_test": "Fresh stock boot; no candidate boot yet",
+      "note": "Safe collector synthetic fixture test PASS; real stock boot UNRUN; imported bc250_smu helper is write-capable and deferred."
+    },
+    {
+      "id": "G12",
+      "area": "JTAG readiness",
+      "status": "UNRUN / preparation only",
+      "evidence": [
+        "evidence/boardview/jtag-readiness-20260911.json",
+        "evidence/boardview/bc250-connector-map.json"
+      ],
+      "next_test": "Verify physical J2/voltage/debug state and adapter before read-only attach"
+    },
+    {
+      "id": "G13",
+      "area": "recovery/approval gates",
+      "status": "PASS for exact APCB candidate write/readback; future writes require new approval",
+      "evidence": [
+        "docs/runbooks/2026-09-11-bc250-programmer-and-candidate-gates.md",
+        "candidates/README.md",
+        "docs/action-logs/2026-09-11-apcb-vcn-hardware-trial.md"
+      ],
+      "next_test": "Retain stock recovery image and require new exact approval for any rollback or later candidate"
+    }
+  ],
+  "mutations": {
+    "firmware_write": true,
+    "register_write": false,
+    "programmer_write": true,
+    "jtag_target_memory_write": false,
+    "flash": true
+  },
+  "goal_completion_blockers": [
+    "policy-only VCN candidate build/review and controlled boot test",
+    "SoC-voltage units/consumer/training",
+    "full pending-module MCP context or explicit bounded limitation",
+    "JTAG only if needed"
+  ],
+  "current_artifacts": {
+    "root_soc_review_sha256": "85073a35337989a62e13a0c599076b9031c2852cd91788f815292962aab45565",
+    "encoding_comparison_sha256": "3576ead3e78ab343cd93727046f2de44e135fb4a4d67024228fee114061823c5",
+    "jtag_readiness_sha256": "8a4e35a2d5d34761b4275754e439e8af9374f60cc2c6d8ef6599efd15be738c7",
+    "memory_map_sha256": "a24f66ddb114e2c37c6ca2c5eedcafd4fa71c69d959743fa370fe17b0d497bd1",
+    "vcn_map_sha256": "6e4edaf7389ad1032a7b0d7131fc3bf9055606f76f6f2ccced770acda377970e",
+    "collector_script_sha256": "ea128ffe4f7fb7151fd63575722e570c7920547c6b8251f923227a447d4571a9",
+    "collector_fixture_test_sha256": "2c83872ef57929fdc5006e41ee67e4fe89db5bcc19137f57505419f1764c59f7",
+    "audit_state_verifier_sha256": "d25777f9badce31633509f5746f590be0e843969c6bbce9148f2922128a6cc2b",
+    "audit_state_verifier_script_sha256": "88ebabef801051fd11ca64fcb02e2a729c475c0ad861cf7ce413f60fb5439d1f",
+    "apcb_hardware_trial_manifest_sha256": "e0488e8cc0d8d99c25b626ae08dec04db496256d20303fcaa03912b907c3e696"
+  }
+}

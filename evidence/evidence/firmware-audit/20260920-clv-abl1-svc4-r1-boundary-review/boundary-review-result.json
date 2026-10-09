@@ -1,0 +1,375 @@
+{
+  "callback_binding": {
+    "active_path": "FCLK caller passes its current R4 object to dispatcher 0x10958; dispatcher loads [current context+0x660] and branches indirectly.",
+    "binding_status": "UNPROVEN: constructor passes parent R5 to initializer, stores a child pointer from [R6+0x3C4] in parent+0x08, then has unresolved BLX R1; later FCLK dispatch uses current R4. No byte-backed object identity connects that initialized parent+0x660 to current R4+0x660, or the B228 +0x44 owner to the active R4 object.",
+    "static_candidate": "initializer 0xAF90 loads literal 0x00060BD9 at 0xB168 and stores it at [initializer parent+0x660]; under conditional base 0x57100 this maps to Thumb candidate 0x9AD8."
+  },
+  "checks": {
+    "failed": 0,
+    "passed": 55,
+    "total": 55
+  },
+  "checks_detail": [
+    {
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "exact_abl_hash",
+      "observed": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "ok": true
+    },
+    {
+      "expected": "d32ba56c94ef3e35d89fc1e5e02765d8cc4607b0623f9ba621b5e1af082c0446",
+      "name": "prior_r1_report_hash",
+      "observed": "d32ba56c94ef3e35d89fc1e5e02765d8cc4607b0623f9ba621b5e1af082c0446",
+      "ok": true
+    },
+    {
+      "expected": "05fa26427c0d969a11d3779714089943d01421780beebbe8b62b910661eeecca",
+      "name": "prior_r1_result_hash",
+      "observed": "05fa26427c0d969a11d3779714089943d01421780beebbe8b62b910661eeecca",
+      "ok": true
+    },
+    {
+      "expected": "40f21e61",
+      "name": "fclk_movw_r1_61e",
+      "observed": "40f21e61",
+      "ok": true
+    },
+    {
+      "expected": "2046",
+      "name": "fclk_context_passed_r0_before_indirect_dispatch",
+      "observed": "2046",
+      "ok": true
+    },
+    {
+      "expected": "00f09af8",
+      "name": "fclk_calls_dispatcher_10958",
+      "observed": "00f09af8",
+      "ok": true
+    },
+    {
+      "expected": "d0f86046",
+      "name": "dispatcher_loads_callback_from_context_plus_660",
+      "observed": "d0f86046",
+      "ok": true
+    },
+    {
+      "expected": "1346",
+      "name": "dispatcher_moves_selected_value_r2_to_callback_r3",
+      "observed": "1346",
+      "ok": true
+    },
+    {
+      "expected": "0a46",
+      "name": "dispatcher_moves_token_r1_to_callback_r2",
+      "observed": "0a46",
+      "ok": true
+    },
+    {
+      "expected": "0121",
+      "name": "dispatcher_normalizes_callback_r1_to_1",
+      "observed": "0121",
+      "ok": true
+    },
+    {
+      "expected": "6047",
+      "name": "dispatcher_indirect_branch",
+      "observed": "6047",
+      "ok": true
+    },
+    {
+      "expected": "0546",
+      "name": "candidate_sets_r5_from_r0_context",
+      "observed": "0546",
+      "ok": true
+    },
+    {
+      "expected": "9b46",
+      "name": "candidate_copies_selected_value_r3_to_r11",
+      "observed": "9b46",
+      "ok": true
+    },
+    {
+      "expected": "c2f30b00",
+      "name": "candidate_extracts_low_12_token_bits",
+      "observed": "c2f30b00",
+      "ok": true
+    },
+    {
+      "expected": "686c",
+      "name": "candidate_loads_table_base_from_context_plus_44",
+      "observed": "686c",
+      "ok": true
+    },
+    {
+      "expected": "50f82160",
+      "name": "candidate_outer_slot_indexed_load",
+      "observed": "50f82160",
+      "ok": true
+    },
+    {
+      "expected": "50f82160",
+      "name": "candidate_nested_slot_indexed_load",
+      "observed": "50f82160",
+      "ok": true
+    },
+    {
+      "expected": "2146",
+      "name": "helper_read_passes_r4_as_r1",
+      "observed": "2146",
+      "ok": true
+    },
+    {
+      "expected": "fdf7bbf8",
+      "name": "helper_read_calls_6da4",
+      "observed": "fdf7bbf8",
+      "ok": true
+    },
+    {
+      "expected": "2146",
+      "name": "helper_write_passes_r4_as_r1",
+      "observed": "2146",
+      "ok": true
+    },
+    {
+      "expected": "fdf76bf8",
+      "name": "helper_write_calls_6e70",
+      "observed": "fdf76bf8",
+      "ok": true
+    },
+    {
+      "expected": "0546",
+      "name": "object_constructor_r5_from_argument",
+      "observed": "0546",
+      "ok": true
+    },
+    {
+      "expected": "d6f8c443",
+      "name": "object_constructor_r4_from_r6_plus_3c4",
+      "observed": "d6f8c443",
+      "ok": true
+    },
+    {
+      "expected": "ac60",
+      "name": "object_constructor_stores_r4_child_into_r5_plus_8",
+      "observed": "ac60",
+      "ok": true
+    },
+    {
+      "expected": "2846",
+      "name": "initializer_passes_parent_r5_as_r0",
+      "observed": "2846",
+      "ok": true
+    },
+    {
+      "expected": "03f056fd",
+      "name": "initializer_calls_af90",
+      "observed": "03f056fd",
+      "ok": true
+    },
+    {
+      "expected": "2846",
+      "name": "later_indirect_call_uses_parent_r5_as_r0",
+      "observed": "2846",
+      "ok": true
+    },
+    {
+      "expected": "8847",
+      "name": "later_indirect_call_via_r1",
+      "observed": "8847",
+      "ok": true
+    },
+    {
+      "expected": "2046",
+      "name": "active_fclk_dispatch_uses_current_r4_as_r0",
+      "observed": "2046",
+      "ok": true
+    },
+    {
+      "expected": "0446",
+      "name": "initializer_af90_sets_r4_from_r0",
+      "observed": "0446",
+      "ok": true
+    },
+    {
+      "expected": "2948",
+      "name": "initializer_loads_static_literal_near_b168",
+      "observed": "2948",
+      "ok": true
+    },
+    {
+      "expected": "c4f86006",
+      "name": "initializer_stores_literal_to_object_plus_660",
+      "observed": "c4f86006",
+      "ok": true
+    },
+    {
+      "expected": "d90b0600",
+      "name": "literal_at_b168",
+      "observed": "d90b0600",
+      "ok": true
+    },
+    {
+      "expected": "2de9ff4f",
+      "name": "mapped_callback_candidate_entry_bytes",
+      "observed": "2de9ff4f",
+      "ok": true
+    },
+    {
+      "expected": "0446",
+      "name": "table_initializer_r4_from_r0",
+      "observed": "0446",
+      "ok": true
+    },
+    {
+      "expected": "0698",
+      "name": "table_initializer_existing_path_pointer_from_stack",
+      "observed": "0698",
+      "ok": true
+    },
+    {
+      "expected": "6064",
+      "name": "table_initializer_existing_path_store_context_plus_44",
+      "observed": "6064",
+      "ok": true
+    },
+    {
+      "expected": "0399",
+      "name": "table_initializer_fallback_path_pointer_from_stack",
+      "observed": "0399",
+      "ok": true
+    },
+    {
+      "expected": "6164",
+      "name": "table_initializer_fallback_path_store_context_plus_44",
+      "observed": "6164",
+      "ok": true
+    },
+    {
+      "expected": "fbf79bf8",
+      "name": "table_initializer_existing_helper_call_site",
+      "observed": "fbf79bf8",
+      "ok": true
+    },
+    {
+      "expected": "faf7f1ff",
+      "name": "table_initializer_fallback_helper_call_site",
+      "observed": "faf7f1ff",
+      "ok": true
+    },
+    {
+      "expected": 6264,
+      "name": "descriptor_slot_offset_61e",
+      "observed": 6264,
+      "ok": true
+    },
+    {
+      "expected": "c0176d00",
+      "name": "descriptor_slot_literal_raw",
+      "observed": "c0176d00",
+      "ok": true
+    },
+    {
+      "expected": 1745,
+      "name": "descriptor_slot_nested_index",
+      "observed": 1745,
+      "ok": true
+    },
+    {
+      "expected": 6980,
+      "name": "descriptor_nested_offset",
+      "observed": 6980,
+      "ok": true
+    },
+    {
+      "expected": "7c020008",
+      "name": "descriptor_nested_literal_raw",
+      "observed": "7c020008",
+      "ok": true
+    },
+    {
+      "expected": 1,
+      "name": "descriptor_nested_kind",
+      "observed": 1,
+      "ok": true
+    },
+    {
+      "expected": 0,
+      "name": "descriptor_nested_bit30",
+      "observed": 0,
+      "ok": true
+    },
+    {
+      "expected": 636,
+      "name": "descriptor_nested_low12",
+      "observed": 636,
+      "ok": true
+    },
+    {
+      "expected": 60,
+      "name": "descriptor_nested_field_start",
+      "observed": 60,
+      "ok": true
+    },
+    {
+      "expected": 9,
+      "name": "descriptor_nested_field_end",
+      "observed": 9,
+      "ok": true
+    },
+    {
+      "expected": 328316,
+      "name": "conditional_kind1_d0_r4",
+      "observed": 328316,
+      "ok": true
+    },
+    {
+      "expected": "cf16bf73c370bac1c4426f7c79e64890898a11da7743304528ddeccfe3cd7ecb",
+      "name": "callback_owner_result_hash",
+      "observed": "cf16bf73c370bac1c4426f7c79e64890898a11da7743304528ddeccfe3cd7ecb",
+      "ok": true
+    },
+    {
+      "expected": true,
+      "name": "callback_identity_in_existing_review_explicitly_unproven",
+      "observed": true,
+      "ok": true
+    },
+    {
+      "expected": true,
+      "name": "callback_active_dispatch_not_claimed_by_owner_result",
+      "observed": true,
+      "ok": true
+    }
+  ],
+  "context_plus_44_table": {
+    "candidate_660_initializer": "A separate static pointer literal exists for the +0x660 callback slot; it does not identify the active callback object or replace the +0x44 table pointer source.",
+    "observed": "candidate code loads table base from context+0x44 at 0x9B18; exact ABL1 function 0xB228 initializes that field from either a lookup-result pointer or fallback allocation pointer. Caller-supplied table[0x61E] and nested descriptor bytes remain dynamic unless the exact fallback path is selected; this review does not decode table entries.",
+    "static_pointer_status": "An exact ABL1 initializer function at 0xB228 writes context+0x44 from helper-returned stack pointers on two paths: lookup-result [SP+0x18] -> STR [R4+0x44] at 0xB266, or fallback-result [SP+0x0C] -> STR [R4+0x44] at 0xB274. The base is not a static pointer literal; it is dynamically supplied by code in the module. The caller/active-context binding remains unproven."
+  },
+  "evidence_class": [
+    "observed-bytes",
+    "independent fresh LLVM disassembly"
+  ],
+  "inputs": {
+    "abl_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "abl_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "callback_owner_result_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-context660-callback-xhigh/abl1-context660-callback-result.json",
+    "callback_owner_result_sha256": "cf16bf73c370bac1c4426f7c79e64890898a11da7743304528ddeccfe3cd7ecb",
+    "target_report_path": "/home/OWNER/orca/projects/bc250/docs/research/20260920-clv-abl1-svc4-r1-target-xhigh.md",
+    "target_report_sha256": "d32ba56c94ef3e35d89fc1e5e02765d8cc4607b0623f9ba621b5e1af082c0446",
+    "target_result_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-svc4-r1-target-xhigh/svc4-r1-target-result.json",
+    "target_result_sha256": "05fa26427c0d969a11d3779714089943d01421780beebbe8b62b910661eeecca"
+  },
+  "r1_boundary": {
+    "candidate_R4_source": "candidate callback selects table[0x61E], then table[(first_slot >> 12)&0xFFF], builds descriptor/context selector using descriptor kind and context bytes; numeric selector remains unknown.",
+    "candidate_callback_SVC_helper_R1": "conditional on active binding: helper receives dynamic R4 via MOV R1,R4 at 0x9C28 / 0x9D94.",
+    "fclk_dispatch_input_R1": "0x61E is the callback selector/token, not the SVC#4 address; dispatcher moves it to callback R2 and sets callback R1=1."
+  },
+  "report_correction": {
+    "R1_scope": "At active FCLK caller, R1=0x61E is only the dispatch key. The eventual helper R1=R4 is exact only inside callback 0x9AD8; active path still has no numeric or function-bound helper R1.",
+    "claim_scope": "No SVC#4 physical target, SMN/MMIO register, clock effect, units, hardware execution, or MCLK=UCLK=FCLK claim follows.",
+    "corrected_statement": "Exact bytes prove the FCLK branch calls dispatcher 0x10958 with token 0x61E and that a conditional initializer candidate points to a compatible 0x9AD8 routine. They do not prove that the live [context+0x660] points to 0x9AD8. Therefore the 0x9AD8 -> table+0x44 -> helper R1=R4 chain is conditional, not an established active FCLK SVC#4 path.",
+    "finding": "Latest SVC4 R1 report overstates the active route by writing \u201ccallback 0x9AD8\u201d without making its conditional binding explicit."
+  },
+  "status": "PASS"
+}

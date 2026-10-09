@@ -1,0 +1,10 @@
+.program adapter_spi_capture
+; Inputs only. TX FIFO supplies finite sample count, never pin output.
+pull block
+mov x, osr
+wait 0 pin 3
+sample:
+in pins, 4
+jmp x-- sample
+hold:
+jmp hold

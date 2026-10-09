@@ -1,0 +1,218 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 27,
+    "total": 27
+  },
+  "checks_detail": [
+    {
+      "details": {
+        "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+        "observed": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-abl-memory/ABL1-clv-decompressed.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b",
+        "observed": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/lorek123_psp/ABL1_decompiled.c",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "dc4db013c5f495151cb8e449a1e4d9754b4b9bdada99a8a41088e05725289edb",
+        "observed": "dc4db013c5f495151cb8e449a1e4d9754b4b9bdada99a8a41088e05725289edb"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-abl-memory-function/abl1-thumb-95fc-9870.txt",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "observed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-abl-memory-function/abl1-disasm.stderr",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "78f0353182fe246ddc0b0b4bb9d3e91ecfa339b27d93f54bcf3f048bfa7366ec",
+        "observed": "78f0353182fe246ddc0b0b4bb9d3e91ecfa339b27d93f54bcf3f048bfa7366ec"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-abl-memory-function/ABL1-FUN-000096fc-snippet.c",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "2de9f04f",
+        "observed": "2de9f04f"
+      },
+      "label": "exact-ABL1-byte:0x95fc",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "0468",
+        "observed": "0468"
+      },
+      "label": "exact-ABL1-byte:0x9600",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "d4f8c403",
+        "observed": "d4f8c403"
+      },
+      "label": "exact-ABL1-byte:0x96f0",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "90f87400",
+        "observed": "90f87400"
+      },
+      "label": "exact-ABL1-byte:0x96f4",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "008c",
+        "observed": "008c"
+      },
+      "label": "exact-ABL1-byte:0x9672",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c1f87802",
+        "observed": "c1f87802"
+      },
+      "label": "exact-ABL1-byte:0x9674",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "d2f87822",
+        "observed": "d2f87822"
+      },
+      "label": "exact-ABL1-byte:0x971a",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c4f8bc62",
+        "observed": "c4f8bc62"
+      },
+      "label": "exact-ABL1-byte:0x973e",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "0684",
+        "observed": "0684"
+      },
+      "label": "exact-ABL1-byte:0x9758",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "95f84b00",
+        "observed": "95f84b00"
+      },
+      "label": "exact-ABL1-byte:0x975a",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "5fb0",
+        "observed": "5fb0"
+      },
+      "label": "exact-ABL1-byte:0x9846",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "0020",
+        "observed": "0020"
+      },
+      "label": "exact-ABL1-byte:0x9848",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "bde8f08f",
+        "observed": "bde8f08f"
+      },
+      "label": "exact-ABL1-byte:0x984a",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "historical-source-structure:FUN_000096fc",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "historical-source-structure:Synchronize_Mem_Speed_for_each_c",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "historical-source-structure:iVar6 + 0x3c4",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "historical-source-structure:iVar6 + 0x278",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "historical-source-structure:param_1[3] + 0x20",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "historical-source-structure:iVar6 + 700",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "historical-source-structure:uVar8 = 0x7d1",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "thumb-disassembly-prologue",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "thumb-disassembly-key-windows",
+      "status": "PASS"
+    }
+  ],
+  "conclusion": "Exact clv ABL1 contains a Thumb-2 memory-speed synchronization function structurally matching historical FUN_000096fc. It collects per-channel memory-speed values, reduces a table to a minimum, and writes the selected speed back through a runtime structure at +0x20. This is a concrete memory-training/policy structure match, but no edge from AmdSetup+0x316/INV 0x11ED or UCLK/FCLK ratio semantics is shown.",
+  "isa_and_base": {
+    "arm_thumb": "Thumb-2 function at exact payload offset 0x95FC; Thumb prologue e92d4ff0",
+    "historical_source_function": "FUN_000096fc at source label 0x96FC; exact control structure matches at payload 0x95FC (address delta -0x100, treated as observed alignment not assumed base)",
+    "payload_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+  },
+  "limitations": [
+    "Historical source text remains provenance lead; no source-to-binary hash identity.",
+    "The exact input population of the ABL1 context and physical MHz conversion remain unresolved.",
+    "No firmware execution, training, hardware, voltage, or settings action."
+  ],
+  "matched_dataflow": {
+    "channel_count": "[r4+0x3c4] then byte +0x74 at 0x96F0/96F4",
+    "context": "r4 = [r0] at 0x9600",
+    "min_reduction": "reads table [r4 + indexed*0x40 + 0x278] and stores min to [r4+0x2bc] at 0x973E",
+    "per_channel_speed_input": "ldrh [r0+0x20] at 0x9672; r0=[r5+0xc]",
+    "speed_table_store": "str.w to [r1+0x278] at 0x9674",
+    "writeback": "strh min to [r0+0x20] at 0x9758; loop count [r5+0x4b] at 0x975A"
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,229 @@
+[2K
+            ; CALL XREF from fcn.00014c0c @ 0x14c8b
+┌ fcn.00014a35(unsigned long arg_4h, unsigned long arg_8h, unsigned long arg_ch);
+│           ; arg unsigned long arg_4h @ stack + 0x4
+│           ; arg unsigned long arg_8h  { >= 0x4} @ stack + 0x8
+│           ; arg unsigned long arg_ch @ stack + 0xc
+│           0x00014a35      push  ebp
+│           0x00014a36      mov   ebp, esp
+│           0x00014a38      cmp   dword [arg_4h], 0x02
+│           0x00014a3c      push  ebx
+│           0x00014a3d      push  esi
+│           0x00014a3e      mov   ebx, eax
+│           0x00014a40      mov   esi, ecx
+│       ┌─< 0x00014a42      jb    0x14a4f
+│       │   0x00014a44      push  0xdf030132                           ; int32_t arg_4h
+│       │   0x00014a49      call  fcn.000005aa
+│       │   0x00014a4e      pop   ecx
+│       └─> 0x00014a4f      cmp   dword [arg_8h], 0x04
+│       ┌─< 0x00014a53      jb    0x14a60
+│       │   0x00014a55      push  0xdf030133                           ; int32_t arg_4h
+│       │   0x00014a5a      call  fcn.000005aa
+│       │   0x00014a5f      pop   ecx
+│       └─> 0x00014a60      cmp   esi, 0x08
+│       ┌─< 0x00014a63      jb    0x14a70
+│       │   0x00014a65      push  0xdf030134                           ; int32_t arg_4h
+│       │   0x00014a6a      call  fcn.000005aa
+│       │   0x00014a6f      pop   ecx
+│       └─> 0x00014a70      cmp   ebx, data.00000400                   ; 0x400 ; "j"
+│       ┌─< 0x00014a76      jb    0x14a83
+│       │   0x00014a78      push  0xdf030135                           ; int32_t arg_4h
+│       │   0x00014a7d      call  fcn.000005aa
+│       │   0x00014a82      pop   ecx
+│       └─> 0x00014a83      test  bl, 0x03
+│       ┌─< 0x00014a86      jz    0x14a93
+│       │   0x00014a88      push  0xdf030136                           ; int32_t arg_4h
+│       │   0x00014a8d      call  fcn.000005aa
+│       │   0x00014a92      pop   ecx
+│       └─> 0x00014a93      push  edi
+│           0x00014a94      mov   edi, 0xff
+│           0x00014a99      cmp   dword [arg_ch], edi
+│       ┌─< 0x00014a9c      jbe   0x14aa9
+│       │   0x00014a9e      push  0xdf030137                           ; int32_t arg_4h
+│       │   0x00014aa3      call  fcn.000005aa
+│       │   0x00014aa8      pop   ecx
+│       └─> 0x00014aa9      mov   eax, dword [arg_4h]
+│           0x00014aac      shl   eax, 0x02
+│           0x00014aaf      or    eax, dword [arg_8h]
+│           0x00014ab2      sub   eax, 0x08
+│           0x00014ab5      and   eax, 0x1f
+│           0x00014ab8      shl   eax, 0x0f
+│           0x00014abb      cmp   dword [arg_ch], edi
+│           0x00014abe      pop   edi
+│       ┌─< 0x00014abf      jnz   0x14ae0
+│       │   0x00014ac1      and   esi, 0x07
+│       │   0x00014ac4      shl   esi, 0x0c
+│       │   0x00014ac7      and   ebx, data.00000fff                   ; 0xfff
+│       │   0x00014acd      and   eax, 0xffff8000
+│       │   0x00014ad2      or    esi, ebx
+│       │   0x00014ad4      or    esi, eax
+│       │   0x00014ad6      sub   esi, 0x20000000
+│       │   0x00014adc      mov   eax, dword [esi]
+│      ┌──< 0x00014ade      jmp   0x14b1b
+│      │└─> 0x00014ae0      movzx ecx, byte [arg_ch]
+│      │    0x00014ae4      shl   ecx, 0x05
+│      │    0x00014ae7      and   esi, 0x07
+│      │    0x00014aea      or    ecx, esi
+│      │    0x00014aec      and   eax, 0xffffc05c
+│      │    0x00014af1      shl   ecx, 0x0b
+│      │    0x00014af4      and   ebx, data.000007fc                   ; 0x7fc ; "t$\b\xfft$\b\xffP<\x8aD$\U00000010YY\xc3\xe8\xcb\xff\xff\xff\xfft$\b\xfft$\b\xffP@f\x8bD$\U00000010YY\xc3\xe8\xb3\xff\xff\xff\xf"
+│      │    0x00014afa      or    eax, data.0000405c                   ; 0x405c ; "E\xfcƀ\xcb\U00000006"
+│      │    0x00014aff      or    ecx, ebx
+│      │    0x00014b01      or    ecx, 0x01
+│      │    0x00014b04      mov   dword [eax-0x20000000], ecx
+│      │    0x00014b0a      and   eax, 0xffffc098
+│      │    0x00014b0f      or    eax, data.00004098                   ; 0x4098
+│      │    0x00014b14      sub   eax, 0x20000000
+│      │    0x00014b19      mov   eax, dword [eax]
+│      │    ; CODE XREF from fcn.00014a35 @ 0x14ade
+│      └──> 0x00014b1b      pop   esi
+│           0x00014b1c      pop   ebx
+│           0x00014b1d      pop   ebp
+└           0x00014b1e      ret
+            ; CALL XREF from fcn.00014c0c @ 0x14ca8
+┌ fcn.00014b1f(unsigned long arg_4h, unsigned long arg_8h, unsigned long arg_ch, int32_t arg_10h);
+│           ; arg unsigned long arg_4h @ stack + 0x4
+│           ; arg unsigned long arg_8h  { >= 0x4} @ stack + 0x8
+│           ; arg unsigned long arg_ch @ stack + 0xc
+│           ; arg int32_t arg_10h @ stack + 0x10
+│           0x00014b1f      push  ebp
+│           0x00014b20      mov   ebp, esp
+│           0x00014b22      cmp   dword [arg_4h], 0x02
+│           0x00014b26      push  ebx
+│           0x00014b27      push  esi
+│           0x00014b28      mov   ebx, eax
+│           0x00014b2a      mov   esi, ecx
+│       ┌─< 0x00014b2c      jb    0x14b39
+│       │   0x00014b2e      push  0xdf030189                           ; int32_t arg_4h
+│       │   0x00014b33      call  fcn.000005aa
+│       │   0x00014b38      pop   ecx
+│       └─> 0x00014b39      cmp   dword [arg_8h], 0x04
+│       ┌─< 0x00014b3d      jb    0x14b4a
+│       │   0x00014b3f      push  0xdf030190                           ; int32_t arg_4h
+│       │   0x00014b44      call  fcn.000005aa
+│       │   0x00014b49      pop   ecx
+│       └─> 0x00014b4a      cmp   esi, 0x08
+│       ┌─< 0x00014b4d      jb    0x14b5a
+│       │   0x00014b4f      push  0xdf030191                           ; int32_t arg_4h
+│       │   0x00014b54      call  fcn.000005aa
+│       │   0x00014b59      pop   ecx
+│       └─> 0x00014b5a      cmp   ebx, data.00000400                   ; 0x400 ; "j"
+│       ┌─< 0x00014b60      jb    0x14b6d
+│       │   0x00014b62      push  0xdf030192                           ; int32_t arg_4h
+│       │   0x00014b67      call  fcn.000005aa
+│       │   0x00014b6c      pop   ecx
+│       └─> 0x00014b6d      test  bl, 0x03
+│       ┌─< 0x00014b70      jz    0x14b7d
+│       │   0x00014b72      push  0xdf030193                           ; int32_t arg_4h
+│       │   0x00014b77      call  fcn.000005aa
+│       │   0x00014b7c      pop   ecx
+│       └─> 0x00014b7d      push  edi
+│           0x00014b7e      mov   edi, 0xff
+│           0x00014b83      cmp   dword [arg_ch], edi
+│       ┌─< 0x00014b86      jbe   0x14b93
+│       │   0x00014b88      push  0xdf030194                           ; int32_t arg_4h
+│       │   0x00014b8d      call  fcn.000005aa
+│       │   0x00014b92      pop   ecx
+│       └─> 0x00014b93      mov   eax, dword [arg_4h]
+│           0x00014b96      shl   eax, 0x02
+│           0x00014b99      or    eax, dword [arg_8h]
+│           0x00014b9c      sub   eax, 0x08
+│           0x00014b9f      and   eax, 0x1f
+│           0x00014ba2      shl   eax, 0x0f
+│           0x00014ba5      cmp   dword [arg_ch], edi
+│           0x00014ba8      pop   edi
+│       ┌─< 0x00014ba9      jnz   0x14bcb
+│       │   0x00014bab      and   esi, 0x07
+│       │   0x00014bae      shl   esi, 0x0c
+│       │   0x00014bb1      and   ebx, data.00000fff                   ; 0xfff
+│       │   0x00014bb7      and   eax, 0xffff8000
+│       │   0x00014bbc      or    esi, ebx
+│       │   0x00014bbe      or    esi, eax
+│       │   0x00014bc0      mov   eax, dword [arg_10h]
+│       │   0x00014bc3      mov   dword [esi-0x20000000], eax
+│      ┌──< 0x00014bc9      jmp   0x14c08
+│      │└─> 0x00014bcb      movzx ecx, byte [arg_ch]
+│      │    0x00014bcf      shl   ecx, 0x05
+│      │    0x00014bd2      and   esi, 0x07
+│      │    0x00014bd5      or    ecx, esi
+│      │    0x00014bd7      shl   ecx, 0x0b
+│      │    0x00014bda      and   ebx, data.000007fc                   ; 0x7fc ; "t$\b\xfft$\b\xffP<\x8aD$\U00000010YY\xc3\xe8\xcb\xff\xff\xff\xfft$\b\xfft$\b\xffP@f\x8bD$\U00000010YY\xc3\xe8\xb3\xff\xff\xff\xf"
+│      │    0x00014be0      and   eax, 0xffffc05c
+│      │    0x00014be5      or    ecx, ebx
+│      │    0x00014be7      or    eax, data.0000405c                   ; 0x405c ; "E\xfcƀ\xcb\U00000006"
+│      │    0x00014bec      or    ecx, 0x01
+│      │    0x00014bef      mov   dword [eax-0x20000000], ecx
+│      │    0x00014bf5      mov   ecx, dword [arg_10h]
+│      │    0x00014bf8      and   eax, 0xffffc098
+│      │    0x00014bfd      or    eax, data.00004098                   ; 0x4098
+│      │    0x00014c02      mov   dword [eax-0x20000000], ecx
+│      │    ; CODE XREF from fcn.00014b1f @ 0x14bc9
+│      └──> 0x00014c08      pop   esi
+│           0x00014c09      pop   ebx
+│           0x00014c0a      pop   ebp
+└           0x00014c0b      ret
+            ; CALL XREF from fcn.00014038 @ 0x14056
+┌ fcn.00014c0c(unsigned long arg_4h, unsigned long arg_8h, unsigned long arg_ch, unsigned long arg_10h, int32_t arg_14h);
+│           ; arg unsigned long arg_4h @ stack + 0x4
+│           ; arg unsigned long arg_8h  { >= 0x4} @ stack + 0x8
+│           ; arg unsigned long arg_ch  { >= 0x8} @ stack + 0xc
+│           ; arg unsigned long arg_10h  { <= 0xff} @ stack + 0x10
+│           ; arg int32_t arg_14h @ stack + 0x14
+│           0x00014c0c      push  ebp
+│           0x00014c0d      mov   ebp, esp
+│           0x00014c0f      cmp   dword [arg_4h], 0x02
+│           0x00014c13      push  esi
+│           0x00014c14      push  edi
+│           0x00014c15      mov   edi, eax
+│       ┌─< 0x00014c17      jb    0x14c24
+│       │   0x00014c19      push  0xdf030256                           ; int32_t arg_4h
+│       │   0x00014c1e      call  fcn.000005aa
+│       │   0x00014c23      pop   ecx
+│       └─> 0x00014c24      cmp   dword [arg_8h], 0x04
+│       ┌─< 0x00014c28      jb    0x14c35
+│       │   0x00014c2a      push  0xdf030257                           ; int32_t arg_4h
+│       │   0x00014c2f      call  fcn.000005aa
+│       │   0x00014c34      pop   ecx
+│       └─> 0x00014c35      cmp   dword [arg_ch], 0x08
+│       ┌─< 0x00014c39      jb    0x14c46
+│       │   0x00014c3b      push  0xdf030258                           ; int32_t arg_4h
+│       │   0x00014c40      call  fcn.000005aa
+│       │   0x00014c45      pop   ecx
+│       └─> 0x00014c46      cmp   ebx, data.00000400                   ; 0x400 ; "j"
+│       ┌─< 0x00014c4c      jb    0x14c59
+│       │   0x00014c4e      push  0xdf030259                           ; int32_t arg_4h
+│       │   0x00014c53      call  fcn.000005aa
+│       │   0x00014c58      pop   ecx
+│       └─> 0x00014c59      test  bl, 0x03
+│       ┌─< 0x00014c5c      jz    0x14c69
+│       │   0x00014c5e      push  0xdf030260                           ; int32_t arg_4h
+│       │   0x00014c63      call  fcn.000005aa
+│       │   0x00014c68      pop   ecx
+│       └─> 0x00014c69      cmp   dword [arg_10h], 0xff
+│       ┌─< 0x00014c70      jbe   0x14c7d
+│       │   0x00014c72      push  0xdf030261                           ; int32_t arg_4h
+│       │   0x00014c77      call  fcn.000005aa
+│       │   0x00014c7c      pop   ecx
+│       └─> 0x00014c7d      push  dword [arg_10h]                      ; unsigned long arg_ch
+│           0x00014c80      mov   ecx, dword [arg_ch]
+│           0x00014c83      push  dword [arg_8h]                       ; unsigned long arg_8h
+│           0x00014c86      mov   eax, ebx
+│           0x00014c88      push  dword [arg_4h]                       ; unsigned long arg_4h
+│           0x00014c8b      call  fcn.00014a35
+│           0x00014c90      mov   ecx, dword [arg_ch]
+│           0x00014c93      mov   esi, eax
+│           0x00014c95      not   edi
+│           0x00014c97      and   esi, edi
+│           0x00014c99      or    esi, dword [arg_14h]
+│           0x00014c9c      mov   eax, ebx
+│           0x00014c9e      push  esi
+│           0x00014c9f      push  dword [arg_10h]                      ; unsigned long arg_ch
+│           0x00014ca2      push  dword [arg_8h]                       ; unsigned long arg_8h
+│           0x00014ca5      push  dword [arg_4h]                       ; unsigned long arg_4h
+│           0x00014ca8      call  fcn.00014b1f
+│           0x00014cad      add   esp, 0x1c
+│           0x00014cb0      pop   edi
+│           0x00014cb1      mov   eax, esi
+│           0x00014cb3      pop   esi
+│           0x00014cb4      pop   ebp
+└           0x00014cb5      ret

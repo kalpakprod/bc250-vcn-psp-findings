@@ -1,0 +1,534 @@
+{
+  "status": "PASS",
+  "checks": {
+    "passed": 83,
+    "failed": 0,
+    "total": 83
+  },
+  "inputs": {
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "elf_sha256": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+    "item17_result_sha256": "5d5599f220425829401bc86fcf1ff0d20eb96907e4d1fa96b8dd010f428cca26"
+  },
+  "selected_local_path": {
+    "conditional_prior_item17_binding": "base 0x57100 reused, not rechecked; loader runtime base remains unproven",
+    "helper_gate": "0x6D10 returns 1; 0x6C20 writes result to scratch +4; 0x95FC loads [SP+0x164]; 0x9646 -> 0x9744 -> 0x984E",
+    "direct_alternatives_bypassed": [
+      "0x9780 -> 0x0DD4",
+      "0x97E4 -> 0x118C",
+      "0x9800 -> 0x10C0"
+    ],
+    "next_reachable_local_edge": "0x984E -> 0x130C (r0=4,r1=0) -> 0x1354 -> 0x1332 -> data-dependent BLX R0 callback table; 0x130C is called again at 0x988A",
+    "indirect_table_status": "dispatch code is byte-backed; table pointer/object initialization and callback targets are unresolved; no SVC6 reachability conclusion follows from this indirect edge",
+    "local_return": "after the single-state loop, 0x98AA -> 0x978E -> 0x9846 -> r0=0 return"
+  },
+  "accepted": "The exact selected local helper branch bypasses the directly enumerated DD4 and SVC-wrapper callsites, reaches a different local indirect callback dispatcher, and returns 0 from ABL1.",
+  "disallowed": "Do not claim SVC #6 is globally unreachable for item17; do not claim it is reached or is the current item17 actuator. The dynamic callback table and external SVC handler are unresolved.",
+  "limits": [
+    "No item17 table/base mapping repeated.",
+    "No SVC handler/recipient semantics.",
+    "No clock-register/PLL write or physical-clock effect in this check.",
+    "No runtime, hardware, training, performance, or synchronization result."
+  ],
+  "checks_detail": [
+    {
+      "name": "exact ROM SHA-256",
+      "passed": true,
+      "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "name": "exact ABL1 SHA-256",
+      "passed": true,
+      "observed": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "name": "exact ELF wrapper SHA-256",
+      "passed": true,
+      "observed": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+      "expected": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6"
+    },
+    {
+      "name": "prior item17 reachability result status",
+      "passed": true,
+      "observed": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "name": "prior conditional base preserved",
+      "passed": true,
+      "observed": "0x57100",
+      "expected": "0x57100"
+    },
+    {
+      "name": "helper:0x6d1e mnemonic",
+      "passed": true,
+      "observed": "movs",
+      "expected": "movs"
+    },
+    {
+      "name": "helper:0x6d1e operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "helper:0x6d20 mnemonic",
+      "passed": true,
+      "observed": "pop",
+      "expected": "pop"
+    },
+    {
+      "name": "helper:0x6d20 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "helper:0x6c2a mnemonic",
+      "passed": true,
+      "observed": "bl",
+      "expected": "bl"
+    },
+    {
+      "name": "helper:0x6c2a operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "helper:0x6c2e mnemonic",
+      "passed": true,
+      "observed": "str",
+      "expected": "str"
+    },
+    {
+      "name": "helper:0x6c2e operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "gate:0x962a mnemonic",
+      "passed": true,
+      "observed": "add",
+      "expected": "add"
+    },
+    {
+      "name": "gate:0x962a operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "gate:0x962c mnemonic",
+      "passed": true,
+      "observed": "bl",
+      "expected": "bl"
+    },
+    {
+      "name": "gate:0x962c operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "gate:0x963e mnemonic",
+      "passed": true,
+      "observed": "ldr",
+      "expected": "ldr"
+    },
+    {
+      "name": "gate:0x963e operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "gate:0x9644 mnemonic",
+      "passed": true,
+      "observed": "cmp",
+      "expected": "cmp"
+    },
+    {
+      "name": "gate:0x9644 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "gate:0x9646 mnemonic",
+      "passed": true,
+      "observed": "bls",
+      "expected": "bls"
+    },
+    {
+      "name": "gate:0x9646 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "bypass:0x9744 mnemonic",
+      "passed": true,
+      "observed": "b",
+      "expected": "b"
+    },
+    {
+      "name": "bypass:0x9744 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "alt_calls:0x9780 mnemonic",
+      "passed": true,
+      "observed": "bl",
+      "expected": "bl"
+    },
+    {
+      "name": "alt_calls:0x9780 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "alt_calls:0x97e4 mnemonic",
+      "passed": true,
+      "observed": "bl",
+      "expected": "bl"
+    },
+    {
+      "name": "alt_calls:0x97e4 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "alt_calls:0x9800 mnemonic",
+      "passed": true,
+      "observed": "bl",
+      "expected": "bl"
+    },
+    {
+      "name": "alt_calls:0x9800 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "single:0x9850 mnemonic",
+      "passed": true,
+      "observed": "movs",
+      "expected": "movs"
+    },
+    {
+      "name": "single:0x9850 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "single:0x9852 mnemonic",
+      "passed": true,
+      "observed": "movs",
+      "expected": "movs"
+    },
+    {
+      "name": "single:0x9852 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "single:0x9854 mnemonic",
+      "passed": true,
+      "observed": "bl",
+      "expected": "bl"
+    },
+    {
+      "name": "single:0x9854 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "single:0x9858 mnemonic",
+      "passed": true,
+      "observed": "b",
+      "expected": "b"
+    },
+    {
+      "name": "single:0x9858 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "single:0x988a mnemonic",
+      "passed": true,
+      "observed": "bl",
+      "expected": "bl"
+    },
+    {
+      "name": "single:0x988a operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "single:0x98aa mnemonic",
+      "passed": true,
+      "observed": "b",
+      "expected": "b"
+    },
+    {
+      "name": "single:0x98aa operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "bypass:0x978e mnemonic",
+      "passed": true,
+      "observed": "strb.w",
+      "expected": "strb.w"
+    },
+    {
+      "name": "bypass:0x978e operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "bypass:0x9792 mnemonic",
+      "passed": true,
+      "observed": "b",
+      "expected": "b"
+    },
+    {
+      "name": "bypass:0x9792 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "bypass:0x9848 mnemonic",
+      "passed": true,
+      "observed": "movs",
+      "expected": "movs"
+    },
+    {
+      "name": "bypass:0x9848 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "bypass:0x984a mnemonic",
+      "passed": true,
+      "observed": "pop.w",
+      "expected": "pop.w"
+    },
+    {
+      "name": "bypass:0x984a operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x1310 mnemonic",
+      "passed": true,
+      "observed": "eor",
+      "expected": "eor"
+    },
+    {
+      "name": "config:0x1310 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x1314 mnemonic",
+      "passed": true,
+      "observed": "orrs",
+      "expected": "orrs"
+    },
+    {
+      "name": "config:0x1314 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x131a mnemonic",
+      "passed": true,
+      "observed": "beq",
+      "expected": "beq"
+    },
+    {
+      "name": "config:0x131a operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x131c mnemonic",
+      "passed": true,
+      "observed": "eor",
+      "expected": "eor"
+    },
+    {
+      "name": "config:0x131c operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x1320 mnemonic",
+      "passed": true,
+      "observed": "orrs",
+      "expected": "orrs"
+    },
+    {
+      "name": "config:0x1320 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x1322 mnemonic",
+      "passed": true,
+      "observed": "bne",
+      "expected": "bne"
+    },
+    {
+      "name": "config:0x1322 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x1328 mnemonic",
+      "passed": true,
+      "observed": "bl",
+      "expected": "bl"
+    },
+    {
+      "name": "config:0x1328 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x135a mnemonic",
+      "passed": true,
+      "observed": "ldr",
+      "expected": "ldr"
+    },
+    {
+      "name": "config:0x135a operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x1366 mnemonic",
+      "passed": true,
+      "observed": "ldr",
+      "expected": "ldr"
+    },
+    {
+      "name": "config:0x1366 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x1376 mnemonic",
+      "passed": true,
+      "observed": "bl",
+      "expected": "bl"
+    },
+    {
+      "name": "config:0x1376 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x133c mnemonic",
+      "passed": true,
+      "observed": "ldr",
+      "expected": "ldr"
+    },
+    {
+      "name": "config:0x133c operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x133e mnemonic",
+      "passed": true,
+      "observed": "blx",
+      "expected": "blx"
+    },
+    {
+      "name": "config:0x133e operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x1346 mnemonic",
+      "passed": true,
+      "observed": "ldr.w",
+      "expected": "ldr.w"
+    },
+    {
+      "name": "config:0x1346 operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x134a mnemonic",
+      "passed": true,
+      "observed": "cmp",
+      "expected": "cmp"
+    },
+    {
+      "name": "config:0x134a operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "config:0x134c mnemonic",
+      "passed": true,
+      "observed": "bne",
+      "expected": "bne"
+    },
+    {
+      "name": "config:0x134c operands prefix",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "input r0=4/r1=0 bypasses 0x1324 equality case",
+      "passed": true,
+      "observed": false,
+      "expected": false
+    },
+    {
+      "name": "input r0=4/r1=0 branches to local 0x1354 dispatcher",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "status": "PASS",
+  "evidence_class": "observed-bytes/static-analysis",
+  "t28_service_opcode": "0x1037",
+  "dispatch": [
+    "BCF4",
+    "BDA8",
+    "BDAC",
+    "BDBE[7]",
+    "BFB2",
+    "C51C",
+    "C526",
+    "118E8"
+  ],
+  "request_fields": {
+    "0x38": "SMU command",
+    "0x3C": "SMU argument",
+    "0x40": "poll limit",
+    "0x44": "returned argument"
+  },
+  "tos_wrapper_rom": "0x8FAEC4",
+  "tos_wrapper_service": "0x1037 via SVC F2",
+  "tos_only_direct_BL_caller_message": "0x0F at ROM8FE04C; not init9",
+  "false_uefi1037_lead": "AmdFabricAriPei772F stores a16-bit record ID, then a byte from source+98; not PSP service call",
+  "build_decision": "Do not patch the serialization token or substitute init9 for a proven coefficient-control route.",
+  "windows": [
+    {
+      "name": "tos-wrapper",
+      "command": [
+        "llvm-mc",
+        "--disassemble",
+        "--triple=thumbv7",
+        "--show-encoding"
+      ],
+      "exit": 0,
+      "instructions": [
+        {
+          "rom": "0x8faec4",
+          "bytes": "f0b5",
+          "instruction": "push\t{r4, r5, r6, r7, lr}"
+        },
+        {
+          "rom": "0x8faec6",
+          "bytes": "9fb0",
+          "instruction": "sub\tsp, #124"
+        },
+        {
+          "rom": "0x8faec8",
+          "bytes": "0546",
+          "instruction": "mov\tr5, r0"
+        },
+        {
+          "rom": "0x8faeca",
+          "bytes": "02a8",
+          "instruction": "add\tr0, sp, #8"
+        },
+        {
+          "rom": "0x8faecc",
+          "bytes": "0e46",
+          "instruction": "mov\tr6, r1"
+        },
+        {
+          "rom": "0x8faece",
+          "bytes": "2021",
+          "instruction": "movs\tr1, #32"
+        },
+        {
+          "rom": "0x8faed0",
+          "bytes": "1446",
+          "instruction": "mov\tr4, r2"
+        },
+        {
+          "rom": "0x8faed2",
+          "bytes": "1f46",
+          "instruction": "mov\tr7, r3"
+        },
+        {
+          "rom": "0x8faed4",
+          "bytes": "fef71aff",
+          "instruction": "bl\t#-4556"
+        },
+        {
+          "rom": "0x8faed8",
+          "bytes": "0220",
+          "instruction": "movs\tr0, #2"
+        },
+        {
+          "rom": "0x8faeda",
+          "bytes": "0190",
+          "instruction": "str\tr0, [sp, #4]"
+        },
+        {
+          "rom": "0x8faedc",
+          "bytes": "0eaa",
+          "instruction": "add\tr2, sp, #56"
+        },
+        {
+          "rom": "0x8faede",
+          "bytes": "41f23700",
+          "instruction": "movw\tr0, #4151"
+        },
+        {
+          "rom": "0x8faee2",
+          "bytes": "0090",
+          "instruction": "str\tr0, [sp]"
+        },
+        {
+          "rom": "0x8faee4",
+          "bytes": "0120",
+          "instruction": "movs\tr0, #1"
+        },
+        {
+          "rom": "0x8faee6",
+          "bytes": "6946",
+          "instruction": "mov\tr1, sp"
+        },
+        {
+          "rom": "0x8faee8",
+          "bytes": "e0c2",
+          "instruction": "stm\tr2!, {r5, r6, r7}"
+        },
+        {
+          "rom": "0x8faeea",
+          "bytes": "f2df",
+          "instruction": "svc\t#242"
+        },
+        {
+          "rom": "0x8faeec",
+          "bytes": "0028",
+          "instruction": "cmp\tr0, #0"
+        },
+        {
+          "rom": "0x8faeee",
+          "bytes": "03d1",
+          "instruction": "bne\t#6"
+        },
+        {
+          "rom": "0x8faef0",
+          "bytes": "002c",
+          "instruction": "cmp\tr4, #0"
+        },
+        {
+          "rom": "0x8faef2",
+          "bytes": "01d0",
+          "instruction": "beq\t#2"
+        },
+        {
+          "rom": "0x8faef4",
+          "bytes": "1199",
+          "instruction": "ldr\tr1, [sp, #68]"
+        },
+        {
+          "rom": "0x8faef6",
+          "bytes": "2160",
+          "instruction": "str\tr1, [r4]"
+        },
+        {
+          "rom": "0x8faef8",
+          "bytes": "1fb0",
+          "instruction": "add\tsp, #124"
+        },
+        {
+          "rom": "0x8faefa",
+          "bytes": "f0bd",
+          "instruction": "pop\t{r4, r5, r6, r7, pc}"
+        }
+      ]
+    },
+    {
+      "name": "tos-caller",
+      "command": [
+        "llvm-mc",
+        "--disassemble",
+        "--triple=thumbv7",
+        "--show-encoding"
+      ],
+      "exit": 0,
+      "instructions": [
+        {
+          "rom": "0x8fe046",
+          "bytes": "0022",
+          "instruction": "movs\tr2, #0"
+        },
+        {
+          "rom": "0x8fe048",
+          "bytes": "40f2e833",
+          "instruction": "movw\tr3, #1000"
+        },
+        {
+          "rom": "0x8fe04c",
+          "bytes": "0f20",
+          "instruction": "movs\tr0, #15"
+        },
+        {
+          "rom": "0x8fe04e",
+          "bytes": "1146",
+          "instruction": "mov\tr1, r2"
+        },
+        {
+          "rom": "0x8fe050",
+          "bytes": "fcf738ff",
+          "instruction": "bl\t#-12688"
+        }
+      ]
+    },
+    {
+      "name": "t28-case",
+      "command": [
+        "llvm-mc",
+        "--disassemble",
+        "--triple=thumbv7",
+        "--show-encoding"
+      ],
+      "exit": 0,
+      "instructions": [
+        {
+          "rom": "0x99141c",
+          "bytes": "04f13800",
+          "instruction": "add.w\tr0, r4, #56"
+        },
+        {
+          "rom": "0x991420",
+          "bytes": "04f14402",
+          "instruction": "add.w\tr2, r4, #68"
+        },
+        {
+          "rom": "0x991424",
+          "bytes": "0bc8",
+          "instruction": "ldm\tr0, {r0, r1, r3}"
+        },
+        {
+          "rom": "0x991426",
+          "bytes": "05f0dff9",
+          "instruction": "bl\t#21438"
+        }
+      ]
+    }
+  ],
+  "false_lead_instructions": [
+    {
+      "rva": 30511,
+      "bytes": "ba37100000",
+      "mnemonic": "mov",
+      "operands": "edx,0x1037"
+    },
+    {
+      "rva": 30516,
+      "bytes": "8b45f8",
+      "mnemonic": "mov",
+      "operands": "eax,DWORD PTR [ebp-0x8]"
+    },
+    {
+      "rva": 30519,
+      "bytes": "668910",
+      "mnemonic": "mov",
+      "operands": "WORD PTR [eax],dx"
+    },
+    {
+      "rva": 30522,
+      "bytes": "8b4df8",
+      "mnemonic": "mov",
+      "operands": "ecx,DWORD PTR [ebp-0x8]"
+    },
+    {
+      "rva": 30525,
+      "bytes": "8a5102",
+      "mnemonic": "mov",
+      "operands": "dl,BYTE PTR [ecx+0x2]"
+    },
+    {
+      "rva": 30528,
+      "bytes": "80e2fc",
+      "mnemonic": "and",
+      "operands": "dl,0xfc"
+    },
+    {
+      "rva": 30531,
+      "bytes": "8b45f8",
+      "mnemonic": "mov",
+      "operands": "eax,DWORD PTR [ebp-0x8]"
+    },
+    {
+      "rva": 30534,
+      "bytes": "885002",
+      "mnemonic": "mov",
+      "operands": "BYTE PTR [eax+0x2],dl"
+    },
+    {
+      "rva": 30537,
+      "bytes": "8b4df8",
+      "mnemonic": "mov",
+      "operands": "ecx,DWORD PTR [ebp-0x8]"
+    },
+    {
+      "rva": 30540,
+      "bytes": "8b55fc",
+      "mnemonic": "mov",
+      "operands": "edx,DWORD PTR [ebp-0x4]"
+    },
+    {
+      "rva": 30543,
+      "bytes": "8a8298000000",
+      "mnemonic": "mov",
+      "operands": "al,BYTE PTR [edx+0x98]"
+    },
+    {
+      "rva": 30549,
+      "bytes": "884103",
+      "mnemonic": "mov",
+      "operands": "BYTE PTR [ecx+0x3],al"
+    }
+  ],
+  "remaining": [
+    "BIOS-callable path to coefficient changes not demonstrated.",
+    "Direct-call enumeration excludes indirect calls and other components.",
+    "No physical domain/voltage encoding inferred from service discovery.",
+    "No ROM patch, emulation, hardware execution, or flash."
+  ]
+}

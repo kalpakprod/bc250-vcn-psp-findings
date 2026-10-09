@@ -1,0 +1,29 @@
+{
+  "base": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "base_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "out": "candidates/BC250_5.00_clv_ROOTKEY-swap-0x09_v001.bin",
+  "out_sha256": "46ec00bbcda7a4d0e6fbe6b9a39457395b573f8667141919e58e7f146ca8ecbf",
+  "blob": {
+    "spi": "0x93f000",
+    "size": "0x440",
+    "kid": "ffc8acd45bb748e082d2100ed808fa54"
+  },
+  "our_key": {
+    "kid": "e298de0371c5de85109f4e4be68b83c7",
+    "e": 65537,
+    "endian": "little"
+  },
+  "tail_0x400": "untouched 64 B high-entropy field (purpose unknown; risk recorded)",
+  "checks": {
+    "diff_count": 256,
+    "diff_confined": true,
+    "kid_unchanged": true,
+    "e_unchanged": true,
+    "endian_used": "little",
+    "other_modulus_copies": [
+      "0x93f048"
+    ]
+  },
+  "gate": "PASS",
+  "claim_boundary": "static discriminator only; boot outcome UNRUN; no flash"
+}

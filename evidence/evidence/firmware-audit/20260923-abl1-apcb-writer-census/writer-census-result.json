@@ -1,0 +1,133 @@
+{
+  "scope": "ABL1 native window 0x221D..0x1F000, real APCB modeled at 0x7B000; no hardware",
+  "abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+  "base_image_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "cases": [
+    {
+      "case": "BASELINE_APCB",
+      "item7_enum": "0x24",
+      "cmos_clock": 1750,
+      "final_policy": 1800,
+      "watched_writes": [
+        {
+          "pc": "0x2248",
+          "addr": "0x20102c",
+          "class": "NESTED+2C",
+          "size": 4,
+          "value": "0x6d6"
+        },
+        {
+          "pc": "0x22ba",
+          "addr": "0x20102c",
+          "class": "NESTED+2C",
+          "size": 4,
+          "value": "0x708"
+        }
+      ],
+      "other_write_classes": {
+        "STACK": 194,
+        "CTX_OTHER": 2,
+        "OTHER": 252
+      },
+      "provider_calls": [
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "case": "MODIFIED_APCB_item7_0x23",
+      "item7_enum": "0x23",
+      "cmos_clock": 1750,
+      "final_policy": 1750,
+      "watched_writes": [
+        {
+          "pc": "0x2248",
+          "addr": "0x20102c",
+          "class": "NESTED+2C",
+          "size": 4,
+          "value": "0x6d6"
+        },
+        {
+          "pc": "0x22ba",
+          "addr": "0x20102c",
+          "class": "NESTED+2C",
+          "size": 4,
+          "value": "0x6d6"
+        }
+      ],
+      "other_write_classes": {
+        "STACK": 194,
+        "CTX_OTHER": 2,
+        "OTHER": 252
+      },
+      "provider_calls": [
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "case": "CMOS_ONLY_pristine_APCB",
+      "item7_enum": "pristine",
+      "cmos_clock": 1650,
+      "final_policy": 1800,
+      "watched_writes": [
+        {
+          "pc": "0x2248",
+          "addr": "0x20102c",
+          "class": "NESTED+2C",
+          "size": 4,
+          "value": "0x672"
+        },
+        {
+          "pc": "0x22ba",
+          "addr": "0x20102c",
+          "class": "NESTED+2C",
+          "size": 4,
+          "value": "0x708"
+        }
+      ],
+      "other_write_classes": {
+        "STACK": 194,
+        "CTX_OTHER": 2,
+        "OTHER": 252
+      },
+      "provider_calls": [
+        [
+          7,
+          2
+        ]
+      ]
+    }
+  ],
+  "verdict": {
+    "j1_executed_window": "CLOSED-NEGATIVE: no writer outside the known CMOS/APCB-native paths touched the watched APCB offsets; AmdSetup carriers do not reach the PLL arguments in this window",
+    "foreign_writes": [],
+    "write_set_diffs": {
+      "baseline_minus_modified": [
+        [
+          "0x22ba",
+          "0x20102c",
+          "0x708"
+        ]
+      ],
+      "modified_minus_baseline": [
+        [
+          "0x22ba",
+          "0x20102c",
+          "0x6d6"
+        ]
+      ],
+      "baseline_minus_cmos_only": [
+        [
+          "0x2248",
+          "0x20102c",
+          "0x6d6"
+        ]
+      ]
+    }
+  }
+}

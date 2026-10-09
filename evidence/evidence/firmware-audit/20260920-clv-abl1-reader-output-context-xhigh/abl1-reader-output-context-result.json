@@ -1,0 +1,437 @@
+{
+  "status": "PASS",
+  "checks": 59,
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "abl": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "dis": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+    "reader": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-apcb-reader-boundary-resume/abl1-apcb-reader-boundary-result.json",
+    "branch": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-fclk-uclk-branch-xhigh/abl1-fclk-uclk-branch-result.json"
+  },
+  "hashes": {
+    "rom": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "abl": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "dis": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+    "reader": "537f987266057865bd7f278939304f2f40dcc5db4e57c6048ca0905ce2dac128",
+    "branch": "d6d053b5e4a74a5b4fe0526e4d4659d22a500601074baad751977ab21e2ecdfa"
+  },
+  "result": {
+    "reader_typed_store": "type 2 executes STRH R0,[R6] at payload+0x2070; R6 receives caller R2",
+    "uclk_output_boundary": "the exact UclkDiv1 M0..M3 callers pass SP+0x0C as output; first post-return byte load at 0x2D12 is then sent to logger; no persistent context store is established in these four slices",
+    "fclk_output_path": [
+      "Fclk descriptor [0x015F,0x0160] is supplied at 0x4662; output pointer is SP+0x08 at 0x4668; reader call is 0x466A.",
+      "Returned halfword is loaded from SP+0x08 at 0x467E and stored through the handler's output pointer at 0x4682.",
+      "Direct caller 0x5E68 is called at 0x7E74 with R0=R4; its Fclk subcall at 0x5FAE receives R0=SP+0x04, then caller loads that local at 0x5FB2 and stores its low halfword at [context+0x78] at 0x5FBA.",
+      "The same outer R4 base is passed at 0x8428 to 0x10200. That routine copies R0 into R4 at 0x10208; its reachable branch 0x104B2 -> 0x10592 -> 0x107DA reaches the first identified load [R4+0x78] at 0x107E4, followed by comparisons to immediates 0x3E8 and 0x4B0."
+    ],
+    "claim_boundary": "Static ABL1 dataflow only. The comparisons and selected branch constants are observed, but units, value meaning, loader/runtime invocation, MCLK-UCLK-FCLK equality, divider/PLL application, memory training, and physical clocks are not established. The conditional 0x57100 mapping is not used as loader proof."
+  },
+  "checks_detail": [
+    {
+      "check": "rom exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "rom sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "abl exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "abl sha256",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "dis exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "dis sha256",
+      "passed": true,
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    {
+      "check": "reader exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "reader sha256",
+      "passed": true,
+      "got": "537f987266057865bd7f278939304f2f40dcc5db4e57c6048ca0905ce2dac128",
+      "expected": "537f987266057865bd7f278939304f2f40dcc5db4e57c6048ca0905ce2dac128"
+    },
+    {
+      "check": "branch exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "branch sha256",
+      "passed": true,
+      "got": "d6d053b5e4a74a5b4fe0526e4d4659d22a500601074baad751977ab21e2ecdfa",
+      "expected": "d6d053b5e4a74a5b4fe0526e4d4659d22a500601074baad751977ab21e2ecdfa"
+    },
+    {
+      "check": "prior reader result status",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "prior reader descriptors",
+      "passed": true,
+      "got": {
+        "UclkDiv1M0": [
+          "0x20",
+          "0x21"
+        ],
+        "UclkDiv1M1": [
+          "0x20",
+          "0x22"
+        ],
+        "UclkDiv1M2": [
+          "0x20",
+          "0x23"
+        ],
+        "UclkDiv1M3": [
+          "0x20",
+          "0x24"
+        ],
+        "Fclk": [
+          "0x15f",
+          "0x160"
+        ]
+      },
+      "expected": {
+        "UclkDiv1M0": [
+          "0x20",
+          "0x21"
+        ],
+        "UclkDiv1M1": [
+          "0x20",
+          "0x22"
+        ],
+        "UclkDiv1M2": [
+          "0x20",
+          "0x23"
+        ],
+        "UclkDiv1M3": [
+          "0x20",
+          "0x24"
+        ],
+        "Fclk": [
+          "0x15f",
+          "0x160"
+        ]
+      }
+    },
+    {
+      "check": "prior branch result status",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "prior Fclk descriptors",
+      "passed": true,
+      "got": [
+        "0x015f",
+        "0x0160"
+      ],
+      "expected": [
+        "0x015f",
+        "0x0160"
+      ]
+    },
+    {
+      "check": "raw 0x1fc4: reader output argument R2 copied to R6",
+      "passed": true,
+      "got": "1646",
+      "expected": "1646"
+    },
+    {
+      "check": "raw 0x2042: reader loads type byte from caller type pointer",
+      "passed": true,
+      "got": "9af80000",
+      "expected": "9af80000"
+    },
+    {
+      "check": "raw 0x2070: type-2 reader store is STRH R0,[R6]",
+      "passed": true,
+      "got": "3080",
+      "expected": "3080"
+    },
+    {
+      "check": "raw 0x4662: Fclk caller passes its local descriptor at SP+0x10",
+      "passed": true,
+      "got": "04a8",
+      "expected": "04a8"
+    },
+    {
+      "check": "raw 0x4668: Fclk caller passes its result slot at SP+0x08",
+      "passed": true,
+      "got": "02aa",
+      "expected": "02aa"
+    },
+    {
+      "check": "raw 0x466a: Fclk caller BLs to reader 0x1FB4",
+      "passed": true,
+      "got": "fdf7a3fc",
+      "expected": "fdf7a3fc"
+    },
+    {
+      "check": "raw 0x467e: Fclk branch first loads returned halfword from SP+0x08",
+      "passed": true,
+      "got": "bdf80800",
+      "expected": "bdf80800"
+    },
+    {
+      "check": "raw 0x4682: Fclk branch stores through its caller-provided pointer",
+      "passed": true,
+      "got": "2860",
+      "expected": "2860"
+    },
+    {
+      "check": "raw 0x5e68: Fclk receiving routine saves R4-R10 and LR",
+      "passed": true,
+      "got": "2de9ff47",
+      "expected": "2de9ff47"
+    },
+    {
+      "check": "raw 0x5e70: Fclk receiving routine copies context argument R0 to R5",
+      "passed": true,
+      "got": "0546",
+      "expected": "0546"
+    },
+    {
+      "check": "raw 0x5fa4: caller seeds its output local with immediate 0x4B0",
+      "passed": true,
+      "got": "40f2b040",
+      "expected": "40f2b040"
+    },
+    {
+      "check": "raw 0x5fac: caller passes SP+0x04 and BLs Fclk routine 0x463C",
+      "passed": true,
+      "got": "01a8fef745fb",
+      "expected": "01a8fef745fb"
+    },
+    {
+      "check": "raw 0x5fb2: caller reads the output local after Fclk routine returns",
+      "passed": true,
+      "got": "019b",
+      "expected": "019b"
+    },
+    {
+      "check": "raw 0x5fba: caller stores returned halfword at context+0x78",
+      "passed": true,
+      "got": "a5f87830",
+      "expected": "a5f87830"
+    },
+    {
+      "check": "raw 0x6024: Fclk receiving routine restores saved R4 before return",
+      "passed": true,
+      "got": "bde8ff87",
+      "expected": "bde8ff87"
+    },
+    {
+      "check": "raw 0x7e72: outer routine passes its R4 context pointer in R0",
+      "passed": true,
+      "got": "2046",
+      "expected": "2046"
+    },
+    {
+      "check": "raw 0x7e74: outer routine directly calls Fclk receiving routine 0x5E68",
+      "passed": true,
+      "got": "fdf7f8ff",
+      "expected": "fdf7f8ff"
+    },
+    {
+      "check": "raw 0x8426: same outer routine later passes R4 in R0 again",
+      "passed": true,
+      "got": "2046",
+      "expected": "2046"
+    },
+    {
+      "check": "raw 0x8428: same outer routine directly calls context reader 0x10200",
+      "passed": true,
+      "got": "07f0eafe",
+      "expected": "07f0eafe"
+    },
+    {
+      "check": "raw 0x10200: context reader saves R4-R9 and LR",
+      "passed": true,
+      "got": "2de9f043",
+      "expected": "2de9f043"
+    },
+    {
+      "check": "raw 0x10208: context reader copies R0 context argument into R4",
+      "passed": true,
+      "got": "0446",
+      "expected": "0446"
+    },
+    {
+      "check": "raw 0x104b2: conditional path to downstream Fclk consumer block",
+      "passed": true,
+      "got": "6ed1",
+      "expected": "6ed1"
+    },
+    {
+      "check": "raw 0x10592: branch to downstream block 0x107DA",
+      "passed": true,
+      "got": "22e1",
+      "expected": "22e1"
+    },
+    {
+      "check": "raw 0x107e0: downstream block calls local helper before reading field",
+      "passed": true,
+      "got": "00f0baf8",
+      "expected": "00f0baf8"
+    },
+    {
+      "check": "raw 0x107e4: first identified downstream load is LDRH R0,[R4,#0x78]",
+      "passed": true,
+      "got": "b4f87800",
+      "expected": "b4f87800"
+    },
+    {
+      "check": "raw 0x107ec: first downstream comparison against immediate 0x3E8",
+      "passed": true,
+      "got": "b0f57a7f",
+      "expected": "b0f57a7f"
+    },
+    {
+      "check": "raw 0x107f2: next downstream comparison against immediate 0x4B0",
+      "passed": true,
+      "got": "b0f5966f",
+      "expected": "b0f5966f"
+    },
+    {
+      "check": "listing 0x2d0c instruction",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing 0x2d12 instruction",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing 0x466a instruction",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing 0x467e instruction",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing 0x4682 instruction",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing 0x5fae instruction",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing 0x5fb2 instruction",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing 0x5fba instruction",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing 0x7e74 instruction",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing 0x8428 instruction",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing 0x10208 instruction",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing 0x104b2 instruction",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing 0x10592 instruction",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing 0x107e4 instruction",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "outer context R4 has no explicit write between the two direct calls",
+      "passed": true,
+      "got": [],
+      "expected": []
+    },
+    {
+      "check": "consumer context R4 has no explicit write before offset load",
+      "passed": true,
+      "got": [],
+      "expected": []
+    },
+    {
+      "check": "full listing count for direct LDRH R0,[R4,#0x78]",
+      "passed": true,
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "check": "unique field load is at 0x107E4",
+      "passed": true,
+      "got": "107e4: f8b4 0078    \tldrh.w\tr0, [r4, #0x78]",
+      "expected": "107e4: f8b4 0078    \tldrh.w\tr0, [r4, #0x78]"
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "status": "PASS",
+  "checks": 32,
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "input": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+  "abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+  "disassembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-data-thumb-llvm.txt",
+  "direct_calls_95fc": [],
+  "raw_checks": {
+    "function_95fc_prologue": {
+      "payload_offset": "0x95FC",
+      "bytes": "2de9f04f"
+    },
+    "caller_7e00_bl_ad58": {
+      "payload_offset": "0x7E00",
+      "bytes": "02f0aaff"
+    },
+    "caller_7e30_bl_10cc0": {
+      "payload_offset": "0x7E30",
+      "bytes": "08f046ff"
+    },
+    "initializer_b1f8_store_52c": {
+      "payload_offset": "0xB1F8",
+      "bytes": "c0f82c15"
+    },
+    "producer_ad58_store_channel_20": {
+      "payload_offset": "0xAE22",
+      "bytes": "0684"
+    },
+    "producer_10cc0_read_channel_20": {
+      "payload_offset": "0x10D40",
+      "bytes": "008c"
+    },
+    "producer_10cc0_store_channel_20": {
+      "payload_offset": "0x10E50",
+      "bytes": "0784"
+    },
+    "preceding_7544_write_context_60": {
+      "payload_offset": "0x757C",
+      "bytes": "a5f86000"
+    },
+    "handoff_7544_to_75cc": {
+      "payload_offset": "0x7586",
+      "bytes": "00f021f8"
+    },
+    "75cc_context_load": {
+      "payload_offset": "0x75E2",
+      "bytes": "7468"
+    },
+    "callback_entry": {
+      "payload_offset": "0x109BC",
+      "bytes": "13b5"
+    },
+    "callback_channel_count": {
+      "payload_offset": "0x109C0",
+      "bytes": "90f8"
+    },
+    "callback_channel_pointer_write": {
+      "payload_offset": "0x10A04",
+      "bytes": "e160"
+    }
+  },
+  "semantic_lines": {
+    "function_95fc_prologue": {
+      "payload_offset": "0x95FC",
+      "line": "95fc: e92d 4ff0    \tpush.w\t{r4, r5, r6, r7, r8, r9, r10, r11, lr}",
+      "pattern": "push\\.w\\s+\\{r4, r5, r6, r7, r8, r9, r10, r11, lr\\}"
+    },
+    "caller_7e00_bl_ad58": {
+      "payload_offset": "0x7E00",
+      "line": "7e00: f002 ffaa    \tbl\t0xad58 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xad58> @ imm = #0x2f54",
+      "pattern": "bl\\s+0xad58\\b"
+    },
+    "caller_7e30_bl_10cc0": {
+      "payload_offset": "0x7E30",
+      "line": "7e30: f008 ff46    \tbl\t0x10cc0 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x10cc0> @ imm = #0x8e8c",
+      "pattern": "bl\\s+0x10cc0\\b"
+    },
+    "initializer_b1f8_store_52c": {
+      "payload_offset": "0xB1F8",
+      "line": "b1f8: f8c0 152c    \tstr.w\tr1, [r0, #0x52c]",
+      "pattern": "str\\.w\\s+r1, \\[r0, #0x52c\\]"
+    },
+    "producer_ad58_store_channel_20": {
+      "payload_offset": "0xAE22",
+      "line": "ae22: 8406         \tstrh\tr6, [r0, #0x20]",
+      "pattern": "strh(?:\\.w)?\\s+r6, \\[r0, #0x20\\]"
+    },
+    "producer_10cc0_read_channel_20": {
+      "payload_offset": "0x10D40",
+      "line": "10d40: 8c00         \tldrh\tr0, [r0, #0x20]",
+      "pattern": "ldrh(?:\\.w)?\\s+r0, \\[r0, #0x20\\]"
+    },
+    "producer_10cc0_store_channel_20": {
+      "payload_offset": "0x10E50",
+      "line": "10e50: 8407         \tstrh\tr7, [r0, #0x20]",
+      "pattern": "strh(?:\\.w)?\\s+r7, \\[r0, #0x20\\]"
+    },
+    "preceding_7544_write_context_60": {
+      "payload_offset": "0x757C",
+      "line": "757c: f8a5 0060    \tstrh.w\tr0, [r5, #0x60]",
+      "pattern": "strh(?:\\.w)?\\s+r0, \\[r5, #0x60\\]"
+    },
+    "handoff_7544_to_75cc": {
+      "payload_offset": "0x7586",
+      "line": "7586: f000 f821    \tbl\t0x75cc <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x75cc> @ imm = #0x42",
+      "pattern": "bl\\s+0x75cc\\b"
+    },
+    "75cc_context_load": {
+      "payload_offset": "0x75E2",
+      "line": "75e2: 6874         \tldr\tr4, [r6, #0x4]",
+      "pattern": "ldr(?:\\.w)?\\s+r4, \\[r6, #0x4\\]"
+    },
+    "callback_entry": {
+      "payload_offset": "0x109BC",
+      "line": "109bc: b513         \tpush\t{r0, r1, r4, lr}",
+      "pattern": "push\\s+\\{r0, r1, r4, lr\\}"
+    },
+    "callback_channel_count": {
+      "payload_offset": "0x109C0",
+      "line": "109c0: f890 004b    \tldrb.w\tr0, [r0, #0x4b]",
+      "pattern": "ldrb(?:\\.w)?\\s+r0, \\[r0, #0x4b\\]"
+    },
+    "callback_channel_pointer_write": {
+      "payload_offset": "0x10A04",
+      "line": "10a04: 60e1         \tstr\tr1, [r4, #0xc]",
+      "pattern": "str\\s+r1, \\[r4, #0xc\\]"
+    }
+  },
+  "callback_boundary": {
+    "initializer_store_payload_offset": "0xB1F8",
+    "initializer_literal_payload_offset": "0xB218",
+    "callback_literal": "0x00067ABD",
+    "candidate_runtime_base": "0x57100",
+    "callback_local_thumb": "0x109BD",
+    "callback_local_code_entry": "0x109BC",
+    "independent_anchor_count": 4,
+    "anchors": [
+      {
+        "literal_payload_offset": "0xB218",
+        "literal": "0x00067ABD",
+        "base": "0x57100",
+        "mapped_thumb": "0x109BD",
+        "local_code_entry": "0x109BC",
+        "line": "109bc: b513         \tpush\t{r0, r1, r4, lr}",
+        "label": "callback +0x52C"
+      },
+      {
+        "literal_payload_offset": "0xB21C",
+        "literal": "0x00067A95",
+        "base": "0x57100",
+        "mapped_thumb": "0x10995",
+        "local_code_entry": "0x10994",
+        "line": "10994: b101         \tcbz\tr1, 0x10998 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x10998> @ imm = #0x0",
+        "label": "callback post-selector helper"
+      },
+      {
+        "literal_payload_offset": "0xB220",
+        "literal": "0x00061E19",
+        "base": "0x57100",
+        "mapped_thumb": "0xAD19",
+        "local_code_entry": "0xAD18",
+        "line": "ad18: b430         \tpush\t{r4, r5}",
+        "label": "runtime callback helper"
+      },
+      {
+        "literal_payload_offset": "0xB224",
+        "literal": "0x00067A59",
+        "base": "0x57100",
+        "mapped_thumb": "0x10959",
+        "local_code_entry": "0x10958",
+        "line": "10958: b430         \tpush\t{r4, r5}",
+        "label": "runtime callback helper"
+      }
+    ],
+    "interpretation": "Four independent absolute pointer literals map under base 0x57100 to exact local Thumb code; +0x52C therefore resolves conditionally to local callback 0x109BC with high static mapping confidence, while the loader/base relation itself remains unmeasured."
+  },
+  "searched_target_pointer_variants": {
+    "0x000095FC": [],
+    "0x000095FD": [],
+    "0x000606FC": [],
+    "0x000606FD": [
+      "0x17134"
+    ],
+    "0x000695FC": [],
+    "0x000695FD": [],
+    "0x080095FC": [],
+    "0x080095FD": [],
+    "0x006A95FC": [],
+    "0x006A95FD": []
+  },
+  "target_pointer_scan_qualification": {
+    "known_collision": "0x000606FD at payload 0x17134",
+    "validated_local_reference": false
+  },
+  "producer_chain": [
+    {
+      "site": "0x7548",
+      "effect": "r5 = [r0+0x04]",
+      "evidence": "same entry object later handed to 0x75CC"
+    },
+    {
+      "site": "0x757C",
+      "effect": "[r5+0x60] = 0x0320 (halfword)",
+      "evidence": "raw little-endian bytes a5f86000; LLVM display strh.w r0,[r5,#0x60]"
+    },
+    {
+      "site": "0x7586",
+      "effect": "BL 0x75CC with original r0",
+      "evidence": "handoff preserves entry object"
+    },
+    {
+      "site": "0x75E2",
+      "effect": "r4 = [r6+0x04]",
+      "evidence": "r6 is original 0x75CC argument; therefore r4 aliases 0x7548 r5"
+    },
+    {
+      "site": "0x7E00",
+      "effect": "BL 0xAD58(r4)",
+      "evidence": "direct Thumb call"
+    },
+    {
+      "site": "0xAD58..0xAE22",
+      "effect": "callback [r4+0x52C](r4,index); r0=[r4+0x0C]; STRH r6,[r0+0x20]",
+      "evidence": "direct bytes/disassembly"
+    },
+    {
+      "site": "0x7E30",
+      "effect": "BL 0x10CC0(r4)",
+      "evidence": "direct Thumb call"
+    },
+    {
+      "site": "0x10CC0..0x10E50",
+      "effect": "callback 0x109BC selects channel; LDRH r0,[channel+0x20] for reduction; STRH r7,[channel+0x20]",
+      "evidence": "direct bytes/disassembly"
+    }
+  ],
+  "conclusion": "Four pointer anchors support conditional runtime base 0x57100: callback slot +0x52C at 0xB1F8 maps literal 0x00067ABD to local Thumb callback 0x109BC, which selects channel index and writes [context+0x0C]. The exact producer path then writes the same per-channel +0x20 field: 0x7E00->0xAD58 writes selected r6; 0x7E30->0x10CC0 reduces and writes r7; preceding 0x7544->0x75CC seeds +0x60 with 0x0320. The immediate caller of 0x95FC still has no direct in-payload BL/BLX edge; loader/base relation and invocation dispatch remain unresolved.",
+  "limits": "No MHz/unit/training/hardware/runtime-precedence claim; base 0x57100 is a conditional static mapping supported by four code anchors, not a loader/runtime proof; no source-to-binary flat-offset assumption."
+}

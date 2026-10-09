@@ -1,0 +1,42 @@
+IDX BOOT ID                          FIRST ENTRY                 LAST ENTRY
+ -5 8d3933adbc2344dabfb5c808dcaa662c Wed 2026-08-26 14:26:52 PKT Wed 2026-08-26 14:31:24 PKT
+ -4 856553a55e31427fb751a47411e56c0b Wed 2026-08-26 14:31:48 PKT Wed 2026-08-26 14:33:15 PKT
+ -3 a70b5882b59b48c9bb3dafb2a66f9c9e Wed 2026-08-26 14:33:42 PKT Wed 2026-08-26 14:35:58 PKT
+ -2 08b9bc9fb2f24a8fb7a19f5013f67428 Wed 2026-08-26 14:48:40 PKT Wed 2026-08-26 14:50:44 PKT
+ -1 68aa89fc31b649178970da6f004ad2be Wed 2026-08-26 14:51:03 PKT Wed 2026-08-26 15:00:35 PKT
+  0 78673ab76fff4905a5d2b3d65c199034 Wed 2026-08-26 15:04:25 PKT Wed 2026-08-26 15:13:49 PKT
+=== BOOT -5 ===
+=== BOOT -4 ===
+Там 26 14:31:48 cachyos kernel: Linux version 7.2.0-rc7-1.90-cachyos-rc-bc250 (linux-cachyos-rc-bc250@cachyos) (clang version 22.1.8, LLD 22.1.8) #4 SMP PREEMPT_DYNAMIC Wed, 26 Aug 2026 08:21:19 +0000
+Там 26 14:31:48 cachyos kernel: Kernel command line: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=14fe5cec-acf0-4986-8103-251a5706bbac video=DP-1:1920x1080@60 amdgpu.sg_display=0 ttm.pages_limit=1048576 systemd.zram=0 loglevel=0 mitigations=off acpi_enforce_resources=lax amdgpu.bc250_vcn=1 amdgpu.fw_load_type=0
+Там 26 14:31:52 cachyos kernel: amdgpu 0000:01:00.0: detected ip block number 6 <vcn_v2_0_0> (vcn_v2_0)
+Там 26 14:31:52 cachyos kernel: amdgpu 0000:01:00.0: [VCN instance 0] Found VCN firmware Version ENC: 1.24 DEC: 8 VEP: 0 Revision: 9
+Там 26 14:31:53 cachyos kernel: amdgpu 0000:01:00.0: [drm:amdgpu_ring_test_helper [amdgpu]] *ERROR* ring kiq_0.2.1.0 test failed (-110)
+Там 26 14:31:53 cachyos kernel: amdgpu 0000:01:00.0: KCQ enable failed
+Там 26 14:31:53 cachyos kernel: amdgpu 0000:01:00.0: hw_init of IP block <gfx_v10_0> failed -110
+Там 26 14:31:53 cachyos kernel: amdgpu 0000:01:00.0: Fatal error during GPU init
+=== BOOT -3 ===
+Там 26 14:33:42 cachyos kernel: Linux version 7.2.0-1.1-cachyos-bc250 (linux-cachyos-bc250@cachyos) (clang version 22.1.8, LLD 22.1.8) #1 SMP PREEMPT_DYNAMIC Fri, 21 Aug 2026 04:13:07 +0000
+Там 26 14:33:42 cachyos kernel: Kernel command line: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=14fe5cec-acf0-4986-8103-251a5706bbac video=DP-1:1920x1080@60 amdgpu.sg_display=0 ttm.pages_limit=1048576 systemd.zram=0 loglevel=0 mitigations=off acpi_enforce_resources=lax amdgpu.bc250_vcn=1 amdgpu.fw_load_type=0
+Там 26 14:33:47 cachyos kernel: amdgpu: unknown parameter 'bc250_vcn' ignored
+Там 26 14:33:47 cachyos kernel: amdgpu 0000:01:00.0: [drm:amdgpu_ring_test_helper [amdgpu]] *ERROR* ring kiq_0.2.1.0 test failed (-110)
+Там 26 14:33:47 cachyos kernel: amdgpu 0000:01:00.0: KCQ enable failed
+Там 26 14:33:47 cachyos kernel: amdgpu 0000:01:00.0: hw_init of IP block <gfx_v10_0> failed -110
+Там 26 14:33:47 cachyos kernel: amdgpu 0000:01:00.0: Fatal error during GPU init
+=== BOOT -2 ===
+Там 26 14:48:40 cachyos kernel: Linux version 7.2.0-rc7-1.90-cachyos-rc-bc250 (linux-cachyos-rc-bc250@cachyos) (clang version 22.1.8, LLD 22.1.8) #4 SMP PREEMPT_DYNAMIC Wed, 26 Aug 2026 08:21:19 +0000
+Там 26 14:48:40 cachyos kernel: Kernel command line: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=14fe5cec-acf0-4986-8103-251a5706bbac video=DP-1:1920x1080@60 amdgpu.sg_display=0 ttm.pages_limit=1048576 systemd.zram=0 loglevel=0 mitigations=off acpi_enforce_resources=lax amdgpu.bc250_vcn=1 amdgpu.fw_load_type=0
+Там 26 14:48:44 cachyos kernel: amdgpu 0000:01:00.0: detected ip block number 6 <vcn_v2_0_0> (vcn_v2_0)
+Там 26 14:48:44 cachyos kernel: amdgpu 0000:01:00.0: [VCN instance 0] Found VCN firmware Version ENC: 1.24 DEC: 8 VEP: 0 Revision: 9
+Там 26 14:48:45 cachyos kernel: amdgpu 0000:01:00.0: [drm:amdgpu_ring_test_helper [amdgpu]] *ERROR* ring kiq_0.2.1.0 test failed (-110)
+Там 26 14:48:45 cachyos kernel: amdgpu 0000:01:00.0: KCQ enable failed
+Там 26 14:48:45 cachyos kernel: amdgpu 0000:01:00.0: hw_init of IP block <gfx_v10_0> failed -110
+Там 26 14:48:45 cachyos kernel: amdgpu 0000:01:00.0: Fatal error during GPU init
+=== BOOT -1 ===
+Там 26 14:51:03 cachyos kernel: Linux version 7.2.0-1.1-cachyos-bc250 (linux-cachyos-bc250@cachyos) (clang version 22.1.8, LLD 22.1.8) #1 SMP PREEMPT_DYNAMIC Fri, 21 Aug 2026 04:13:07 +0000
+Там 26 14:51:03 cachyos kernel: Kernel command line: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=14fe5cec-acf0-4986-8103-251a5706bbac video=DP-1:1920x1080@60 amdgpu.sg_display=0 ttm.pages_limit=1048576 systemd.zram=0 loglevel=0 mitigations=off acpi_enforce_resources=lax
+Там 26 14:51:09 cachyos kernel: [drm] Initialized amdgpu 3.64.0 for 0000:01:00.0 on minor 1
+=== BOOT 0 ===
+Там 26 15:04:25 cachyos kernel: Linux version 7.2.0-1.1-cachyos-bc250 (linux-cachyos-bc250@cachyos) (clang version 22.1.8, LLD 22.1.8) #1 SMP PREEMPT_DYNAMIC Fri, 21 Aug 2026 04:13:07 +0000
+Там 26 15:04:25 cachyos kernel: Kernel command line: quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=14fe5cec-acf0-4986-8103-251a5706bbac video=DP-1:1920x1080@60 amdgpu.sg_display=0 ttm.pages_limit=1048576 systemd.zram=0 loglevel=0 mitigations=off acpi_enforce_resources=lax
+Там 26 15:04:31 cachyos kernel: [drm] Initialized amdgpu 3.64.0 for 0000:01:00.0 on minor 1

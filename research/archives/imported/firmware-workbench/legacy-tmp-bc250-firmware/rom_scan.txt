@@ -1,0 +1,77 @@
+====================================================================================================
+IMAGE: BC250_3.00.ROM  (16,777,216 bytes)
+  $PSP@['0x8e0000', '0x99c2bc', '0xe17730', '0xe1f0ec', '0xe3aa95', '0xe3c35a', '0xe58e04', '0xe9fa6b', '0xeb8f89', '0xece8ff']  $BIOS@[]  $VRM@[]
+  discovery@['0x981a00']  ATOMBIOS@[]  SLB2@[]  AMDRBN@[]
+  $PSP: dir @0x8E0000: hexdump:
+    24 50 53 50 c8 fc ff 63 13 00 00 00 d0 05 00 00
+    01 00 00 00 00 a8 00 00 00 04 8e ff 00 00 00 00
+    02 00 00 00 50 43 01 00 00 ac 8e ff 00 00 00 00
+    08 00 00 00 00 02 04 00 00 f0 8f ff 00 00 00 00
+    entry[0] type=0x1 size=0xA800 loc=0xFF8E0400
+    entry[1] type=0x2 size=0x14350 loc=0xFF8EAC00
+    entry[2] type=0x8 size=0x40200 loc=0xFF8FF000
+    entry[3] type=0x9 size=0x440 loc=0xFF93F200
+    entry[4] type=0x12 size=0x40200 loc=0xFF93F700
+    entry[5] type=0x13 size=0x2000 loc=0xFF97F900
+  $PSP: dir @0x99C2BC: hexdump:
+    24 50 53 50 08 03 00 80 2d e9 f7 4f 33 48 00 26
+    82 b0 17 46 00 78 38 b1 31 4d df f8 c8 90 05 f1
+    40 04 05 f5 80 48 13 e0 2f 48 05 b0 bd e8 f0 8f
+    02 99 10 22 04 f1 10 00 ea f7 ac f8 30 b1 20 89
+    entry[0] type=0x4617B082 size=0xB1387800 loc=0xF10590C8F8DF4D31
+    entry[1] type=0xF5050440 size=0xE0134880 loc=0x8FF0E8BDB005482F
+    entry[2] type=0x22109902 size=0x10F104 loc=0x8920B130F8ACF7EA
+    entry[3] type=0x45444404 size=0x4E28D904 loc=0xE0394E27E03B1EB6
+    entry[4] type=0x454968E1 size=0xBBAED0EC loc=0xB07EB0A0A20F104
+    entry[5] type=0xD90145C3 size=0xE02D4E22 loc=0x10F10422109902
+  disc@0x981A00: DISCOVERY binary_header @0x981A00: ver 0.0, checksum 0x50AC, binary_size 0x44C
+    table[0] IP_DISCOVERY   off=0x003C size=0x0324 checksum=0x48DC
+    table[1] GC             off=0x0360 size=0x0064 checksum=0x023F
+    table[2] HARVEST_INFO   off=0x03C4 size=0x0088 checksum=0x0131
+    table[3] VCN_INFO       off=0x0000 size=0x0000 checksum=0x0000
+    table[4] MALL_INFO      off=0x0000 size=0x0000 checksum=0x0000
+    table[5] NPS_INFO       off=0x0000 size=0x0000 checksum=0x0000
+  ip_discovery_header @0x981A3C: sig 0x53445049 ('IPDS'), ver 2, size 0x324, num_dies 1
+    die[0] id=0 off=0x8C num_ips=38
+      ip[00] hw_id=14  DCEAZ          inst=0 v4.0.0 harvest=0 bases=0x00480000+0x02403800
+      ip[01] hw_id=35  SDMA3          inst=0 v2.0.3 harvest=0 bases=0x00000C00+0x02408C00
+      ip[02] hw_id=6   UVD(VCN)       inst=0 v11.0.1 harvest=0 bases=0x00016C00+0x02401800  <<<<< VCN/UVD inst=0 harvest=0
+      ip[03] hw_id=6   UVD(VCN)       inst=1 v11.0.1 harvest=0 bases=0x00016E00+0x02401C00  <<<<< VCN/UVD inst=1 harvest=0
+      ip[04] hw_id=6   UVD(VCN)       inst=2 v11.0.1 harvest=0 bases=0x00017000+0x02402000  <<<<< VCN/UVD inst=2 harvest=0
+      ip[05] hw_id=47  hw47           inst=0 v11.0.1 harvest=0 bases=0x00017E00+0x0240BC00
+      ip[06] hw_id=36  ISP            inst=0 v3.0.0 harvest=0 bases=0x000001C0
+      ip[07] hw_id=46  hw46           inst=0 v3.5.0 harvest=0 bases=0x00007000+0x0240B800
+      ip[08] hw_id=37  DBGU_IO        inst=0 v2.0.0 harvest=0 bases=0x00000580+0x02409400
+      ip[09] hw_id=49  hw49           inst=0 v2.0.0 harvest=0 bases=0x000005A0+0x00B80000+0x0240C400
+      ip[10] hw_id=272 hw272          inst=0 v127.127.63 harvest=0 bases=0x02404000
+      ip[11] hw_id=271 hw271          inst=0 v2.0.3 harvest=0 bases=0x00000012+0x000000C0+0x000034C0+0x00009000+0x02403C00
+      ip[12] hw_id=5   GC             inst=0 v11.0.1 harvest=0 bases=0x00017400+0x02401400
+      ip[13] hw_id=11  DCO            inst=0 v10.1.3 harvest=0 bases=0x00001260+0x0000A000+0x02402C00
+      ip[14] hw_id=274 hw274          inst=0 v127.127.63 harvest=0 bases=0x004C0000+0x02404800
+      ip[15] hw_id=41  FCH            inst=0 v5.0.1 harvest=0 bases=0x00000F20+0x0240A400
+      ip[16] hw_id=34  SDMA2          inst=0 v2.0.3 harvest=0 bases=0x0001A000+0x02408800
+      ip[17] hw_id=255 hw255          inst=0 v11.0.8 harvest=0 bases=0x00016000+0x00DC0000+0x00E00000+0x00E40000+0x0243FC00
+      ip[18] hw_id=1   SMUIO          inst=0 v11.0.8 harvest=0 bases=0x00016000+0x00DC0000+0x00E00000+0x00E40000+0x0243FC00
+      ip[19] hw_id=0   UNKNOWN        inst=0 v11.0.1 harvest=0 bases=0x0001B800+0x01440000+0x01480000+0x014C0000+0x02411000
+      ip[20] hw_id=0   UNKNOWN        inst=1 v11.0.1 harvest=0 bases=0x0001BA00+0x01500000+0x01540000+0x01580000+0x02411400
+      ip[21] hw_id=108 hw108          inst=0 v2.1.1 harvest=0 bases=0x00000000+0x00000014+0x00000D20+0x00010400+0x0241B000+0x04040000
+      ip[22] hw_id=40  CLKB           inst=0 v5.0.1 harvest=0 bases=0x000010A0+0x0240A000
+      ip[23] hw_id=70  CCXSEC         inst=0 v4.2.0 harvest=0 bases=0x02411800+0x04440000
+      ip[24] hw_id=80  MP0            inst=0 v3.6.0 harvest=0 bases=0x02414000+0x04680000
+      ip[25] hw_id=42  DFX_DAP        inst=0 v5.0.1 harvest=0 bases=0x00001260+0x0000A000+0x02402C00
+      ip[26] hw_id=43  L1IMU_PCIE     inst=0 v5.0.1 harvest=0 bases=0x00001260+0x0000A000+0x02402C00
+      ip[27] hw_id=4   PWR            inst=0 v11.0.8 harvest=0 bases=0x00016800+0x00016A00+0x00440000+0x02401000
+      ip[28] hw_id=128 hw128          inst=0 v2.1.0 harvest=0 bases=0x00000EA0+0x00500000+0x02420000
+      ip[29] hw_id=3   CLKA           inst=0 v11.0.1 harvest=0 bases=0x00016600+0x02400C00
+      ip[30] hw_id=150 hw150          inst=0 v8.1.1 harvest=0 bases=0x00014000+0x02425800
+      ip[31] hw_id=150 hw150          inst=1 v8.1.1 harvest=0 bases=0x00054000+0x02425C00
+      ip[32] hw_id=170 hw170          inst=0 v4.5.0 harvest=0 bases=0x0242A800+0x05B00000
+      ip[33] hw_id=170 hw170          inst=1 v4.5.0 harvest=0 bases=0x0242AC00+0x05B80000
+      ip[34] hw_id=12  DIO            inst=0 v2.0.3 harvest=0 bases=0x00007800+0x00007E00+0x02403000
+      ip[35] hw_id=45  L1IMU_IOAGR    inst=0 v3.0.0 harvest=0 bases=0x000001E0
+      ip[36] hw_id=28  HDP            inst=0 v0.0.0 harvest=0 bases=0x00007DC0+0x00900000+0x02407000+0x04FC0000+0x055C0000
+      ip[37] hw_id=24  DFX            inst=0 v0.0.0 harvest=0 bases=0x00010000+0x02406000+0x04EC0000
+    *** VCN RECORD: hw_id=6 inst=0 harvest=0 (0=live,1=harvested) bases=['0x16c00', '0x2401800']
+    *** VCN RECORD: hw_id=6 inst=1 harvest=0 (0=live,1=harvested) bases=['0x16e00', '0x2401c00']
+    *** VCN RECORD: hw_id=6 inst=2 harvest=0 (0=live,1=harvested) bases=['0x17000', '0x2402000']
+  harvest_table @0x981DC4: sig 0x56524148 ('HARV') ver 0

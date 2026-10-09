@@ -1,0 +1,17 @@
+# BC-250 presence-only DXE marker.
+[Defines]
+  INF_VERSION = 0x00010005
+  BASE_NAME = Bc250FirstMarkerDxe
+  FILE_GUID = 0b2f8841-8ca8-42c6-9175-79e13f045741
+  MODULE_TYPE = DXE_DRIVER
+  VERSION_STRING = 1.0
+  ENTRY_POINT = Bc250FirstMarkerDxeEntryPoint
+[Sources]
+  Bc250FirstMarkerDxe.c
+[Packages]
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+[Depex]
+  TRUE

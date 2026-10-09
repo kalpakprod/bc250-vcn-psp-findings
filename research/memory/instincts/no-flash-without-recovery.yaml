@@ -1,0 +1,4 @@
+trigger: when_a_candidate_is_ready_for_physical_flash
+action: stop_until_full_dump_hash_rollback_procedure_exact_target_approval_and_post_write_readback_exist
+confidence: 0.99
+evidence: bc250_firmware_safety_contract_and_imported_flash_checklists

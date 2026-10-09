@@ -1,0 +1,121 @@
+========================================================================
+=== STOCK_BC250_3.00
+  discovery @0x981A00 ver 0.0 ntables=6
+  GC table @0x981D60 id=b'GC\x00\x00' ver=0x10001 size=0x64
+    981D60: 47 43 00 00 01 00 01 00 64 00 00 00 02 00 00 00
+    981D70: 03 00 00 00 02 00 00 00 08 00 00 00 10 00 00 00
+    981D80: 00 04 00 00 20 00 00 00 20 00 00 00 00 07 00 00
+    981D90: 00 04 00 00 01 00 00 00 20 00 00 00 14 00 00 00
+    981DA0: 20 00 00 00 40 00 00 00 02 00 00 00 02 00 00 00
+    981DB0: 02 00 00 00 04 00 00 00 0a 00 00 00 10 00 00 00
+    v1 header_size=0x64 num_se=2 wgp0_per_sa=3 wgp1_per_sa=2 rb_per_se=8 gl2c=16 gprs=1024 max_gs_thds=32 lds/wgp=32 spi_per_sa=1792 cu_per_sh=1024
+  HARVEST table @0x981DC4 sig=b'HARV' ver=0 size=0x88
+    num entries = 0
+========================================================================
+=== DONOR_CEZANNE
+  discovery @0x5CE040 ver 16712.22098 ntables=800
+  GC table @0x5D4051 id=b'\xeb\xc0\x01\x01' ver=0x21000eb size=0x8f4f
+    5D4051: eb c0 01 01 eb 00 10 02 49 09 68 01 eb 80 00 80
+    5D4061: 6d 70 47 54 70 00 00 0b 46 02 46 10 b5 fd f7 e7
+    5D4071: fd 00 28 09 d1 05 4c c2 eb c2 01 01 eb 02 12 21
+    5D4081: 68 01 eb 82 01 49 69 19 60 10 bd 54 70 00 00 30
+    5D4091: b5 03 46 0c 46 fd f7 d3 fd 00 28 0e d1 c3 eb c3
+    5D40A1: 01 01 eb 03 13 06 49 0d 68 05 eb 83 05 2d 6a 25
+    v1 header_size=0x1680949 num_se=2147516651 wgp0_per_sa=1413967981 wgp1_per_sa=184549488 rb_per_se=273023558 gl2c=3891789237 gprs=153616637 max_gs_thds=3259762129 lds/wgp=16892651 spi_per_sa=554828523 cu_per_sh=2196439400
+  HARVEST table @0x5D4851 sig=b'\xb1\x97\xf8Y' ver=103285504 size=0x4170
+    num entries = 4728785
+    harvest[0] hw_id=49185 inst=233 reserved=0
+    harvest[1] hw_id=785 inst=32 reserved=0
+    harvest[2] hw_id=16112 inst=251 reserved=36
+    harvest[3] hw_id=328 inst=120 reserved=65
+    harvest[4] hw_id=177 inst=33 reserved=1
+    harvest[5] hw_id=368 inst=32 reserved=64
+    harvest[6] hw_id=59634 inst=49 reserved=253
+    harvest[7] hw_id=59127 inst=253 reserved=2
+    harvest[8] hw_id=4848 inst=250 reserved=31
+    harvest[9] hw_id=35656 inst=248 reserved=0
+    harvest[10] hw_id=1888 inst=96 reserved=30
+    harvest[11] hw_id=53320 inst=233 reserved=0
+    harvest[12] hw_id=7698 inst=72 reserved=192
+    harvest[13] hw_id=233 inst=18 reserved=29
+    harvest[14] hw_id=329 inst=224 reserved=21
+    harvest[15] hw_id=1504 inst=224 reserved=120
+    harvest[16] hw_id=2159 inst=96 reserved=5
+    harvest[17] hw_id=1515 inst=32 reserved=13
+    harvest[18] hw_id=12526 inst=15 reserved=0
+    harvest[19] hw_id=4140 inst=218 reserved=155
+    harvest[20] hw_id=248 inst=0 reserved=92
+    harvest[21] hw_id=65350 inst=247 reserved=231
+    harvest[22] hw_id=8445 inst=120 reserved=255
+    harvest[23] hw_id=27383 inst=254 reserved=32
+    harvest[24] hw_id=48504 inst=232 reserved=240
+    harvest[25] hw_id=64607 inst=247 reserved=31
+    harvest[26] hw_id=25787 inst=30 reserved=127
+    harvest[27] hw_id=25333 inst=175 reserved=238
+    harvest[28] hw_id=48615 inst=232 reserved=240
+    harvest[29] hw_id=159 inst=0 reserved=196
+    harvest[30] hw_id=114 inst=0 reserved=56
+    harvest[31] hw_id=112 inst=0 reserved=96
+  discovery @0x639F00 ver 1.1 ntables=6
+  GC table @0x63A28C id=b'GC\x00\x00' ver=0x2 size=0x50
+    63A28C: 47 43 00 00 02 00 00 00 50 00 00 00 01 00 00 00
+    63A29C: 08 00 00 00 01 00 00 00 02 00 00 00 04 00 00 00
+    63A2AC: 00 01 00 00 20 00 00 00 20 00 00 00 00 07 00 00
+    63A2BC: 00 04 00 00 01 00 00 00 40 00 00 00 0a 00 00 00
+    63A2CC: 20 00 00 00 40 00 00 00 01 00 00 00 02 00 00 00
+    v2 header_size=0x50 harvest_bitmap=0x1 num_se=8 cu_per_sh=1 sh_per_se=2 rb_per_se=4 gl2c=256 wave_size=32 lds/wgp=32 gprs=1792 max_gs_thds=1024 spi_per_sa=1 sc_per_sh=64 packer/sc=10
+  HARVEST table @0x63A2DC sig=b'HARV' ver=0 size=0x88
+    num entries = 0
+  discovery @0x74E040 ver 16712.22098 ntables=800
+  GC table @0x754051 id=b'\xeb\xc0\x01\x01' ver=0x21000eb size=0x8f4f
+    754051: eb c0 01 01 eb 00 10 02 49 09 68 01 eb 80 00 80
+    754061: 6d 70 47 54 70 00 00 0b 46 02 46 10 b5 fd f7 e7
+    754071: fd 00 28 09 d1 05 4c c2 eb c2 01 01 eb 02 12 21
+    754081: 68 01 eb 82 01 49 69 19 60 10 bd 54 70 00 00 30
+    754091: b5 03 46 0c 46 fd f7 d3 fd 00 28 0e d1 c3 eb c3
+    7540A1: 01 01 eb 03 13 06 49 0d 68 05 eb 83 05 2d 6a 25
+    v1 header_size=0x1680949 num_se=2147516651 wgp0_per_sa=1413967981 wgp1_per_sa=184549488 rb_per_se=273023558 gl2c=3891789237 gprs=153616637 max_gs_thds=3259762129 lds/wgp=16892651 spi_per_sa=554828523 cu_per_sh=2196439400
+  HARVEST table @0x754851 sig=b'\xb1\x97\xf8Y' ver=103285504 size=0x4170
+    num entries = 4728785
+    harvest[0] hw_id=49185 inst=233 reserved=0
+    harvest[1] hw_id=785 inst=32 reserved=0
+    harvest[2] hw_id=16112 inst=251 reserved=36
+    harvest[3] hw_id=328 inst=120 reserved=65
+    harvest[4] hw_id=177 inst=33 reserved=1
+    harvest[5] hw_id=368 inst=32 reserved=64
+    harvest[6] hw_id=59634 inst=49 reserved=253
+    harvest[7] hw_id=59127 inst=253 reserved=2
+    harvest[8] hw_id=4848 inst=250 reserved=31
+    harvest[9] hw_id=35656 inst=248 reserved=0
+    harvest[10] hw_id=1888 inst=96 reserved=30
+    harvest[11] hw_id=53320 inst=233 reserved=0
+    harvest[12] hw_id=7698 inst=72 reserved=192
+    harvest[13] hw_id=233 inst=18 reserved=29
+    harvest[14] hw_id=329 inst=224 reserved=21
+    harvest[15] hw_id=1504 inst=224 reserved=120
+    harvest[16] hw_id=2159 inst=96 reserved=5
+    harvest[17] hw_id=1515 inst=32 reserved=13
+    harvest[18] hw_id=12526 inst=15 reserved=0
+    harvest[19] hw_id=4140 inst=218 reserved=155
+    harvest[20] hw_id=248 inst=0 reserved=92
+    harvest[21] hw_id=65350 inst=247 reserved=231
+    harvest[22] hw_id=8445 inst=120 reserved=255
+    harvest[23] hw_id=27383 inst=254 reserved=32
+    harvest[24] hw_id=48504 inst=232 reserved=240
+    harvest[25] hw_id=64607 inst=247 reserved=31
+    harvest[26] hw_id=25787 inst=30 reserved=127
+    harvest[27] hw_id=25333 inst=175 reserved=238
+    harvest[28] hw_id=48615 inst=232 reserved=240
+    harvest[29] hw_id=159 inst=0 reserved=196
+    harvest[30] hw_id=114 inst=0 reserved=56
+    harvest[31] hw_id=112 inst=0 reserved=96
+  discovery @0x7BB800 ver 1.1 ntables=6
+  GC table @0x7BBB8C id=b'GC\x00\x00' ver=0x2 size=0x50
+    7BBB8C: 47 43 00 00 02 00 00 00 50 00 00 00 01 00 00 00
+    7BBB9C: 08 00 00 00 01 00 00 00 02 00 00 00 04 00 00 00
+    7BBBAC: 00 01 00 00 20 00 00 00 20 00 00 00 00 07 00 00
+    7BBBBC: 00 04 00 00 01 00 00 00 40 00 00 00 0a 00 00 00
+    7BBBCC: 20 00 00 00 40 00 00 00 01 00 00 00 02 00 00 00
+    v2 header_size=0x50 harvest_bitmap=0x1 num_se=8 cu_per_sh=1 sh_per_se=2 rb_per_se=4 gl2c=256 wave_size=32 lds/wgp=32 gprs=1792 max_gs_thds=1024 spi_per_sa=1 sc_per_sh=64 packer/sc=10
+  HARVEST table @0x7BBBDC sig=b'HARV' ver=0 size=0x88
+    num entries = 0

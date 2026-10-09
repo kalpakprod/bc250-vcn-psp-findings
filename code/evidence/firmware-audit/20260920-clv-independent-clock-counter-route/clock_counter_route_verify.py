@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+"""Bounded offline validation of an independent clock-counter route candidate."""
+from __future__ import annotations
+import hashlib,json,re
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[3]; OUT=Path(__file__).resolve().parent
+OFF=ROOT/'import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_offset.h'; MASK=ROOT/'import/from-windows/Users/kukuruza/tmp_bc250/recon/gc_10_1_0_sh_mask.h'
+FREQ=ROOT/'docs/research/2026-09-20-clv-sync-frequency-unit-discrimination.md'; ACT=ROOT/'docs/research/oc-clock-actuator-chain.md'
+checks=[]
+def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def ck(ok,label,got,exp): checks.append({'label':label,'status':'PASS' if ok else 'FAIL','got':got,'expected':exp}); return ok
+o=OFF.read_text(); m=MASK.read_text()
+ck(sha(OFF)=='a0ad8bffb3c07ec3824d306aff49c77bc40057f8760aec7a76ee58a60cc8e6a2','offset-header-hash',sha(OFF),'a0ad8bffb3c07ec3824d306aff49c77bc40057f8760aec7a76ee58a60cc8e6a2');ck(sha(MASK)=='cba20414ecf02e91bafdcfbff7d4ba686326f0bdaf236d1a883364f08410c167','mask-header-hash',sha(MASK),'cba20414ecf02e91bafdcfbff7d4ba686326f0bdaf236d1a883364f08410c167');ck(sha(FREQ)=='254c224c10e086db5fd5f71381d381e23e39c1180ff741fb53bd583028ba7a89','frequency-report-hash',sha(FREQ),'254c224c10e086db5fd5f71381d381e23e39c1180ff741fb53bd583028ba7a89');ck(sha(ACT)=='8a1af511412e517a6451d30bd0f6cc3425278e99271ff4f4b75efa6174f36a8c','actuator-report-hash',sha(ACT),'8a1af511412e517a6451d30bd0f6cc3425278e99271ff4f4b75efa6174f36a8c')
+# Use exact declarations in existing register headers.
+reg={}
+for name in ['mmRLC_CLK_COUNT_GFXCLK_LSB','mmRLC_CLK_COUNT_GFXCLK_MSB','mmRLC_CLK_COUNT_REFCLK_LSB','mmRLC_CLK_COUNT_REFCLK_MSB','mmRLC_CLK_COUNT_CTRL','mmRLC_CLK_COUNT_STAT']:
+ mm=re.search(rf'^#define {name}\s+0x([0-9a-fA-F]+)',o,re.M);reg[name]=int(mm.group(1),16) if mm else None;ck(mm is not None,f'offset:{name}',reg[name],reg[name])
+ck(len(set(reg.values()))==6,'counter-registers-distinct',len(set(reg.values())),6);ck(reg['mmRLC_CLK_COUNT_GFXCLK_LSB']+1==reg['mmRLC_CLK_COUNT_GFXCLK_MSB'],'gfxclk-counter-adjacent',hex(reg['mmRLC_CLK_COUNT_GFXCLK_MSB']),hex(reg['mmRLC_CLK_COUNT_GFXCLK_LSB']+1));ck(reg['mmRLC_CLK_COUNT_REFCLK_LSB']+1==reg['mmRLC_CLK_COUNT_REFCLK_MSB'],'refclk-counter-adjacent',hex(reg['mmRLC_CLK_COUNT_REFCLK_MSB']),hex(reg['mmRLC_CLK_COUNT_REFCLK_LSB']+1))
+# Control and valid masks prove independent gating/status fields, not a software alias.
+mask_expect={'RLC_CLK_COUNT_CTRL__GFXCLK_RUN_MASK':'0x00000001L','RLC_CLK_COUNT_CTRL__GFXCLK_RESET_MASK':'0x00000002L','RLC_CLK_COUNT_CTRL__GFXCLK_SAMPLE_MASK':'0x00000004L','RLC_CLK_COUNT_CTRL__REFCLK_RUN_MASK':'0x00000008L','RLC_CLK_COUNT_CTRL__REFCLK_RESET_MASK':'0x00000010L','RLC_CLK_COUNT_CTRL__REFCLK_SAMPLE_MASK':'0x00000020L','RLC_CLK_COUNT_STAT__GFXCLK_VALID_MASK':'0x00000001L','RLC_CLK_COUNT_STAT__REFCLK_VALID_MASK':'0x00000002L'}
+for name,want in mask_expect.items():
+ mm=re.search(rf'^#define {name}\s+(\S+)',m,re.M); got=mm.group(1) if mm else None; ck(got==want,f'mask:{name}',got,want)
+# Existing reports are explicitly negative for aliases/software state.
+ck('software alias' in FREQ.read_text(),'software-alias-negative','present','software alias');ck('Does NOT sample hardware PLL counters' in ACT.read_text(),'smu-query-negative','present','Does NOT sample hardware PLL counters')
+result={'status':'PASS' if all(x['status']=='PASS' for x in checks) else 'FAIL','checks':{'passed':sum(x['status']=='PASS' for x in checks),'failed':sum(x['status']=='FAIL' for x in checks),'total':len(checks)},'input_hashes':{'offset_header':sha(OFF),'mask_header':sha(MASK),'frequency_report':sha(FREQ),'actuator_report':sha(ACT)},'counter_route':{'registers':{k:hex(v) for k,v in reg.items()},'measured_pair':'RLC GFXCLK counter vs RLC REFCLK counter','control_masks':mask_expect,'status_masks':{'GFXCLK_VALID':'0x1','REFCLK_VALID':'0x2'},'non_alias_property':'separate hardware counter registers and shared run/reset/sample control; ratio = sampled GFXCLK count / sampled REFCLK count'},'scope_decision':{'proven_offline':'an independent hardware-counter mechanism exists in the retained register map for GFXCLK/REFCLK','not_proven':'the retained map does not bind these counters to exact CLV MCLK/UCLK/FCLK; no UMC/DF/UCLK counter/status register was recovered in this bounded check','synchronous_crossing_requirement':'requires a dedicated UMC/DF mode/status bit or divider/crossing selector plus independent counter ratios; equal software values or one counter alias are insufficient'},'next_route':'Recover exact CLV UMC/MCLK, UCLK, and DF/FCLK counter/status register addresses from the ABL/SMU/driver path; then compare all domains against a common reference window. Do not use the RLC GFXCLK pair as an MCLK/UCLK/FCLK identity claim.', 'limits':['Offline register-map evidence only; no live reads.','RLC GFXCLK is not relabelled FCLK.','No hardware/calibration, clock units, training, or synchronization claim.'],'checks_detail':checks}
+(OUT/'clock-counter-route-result.json').write_text(json.dumps(result,indent=2,sort_keys=True)+'\n');print(json.dumps({'status':result['status'],'checks':result['checks'],'counter_route':result['counter_route'],'scope_decision':result['scope_decision']},sort_keys=True));raise SystemExit(0 if result['status']=='PASS' else 1)

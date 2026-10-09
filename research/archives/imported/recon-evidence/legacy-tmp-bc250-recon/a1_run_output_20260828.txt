@@ -1,0 +1,11 @@
+=== A1 FULL GASKET REPLAY (1461 writes) ===
+[*] SMU alive
+gate before: 0xFD (closed)
+dbg byte 0x01 entry byte 0x00
+P = 0x0797C N = 105
+fake table ok
+dbg unlocked; SMU still alive (this was a triumph..)
+fixup SMU state
+fixup done; only 0x7B3C (dbg) should differ from boot
+SMU alive: True
+[*] secure SMN path open

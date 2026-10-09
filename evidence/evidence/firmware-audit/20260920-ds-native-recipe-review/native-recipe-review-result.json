@@ -1,0 +1,343 @@
+{
+  "status": "PASS",
+  "checks": 37,
+  "failed": 0,
+  "checks_detail": [
+    {
+      "name": "donor_rom_size",
+      "status": "PASS",
+      "detail": "donor ROM size"
+    },
+    {
+      "name": "donor_rom_sha256",
+      "status": "PASS",
+      "detail": "donor ROM sha256 matches the recipe baseline"
+    },
+    {
+      "name": "census_input_rom",
+      "status": "PASS",
+      "detail": "census input is the pinned donor ROM"
+    },
+    {
+      "name": "module_sha256_matches_census",
+      "status": "PASS",
+      "detail": "extracted CLV CbsSetupDxe PE32 hash matches the census record and the pinned recipe hash",
+      "data": {
+        "size": 264160
+      }
+    },
+    {
+      "name": "module_not_verbatim_in_rom",
+      "status": "PASS",
+      "detail": "module bytes are not a verbatim ROM substring (FFS section is compressed); provenance rests on the recorded extractor, sha256=5ead8605678fc5a13eb0cf49c01b43037560ddc485d8ad2686abf0e9c34d9593"
+    },
+    {
+      "name": "varstore_amdsetup",
+      "status": "PASS",
+      "detail": "raw varstore record: guid 3A997502-647A-4C82-998E-52EF9486A247 id=0x5000 size=0x8B5 name='AmdSetup'; all six questions reference varstore id ['0x5000']",
+      "data": {
+        "varstore_module_offset": "0xb30d",
+        "guid_occurrences": [
+          "0xb180",
+          "0xb30d",
+          "0x3f040",
+          "0x3f054"
+        ],
+        "question_varstore_ids": [
+          "0x5000"
+        ]
+      }
+    },
+    {
+      "name": "all_six_questions_recovered",
+      "status": "PASS",
+      "detail": "all six claimed questions recovered from raw IFR bytes",
+      "data": {
+        "qids": [
+          "0x20f",
+          "0x229",
+          "0x25e",
+          "0x37d",
+          "0x37e",
+          "0x37f",
+          "0x7045"
+        ]
+      }
+    },
+    {
+      "name": "offset_0x20f",
+      "status": "PASS",
+      "detail": "Memory Clock Speed: qid 0x20F -> ?+0x316, opcode 0x05 (Memory Clock Speed)",
+      "data": {
+        "varstore_id": "0x5000",
+        "flags": "0x10",
+        "raw": "0591f504f6040f0200501603101002ff00"
+      }
+    },
+    {
+      "name": "offset_0x229",
+      "status": "PASS",
+      "detail": "UclkDiv1M0: qid 0x229 -> ?+0x330, opcode 0x05 (UclkDiv1M0)",
+      "data": {
+        "varstore_id": "0x5000",
+        "flags": "0x10",
+        "raw": "0591a005a105290200503003101001ff00"
+      }
+    },
+    {
+      "name": "offset_0x25e",
+      "status": "PASS",
+      "detail": "Memory P-state: qid 0x25E -> ?+0x36D, opcode 0x05 (Memory P-state)",
+      "data": {
+        "varstore_id": "0x5000",
+        "flags": "0x10",
+        "raw": "05911a061b065e0200506d03101000ff00"
+      }
+    },
+    {
+      "name": "offset_0x7045",
+      "status": "PASS",
+      "detail": "FCLK_DPM: qid 0x7045 -> ?+0x6A3, opcode 0x05 (FCLK_DPM)",
+      "data": {
+        "varstore_id": "0x5000",
+        "flags": "0x14",
+        "raw": "05912208230845700050a3061410000f00"
+      }
+    },
+    {
+      "name": "offset_0x37d",
+      "status": "PASS",
+      "detail": "DF Clock Override Control: qid 0x37D -> ?+0x703, opcode 0x05 (DF Clock Override Control)",
+      "data": {
+        "varstore_id": "0x5000",
+        "flags": "0x10",
+        "raw": "0591ac08ad087d0300500307101001ff00"
+      }
+    },
+    {
+      "name": "offset_0x37e",
+      "status": "PASS",
+      "detail": "DF Clock Override: qid 0x37E -> ?+0x704, opcode 0x07 (DF Clock Override)",
+      "data": {
+        "varstore_id": "0x5000",
+        "flags": "0x10",
+        "raw": "0794ae08af087e030050040710110000d0070000"
+      }
+    },
+    {
+      "name": "option_0x20f_1330MHz",
+      "status": "PASS",
+      "detail": "0x20F '1330MHz' = 0x1A (u8 byte)"
+    },
+    {
+      "name": "option_0x20f_1750MHz",
+      "status": "PASS",
+      "detail": "0x20F '1750MHz' = 0x23 (u8 byte)"
+    },
+    {
+      "name": "option_0x229_Enabled",
+      "status": "PASS",
+      "detail": "0x229 'Enabled' = 0x01 (u8 byte)"
+    },
+    {
+      "name": "option_0x25e_Disabled",
+      "status": "PASS",
+      "detail": "0x25E 'Disabled' = 0x00 (u8 byte)"
+    },
+    {
+      "name": "option_0x7045_Disabled",
+      "status": "PASS",
+      "detail": "0x7045 'Disabled' = 0x00 (u8 byte)"
+    },
+    {
+      "name": "option_0x37d_Manual",
+      "status": "PASS",
+      "detail": "0x37D 'Manual' = 0x01 (u8 byte)"
+    },
+    {
+      "name": "df_numeric_bounds",
+      "status": "PASS",
+      "detail": "DF Clock Override bounds read from raw bytes: [0, 2000, 0]",
+      "data": {
+        "size_bytes": 2
+      }
+    },
+    {
+      "name": "df_numeric_default_le",
+      "status": "PASS",
+      "detail": "DF Clock Override default bytes e803 -> LE 1000 (in 0..2000) / BE 59395 (out of range)"
+    },
+    {
+      "name": "oneof_width_u8",
+      "status": "PASS",
+      "detail": "ONE_OF option fields occupy 1 byte (neighbour offset deltas {'0x20F': 1, '0x229': 1, '0x25E': 1, '0x7045': 1, '0x37D': 1, '0x37E': 2})"
+    },
+    {
+      "name": "df_override_width_u16",
+      "status": "PASS",
+      "detail": "DF Clock Override occupies 2 bytes: +0x704 -> next question +0x706"
+    },
+    {
+      "name": "machine_profile_h1330",
+      "status": "PASS",
+      "detail": "current machine result profile = H1330-native-help (no_voltage=True)"
+    },
+    {
+      "name": "machine_offsets_match_ifr",
+      "status": "PASS",
+      "detail": "recipe-result.json qid/offset pairs match the raw IFR records"
+    },
+    {
+      "name": "df_1330_encoding",
+      "status": "PASS",
+      "detail": "current profile DF value '1330 / bytes 32 05 LE' -> LE 0x0532 = 1330"
+    },
+    {
+      "name": "df_1750_encoding",
+      "status": "PASS",
+      "detail": "historical H1750 DF value '1750 / bytes D6 06 LE' -> LE 0x06D6 = 1750"
+    },
+    {
+      "name": "historical_profile_kept",
+      "status": "PASS",
+      "detail": "H1750 record preserved and labelled as the superseded historical profile"
+    },
+    {
+      "name": "historical_file_identical_to_orig",
+      "status": "PASS",
+      "detail": "recipe-result-H1750-historical.json is byte-identical to the pre-correction recipe-result.json"
+    },
+    {
+      "name": "correction_wording_present",
+      "status": "PASS",
+      "detail": "review wording correction applied and machine result names the current H1330 recommendation"
+    },
+    {
+      "name": "h1750_doc_marks_hypothesis",
+      "status": "PASS",
+      "detail": "the 1750 report self-labels as a diagnostic hypothesis rather than a validated profile"
+    },
+    {
+      "name": "manifest_SHA256SUMS.final",
+      "status": "PASS",
+      "detail": "3 declared hashes verified against current bytes on disk"
+    },
+    {
+      "name": "manifest_SHA256SUMS.final.orig-20260920",
+      "status": "PASS",
+      "detail": "pre-correction manifest verified against preserved siblings: {\"recipe-result.json\": \"orig-sibling\", \"../../../docs/research/2026-09-20-clv-native-1to1-recipe.md\": \"current\"}"
+    },
+    {
+      "name": "review_result_inputs_fresh",
+      "status": "PASS",
+      "detail": "review-result.json inputs still match disk"
+    },
+    {
+      "name": "menu_result_unchanged",
+      "status": "PASS",
+      "detail": "menu-result.json still matches the hash declared in recipe-result.json before/after the fresh verifier run"
+    },
+    {
+      "name": "artifact_paths_exist",
+      "status": "PASS",
+      "detail": "every path cited by recipe-result.json exists",
+      "data": {
+        "artifacts": {
+          "report": "/home/OWNER/orca/projects/bc250/docs/research/2026-09-20-clv-native-operator-recipe.md",
+          "result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-native-1to1-recipe/recipe-result.json",
+          "historical_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-native-1to1-recipe/recipe-result-H1750-historical.json",
+          "action_log": "/home/OWNER/orca/projects/bc250/docs/action-logs/2026-09-20-clv-native-recipe-coherence-correction.md"
+        }
+      }
+    },
+    {
+      "name": "inputs_unmodified",
+      "status": "PASS",
+      "detail": "all 19 inputs unchanged by this review"
+    }
+  ],
+  "scope": "profiles H1330/H1750, AmdSetup offsets, endianness and stale-artifact audit; strategy-only static review; no ROM/NVRAM/hardware/register action",
+  "inputs": {
+    "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin": {
+      "size": 16777216,
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    "evidence/firmware-audit/20260919-inv-token-consumers/CbsSetupDxe-7ff717d51c9a.bin": {
+      "size": 264160,
+      "sha256": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8"
+    },
+    "evidence/firmware-audit/20260919-inv-token-consumers/census.json": {
+      "size": 338529,
+      "sha256": "506b8eefd0ef3847782dddd88a458b95e32082f473346d7d645703dce6b60d39"
+    },
+    "import/from-windows/Users/kukuruza/bc250-bios/tools/uefi/e1_ifr_dump.py": {
+      "size": 13319,
+      "sha256": "480aa6fc70ed12e8d1dbec2c32dfb45ddadcd7c2f9075ceac6dad6486bc50ebb"
+    },
+    "evidence/firmware-audit/20260920-df-init-route/menu-CbsSetupDxe.txt": {
+      "size": 277902,
+      "sha256": "f71c97ed6041a0c9a4260f651c093bd7873cc33222b124830b0728107cfb6084"
+    },
+    "evidence/firmware-audit/20260920-df-init-route/menu-result.json": {
+      "size": 31047,
+      "sha256": "6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a"
+    },
+    "evidence/firmware-audit/20260920-df-init-route/menu-verify.py": {
+      "size": 4983,
+      "sha256": "928d82ccedc9908758b98ac2705076e88b621315fc6e815387f2f542b4755682"
+    },
+    "evidence/firmware-audit/20260920-clv-native-1to1-recipe/recipe-result.json": {
+      "size": 3069,
+      "sha256": "214173554e4264b5bae273c8be9115f6d0f7c200837d402e43a3d2fc99132752"
+    },
+    "evidence/firmware-audit/20260920-clv-native-1to1-recipe/recipe-result-H1750-historical.json": {
+      "size": 2152,
+      "sha256": "e4a2c4231070d83829f14c65087cd1ec3aadd20a00cd4b8ef2872de08849477d"
+    },
+    "evidence/firmware-audit/20260920-clv-native-1to1-recipe/recipe-result.json.orig-20260920": {
+      "size": 2152,
+      "sha256": "e4a2c4231070d83829f14c65087cd1ec3aadd20a00cd4b8ef2872de08849477d"
+    },
+    "evidence/firmware-audit/20260920-clv-native-1to1-recipe/SHA256SUMS.final": {
+      "size": 313,
+      "sha256": "cb1bfce0ef04792eba8cf27fcfa29ed2a28efe183b0d86c5528fc51a73ad8b49"
+    },
+    "evidence/firmware-audit/20260920-clv-native-1to1-recipe/SHA256SUMS.final.orig-20260920": {
+      "size": 211,
+      "sha256": "f3d70309e2df8c46ead8ca0781b14e0a83a936bd5e01101176a05c1c2872b020"
+    },
+    "evidence/firmware-audit/20260920-clv-native-operator-recipe-review/review-result.json": {
+      "size": 4100,
+      "sha256": "26619d57e25fb058f51b93ca6d942bf97ad5503a093feff48ca8991653a0e2c1"
+    },
+    "evidence/firmware-audit/20260920-clv-native-operator-recipe-review/review_recipe.py": {
+      "size": 5703,
+      "sha256": "5e2d1a4fbcfd2997c99751f80eba630773ff4542fd48cff2c3da1aa9facaad87"
+    },
+    "docs/research/2026-09-20-clv-native-operator-recipe.md": {
+      "size": 4346,
+      "sha256": "66060b1f71639f9cc3fc5a187f9e819fecfd5a69f6ec2c91eb9c91bb40bd6e71"
+    },
+    "docs/research/2026-09-20-clv-native-1to1-recipe.md": {
+      "size": 5337,
+      "sha256": "59064139e8cea853fd18d4259e654990c1ecf59abc50921787d1f161e414ca50"
+    },
+    "docs/research/2026-09-20-clv-native-menu-1to1-guide.md": {
+      "size": 14805,
+      "sha256": "03a7239adf248a32558ea8fc0bea801325cb010035a41198df888350aa8236e6"
+    },
+    "docs/research/2026-09-20-clv-uclk-discrimination-guide.md": {
+      "size": 6269,
+      "sha256": "6c5dc2ef21a755a16a5a47c8106cd70cd3e6c4fa37783deda717250bf1f0c925"
+    },
+    "docs/research/20260920-clv-abl1-r6-3c4-producer-trace.md": {
+      "size": 4250,
+      "sha256": "655e99c5456453e59643ae9bce287f8414ab0387025e157c687dd862a0f267ab"
+    }
+  },
+  "limits": [
+    "Bytes for the six fields come from the extracted CLV CbsSetupDxe PE32 (sha256 7ff717d5...); the module is not a verbatim ROM substring because the FFS section is compressed, so provenance rests on the recorded extractor hash, not on a byte-substring match.",
+    "IFR record type/option bytes are static requests; nothing here shows that firmware applies them, that NVRAM persists them, or that any clock ratio becomes 1:1:1.",
+    "UclkDiv1M0 'Enabled' remains an undecoded enum byte; Memory Clock Speed values are option-table indices, not a MHz/50 arithmetic scaling."
+  ]
+}

@@ -1,0 +1,42 @@
+PASS: entire loaded program memory equals clv-matching robin-5 body, bytes=262400
+===== 00000ffc FUN_00000ffc =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 FUN_00000ffc(int param_1)
+
+{
+  memw();
+  return **(undefined4 **)(param_1 * 0xc + _DAT_00000ba0 + 0xc);
+}
+
+
+00000ffc 364100 entry a1,0x20
+00000fff 31e8fe l32r a3,0x00000ba0
+00001002 202290 addx2 a2,a2,a2
+00001005 3022a0 addx4 a2,a2,a3
+00001008 2832 l32i.n a2,a2,0xc
+0000100a c02000 memw
+0000100d 2802 l32i.n a2,a2,0x0
+0000100f 1df0 retw.n
+===== 00000fa8 FUN_00000fa8 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00000fa8(int param_1,undefined4 param_2)
+
+{
+  memw();
+  **(undefined4 **)(param_1 * 0xc + _DAT_00000ba0 + 0x10) = param_2;
+  return;
+}
+
+
+00000fa8 364100 entry a1,0x20
+00000fab 51fdfe l32r a5,0x00000ba0
+00000fae 204290 addx2 a4,a2,a2
+00000fb1 5044a0 addx4 a4,a4,a5
+00000fb4 4844 l32i.n a4,a4,0x10
+00000fb6 c02000 memw
+00000fb9 3904 s32i.n a3,a4,0x0
+00000fbb 1df0 retw.n

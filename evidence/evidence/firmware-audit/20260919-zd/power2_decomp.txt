@@ -1,0 +1,374 @@
+===== FUNCTION 0x36428 : FUN_00036428 =====
+
+/* WARNING: Removing unreachable block (ram,0x0003660a) */
+/* WARNING: Removing unreachable block (ram,0x000365fe) */
+/* WARNING: Removing unreachable block (ram,0x0003660d) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 FUN_00036428(uint *param_1)
+
+{
+  int *piVar1;
+  undefined4 uVar2;
+  uint uVar3;
+  
+  piVar1 = _DAT_000185c4;
+  uVar2 = _DAT_000184dc;
+  uVar3 = (uint)(byte)*param_1;
+  if (((((((uVar3 == 0x11) || (uVar3 == 0x12)) || (uVar3 == 0xe)) ||
+        ((uVar3 == 0xd || (uVar3 == 9)))) ||
+       ((uVar3 == 0x1b || ((uVar3 == 0x21 || (uVar3 == 0x3a)))))) || (uVar3 == 0x51)) ||
+     ((uVar3 == 0x52 || (uVar3 == 0x2e)))) {
+    uVar2 = func_0x00036e64(param_1);
+    return uVar2;
+  }
+  if (uVar3 != 0x30) {
+    if (uVar3 != 0x2f) {
+      if (uVar3 == 0x3b) {
+        func_0x000391c4(param_1);
+        return 3;
+      }
+      if (uVar3 == 5) {
+        func_0x00039350(0,0);
+        return 3;
+      }
+      memw();
+      if ((*_DAT_000185c4 != 0) && ((memw(), *_DAT_000185c4 != 1 || ((*param_1 >> 8 & 3) != 3)))) {
+        return 5;
+      }
+      memw();
+      *_DAT_000185c4 = 2;
+      if (0x53 < uVar3) {
+        if ((*param_1 >> 8 & 3) == 3) {
+          memw();
+          *_DAT_000185d0 = 2;
+          memw();
+          *piVar1 = 3;
+        }
+        else {
+          memw();
+          *piVar1 = 0;
+        }
+        return 2;
+      }
+                    /* WARNING: Could not recover jumptable at 0x000364f5. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      uVar2 = (*(code *)(uVar3 * 3 + _DAT_000185cc))(param_1,uVar3,0x100,piVar1,9,uVar2);
+      return uVar2;
+    }
+    func_0x00034d84(param_1);
+  }
+  if (uVar3 == 0x30) {
+    func_0x00034dd0(param_1);
+  }
+  return 3;
+}
+
+
+===== FUNCTION 0x2a018 : FUN_0002a018 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+uint FUN_0002a018(uint param_1)
+
+{
+  memw();
+  return (*(uint *)(_DAT_000170a4 + 0x2e8) & 1 << 0x20 - (0x20 - (param_1 & 0x1f))) >>
+         (param_1 & 0x1f);
+}
+
+
+===== FUNCTION 0x1cc7c : FUN_0001cc7c =====
+
+void FUN_0001cc7c(undefined4 *param_1,undefined4 *param_2,uint param_3)
+
+{
+  int iVar1;
+  
+  iVar1 = (param_3 >> 2) - 1;
+  if (param_3 >> 2 != 0) goto code_r0x0001cc85;
+  while (iVar1 != 0) {
+    iVar1 = iVar1 + -1;
+code_r0x0001cc85:
+    *param_2 = *param_1;
+    param_1 = param_1 + 1;
+    param_2 = param_2 + 1;
+  }
+  return;
+}
+
+
+===== FUNCTION 0x23ecc : FUN_00023ecc =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int FUN_00023ecc(uint param_1)
+
+{
+  if (param_1 <= _DAT_00017354) {
+    if (param_1 <= _DAT_00017944) {
+      param_1 = param_1 >> 6;
+      goto LAB_00023ef0;
+    }
+    param_1 = param_1 * 2 - 0x2000;
+  }
+  param_1 = (param_1 >> 8) + 0x40;
+LAB_00023ef0:
+  param_1 = param_1 & 0xff;
+  return (uint)(param_1 < 8) * 8 + (param_1 >= 8) * param_1;
+}
+
+
+===== FUNCTION 0x2360c : FUN_0002360c =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+float FUN_0002360c(uint param_1)
+
+{
+  return (float)(param_1 & 0x1ff) / 1.0 + ((float)(param_1 >> 0x10) / 1.0) * _DAT_00017460;
+}
+
+
+===== FUNCTION 0x2379c : FUN_0002379c =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002379c(uint param_1,int param_2,undefined4 param_3)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  undefined4 *puVar3;
+  int iVar4;
+  int iVar5;
+  undefined1 uStack_30;
+  
+  puVar3 = (undefined4 *)(param_1 * 0x48 + _DAT_0001745c);
+  iVar4 = puVar3[2];
+  func_0x00024020(param_1,1000);
+  func_0x00024afc(param_1);
+  iVar5 = param_2 * 0x1c + _DAT_000178c4;
+  if (*(char *)(iVar5 + 0x7f) != '\0') {
+    uVar1 = func_0x00023fb8(param_2,*(undefined1 *)(iVar5 + 0x7e),param_3);
+    uStack_30 = (undefined1)uVar1;
+    iVar2 = func_0x00023654(*puVar3,param_3);
+    if (iVar2 == 1) {
+      func_0x00024128(param_2,0);
+      func_0x00024084(param_2,uVar1);
+      func_0x00024128(param_2,1);
+    }
+  }
+  func_0x000235c8(puVar3[7] + iVar4,param_3);
+  do {
+    memw();
+  } while ((*(uint *)((puVar3[0xd] + iVar4 & _DAT_00017134) + _DAT_00017160 + 0x200) & 0x100) == 0);
+  if ((*(char *)(iVar5 + 0x7f) != '\0') && (iVar5 = func_0x00023654(*puVar3,param_3), iVar5 == -1))
+  {
+    func_0x00024128(param_2,0);
+    func_0x00024084(param_2,uStack_30);
+    func_0x00024128(param_2,1);
+  }
+  memw();
+  func_0x000235c8(puVar3[9] + iVar4,
+                  *(uint *)((puVar3[9] + iVar4 & _DAT_00017134) + _DAT_00017160 + 0x200) &
+                  _DAT_000178f4 | _DAT_000178f8);
+  *puVar3 = param_3;
+  func_0x00023ef8(param_1);
+  if (param_2 == 0xff) {
+    iVar5 = 0;
+    iVar4 = _DAT_000178fc;
+    do {
+      if (*(byte *)(iVar4 + 0x80) == param_1) {
+        func_0x00023f18(iVar5);
+      }
+      iVar4 = iVar4 + 0x1c;
+      iVar5 = iVar5 + 1;
+    } while (iVar5 != 0x1b);
+    return;
+  }
+  func_0x00023f18(param_2);
+  return;
+}
+
+
+===== FUNCTION 0x3acf8 : FUN_0003acf8 =====
+
+float FUN_0003acf8(uint param_1,float param_2)
+
+{
+  uint uVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  
+  fVar3 = 1.0 / param_2;
+  uVar1 = (uint)param_2 >> 0x17 & 0xff;
+  fVar4 = (float)(((uint)param_2 >> 0x1f ^ 1) << 0x1f |
+                  ((uint)(uVar1 != 0 && uVar1 != 0xff) &
+                   ((uVar1 - 0x7f) - (uVar1 - 0x7f & 0xfffffffe)) + 0x7f & 0xff |
+                  (uVar1 == 0 || uVar1 == 0xff) & uVar1) << 0x17 | (uint)param_2 & 0x7fffff);
+  uVar1 = param_1 >> 0x17 & 0xff;
+  fVar2 = (float)((param_1 >> 0x1f ^ 1) << 0x1f |
+                  ((uint)(uVar1 != 0 && uVar1 != 0xff) &
+                   ((uVar1 - 0x7f) - (uVar1 - 0x7f & 0xfffffffe)) + 0x7f & 0xff |
+                  (uVar1 == 0 || uVar1 == 0xff) & uVar1) << 0x17 | param_1 & 0x7fffff);
+  fVar5 = fVar3 + (fVar4 * fVar3 + 1.0) * fVar3;
+  fVar6 = 0.0 - fVar2;
+  fVar3 = fVar6 * fVar3 + 0.0;
+  fVar5 = fVar5 + (fVar4 * fVar5 + 1.0) * fVar5;
+  fVar3 = fVar3 + (fVar6 + fVar4 * fVar3) * fVar5;
+  fVar5 = fVar5 + (fVar4 * fVar5 + 1.0) * fVar5;
+  return (float)(((uint)fVar3 >> 0x1f ^ ((uint)param_2 & 0x400000) >> 0x16) << 0x1f |
+                 ((((uint)fVar3 >> 0x17 & 0xff) + (((uint)param_2 & 0x3fc000) >> 0xe)) - 0x7f & 0xff
+                 ) << 0x17 | (uint)fVar3 & 0x7fffff) +
+         ((0.0 - fVar2) + fVar4 * fVar3) *
+         (float)(((uint)fVar5 ^ param_1) & 0x80000000 |
+                 ((((uint)fVar5 >> 0x17 & 0xff) + ((param_1 & 0x7f800000) >> 0x17)) - 0x7f & 0xff)
+                 << 0x17 | (uint)fVar5 & 0x7fffff);
+}
+
+
+===== FUNCTION 0x23cb8 : FUN_00023cb8 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 FUN_00023cb8(float param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  float fVar4;
+  
+  fVar4 = _DAT_0001729c * param_1 * 2.0;
+  uVar1 = (ulonglong)(fVar4 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  uVar3 = ((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar4) || bVar2)) +
+          (uint)((!NAN(fVar4) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1;
+  if (_DAT_0001792c < uVar3) {
+    uVar3 = uVar3 / 0x32;
+  }
+  else {
+    uVar3 = (uVar3 * (_DAT_00017930 / uVar3 + 1)) / 200;
+  }
+  return (int)(CONCAT44(uVar3,uVar3) >> 1);
+}
+
+
+===== FUNCTION 0x23ab0 : FUN_00023ab0 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined1 FUN_00023ab0(int param_1)
+
+{
+  return *(undefined1 *)(param_1 * 0x1c + _DAT_000178c4 + 0x7e);
+}
+
+
+===== FUNCTION 0x23ac4 : FUN_00023ac4 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 FUN_00023ac4(int param_1)
+
+{
+  return *(undefined4 *)
+          ((uint)*(byte *)(param_1 * 0x1c + _DAT_000178fc + 0x80) * 0x48 + _DAT_0001745c);
+}
+
+
+===== FUNCTION 0x23c40 : FUN_00023c40 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 FUN_00023c40(int param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  float fVar1;
+  undefined4 uVar2;
+  float fVar3;
+  
+  fVar1 = (float)FUN_0002360c(param_2);
+  fVar3 = *(float *)(param_1 * 0x48 + _DAT_0001745c + 0x10);
+  uVar2 = func_0x0001cad8(param_3);
+  uVar2 = FUN_0003acf8(fVar3 * fVar1,uVar2);
+  return uVar2;
+}
+
+
+===== FUNCTION 0x23890 : FUN_00023890 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00023890(int param_1,uint param_2)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  int iVar3;
+  int iVar4;
+  uint uVar5;
+  undefined1 uStack_30;
+  undefined1 uStack_2f;
+  undefined1 uStack_2c;
+  
+  iVar1 = _DAT_0001745c;
+  iVar3 = param_1 * 0x1c + _DAT_000178fc;
+  iVar4 = *(int *)(param_1 * 0x1c + _DAT_0001745c + 0x254);
+  if (*(char *)((uint)*(byte *)(iVar3 + 0x80) * 0x48 + _DAT_0001745c + 0x14) == '\0') {
+    func_0x00023d78((uint)*(byte *)(iVar3 + 0x80),1);
+  }
+  if (*(char *)(iVar3 + 0x98) != '\0') {
+    uStack_30 = 0;
+    uStack_2f = 0;
+    func_0x000239c0(param_1,&uStack_30);
+  }
+  if (*(char *)(iVar3 + 0x83) != '\0') {
+    uVar2 = func_0x00023fb8(param_1,param_2,
+                            *(undefined4 *)((uint)*(byte *)(iVar3 + 0x80) * 0x48 + iVar1));
+    uStack_2c = (undefined1)uVar2;
+    if (param_2 < *(byte *)(iVar3 + 0x82)) {
+      func_0x00024128(param_1,0);
+      func_0x00024084(param_1,uVar2);
+      func_0x00024128(param_1,1);
+    }
+  }
+  iVar1 = _DAT_000178cc;
+  if ((param_1 == 0x13) && (param_2 == 0)) {
+    memw();
+    memw();
+    *(uint *)(_DAT_000178cc + 0x214) = *(uint *)(_DAT_000178cc + 0x214) & 0xffffffe7;
+    do {
+      memw();
+    } while ((*(uint *)(iVar1 + 0x218) & 0x18) != 0);
+  }
+  func_0x000235c8(iVar4,param_2);
+  do {
+    memw();
+  } while ((*(uint *)((iVar4 + 0x24U & _DAT_00017134) + _DAT_00017160 + 0x200) & 0x10000) == 0);
+  if ((param_1 == 0x13) && (param_2 != 0)) {
+    memw();
+    uVar5 = *(uint *)(iVar1 + 0x214);
+    if (((uVar5 & 8) == 0) || ((uVar5 & 0x10) == 0)) {
+      memw();
+      *(uint *)(iVar1 + 0x214) = uVar5 | 0x18;
+    }
+  }
+  if ((*(char *)(iVar3 + 0x83) != '\0') && (*(byte *)(iVar3 + 0x82) < param_2)) {
+    func_0x00024128(param_1,0);
+    func_0x00024084(param_1,uStack_2c);
+    func_0x00024128(param_1,1);
+  }
+  *(char *)(iVar3 + 0x82) = (char)param_2;
+  if (param_2 != 0) {
+    *(char *)(iVar3 + 0x86) = (char)param_2;
+  }
+  func_0x00023f18(param_1);
+  return;
+}
+
+

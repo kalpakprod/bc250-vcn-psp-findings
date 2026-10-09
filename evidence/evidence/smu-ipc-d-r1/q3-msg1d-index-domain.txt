@@ -1,0 +1,28 @@
+SUPERSEDED_BY=q3-msg1d-single-decoder.txt (use its CALL8/ENTRY-derived ordered def-use table)
+SUPERSEDED_REASON=old pointer-array interpretation treated 0x2e45b as absent; length-driven decode reaches local mov.n a2,a7
+body_sha256=5c805026581ace101ba43ef4d0f6b34354f4a61461a1c78d2fa6a335a53d9936
+index_validity=1..20 inclusive (0x2e6d7 bltu 0x14,index; 0x2e6da beqz index)
+pointer_array=*(0x181e0 + 4*index); type_field=*(pointer_array + 4); reject_type==0x13 or 0x14 (0x2e6e4/0x2e6e6)
+index=01 pointer_slot=0x181e4 pointer=0x13fc4 type_field_addr=0x13fc8 type=0x00000000 accepted=True
+index=02 pointer_slot=0x181e8 pointer=0x16f38 type_field_addr=0x16f3c type=0x00000000 accepted=True
+index=03 pointer_slot=0x181ec pointer=0x16f40 type_field_addr=0x16f44 type=0x3f800000 accepted=True
+index=04 pointer_slot=0x181f0 pointer=0x16f3c type_field_addr=0x16f40 type=0x3a83126f accepted=True
+index=05 pointer_slot=0x181f4 pointer=0x14020 type_field_addr=0x14024 type=0x00000000 accepted=True
+index=06 pointer_slot=0x181f8 pointer=0x3fefae14 type_field_addr=0x3fefae18 type=out-of-body accepted=unknown
+index=07 pointer_slot=0x181fc pointer=0x7ae147ae type_field_addr=0x7ae147b2 type=out-of-body accepted=unknown
+index=08 pointer_slot=0x18200 pointer=0x16f44 type_field_addr=0x16f48 type=0x447a0000 accepted=True
+index=09 pointer_slot=0x18204 pointer=0x16f4c type_field_addr=0x16f50 type=0x3f800000 accepted=True
+index=10 pointer_slot=0x18208 pointer=0xffffc1ff type_field_addr=0xffffc203 type=out-of-body accepted=unknown
+index=11 pointer_slot=0x1820c pointer=0xfff07fff type_field_addr=0xfff08003 type=out-of-body accepted=unknown
+index=12 pointer_slot=0x18210 pointer=0xffff83ff type_field_addr=0xffff8403 type=out-of-body accepted=unknown
+index=13 pointer_slot=0x18214 pointer=0x111804bc type_field_addr=0x111804c0 type=out-of-body accepted=unknown
+index=14 pointer_slot=0x18218 pointer=0x11140224 type_field_addr=0x11140228 type=out-of-body accepted=unknown
+index=15 pointer_slot=0x1821c pointer=0x11140220 type_field_addr=0x11140224 type=out-of-body accepted=unknown
+index=16 pointer_slot=0x18220 pointer=0x19778 type_field_addr=0x1977c type=0x00000000 accepted=True
+index=17 pointer_slot=0x18224 pointer=0x3b325331 type_field_addr=0x3b325335 type=out-of-body accepted=unknown
+index=18 pointer_slot=0x18228 pointer=0x3f0fd8a2 type_field_addr=0x3f0fd8a6 type=out-of-body accepted=unknown
+index=19 pointer_slot=0x1822c pointer=0x04280 type_field_addr=0x04284 type=0x00000000 accepted=True
+index=20 pointer_slot=0x18230 pointer=0x042c0 type_field_addr=0x042c4 type=0x00000000 accepted=True
+q3_value=arg[15:0], converted unsigned float and stored at *(0x181e0 + 12*index) + 0x140 via 0x2e6ec/0x2e6f8/0x2e6fb
+downstream_2e448=coherent body reads a2+0x14c and writes a2+0x5c; no direct read of q3-updated +0x140 field is present
+downstream_246f4=0x2e481 receives a4 loaded at 0x2e46e from [a3+0x8]; this is not the q3-updated float field

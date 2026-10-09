@@ -1,0 +1,247 @@
+{
+  "generated_at": "2026-09-11T04:37:18.957657+00:00",
+  "current": {
+    "full_wrapper_path": "evidence/firmware-audit/ps1/dump-2-sec-gasket.bin",
+    "full_wrapper_sha256": "b365d5b135da12b097a4ef5aecc47a284f1ccd49ac3d251b35b2c0a6de8c9e55",
+    "full_wrapper_size": 11856,
+    "payload_path": "evidence/firmware-audit/ps1/dump-2-sec-gasket-payload.bin",
+    "payload_sha256": "d16f7dacfd9b38ea47e3cde8b9754183eeb3a97076244702a0dd980eb53fd52c",
+    "payload_size": 11344,
+    "payload_offset_within_type36": "0x100",
+    "trailing_wrapper_bytes": "0x100",
+    "parsed_report": "evidence/firmware-audit/ps1/dump-2-sec-gasket-payload.json",
+    "groups": [
+      {
+        "type": "0x201",
+        "count": 1230,
+        "address_min": "0x0000d428",
+        "address_max": "0x09301b88",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      },
+      {
+        "type": "0x203",
+        "count": 31,
+        "address_min": "0x0322011c",
+        "address_max": "0x032201d4",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      },
+      {
+        "type": "0x210",
+        "count": 13,
+        "address_min": "0x0003e810",
+        "address_max": "0x0003e814",
+        "hwid12_range_write_count": 0,
+        "e810_values": [
+          "0x00000000"
+        ]
+      },
+      {
+        "type": "0x280",
+        "count": 100,
+        "address_min": "0x03a2011c",
+        "address_max": "0x09300234",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      },
+      {
+        "type": "0x281",
+        "count": 31,
+        "address_min": "0x0322011c",
+        "address_max": "0x032201d4",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      }
+    ]
+  },
+  "historical_robin3": {
+    "parsed_report": "import/from-windows/Users/kukuruza/tmp_bc250/recon/robin3_sec_gasket_parsed.json",
+    "parsed_report_sha256": "a4ff6164943e36fa8cb5c9182e6d6c34e9dcd47f2b0a4a9c4f709d4471e8adc5",
+    "groups": [
+      {
+        "type": "0x201",
+        "count": 1230,
+        "address_min": "0x0000d428",
+        "address_max": "0x09301b88",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      },
+      {
+        "type": "0x203",
+        "count": 31,
+        "address_min": "0x0322011c",
+        "address_max": "0x032201d4",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      },
+      {
+        "type": "0x210",
+        "count": 13,
+        "address_min": "0x0003e810",
+        "address_max": "0x0003e814",
+        "hwid12_range_write_count": 0,
+        "e810_values": [
+          "0x00000000"
+        ]
+      },
+      {
+        "type": "0x280",
+        "count": 100,
+        "address_min": "0x03a2011c",
+        "address_max": "0x09300234",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      },
+      {
+        "type": "0x281",
+        "count": 31,
+        "address_min": "0x0322011c",
+        "address_max": "0x032201d4",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      }
+    ],
+    "payload_equal_to_current": true
+  },
+  "historical_unsigned_vcn_candidate": {
+    "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/bc250_sec_gasket_with_vcn_UNSIGNED_DO_NOT_FLASH.bin",
+    "sha256": "531d27b386d631ccdad3e8397f916ee4b5f9608d9516317b0d661db92d4a1017",
+    "size": 11792,
+    "parsed_report": "import/from-windows/Users/kukuruza/tmp_bc250/recon/bc250_sec_gasket_with_vcn_UNSIGNED_DO_NOT_FLASH.parsed.json",
+    "parsed_report_sha256": "c89884757222710531fc64d19e71ce22e4553950071d253363144ad79bfa0aa2",
+    "groups": [
+      {
+        "type": "0x201",
+        "count": 1281,
+        "address_min": "0x0000d428",
+        "address_max": "0x09301b88",
+        "hwid12_range_write_count": 51,
+        "e810_values": []
+      },
+      {
+        "type": "0x203",
+        "count": 31,
+        "address_min": "0x0322011c",
+        "address_max": "0x032201d4",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      },
+      {
+        "type": "0x210",
+        "count": 13,
+        "address_min": "0x0003e810",
+        "address_max": "0x0003e814",
+        "hwid12_range_write_count": 0,
+        "e810_values": [
+          "0x00000000"
+        ]
+      },
+      {
+        "type": "0x280",
+        "count": 105,
+        "address_min": "0x03a2011c",
+        "address_max": "0x09300234",
+        "hwid12_range_write_count": 5,
+        "e810_values": []
+      },
+      {
+        "type": "0x281",
+        "count": 31,
+        "address_min": "0x0322011c",
+        "address_max": "0x032201d4",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      }
+    ],
+    "additional_hwid12_range_writes_vs_current": 56,
+    "status": "rejected research artifact; unsigned and not a source/candidate"
+  },
+  "historical_cezanne_dir1": {
+    "parsed_report": "import/from-windows/Users/kukuruza/tmp_bc250/recon/cezanne_a3mstx_370e/dir1_sec_gasket_12.parsed.json",
+    "parsed_report_sha256": "d2be25f8f56d8b135c5b713dde65f80add6783cca3ef61734b1a028eeb961970",
+    "groups": [
+      {
+        "type": "0x201",
+        "count": 900,
+        "address_min": "0x0001c73c",
+        "address_max": "0x09301b80",
+        "hwid12_range_write_count": 51,
+        "e810_values": []
+      },
+      {
+        "type": "0x203",
+        "count": 32,
+        "address_min": "0x0322011c",
+        "address_max": "0x032201d4",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      },
+      {
+        "type": "0x206",
+        "count": 45,
+        "address_min": "0x0900b848",
+        "address_max": "0x0900bb80",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      },
+      {
+        "type": "0x208",
+        "count": 0,
+        "address_min": null,
+        "address_max": null,
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      },
+      {
+        "type": "0x210",
+        "count": 4,
+        "address_min": "0x0001f820",
+        "address_max": "0x0003e814",
+        "hwid12_range_write_count": 0,
+        "e810_values": [
+          "0x00000006"
+        ]
+      },
+      {
+        "type": "0x212",
+        "count": 28,
+        "address_min": "0x0000d428",
+        "address_max": "0x0900fb80",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      },
+      {
+        "type": "0x280",
+        "count": 367,
+        "address_min": "0x0000d428",
+        "address_max": "0x09301b80",
+        "hwid12_range_write_count": 5,
+        "e810_values": []
+      },
+      {
+        "type": "0x281",
+        "count": 28,
+        "address_min": "0x0322011c",
+        "address_max": "0x032201d4",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      },
+      {
+        "type": "0x282",
+        "count": 3,
+        "address_min": "0x0900b914",
+        "address_max": "0x0900bb80",
+        "hwid12_range_write_count": 0,
+        "e810_values": []
+      }
+    ],
+    "status": "historical donor/reference; not current BC-250 baseline"
+  },
+  "conclusions": [
+    "Current dump payload exactly matches the imported Robin3 parsed gasket and contains no 0x0900Cxxx HWID-12 range writes.",
+    "The rejected unsigned VCN artifact adds 56 HWID-12 range writes (51 in group 0x201 and 5 in group 0x280), but its checksum/signature/provenance do not make it flashable.",
+    "The historical Cezanne dir1 donor has a different group layout and 0x03E810=0x6; this is a donor correlation, not proof that the target accepts or executes those writes."
+  ],
+  "evidence_class": "observed-bytes/static-analysis"
+}

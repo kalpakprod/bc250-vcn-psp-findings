@@ -1,0 +1,111 @@
+=== PART7 final gaps ===
+--- stop? NO writes; just retry SMU reads with flock ---
+try 0 test ERR smu returned status 0x00 for queue 3 msg 0x01
+try 1 test ERR smu returned status 0x00 for queue 3 msg 0x01
+try 2 test ERR smu returned status 0x00 for queue 3 msg 0x01
+get_enabled_smu_features ERR smu returned status 0x00 for queue 0 msg 0x3D
+query_active_wgp ERR smu returned status 0x00 for queue 0 msg 0x1E
+query_gfxclk ERR smu returned status 0x00 for queue 0 msg 0x0F
+get_gfx_frequency ERR smu returned status 0x00 for queue 0 msg 0x37
+get_gfx_vid ERR smu returned status 0x00 for queue 0 msg 0x38
+test_message ERR Bc250Smu.test_message() missing 1 required positional argument: 'value'
+q2_name ERR Queue2Mixin.q2_0x04_get_device_name() missing 1 required positional argument: 'index'
+--- patches mentioning vcn ---
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:394:+	size += sysfs_emit_at(buf, size, "vclk:  %5uMHz\n",
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:396:+	size += sysfs_emit_at(buf, size, "dclk:  %5uMHz\n",
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:507: 	gpu_metrics->average_vclk_frequency = metrics.Average.VclkFrequency;
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:508: 	gpu_metrics->average_dclk_frequency = metrics.Average.DclkFrequency;
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:520: 	gpu_metrics->current_vclk = metrics.Current.VclkFrequency;
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:521: 	gpu_metrics->current_dclk = metrics.Current.DclkFrequency;
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch:394:+	size += sysfs_emit_at(buf, size, "vclk:  %5uMHz\n",
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch:396:+	size += sysfs_emit_at(buf, size, "dclk:  %5uMHz\n",
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch:507: 	gpu_metrics->average_vclk_frequency = metrics.Average.VclkFrequency;
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch:508: 	gpu_metrics->average_dclk_frequency = metrics.Average.DclkFrequency;
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch:520: 	gpu_metrics->current_vclk = metrics.Current.VclkFrequency;
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch:521: 	gpu_metrics->current_dclk = metrics.Current.DclkFrequency;
+--- kernel-7.2 patch list ---
+0001-bc250-8core-telemetry-gpu-activity.patch
+0003-nct6687d-hwmon.patch
+0004-gfx1013-pasid-tlb-invalidation.patch
+0005-gfx1013-compute-gfxoff-guard.patch
+0006-bc250-kfd-flush-tlb-by-runlist.patch
+0007-amdgpu-ttm-null-page-guard.patch
+--- mesa patch list ---
+/home/OWNER/linux-cachyos-bc250/patches/mesa:
+0001-gfx1013-compute-queue-fix.patch
+0002-gfx1013-mesh-task-shaders.patch
+0003-gfx1013-taskmesh-queries.patch
+0004-radv-gfx103.patch
+
+/home/OWNER/linux-cachyos-bc250/patches/mesa-git:
+0001-gfx1013-compute-queue-fix.patch
+0002-gfx1013-mesh-task-shaders.patch
+0003-gfx1013-taskmesh-queries.patch
+0004-radv-gfx103.patch
+--- amdgpu.ko strings ---
+MOD=/lib/modules/7.2.0-1.1-cachyos-bc250
+amdgpu.ko.zst
+KO=/lib/modules/7.2.0-1.1-cachyos-bc250/kernel/drivers/gpu/drm/amd/amdgpu/amdgpu.ko.zst
+AMD_APU_IS_CYAN_SKILLFISH2
+AMDGIM_FEATURE_VCN_RB_DECOUPLE
+amdgpu_debugfs_vcn_fwlog_init
+amdgpu_debugfs_vcn_fwlog_read
+amdgpu_debugfs_vcn_sched_mask_fops
+amdgpu_debugfs_vcn_sched_mask_fops_open
+amdgpu_debugfs_vcn_sched_mask_get
+amdgpu_debugfs_vcn_sched_mask_init
+amdgpu_debugfs_vcn_sched_mask_set
+amdgpu_discovery_get_vcn_info
+amdgpu_discovery_get_vcn_info._entry
+amdgpu_discovery_get_vcn_info._entry.188
+amdgpu_discovery_get_vcn_info._entry_ptr
+amdgpu_discovery_get_vcn_info._entry_ptr.190
+AMDGPU_DOORBELL_LAYOUT1_VCN_END
+AMDGPU_DOORBELL_LAYOUT1_VCN_START
+amdgpu_dpm_reset_vcn_is_supported
+amdgpu_get_vcn_busy_percent
+amdgpu_get_vcn_reset_mask
+AMDGPU_METRICS_ATTR_ID_VCN_BUSY
+AMDGPU_PP_SENSOR_VCN_LOAD
+AMDGPU_PP_SENSOR_VCN_POWER_STATE
+AMDGPU_RING_TYPE_VCN_DEC
+AMDGPU_RING_TYPE_VCN_ENC
+AMDGPU_RING_TYPE_VCN_JPEG
+AMDGPU_SOC_V1_0_DOORBELL_VCN_END
+AMDGPU_SOC_V1_0_DOORBELL_VCN_START
+amdgpu_vcn_caps
+amdgpu_vcn_decode_buffer
+amdgpu_vcn_dec_ring_test_ib
+amdgpu_vcn_dec_ring_test_ring
+amdgpu_vcn_dec_send_msg
+amdgpu_vcn_dec_sw_ring_test_ib
+amdgpu_vcn_dec_sw_ring_test_ring
+amdgpu_vcn_dec_sw_send_msg
+amdgpu_vcn_%d_fwlog
+amdgpu_vcn_dump_ip_state
+amdgpu_vcn_early_init
+amdgpu_vcn_enc_ring_test_ib
+amdgpu_vcn_enc_ring_test_ring
+amdgpu_vcn_fwlog
+amdgpu_vcn_fwlog_init
+amdgpu_vcn_fw_shared
+amdgpu_vcn_get_enc_ring_prio
+amdgpu_vcn_get_profile
+amdgpu_vcn_get_profile._entry
+amdgpu_vcn_get_profile._entry_ptr
+amdgpu_vcn_idle_work_handler
+amdgpu_vcn_inst
+amdgpu_vcn_is_disabled_vcn
+--- hwmon ---
+name=amdgpu
+temp1_input=
+freq1_input=
+power1_average=
+--- drm clients ---
+by-path
+card1
+renderD128
+--- no video nodes confirm ---
+ls: невозможно получить доступ к '/dev/video*': Нет такого файла или каталога
+ls: невозможно получить доступ к '/dev/media*': Нет такого файла или каталога
+=== PART7 DONE ===

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/tmp/smu_probe.py", line 5, in <module>
+    s = Bc250Smu(allow_queue0=True)
+  File "/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py", line 33, in __init__
+    self._transport.open()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/transport.py", line 15, in open
+    self._fd = os.open(self._config_path, os.O_RDWR | os.O_CLOEXEC)
+               ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/sys/bus/pci/devices/0000:00:00.0/config'

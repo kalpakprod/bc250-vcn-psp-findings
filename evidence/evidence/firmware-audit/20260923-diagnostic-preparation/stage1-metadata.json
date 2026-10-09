@@ -1,0 +1,27 @@
+{
+  "mode": "metadata",
+  "expected_pci_id": "1002:13fe",
+  "status": "METADATA_ONLY",
+  "cards": [
+    {
+      "card": "card1",
+      "pci_id": "1002:13fe",
+      "files": {},
+      "unavailable": []
+    }
+  ],
+  "forbidden": [
+    "PCI config",
+    "SMN",
+    "SMU mailbox",
+    "/dev/mem",
+    "settings writes",
+    "hostname",
+    "cmdline"
+  ],
+  "independent_clock_proof": false,
+  "soc_voltage_verified": false,
+  "kernel": "7.2.6-1.206-cachyos-bc250",
+  "bios_version": "P3.00\n",
+  "bios_date": "12/09/2021\n"
+}

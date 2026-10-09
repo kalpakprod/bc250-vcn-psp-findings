@@ -1,0 +1,13 @@
+{
+    "id": 212,
+    "jsonrpc": "2.0",
+    "result": {
+        "content": [
+            {
+                "text": "{\"addr\":\"0x11037\",\"pseudo\":\"\\n// WARNING: Variable defined which should be unmapped: var_f8h\\n// WARNING: [rz-ghidra] Detected overlap for variable var_cch\\n\\nundefined8 entry0(undefined8 placeholder_0, int64_t arg2)\\n{\\n    char cVar1;\\n    int64_t iVar2;\\n    int64_t iVar3;\\n    int64_t var_f8h;\\n    int64_t var_f0h;\\n    int64_t var_e8h;\\n    int64_t var_e0h;\\n    int64_t var_d8h;\\n    int32_t var_cch;\\n    int64_t var_c8h;\\n    int64_t var_b8h;\\n    int64_t var_a8h;\\n    int64_t var_98h;\\n    int64_t var_88h;\\n    int64_t var_78h;\\n    int64_t var_68h;\\n    int64_t var_58h;\\n    int64_t var_48h;\\n    int64_t var_38h;\\n    \\n    _data.00012008 = *(int64_t *)(arg2 + 0x60);\\n    *(int64_t *)0x12000 = *(int64_t *)(arg2 + 0x58);\\n    var_f0h = 0;\\n    var_e8h = 0;\\n    var_d8h = -0x56f24dc9c1c01a5f;\\n    var_e0h = 0x4bb5eba4ec87d643;\\n    cVar1 = fcn.00011272();\\n    if (cVar1 != -1) {\\n        iVar2 = (**(code **)(*(int64_t *)0x12000 + 0x48))(data.000112f4, &var_e0h, 0, &var_f0h, 0);\\n        iVar3 = 0;\\n        if ((((iVar2 == -0x7ffffffffffffffb) &&\\n             (iVar2 = (**(code **)(_data.00012008 + 0x40))(4, var_f0h, &var_e8h), iVar3 = var_e8h, -1 < iVar2)) &&\\n            (iVar2 = (**(code **)(*(int64_t *)0x12000 + 0x48))(data.000112f4, &var_e0h, 0, &var_f0h, var_e8h),\\n            iVar3 = var_e8h, -1 < iVar2)) && (*(int32_t *)(var_e8h + 0x1c4) == 88000)) {\\n            (**(code **)(_data.00012008 + 0x48))(var_e8h);\\n        } else {\\n            (**(code **)(_data.00012008 + 0x48))(iVar3);\\n            var_cch = 0;\\n            fcn.000112b1();\\n            fcn.000112d3();\\n            fcn.000112d3();\\n            fcn.000112d3();\\n            fcn.000112d3();\\n            fcn.000112b1();\\n            if ((var_cch == 1) && (cVar1 = fcn.00011272(), cVar1 == -1)) {\\n                (**(code **)(*(int64_t *)0x12000 + 0x68))(1, 0, 0, 0);\\n                return 0x8000000000000007;\\n            }\\n        }\\n    }\\n    return 0;\\n}\\n\"}",
+                "type": "text"
+            }
+        ],
+        "isError": false
+    }
+}

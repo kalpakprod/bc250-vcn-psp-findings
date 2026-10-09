@@ -1,0 +1,45 @@
+{
+  "source_sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+  "entries": {
+    "0x7": {
+      "entry": "0x79e8",
+      "handler": "0x1e720",
+      "flags": 6
+    },
+    "0xe": {
+      "entry": "0x7a20",
+      "handler": "0x1f218",
+      "flags": 6
+    },
+    "0xf": {
+      "entry": "0x7a28",
+      "handler": "0x1f2f0",
+      "flags": 6
+    }
+  },
+  "listings": [
+    {
+      "file": "smu-pll-handlers.txt",
+      "instructions": 237,
+      "sha256": "a3bd20f450af11ff0bad3b8f9207c13636429089f172d63a4d92c204e8f12785"
+    },
+    {
+      "file": "smu-transition-helpers.txt",
+      "instructions": 95,
+      "sha256": "d6aceee20c52e60b4a4ab4e439002ddfcade49b7d3ce783f667aa9acded8af70"
+    }
+  ],
+  "scale170ac": 0.0010000000474974513,
+  "conclusions": [
+    "1E720 uses high byte1 and low byte index, calls1E448 and storesFF to state+F6",
+    "1F218 and1F2F0 reject when state+F6==FF and reject zero argument",
+    "1F218 selects domain0E;1F2F0 domains0F/11 plus10/12",
+    "Both scale unsigned integer by float0.001 before downstream helper"
+  ],
+  "limits": [
+    "Static Xtensa analysis, not emulation",
+    "SVC28 transport to these dispatch entries remains unproven",
+    "Numeric scale does not independently prove physical clock units",
+    "Rows may be rewritten at runtime; initial image table not final hardware state"
+  ]
+}

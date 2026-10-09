@@ -1,0 +1,267 @@
+{
+  "check_count": 31,
+  "checks": [
+    {
+      "actual": 16777216,
+      "expected": 16777216,
+      "name": "rom_size",
+      "ok": true
+    },
+    {
+      "actual": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "name": "rom_sha256",
+      "ok": true
+    },
+    {
+      "actual": 92512,
+      "expected": 92512,
+      "name": "amd_fabric_code_size",
+      "ok": true
+    },
+    {
+      "actual": "2a32fef056825e8f201db78402e0303f9541aa90013df2e56c78550c5a3f2db9",
+      "expected": "2a32fef056825e8f201db78402e0303f9541aa90013df2e56c78550c5a3f2db9",
+      "name": "amd_fabric_code_sha256",
+      "ok": true
+    },
+    {
+      "actual": "9c4744e1129052c965828694995bc60b250ce4bdb66d858584d090ea092b9f95",
+      "expected": "9c4744e1129052c965828694995bc60b250ce4bdb66d858584d090ea092b9f95",
+      "name": "amd_fabric_assembly_sha256",
+      "ok": true
+    },
+    {
+      "actual": "77b1d4be4393fbbf920847398ae5667c42b3841066d40c2aaace1b49036c81e1",
+      "expected": "77b1d4be4393fbbf920847398ae5667c42b3841066d40c2aaace1b49036c81e1",
+      "name": "amd_fabric_instruction_rows_sha256",
+      "ok": true
+    },
+    {
+      "actual": "ba64130000",
+      "expected": "ba64130000",
+      "name": "producer_0x1364_mov",
+      "ok": true
+    },
+    {
+      "actual": "80ca02",
+      "expected": "80ca02",
+      "name": "producer_0x1364_type_flag",
+      "ok": true
+    },
+    {
+      "actual": "8b82e6060000",
+      "expected": "8b82e6060000",
+      "name": "producer_0x1364_payload_load",
+      "ok": true
+    },
+    {
+      "actual": "894103",
+      "expected": "894103",
+      "name": "producer_0x1364_payload_store",
+      "ok": true
+    },
+    {
+      "actual": "ba63130000",
+      "expected": "ba63130000",
+      "name": "producer_0x1363_control_mov",
+      "ok": true
+    },
+    {
+      "actual": "8a82e5060000",
+      "expected": "8a82e5060000",
+      "name": "producer_0x1363_control_load",
+      "ok": true
+    },
+    {
+      "actual": "558bec83ec24",
+      "expected": "558bec83ec24",
+      "name": "reader_entry",
+      "ok": true
+    },
+    {
+      "actual": "bb4e565442",
+      "expected": "bb4e565442",
+      "name": "reader_nvtb_magic_load",
+      "ok": true
+    },
+    {
+      "actual": "813e24494e56",
+      "expected": "813e24494e56",
+      "name": "reader_inv_magic_check",
+      "ok": true
+    },
+    {
+      "actual": "0fb6460283e003",
+      "expected": "0fb6460283e003",
+      "name": "reader_type_load",
+      "ok": true
+    },
+    {
+      "actual": "8b460383670400",
+      "expected": "8b460383670400",
+      "name": "reader_type2_load",
+      "ok": true
+    },
+    {
+      "actual": "6a07",
+      "expected": "6a07",
+      "name": "reader_type2_stride",
+      "ok": true
+    },
+    {
+      "actual": "0fb746036a05",
+      "expected": "0fb746036a05",
+      "name": "reader_type1_movzx",
+      "ok": true
+    },
+    {
+      "actual": "0fb646036a04998957048907",
+      "expected": "0fb646036a04998957048907",
+      "name": "reader_type0_movzx_cdq",
+      "ok": true
+    },
+    {
+      "actual": "998957048907",
+      "expected": "998957048907",
+      "name": "reader_type1_shared_cdq_store",
+      "ok": true
+    },
+    {
+      "actual": "668b06663b4508740c",
+      "expected": "668b06663b4508740c",
+      "name": "reader_token_compare",
+      "ok": true
+    },
+    {
+      "actual": "68ff100000",
+      "expected": "68ff100000",
+      "name": "caller_1_requested_id",
+      "ok": true
+    },
+    {
+      "actual": "e87afeffff",
+      "expected": "e87afeffff",
+      "name": "caller_1_reader_call",
+      "ok": true
+    },
+    {
+      "actual": "6804110000",
+      "expected": "6804110000",
+      "name": "caller_2_requested_id",
+      "ok": true
+    },
+    {
+      "actual": "e8a3fdffff",
+      "expected": "e8a3fdffff",
+      "name": "caller_2_reader_call",
+      "ok": true
+    },
+    {
+      "actual": [
+        7869,
+        8084
+      ],
+      "expected": [
+        7869,
+        8084
+      ],
+      "name": "module_local_direct_reader_calls",
+      "ok": true
+    },
+    {
+      "actual": [
+        2147483648,
+        0
+      ],
+      "expected": [
+        2147483648,
+        0
+      ],
+      "name": "type2_zero_extension_high_bit",
+      "ok": true
+    },
+    {
+      "actual": [
+        4294967295,
+        0
+      ],
+      "expected": [
+        4294967295,
+        0
+      ],
+      "name": "type2_zero_extension_all_ones",
+      "ok": true
+    },
+    {
+      "actual": [
+        32768,
+        0
+      ],
+      "expected": [
+        32768,
+        0
+      ],
+      "name": "type1_movzx_high_bit",
+      "ok": true
+    },
+    {
+      "actual": [
+        128,
+        0
+      ],
+      "expected": [
+        128,
+        0
+      ],
+      "name": "type0_movzx_high_bit",
+      "ok": true
+    }
+  ],
+  "interpretation": {
+    "not_observed": "No final voltage consumer, rail selection, mV/sign convention at the actuator, or hardware application.",
+    "observed": "The exact generic parser's type-2 branch zero-extends the 32-bit payload into its 64-bit output pair; the two direct callers pass 0x10FF and 0x1104, not 0x1364.",
+    "rail_scope": "AmdSetup+0x6E6 is retained as VDDCR_VDD-labelled offset field; no SoC or GFX equivalence is inferred. AmdSetup+0x6EA/+0x6EB remains the separate GFX-labelled pair."
+  },
+  "producer": {
+    "control_field": "AmdSetup+0x6E5",
+    "control_record": "0x1363",
+    "copy_is_unchanged": true,
+    "value_field": "AmdSetup+0x6E6",
+    "value_payload_width": 4,
+    "value_record": "0x1364",
+    "value_record_type_low_bits": 2
+  },
+  "reader": {
+    "1364_signed_conversion": false,
+    "direct_callers": [
+      {
+        "call_rva": "0x1ebd",
+        "caller_rva": "0x1eb0",
+        "requested_record": "0x10ff"
+      },
+      {
+        "call_rva": "0x1f94",
+        "caller_rva": "0x1f8b",
+        "requested_record": "0x1104"
+      }
+    ],
+    "entry_rva": "0x1d3c",
+    "local_direct_1364_call": false,
+    "module": "AmdFabricAriPei",
+    "record_marker": "$INV",
+    "type01_operation": "movzx eax,[record+3]; cdq; mov [out+4],edx",
+    "type2_operation": "mov eax,[record+3]; mov [out+0],eax; and dword ptr [out+4],0"
+  },
+  "status": "STATIC_PARSER_BOUNDARY_ONLY",
+  "target": {
+    "assembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdFabricAriPei-c5b99650a442-0.asm",
+    "code": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdFabricAriPei-c5b99650a442-0.code",
+    "code_rva_base": "0x240",
+    "code_sha256": "2a32fef056825e8f201db78402e0303f9541aa90013df2e56c78550c5a3f2db9",
+    "instruction_rows": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdFabricAriPei-c5b99650a442.instructions.json",
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "rom_size": 16777216
+  }
+}

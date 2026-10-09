@@ -1,0 +1,25 @@
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_discovery.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_discovery.c
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu_discovery.c
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_discovery.c
+@@ -309,7 +309,21 @@ static int amdgpu_discovery_get_tmr_info(struct amdgpu_device *adev,
+ 		} else {
+ 			goto out;
+ 		}
+ 	} else {
++		if (adev->discovery.offset) {
++			u32 signature;
++
++			/* Preserve a valid discovery table already present at the
++			 * default VRAM offset instead of replacing it with stale
++			 * DRIVER_SCRATCH values. Upstream Linux gained this between
++			 * v7.2-rc7 and v7.2.
++			 */
++			amdgpu_device_vram_access(adev, adev->discovery.offset,
++						  &signature, sizeof(signature), false);
++			if (le32_to_cpu(signature) == BINARY_SIGNATURE)
++				goto out;
++		}
++
+ 		tmr_size = RREG32(mmDRIVER_SCRATCH_2);
+ 		if (tmr_size) {
+ 			/* It's preferred to transition to PSP mailbox reg interface

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-menu-reproduction/run.py"
+  ],
+  "exit": 0,
+  "builder": "/home/OWNER/orca/projects/bc250/candidates/clv-native-menu-bridge-v001/build_integration.py",
+  "builder_sha256": "19cb4230841bd22c2281fe0b83ccae1d4f0378436f0cc3eff4b2278683f79e54",
+  "change": "output directory only; original __file__ retained",
+  "stdout": "{\n  \"rom\": \"/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-menu-reproduction/BC250_5.00_clv_MENU_ONLY_EXPERIMENTAL.bin\",\n  \"sha256\": \"476076f280ca6385024db1bf643e042629153afff8bab2f9a52cc61c221e411e\",\n  \"source_sha256\": \"ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8\",\n  \"native_FFS\": 187,\n  \"result_FFS\": 188,\n  \"new_driver_bytes\": 2996,\n  \"inner_FV_size_unchanged\": 4308992,\n  \"NVRAM_PSP_APCB_unchanged\": true,\n  \"voltage_change\": \"only canonical FALSE expressions; NO SETPOINT/SoC CONTROL\",\n  \"runtime\": \"UNRUN\"\n}\n",
+  "stderr": "",
+  "reproduced_sha256": "476076f280ca6385024db1bf643e042629153afff8bab2f9a52cc61c221e411e",
+  "byte_identical": true
+}

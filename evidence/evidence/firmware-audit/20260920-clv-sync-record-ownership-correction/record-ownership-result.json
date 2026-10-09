@@ -1,0 +1,346 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 12,
+    "total": 12
+  },
+  "checks_detail": [
+    {
+      "details": {
+        "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+      },
+      "label": "rom-hash",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+        "observed": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+      },
+      "label": "CbsBasePei-hash",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "header": {
+          "bytes": "ba30130000",
+          "mnemonic": "mov",
+          "operands": "edx,0x1330",
+          "rva": 55726
+        },
+        "increment": {
+          "bytes": "83c104",
+          "mnemonic": "add",
+          "operands": "ecx,0x4",
+          "rva": 55770
+        },
+        "source": {
+          "bytes": "8a82a2060000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x6a2]",
+          "rva": 55758
+        },
+        "store": {
+          "bytes": "884103",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [ecx+0x3],al",
+          "rva": 55764
+        }
+      },
+      "label": "CbsBasePei-record-1330-owned-by-source-0x6a2",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "header": {
+          "bytes": "ba31130000",
+          "mnemonic": "mov",
+          "operands": "edx,0x1331",
+          "rva": 55776
+        },
+        "increment": {
+          "bytes": "83c104",
+          "mnemonic": "add",
+          "operands": "ecx,0x4",
+          "rva": 55820
+        },
+        "source": {
+          "bytes": "8a82a3060000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x6a3]",
+          "rva": 55808
+        },
+        "store": {
+          "bytes": "884103",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [ecx+0x3],al",
+          "rva": 55814
+        }
+      },
+      "label": "CbsBasePei-record-1331-owned-by-source-0x6a3",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "header": {
+          "bytes": "ba32130000",
+          "mnemonic": "mov",
+          "operands": "edx,0x1332",
+          "rva": 55826
+        },
+        "increment": {
+          "bytes": "83c104",
+          "mnemonic": "add",
+          "operands": "ecx,0x4",
+          "rva": 55870
+        },
+        "source": {
+          "bytes": "8a82a4060000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x6a4]",
+          "rva": 55858
+        },
+        "store": {
+          "bytes": "884103",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [ecx+0x3],al",
+          "rva": 55864
+        }
+      },
+      "label": "CbsBasePei-record-1332-owned-by-source-0x6a4",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "header": {
+          "bytes": "ba33130000",
+          "mnemonic": "mov",
+          "operands": "edx,0x1333",
+          "rva": 55876
+        },
+        "increment": {
+          "bytes": "83c104",
+          "mnemonic": "add",
+          "operands": "ecx,0x4",
+          "rva": 55920
+        },
+        "source": {
+          "bytes": "8a82a5060000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x6a5]",
+          "rva": 55908
+        },
+        "store": {
+          "bytes": "884103",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [ecx+0x3],al",
+          "rva": 55914
+        }
+      },
+      "label": "CbsBasePei-record-1333-owned-by-source-0x6a5",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+        "observed": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+      },
+      "label": "AmdNbioSmuV10Pei-hash",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "header": {
+          "bytes": "ba30130000",
+          "mnemonic": "mov",
+          "operands": "edx,0x1330",
+          "rva": 64046
+        },
+        "increment": {
+          "bytes": "83c104",
+          "mnemonic": "add",
+          "operands": "ecx,0x4",
+          "rva": 64090
+        },
+        "source": {
+          "bytes": "8a82a2060000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x6a2]",
+          "rva": 64078
+        },
+        "store": {
+          "bytes": "884103",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [ecx+0x3],al",
+          "rva": 64084
+        }
+      },
+      "label": "AmdNbioSmuV10Pei-record-1330-owned-by-source-0x6a2",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "header": {
+          "bytes": "ba31130000",
+          "mnemonic": "mov",
+          "operands": "edx,0x1331",
+          "rva": 64096
+        },
+        "increment": {
+          "bytes": "83c104",
+          "mnemonic": "add",
+          "operands": "ecx,0x4",
+          "rva": 64140
+        },
+        "source": {
+          "bytes": "8a82a3060000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x6a3]",
+          "rva": 64128
+        },
+        "store": {
+          "bytes": "884103",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [ecx+0x3],al",
+          "rva": 64134
+        }
+      },
+      "label": "AmdNbioSmuV10Pei-record-1331-owned-by-source-0x6a3",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "header": {
+          "bytes": "ba32130000",
+          "mnemonic": "mov",
+          "operands": "edx,0x1332",
+          "rva": 64146
+        },
+        "increment": {
+          "bytes": "83c104",
+          "mnemonic": "add",
+          "operands": "ecx,0x4",
+          "rva": 64190
+        },
+        "source": {
+          "bytes": "8a82a4060000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x6a4]",
+          "rva": 64178
+        },
+        "store": {
+          "bytes": "884103",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [ecx+0x3],al",
+          "rva": 64184
+        }
+      },
+      "label": "AmdNbioSmuV10Pei-record-1332-owned-by-source-0x6a4",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "header_rva": "0xd9e0",
+        "increment_rva": "0xda0c",
+        "ownership_basis": "same destination pointer [ebp-0x8] is used for header, flags, source+3 store; +4 increment follows store",
+        "source_rva": "0xda00",
+        "source_setup_offset": "0x6a3",
+        "store_rva": "0xda06",
+        "token": "0x1331"
+      },
+      "label": "CbsBasePei-FclkDpm-token1331",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "header_rva": "0xfa60",
+        "increment_rva": "0xfa8c",
+        "ownership_basis": "same destination pointer [ebp-0x8] is used for header, flags, source+3 store; +4 increment follows store",
+        "source_rva": "0xfa80",
+        "source_setup_offset": "0x6a3",
+        "store_rva": "0xfa86",
+        "token": "0x1331"
+      },
+      "label": "AmdNbioSmuV10Pei-FclkDpm-token1331",
+      "status": "PASS"
+    }
+  ],
+  "correction": {
+    "corrected": "destination-pointer dataflow pairs +0x6A3 with token 0x1331; +0x6A4 with token 0x1332",
+    "superseded": "nearest-RVA pairing of +0x6A3 with token 0x1332"
+  },
+  "limits": [
+    "Static instruction/dataflow ownership only; no downstream consumer, units, training, physical clock, or hardware behavior."
+  ],
+  "ownership": {
+    "AmdNbioSmuV10Pei": [
+      {
+        "header_rva": "0xfa2e",
+        "increment_rva": "0xfa5a",
+        "ownership_basis": "same destination pointer [ebp-0x8] is used for header, flags, source+3 store; +4 increment follows store",
+        "source_rva": "0xfa4e",
+        "source_setup_offset": "0x6a2",
+        "store_rva": "0xfa54",
+        "token": "0x1330"
+      },
+      {
+        "header_rva": "0xfa60",
+        "increment_rva": "0xfa8c",
+        "ownership_basis": "same destination pointer [ebp-0x8] is used for header, flags, source+3 store; +4 increment follows store",
+        "source_rva": "0xfa80",
+        "source_setup_offset": "0x6a3",
+        "store_rva": "0xfa86",
+        "token": "0x1331"
+      },
+      {
+        "header_rva": "0xfa92",
+        "increment_rva": "0xfabe",
+        "ownership_basis": "same destination pointer [ebp-0x8] is used for header, flags, source+3 store; +4 increment follows store",
+        "source_rva": "0xfab2",
+        "source_setup_offset": "0x6a4",
+        "store_rva": "0xfab8",
+        "token": "0x1332"
+      }
+    ],
+    "CbsBasePei": [
+      {
+        "header_rva": "0xd9ae",
+        "increment_rva": "0xd9da",
+        "ownership_basis": "same destination pointer [ebp-0x8] is used for header, flags, source+3 store; +4 increment follows store",
+        "source_rva": "0xd9ce",
+        "source_setup_offset": "0x6a2",
+        "store_rva": "0xd9d4",
+        "token": "0x1330"
+      },
+      {
+        "header_rva": "0xd9e0",
+        "increment_rva": "0xda0c",
+        "ownership_basis": "same destination pointer [ebp-0x8] is used for header, flags, source+3 store; +4 increment follows store",
+        "source_rva": "0xda00",
+        "source_setup_offset": "0x6a3",
+        "store_rva": "0xda06",
+        "token": "0x1331"
+      },
+      {
+        "header_rva": "0xda12",
+        "increment_rva": "0xda3e",
+        "ownership_basis": "same destination pointer [ebp-0x8] is used for header, flags, source+3 store; +4 increment follows store",
+        "source_rva": "0xda32",
+        "source_setup_offset": "0x6a4",
+        "store_rva": "0xda38",
+        "token": "0x1332"
+      },
+      {
+        "header_rva": "0xda44",
+        "increment_rva": "0xda70",
+        "ownership_basis": "same destination pointer [ebp-0x8] is used for header, flags, source+3 store; +4 increment follows store",
+        "source_rva": "0xda64",
+        "source_setup_offset": "0x6a5",
+        "store_rva": "0xda6a",
+        "token": "0x1333"
+      }
+    ]
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,262 @@
+{
+  "status": "PASS",
+  "checks": 36,
+  "route": "exact ABL1 0x4800 provider/consumer boundary",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "abl1": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "retained_source_lead": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/lorek123_psp/ABL3_decompiled.c",
+    "disassembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+    "prior_reader_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-apcb-reader-boundary-resume/abl1-apcb-reader-boundary-result.json"
+  },
+  "hashes": {
+    "rom": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "abl1": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "source": "ecd1bfb8be3fe15257038c4db6fd927ab72ca97a920a4639ad10cece04d3e22f",
+    "disassembly": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+    "prior_reader_result": "537f987266057865bd7f278939304f2f40dcc5db4e57c6048ca0905ce2dac128"
+  },
+  "helper_4800": {
+    "payload_offset": "0x4800",
+    "valid_key_bound": "1..0x161 inclusive from (key-1)<=0x160",
+    "internal_selector": "0x0f",
+    "provider": "payload+0x49cc"
+  },
+  "provider_49cc": {
+    "role": "table/provider dispatcher boundary; source lead FUN_00005064",
+    "selector_case": "0x0f",
+    "first_helper": "payload+0x6374",
+    "raw_copy_helper": "payload+0x6238",
+    "observed_argument_shape": "token in r1, caller context/timepoint in r2, output pointer in r3, saved caller type in stack args",
+    "value_classification": "raw typed parameter bytes; enum/voltage/frequency/pointer semantics unresolved"
+  },
+  "first_consumer": {
+    "payload_offset": "0x1fb4",
+    "effect": "typed copy into caller output according to type 1/2/4/8"
+  },
+  "fresh_result": "Exact helper 0x4800 validates token range 1..0x161, forces provider selector 0x0f, forwards token/context/output arguments to exact 0x49cc. Provider 0x49cc dispatches selector 0x0f into a table-backed path reaching 0x6374/0x6238 and copies raw typed parameter bytes. The first consumer is the 0x1fb4 typed store; no frequency/voltage/pointer semantics or divider/PLL write is established.",
+  "unresolved_edge": "payload+0x6374 / payload+0x6238 table/provider implementation and runtime backing data remain unresolved; this is the next exact edge. No MCLK=UCLK=FCLK or hardware claim follows.",
+  "limits": "No broad search, no duplicate 53/42 checks, no firmware/hardware/settings/shared-state changes. ABL3 source is a version-aligned lead only; exact branch bytes are authoritative.",
+  "checks_detail": [
+    {
+      "check": "ROM exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "exact ABL1 exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "exact ABL1 sha256",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "retained ABL3 source lead exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained ABL3 source lead sha256",
+      "passed": true,
+      "got": "ecd1bfb8be3fe15257038c4db6fd927ab72ca97a920a4639ad10cece04d3e22f",
+      "expected": "ecd1bfb8be3fe15257038c4db6fd927ab72ca97a920a4639ad10cece04d3e22f"
+    },
+    {
+      "check": "exact disassembly exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "exact disassembly sha256",
+      "passed": true,
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    {
+      "check": "prior reader result exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "prior reader result sha256",
+      "passed": true,
+      "got": "537f987266057865bd7f278939304f2f40dcc5db4e57c6048ca0905ce2dac128",
+      "expected": "537f987266057865bd7f278939304f2f40dcc5db4e57c6048ca0905ce2dac128"
+    },
+    {
+      "check": "prior reader result PASS",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "prior reader result checks",
+      "passed": true,
+      "got": 42,
+      "expected": 42
+    },
+    {
+      "check": "retained provider source lead FUN_00004e98",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained provider source lead FUN_00005064",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained provider source lead param_1 - 1U < 0x161",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained provider source lead FUN_00008edc",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained provider source lead Get_config_parameter__token",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained provider source lead APCB_Config_parameter",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "0x4800 prologue",
+      "passed": true,
+      "got": "hex:7cb504460d46401e",
+      "expected": "hex:7cb504460d46401e"
+    },
+    {
+      "check": "0x4800 token bound after subtract",
+      "passed": true,
+      "got": "hex:401e0699b0f5b07f",
+      "expected": "hex:401e0699b0f5b07f"
+    },
+    {
+      "check": "0x4800 invalid-key branch",
+      "passed": true,
+      "got": "hex:b07f08d8",
+      "expected": "hex:b07f08d8"
+    },
+    {
+      "check": "0x4800 internal selector 0x0f",
+      "passed": true,
+      "got": "hex:0f20",
+      "expected": "hex:0f20"
+    },
+    {
+      "check": "0x4800 forwards saved args",
+      "passed": true,
+      "got": "hex:cde9003113462a462146",
+      "expected": "hex:cde9003113462a462146"
+    },
+    {
+      "check": "0x4800 calls provider 0x49cc",
+      "passed": true,
+      "got": "hex:00f0d6f87cbd",
+      "expected": "hex:00f0d6f87cbd"
+    },
+    {
+      "check": "0x4800 exact valid key range is 1..0x161",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "0x49cc entry prologue",
+      "passed": true,
+      "got": "hex:2de9ff4ffe489bb0",
+      "expected": "hex:2de9ff4ffe489bb0"
+    },
+    {
+      "check": "0x49cc loads global context pointer",
+      "passed": true,
+      "got": "hex:00680e9019902422",
+      "expected": "hex:00680e9019902422"
+    },
+    {
+      "check": "0x49cc reads provider selector from stack",
+      "passed": true,
+      "got": "hex:1b9a41f6fe7041f20771102a72d2",
+      "expected": "hex:1b9a41f6fe7041f20771102a72d2"
+    },
+    {
+      "check": "0x49cc dispatches selector table",
+      "passed": true,
+      "got": "hex:dfe802f0",
+      "expected": "hex:dfe802f0"
+    },
+    {
+      "check": "0x49cc case selector 0x0f constants",
+      "passed": true,
+      "got": "hex:0f2240f2621a0024834601254af24e06cde90121",
+      "expected": "hex:0f2240f2621a0024834601254af24e06cde90121"
+    },
+    {
+      "check": "0x49cc reaches exact table/helper 0x6374",
+      "passed": true,
+      "got": "hex:09a82999099601f01bfc",
+      "expected": "hex:09a82999099601f01bfc"
+    },
+    {
+      "check": "0x49cc builds raw output descriptor and calls 0x6238",
+      "passed": true,
+      "got": "hex:aaeb0500082100eb400001eb4000cde90506042029998df81c0005a801f0",
+      "expected": "hex:aaeb0500082100eb400001eb4000cde90506042029998df81c0005a801f0"
+    },
+    {
+      "check": "0x49cc obtains output byte-count from provider table",
+      "passed": true,
+      "got": "hex:9d4801f0b0fc089e0c9608360027",
+      "expected": "hex:9d4801f0b0fc089e0c9608360027"
+    },
+    {
+      "check": "0x49cc iterates provider raw table entries",
+      "passed": true,
+      "got": "hex:0836002703a80090019800220fab38440d9081b2029800f063f9",
+      "expected": "hex:0836002703a80090019800220fab38440d9081b2029800f063f9"
+    },
+    {
+      "check": "reader prior result identifies 0x1fb4 typed stores",
+      "passed": true,
+      "got": "0x1fb4",
+      "expected": "0x1fb4"
+    },
+    {
+      "check": "reader prior result identifies helper 0x4800",
+      "passed": true,
+      "got": "payload+0x4800",
+      "expected": "payload+0x4800"
+    }
+  ]
+}

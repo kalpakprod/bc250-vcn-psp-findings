@@ -1,0 +1,59 @@
+{
+  "assumptions": [
+    "raw instruction execution at0, separate data image alias at conditional57100",
+    "synthetic output pointers and stack, no whole-boot state"
+  ],
+  "events": [
+    {
+      "entered": "0x4800"
+    },
+    {
+      "entered": "0x49cc"
+    },
+    {
+      "entered": "0x6374"
+    },
+    {
+      "entered": "0x6238"
+    },
+    {
+      "entered": "0x4e4c"
+    }
+  ],
+  "instructions": 20000,
+  "last_pcs": [
+    "0x4cd4",
+    "0x4cd8",
+    "0x4cdc",
+    "0x4cde",
+    "0x4ce0",
+    "0x4ce4",
+    "0x4ce8",
+    "0x4cea",
+    "0x4cee",
+    "0x4cf2",
+    "0x4cf6",
+    "0x4cfa",
+    "0x4cfc",
+    "0x4d00",
+    "0x4d04",
+    "0x4d06",
+    "0x4d0a",
+    "0x4d0e",
+    "0x4d12",
+    "0x4d16",
+    "0x4d18",
+    "0x4d1a",
+    "0x4d1e",
+    "0x4d22",
+    "0x4d24"
+  ],
+  "pc": "0x4d26",
+  "returned_r0": 0,
+  "apcb_source": "clean ROM0xAB1000 copied to modeled runtime7B000",
+  "output_hex": "0000000000000000",
+  "original_instruction_image_unchanged": true,
+  "boundary": {
+    "kind": "budget-stop"
+  }
+}

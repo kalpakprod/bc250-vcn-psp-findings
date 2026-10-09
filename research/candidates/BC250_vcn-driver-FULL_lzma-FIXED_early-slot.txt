@@ -1,0 +1,8 @@
+BC250_vcn-driver-FULL_lzma-FIXED_early-slot.bin
+Old technical name (alias): v005
+SHA-256: 2fadb173251eb4a44aa9da371f37207efb0f276f8d509926083bfa5a64c03406
+Built by: scripts/build_FULL_lzma_fixed_early_slot.py
+What is inside: FULL_lzma-BROKEN_early-slot + LZMA-alone explicit decoded size (8-byte patch); driver, placement, FV, capsule lengths unchanged
+Question it answers: answered: explicit LZMA loads DXE; the wedge comes later (2 blinks, no LAN/video).
+Verdict: FLASHED 2026-09-24: hangs after 2 blinks, no LAN/video (DXE loads, wedge comes later).
+Вердикт: Прошит 2026-09-24: встаёт после 2 морганий, без LAN/видео (DXE грузится, клин позже).

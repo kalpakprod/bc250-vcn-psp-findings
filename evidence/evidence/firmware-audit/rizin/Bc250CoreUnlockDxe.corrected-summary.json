@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-09-11T05:25:00.224887+00:00",
+  "module": {
+    "ffs_guid": "2F3D426D-6A54-4A6B-82D0-1207CC5B6D92",
+    "ui": "Bc250CoreUnlockDxe",
+    "image_type": "PE32",
+    "size": 12288,
+    "sha256": "7d22d80284cd4c9c8af997611002f6916b4fa4b0d3ca9e3e34e450abbe885c55",
+    "source_record": "{'local_path': 'modules/0000_Bc250CoreUnlockDxe_pe32.bin', 'sha256': '7d22d80284cd4c9c8af997611002f6916b4fa4b0d3ca9e3e34e450abbe885c55', 'size': 12288, 'image_type': 'PE32', 'ui': 'Bc250CoreUnlockDxe', 'ffs_guid': '2F3D426D-6A54-4A6B-82D0-1207CC5B6D92', 'ffs_type': 7, 'fv_base': 16, 'ffs_offset': 136, 'section_offset': 0, 'origin': 'outer/guided@0x0'}"
+  },
+  "tools": [
+    {
+      "name": "Rizin",
+      "version": "0.9.1",
+      "commit": "c3a90e9226d977f58f4e9c75f78fa6b07afe13c7",
+      "report": "evidence/firmware-audit/rizin/Bc250CoreUnlockDxe.functions.txt",
+      "sha256": "d02d5890c9e3d60faf16408a69551e7d15e6851e19d736ba3e583758309e360f"
+    },
+    {
+      "name": "llvm-objdump",
+      "command": "llvm-objdump -d --x86-asm-syntax=intel",
+      "report": "evidence/firmware-audit/rizin/Bc250CoreUnlockDxe.llvm-objdump.txt",
+      "sha256": "399ae5a8fb37d93dfb98d3a258a2c29c1bad5e51aff593bdf5f30321bb466242"
+    }
+  ],
+  "functions_rizin": [
+    {
+      "address": "0x11000",
+      "name": "fcn.00011000",
+      "size": 55
+    },
+    {
+      "address": "0x11037",
+      "name": "entry0",
+      "size": 571
+    },
+    {
+      "address": "0x11272",
+      "name": "fcn.00011272",
+      "size": 63
+    },
+    {
+      "address": "0x112B1",
+      "name": "fcn.000112b1",
+      "size": 34
+    },
+    {
+      "address": "0x112D3",
+      "name": "fcn.000112d3",
+      "size": 33
+    }
+  ],
+  "observed_control_flow": [
+    {
+      "image_address": "0x110D2",
+      "instruction": "mov edi, 0x115a870",
+      "meaning": "SMN core-mask address argument"
+    },
+    {
+      "image_address": "0x110D7",
+      "instruction": "call 0x11272",
+      "meaning": "SMN read helper"
+    },
+    {
+      "image_address": "0x110DC",
+      "instruction": "cmp al, 0xff",
+      "meaning": "low-byte unlocked check"
+    },
+    {
+      "image_address": "0x11102",
+      "instruction": "lea rcx, [0x12f4] ; UTF-16 Setup",
+      "meaning": "Setup variable name used by additional guard"
+    },
+    {
+      "image_address": "0x11168",
+      "instruction": "cmp dword ptr [rsi+0x1c4], 0x157c0",
+      "meaning": "skip condition tied to Setup+0x1C4"
+    },
+    {
+      "image_address": "0x111A4",
+      "instruction": "write Q3_RSP=0",
+      "meaning": "clear queue response"
+    },
+    {
+      "image_address": "0x111B0",
+      "instruction": "write Q3_ARG=0x115a870",
+      "meaning": "pass SMN mask address"
+    },
+    {
+      "image_address": "0x111BF",
+      "instruction": "write Q3_ARG+4=0",
+      "meaning": "clear second argument"
+    },
+    {
+      "image_address": "0x111CB",
+      "instruction": "write Q3_CMD=0x98",
+      "meaning": "issue Queue-3 message"
+    },
+    {
+      "image_address": "0x111DA",
+      "instruction": "call 0x112B1",
+      "meaning": "poll Q3 response"
+    },
+    {
+      "image_address": "0x111E2",
+      "instruction": "cmp dword ptr [r14], 1",
+      "meaning": "require Q3 status 0x01"
+    },
+    {
+      "image_address": "0x111E8",
+      "instruction": "mov edi, 0x115a870; call 0x11272",
+      "meaning": "reread SMN mask"
+    },
+    {
+      "image_address": "0x111F2",
+      "instruction": "cmp al, 0xff",
+      "meaning": "verify low byte"
+    },
+    {
+      "image_address": "0x11208",
+      "instruction": "call qword [rax+0x68]",
+      "meaning": "UEFI runtime reset call; exact table provenance inferred from ABI"
+    }
+  ],
+  "retained_source": {
+    "path": "import/from-windows/Users/kukuruza/tmp_bc250/upstream/BC250-DXE-SMU-Core-Unlock/Bc250CoreUnlockPkg/Bc250CoreUnlockDxe/Bc250CoreUnlockDxe.c",
+    "sha256": "a65d0be8b29a121bdce55fc4ba61649e418e33280efe3ad844062f7369fd22b6",
+    "git_head": "0a070e3",
+    "contains_expected_constants": [
+      "MASK_REG=0x0115A870",
+      "MSG_WRITE_FF=0x98",
+      "Q3_CMD=0x03B10A20",
+      "Q3_RSP=0x03B10A80",
+      "Q3_ARG=0x03B10A88"
+    ],
+    "missing_from_source": [
+      "Setup variable read",
+      "Setup+0x1C4 comparison with 0x157C0"
+    ]
+  },
+  "conclusion": {
+    "status": "partial_semantic_overlap_only",
+    "evidence_class": "static-analysis",
+    "statement": "The dump-only body contains the expected mask/Q3/warm-reset semantic path but is not byte-for-byte or source-revision matched to the retained source. The additional Setup gate must be resolved before dispatch or unlock claims.",
+    "runtime_execution": "unverified",
+    "hardware_verification": "unrun",
+    "mutation": "none"
+  },
+  "setup_gate_correlation": {
+    "binary_check": {
+      "field": "Setup+0x1C4",
+      "comparison": "0x000157C0 (88000)",
+      "branch": "skip Q3 path when equal"
+    },
+    "current_nvar_observation": {
+      "record_absolute_offset": "0xD84",
+      "body_size": "0x1D3",
+      "field_bytes": "40 19 01 00",
+      "field_u32": 72000,
+      "field_hex": "0x00011940",
+      "satisfies_skip_equality": false
+    },
+    "ifr_context": {
+      "historical_field": "Setup+0x1C4",
+      "prompt": "Cooler and Quieter operation",
+      "raw_option_values_from_current_Setup_PE32": [
+        "0x000157C0",
+        "0x00011940"
+      ],
+      "historical_text_formatter_values": [
+        "0x57C0",
+        "0x1940"
+      ],
+      "note": "Historical IFR text omitted the high 0x10000 bit; direct current Setup PE32 bytes restore the full u32 values. The binary comparison to 0x157C0 is therefore not inherently contradictory."
+    },
+    "interpretation": "Current Setup+0x1C4=0x00011940 does not meet the 0x000157C0 skip equality; exact option-label mapping follows the historical IFR option order."
+  }
+}

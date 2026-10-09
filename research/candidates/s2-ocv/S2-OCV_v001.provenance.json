@@ -1,0 +1,25 @@
+{
+  "arbitrated_template": "empty (both verdicts no-change); changed-vs-S1 set is exactly []",
+  "base_hash": "c5dc6424b3d836b0a262ed54d9c3e747f2c33d40cb614fac40e4ea46e7bfbf7c",
+  "base_path": "candidates/s1-h1330/BC250_5.00_clv_S1-H1330_v001.bin",
+  "builder": "scripts/build_clv_oc_candidate.py",
+  "builder_version": "1.2.0",
+  "changed_bytes": [],
+  "output_hash": "c5dc6424b3d836b0a262ed54d9c3e747f2c33d40cb614fac40e4ea46e7bfbf7c",
+  "output_path": "candidates/s2-ocv/BC250_5.00_clv_S2-OCV_v001.bin",
+  "profile": "s2-ocv",
+  "s2a_verdict": {
+    "file": "candidates/s2-ocv/S2A-verdict.json",
+    "no_change": true,
+    "sha256": "3f82f6bfe1833c9c9d89d87549fb10032d863b4a3f16bdaab13e1feae653e1de",
+    "template": []
+  },
+  "s2b_verdict": {
+    "closed": false,
+    "file": "candidates/s2-ocv/S2B-verdict.json",
+    "sha256": "c28ffd28c3c05889690606b1e25cf8f2d9725cc78391f528a52ae78bac4d3be9",
+    "value_u32": null
+  },
+  "status": "EXPERIMENTAL_REQUEST_ONLY_NOT_FLASH_APPROVED",
+  "template_notes": "Byte-identical to S1 by arbitration, not by omission. S1 bytes asserted: 0x7E5=0x1A, 0x7FF=0x01, 0x83C=0xFF, 0xBD2=0x01, 0xBD3:0xBD4=0x0532. S2A asserts (never written): ROM 0xF5E..0xF67 donor VCORE 0/900/2, GFX 0/900/2, MEMIO 0/0x1E. S2B asserts (never written): 0xBB4=0x00 control (Auto), 0xBB5:0xBB8=0x00000000 value. No voltage, clock, or synchronization request stored beyond S1."
+}

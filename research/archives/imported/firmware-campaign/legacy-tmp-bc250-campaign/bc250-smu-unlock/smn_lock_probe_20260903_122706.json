@@ -1,0 +1,29 @@
+{
+ "argv": [
+  "smn_lock_probe.py"
+ ],
+ "bdf": "0000:00:00.0",
+ "with_bank12": false,
+ "started": "2026-09-03 12:27:06",
+ "phase_a": [
+  {
+   "addr": "0x0005a870",
+   "label": "control: SMU PM (unlock probe)",
+   "expect_robin": "0x77 (сток) / 0xFF",
+   "expect_donor": "-",
+   "note": "контроль живости 0x2A вне DF-пространства",
+   "value": "0x000000ff"
+  },
+  {
+   "addr": "0x03a2011c",
+   "label": "DF window 0x03a2 11c",
+   "expect_robin": "0x000087ff",
+   "expect_donor": "0x000107ff",
+   "note": "бит-12 (банк-12) у Robin ОТСУТСТВУЕТ",
+   "error": "TIMEOUT/SMU-WEDGED"
+  }
+ ],
+ "phase_b": null,
+ "verdict": "WEDGED (Phase A read) — холодный цикл питания; записи не выполнялись",
+ "finished": "2026-09-03 12:27:11"
+}

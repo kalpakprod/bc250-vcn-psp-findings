@@ -1,0 +1,128 @@
+{
+  "dump": {
+    "path": "/home/OWNER/orca/projects/bc250/dump/2.bin",
+    "size": 16777216,
+    "sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0"
+  },
+  "psp_directory": {
+    "offset": "0x8E0000",
+    "magic": "$PSP",
+    "count": 19,
+    "entries": [
+      {
+        "index": 2,
+        "type": "0x08",
+        "name": "SMU_OFFCHIP_FW",
+        "subprogram": 0,
+        "flags": "0x0000",
+        "size": 262656,
+        "location_raw": "0xFF8FF000",
+        "spi_offset": "0x8FF000",
+        "reserved": "0x00000000",
+        "raw_directory_entry_hex": "080000000002040000f08fff00000000",
+        "signed_sha256": "6a3da1ef6024c3143283fb92468fd71d628e9402a751c4a9799a20f473549ad9",
+        "signed_size": 262656,
+        "body_sha256": "5c805026581ace101ba43ef4d0f6b34354f4a61461a1c78d2fa6a335a53d9936",
+        "body_size": 262144,
+        "entry_tail_sha256": "e61ee411bee9df70c7a237fac2d6e1ed7c7063c1d6d49d7dd556fbf0062aced1",
+        "body_nonzero_count": 144782,
+        "body_nonzero_offsets": [
+          "0x00001",
+          "0x00002",
+          "0x00005",
+          "0x00006",
+          "0x00100",
+          "0x00101",
+          "0x00109",
+          "0x0010D",
+          "0x00111",
+          "0x00116",
+          "0x00118",
+          "0x0011B",
+          "0x0011E",
+          "0x0011F",
+          "0x00120",
+          "0x00121",
+          "0x00125",
+          "0x0012B",
+          "0x0012C",
+          "0x0012F",
+          "0x00133",
+          "0x00134",
+          "0x00137",
+          "0x00138",
+          "0x00139",
+          "0x0013A",
+          "0x0013B",
+          "0x0013C",
+          "0x0013D",
+          "0x0013E",
+          "0x0013F",
+          "0x00140"
+        ]
+      },
+      {
+        "index": 4,
+        "type": "0x12",
+        "name": "SMU_OFF_CHIP_FW_2",
+        "subprogram": 0,
+        "flags": "0x0000",
+        "size": 262656,
+        "location_raw": "0xFF93F700",
+        "spi_offset": "0x93F700",
+        "reserved": "0x00000000",
+        "raw_directory_entry_hex": "120000000002040000f793ff00000000",
+        "signed_sha256": "dbd60a2154461ee517c70bdfd9d2f64b43fc429d42fa9cc20a9a8626be3f26fd",
+        "signed_size": 262656,
+        "body_sha256": "f22e2815c99e9bf4a4fbdcc8d6498d3eee59181dd46185f83a0130ff73190b06",
+        "body_size": 262144,
+        "entry_tail_sha256": "977096dbe444de04b3e207d75ba107d0c2c09a111d34d16b1ac2766926bb05b2",
+        "body_nonzero_count": 8,
+        "body_nonzero_offsets": [
+          "0x00001",
+          "0x00002",
+          "0x00005",
+          "0x00006",
+          "0x3FFFC",
+          "0x3FFFD",
+          "0x3FFFE",
+          "0x3FFFF"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin3_psp_bodies/SMU_OFF_CHIP_FW_2~0x12_0.58.6.0.body",
+      "size": 262144,
+      "sha256": "f22e2815c99e9bf4a4fbdcc8d6498d3eee59181dd46185f83a0130ff73190b06",
+      "first16": "00065800000658000000000000000000",
+      "body_sha256_if_ps1": "577f59e752a520f2870d7b3c49422a510a5ba0ccede10709aaae00226f66b4c6",
+      "body_size_if_ps1": 261888,
+      "nonzero_count": 8
+    },
+    {
+      "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin3_psp_unique/SMU_OFF_CHIP_FW_2~0x12_0.58.6.0",
+      "size": 262400,
+      "sha256": "5af653a91bca18427c5af591ffa320289e7048531e6ed9bea01d8adc349f8b38",
+      "first16": "67fe50fe421a967476f5f09f4a1c0cda",
+      "body_sha256_if_ps1": "f22e2815c99e9bf4a4fbdcc8d6498d3eee59181dd46185f83a0130ff73190b06",
+      "body_size_if_ps1": 262144,
+      "nonzero_count": 87
+    },
+    {
+      "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin3_psp_bodies/SMU_OFFCHIP_FW~0x8_0.58.6.0.body",
+      "size": 262144,
+      "sha256": "5c805026581ace101ba43ef4d0f6b34354f4a61461a1c78d2fa6a335a53d9936",
+      "first16": "00065800000658000000000000000000",
+      "body_sha256_if_ps1": "8ddce9449ca7d3daa0ac5f7d7f8e431d781724cac41f61194576a961db4281da",
+      "body_size_if_ps1": 261888,
+      "nonzero_count": 144782
+    }
+  ],
+  "loader_source": {
+    "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/extract_psp_bodies.py",
+    "rule": "body = data[0x100:]",
+    "loader_sha256": "c7548eb30da7a3bcd9d8bd68aefc98996114a02d7903f7aa059cf70b45a33710"
+  }
+}

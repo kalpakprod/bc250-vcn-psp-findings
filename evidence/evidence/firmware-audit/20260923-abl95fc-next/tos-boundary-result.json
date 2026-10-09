@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "service": 40,
+      "return": 9,
+      "entry": "0x46a0",
+      "exception_prologue_not_executed": true,
+      "code_0_to6000_unchanged": true
+    },
+    {
+      "service": 45,
+      "return": 9,
+      "entry": "0x46a0",
+      "exception_prologue_not_executed": true,
+      "code_0_to6000_unchanged": true
+    }
+  ],
+  "source_sha256": "259a31d52ec847df23596ae1c7e736212ff6bab7793af741b83fa62e439ade68",
+  "finding": "This native TOS dispatcher route does not implement early ABL28/2D services; both take default9. Do not infer TOS was active during ABL.",
+  "limits": [
+    "Synthetic supervisor frame, not live TOS exception",
+    "Other runtime dispatch paths not excluded",
+    "Type1 header not recognized, not proven encrypted",
+    "ROM/earlier bootloader implementation remains missing"
+  ]
+}

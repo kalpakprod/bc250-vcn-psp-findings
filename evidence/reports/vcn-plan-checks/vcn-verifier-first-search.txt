@@ -1,0 +1,44 @@
+docs/research/2026-09-17-campaign-error-audit.md:8:## 0. Verified end-state of the campaign (baseline for the audit)
+docs/research/2026-09-17-campaign-error-audit.md:19:Flash discipline was never broken: every write had VERIFIED + independent
+docs/research/2026-09-17-campaign-error-audit.md:38:  signature-fatality) closed every software-reachable route to the VCN
+docs/research/2026-09-17-campaign-error-audit.md:50:  in the worker registry: "worker claims UNVERIFIED"). The operator
+docs/research/2026-09-17-campaign-error-audit.md:111:  trigger authorizes ANALYSIS, not a base change"). Two direction changes
+docs/research/2026-09-17-campaign-error-audit.md:143:  (BC250_5.00.bin, retroweb-verified bytes in `evidence/donor/
+docs/research/2026-09-17-campaign-error-audit.md:177:- Flash safety: 6/6 writes VERIFIED + independent readback; recovery chain
+memory/open-questions.md:7:2. What exact signature span and verification transform does the target PSP use for modified `$PS1` blobs?
+memory/open-questions.md:8:   - Status 2026-09-12: sharpened by the D3-B2 retest — with correct display wiring, policy carriers with stale signature material do not boot, while APCB-only does. Leading explanation: PSP rejects modified/relocated signed policy. Offline signature verification remains impossible (no signing capability).
+memory/open-questions.md:16:   - Still open. Known so far: the 1.92 probe kernel registers VCN (`vcn_v2_0`) and loads green_sardine_vcn.bin (mode1 hardware-verified 2026-09-12); wedge at first MMIO in mode2 without domain power.
+memory/open-questions.md:18:   - Status 2026-09-12: runtime SMN writes are session-reversible (cold power cycle restores re-armed gates, proven twice); SPI reflashes proven reversible with flashrom VERIFIED + independent readback (three full cycles). NBIO S4 bit-writes are designed reversible but unrun.
+memory/open-questions.md:20:   - ANSWERED 2026-09-12 (hardware-verified): the donor gasket writes LATCH — bank-12 commit readback = 1 after 59 accepted writes. But SMN READS of DF space hang the SMU mailbox in the never-programmed boot state (read wedge class closed); the latch was proven via the bank-12 control readback, not DF-window reads. The full result and wedge taxonomy are in `memory/firmware-audit.md` (S2-A section).
+memory/open-questions.md:23:   - ANSWERED BY STAGE5 (2026-09-12 06:50 PKT, hardware-verified): the full donor dataplane (NBIF routes `0x1C7xx`, NBIO `0x1F820/0x1F8A4`, IOHC `0x322`, DF `0x3D2`, binding `0x3E814`) was runtime-written ON TOP of the full bring-up + gasket (59/59, commit=1) — the arbiter stayed ALL-ONES with clean reads. The bridge is NOT a routing-values problem. The S4 NBIO bit-writes are also excluded (no candidate). Remaining suspects: island ISO/reset held outside the dom6 sequencer; an unmapped Q3 fw message (real PowerUpVcn equivalent); PSP-side isolation beyond the gasket. Next lever: Q3 msg-table deep decode + ISO chain in the SMU firmware image.
+memory/open-questions.md:27:- OQ12: PSP authority map — for each of the 19 `$PSP` entries in 5.00 clv, which `kid`
+memory/open-questions.md:28:  verifies it, and is there any entry with no signature block at all? Untested statically.
+memory/open-questions.md:29:  A "no-signature entry" or an entry verified by a kid that is not the one its type should
+memory/open-questions.md:30:  use would be a pre-auth write primitive on a signed carrier — the only remaining lane
+memory/open-questions.md:31:  that has authority over the VCN isolation grant. Requires: entry-body parse
+memory/open-questions.md:32:  (signature block presence + length field consistency) and the kid→entry map.
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:28:Verification (all landed on coherent Thumb code / self-consistent literal pools):
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:93:claim **cannot be verified statically** — there is no static array in t28.
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:127:community-described "FEATURE-DISABLED" gate for the type-13/VCN load. Not a signature
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:185:## 5. Is t28's $PS1/RSA signature verified before execution? — STATIC ANSWER: YES (by format), enforcement code is off-blob
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:189:  size 0x1a770 (matches). Type **0x01 = PSP bootloader** (FILE 0x8e0400, 0xB600) is a
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:190:  SEPARATE entry — it is the loader/authenticator, **not** part of t28.
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:194:- t28 trailing 0x100 bytes (FILE 0x99f570…0x99f670): RSA-2048 signature.
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:196:  RSA signature. (Location noted only; bytes not reproduced.)
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:198:**Enforcement:** the code that verifies the `$PS1`/RSA signature is NOT inside t28 —
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:199:on AMD PSP it lives in the on-die bootROM (verifies the type-0x01 PSP bootloader
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:200:against a fused root key) and in that type-0x01 bootloader (verifies each subsequent
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:201:PSP-dir entry's `$PS1` signature before load/exec). This is the standard AMD PSP
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:202:secure-boot chain. The very presence of a 256-byte RSA-2048 signature over the entry
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:203:exists to be checked; an entry that was never verified would not carry one.
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:210:§4a) changes bytes covered by the RSA-2048 signature and will **fail signature
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:211:verification** on a correctly-functioning PSP loader. **Editing t28's body to flip the
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:213:from this blob) holds: (a) the type-0x01 PSP bootloader does not actually verify
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:214:type-0x28 (would require disassembling that separate, itself-verified entry to
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:215:disprove), or (b) signature checking is disabled by SoC fuses. The realistic route to
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:218:authenticated code — not a static image edit.
+docs/action-logs/2026-09-23-clv-t28-vcn-gate-disasm.md:241:| RSA-2048 sig (location only) | — | 0x99F570…0x99F670 | — |
+
+STDERR
+
+EXIT 0

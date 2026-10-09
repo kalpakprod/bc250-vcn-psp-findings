@@ -1,0 +1,19 @@
+=== find GPU card (device 0x13fe) ===
+/sys/class/drm/card1 dev= vid=0x1002
+/sys/class/drm/card1-DP-1 dev= vid=
+/sys/class/drm/card1-DP-2 dev= vid=
+=== card0 firmware_info (raw) ===
+=== card0 ip_blocks (raw) ===
+NO FILE
+=== dmesg vcn/psp/power/skillfish ===
+=== smu version / features / wgp ===
+Traceback (most recent call last):
+  File "<stdin>", line 4, in <module>
+  File "/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py", line 33, in __init__
+    self._transport.open()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/transport.py", line 15, in open
+    self._fd = os.open(self._config_path, os.O_RDWR | os.O_CLOEXEC)
+               ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/sys/bus/pci/devices/0000:00:00.0/config'
+=== END ===

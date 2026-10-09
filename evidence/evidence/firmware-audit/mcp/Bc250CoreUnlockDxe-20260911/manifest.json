@@ -1,0 +1,496 @@
+{
+  "generated_at": "2026-09-11T05:40:18.453243+00:00",
+  "base_url": "http://127.0.0.1:8000",
+  "input": "evidence/firmware-audit/dump-2-extract/modules/0000_Bc250CoreUnlockDxe_pe32.bin",
+  "input_sha256": "7d22d80284cd4c9c8af997611002f6916b4fa4b0d3ca9e3e34e450abbe885c55",
+  "current_health": "{\n    \"current_address\": \"0x11037\",\n    \"status\": \"ok\"\n}\n",
+  "calls": [
+    {
+      "id": 200,
+      "label": "initialize",
+      "method": "initialize",
+      "tool": null,
+      "arguments": null,
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/200-initialize.json",
+      "sha256": "40db26a1a581d834f88cea0ff8413a0f4edc2ac8b42659ae960a8a6d459c0ad5",
+      "size": 276,
+      "is_error": false
+    },
+    {
+      "id": 201,
+      "label": "tools/list",
+      "method": "tools/list",
+      "tool": null,
+      "arguments": null,
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/201-tools_list.json",
+      "sha256": "7744b7113eba9e3d00e7956b11c89cca21af8bc3074f00956dafb53ef5c09ec5",
+      "size": 13468,
+      "is_error": false
+    },
+    {
+      "id": 202,
+      "label": "health",
+      "method": "tools/call",
+      "tool": "cutter_health",
+      "arguments": {},
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/202-health.json",
+      "sha256": "f82f1560cfd1400b7acb11423d386db819dcbff64911375e7001413605359128",
+      "size": 258,
+      "is_error": false,
+      "inner_sha256": "75d461207fbcd7d1ed08bb95e9c410480e136074d076abceb54218914c8b4586",
+      "inner_preview": "{\"current_address\":\"0x11037\",\"status\":\"ok\"}",
+      "inner_keys": [
+        "current_address",
+        "status"
+      ]
+    },
+    {
+      "id": 203,
+      "label": "segments",
+      "method": "tools/call",
+      "tool": "cutter_list_segments",
+      "arguments": {
+        "limit": 100,
+        "offset": 0
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/203-segments.json",
+      "sha256": "4e4541cb43c3a55a0c8294c9e6e71c566da905adb9bd43a83f88e3cc28a4023b",
+      "size": 451,
+      "is_error": false,
+      "inner_sha256": "b423cb581c2e389f83ea1ef7708f4cd3ec04cc4cdad3537e1e02239bc48952cf",
+      "inner_preview": "{\"items\":[{\"name\":\".text\",\"paddr\":\"0x1000\",\"perm\":\"-r-x\",\"size\":4096,\"vaddr\":\"0x11000\"},{\"name\":\".data\",\"paddr\":\"0x2000\",\"perm\":\"-rw-\",\"size\":4096,\"vaddr\":\"0x12000\"}],\"limit\":100,\"offset\":0,\"total\":2}",
+      "inner_keys": [
+        "items",
+        "limit",
+        "offset",
+        "total"
+      ],
+      "total": 2,
+      "limit": 100,
+      "offset": 0,
+      "items_count": 2
+    },
+    {
+      "id": 204,
+      "label": "functions",
+      "method": "tools/call",
+      "tool": "cutter_list_functions",
+      "arguments": {
+        "limit": 100,
+        "offset": 0
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/204-functions.json",
+      "sha256": "6d4d40835b18f97e52be762e4953b5ccf1c47c8cfe7cb8e1572db0326548b80c",
+      "size": 764,
+      "is_error": false,
+      "inner_sha256": "b7fdc63797ed4211c3e821546c245d1b826a661c889f41fa61b4f77a1d888daa",
+      "inner_preview": "{\"items\":[{\"addr\":\"0x11000\",\"demangled\":\"fcn.00011000\",\"n_bb\":3,\"name\":\"fcn.00011000\",\"size\":55},{\"addr\":\"0x11037\",\"demangled\":\"entry0\",\"n_bb\":11,\"name\":\"entry0\",\"size\":571},{\"addr\":\"0x11272\",\"demangled\":\"fcn.00011272\",\"n_bb\":4,\"name\":\"fcn.00011272\",\"size\":63},{\"addr\":\"0x112b1\",\"demangled\":\"fcn.000112b1\",\"n_bb\":4,\"name\":\"fcn.000112b1\",\"size\":34},{\"addr\":\"0x112d3\",\"demangled\":\"fcn.000112d3\",\"n_bb\":1,\"name\":\"fcn.000112d3\",\"size\":33}],\"limit\":100,\"offset\":0,\"total\":5}",
+      "inner_keys": [
+        "items",
+        "limit",
+        "offset",
+        "total"
+      ],
+      "total": 5,
+      "limit": 100,
+      "offset": 0,
+      "items_count": 5
+    },
+    {
+      "id": 205,
+      "label": "strings_setup",
+      "method": "tools/call",
+      "tool": "cutter_list_strings",
+      "arguments": {
+        "contains": "Setup",
+        "min_length": 4,
+        "limit": 50,
+        "offset": 0
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/205-strings_setup.json",
+      "sha256": "34aecb92085b79c420ba07cccc4b1b268fb0a9c5ef4b3f2f668dd4726ff08ec6",
+      "size": 259,
+      "is_error": false,
+      "inner_sha256": "2ffd032fe83e620b56f6b08d644e1eb559a0ad5694d8a35dc47c4654ca8e7baa",
+      "inner_preview": "{\"items\":[],\"limit\":50,\"offset\":0,\"total\":0}",
+      "inner_keys": [
+        "items",
+        "limit",
+        "offset",
+        "total"
+      ],
+      "total": 0,
+      "limit": 50,
+      "offset": 0,
+      "items_count": 0
+    },
+    {
+      "id": 206,
+      "label": "strings_smu",
+      "method": "tools/call",
+      "tool": "cutter_list_strings",
+      "arguments": {
+        "contains": "SMU",
+        "min_length": 3,
+        "limit": 50,
+        "offset": 0
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/206-strings_smu.json",
+      "sha256": "bade99538b07c664f977681d57c5d0aad72a08a66bc144de4f2a3bb6ff8bcf2c",
+      "size": 259,
+      "is_error": false,
+      "inner_sha256": "2ffd032fe83e620b56f6b08d644e1eb559a0ad5694d8a35dc47c4654ca8e7baa",
+      "inner_preview": "{\"items\":[],\"limit\":50,\"offset\":0,\"total\":0}",
+      "inner_keys": [
+        "items",
+        "limit",
+        "offset",
+        "total"
+      ],
+      "total": 0,
+      "limit": 50,
+      "offset": 0,
+      "items_count": 0
+    },
+    {
+      "id": 207,
+      "label": "strings_all",
+      "method": "tools/call",
+      "tool": "cutter_list_strings",
+      "arguments": {
+        "min_length": 8,
+        "limit": 100,
+        "offset": 0
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/207-strings_all.json",
+      "sha256": "692520fcc5aec5a39c54b04eeb1a6950ad8116c0619486367418a94ebb72ffd8",
+      "size": 477,
+      "is_error": false,
+      "inner_sha256": "60be90762fd4e949e9bed0ff1aa487c5bc601af29960e4cc1927f6f835cebfbd",
+      "inner_preview": "{\"items\":[{\"addr\":\"0x120cc\",\"length\":145,\"string\":\"/cache/edk2/Build/Bc250CoreUnlockPkg/RELEASE_CLANGDWARF/X64/Bc250CoreUnlockPkg/Bc250CoreUnlockDxe/Bc250CoreUnlockDxe/DEBUG/Bc250CoreUnlockDxe.dll\",\"type\":\"ascii\"}],\"limit\":100,\"offset\":0,\"total\":1}",
+      "inner_keys": [
+        "items",
+        "limit",
+        "offset",
+        "total"
+      ],
+      "total": 1,
+      "limit": 100,
+      "offset": 0,
+      "items_count": 1
+    },
+    {
+      "id": 208,
+      "label": "bytes_entry",
+      "method": "tools/call",
+      "tool": "cutter_read_bytes",
+      "arguments": {
+        "addr": "0x11037",
+        "size": 128
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/208-bytes_entry.json",
+      "sha256": "7b743d7cc7bb667593889231483538f851a5b0a513c2eaa388f1314b7125eb0d",
+      "size": 637,
+      "is_error": false,
+      "inner_sha256": "efe3ec47a362788db44314a3bc5345d5b7b8da3925c4d8375824e7d03bf1181b",
+      "inner_preview": "{\"addr\":\"0x11037\",\"bytes\":[65,86,86,87,83,72,129,236,248,0,0,0,68,15,41,188,36,224,0,0,0,68,15,41,180,36,208,0,0,0,68,15,41,172,36,192,0,0,0,68,15,41,164,36,176,0,0,0,68,15,41,156,36,160,0,0,0,68,15,41,148,36,144,0,0,0,68,15,41,140,36,128,0,0,0,68,15,41,68,36,112,15,41,124,36,96,15,41,116,36,80,72,139,66,96,72,137,5,107,15,0,0,72,139,66,88,72,131,100,36,40,0,72,137,5,82,15,0,0,72,131,100,36,48,0,72,184,161],\"size\":128}",
+      "inner_keys": [
+        "addr",
+        "bytes",
+        "size"
+      ],
+      "addr": "0x11037"
+    },
+    {
+      "id": 209,
+      "label": "disasm_entry",
+      "method": "tools/call",
+      "tool": "cutter_disasm",
+      "arguments": {
+        "addr": "0x11037",
+        "fmt": "json"
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/209-disasm_entry.json",
+      "sha256": "78ba35b0d08a5e82a03c42a38a0ed72b156fc7b3338434d4330d7c007c383c1a",
+      "size": 40002,
+      "is_error": false,
+      "inner_sha256": "910bef29b7410d07fd0eeb9b5125b4c1c0287bcbcf5dc939966bd05eb3c83844",
+      "inner_preview": "{\"addr\":\"0x11037\",\"ops\":[{\"bytes\":\"4156\",\"disasm\":\"push r14\",\"esil\":\"r14,8,rsp,-,=[8],8,rsp,-=\",\"family\":\"cpu\",\"fcn_addr\":69687,\"fcn_last\":70256,\"flags\":[\"entry0\"],\"offset\":69687,\"opcode\":\"push r14\",\"refptr\":false,\"reloc\":false,\"size\":2,\"type\":\"rpush\",\"type2_num\":0,\"type_num\":268435468},{\"bytes\":\"56\",\"disasm\":\"push rsi\",\"esil\":\"rsi,8,rsp,-,=[8],8,rsp,-=\",\"family\":\"cpu\",\"fcn_addr\":69687,\"fcn_last\":70257,\"offset\":69689,\"opcode\":\"push rsi\",\"refptr\":false,\"reloc\":false,\"size\":1,\"type\":\"rpush\",\"type2",
+      "inner_keys": [
+        "addr",
+        "ops"
+      ],
+      "addr": "0x11037",
+      "ops_count": 120
+    },
+    {
+      "id": 210,
+      "label": "pd_entry",
+      "method": "tools/call",
+      "tool": "cutter_pd",
+      "arguments": {
+        "addr": "0x11037",
+        "count": 128,
+        "fmt": "json"
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/210-pd_entry.json",
+      "sha256": "37e59d858bc0f5da3aff9094a1258d3914353abf533af8e918a290b61e1fd3fb",
+      "size": 42577,
+      "is_error": false,
+      "inner_sha256": "7c0b0d396a4d391e8880ff2ee2fdd58c8531bf981b62e7742d47d26f0d7acf85",
+      "inner_preview": "{\"addr\":\"0x11037\",\"count\":128,\"ops\":[{\"bytes\":\"4156\",\"disasm\":\"push r14\",\"esil\":\"r14,8,rsp,-,=[8],8,rsp,-=\",\"family\":\"cpu\",\"fcn_addr\":69687,\"fcn_last\":70256,\"flags\":[\"entry0\"],\"offset\":69687,\"opcode\":\"push r14\",\"refptr\":false,\"reloc\":false,\"size\":2,\"type\":\"rpush\",\"type2_num\":0,\"type_num\":268435468},{\"bytes\":\"56\",\"disasm\":\"push rsi\",\"esil\":\"rsi,8,rsp,-,=[8],8,rsp,-=\",\"family\":\"cpu\",\"fcn_addr\":69687,\"fcn_last\":70257,\"offset\":69689,\"opcode\":\"push rsi\",\"refptr\":false,\"reloc\":false,\"size\":1,\"type\":\"r",
+      "inner_keys": [
+        "addr",
+        "count",
+        "ops"
+      ],
+      "addr": "0x11037",
+      "count": 128,
+      "ops_count": 128
+    },
+    {
+      "id": 211,
+      "label": "function_detail_entry",
+      "method": "tools/call",
+      "tool": "cutter_function_detail",
+      "arguments": {
+        "addr": "0x11037"
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/211-function_detail_entry.json",
+      "sha256": "764647fdce0943a70ff79f79fca29b41d197f5e02f295af9df59e5c7e196fabe",
+      "size": 3838,
+      "is_error": false,
+      "inner_sha256": "1250af65ed82bb5d75ae5ae1f36cbbea4e9faa411fcb83f02d96ab65f4b84344",
+      "inner_preview": "{\"info\":{\"bits\":64,\"callrefs\":[{\"from\":69847,\"to\":70258,\"type\":\"CALL\"},{\"from\":70017,\"to\":70161,\"type\":\"CODE\"},{\"from\":70047,\"to\":70321,\"type\":\"CALL\"},{\"from\":70059,\"to\":70355,\"type\":\"CALL\"},{\"from\":70074,\"to\":70355,\"type\":\"CALL\"},{\"from\":70086,\"to\":70355,\"type\":\"CALL\"},{\"from\":70101,\"to\":70355,\"type\":\"CALL\"},{\"from\":70109,\"to\":70321,\"type\":\"CALL\"},{\"from\":70125,\"to\":70258,\"type\":\"CALL\"},{\"from\":70159,\"to\":70163,\"type\":\"CODE\"}],\"calltype\":\"ms\",\"cc\":8,\"codexrefs\":[{\"from\":70017,\"to\":70161,\"type\":",
+      "inner_keys": [
+        "info",
+        "xrefs_in"
+      ]
+    },
+    {
+      "id": 212,
+      "label": "decompile_entry",
+      "method": "tools/call",
+      "tool": "cutter_decompile",
+      "arguments": {
+        "addr": "0x11037"
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/212-decompile_entry.json",
+      "sha256": "bb4a7de3b1e64d4cd5a84b3c6a59c2c3d764f62c1db4233aeb766f14b8f64c34",
+      "size": 2241,
+      "is_error": false,
+      "inner_sha256": "9e5926ce19d5e50bba97cad1d35bf714dbf3bccbd1c8c61cfe7101f6d312dc65",
+      "inner_preview": "{\"addr\":\"0x11037\",\"pseudo\":\"\\n// WARNING: Variable defined which should be unmapped: var_f8h\\n// WARNING: [rz-ghidra] Detected overlap for variable var_cch\\n\\nundefined8 entry0(undefined8 placeholder_0, int64_t arg2)\\n{\\n    char cVar1;\\n    int64_t iVar2;\\n    int64_t iVar3;\\n    int64_t var_f8h;\\n    int64_t var_f0h;\\n    int64_t var_e8h;\\n    int64_t var_e0h;\\n    int64_t var_d8h;\\n    int32_t var_cch;\\n    int64_t var_c8h;\\n    int64_t var_b8h;\\n    int64_t var_a8h;\\n    int64_t var_98h;\\n  ",
+      "inner_keys": [
+        "addr",
+        "pseudo"
+      ],
+      "addr": "0x11037"
+    },
+    {
+      "id": 213,
+      "label": "vars_entry",
+      "method": "tools/call",
+      "tool": "cutter_list_vars",
+      "arguments": {
+        "addr": "0x11037"
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/213-vars_entry.json",
+      "sha256": "a2b6ed720a5f1a3d0c3b2d0c01fb3dc4d1038b648642d4e973301a395e364743",
+      "size": 2341,
+      "is_error": false,
+      "inner_sha256": "70e1c5b9f377d9aa37bd01b4a708c8383d94145ea870d8911da17421d9930d11",
+      "inner_preview": "{\"addr\":\"0x11037\",\"vars\":{\"args\":[],\"bpvars\":[],\"reg\":[{\"arg\":true,\"name\":\"arg2\",\"storage\":{\"reg\":\"rdx\",\"type\":\"reg\"},\"type\":\"int64_t\"}],\"stack\":[{\"arg\":false,\"name\":\"var_f8h\",\"storage\":{\"stack\":18446744073709552000,\"type\":\"stack\"},\"type\":\"int64_t\"},{\"arg\":false,\"name\":\"var_f0h\",\"storage\":{\"stack\":18446744073709552000,\"type\":\"stack\"},\"type\":\"int64_t\"},{\"arg\":false,\"name\":\"var_e8h\",\"storage\":{\"stack\":18446744073709552000,\"type\":\"stack\"},\"type\":\"int64_t\"},{\"arg\":false,\"name\":\"var_e0h\",\"storage\":{\"",
+      "inner_keys": [
+        "addr",
+        "vars"
+      ],
+      "addr": "0x11037"
+    },
+    {
+      "id": 214,
+      "label": "xrefs_read",
+      "method": "tools/call",
+      "tool": "cutter_xrefs",
+      "arguments": {
+        "addr": "0x11272"
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/214-xrefs_read.json",
+      "sha256": "c8ec5a262959f05df97579bbc3030bd3e6597621deb9ffc7fc48573bc009fe76",
+      "size": 562,
+      "is_error": false,
+      "inner_sha256": "4e6b091c442cd0e17a80c38d7c2a368a0ff2b98f3f04ac531e185e8dd3319194",
+      "inner_preview": "{\"addr\":\"0x11272\",\"xrefs\":[{\"from\":69847,\"from_demangled\":\"entry0\",\"from_name\":\"entry0\",\"to\":70258,\"type\":\"CALL\"},{\"from\":70125,\"from_demangled\":\"entry0\",\"from_name\":\"entry0\",\"to\":70258,\"type\":\"CALL\"},{\"from\":70330,\"from_demangled\":\"fcn.000112b1\",\"from_name\":\"fcn.000112b1\",\"to\":70258,\"type\":\"CALL\"}]}",
+      "inner_keys": [
+        "addr",
+        "xrefs"
+      ],
+      "addr": "0x11272",
+      "xrefs_count": 3
+    },
+    {
+      "id": 215,
+      "label": "xrefs_write",
+      "method": "tools/call",
+      "tool": "cutter_xrefs",
+      "arguments": {
+        "addr": "0x112d3"
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/215-xrefs_write.json",
+      "sha256": "4f675d60fae9e763179226e3fd0b063b660f3c180dfbe6d19acf34eabdff0e26",
+      "size": 653,
+      "is_error": false,
+      "inner_sha256": "31f1dd1c57a0b67f6ed3dbfff4549573363b0bbbb2b5109f76682da5cc2a1cd3",
+      "inner_preview": "{\"addr\":\"0x112d3\",\"xrefs\":[{\"from\":70059,\"from_demangled\":\"entry0\",\"from_name\":\"entry0\",\"to\":70355,\"type\":\"CALL\"},{\"from\":70074,\"from_demangled\":\"entry0\",\"from_name\":\"entry0\",\"to\":70355,\"type\":\"CALL\"},{\"from\":70086,\"from_demangled\":\"entry0\",\"from_name\":\"entry0\",\"to\":70355,\"type\":\"CALL\"},{\"from\":70101,\"from_demangled\":\"entry0\",\"from_name\":\"entry0\",\"to\":70355,\"type\":\"CALL\"}]}",
+      "inner_keys": [
+        "addr",
+        "xrefs"
+      ],
+      "addr": "0x112d3",
+      "xrefs_count": 4
+    },
+    {
+      "id": 216,
+      "label": "xrefs_poll",
+      "method": "tools/call",
+      "tool": "cutter_xrefs",
+      "arguments": {
+        "addr": "0x112b1"
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/216-xrefs_poll.json",
+      "sha256": "5271099b555c5bec72c5d1e0425f75e60922d6f10b6ef068c55f37dd13539b39",
+      "size": 447,
+      "is_error": false,
+      "inner_sha256": "c7439d630bffcbee57db612aaec1809cab68c437be8d62f246f3c32fa1b3704a",
+      "inner_preview": "{\"addr\":\"0x112b1\",\"xrefs\":[{\"from\":70047,\"from_demangled\":\"entry0\",\"from_name\":\"entry0\",\"to\":70321,\"type\":\"CALL\"},{\"from\":70109,\"from_demangled\":\"entry0\",\"from_name\":\"entry0\",\"to\":70321,\"type\":\"CALL\"}]}",
+      "inner_keys": [
+        "addr",
+        "xrefs"
+      ],
+      "addr": "0x112b1",
+      "xrefs_count": 2
+    },
+    {
+      "id": 217,
+      "label": "globals",
+      "method": "tools/call",
+      "tool": "cutter_list_globals",
+      "arguments": {
+        "limit": 100,
+        "offset": 0
+      },
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/217-globals.json",
+      "sha256": "cdfac7098ca2700dcb7c984f6cc9fc977fd3755afa2d9f7ee2a309a718c31d41",
+      "size": 260,
+      "is_error": false,
+      "inner_sha256": "951fac910c5d114535732996746d9fe6587f3f394a5f26c1e7a44bee84130a21",
+      "inner_preview": "{\"items\":[],\"limit\":100,\"offset\":0,\"total\":0}",
+      "inner_keys": [
+        "items",
+        "limit",
+        "offset",
+        "total"
+      ],
+      "total": 0,
+      "limit": 100,
+      "offset": 0,
+      "items_count": 0
+    },
+    {
+      "id": 218,
+      "label": "types",
+      "method": "tools/call",
+      "tool": "cutter_types",
+      "arguments": {},
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/218-types.json",
+      "sha256": "7a85af1dbf6ed2cb1c0b5a7be36b5b379699db01d1a6836fe246e29cd91eb85d",
+      "size": 7181,
+      "is_error": false,
+      "inner_sha256": "80984344ae676ee7b7ecb36ac2f946afda0b638e00a15c8c6aeda57a564ac789",
+      "inner_preview": "{\"types\":[{\"kind\":\"typedef\",\"size\":0,\"type\":\"FILE\"},{\"kind\":\"atomic\",\"size\":8,\"type\":\"_Bool\"},{\"kind\":\"struct\",\"size\":64,\"type\":\"__div_t\"},{\"kind\":\"struct\",\"size\":128,\"type\":\"__imaxdiv_t\"},{\"kind\":\"struct\",\"size\":128,\"type\":\"__ldiv_t\"},{\"kind\":\"struct\",\"size\":128,\"type\":\"__lldiv_t\"},{\"kind\":\"atomic\",\"size\":16,\"type\":\"bin16_t\"},{\"kind\":\"atomic\",\"size\":32,\"type\":\"bin32_t\"},{\"kind\":\"atomic\",\"size\":64,\"type\":\"bin64_t\"},{\"kind\":\"atomic\",\"size\":8,\"type\":\"bin8_t\"},{\"kind\":\"atomic\",\"size\":8,\"type\":\"bool",
+      "inner_keys": [
+        "types"
+      ],
+      "types_count": 121
+    },
+    {
+      "id": 219,
+      "label": "current_address",
+      "method": "tools/call",
+      "tool": "cutter_current_address",
+      "arguments": {},
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/219-current_address.json",
+      "sha256": "b6d1526d10d5e596516594d79c5ba0d3ad8d5679054d7a342431cf7704025dd5",
+      "size": 229,
+      "is_error": false,
+      "inner_sha256": "4c0c06366076ee44fa00822cf860ab3d00eec63011cdeffad7bd2693f54143d0",
+      "inner_preview": "{\"addr\":\"0x11037\"}",
+      "inner_keys": [
+        "addr"
+      ],
+      "addr": "0x11037"
+    },
+    {
+      "id": 220,
+      "label": "current_function",
+      "method": "tools/call",
+      "tool": "cutter_current_function",
+      "arguments": {},
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/220-current_function.json",
+      "sha256": "48e484f0931772067bd7a2656eb86f25c318a86e7e7f17a762a814d337935f1a",
+      "size": 3822,
+      "is_error": false,
+      "inner_sha256": "f88e84eb735535de847bc61ef8734f684c3373161d6b919884606253c94f16a7",
+      "inner_preview": "{\"info\":{\"bits\":64,\"callrefs\":[{\"from\":69847,\"to\":70258,\"type\":\"CALL\"},{\"from\":70017,\"to\":70161,\"type\":\"CODE\"},{\"from\":70047,\"to\":70321,\"type\":\"CALL\"},{\"from\":70059,\"to\":70355,\"type\":\"CALL\"},{\"from\":70074,\"to\":70355,\"type\":\"CALL\"},{\"from\":70086,\"to\":70355,\"type\":\"CALL\"},{\"from\":70101,\"to\":70355,\"type\":\"CALL\"},{\"from\":70109,\"to\":70321,\"type\":\"CALL\"},{\"from\":70125,\"to\":70258,\"type\":\"CALL\"},{\"from\":70159,\"to\":70163,\"type\":\"CODE\"}],\"calltype\":\"ms\",\"cc\":8,\"codexrefs\":[{\"from\":70017,\"to\":70161,\"type\":",
+      "inner_keys": [
+        "info"
+      ]
+    },
+    {
+      "id": 221,
+      "label": "entrypoints",
+      "method": "tools/call",
+      "tool": "cutter_entrypoints",
+      "arguments": {},
+      "status": 200,
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/221-entrypoints.json",
+      "sha256": "3f05156b46669e6dfbf777261d62228dfa736e975b5c4d2ec65e2ec8f6fcf184",
+      "size": 319,
+      "is_error": false,
+      "inner_sha256": "13778b012e670783c9c2c2ae759bb26b88e79e36aeef6e9dc866e2542d82a2c7",
+      "inner_preview": "{\"entries\":[{\"baddr\":65536,\"haddr\":3712,\"laddr\":0,\"paddr\":4151,\"type\":\"program\",\"vaddr\":69687}]}",
+      "inner_keys": [
+        "entries"
+      ],
+      "entries_count": 1
+    }
+  ],
+  "mutating_tools_exposed": [
+    "cutter_rename_function",
+    "cutter_add_comment",
+    "cutter_set_prototype"
+  ],
+  "mutating_tools_called": [],
+  "evidence_class": "static-analysis"
+}

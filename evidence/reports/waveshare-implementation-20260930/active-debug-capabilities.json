@@ -1,0 +1,166 @@
+{
+  "schema": 1,
+  "target": "/home/OWNER/orca/projects/bc250/candidates/waveshare-adapter-safe-v001",
+  "objective": "full active debugger plus prior adapter plan",
+  "completion": false,
+  "hardware_operations_performed": false,
+  "current_source_id": "a18a9736bcbe",
+  "sources": {
+    "facts_sha256": "2133db3b8a73274bddc1a97a46edfb0be07f6d5b8d7660542e9cc6fc301e6bef",
+    "SPI_trace": "/home/OWNER/orca/projects/bc250/reports/waveshare-implementation-20260930/spi-acquisition-path.json",
+    "UART_trace": "/home/OWNER/orca/projects/bc250/reports/waveshare-implementation-20260930/uart-net-trace.json"
+  },
+  "decision_pending": null,
+  "capabilities": [
+    {
+      "function": "SPI memory identify/read",
+      "connector": "J4004",
+      "state": "DESIGN_PENDING_BUS_OWNERSHIP",
+      "implemented": "bounded input-only waveform observer only",
+      "requested": "active memory commands including full read",
+      "constraints": [
+        "shared FCH/flash bus",
+        "PROGRAM# reset coupling is not proven isolation",
+        "actual installed chip identity must be established",
+        "no master commands during running AMD"
+      ],
+      "acceptance": [
+        "exclusive bus ownership independently confirmed",
+        "two full reads equal; chip ID/size bound; no write side effects"
+      ]
+    },
+    {
+      "function": "SPI erase/program/verify",
+      "connector": "J4004",
+      "state": "APPROVED_SCOPE_NOT_IMPLEMENTED",
+      "implemented": false,
+      "requested": "conventional sector erase/page program/readback verification",
+      "constraints": [
+        "verified pristine dump, recovery and exact-image approval before physical write",
+        "preserve signed PSP regions; no bypass or race injection"
+      ],
+      "acceptance": [
+        "offline allowlist/bounds/write protect tests",
+        "approved chip write and independent readback; recovery check"
+      ]
+    },
+    {
+      "function": "UART receive/transmit",
+      "connector": "J5",
+      "state": "RX_BUILT_TX_NOT_IMPLEMENTED",
+      "implemented": "115200 8N1 RX GP9, explicit diagnostic/wiring confirmation, private capture",
+      "requested": "bidirectional serial debugging",
+      "constraints": [
+        "CAD/vendor direction: J5.4 board TX, J5.3 board RX",
+        "documented3.3V; connector orientation not observed",
+        "no presumed PSP console/protocol"
+      ],
+      "acceptance": [
+        "real receive capture",
+        "benign documented TX exchange only after operator integration approval"
+      ]
+    },
+    {
+      "function": "LPC POST observation",
+      "connector": "TPMS1",
+      "state": "NOT_IMPLEMENTED",
+      "implemented": false,
+      "requested": "POST observation and protocol diagnostics",
+      "constraints": [
+        "2mm header not standard2.54mm cable",
+        "33MHz community clock claim is not measured unit clock",
+        "must not drive shared LAD/frame/clock during observation",
+        "not generic arbitrary LPC master"
+      ],
+      "acceptance": [
+        "passive capture resource/bandwidth proof",
+        "known POST decoder fixtures and actual board capture"
+      ]
+    },
+    {
+      "function": "SMBus/PMBus diagnostics",
+      "connector": "I2C_HEADER1",
+      "state": "NOT_IMPLEMENTED",
+      "implemented": "Linux sensor collection is separate, not external SMBus implementation",
+      "requested": "documented peripheral reads and justified control",
+      "constraints": [
+        "CAD pin1 SDA/pin2 SCL; public orientation disagreement",
+        "shared open-drain bus and pull-up voltage need evidence",
+        "no blind scans/writes to power controllers while gaming",
+        "device/register meanings and limits required before writes"
+      ],
+      "acceptance": [
+        "connector/device identity and bus ownership evidence",
+        "read-only known-register fixture then live checked read"
+      ]
+    },
+    {
+      "function": "JTAG/HDT CPU debug",
+      "connector": "J2",
+      "state": "HARDWARE_ACCESS_UNPROVEN",
+      "implemented": false,
+      "requested": "maximum accessible CPU debugging",
+      "constraints": [
+        "CAD supplies1.8V; Waveshare GPIO3.3V not direct compatible",
+        "community describes unpopulated1.27mm footprint",
+        "no solder/buy constraint retained; existing level conversion/connector availability unproven",
+        "security/debug access may be restricted; no bypass promise"
+      ],
+      "acceptance": [
+        "compatible connection/level conversion established",
+        "supported documented authenticated debug path"
+      ]
+    },
+    {
+      "function": "Power/reset controls",
+      "connector": "existing HA + documented board controls",
+      "state": "HA_BUILT_PHYSICAL_CONTROLS_PENDING",
+      "implemented": "gated HA power-on and local graceful shutdown helpers",
+      "requested": "physical control and reset in debugger",
+      "constraints": [
+        "access is not present permission to interrupt gameplay",
+        "pin role/output topology must be proven for any physical control",
+        "PROGRAM# is not general safe isolation",
+        "no autonomous destructive reset loop"
+      ],
+      "acceptance": [
+        "owned target/supply confirmed",
+        "one explicitly approved action and actual resulting state"
+      ]
+    },
+    {
+      "function": "Fan RPM/PWM",
+      "connector": "CPU_FAN1/J4003 and NCT6686D Linux hwmon",
+      "state": "RPM_BUILT_PWM_NOT_IMPLEMENTED",
+      "implemented": "nct sensors/collector, fresh fan1/fan2 forwarding and panel; Decky all available sensors",
+      "requested": "fan speed monitoring and documented control",
+      "constraints": [
+        "placement-only parsed facts do not prove all pin mappings",
+        "Linux module names versus actual nct6686 sensor name differ",
+        "PWM and tach are separate, fan power12V not Waveshare supply",
+        "no changes to current cooling while gaming"
+      ],
+      "acceptance": [
+        "actual channel/physical fan association",
+        "bounded approved PWM change with restore/current controller exclusivity"
+      ]
+    },
+    {
+      "function": "DualSense/network/telemetry",
+      "connector": "USB/Bluetooth/WiFi",
+      "state": "CODE_BUILT_RUNTIME_PENDING",
+      "implemented": "HID/audio/feedback source, WiFi/auth HTTP/MQTT, metrics and Decky",
+      "requested": "retain concurrently with normal operation",
+      "constraints": [
+        "diagnostic isolation intentionally stops controller output",
+        "physical game/audio/reconnect/load acceptance not yet run"
+      ],
+      "acceptance": [
+        "final-image flash with readback",
+        "input/audio/feedback/reconnect, gameplay and observation phases"
+      ]
+    }
+  ],
+  "scope_decision_pending": null,
+  "scope_decision": "A: include conventional BIOS erase/program/verify; exact physical approval remains separate"
+}

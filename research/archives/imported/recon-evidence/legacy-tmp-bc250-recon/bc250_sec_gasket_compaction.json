@@ -1,0 +1,51 @@
+{
+  "required_writes": 56,
+  "required_bytes": 448,
+  "target_group_duplicate_writes": 8,
+  "theoretical_duplicate_bytes": 64,
+  "remaining_shortfall": 384,
+  "size_preserving_candidate_possible": false,
+  "warning": "Even exact duplicate writes can be side-effectful; theoretical duplicate bytes are not declared safe to remove. Ordered rewrites include commit/enable transitions.",
+  "groups": [
+    {
+      "type": "0x201",
+      "count": 1230,
+      "unique_pairs": 1226,
+      "duplicate_pair_writes": 4,
+      "unique_addresses": 1178,
+      "ordered_rewrites": 52
+    },
+    {
+      "type": "0x203",
+      "count": 31,
+      "unique_pairs": 31,
+      "duplicate_pair_writes": 0,
+      "unique_addresses": 31,
+      "ordered_rewrites": 0
+    },
+    {
+      "type": "0x210",
+      "count": 13,
+      "unique_pairs": 13,
+      "duplicate_pair_writes": 0,
+      "unique_addresses": 2,
+      "ordered_rewrites": 11
+    },
+    {
+      "type": "0x280",
+      "count": 100,
+      "unique_pairs": 96,
+      "duplicate_pair_writes": 4,
+      "unique_addresses": 49,
+      "ordered_rewrites": 51
+    },
+    {
+      "type": "0x281",
+      "count": 31,
+      "unique_pairs": 31,
+      "duplicate_pair_writes": 0,
+      "unique_addresses": 31,
+      "ordered_rewrites": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "archive": "/home/OWNER/orca/projects/bc250/reports/waveshare-implementation-20260930/BC250-Waveshare-preconnection-DRAFT-59c2e731d38e.zip",
+  "sha256": "87659cc579c0e5fe72226a472c93f443f293c16a657f7491500912bff3e1a4e9",
+  "private_data_excluded": true,
+  "exact_file_hashes_pass": true,
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "scripts/check_waveshare_uf2.py",
+        "Waveshare-RP2350B-Plus-W-DualSense-WiFi-MQTT-LinuxMetrics-TEST.uf2"
+      ],
+      "cwd": "/home/OWNER/.cache/waveshare-package-check/1790760384110328930",
+      "stdout": "{\n  \"sha256\": \"1448085f48f1f1ef138801f1f0be77b279c596b030bc69b4145f74dbf79e49a3\",\n  \"size\": 1617408,\n  \"program_blocks\": 3158,\n  \"family_id\": \"0xe48bff59\",\n  \"metadata\": [\n    {\n      \"type\": \"documented_RP2350_E10_ignore_marker\",\n      \"address\": \"0x10ffff00\",\n      \"program_data\": false,\n      \"device_ignore_behavior_hardware_verified\": false\n    }\n  ],\n  \"program_pages_exclude_private_sectors\": true,\n  \"hardware_boot_verified\": false,\n  \"metadata_provenance\": \"picotool 2.3.1 elf2uf2.cpp gen_abs_block/check_abs_block; pico-sdk boot/uf2.h\"\n}\n",
+      "stderr": "",
+      "exit_status": 0
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/waveshare_bios_audit.py",
+        "/home/OWNER/orca/projects/bc250/dump/2.bin",
+        "--baseline",
+        "/home/OWNER/orca/projects/bc250/dump/2.bin",
+        "--structure"
+      ],
+      "cwd": "/home/OWNER/.cache/waveshare-package-check/1790760384110328930",
+      "stdout": "{\n  \"evidence_class\": \"offline_file_integrity\",\n  \"source\": {\n    \"size\": 16777216,\n    \"sha256\": \"83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0\",\n    \"marker_counts\": {\n      \"$PSP\": 10,\n      \"$BHD\": 9\n    },\n    \"board_identity\": \"not_established_from_bytes\",\n    \"signed_region_preservation\": \"not_verified\",\n    \"raw_bytes_or_offsets_printed\": false,\n    \"writes_performed\": false\n  },\n  \"hardware_acceptance\": false,\n  \"baseline\": {\n    \"size\": 16777216,\n    \"sha256\": \"83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0\",\n    \"marker_counts\": {\n      \"$PSP\": 10,\n      \"$BHD\": 9\n    },\n    \"board_identity\": \"not_established_from_bytes\",\n    \"signed_region_preservation\": \"not_verified\",\n    \"raw_bytes_or_offsets_printed\": false,\n    \"writes_performed\": false\n  },\n  \"identical_to_baseline\": true,\n  \"structure\": {\n    \"parser_sha256\": \"5ead8605678fc5a13eb0cf49c01b43037560ddc485d8ad2686abf0e9c34d9593\",\n    \"evidence_class\": \"static_directory_structure_only\",\n    \"signature_acceptance\": \"not_verified\",\n    \"private_material_emitted\": false,\n    \"PSP\": {\n      \"state\": \"parsed\",\n      \"entry_count\": 19,\n      \"checksum_match\": true,\n      \"entries_with_valid_image_bounds\": 19,\n      \"entries_with_invalid_image_bounds\": 0\n    },\n    \"BHD\": {\n      \"state\": \"parsed\",\n      \"entry_count\": 4,\n      \"checksum_match\": true,\n      \"entries_with_valid_image_bounds\": 3,\n      \"entries_with_invalid_image_bounds\": 1\n    }\n  }\n}\n",
+      "stderr": "",
+      "exit_status": 0
+    }
+  ],
+  "full_goal_complete": false
+}

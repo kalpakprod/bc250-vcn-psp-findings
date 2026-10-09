@@ -1,0 +1,69 @@
+0x189ec PcieSetSpeed Entry for Device %d Function %d to Gen%d
+0x18a24 AmdNbioPcieARIPeiEntry Entry
+0x18a44 AmdNbioPcieARIPeiEntry Exit
+0x18a64 PcieConfigurationInit Enter
+0x18aec PcieConfigurationInit Exit [0x%x]
+0x18b10 PcieIntegratedInterfaceCallback Enter
+0x18b38 PcieIntegratedInterfaceCallback Exit
+0x18b60 PcieAfterTrainingDoneCallback Enter
+0x18c6c Value of EnableSafeSearch  = 0x%x
+0x18cb0 Value of Enable3x3Search  = 0x%x
+0x18cd4 Address of Enable3x3Search  = 0x%x
+0x18d78 Value of PowerOffPhyLanesPllL1 = 0x%x
+0x18da0 Address of PowerOffPhyLanesPllL1= 0x%x
+0x18e2c PcieAfterTrainingDoneCallback Exit
+0x18f88 rxX_eq_vga1_gain[3:0] GEN1: %x
+0x18fa8 rxX_eq_vga2_gain[3:0] GEN1: %x
+0x190f8 rxX_eq_vga1_gain[3:0] GEN2: %x
+0x19118 rxX_eq_vga2_gain[3:0] GEN2: %x
+0x19268 rxX_eq_vga1_gain[3:0] GEN3: %x
+0x19288 rxX_eq_vga2_gain[3:0] GEN3: %x
+0x1932c PCIe Port
+0x19415     DeviceNumber - %d
+0x194b4 <---------- PCIe User Config Start------------->
+0x19500 <---------- PCIe User Config End-------------->
+0x19534 PcieInterfaceInitSetting Enter
+0x19554 PcieInterfaceInitSetting Exit
+0x19574 PcieInterfaceAfterDxioDoneSetting Enter
+0x195a0 PcieInterfaceAfterDxioDoneSetting Exit
+0x19684 gAmdNbioSmuServicesPpiGuid is installed
+0x196b0 gAmdNbioPcieComplexPpiGuid is installed
+0x197e8         Engine Type - PCIe Port
+0x19888         PCIe port configuration:
+0x198ac Disable
+0x198b4 Enabled
+0x198dc           Requested PCI Dev Number   - %d
+0x19908           Requested PCI Func Number  - %d
+0x19934           PCI Address - %d:%d:%d
+0x19998 Disabled
+0x19a98         PowerOffUnusedLanes - %x
+0x19ab9         PowerOffUnusedPlls - %x
+0x19b08         TxclkGatingPllPowerDown - %x
+0x19b78 <-------------- PCIe Config Start------------>
+0x19ba8 Power Saving
+0x19bf4   GFX Workaround - %a
+0x19d70       Host PCI Address - %d:%d:%d
+0x19df4 <-------------- PCIe Config End-------------->
+0x19e84 Sending this Platform Descriptor to SMU...
+0x19eb0 Sending this Ancillary Data to SMU...
+0x19f88 Training failed on Device %x Function %x
+0x19fb4 Training SUCCESS on Device %x Function %x
+0x1a000 DxioUpdatePcieStatus enter
+0x1a0d0 PCIE Link Speed UserConfig Gen%d 
+0x1a0f4 Target PCIE Link Speed Gen%d 
+0x1a198 PCIE Link Speed Gen%d Change Succeed
+0x1a1c0 PCIE Link Speed Gen%d Change Fail!!!
+0x1a1e8 PCIE Link Speed Gen%d request returned with Error from SMU!!!
+0x1a228 Skip PCIE link speed change request as current link is already Gen%d 
+0x1a2a8   PcieGetAriCapabilityCallback for Device = %d:%d:%d
+0x1a314   PcieAriInitCallback for Device = %d:%d:%d
+0x1a344   PcieAriInitCallback AriCapabilityFound = %d
+0x1a374   Enable Ari for Device = %d:%d:%d
+0x1a398   PcieAriInitCallback Exit
+0x1a3b4 PcieAriInit Enter
+0x1a3c8 PcieAriInit Exit
+0x1a3dc PcieMapPortPciAddress Enter
+0x1a3fc     Device %x, Function %x
+0x1a460 PcieMapPortPciAddress Exit [0x%x]
+0x1a484 NbioEnableNbifDevice (DeviceType=%x)
+0x1a4ac NbioDisableNbifDevice (DeviceType=%x)

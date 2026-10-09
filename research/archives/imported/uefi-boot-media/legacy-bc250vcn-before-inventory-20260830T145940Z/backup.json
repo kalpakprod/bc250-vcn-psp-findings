@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "timestamp": "20260830T145940Z",
+  "source": {
+    "ssh_target": "steammachine@127.0.0.1",
+    "host_key_alias": "127.0.0.1",
+    "mount": "/run/media/steammachine/BC250VCN",
+    "device": "/dev/sdc1",
+    "fstype": "vfat",
+    "label": "BC250VCN"
+  },
+  "files": [
+    {
+      "path": "EFI/BOOT/BOOTX64.EFI",
+      "size": 19168,
+      "sha256": "59e9fc56c995ba849b19904401fb6226850aa07abd6fb97fee70d34242c728db"
+    },
+    {
+      "path": "Bc250VcnProbeApp.efi",
+      "size": 19168,
+      "sha256": "59e9fc56c995ba849b19904401fb6226850aa07abd6fb97fee70d34242c728db"
+    },
+    {
+      "path": "Bc250VcnUnlockDxe.efi",
+      "size": 5984,
+      "sha256": "95b7078285e377a721a0f821552091d541ceb7e95924b8e524f7ed9587747d3d"
+    },
+    {
+      "path": "SHA256SUMS.txt",
+      "size": 202,
+      "sha256": "109d3c72ffcd7589dc104a9d0894f14b6a0cd1b338efa64eac51cdffa5c4cea5"
+    },
+    {
+      "path": "limine.conf",
+      "size": 31320,
+      "sha256": "bb8d9b3d6b1ec1747544c0a7559f91326627c77ce1edc3336a9f1cd247b4e459"
+    },
+    {
+      "path": "EFI/BOOT/limine.conf",
+      "size": 31320,
+      "sha256": "bb8d9b3d6b1ec1747544c0a7559f91326627c77ce1edc3336a9f1cd247b4e459"
+    },
+    {
+      "path": "EFI/limine/limine.conf",
+      "size": 31320,
+      "sha256": "bb8d9b3d6b1ec1747544c0a7559f91326627c77ce1edc3336a9f1cd247b4e459"
+    }
+  ]
+}

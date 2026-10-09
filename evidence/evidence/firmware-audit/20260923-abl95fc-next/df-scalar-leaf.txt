@@ -1,0 +1,107 @@
+PASS: entire loaded program memory equals clv-matching robin-5 body, bytes=262400
+===== 0002f2ac FUN_0002f2ac =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002f2ac(int param_1,undefined4 param_2,uint param_3,undefined4 param_4)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  float fVar3;
+  undefined4 uVar4;
+  uint uVar5;
+  int iVar6;
+  float fVar7;
+  
+  fVar3 = (float)func_0x0003acf8(_DAT_0001729c,param_2);
+  fVar3 = fVar3 + *_DAT_00018258;
+  fVar7 = _DAT_00018258[-1];
+  uVar1 = (ulonglong)(fVar3 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  uVar5 = ((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar3) || bVar2)) +
+          (uint)((!NAN(fVar3) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1;
+  *(uint *)(param_1 + 0x74) = uVar5;
+  fVar3 = (float)func_0x0003acf8(fVar7,param_4);
+  uVar4 = _DAT_00017398;
+  fVar3 = fVar3 + *_DAT_00018258;
+  uVar1 = (ulonglong)(fVar3 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  *(uint *)(param_1 + 0x78) =
+       ((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar3) || bVar2)) +
+       (uint)((!NAN(fVar3) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1;
+  fVar3 = (float)func_0x0003acf8(uVar4,(float)param_3 / 1.0);
+  fVar3 = ((float)uVar5 / 1.0) * (fVar3 + 1.0);
+  uVar1 = (ulonglong)(fVar3 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  *(uint *)(param_1 + 0x7c) =
+       ((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar3) || bVar2)) +
+       (uint)((!NAN(fVar3) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1;
+  iVar6 = param_1;
+  do {
+    uVar4 = func_0x000029f8(0,*(undefined4 *)(iVar6 + 0xcc),2);
+    *(undefined4 *)(iVar6 + 0xc0) = uVar4;
+    iVar6 = iVar6 + 4;
+  } while (iVar6 != param_1 + 8);
+  uVar4 = func_0x000029f8(0,*(undefined4 *)(param_1 + 0xd4),2);
+  *(undefined4 *)(param_1 + 200) = uVar4;
+  func_0x0002f3c0(param_1);
+  func_0x0002f25c(param_1);
+  return;
+}
+
+
+0002f2ac 366100 entry a1,0x30
+0002f2af bd03 mov.n a11,a3
+0002f2b1 a1fa9f l32r a10,0x0001729c
+0002f2b4 5025fa wfr f2,a5
+0002f2b7 234100 ssi f2,a1,0x0
+0002f2ba e5a30b call8 0x0003acf8
+0002f2bd 91e6a3 l32r a9,0x00018258
+0002f2c0 530100 lsi f5,a1,0x0
+0002f2c3 506afa wfr f6,a10
+0002f2c6 730900 lsi f7,a9,0x0
+0002f2c9 70460a add.s f4,f6,f7
+0002f2cc 40b5fa rfr a11,f5
+0002f2cf 82c9fc addi a8,a9,-0x4
+0002f2d2 330800 lsi f3,a8,0x0
+0002f2d5 0034ea utrunc.s a3,f4,0x0
+0002f2d8 40a3fa rfr a10,f3
+0002f2db 32621d s32i a3,a2,0x74
+0002f2de a5a10b call8 0x0003acf8
+0002f2e1 d1dda3 l32r a13,0x00018258
+0002f2e4 50aafa wfr f10,a10
+0002f2e7 b30d00 lsi f11,a13,0x0
+0002f2ea b09a0a add.s f9,f10,f11
+0002f2ed 0084da ufloat.s f8,a4,0x0
+0002f2f0 a12aa0 l32r a10,0x00017398
+0002f2f3 00c9ea utrunc.s a12,f9,0x0
+0002f2f6 40b8fa rfr a11,f8
+0002f2f9 c2621e s32i a12,a2,0x78
+0002f2fc a59f0b call8 0x0003acf8
+0002f2ff 3001fa const.sf f0,0x3f800000
+0002f302 50fafa wfr f15,a10
+0002f305 00ef0a add.s f14,f15,f0
+0002f308 00d3da ufloat.s f13,a3,0x0
+0002f30b e0cd2a mul.s f12,f13,f14
+0002f30e 8b42 addi.n a4,a2,0x8
+0002f310 00ecea utrunc.s a14,f12,0x0
+0002f313 3d02 mov.n a3,a2
+0002f315 e2621f s32i a14,a2,0x7c
+0002f318 0c0a movi.n a10,0x0
+0002f31a b22333 l32i a11,a3,0xcc
+0002f31d 0c2c movi.n a12,0x2
+0002f31f a56dd3 call8 0x000029f8
+0002f322 a26330 s32i a10,a3,0xc0
+0002f325 4b33 addi.n a3,a3,0x4
+0002f327 4793ed bne a3,a4,0x0002f318
+0002f32a 0c0a movi.n a10,0x0
+0002f32c b22235 l32i a11,a2,0xd4
+0002f32f 0c2c movi.n a12,0x2
+0002f331 656cd3 call8 0x000029f8
+0002f334 a26232 s32i a10,a2,0xc8
+0002f337 ad02 mov.n a10,a2
+0002f339 650800 call8 0x0002f3c0
+0002f33c ad02 mov.n a10,a2
+0002f33e e5f1ff call8 0x0002f25c
+0002f341 1df0 retw.n

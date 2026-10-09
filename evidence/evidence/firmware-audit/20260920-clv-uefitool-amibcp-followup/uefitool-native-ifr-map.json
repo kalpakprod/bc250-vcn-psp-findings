@@ -1,0 +1,356 @@
+{
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "limits": [
+    "This is exact native UEFIExtract body plus existing IFR decoder; it is not AMIBCP output.",
+    "No AMIBCP package exists in the searched authorized roots; AMIBCP Setup-tree/access output is UNRUN.",
+    "No browser/NVRAM/hardware action was executed."
+  ],
+  "questions": [
+    {
+      "conditions": [],
+      "flags": "0x10",
+      "form": "0x702c",
+      "form_title": "I Accept",
+      "help": "Set the memory clock frequency.",
+      "label": "Memory Clock Speed",
+      "offset": "0x316",
+      "options": [
+        {
+          "default": true,
+          "label": "Auto",
+          "value": 255
+        },
+        {
+          "default": false,
+          "label": "125MHz",
+          "value": 2
+        },
+        {
+          "default": false,
+          "label": "225MHz",
+          "value": 4
+        },
+        {
+          "default": false,
+          "label": "250MHz",
+          "value": 5
+        },
+        {
+          "default": false,
+          "label": "400MHz",
+          "value": 8
+        },
+        {
+          "default": false,
+          "label": "450MHz",
+          "value": 9
+        },
+        {
+          "default": false,
+          "label": "500MHz",
+          "value": 10
+        },
+        {
+          "default": false,
+          "label": "750MHz",
+          "value": 15
+        },
+        {
+          "default": false,
+          "label": "850MHz",
+          "value": 17
+        },
+        {
+          "default": false,
+          "label": "1000MHz",
+          "value": 20
+        },
+        {
+          "default": false,
+          "label": "1250MHz",
+          "value": 25
+        },
+        {
+          "default": false,
+          "label": "1330MHz",
+          "value": 26
+        },
+        {
+          "default": false,
+          "label": "1375MHz",
+          "value": 27
+        },
+        {
+          "default": false,
+          "label": "1500MHz",
+          "value": 30
+        },
+        {
+          "default": false,
+          "label": "1600MHz",
+          "value": 32
+        },
+        {
+          "default": false,
+          "label": "1650MHz",
+          "value": 33
+        },
+        {
+          "default": false,
+          "label": "1700MHz",
+          "value": 34
+        },
+        {
+          "default": false,
+          "label": "1750MHz",
+          "value": 35
+        },
+        {
+          "default": false,
+          "label": "1800MHz",
+          "value": 36
+        },
+        {
+          "default": false,
+          "label": "1850MHz",
+          "value": 37
+        },
+        {
+          "default": false,
+          "label": "1900MHz",
+          "value": 38
+        },
+        {
+          "default": false,
+          "label": "1950MHz",
+          "value": 39
+        },
+        {
+          "default": false,
+          "label": "2000MHz",
+          "value": 40
+        }
+      ],
+      "qid": "0x20f",
+      "rom_persisted": {
+        "absolute_rom_offset": "0x7e5",
+        "raw_le": "24",
+        "value": 36
+      },
+      "unconditional_ref_path": null,
+      "varstore_id": "0x5000"
+    },
+    {
+      "conditions": [],
+      "flags": "0x10",
+      "form": "0x702f",
+      "form_title": "GDDR6 DRAM Timing Configuration",
+      "help": "UclkDiv1 option, relative to FCLK.",
+      "label": "UclkDiv1M0",
+      "offset": "0x330",
+      "options": [
+        {
+          "default": true,
+          "label": "Auto",
+          "value": 255
+        },
+        {
+          "default": false,
+          "label": "Enabled",
+          "value": 1
+        }
+      ],
+      "qid": "0x229",
+      "rom_persisted": {
+        "absolute_rom_offset": "0x7ff",
+        "raw_le": "01",
+        "value": 1
+      },
+      "unconditional_ref_path": [
+        {
+          "form": "0x7000",
+          "title": "AMD CBS"
+        },
+        {
+          "form": "0x7008",
+          "title": "UMC Debug Options"
+        },
+        {
+          "form": "0x702e",
+          "title": "GDDR6 Debug Options"
+        },
+        {
+          "form": "0x702f",
+          "title": "GDDR6 DRAM Timing Configuration"
+        }
+      ],
+      "varstore_id": "0x5000"
+    },
+    {
+      "conditions": [],
+      "flags": "0x10",
+      "form": "0x7032",
+      "form_title": "DRAM Power Options",
+      "help": "No help string",
+      "label": "Memory P-state",
+      "offset": "0x36d",
+      "options": [
+        {
+          "default": true,
+          "label": "Auto",
+          "value": 255
+        },
+        {
+          "default": false,
+          "label": "Enabled",
+          "value": 1
+        },
+        {
+          "default": false,
+          "label": "Disabled",
+          "value": 0
+        }
+      ],
+      "qid": "0x25e",
+      "rom_persisted": {
+        "absolute_rom_offset": "0x83c",
+        "raw_le": "ff",
+        "value": 255
+      },
+      "unconditional_ref_path": [
+        {
+          "form": "0x7000",
+          "title": "AMD CBS"
+        },
+        {
+          "form": "0x7008",
+          "title": "UMC Debug Options"
+        },
+        {
+          "form": "0x702e",
+          "title": "GDDR6 Debug Options"
+        },
+        {
+          "form": "0x7030",
+          "title": "GDDR6 DRAM Controller Configuration"
+        },
+        {
+          "form": "0x7032",
+          "title": "DRAM Power Options"
+        }
+      ],
+      "varstore_id": "0x5000"
+    },
+    {
+      "conditions": [],
+      "flags": "0x14",
+      "form": "0x703e",
+      "form_title": "SMU Features",
+      "help": "FEATURE_FCLK_DPM_MASK",
+      "label": "FCLK_DPM",
+      "offset": "0x6a3",
+      "options": [
+        {
+          "default": false,
+          "label": "Disabled",
+          "value": 0
+        },
+        {
+          "default": false,
+          "label": "Enabled",
+          "value": 1
+        },
+        {
+          "default": true,
+          "label": "Auto",
+          "value": 15
+        }
+      ],
+      "qid": "0x7045",
+      "rom_persisted": {
+        "absolute_rom_offset": "0xb72",
+        "raw_le": "0f",
+        "value": 15
+      },
+      "unconditional_ref_path": null,
+      "varstore_id": "0x5000"
+    },
+    {
+      "conditions": [],
+      "flags": "0x10",
+      "form": "0x703f",
+      "form_title": "SMU Debug",
+      "help": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+      "label": "DF Clock Override Control",
+      "offset": "0x703",
+      "options": [
+        {
+          "default": true,
+          "label": "Auto",
+          "value": 255
+        },
+        {
+          "default": false,
+          "label": "Manual",
+          "value": 1
+        }
+      ],
+      "qid": "0x37d",
+      "rom_persisted": {
+        "absolute_rom_offset": "0xbd2",
+        "raw_le": "01",
+        "value": 1
+      },
+      "unconditional_ref_path": null,
+      "varstore_id": "0x5000"
+    },
+    {
+      "bounds": [
+        0,
+        2000,
+        0
+      ],
+      "conditions": [],
+      "flags": "0x10",
+      "form": "0x703f",
+      "form_title": "SMU Debug",
+      "help": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+      "label": "DF Clock Override",
+      "offset": "0x704",
+      "options": [],
+      "qid": "0x37e",
+      "rom_persisted": {
+        "absolute_rom_offset": "0xbd3",
+        "raw_le": "8c05",
+        "value": 1420
+      },
+      "unconditional_ref_path": null,
+      "varstore_id": "0x5000"
+    }
+  ],
+  "rom": {
+    "amdsetup_body_base": "0x4cf",
+    "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "size": 16777216
+  },
+  "status": "PASS",
+  "uefitool_native": {
+    "forms_package_offset": "0xb2d4",
+    "ifr_bytes_walked": 60721,
+    "module_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-uefitool-native-run/BC250_5.00_clv.bin.dump/2 4F1C52D3-D824-4D2A-A2F0-EC40C23C5916/0 9E21FD93-9C72-4C15-8C4B-E77F1DB2D792/0 EE4E5898-3914-4259-9D6E-DC7BD79403CF/1 Volume image section/0 5C60F367-A505-419A-859E-2A4FF6CA6FE5/42 CbsSetupDxe/1 PE32 image section/body.bin",
+    "module_sha256": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8",
+    "module_size": 264160,
+    "parser_path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/bc250-bios/tools/uefi/e1_ifr_dump.py",
+    "parser_sha256": "480aa6fc70ed12e8d1dbec2c32dfb45ddadcd7c2f9075ceac6dad6486bc50ebb",
+    "report_sha256": "41e44c9dcc977bc7bb027b698b91f00c4592f95c026a2cfdfa0e153b61dc3c89",
+    "uefitool_report": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-uefitool-native-run/BC250_5.00_clv.bin.report.txt"
+  },
+  "varstores_observed": {
+    "0x5000": "AmdSetup",
+    "notes": "VarStore and HII questions are decoded directly from the UEFIExtract-produced CbsSetupDxe body; native UEFIExtract report separately shows NVAR AmdSetup GUID 3A997502-647A-4C82-998E-52EF9486A247."
+  }
+}

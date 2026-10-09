@@ -1,0 +1,108 @@
+Total functions=390 selected=2
+
+FUNCTION 00004544 FUN_00004544
+
+void FUN_00004544(uint param_1)
+
+{
+  undefined4 *puVar1;
+  uint uVar2;
+  undefined4 uVar3;
+  undefined4 *puVar4;
+  
+  puVar1 = DAT_000045ac;
+  puVar4 = (undefined4 *)*DAT_000045ac;
+  if (puVar4[0x1c] == 0) {
+    uVar2 = (uint)*(byte *)(puVar4 + 0x13);
+    if (uVar2 == 0xff) {
+      uVar2 = (uint)*(byte *)((int)puVar4 + 0x4b);
+    }
+  }
+  else {
+    uVar2 = (uint)*DAT_000045b0;
+  }
+  if (param_1 < 0xe0) {
+    uVar2 = *(uint *)(DAT_000045b4 + uVar2 * 8) & 0xf;
+    if (((uVar2 != 5) && (uVar2 != 6)) || (param_1 == 0x75)) {
+      uVar3 = FUN_000046a0();
+      goto LAB_000045a2;
+    }
+  }
+  else {
+    if (0xef < param_1) {
+      uVar3 = FUN_00005050(param_1);
+      goto LAB_000045a2;
+    }
+    if (-1 < (int)(~*(uint *)(DAT_000045b4 + uVar2 * 8) << 0x1a)) {
+      uVar3 = FUN_000045b8(param_1);
+      goto LAB_000045a2;
+    }
+  }
+  uVar3 = 0xe;
+LAB_000045a2:
+  if (puVar4 == (undefined4 *)*puVar1) {
+    *puVar4 = uVar3;
+  }
+  return;
+}
+
+
+FUNCTION 00000f54 FUN_00000f54
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00000f54(int param_1,undefined4 param_2)
+
+{
+  byte bVar1;
+  byte bVar2;
+  undefined4 *puVar3;
+  char *pcVar4;
+  undefined4 uVar5;
+  int iVar6;
+  uint uVar7;
+  undefined4 uVar8;
+  uint uVar9;
+  undefined4 uVar10;
+  undefined4 in_cr0;
+  undefined4 in_cr5;
+  undefined4 in_cr6;
+  
+  *DAT_00001014 = param_2;
+  puVar3 = DAT_00001028;
+  uVar5 = 0xffffffff;
+  uVar8 = 0xffffffff;
+  uVar7 = (uint)*(byte *)(*DAT_00001018 + 0x4b);
+  uVar9 = *(uint *)(*DAT_00001018 + 0x40);
+  bVar2 = *(byte *)(*DAT_0000101c + uVar7 * 0x5c);
+  bVar1 = *DAT_00001020;
+  if (param_1 == 1) {
+    uVar5 = coprocessor_movefromRt(0xf,0,1,in_cr5,in_cr0);
+    uVar8 = coprocessor_movefromRt(0xf,0,2,in_cr6,in_cr0);
+  }
+  else if ((param_1 == 2) || (param_1 == 4)) {
+    uVar5 = coprocessor_movefromRt(0xf,0,0,in_cr5,in_cr0);
+    uVar8 = coprocessor_movefromRt(0xf,0,0,in_cr6,in_cr0);
+  }
+  uVar10 = *(undefined4 *)(*DAT_0000101c + uVar7 * 0x5c + 0x48);
+  *DAT_00001028 = *DAT_00001024;
+  puVar3[1] = param_1 << 0x1c | (uint)bVar2 << 0x18 | uVar7 << 0x10 | (uVar9 & 0x1f) << 8 |
+              (uint)bVar1;
+  puVar3[2] = param_2;
+  puVar3[3] = uVar5;
+  puVar3[4] = uVar8;
+  DAT_00001028[6] = uVar10;
+  _DAT_03200074 = param_2;
+  FUN_00001ad8(0,param_1 + 0xab00);
+  iVar6 = FUN_00004478(param_1,2);
+  pcVar4 = DAT_0000102c;
+  if (iVar6 != 0) {
+    return;
+  }
+  do {
+    do {
+    } while (*pcVar4 == '\0');
+    FUN_00003b24();
+  } while( true );
+}
+

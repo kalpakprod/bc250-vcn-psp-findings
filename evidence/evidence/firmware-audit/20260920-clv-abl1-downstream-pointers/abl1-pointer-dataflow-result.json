@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "checks": 13,
+  "route": "raw ABL1 0x95FC/0x95FD pointer forms + exact aggregate/channel dataflow",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "input": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+  "abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+  "provenance_doc": "/home/OWNER/orca/projects/bc250/docs/research/20260920-clv-psp-abl-provenance.md",
+  "disassembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+  "raw_pointer_values": {
+    "0x95fc": 0,
+    "0x95fd": 0
+  },
+  "raw_pointer_offsets": {
+    "0x95fc": [],
+    "0x95fd": []
+  },
+  "thumb_branch_candidates": [],
+  "aggregate_accesses": [
+    "    7e40: f8d0 62bc    \tldr.w\tr6, [r0, #0x2bc]",
+    "    973e: f8c4 62bc    \tstr.w\tr6, [r4, #0x2bc]",
+    "    981e: f8c4 02bc    \tstr.w\tr0, [r4, #0x2bc]",
+    "    989a: f8c4 02bc    \tstr.w\tr0, [r4, #0x2bc]",
+    "    b560: 48af         \tldr\tr0, [pc, #0x2bc]        @ 0xb820 <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xb820>",
+    "    b566: 48af         \tldr\tr0, [pc, #0x2bc]        @ 0xb824 <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xb824>",
+    "    b56a: 48af         \tldr\tr0, [pc, #0x2bc]        @ 0xb828 <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xb828>",
+    "    c18c: 4aaf         \tldr\tr2, [pc, #0x2bc]        @ 0xc44c <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xc44c>",
+    "    cd38: 4aaf         \tldr\tr2, [pc, #0x2bc]        @ 0xcff8 <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xcff8>",
+    "    cd3c: 48af         \tldr\tr0, [pc, #0x2bc]        @ 0xcffc <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xcffc>",
+    "    cd42: 48af         \tldr\tr0, [pc, #0x2bc]        @ 0xd000 <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xd000>",
+    "    d94a: 4eaf         \tldr\tr6, [pc, #0x2bc]        @ 0xdc08 <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xdc08>",
+    "    df62: 48af         \tldr\tr0, [pc, #0x2bc]        @ 0xe220 <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xe220>",
+    "    df66: 48af         \tldr\tr0, [pc, #0x2bc]        @ 0xe224 <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xe224>",
+    "    fa98: 4aaf         \tldr\tr2, [pc, #0x2bc]        @ 0xfd58 <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xfd58>",
+    "    fa9e: 4aaf         \tldr\tr2, [pc, #0x2bc]        @ 0xfd5c <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xfd5c>",
+    "   108b2: f240 21bc    \tmovw\tr1, #0x2bc"
+  ],
+  "channel_accesses": [
+    "     a58: 6a01         \tldr\tr1, [r0, #0x20]",
+    "     a72: 6a01         \tldr\tr1, [r0, #0x20]",
+    "     ad0: 6a01         \tldr\tr1, [r0, #0x20]",
+    "    473e: 6201         \tstr\tr1, [r0, #0x20]",
+    "    7e7e: 8c01         \tldrh\tr1, [r0, #0x20]",
+    "    7fee: 8c00         \tldrh\tr0, [r0, #0x20]",
+    "    9672: 8c00         \tldrh\tr0, [r0, #0x20]",
+    "    96b2: 6a00         \tldr\tr0, [r0, #0x20]",
+    "    9758: 8406         \tstrh\tr6, [r0, #0x20]",
+    "    976a: 8c03         \tldrh\tr3, [r0, #0x20]",
+    "    97c6: 8c00         \tldrh\tr0, [r0, #0x20]",
+    "    ae22: 8406         \tstrh\tr6, [r0, #0x20]",
+    "    e576: 6202         \tstr\tr2, [r0, #0x20]",
+    "    e6c0: 6202         \tstr\tr2, [r0, #0x20]",
+    "    ec0a: 6202         \tstr\tr2, [r0, #0x20]",
+    "   10d40: 8c00         \tldrh\tr0, [r0, #0x20]",
+    "   10e50: 8407         \tstrh\tr7, [r0, #0x20]"
+  ],
+  "fresh_result": "Raw pointer-word and Thumb-branch checks retain all 0x95FC/0x95FD forms without promoting mixed data as code. Exact register provenance proves r4 is the shared configuration root, aggregate +0x2BC is written from the selected minimum, and channel +0x20 receives the selected halfword through a separate pointer loaded from r5+0xc. No downstream caller/function-pointer owner is proven in this bounded exact-body evidence; indirect/vector/external ownership remains the concrete blocker, not a blanket absence claim.",
+  "limits": "No runtimebase/runtime invocation, no claim that offset +0x2BC is MCLK/UCLK/FCLK or MHz, no historical global offset assumption, no firmware/hardware/shared-state change.",
+  "checks_detail": [
+    {
+      "check": "ABL1 hash",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "provenance doc exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "provenance report contains exact hash",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "reviewed disassembly exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "raw function-pointer words recorded",
+      "passed": true,
+      "got": {
+        "0x95fc": 0,
+        "0x95fd": 0
+      },
+      "expected": {
+        "0x95fc": 0,
+        "0x95fd": 0
+      }
+    },
+    {
+      "check": "raw Thumb branch target candidates recorded",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "reviewed aggregate +0x2BC accesses present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "reviewed channel +0x20 accesses present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "r4 shared root load bytes",
+      "passed": true,
+      "got": "0468",
+      "expected": "0468"
+    },
+    {
+      "check": "channel pointer load bytes",
+      "passed": true,
+      "got": "e868",
+      "expected": "e868"
+    },
+    {
+      "check": "aggregate store bytes",
+      "passed": true,
+      "got": "c4f8bc62",
+      "expected": "c4f8bc62"
+    },
+    {
+      "check": "channel halfword write bytes",
+      "passed": true,
+      "got": "0684",
+      "expected": "0684"
+    },
+    {
+      "check": "aggregate final store bytes",
+      "passed": true,
+      "got": "c4f8bc02",
+      "expected": "c4f8bc02"
+    }
+  ]
+}

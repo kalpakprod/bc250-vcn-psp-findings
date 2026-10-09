@@ -1,0 +1,182 @@
+{
+  "status": "PASS",
+  "checks": 4,
+  "route": "ABL1 source-lead UCLK/FCLK/divider coupling audit",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+  "source_sha256": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b",
+  "source_leads": [
+    {
+      "line": 1644,
+      "text": "  FUN_0000140c(4,0,s_Synchronize_All_Slave_Dies_with_t_00001e40);"
+    },
+    {
+      "line": 1681,
+      "text": "    FUN_0000140c(4,0,s_Synchronize_All_Slave_Dies_with_t_00001e40);"
+    },
+    {
+      "line": 1701,
+      "text": "    pcVar4 = s_All_Slave_Dies_synchronized_with_00001fcc;"
+    },
+    {
+      "line": 3104,
+      "text": "      FUN_0000140c(4,0,s_ulMemClkFreq____1800Mhz_00005cdc);"
+    },
+    {
+      "line": 3114,
+      "text": "      FUN_0000140c(4,0,s_ulMemClkFreq____850Mhz_00005d54);"
+    },
+    {
+      "line": 3120,
+      "text": "    FUN_0000140c(4,0,s_ulMemClkFreq____1750Mhz_00005d0c);"
+    },
+    {
+      "line": 4383,
+      "text": "  FUN_0000140c(4,0,s_Synchronize_Mem_Speed_for_each_c_000099d8);"
+    },
+    {
+      "line": 4465,
+      "text": "    FUN_0000140c(4,0,s_Sending_Synchronized_Speed_back_t_00009aa4,*(undefined2 *)(param_1[3] + 0x20)"
+    }
+  ],
+  "candidate_contexts": [
+    {
+      "source_line": 1644,
+      "names": [
+        "thunk_FUN_00006c7e(",
+        "FUN_0000140c",
+        "FUN_00006d20",
+        "FUN_0000140c",
+        "FUN_0000140c",
+        "FUN_0000140c",
+        "FUN_0000140c",
+        "FUN_0000140c",
+        "FUN_0000140c",
+        "if ("
+      ],
+      "block": "  uint local_30;\n  undefined4 local_2c;\n  undefined4 local_28;\n  undefined4 local_24;\n  int local_20;\n  int local_1c;\n  \n  thunk_FUN_00006c7e(&local_54,0,0x20,param_2);\n  FUN_0000140c(4,0,s_Synchronize_All_Slave_Dies_with_t_00001e40);\n  FUN_00006d20(&local_34);\n  FUN_0000140c(4,0,s_MCM_Info_00001e70,local_34);\n  FUN_0000140c(4,0,s_SocketCount____d_00001e7c,local_34);\n  FUN_0000140c(4,0,s_Socket_ID____d_00001e90,local_28);\n  FUN_0000140c(4,0,s_Dies_per_Socket____d_00001ea4,local_2c);\n  FUN_0000140c(4,0,s_Die_Count____d_00001ebc,local_30);\n  FUN_0000140c(4,0,s_Die_ID____d_00001ed0,local_24);\n  if (local_1c == 0) {"
+    },
+    {
+      "source_line": 1681,
+      "names": [
+        "FUN_0000128c",
+        "if (",
+        "FUN_000065c8",
+        "FUN_0000140c",
+        "FUN_0000140c",
+        "FUN_00001050",
+        "for (",
+        "FUN_0000140c"
+      ],
+      "block": "      local_52 = 1;\n      iVar1 = FUN_0000128c(param_2,0,&local_54,1,1);\n      if (iVar1 != 9) {\n        return 0;\n      }\n      FUN_000065c8(DAT_00001ffc);\n      return 0;\n    }\n    FUN_0000140c(4,0,s_Synchronize_All_Slave_Dies_with_t_00001e40);\n    FUN_0000140c(4,0,s_System_Master_waiting_on_callbac_00001f1c);\n    iVar1 = FUN_00001050(param_2,auStack_18c);\n    for (uVar5 = 1; uVar5 < local_30; uVar5 = uVar5 + 1 & 0xff) {\n      FUN_0000140c(4,0,s_Slave__d_00001f50,uVar5);\n      uVar2 = 0;\n      do {\n        uVar3 = uVar2 + 1 & 0xff;\n        local_50[uVar2] = auStack_174[uVar5 * 7 + uVar2];"
+    },
+    {
+      "source_line": 1701,
+      "names": [
+        "FUN_0000140c",
+        "if (",
+        "FUN_0000140c",
+        "FUN_0000140c",
+        "FUN_0000140c",
+        "FUN_0000140c",
+        "FUN_0000202c"
+      ],
+      "block": "        FUN_0000140c(4,0,s_Fatal_error__received_from_ABL_G_00001fa0);\n      }\n      else if (acStack_17c[uVar5] == '\\x01') {\n        FUN_0000140c(4,0,s_Slave_ID____d_00001f5c,0);\n        FUN_0000140c(4,0,s_Slave_Socket_ID____d_00001f70,local_54);\n        FUN_0000140c(4,0,s_Slave_Die_ID____d_00001f88,local_53);\n      }\n    }\n    pcVar4 = s_All_Slave_Dies_synchronized_with_00001fcc;\n  }\n  FUN_0000140c(4,0,pcVar4);\n  return 0;\n}\n\n\n\n/* FUN_0000202c @ 0000202c */"
+    },
+    {
+      "source_line": 3104,
+      "names": [
+        "if (",
+        "FUN_0000140c",
+        "if (",
+        "FUN_0000140c",
+        "FUN_0000140c",
+        "if (",
+        "if ("
+      ],
+      "block": "    if (((uint)*(ushort *)(param_4 + 6) << 0x1a) >> 0x1e == 1) {\n      *(ushort *)(param_4 + 6) = *(ushort *)(param_4 + 6) & 0xffcf | 0x20;\n      return;\n    }\n  }\n  else {\n    FUN_0000140c(4,0,s_x16_board_00005ccc);\n    if (param_3 == DAT_00005cd8) {\n      FUN_0000140c(4,0,s_ulMemClkFreq____1800Mhz_00005cdc);\n      *(undefined *)(param_4 + 8) = 0x19;\n      uVar5 = *(ushort *)(param_4 + 4) & 0xff87 | 0x20;\n      *(ushort *)(param_4 + 4) = uVar5;\n      FUN_0000140c(4,0,s_usMRS_is__x_00005cf8,uVar5,iVar6);\n    }\n    if (param_3 != DAT_00005d08) {\n      if (param_3 != DAT_00005d50) {\n        return;"
+    },
+    {
+      "source_line": 3114,
+      "names": [
+        "FUN_0000140c",
+        "if (",
+        "if (",
+        "FUN_0000140c",
+        "FUN_0000140c",
+        "FUN_0000140c"
+      ],
+      "block": "      uVar5 = *(ushort *)(param_4 + 4) & 0xff87 | 0x20;\n      *(ushort *)(param_4 + 4) = uVar5;\n      FUN_0000140c(4,0,s_usMRS_is__x_00005cf8,uVar5,iVar6);\n    }\n    if (param_3 != DAT_00005d08) {\n      if (param_3 != DAT_00005d50) {\n        return;\n      }\n      FUN_0000140c(4,0,s_ulMemClkFreq____850Mhz_00005d54);\n      *(undefined *)(param_4 + 8) = 0xf;\n      *(ushort *)(param_4 + 4) = (*(ushort *)(param_4 + 4) & 0xff87) + 0x50;\n      FUN_0000140c(4,0,s_usMRS_is__x_00005cf8);\n      return;\n    }\n    FUN_0000140c(4,0,s_ulMemClkFreq____1750Mhz_00005d0c);\n    *(undefined *)(param_4 + 8) = 0x18;\n    sVar2 = (*(ushort *)(param_4 + 4) & 0xff87) + 0x18;"
+    },
+    {
+      "source_line": 3120,
+      "names": [
+        "FUN_0000140c",
+        "FUN_0000140c",
+        "FUN_0000140c",
+        "FUN_0000140c"
+      ],
+      "block": "        return;\n      }\n      FUN_0000140c(4,0,s_ulMemClkFreq____850Mhz_00005d54);\n      *(undefined *)(param_4 + 8) = 0xf;\n      *(ushort *)(param_4 + 4) = (*(ushort *)(param_4 + 4) & 0xff87) + 0x50;\n      FUN_0000140c(4,0,s_usMRS_is__x_00005cf8);\n      return;\n    }\n    FUN_0000140c(4,0,s_ulMemClkFreq____1750Mhz_00005d0c);\n    *(undefined *)(param_4 + 8) = 0x18;\n    sVar2 = (*(ushort *)(param_4 + 4) & 0xff87) + 0x18;\n    *(short *)(param_4 + 4) = sVar2;\n    FUN_0000140c(4,0,s_usMRS_is__x__usMR4_is__x_00005d28,sVar2,*(undefined2 *)(param_4 + 0x42));\n  }\n  return;\n}\n"
+    },
+    {
+      "source_line": 4383,
+      "names": [
+        "thunk_FUN_00006c7e(",
+        "FUN_0000140c",
+        "FUN_0000140c",
+        "FUN_00006d20",
+        "thunk_FUN_00006c7e(",
+        "if (",
+        "FUN_0000140c",
+        "for ("
+      ],
+      "block": "  int local_34;\n  int local_30;\n  int local_2c;\n  \n  iVar6 = *param_1;\n  uVar7 = 0;\n  thunk_FUN_00006c7e(local_60,0,0x20,iVar6);\n  FUN_0000140c(4,0,s_AGESA_MEM___Multi_Die___DRAM_Spe_000099ac);\n  FUN_0000140c(4,0,s_Synchronize_Mem_Speed_for_each_c_000099d8);\n  FUN_00006d20(auStack_40);\n  thunk_FUN_00006c7e(iVar6 + 0x278,0xff,0x40,iVar6);\n  if (local_3c < 2) {\n    FUN_0000140c(4,0,DAT_00009b0c);\n    for (; uVar7 < *(byte *)(*(int *)(iVar6 + 0x3c4) + 0x74); uVar7 = uVar7 + 1 & 0xff) {\n      iVar3 = uVar7 * 0x170 + 0x20;\n      uVar8 = (uint)*(ushort *)(*(int *)(*(int *)(iVar6 + 0x3c4) + 0x70) + iVar3);\n      *(uint *)(iVar6 + local_34 * 0x40 + local_30 * 0x40 + uVar7 * 4 + 0x278) = uVar8;"
+    },
+    {
+      "source_line": 4465,
+      "names": [
+        "while (",
+        "while (",
+        "for (",
+        "FUN_0000140c",
+        "FUN_00000ed4",
+        "if (",
+        "FUN_000065c8"
+      ],
+      "block": "      } while (uVar4 == 0);\n      uVar7 = uVar7 + 1 & 0xffff;\n    } while (uVar7 == 0);\n    *(uint *)(iVar6 + 700) = uVar8;\n    for (bVar9 = 0; bVar9 < *(byte *)((int)param_1 + 0x4b); bVar9 = bVar9 + 1) {\n      (*(code *)param_1[0x14b])(param_1,bVar9);\n      *(short *)(param_1[3] + 0x20) = (short)uVar8;\n    }\n    FUN_0000140c(4,0,s_Sending_Synchronized_Speed_back_t_00009aa4,*(undefined2 *)(param_1[3] + 0x20)\n                );\n    local_198 = 0;\n    uStack_194 = 0x1000000;\n    local_a0 = 1;\n    local_180 = uVar8;\n    iVar3 = FUN_00000ed4(iVar6,&local_198);\n    if (iVar3 == 9) {\n      FUN_000065c8(DAT_00009ad8);"
+    }
+  ],
+  "exact_payload_anchors": [],
+  "disassembly_textual_hits": [],
+  "fresh_result": "Version-aligned ABL1 source leads were enumerated and compared against the exact payload/disassembly without source identity claims. A candidate UCLK/FCLK/divider function is promoted only if >=2 structural binary anchors are available; otherwise the lead remains unproven and the next blocker is recorded.",
+  "limits": "No cross-channel minimum synchronization assumption, no MHz/unit claim, no source-to-binary identity claim, no firmware/hardware/runtime action and no broad absence inference.",
+  "checks_detail": [
+    {
+      "check": "ABL1 full hash",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "source exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "disassembly exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "source coupling leads present",
+      "passed": true,
+      "got": true,
+      "expected": true
+    }
+  ]
+}

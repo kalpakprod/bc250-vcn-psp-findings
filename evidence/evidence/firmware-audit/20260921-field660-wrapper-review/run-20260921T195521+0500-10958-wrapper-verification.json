@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "checks": {
+    "passed": 12,
+    "failed": 0,
+    "total": 12
+  },
+  "inputs": {
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "rom_size": 16777216,
+    "abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "abl1_size": 94624,
+    "elf_sha256": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+    "data_section_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "wrapper_range": "0x10958..0x1096A",
+    "wrapper_bytes": "30b4d0f8604613460a46a44630bc01216047"
+  },
+  "AAPCS_trace": {
+    "entry_r0": "pointer-like base used by LDR [r0,#0x660]",
+    "callback_target": "loaded from entry_r0+0x660 into r4 then r12",
+    "callback_r0": "same incoming r0; no destination write to r0 in wrapper",
+    "callback_r1": "constant 1",
+    "callback_r2": "entry r1",
+    "callback_r3": "entry r2",
+    "lr": "preserved; final BX R12 is a tail branch",
+    "stack": "push/pop r4,r5 balanced before tail branch"
+  },
+  "accepted_claim": "Within bytes 0x10958..0x1096A, the wrapper preserves incoming R0 for the indirect callback and does not write through that pointer.",
+  "rejected_claim": "The wrapper itself mutates the pointee addressed by incoming R0.",
+  "limits": [
+    "The indirect callback may mutate the pointee; that body is outside this wrapper-only check.",
+    "No initializer or callback-target body was analyzed.",
+    "No runtime, SVC handler, MMIO/PLL, physical clock, or hardware result."
+  ],
+  "checks_detail": [
+    {
+      "name": "pinned CLV ROM SHA-256",
+      "passed": true
+    },
+    {
+      "name": "exact ABL1 SHA-256",
+      "passed": true
+    },
+    {
+      "name": "ABL1 size",
+      "passed": true
+    },
+    {
+      "name": "ELF .data length equals ABL1",
+      "passed": true
+    },
+    {
+      "name": "ELF .data is byte-identical to ABL1",
+      "passed": true
+    },
+    {
+      "name": "wrapper bytes",
+      "passed": true
+    },
+    {
+      "name": "eight wrapper instructions",
+      "passed": true
+    },
+    {
+      "name": "exact AAPCS register sequence",
+      "passed": true
+    },
+    {
+      "name": "r0 not overwritten",
+      "passed": true
+    },
+    {
+      "name": "no store through r0",
+      "passed": true
+    },
+    {
+      "name": "r4/r5 stack save restored",
+      "passed": true
+    },
+    {
+      "name": "callback tail branch via r12",
+      "passed": true
+    }
+  ]
+}

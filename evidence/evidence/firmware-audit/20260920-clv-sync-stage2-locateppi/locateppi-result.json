@@ -1,0 +1,866 @@
+{
+  "status": "PASS",
+  "checks": 12,
+  "route": "six LocatePpi argument/interface slices in AmdNbioSmuV10Pei",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "module_sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+  "module": {
+    "name": "AmdNbioSmuV10Pei",
+    "base": "0x9e88fdc",
+    "entry_rva": "0x240"
+  },
+  "candidates": [
+    {
+      "call_rva": "0x372",
+      "call_bytes": "ff5020",
+      "push_immediates": [
+        {
+          "value": "0xb000000a",
+          "rva": null,
+          "guid": null,
+          "bytes": null
+        },
+        {
+          "value": "0x9e9e9dc",
+          "rva": "0x15a00",
+          "guid": "556e2ead-b0a2-43d9-a8f2-f33685aa21ba",
+          "bytes": "ad2e6e55a2b0d943a8f2f33685aa21ba"
+        },
+        {
+          "value": "0x9e9ec08",
+          "rva": "0x15c2c",
+          "guid": "00000020-e9dc-09e9-7292-e80910000080",
+          "bytes": "20000000dce9e9097292e80910000080"
+        },
+        {
+          "value": "0x9e9e9ec",
+          "rva": "0x15a10",
+          "guid": "5af9cd51-36ee-4bab-b414-aaa0541c5b38",
+          "bytes": "51cdf95aee36ab4bb414aaa0541c5b38"
+        }
+      ],
+      "resolved_guid_arguments": [
+        {
+          "value": "0x9e9e9dc",
+          "rva": "0x15a00",
+          "guid": "556e2ead-b0a2-43d9-a8f2-f33685aa21ba",
+          "bytes": "ad2e6e55a2b0d943a8f2f33685aa21ba"
+        },
+        {
+          "value": "0x9e9ec08",
+          "rva": "0x15c2c",
+          "guid": "00000020-e9dc-09e9-7292-e80910000080",
+          "bytes": "20000000dce9e9097292e80910000080"
+        },
+        {
+          "value": "0x9e9e9ec",
+          "rva": "0x15a10",
+          "guid": "5af9cd51-36ee-4bab-b414-aaa0541c5b38",
+          "bytes": "51cdf95aee36ab4bb414aaa0541c5b38"
+        }
+      ],
+      "immediate_after_call": [
+        {
+          "rva": "0x375",
+          "bytes": "83c414",
+          "mnemonic": "add",
+          "operands": "esp,0x14"
+        },
+        {
+          "rva": "0x378",
+          "bytes": "89442418",
+          "mnemonic": "mov",
+          "operands": "DWORD PTR [esp+0x18],eax"
+        },
+        {
+          "rva": "0x37c",
+          "bytes": "3bc3",
+          "mnemonic": "cmp",
+          "operands": "eax,ebx"
+        },
+        {
+          "rva": "0x37e",
+          "bytes": "740c",
+          "mnemonic": "je",
+          "operands": "0x38c"
+        },
+        {
+          "rva": "0x380",
+          "bytes": "685902b0a2",
+          "mnemonic": "push",
+          "operands": "0xa2b00259"
+        },
+        {
+          "rva": "0x385",
+          "bytes": "e8c5090000",
+          "mnemonic": "call",
+          "operands": "0xd4f"
+        },
+        {
+          "rva": "0x38a",
+          "bytes": "eb29",
+          "mnemonic": "jmp",
+          "operands": "0x3b5"
+        },
+        {
+          "rva": "0x38c",
+          "bytes": "8d442414",
+          "mnemonic": "lea",
+          "operands": "eax,[esp+0x14]"
+        },
+        {
+          "rva": "0x390",
+          "bytes": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "rva": "0x391",
+          "bytes": "8b442414",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esp+0x14]"
+        },
+        {
+          "rva": "0x395",
+          "bytes": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "rva": "0x396",
+          "bytes": "ff5004",
+          "mnemonic": "call",
+          "operands": "DWORD PTR [eax+0x4]"
+        }
+      ],
+      "returns_eax_use": true
+    },
+    {
+      "call_rva": "0x410",
+      "call_bytes": "ff5120",
+      "push_immediates": [
+        {
+          "value": "0x9e9ed08",
+          "rva": "0x15d2c",
+          "guid": "56756d53-3031-6547-7443-6f7265546f70",
+          "bytes": "536d75563130476574436f7265546f70"
+        },
+        {
+          "value": "0x0",
+          "rva": null,
+          "guid": null,
+          "bytes": null
+        },
+        {
+          "value": "0x0",
+          "rva": null,
+          "guid": null,
+          "bytes": null
+        },
+        {
+          "value": "0x0",
+          "rva": null,
+          "guid": null,
+          "bytes": null
+        },
+        {
+          "value": "0x9e9e9ec",
+          "rva": "0x15a10",
+          "guid": "5af9cd51-36ee-4bab-b414-aaa0541c5b38",
+          "bytes": "51cdf95aee36ab4bb414aaa0541c5b38"
+        }
+      ],
+      "resolved_guid_arguments": [
+        {
+          "value": "0x9e9ed08",
+          "rva": "0x15d2c",
+          "guid": "56756d53-3031-6547-7443-6f7265546f70",
+          "bytes": "536d75563130476574436f7265546f70"
+        },
+        {
+          "value": "0x9e9e9ec",
+          "rva": "0x15a10",
+          "guid": "5af9cd51-36ee-4bab-b414-aaa0541c5b38",
+          "bytes": "51cdf95aee36ab4bb414aaa0541c5b38"
+        }
+      ],
+      "immediate_after_call": [
+        {
+          "rva": "0x413",
+          "bytes": "8bf0",
+          "mnemonic": "mov",
+          "operands": "esi,eax"
+        },
+        {
+          "rva": "0x415",
+          "bytes": "83c414",
+          "mnemonic": "add",
+          "operands": "esp,0x14"
+        },
+        {
+          "rva": "0x418",
+          "bytes": "85f6",
+          "mnemonic": "test",
+          "operands": "esi,esi"
+        },
+        {
+          "rva": "0x41a",
+          "bytes": "7410",
+          "mnemonic": "je",
+          "operands": "0x42c"
+        },
+        {
+          "rva": "0x41c",
+          "bytes": "685701b3a2",
+          "mnemonic": "push",
+          "operands": "0xa2b30157"
+        },
+        {
+          "rva": "0x421",
+          "bytes": "e829090000",
+          "mnemonic": "call",
+          "operands": "0xd4f"
+        },
+        {
+          "rva": "0x426",
+          "bytes": "59",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "rva": "0x427",
+          "bytes": "e9a4000000",
+          "mnemonic": "jmp",
+          "operands": "0x4d0"
+        },
+        {
+          "rva": "0x42c",
+          "bytes": "8d442410",
+          "mnemonic": "lea",
+          "operands": "eax,[esp+0x10]"
+        },
+        {
+          "rva": "0x430",
+          "bytes": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "rva": "0x431",
+          "bytes": "8b442410",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esp+0x10]"
+        },
+        {
+          "rva": "0x435",
+          "bytes": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        }
+      ],
+      "returns_eax_use": true
+    },
+    {
+      "call_rva": "0x51c",
+      "call_bytes": "ff5120",
+      "push_immediates": [
+        {
+          "value": "0x9e9ed08",
+          "rva": "0x15d2c",
+          "guid": "56756d53-3031-6547-7443-6f7265546f70",
+          "bytes": "536d75563130476574436f7265546f70"
+        },
+        {
+          "value": "0x40000",
+          "rva": null,
+          "guid": null,
+          "bytes": null
+        },
+        {
+          "value": "0x9e9e9ec",
+          "rva": "0x15a10",
+          "guid": "5af9cd51-36ee-4bab-b414-aaa0541c5b38",
+          "bytes": "51cdf95aee36ab4bb414aaa0541c5b38"
+        }
+      ],
+      "resolved_guid_arguments": [
+        {
+          "value": "0x9e9ed08",
+          "rva": "0x15d2c",
+          "guid": "56756d53-3031-6547-7443-6f7265546f70",
+          "bytes": "536d75563130476574436f7265546f70"
+        },
+        {
+          "value": "0x9e9e9ec",
+          "rva": "0x15a10",
+          "guid": "5af9cd51-36ee-4bab-b414-aaa0541c5b38",
+          "bytes": "51cdf95aee36ab4bb414aaa0541c5b38"
+        }
+      ],
+      "immediate_after_call": [
+        {
+          "rva": "0x51f",
+          "bytes": "8bf0",
+          "mnemonic": "mov",
+          "operands": "esi,eax"
+        },
+        {
+          "rva": "0x521",
+          "bytes": "83c414",
+          "mnemonic": "add",
+          "operands": "esp,0x14"
+        },
+        {
+          "rva": "0x524",
+          "bytes": "3bf3",
+          "mnemonic": "cmp",
+          "operands": "esi,ebx"
+        },
+        {
+          "rva": "0x526",
+          "bytes": "7410",
+          "mnemonic": "je",
+          "operands": "0x538"
+        },
+        {
+          "rva": "0x528",
+          "bytes": "684402b3a2",
+          "mnemonic": "push",
+          "operands": "0xa2b30244"
+        },
+        {
+          "rva": "0x52d",
+          "bytes": "e81d080000",
+          "mnemonic": "call",
+          "operands": "0xd4f"
+        },
+        {
+          "rva": "0x532",
+          "bytes": "59",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "rva": "0x533",
+          "bytes": "e955010000",
+          "mnemonic": "jmp",
+          "operands": "0x68d"
+        },
+        {
+          "rva": "0x538",
+          "bytes": "8d442410",
+          "mnemonic": "lea",
+          "operands": "eax,[esp+0x10]"
+        },
+        {
+          "rva": "0x53c",
+          "bytes": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "rva": "0x53d",
+          "bytes": "8b442410",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esp+0x10]"
+        },
+        {
+          "rva": "0x541",
+          "bytes": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        }
+      ],
+      "returns_eax_use": true
+    },
+    {
+      "call_rva": "0xb26",
+      "call_bytes": "ff5120",
+      "push_immediates": [
+        {
+          "value": "0x9e9ee74",
+          "rva": "0x15e98",
+          "guid": "53756d53-7465-6f44-776e-436f72655265",
+          "bytes": "536d75536574446f776e436f72655265"
+        },
+        {
+          "value": "0x9e9e9ec",
+          "rva": "0x15a10",
+          "guid": "5af9cd51-36ee-4bab-b414-aaa0541c5b38",
+          "bytes": "51cdf95aee36ab4bb414aaa0541c5b38"
+        }
+      ],
+      "resolved_guid_arguments": [
+        {
+          "value": "0x9e9ee74",
+          "rva": "0x15e98",
+          "guid": "53756d53-7465-6f44-776e-436f72655265",
+          "bytes": "536d75536574446f776e436f72655265"
+        },
+        {
+          "value": "0x9e9e9ec",
+          "rva": "0x15a10",
+          "guid": "5af9cd51-36ee-4bab-b414-aaa0541c5b38",
+          "bytes": "51cdf95aee36ab4bb414aaa0541c5b38"
+        }
+      ],
+      "immediate_after_call": [
+        {
+          "rva": "0xb29",
+          "bytes": "8bf0",
+          "mnemonic": "mov",
+          "operands": "esi,eax"
+        },
+        {
+          "rva": "0xb2b",
+          "bytes": "83c414",
+          "mnemonic": "add",
+          "operands": "esp,0x14"
+        },
+        {
+          "rva": "0xb2e",
+          "bytes": "3bf3",
+          "mnemonic": "cmp",
+          "operands": "esi,ebx"
+        },
+        {
+          "rva": "0xb30",
+          "bytes": "0f859c000000",
+          "mnemonic": "jne",
+          "operands": "0xbd2"
+        },
+        {
+          "rva": "0xb36",
+          "bytes": "8d442410",
+          "mnemonic": "lea",
+          "operands": "eax,[esp+0x10]"
+        },
+        {
+          "rva": "0xb3a",
+          "bytes": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "rva": "0xb3b",
+          "bytes": "8b442410",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esp+0x10]"
+        },
+        {
+          "rva": "0xb3f",
+          "bytes": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "rva": "0xb40",
+          "bytes": "ff5004",
+          "mnemonic": "call",
+          "operands": "DWORD PTR [eax+0x4]"
+        },
+        {
+          "rva": "0xb43",
+          "bytes": "8b442418",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esp+0x18]"
+        },
+        {
+          "rva": "0xb47",
+          "bytes": "59",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "rva": "0xb48",
+          "bytes": "59",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        }
+      ],
+      "returns_eax_use": true
+    },
+    {
+      "call_rva": "0xc22",
+      "call_bytes": "ff5120",
+      "push_immediates": [
+        {
+          "value": "0x9e9eec8",
+          "rva": "0x15eec",
+          "guid": "44756d53-7369-6261-6c65-536d7420456e",
+          "bytes": "536d7544697361626c65536d7420456e"
+        },
+        {
+          "value": "0x9e9e9ec",
+          "rva": "0x15a10",
+          "guid": "5af9cd51-36ee-4bab-b414-aaa0541c5b38",
+          "bytes": "51cdf95aee36ab4bb414aaa0541c5b38"
+        }
+      ],
+      "resolved_guid_arguments": [
+        {
+          "value": "0x9e9eec8",
+          "rva": "0x15eec",
+          "guid": "44756d53-7369-6261-6c65-536d7420456e",
+          "bytes": "536d7544697361626c65536d7420456e"
+        },
+        {
+          "value": "0x9e9e9ec",
+          "rva": "0x15a10",
+          "guid": "5af9cd51-36ee-4bab-b414-aaa0541c5b38",
+          "bytes": "51cdf95aee36ab4bb414aaa0541c5b38"
+        }
+      ],
+      "immediate_after_call": [
+        {
+          "rva": "0xc25",
+          "bytes": "8bf0",
+          "mnemonic": "mov",
+          "operands": "esi,eax"
+        },
+        {
+          "rva": "0xc27",
+          "bytes": "83c414",
+          "mnemonic": "add",
+          "operands": "esp,0x14"
+        },
+        {
+          "rva": "0xc2a",
+          "bytes": "3bf7",
+          "mnemonic": "cmp",
+          "operands": "esi,edi"
+        },
+        {
+          "rva": "0xc2c",
+          "bytes": "0f85bd000000",
+          "mnemonic": "jne",
+          "operands": "0xcef"
+        },
+        {
+          "rva": "0xc32",
+          "bytes": "8d442418",
+          "mnemonic": "lea",
+          "operands": "eax,[esp+0x18]"
+        },
+        {
+          "rva": "0xc36",
+          "bytes": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "rva": "0xc37",
+          "bytes": "8b442418",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esp+0x18]"
+        },
+        {
+          "rva": "0xc3b",
+          "bytes": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "rva": "0xc3c",
+          "bytes": "ff5004",
+          "mnemonic": "call",
+          "operands": "DWORD PTR [eax+0x4]"
+        },
+        {
+          "rva": "0xc3f",
+          "bytes": "8b442420",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esp+0x20]"
+        },
+        {
+          "rva": "0xc43",
+          "bytes": "59",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "rva": "0xc44",
+          "bytes": "59",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        }
+      ],
+      "returns_eax_use": true
+    },
+    {
+      "call_rva": "0x1583",
+      "call_bytes": "ff5120",
+      "push_immediates": [
+        {
+          "value": "0x3",
+          "rva": null,
+          "guid": null,
+          "bytes": null
+        },
+        {
+          "value": "0x0",
+          "rva": null,
+          "guid": null,
+          "bytes": null
+        },
+        {
+          "value": "0x0",
+          "rva": null,
+          "guid": null,
+          "bytes": null
+        }
+      ],
+      "resolved_guid_arguments": [],
+      "immediate_after_call": [
+        {
+          "rva": "0x1586",
+          "bytes": "83c414",
+          "mnemonic": "add",
+          "operands": "esp,0x14"
+        },
+        {
+          "rva": "0x1589",
+          "bytes": "c3",
+          "mnemonic": "ret",
+          "operands": ""
+        },
+        {
+          "rva": "0x158a",
+          "bytes": "55",
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "rva": "0x158b",
+          "bytes": "8bec",
+          "mnemonic": "mov",
+          "operands": "ebp,esp"
+        },
+        {
+          "rva": "0x158d",
+          "bytes": "51",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "rva": "0x158e",
+          "bytes": "8d45fc",
+          "mnemonic": "lea",
+          "operands": "eax,[ebp-0x4]"
+        },
+        {
+          "rva": "0x1591",
+          "bytes": "50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "rva": "0x1592",
+          "bytes": "680ceae909",
+          "mnemonic": "push",
+          "operands": "0x9e9ea0c"
+        },
+        {
+          "rva": "0x1597",
+          "bytes": "e8d3ffffff",
+          "mnemonic": "call",
+          "operands": "0x156f"
+        },
+        {
+          "rva": "0x159c",
+          "bytes": "59",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "rva": "0x159d",
+          "bytes": "59",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "rva": "0x159e",
+          "bytes": "85c0",
+          "mnemonic": "test",
+          "operands": "eax,eax"
+        }
+      ],
+      "returns_eax_use": true
+    }
+  ],
+  "helper_0x156f_callers": [
+    {
+      "call_rva": "0x33f",
+      "push_immediates": [
+        {
+          "value": "0xb000000a",
+          "rva": null,
+          "guid": null,
+          "bytes": null
+        },
+        {
+          "value": "0x9e9e9dc",
+          "rva": "0x15a00",
+          "guid": "556e2ead-b0a2-43d9-a8f2-f33685aa21ba",
+          "bytes": "ad2e6e55a2b0d943a8f2f33685aa21ba"
+        }
+      ]
+    },
+    {
+      "call_rva": "0x1597",
+      "push_immediates": [
+        {
+          "value": "0x0",
+          "rva": null,
+          "guid": null,
+          "bytes": null
+        },
+        {
+          "value": "0x0",
+          "rva": null,
+          "guid": null,
+          "bytes": null
+        },
+        {
+          "value": "0x9e9ea0c",
+          "rva": "0x15a30",
+          "guid": "8663e771-52f6-49fb-b345-db93965e6cab",
+          "bytes": "71e76386f652fb49b345db93965e6cab"
+        }
+      ]
+    },
+    {
+      "call_rva": "0x1552a",
+      "push_immediates": [
+        {
+          "value": "0x56",
+          "rva": null,
+          "guid": null,
+          "bytes": null
+        },
+        {
+          "value": "0x6d",
+          "rva": null,
+          "guid": null,
+          "bytes": null
+        },
+        {
+          "value": "0x9e9e9fc",
+          "rva": "0x15a20",
+          "guid": "06e81c58-4ad7-44bc-8390-f10265f72480",
+          "bytes": "581ce806d74abc448390f10265f72480"
+        }
+      ]
+    }
+  ],
+  "cbs_guid": "04126c85-5c4e-458f-abc1-29f1f7da365e",
+  "common_guid": "5af9cd51-36ee-4bab-b414-aaa0541c5b38",
+  "fresh_result": "Five direct LocatePpi calls (0x372,0x410,0x51C,0xB26,0xC22) resolve the same non-CBS GUID 5af9cd51-36ee-4bab-b414-aaa0541c5b38; the returned interface is immediately used, with a concrete method call [eax+0x4] at 0x396 on the 0x372 path. The sixth call 0x1583 is a helper path; its three direct helper callers push GUID pointers at 0x33F/0x1597/0x1552A, none resolving to the CBS GUID 04126c85-5c4e-458f-abc1-29f1f7da365e. Full six-call coverage therefore yields a real non-CBS PPI handoff and a bounded CBS no-join.",
+  "limits": "Only the six exact calls, helper callers and bounded argument/use slices; no broad absence claim, arbitrary computed GUID resolution beyond these callers, runtime PPI database, firmware execution, hardware or shared-state change.",
+  "checks_detail": [
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ROM size",
+      "passed": true,
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "check": "module sha256",
+      "passed": true,
+      "got": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "expected": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+    },
+    {
+      "check": "all six LocatePpi call RVAs",
+      "passed": true,
+      "got": [
+        882,
+        1040,
+        1308,
+        2854,
+        3106,
+        5507
+      ],
+      "expected": [
+        882,
+        1040,
+        1308,
+        2854,
+        3106,
+        5507
+      ]
+    },
+    {
+      "check": "all six call bytes",
+      "passed": true,
+      "got": [
+        "ff5020",
+        "ff5120",
+        "ff5120",
+        "ff5120",
+        "ff5120",
+        "ff5120"
+      ],
+      "expected": [
+        "ff5020",
+        "ff5120",
+        "ff5120",
+        "ff5120",
+        "ff5120",
+        "ff5120"
+      ]
+    },
+    {
+      "check": "six candidate records emitted",
+      "passed": true,
+      "got": 6,
+      "expected": 6
+    },
+    {
+      "check": "CBS GUID direct LocatePpi arguments",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "five direct candidates resolve common GUID",
+      "passed": true,
+      "got": 5,
+      "expected": 5
+    },
+    {
+      "check": "helper 0x156f direct caller count",
+      "passed": true,
+      "got": 3,
+      "expected": 3
+    },
+    {
+      "check": "helper callers have no CBS GUID",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "first returned interface use",
+      "passed": true,
+      "got": "ff5004",
+      "expected": "ff5004"
+    },
+    {
+      "check": "CBS GUID pointer immediate materializations",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    }
+  ]
+}

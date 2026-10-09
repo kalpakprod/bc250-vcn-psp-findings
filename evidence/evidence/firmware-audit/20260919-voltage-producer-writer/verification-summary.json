@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "verification": {
+    "clv_rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "robin5_smu_sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+    "smu_body_offset_in_rom": "0x8fef00",
+    "literal_17f88": "0xca68",
+    "literal_17f84": "0x107fc",
+    "literal_17f7c": "0x16ee4",
+    "table_export_base": "0xcb68",
+    "loop_bytes_exact_match": true,
+    "master_pointer_table_15380": [
+      "0x0",
+      "0x11060",
+      "0x108b0",
+      "0x11360",
+      "0x11070",
+      "0x13474",
+      "0x109f4",
+      "0x109f8",
+      "0x109fc",
+      "0x108a4",
+      "0x10a08",
+      "0x10a0c",
+      "0x10a10",
+      "0x112b0"
+    ],
+    "delta_domain0_actuator_vs_telemetry": "0x2a80",
+    "delta_domain1_actuator_vs_telemetry": "0x2a8c",
+    "l32r_refs_to_telemetry_base": [
+      "0x29c2d",
+      "0x29ede"
+    ]
+  },
+  "provenance_conclusion": {
+    "telemetry_source_array": "0x107fc + 0x1f8 (0x109f4) and + 0x20c (0x10a08)",
+    "telemetry_master_pointer_table": "0x15380, entries 0x15394 (actuator), 0x15398 (dom0 V), 0x153a8 (dom1 V)",
+    "actuator_direct_read": false,
+    "static_code_writer_status": "BOUNDED_NEGATIVE_LITERAL_SCAN: Direct l32r references to telemetry base literal 0x17f84 are read consumers (0x29c2d, 0x29ede). Scope of negative scan only literal-reference path, NOT all stores/indirect/DMA writes; does NOT establish an external hardware writer. Verified producer reads 0x109f4/0x10a08, not direct alias 0x13474; unequal addresses do not disprove actuator->telemetry copy; source writer and copied provenance unknown."
+  }
+}

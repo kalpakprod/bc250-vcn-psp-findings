@@ -1,0 +1,98 @@
+############ A1 READ-ONLY VCN RECON ############
+ts=2026-08-25T18:32:24+05:00
+host=cachyos user=steammachine
+
+############ KERNEL / CMDLINE ############
+Linux cachyos 7.2.0-1.1-cachyos-bc250 #1 SMP PREEMPT_DYNAMIC Fri, 21 Aug 2026 04:13:07 +0000 x86_64 GNU/Linux
+quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=14fe5cec-acf0-4986-8103-251a5706bbac video=DP-1:1920x1080@60 amdgpu.sg_display=0 ttm.pages_limit=1048576 systemd.zram=0 loglevel=0 mitigations=off acpi_enforce_resources=lax
+
+--- modules ---
+amdgpu              18808832  2
+drm_panel_backlight_quirks    12288  1 amdgpu
+drm_buddy              12288  1 amdgpu
+drm_suballoc_helper    24576  1 amdgpu
+i2c_algo_bit           20480  1 amdgpu
+drm_exec               16384  1 amdgpu
+gpu_sched              77824  1 amdgpu
+amdxcp                 12288  1 amdgpu
+drm_ttm_helper         20480  2 amdgpu
+ttm                   163840  2 amdgpu,drm_ttm_helper
+drm_display_helper    311296  1 amdgpu
+video                  81920  1 amdgpu
+cec                   102400  2 drm_display_helper,amdgpu
+--- amd_psp module ---
+amd_psp: not loaded
+amd_psp: no modinfo
+
+############ GPU PCI ############
+01:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Cyan Skillfish [BC-250] [1002:13fe]
+01:00.1 Audio device [0403]: Advanced Micro Devices, Inc. [AMD/ATI] Device [1002:13ff]
+--- 13fe verbose ---
+01:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Cyan Skillfish [BC-250] (prog-if 00 [VGA controller])
+	Subsystem: Advanced Micro Devices, Inc. [AMD] Device 0000
+	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx+
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort+ <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Latency: 0, Cache Line Size: 64 bytes
+	Interrupts: pin B disabled, MSI(X) routed to IRQ 55
+	Region 0: Memory at c0000000 (64-bit, prefetchable) [size=256M]
+	Region 2: Memory at d0000000 (64-bit, prefetchable) [size=2M]
+	Region 4: I/O ports at e000 [size=256]
+	Region 5: Memory at fe800000 (32-bit, non-prefetchable) [size=512K]
+	Capabilities: <access denied>
+	Kernel driver in use: amdgpu
+	Kernel modules: amdgpu
+
+--- BARs (names only, no mmap) ---
+DEV=/sys/bus/pci/devices/0000:01:00.0
+0x13fe
+
+-r--r--r-- 1 root root      4096 Там 25 18:04 /sys/bus/pci/devices/0000:01:00.0/resource
+-rw------- 1 root root 268435456 Там 25 18:32 /sys/bus/pci/devices/0000:01:00.0/resource0
+-rw-r--r-- 1 root root      4096 Там 25 18:32 /sys/bus/pci/devices/0000:01:00.0/resource0_resize
+-rw------- 1 root root 268435456 Там 25 18:32 /sys/bus/pci/devices/0000:01:00.0/resource0_wc
+-rw------- 1 root root   2097152 Там 25 18:32 /sys/bus/pci/devices/0000:01:00.0/resource2
+-rw-r--r-- 1 root root      4096 Там 25 18:32 /sys/bus/pci/devices/0000:01:00.0/resource2_resize
+-rw------- 1 root root   2097152 Там 25 18:32 /sys/bus/pci/devices/0000:01:00.0/resource2_wc
+-rw------- 1 root root       256 Там 25 18:32 /sys/bus/pci/devices/0000:01:00.0/resource4
+-rw------- 1 root root    524288 Там 25 18:32 /sys/bus/pci/devices/0000:01:00.0/resource5
+enable=1 irq=54
+DEV=/sys/bus/pci/devices/0000:01:00.1
+0x13ff
+
+-r--r--r-- 1 root root  4096 Там 25 18:32 /sys/bus/pci/devices/0000:01:00.1/resource
+-rw------- 1 root root 16384 Там 25 18:32 /sys/bus/pci/devices/0000:01:00.1/resource0
+enable=1 irq=58
+
+############ DRM / MEDIA NODES ############
+итого 0
+drwxr-xr-x  2 root root         80 Там 25 17:07 by-path
+crw-rw----+ 1 root video  226,   1 Там 25 18:32 card1
+crw-rw-rw-  1 root render 226, 128 Там 25 17:07 renderD128
+no /dev/video* or /dev/media*
+vainfo: absent
+vdpauinfo: absent
+Hardware acceleration methods:
+vdpau
+cuda
+vaapi
+qsv
+drm
+opencl
+vulkan
+amf
+
+
+############ AMDGPU SYSFS (read-only) ############
+=== /sys/class/drm/card1 ===
+device=0x13fe rev=0x00
+missing: firmware_info
+--- ip_discovery ---
+bytes=0
+missing: ip_blocks
+--- gpu_metrics ---
+bytes=0
+--- pp_dpm_sclk ---
+
+--- pp_dpm_mclk ---
+
+--- pp_dpm_fclk ---

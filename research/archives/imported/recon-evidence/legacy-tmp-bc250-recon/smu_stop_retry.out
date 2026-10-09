@@ -1,0 +1,53 @@
++ SP=/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc
++ echo '=== bc250 services status (before) ==='
+=== bc250 services status (before) ===
++ systemctl list-units --type=service --all
++ grep -iE 'bc250|gpu|metrics|watchdog|pwr'
+  bc250-boot-forensics.service                          loaded    active   exited  BC-250 post-mortem of the previous boot
+  bc250-cpu-oc.service                                  loaded    active   exited  BC-250 CPU overclock (validated point, extra voltage kept enabled)
+  bc250-cpu-performance.service                         loaded    active   exited  Pin CPU governor to performance (BC-250 console)
+  bc250-cu-layout.service                               loaded    active   exited  BC-250 stable 38-CU dispatch layout
+  bc250-cu-live-manager.service                         loaded    active   exited  BC-250 CU saved enumeration and dispatch
+  bc250-dpwatch.service                                 loaded    active   running BC-250 fast DP link watcher (200 ms)
+  bc250-fan.service                                     loaded    active   running BC-250 blower fan curve (nct6687 pwm2 <- amdgpu edge temp)
+  bc250-gpu-fixed.service                               loaded    active   exited  BC-250 fixed GPU frequency and voltage
+  bc250-gpu-watchdog.service                            loaded    active   running BC-250 GPU thermal rollback watchdog
+  bc250-metrics.service                                 loaded    active   running BC-250 SMU metrics sampler (CPU/GPU power split, throttle status)
+  bc250-netconsole.service                              loaded    active   exited  BC-250 netconsole target (kernel log -> UDP off-box)
+  bc250-pwrwatch.service                                loaded    active   running BC-250 200 ms power peak sampler
+  bc250-smu-oc.service                                  loaded    inactive dead    AMD BC-250 CPU Overclock
+  bc250-telemetry.service                               loaded    active   running BC-250 lightweight telemetry logger (GPU/CPU temp, voltage, power, clocks)
+  bc250-userlog.service                                 loaded    active   running BC-250 userspace journal shipping to UDP 6667
+  bc250-watchdog-load.service                           loaded    active   exited  BC-250 load sp5100_tco (denylisted by nowatchdog; tuner needs /dev/watchdog)
+  bc250-zram.service                                    loaded    active   exited  BC-250 zram swap (8G, lz4) instead of zswap
+  cyan-skillfish-governor-smu.service                   loaded    inactive dead    Cyan Skillfish GPU Governor
++ echo '=== netconsole script (target) ==='
+=== netconsole script (target) ===
++ cat /usr/local/libexec/bc250-netconsole.sh
++ grep -iE 'udp|6666|destination|src|IP|HOST|OFFBOX'
++ head
+TARGET_IP=127.0.0.1
+PORT=6666
+  IFACE=$(ip -o route get "$TARGET_IP" 2>/dev/null | awk '{for(j=1;j<=NF;j++) if($j=="dev") print $(j+1)}')
+  SRC=$(ip -o route get "$TARGET_IP" 2>/dev/null | awk '{for(j=1;j<=NF;j++) if($j=="src") print $(j+1)}')
+    ping -c 1 -W 1 "$TARGET_IP" >/dev/null 2>&1
+    MAC="REDACTED"}' | head -1)
+[ -z "${IFACE:-}" ] && { echo "bc250-netconsole: no route to $TARGET_IP" >&2; exit 1; }
+[ -z "${MAC:"REDACTED"}" ] && { echo "bc250-netconsole: ARP for $TARGET_IP unresolved" >&2; exit 1; }
+echo "$SRC"   > "$T/local_ip"
+echo "$TARGET_IP" > "$T/remote_ip"
++ echo '=== STOP contenders ==='
+=== STOP contenders ===
++ sudo systemctl stop bc250-metrics bc250-gpu-watchdog bc250-pwrwatch
++ echo 'stopped rc=0'
+stopped rc=0
++ echo '=== SMU test (sudo, AFTER stop) ==='
+=== SMU test (sudo, AFTER stop) ===
++ sudo /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/bin/python -
+test_message ERR: RuntimeError('smu returned status 0x00 for queue 3 msg 0x01')
+q3_0x47 ERR: RuntimeError('smu returned status 0x00 for queue 3 msg 0x47')
+q3_0x48 ERR: RuntimeError('smu returned status 0x00 for queue 3 msg 0x48')
+q3_0x98 ERR: RuntimeError('smu returned status 0x00 for queue 3 msg 0x98')
+q2_0x03 ERR: RuntimeError('smu returned status 0x00 for queue 2 msg 0x03')
++ echo '=== done ==='
+=== done ===

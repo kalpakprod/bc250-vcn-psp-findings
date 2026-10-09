@@ -1,0 +1,5 @@
+# Installer scanner and runtime permissions
+
+Intent: change only native installer, rollback and packaging regressions. Move transient and preserved plugin trees outside the destination parent (loader scan), check filesystem identity before moving existing data, make installed runtime directories traversable. Preserve source backups and no deployment/restart.
+
+Result: focused packaging regressions passed (5), make test passed. Procoder scoped check exit0 after formatting, reports existing broad-suite failure (Waveshare passive-capture assertion, 281 passed/1 failed) and nonblocking hygiene. Fixture baseline exposed a backup in scan and mode700; modified install leaves only plugin in scan, mode755; package rollback restores pristine main.py and keeps scan clean. No host deployment. Detailed literal output/hashes under /home/OWNER/.cache/bc250-installer-fix-low/VERIFICATION.txt. Evidence generation first attempt failed under system python because pytest absent; replaced with standalone stdlib fixture runner.

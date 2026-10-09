@@ -1,0 +1,110 @@
+{
+  "checks": 18,
+  "checks_detail": [
+    {
+      "detail": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "payload_sha256",
+      "ok": true
+    },
+    {
+      "detail": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "name": "listing_sha256",
+      "ok": true
+    },
+    {
+      "detail": "3122a0dce28bc61942a22d567acdc29e318a714097b48877eb0391094a7d0e43",
+      "name": "exact_map_report_sha256",
+      "ok": true
+    },
+    {
+      "detail": "05fa26427c0d969a11d3779714089943d01421780beebbe8b62b910661eeecca",
+      "name": "prior_r1_result_sha256",
+      "ok": true
+    },
+    {
+      "detail": "existing exact-clv static map report maps row+0x20 to 0x5027C",
+      "name": "map_anchor_5027c",
+      "ok": true
+    },
+    {
+      "detail": "exact report also records slot/mask derived offsets; no identity to ABL context byte is asserted",
+      "name": "map_anchor_offset_formula",
+      "ok": true
+    },
+    {
+      "detail": "0xC7DE 41f678000844824a6490 expected 41f678000844824a6490",
+      "name": "candidate_store_sequence_R1_plus_0x1878",
+      "ok": true
+    },
+    {
+      "detail": "pool 0xC9F0=c0176d00 value=0x006D17C0",
+      "name": "candidate_literal_slot_61e",
+      "ok": true
+    },
+    {
+      "detail": "0xC79A 41f644328e488850 expected 41f644328e488850",
+      "name": "candidate_store_sequence_R1_plus_0x1b44",
+      "ok": true
+    },
+    {
+      "detail": "pool 0xC9D8=7c020008 value=0x0800027C",
+      "name": "candidate_nested_literal",
+      "ok": true
+    },
+    {
+      "detail": "0x9BEA ubfx\tr0, r6, #0x0, #0xc",
+      "name": "callback_descriptor_low12",
+      "ok": true
+    },
+    {
+      "detail": "0x9C56 orr\tr0, r4, #0x50000",
+      "name": "kind1_0x50000_base",
+      "ok": true
+    },
+    {
+      "detail": "0x9C5E lsr.w\tr2, r1, #0x1",
+      "name": "kind1_byte49_high_bits",
+      "ok": true
+    },
+    {
+      "detail": "0x9C62 and\tr1, r1, #0x1",
+      "name": "kind1_byte49_low_bit",
+      "ok": true
+    },
+    {
+      "detail": "0x109D8 ldr.w\tr2, [r4, #0x3b0]",
+      "name": "byte49_provider_pointer",
+      "ok": true
+    },
+    {
+      "detail": "0x109E0 blx\tr2",
+      "name": "byte49_provider_call",
+      "ok": true
+    },
+    {
+      "detail": "0x109E6 strb.w\tr0, [r4, #0x49]",
+      "name": "byte49_dynamic_store",
+      "ok": true
+    },
+    {
+      "detail": "descriptor=0x0800027C, d=0, formula R4=0x0005027C",
+      "name": "conditional_example_base",
+      "ok": true
+    }
+  ],
+  "conditional_correlation": {
+    "boundary": "static concordance only; active table-base binding, byte49 value, SVC#4 translation and hardware effect are unproven",
+    "candidate_descriptor": "0x0800027C, not proven to be active table entry",
+    "context_byte49": "runtime callback-sourced at 0x109D8..0x109E6",
+    "exact_static_map_hit": "row+0x20 writes use SMN address base 0x5027C in docs/research/2026-09-20-oc-df-init-route.md",
+    "if_byte49_zero_R4": "0x0005027C"
+  },
+  "inputs": {
+    "listing_sha256": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+    "map_report_sha256": "3122a0dce28bc61942a22d567acdc29e318a714097b48877eb0391094a7d0e43",
+    "payload_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "prior_r1_result_sha256": "05fa26427c0d969a11d3779714089943d01421780beebbe8b62b910661eeecca"
+  },
+  "passed": 18,
+  "status": "PASS"
+}

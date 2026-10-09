@@ -1,0 +1,189 @@
+{
+  "byte_lines_checked": 189694,
+  "interfaces": [
+    {
+      "module": "AmdFabricAriPei",
+      "guid_refs": [
+        "0x3b7b"
+      ],
+      "wrapper": "0x3b60",
+      "gateway": "0x36c0",
+      "wrapper_calls": [
+        "0x36e6"
+      ],
+      "gateway_calls": [
+        "0x1d32",
+        "0x372a"
+      ],
+      "wrapper_pointer_occurrences": [],
+      "gateway_pointer_occurrences": [],
+      "minus_two_instructions": [
+        "     aeb:\t83 e0 fe             \tand    eax,0xfffffffe",
+        "    3728:\t6a fe                \tpush   0xfffffffe"
+      ],
+      "raw_push_imm8_minus_two": [
+        "0x159a",
+        "0x3590"
+      ]
+    },
+    {
+      "module": "AmdNbioGfxARIPei",
+      "guid_refs": [
+        "0x1d4b"
+      ],
+      "wrapper": "0x1d30",
+      "gateway": "0x1920",
+      "wrapper_calls": [
+        "0x1946"
+      ],
+      "gateway_calls": [
+        "0x13d0"
+      ],
+      "wrapper_pointer_occurrences": [],
+      "gateway_pointer_occurrences": [],
+      "minus_two_instructions": [],
+      "raw_push_imm8_minus_two": [
+        "0x116a"
+      ]
+    },
+    {
+      "module": "AmdNbioBaseARIPei",
+      "guid_refs": [
+        "0x498b"
+      ],
+      "wrapper": "0x4970",
+      "gateway": "0x4500",
+      "wrapper_calls": [
+        "0x4526"
+      ],
+      "gateway_calls": [
+        "0xd81"
+      ],
+      "wrapper_pointer_occurrences": [],
+      "gateway_pointer_occurrences": [],
+      "minus_two_instructions": [
+        "     5e3:\t6a fe                \tpush   0xfffffffe",
+        "     622:\t6a fe                \tpush   0xfffffffe",
+        "     65d:\t6a fe                \tpush   0xfffffffe",
+        "     877:\t6a fe                \tpush   0xfffffffe",
+        "     c3e:\t83 65 fc fe          \tand    DWORD PTR [ebp-0x4],0xfffffffe",
+        "    20cd:\t88 45 fe             \tmov    BYTE PTR [ebp-0x2],al",
+        "    21a0:\t80 7d fe 00          \tcmp    BYTE PTR [ebp-0x2],0x0",
+        "    22dc:\t80 7d fe 00          \tcmp    BYTE PTR [ebp-0x2],0x0",
+        "    2372:\tc6 45 fe 01          \tmov    BYTE PTR [ebp-0x2],0x1",
+        "    23e2:\tfe 45 fe             \tinc    BYTE PTR [ebp-0x2]",
+        "    24d6:\t80 7d fe 03          \tcmp    BYTE PTR [ebp-0x2],0x3",
+        "    24dd:\t0f b6 45 fe          \tmovzx  eax,BYTE PTR [ebp-0x2]",
+        "    251d:\t0f b6 45 fe          \tmovzx  eax,BYTE PTR [ebp-0x2]",
+        "    2521:\t83 c0 fe             \tadd    eax,0xfffffffe",
+        "    255f:\t0f b6 45 fe          \tmovzx  eax,BYTE PTR [ebp-0x2]",
+        "    258c:\t88 5d fe             \tmov    BYTE PTR [ebp-0x2],bl",
+        "    2596:\t0f b6 4d fe          \tmovzx  ecx,BYTE PTR [ebp-0x2]",
+        "    25a1:\tfe 45 fe             \tinc    BYTE PTR [ebp-0x2]",
+        "    25a4:\t80 7d fe 04          \tcmp    BYTE PTR [ebp-0x2],0x4",
+        "    25b5:\t0a 45 fe             \tor     al,BYTE PTR [ebp-0x2]",
+        "    25d9:\t02 45 fe             \tadd    al,BYTE PTR [ebp-0x2]",
+        "    25ef:\t0f b6 4d fe          \tmovzx  ecx,BYTE PTR [ebp-0x2]",
+        "    2673:\t0f b6 45 fe          \tmovzx  eax,BYTE PTR [ebp-0x2]",
+        "    26a3:\t0f b6 45 fe          \tmovzx  eax,BYTE PTR [ebp-0x2]",
+        "    2734:\t88 5d fe             \tmov    BYTE PTR [ebp-0x2],bl",
+        "    274a:\t38 5d fe             \tcmp    BYTE PTR [ebp-0x2],bl",
+        "    276f:\t8a 45 fe             \tmov    al,BYTE PTR [ebp-0x2]",
+        "    279d:\t02 45 fe             \tadd    al,BYTE PTR [ebp-0x2]",
+        "    27a6:\t0a 4d fe             \tor     cl,BYTE PTR [ebp-0x2]",
+        "    2818:\tfe 45 fe             \tinc    BYTE PTR [ebp-0x2]",
+        "    281b:\t8a 45 fe             \tmov    al,BYTE PTR [ebp-0x2]",
+        "    293d:\t88 5d fe             \tmov    BYTE PTR [ebp-0x2],bl",
+        "    297c:\t0a 4d fe             \tor     cl,BYTE PTR [ebp-0x2]",
+        "    29e2:\tfe 45 fe             \tinc    BYTE PTR [ebp-0x2]",
+        "    29e9:\t8a 45 fe             \tmov    al,BYTE PTR [ebp-0x2]",
+        "    2a53:\t88 5d fe             \tmov    BYTE PTR [ebp-0x2],bl",
+        "    2a5b:\t88 45 fe             \tmov    BYTE PTR [ebp-0x2],al",
+        "    2a64:\t0a 45 fe             \tor     al,BYTE PTR [ebp-0x2]",
+        "    2a9e:\t0f b6 4d fe          \tmovzx  ecx,BYTE PTR [ebp-0x2]",
+        "    2ae1:\t0f b6 4d fe          \tmovzx  ecx,BYTE PTR [ebp-0x2]"
+      ],
+      "raw_push_imm8_minus_two": [
+        "0x453",
+        "0x492",
+        "0x4cd",
+        "0x6e7",
+        "0x32d2"
+      ]
+    },
+    {
+      "module": "AmdNbioPcieARIPei",
+      "guid_refs": [
+        "0x548b"
+      ],
+      "wrapper": "0x5470",
+      "gateway": "0x5060",
+      "wrapper_calls": [
+        "0x5086"
+      ],
+      "gateway_calls": [
+        "0x451e"
+      ],
+      "wrapper_pointer_occurrences": [],
+      "gateway_pointer_occurrences": [],
+      "minus_two_instructions": [
+        "    31b9:\t8d 77 fe             \tlea    esi,[edi-0x2]",
+        "    3495:\t80 7b fe 01          \tcmp    BYTE PTR [ebx-0x2],0x1",
+        "    35a4:\t8d 43 fe             \tlea    eax,[ebx-0x2]",
+        "    46c1:\tc6 45 fe 05          \tmov    BYTE PTR [ebp-0x2],0x5"
+      ],
+      "raw_push_imm8_minus_two": [
+        "0x28fa"
+      ]
+    },
+    {
+      "module": "AmdNbioSmuV10Pei",
+      "guid_refs": [
+        "0x269b"
+      ],
+      "wrapper": "0x2680",
+      "gateway": "0x2270",
+      "wrapper_calls": [
+        "0x2296"
+      ],
+      "gateway_calls": [
+        "0x32d"
+      ],
+      "wrapper_pointer_occurrences": [],
+      "gateway_pointer_occurrences": [],
+      "minus_two_instructions": [],
+      "raw_push_imm8_minus_two": [
+        "0x1cf2"
+      ]
+    },
+    {
+      "module": "AmdSocBl5AriPei",
+      "guid_refs": [
+        "0x23cb"
+      ],
+      "wrapper": "0x23b0",
+      "gateway": "0x1ad0",
+      "wrapper_calls": [
+        "0x1af6"
+      ],
+      "gateway_calls": [
+        "0x37f"
+      ],
+      "wrapper_pointer_occurrences": [],
+      "gateway_pointer_occurrences": [],
+      "minus_two_instructions": [
+        "   13699:\t88 45 fe             \tmov    BYTE PTR [ebp-0x2],al",
+        "   136d1:\t8a 4d fe             \tmov    cl,BYTE PTR [ebp-0x2]"
+      ],
+      "raw_push_imm8_minus_two": [
+        "0xe3a"
+      ]
+    },
+    {
+      "module": "CbsBasePei",
+      "guid_refs": [],
+      "minus_two_instructions": [],
+      "raw_push_imm8_minus_two": []
+    }
+  ]
+}

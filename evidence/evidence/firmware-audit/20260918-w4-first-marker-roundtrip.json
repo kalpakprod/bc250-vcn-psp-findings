@@ -1,0 +1,46 @@
+{
+  "stock_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "candidate_sha256": "7d420c9f2d46f39131f90827d2dd7b6ee8c7e3558ad8ef8a1d1e2c2a94bccb35",
+  "candidate_size": 16777216,
+  "standalone_ffs_sha256": "f45fd7c978b900a0f6b0cbf30e30142c7edafaa0af00d0e8ce771394f99195b4",
+  "efi_sha256": "0a31ea82ab3fe75551126e56db209060985d9c83ed59e1e6bc7f9fd818685cee",
+  "firmware_audit": {
+    "psp": true,
+    "bhd": true,
+    "apcb": true,
+    "fvs": 4
+  },
+  "inner_size": 4308992,
+  "inner_header_checksum": 0,
+  "marker_offset": 4181512,
+  "marker_size": 12324,
+  "marker_equals_standalone_ffs": true,
+  "ffs_checksums": {
+    "marker_header": 0,
+    "pad_header": 0,
+    "capsule_header": 0
+  },
+  "sections": [
+    [
+      24,
+      6,
+      19
+    ],
+    [
+      32,
+      12292,
+      16
+    ]
+  ],
+  "embedded_pe_equals_output": true,
+  "changed": {
+    "count": 13867,
+    "first": 4181512,
+    "last": 4195452,
+    "prefix_equal": true,
+    "suffix_equal": true
+  },
+  "nvram_equal": true,
+  "psp_region_equal": true,
+  "apcb_equal": true
+}

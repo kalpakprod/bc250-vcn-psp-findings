@@ -1,0 +1,192 @@
+{
+  "generated_at": "2026-09-14T12:02:42.160701+00:00",
+  "tool": "scripts/trace_te_entry.py",
+  "pypcode_version": "4.0.0",
+  "input": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/programmer/reads/20260911/firmware-audit/read-a-extract/modules/0193_AmdNbioGfxARIPei_te.bin",
+    "size": 87048,
+    "sha256": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8"
+  },
+  "te": {
+    "machine": "0x14C",
+    "stripped_size": "0x1C0",
+    "delta": "0x198",
+    "entry_rva": "0x240",
+    "trace_start_rva": "0xA06",
+    "sections": [
+      {
+        "name": ".text",
+        "virtual_address": "0x240",
+        "virtual_size": 85423,
+        "raw_size": 85440,
+        "file_offset": "0xA8"
+      },
+      {
+        "name": ".data",
+        "virtual_address": "0x15000",
+        "virtual_size": 1128,
+        "raw_size": 1152,
+        "file_offset": "0x14E68"
+      },
+      {
+        "name": ".reloc",
+        "virtual_address": "0x15480",
+        "virtual_size": 272,
+        "raw_size": 288,
+        "file_offset": "0x152E8"
+      }
+    ]
+  },
+  "trace": {
+    "instruction_count": 21,
+    "instructions": [
+      {
+        "address": "0xA06",
+        "length": 1,
+        "mnemonic": "PUSH",
+        "body": "EBP"
+      },
+      {
+        "address": "0xA07",
+        "length": 2,
+        "mnemonic": "MOV",
+        "body": "EBP,ESP"
+      },
+      {
+        "address": "0xA09",
+        "length": 1,
+        "mnemonic": "PUSH",
+        "body": "ECX"
+      },
+      {
+        "address": "0xA0A",
+        "length": 3,
+        "mnemonic": "LEA",
+        "body": "EAX,[EBP + -0x4]"
+      },
+      {
+        "address": "0xA0D",
+        "length": 1,
+        "mnemonic": "PUSH",
+        "body": "EAX"
+      },
+      {
+        "address": "0xA0E",
+        "length": 5,
+        "mnemonic": "PUSH",
+        "body": "0x9e51c74"
+      },
+      {
+        "address": "0xA13",
+        "length": 5,
+        "mnemonic": "CALL",
+        "body": "0x9eb"
+      },
+      {
+        "address": "0xA18",
+        "length": 1,
+        "mnemonic": "POP",
+        "body": "ECX"
+      },
+      {
+        "address": "0xA19",
+        "length": 1,
+        "mnemonic": "POP",
+        "body": "ECX"
+      },
+      {
+        "address": "0xA1A",
+        "length": 2,
+        "mnemonic": "TEST",
+        "body": "EAX,EAX"
+      },
+      {
+        "address": "0xA1C",
+        "length": 2,
+        "mnemonic": "JL",
+        "body": "0xa33"
+      },
+      {
+        "address": "0xA1E",
+        "length": 3,
+        "mnemonic": "LEA",
+        "body": "EAX,[EBP + 0x14]"
+      },
+      {
+        "address": "0xA21",
+        "length": 1,
+        "mnemonic": "PUSH",
+        "body": "EAX"
+      },
+      {
+        "address": "0xA22",
+        "length": 3,
+        "mnemonic": "PUSH",
+        "body": "dword ptr [EBP + 0x10]"
+      },
+      {
+        "address": "0xA25",
+        "length": 3,
+        "mnemonic": "MOV",
+        "body": "EAX,dword ptr [EBP + -0x4]"
+      },
+      {
+        "address": "0xA28",
+        "length": 3,
+        "mnemonic": "PUSH",
+        "body": "dword ptr [EBP + 0xc]"
+      },
+      {
+        "address": "0xA2B",
+        "length": 3,
+        "mnemonic": "PUSH",
+        "body": "dword ptr [EBP + 0x8]"
+      },
+      {
+        "address": "0xA2E",
+        "length": 2,
+        "mnemonic": "CALL",
+        "body": "dword ptr [EAX]"
+      },
+      {
+        "address": "0xA30",
+        "length": 3,
+        "mnemonic": "ADD",
+        "body": "ESP,0x10"
+      },
+      {
+        "address": "0xA33",
+        "length": 1,
+        "mnemonic": "LEAVE",
+        "body": ""
+      },
+      {
+        "address": "0xA34",
+        "length": 1,
+        "mnemonic": "RET",
+        "body": ""
+      }
+    ],
+    "direct_calls": [
+      {
+        "site": "0xA13",
+        "target": "0x9EB",
+        "body": "0x9eb"
+      }
+    ],
+    "indirect_calls": [
+      {
+        "site": "0xA2E",
+        "target": null,
+        "body": "dword ptr [EAX]"
+      }
+    ],
+    "exits": [
+      {
+        "address": "0xA34",
+        "kind": "RET"
+      }
+    ],
+    "errors": []
+  }
+}

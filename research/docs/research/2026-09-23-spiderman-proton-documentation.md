@@ -1,0 +1,40 @@
+# Spider-Man Remastered: документация Proton, не набор случайных флагов
+
+Исследовано read-only, настройки платы не менялись.
+
+## Первичные источники
+
+- ValveProtonREADME RuntimeConfigOptions: https://github.com/ValveSoftware/Proton#runtime-config-options
+- vkd3d-protonREADME Environmentvariables: https://github.com/HansKristian-Work/vkd3d-proton#environment-variables
+- VKD3DReBAR/SAMCPUperformanceissue1406: https://github.com/HansKristian-Work/vkd3d-proton/issues/1406
+- SpiderManSlowTextureLoading2603: https://github.com/HansKristian-Work/vkd3d-proton/issues/2603
+- MainProtoncompatibility6088: https://github.com/ValveSoftware/Proton/issues/6088
+- AMD6650XTslowdown8376(movedto6088): https://github.com/ValveSoftware/Proton/issues/8376
+- GamescopeREADME: https://github.com/ValveSoftware/gamescope
+- ProtonDB:https://www.protondb.com/app/1817070 (openedearlierthissession)
+
+## Выводы
+
+ИграDX12, релевантенvkd3d-proton. PROTON_USE_WINED3DвофициальнойтаблицеотноситсякD3D9/10/11, непрямоерешениеэтогоDX12сбоя. NVIDIA/DLSSflagsнеподходятBC250.
+ОфициальныйPROTON_NO_NTSYNCлишьотключаетмеханизмсинхронизации, неускоритель. ПроведённыйA/Bпользовательсообщилбезулучшения; большенепродвигатьэтугипотезукакисправление.
+no_upload_hvvофициальноотключаетиспользованиеhost-visibleVRAMдляUPLOADheap;документацияпредупреждаетопотенциальномсниженииGPUпроизводительности.
+Issue1406содержитсходныйсимптом(низкаяобщая/поточнаяCPUзанятость,плохаяпроизводительность),упоминаетSpiderMan,ноосновныечисловыетестыUncharted/другихигр. ЭтонепрямоедоказательствоBC250.
+Issue2603(2025)конкретноSpiderManнаAMD/SteamDeck: no_upload_hvvускоряетзагрузкутекстур,новозможновозвращениенизкихmipmaps. Этоосмысленныйдиагностическийкандидат,неуниверсальныйфикс.
+Наэтойплатесвежийsysfs:VRAM8GiB,visibleVRAM8GiB. МеханизмCPU-visibleVRAMрелевантен,ноBC250UMAнеэквивалентнастандартнойдискретнойReBARкарте. Требуетсялогфактическоговыбораheap.
+single_queueофициальноотключаетасинхронныеcompute/transferочереди. Неиспользоватьвместесno_upload_hvvпервымтестом: потеряетсяпричинность.
+VKD3D_FRAME_RATEофициальныйлимитерDX12;0отключаетего. Ненужнонакладыватьсразунескольколимитеров.
+PROTON_LOG1даётдиагностическийлог. VKD3D_DEBUGinfoиVKD3D_LOG_FILEпозволяютпроверитьверсию/инициализацию. Логисобиратьограниченно,невыводитьцеликомвчат,передпередачейочиститьличныеданные.
+VKD3D_PROFILE_PATHработаеттолькоспрофилирующейсборкой,нельзяобещатьпрофильпростоотпеременнойнаобычнойсборке.
+
+## Следующий обоснованный шаг
+
+Сначалаограниченныйstartup-logтекущегобилдадляверсииvkd3d/heap/routing. Затемоднопараметрическийno_upload_hvvсравнениевтойжесценеснепрерывнымframetime,еслипутьUPLOADHVVреальноактивен. НеотключатьReBARвBIOS. НеустанавливатьOptiScaler. Непроводилосьэтимисследованием.
+
+## Проверка установленного пути после продолжения
+
+ИграPID143560загружаетprefixd3d12core.dll,егоSHA256ae4b93a8b2009f10ed955c9f7bc4dd569a86b8a2c709da2fd4e3ba9e3f448be5совпадаетсDLLтекущегоProton. Строкаверсии3.1.0, no_upload_hvvвбинарникеесть. VKD3D_CONFIGвокруженииигрынет, VKD3D_DEBUG=none.
+НайденныеconsoleстрокиApplyingresizableBARbudgetНЕприписываютсяэтомузапуску: последняя13:04:55раньше13:30запускаисследуемойигры. ОнинеподтверждаютheapвыборSpiderMan. НуженсвежийпривязанныйкPIDstartup-log.
+Текущийupstreamdevice_workarounds.cпрофильSpider-Man.exeзадаётFORCE_INITIAL_TRANSITIONиDISABLE_UAV_COMPRESSION, неNO_UPLOAD_HVV. Этоmaster, неточныйbuildплаты; использоватькакконтекст, негарантиюлокальныхdefaults.
+Достаточнаядиагностикапослеперезапуска:VKD3D_DEBUG=infoиVKD3D_LOG_FILEвявномпользовательскомкаталоге, безtrace/validation/меняющихпроизводительностьфлагов. Неусиливатьгипотезупамятинаоснованиичужоголога.
+
+Fresh startup verification completed: AppID1817070,Spider-Man.exe,vkd3d3.1.0buildaf89350cc2eacd9+. Exact observed decision: "Topology: HVV usage is allowed, using DEVICE_LOCAL | HOST_COHERENT for UPLOAD." This establishes applicability of no_upload_hvv to actualgame route, notcausalFPSproof. Evidence startup-info.log. Onlyinfo-loggingenabled, noheapflagchange.

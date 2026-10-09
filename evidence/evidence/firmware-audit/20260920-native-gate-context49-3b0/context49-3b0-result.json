@@ -1,0 +1,330 @@
+{
+  "address_use": {
+    "callback_entry": "0x9AD8 (conditional anchor 0x60BD9-0x57100=0x9AD9 Thumb pointer)",
+    "construction": "u8 value is shifted/tested and merged into constructed descriptor/address word; exact address remains conditional on this byte and other runtime fields.",
+    "plus_0x49_paths": [
+      "0x9C44",
+      "0x9C52",
+      "0x9C8C",
+      "0x9CBC",
+      "0x9CD4",
+      "0x9D9C",
+      "0x9DD2",
+      "0x9E04"
+    ]
+  },
+  "checks": {
+    "failed": 0,
+    "passed": 45,
+    "total": 45
+  },
+  "checks_detail": [
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:ABL1-clv-decompressed.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:abl1-full-thumb-llvm.txt",
+      "status": "PASS"
+    },
+    {
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "hash:ABL1-clv-decompressed.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "name": "hash:abl1-full-thumb-llvm.txt",
+      "status": "PASS"
+    },
+    {
+      "expected": 94624,
+      "got": 94624,
+      "name": "ABL size",
+      "status": "PASS"
+    },
+    {
+      "expected": "9df80410",
+      "got": "9df80410",
+      "name": "helper reads caller input byte from saved R1",
+      "status": "PASS"
+    },
+    {
+      "expected": "0078",
+      "got": "0078",
+      "name": "helper reads global callback gate byte",
+      "status": "PASS"
+    },
+    {
+      "expected": "d4f8b023",
+      "got": "d4f8b023",
+      "name": "helper loads callback pointer from context +0x3B0",
+      "status": "PASS"
+    },
+    {
+      "expected": "01a9",
+      "got": "01a9",
+      "name": "helper passes SP+4 as output-byte pointer",
+      "status": "PASS"
+    },
+    {
+      "expected": "2046",
+      "got": "2046",
+      "name": "helper passes context as R0",
+      "status": "PASS"
+    },
+    {
+      "expected": "9047",
+      "got": "9047",
+      "name": "helper BLX through +0x3B0 pointer",
+      "status": "PASS"
+    },
+    {
+      "expected": "9df80400",
+      "got": "9df80400",
+      "name": "helper reads one byte from callback output pointer",
+      "status": "PASS"
+    },
+    {
+      "expected": "84f84900",
+      "got": "84f84900",
+      "name": "helper stores one byte to context +0x49",
+      "status": "PASS"
+    },
+    {
+      "expected": "94f84900",
+      "got": "94f84900",
+      "name": "helper reloads context +0x49 for subsequent index arithmetic",
+      "status": "PASS"
+    },
+    {
+      "expected": "0020",
+      "got": "0020",
+      "name": "initializer sets R0=0 before selection helper",
+      "status": "PASS"
+    },
+    {
+      "expected": "0146",
+      "got": "0146",
+      "name": "initializer copies zero into R1 input byte",
+      "status": "PASS"
+    },
+    {
+      "expected": "2846",
+      "got": "2846",
+      "name": "initializer passes context in R0",
+      "status": "PASS"
+    },
+    {
+      "expected": "09f05cfa",
+      "got": "09f05cfa",
+      "name": "initializer calls helper 0x109BC",
+      "status": "PASS"
+    },
+    {
+      "expected": "95f84900",
+      "got": "95f84900",
+      "name": "type-branch reads +0x49 byte",
+      "status": "PASS"
+    },
+    {
+      "expected": "95f84910",
+      "got": "95f84910",
+      "name": "type-1 address path reads +0x49 byte",
+      "status": "PASS"
+    },
+    {
+      "expected": "95f84910",
+      "got": "95f84910",
+      "name": "type-2 address path reads +0x49 byte",
+      "status": "PASS"
+    },
+    {
+      "expected": "95f84910",
+      "got": "95f84910",
+      "name": "type-3 address path reads +0x49 byte",
+      "status": "PASS"
+    },
+    {
+      "expected": "95f84900",
+      "got": "95f84900",
+      "name": "post-read path reads +0x49 byte",
+      "status": "PASS"
+    },
+    {
+      "expected": "95f84910",
+      "got": "95f84910",
+      "name": "write path type-1 reads +0x49 byte",
+      "status": "PASS"
+    },
+    {
+      "expected": "95f84910",
+      "got": "95f84910",
+      "name": "write path type-2 reads +0x49 byte",
+      "status": "PASS"
+    },
+    {
+      "expected": "95f84910",
+      "got": "95f84910",
+      "name": "write path post-branch reads +0x49 byte",
+      "status": "PASS"
+    },
+    {
+      "expected": 1,
+      "got": 1,
+      "name": "sole direct +0x49 writer count",
+      "status": "PASS"
+    },
+    {
+      "expected": "109e6",
+      "got": "109e6",
+      "name": "sole direct +0x49 writer address",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "sole direct +0x49 writer opcode",
+      "status": "PASS"
+    },
+    {
+      "expected": 1,
+      "got": 1,
+      "name": "sole direct +0x3B0 writer count",
+      "status": "PASS"
+    },
+    {
+      "expected": "c058",
+      "got": "c058",
+      "name": "sole direct +0x3B0 writer address",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "sole direct +0x3B0 writer opcode",
+      "status": "PASS"
+    },
+    {
+      "expected": 7229765,
+      "got": 7229765,
+      "name": "literal for +0x44",
+      "status": "PASS"
+    },
+    {
+      "expected": 7229700,
+      "got": 7229700,
+      "name": "literal for +0x4C",
+      "status": "PASS"
+    },
+    {
+      "expected": 7229570,
+      "got": 7229570,
+      "name": "literal for +0x3B0",
+      "status": "PASS"
+    },
+    {
+      "expected": 7229505,
+      "got": 7229505,
+      "name": "literal for +0x3AC",
+      "status": "PASS"
+    },
+    {
+      "expected": "4864",
+      "got": "4864",
+      "name": "same initializer writes +0x44",
+      "status": "PASS"
+    },
+    {
+      "expected": "c864",
+      "got": "c864",
+      "name": "same initializer writes +0x4C",
+      "status": "PASS"
+    },
+    {
+      "expected": "c1f8b003",
+      "got": "c1f8b003",
+      "name": "same initializer writes +0x3B0",
+      "status": "PASS"
+    },
+    {
+      "expected": 39641,
+      "got": 39641,
+      "name": "conditional base local callback pointer",
+      "status": "PASS"
+    },
+    {
+      "expected": 39640,
+      "got": 39640,
+      "name": "conditional base local callback entry",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "0x3B0 literal is outside exact ABL1 payload under base 0x57100",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "indirect callback call exists",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "callback output-byte load exists",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "output byte stored to +0x49",
+      "status": "PASS"
+    }
+  ],
+  "decision": "DO_NOT_ASSIGN_EXACT_CONTEXT49_VALUE_OR_LOCAL_3B0_TARGET",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "field_widths": {
+    "context_plus_0x3B0": {
+      "consumer": "helper 0x109BC LDR.W +0x3B0 then BLX R2 at 0x109E0",
+      "source": "initializer store at 0xC058 from literal pool 0xC3D4=0x006E5082",
+      "width": "u32 function-pointer field"
+    },
+    "context_plus_0x49": {
+      "consumer": "callback 0x9AD8 uses LDRB and bit shifts/bit tests in address construction",
+      "source": "helper 0x109BC: [SP+4] after optional BLX callback; written by STRB at 0x109E6",
+      "width": "u8"
+    }
+  },
+  "inputs": {
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin": {
+      "sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "size": 94624
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt": {
+      "sha256": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "size": 2586986
+    }
+  },
+  "limitations": [
+    "No runtime callback execution or output-byte capture.",
+    "No context+0x44 pointer analysis; that ownership remains a separate worker scope.",
+    "No physical register, MMIO, clock, or hardware claim."
+  ],
+  "status": "UNRESOLVED_SOURCE",
+  "value_source": {
+    "plus_0x3B0": "exact literal is 0x006E5082; under conditional local base 0x57100 it maps to 0x68DF82, outside the 0x171A0-byte payload. It is not an anchored local ABL1 target.",
+    "plus_0x49": "initializer call 0x7500 proposes input byte 0; helper 0x109BC can keep that byte if global gate at 0x6E130 is nonzero, or call the +0x3B0 callback when gate is zero; callback may overwrite the SP+4 output byte. BLX return R0 is ignored, so final +0x49 remains unknown without the callback target/runtime gate."
+  }
+}

@@ -1,0 +1,297 @@
+== fn@0x3528 token-install (cmd 0x100B -> arm 0xC0C4) : 0x3528..0x35c2 ==
+0x003528  push.w   {r4, r5, r6, r7, r8, sb, lr}            
+0x00352c  mov      sb, r0                                  
+0x00352e  ldr      r0, [pc, #0x7c]                          ; lit@0x35ac = 0x00e01a1c
+0x003530  sub      sp, #0x114                              
+0x003532  mov      r5, r1                                  
+0x003534  mov      r8, r2                                  
+0x003536  ldr      r4, [r0]                                
+0x003538  str      r4, [sp, #0x110]                        
+0x00353a  cmp.w    r2, #0x140                              
+0x00353e  bhs      #0x3544                                 
+0x003540  ldr      r5, [pc, #0x6c]                          ; lit@0x35b0 = 0xffff300f
+0x003542  b        #0x3598                                 
+0x003544  ldr      r6, [pc, #0x6c]                          ; lit@0x35b4 = 0x00e188c0
+0x003546  ldrb     r0, [r6]                                
+0x003548  cbnz     r0, #0x357a                             
+0x00354a  movs     r0, #0                                  
+0x00354c  str      r0, [sp, #0xc]                          
+0x00354e  add.w    r0, sp, #0x2f                           
+0x003552  bic      r7, r0, #0x1f                           
+0x003556  movs     r1, #0xe0                               
+0x003558  mov      r0, r7                                  
+0x00355a  bl       #0x15e4                                  ; CALL
+0x00355e  movs     r0, #0x20                               
+0x003560  ldr      r1, [pc, #0x54]                          ; lit@0x35b8 = 0x00e25814
+0x003562  movs     r3, #4                                  
+0x003564  str      r7, [sp, #8]                            
+0x003566  add      r2, sp, #0xc                            
+0x003568  strd     r1, r0, [sp]                            
+0x00356c  ldr      r1, [pc, #0x4c]                          ; lit@0x35bc = 0x00e179b2
+0x00356e  mov      r0, sb                                  
+0x003570  bl       #0x5fa0                                  ; CALL
+0x003574  cbnz     r0, #0x3596                             
+0x003576  movs     r0, #1                                  
+0x003578  strb     r0, [r6]                                
+0x00357a  add.w    r6, r5, #0x100                          
+0x00357e  mov      r1, r8                                  
+0x003580  mov      r0, r5                                  
+0x003582  bl       #0x15e4                                  ; CALL
+0x003586  ldr      r1, [pc, #0x30]                          ; lit@0x35b8 = 0x00e25814
+0x003588  movs     r2, #0x20                               
+0x00358a  mov      r0, r6                                  
+0x00358c  blx      #0x14e4                                  ; CALL
+0x003590  movs     r0, #0x40                               
+0x003592  str      r0, [r5, #0x14]                         
+0x003594  movs     r0, #0                                  
+0x003596  mov      r5, r0                                  
+0x003598  ldr      r0, [sp, #0x110]                        
+0x00359a  cmp      r0, r4                                  
+0x00359c  beq      #0x35a2                                 
+0x00359e  blx      #0x1920                                  ; CALL
+0x0035a2  add      sp, #0x114                              
+0x0035a4  mov      r0, r5                                  
+0x0035a6  pop.w    {r4, r5, r6, r7, r8, sb, pc}            
+0x0035aa  movs     r0, r0                                  
+0x0035ac  subs     r4, r3, r0                              
+0x0035ae  lsls     r0, r4, #3                              
+0x0035b0  adds     r0, #0xf                                
+0x0035b2  vtbx.8   d24, {d31}, d0                          
+0x0035b6  lsls     r1, r4, #3                              
+0x0035b8  ldr      r4, [r2, r0]                            
+0x0035ba  lsls     r2, r4, #3                              
+0x0035bc  ldrb     r2, [r6, #6]                            
+0x0035be  lsls     r1, r4, #3                              
+0x0035c0  movs     r2, #0                                  
+
+== arm 0xC0C4 dispatcher context (cmd 0x100B) : 0xc0c4..0xc0d0 ==
+0x00c0c4  ldr      r0, [sp, #0x20]                         
+0x00c0c6  ldrd     r1, r2, [r5]                            
+0x00c0ca  bl       #0x3528                                  ; CALL
+0x00c0ce  b        #0xc394                                 
+
+== fn@0x1167c registry reader : 0x1167c..0x11760 ==
+0x01167c  push     {r4, r5, r6, r7, lr}                    
+0x01167e  ldr      r4, [pc, #0x38]                          ; lit@0x116b8 = 0x00e5cbdc
+0x011680  movs     r3, #0                                  
+0x011682  mov      r7, r0                                  
+0x011684  ldr      r0, [pc, #0x2c]                          ; lit@0x116b4 = 0xffff0008
+0x011686  add.w    r5, r4, #0x100                          
+0x01168a  add.w    r4, r4, #0x140                          
+0x01168e  ldr.w    ip, [r5]                                
+0x011692  b        #0x116ae                                
+0x011694  add.w    r5, r4, #8                              
+0x011698  ldrd     r4, r6, [r4]                            
+0x01169c  cmp      r4, r7                                  
+0x01169e  bne      #0x116a8                                
+0x0116a0  str      r5, [r1]                                
+0x0116a2  movs     r0, #0                                  
+0x0116a4  str      r6, [r2]                                
+0x0116a6  pop      {r4, r5, r6, r7, pc}                    
+0x0116a8  adds     r3, r3, #1                              
+0x0116aa  add.w    r4, r5, r6, lsl #3                      
+0x0116ae  cmp      ip, r3                                  
+0x0116b0  bhi      #0x11694                                
+0x0116b2  pop      {r4, r5, r6, r7, pc}                    
+0x0116b4  movs     r0, r1                                  
+0x0116b6  .byte    0xff, 0xff                              
+0x0116b8  ldm      r3, {r2, r3, r4, r6, r7}                
+0x0116ba  lsls     r5, r4, #3                              
+0x0116bc  push     {r4, lr}                                
+0x0116be  mov      r4, r0                                  
+0x0116c0  bl       #0x68ac                                  ; CALL
+0x0116c4  cbz      r0, #0x116d6                            
+0x0116c6  bl       #0x6698                                  ; CALL
+0x0116ca  sub.w    r1, r0, #0xff00                         
+0x0116ce  subs     r1, #0xff                               
+0x0116d0  beq      #0x116dc                                
+0x0116d2  ldr      r0, [pc, #0x14]                          ; lit@0x116e8 = 0xffff0001
+0x0116d4  pop      {r4, pc}                                
+0x0116d6  ldr      r0, [pc, #0x10]                          ; lit@0x116e8 = 0xffff0001
+0x0116d8  adds     r0, #9                                  
+0x0116da  pop      {r4, pc}                                
+0x0116dc  ldr      r0, [pc, #0xc]                           ; lit@0x116ec = 0x00e18b60
+0x0116de  ldr      r0, [r0]                                
+0x0116e0  str      r0, [r4]                                
+0x0116e2  movs     r0, #0                                  
+0x0116e4  pop      {r4, pc}                                
+0x0116e6  movs     r0, r0                                  
+0x0116e8  movs     r1, r0                                  
+0x0116ea  vtbx.8   d24, {d15, d16, d17, d18}, d16          
+0x0116ee  lsls     r1, r4, #3                              
+0x0116f0  ldr      r0, [pc, #0x14]                          ; lit@0x11708 = 0x00e189a0
+0x0116f2  movs     r1, #4                                  
+0x0116f4  ldr      r0, [r0]                                
+0x0116f6  str      r1, [r0, #0x74]                         
+0x0116f8  ldr      r1, [r0, #0x70]                         
+0x0116fa  bic      r1, r1, #0xff                           
+0x0116fe  orr      r1, r1, #0x80000000                     
+0x011702  str      r1, [r0, #0x70]                         
+0x011704  bx       lr                                      
+0x011706  movs     r0, r0                                  
+0x011708  ldrh     r0, [r4, #0xc]                          
+0x01170a  lsls     r1, r4, #3                              
+0x01170c  push.w   {r0, r1, r2, r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
+0x011710  ldr      r0, [pc, #0xa4]                          ; lit@0x117b8 = 0x00e18978
+0x011712  movs     r5, #0                                  
+0x011714  mov      sl, r2                                  
+0x011716  mov      r4, r3                                  
+0x011718  mov.w    sb, #0x20                               
+0x01171c  ldr      r0, [r0]                                
+0x01171e  svc      #0x5e                                    ; SVC
+0x011720  ldr      r0, [pc, #0x98]                          ; lit@0x117bc = 0x03b10700
+0x011722  mov      r1, sb                                  
+0x011724  svc      #0x7d                                    ; SVC
+0x011726  movs     r7, r0                                  
+0x011728  beq      #0x11740                                
+0x01172a  lsrs     r0, r7, #0x14                           
+0x01172c  ldr      r1, [pc, #0x90]                          ; lit@0x117c0 = 0x00010718
+0x01172e  mov.w    r8, #0                                  
+0x011732  lsls     r0, r0, #0x14                           
+0x011734  add.w    fp, r0, r1                              
+0x011738  ldr      r1, [pc, #0x84]                          ; lit@0x117c0 = 0x00010718
+0x01173a  subs     r1, #0x14                               
+0x01173c  adds     r6, r0, r1                              
+0x01173e  b        #0x11754                                
+0x011740  ldr      r5, [pc, #0x80]                          ; lit@0x117c4 = 0xffff000c
+0x011742  b        #0x117a2                                
+0x011744  movs     r0, #1                                  
+0x011746  svc      #0x56                                    ; SVC
+0x011748  adds     r0, r4, #1                              
+0x01174a  beq      #0x11754                                
+0x01174c  add.w    r8, r8, #1                              
+0x011750  cmp      r8, r4                                  
+0x011752  bhi      #0x11780                                
+0x011754  ldr      r0, [r6]                                
+0x011756  cmp      r0, #0                                  
+0x011758  beq      #0x11744                                
+0x01175a  cbnz     r5, #0x117a2                            
+0x01175c  movs     r0, #0                                  
+0x01175e  str      r0, [r6]                                
+
+== fn@0x20d4 sequencer (cmd 0x1033) : 0x20d4..0x2178 ==
+0x0020d4  ldr      r1, [pc, #0x94]                          ; lit@0x216c = 0x00e18af0
+0x0020d6  movs     r0, #1                                  
+0x0020d8  push     {r4, r5, r6, lr}                        
+0x0020da  ldr      r5, [pc, #0x88]                          ; lit@0x2164 = 0x00e5cbdc
+0x0020dc  ldr      r4, [pc, #0x88]                          ; lit@0x2168 = 0xffff0000
+0x0020de  strb     r0, [r1]                                
+0x0020e0  bl       #0x9f5c                                  ; CALL
+0x0020e4  cbz      r0, #0x20f0                             
+0x0020e6  ldr      r0, [pc, #0x88]                          ; lit@0x2170 = 0x00e18af8
+0x0020e8  ldrb     r0, [r0]                                
+0x0020ea  cmp      r0, #1                                  
+0x0020ec  beq      #0x20f4                                 
+0x0020ee  b        #0x2158                                 
+0x0020f0  movs     r4, #0                                  
+0x0020f2  b        #0x2160                                 
+0x0020f4  bl       #0x88fc                                  ; CALL
+0x0020f8  cmp.w    r0, #0x100                              
+0x0020fc  beq      #0x210c                                 
+0x0020fe  movw     r0, #0x201                              
+0x002102  bl       #0x2178                                  ; CALL
+0x002106  movs     r4, r0                                  
+0x002108  bne      #0x2158                                 
+0x00210a  b        #0x2112                                 
+0x00210c  ldr      r4, [pc, #0x58]                          ; lit@0x2168 = 0xffff0000
+0x00210e  adds     r4, #0xa                                
+0x002110  b        #0x214e                                 
+0x002112  movw     r0, #0x205                              
+0x002116  bl       #0x2178                                  ; CALL
+0x00211a  movs     r4, r0                                  
+0x00211c  bne      #0x2158                                 
+0x00211e  movw     r0, #0x203                              
+0x002122  bl       #0x2178                                  ; CALL
+0x002126  movs     r4, r0                                  
+0x002128  bne      #0x2158                                 
+0x00212a  movw     r0, #0x20a                              
+0x00212e  bl       #0x2178                                  ; CALL
+0x002132  movs     r4, r0                                  
+0x002134  bne      #0x2158                                 
+0x002136  movw     r0, #0x20b                              
+0x00213a  bl       #0x2178                                  ; CALL
+0x00213e  movs     r4, r0                                  
+0x002140  bne      #0x2158                                 
+0x002142  movw     r0, #0x210                              
+0x002146  bl       #0x2178                                  ; CALL
+0x00214a  movs     r4, r0                                  
+0x00214c  bne      #0x2158                                 
+0x00214e  ldr      r1, [r5, #0x60]                         
+0x002150  movs     r0, #0x5b                               
+0x002152  bl       #0x17124                                 ; CALL
+0x002156  cbz      r4, #0x2160                             
+0x002158  ldr      r1, [pc, #0x18]                          ; lit@0x2174 = 0xdeadbeef
+0x00215a  movs     r0, #0x5b                               
+0x00215c  bl       #0x17124                                 ; CALL
+0x002160  mov      r0, r4                                  
+0x002162  pop      {r4, r5, r6, pc}                        
+0x002164  ldm      r3, {r2, r3, r4, r6, r7}                
+0x002166  lsls     r5, r4, #3                              
+0x002168  movs     r0, r0                                  
+0x00216a  .byte    0xff, 0xff                              
+0x00216c  ldrh     r0, [r6, #0x16]                         
+0x00216e  lsls     r1, r4, #3                              
+0x002170  ldrh     r0, [r7, #0x16]                         
+0x002172  lsls     r1, r4, #3                              
+0x002174  bkpt     #0xef                                   
+0x002176  udf      #0xad                                   
+
+== fn@0x2178 apply-one-group : 0x2178..0x21d0 ==
+0x002178  push     {r2, r3, r4, r5, lr}                    
+0x00217a  mov      r5, r0                                  
+0x00217c  mov      r2, sp                                  
+0x00217e  movs     r0, #0                                  
+0x002180  add      r1, sp, #4                              
+0x002182  mov      r4, r0                                  
+0x002184  str      r0, [sp]                                
+0x002186  str      r0, [sp, #4]                            
+0x002188  mov      r0, r5                                  
+0x00218a  bl       #0x1167c                                 ; CALL
+0x00218e  cmp      r0, #0                                  
+0x002190  bne      #0x21b6                                 
+0x002192  sub.w    r1, r5, #0x200                          
+0x002196  subs     r1, #3                                  
+0x002198  beq      #0x21b0                                 
+0x00219a  subs     r1, #0x14                               
+0x00219c  beq      #0x21b0                                 
+0x00219e  b        #0x21ca                                 
+0x0021a0  ldr      r1, [sp, #4]                            
+0x0021a2  ldr.w    r2, [r1, r4, lsl #3]                    
+0x0021a6  add.w    r1, r1, r4, lsl #3                      
+0x0021aa  ldr      r1, [r1, #4]                            
+0x0021ac  str      r1, [r2]                                
+0x0021ae  adds     r4, r4, #1                              
+0x0021b0  ldr      r1, [sp]                                
+0x0021b2  cmp      r4, r1                                  
+0x0021b4  blo      #0x21a0                                 
+0x0021b6  pop      {r2, r3, r4, r5, pc}                    
+0x0021b8  ldr      r1, [sp, #4]                            
+0x0021ba  movs     r2, #4                                  
+0x0021bc  ldr.w    r0, [r1, r4, lsl #3]                    
+0x0021c0  add.w    r1, r1, r4, lsl #3                      
+0x0021c4  ldr      r1, [r1, #4]                            
+0x0021c6  svc      #0x7c                                    ; SVC
+0x0021c8  adds     r4, r4, #1                              
+0x0021ca  ldr      r1, [sp]                                
+0x0021cc  cmp      r4, r1                                  
+0x0021ce  blo      #0x21b8                                 
+
+== literal-pool refs (u32 == target) in whole body ==
+-- target 0x00e4e538 --
+   lit@body+0xd500
+   lit@body+0x135dc
+   lit@body+0x136ac
+   lit@body+0x136f0
+   lit@body+0x155d4
+
+-- target 0x00e5cbdc --
+   lit@body+0x2164
+   lit@body+0x116b8
+
+-- target 0x00e25814 --
+   lit@body+0x35b8
+   lit@body+0x135d4
+
+== all literals in 0xE5CB00..0xE5CD40 range ==
+   lit@body+0x2164 = 0x00e5cbdc
+   lit@body+0x116b8 = 0x00e5cbdc

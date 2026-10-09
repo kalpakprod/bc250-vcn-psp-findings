@@ -1,0 +1,1042 @@
+{
+  "status": "PASS",
+  "checks_passed": 102,
+  "checks_failed": 0,
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "rom": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "size": 16777216,
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    "abl1_container": {
+      "spi_offset": "0x99FD00",
+      "size": 49184,
+      "sha256": "95ae7826a69ea56b8c52ac703b85f181d45bdc309de334c2b7f9f4130376d515"
+    },
+    "abl1_payload": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+      "size": 94624,
+      "sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    "abl1_object": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o",
+      "sha256": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135"
+    },
+    "full_listing": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+      "sha256": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    "conditional_base_report": {
+      "path": "/home/OWNER/orca/projects/bc250/docs/research/20260920-clv-abl-producer-base-review.md",
+      "sha256": "120ac10f4a7b53895e8c71acc69be005e091ca53292b168a5d39163a3243402c"
+    },
+    "prior_34check_script": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-heap-populator/heap_populator_verify.py",
+      "sha256": "41bdf4e173dc91e840f7d16e35281c878b37207c52d9d039ebb37185803d1f9f"
+    },
+    "prior_34check_result": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-heap-populator/heap-populator-result.json",
+      "sha256": "acad9717893994744064d2f9573661aec0ad65024fd2816f39296e811d81a617"
+    }
+  },
+  "load_map": {
+    "ps1_load_address": "0x0",
+    "decompressed_length": "0x171a0",
+    "pointer_literal": "0x006CD4D0",
+    "payload_relative_offset": "0x6cd4d0",
+    "conditional_0x57100_offset": "0x6763d0",
+    "conditional_0x57100_is_loader_proof": false,
+    "classification": "not mapped inside the payload by the exact header or prior conditional 0x57100 code-base hypothesis; actual target region remains unresolved because exact runtime load/relocation map is unavailable",
+    "hypothetical_0x6c0000_offset": "0xd4d0",
+    "hypothetical_base_adopted": false
+  },
+  "fclk_heap_argument": {
+    "fclk_sp_slots": [
+      0,
+      0
+    ],
+    "reader_saved_reg_count": 12,
+    "reader_ldr_r7_r9_from_sp_offset": 48,
+    "reader_r9": 0,
+    "reader_stores_r9_to_helper_sp0": true,
+    "helper_saved_reg_count": 6,
+    "helper_ldr_r1_from_sp_plus_0x18": 0,
+    "helper_strd_r3_r1_provider_stack_args": [
+      null,
+      0
+    ],
+    "provider_saved_reg_mask": "0x4FFF",
+    "provider_saved_reg_bytes": 52,
+    "provider_local_bytes": 108,
+    "provider_sp_plus_0xa4_maps_to_entry_sp_plus": 4,
+    "provider_second_stack_arg": 0,
+    "heap_producer_r1_r10": 0,
+    "result": "selected FCLK -> provider-0x0F miss path has auxiliary arg zero; it is not linked to constructor outer+0x864"
+  },
+  "heap_allocator_contract": {
+    "direct_6238_calls_in_full_listing": 14,
+    "representative_callers": [
+      {
+        "site": "0x46DC",
+        "r0": "descriptor SP+0x4",
+        "r1": "R6 copied from original R0 context"
+      },
+      {
+        "site": "0x4774",
+        "r0": "descriptor SP+0x4",
+        "r1": "R6 copied from original R0 context"
+      },
+      {
+        "site": "0x4B5C",
+        "r0": "miss descriptor SP+0x14",
+        "r1": "provider second stack argument; zero in FCLK path"
+      }
+    ],
+    "callee": "0x6238 captures R1 in R10; available checked uses do not establish R10 as byte-source pointer; 0x6B78 ignores R3 and stores R1 to [R0] per byte. In this call R1=0 and R2=node length, so 0x6B78 is a zero-fill loop, not memcpy."
+  },
+  "constructor": {
+    "caller": "0xB84 R5=saved entry R1; at 0xBD2 passes R1=R5 to 0xC00; direct B84 callers 0xA6C/0xA8A/0xAB6/0xAE4 pass R1=R4",
+    "runtime_outer_pointer_source": "R4 is built from [R0+0xC] with 0xFC000000 high bits; R0 comes through an external/runtime pointer cell keyed by literal 0x6E134",
+    "field_store": "only direct displacement references #0x864 in full ABL1 listing are ADDW R0,R1,#0x864 at 0xC29E and STR.W R2,[R1,#0x864] at 0xC2AE; one direct store site",
+    "field_default_literal": "0x006CD4D0 at payload 0xC4B4",
+    "stack_offset_warning": "C00 [SP+0xA4] stores pointer R1+0x864 in constructor frame; provider 0x49CC [SP+0xA4] loads provider second stack argument. Numeric slot equality is not frame identity."
+  },
+  "g7_correction": {
+    "supersedes": "prior owned report docs/research/2026-09-21-apob-abl-heap-populator.md, which described 0x6B78 as copying data from R10/outer+0x864",
+    "correction": "raw/reconciled helper is a byte-fill loop, called with R1=0 and R3=R10. The C00 SP+0xA4 local and provider SP+0xA4 input are separate frames. On the concrete FCLK call path the provider second stack arg is 0. Prior 34/34 result proved only the checked byte anchors; its verifier did not disassemble/helper-signature-check 0x6B78 or reconcile stack arguments."
+  },
+  "first_unresolved_boundary": "ABL1 absolute pointer 0x006CD4D0 has no proven mapping under exact $PS1 load_address=0 or the conditional 0x57100 code-base hypothesis; the outer object is sourced via runtime/global descriptor state. No byte-backed join from that runtime object/field to APOB service 0x9E3B14C/0x61/0xFF or native $INV 0x11ED is established. Exact selected FCLK path passes zero as provider auxiliary arg; other caller values/paths are not promoted.",
+  "limits": [
+    "No actual runtime load/relocation base; hypothetical 0x6C0000 would map pointer to payload+0xD4D0 but is not supported and was not adopted.",
+    "No complete alias/DMA/external write census for outer+0x864.",
+    "No firmware/ABL1/APOB execution, PPI/HOB capture, SMU execution, or hardware result.",
+    "No modification to old report/evidence, PPI GUID proof, or 0x1204 path."
+  ],
+  "checks": [
+    {
+      "name": "ROM-hash-size",
+      "status": "PASS",
+      "got": [
+        "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        16777216
+      ],
+      "expected": [
+        "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        16777216
+      ]
+    },
+    {
+      "name": "ABL-payload-hash-size",
+      "status": "PASS",
+      "got": [
+        "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+        94624
+      ],
+      "expected": [
+        "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+        94624
+      ]
+    },
+    {
+      "name": "ELF-object-hash",
+      "status": "PASS",
+      "got": [
+        "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135"
+      ],
+      "expected": [
+        "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135"
+      ]
+    },
+    {
+      "name": "existing-full-listing-hash",
+      "status": "PASS",
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    {
+      "name": "conditional-base-is-not-loader-proof",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "prior-34-check-result",
+      "status": "PASS",
+      "got": [
+        "PASS",
+        34
+      ],
+      "expected": [
+        "PASS",
+        34
+      ]
+    },
+    {
+      "name": "prior-report-contained-source-copy-claim",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "prior-verifier-did-not-disassemble-fill-helper",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "ABL1-$PS1-magic",
+      "status": "PASS",
+      "got": "24505331",
+      "expected": "24505331"
+    },
+    {
+      "name": "ABL1-header-lengths",
+      "status": "PASS",
+      "got": [
+        48672,
+        94624,
+        94624
+      ],
+      "expected": [
+        48672,
+        94624,
+        94624
+      ]
+    },
+    {
+      "name": "ABL1-container-decompresses-to-pinned-payload",
+      "status": "PASS",
+      "got": [
+        "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+        true
+      ],
+      "expected": [
+        "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+        true
+      ]
+    },
+    {
+      "name": "ABL1-explicit-load-address",
+      "status": "PASS",
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "name": "outer864-pointer-literal-sites",
+      "status": "PASS",
+      "got": [
+        "0xc4b4"
+      ],
+      "expected": [
+        "0xc4b4"
+      ]
+    },
+    {
+      "name": "pointer-not-in-header-zero-coordinate",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "pointer-not-in-conditional-0x57100-map",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "conditional-offset-value",
+      "status": "PASS",
+      "got": "0x6763d0",
+      "expected": "0x6763d0"
+    },
+    {
+      "name": "ROM-offset-interpretation-not-ABL1-container",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "hypothetical-base-0x6c0000-not-adopted",
+      "status": "PASS",
+      "got": 54480,
+      "expected": 54480
+    },
+    {
+      "name": "context-callers-exit-and-stderr",
+      "status": "PASS",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "context-callers-byte-reconciliation",
+      "status": "PASS",
+      "instruction_count": 120
+    },
+    {
+      "name": "fclk-463c-exit-and-stderr",
+      "status": "PASS",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "fclk-463c-byte-reconciliation",
+      "status": "PASS",
+      "instruction_count": 21
+    },
+    {
+      "name": "reader-1fb4-exit-and-stderr",
+      "status": "PASS",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "reader-1fb4-byte-reconciliation",
+      "status": "PASS",
+      "instruction_count": 18
+    },
+    {
+      "name": "helper-4800-exit-and-stderr",
+      "status": "PASS",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "helper-4800-byte-reconciliation",
+      "status": "PASS",
+      "instruction_count": 15
+    },
+    {
+      "name": "provider-49cc-exit-and-stderr",
+      "status": "PASS",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "provider-49cc-byte-reconciliation",
+      "status": "PASS",
+      "instruction_count": 150
+    },
+    {
+      "name": "heap-6238-exit-and-stderr",
+      "status": "PASS",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "heap-6238-byte-reconciliation",
+      "status": "PASS",
+      "instruction_count": 120
+    },
+    {
+      "name": "fill-6b78-exit-and-stderr",
+      "status": "PASS",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "fill-6b78-byte-reconciliation",
+      "status": "PASS",
+      "instruction_count": 5
+    },
+    {
+      "name": "heap-callsite-46b4-exit-and-stderr",
+      "status": "PASS",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "heap-callsite-46b4-byte-reconciliation",
+      "status": "PASS",
+      "instruction_count": 17
+    },
+    {
+      "name": "heap-callsite-474e-exit-and-stderr",
+      "status": "PASS",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "heap-callsite-474e-byte-reconciliation",
+      "status": "PASS",
+      "instruction_count": 16
+    },
+    {
+      "name": "allocator-6810-exit-and-stderr",
+      "status": "PASS",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "allocator-6810-byte-reconciliation",
+      "status": "PASS",
+      "instruction_count": 25
+    },
+    {
+      "name": "unlink-4f9c-exit-and-stderr",
+      "status": "PASS",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "unlink-4f9c-byte-reconciliation",
+      "status": "PASS",
+      "instruction_count": 25
+    },
+    {
+      "name": "constructor-caller-b84-exit-and-stderr",
+      "status": "PASS",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "constructor-caller-b84-byte-reconciliation",
+      "status": "PASS",
+      "instruction_count": 37
+    },
+    {
+      "name": "constructor-c00-exit-and-stderr",
+      "status": "PASS",
+      "got": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "constructor-c00-byte-reconciliation",
+      "status": "PASS",
+      "instruction_count": 19425
+    },
+    {
+      "name": "fclk-zero-first-stack-arg",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "fclk-zero-second-stack-arg",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "fclk-calls-reader",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "reader-pushes-12-registers",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "reader-loads-r7-r9-from-caller-stack",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "reader-forwards-r9-as-first-helper-stack-arg",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "helper-loads-inherited-stack-arg",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "helper-passes-r3-r1-as-provider-stack-pair",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "helper-calls-provider",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "provider-register-save-mask",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "provider-local-allocation",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "provider-read-second-stack-arg-at-sp-a4",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "provider-calls-heap-producer",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "provider-sp+a4-resolves-second-stacked-arg",
+      "status": "PASS",
+      "got": [
+        52,
+        108,
+        4
+      ],
+      "expected": [
+        52,
+        108,
+        4
+      ]
+    },
+    {
+      "name": "fclk-initializes-stack-arg-source-register-r2-to-zero",
+      "status": "PASS",
+      "got": "0022",
+      "expected": "0022"
+    },
+    {
+      "name": "fclk-zeroes-both-stack-arg-slots",
+      "status": "PASS",
+      "got": "00920192",
+      "expected": "00920192"
+    },
+    {
+      "name": "heap-writer-captures-r1-as-r10",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "caller46dc-r1-is-original-r0-context",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "caller46dc-r1-context-setup",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "caller46dc-descriptor-arg0",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "caller46dc-heap-call",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "caller4774-r1-is-original-r0-context",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "caller4774-r1-context-setup",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "caller4774-descriptor-arg0",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "caller4774-heap-call",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "heap-writer-r10-from-r1",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "heap-writer-heap-helper-overwrites-r0-before-use",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "heap-writer-unlink-helper-overwrites-r0-before-use",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "heap-writer-sets-fill-byte-zero",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "heap-writer-length-from-node-descriptor",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "heap-writer-destination-node-payload",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "heap-writer-passes-r10-in-r3",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "heap-writer-calls-fill-loop",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "fill-helper-store-r1-to-r0",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "fill-helper-does-not-consume-r3",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "fill-helper-body-has-no-r3-read",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "B84-saves-incoming-outer-arg1",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "B84-passes-saved-arg1-to-C00",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "B84-calls-C00",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "C00-saves-outer-arg1",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "C00-creates-outer-field-address",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "C00-stores-outer-field-address-to-its-SP+a4",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "C00-stores-default-pointer-to-outer+864",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "direct-0x864-displacement-lines",
+      "status": "PASS",
+      "got": [
+        "c29e",
+        "c2ae"
+      ],
+      "expected": [
+        "c29e",
+        "c2ae"
+      ]
+    },
+    {
+      "name": "direct-outer+864-store-byte-site",
+      "status": "PASS",
+      "got": [
+        "0xc2ae"
+      ],
+      "expected": [
+        "0xc2ae"
+      ]
+    },
+    {
+      "name": "outer+864-initialized-literal",
+      "status": "PASS",
+      "got": "0x6cd4d0",
+      "expected": "0x6cd4d0"
+    },
+    {
+      "name": "context-caller-R1-from-R4-a68",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "context-caller-R1-from-R4-a86",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "context-caller-R1-from-R4-ab2",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "context-caller-R1-from-R4-ae0",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "context-caller-calls-B84-a6c",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "context-caller-calls-B84-a8a",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "context-caller-calls-B84-ab6",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "context-caller-calls-B84-ae4",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "context-source-loads-outer-field",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "context-source-ORs-mapped-high-bits",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "ABL1-global-pointer-cell-literal-6E134",
+      "status": "PASS",
+      "got": "0x6e134",
+      "expected": "0x6e134"
+    },
+    {
+      "name": "reused exact APOB service boundary",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    }
+  ],
+  "commands": [
+    {
+      "name": "context-callers",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x9c0",
+        "--stop-address=0xaf0",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/context-callers.stdout",
+      "stderr": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/context-callers.stderr"
+    },
+    {
+      "name": "fclk-463c",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x463c",
+        "--stop-address=0x4670",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/fclk-463c.stdout",
+      "stderr": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/fclk-463c.stderr"
+    },
+    {
+      "name": "reader-1fb4",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x1fb4",
+        "--stop-address=0x1fe4",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/reader-1fb4.stdout",
+      "stderr": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/reader-1fb4.stderr"
+    },
+    {
+      "name": "helper-4800",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x4800",
+        "--stop-address=0x4824",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/helper-4800.stdout",
+      "stderr": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/helper-4800.stderr"
+    },
+    {
+      "name": "provider-49cc",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x49cc",
+        "--stop-address=0x4b60",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/provider-49cc.stdout",
+      "stderr": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/provider-49cc.stderr"
+    },
+    {
+      "name": "heap-6238",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x6238",
+        "--stop-address=0x635c",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/heap-6238.stdout",
+      "stderr": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/heap-6238.stderr"
+    },
+    {
+      "name": "fill-6b78",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x6b78",
+        "--stop-address=0x6b84",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/fill-6b78.stdout",
+      "stderr": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/fill-6b78.stderr"
+    },
+    {
+      "name": "heap-callsite-46b4",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x46b4",
+        "--stop-address=0x46e0",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/heap-callsite-46b4.stdout",
+      "stderr": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/heap-callsite-46b4.stderr"
+    },
+    {
+      "name": "heap-callsite-474e",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x474e",
+        "--stop-address=0x4778",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/heap-callsite-474e.stdout",
+      "stderr": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/heap-callsite-474e.stderr"
+    },
+    {
+      "name": "allocator-6810",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x6810",
+        "--stop-address=0x6844",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/allocator-6810.stdout",
+      "stderr": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/allocator-6810.stderr"
+    },
+    {
+      "name": "unlink-4f9c",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x4f9c",
+        "--stop-address=0x4fd0",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/unlink-4f9c.stdout",
+      "stderr": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/unlink-4f9c.stderr"
+    },
+    {
+      "name": "constructor-caller-b84",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0xb84",
+        "--stop-address=0xbd6",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/constructor-caller-b84.stdout",
+      "stderr": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/constructor-caller-b84.stderr"
+    },
+    {
+      "name": "constructor-c00",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0xc00",
+        "--stop-address=0xc2b4",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/constructor-c00.stdout",
+      "stderr": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated/constructor-c00.stderr"
+    }
+  ],
+  "tool_version": "LLVM (http://llvm.org/):\n  LLVM version 22.1.8\n  Optimized build.\n\n\n  Registered Targets:\n    aarch64     - AArch64 (little endian)\n    aarch64_32  - AArch64 (little endian ILP32)\n    aarch64_be  - AArch64 (big endian)\n    amdgcn      - AMD GCN GPUs\n    arm         - ARM\n    arm64       - ARM64 (little endian)\n    arm64_32    - ARM64 (little endian ILP32)\n    armeb       - ARM (big endian)\n    avr         - Atmel AVR Microcontroller\n    bpf         - BPF (host endian)\n    bpfeb       - BPF (big endian)\n    bpfel       - BPF (little endian)\n    hexagon     - Hexagon\n    lanai       - Lanai\n    loongarch32 - 32-bit LoongArch\n    loongarch64 - 64-bit LoongArch\n    mips        - MIPS (32-bit big endian)\n    mips64      - MIPS (64-bit big endian)\n    mips64el    - MIPS (64-bit little endian)\n    mipsel      - MIPS (32-bit little endian)\n    msp430      - MSP430 [experimental]\n    nvptx       - NVIDIA PTX 32-bit\n    nvptx64     - NVIDIA PTX 64-bit\n    ppc32       - PowerPC 32\n    ppc32le     - PowerPC 32 LE\n    ppc64       - PowerPC 64\n    ppc64le     - PowerPC 64 LE\n    r600        - AMD GPUs HD2XXX-HD6XXX\n    riscv32     - 32-bit RISC-V\n    riscv32be   - 32-bit big endian RISC-V\n    riscv64     - 64-bit RISC-V\n    riscv64be   - 64-bit big endian RISC-V\n    sparc       - Sparc\n    sparcel     - Sparc LE\n    sparcv9     - Sparc V9\n    spirv       - SPIR-V Logical\n    spirv32     - SPIR-V 32-bit\n    spirv64     - SPIR-V 64-bit\n    systemz     - SystemZ\n    thumb       - Thumb\n    thumbeb     - Thumb (big endian)\n    ve          - VE\n    wasm32      - WebAssembly 32-bit\n    wasm64      - WebAssembly 64-bit\n    x86         - 32-bit X86: Pentium-Pro and above\n    x86-64      - 64-bit X86: EM64T and AMD64\n    xcore       - XCore",
+  "checks_total": 102
+}

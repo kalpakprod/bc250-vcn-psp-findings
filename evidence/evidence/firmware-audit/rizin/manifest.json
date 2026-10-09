@@ -1,0 +1,159 @@
+{
+  "generated_at": "2026-09-10T20:11:51.910741+00:00",
+  "tool": "/tmp/.mount_CutterJAnFal/usr/bin/rizin",
+  "tool_version": "rizin 0.9.1",
+  "tool_commit": "c3a90e9226d977f58f4e9c75f78fa6b07afe13c7",
+  "command": "rizin -qq -A -c \"iIj; iSj; ii; iEj; aflj; s entry0; pd 48; izzj\" <module>",
+  "inputs_context": "copied PE32/TE bodies extracted from dump/2.bin; no write mode",
+  "reports": [
+    {
+      "name": "Bc250CoreUnlockDxe",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0000_Bc250CoreUnlockDxe_pe32.bin",
+      "input_sha256": "7d22d80284cd4c9c8af997611002f6916b4fa4b0d3ca9e3e34e450abbe885c55",
+      "output": "evidence/firmware-audit/rizin/Bc250CoreUnlockDxe.analysis.txt",
+      "output_sha256": "0d10078b4f33bf7f4f249eca56aa4a7f8009ca5d00f7800590371849e393ccfc",
+      "exit_code": 0,
+      "output_size": 25325
+    },
+    {
+      "name": "AmdNbioGfxARIPei",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0193_AmdNbioGfxARIPei_te.bin",
+      "input_sha256": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+      "output": "evidence/firmware-audit/rizin/AmdNbioGfxARIPei.analysis.txt",
+      "output_sha256": "721911fdde66d0e7796cff4c215fb371380538812a4361964ed51386343cf47b",
+      "exit_code": 0,
+      "output_size": 381297
+    },
+    {
+      "name": "AmdNbioPcieARIPei",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0197_AmdNbioPcieARIPei_te.bin",
+      "input_sha256": "62b1398c4ba9b5a03ea533306cd8200257fac323c8fa688caa057667a5871312",
+      "output": "evidence/firmware-audit/rizin/AmdNbioPcieARIPei.analysis.txt",
+      "output_sha256": "0db5832885ab4ad3d11cb6b68329e96fa1aa2de0ee2dc0b5081cda6e36b571b3",
+      "exit_code": 0,
+      "output_size": 441564
+    },
+    {
+      "name": "AmdNbioSmuV10Pei",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0198_AmdNbioSmuV10Pei_te.bin",
+      "input_sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "output": "evidence/firmware-audit/rizin/AmdNbioSmuV10Pei.analysis.txt",
+      "output_sha256": "cf7caf2417800aab5a157fe77a07f5b3da3ec1781cc9e680738a1d7451d5e072",
+      "exit_code": 0,
+      "output_size": 332204
+    },
+    {
+      "name": "AmdNbioGfxARIDxe",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0025_AmdNbioGfxARIDxe_pe32.bin",
+      "input_sha256": "a1b5855a339875f09cfaec8a1c17abf54251bab2c43ff577bc3cdf8711e2f61c",
+      "output": "evidence/firmware-audit/rizin/AmdNbioGfxARIDxe.analysis.txt",
+      "output_sha256": "86ae8e28ab8833ea25db14bef5fbae3536d7b1c9109f79a89736556d7a55bab7",
+      "exit_code": 0,
+      "output_size": 106793
+    },
+    {
+      "name": "AmdNbioSmuV10Dxe",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0031_AmdNbioSmuV10Dxe_pe32.bin",
+      "input_sha256": "546a0689e607a3a87b8c437c7fe7191e55757f56b35792fb8d84f539844b500e",
+      "output": "evidence/firmware-audit/rizin/AmdNbioSmuV10Dxe.analysis.txt",
+      "output_sha256": "80096cd54a67ca6d8af32ec30ee8dfa02e75a5ba6d193b19495704037db27e6c",
+      "exit_code": 0,
+      "output_size": 212235
+    },
+    {
+      "name": "AmdFabricAriDxe",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0021_AmdFabricAriDxe_pe32.bin",
+      "input_sha256": "b9702a29ed28cdd253b82a7a4b1ccd62ec318705b105b9d9939b212360bec929",
+      "output": "evidence/firmware-audit/rizin/AmdFabricAriDxe.analysis.txt",
+      "output_sha256": "a590895233d4adf54c42efaddb4c453023bf0b61927e1046ba97292c2b766395",
+      "exit_code": 0,
+      "output_size": 172283
+    },
+    {
+      "name": "AmiApcbLibInterface",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0039_AmiApcbLibInterface_pe32.bin",
+      "input_sha256": "4d65e6dc2ca83c8d7bed8812275b78e9821fd126cba413f94ba9390e91a56336",
+      "output": "evidence/firmware-audit/rizin/AmiApcbLibInterface.analysis.txt",
+      "output_sha256": "cf31336645eeda225a0c298ce1eb0c9094a7fa3d54529f34fe51c834c7f799dc",
+      "exit_code": 0,
+      "output_size": 71797
+    },
+    {
+      "name": "AmdApcbObrDxe",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0033_AmdApcbObrDxe_pe32.bin",
+      "input_sha256": "e0bc6cb786469818ac6af66d7c2d06ffd5d9026ad550b651911e45334746604c",
+      "output": "evidence/firmware-audit/rizin/AmdApcbObrDxe.analysis.txt",
+      "output_sha256": "d984e87aeab3caa32d9576742f29c6685f93a9dc45546ca39d48d4d9967efa5f",
+      "exit_code": 0,
+      "output_size": 126790
+    },
+    {
+      "name": "CbsSetupDxe",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0040_CbsSetupDxe_pe32.bin",
+      "input_sha256": "9fae1341693fe1b89e6f070f8740c94228f5161cca701ac31425bc5d438533b3",
+      "output": "evidence/firmware-audit/rizin/CbsSetupDxe.analysis.txt",
+      "output_sha256": "b80dcc8a717b3c5c803c146acc5cbba14aaf25fd2fbf07efce62dd4dfc4d2e69",
+      "exit_code": 0,
+      "output_size": 542305
+    },
+    {
+      "name": "AmdPspPeiV2",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0199_AmdPspPeiV2_te.bin",
+      "input_sha256": "1158720bbf95af537f3337ce8572359df84968ee465f5fabcbb036a839460d0e",
+      "output": "evidence/firmware-audit/rizin/AmdPspPeiV2.analysis.txt",
+      "output_sha256": "63821a1c2915507e8362eb49c70cf344790d8152be593b548a1b74b1352467fa",
+      "exit_code": 0,
+      "output_size": 90001
+    },
+    {
+      "name": "AmdPspDxeV2",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0032_AmdPspDxeV2_pe32.bin",
+      "input_sha256": "554e1b4bc50d38578b09d58cc2fcdb0f460ad3c164eab9009be706a551dc1c92",
+      "output": "evidence/firmware-audit/rizin/AmdPspDxeV2.analysis.txt",
+      "output_sha256": "5027c49babc09944352d2517c501c346cdb2fb68309ce9895d5ffd17a3c9e72f",
+      "exit_code": 0,
+      "output_size": 97229
+    },
+    {
+      "name": "AmdNbioBaseARIPei",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0196_AmdNbioBaseARIPei_te.bin",
+      "input_sha256": "51d96c1e5a5e2c39f04fb962b0b5be686dea0a05eecbde829a4595fe3356884f",
+      "output": "evidence/firmware-audit/rizin/AmdNbioBaseARIPei.analysis.txt",
+      "output_sha256": "fa91aba04ce80010702542cfbd9e93fa030b220a4989d46ff18abff9373e0e8a",
+      "exit_code": 0,
+      "output_size": 401548
+    },
+    {
+      "name": "CbsBasePei",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0204_CbsBasePei_te.bin",
+      "input_sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "output": "evidence/firmware-audit/rizin/CbsBasePei.analysis.txt",
+      "output_sha256": "0f22db632806b7364d21d71b32c99f4d2e01a086817499d8bc2e7413f10dd548",
+      "exit_code": 0,
+      "output_size": 257160
+    },
+    {
+      "name": "AmdMemAm4Pei",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0191_AmdMemAm4Pei_te.bin",
+      "input_sha256": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8",
+      "output": "evidence/firmware-audit/rizin/AmdMemAm4Pei.analysis.txt",
+      "output_sha256": "2c5cac67332d8b29709e87b7f882765e8f14643ed36d6e0f8797abaddca98aa5",
+      "exit_code": 0,
+      "output_size": 54360
+    },
+    {
+      "name": "SecurityCore",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0233_1BA0062E-C779-4582-8566-336AE8F78F09_te.bin",
+      "input_sha256": "93ea4e943d9d8feeb92e5000ffc9185028cb38e19576a41fa3de674bd788bc3b",
+      "output": "evidence/firmware-audit/rizin/SecurityCore.analysis.txt",
+      "output_sha256": "78449f4d3ba47cde3d2e5f69cd8c0bc99b9e2d19dccfc85db343f34d996e2854",
+      "exit_code": 0,
+      "output_size": 27263
+    }
+  ],
+  "caveats": [
+    "Rizin reports TE images as endian=BE even though TE headers/bytes are little-endian; cross-check TE instruction interpretation independently.",
+    "Rizin metadata includes build/debug paths from compiled EFI modules; they are retained only in local evidence reports."
+  ],
+  "evidence_class": "static-analysis"
+}

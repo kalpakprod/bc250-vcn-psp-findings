@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "checks": 25,
+  "source_edges": {
+    "q3_0x1d": {
+      "mailbox": "Queue ID 3 msg 0x1D",
+      "handler": "0x2EA08",
+      "target_source": "low16 mailbox arg -> ufloat.s -> 0x1402C+index*12",
+      "bulk_source": "0x2E9DC reads 0x7B5C+pstate*100+0x48 -> 0x14038",
+      "consumer": "0x2E788 -> 0x23890 -> 0x235C8",
+      "unit": "raw unsigned integer; no MHz/divider scale encoded",
+      "setup_join": "not observed"
+    },
+    "q4_0x07": {
+      "mailbox": "raw Queue ID 4 msg 0x07",
+      "dispatch": "0x79E8/0x79EC",
+      "handler": "0x1E720 -> 0x1E448",
+      "selector": "high byte mode 0x01, low byte pstate index",
+      "table": "0xCF0C, 5 rows x 0x28",
+      "consumer": "0x23B7C/0x23BA8/0x23BF4 -> 0x23F18",
+      "unit": "fixed-point/DID arithmetic reproduces numeric stored floats; physical MHz identity unresolved",
+      "setup_join": "not observed"
+    }
+  },
+  "pstate3": {
+    "row": "0xCF84",
+    "stored_plus_0x04": 1200.0,
+    "stored_plus_0x10": 875.0,
+    "stored_plus_0x14": 109.375,
+    "stored_plus_0x18": 1750.0
+  },
+  "preserved_clv_request": {
+    "rom_offset": "0x7E5",
+    "AmdSetup_offset": "0x316",
+    "byte": "0x24",
+    "label": "1800MHz"
+  },
+  "unresolved": "provider/caller join from native AmdSetup/ABL1/APOB to mailbox args; physical MCLK/UCLK/FCLK assignment and crossing selector"
+}

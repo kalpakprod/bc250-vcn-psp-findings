@@ -1,0 +1,211 @@
++ SP=/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc
++ PY=/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu
++ echo '=== bc250_smu files ==='
+=== bc250_smu files ===
++ ls -la /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu
+итого 56
+drwxr-xr-x 1 steammachine steammachine   206 Там 16 18:37 .
+drwxr-xr-x 1 steammachine steammachine   246 Там 16 18:37 ..
+-rw-r--r-- 1 steammachine steammachine  3554 Там 16 18:37 api.py
+-rw-r--r-- 1 steammachine steammachine  6145 Там 16 18:37 api_q0.py
+-rw-r--r-- 1 steammachine steammachine   180 Там 16 18:37 api_q1.py
+-rw-r--r-- 1 steammachine steammachine  3439 Там 16 18:37 api_q2.py
+-rw-r--r-- 1 steammachine steammachine 14770 Там 16 18:37 api_q3.py
+-rw-r--r-- 1 steammachine steammachine   990 Там 16 18:37 api_q4.py
+-rw-r--r-- 1 steammachine steammachine   640 Там 16 18:37 codec.py
+-rw-r--r-- 1 steammachine steammachine   177 Там 16 18:37 __init__.py
+-rw-r--r-- 1 steammachine steammachine  1969 Там 16 18:37 mailbox.py
+drwxr-xr-x 1 steammachine steammachine   444 Там 16 18:37 __pycache__
+-rw-r--r-- 1 steammachine steammachine  1695 Там 16 18:37 transport.py
++ echo '=== __init__.py ==='
+=== __init__.py ===
++ cat /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/__init__.py
+from .api import Bc250Smu
+from .mailbox import Bc250Mailbox
+from .transport import Bc250PciTransport
+
+__all__ = [
+    "Bc250Smu",
+    "Bc250Mailbox",
+    "Bc250PciTransport",
+]
++ echo '=== transport.py ==='
+=== transport.py ===
++ cat /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/transport.py
+import fcntl
+import os
+import struct
+from typing import Optional
+
+
+class Bc250PciTransport:
+    def __init__(self, bdf: str, use_flock: bool = False):
+        self._config_path = f"/sys/bus/pci/devices/{bdf}/config"
+        self._use_flock = use_flock
+        self._fd: Optional[int] = None
+
+    def open(self) -> None:
+        if self._fd is None:
+            self._fd = os.open(self._config_path, os.O_RDWR | os.O_CLOEXEC)
+
+    def close(self) -> None:
+        if self._fd is not None:
+            os.close(self._fd)
+            self._fd = None
+
+    def _lock(self) -> None:
+        if self._use_flock and self._fd is not None:
+            fcntl.flock(self._fd, fcntl.LOCK_EX)
+
+    def _unlock(self) -> None:
+        if self._use_flock and self._fd is not None:
+            fcntl.flock(self._fd, fcntl.LOCK_UN)
+
+    def read_config32(self, offset: int) -> int:
+        if self._fd is None:
+            raise RuntimeError("transport not opened")
+        self._lock()
+        try:
+            data = os.pread(self._fd, 4, offset)
+        finally:
+            self._unlock()
+        return struct.unpack("<I", data)[0]
+
+    def write_config32(self, offset: int, value: int) -> None:
+        if self._fd is None:
+            raise RuntimeError("transport not opened")
+        data = struct.pack("<I", value)
+        self._lock()
+        try:
+            os.pwrite(self._fd, data, offset)
+        finally:
+            self._unlock()
+
+    def read_smu_reg(self, reg: int) -> int:
+        self.write_config32(0xB8, reg)
+        return self.read_config32(0xBC)
+
+    def write_smu_reg(self, reg: int, value: int) -> None:
+        self.write_config32(0xB8, reg)
+        self.write_config32(0xBC, value)
++ echo '=== mailbox.py ==='
+=== mailbox.py ===
++ cat /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/mailbox.py
+import threading
+from typing import Optional
+
+from .transport import Bc250PciTransport
+
+
+class Bc250Mailbox:
+    SMU_RETURN_OK = 0x01
+    SMU_RETURN_FAILED = 0xFF
+    SMU_RETURN_UNKNOWN_CMD = 0xFE
+    SMU_RETURN_REJECTED_PREREQ = 0xFD
+    SMU_RETURN_REJECTED_BUSY = 0xFC
+    
+    def __init__(
+        self,
+        transport: Bc250PciTransport,
+        cmd_addr: int,
+        rsp_addr: int,
+        arg_addr: int,
+        timeout: int = 100,
+        lock: Optional[threading.Lock] = None,
+    ) -> None:
+        self._transport = transport
+        self._cmd_addr = cmd_addr
+        self._rsp_addr = rsp_addr
+        self._arg_addr = arg_addr
+        self._timeout = timeout
+        self._lock = lock or threading.Lock()
+
+    def send(self, msg_id: int, arg: int = 0, arg_high: Optional[int] = None) -> int:
+        with self._lock:
+            self._transport.write_smu_reg(self._rsp_addr, 0)
+            self._transport.write_smu_reg(self._arg_addr, arg)
+            self._transport.write_smu_reg(self._arg_addr + 4, 0 if arg_high is None else arg_high)
+            self._transport.write_smu_reg(self._cmd_addr, msg_id)
+            return self._wait_done()
+
+    def read_arg(self) -> int:
+        with self._lock:
+            return self._transport.read_smu_reg(self._arg_addr)
+
+    def read_arg_high(self) -> int:
+        with self._lock:
+            return self._transport.read_smu_reg(self._arg_addr + 4)
+
+    def _wait_done(self) -> int:
+        done_statuses = {
+            self.SMU_RETURN_OK,
+            self.SMU_RETURN_FAILED,
+            self.SMU_RETURN_UNKNOWN_CMD,
+            self.SMU_RETURN_REJECTED_PREREQ,
+            self.SMU_RETURN_REJECTED_BUSY,
+        }
+        remaining = self._timeout
+        last_status = 0
+        while remaining > 0:
+            remaining -= 1
+            last_status = self._transport.read_smu_reg(self._rsp_addr)
+            if last_status in done_statuses:
+                return last_status
+        return last_status
++ echo '=== grep SMU msg/queue/0x98/SMN in package ==='
+=== grep SMU msg/queue/0x98/SMN in package ===
++ grep -iE 'def |0x98|queue|smn|msg'
++ grep -rniE 'msg|queue|0x98|smn|mailbox|write_reg|config' /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q1.py /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q4.py /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/codec.py /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/__init__.py /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/mailbox.py /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/transport.py
++ head -60
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:3:from .api_q0 import Queue0Mixin
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:4:from .api_q1 import Queue1Mixin
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:5:from .api_q2 import Queue2Mixin
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:6:from .api_q3 import Queue3Mixin
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:7:from .api_q4 import Queue4Mixin
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:13:DEFAULT_QUEUE_ADDRS: Dict[int, Tuple[int, int, int]] = {
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:22:class Bc250Smu(Queue0Mixin, Queue1Mixin, Queue2Mixin, Queue3Mixin, Queue4Mixin):
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:26:        allow_queue0: bool = False,
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:28:        queue_addrs: Optional[Dict[int, Tuple[int, int, int]]] = None,
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:31:        self._allow_queue0 = allow_queue0
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:34:        addrs = dict(DEFAULT_QUEUE_ADDRS)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:35:        if queue_addrs:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:36:            addrs.update(queue_addrs)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:37:        self._queues: Dict[int, Bc250Mailbox] = {
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:38:            queue: Bc250Mailbox(self._transport, cmd, rsp, arg, timeout=timeout)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:39:            for queue, (cmd, rsp, arg) in addrs.items()
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:45:    def raw_send(self, queue: int, msg_id: int, arg: int = 0, arg_high: Optional[int] = None) -> int:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:46:        self._guard_queue(queue)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:47:        return self._get_queue(queue).send(msg_id, arg=arg, arg_high=arg_high)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:49:    def raw_read(self, queue: int) -> int:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:50:        self._guard_queue(queue)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:51:        return self._get_queue(queue).read_arg()
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:53:    def raw_read_high(self, queue: int) -> int:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:54:        self._guard_queue(queue)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:55:        return self._get_queue(queue).read_arg_high()
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:59:        queue_id: int,
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:60:        msg_id: int,
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:68:        status = self.raw_send(queue_id, msg_id, arg=packed, arg_high=arg_high)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:70:            raise RuntimeError(f"smu returned status 0x{status:02X} for queue {queue_id} msg 0x{msg_id:02X}")
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:73:        return decode(self.raw_read(queue_id))
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:91:    def _get_queue(self, queue: int) -> Bc250Mailbox:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:92:        if queue not in self._queues:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:93:            raise KeyError(f"queue {queue} not configured")
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:94:        return self._queues[queue]
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:96:    def _guard_queue(self, queue: int) -> None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:97:        if queue == 0 and not self._allow_queue0:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:98:            raise PermissionError("queue 0 access disabled; pass allow_queue0=True to enable")
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:4:class Queue0Mixin:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:54:    def _configure_s3_pwroff_register_addr_high(self, value: int) -> None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:57:    def _configure_s3_pwroff_register_addr_low(self, value: int) -> None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q1.py:1:class Queue1Mixin:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:4:class Queue2Mixin:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:4:class Queue3Mixin:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:330:    def _q3_0x98(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:331:        return self.send_message(3, 0x98)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q4.py:4:class Queue4Mixin:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/mailbox.py:30:    def send(self, msg_id: int, arg: int = 0, arg_high: Optional[int] = None) -> int:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/mailbox.py:35:            self._transport.write_smu_reg(self._cmd_addr, msg_id)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/transport.py:30:    def read_config32(self, offset: int) -> int:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/transport.py:40:    def write_config32(self, offset: int, value: int) -> None:
++ echo '=== done ==='
+=== done ===

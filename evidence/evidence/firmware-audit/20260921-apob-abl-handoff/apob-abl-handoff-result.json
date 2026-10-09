@@ -1,0 +1,393 @@
+{
+  "status": "PASS",
+  "checks": {
+    "passed": 46,
+    "failed": 0,
+    "total": 46
+  },
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "rom": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "size": 16777216
+    },
+    "census": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/census.json",
+      "sha256": "506b8eefd0ef3847782dddd88a458b95e32082f473346d7d645703dce6b60d39"
+    },
+    "abl1": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+      "sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "size": 94624
+    },
+    "pmfw": {
+      "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin5_psp_bodies/SMU_OFFCHIP_FW~0x8_0.58.7.1.body",
+      "sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+      "size": 262400
+    }
+  },
+  "trace": {
+    "native_0x11ed": {
+      "field": "AmdSetup+0x316",
+      "pinned_value": "0x24",
+      "preserved_label": "1800MHz (UI label only)",
+      "cbs_rvas": [
+        "0x9837",
+        "0x9857",
+        "0x985D"
+      ],
+      "smu_pei_rvas": [
+        "0xB8B7",
+        "0xB8D7",
+        "0xB8DD"
+      ]
+    },
+    "apob_to_memory_hob": {
+      "amd_mem_service": {
+        "pointer": "0x9E3B14C",
+        "message": "0x61",
+        "argument": "0xFF",
+        "call_rva": "0x8D1"
+      },
+      "ppi_guid": "e54e6e84-020b-4081-8156-37e9c62c1ed6",
+      "amd_mem_guid_rva": "0x11A0",
+      "amd_mem_guid_raw": "0x1008",
+      "memory_hob_guid_rva": "0x1640",
+      "memory_hob_guid_raw": "0x14A8",
+      "ppi_fields": [
+        "+0x28",
+        "+0x2C",
+        "+0x30",
+        "+0x31",
+        "+0x40"
+      ],
+      "install_pei_memory_rva": "0x299"
+    },
+    "abl1_provider": {
+      "getter_token": 7,
+      "timepoint": 2,
+      "path": [
+        "0x2264 -> 0x1F2C",
+        "0x4810 selector 0x0F",
+        "0x4B0E group 0x1707"
+      ],
+      "enum_0x24_policy_value": "0x708",
+      "policy_value_dec": 1800
+    },
+    "apcb_raw_token7_contrast": [
+      {
+        "instance": 13,
+        "absolute": "0xab1464",
+        "u8_0": 1,
+        "u8_1": 7,
+        "u16_le": 0
+      },
+      {
+        "instance": 15,
+        "absolute": "0xab1710",
+        "u8_0": 1,
+        "u8_1": 7,
+        "u16_le": 97
+      }
+    ],
+    "smu_carrier": {
+      "pmfw_marker_hits": {
+        "$INV": 0,
+        "NVTB": 0
+      },
+      "direct_0x11ed_literal_hits": 0
+    }
+  },
+  "first_missing_boundary": {
+    "location": "between Cbs/AmdNbioSmuV10Pei `$INV 0x11ED` buffer production and AmdMemAm4Pei APOB service/PPI population; downstream ABL1 provider table remains separate",
+    "statement": "The exact open UEFI writers preserve Setup+0x316=0x24 in `$INV 0x11ED`. AmdMemAm4Pei requests APOB service 0x9E3B14C/0x61/0xFF and installs the PPI identified by GUID e54e6e84-020b-4081-8156-37e9c62c1ed6; AmdMemoryHobInfoPeim locates that same GUID, reads returned fields, and calls InstallPeiMemory. Exact ABL1 separately reads APCB/CBS token 7 and maps enum 0x24 to 0x708. No byte-backed edge identifies `$INV 0x11ED` as an input to the APOB service, the joined PPI fields, ABL1 runtime context, or SMU PMFW. The first missing boundary is the APOB service/PPI population input, before training/clock actuator semantics.",
+    "not_repeated": "The existing UclkDiv1M0 `$INV 0x1204` serializer/HOB path was not checked."
+  },
+  "limits": [
+    "Static bytes only; no APOB service, PPI, ABL1, SMU, firmware runtime or hardware execution.",
+    "APCB rows with u8_1=7 are retained as raw parser fields and are not renamed to native `$INV` token 0x11ED.",
+    "PMFW marker no-hits are bounded carrier evidence, not proof against computed, indirect or DMA delivery."
+  ],
+  "checks_detail": [
+    {
+      "name": "ROM hash",
+      "status": "PASS",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "name": "ROM size",
+      "status": "PASS",
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "name": "ABL1 hash",
+      "status": "PASS",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "name": "PMFW hash",
+      "status": "PASS",
+      "got": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+      "expected": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37"
+    },
+    {
+      "name": "CbsBasePei hash",
+      "status": "PASS",
+      "got": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    {
+      "name": "AmdNbioSmuV10Pei hash",
+      "status": "PASS",
+      "got": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "expected": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+    },
+    {
+      "name": "AmdMemAm4Pei hash",
+      "status": "PASS",
+      "got": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8",
+      "expected": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8"
+    },
+    {
+      "name": "AmdMemoryHobInfoPeim hash",
+      "status": "PASS",
+      "got": "aad3f828ccef4cf8878cad8c9ee1e47743748f652a1ef54af04de759983b4619",
+      "expected": "aad3f828ccef4cf8878cad8c9ee1e47743748f652a1ef54af04de759983b4619"
+    },
+    {
+      "name": "CbsBasePei INV 0x11ED header",
+      "status": "PASS",
+      "got": "baed110000",
+      "expected": "baed110000"
+    },
+    {
+      "name": "CbsBasePei Setup+0x316 load",
+      "status": "PASS",
+      "got": "8a8216030000",
+      "expected": "8a8216030000"
+    },
+    {
+      "name": "CbsBasePei INV value store",
+      "status": "PASS",
+      "got": "884103",
+      "expected": "884103"
+    },
+    {
+      "name": "AmdNbioSmuV10Pei INV 0x11ED header",
+      "status": "PASS",
+      "got": "baed110000",
+      "expected": "baed110000"
+    },
+    {
+      "name": "AmdNbioSmuV10Pei Setup+0x316 load",
+      "status": "PASS",
+      "got": "8a8216030000",
+      "expected": "8a8216030000"
+    },
+    {
+      "name": "AmdNbioSmuV10Pei INV value store",
+      "status": "PASS",
+      "got": "884103",
+      "expected": "884103"
+    },
+    {
+      "name": "pinned AmdSetup+0x316 byte",
+      "status": "PASS",
+      "got": 36,
+      "expected": 36
+    },
+    {
+      "name": "AmdMem APOB PPI descriptor GUID pointer RVA",
+      "status": "PASS",
+      "got": "0x11a0",
+      "expected": "0x11a0"
+    },
+    {
+      "name": "AmdMemoryHob LocatePpi GUID pointer RVA",
+      "status": "PASS",
+      "got": "0x1640",
+      "expected": "0x1640"
+    },
+    {
+      "name": "AmdMem/AmdMemoryHob GUID bytes join",
+      "status": "PASS",
+      "got": "846e4ee50b028140815637e9c62c1ed6",
+      "expected": "846e4ee50b028140815637e9c62c1ed6"
+    },
+    {
+      "name": "joined PPI GUID",
+      "status": "PASS",
+      "got": "e54e6e84-020b-4081-8156-37e9c62c1ed6",
+      "expected": "e54e6e84-020b-4081-8156-37e9c62c1ed6"
+    },
+    {
+      "name": "AmdMem APOB service pointer push",
+      "status": "PASS",
+      "got": "684cb1e309",
+      "expected": "684cb1e309"
+    },
+    {
+      "name": "AmdMem service argument 0xFF",
+      "status": "PASS",
+      "got": "68ff000000",
+      "expected": "68ff000000"
+    },
+    {
+      "name": "AmdMem service message 0x61",
+      "status": "PASS",
+      "got": "6a61",
+      "expected": "6a61"
+    },
+    {
+      "name": "AmdMem service call 0xCD9",
+      "status": "PASS",
+      "got": "e803040000",
+      "expected": "e803040000"
+    },
+    {
+      "name": "AmdMem InstallPpi slot",
+      "status": "PASS",
+      "got": "ff5018",
+      "expected": "ff5018"
+    },
+    {
+      "name": "AmdMem PPI +0x44 callback data",
+      "status": "PASS",
+      "got": "c740446ea0e309",
+      "expected": "c740446ea0e309"
+    },
+    {
+      "name": "AmdMemoryHob LocatePpi slot",
+      "status": "PASS",
+      "got": "ff5020",
+      "expected": "ff5020"
+    },
+    {
+      "name": "AmdMemoryHob InstallPeiMemory slot",
+      "status": "PASS",
+      "got": "ff5044",
+      "expected": "ff5044"
+    },
+    {
+      "name": "AmdMemoryHob reads returned PPI +0x28",
+      "status": "PASS",
+      "got": "8b4828",
+      "expected": "8b4828"
+    },
+    {
+      "name": "AmdMemoryHob reads returned PPI +0x2c",
+      "status": "PASS",
+      "got": "668b482c",
+      "expected": "668b482c"
+    },
+    {
+      "name": "AmdMemoryHob reads returned PPI +0x30",
+      "status": "PASS",
+      "got": "8a4830",
+      "expected": "8a4830"
+    },
+    {
+      "name": "AmdMemoryHob reads returned PPI +0x31",
+      "status": "PASS",
+      "got": "8a4831",
+      "expected": "8a4831"
+    },
+    {
+      "name": "AmdMemoryHob reads returned PPI +0x40",
+      "status": "PASS",
+      "got": "8b4040",
+      "expected": "8b4040"
+    },
+    {
+      "name": "AmdMem body lacks direct 0x11ED literal",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "ABL1 getter token 7",
+      "status": "PASS",
+      "got": "0720",
+      "expected": "0720"
+    },
+    {
+      "name": "ABL1 getter call 0x1F2C",
+      "status": "PASS",
+      "got": "fff761fe",
+      "expected": "fff761fe"
+    },
+    {
+      "name": "ABL1 provider selector 0x0F",
+      "status": "PASS",
+      "got": "0f20",
+      "expected": "0f20"
+    },
+    {
+      "name": "ABL1 provider group 0x1707",
+      "status": "PASS",
+      "got": "0f2240f2621a",
+      "expected": "0f2240f2621a"
+    },
+    {
+      "name": "ABL1 TBB table fragment",
+      "status": "PASS",
+      "got": "1450161a50501c1f225050505025502850502b505050502e3134505037503a3d4044474a50504d00",
+      "expected": "1450161a50501c1f225050505025502850502b505050502e3134505037503a3d4044474a50504d00"
+    },
+    {
+      "name": "ABL1 enum 0x24 target",
+      "status": "PASS",
+      "got": "0x2318",
+      "expected": "0x2318"
+    },
+    {
+      "name": "ABL1 enum 0x24 policy value 0x708",
+      "status": "PASS",
+      "got": "40f20870",
+      "expected": "40f20870"
+    },
+    {
+      "name": "ABL1 body lacks direct 0x11ED literal",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "PMFW lacks $INV marker",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "PMFW lacks NVTB marker",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "PMFW lacks direct 0x11ED literal",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "APCB parser image hash",
+      "status": "PASS",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "name": "APCB raw CBSG rows with second byte 7",
+      "status": "PASS",
+      "got": 2,
+      "expected": 2
+    }
+  ]
+}

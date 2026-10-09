@@ -1,0 +1,216 @@
+{
+  "checks_detail": [
+    {
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "label": "clv-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "e831060000",
+      "got": "e831060000",
+      "label": "AmdMemAm4Pei:0x240",
+      "status": "PASS"
+    },
+    {
+      "expected": "8b442408",
+      "got": "8b442408",
+      "label": "AmdMemAm4Pei:0x245",
+      "status": "PASS"
+    },
+    {
+      "expected": "8bf0",
+      "got": "8bf0",
+      "label": "AmdMemAm4Pei:0x30f",
+      "status": "PASS"
+    },
+    {
+      "expected": "8b06",
+      "got": "8b06",
+      "label": "AmdMemAm4Pei:0x311",
+      "status": "PASS"
+    },
+    {
+      "expected": "ff504c",
+      "got": "ff504c",
+      "label": "AmdMemAm4Pei:0x316",
+      "status": "PASS"
+    },
+    {
+      "expected": "8b06",
+      "got": "8b06",
+      "label": "AmdMemAm4Pei:0x3a0",
+      "status": "PASS"
+    },
+    {
+      "expected": "ff504c",
+      "got": "ff504c",
+      "label": "AmdMemAm4Pei:0x3aa",
+      "status": "PASS"
+    },
+    {
+      "expected": "8b06",
+      "got": "8b06",
+      "label": "AmdMemAm4Pei:0x3e2",
+      "status": "PASS"
+    },
+    {
+      "expected": "ff5018",
+      "got": "ff5018",
+      "label": "AmdMemAm4Pei:0x3e5",
+      "status": "PASS"
+    },
+    {
+      "expected": "8365fc00",
+      "got": "8365fc00",
+      "label": "AmdFabricAriPei:0x1d68",
+      "status": "PASS"
+    },
+    {
+      "expected": "8d45fc",
+      "got": "8d45fc",
+      "label": "AmdFabricAriPei:0x1d6c",
+      "status": "PASS"
+    },
+    {
+      "expected": "6a00",
+      "got": "6a00",
+      "label": "AmdFabricAriPei:0x1d70",
+      "status": "PASS"
+    },
+    {
+      "expected": "e899190000",
+      "got": "e899190000",
+      "label": "AmdFabricAriPei:0x1d72",
+      "status": "PASS"
+    },
+    {
+      "expected": "8d45fc",
+      "got": "8d45fc",
+      "label": "AmdFabricAriPei:0x1dc5",
+      "status": "PASS"
+    },
+    {
+      "expected": "ff75e9",
+      "got": "ff75e9",
+      "label": "AmdFabricAriPei:0x1dc9",
+      "status": "PASS"
+    },
+    {
+      "expected": "e83f190000",
+      "got": "e83f190000",
+      "label": "AmdFabricAriPei:0x1dcc",
+      "status": "PASS"
+    },
+    {
+      "expected": "8b75e9",
+      "got": "8b75e9",
+      "label": "AmdFabricAriPei:0x1df9",
+      "status": "PASS"
+    },
+    {
+      "expected": "813e24494e56",
+      "got": "813e24494e56",
+      "label": "AmdFabricAriPei:0x1dfc",
+      "status": "PASS"
+    },
+    {
+      "expected": "edx,0x1331",
+      "got": "edx,0x1331",
+      "label": "CbsBasePei:FCLK-header",
+      "status": "PASS"
+    },
+    {
+      "expected": "al,BYTE PTR [edx+0x6a3]",
+      "got": "al,BYTE PTR [edx+0x6a3]",
+      "label": "CbsBasePei:FCLK-source",
+      "status": "PASS"
+    },
+    {
+      "expected": "BYTE PTR [ecx+0x3],al",
+      "got": "BYTE PTR [ecx+0x3],al",
+      "label": "CbsBasePei:FCLK-store",
+      "status": "PASS"
+    },
+    {
+      "expected": "edx,0x1331",
+      "got": "edx,0x1331",
+      "label": "AmdNbioSmuV10Pei:FCLK-header",
+      "status": "PASS"
+    },
+    {
+      "expected": "al,BYTE PTR [edx+0x6a3]",
+      "got": "al,BYTE PTR [edx+0x6a3]",
+      "label": "AmdNbioSmuV10Pei:FCLK-source",
+      "status": "PASS"
+    },
+    {
+      "expected": "BYTE PTR [ecx+0x3],al",
+      "got": "BYTE PTR [ecx+0x3],al",
+      "label": "AmdNbioSmuV10Pei:FCLK-store",
+      "status": "PASS"
+    }
+  ],
+  "direct_checks": {
+    "failed": 0,
+    "passed": 25,
+    "total": 25
+  },
+  "limitations": [
+    "No firmware execution, runtime PPI invocation, hardware, training, clock, or performance result.",
+    "Selected module no-hit checks do not exclude indirect/HOB/DMA/closed AGESA/PSP consumers.",
+    "Worker reports with self-comparison checks remain qualified by these direct-byte checks; no broad census claim is made."
+  ],
+  "review_findings": [
+    "AmdMemAm4Pei uses a PEIM entry argument of type EFI_PEI_SERVICES**: ESI retains the pointer-to-pointer; mov eax,[esi] loads the service table before calls at table+0x4C and table+0x18. The worker report wording \"ESI=EAX (PeiServices table)\" is imprecise and corrected here.",
+    "The Fabric chain proves local pointer identity from the second 0x3710 D.buffer argument ([ebp-0x17]) to the first returned-buffer reader (0x1df9/0x1dfc). The exact HOB+0x28 offset is not independently proven by the bounded helper decode and is not promoted.",
+    "The first 0x3710 call is a size pass with D.buffer=NULL; it cannot be described as filling a buffer. The second call is the data/serialization pass using the allocated pointer.",
+    "The CBS lifecycle worker output contains a stale token-0x1332 wording. Independent contiguous source/store checks in both serializer bodies establish FclkDpm +0x6A3 -> token 0x1331; token 0x1332 is the following +0x6A4 record and must be removed from that claim."
+  ],
+  "status": "PASS",
+  "worker_reopen": [
+    {
+      "hash": "3da09849219856afed76fc6c192e54f14ddcb4949d6fa75269d2b2c0c93cc9b1",
+      "label": "cbs_lifecycle",
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-cbs-ppi-lifecycle/cbs-ppi-lifecycle-result.json",
+      "reported_checks": 26,
+      "status": "PASS"
+    },
+    {
+      "hash": "53f3a7266d319abd773f481f17c90bf6ef86327d8d869970f8ba9b6e7d309620",
+      "label": "memclk_consumer",
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-memclk-consumer/memclk-consumer-result.json",
+      "reported_checks": {
+        "failed": 0,
+        "passed": 12,
+        "total": 12
+      },
+      "status": "PASS"
+    },
+    {
+      "hash": "705fdb5dd4605dc4d949748378977ed229b2475e713e09136010a88420a1084d",
+      "label": "meminit_controlflow",
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-memclk-consumer/mem-init-controlflow-result.json",
+      "reported_checks": {
+        "failed": 0,
+        "passed": 27,
+        "total": 27
+      },
+      "status": "PASS"
+    },
+    {
+      "hash": "9f82877cfbe0f9d6539aa09f4832684afad4bd322c6dacf0bd3b0f50b49d5426",
+      "label": "cbs_dispatch",
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-cbs-dispatch-selection/cbs-dispatch-result.json",
+      "reported_checks": 21,
+      "status": "PASS"
+    },
+    {
+      "hash": "ef22ba8a6bc8e8ca58d20020403bb29959d8bf332a7571c36d180b1e4d946369",
+      "label": "cbs_caller_chain",
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-cbs-caller-chain/cbs-caller-chain-result.json",
+      "reported_checks": 21,
+      "status": "PASS"
+    }
+  ]
+}

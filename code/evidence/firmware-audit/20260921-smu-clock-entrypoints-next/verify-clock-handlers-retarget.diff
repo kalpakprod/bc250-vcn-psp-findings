@@ -1,0 +1,8 @@
+     "observed_apertures": ["0x0115Bxxx", "0x0116Cxxx", "0x0116Dxxx", "0x01D80414"]
+ }
+ 
+-out_path = Path('evidence/firmware-audit/20260919-oc-clock-provenance/clock-handlers-verification.json')
++out_path = Path('evidence/firmware-audit/20260921-smu-clock-entrypoints-next/clock-handlers-verification.json')
+ out_path.write_text(json.dumps(results, indent=2))
+ print(f"PASS: Clock handlers and actuator chain verification complete. Written to {out_path}")
+ 

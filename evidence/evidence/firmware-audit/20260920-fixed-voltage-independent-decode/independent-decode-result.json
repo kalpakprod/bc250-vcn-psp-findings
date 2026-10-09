@@ -1,0 +1,1274 @@
+{
+ "status": "PASS",
+ "decode_status": "PASS_WITH_CONTRADICTED_LABELS",
+ "label_status": "MISLEADING_LABELS_FOUND",
+ "semantic_checks": [
+  {
+   "id": "M-ISL69247-identity",
+   "module": "ISL69247",
+   "claim": "TE image at ROM 0xed2c74 hashes to the pinned census record",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0xed2c74",
+     "text": "3e1f753a627922d1 / 3e1f753a627922d1"
+    }
+   ]
+  },
+  {
+   "id": "M-ISL95712-identity",
+   "module": "ISL95712",
+   "claim": "TE image at ROM 0xed3d8c hashes to the pinned census record",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0xed3d8c",
+     "text": "c0cc17d2d54f9cde / c0cc17d2d54f9cde"
+    }
+   ]
+  },
+  {
+   "id": "A3a",
+   "module": "ISL69247",
+   "claim": "GetVariable call site pushes the Setup GUID VA and the UTF-16 name VA",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x2d0",
+     "text": "push   0x9ed36c4"
+    },
+    {
+     "addr": "0x2d5",
+     "text": "push   0x9ed36d4"
+    }
+   ]
+  },
+  {
+   "id": "A4a",
+   "module": "ISL69247",
+   "claim": "the pushed GUID VA 0x9ed36c4 holds the Setup VarStore GUID",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x9ed36c4",
+     "text": "43d687eca4ebb54ba1e53f3e36b20da9"
+    }
+   ]
+  },
+  {
+   "id": "A4b",
+   "module": "ISL69247",
+   "claim": "the pushed name VA 0x9ed36d4 holds UTF-16 'Setup'",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x9ed36d4",
+     "text": "'S\\x00e\\x00t\\x00u\\x00p\\x00\\x00\\x00'"
+    }
+   ]
+  },
+  {
+   "id": "A5a",
+   "module": "ISL69247",
+   "claim": "the GuidLocate argument is the PEI Read-Only Variable2 PPI GUID",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x9ed341c",
+     "text": "f56eb82ab5ec3441b5563854ca1fe1b4"
+    }
+   ]
+  },
+  {
+   "id": "A5b",
+   "module": "ISL69247",
+   "claim": "the module calls an interface slot indirectly after locating that PPI and calls slot +0x00 (GetVariable)",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x2b7",
+     "text": "call   DWORD PTR [ecx+0x20]"
+    },
+    {
+     "addr": "0x2db",
+     "text": "call   DWORD PTR [eax]"
+    }
+   ]
+  },
+  {
+   "id": "A5c",
+   "module": "ISL69247",
+   "claim": "the read-interface call carries 5 arguments (size 0x1d3 at [ebp+0x5c], buffer [ebp-0x178])",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x2a2",
+     "text": "mov    DWORD PTR [ebp+0x5c],0x1d3"
+    },
+    {
+     "addr": "0x2c1",
+     "text": "lea    eax,[ebp-0x178]"
+    },
+    {
+     "addr": "0x2ba",
+     "text": "add    esp,0x14"
+    }
+   ]
+  },
+  {
+   "id": "A6",
+   "module": "ISL69247",
+   "claim": "defaults for Setup+0x1c9/0x1cd are 0: stores of bl after xor ebx,ebx",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x27c",
+     "text": "xor    ebx,ebx"
+    },
+    {
+     "addr": "0x2a9",
+     "text": "mov    BYTE PTR [ebp+0x51],bl"
+    },
+    {
+     "addr": "0x2b0",
+     "text": "mov    BYTE PTR [ebp+0x55],bl"
+    }
+   ]
+  },
+  {
+   "id": "A7",
+   "module": "ISL69247",
+   "claim": "defaults for Setup+0x1ca/0x1ce are 0x384 (900 mV) via esi/ecx",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x287",
+     "text": "mov    esi,0x384"
+    },
+    {
+     "addr": "0x28c",
+     "text": "mov    ecx,esi"
+    },
+    {
+     "addr": "0x28f",
+     "text": "mov    WORD PTR [ebp+0x52],cx"
+    },
+    {
+     "addr": "0x293",
+     "text": "mov    WORD PTR [ebp+0x56],cx"
+    }
+   ]
+  },
+  {
+   "id": "A8",
+   "module": "ISL69247",
+   "claim": "defaults for Setup+0x1cc/0x1d0 are the immediate 2 (decoded, not asserted by prior)",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x2ac",
+     "text": "mov    BYTE PTR [ebp+0x54],0x2"
+    },
+    {
+     "addr": "0x2b3",
+     "text": "mov    BYTE PTR [ebp+0x58],0x2"
+    }
+   ]
+  },
+  {
+   "id": "A9",
+   "module": "ISL69247",
+   "claim": "loadline table at [ebp+0x60..0x6a] is {0,20,30,40,50,60} and is indexed by the Setup loadline byte",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x25b",
+     "text": "mov    WORD PTR [ebp+0x60],cx"
+    },
+    {
+     "addr": "0x262",
+     "text": "mov    WORD PTR [ebp+0x62],cx"
+    },
+    {
+     "addr": "0x257",
+     "text": "push   0x14"
+    },
+    {
+     "addr": "0x260",
+     "text": "push   0x1e"
+    },
+    {
+     "addr": "0x267",
+     "text": "push   0x28"
+    },
+    {
+     "addr": "0x26e",
+     "text": "push   0x32"
+    },
+    {
+     "addr": "0x275",
+     "text": "push   0x3c"
+    },
+    {
+     "addr": "0x36f",
+     "text": "movzx  eax,WORD PTR [ebp+eax*2+0x60]"
+    },
+    {
+     "addr": "0x267",
+     "text": "push   0x28"
+    }
+   ]
+  },
+  {
+   "id": "A10",
+   "module": "ISL69247",
+   "claim": "the enable tests are cmp [ebp+0x51],bl and cmp [ebp+0x55],bl (bl==0)",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x30f",
+     "text": "cmp    BYTE PTR [ebp+0x51],bl"
+    },
+    {
+     "addr": "0x3ad",
+     "text": "cmp    BYTE PTR [ebp+0x55],bl"
+    }
+   ]
+  },
+  {
+   "id": "A11",
+   "module": "ISL69247",
+   "claim": "the prior claim 'enable test: cmp Setup+0x1c9 vs 0' asserted at RVA 0x30A",
+   "verdict": "CONTRADICTED",
+   "evidence": [
+    {
+     "addr": "0x30a",
+     "text": "push   0x21"
+    },
+    {
+     "addr": "0x30f",
+     "text": "cmp    BYTE PTR [ebp+0x51],bl"
+    }
+   ],
+   "note": "the enable test decodes at 0x30f; 0x30A is the register-index push shared with the 'VCORE write targets register index 0x21' label"
+  },
+  {
+   "id": "A12",
+   "module": "ISL69247",
+   "claim": "enabled path writes the Setup mV word to register 0x21; disabled path writes 0x384 (900 mV)",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x314",
+     "text": "movzx  eax,WORD PTR [ebp+0x52]"
+    },
+    {
+     "addr": "0x3b2",
+     "text": "movzx  eax,WORD PTR [ebp+0x56]"
+    },
+    {
+     "addr": "0x3d4",
+     "text": "mov    DWORD PTR [ebp+0x74],0x384"
+    },
+    {
+     "addr": "0x30a",
+     "text": "push   0x21"
+    }
+   ],
+   "note": "the VCORE disabled path reuses esi=0x384 set at 0x287, the GFX disabled path uses an explicit 0x384 immediate"
+  },
+  {
+   "id": "A13",
+   "module": "ISL69247",
+   "claim": "register 0x23 is written with 0 and 0xF0 is a read-modify-write of bit 0x30",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x320",
+     "text": "push   0x23"
+    },
+    {
+     "addr": "0x322",
+     "text": "mov    DWORD PTR [ebp+0x74],ebx"
+    },
+    {
+     "addr": "0x32a",
+     "text": "mov    esi,0xf0"
+    },
+    {
+     "addr": "0x335",
+     "text": "or     DWORD PTR [ebp+0x74],0x30"
+    },
+    {
+     "addr": "0x35b",
+     "text": "and    DWORD PTR [ebp+0x74],0xffcf"
+    }
+   ]
+  },
+  {
+   "id": "A14",
+   "module": "ISL69247",
+   "claim": "helper 0x4d2 writes register 0xC7 with argument 0 and register 0xC5 with argument 1",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x4d3",
+     "text": "push   0xc7"
+    },
+    {
+     "addr": "0x4e1",
+     "text": "push   0xc5"
+    },
+    {
+     "addr": "0x388",
+     "text": "push   0xb"
+    },
+    {
+     "addr": "0x38c",
+     "text": "push   0x8"
+    },
+    {
+     "addr": "0x38e",
+     "text": "push   0xea0b"
+    },
+    {
+     "addr": "0x429",
+     "text": "push   0xea8b"
+    },
+    {
+     "addr": "0x381",
+     "text": "cmp    BYTE PTR [ebp+0x54],0x2"
+    }
+   ],
+   "note": "caller pushes (0x0b|0x08) then (0xea0b|0xea8b); the callee's lea [esp+0xc]/[esp+0x14] bind 0xC7<-0xEA0B/0xEA8B and 0xC5<-0x0B/0x08"
+  },
+  {
+   "id": "A15",
+   "module": "ISL69247",
+   "claim": "write helper 0x6ed stages 0x65<-0xC0, 0x66<-register, 0x70/0x71<-2-byte LE value, 0x63<-3, 0x60<-0xC0, then polls status bit 0x40 with <=10 retries and writes 0x60<-8",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x6f5",
+     "text": "push   0x65"
+    },
+    {
+     "addr": "0x702",
+     "text": "push   0x66"
+    },
+    {
+     "addr": "0x709",
+     "text": "movzx  eax,BYTE PTR [edi]"
+    },
+    {
+     "addr": "0x714",
+     "text": "movzx  eax,BYTE PTR [edi+0x1]"
+    },
+    {
+     "addr": "0x70d",
+     "text": "push   0x70"
+    },
+    {
+     "addr": "0x719",
+     "text": "push   0x71"
+    },
+    {
+     "addr": "0x722",
+     "text": "push   0x63"
+    },
+    {
+     "addr": "0x72a",
+     "text": "push   0x60"
+    },
+    {
+     "addr": "0x756",
+     "text": "test   al,0x40"
+    },
+    {
+     "addr": "0x743",
+     "text": "cmp    bl,0xa"
+    },
+    {
+     "addr": "0x75a",
+     "text": "push   0x8"
+    }
+   ],
+   "note": "the 2-byte value is produced by two byte reads (0x709, 0x714), not by a word read"
+  },
+  {
+   "id": "A16",
+   "module": "ISL69247",
+   "claim": "mailbox transport uses ports 0x2E/0x2F with the 0x87,0x87 unlock and mailbox 0xA20(index)/0xA21/A22",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x4f6",
+     "text": "push   0x2e"
+    },
+    {
+     "addr": "0x4fb",
+     "text": "mov    al,0x87"
+    },
+    {
+     "addr": "0x502",
+     "text": "push   0x2f"
+    },
+    {
+     "addr": "0x543",
+     "text": "mov    ecx,0xa20"
+    },
+    {
+     "addr": "0x5bf",
+     "text": "mov    al,BYTE PTR [esp+0x4]"
+    },
+    {
+     "addr": "0x5c5",
+     "text": "mov    al,BYTE PTR [esp+0x8]"
+    }
+   ],
+   "note": "low-level writer 0x565 sends [esp+4] to 0xA21 and [esp+8] to 0xA22 (index, value)"
+  },
+  {
+   "id": "A17",
+   "module": "ISL69247",
+   "claim": "the prior label 'write helper reads a u16 little-endian value from [edi]' at 0x709",
+   "verdict": "CONTRADICTED",
+   "evidence": [
+    {
+     "addr": "0x709",
+     "text": "movzx  eax,BYTE PTR [edi]"
+    },
+    {
+     "addr": "0x714",
+     "text": "movzx  eax,BYTE PTR [edi+0x1]"
+    }
+   ],
+   "note": "0x709 is movzx eax,byte [edi]; the second byte is read at 0x714 and staged to 0x71, so the 2-byte LE staging is real but the labelled instruction is a byte read"
+  },
+  {
+   "id": "A18",
+   "module": "ISL69247",
+   "claim": "read helper 0x653 stages 0x63<-0x83 and returns the mailbox 0xB0/0xB1 pair as the current 2-byte value",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x66f",
+     "text": "push   0x83"
+    },
+    {
+     "addr": "0x6ac",
+     "text": "push   0xb0"
+    },
+    {
+     "addr": "0x6bd",
+     "text": "push   0xb1"
+    },
+    {
+     "addr": "0x6c7",
+     "text": "mov    BYTE PTR [edi+0x1],al"
+    }
+   ],
+   "note": "this is the read half of the 0xF0 read-modify-write"
+  },
+  {
+   "id": "B1a",
+   "module": "ISL95712",
+   "claim": "GetVariable call site pushes the Setup GUID VA and the name VA",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x28d",
+     "text": "push   0x9ed455c"
+    },
+    {
+     "addr": "0x292",
+     "text": "push   0x9ed456c"
+    }
+   ]
+  },
+  {
+   "id": "B1b",
+   "module": "ISL95712",
+   "claim": "those VAs hold the Setup GUID and UTF-16 'Setup'",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x9ed455c",
+     "text": "43d687eca4ebb54ba1e53f3e36b20da9"
+    },
+    {
+     "addr": "0x9ed456c",
+     "text": "'S\\x00e\\x00t\\x00u\\x00p\\x00\\x00\\x00'"
+    }
+   ]
+  },
+  {
+   "id": "B1c",
+   "module": "ISL95712",
+   "claim": "the GuidLocate argument is the PEI Read-Only Variable2 PPI GUID",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x9ed42b4",
+     "text": "f56eb82ab5ec3441b5563854ca1fe1b4"
+    }
+   ]
+  },
+  {
+   "id": "B1d",
+   "module": "ISL95712",
+   "claim": "5-argument indirect locate call through [ecx+0x20] then GetVariable through [eax]",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x274",
+     "text": "call   DWORD PTR [ecx+0x20]"
+    },
+    {
+     "addr": "0x298",
+     "text": "call   DWORD PTR [eax]"
+    },
+    {
+     "addr": "0x277",
+     "text": "add    esp,0x14"
+    },
+    {
+     "addr": "0x266",
+     "text": "mov    DWORD PTR [ebp-0xc],0x1d3"
+    },
+    {
+     "addr": "0x27e",
+     "text": "lea    eax,[ebp-0x1e0]"
+    }
+   ]
+  },
+  {
+   "id": "B2",
+   "module": "ISL95712",
+   "claim": "defaults: Setup+0x1d1=0 (bl after xor ebx,ebx), Setup+0x1d2=0x1e (1.35 V)",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x255",
+     "text": "xor    ebx,ebx"
+    },
+    {
+     "addr": "0x26d",
+     "text": "mov    BYTE PTR [ebp-0xf],bl"
+    },
+    {
+     "addr": "0x270",
+     "text": "mov    BYTE PTR [ebp-0xe],0x1e"
+    }
+   ]
+  },
+  {
+   "id": "B3",
+   "module": "ISL95712",
+   "claim": "enabled path writes the stored enum to 0xDF, then ORs bit 0; disabled path writes 0x1e and clears bit 0",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x2b6",
+     "text": "cmp    BYTE PTR [ebp-0xf],bl"
+    },
+    {
+     "addr": "0x2bc",
+     "text": "mov    al,BYTE PTR [ebp-0xe]"
+    },
+    {
+     "addr": "0x2d9",
+     "text": "or     BYTE PTR [ebp-0x1],0x1"
+    },
+    {
+     "addr": "0x2e8",
+     "text": "mov    BYTE PTR [ebp-0x1],0x1e"
+    },
+    {
+     "addr": "0x2fa",
+     "text": "and    BYTE PTR [ebp-0x1],0xfe"
+    }
+   ],
+   "note": "both branches also write register 0xDE with the staged value (enabled |1, disabled &0xfe)"
+  },
+  {
+   "id": "B4",
+   "module": "ISL95712",
+   "claim": "follow-up helper stages 0x65<-0x9E, 0x66<-0xDE, 0x63<-0x82, 0x60<-0xC0",
+   "verdict": "SUPPORTED",
+   "evidence": [
+    {
+     "addr": "0x3f3",
+     "text": "push   0x9e"
+    },
+    {
+     "addr": "0x302",
+     "text": "push   0xde"
+    },
+    {
+     "addr": "0x40d",
+     "text": "push   0x82"
+    },
+    {
+     "addr": "0x419",
+     "text": "push   0xc0"
+    },
+    {
+     "addr": "0x3f8",
+     "text": "push   0x65"
+    },
+    {
+     "addr": "0x406",
+     "text": "push   0x66"
+    }
+   ]
+  }
+ ],
+ "label_review": [
+  {
+   "module": "ISL69247",
+   "rva": "0x2a2",
+   "asserted_bytes": "c7455cd3010000",
+   "label": "GetVariable DataSize = 0x1d3 (Setup variable size)",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "mov    DWORD PTR [ebp+0x5c],0x1d3",
+   "actual_addr": "0x2a2",
+   "actual_bytes": "c7 45 5c d3 01 00 00"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x2c1",
+   "asserted_bytes": "8d8588feffff",
+   "label": "GetVariable Data buffer = [ebp-0x178]",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "lea    eax,[ebp-0x178]",
+   "actual_addr": "0x2c1",
+   "actual_bytes": "8d 85 88 fe ff ff"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x2d0",
+   "asserted_bytes": "68c436ed09",
+   "label": "push Setup variable GUID VA 0x9ed36c4",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x9ed36c4",
+   "actual_addr": "0x2d0",
+   "actual_bytes": "68 c4 36 ed 09"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x2d5",
+   "asserted_bytes": "68d436ed09",
+   "label": "push UTF-16 name 'Setup' VA 0x9ed36d4",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x9ed36d4",
+   "actual_addr": "0x2d5",
+   "actual_bytes": "68 d4 36 ed 09"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x2a9",
+   "asserted_bytes": "885d51",
+   "label": "default Setup+0x1c9 (VCORE Fix Voltage) = 0",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "mov    BYTE PTR [ebp+0x51],bl",
+   "actual_addr": "0x2a9",
+   "actual_bytes": "88 5d 51"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x2ac",
+   "asserted_bytes": "c64554",
+   "label": "default Setup+0x1cc (VCORE Loadline) = 2",
+   "class": "PREFIX_OF_INSTRUCTION",
+   "actual_instruction": "mov    BYTE PTR [ebp+0x54],0x2",
+   "actual_addr": "0x2ac",
+   "actual_bytes": "c6 45 54 02"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x2b0",
+   "asserted_bytes": "885d55",
+   "label": "default Setup+0x1cd (GFX Fix Voltage) = 0",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "mov    BYTE PTR [ebp+0x55],bl",
+   "actual_addr": "0x2b0",
+   "actual_bytes": "88 5d 55"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x2b3",
+   "asserted_bytes": "c64558",
+   "label": "default Setup+0x1d0 (GFX Loadline) = 2",
+   "class": "PREFIX_OF_INSTRUCTION",
+   "actual_instruction": "mov    BYTE PTR [ebp+0x58],0x2",
+   "actual_addr": "0x2b3",
+   "actual_bytes": "c6 45 58 02"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x28f",
+   "asserted_bytes": "66894d52",
+   "label": "default Setup+0x1ca (VCORE Voltage mV) = 0x384 (900)",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "mov    WORD PTR [ebp+0x52],cx",
+   "actual_addr": "0x28f",
+   "actual_bytes": "66 89 4d 52"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x293",
+   "asserted_bytes": "66894d56",
+   "label": "default Setup+0x1ce (GFX Voltage mV) = 0x384 (900)",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "mov    WORD PTR [ebp+0x56],cx",
+   "actual_addr": "0x293",
+   "actual_bytes": "66 89 4d 56"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x314",
+   "asserted_bytes": "0fb74552",
+   "label": "read Setup+0x1ca as u16 -> VCORE mV value",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "movzx  eax,WORD PTR [ebp+0x52]",
+   "actual_addr": "0x314",
+   "actual_bytes": "0f b7 45 52"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x30a",
+   "asserted_bytes": "6a21",
+   "label": "VCORE write targets register index 0x21",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x21",
+   "actual_addr": "0x30a",
+   "actual_bytes": "6a 21"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x3b2",
+   "asserted_bytes": "0fb74556",
+   "label": "read Setup+0x1ce as u16 -> GFX mV value",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "movzx  eax,WORD PTR [ebp+0x56]",
+   "actual_addr": "0x3b2",
+   "actual_bytes": "0f b7 45 56"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x3a8",
+   "asserted_bytes": "6a21",
+   "label": "GFX write targets register index 0x21",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x21",
+   "actual_addr": "0x3a8",
+   "actual_bytes": "6a 21"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x36b",
+   "asserted_bytes": "0fb64554",
+   "label": "read Setup+0x1cc (VCORE Loadline index)",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "movzx  eax,BYTE PTR [ebp+0x54]",
+   "actual_addr": "0x36b",
+   "actual_bytes": "0f b6 45 54"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x403",
+   "asserted_bytes": "0fb64558",
+   "label": "read Setup+0x1d0 (GFX Loadline index)",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "movzx  eax,BYTE PTR [ebp+0x58]",
+   "actual_addr": "0x403",
+   "actual_bytes": "0f b6 45 58"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x40f",
+   "asserted_bytes": "6a28",
+   "label": "Loadline write targets register index 0x28",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x28",
+   "actual_addr": "0x40f",
+   "actual_bytes": "6a 28"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x30a",
+   "asserted_bytes": "6a21",
+   "label": "enable test: cmp Setup+0x1c9 vs 0 selects Setup mV vs default 900",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x21",
+   "actual_addr": "0x30a",
+   "actual_bytes": "6a 21"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x3ad",
+   "asserted_bytes": "385d55",
+   "label": "enable test: cmp Setup+0x1cd (GFX Fix Voltage) vs 0",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "cmp    BYTE PTR [ebp+0x55],bl",
+   "actual_addr": "0x3ad",
+   "actual_bytes": "38 5d 55"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x38e",
+   "asserted_bytes": "680bea0000",
+   "label": "VCORE helper arg2 = 0xEA0B",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0xea0b",
+   "actual_addr": "0x38e",
+   "actual_bytes": "68 0b ea 00 00"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x429",
+   "asserted_bytes": "688bea0000",
+   "label": "GFX helper arg2 = 0xEA8B",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0xea8b",
+   "actual_addr": "0x429",
+   "actual_bytes": "68 8b ea 00 00"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x4d3",
+   "asserted_bytes": "68c7000000",
+   "label": "helper writes register 0xC7",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0xc7",
+   "actual_addr": "0x4d3",
+   "actual_bytes": "68 c7 00 00 00"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x4e1",
+   "asserted_bytes": "68c5000000",
+   "label": "helper writes register 0xC5",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0xc5",
+   "actual_addr": "0x4e1",
+   "actual_bytes": "68 c5 00 00 00"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x388",
+   "asserted_bytes": "6a0b",
+   "label": "VCORE loadline==2 selects 0x0B for reg 0xC5",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0xb",
+   "actual_addr": "0x388",
+   "actual_bytes": "6a 0b"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x38c",
+   "asserted_bytes": "6a08",
+   "label": "VCORE loadline!=2 selects 0x08 for reg 0xC5",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x8",
+   "actual_addr": "0x38c",
+   "actual_bytes": "6a 08"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x709",
+   "asserted_bytes": "0fb607",
+   "label": "write helper reads a u16 little-endian value from [edi]",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "movzx  eax,BYTE PTR [edi]",
+   "actual_addr": "0x709",
+   "actual_bytes": "0f b6 07"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x543",
+   "asserted_bytes": "b9200a0000",
+   "label": "transport mailbox base port 0xA20",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "mov    ecx,0xa20",
+   "actual_addr": "0x543",
+   "actual_bytes": "b9 20 0a 00 00"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x566",
+   "asserted_bytes": "2e59",
+   "label": "transport uses x86 config port 0x2E",
+   "class": "STARTS_MID_INSTRUCTION",
+   "actual_instruction": "push   0x2e",
+   "actual_addr": "0x565",
+   "actual_bytes": "6a 2e"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x571",
+   "asserted_bytes": "6a2f",
+   "label": "transport uses x86 config port 0x2F",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x2f",
+   "actual_addr": "0x571",
+   "actual_bytes": "6a 2f"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x6f5",
+   "asserted_bytes": "6a65",
+   "label": "write helper stages register 0x65",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x65",
+   "actual_addr": "0x6f5",
+   "actual_bytes": "6a 65"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x702",
+   "asserted_bytes": "6a66",
+   "label": "write helper stages target register index in register 0x66",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x66",
+   "actual_addr": "0x702",
+   "actual_bytes": "6a 66"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x722",
+   "asserted_bytes": "6a63",
+   "label": "write helper stages register 0x63",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x63",
+   "actual_addr": "0x722",
+   "actual_bytes": "6a 63"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x72a",
+   "asserted_bytes": "6a60",
+   "label": "write helper stages register 0x60 (start)",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x60",
+   "actual_addr": "0x72a",
+   "actual_bytes": "6a 60"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x2e1",
+   "asserted_bytes": "6a61",
+   "label": "init writes register 0x61 = 0",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x61",
+   "actual_addr": "0x2e1",
+   "actual_bytes": "6a 61"
+  },
+  {
+   "module": "ISL69247",
+   "rva": "0x2e8",
+   "asserted_bytes": "6a03",
+   "label": "init writes register 0x62 = 3",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x3",
+   "actual_addr": "0x2e8",
+   "actual_bytes": "6a 03"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x266",
+   "asserted_bytes": "c745f4d3010000",
+   "label": "GetVariable DataSize = 0x1d3 (Setup variable size)",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "mov    DWORD PTR [ebp-0xc],0x1d3",
+   "actual_addr": "0x266",
+   "actual_bytes": "c7 45 f4 d3 01 00 00"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x27e",
+   "asserted_bytes": "8d8520feffff",
+   "label": "GetVariable Data buffer = [ebp-0x1e0]",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "lea    eax,[ebp-0x1e0]",
+   "actual_addr": "0x27e",
+   "actual_bytes": "8d 85 20 fe ff ff"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x28d",
+   "asserted_bytes": "685c45ed09",
+   "label": "push Setup variable GUID VA 0x9ed455c",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x9ed455c",
+   "actual_addr": "0x28d",
+   "actual_bytes": "68 5c 45 ed 09"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x292",
+   "asserted_bytes": "686c45ed09",
+   "label": "push UTF-16 name 'Setup' VA 0x9ed456c",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x9ed456c",
+   "actual_addr": "0x292",
+   "actual_bytes": "68 6c 45 ed 09"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x26d",
+   "asserted_bytes": "885df1",
+   "label": "default Setup+0x1d1 (MEMIO Fix Voltage) = 0",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "mov    BYTE PTR [ebp-0xf],bl",
+   "actual_addr": "0x26d",
+   "actual_bytes": "88 5d f1"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x270",
+   "asserted_bytes": "c645f2",
+   "label": "default Setup+0x1d2 (MEMIO Voltage) = 0x1e (1.35 V)",
+   "class": "PREFIX_OF_INSTRUCTION",
+   "actual_instruction": "mov    BYTE PTR [ebp-0xe],0x1e",
+   "actual_addr": "0x270",
+   "actual_bytes": "c6 45 f2 1e"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x2b6",
+   "asserted_bytes": "385df1",
+   "label": "enable test: cmp Setup+0x1d1 (MEMIO Fix Voltage) vs 0",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "cmp    BYTE PTR [ebp-0xf],bl",
+   "actual_addr": "0x2b6",
+   "actual_bytes": "38 5d f1"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x2bc",
+   "asserted_bytes": "8a45f2",
+   "label": "read Setup+0x1d2 (MEMIO Voltage enum)",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "mov    al,BYTE PTR [ebp-0xe]",
+   "actual_addr": "0x2bc",
+   "actual_bytes": "8a 45 f2"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x2c6",
+   "asserted_bytes": "68df000000",
+   "label": "MEMIO write targets register index 0xdf",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0xdf",
+   "actual_addr": "0x2c6",
+   "actual_bytes": "68 df 00 00 00"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x2e3",
+   "asserted_bytes": "68df000000",
+   "label": "disabled path writes register 0xDF with default 0x1e",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0xdf",
+   "actual_addr": "0x2e3",
+   "actual_bytes": "68 df 00 00 00"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x2e8",
+   "asserted_bytes": "c645ff1e",
+   "label": "default MEMIO Voltage = 0x1e (1.35 V)",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "mov    BYTE PTR [ebp-0x1],0x1e",
+   "actual_addr": "0x2e8",
+   "actual_bytes": "c6 45 ff 1e"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x2d9",
+   "asserted_bytes": "804dff01",
+   "label": "enabled path ORs bit 0 into the staged MEMIO value",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "or     BYTE PTR [ebp-0x1],0x1",
+   "actual_addr": "0x2d9",
+   "actual_bytes": "80 4d ff 01"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x3f3",
+   "asserted_bytes": "689e000000",
+   "label": "MEMIO post-write helper stages register 0x65 = 0x9E",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0x9e",
+   "actual_addr": "0x3f3",
+   "actual_bytes": "68 9e 00 00 00"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x401",
+   "asserted_bytes": "68de000000",
+   "label": "MEMIO post-write helper stages register 0x66 = 0xDE",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0xde",
+   "actual_addr": "0x401",
+   "actual_bytes": "68 de 00 00 00"
+  },
+  {
+   "module": "ISL95712",
+   "rva": "0x419",
+   "asserted_bytes": "68c0000000",
+   "label": "MEMIO post-write helper stages register 0x60 = 0xC0",
+   "class": "FULL_INSTRUCTION",
+   "actual_instruction": "push   0xc0",
+   "actual_addr": "0x419",
+   "actual_bytes": "68 c0 00 00 00"
+  }
+ ],
+ "boundaries": [],
+ "donor": {
+  "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "size": 16777216
+ },
+ "tool": {
+  "objdump": "GNU objdump (GNU Binutils) 2.47",
+  "rva_delta": "0x198",
+  "disasm_flags": "-D -b binary -m i386 -M intel --adjust-vma=0x198"
+ },
+ "prior_assertion_source": {
+  "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-fixed-voltage-consumer/scan_fixed_voltage_consumer.py",
+  "sha256": "e67ded127c9e00f0532f8aa41431b13ab08468619189252e01bb3fbbfcf72ea3"
+ },
+ "fv_regions": [
+  {
+   "base": "0x0",
+   "length": "0x20000",
+   "header_length": "0x48"
+  },
+  {
+   "base": "0xae0000",
+   "length": "0x320000",
+   "header_length": "0x48"
+  },
+  {
+   "base": "0xe00000",
+   "length": "0x200000",
+   "header_length": "0x48"
+  }
+ ],
+ "fv_regions_note": "regions contained in another detected volume are dropped as nested duplicates",
+ "ffs_scan": {
+  "volumes": 3,
+  "files_found": 67,
+  "note": "structural FFS validation; FFS header checksum fields in this volume do not validate under the edk2 rule (0xAA placeholder)"
+ },
+ "modules": {
+  "ISL69247": {
+   "ffs_guid": "6E6D2018-28D0-4AD3-BEB3-B48E4981707D",
+   "ffs_file_offset": "0xed2c30",
+   "ffs_file_size": 4370,
+   "section_type": "TE",
+   "te_offset_in_rom": "0xed2c74",
+   "te_size": 4264,
+   "te_sha256": "3e1f753a627922d16e5a638a527e39f4dd26242144edae25b0ac849db6421e34",
+   "census_sha256": "3e1f753a627922d16e5a638a527e39f4dd26242144edae25b0ac849db6421e34",
+   "census_size": 4264,
+   "te_header": {
+    "signature": "VZ",
+    "machine": "0x14c",
+    "sections": 3,
+    "stripped_size": "0x1c0",
+    "entry": "0x240",
+    "image_base": "0x9ed2adc"
+   }
+  },
+  "ISL95712": {
+   "ffs_guid": "02544BE0-2CB9-4B75-8111-CD8CDC07B837",
+   "ffs_file_offset": "0xed3d48",
+   "ffs_file_size": 3730,
+   "section_type": "TE",
+   "te_offset_in_rom": "0xed3d8c",
+   "te_size": 3624,
+   "te_sha256": "c0cc17d2d54f9cde65f471d2971596837b024d4764a28b33286032cfa95d43a9",
+   "census_sha256": "c0cc17d2d54f9cde65f471d2971596837b024d4764a28b33286032cfa95d43a9",
+   "census_size": 3624,
+   "te_header": {
+    "signature": "VZ",
+    "machine": "0x14c",
+    "sections": 3,
+    "stripped_size": "0x1c0",
+    "entry": "0x240",
+    "image_base": "0x9ed3bf4"
+   }
+  }
+ },
+ "consumer_scan": {
+  "files_scanned": 67,
+  "executable_sections_scanned": 55,
+  "setup_guid_and_name": [
+   {
+    "ffs_guid": "6E6D2018-28D0-4AD3-BEB3-B48E4981707D",
+    "file_offset": "0xed2c30",
+    "fv_base": "0xe00000",
+    "setup_guid_rva": "0xaf8",
+    "module": "ISL69247"
+   },
+   {
+    "ffs_guid": "02544BE0-2CB9-4B75-8111-CD8CDC07B837",
+    "file_offset": "0xed3d48",
+    "fv_base": "0xe00000",
+    "setup_guid_rva": "0x878",
+    "module": "ISL95712"
+   }
+  ],
+  "setup_guid_only_count": 7,
+  "census_coverage": {
+   "census_identities": 233,
+   "reproduced_by_this_scan": 55
+  },
+  "scope_note": "outer FFS files with a first-level PE32/TE section only; images inside compressed or GUIDed sections and nested FVs are not enumerated here, so the prior 'exactly three consumers incl. CpuDxe (nested GUIDed PE32)' claim is not re-derived by this scan"
+ },
+ "label_findings": {
+  "non_full_instruction_windows": [
+   {
+    "module": "ISL69247",
+    "rva": "0x2ac",
+    "class": "PREFIX_OF_INSTRUCTION",
+    "label": "default Setup+0x1cc (VCORE Loadline) = 2",
+    "actual": "mov    BYTE PTR [ebp+0x54],0x2"
+   },
+   {
+    "module": "ISL69247",
+    "rva": "0x2b3",
+    "class": "PREFIX_OF_INSTRUCTION",
+    "label": "default Setup+0x1d0 (GFX Loadline) = 2",
+    "actual": "mov    BYTE PTR [ebp+0x58],0x2"
+   },
+   {
+    "module": "ISL69247",
+    "rva": "0x566",
+    "class": "STARTS_MID_INSTRUCTION",
+    "label": "transport uses x86 config port 0x2E",
+    "actual": "push   0x2e"
+   },
+   {
+    "module": "ISL95712",
+    "rva": "0x270",
+    "class": "PREFIX_OF_INSTRUCTION",
+    "label": "default Setup+0x1d2 (MEMIO Voltage) = 0x1e (1.35 V)",
+    "actual": "mov    BYTE PTR [ebp-0xe],0x1e"
+   }
+  ],
+  "contradicted_claims": [
+   "A11",
+   "A17"
+  ]
+ },
+ "counts": {
+  "semantic_checks": 28,
+  "contradicted": 2,
+  "label_windows_not_full_instruction": 4
+ }
+}

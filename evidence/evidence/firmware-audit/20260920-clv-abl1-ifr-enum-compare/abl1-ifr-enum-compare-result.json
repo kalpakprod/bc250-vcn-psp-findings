@@ -1,0 +1,469 @@
+{
+  "abl1_dispatch": {
+    "invalid_path": "diagnostic helper call 0x64C8, then direct mode write [r4+0x04]+0x28 <- 2; no direct +0x2C policy write in this function",
+    "invalid_target": "0x232A",
+    "mapped": {
+      "0x11": 850,
+      "0x14": 1000,
+      "0x19": 1250,
+      "0x1a": 1330,
+      "0x1b": 1375,
+      "0x1e": 1500,
+      "0x2": 125,
+      "0x20": 1600,
+      "0x21": 1650,
+      "0x22": 1700,
+      "0x23": 1750,
+      "0x24": 1800,
+      "0x25": 1850,
+      "0x28": 2000,
+      "0x4": 225,
+      "0x5": 250,
+      "0x8": 400,
+      "0x9": 450,
+      "0xa": 500,
+      "0xf": 750
+    },
+    "selector_range_guard": "selector 2..40 enters TBB; all other byte values branch to 0x232A",
+    "tbb_offset": "0x228A"
+  },
+  "checks": {
+    "failed": 0,
+    "passed": 21,
+    "total": 21
+  },
+  "checks_detail": [
+    {
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "payload_sha256",
+      "status": "PASS"
+    },
+    {
+      "expected": 94624,
+      "got": 94624,
+      "name": "payload_length",
+      "status": "PASS"
+    },
+    {
+      "expected": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8",
+      "got": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8",
+      "name": "exact_ifr_module_sha256",
+      "status": "PASS"
+    },
+    {
+      "expected": "PASS",
+      "got": "PASS",
+      "name": "exact_ifr_parser_status",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "listing_exists",
+      "status": "PASS"
+    },
+    {
+      "expected": "dfe800f0",
+      "got": "dfe800f0",
+      "name": "tbb_opcode",
+      "status": "PASS"
+    },
+    {
+      "expected": "801e272851d2",
+      "got": "801e272851d2",
+      "name": "range_guard_bytes",
+      "status": "PASS"
+    },
+    {
+      "expected": 39,
+      "got": 39,
+      "name": "tbb_length",
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "2": 125,
+        "4": 225,
+        "5": 250,
+        "8": 400,
+        "9": 450,
+        "10": 500,
+        "15": 750,
+        "17": 850,
+        "20": 1000,
+        "25": 1250,
+        "26": 1330,
+        "27": 1375,
+        "30": 1500,
+        "32": 1600,
+        "33": 1650,
+        "34": 1700,
+        "35": 1750,
+        "36": 1800,
+        "37": 1850,
+        "40": 2000
+      },
+      "got": {
+        "2": 125,
+        "4": 225,
+        "5": 250,
+        "8": 400,
+        "9": 450,
+        "10": 500,
+        "15": 750,
+        "17": 850,
+        "20": 1000,
+        "25": 1250,
+        "26": 1330,
+        "27": 1375,
+        "30": 1500,
+        "32": 1600,
+        "33": 1650,
+        "34": 1700,
+        "35": 1750,
+        "36": 1800,
+        "37": 1850,
+        "40": 2000
+      },
+      "name": "all_20_abl_mappings",
+      "status": "PASS"
+    },
+    {
+      "expected": 20,
+      "got": 20,
+      "name": "mapped_count",
+      "status": "PASS"
+    },
+    {
+      "expected": "invalid-range",
+      "got": "invalid-range",
+      "name": "auto_0xFF_is_invalid_range",
+      "status": "PASS"
+    },
+    {
+      "expected": "invalid-table-gap",
+      "got": "invalid-table-gap",
+      "name": "ifr_1900_code_38_is_invalid_gap",
+      "status": "PASS"
+    },
+    {
+      "expected": "invalid-table-gap",
+      "got": "invalid-table-gap",
+      "name": "ifr_1950_code_39_is_invalid_gap",
+      "status": "PASS"
+    },
+    {
+      "expected": "c44804f0ccf860688662",
+      "got": "c44804f0ccf860688662",
+      "name": "invalid_path_target",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "invalid_path_no_direct_speed_write",
+      "status": "PASS"
+    },
+    {
+      "expected": 1,
+      "got": 1,
+      "name": "one_memory_clock_question",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x316",
+      "got": "0x316",
+      "name": "ifr_question_offset",
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "default": true,
+        "label": "Auto",
+        "numeric_mhz": null
+      },
+      "got": {
+        "default": true,
+        "label": "Auto",
+        "numeric_mhz": null
+      },
+      "name": "ifr_auto_default",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "all_20_codes_have_ifr_options",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "all_20_numeric_labels_agree",
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        {
+          "abl_outcome": "invalid-table-gap",
+          "abl_target": "0x232A",
+          "code": 38,
+          "default": false,
+          "label": "1900MHz",
+          "numeric_mhz": 1900
+        },
+        {
+          "abl_outcome": "invalid-table-gap",
+          "abl_target": "0x232A",
+          "code": 39,
+          "default": false,
+          "label": "1950MHz",
+          "numeric_mhz": 1950
+        },
+        {
+          "abl_outcome": "invalid-range",
+          "abl_target": "0x232A",
+          "code": 255,
+          "default": true,
+          "label": "Auto",
+          "numeric_mhz": null
+        }
+      ],
+      "got": [
+        {
+          "abl_outcome": "invalid-table-gap",
+          "abl_target": "0x232A",
+          "code": 38,
+          "default": false,
+          "label": "1900MHz",
+          "numeric_mhz": 1900
+        },
+        {
+          "abl_outcome": "invalid-table-gap",
+          "abl_target": "0x232A",
+          "code": 39,
+          "default": false,
+          "label": "1950MHz",
+          "numeric_mhz": 1950
+        },
+        {
+          "abl_outcome": "invalid-range",
+          "abl_target": "0x232A",
+          "code": 255,
+          "default": true,
+          "label": "Auto",
+          "numeric_mhz": null
+        }
+      ],
+      "name": "ifr_only_entries_and_invalid_outcomes",
+      "status": "PASS"
+    }
+  ],
+  "comparison": {
+    "exact_code_and_numeric_agreement_count": 20,
+    "exact_code_and_numeric_agreement_total": 20,
+    "ifr_only_entries": [
+      {
+        "abl_outcome": "invalid-table-gap",
+        "abl_target": "0x232A",
+        "code": 38,
+        "default": false,
+        "label": "1900MHz",
+        "numeric_mhz": 1900
+      },
+      {
+        "abl_outcome": "invalid-table-gap",
+        "abl_target": "0x232A",
+        "code": 39,
+        "default": false,
+        "label": "1950MHz",
+        "numeric_mhz": 1950
+      },
+      {
+        "abl_outcome": "invalid-range",
+        "abl_target": "0x232A",
+        "code": 255,
+        "default": true,
+        "label": "Auto",
+        "numeric_mhz": null
+      }
+    ],
+    "interpretation": "All 20 ABL-recognized input codes have exact IFR option-code matches and their decoded numeric policy values equal the IFR MHz labels. IFR Auto/default 0xFF and 1900/1950 codes 0x26/0x27 are not accepted by this ABL TBB path: they take the invalid diagnostic path. This is a strong bounded correlation, not proof that token 7, the IFR field, or the numeric values share one runtime namespace or physical-MHz unit.",
+    "mapped_entries": [
+      {
+        "abl_policy_value": 125,
+        "code": 2,
+        "ifr_label": "125MHz",
+        "ifr_numeric_mhz": 125,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 225,
+        "code": 4,
+        "ifr_label": "225MHz",
+        "ifr_numeric_mhz": 225,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 250,
+        "code": 5,
+        "ifr_label": "250MHz",
+        "ifr_numeric_mhz": 250,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 400,
+        "code": 8,
+        "ifr_label": "400MHz",
+        "ifr_numeric_mhz": 400,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 450,
+        "code": 9,
+        "ifr_label": "450MHz",
+        "ifr_numeric_mhz": 450,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 500,
+        "code": 10,
+        "ifr_label": "500MHz",
+        "ifr_numeric_mhz": 500,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 750,
+        "code": 15,
+        "ifr_label": "750MHz",
+        "ifr_numeric_mhz": 750,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 850,
+        "code": 17,
+        "ifr_label": "850MHz",
+        "ifr_numeric_mhz": 850,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 1000,
+        "code": 20,
+        "ifr_label": "1000MHz",
+        "ifr_numeric_mhz": 1000,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 1250,
+        "code": 25,
+        "ifr_label": "1250MHz",
+        "ifr_numeric_mhz": 1250,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 1330,
+        "code": 26,
+        "ifr_label": "1330MHz",
+        "ifr_numeric_mhz": 1330,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 1375,
+        "code": 27,
+        "ifr_label": "1375MHz",
+        "ifr_numeric_mhz": 1375,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 1500,
+        "code": 30,
+        "ifr_label": "1500MHz",
+        "ifr_numeric_mhz": 1500,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 1600,
+        "code": 32,
+        "ifr_label": "1600MHz",
+        "ifr_numeric_mhz": 1600,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 1650,
+        "code": 33,
+        "ifr_label": "1650MHz",
+        "ifr_numeric_mhz": 1650,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 1700,
+        "code": 34,
+        "ifr_label": "1700MHz",
+        "ifr_numeric_mhz": 1700,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 1750,
+        "code": 35,
+        "ifr_label": "1750MHz",
+        "ifr_numeric_mhz": 1750,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 1800,
+        "code": 36,
+        "ifr_label": "1800MHz",
+        "ifr_numeric_mhz": 1800,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 1850,
+        "code": 37,
+        "ifr_label": "1850MHz",
+        "ifr_numeric_mhz": 1850,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      },
+      {
+        "abl_policy_value": 2000,
+        "code": 40,
+        "ifr_label": "2000MHz",
+        "ifr_numeric_mhz": 2000,
+        "namespace_identity_proven": false,
+        "numeric_agreement": true
+      }
+    ],
+    "same_namespace_proven": false
+  },
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "abl1_listing": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-data-thumb-llvm.txt",
+    "abl1_payload": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "abl1_payload_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "ifr_module_sha256": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8",
+    "ifr_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-df-init-route/menu-result.json"
+  },
+  "status": "PASS"
+}

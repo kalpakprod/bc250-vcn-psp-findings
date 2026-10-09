@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "total_checks": 9,
+  "checks_passed": 9,
+  "checks": [
+    {
+      "name": "ROM Hash",
+      "passed": true,
+      "detail": "Got ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "name": "AmdFabricAriPei Hash",
+      "passed": true,
+      "detail": "Got c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78"
+    },
+    {
+      "name": "AmdCcxVhAriDxe Hash",
+      "passed": true,
+      "detail": "Got d9bc6337e3d039922016e95ed8be1fda5d7fb3e0250e43a6058d9c0d305997f0"
+    },
+    {
+      "name": "Fabric 0x1373 Serialization",
+      "passed": true,
+      "detail": "Offset 0x11ace, reads AmdSetup+0x703"
+    },
+    {
+      "name": "Fabric 0x1374 Serialization",
+      "passed": true,
+      "detail": "Offset 0x11b00, reads AmdSetup+0x704 (u16)"
+    },
+    {
+      "name": "Fabric CBS Counterpart Descriptor",
+      "passed": true,
+      "detail": "CBS GUID match=True, Notify GUID match=True, Callback VA=0x09E227A0, Event=0xFFFFFFFE"
+    },
+    {
+      "name": "Fabric Ari Pei Direct Queries",
+      "passed": true,
+      "detail": "Queries 0x10FF at 0x1D18, 0x1104 at 0x1DF3; Zero queries for 0x1373/0x1374"
+    },
+    {
+      "name": "CCX Ari Dxe Direct Queries",
+      "passed": true,
+      "detail": "Queries 0x1000 at 0x5CA0, 0x1001 at 0x5CEC; Zero queries for 0x1373/0x1374"
+    },
+    {
+      "name": "Corpus Direct Query Scan",
+      "passed": true,
+      "detail": "Immediate reader queries: 0x1373 hits=0, 0x1374 hits=0"
+    }
+  ],
+  "summary": {
+    "tokens": {
+      "0x1373": {
+        "name": "DfPstateOverride",
+        "setup_offset": "0x703",
+        "width": 1,
+        "serializer_module": "AmdFabricAriPei",
+        "serializer_rva": "0x11C66",
+        "direct_uefi_consumer": null
+      },
+      "0x1374": {
+        "name": "DfClockOvrd",
+        "setup_offset": "0x704",
+        "width": 2,
+        "serializer_module": "AmdFabricAriPei",
+        "serializer_rva": "0x11C98",
+        "direct_uefi_consumer": null
+      }
+    },
+    "boundary_conclusion": "DF override tokens 0x1373 and 0x1374 are serialized by AmdFabricAriPei and CbsBasePei into the NVTB/$INV buffer via CBS Notify registration callback 0x6A88 (VA 0x9E227A0). Zero direct reader queries exist across the UEFI PEI/DXE corpus. Downstream consumption terminates into the ABL1/APOB/SMU handoff."
+  }
+}

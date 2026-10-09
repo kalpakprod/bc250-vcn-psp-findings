@@ -1,0 +1,344 @@
+=== PART6 SMU+patches+ip ===
+--- list queue mixins methods via python ---
+METHODS_COUNT 60
+METHODS check_test_message,close,disable_extra_cpu_gpu_voltage,force_gfx_freq,force_gfx_vid,get_enabled_smu_features,get_gfx_frequency,get_gfx_vid,q2_0x03,q2_0x04_get_device_name,q2_0x05_enable_smu_features,q2_0x06_disable_smu_features,q2_0x17_cpu_droop_calibration,q3_0x0f_set_cpu_gpu_vid,q3_0x10_unforce_cpu_gpu_vid,q3_0x20_set_max_temperature_cpu_gpu,q3_0x25_set_oc_clk,q3_0x26_unset_oc_clk,q3_0x30_return_cpu_vid_float_or,q3_0x36_get_current_cpu_voltage,q3_0x37_get_current_gpu_voltage,q3_0x3b_get_clk_assigned_to_p_state,q3_0x40_get_cpu_temp_max,q3_0x42_return_vddcrsoc_dpm_value,q3_0x43_get_core_freq,q3_0x47_return_status_0xfe,q3_0x48_return_status_0xfe,q3_0x49_set_cpu_vid_offset,q3_0x4a_set_gfx_vid_offset1,q3_0x4c_gfx_droop_calibration,q3_0x4d_set_cpu_vid_offset_large,q3_0x4e_set_gpu_vid_offset_large,q3_0x50_scale_f_vid_curve,q3_0x52_set_cpu_clock_stretch_coeff,q3_0x53_set_ccx_clock_stretch_coeff,q3_0x67_zero_return,q3_0x6d_force_clock_stretching_vid,q3_0x77_set_cpu_max_current,q3_0x7f_get_current_perf_sample,q3_0x80_get_sample_interval_max,q3_0x8b_set_cpu_max_temperature,q3_0x8c_set_gpu_max_temperature,q3_0x8d_get_current_sample_interval,q3_0x8e_set_vid_main_2_limit,q3_0x8f_set_max_cpu_boost_clk,query_active_wgp,query_core_pstate,query_gfxclk,query_vddcr_soc_clock,raw_read,raw_read_high,raw_send,request_core_pstate,send_message,set_core_enable_mask,set_soft_max_cclk,set_soft_min_cclk,test_message,unforce_gfx_freq,unforce_gfx_vid
+check_test_message ERR RuntimeError smu returned status 0x00 for queue 3 msg 0x01
+get_enabled_smu_features ERR RuntimeError smu returned status 0x00 for queue 0 msg 0x3D
+query_active_wgp ERR RuntimeError smu returned status 0x00 for queue 0 msg 0x1E
+query_gfxclk ERR RuntimeError smu returned status 0x00 for queue 0 msg 0x0F
+CAND check_test_message
+CAND force_gfx_freq
+CAND force_gfx_vid
+CAND get_enabled_smu_features
+CAND get_gfx_frequency
+CAND get_gfx_vid
+CAND q2_0x05_enable_smu_features
+CAND q2_0x06_disable_smu_features
+CAND q3_0x4a_set_gfx_vid_offset1
+CAND q3_0x4c_gfx_droop_calibration
+CAND query_active_wgp
+CAND query_gfxclk
+CAND test_message
+CAND unforce_gfx_freq
+CAND unforce_gfx_vid
+--- sed api_q0/q3 method defs ---
+5:    def _get_smu_version(self) -> int:
+6:        return self.send_message(0, 0x02, decode=decode_u32)
+8:    def _get_driver_if_version(self) -> int:
+9:        return self.send_message(0, 0x03, decode=decode_u32)
+11:    def _set_driver_table_dram_addr_high(self, value: int) -> None:
+12:        self.send_message(0, 0x04, arg=value, pack=pack_u32)
+14:    def _set_driver_table_dram_addr_low(self, value: int) -> None:
+15:        self.send_message(0, 0x05, arg=value, pack=pack_u32)
+17:    def _transfer_table_smu2dram(self) -> None:
+18:        self.send_message(0, 0x06)
+20:    def _transfer_table_dram2smu(self) -> None:
+21:        self.send_message(0, 0x07)
+23:    def request_core_pstate(self, pstate: int, core_mask: int) -> None:
+25:        param = ((pstate & 0xF) << 16) | (core_mask & 0xFF)
+26:        self.send_message(0, 0x0B, arg=param, pack=pack_u32)
+28:    def query_core_pstate(self, core_id: int) -> int:
+29:        """Return the current core P-state (status 0xFF if core_id > 7)."""
+32:            0x0C,
+39:    def _request_gfxclk(self) -> None:
+40:        self.send_message(0, 0x0E)
+42:    def query_gfxclk(self) -> int:
+44:        return self.send_message(0, 0x0F, decode=decode_u32)
+46:    def query_vddcr_soc_clock(self, index: int) -> int:
+48:        param = (index & 0xFFFF) << 16
+49:        return self.send_message(0, 0x11, arg=param, pack=pack_u32, decode=decode_u32)
+51:    def _query_df_pstate(self) -> int:
+52:        return self.send_message(0, 0x13, decode=decode_u32)
+54:    def _configure_s3_pwroff_register_addr_high(self, value: int) -> None:
+55:        self.send_message(0, 0x16, arg=value, pack=pack_u32)
+57:    def _configure_s3_pwroff_register_addr_low(self, value: int) -> None:
+58:        self.send_message(0, 0x17, arg=value, pack=pack_u32)
+60:    def _request_active_wgp(self) -> None:
+61:        self.send_message(0, 0x18)
+63:    def _set_min_deep_sleep_gfxclk_freq(self, value: int) -> None:
+64:        self.send_message(0, 0x19, arg=value, pack=pack_u32)
+66:    def _set_max_deep_sleep_dfll_gfx_div(self, value: int) -> None:
+67:        self.send_message(0, 0x1A, arg=value, pack=pack_u32)
+69:    def _start_telemetry_reporting(self, value: int = 0) -> None:
+70:        self.send_message(0, 0x1B, arg=value, pack=pack_u32)
+72:    def _stop_telemetry_reporting(self) -> None:
+73:        self.send_message(0, 0x1C)
+75:    def _clear_telemetry_max(self) -> None:
+76:        self.send_message(0, 0x1D)
+78:    def query_active_wgp(self) -> int:
+80:        return self.send_message(0, 0x1E, decode=decode_u32)
+82:    def get_gfx_frequency(self) -> int:
+84:        return self.send_message(0, 0x37, decode=decode_u32)
+86:    def get_gfx_vid(self) -> int:
+88:        vid = self.send_message(0, 0x38, decode=decode_u32)
+91:    def force_gfx_freq(self, freq_mhz: int) -> None:
+93:        self.send_message(0, 0x39, arg=freq_mhz, pack=pack_u32)
+95:    def unforce_gfx_freq(self) -> None:
+97:        self.send_message(0, 0x3A)
+99:    def force_gfx_vid(self, mv: int) -> None:
+102:        self.send_message(0, 0x3B, arg=vid, pack=pack_u32)
+104:    def unforce_gfx_vid(self) -> None:
+106:        self.send_message(0, 0x3C, check_status=False)
+108:    def get_enabled_smu_features(self) -> int:
+110:        return self.send_message(0, 0x3D, decode=decode_u32)
+112:    def set_core_enable_mask(self, mask: int) -> None:
+114:        self.send_message(0, 0x2C, arg=mask & 0xFF, pack=pack_u32)
+116:    def _gfx_cac_weight_operation(self, value: int) -> None:
+120:        self.send_message(0, 0x2F, arg=value, pack=pack_u32)
+122:    def _l3_cac_weight_operation(self, value: int) -> None:
+126:        self.send_message(0, 0x30, arg=value, pack=pack_u32)
+128:    def _pack_core_cac_weight(self, value: int) -> None:
+132:        self.send_message(0, 0x31, arg=value, pack=pack_u32)
+134:    def _set_driver_table_vmid(self, value: int) -> None:
+135:        self.send_message(0, 0x34, arg=value, pack=pack_u32)
+137:    def set_soft_min_cclk(self, core_id: int, freq_mhz: int) -> int:
+139:        param = ((core_id & 0xFF) << 20) | (freq_mhz & 0xFFFF)
+140:        return self.send_message(0, 0x35, arg=param, pack=pack_u32, decode=decode_u32)
+142:    def set_soft_max_cclk(self, core_id: int, freq_mhz: int) -> int:
+144:        param = ((core_id & 0xFF) << 20) | (freq_mhz & 0xFFFF)
+145:        return self.send_message(0, 0x36, arg=param, pack=pack_u32, decode=decode_u32)
+---- q3 ----
+6:    def _q3_0x04(self) -> int | None:
+7:        return self.send_message(3, 0x04)
+9:    def _q3_0x0a(self) -> int | None:
+10:        return self.send_message(3, 0x0A)
+12:    def _q3_0x0b(self) -> int | None:
+13:        return self.send_message(3, 0x0B)
+15:    def _q3_0x0c(self) -> int | None:
+16:        return self.send_message(3, 0x0C)
+18:    def _q3_0x0d(self) -> int | None:
+19:        return self.send_message(3, 0x0D)
+21:    def _q3_0x0e(self) -> int | None:
+22:        return self.send_message(3, 0x0E)
+24:    def q3_0x0f_set_cpu_gpu_vid(self, kind: int, mv: int) -> None:
+27:        param = ((kind & 0xFFFF) << 16) | (vid & 0xFFFF)
+28:        self.send_message(3, 0x0F, arg=param, pack=pack_u32)
+30:    def q3_0x10_unforce_cpu_gpu_vid(self, kind: int) -> None:
+32:        param = (kind & 0xFFFF) << 16
+33:        self.send_message(3, 0x10, arg=param, pack=pack_u32)
+35:    def _q3_0x11(self) -> int | None:
+36:        return self.send_message(3, 0x11)
+38:    def _q3_0x14(self) -> int | None:
+39:        return self.send_message(3, 0x14)
+41:    def _q3_0x15(self) -> int | None:
+42:        return self.send_message(3, 0x15)
+44:    def _q3_0x18(self) -> int | None:
+45:        return self.send_message(3, 0x18)
+47:    def _q3_0x19(self) -> int | None:
+48:        return self.send_message(3, 0x19)
+50:    def _q3_0x1a(self) -> int | None:
+51:        return self.send_message(3, 0x1A)
+53:    def _q3_0x1b(self) -> int | None:
+54:        return self.send_message(3, 0x1B)
+56:    def _q3_0x1d_set_soc_clock_for_index(self, value: int = 0) -> int | None:
+57:        return self.send_message(3, 0x1D, arg=value, pack=pack_u32)
+59:    def _q3_0x1e_set_perfprofileindex(self, value: int = 0) -> int | None:
+60:        return self.send_message(3, 0x1E, arg=value, pack=pack_u32)
+62:    def q3_0x20_set_max_temperature_cpu_gpu(self, temp_c: int) -> None:
+64:        self.send_message(3, 0x20, arg=temp_c, pack=pack_u32)
+66:    def _q3_0x24(self) -> int | None:
+67:        return self.send_message(3, 0x24)
+69:    def q3_0x25_set_oc_clk(self, core_id: int, freq_mhz: int) -> None:
+70:        """Set OC target clock for a core or all cores (core_id=0xFF)."""
+71:        param = ((core_id & 0xFF) << 16) | (freq_mhz & 0xFFFF)
+72:        self.send_message(3, 0x25, arg=param, pack=pack_u32)
+74:    def q3_0x26_unset_oc_clk(self, core_id: int) -> None:
+75:        """Clear OC target clock for a core or all cores (core_id=0xFF)."""
+76:        param = (core_id & 0xFF) << 16
+77:        self.send_message(3, 0x26, arg=param, pack=pack_u32)
+80:    def _q3_0x28_write_to_dat_8b08_secure(self, value: int = 0) -> int | None:
+81:        return self.send_message(3, 0x28, arg=value, pack=pack_u32)
+83:    def _q3_0x29_write_to_pointer_at_dat(self, value: int = 0) -> int | None:
+84:        return self.send_message(3, 0x29, arg=value, pack=pack_u32)
+86:    def _q3_0x2b_writes_into_dat_00008b0c(self, value: int = 0) -> int | None:
+87:        return self.send_message(3, 0x2B, arg=value, pack=pack_u32)
+89:    def q3_0x30_return_cpu_vid_float_or(self, selector: int) -> int:
+91:        return self.send_message(3, 0x30, arg=selector, pack=pack_u32, decode=decode_u32)
+93:    def _q3_0x34_return_dat_00015778(self) -> int | None:
+94:        return self.send_message(3, 0x34, decode=decode_u32)
+96:    def q3_0x36_get_current_cpu_voltage(self) -> int:
+98:        return self.send_message(3, 0x36, decode=decode_u32)
+100:    def q3_0x37_get_current_gpu_voltage(self) -> int:
+102:        return self.send_message(3, 0x37, decode=decode_u32)
+104:    def _q3_0x38_get_more_clock_assigned_to_state(self, value: int = 0) -> int | None:
+105:        return self.send_message(3, 0x38, arg=value, pack=pack_u32, decode=decode_u32)
+107:    def _q3_0x39_get_other_clock_assigned_to_s(self, value: int = 0) -> int | None:
+108:        return self.send_message(3, 0x39, arg=value, pack=pack_u32, decode=decode_u32)
+110:    def _q3_0x3a_get_some_clock_assigned_to_state(self, value: int = 0) -> int | None:
+111:        return self.send_message(3, 0x3A, arg=value, pack=pack_u32, decode=decode_u32)
+113:    def q3_0x3b_get_clk_assigned_to_p_state(self, pstate: int) -> int:
+115:        return self.send_message(3, 0x3B, arg=pstate, pack=pack_u32, decode=decode_u32)
+117:    def _q2_0x05_enable_smu_features_3c(self, value: int = 0) -> int | None:
+118:        return self.send_message(3, 0x3C, arg=value, pack=pack_u32)
+120:    def _q2_0x06_disable_smu_features_3d(self, value: int = 0) -> int | None:
+121:        return self.send_message(3, 0x3D, arg=value, pack=pack_u32)
+123:    def q3_0x40_get_cpu_temp_max(self) -> int:
+125:        return self.send_message(3, 0x40, decode=decode_u32)
+127:    def _q3_0x41_read_from_perfprofiletable(self, value: int = 0) -> int | None:
+128:        return self.send_message(3, 0x41, arg=value, pack=pack_u32, decode=decode_u32)
+130:    def q3_0x42_return_vddcrsoc_dpm_value(self, index: int) -> int:
+132:        param = (index & 0xFFFF) << 16
+---- mailbox ----
+import threading
+from typing import Optional
+
+from .transport import Bc250PciTransport
+
+
+class Bc250Mailbox:
+    SMU_RETURN_OK = 0x01
+    SMU_RETURN_FAILED = 0xFF
+    SMU_RETURN_UNKNOWN_CMD = 0xFE
+    SMU_RETURN_REJECTED_PREREQ = 0xFD
+    SMU_RETURN_REJECTED_BUSY = 0xFC
+    
+    def __init__(
+        self,
+        transport: Bc250PciTransport,
+        cmd_addr: int,
+        rsp_addr: int,
+        arg_addr: int,
+        timeout: int = 100,
+        lock: Optional[threading.Lock] = None,
+    ) -> None:
+        self._transport = transport
+        self._cmd_addr = cmd_addr
+        self._rsp_addr = rsp_addr
+        self._arg_addr = arg_addr
+        self._timeout = timeout
+        self._lock = lock or threading.Lock()
+
+    def send(self, msg_id: int, arg: int = 0, arg_high: Optional[int] = None) -> int:
+        with self._lock:
+            self._transport.write_smu_reg(self._rsp_addr, 0)
+            self._transport.write_smu_reg(self._arg_addr, arg)
+            self._transport.write_smu_reg(self._arg_addr + 4, 0 if arg_high is None else arg_high)
+            self._transport.write_smu_reg(self._cmd_addr, msg_id)
+            return self._wait_done()
+
+    def read_arg(self) -> int:
+        with self._lock:
+            return self._transport.read_smu_reg(self._arg_addr)
+
+    def read_arg_high(self) -> int:
+        with self._lock:
+            return self._transport.read_smu_reg(self._arg_addr + 4)
+
+    def _wait_done(self) -> int:
+        done_statuses = {
+            self.SMU_RETURN_OK,
+            self.SMU_RETURN_FAILED,
+            self.SMU_RETURN_UNKNOWN_CMD,
+            self.SMU_RETURN_REJECTED_PREREQ,
+            self.SMU_RETURN_REJECTED_BUSY,
+        }
+        remaining = self._timeout
+        last_status = 0
+        while remaining > 0:
+            remaining -= 1
+            last_status = self._transport.read_smu_reg(self._rsp_addr)
+            if last_status in done_statuses:
+                return last_status
+        return last_status
+--- packaging patches list ---
+итого 0
+drwxr-xr-x 1 steammachine steammachine  64 Там 16 20:03 .
+drwxr-xr-x 1 steammachine steammachine 144 Там 22 13:09 ..
+drwxr-xr-x 1 steammachine steammachine 542 Там 16 20:15 kernel-7.1
+drwxr-xr-x 1 steammachine steammachine 456 Там 16 20:03 kernel-7.2
+drwxr-xr-x 1 steammachine steammachine 258 Там 16 20:03 mesa
+drwxr-xr-x 1 steammachine steammachine 258 Там 16 20:03 mesa-git
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0002-bc250-audio.patch
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0003-nct6687d-hwmon.patch
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0004-gfx1013-pasid-tlb-invalidation.patch
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0005-gfx1013-compute-gfxoff-guard.patch
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0006-bc250-kfd-flush-tlb-by-runlist.patch
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0007-amdgpu-ttm-null-page-guard.patch
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0008-bc250-40cu.patch
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0003-nct6687d-hwmon.patch
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0004-gfx1013-pasid-tlb-invalidation.patch
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0005-gfx1013-compute-gfxoff-guard.patch
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0006-bc250-kfd-flush-tlb-by-runlist.patch
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0007-amdgpu-ttm-null-page-guard.patch
+/home/OWNER/linux-cachyos-bc250/patches/mesa-git/0001-gfx1013-compute-queue-fix.patch
+/home/OWNER/linux-cachyos-bc250/patches/mesa-git/0002-gfx1013-mesh-task-shaders.patch
+/home/OWNER/linux-cachyos-bc250/patches/mesa-git/0003-gfx1013-taskmesh-queries.patch
+/home/OWNER/linux-cachyos-bc250/patches/mesa-git/0004-radv-gfx103.patch
+/home/OWNER/linux-cachyos-bc250/patches/mesa/0001-gfx1013-compute-queue-fix.patch
+/home/OWNER/linux-cachyos-bc250/patches/mesa/0002-gfx1013-mesh-task-shaders.patch
+/home/OWNER/linux-cachyos-bc250/patches/mesa/0003-gfx1013-taskmesh-queries.patch
+/home/OWNER/linux-cachyos-bc250/patches/mesa/0004-radv-gfx103.patch
+--- grep vcn/cyan in patches+scripts+README ---
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:1:diff --git a/drivers/gpu/drm/amd/pm/swsmu/inc/pmfw_if/smu11_driver_if_cyan_skillfish.h b/drivers/gpu/drm/amd/pm/swsmu/inc/pmfw_if/smu11_driver_if_cyan_skillfish.h
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:3:--- a/drivers/gpu/drm/amd/pm/swsmu/inc/pmfw_if/smu11_driver_if_cyan_skillfish.h
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:4:+++ b/drivers/gpu/drm/amd/pm/swsmu/inc/pmfw_if/smu11_driver_if_cyan_skillfish.h
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:49:diff --git a/drivers/gpu/drm/amd/pm/swsmu/smu11/cyan_skillfish_ppt.c b/drivers/gpu/drm/amd/pm/swsmu/smu11/cyan_skillfish_ppt.c
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:51:--- a/drivers/gpu/drm/amd/pm/swsmu/smu11/cyan_skillfish_ppt.c
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:52:+++ b/drivers/gpu/drm/amd/pm/swsmu/smu11/cyan_skillfish_ppt.c
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:78: static uint32_t cyan_skillfish_sclk_default;
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:106:+struct cyan_skillfish_metrics_cache {
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:126:+static uint16_t cyan_skillfish_core_count(void)
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:138:+static bool cyan_skillfish_use_hybrid_metrics(void)
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:140:+	return cs_eight_core_map || cyan_skillfish_core_count() >= 8;
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:143:+static uint16_t cyan_skillfish_get_gpu_activity(struct smu_context *smu)
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:145:+	struct cyan_skillfish_metrics_cache *cache = smu->smu_table.metrics_table;
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:191:+static int cyan_skillfish_get_current_gfxclk(struct smu_context *smu,
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:194:+	struct cyan_skillfish_metrics_cache *cache = smu->smu_table.metrics_table;
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:212:+	if (ret && !cyan_skillfish_use_hybrid_metrics()) {
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:228: static const struct smu_feature_bits cyan_skillfish_dpm_features = {
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:231:@@ -77,6 +234,7 @@ static struct cmn2asic_msg_mapping cyan_skillfish_message_map[SMU_MSG_MAX_COUNT]
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:239:@@ -90,6 +248,7 @@ static int cyan_skillfish_tables_init(struct smu_context *smu)
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:243:+	struct cyan_skillfish_metrics_cache *metrics_cache;
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:247:@@ -97,10 +256,15 @@ static int cyan_skillfish_tables_init(struct smu_context *smu)
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:253:+		kzalloc_obj(struct cyan_skillfish_metrics_cache);
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:264:@@ -143,7 +307,8 @@ cyan_skillfish_get_smu_metrics_data(struct smu_context *smu,
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:269:+		ret = cyan_skillfish_get_current_gfxclk(
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:274:@@ -205,7 +370,8 @@ static int cyan_skillfish_read_sensor(struct smu_context *smu,
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:275: 		ret = cyan_skillfish_get_smu_metrics_data(smu,
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:284:@@ -251,6 +417,10 @@ static int cyan_skillfish_read_sensor(struct smu_context *smu,
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:289:+		*(uint32_t *)data = cyan_skillfish_get_gpu_activity(smu) / 100;
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:295:@@ -290,6 +460,127 @@ static int cyan_skillfish_get_current_clk_freq(struct smu_context *smu,
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:296: 	return cyan_skillfish_get_smu_metrics_data(smu, member_type, value);
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:299:+static int cyan_skillfish_emit_smu_table(struct smu_context *smu, char *buf,
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:313:+	hybrid = cyan_skillfish_use_hybrid_metrics();
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:382:+	ret = cyan_skillfish_get_current_gfxclk(
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:420: static int cyan_skillfish_emit_clk_levels(struct smu_context *smu,
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:423:@@ -320,9 +611,20 @@ static int cyan_skillfish_emit_clk_levels(struct smu_context *smu,
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:429:+			ret = cyan_skillfish_emit_smu_table(smu, buf, &size);
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:434:+		ret = cyan_skillfish_get_current_clk_freq(smu, clk_type, &cur_value);
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:444: 		ret = cyan_skillfish_get_current_clk_freq(smu, clk_type, &cur_value);
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:445:@@ -384,6 +686,17 @@ static bool cyan_skillfish_is_dpm_running(struct smu_context *smu)
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:446: 					  cyan_skillfish_dpm_features.bits);
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:455:+static uint16_t cyan_skillfish_gpu_metrics_power(uint32_t power)
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:460: static ssize_t cyan_skillfish_get_gpu_metrics(struct smu_context *smu,
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:463:@@ -391,20 +704,39 @@ static ssize_t cyan_skillfish_get_gpu_metrics(struct smu_context *smu,
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:476:+	hybrid = cyan_skillfish_use_hybrid_metrics();
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:477:+	gfxclk_ret = cyan_skillfish_get_current_gfxclk(
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:482:+		cyan_skillfish_get_gpu_activity(smu);
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:498:+		cyan_skillfish_gpu_metrics_power(metrics.Current.CurrentSocketPower);
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:500:+		cyan_skillfish_gpu_metrics_power(metrics.Current.Power[0]);
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:502:+		cyan_skillfish_gpu_metrics_power(metrics.Current.Power[1]);
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:506:@@ -413,17 +745,48 @@ static ssize_t cyan_skillfish_get_gpu_metrics(struct smu_context *smu,
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:543:+				cyan_skillfish_gpu_metrics_power(hcur.CorePower[i - 1]);
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch:552:+				cyan_skillfish_gpu_metrics_power(
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch:1:diff --git a/drivers/gpu/drm/amd/pm/swsmu/inc/pmfw_if/smu11_driver_if_cyan_skillfish.h b/drivers/gpu/drm/amd/pm/swsmu/inc/pmfw_if/smu11_driver_if_cyan_skillfish.h
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch:3:--- a/drivers/gpu/drm/amd/pm/swsmu/inc/pmfw_if/smu11_driver_if_cyan_skillfish.h
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch:4:+++ b/drivers/gpu/drm/amd/pm/swsmu/inc/pmfw_if/smu11_driver_if_cyan_skillfish.h
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch:49:diff --git a/drivers/gpu/drm/amd/pm/swsmu/smu11/cyan_skillfish_ppt.c b/drivers/gpu/drm/amd/pm/swsmu/smu11/cyan_skillfish_ppt.c
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch:51:--- a/drivers/gpu/drm/amd/pm/swsmu/smu11/cyan_skillfish_ppt.c
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch:52:+++ b/drivers/gpu/drm/amd/pm/swsmu/smu11/cyan_skillfish_ppt.c
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch:78: static uint32_t cyan_skillfish_sclk_default;
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch:106:+struct cyan_skillfish_metrics_cache {
+--- installed kernel modules path ---
+MODDIR=/lib/modules/7.2.0-1.1-cachyos-bc250
+amdgpu.ko.zst
+amdgpu.ko.zst
+--- ip discovery via debugfs name list only ---
+--- hwmon ---
+name=amdgpu
+temp1_input=
+freq1_input=
+power1_average=
+=== PART6 DONE ===

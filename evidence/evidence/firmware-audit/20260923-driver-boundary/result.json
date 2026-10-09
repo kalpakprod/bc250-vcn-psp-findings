@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/home/OWNER/orca/projects/bc250/candidates/clv-native-menu-bridge-v001/dxe-build/host-test"
+  ],
+  "exit": 0,
+  "stdout": "PASS: registration, three error paths, failed removal retained, successful removal, idempotent unload (host mock only)\n",
+  "stderr": "",
+  "depex": "PUSH EFI_HII_DATABASE_PROTOCOL_GUID; END",
+  "depex_sha256": "7b0577190188e3eca9bfd5f62fa42ec0ba29b9de026a83c397e76352213ac089",
+  "limits": [
+    "Existing host mock executable reused, not a new compilation",
+    "Mock is not actual DXE dispatch",
+    "No hardware voltage/clock result"
+  ]
+}

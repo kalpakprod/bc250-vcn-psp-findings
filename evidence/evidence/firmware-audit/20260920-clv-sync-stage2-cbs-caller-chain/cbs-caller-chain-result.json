@@ -1,0 +1,207 @@
+{
+  "status": "PASS",
+  "checks": 21,
+  "route": "AmdFabricAriPei request3710 -> CBS PPI LocatePpi/method0 -> serializer local D.buffer -> first reader use",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis",
+    "emulated-or-host-tested"
+  ],
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "fabric_sha256": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+  "cbs_sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+  "fresh_result": "AmdFabricAriPei constructs the D request and sends event FFFFFFFE through gateway 36C0 to the CBS PPI method; the first size call uses NULL buffer, the second fills the allocator-returned local D.buffer, and reader 1DFC consumes that same local D.buffer pointer. HOB-backed ownership is supported, but the exact internal HOB offset is not proven here. Runtime invocation and downstream FCLK 0x1331/UCLK 0x1204 requester remain unverified.",
+  "provenance": [
+    {
+      "phase": "size",
+      "buffer": "NULL",
+      "size_ptr": "D.size",
+      "call": "3710"
+    },
+    {
+      "phase": "fill",
+      "buffer": "allocator-returned local D.buffer (HOB-backed ownership; exact internal HOB offset unproven)",
+      "size_ptr": "D.size",
+      "call": "3710"
+    },
+    {
+      "phase": "read",
+      "buffer": "same local D.buffer pointer",
+      "size_ptr": "not used",
+      "call": "1DFC"
+    }
+  ],
+  "limits": "One exact Fabric->CBS chain only; no runtime firmware execution, hardware, requester semantic or clock claim, no exact HOB offset claim, no broad scans or shared-state changes.",
+  "checks_detail": [
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ROM size",
+      "passed": true,
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "check": "Fabric hash",
+      "passed": true,
+      "got": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "expected": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78"
+    },
+    {
+      "check": "Cbs hash",
+      "passed": true,
+      "got": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    {
+      "check": "Fabric reader entry",
+      "passed": true,
+      "got": "558bec83ec24",
+      "expected": "558bec83ec24"
+    },
+    {
+      "check": "Fabric miss initializes size",
+      "passed": true,
+      "got": "8365fc008d45fc50",
+      "expected": "8365fc008d45fc50"
+    },
+    {
+      "check": "Fabric first CBS request",
+      "passed": true,
+      "got": "e899190000",
+      "expected": "e899190000"
+    },
+    {
+      "check": "Fabric event -2 gateway",
+      "passed": true,
+      "got": "6afee891ffffff",
+      "expected": "6afee891ffffff"
+    },
+    {
+      "check": "Fabric gateway prologue",
+      "passed": true,
+      "got": "558bec",
+      "expected": "558bec"
+    },
+    {
+      "check": "Fabric gateway LocatePpi call",
+      "passed": true,
+      "got": "8b4d08518b55088b028b4820ffd1",
+      "expected": "8b4d08518b55088b028b4820ffd1"
+    },
+    {
+      "check": "Fabric gateway method call window",
+      "passed": true,
+      "got": "8b5510528b450c508b4d08518b55f88b02ffd0",
+      "expected": "8b5510528b450c508b4d08518b55f88b02ffd0"
+    },
+    {
+      "check": "Fabric CBS GUID occurrence count",
+      "passed": true,
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "check": "Fabric counterpart descriptor wildcard",
+      "passed": true,
+      "got": [
+        4294967295,
+        0
+      ],
+      "expected": [
+        4294967295,
+        0
+      ]
+    },
+    {
+      "check": "Fabric counterpart descriptor event",
+      "passed": true,
+      "got": 4294967294,
+      "expected": 4294967294
+    },
+    {
+      "check": "Fabric counterpart callback pointer",
+      "passed": true,
+      "got": 165816224,
+      "expected": 165816224
+    },
+    {
+      "check": "Fabric miss allocates after size",
+      "passed": true,
+      "got": "83c0688945e0",
+      "expected": "83c0688945e0"
+    },
+    {
+      "check": "Fabric sentinel before second serialize",
+      "passed": true,
+      "got": "89740164",
+      "expected": "89740164"
+    },
+    {
+      "check": "Fabric second CBS serialize call",
+      "passed": true,
+      "got": "e83f190000",
+      "expected": "e83f190000"
+    },
+    {
+      "check": "Fabric first returned buffer use gate",
+      "passed": true,
+      "got": "813e24494e56740b",
+      "expected": "813e24494e56740b"
+    },
+    {
+      "check": "Fabric reader first record advance",
+      "passed": true,
+      "got": "33db83c620eb5c",
+      "expected": "33db83c620eb5c"
+    },
+    {
+      "check": "host D buffer provenance",
+      "passed": true,
+      "got": [
+        {
+          "phase": "size",
+          "buffer": "NULL",
+          "size_ptr": "D.size",
+          "call": "3710"
+        },
+        {
+          "phase": "fill",
+          "buffer": "allocator-returned local D.buffer (HOB-backed ownership; exact internal HOB offset unproven)",
+          "size_ptr": "D.size",
+          "call": "3710"
+        },
+        {
+          "phase": "read",
+          "buffer": "same local D.buffer pointer",
+          "size_ptr": "not used",
+          "call": "1DFC"
+        }
+      ],
+      "expected": [
+        {
+          "phase": "size",
+          "buffer": "NULL",
+          "size_ptr": "D.size",
+          "call": "3710"
+        },
+        {
+          "phase": "fill",
+          "buffer": "allocator-returned local D.buffer (HOB-backed ownership; exact internal HOB offset unproven)",
+          "size_ptr": "D.size",
+          "call": "3710"
+        },
+        {
+          "phase": "read",
+          "buffer": "same local D.buffer pointer",
+          "size_ptr": "not used",
+          "call": "1DFC"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "target": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "target_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "checkpoint_report": "docs/research/2026-09-21-pstate-precedence-next.md",
+  "checkpoint_action_log": "docs/action-logs/2026-09-21-pstate-precedence-next.md",
+  "runner": "evidence/firmware-audit/20260921-pstate-precedence-next/pstate_precedence_verify.py",
+  "runner_sha256": "b5d70cf67ca3c585d8dba3d09ff260d3e44fb8157c2f24b4919ac10333f31043",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/tmp/bc250-pstate-precedence-recheck-hy0pi02k/evidence/firmware-audit/20260921-pstate-precedence-next/pstate_precedence_verify.py"
+  ],
+  "cwd": "/tmp/bc250-pstate-precedence-recheck-hy0pi02k",
+  "exit_status": 0,
+  "stdout": "{\"branch_precedence\": {\"slot_164_gt_1_and_slot_174_eq_0\": \"0x964E/0x9650 branches to 0x9746/0x9794; it gathers channel+0x20 values, calls helpers 0x118C and 0x10C0, then writes the output slot to context+0x2BC (0x981E) and each channel+0x20 (0x983C). Helper selection semantics are opaque.\", \"slot_164_gt_1_and_slot_174_ne_0\": \"Collects per-channel+0x20 values at 0x9672/0x9674; zero slave-table entries substitute 0x7D1 at 0x96E4..0x96E8; a 0x7D1-initialized current value is lowered on smaller candidates at 0x971E..0x9722; selected value is stored to context+0x2BC at 0x973E and each channel+0x20 at 0x9758.\", \"slot_164_le_1\": \"0x9644/0x9646 branches to 0x9744 then 0x984E system-master/table retrieval; the selected table value is stored to context+0x2BC at 0x989A. The bounded single-state window does not store a value to channel+0x20.\"}, \"checks\": {\"failed\": 0, \"passed\": 47, \"total\": 47}, \"setup_raw\": {\"DfClockOverrideControl\": 1, \"DfClockOvrd\": 1420, \"FclkDpm\": 15, \"MemoryClockSpeed\": 36, \"MemoryPstate\": 255, \"UclkDiv1M0\": 1}, \"status\": \"PASS\"}\n",
+  "stderr": "",
+  "result_summary": "{\"failed\": 0, \"passed\": 47, \"total\": 47}",
+  "evidence_class": "static-analysis / host-tested verifier only",
+  "hardware_action": "none"
+}

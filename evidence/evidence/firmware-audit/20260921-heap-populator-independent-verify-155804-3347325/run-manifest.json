@@ -1,0 +1,19 @@
+{
+  "target": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "target_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "source_artifact": "docs/research/2026-09-21-apob-abl-heap-populator.md",
+  "source_action_log": "docs/action-logs/2026-09-21-apob-abl-heap-populator.md",
+  "verifier_source": "evidence/firmware-audit/20260921-apob-abl-heap-populator/heap_populator_verify.py",
+  "verifier_sha256": "41bdf4e173dc91e840f7d16e35281c878b37207c52d9d039ebb37185803d1f9f",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/tmp/bc250-heap-populator-verify-ociocbt3/evidence/firmware-audit/20260921-apob-abl-heap-populator/heap_populator_verify.py"
+  ],
+  "working_directory": "/tmp/bc250-heap-populator-verify-ociocbt3",
+  "exit_status": 0,
+  "stdout": "{\n  \"status\": \"PASS\",\n  \"checks\": 34,\n  \"result\": \"/tmp/bc250-heap-populator-verify-ociocbt3/evidence/firmware-audit/20260921-apob-abl-heap-populator/heap-populator-result.json\",\n  \"first_unresolved\": {\n    \"location\": \"producer of the outer ABL1 object passed as R1 at 0xB84/0xBD2 and population/meaning of its +0x864 field (initialized with 0x006CD4D0) relative to AmdMem APOB service output and native INV 0x11ED\",\n    \"statement\": \"The exact HEAP node writer is now closed to a runtime field-backed source: provider key 0xA04E -> descriptor -> 0x6238 -> node key/payload. The first missing cross-stage edge is upstream of that field: no byte-backed path joins outer+0x864, APOB service 0x9E3B14C/message0x61/arg0xFF, and `$INV 0x11ED`; no training/clock/SMU actuator is claimed.\"\n  }\n}\n",
+  "stderr": "",
+  "machine_result_source": "/tmp/bc250-heap-populator-verify-ociocbt3/evidence/firmware-audit/20260921-apob-abl-heap-populator/heap-populator-result.json",
+  "scope": "static ABL1 heap-populator bytes only; no applied clocks or hardware"
+}

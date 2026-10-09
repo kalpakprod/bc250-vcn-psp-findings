@@ -1,0 +1,583 @@
+{
+  "status": "PASS",
+  "checks": 64,
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "abl1": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "thumb_listing": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt"
+  },
+  "hashes": {
+    "abl1": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "thumb_listing": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+  },
+  "lookup_node_layout": {
+    "key": "node+0 (compared with requested key)",
+    "size": "u32 node+4",
+    "metadata_byte": "u8 node+9",
+    "next_link": "pointer node+0xC",
+    "payload_start": "node+0x10+metadata_byte",
+    "payload_length": "u32(node+4)-metadata_byte",
+    "descriptor_outputs": {
+      "payload_pointer": "descriptor+8",
+      "payload_length": "descriptor+4"
+    }
+  },
+  "key_query": "selector 0x0F materializes immediate 0xA04E at 0x4B1A, stores it to [SP+0x24] at 0x4B38, and calls 0x6374 at 0x4B3A.",
+  "initializer": "0x63F8 is called at 0x6F78. It loads table base literal 0x73000, loads the HEAP tag literal, and stores HEAP at [base+0]. This is arena/header/sentinel initialization only; this bounded routine does not demonstrate production of a linked node keyed 0xA04E. It does not prove that no other producer exists.",
+  "rom_scalar_qualification": "The earlier raw-image check tests only exact contiguous little-endian 32-bit scalar byte strings. Those misses do not prove there is no ROM representation. The decompressed ABL1 itself contains the 0xA04E MOVW immediate and the 0x73000 table-base literals.",
+  "limitations": [
+    "No runtime HEAP snapshot or node producer was identified by this one-edge check.",
+    "The parsed APCB/CBSG group 0x1707 has no established schema link to the runtime HEAP key.",
+    "No runtime, MHz, voltage, physical clock, mode, or MCLK=UCLK=FCLK claim."
+  ],
+  "checks_detail": [
+    {
+      "check": "exact ABL1 SHA-256",
+      "status": "PASS",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "exact Thumb listing SHA-256",
+      "status": "PASS",
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x4b1a",
+      "status": "PASS",
+      "got": "4af24e06",
+      "expected": "4af24e06"
+    },
+    {
+      "check": "instruction semantics at 0x4b1a",
+      "status": "PASS",
+      "got": "movw r6, #0xa04e",
+      "expected": "movw r6, #0xa04e"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x4b34",
+      "status": "PASS",
+      "got": "09a8",
+      "expected": "09a8"
+    },
+    {
+      "check": "instruction semantics at 0x4b34",
+      "status": "PASS",
+      "got": "add r0, sp, #0x24",
+      "expected": "add r0, sp, #0x24"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x4b38",
+      "status": "PASS",
+      "got": "0996",
+      "expected": "0996"
+    },
+    {
+      "check": "instruction semantics at 0x4b38",
+      "status": "PASS",
+      "got": "str r6, [sp, #0x24]",
+      "expected": "str r6, [sp, #0x24]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x4b3a",
+      "status": "PASS",
+      "got": "01f01bfc",
+      "expected": "01f01bfc"
+    },
+    {
+      "check": "instruction semantics at 0x4b3a",
+      "status": "PASS",
+      "got": "bl 0x6374",
+      "expected": "bl 0x6374"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x6374",
+      "status": "PASS",
+      "got": "1c4a",
+      "expected": "1c4a"
+    },
+    {
+      "check": "instruction semantics at 0x6374",
+      "status": "PASS",
+      "got": "ldr r2, [pc, #0x70]",
+      "expected": "ldr r2, [pc, #0x70]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x6378",
+      "status": "PASS",
+      "got": "1c4f",
+      "expected": "1c4f"
+    },
+    {
+      "check": "instruction semantics at 0x6378",
+      "status": "PASS",
+      "got": "ldr r7, [pc, #0x70]",
+      "expected": "ldr r7, [pc, #0x70]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x637c",
+      "status": "PASS",
+      "got": "1368",
+      "expected": "1368"
+    },
+    {
+      "check": "instruction semantics at 0x637c",
+      "status": "PASS",
+      "got": "ldr r3, [r2]",
+      "expected": "ldr r3, [r2]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x637e",
+      "status": "PASS",
+      "got": "bb42",
+      "expected": "bb42"
+    },
+    {
+      "check": "instruction semantics at 0x637e",
+      "status": "PASS",
+      "got": "cmp r3, r7",
+      "expected": "cmp r3, r7"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x6394",
+      "status": "PASS",
+      "got": "0568",
+      "expected": "0568"
+    },
+    {
+      "check": "instruction semantics at 0x6394",
+      "status": "PASS",
+      "got": "ldr r5, [r0]",
+      "expected": "ldr r5, [r0]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x6396",
+      "status": "PASS",
+      "got": "1c68",
+      "expected": "1c68"
+    },
+    {
+      "check": "instruction semantics at 0x6396",
+      "status": "PASS",
+      "got": "ldr r4, [r3]",
+      "expected": "ldr r4, [r3]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x6398",
+      "status": "PASS",
+      "got": "ac42",
+      "expected": "ac42"
+    },
+    {
+      "check": "instruction semantics at 0x6398",
+      "status": "PASS",
+      "got": "cmp r4, r5",
+      "expected": "cmp r4, r5"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x639c",
+      "status": "PASS",
+      "got": "db68",
+      "expected": "db68"
+    },
+    {
+      "check": "instruction semantics at 0x639c",
+      "status": "PASS",
+      "got": "ldr r3, [r3, #0xc]",
+      "expected": "ldr r3, [r3, #0xc]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x63a8",
+      "status": "PASS",
+      "got": "597a",
+      "expected": "597a"
+    },
+    {
+      "check": "instruction semantics at 0x63a8",
+      "status": "PASS",
+      "got": "ldrb r1, [r3, #0x9]",
+      "expected": "ldrb r1, [r3, #0x9]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x63aa",
+      "status": "PASS",
+      "got": "5a18",
+      "expected": "5a18"
+    },
+    {
+      "check": "instruction semantics at 0x63aa",
+      "status": "PASS",
+      "got": "adds r2, r3, r1",
+      "expected": "adds r2, r3, r1"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x63ac",
+      "status": "PASS",
+      "got": "1032",
+      "expected": "1032"
+    },
+    {
+      "check": "instruction semantics at 0x63ac",
+      "status": "PASS",
+      "got": "adds r2, #0x10",
+      "expected": "adds r2, #0x10"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x63ae",
+      "status": "PASS",
+      "got": "8260",
+      "expected": "8260"
+    },
+    {
+      "check": "instruction semantics at 0x63ae",
+      "status": "PASS",
+      "got": "str r2, [r0, #0x8]",
+      "expected": "str r2, [r0, #0x8]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x63b0",
+      "status": "PASS",
+      "got": "5a68",
+      "expected": "5a68"
+    },
+    {
+      "check": "instruction semantics at 0x63b0",
+      "status": "PASS",
+      "got": "ldr r2, [r3, #0x4]",
+      "expected": "ldr r2, [r3, #0x4]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x63b2",
+      "status": "PASS",
+      "got": "511a",
+      "expected": "511a"
+    },
+    {
+      "check": "instruction semantics at 0x63b2",
+      "status": "PASS",
+      "got": "subs r1, r2, r1",
+      "expected": "subs r1, r2, r1"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x63b4",
+      "status": "PASS",
+      "got": "4160",
+      "expected": "4160"
+    },
+    {
+      "check": "instruction semantics at 0x63b4",
+      "status": "PASS",
+      "got": "str r1, [r0, #0x4]",
+      "expected": "str r1, [r0, #0x4]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x63fa",
+      "status": "PASS",
+      "got": "0949",
+      "expected": "0949"
+    },
+    {
+      "check": "instruction semantics at 0x63fa",
+      "status": "PASS",
+      "got": "ldr r1, [pc, #0x24]",
+      "expected": "ldr r1, [pc, #0x24]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x63fe",
+      "status": "PASS",
+      "got": "c0e90612",
+      "expected": "c0e90612"
+    },
+    {
+      "check": "instruction semantics at 0x63fe",
+      "status": "PASS",
+      "got": "strd r1, r2, [r0, #24]",
+      "expected": "strd r1, r2, [r0, #24]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x6404",
+      "status": "PASS",
+      "got": "c1e90132",
+      "expected": "c1e90132"
+    },
+    {
+      "check": "instruction semantics at 0x6404",
+      "status": "PASS",
+      "got": "strd r3, r2, [r1, #4]",
+      "expected": "strd r3, r2, [r1, #4]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x6408",
+      "status": "PASS",
+      "got": "cb60",
+      "expected": "cb60"
+    },
+    {
+      "check": "instruction semantics at 0x6408",
+      "status": "PASS",
+      "got": "str r3, [r1, #0xc]",
+      "expected": "str r3, [r1, #0xc]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x640a",
+      "status": "PASS",
+      "got": "064b",
+      "expected": "064b"
+    },
+    {
+      "check": "instruction semantics at 0x640a",
+      "status": "PASS",
+      "got": "ldr r3, [pc, #0x18]",
+      "expected": "ldr r3, [pc, #0x18]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x640c",
+      "status": "PASS",
+      "got": "0b60",
+      "expected": "0b60"
+    },
+    {
+      "check": "instruction semantics at 0x640c",
+      "status": "PASS",
+      "got": "str r3, [r1]",
+      "expected": "str r3, [r1]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x6412",
+      "status": "PASS",
+      "got": "4b61",
+      "expected": "4b61"
+    },
+    {
+      "check": "instruction semantics at 0x6412",
+      "status": "PASS",
+      "got": "str r3, [r1, #0x14]",
+      "expected": "str r3, [r1, #0x14]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x6414",
+      "status": "PASS",
+      "got": "ca61",
+      "expected": "ca61"
+    },
+    {
+      "check": "instruction semantics at 0x6414",
+      "status": "PASS",
+      "got": "str r2, [r1, #0x1c]",
+      "expected": "str r2, [r1, #0x1c]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x6418",
+      "status": "PASS",
+      "got": "0174",
+      "expected": "0174"
+    },
+    {
+      "check": "instruction semantics at 0x6418",
+      "status": "PASS",
+      "got": "strb r1, [r0, #0x10]",
+      "expected": "strb r1, [r0, #0x10]"
+    },
+    {
+      "check": "listing bytes match ABL1 at 0x6f78",
+      "status": "PASS",
+      "got": "fff73efa",
+      "expected": "fff73efa"
+    },
+    {
+      "check": "instruction semantics at 0x6f78",
+      "status": "PASS",
+      "got": "bl 0x63f8",
+      "expected": "bl 0x63f8"
+    },
+    {
+      "check": "lookup table-base literal",
+      "status": "PASS",
+      "got": "00300700",
+      "expected": "00300700"
+    },
+    {
+      "check": "lookup HEAP comparison literal",
+      "status": "PASS",
+      "got": "48454150",
+      "expected": "48454150"
+    },
+    {
+      "check": "initializer table-base literal",
+      "status": "PASS",
+      "got": "00300700",
+      "expected": "00300700"
+    },
+    {
+      "check": "initializer HEAP store literal",
+      "status": "PASS",
+      "got": "48454150",
+      "expected": "48454150"
+    }
+  ],
+  "review_kind": "bounded integration review only",
+  "integration_findings": {
+    "branch_report": {
+      "path": "/home/OWNER/orca/projects/bc250/docs/research/20260920-clv-abl1-context-branch-consumer-xhigh.md",
+      "sha256": "f77b55f179bf70fb0dfb856ae2bf8919ae3ad5eb6664ad222a7848933dc67ca0",
+      "result_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-context-branch-consumer-xhigh/abl1-context-branch-consumer-result.json",
+      "result_sha256": "269049d9fb13f32dbf8c037f85ebfe695fd5099e37fe354e8b2a939d1c4cf671",
+      "status": "PASS",
+      "checks": 89
+    },
+    "heap_followup": {
+      "path": "/home/OWNER/orca/projects/bc250/docs/research/20260920-clv-abl1-runtime-heap-followup.md",
+      "sha256": "0d2046ec0bb5ac829a68e2e803d142ff0d93ca6f6b0c0df8b4244968d2dd6475",
+      "result_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-runtime-heap-followup/abl1-runtime-heap-followup-result.json",
+      "result_sha256": "9c94bf1d3b3a4880b32a36d2e6c95b25e56a7e0292aa495c0ff1400c0492a75f",
+      "status": "PASS",
+      "checks": 90
+    },
+    "reader_precedence_type": {
+      "path": "/home/OWNER/orca/projects/bc250/docs/research/20260920-clv-abl1-reader-fallback-status-xhigh.md",
+      "sha256": "dfadcfec1e748ffdbcf20bdbe47bd44f944c8b75e3ccd45ee5e7848142b2a8ed",
+      "result_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-reader-fallback-status-xhigh/abl1-reader-fallback-status-result.json",
+      "result_sha256": "5e63a7cf2121a8ea39631cbd357a3a958a8f691668e26df98900a2fdbb7aa19a",
+      "status": "PASS",
+      "checks": 64,
+      "fclk_type_pointer": "SP+0x0C lacks an explicit write in the bounded caller; actual type-2 execution is unproven"
+    },
+    "reader_precedence_correction": "For an earlier ordered item, helper status R0=0 advances to the next candidate. A nonzero earlier helper result advances only when its returned gate byte is exactly 1; other byte values fail terminally. The final typed query status failure and typed sentinel failure are terminal and do not advance.",
+    "heap_node_layout": {
+      "key": "node+0 (compared with requested key)",
+      "size": "u32 node+4",
+      "metadata_byte": "u8 node+9",
+      "next_link": "pointer node+0xC",
+      "payload_start": "node+0x10+metadata_byte",
+      "payload_length": "u32(node+4)-metadata_byte",
+      "descriptor_outputs": {
+        "payload_pointer": "descriptor+8",
+        "payload_length": "descriptor+4"
+      }
+    },
+    "initializer_limit": "0x63F8 is called at 0x6F78. It loads table base literal 0x73000, loads the HEAP tag literal, and stores HEAP at [base+0]. This is arena/header/sentinel initialization only; this bounded routine does not demonstrate production of a linked node keyed 0xA04E. It does not prove that no other producer exists.",
+    "raw_rom_scalar_limit": "The earlier raw-image check tests only exact contiguous little-endian 32-bit scalar byte strings. Those misses do not prove there is no ROM representation. The decompressed ABL1 itself contains the 0xA04E MOVW immediate and the 0x73000 table-base literals.",
+    "apcb_cbsg_qualification": "Existing parser reports CBSG group 0x1707 present; no schema-backed mapping to runtime HEAP key 0xA04E is established.",
+    "callback_660": "Author target result remains pending and unjoined; no claim of its callback address/effect.",
+    "pointer_space": "context+0x2C4 child pointer and context+0x660 callback target address spaces are unknown. MMIO remains possible; no direct mapping proves MMIO and there is no positive proof of non-MMIO.",
+    "clock_claim": "No known clock mode, physical clock, frequency unit, synchronization, or MCLK=UCLK=FCLK result."
+  },
+  "transaction": {
+    "target": "/home/OWNER/orca/projects/bc250/memory/oc-recheck.md",
+    "baseline_sha256": "186009168f9ab552d23652ab1056e16d92ca6d852e62cb264364d1688f3e24d7",
+    "modified_sha256": "39ea72fca9ded368fc96d3a1d4608626b32b36e08f3befede397b271e5bc89f9",
+    "plan_target": "/home/OWNER/orca/projects/bc250/specs/2026-09-20-clv-sync-development-plan.md",
+    "plan_baseline_sha256": "0e6691f1a4a9d0b010dfd954187c9fa3490546e443f189dc690a3f1cb5aa98ad",
+    "plan_modified_sha256": "d829ac5331d4c7ee029ab592f93766eb5054409ae119fb45d5138c5dbb2132ca",
+    "baseline_event": {
+      "phase": "BASELINE",
+      "command": [
+        "grep",
+        "-Fq",
+        "CLV ABL1 context/HEAP integration review — remains PARTIAL (2026-09-20)",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/state-under-test.md"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "exit_status": 1,
+      "sha256": "186009168f9ab552d23652ab1056e16d92ca6d852e62cb264364d1688f3e24d7"
+    },
+    "events": [
+      {
+        "phase": "BASELINE",
+        "command": [
+          "grep",
+          "-Fq",
+          "CLV ABL1 context/HEAP integration review — remains PARTIAL (2026-09-20)",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/state-under-test.md"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exit_status": 1,
+        "sha256": "186009168f9ab552d23652ab1056e16d92ca6d852e62cb264364d1688f3e24d7"
+      },
+      {
+        "phase": "MODIFIED",
+        "command": [
+          "grep",
+          "-Fq",
+          "CLV ABL1 context/HEAP integration review — remains PARTIAL (2026-09-20)",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/state-under-test.md"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exit_status": 0,
+        "sha256": "39ea72fca9ded368fc96d3a1d4608626b32b36e08f3befede397b271e5bc89f9"
+      },
+      {
+        "phase": "ROLLBACK_SCRIPT",
+        "command": [
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/ROLLBACK.sh",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/state-under-test.md"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exit_status": 0,
+        "sha256": "186009168f9ab552d23652ab1056e16d92ca6d852e62cb264364d1688f3e24d7"
+      },
+      {
+        "phase": "ROLLBACK",
+        "command": [
+          "grep",
+          "-Fq",
+          "CLV ABL1 context/HEAP integration review — remains PARTIAL (2026-09-20)",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/state-under-test.md"
+        ],
+        "stdout": "",
+        "stderr": "",
+        "exit_status": 1,
+        "sha256": "186009168f9ab552d23652ab1056e16d92ca6d852e62cb264364d1688f3e24d7"
+      }
+    ],
+    "rollback_test_restored_hash": "186009168f9ab552d23652ab1056e16d92ca6d852e62cb264364d1688f3e24d7",
+    "rollback_matches_baseline": true,
+    "role_paths": {
+      "MODIFIED_FILE": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/MODIFIED_FILE.md",
+      "DIFF_FILE": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/DIFF_FILE.patch",
+      "VERIFICATION.txt": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/VERIFICATION.txt",
+      "ROLLBACK.sh": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/ROLLBACK.sh"
+    },
+    "preflight_nonmatching_marker_probe": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/preflight-baseline-command-nonmatching-marker.json",
+      "note": "not used for the same-predicate transaction"
+    },
+    "diff_reconstruction": {
+      "command": [
+        "patch",
+        "--batch",
+        "--silent",
+        "-p0",
+        "-i",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/DIFF_FILE.patch"
+      ],
+      "target_copy": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/memory-oc-recheck.baseline.md",
+      "stdout": "",
+      "stderr": "",
+      "exit_status": 0,
+      "reconstructed_sha256": "39ea72fca9ded368fc96d3a1d4608626b32b36e08f3befede397b271e5bc89f9",
+      "modified_file_sha256": "39ea72fca9ded368fc96d3a1d4608626b32b36e08f3befede397b271e5bc89f9",
+      "byte_equal_status": 0
+    },
+    "diff_file_sha256": "76a69897723a564ec2cf7d0a247a7045a352db82056ed630f45515f7e053f646"
+  },
+  "execution": {
+    "command": [
+      "python3",
+      "-B",
+      "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/abl1_heap_node_init_review_verify.py"
+    ],
+    "stdout": "{\"status\":\"PASS\",\"checks\":64,\"key_query\":\"selector 0x0F materializes immediate 0xA04E at 0x4B1A, stores it to [SP+0x24] at 0x4B38, and calls 0x6374 at 0x4B3A.\",\"lookup_node_layout\":{\"key\":\"node+0 (compared with requested key)\",\"size\":\"u32 node+4\",\"metadata_byte\":\"u8 node+9\",\"next_link\":\"pointer node+0xC\",\"payload_start\":\"node+0x10+metadata_byte\",\"payload_length\":\"u32(node+4)-metadata_byte\",\"descriptor_outputs\":{\"payload_pointer\":\"descriptor+8\",\"payload_length\":\"descriptor+4\"}},\"initializer\":\"0x63F8 is called at 0x6F78. It loads table base literal 0x73000, loads the HEAP tag literal, and stores HEAP at [base+0]. This is arena/header/sentinel initialization only; this bounded routine does not demonstrate production of a linked node keyed 0xA04E. It does not prove that no other producer exists.\",\"rom_scalar_qualification\":\"The earlier raw-image check tests only exact contiguous little-endian 32-bit scalar byte strings. Those misses do not prove there is no ROM representation. The decompressed ABL1 itself contains the 0xA04E MOVW immediate and the 0x73000 table-base literals.\"}\n",
+    "stderr": "",
+    "exit_status": 0
+  },
+  "author_660_result": "pending"
+}

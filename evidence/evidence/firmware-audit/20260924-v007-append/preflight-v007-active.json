@@ -1,0 +1,88 @@
+{
+  "verdict": "GO",
+  "candidate": "candidates/BC250_pre_dump_vcn_append_v007.bin",
+  "candidate_sha256": "9d2493975b870810fd31481cf3ded36cc964aa201181ad0ea4949f3cf5afad17",
+  "gates": {
+    "G1_diff_confinement": {
+      "pass": true,
+      "changed_bytes": 1373258,
+      "window": [
+        "0xae0088",
+        "0xc30a6b"
+      ],
+      "declared_window": [
+        "0xae0088",
+        "0xc30a6b"
+      ]
+    },
+    "G8_boot_regions_untouched": {
+      "pass": true
+    },
+    "G2_outer_fv_headers": {
+      "pass": true
+    },
+    "G3_inner_inventory": {
+      "pass": true,
+      "base_files": 193,
+      "cand_files": 194,
+      "new": [
+        "B6250780-7E00-4203-900C-23443B1413FE"
+      ],
+      "gone": [],
+      "content_changed": [],
+      "shape_changed": []
+    },
+    "G4_new_ffs": {
+      "pass": true,
+      "found": {
+        "off": "0x43c018",
+        "size": "0x3022",
+        "type": "0x7",
+        "state": "0xf8"
+      }
+    },
+    "G5_new_driver_pe": {
+      "pass": true,
+      "pe_len": 12288,
+      "machine": "0x8664",
+      "magic": "0x20b",
+      "subsystem": "0xb",
+      "sha256": "ba1cf214178448eabcc353beac59f78f1a404ee65ff5326c5884508c7423e0cb"
+    },
+    "G6_inner_fv_checksum": {
+      "pass": true,
+      "base_fv_len": 4444160,
+      "cand_fv_len": 4456448,
+      "note": "asserted inside walk_ffs for both images"
+    },
+    "G7_capsule_free_tail": {
+      "pass": true,
+      "base_free": "0xfe8",
+      "cand_free": "0xfc0"
+    },
+    "G9_dispatch_reachable": {
+      "pass": true,
+      "prev_file": "6C98E4F3-9D8B-4E5A-B2E7-31A45B9C5D81",
+      "prev_end": "0x43c018",
+      "new_off": "0x43c018",
+      "erased_gap_bytes": 0
+    },
+    "G10_lzma_explicit_size": {
+      "pass": true,
+      "base": {
+        "lz_off": "0xae00a8",
+        "props": "0x5d",
+        "dict": "0x1000000",
+        "outsize": "0x43d010",
+        "stream_len": "0x43d010"
+      },
+      "cand": {
+        "lz_off": "0xae00a8",
+        "props": "0x5d",
+        "dict": "0x1000000",
+        "outsize": "0x440010",
+        "stream_len": "0x440010"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+0: 450Mhz *
+---
+0: 350Mhz 
+1: 2000Mhz *
+2: 2230Mhz 
+---
+0: 450Mhz *
+---
+quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=14fe5cec-acf0-4986-8103-251a5706bbac video=DP-1:1920x1080@60 amdgpu.sg_display=0 ttm.pages_limit=1048576 systemd.zram=0 loglevel=0 mitigations=off acpi_enforce_resources=lax amdgpu.bc250_vcn_mode=1 zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=25
+
+7.2.6-1.1-cachyos-bore-vcn-bc250

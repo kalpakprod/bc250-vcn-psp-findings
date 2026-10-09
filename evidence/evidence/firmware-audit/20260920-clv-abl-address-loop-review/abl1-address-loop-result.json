@@ -1,0 +1,193 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 25,
+    "total": 25
+  },
+  "checks_detail": [
+    {
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "label": "rom-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "label": "payload-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "b494f9e3d59855eaa7a39ea8e1623bebe7d1419b05b1d7b0f29a67b56f9cc223",
+      "got": "b494f9e3d59855eaa7a39ea8e1623bebe7d1419b05b1d7b0f29a67b56f9cc223",
+      "label": "entry-disassembly-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "569981be14760be76e4a5e8f3fc6f46307d2299017db834fca29eb6e98b05898",
+      "got": "569981be14760be76e4a5e8f3fc6f46307d2299017db834fca29eb6e98b05898",
+      "label": "function-disassembly-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "got": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "entry-stderr-empty",
+      "status": "PASS"
+    },
+    {
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "got": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "function-stderr-empty",
+      "status": "PASS"
+    },
+    {
+      "expected": 0,
+      "got": 0,
+      "label": "header-load-address-zero",
+      "status": "PASS"
+    },
+    {
+      "expected": 94624,
+      "got": 94624,
+      "label": "header-uncompressed-length",
+      "status": "PASS"
+    },
+    {
+      "expected": 49184,
+      "got": 49184,
+      "label": "header-rom-size",
+      "status": "PASS"
+    },
+    {
+      "expected": "e92d4010",
+      "got": "10402de9",
+      "label": "entry-ARM-prologue",
+      "status": "PASS"
+    },
+    {
+      "expected": "e59f2004",
+      "got": "04209fe5",
+      "label": "entry-ARM-ldr",
+      "status": "PASS"
+    },
+    {
+      "expected": "e12fff32",
+      "got": "32ff2fe1",
+      "label": "entry-ARM-blx-r2",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x5e02d",
+      "got": "0x5e02d",
+      "label": "entry-literal-target",
+      "status": "PASS"
+    },
+    {
+      "expected": "2de9f04f",
+      "got": "2de9f04f",
+      "label": "func-prologue-raw",
+      "status": "PASS"
+    },
+    {
+      "expected": "0468",
+      "got": "0468",
+      "label": "func-context-load",
+      "status": "PASS"
+    },
+    {
+      "expected": "008c",
+      "got": "008c",
+      "label": "loop-speed-load",
+      "status": "PASS"
+    },
+    {
+      "expected": "c1f87802",
+      "got": "c1f87802",
+      "label": "loop-table-store",
+      "status": "PASS"
+    },
+    {
+      "expected": "f895004b",
+      "got": "95f84b00",
+      "label": "outer-loop-bound-read",
+      "status": "PASS"
+    },
+    {
+      "expected": "f8d403c4f8900074",
+      "got": "d4f8c40390f87400",
+      "label": "nested-structure-bound",
+      "status": "PASS"
+    },
+    {
+      "expected": "d2f87822b24200d2b296",
+      "got": "d2f87822b24200d296b2",
+      "label": "min-compare-update",
+      "status": "PASS"
+    },
+    {
+      "expected": "c4f8bc62",
+      "got": "c4f8bc62",
+      "label": "min-store",
+      "status": "PASS"
+    },
+    {
+      "expected": "83e0",
+      "got": "83e0",
+      "label": "continuation-branch",
+      "status": "PASS"
+    },
+    {
+      "expected": "6f4a",
+      "got": "6f4a",
+      "label": "continuation-code",
+      "status": "PASS"
+    },
+    {
+      "expected": "70e7",
+      "got": "70e7",
+      "label": "end-branch",
+      "status": "PASS"
+    },
+    {
+      "expected": "b'\\nAGESA MEM'",
+      "got": "b'\\nAGESA MEM'",
+      "label": "code-data-boundary",
+      "status": "PASS"
+    }
+  ],
+  "conclusion": "Exact header/entry/Thumb boundaries are payload-relative only. The 0x95FC cluster has an outer byte-count loop driven by R5+0x4B and callback/indexed table access, followed by nested loops driven by [[R4+0x3C4]+0x74]. Strings provide Channel/MEMCLK/P-state nomenclature context but do not prove whether the bounds represent channels, P-states, dies, or another runtime dimension. No runtime base, caller, unit, or physical domain is inferred.",
+  "function_boundary": {
+    "code_to_data": "0x98AC",
+    "independent_extension": "0x984E..0x98AA continuation",
+    "last_code_before_data": "0x98AB",
+    "payload_relative_start": "0x95FC",
+    "worker_window": "0x95FC..0x9870 (partial)"
+  },
+  "header": {
+    "decompressed_length": 94624,
+    "entry_literal": "0x0005E02D (outside payload)",
+    "load_address": "0x0 (observed field; not promoted to physical runtime base)",
+    "rom_size_field": "0xC020"
+  },
+  "limitations": [
+    "No loader relocation map or in-payload caller to 0x95FC recovered.",
+    "No firmware execution, training, hardware, clock, or settings result.",
+    "Mixed code/data prevents treating a flat Thumb scan as complete xref proof."
+  ],
+  "loop_semantics": {
+    "callback": "[R5+0x52C](R5,index) before reading [R5+0x0C]+0x20",
+    "nested_bound": "[[R4+0x3C4]+0x74] controls later reduction/writeback loops",
+    "nomenclature": "strings mention Channel/MEMCLK/P-state, but exact field semantics and physical domain remain unresolved",
+    "outer_count_field": "[R5+0x4B] byte controls first indexed loop",
+    "table_stride": "R1=R4+(index<<2), then +0x278"
+  },
+  "status": "PASS",
+  "string_context": {
+    "0x820C": "Synchronize MEMCLK Across Channels and Set Limits",
+    "0x8271": "Memory P-state Enabled.",
+    "0x828D": "Memory P-state Disabled.",
+    "0x9959": "Channel %d Memory Speed : %d",
+    "0x9983": "Channel %d Memory Speed : %d"
+  }
+}

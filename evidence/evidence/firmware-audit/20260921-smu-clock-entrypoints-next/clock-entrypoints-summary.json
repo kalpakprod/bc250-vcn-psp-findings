@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "evidence_class": ["observed-bytes", "static-analysis"],
+  "baseline": {
+    "rom": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "rom_size": 16777216,
+    "amdsetup_memory_clock": {
+      "relative_offset": "0x316",
+      "absolute_offset": "0x7E5",
+      "raw_byte": "0x24",
+      "ifr_label": "1800MHz",
+      "meaning": "stored request only; not a measured clock"
+    },
+    "smu": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5",
+      "sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+      "rom_offset": "0x8FEF00",
+      "size": 262400
+    },
+    "queue_api": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/bc250_smu/bc250_smu/api.py",
+      "sha256": "584b135de0796e2b1e5d593b316457f18b5e5120bb3f8b5307acb551c2721185",
+      "queue_ids": [0, 1, 2, 3, 4]
+    }
+  },
+  "request_candidates": [
+    {
+      "name": "dynamic_per_domain_clock_request",
+      "mailbox_queue": 3,
+      "message": "0x1D",
+      "dispatch_offset": "0x7550",
+      "handler": "0x2EA08",
+      "handler_provenance": "queue dispatch -> high16 1-based domain index; low16 unsigned request -> ufloat.s target",
+      "callee_chain": ["0x2EA08", "0x2E788", "0x23890", "0x235C8"],
+      "program_path": "target[0x14038 + 12*(index-1)] -> actuator loop -> SMN program/poll path",
+      "static_units": "low16 is an unsigned integer converted directly to float; no MHz scale or divider conversion is visible",
+      "domain_ids_in_target_array": ["0x0D", "0x00", "0x01", "0x02", "0x03", "0x04", "0x05", "0x06", "0x07", "0x0A", "0x18", "0x13", "0x14", "0x15", "0x16", "0x17", "0x0B", "0x08", "0x09", "0x0C"],
+      "candidate_group5_6_program_registers": {
+        "domain_0x13": "0x0116C900",
+        "domain_0x14": "0x0116C928",
+        "domain_0x15": "0x0116C950",
+        "domain_0x16": "0x0116D100",
+        "domain_0x17": "0x0116D128",
+        "domain_0x18": "0x0116D150"
+      },
+      "physical_identity": "unresolved; group/domain IDs and SMN apertures are observed, not proven MCLK/UCLK/FCLK/VCN identities",
+      "setup_caller_join": "unresolved; no direct AmdSetup+0x316/0x330/0x6A3/0x703/0x704 caller edge in this SMU entrypoint test"
+    },
+    {
+      "name": "DF_pstate_request",
+      "mailbox_queue": 4,
+      "historical_label": "Queue 5 in older project reports and local Queue4Mixin method names _q5_*",
+      "message": "0x07",
+      "dispatch_offset": "0x79E8",
+      "handler_pointer_offset": "0x79EC",
+      "handler": "0x1E720",
+      "handler_provenance": "raw table Queue 4 (base 0x79B8); local Bc250Smu exposes queue IDs 0..4",
+      "callee_chain": ["0x1E720", "0x1E448", "0x23B7C", "0x23BA8", "0x23BF4", "0x23EF8", "0x23F18"],
+      "argument_units": "low byte selects a DF P-state index; accepted bound is runtime byte at 0xCEE0+0xF7; high-byte mode check requires 0x01 in the checked branch",
+      "table": {
+        "base": "0xCF0C",
+        "row_stride": 40,
+        "row_count": 5,
+        "pstate3": {
+          "row": "0xCF84",
+          "decoded_numeric_rates": {
+            "domain_0x0E": 1200.0,
+            "domains_0x0F_0x11": 875.0,
+            "domains_0x10_0x12": 109.375
+          },
+          "stored_float_at_row_plus_0x18": 1750.0
+        }
+      },
+      "actuated_domain_groups": {
+        "domain_0x0E": {"group": 2, "program_register": "0x0115C0FC", "arguments": "row[2], row[0], row[1]"},
+        "domains_0x0F_0x11": {"groups": [3, 4], "program_registers": ["0x0115C8FC", "0x0116C0FC"], "arguments": "row[10], row[8], row[9]"},
+        "domains_0x10_0x12": {"groups": [3, 4], "program_registers": ["0x0115C924", "0x0116C124"], "arguments": "row[12], row[8], row[11]"}
+      },
+      "numeric_units": "table helper arithmetic reconstructs float values numerically labelled MHz in existing static evidence, but physical domain identity and external unit/rate conversion remain unproven",
+      "setup_caller_join": "unresolved; no direct AmdSetup clock-field source or ABL1/APOB provider join was observed"
+    }
+  ],
+  "excluded_aliases": [
+    {"queue": 0, "message": "0x11", "handler": "0x2EA74", "reason": "reads committed software float; no hardware counter"},
+    {"queue": 0, "message": "0x13", "handler": "0x1E988", "reason": "returns DF P-state index/count delta; not frequency"},
+    {"queue": 0, "message": "0x1A", "handler": "0x2B634", "reason": "GFX DFLL divider; not memory/fabric request"}
+  ],
+  "first_unresolved_boundary": "mailbox caller / provider that supplies these requests and joins AmdSetup clock fields or ABL1/APOB records to a physical MCLK/UCLK/FCLK divider or crossing selector",
+  "hardware": "unrun; no board/register/NVRAM/ROM/network action"
+}

@@ -1,0 +1,17 @@
+{
+  "tool": "inline (see docs/research/2026-09-19-zero-day-confirmation.md \u00a75.3)",
+  "smu_body": "import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5",
+  "smu_body_sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+  "pointer_DAT_171EC": {
+    "file_offset": "0x0171EC",
+    "value": "0xcee0"
+  },
+  "gate_byte": {
+    "sram": "0xcfd6",
+    "file_offset": "0xcfd6",
+    "image_value": "0x0",
+    "meaning": "0x00 in the image -> the Q3 0x5C/0x5D domain-14 power route is NOT gated by the image; the gate is a runtime-set flag"
+  },
+  "xrefs": "Ghidra: 3 READ refs to 0x171EC (FUN_0001f218 x2, FUN_0001f2f0 x1); 0 refs to the gate byte 0x172E2 itself -> no writer in the body; the writer is outside the SMU body (PSP/ABL or a runtime path)",
+  "consequence": "ZD-2's fixed-0xFF write could CLOSE this gate (write 0xFF to SRAM 0xCFD6), but nothing in the image closes it; the domain-14 route is open in the image and the blocker is elsewhere"
+}

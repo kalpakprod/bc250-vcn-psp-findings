@@ -1,0 +1,173 @@
+PASS: entire loaded program memory equals clv-matching robin-5 body, bytes=262400
+===== 0001f120 FUN_0001f120 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001f120(void)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  uint uVar4;
+  uint uVar5;
+  
+  iVar1 = _DAT_00017470;
+  uVar4 = 0;
+  do {
+    iVar2 = uVar4 * 8 + _DAT_00017474;
+    *(undefined1 *)(iVar2 + 0x7f) = 0;
+    if (*(char *)(iVar2 + 0x7c) != '\0') {
+      iVar3 = func_0x000029f8(0,(uint)*(byte *)(iVar2 + 0x7d) * 0x100000 + iVar1,2);
+      uVar5 = 0;
+      if (*(int *)(iVar2 + 0x80) != iVar3) {
+        do {
+          if (((int)(uint)*(byte *)(iVar2 + 0x7e) >> (uVar5 & 0x1f) & 1U) != 0) {
+            func_0x00002a74(0,uVar5 * 0x100000 + iVar1,iVar3,2);
+            func_0x00002a74(0,uVar5 * 0x100000 + _DAT_00017478,1,2);
+            *(undefined1 *)(iVar2 + 0x7f) = 1;
+          }
+          uVar5 = uVar5 + 1 & 0xff;
+        } while (uVar5 != 8);
+        *(int *)(iVar2 + 0x80) = iVar3;
+      }
+    }
+    uVar4 = uVar4 + 1 & 0xff;
+  } while (uVar4 != 4);
+  return;
+}
+
+
+0001f120 364100 entry a1,0x20
+0001f123 21d4e0 l32r a2,0x00017474
+0001f126 0c03 movi.n a3,0x0
+0001f128 41d2e0 l32r a4,0x00017470
+0001f12b 2023b0 addx8 a2,a3,a2
+0001f12e c2027c l8ui a12,a2,0x7c
+0001f131 0c0d movi.n a13,0x0
+0001f133 d2427f s8i a13,a2,0x7f
+0001f136 160c05 beqz a12,0x0001f18a
+0001f139 b2027d l8ui a11,a2,0x7d
+0001f13c 0c0a movi.n a10,0x0
+0001f13e 0c2c movi.n a12,0x2
+0001f140 c0bb01 slli a11,a11,0x14
+0001f143 4abb add.n a11,a11,a4
+0001f145 258be3 call8 0x000029f8
+0001f148 c22220 l32i a12,a2,0x80
+0001f14b 6d0a mov.n a6,a10
+0001f14d 0c05 movi.n a5,0x0
+0001f14f a71c37 beq a12,a10,0x0001f18a
+0001f152 d2027e l8ui a13,a2,0x7e
+0001f155 000540 ssr a5
+0001f158 d0d0b1 sra a13,a13
+0001f15b 076d20 bbci a13,0x0,0x0001f17f
+0001f15e 0c0a movi.n a10,0x0
+0001f160 cd06 mov.n a12,a6
+0001f162 0c2d movi.n a13,0x2
+0001f164 c07501 slli a7,a5,0x14
+0001f167 4ab7 add.n a11,a7,a4
+0001f169 a590e3 call8 0x00002a74
+0001f16c 0c0a movi.n a10,0x0
+0001f16e b1c2e0 l32r a11,0x00017478
+0001f171 0c1c movi.n a12,0x1
+0001f173 0c2d movi.n a13,0x2
+0001f175 bab7 add.n a11,a7,a11
+0001f177 e58fe3 call8 0x00002a74
+0001f17a 0c1c movi.n a12,0x1
+0001f17c c2427f s8i a12,a2,0x7f
+0001f17f 1b55 addi.n a5,a5,0x1
+0001f181 505074 extui a5,a5,0x0,0x8
+0001f184 6685ca bnei a5,0x8,0x0001f152
+0001f187 626220 s32i a6,a2,0x80
+0001f18a 21bae0 l32r a2,0x00017474
+0001f18d 1b33 addi.n a3,a3,0x1
+0001f18f 303074 extui a3,a3,0x0,0x8
+0001f192 664395 bnei a3,0x4,0x0001f12b
+0001f195 1df0 retw.n
+===== 0001f198 FUN_0001f198 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001f198(void)
+
+{
+  int iVar1;
+  int iVar2;
+  uint uVar3;
+  uint uVar4;
+  int iVar5;
+  uint uVar6;
+  
+  iVar5 = _DAT_00017478;
+  iVar1 = _DAT_000171ec;
+  uVar3 = 0;
+  do {
+    if (((int)(uint)*(byte *)(iVar1 + 0x11) >> (uVar3 & 0x1f) & 1U) != 0) {
+      func_0x00002a74(0,uVar3 * 0x100000 + iVar5,3,2);
+    }
+    iVar2 = _DAT_0001747c;
+    uVar3 = uVar3 + 1 & 0xff;
+  } while (uVar3 != 8);
+  uVar3 = 0;
+  do {
+    uVar4 = 0;
+    do {
+      uVar6 = 1 << 0x20 - (0x20 - (uVar4 & 0x1f));
+      if (((int)(uint)*(byte *)(iVar1 + 0x11) >> (uVar4 & 0x1f) & 1U) == 0) {
+        uVar3 = uVar6 | uVar3;
+      }
+      else if (((uVar6 & uVar3) == 0) &&
+              (iVar5 = func_0x000029f8(0,uVar4 * 0x100000 + iVar2,2), iVar5 == 3)) {
+        uVar3 = uVar6 | uVar3;
+      }
+      uVar4 = uVar4 + 1 & 0xff;
+    } while (uVar4 != 8);
+  } while (uVar3 != 0xff);
+  return;
+}
+
+
+0001f198 364100 entry a1,0x20
+0001f19b 0c02 movi.n a2,0x0
+0001f19d 5113e0 l32r a5,0x000171ec
+0001f1a0 31b6e0 l32r a3,0x00017478
+0001f1a3 0c16 movi.n a6,0x1
+0001f1a5 820511 l8ui a8,a5,0x11
+0001f1a8 000240 ssr a2
+0001f1ab 8080b1 sra a8,a8
+0001f1ae 07680d bbci a8,0x0,0x0001f1bf
+0001f1b1 0c0a movi.n a10,0x0
+0001f1b3 0c3c movi.n a12,0x3
+0001f1b5 0c2d movi.n a13,0x2
+0001f1b7 c0b201 slli a11,a2,0x14
+0001f1ba 3abb add.n a11,a11,a3
+0001f1bc 658be3 call8 0x00002a74
+0001f1bf 1b22 addi.n a2,a2,0x1
+0001f1c1 202074 extui a2,a2,0x0,0x8
+0001f1c4 6682dd bnei a2,0x8,0x0001f1a5
+0001f1c7 0c04 movi.n a4,0x0
+0001f1c9 b2a0ff movi a11,0xff
+0001f1cc 71ace0 l32r a7,0x0001747c
+0001f1cf 0c02 movi.n a2,0x0
+0001f1d1 001240 ssl a2
+0001f1d4 820511 l8ui a8,a5,0x11
+0001f1d7 0036a1 sll a3,a6
+0001f1da 000240 ssr a2
+0001f1dd 8080b1 sra a8,a8
+0001f1e0 07681a bbci a8,0x0,0x0001f1fe
+0001f1e3 47831a bany 0x0001f201,a3,a4,
+0001f1e6 0c0a movi.n a10,0x0
+0001f1e8 0c2c movi.n a12,0x2
+0001f1ea c0b201 slli a11,a2,0x14
+0001f1ed 7abb add.n a11,a11,a7
+0001f1ef a580e3 call8 0x000029f8
+0001f1f2 b2a0ff movi a11,0xff
+0001f1f5 663a08 bnei a10,0x3,0x0001f201
+0001f1f8 404320 or a4,a3,a4
+0001f1fb 860000 j 0x0001f201
+0001f1fe 404320 or a4,a3,a4
+0001f201 1b22 addi.n a2,a2,0x1
+0001f203 202074 extui a2,a2,0x0,0x8
+0001f206 6682c7 bnei a2,0x8,0x0001f1d1
+0001f209 b794c2 bne a4,a11,0x0001f1cf
+0001f20c 1df0 retw.n

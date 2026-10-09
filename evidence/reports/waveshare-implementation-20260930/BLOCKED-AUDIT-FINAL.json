@@ -1,0 +1,25 @@
+{
+  "objective": "исполни план до конца",
+  "status": "blocked",
+  "reason": "Full objective requires live final-image/hardware acceptance, but candidate remains NOT_FINAL_DO_NOT_FLASH and required runtime/connector acceptance is absent. Existing Waveshare runs c1e7627; exact-image upload gate is not satisfied.",
+  "observed": [
+    "live VERSION c1e7627/MODE controller",
+    "UF2 structural verification passes",
+    "87 host tests pass",
+    "ARM build/RAM relocation pass",
+    "upstream serprog compiles for RP2350 but standalone incompatibility reviewed",
+    "Waveshare USB target physically identified via Sony-emulation CDC"
+  ],
+  "missing": [
+    "final approved image",
+    "Waveshare candidate flash/readback",
+    "SPI JEDEC/readback on AMD",
+    "UART real capture",
+    "cold boot/recovery",
+    "audio/haptics/reconnect/gameplay",
+    "full connectors/LPC/SMBus/JTAG acceptance",
+    "24h observation"
+  ],
+  "no_hardware_write": true,
+  "next_external_state_change": "owner must approve an exact final image after remaining acceptance gates or provide required hardware observations"
+}

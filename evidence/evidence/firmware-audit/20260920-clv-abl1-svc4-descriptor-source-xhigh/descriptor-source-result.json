@@ -1,0 +1,394 @@
+{
+  "checks": 75,
+  "checks_detail": [
+    {
+      "detail": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "payload_identity",
+      "ok": true
+    },
+    {
+      "detail": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "name": "listing_identity",
+      "ok": true
+    },
+    {
+      "detail": "05fa26427c0d969a11d3779714089943d01421780beebbe8b62b910661eeecca",
+      "name": "prior_r1_report_identity",
+      "ok": true
+    },
+    {
+      "detail": "reused existing PASS 58/58; not rerun",
+      "name": "prior_r1_checks_reused",
+      "ok": true
+    },
+    {
+      "detail": "{\"constructed_R1\": \"R4 built from descriptor low bits plus context+0x49 and optional context+0x2B0 according to kind bits27..29\", \"descriptor_bits\": \"start=bits0..5,end=bits6..11,nested=bits12..23,wide=bit30\", \"first_slot\": \"*( *(uint32_t**)(context+0x44) + 0x61E )\", \"nested_slot\": \"*( *(uint32_t**)(context+0x44) + ((first_slot >> 12) & 0xFFF) )\", \"numeric_value\": \"not recovered: exact table slot contents/runtime context are unavailable in this bounded static slice\", \"read_call\": \"R1=R4 at 0x9C28; BL 0x6DA4 at 0x9C2A\", \"write_call\": \"R1=R4 at 0x9D94; BL 0x6E70 at 0x9D96\"}",
+      "name": "prior_r1_slot_formula_reused",
+      "ok": true
+    },
+    {
+      "detail": "0xB228: expected=2de9f04ff7b004464ff092750495016804a8fbf79bf8 got=2de9f04ff7b004464ff092750495016804a8fbf79bf8",
+      "name": "init_table_lookup_prefix",
+      "ok": true
+    },
+    {
+      "detail": "0xB230 listing contains 'mov.w\\tr5, #0x1240000'",
+      "name": "lookup_key_0x01240000",
+      "ok": true
+    },
+    {
+      "detail": "0xB236 listing contains 'ldr\\tr1, [r0]'",
+      "name": "lookup_owner_from_context_root",
+      "ok": true
+    },
+    {
+      "detail": "0xB238 listing contains 'add\\tr0, sp, #0x10'",
+      "name": "lookup_request_descriptor",
+      "ok": true
+    },
+    {
+      "detail": "0xB23A listing contains 'bl\\t0x6374'",
+      "name": "lookup_heap_node_call",
+      "ok": true
+    },
+    {
+      "detail": "0xB23E listing contains 'cbz\\tr0, 0xb264'",
+      "name": "existing_heap_node_path",
+      "ok": true
+    },
+    {
+      "detail": "0xB264 listing contains 'ldr\\tr0, [sp, #0x18]'",
+      "name": "existing_node_body_pointer",
+      "ok": true
+    },
+    {
+      "detail": "0xB266 listing contains 'str\\tr0, [r4, #0x44]'",
+      "name": "install_existing_table_at_context_plus_44",
+      "ok": true
+    },
+    {
+      "detail": "0xB240 listing contains 'movw\\tr0, #0x26c0'",
+      "name": "fallback_request_size_0x26c0",
+      "ok": true
+    },
+    {
+      "detail": "0xB244 listing contains 'strd\\tr0, r5, [sp]'",
+      "name": "fallback_size_and_key_descriptor",
+      "ok": true
+    },
+    {
+      "detail": "0xB248 listing contains 'movs\\tr0, #0x4'",
+      "name": "fallback_item_type_4",
+      "ok": true
+    },
+    {
+      "detail": "0xB24E listing contains 'ldr\\tr1, [r4]'",
+      "name": "fallback_allocator_owner",
+      "ok": true
+    },
+    {
+      "detail": "0xB252 listing contains 'bl\\t0x6238'",
+      "name": "fallback_heap_allocation",
+      "ok": true
+    },
+    {
+      "detail": "0xB256 listing contains 'cbz\\tr0, 0xb26a'",
+      "name": "fallback_allocation_success_branch",
+      "ok": true
+    },
+    {
+      "detail": "0xB26A listing contains 'ldr\\tr1, [sp, #0xc]'",
+      "name": "fallback_table_body_pointer",
+      "ok": true
+    },
+    {
+      "detail": "0xB270 listing contains 'movw\\tr3, #0x652'",
+      "name": "fallback_table_entry_count_0x652",
+      "ok": true
+    },
+    {
+      "detail": "0xB274 listing contains 'str\\tr1, [r4, #0x44]'",
+      "name": "install_fallback_table_at_context_plus_44",
+      "ok": true
+    },
+    {
+      "detail": "0xB276 listing contains 'str.w\\tr2, [r1, r0, lsl #2]'",
+      "name": "zero_fallback_table_entry_loop",
+      "ok": true
+    },
+    {
+      "detail": "0xB27A listing contains 'adds\\tr0, r0, #0x1'",
+      "name": "zero_loop_increment",
+      "ok": true
+    },
+    {
+      "detail": "0xB27E listing contains 'cmp\\tr0, r3'",
+      "name": "zero_loop_bound",
+      "ok": true
+    },
+    {
+      "detail": "0xB280 listing contains 'blo\\t0xb276'",
+      "name": "zero_loop_repeat",
+      "ok": true
+    },
+    {
+      "detail": "0x6374 listing contains 'ldr\\tr2, [pc, #0x70]'",
+      "name": "heap_table_literal_load",
+      "ok": true
+    },
+    {
+      "detail": "0x6376 listing contains 'push\\t{r3, r4, r5, r6, r7, lr}'",
+      "name": "heap_lookup_prologue",
+      "ok": true
+    },
+    {
+      "detail": "0x637C listing contains 'ldr\\tr3, [r2]'",
+      "name": "heap_signature_read",
+      "ok": true
+    },
+    {
+      "detail": "0x637E listing contains 'cmp\\tr3, r7'",
+      "name": "heap_signature_compare",
+      "ok": true
+    },
+    {
+      "detail": "0x6394 listing contains 'ldr\\tr5, [r0]'",
+      "name": "heap_query_key_read",
+      "ok": true
+    },
+    {
+      "detail": "0x6396 listing contains 'ldr\\tr4, [r3]'",
+      "name": "heap_node_key_read",
+      "ok": true
+    },
+    {
+      "detail": "0x6398 listing contains 'cmp\\tr4, r5'",
+      "name": "heap_key_compare",
+      "ok": true
+    },
+    {
+      "detail": "0x63A8 listing contains 'ldrb\\tr1, [r3, #0x9]'",
+      "name": "heap_node_metadata_length",
+      "ok": true
+    },
+    {
+      "detail": "0x63AE listing contains 'str\\tr2, [r0, #0x8]'",
+      "name": "heap_body_output",
+      "ok": true
+    },
+    {
+      "detail": "0x63B0 listing contains 'ldr\\tr2, [r3, #0x4]'",
+      "name": "heap_node_size",
+      "ok": true
+    },
+    {
+      "detail": "0x63B2 listing contains 'subs\\tr1, r2, r1'",
+      "name": "heap_payload_length",
+      "ok": true
+    },
+    {
+      "detail": "0x63B4 listing contains 'str\\tr1, [r0, #0x4]'",
+      "name": "heap_payload_length_output",
+      "ok": true
+    },
+    {
+      "detail": "0x9B18 listing contains 'ldr\\tr0, [r5, #0x44]'",
+      "name": "callback_table_pointer_read",
+      "ok": true
+    },
+    {
+      "detail": "0x9B1C listing contains 'ldr.w\\tr6, [r0, r1, lsl #2]'",
+      "name": "callback_first_slot_read",
+      "ok": true
+    },
+    {
+      "detail": "0x9B2C listing contains 'ubfx\\tr1, r6, #0xc, #0xc'",
+      "name": "nested_index_extraction",
+      "ok": true
+    },
+    {
+      "detail": "0x9B54 listing contains 'ldr.w\\tr6, [r0, r1, lsl #2]'",
+      "name": "callback_nested_descriptor_read",
+      "ok": true
+    },
+    {
+      "detail": "0x9C28 listing contains 'mov\\tr1, r4'",
+      "name": "read_helper_target_from_descriptor",
+      "ok": true
+    },
+    {
+      "detail": "0x9C2A listing contains 'bl\\t0x6da4'",
+      "name": "read_helper_call",
+      "ok": true
+    },
+    {
+      "detail": "0x9D94 listing contains 'mov\\tr1, r4'",
+      "name": "write_helper_target_from_descriptor",
+      "ok": true
+    },
+    {
+      "detail": "0x9D96 listing contains 'bl\\t0x6e70'",
+      "name": "write_helper_call",
+      "ok": true
+    },
+    {
+      "detail": "0xC7DE: expected=41f678000844824a6490 got=41f678000844824a6490",
+      "name": "fallback_pointer_relative_store_candidate_at_0x1878",
+      "ok": true
+    },
+    {
+      "detail": "0xC79A: expected=41f644328e488850 got=41f644328e488850",
+      "name": "fallback_pointer_relative_store_candidate_at_0x1b44",
+      "ok": true
+    },
+    {
+      "detail": "0x61E * 4 = 0x1878",
+      "name": "fallback_slot_byte_offset",
+      "ok": true
+    },
+    {
+      "detail": "0xC9F0 raw=c0176d00 value=0x006D17C0",
+      "name": "fallback_slot_literal",
+      "ok": true
+    },
+    {
+      "detail": "0x6D17C0 >> 12 = 0x6D1",
+      "name": "fallback_nested_index",
+      "ok": true
+    },
+    {
+      "detail": "0x6D1 * 4 = 0x1B44",
+      "name": "nested_slot_byte_offset",
+      "ok": true
+    },
+    {
+      "detail": "0xC9D8 raw=7c020008 value=0x0800027C",
+      "name": "nested_descriptor_literal",
+      "ok": true
+    },
+    {
+      "detail": "kind bits 27..29 = 1",
+      "name": "nested_descriptor_kind",
+      "ok": true
+    },
+    {
+      "detail": "bit30 = 0",
+      "name": "nested_descriptor_bit30_clear",
+      "ok": true
+    },
+    {
+      "detail": "low12 = 0x27C",
+      "name": "nested_descriptor_low12",
+      "ok": true
+    },
+    {
+      "detail": "bits0..5 = 0x3C",
+      "name": "nested_descriptor_field_start",
+      "ok": true
+    },
+    {
+      "detail": "bits6..11 = 9",
+      "name": "nested_descriptor_field_end",
+      "ok": true
+    },
+    {
+      "detail": "0x9BEA listing contains 'ubfx\\tr0, r6, #0x0, #0xc'",
+      "name": "descriptor_R4_low12_source",
+      "ok": true
+    },
+    {
+      "detail": "0x9BF0 listing contains 'orrs\\tr4, r0'",
+      "name": "descriptor_low12_into_R4",
+      "ok": true
+    },
+    {
+      "detail": "0x9C52 listing contains 'ldrb.w\\tr1, [r5, #0x49]'",
+      "name": "kind1_context_byte49_source",
+      "ok": true
+    },
+    {
+      "detail": "0x9C56 listing contains 'orr\\tr0, r4, #0x50000'",
+      "name": "kind1_base_constant",
+      "ok": true
+    },
+    {
+      "detail": "0x9C5E listing contains 'lsr.w\\tr2, r1, #0x1'",
+      "name": "kind1_context_selector_high",
+      "ok": true
+    },
+    {
+      "detail": "0x9C62 listing contains 'and\\tr1, r1, #0x1'",
+      "name": "kind1_context_selector_low",
+      "ok": true
+    },
+    {
+      "detail": "0x9C66 listing contains 'orr.w\\tr0, r0, r2, lsl #20'",
+      "name": "kind1_context_high_merge",
+      "ok": true
+    },
+    {
+      "detail": "0x9C72 listing contains 'orr.w\\tr4, r4, r0'",
+      "name": "kind1_final_R4_merge",
+      "ok": true
+    },
+    {
+      "detail": "0x9C76 listing contains 'beq\\t0x9c1e'",
+      "name": "kind1_bit30_clear_no_extra_offset_path",
+      "ok": true
+    },
+    {
+      "detail": "0x109D8 listing contains 'ldr.w\\tr2, [r4, #0x3b0]'",
+      "name": "context_byte49_callback_pointer",
+      "ok": true
+    },
+    {
+      "detail": "0x109DC listing contains 'add\\tr1, sp, #0x4'",
+      "name": "context_byte49_callback_output",
+      "ok": true
+    },
+    {
+      "detail": "0x109E0 listing contains 'blx\\tr2'",
+      "name": "context_byte49_callback_call",
+      "ok": true
+    },
+    {
+      "detail": "0x109E2 listing contains 'ldrb.w\\tr0, [sp, #0x4]'",
+      "name": "context_byte49_callback_result",
+      "ok": true
+    },
+    {
+      "detail": "0x109E6 listing contains 'strb.w\\tr0, [r4, #0x49]'",
+      "name": "context_byte49_dynamic_store",
+      "ok": true
+    },
+    {
+      "detail": "For this fallback descriptor and kind1/bit30=0: R4 = 0x0005027C | ((d>>1)<<20) | ((d&1)<<13), d=context_byte49; if d=0 then R4=0x0005027C.",
+      "name": "conditional_R4_formula",
+      "ok": true
+    },
+    {
+      "detail": "no physical SMN address claimed: context_byte49 is callback-sourced and SVC#4 translation remains opaque",
+      "name": "physical_map_correlates",
+      "ok": true
+    },
+    {
+      "detail": "aligned/full raw scalar 0x0000061E first byte-pattern offset=None; not a runtime-table read",
+      "name": "raw_u32_61e_scalar",
+      "ok": true
+    }
+  ],
+  "inputs": {
+    "listing_sha256": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+    "payload_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "prior_r1_result_sha256": "05fa26427c0d969a11d3779714089943d01421780beebbe8b62b910661eeecca"
+  },
+  "observed_runtime_source": {
+    "existing_path": "function 0xB228 queries ABL1 HEAP key 0x01240000 via 0x6374; on success it installs returned body pointer [SP+0x18] at context+0x44",
+    "fallback_path": "on lookup miss, it requests size 0x26C0/type 4/key 0x01240000 via 0x6238, installs returned pointer at context+0x44, zeroes 0x652 dwords; later exact code contains pointer-relative stores using R1+0x1878 and R1+0x1B44 with literals 0x006D17C0/0x0800027C, but this bounded pass does not prove that those stores use the context+0x44 table base",
+    "missing_edge": "when the existing HEAP node is found, its body bytes and active callback/context+0x49 are runtime data. The fallback is exactly initialized for the descriptor chain, but the active path selecting HEAP vs fallback and active context identity remain unproven"
+  },
+  "operator_gate": "Before any runtime experiment, obtain operator approval for an authorized read-only capture path; capture whether context+0x44 came from HEAP key 0x01240000 or fallback, its table[0x61E], nested descriptor, context+0x49 (provider [context+0x3B0]), and optional +0x2B0. Do not issue a firmware/hardware write. Physical map correlation additionally needs SVC#4 returned base or recovered PSP ROM handler.",
+  "passed": 75,
+  "status": "PASS",
+  "target_conclusion": "The exact callback algorithm is table[0x61E] -> nested index -> descriptor -> R4, and kind-1 R4 construction is (descriptor low12 | 0x50000 | context_byte49-derived selector bits). Raw fallback code also contains candidate literal stores 0x006D17C0 at R1+0x1878 and 0x0800027C at R1+0x1B44; this pass does not prove R1 is the context+0x44 table base at those stores, so they are not promoted to callback slot values. No physical register/map claim."
+}

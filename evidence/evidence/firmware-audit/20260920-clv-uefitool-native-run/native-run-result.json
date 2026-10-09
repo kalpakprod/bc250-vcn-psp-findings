@@ -1,0 +1,82 @@
+{
+  "build": {
+    "build_exit": 0,
+    "cmake_configure_exit": 0,
+    "uefiextract_binary": {
+      "file": "ELF 64-bit x86-64 console",
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-uefitool-native-run/build/UEFIExtract/uefiextract",
+      "sha256": "cdc9d31d216deb9aa78f0ee69d841f8ab56618176ea16458bb51e32449ed9d83",
+      "size": 1600952
+    },
+    "uefitool_binary": {
+      "file": "ELF 64-bit x86-64 Qt6 GUI",
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-uefitool-native-run/build/UEFITool/uefitool",
+      "sha256": "19a92b8987b29f9e6a22ba6ac58deb64f59771f7310cbeb8e73ad1405cd204cd",
+      "size": 2828520
+    }
+  },
+  "cbs_setup_dxe": {
+    "existing_census_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsSetupDxe-7ff717d51c9a.bin",
+    "existing_census_sha256": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8",
+    "ffs_guid": "F639D37E-02A1-4BA8-AD17-5C6C6E5E9322",
+    "sha256_match": true,
+    "size_match": true,
+    "uefitool_dump_pe32_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-uefitool-native-run/BC250_5.00_clv.bin.dump/2 4F1C52D3-D824-4D2A-A2F0-EC40C23C5916/0 9E21FD93-9C72-4C15-8C4B-E77F1DB2D792/0 EE4E5898-3914-4259-9D6E-DC7BD79403CF/1 Volume image section/0 5C60F367-A505-419A-859E-2A4FF6CA6FE5/42 CbsSetupDxe/1 PE32 image section/body.bin",
+    "uefitool_dump_pe32_sha256": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8",
+    "uefitool_dump_pe32_size": 264160,
+    "ui": "CbsSetupDxe"
+  },
+  "limits": [
+    "UEFITool GUI tree was opened and image parsing occurred, but Orca computer-use could not observe an AT-SPI window on this Wayland/Xwayland session; no guessed GUI controls were used.",
+    "No firmware image was modified; no UEFITool Save/Rebuild/Replace action was invoked.",
+    "AMIBCP remains a separate worker-owned track."
+  ],
+  "source": {
+    "commit": "dac91b26733ca21cb204e41614c1b8c81cc50860",
+    "license": "BSD-2-Clause/BSD license",
+    "license_sha256": "c7973c703ab625a818957e2603c94d65eff26307d660234832d3fed072130ffa",
+    "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/Documents/Codex/2026-08-30/x20/bc250-uefi-capture/third_party/UEFITool",
+    "remote": "https://github.com/LongSoft/UEFITool.git",
+    "version": "NE alpha 76",
+    "version_header_sha256": "55f1d1bf0631572d70618b72f4db822bcbb221b336c52678423f8c2161bccfaa"
+  },
+  "status": "PASS",
+  "target": {
+    "copy_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-uefitool-native-run/BC250_5.00_clv.bin",
+    "copy_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "size": 16777216
+  },
+  "timestamp": "2026-09-20 Asia/Almaty",
+  "uefiextract": {
+    "all_exit": 0,
+    "dump_body_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-uefitool-native-run/BC250_5.00_clv.bin.dump/body.bin",
+    "dump_body_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "guid_csv_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-uefitool-native-run/BC250_5.00_clv.bin.guids.csv",
+    "guid_csv_sha256": "298bf3eb2b1ec87f1adc3655d351753724afdc9e82e7a2efece1a6191e2d82c4",
+    "report_exit": 0,
+    "report_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-uefitool-native-run/BC250_5.00_clv.bin.report.txt",
+    "report_sha256": "41e44c9dcc977bc7bb027b698b91f00c4592f95c026a2cfdfa0e153b61dc3c89",
+    "specific_ffs_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-uefitool-native-run/cbs-ffs-absolute/file.ffs",
+    "specific_ffs_sha256": "26a2d9fa789da13dd4aec77cc3a49756aae73bfeef425bfcac3792a662e68480",
+    "specific_ffs_size": 264378,
+    "specific_guid": "F639D37E-02A1-4BA8-AD17-5C6C6E5E9322",
+    "specific_guid_absolute_output_exit": 0,
+    "warnings": "Repeated checkTeImageBase warnings on TE images; report/all still exited 0."
+  },
+  "uefitool_gui": {
+    "command": "QT_QPA_PLATFORM=xcb DISPLAY=:0 build/UEFITool/uefitool evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "direct_run_exit": 124,
+    "direct_run_note": "timeout 3s used only to bound the resident GUI; parser reached the same native TE warnings before timeout. The earlier xcb run supplied the window-title observation.",
+    "direct_run_stdout_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-uefitool-native-run/uefitool-xcb.stdout",
+    "direct_run_stdout_sha256": "d762d59cdcf5ba45a54e03d0c45fd877289a3b640b1d27308520f218935f2f52",
+    "native_parse_event": "GUI stayed resident after opening the image; same TE-base warnings were observed on stderr.",
+    "orca_computer_observation_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-uefitool-native-run/orca-computer-get-app-state.json",
+    "orca_computer_status": "UNAVAILABLE: No top-level AT-SPI window is available for uefitool",
+    "pid": 2099876,
+    "title": "UEFITool NE alpha 76 (Sep 20 2026) - BC250_5.00_clv.bin",
+    "window_observation_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-uefitool-native-run/uefitool-window-observation.txt",
+    "window_observation_sha256": "5d2f545e47f62a182ee28429725221b83f490430f0f047a5193e1c4a85c94025"
+  }
+}

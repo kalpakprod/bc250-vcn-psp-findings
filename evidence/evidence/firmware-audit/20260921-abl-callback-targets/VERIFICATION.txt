@@ -1,0 +1,38 @@
+# Callback-table verification evidence
+
+Evidence class: observed-bytes + static-analysis. All addresses are ABL1 raw-payload offsets unless named as the literal runtime pointer value. The loader base 0x57100 is conditional and remains unproven.
+
+## Pinned inputs
+- Raw ABL1: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin`; size 94624; SHA-256 `af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a`.
+- ELF wrapper: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o`; SHA-256 `adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6`.
+- Local LLVM objdump version: 22.1.8.
+
+## Focused commands and saved outputs
+- Command: `llvm-objdump -D --triple=thumbv7m-none-eabi --start-address=0x1320 --stop-address=0x1420 /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o`
+  - Exit: `0`; stderr: `(empty)`.
+  - Literal stdout is saved at `provider-thumb-1320-1420.stdout` (SHA-256 recorded in evidence-manifest.sha256).
+- Command: `llvm-objdump -D --triple=thumbv7m-none-eabi --start-address=0x54fc --stop-address=0x557c /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o`
+  - Exit: `0`; stderr: `(empty)`.
+  - Literal stdout is saved at `provider-54fc-557c.stdout` (SHA-256 recorded in evidence-manifest.sha256).
+- Command: `llvm-objdump -D --triple=thumbv7m-none-eabi --start-address=0x50c0 --stop-address=0x5120 /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o`
+  - Exit: `0`; stderr: `(empty)`.
+  - Literal stdout is saved at `provider-helper-50c0-5120.stdout` (SHA-256 recorded in evidence-manifest.sha256).
+- Command: `llvm-objdump -D --triple=thumbv7m-none-eabi --start-address=0x16b0 --stop-address=0x16b6 /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o`
+  - Exit: `0`; stderr: `(empty)`.
+  - Literal stdout is saved at `target-entry-16b0-16b6.stdout` (SHA-256 recorded in evidence-manifest.sha256).
+- Bounded raw bytes at RVA `[0x1717c,0x171a0)` were extracted from the exact raw ABL1 with a direct little-endian Python read; command result: `table-bytes-rva-1717c.stdout`; exit `0`; stderr empty.
+- Corrected four-byte literal-pool extraction output: `provider-literals-corrected.stdout`; exit `0`; stderr empty. It validates caller literals `[0x1418,0x1420)`, provider literal `0x5510`, record initializer literals `0x50d4..0x50e8`, and target literal `0x16b8`.
+- Machine check command: `/usr/bin/python3 -B evidence/firmware-audit/20260921-abl-callback-targets/check_callback_targets.py`.
+- Machine check literal stdout: `{   "status": "PASS",   "checks": 33,   "passed": 33,   "failed": 0,   "table_base": "0x6e27c",   "record": "0x6e284",   "BLX_R0_site": "0x133e",   "direct_target": "0x587b1",   "conditional_RVA": "0x16b0",   "runtime_base": "UNPROVEN" }`.
+- Machine check stderr: `` (empty); exit: `0`.
+- Machine-readable result: `callback-targets-result.json` (`PASS`, 33/33).
+
+## Preserved failed attempts and corrections
+- Wrong-input donor-ROM `llvm-objdump` attempt, incorrect ARM-mode decoding, broad `llvm-objdump -s` output, rejected `force-thumb` option, literal-reader unpack error, and first JSON serialization error are retained as their command/output/error/status files when captured, and documented in `docs/action-logs/2026-09-21-callback-table-targets.md` and `memory/incidents/2026-09-21-callback-table-dispatch-input-correction.md`. Uncaptured statuses are marked as not captured; no exit code is inferred.
+
+## Static trace result
+- `0x1354` loads the list base from literal `0x141c` (`0x6e27c`), calls list provider `0x54fc` at `0x1370`, then calls enumerator `0x1332` at `0x1376`.
+- `0x54fc` calls record initializer `0x50c0`, writes `0x6e284` to list[0] and zero to list[1]. `0x50c0` writes descriptor callback fields `[0]=0x587b1`, `[4]=0x58659`, `[8]=0x5865d`, `[12]=0x58661` into record `0x6e284`.
+- `0x1332` loads the descriptor pointer from the list, loads its first word at `0x133c`, and performs `BLX R0` at `0x133e`. The sole non-null list element yields direct target `0x587b1` (Thumb pointer).
+- Under conditional base `0x57100` only, list base `0x6e27c` maps to RVA `0x1717c`, record `0x6e284` maps to RVA `0x17184`, and target `0x587b1` maps to RVA `0x16b0`. The target window is `LDR literal; LDRB r0,[r0]; BX lr`; the literal is `0x6e131`.
+- Runtime loader base, actual execution, callback semantics, clock behavior, SVC handler identity, sibling pointer behavior, and hardware result are unproven/unrun. No `memory_clock_units` `0x7fc2 -> 0x8428` or `0x10958` edge was followed.

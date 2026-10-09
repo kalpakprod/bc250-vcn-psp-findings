@@ -1,0 +1,26 @@
+{
+  "command": [
+    "/home/OWNER/tools/ghidra_12.1.3_PUBLIC/support/analyzeHeadless",
+    "evidence/firmware-audit/20260919-oc-final-consumer-pass/project",
+    "OCConsumer",
+    "-process",
+    "smu_fw_robin_5",
+    "-noanalysis",
+    "-readOnly",
+    "-max-cpu",
+    "1",
+    "-scriptPath",
+    "evidence/firmware-audit/20260919-oc-final-consumer-pass",
+    "-postScript",
+    "OcConsumerRead.java",
+    "import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5",
+    "evidence/firmware-audit/20260923-abl95fc-next/uclk-pll-readback-helpers.txt",
+    "0x23ab0",
+    "0x23ac4",
+    "0x2360c",
+    "0x1cad8"
+  ],
+  "exit": 0,
+  "stdout": "INFO  Using log config file: jar:file:/home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  \nINFO  Using log file: /home/OWNER/.config/ghidra/ghidra_12.1.3_PUBLIC/application.log (LoggingInitialization)  \nINFO  Loading user preferences: /home/OWNER/.config/ghidra/ghidra_12.1.3_PUBLIC/preferences (Preferences)  \nINFO  Searching for classes... (ClassSearcher)  \nINFO  Class search complete (794 ms) (ClassSearcher)  \nINFO  Initializing SSL Context (DefaultSSLContextInitializer)  \nINFO  Initializing Random Number Generator... (SecureRandomFactory)  \nINFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  \nINFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  \nINFO  Headless startup complete (1855 ms) (AnalyzeHeadless)  \nINFO  Class searcher loaded 60 extension points (20 false positives) (ClassSearcher)  \nINFO  HEADLESS Script Paths:\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/BSim/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/PDB/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Base/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Extensions/GhidrAssistMCP/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts\n    /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts\n    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/8051/ghidra_scripts\n    /home/OWNER/ghidra_scripts (HeadlessAnalyzer)  \nINFO  HEADLESS: execution starts (HeadlessAnalyzer)  \nINFO  Opening existing project: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass/project/OCConsumer (HeadlessAnalyzer)  \nINFO  Opening project: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass/project/OCConsumer (HeadlessProject)  \nINFO  REPORT: Processing read-only project file: /smu_fw_robin_5 (HeadlessAnalyzer)  \nINFO  REPORT: Execute script: OcConsumerRead.java 'import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5' 'evidence/firmware-audit/20260923-abl95fc-next/uclk-pll-readback-helpers.txt' '0x23ab0' '0x23ac4' '0x2360c' '0x1cad8'  (HeadlessAnalyzer)  \nINFO  SCRIPT: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass/OcConsumerRead.java (HeadlessAnalyzer)  \nINFO  REPORT: Discarding changes to the following read-only file: /smu_fw_robin_5 (HeadlessAnalyzer)  \n",
+  "stderr": "Picked up _JAVA_OPTIONS: -XX:ActiveProcessorCount=1 -Xmx1g\nPicked up _JAVA_OPTIONS: -XX:ActiveProcessorCount=1 -Xmx1g\nPicked up _JAVA_OPTIONS: -XX:ActiveProcessorCount=1 -Xmx1g\nPicked up _JAVA_OPTIONS: -XX:ActiveProcessorCount=1 -Xmx1g\nopenjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode)\n"
+}

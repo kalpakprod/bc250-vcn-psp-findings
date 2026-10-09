@@ -1,0 +1,116 @@
+{
+  "status": "PARTIAL_UNRESOLVED_RUNTIME_OBJECT_IDENTITY",
+  "inputs": {
+    "rom": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "size_bytes": 16777216,
+      "size_hex": "0x1000000",
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    "abl1": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+      "size_bytes": 94624,
+      "size_hex": "0x171a0",
+      "sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    "listing": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+      "size_bytes": 2586986,
+      "size_hex": "0x27796a",
+      "sha256": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    }
+  },
+  "source_listing_redecoded": false,
+  "instruction_rows": {
+    "0x7378": [
+      "    7378: e92d 43f0    \tpush.w\t{r4, r5, r6, r7, r8, r9, lr}"
+    ],
+    "0x737C": [
+      "    737c: 4605         \tmov\tr5, r0"
+    ],
+    "0x737E": [
+      "    737e: f8d1 03c4    \tldr.w\tr0, [r1, #0x3c4]"
+    ],
+    "0x7384": [
+      "    7384: 460e         \tmov\tr6, r1"
+    ],
+    "0x7390": [
+      "    7390: f8d6 03c4    \tldr.w\tr0, [r6, #0x3c4]"
+    ],
+    "0x73AE": [
+      "    73ae: f8d6 43c4    \tldr.w\tr4, [r6, #0x3c4]"
+    ],
+    "0x73B2": [
+      "    73b2: 60ac         \tstr\tr4, [r5, #0x8]"
+    ],
+    "0x73B4": [
+      "    73b4: 7020         \tstrb\tr0, [r4]"
+    ],
+    "0x73B6": [
+      "    73b6: 6860         \tldr\tr0, [r4, #0x4]"
+    ],
+    "0x73B8": [
+      "    73b8: 6428         \tstr\tr0, [r5, #0x40]"
+    ],
+    "0x74DE": [
+      "    74de: 4628         \tmov\tr0, r5"
+    ],
+    "0x74E0": [
+      "    74e0: f003 fd56    \tbl\t0xaf90 <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xaf90> @ imm = #0x3aac"
+    ],
+    "0xB0C4": [
+      "    b0c4: f8c4 0660    \tstr.w\tr0, [r4, #0x660]"
+    ],
+    "0xB93A": [
+      "    b93a: 48ef         \tldr\tr0, [pc, #0x3bc]        @ 0xbcf8 <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xbcf8>"
+    ],
+    "0xB93C": [
+      "    b93c: f8c1 03c4    \tstr.w\tr0, [r1, #0x3c4]"
+    ],
+    "0x10B26": [
+      "   10b26: 9804         \tldr\tr0, [sp, #0x10]"
+    ],
+    "0x10B2E": [
+      "   10b2e: f8c4 03c4    \tstr.w\tr0, [r4, #0x3c4]"
+    ]
+  },
+  "raw_abl1_byte_spans": {
+    "0x7378..0x738A": "2d e9 f0 43 05 46 d1 f8 c4 03 8d b0 0e 46 5e 30 90 46",
+    "0x73AE..0x73B4": "d6 f8 c4 43 ac 60",
+    "0x74DE..0x74E4": "28 46 03 f0 56 fd",
+    "0xB0C4..0xB0C8": "c4 f8 60 06",
+    "0xB93A..0xB940": "ef 48 c1 f8 c4 03",
+    "0x10B26..0x10B32": "04 98 0e aa 0d a9 23 46 c4 f8 c4 03"
+  },
+  "direct_plus_0x3c4_stores": [
+    "    b93c: f8c1 03c4    \tstr.w\tr0, [r1, #0x3c4]",
+    "   10b2e: f8c4 03c4    \tstr.w\tr0, [r4, #0x3c4]"
+  ],
+  "direct_bl_0x7378_references": [],
+  "static_dataflow": {
+    "function_0x7378_arg0_to_R5": "0x737C",
+    "function_0x7378_arg1_to_R6": "0x7384",
+    "field_read": "0x73AE R4=[R6+0x3C4]",
+    "pointer_store": "0x73B2 [R5+0x8]=R4",
+    "initializer_argument": "0x74DE R0=R5; 0x74E0 BL 0xAF90",
+    "initializer_slot_store": "0xB0C4 [R4+0x660]=R0; initializer-body entry 0xAF90 is absent from the existing linear listing",
+    "candidate_field_writers": [
+      {
+        "site": "0xB93C",
+        "base": "R1",
+        "value_source": "R0 loaded from PC-relative literal at 0xBCF8"
+      },
+      {
+        "site": "0x10B2E",
+        "base": "R4",
+        "value_source": "R0 loaded from [SP+0x10] at 0x10B26"
+      }
+    ],
+    "identity": "not proven; no static dataflow joins either writer base or the runtime arg1/R6 field owner to the initializer arg0/R5 object"
+  },
+  "limits": [
+    "No direct BL 0x7378 was found; this excludes only direct BL text in this listing, not indirect call paths.",
+    "The linear listing has no decoded entry row at 0xAF90; only the call target and downstream 0xB0C4 row are available.",
+    "No firmware execution, runtime HEAP/context capture, SVC#4 translation, physical register mapping, hardware behavior, or clock equality was tested."
+  ]
+}

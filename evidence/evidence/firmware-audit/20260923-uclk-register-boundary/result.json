@@ -1,0 +1,45 @@
+{
+  "source_sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+  "domains": [
+    {
+      "domain": "0xe",
+      "program": "0x115c0fc",
+      "poll": "0x115c120",
+      "pointer_cell": "0xf944"
+    },
+    {
+      "domain": "0xf",
+      "program": "0x115c8fc",
+      "poll": "0x115c920",
+      "pointer_cell": "0xf960"
+    },
+    {
+      "domain": "0x10",
+      "program": "0x115c924",
+      "poll": "0x115c948",
+      "pointer_cell": "0xf97c"
+    },
+    {
+      "domain": "0x11",
+      "program": "0x116c0fc",
+      "poll": "0x116c120",
+      "pointer_cell": "0xf998"
+    },
+    {
+      "domain": "0x12",
+      "program": "0x116c124",
+      "poll": "0x116c148",
+      "pointer_cell": "0xf9b4"
+    }
+  ],
+  "exact_smu_group3_pll_writer_raw": "0x5c834",
+  "linux_clk11_0_0_pll_req_raw": "0x5c838",
+  "verdict": "same base, different register offset; no compatible-map or physical-clock proof",
+  "headers": {
+    "clk11-offset.h": "e47b02014ad1a74abf4b168682214cc0172b14d49b8a53f4b87ab3894d1d58b8",
+    "clk11-mask.h": "26dbff62ca70625365bf8c9c6aff0133a972529735936b9b1979fc3e2d68b025",
+    "clk_10_0_2_offset.h": "395eeb4ba348e40edb4eba7d87e192ce20c80f662cebe3c5cba2aa7beb199d98",
+    "clk_11_0_1_offset.h": "0a2cc8227652cfdf06b84e8fa898c1dc8a2bea39b996ed23a6f59f93186e37e5",
+    "clk_11_5_0_offset.h": "603a3ea376d63cd898b493ba492335f6ff5fd47814cbb3ace56d1cacc79d5c93"
+  }
+}

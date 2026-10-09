@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "checks": 8,
+  "input": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+  "abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+  "review_doc": "/home/OWNER/orca/projects/bc250/docs/research/20260920-clv-abl-memory-review.md",
+  "reviewed_excerpt": "# Exact CLV ABL1 memory-speed function independent review\nIndependent `llvm-objcopy`/`llvm-objdump` decoding and raw-byte checks confirm the exact clv ABL1 payload contains a Thumb-2 memory-speed policy function at payload offset `0x95FC`:\n- Payload SHA-256: `af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a`.\n- Reduction: `0x971A` loads `[r2+0x278]`, `0x971E` compares against the current candidate, `0x9722` updates the candidate when lower, and `0x973E` stores the selected value at `[r4+0x2BC]`.\n- Worker result: `evidence/firmware-audit/20260920-clv-sync-stage2-abl-memory-function/abl1-memory-function-result.json`, `27/27 PASS`.\n- Independent review result: `evidence/firmware-audit/20260920-clv-abl-memory-review/abl1-memory-review-result.json`, SHA-256 `e06dba13765d30d1040f2fb6bfeec65120ef6d7aed3152683c587936c811fd23`, `20/20 PASS`.\n- Independent Thumb disassembly: `evidence/firmware-audit/20260920-clv-abl-memory-review/abl1-thumb-95fc-9870.txt`, SHA-256 `0ed462d9ee84d880b304ab7788bce83913621a7e4ebe1b2e8530799cbffec13a`.\nHistorical `ABL1_decompiled.c` is structurally aligned with this function, but source-text-to-binary identity remains unclaimed. The observed `-0x100` address delta is an alignment observation, not a flat-base assumption.",
+  "reference_paths": [
+    "/home/OWNER/orca/projects/bc250/docs/action-logs/2026-09-10-bc250-full-audit.md",
+    "/home/OWNER/orca/projects/bc250/docs/action-logs/2026-09-20-clv-sync-stage2-abl-memory-function.md",
+    "/home/OWNER/orca/projects/bc250/docs/action-logs/2026-09-20-clv-abl1-downstream.md",
+    "/home/OWNER/orca/projects/bc250/docs/research/2026-09-20-clv-sync-stage2-abl-memory-function.md",
+    "/home/OWNER/orca/projects/bc250/docs/research/20260920-clv-abl-memory-review.md"
+  ],
+  "downstream_reference_paths": [
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/dump-2-nvar-primary.json",
+    "/home/OWNER/orca/projects/bc250/evidence/candidates/BC250_MemoryClock_1750_only_v001/nvar-primary.json",
+    "/home/OWNER/orca/projects/bc250/evidence/programmer/reads/20260911/firmware-audit/read-a-nvar-primary.json",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-abl-memory/abl1-arm-95fc-9870.txt",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-abl-memory/abl1-thumb-95fc-9870.txt",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-abl-memory-function/abl1-thumb-95fc-9870.txt",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-abl-memory-function/abl1_memory_function_verify.py",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-abl-memory-function/abl1-memory-function-result.json",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/abl1-thumb-95fc-9870.txt",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/abl1_memory_review_verify.py",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/abl1-memory-review-result.json",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1_downstream_verify.py",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-downstream-preflight.json",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1_downstream_trace.py"
+  ],
+  "fresh_result": "Exact ABL1 input and reviewed function-0x95FC evidence located; downstream caller/use tracing is the next bounded operation.",
+  "limits": "No firmware/hardware/runtime claim; no historical global offset assumed."
+}

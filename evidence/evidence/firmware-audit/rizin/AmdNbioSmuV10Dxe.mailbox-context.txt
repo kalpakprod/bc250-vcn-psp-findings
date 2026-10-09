@@ -1,0 +1,228 @@
+[2K
+            ; XREFS: CALL 0x0001302f  CALL 0x00013041  CALL 0x00013055
+            ; XREFS: CALL 0x00013067  CALL 0x00013079  CALL 0x0001308b
+            ; XREFS: CALL 0x0001309d  CALL 0x000130b4
+┌ fcn.00012f34(int64_t arg1, int64_t arg2, int64_t arg3, unsigned long arg4);
+│           ; arg int64_t arg1 @ rcx
+│           ; arg int64_t arg2 @ rdx
+│           ; arg int64_t arg3 @ r8
+│           ; arg unsigned long arg4 @ r9
+│           ; var int64_t var_18h @ stack - 0x18
+│           0x00012f34      sub   rsp, 0x38
+│           0x00012f38      mov   rax, r8                              ; arg3
+│           0x00012f3b      cmp   r9d, 0x01                            ; 1 ; arg4
+│           0x00012f3f      mov   r10d, 0x83                           ; 131
+│           0x00012f45      mov   r8d, 0x03                            ; int64_t arg3
+│           0x00012f4b      mov   r9, rax                              ; int64_t arg4
+│           0x00012f4e      cmovz r8d, r10d
+│           0x00012f52      and   qword [var_18h], 0x00
+│           0x00012f58      or    ecx, 0xb8                            ; 184 ; arg1
+│           0x00012f5e      call  fcn.000150f0
+│           0x00012f63      add   rsp, 0x38
+└           0x00012f67      ret
+│           0x00013000      add   byte [rbp+rcx*4+0x40], al
+│           0x00013004      add   edi, dword [rdx+0x3b10564]
+│           0x0001300a      mov   qword [var_78h], rax
+│           0x0001300f      call  fcn.00015090
+│           0x00013014      mov   ecx, dword [rbx]                     ; int64_t arg1
+│           0x00013016      xor   eax, eax
+│           0x00013018      lea   r8, qword [var_20h]                  ; int64_t arg3
+│           0x00013020      mov   r9d, ebp                             ; unsigned long arg4
+│           0x00013023      mov   edx, 0x3b10564                       ; int64_t arg2
+│           0x00013028      mov   dword [var_20h], eax
+│           0x0001302f      call  fcn.00012f34
+│           0x00013034      mov   ecx, dword [rbx]                     ; int64_t arg1
+│           0x00013036      mov   r9d, ebp                             ; unsigned long arg4
+│           0x00013039      mov   r8, r12                              ; int64_t arg3
+│           0x0001303c      mov   edx, 0x3b10998                       ; int64_t arg2
+│           0x00013041      call  fcn.00012f34
+│           0x00013046      mov   ecx, dword [rbx]                     ; int64_t arg1
+│           0x00013048      lea   r8, qword [r12+0x04]                 ; int64_t arg3
+│           0x0001304d      mov   r9d, ebp                             ; unsigned long arg4
+│           0x00013050      mov   edx, 0x3b1099c                       ; int64_t arg2
+│           0x00013055      call  fcn.00012f34
+│           0x0001305a      mov   ecx, dword [rbx]                     ; int64_t arg1
+│           0x0001305c      mov   r9d, ebp                             ; unsigned long arg4
+│           0x0001305f      mov   r8, rsi                              ; int64_t arg3
+│           0x00013062      mov   edx, 0x3b109a0                       ; int64_t arg2
+│           0x00013067      call  fcn.00012f34
+│           0x0001306c      mov   ecx, dword [rbx]                     ; int64_t arg1
+│           0x0001306e      mov   r9d, ebp                             ; unsigned long arg4
+│           0x00013071      mov   r8, r15                              ; int64_t arg3
+│           0x00013074      mov   edx, 0x3b109a4                       ; int64_t arg2
+│           0x00013079      call  fcn.00012f34
+│           0x0001307e      mov   ecx, dword [rbx]                     ; int64_t arg1
+│           0x00013080      mov   r9d, ebp                             ; unsigned long arg4
+│           0x00013083      mov   r8, r14                              ; int64_t arg3
+│           0x00013086      mov   edx, 0x3b109a8                       ; int64_t arg2
+│           0x0001308b      call  fcn.00012f34
+│           0x00013090      mov   ecx, dword [rbx]                     ; int64_t arg1
+│           0x00013092      mov   r9d, ebp                             ; unsigned long arg4
+│           0x00013095      mov   r8, r13                              ; int64_t arg3
+│           0x00013098      mov   edx, 0x3b109ac                       ; int64_t arg2
+│           0x0001309d      call  fcn.00012f34
+│           0x000130a2      mov   ecx, dword [rbx]                     ; int64_t arg2
+│           0x000130a4      lea   r8, qword [var_10h]                  ; int64_t arg3
+│           0x000130ac      mov   r9d, ebp                             ; unsigned long arg4
+│           0x000130af      mov   edx, 0x3b10528                       ; int64_t arg2
+│           0x000130b4      call  fcn.00012f34
+│           0x000130b9      call  fcn.000157f0
+│           0x000130be      mov   rdi, rax
+│           0x000130c1      mov   rax, 0x47ae147ae147ae15
+│           0x000130cb      mul   rdi
+│           0x000130ce      sub   rdi, rdx
+│           0x000130d1      shr   rdi, 0x01
+│           0x000130d4      add   rdi, rdx
+│           0x000130d7      shr   rdi, 0x0a
+│           0x000130db      mov   ecx, dword [rbx]                     ; int64_t arg2
+│           0x000130dd      xor   eax, eax
+│           0x000130df      lea   r9, qword [var_20h]                  ; int64_t arg4
+│           0x000130e7      lea   r8d, qword [rax+0x03]
+│           0x000130eb      mov   edx, 0x3b10564                       ; int64_t arg2
+│           0x000130f0      or    ecx, 0xb8                            ; 184
+│           0x000130f6      mov   qword [var_78h], rax
+│           0x000130fb      call  fcn.00015090
+│           0x00013100      call  fcn.000157f0
+│           0x00013105      mov   r11, rax
+│           0x00013108      mov   rax, 0x47ae147ae147ae15
+│           0x00013112      mul   r11
+│           0x00013115      sub   r11, rdx
+│           0x00013118      shr   r11, 0x01
+│           0x0001311b      add   r11, rdx
+│           0x0001311e      shr   r11, 0x0a
+│           0x00013122      sub   r11, rdi
+│           0x00013125      cmp   r11, 0x2dc6c0
+│           0x0001312c      jnbe  0x133d6
+│           0x00013132      mov   eax, dword [var_20h]
+│           0x00013139      test  eax, eax
+│           0x0001313b      jz    0x130db
+│           0x0001313d      cmp   eax, 0x01                            ; 1
+│           0x00013140      jz    0x131cf
+│           0x00013146      mov   r8d, dword [var_10h]                 ; int64_t arg3
+│           0x0001314e      xor   r15d, r15d
+│           0x00013151      mov   rdi, 0x2000000000100000
+│           0x0001315b      lea   rdx, qword str.ERROR_:_0xE0483001_SmuServiceRequest_0x_x__Res:_0x_x ; 0x17588 ; "[ERROR]: 0xE0483001 SmuServiceRequest 0x%x, Res: 0x%x\n" ; int64_t arg2
+│           0x00013162      mov   r9d, eax                             ; int64_t arg4
+│           0x00013165      mov   rcx, rdi                             ; int64_t arg1
+│           0x00013168      mov   dword [var_8h], r15d
+│           0x00013170      call  fcn.00013530
+│           0x00013175      mov   esi, r15d
+│           0x00013178      mov   ecx, dword [rbx]                     ; int64_t arg1
+│           0x0001317a      lea   r9, qword [var_8h]                   ; int64_t arg4
+│           0x00013182      mov   edx, 0x3b10028                       ; '(' ; int64_t arg2
+│           0x00013187      mov   r8d, 0x03                            ; int64_t arg3
+│           0x0001318d      or    ecx, 0xb8                            ; 184
+│           0x00013193      mov   qword [var_78h], r15
+│           0x00013198      call  fcn.00015090
+│           0x0001319d      mov   r9d, dword [var_8h]                  ; int64_t arg4
+│           0x000131a5      lea   rdx, qword str.PDEBUGPC__02d____0x_08X ; 0x17568 ; "PDEBUGPC[%02d] = 0x%08X\n" ; int64_t arg2
+│           0x000131ac      mov   r8d, esi                             ; int64_t arg3
+│           0x000131af      mov   rcx, rdi                             ; int64_t arg1
+│           0x000131b2      call  fcn.00013530
+│           0x000131b7      inc   esi
+│           0x000131b9      cmp   esi, 0x0a                            ; 0xa ; 10
+│           0x000131bc      jb    0x13178
+│           0x000131be      mov   eax, dword [var_20h]
+│           0x000131c5      lea   r15, qword [r12+0x0c]
+│           0x000131ca      lea   rsi, qword [r12+0x08]
+│           0x000131cf      xor   edi, edi
+│           0x000131d1      cmp   ebp, edi
+│           0x000131d3      lea   ebp, qword [rdi+0x03]
+│           0x000131d6      jz    0x13252
+│           0x000131d8      mov   edx, dword [rbx]
+│           0x000131da      lea   r8, qword [var_58h]                  ; int64_t arg3
+│           0x000131df      mov   ecx, ebp                             ; int64_t arg1
+│           0x000131e1      and   edx, 0xfffff47
+│           0x000131e7      mov   dword [var_58h], 0x3b10564           ; [0x3b10564:4]=-1
+│           0x000131ef      or    rdx, 0xb8                            ; 184
+│           0x000131f6      add   rdx, qword [data.00017ac0]           ; [0x17ac0:8]=0 ; int64_t arg2
+│           0x000131fd      invalid
+│           0x000131fe      invalid
+│           0x000131ff      invalid
+│           0x00013200      add   byte [rax], al
+            ; XREFS(194)
+┌ fcn.00013530(int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4, int64_t arg_38h);
+│           ; arg int64_t arg1 @ rcx
+│           ; arg int64_t arg2 @ rdx
+│           ; arg int64_t arg3 @ r8
+│           ; arg int64_t arg4 @ r9
+│           ; var int64_t var_28h  { >= 0x0} @ stack - 0x28
+│           ; var int64_t var_8h @ stack + 0x8
+│           ; var int64_t var_10h @ stack + 0x10
+│           ; var int64_t var_18h @ stack + 0x18
+│           ; var int64_t var_20h @ stack + 0x20
+│           ; arg int64_t arg_38h @ stack + 0x38
+│           0x00013530      mov   qword [var_10h], rdx                 ; arg2
+│           0x00013535      mov   qword [var_8h], rcx                  ; arg1
+│           0x0001353a      mov   qword [var_18h], r8                  ; arg3
+│           0x0001353f      mov   qword [var_20h], r9                  ; arg4
+│           0x00013544      sub   rsp, 0x48
+│           0x00013548      lea   rax, qword [var_18h]
+│           0x0001354d      mov   qword [var_28h + 0x10], rax
+│           0x00013552      lea   r8, qword [var_28h + 0x8]
+│           0x00013557      xor   edx, edx
+│           0x00013559      lea   rcx, qword data.00015aa0             ; 0x15aa0
+│           0x00013560      mov   rax, qword [data.00017a68]           ; [0x17a68:8]=0
+│           0x00013567      call  qword [rax+0x140]                    ; 320
+│           0x0001356d      mov   qword [var_28h], rax
+│           0x00013572      cmp   qword [var_28h], 0x00
+│       ┌─< 0x00013578      jl    0x13590
+│       │   0x0001357a      mov   r8, qword [arg_38h]
+│       │   0x0001357f      mov   rdx, qword [var_10h]
+│       │   0x00013584      mov   rcx, qword [var_8h]
+│       │   0x00013589      mov   rax, qword [var_28h + 0x8]
+│       │   0x0001358e      call  qword [rax]
+│       └─> 0x00013590      mov   qword [var_28h + 0x10], 0x00
+│           0x00013599      add   rsp, 0x48
+└           0x0001359d      ret
+            ; XREFS: CALL 0x0001300f  CALL 0x000130fb  CALL 0x00013198
+            ; XREFS: CALL 0x000132c2  CALL 0x000132e1  CALL 0x00013301
+            ; XREFS: CALL 0x0001331b  CALL 0x00013335  CALL 0x0001334f
+            ; XREFS: CALL 0x00013422  CALL 0x0001348d  CALL 0x000134ad
+┌ fcn.00015090(int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4);
+│           ; arg int64_t arg1 @ rcx
+│           ; arg int64_t arg2 @ rdx
+│           ; arg int64_t arg3 @ r8
+│           ; arg int64_t arg4 @ r9
+│           ; var int64_t var_8h @ stack + 0x8
+│           ; var int64_t var_10h @ stack + 0x10
+│           ; var int64_t var_18h @ stack + 0x18
+│           ; var int64_t var_20h @ stack + 0x20
+│           0x00015090      mov   rax, rsp
+│           0x00015093      mov   qword [rax+0x08], rbx
+│           0x00015097      mov   qword [rax+0x18], rbp
+│           0x0001509b      mov   qword [rax+0x20], rsi
+│           0x0001509f      mov   dword [rax+0x10], edx                ; arg2
+│           0x000150a2      push  rdi
+│           0x000150a3      sub   rsp, 0x20
+│           0x000150a7      mov   edi, ecx                             ; arg1
+│           0x000150a9      mov   ecx, r8d                             ; unsigned long arg1
+│           0x000150ac      mov   rsi, r9                              ; arg4
+│           0x000150af      mov   ebp, r8d
+│           0x000150b2      call  fcn.000136c0
+│           0x000150b7      lea   r8, qword [var_10h]                  ; int64_t arg3
+│           0x000150bc      xor   r9d, r9d
+│           0x000150bf      mov   edx, ebp                             ; unsigned long arg2
+│           0x000150c1      mov   ecx, edi                             ; int64_t arg1
+│           0x000150c3      movzx ebx, al
+│           0x000150c6      call  fcn.00015150
+│           0x000150cb      lea   ecx, qword [rbx+rdi*1]
+│           0x000150ce      xor   r9d, r9d
+│           0x000150d1      mov   r8, rsi                              ; int64_t arg3
+│           0x000150d4      mov   edx, ebp                             ; int64_t arg2
+│           0x000150d6      call  fcn.000151fc
+│           0x000150db      mov   rbx, qword [var_8h]
+│           0x000150e0      mov   rbp, qword [var_18h]
+│           0x000150e5      mov   rsi, qword [var_20h]
+│           0x000150ea      add   rsp, 0x20
+│           0x000150ee      pop   rdi
+└           0x000150ef      ret
+            ; XREFS: CALL 0x0001151a  CALL 0x0001153d  CALL 0x00012cfd
+            ; XREFS: CALL 0x00012d20  CALL 0x000130b9  CALL 0x00013100
+            ; XREFS: CALL 0x0001339d  CALL 0x000133c0
+┌ fcn.000157f0(int64_t arg2);
+│           ; arg int64_t arg2 @ rdx
+│           0x000157f0      rdtsc
+│           0x000157f2      shl   rdx, 0x20                            ; arg2
+│           0x000157f6      or    rax, rdx                             ; arg2
+└           0x000157f9      ret

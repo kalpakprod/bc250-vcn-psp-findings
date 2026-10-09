@@ -1,0 +1,149 @@
+{
+  "status": "PASS",
+  "evidence_class": "observed-bytes/static-analysis",
+  "mapping": [
+    {
+      "api_index": 1,
+      "descriptor": "0xd",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x14038"
+    },
+    {
+      "api_index": 2,
+      "descriptor": "0x0",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x14044"
+    },
+    {
+      "api_index": 3,
+      "descriptor": "0x1",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x14050"
+    },
+    {
+      "api_index": 4,
+      "descriptor": "0x2",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x1405c"
+    },
+    {
+      "api_index": 5,
+      "descriptor": "0x3",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x14068"
+    },
+    {
+      "api_index": 6,
+      "descriptor": "0x4",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x14074"
+    },
+    {
+      "api_index": 7,
+      "descriptor": "0x5",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x14080"
+    },
+    {
+      "api_index": 8,
+      "descriptor": "0x6",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x1408c"
+    },
+    {
+      "api_index": 9,
+      "descriptor": "0x7",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x14098"
+    },
+    {
+      "api_index": 10,
+      "descriptor": "0xa",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x140a4"
+    },
+    {
+      "api_index": 11,
+      "descriptor": "0x18",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x140b0"
+    },
+    {
+      "api_index": 12,
+      "descriptor": "0x13",
+      "rejected_by_descriptor_check": true,
+      "target_address": "0x140bc"
+    },
+    {
+      "api_index": 13,
+      "descriptor": "0x14",
+      "rejected_by_descriptor_check": true,
+      "target_address": "0x140c8"
+    },
+    {
+      "api_index": 14,
+      "descriptor": "0x15",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x140d4"
+    },
+    {
+      "api_index": 15,
+      "descriptor": "0x16",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x140e0"
+    },
+    {
+      "api_index": 16,
+      "descriptor": "0x17",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x140ec"
+    },
+    {
+      "api_index": 17,
+      "descriptor": "0xb",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x140f8"
+    },
+    {
+      "api_index": 18,
+      "descriptor": "0x8",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x14104"
+    },
+    {
+      "api_index": 19,
+      "descriptor": "0x9",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x14110"
+    },
+    {
+      "api_index": 20,
+      "descriptor": "0xc",
+      "rejected_by_descriptor_check": false,
+      "target_address": "0x1411c"
+    }
+  ],
+  "df_descriptors_absent": [
+    "0xe",
+    "0xf",
+    "0x10",
+    "0x11",
+    "0x12"
+  ],
+  "checked_windows": {
+    "0x2ea08": "364100ad02e55ed21c4c",
+    "0x2ea14": "a0a0f5a73c3fbcca",
+    "0x2ea1c": "d106a6d0baa0b81b1c38871b3ac71b37",
+    "0x2ea3b": "034c50",
+    "0x2ea41": "65d4ff",
+    "0x2e794": "98178807",
+    "0x2e79d": "979802462700",
+    "0x2e82d": "7302537342174b33cb22",
+    "0x2392e": "a5c9ff"
+  },
+  "limits": [
+    "Static initial mapping only; runtime mapping writes not exhaustively traced.",
+    "Actuator is gated by state words at base+0 and base+4; setter invocation alone is not actuation proof.",
+    "No physical clock labels, supported voltage or boot outcome established."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "variant": "v005",
+  "what": "FULL_lzma-BROKEN_early-slot + LZMA-alone explicit decoded size (8-byte patch); driver, placement, FV, capsule lengths unchanged",
+  "fix_vs_v004": "LZMA-alone header bytes 5..12: ffffffff... -> explicit 1010440000000000 (4460560 = 0x441010); repeats the hardware-proven D8 repair of the D5-D7 defect",
+  "base": {
+    "path": "/home/OWNER/orca/projects/bc250/candidates/BC250_vcn-driver-FULL_lzma-BROKEN_early-slot.bin",
+    "sha256": "98b9c2bd0bd0324f5642d76b105fb7a1ba851ec16c5c89046b0bf585a5765ab8"
+  },
+  "output_sha256": "2fadb173251eb4a44aa9da371f37207efb0f276f8d509926083bfa5a64c03406",
+  "lzma_header_off": "0xae00a8",
+  "explicit_size": 4460560,
+  "diff_vs_v004": {
+    "n": 8,
+    "first": "0xae00ad",
+    "last": "0xae00b4"
+  },
+  "hardware_written": false,
+  "plain_name": "BC250_vcn-driver-FULL_lzma-FIXED_early-slot.bin",
+  "builder": "scripts/build_FULL_lzma_fixed_early_slot.py",
+  "alias": "v005",
+  "question": "answered: explicit LZMA loads DXE; the wedge comes later (2 blinks, no LAN/video)."
+}

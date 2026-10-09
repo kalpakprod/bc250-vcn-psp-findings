@@ -1,0 +1,141 @@
+{
+  "scope": "Control Center 1.20.3 declared integrations, not all existing BC250 patches",
+  "source_sha256": "5bfcbfd58693eb49c2f41aed3047f9245a9fb1f4167e8456e3a26534ab6b2c10",
+  "integrations": [
+    {
+      "key": "cyan_smu",
+      "upstream": "https://github.com/filippor/cyan-skillfish-governor",
+      "license": "MIT",
+      "reviewed_revision": "964524d74ba6b69364be39f0e8fa484eb915779e",
+      "privilege_class": "service-config",
+      "hardware_writes": true,
+      "automated": true,
+      "rollback": "Disable/remove the managed service overlay and restore the previous TOML/range.",
+      "validation_level": "code-reviewed-and-mocked"
+    },
+    {
+      "key": "cpu_smu_oc",
+      "upstream": "https://github.com/bc250-collective/bc250_smu_oc",
+      "license": "MIT",
+      "reviewed_revision": "43d6b4c6e38c57bc9ec8908c44675ce7d5fd3d2f",
+      "privilege_class": "live-hardware",
+      "hardware_writes": true,
+      "automated": true,
+      "rollback": "Temporary settings end on reboot; persistent state has an explicit disable/restore action.",
+      "validation_level": "code-reviewed-mocked-hardware-gate-pending",
+      "payload_distribution": "bundled-reviewed-snapshot"
+    },
+    {
+      "key": "core_unlock",
+      "upstream": "https://github.com/rw-r-r-0644/bc250-core-unlock",
+      "license": "MIT",
+      "reviewed_revision": "fb7e5bceab0e38369006cd1a0e53b768517f6030",
+      "privilege_class": "live-hardware-reboot",
+      "hardware_writes": true,
+      "automated": true,
+      "rollback": "Full power removal restores the factory core mask; physical recovery gate remains mandatory.",
+      "validation_level": "code-reviewed-mocked-hardware-gate-pending"
+    },
+    {
+      "key": "cu_manager_standard",
+      "upstream": "https://github.com/WinnieLV/bc250-cu-live-manager",
+      "license": "not-declared-upstream",
+      "reviewed_revision": "a929085d791f126ce76a60eb609610820fb08066",
+      "privilege_class": "live-hardware-service-reboot",
+      "hardware_writes": true,
+      "automated": true,
+      "rollback": "Restore factory 24-CU routing and uninstall the persistence service; a cold power cycle restores the optional volatile CPU-core mask.",
+      "validation_level": "code-reviewed-mocked-hardware-gate-pending"
+    },
+    {
+      "key": "cu_manager_steamos",
+      "upstream": "https://github.com/F5GO/bc250-cu-live-manager-SteamOS",
+      "license": "not-declared-upstream",
+      "reviewed_revision": "c4e91184e4cd194b9c7be0862b34e317faca6393",
+      "privilege_class": "live-hardware-service",
+      "hardware_writes": true,
+      "automated": true,
+      "rollback": "Restore the factory 24-CU route and uninstall the persistent service.",
+      "validation_level": "code-reviewed-mocked-hardware-gate-pending"
+    },
+    {
+      "key": "steamos_amdgpu",
+      "upstream": "https://github.com/keyboardspecialist/bc250-steamos",
+      "license": "mixed-per-subproject",
+      "reviewed_revision": "1f4f3266d7f0e3dc0e8c760592bd63871d2c53c3",
+      "privilege_class": "boot-kernel-initramfs",
+      "hardware_writes": false,
+      "automated": true,
+      "rollback": "Upstream AMDGPU and RADV transactions provide independent uninstall/rollback paths; physical boot recovery is still required.",
+      "validation_level": "code-reviewed-field-tested-single-host"
+    },
+    {
+      "key": "fsr4_runtime",
+      "upstream": "https://github.com/dmorazasanchez/bc250-fsr4",
+      "license": "not-declared-upstream",
+      "reviewed_revision": "6173651fa3a5a557cba2c2ff802e2d6f49881bc1",
+      "privilege_class": "userspace",
+      "hardware_writes": false,
+      "automated": true,
+      "rollback": "Remove the per-user prefix under ~/.local/share/bc250-fsr4 and drop the Steam launch option.",
+      "validation_level": "code-reviewed-field-tested-single-host"
+    },
+    {
+      "key": "fsr4_opticlient",
+      "upstream": "https://github.com/daniel-h-0/bc250-fsr4-fork",
+      "license": "GPL-3.0-or-later (OptiScaler Client) · MIT (BC250 additions)",
+      "reviewed_revision": "b1c46717827815cab371504789149e703edd1e95",
+      "privilege_class": "userspace",
+      "hardware_writes": false,
+      "automated": true,
+      "rollback": "Restore / recover selected in the client puts each game back; removing the client keeps ~/.config/OptiscalerClient-BC250.",
+      "validation_level": "code-reviewed-field-tested-single-host"
+    },
+    {
+      "key": "nct6687",
+      "upstream": "https://github.com/Fred78290/nct6687d",
+      "license": "GPL-2.0",
+      "reviewed_revision": "163ffdcc3928a2bb04acdf9607e45f98eeb46b8a",
+      "privilege_class": "kernel-module-live-hardware",
+      "hardware_writes": true,
+      "automated": true,
+      "rollback": "Unload nct6687, remove its persistence unit/module and restore the prior module preference.",
+      "validation_level": "code-reviewed-field-tested-single-host"
+    },
+    {
+      "key": "oberon_governor",
+      "upstream": "https://gitlab.com/mothenjoyer69/oberon-governor",
+      "license": "MIT",
+      "reviewed_revision": "7e13da6c2cb9f1e0519242b1cb084ef767631a5c",
+      "privilege_class": "service-config-live-hardware",
+      "hardware_writes": true,
+      "automated": true,
+      "rollback": "Disable/remove the managed service and binary; preserve the existing YAML unless explicitly removed.",
+      "validation_level": "code-reviewed-and-mocked"
+    },
+    {
+      "key": "gfx1013_direct",
+      "upstream": "https://github.com/DryhoppedIPA/bc250-gfx1013-fix",
+      "license": "GPL/MIT components",
+      "reviewed_revision": "5bb0dac39d094fe9cbd10d2b34868837125d9c39",
+      "privilege_class": "boot-kernel-mesa",
+      "hardware_writes": false,
+      "automated": true,
+      "rollback": "Use the official upstream uninstall action; the stock Fedora boot entry remains the recovery path.",
+      "validation_level": "reviewed-upstream-commit-with-local-host-and-hardware-gates",
+      "update_strategy": "reviewed-commit",
+      "payload_distribution": "runtime-fetch-reviewed-revision"
+    },
+    {
+      "key": "gddr6_memory_temp",
+      "upstream": "https://github.com/pan-Rijovich/bc250-memory-temperature",
+      "license": "MIT",
+      "reviewed_revision": "b7e6bffcb5d592fc03edde375b7598ddc79aa846",
+      "privilege_class": "live-hardware-firmware",
+      "hardware_writes": true,
+      "automated": true,
+      "rollback": "The SMU patch lives in volatile SMU RAM only; a full power cycle restores the factory Queue 3 / Message 5 handler. No persistent or flash state is written.",
+      "validation_level": "reverse-engineered-community-reported-hardware-gate-pending"
+    }
+  ]
+}

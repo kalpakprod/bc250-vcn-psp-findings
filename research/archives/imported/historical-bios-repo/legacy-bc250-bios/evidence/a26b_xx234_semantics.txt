@@ -1,0 +1,34 @@
+== xx234 family: per-address sequences (in order) and final value ==
+DONOR grp 201: 126 pairs, 59 uniq addrs
+  final: ->0 0, ->1 59, ->other 0
+  0x0->0x1 : 55 addrs 900e234 9023234 9301234 9006234 9007234 9008234 9009234 902f234 9031234 902d234 904f234 9058234 ...
+  0x0->0x0->0x1->0x1 : 4 addrs 9300234 90a8234 90aa234 90ab234
+DONOR grp 280: 126 pairs, 59 uniq addrs
+  final: ->0 0, ->1 59, ->other 0
+  0x0->0x1 : 55 addrs 900e234 9023234 9301234 9006234 9007234 9008234 9009234 902f234 9031234 902d234 904f234 9058234 ...
+  0x0->0x0->0x1->0x1 : 4 addrs 9300234 90a8234 90aa234 90ab234
+STOCK grp 201: 98 pairs, 47 uniq addrs
+  final: ->0 0, ->1 47, ->other 0
+  0x0->0x1 : 44 addrs 9023234 9300234 9006234 9007234 9008234 9009234 90b6234 90b7234 90b8234 902f234 9031234 902d234 ...
+  0x0->0x1->0x1 : 2 addrs 902e234 9025234
+  0x0->0x0->0x1->0x1 : 1 addrs 9096234
+STOCK grp 280: 98 pairs, 47 uniq addrs
+  final: ->0 0, ->1 47, ->other 0
+  0x0->0x1 : 44 addrs 9023234 9300234 9006234 9007234 9008234 9009234 90b6234 90b7234 90b8234 902f234 9031234 902d234 ...
+  0x0->0x1->0x1 : 2 addrs 902e234 9025234
+  0x0->0x0->0x1->0x1 : 1 addrs 9096234
+
+== D3-B2 targets per side/group (ordered) ==
+DONOR grp 201: 0x900c234 -> ['0x0', '0x1']
+DONOR grp 201: 0x900c914 -> ['0x7fff']
+DONOR grp 201: 0x900c930 -> ['0x36']
+DONOR grp 201: 0x900cb80 -> ['0xff']
+DONOR grp 280: 0x900c234 -> ['0x0', '0x1']
+DONOR grp 280: 0x900c914 -> ['0x0']
+DONOR grp 280: 0x900c930 -> ['0x0']
+DONOR grp 280: 0x900cb80 -> ['0x0']
+
+== xx234 address sets: stock-only / donor-only / shared ==
+stock-0x201 uniq: 47, donor-0x201 uniq: 59, shared: 38
+stock-only: 9098234 9099234 909a234 909b234 909c234 909d234 90b6234 90b7234 90b8234
+donor-only: 900c234 900e234 902a234 902c234 9030234 9047234 9051234 9052234 9053234 9054234 9055234 905a234 905b234 9063234 90a8234 90a9234 90b0234 90b1234 90b5234 90d8234 9301234

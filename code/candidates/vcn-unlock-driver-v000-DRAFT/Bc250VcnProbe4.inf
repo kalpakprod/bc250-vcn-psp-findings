@@ -1,0 +1,33 @@
+# Read-only BC-250 VCN state probe, transport v2 (mailbox: SMU debug
+# unlock + Q3 0x2A secure reads) after run 1 proved the raw SMN window
+# wedges the board. Writes its report to the marked USB stick and
+# reboots the board. Boots as \\EFI\\BOOT\\BOOTX64.EFI, no Shell.
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = Bc250VcnProbe4
+  FILE_GUID                      = dce26c2e-da12-4bb4-8115-a4d974530df0
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+[Sources]
+  Bc250VcnProbe4.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  Bc250VcnUnlockPkg/Bc250VcnUnlockPkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  UefiLib
+  BaseLib
+  BaseMemoryLib
+  PciSegmentLib
+  IoLib
+  PrintLib
+
+[Protocols]
+  gEfiSimpleFileSystemProtocolGuid

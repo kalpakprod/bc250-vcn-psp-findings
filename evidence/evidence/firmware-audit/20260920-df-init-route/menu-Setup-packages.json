@@ -1,0 +1,7038 @@
+{
+  "module": "evidence/firmware-audit/20260919-inv-token-consumers/Setup-10cc728ae3f8.bin",
+  "sha256": "10cc728ae3f8abec5bdf206b272eb3806ef4b7f90f2bc3f887b33c02c30da152",
+  "packages": [
+    [
+      64340,
+      2,
+      15398
+    ],
+    [
+      79738,
+      4,
+      88396
+    ]
+  ],
+  "strings": [
+    [
+      1,
+      "English\u0000"
+    ],
+    [
+      2,
+      "\u0000"
+    ],
+    [
+      3,
+      "Enabled\u0000"
+    ],
+    [
+      4,
+      "Disabled\u0000"
+    ],
+    [
+      5,
+      "Auto\u0000"
+    ],
+    [
+      6,
+      "Setup\u0000"
+    ],
+    [
+      7,
+      "Setup\u0000"
+    ],
+    [
+      8,
+      "Main\u0000"
+    ],
+    [
+      9,
+      "Choose the system default language\u0000"
+    ],
+    [
+      10,
+      "System Language\u0000"
+    ],
+    [
+      11,
+      "BIOS Information\u0000"
+    ],
+    [
+      12,
+      "BIOS Vendor\u0000"
+    ],
+    [
+      13,
+      "N/A\u0000"
+    ],
+    [
+      14,
+      "Core Version\u0000"
+    ],
+    [
+      15,
+      "N/A\u0000"
+    ],
+    [
+      16,
+      "Compliancy\u0000"
+    ],
+    [
+      17,
+      "N/A\u0000"
+    ],
+    [
+      18,
+      "Project Version\u0000"
+    ],
+    [
+      19,
+      "N/A\u0000"
+    ],
+    [
+      20,
+      "Build Date and Time\u0000"
+    ],
+    [
+      21,
+      "N/A\u0000"
+    ],
+    [
+      22,
+      "System Date\u0000"
+    ],
+    [
+      23,
+      "Set the Date. Use Tab to switch between Date elements.\u0000"
+    ],
+    [
+      24,
+      "System Time\u0000"
+    ],
+    [
+      25,
+      "Set the Time. Use Tab to switch between Time elements.\u0000"
+    ],
+    [
+      26,
+      "Access Level\u0000"
+    ],
+    [
+      27,
+      "User\u0000"
+    ],
+    [
+      28,
+      "Administrator\u0000"
+    ],
+    [
+      29,
+      "Advanced\u0000"
+    ],
+    [
+      30,
+      "Chipset\u0000"
+    ],
+    [
+      31,
+      "Boot\u0000"
+    ],
+    [
+      32,
+      "Quiet Boot\u0000"
+    ],
+    [
+      33,
+      "Enables or disables Quiet Boot option\u0000"
+    ],
+    [
+      34,
+      "Fast Boot\u0000"
+    ],
+    [
+      35,
+      "Enables or disables boot with initialization of a minimal set of devices required to launch active boot option. Has no effect for BBS boot options.\u0000"
+    ],
+    [
+      36,
+      "Boot Configuration\u0000"
+    ],
+    [
+      37,
+      "Setup Prompt Timeout\u0000"
+    ],
+    [
+      38,
+      "Number of seconds to wait for setup activation key. 65535(0xFFFF) means indefinite waiting.\u0000"
+    ],
+    [
+      39,
+      "Bootup NumLock State\u0000"
+    ],
+    [
+      40,
+      "Select the keyboard NumLock state\u0000"
+    ],
+    [
+      41,
+      "On\u0000"
+    ],
+    [
+      42,
+      "Off\u0000"
+    ],
+    [
+      43,
+      "Boot Option Priorities\u0000"
+    ],
+    [
+      44,
+      "Boot Option #%d\u0000"
+    ],
+    [
+      45,
+      "Sets the system boot order\u0000"
+    ],
+    [
+      46,
+      "Add New Boot Option\u0000"
+    ],
+    [
+      47,
+      "Add a new EFI boot option to the boot order\u0000"
+    ],
+    [
+      48,
+      "Delete Boot Option\u0000"
+    ],
+    [
+      49,
+      "Remove an EFI boot option from the boot order\u0000"
+    ],
+    [
+      50,
+      "Select one to Delete\u0000"
+    ],
+    [
+      51,
+      "Set the order of the legacy devices in this group\u0000"
+    ],
+    [
+      52,
+      "Add boot option\u0000"
+    ],
+    [
+      53,
+      "Specify name for new boot option\u0000"
+    ],
+    [
+      54,
+      "Path for boot option\u0000"
+    ],
+    [
+      55,
+      "Enter the path to the boot option in the format fsx:\\path\\filename.efi\u0000"
+    ],
+    [
+      56,
+      "Create\u0000"
+    ],
+    [
+      57,
+      "Security\u0000"
+    ],
+    [
+      58,
+      "Password Description\u0000"
+    ],
+    [
+      59,
+      "If ONLY the Administrator's password is set,\u0000"
+    ],
+    [
+      60,
+      "then this only limits access to Setup and is\u0000"
+    ],
+    [
+      61,
+      "only asked for when entering Setup.\u0000"
+    ],
+    [
+      62,
+      "If ONLY the User's password is set, then this\u0000"
+    ],
+    [
+      63,
+      "is a power on password and must be entered to\u0000"
+    ],
+    [
+      64,
+      "boot or enter Setup. In Setup the User will\u0000"
+    ],
+    [
+      65,
+      "have Administrator rights.\u0000"
+    ],
+    [
+      66,
+      "The password length must be\u0000"
+    ],
+    [
+      67,
+      "in the following range:\u0000"
+    ],
+    [
+      68,
+      "Minimum length\u0000"
+    ],
+    [
+      69,
+      "N/A\u0000"
+    ],
+    [
+      70,
+      "Maximum length\u0000"
+    ],
+    [
+      71,
+      "N/A\u0000"
+    ],
+    [
+      72,
+      "Administrator Password\u0000"
+    ],
+    [
+      73,
+      "Set Administrator Password\u0000"
+    ],
+    [
+      74,
+      "User Password\u0000"
+    ],
+    [
+      75,
+      "Set User Password\u0000"
+    ],
+    [
+      76,
+      "Save & Exit\u0000"
+    ],
+    [
+      77,
+      "Save Changes and Exit\u0000"
+    ],
+    [
+      78,
+      "Exit system setup after saving the changes.\u0000"
+    ],
+    [
+      79,
+      "Discard Changes and Exit\u0000"
+    ],
+    [
+      80,
+      "Exit system setup without saving any changes.\u0000"
+    ],
+    [
+      81,
+      "Save Changes and Reset\u0000"
+    ],
+    [
+      82,
+      "Reset the system after saving the changes.\u0000"
+    ],
+    [
+      83,
+      "Discard Changes and Reset\u0000"
+    ],
+    [
+      84,
+      "Reset system setup without saving any changes.\u0000"
+    ],
+    [
+      85,
+      "Save Options\u0000"
+    ],
+    [
+      86,
+      "Save Changes\u0000"
+    ],
+    [
+      87,
+      "Save Changes done so far to any of the setup options.\u0000"
+    ],
+    [
+      88,
+      "Discard Changes\u0000"
+    ],
+    [
+      89,
+      "Discard Changes done so far to any of the setup options.\u0000"
+    ],
+    [
+      90,
+      "Default Options\u0000"
+    ],
+    [
+      91,
+      "Restore Defaults\u0000"
+    ],
+    [
+      92,
+      "Restore/Load Default values for all the setup options.\u0000"
+    ],
+    [
+      93,
+      "Save as User Defaults\u0000"
+    ],
+    [
+      94,
+      "Save the changes done so far as User Defaults.\u0000"
+    ],
+    [
+      95,
+      "Restore User Defaults\u0000"
+    ],
+    [
+      96,
+      "Restore the User Defaults to all the setup options.\u0000"
+    ],
+    [
+      97,
+      "Boot Override\u0000"
+    ],
+    [
+      98,
+      "Launch EFI Shell from filesystem device\u0000"
+    ],
+    [
+      99,
+      "Attempts to Launch EFI Shell application (Shell.efi) from one of the available filesystem devices\u0000"
+    ],
+    [
+      100,
+      "Attempts to Launch EFI Shell application (Shellx64.efi) from one of the available filesystem devices\u0000"
+    ],
+    [
+      101,
+      "Attempts to Launch EFI Shell application (ShellIA64.efi) from one of the available filesystem devices\u0000"
+    ],
+    [
+      102,
+      "Driver Health\u0000"
+    ],
+    [
+      103,
+      "Provides Health Status for the Drivers/Controllers\u0000"
+    ],
+    [
+      104,
+      "CPU Configuration\u0000"
+    ],
+    [
+      105,
+      "CPU Configuration Parameters\u0000"
+    ],
+    [
+      106,
+      "Enabled\u0000"
+    ],
+    [
+      107,
+      "Node 0 Information\u0000"
+    ],
+    [
+      108,
+      "View Memory Information related to Node 0\u0000"
+    ],
+    [
+      109,
+      "\u0000"
+    ],
+    [
+      110,
+      "\u0000"
+    ],
+    [
+      111,
+      "\u0000"
+    ],
+    [
+      112,
+      "\u0000"
+    ],
+    [
+      113,
+      "\u0000"
+    ],
+    [
+      114,
+      "\u0000"
+    ],
+    [
+      115,
+      "\u0000"
+    ],
+    [
+      116,
+      "\u0000"
+    ],
+    [
+      117,
+      "\u0000"
+    ],
+    [
+      118,
+      "\u0000"
+    ],
+    [
+      119,
+      "\u0000"
+    ],
+    [
+      120,
+      "\u0000"
+    ],
+    [
+      121,
+      "\u0000"
+    ],
+    [
+      122,
+      "\u0000"
+    ],
+    [
+      123,
+      "\u0000"
+    ],
+    [
+      124,
+      "\u0000"
+    ],
+    [
+      125,
+      "\u0000"
+    ],
+    [
+      126,
+      "\u0000"
+    ],
+    [
+      127,
+      "\u0000"
+    ],
+    [
+      128,
+      "\u0000"
+    ],
+    [
+      129,
+      "\u0000"
+    ],
+    [
+      130,
+      "\u0000"
+    ],
+    [
+      131,
+      "--------- Cache per core ---------\u0000"
+    ],
+    [
+      132,
+      "--------- Cache information ---------\u0000"
+    ],
+    [
+      133,
+      "\u0000"
+    ],
+    [
+      134,
+      "\u0000"
+    ],
+    [
+      135,
+      "\u0000"
+    ],
+    [
+      136,
+      "\u0000"
+    ],
+    [
+      137,
+      "\u0000"
+    ],
+    [
+      138,
+      "\u0000"
+    ],
+    [
+      139,
+      "\u0000"
+    ],
+    [
+      140,
+      "\u0000"
+    ],
+    [
+      141,
+      "\u0000"
+    ],
+    [
+      142,
+      "\u0000"
+    ],
+    [
+      143,
+      "\u0000"
+    ],
+    [
+      144,
+      "\u0000"
+    ],
+    [
+      145,
+      "\u0000"
+    ],
+    [
+      146,
+      "\u0000"
+    ],
+    [
+      147,
+      "\u0000"
+    ],
+    [
+      148,
+      "\u0000"
+    ],
+    [
+      149,
+      "\u0000"
+    ],
+    [
+      150,
+      "\u0000"
+    ],
+    [
+      151,
+      "Microcode Not loaded\u0000"
+    ],
+    [
+      152,
+      "Microcode Not loaded\u0000"
+    ],
+    [
+      153,
+      "Microcode Not loaded\u0000"
+    ],
+    [
+      154,
+      "Microcode Not loaded\u0000"
+    ],
+    [
+      155,
+      "PSS Support\u0000"
+    ],
+    [
+      156,
+      "Enable/disable the generation of ACPI _PPC, _PSS, and _PCT objects.\u0000"
+    ],
+    [
+      157,
+      "PSTATE Adjustment\u0000"
+    ],
+    [
+      158,
+      "Provide to adjust startup P-state level\u0000"
+    ],
+    [
+      159,
+      "PPC Adjustment\u0000"
+    ],
+    [
+      160,
+      "Provide to adjust _PPC object.\u0000"
+    ],
+    [
+      161,
+      "PState 0\u0000"
+    ],
+    [
+      162,
+      "PState 1\u0000"
+    ],
+    [
+      163,
+      "PState 2\u0000"
+    ],
+    [
+      164,
+      "PState 3\u0000"
+    ],
+    [
+      165,
+      "PState 4\u0000"
+    ],
+    [
+      166,
+      "PState 5\u0000"
+    ],
+    [
+      167,
+      "PState 6\u0000"
+    ],
+    [
+      168,
+      "PState 7\u0000"
+    ],
+    [
+      169,
+      "NX Mode\u0000"
+    ],
+    [
+      170,
+      "Enable/disable No-execute page protection Function\u0000"
+    ],
+    [
+      171,
+      "SVM Mode\u0000"
+    ],
+    [
+      172,
+      "Enable/disable CPU Virtualization\u0000"
+    ],
+    [
+      173,
+      "C6 Mode\u0000"
+    ],
+    [
+      174,
+      "Enable/disable C6\u0000"
+    ],
+    [
+      175,
+      "CPB Mode\u0000"
+    ],
+    [
+      176,
+      "Enable/disable CPB\u0000"
+    ],
+    [
+      177,
+      "Primary Video Device\u0000"
+    ],
+    [
+      178,
+      "Select Primary Video Device That BIOS Will Use To For Output.\u0000"
+    ],
+    [
+      179,
+      "IGD Video\u0000"
+    ],
+    [
+      180,
+      "NB PCIe Slot Video\u0000"
+    ],
+    [
+      181,
+      "GFX Configuration\u0000"
+    ],
+    [
+      182,
+      "Integrated Graphics\u0000"
+    ],
+    [
+      183,
+      "Enable Integrate Graphics Controller\u0000"
+    ],
+    [
+      184,
+      "Force\u0000"
+    ],
+    [
+      185,
+      "UMA Frame Buffer Size\u0000"
+    ],
+    [
+      186,
+      "Set UMA FB Size\u0000"
+    ],
+    [
+      187,
+      "32M\u0000"
+    ],
+    [
+      188,
+      "64M\u0000"
+    ],
+    [
+      189,
+      "128M\u0000"
+    ],
+    [
+      190,
+      "256M\u0000"
+    ],
+    [
+      191,
+      "512M\u0000"
+    ],
+    [
+      192,
+      "1G\u0000"
+    ],
+    [
+      193,
+      "2G\u0000"
+    ],
+    [
+      194,
+      "\u0000"
+    ],
+    [
+      195,
+      "Disabled\u0000"
+    ],
+    [
+      196,
+      "Enabled\u0000"
+    ],
+    [
+      197,
+      "DEFAULT\u0000"
+    ],
+    [
+      198,
+      "PSPP Policy\u0000"
+    ],
+    [
+      199,
+      "PCIe Speed Power Policy\u0000"
+    ],
+    [
+      200,
+      "Performance\u0000"
+    ],
+    [
+      201,
+      "Balanced-High\u0000"
+    ],
+    [
+      202,
+      "Balanced-Low\u0000"
+    ],
+    [
+      203,
+      "Power Saving\u0000"
+    ],
+    [
+      204,
+      "\u0000"
+    ],
+    [
+      205,
+      "IOMMU\u0000"
+    ],
+    [
+      206,
+      "Enable/Disable IOMMU Support\u0000"
+    ],
+    [
+      207,
+      "Remote Display Feature\u0000"
+    ],
+    [
+      208,
+      "Enable/Disable Remote Display Feature Support\u0000"
+    ],
+    [
+      209,
+      "Gnb Hd Audio\u0000"
+    ],
+    [
+      210,
+      "Enable/Disable Gnb Hd Audio Support\u0000"
+    ],
+    [
+      211,
+      "\u0000"
+    ],
+    [
+      212,
+      "Manually\u0000"
+    ],
+    [
+      213,
+      "CRT\u0000"
+    ],
+    [
+      214,
+      "LCD\u0000"
+    ],
+    [
+      215,
+      "CRT2\u0000"
+    ],
+    [
+      216,
+      "DFP1\u0000"
+    ],
+    [
+      217,
+      "DFP2\u0000"
+    ],
+    [
+      218,
+      "DFP3\u0000"
+    ],
+    [
+      219,
+      "DFP4\u0000"
+    ],
+    [
+      220,
+      "DFP5\u0000"
+    ],
+    [
+      221,
+      "DFP6\u0000"
+    ],
+    [
+      222,
+      "DFP7\u0000"
+    ],
+    [
+      223,
+      "IGD - AmdGop Output Priority\u0000"
+    ],
+    [
+      224,
+      "Sample Code\u0000"
+    ],
+    [
+      225,
+      "  Priority1\u0000"
+    ],
+    [
+      226,
+      "  Priority2\u0000"
+    ],
+    [
+      227,
+      "  Priority3\u0000"
+    ],
+    [
+      228,
+      "  Priority4\u0000"
+    ],
+    [
+      229,
+      "  Priority5\u0000"
+    ],
+    [
+      230,
+      "  Priority6\u0000"
+    ],
+    [
+      231,
+      "For Multi Connector Display Priority\u0000"
+    ],
+    [
+      232,
+      "IGD - AmdGop Bootup Brightness Level\u0000"
+    ],
+    [
+      233,
+      "Lcd Only, Range 0 - 255\u0000"
+    ],
+    [
+      234,
+      "North Bridge\u0000"
+    ],
+    [
+      235,
+      "North Bridge Parameters\u0000"
+    ],
+    [
+      236,
+      "North Bridge Configuration\u0000"
+    ],
+    [
+      237,
+      "Socket 0 Information\u0000"
+    ],
+    [
+      238,
+      "View Information related to Socket 0\u0000"
+    ],
+    [
+      239,
+      "Memory Information\u0000"
+    ],
+    [
+      240,
+      "Total Memory\u0000"
+    ],
+    [
+      241,
+      "N/A\u0000"
+    ],
+    [
+      242,
+      "Total Memory in the System.\u0000"
+    ],
+    [
+      243,
+      "  Starting Address: Unknown\u0000"
+    ],
+    [
+      244,
+      "    Ending Address: Unknown\u0000"
+    ],
+    [
+      245,
+      "Dimm0: Not Present\u0000"
+    ],
+    [
+      246,
+      "Dimm1: Not Present\u0000"
+    ],
+    [
+      247,
+      "Dimm2: Not Present\u0000"
+    ],
+    [
+      248,
+      "Dimm3: Not Present\u0000"
+    ],
+    [
+      249,
+      "Memory Configuration\u0000"
+    ],
+    [
+      250,
+      "Memory Clock\u0000"
+    ],
+    [
+      251,
+      "This Option Allows User to select different Memory Clock. Default value is 800Mhz.\u0000"
+    ],
+    [
+      252,
+      "Auto\u0000"
+    ],
+    [
+      253,
+      "1333MHz\u0000"
+    ],
+    [
+      254,
+      "1600MHz\u0000"
+    ],
+    [
+      255,
+      "1866MHz\u0000"
+    ],
+    [
+      256,
+      "2133MHz\u0000"
+    ],
+    [
+      257,
+      "2400MHz\u0000"
+    ],
+    [
+      258,
+      "Bank Interleaving\u0000"
+    ],
+    [
+      259,
+      "Enable/Disable Bank Interleaving\u0000"
+    ],
+    [
+      260,
+      "Channel Interleaving\u0000"
+    ],
+    [
+      261,
+      "Enable/Disable Channel Interleaving\u0000"
+    ],
+    [
+      262,
+      "Memory Clear\u0000"
+    ],
+    [
+      263,
+      "Enable/Disable Memory Clear function\u0000"
+    ],
+    [
+      264,
+      "Disabled\u0000"
+    ],
+    [
+      265,
+      "00\u0000"
+    ],
+    [
+      266,
+      "01\u0000"
+    ],
+    [
+      267,
+      "02\u0000"
+    ],
+    [
+      268,
+      "03\u0000"
+    ],
+    [
+      269,
+      "04\u0000"
+    ],
+    [
+      270,
+      "South Bridge\u0000"
+    ],
+    [
+      271,
+      "South Bridge Parameters\u0000"
+    ],
+    [
+      272,
+      "AMD Reference code Version :\u0000"
+    ],
+    [
+      273,
+      "xx\u0000"
+    ],
+    [
+      274,
+      "Not Present\u0000"
+    ],
+    [
+      275,
+      "OHCI HC(Bus 0 Dev 18 Fn 0)\u0000"
+    ],
+    [
+      276,
+      "OHCI HC(Bus 0 Dev 18 Fn 0) Enable/Disable\u0000"
+    ],
+    [
+      277,
+      "EHCI HC(Bus 0 Dev 18 Fn 2)\u0000"
+    ],
+    [
+      278,
+      "EHCI HC(Bus 0 Dev 18 Fn 2) Enable/Disable\u0000"
+    ],
+    [
+      279,
+      "OHCI HC(Bus 0 Dev 19 Fn 0)\u0000"
+    ],
+    [
+      280,
+      "OHCI HC(Bus 0 Dev 19 Fn 0) Enable/Disable\u0000"
+    ],
+    [
+      281,
+      "EHCI HC(Bus 0 Dev 19 Fn 2)\u0000"
+    ],
+    [
+      282,
+      "EHCI HC(Bus 0 Dev 19 Fn 2) Enable/Disable\u0000"
+    ],
+    [
+      283,
+      "OHCI HC(Bus 0 Dev 22 Fn 0)\u0000"
+    ],
+    [
+      284,
+      "OHCI HC(Bus 0 Dev 22 Fn 0) Enable/Disable\u0000"
+    ],
+    [
+      285,
+      "EHCI HC(Bus 0 Dev 22 Fn 2)\u0000"
+    ],
+    [
+      286,
+      "EHCI HC(Bus 0 Dev 22 Fn 2) Enable/Disable\u0000"
+    ],
+    [
+      287,
+      "OHCI HC (Bus 0 Dev 20 Fn 5)\u0000"
+    ],
+    [
+      288,
+      "OHCI HC (Bus 0 Dev 20 Fn 5) Enable/Disable\u0000"
+    ],
+    [
+      289,
+      "Enable all USB device\u0000"
+    ],
+    [
+      290,
+      "USB PORT 0 \u0000"
+    ],
+    [
+      291,
+      "USB PORT 0 Enable/Disable\u0000"
+    ],
+    [
+      292,
+      "USB PORT 1 \u0000"
+    ],
+    [
+      293,
+      "USB PORT 1 Enable/Disable\u0000"
+    ],
+    [
+      294,
+      "USB PORT 2 \u0000"
+    ],
+    [
+      295,
+      "USB PORT 2 Enable/Disable\u0000"
+    ],
+    [
+      296,
+      "USB PORT 3 \u0000"
+    ],
+    [
+      297,
+      "USB PORT 3 Enable/Disable\u0000"
+    ],
+    [
+      298,
+      "USB PORT 4 \u0000"
+    ],
+    [
+      299,
+      "USB PORT 4 Enable/Disable\u0000"
+    ],
+    [
+      300,
+      "USB PORT 5 \u0000"
+    ],
+    [
+      301,
+      "USB PORT 5 Enable/Disable\u0000"
+    ],
+    [
+      302,
+      "USB PORT 6 \u0000"
+    ],
+    [
+      303,
+      "USB PORT 6 Enable/Disable\u0000"
+    ],
+    [
+      304,
+      "USB PORT 7 \u0000"
+    ],
+    [
+      305,
+      "USB PORT 7 Enable/Disable\u0000"
+    ],
+    [
+      306,
+      "USB PORT 8 \u0000"
+    ],
+    [
+      307,
+      "USB PORT 8 Enable/Disable\u0000"
+    ],
+    [
+      308,
+      "USB PORT 9 \u0000"
+    ],
+    [
+      309,
+      "USB PORT 9 Enable/Disable\u0000"
+    ],
+    [
+      310,
+      "USB PORT 10 \u0000"
+    ],
+    [
+      311,
+      "USB PORT 10 Enable/Disable\u0000"
+    ],
+    [
+      312,
+      "USB PORT 11 \u0000"
+    ],
+    [
+      313,
+      "USB PORT 11 Enable/Disable\u0000"
+    ],
+    [
+      314,
+      "USB PORT 12 \u0000"
+    ],
+    [
+      315,
+      "USB PORT 12 Enable/Disable\u0000"
+    ],
+    [
+      316,
+      "USB PORT 13 \u0000"
+    ],
+    [
+      317,
+      "USB PORT 13 Enable/Disable\u0000"
+    ],
+    [
+      318,
+      "XHCI0 PORT 0 \u0000"
+    ],
+    [
+      319,
+      "XHCI0 PORT 0 Enable/Disable\u0000"
+    ],
+    [
+      320,
+      "XHCI0 PORT 1 \u0000"
+    ],
+    [
+      321,
+      "XHCI0 PORT 1 Enable/Disable\u0000"
+    ],
+    [
+      322,
+      "XHCI1 PORT 0 \u0000"
+    ],
+    [
+      323,
+      "XHCI1 PORT 0 Enable/Disable\u0000"
+    ],
+    [
+      324,
+      "XHCI1 PORT 1 \u0000"
+    ],
+    [
+      325,
+      "XHCI1 PORT 1 Enable/Disable\u0000"
+    ],
+    [
+      326,
+      "USB PORT FL0 \u0000"
+    ],
+    [
+      327,
+      "USB PORT FL0 Enable/Disable\u0000"
+    ],
+    [
+      328,
+      "USB PORT FL1 \u0000"
+    ],
+    [
+      329,
+      "USB PORT FL1 Enable/Disable\u0000"
+    ],
+    [
+      330,
+      "OnChip SATA Channel\u0000"
+    ],
+    [
+      331,
+      "OnChip SATA Type\u0000"
+    ],
+    [
+      332,
+      "Native IDE /n RAID /n AHCI /n AHCI /n Legacy IDE /n IDE->AHCI /n HyperFlash\u0000"
+    ],
+    [
+      333,
+      "Native IDE\u0000"
+    ],
+    [
+      334,
+      "RAID\u0000"
+    ],
+    [
+      335,
+      "AHCI\u0000"
+    ],
+    [
+      336,
+      "Legacy IDE\u0000"
+    ],
+    [
+      337,
+      "IDE->AHCI\u0000"
+    ],
+    [
+      338,
+      "AHCI as ID 7804\u0000"
+    ],
+    [
+      339,
+      "IDE->AHCI as ID 7804\u0000"
+    ],
+    [
+      340,
+      "SATA IDE Combined Mode\u0000"
+    ],
+    [
+      341,
+      "SATA IDE Controller Combined Mode\u0000"
+    ],
+    [
+      342,
+      "Chipset Power Saving Features\u0000"
+    ],
+    [
+      343,
+      "Chipset Power Saving Features\u0000"
+    ],
+    [
+      344,
+      "OnChip IDE mode\u0000"
+    ],
+    [
+      345,
+      "Sata IDE Controller Mode\u0000"
+    ],
+    [
+      346,
+      "Legacy mode\u0000"
+    ],
+    [
+      347,
+      "Native mode\u0000"
+    ],
+    [
+      348,
+      "ESATA PORT on PORT0\u0000"
+    ],
+    [
+      349,
+      "ESATA PORT on PORT1\u0000"
+    ],
+    [
+      350,
+      "ESATA PORT on PORT2\u0000"
+    ],
+    [
+      351,
+      "ESATA PORT on PORT3\u0000"
+    ],
+    [
+      352,
+      "ESATA PORT on PORT4\u0000"
+    ],
+    [
+      353,
+      "ESATA PORT on PORT5\u0000"
+    ],
+    [
+      354,
+      "ESATA PORT on PORT6\u0000"
+    ],
+    [
+      355,
+      "ESATA PORT on PORT7\u0000"
+    ],
+    [
+      356,
+      "SATA Power on PORT0\u0000"
+    ],
+    [
+      357,
+      "SATA Power on PORT1\u0000"
+    ],
+    [
+      358,
+      "SATA Power on PORT2\u0000"
+    ],
+    [
+      359,
+      "SATA Power on PORT3\u0000"
+    ],
+    [
+      360,
+      "SATA Power on PORT4\u0000"
+    ],
+    [
+      361,
+      "SATA Power on PORT5\u0000"
+    ],
+    [
+      362,
+      "SATA Power on PORT6\u0000"
+    ],
+    [
+      363,
+      "SATA Power on PORT7\u0000"
+    ],
+    [
+      364,
+      "Power Down\u0000"
+    ],
+    [
+      365,
+      "HD Audio Azalia Device\u0000"
+    ],
+    [
+      366,
+      "HD Audio Azalia Device\u0000"
+    ],
+    [
+      367,
+      "HD Onboard PIN Config\u0000"
+    ],
+    [
+      368,
+      "Azalia Controller SDIN Pin Configuration\u0000"
+    ],
+    [
+      369,
+      "Azalia Front Panel\u0000"
+    ],
+    [
+      370,
+      "Azalia Controller Front Panel Configuration\u0000"
+    ],
+    [
+      371,
+      "SDIN0 Pin Config\u0000"
+    ],
+    [
+      372,
+      "Program SDIN0 As Azalia SDIN Pin Or GPIO Pin\u0000"
+    ],
+    [
+      373,
+      "SDIN1 Pin Config\u0000"
+    ],
+    [
+      374,
+      "Program SDIN1 As Azalia SDIN Pin Or GPIO Pin\u0000"
+    ],
+    [
+      375,
+      "SDIN2 Pin Config\u0000"
+    ],
+    [
+      376,
+      "Program SDIN2 As Azalia SDIN Pin Or GPIO Pin\u0000"
+    ],
+    [
+      377,
+      "SDIN3 Pin Config\u0000"
+    ],
+    [
+      378,
+      "Program SDIN3 As Azalia SDIN Pin Or GPIO Pin\u0000"
+    ],
+    [
+      379,
+      "GPIO\u0000"
+    ],
+    [
+      380,
+      "Azalia\u0000"
+    ],
+    [
+      381,
+      "Azalia Snoop\u0000"
+    ],
+    [
+      382,
+      "Azalia Controller Snoop Feature Configuration\u0000"
+    ],
+    [
+      383,
+      "HPET in SB\u0000"
+    ],
+    [
+      384,
+      "Restore on AC Power Loss\u0000"
+    ],
+    [
+      385,
+      "Power On\u0000"
+    ],
+    [
+      386,
+      "Power Off\u0000"
+    ],
+    [
+      387,
+      "Last State\u0000"
+    ],
+    [
+      388,
+      "GPP Clock Gating\u0000"
+    ],
+    [
+      389,
+      "GPP Clock Gating Enable/Disable\u0000"
+    ],
+    [
+      390,
+      "AB Clock Gating\u0000"
+    ],
+    [
+      391,
+      "Pcib Clock Run\u0000"
+    ],
+    [
+      392,
+      "GPP Memory Write Improvement\u0000"
+    ],
+    [
+      393,
+      "GPP Memory Write Improvement Enable/Disable\u0000"
+    ],
+    [
+      394,
+      "SB HardWare Monitor\u0000"
+    ],
+    [
+      395,
+      "SB HardWare Monitor\u0000"
+    ],
+    [
+      396,
+      "SB Debug Configuration\u0000"
+    ],
+    [
+      397,
+      "Options for SB Debug Features\u0000"
+    ],
+    [
+      398,
+      "SB HD Azalia Configuration\u0000"
+    ],
+    [
+      399,
+      "Options for SB HD Azalia\u0000"
+    ],
+    [
+      400,
+      "SB Power Saving\u0000"
+    ],
+    [
+      401,
+      "Options for SB Power Saving\u0000"
+    ],
+    [
+      402,
+      "SB Clock Spread Spectrum\u0000"
+    ],
+    [
+      403,
+      "Aggressive Link PM capability\u0000"
+    ],
+    [
+      404,
+      "Indicates Whether Host Bus Adapter (HBA) Can Support Auto-Generating Link Requests To The Partial Or Slumber States When There Are No Commands To Process\u0000"
+    ],
+    [
+      405,
+      "Port Multiplier Capability\u0000"
+    ],
+    [
+      406,
+      "Indicates Whether Host Bus Adapter (HBA) Can Support A Port Multiplier\u0000"
+    ],
+    [
+      407,
+      "SATA Partial State Capability\u0000"
+    ],
+    [
+      408,
+      "Indicates Whether SATA Host Bus Adapter (HBA) Can Support Transitions To The Partial State\u0000"
+    ],
+    [
+      409,
+      "SATA Slumber State Capability\u0000"
+    ],
+    [
+      410,
+      "Indicates Whether SATA Host Bus Adapter (HBA) Can Support Transitions To The Slumber State\u0000"
+    ],
+    [
+      411,
+      "SATA Command Completion Coalescing support\u0000"
+    ],
+    [
+      412,
+      "Indicates Whether SATA Host Bus Adapter (HBA) Can Support Command Completion Coalescing\u0000"
+    ],
+    [
+      413,
+      "SATA MSI Capability support\u0000"
+    ],
+    [
+      414,
+      "SATA Controller Message-Based Interrupts Capability Support\u0000"
+    ],
+    [
+      415,
+      "SATA Fis based Switching\u0000"
+    ],
+    [
+      416,
+      "Indicates Whether SATA Host Bus Adapter (HBA) Can Support Port Multiplier FIS-Based Switching\u0000"
+    ],
+    [
+      417,
+      "IR Config\u0000"
+    ],
+    [
+      418,
+      "Infrared (IR) Configuration\u0000"
+    ],
+    [
+      419,
+      "RX & TX0 Only\u0000"
+    ],
+    [
+      420,
+      "RX & TX1 Only\u0000"
+    ],
+    [
+      421,
+      "RX, TX0, and TX1\u0000"
+    ],
+    [
+      422,
+      "SATA Ports Auto Clock Control\u0000"
+    ],
+    [
+      423,
+      "EnableDisable SATA Ports Auto Clock Control\u0000"
+    ],
+    [
+      424,
+      "USB Phy Power Down\u0000"
+    ],
+    [
+      425,
+      "Support for S4/S5 USB PHY Power Down\u0000"
+    ],
+    [
+      426,
+      "_OSC for PCI0\u0000"
+    ],
+    [
+      427,
+      "PCIB_CLK_Stop Override\u0000"
+    ],
+    [
+      428,
+      "PCI CLK 0:  \u0000"
+    ],
+    [
+      429,
+      "PCI CLK 0 Enable/Disable\u0000"
+    ],
+    [
+      430,
+      "PCI CLK 1:  \u0000"
+    ],
+    [
+      431,
+      "PCI CLK 1 Enable/Disable\u0000"
+    ],
+    [
+      432,
+      "PCI CLK 2:  \u0000"
+    ],
+    [
+      433,
+      "PCI CLK 2 Enable/Disable\u0000"
+    ],
+    [
+      434,
+      "PCI CLK 3:  \u0000"
+    ],
+    [
+      435,
+      "PCI CLK 3 Enable/Disable\u0000"
+    ],
+    [
+      436,
+      "PCI CLK 4:  \u0000"
+    ],
+    [
+      437,
+      "PCI CLK 4 Enable/Disable\u0000"
+    ],
+    [
+      438,
+      "SATA PORT0 MODE\u0000"
+    ],
+    [
+      439,
+      "Indicates The Highest Allowable Speed Of The SATA Port 0\u0000"
+    ],
+    [
+      440,
+      "SATA PORT1 MODE\u0000"
+    ],
+    [
+      441,
+      "Indicates The Highest Allowable Speed Of The SATA Port 1\u0000"
+    ],
+    [
+      442,
+      "SATA PORT2 MODE\u0000"
+    ],
+    [
+      443,
+      "Indicates The Highest Allowable Speed Of The SATA Port 2\u0000"
+    ],
+    [
+      444,
+      "SATA PORT3 MODE\u0000"
+    ],
+    [
+      445,
+      "Indicates The Highest Allowable Speed Of The SATA Port 3\u0000"
+    ],
+    [
+      446,
+      "SATA PORT4 MODE\u0000"
+    ],
+    [
+      447,
+      "Indicates The Highest Allowable Speed Of The SATA Port 4\u0000"
+    ],
+    [
+      448,
+      "SATA PORT5 MODE\u0000"
+    ],
+    [
+      449,
+      "Indicates The Highest Allowable Speed Of The SATA Port 5\u0000"
+    ],
+    [
+      450,
+      "SATA PORT6 MODE\u0000"
+    ],
+    [
+      451,
+      "Indicates The Highest Allowable Speed Of The SATA Port 6\u0000"
+    ],
+    [
+      452,
+      "SATA PORT7 MODE\u0000"
+    ],
+    [
+      453,
+      "Indicates The Highest Allowable Speed Of The SATA Port 7\u0000"
+    ],
+    [
+      454,
+      "GEN1\u0000"
+    ],
+    [
+      455,
+      "GEN2\u0000"
+    ],
+    [
+      456,
+      "USB MSI option\u0000"
+    ],
+    [
+      457,
+      "USB MSI Capability\u0000"
+    ],
+    [
+      458,
+      "HD Audio MSI option\u0000"
+    ],
+    [
+      459,
+      "Azalia MSI Capability\u0000"
+    ],
+    [
+      460,
+      "LPC MSI option\u0000"
+    ],
+    [
+      461,
+      "LPC MSI Capability\u0000"
+    ],
+    [
+      462,
+      "PCIBridge MSI option\u0000"
+    ],
+    [
+      463,
+      "PCI-PCI Bridge MSI Capability\u0000"
+    ],
+    [
+      464,
+      "AB MSI option\u0000"
+    ],
+    [
+      465,
+      "ABlink MSI Capability\u0000"
+    ],
+    [
+      466,
+      "XHCI Controller 0\u0000"
+    ],
+    [
+      467,
+      "XHCI Controller 1\u0000"
+    ],
+    [
+      468,
+      "XHCI ENABLE Help\u0000"
+    ],
+    [
+      469,
+      "SATA Configuration\u0000"
+    ],
+    [
+      470,
+      "IDE Devices Configuration\u0000"
+    ],
+    [
+      471,
+      "Enable / Disable Serial ATA\u0000"
+    ],
+    [
+      472,
+      "SATA Ports (0-3) Device Names if Present and Enabled.\u0000"
+    ],
+    [
+      473,
+      "SATA Port0\u0000"
+    ],
+    [
+      474,
+      "SATA Port1\u0000"
+    ],
+    [
+      475,
+      "SATA Port2\u0000"
+    ],
+    [
+      476,
+      "SATA Port3\u0000"
+    ],
+    [
+      477,
+      "SATA Port4\u0000"
+    ],
+    [
+      478,
+      "SATA Port5\u0000"
+    ],
+    [
+      479,
+      "SATA Port6\u0000"
+    ],
+    [
+      480,
+      "SATA Port7\u0000"
+    ],
+    [
+      481,
+      "Not Present\u0000"
+    ],
+    [
+      482,
+      "Not Present\u0000"
+    ],
+    [
+      483,
+      "Not Present\u0000"
+    ],
+    [
+      484,
+      "Not Present\u0000"
+    ],
+    [
+      485,
+      "Not Present\u0000"
+    ],
+    [
+      486,
+      "Not Present\u0000"
+    ],
+    [
+      487,
+      "Not Present\u0000"
+    ],
+    [
+      488,
+      "Not Present\u0000"
+    ],
+    [
+      489,
+      "PATA Master:     Not Present\u0000"
+    ],
+    [
+      490,
+      "PATA Slave:      Not Present\u0000"
+    ],
+    [
+      491,
+      "SATA Port0:      Not Present\u0000"
+    ],
+    [
+      492,
+      "SATA Port1:      Not Present\u0000"
+    ],
+    [
+      493,
+      "SATA Port2:      Not Present\u0000"
+    ],
+    [
+      494,
+      "SATA Port3:      Not Present\u0000"
+    ],
+    [
+      495,
+      "SATA Port4:      Not Present\u0000"
+    ],
+    [
+      496,
+      "SATA Port5:      Not Present\u0000"
+    ],
+    [
+      497,
+      "SATA Port6:      Not Present\u0000"
+    ],
+    [
+      498,
+      "SATA Port7:      Not Present\u0000"
+    ],
+    [
+      499,
+      "PIO Mode\u0000"
+    ],
+    [
+      500,
+      "DMA Mode\u0000"
+    ],
+    [
+      501,
+      "SWDMA0\u0000"
+    ],
+    [
+      502,
+      "SWDMA1\u0000"
+    ],
+    [
+      503,
+      "SWDMA2\u0000"
+    ],
+    [
+      504,
+      "MWDMA0\u0000"
+    ],
+    [
+      505,
+      "MWDMA1\u0000"
+    ],
+    [
+      506,
+      "MWDMA2\u0000"
+    ],
+    [
+      507,
+      "UDMA0\u0000"
+    ],
+    [
+      508,
+      "UDMA1\u0000"
+    ],
+    [
+      509,
+      "UDMA2\u0000"
+    ],
+    [
+      510,
+      "UDMA3\u0000"
+    ],
+    [
+      511,
+      "UDMA4\u0000"
+    ],
+    [
+      512,
+      "UDMA5\u0000"
+    ],
+    [
+      513,
+      "UDMA6\u0000"
+    ],
+    [
+      514,
+      "Advanced CPU Settings\u0000"
+    ],
+    [
+      515,
+      "Advanced CPU Settings Config\u0000"
+    ],
+    [
+      516,
+      "Cooler and Quieter operation\u0000"
+    ],
+    [
+      517,
+      "Disable for highest performance.\u0000"
+    ],
+    [
+      518,
+      "USB Configuration\u0000"
+    ],
+    [
+      519,
+      "USB Device Configuration\u0000"
+    ],
+    [
+      520,
+      "USB mode\u0000"
+    ],
+    [
+      521,
+      "Indicates The Highest Allowable Speed Of The USB3.\u0000"
+    ],
+    [
+      522,
+      "SB GPP Port Configuration\u0000"
+    ],
+    [
+      523,
+      "Options for SB GPP Port Config\u0000"
+    ],
+    [
+      524,
+      "SB GPP Function\u0000"
+    ],
+    [
+      525,
+      "SB GPP Function Enable/Disable\u0000"
+    ],
+    [
+      526,
+      "GPP Port Link Configuration\u0000"
+    ],
+    [
+      527,
+      "GPP Port Link Configuration\u0000"
+    ],
+    [
+      528,
+      "x4 mode\u0000"
+    ],
+    [
+      529,
+      "2:2 mode\u0000"
+    ],
+    [
+      530,
+      "2:1:1 mode\u0000"
+    ],
+    [
+      531,
+      "1:1:1:1 mode\u0000"
+    ],
+    [
+      532,
+      "Hide Unused GPP Ports\u0000"
+    ],
+    [
+      533,
+      "Hide unused GPP ports\u0000"
+    ],
+    [
+      534,
+      "GPP Link ASPM\u0000"
+    ],
+    [
+      535,
+      "GPP Link ASPM Configuration\u0000"
+    ],
+    [
+      536,
+      "L0s\u0000"
+    ],
+    [
+      537,
+      "L1\u0000"
+    ],
+    [
+      538,
+      "L0s+L1\u0000"
+    ],
+    [
+      539,
+      "UMI PHY PLL Power Down\u0000"
+    ],
+    [
+      540,
+      "UMI PHY PLL Power Down\u0000"
+    ],
+    [
+      541,
+      "SB GPP PHY PLL Power Down\u0000"
+    ],
+    [
+      542,
+      "SB GPP PHY PLL Power Down\u0000"
+    ],
+    [
+      543,
+      "SB GPP LANE REVERSAL\u0000"
+    ],
+    [
+      544,
+      "SB GPP LANE REVERSAL Enable/Disable\u0000"
+    ],
+    [
+      545,
+      "GPP HW Compliance Mode\u0000"
+    ],
+    [
+      546,
+      "GPP HW Compliance Mode\u0000"
+    ],
+    [
+      547,
+      "Port A\u0000"
+    ],
+    [
+      548,
+      "Port B\u0000"
+    ],
+    [
+      549,
+      "Port C\u0000"
+    ],
+    [
+      550,
+      "Port D\u0000"
+    ],
+    [
+      551,
+      "SB GPP Port A\u0000"
+    ],
+    [
+      552,
+      "Set the GPP PORT A disable, other ports will be disabled \u0000"
+    ],
+    [
+      553,
+      "SB GPP Port B\u0000"
+    ],
+    [
+      554,
+      "Set the GPP PORT B disable, other ports will be disabled\u0000"
+    ],
+    [
+      555,
+      "SB GPP Port C\u0000"
+    ],
+    [
+      556,
+      "Set the GPP PORT C disable, other ports will be disabled\u0000"
+    ],
+    [
+      557,
+      "SB GPP Port D\u0000"
+    ],
+    [
+      558,
+      "Set the GPP PORT D disable, other ports will be disabled\u0000"
+    ],
+    [
+      559,
+      "SB GPP Port A HotPlug\u0000"
+    ],
+    [
+      560,
+      "SB GPP Port A HotPlug\u0000"
+    ],
+    [
+      561,
+      "SB GPP Port B HotPlug\u0000"
+    ],
+    [
+      562,
+      "SB GPP Port B HotPlug\u0000"
+    ],
+    [
+      563,
+      "SB GPP Port C HotPlug\u0000"
+    ],
+    [
+      564,
+      "SB GPP Port C HotPlug\u0000"
+    ],
+    [
+      565,
+      "SB GPP Port D HotPlug\u0000"
+    ],
+    [
+      566,
+      "SB GPP Port D HotPlug\u0000"
+    ],
+    [
+      567,
+      "SB GEC Configuration\u0000"
+    ],
+    [
+      568,
+      "Options for GEC\u0000"
+    ],
+    [
+      569,
+      "In-Chip NIC\u0000"
+    ],
+    [
+      570,
+      "In-Chip NIC Enable/Disable\u0000"
+    ],
+    [
+      571,
+      "GEC Resume Wake from S5\u0000"
+    ],
+    [
+      572,
+      "GEC Resume Wake from S5 Enable/Disalbe\u0000"
+    ],
+    [
+      573,
+      "GEC OPROM\u0000"
+    ],
+    [
+      574,
+      "GEC OPROM Enable/Disable\u0000"
+    ],
+    [
+      575,
+      "SB SATA Configuration\u0000"
+    ],
+    [
+      576,
+      "Options for  SATA Configuration\u0000"
+    ],
+    [
+      577,
+      "SB USB Configuration\u0000"
+    ],
+    [
+      578,
+      "Options for SB USB Configuration\u0000"
+    ],
+    [
+      579,
+      "SB MISC DEBUG Configuration\u0000"
+    ],
+    [
+      580,
+      "Options for SB DEBUG Configuration\u0000"
+    ],
+    [
+      581,
+      "SB IR Configuration\u0000"
+    ],
+    [
+      582,
+      "Options for IR\u0000"
+    ],
+    [
+      583,
+      "SB SD Configuration\u0000"
+    ],
+    [
+      584,
+      "Options for SD\u0000"
+    ],
+    [
+      585,
+      "SB SATA DEBUG Configuration\u0000"
+    ],
+    [
+      586,
+      "Options for  SATA  DEBUGConfiguration\u0000"
+    ],
+    [
+      587,
+      "SB GPP DEBUG Configuration\u0000"
+    ],
+    [
+      588,
+      "Options for SB GPP DEBUG Configuration\u0000"
+    ],
+    [
+      589,
+      "SB GEC DEBUG Configuration\u0000"
+    ],
+    [
+      590,
+      "Options for SB GEC DEBUG Configuration\u0000"
+    ],
+    [
+      591,
+      "SB FUSION DEBUG Configuration\u0000"
+    ],
+    [
+      592,
+      "Options for SB FUSION DEBUG Configuration\u0000"
+    ],
+    [
+      593,
+      "SB SPI DEBUG Configuration\u0000"
+    ],
+    [
+      594,
+      "Options for SB SPI DEBUG Configuration\u0000"
+    ],
+    [
+      595,
+      "Sata 6 AHCI Support\u0000"
+    ],
+    [
+      596,
+      "Setting only for AHCI mode\u0000"
+    ],
+    [
+      597,
+      "Int. Clk Differential Spread\u0000"
+    ],
+    [
+      598,
+      "SB Spread Spectrum item have to enable\u0000"
+    ],
+    [
+      599,
+      "SATA PHY PLL\u0000"
+    ],
+    [
+      600,
+      "SATA PHY PLL dynamic shutdown\u0000"
+    ],
+    [
+      601,
+      "SATA MAXGEN2 CAP OPTION\u0000"
+    ],
+    [
+      602,
+      "Set Sata Max Gen2 Mode\u0000"
+    ],
+    [
+      603,
+      "SATA CLK Mode Option\u0000"
+    ],
+    [
+      604,
+      "SATA Reference Clock Selector And Divider\u0000"
+    ],
+    [
+      605,
+      "EXT 25MHz\u0000"
+    ],
+    [
+      606,
+      "INT 48MHz\u0000"
+    ],
+    [
+      607,
+      "INT 100MHz\u0000"
+    ],
+    [
+      608,
+      "SATA Target Support 8 Devices\u0000"
+    ],
+    [
+      609,
+      "Indicates Whether SATA Target Support 8 Devices Function\u0000"
+    ],
+    [
+      610,
+      "Generic Mode\u0000"
+    ],
+    [
+      611,
+      "Sata Disable Generic Mode\u0000"
+    ],
+    [
+      612,
+      "SATA AHCI Enclosure\u0000"
+    ],
+    [
+      613,
+      "SATA AHCI Enclosure Management\u0000"
+    ],
+    [
+      614,
+      "SATA GPIO 0\u0000"
+    ],
+    [
+      615,
+      "Enable/Disable SATA Serial General Purpose Input/Output (SGPIO) 0\u0000"
+    ],
+    [
+      616,
+      "SATA GPIO 1\u0000"
+    ],
+    [
+      617,
+      "Enable/Disable SATA Serial General Purpose Input/Output (SGPIO) 1\u0000"
+    ],
+    [
+      618,
+      "Hot-Removal enhancement Function\u0000"
+    ],
+    [
+      619,
+      " SATA Hot-Removabel SUPPORT\u0000"
+    ],
+    [
+      620,
+      "GPP Gen2\u0000"
+    ],
+    [
+      621,
+      "GPP Gen2 Enable/Disable\u0000"
+    ],
+    [
+      622,
+      "UMI Gen2\u0000"
+    ],
+    [
+      623,
+      "UMI Gen2 Enable/Disable\u0000"
+    ],
+    [
+      624,
+      "SB GEC PHY STATUS\u0000"
+    ],
+    [
+      625,
+      "SB GEC PHY STATUS\u0000"
+    ],
+    [
+      626,
+      "GB PHY MODE\u0000"
+    ],
+    [
+      627,
+      "100/10 PHY MODE\u0000"
+    ],
+    [
+      628,
+      "GEC POWER POLICY OPTION\u0000"
+    ],
+    [
+      629,
+      "GEC POWER POLICY OPTION\u0000"
+    ],
+    [
+      630,
+      "S3 AND S5\u0000"
+    ],
+    [
+      631,
+      "S5\u0000"
+    ],
+    [
+      632,
+      "S3\u0000"
+    ],
+    [
+      633,
+      "NEVER POWER DOWN\u0000"
+    ],
+    [
+      634,
+      "GEC DEBUG BUS OPTION\u0000"
+    ],
+    [
+      635,
+      "GEC DEBUG BUS OPTION\u0000"
+    ],
+    [
+      636,
+      " SATA port X support ESATA Enable/disable\u0000"
+    ],
+    [
+      637,
+      " SATA port Power Enable/disable\u0000"
+    ],
+    [
+      638,
+      "RAID Type\u0000"
+    ],
+    [
+      639,
+      "RAID or RAID5\u0000"
+    ],
+    [
+      640,
+      "RAID\u0000"
+    ],
+    [
+      641,
+      "RAID5\u0000"
+    ],
+    [
+      642,
+      "SD MODE\u0000"
+    ],
+    [
+      643,
+      "SD MODE\u0000"
+    ],
+    [
+      644,
+      "SD SPEED\u0000"
+    ],
+    [
+      645,
+      "SD SPEED\u0000"
+    ],
+    [
+      646,
+      "SD BitWidth\u0000"
+    ],
+    [
+      647,
+      "SD BitWidth\u0000"
+    ],
+    [
+      648,
+      "ADMA\u0000"
+    ],
+    [
+      649,
+      "DMA\u0000"
+    ],
+    [
+      650,
+      "PIO\u0000"
+    ],
+    [
+      651,
+      "Low\u0000"
+    ],
+    [
+      652,
+      "High\u0000"
+    ],
+    [
+      653,
+      "32Bit\u0000"
+    ],
+    [
+      654,
+      "64Bit\u0000"
+    ],
+    [
+      655,
+      "SD Trace Length\u0000"
+    ],
+    [
+      656,
+      "SD trace length (inches)\u0000"
+    ],
+    [
+      657,
+      "Less 6\u0000"
+    ],
+    [
+      658,
+      "Between 6 and 11\u0000"
+    ],
+    [
+      659,
+      "Greater 11\u0000"
+    ],
+    [
+      660,
+      "PCIE Posted Pass Non-posted\u0000"
+    ],
+    [
+      661,
+      "PCIe Order Rule\u0000"
+    ],
+    [
+      662,
+      "Hudson-1\u0000"
+    ],
+    [
+      663,
+      "Hudson-2\u0000"
+    ],
+    [
+      664,
+      "UMI ASPM L1 Timer Auto Override\u0000"
+    ],
+    [
+      665,
+      "UMI L1 Inactivity Timer Overwrite Value\u0000"
+    ],
+    [
+      666,
+      "1us\u0000"
+    ],
+    [
+      667,
+      "2us\u0000"
+    ],
+    [
+      668,
+      "4us\u0000"
+    ],
+    [
+      669,
+      "10us\u0000"
+    ],
+    [
+      670,
+      "20us\u0000"
+    ],
+    [
+      671,
+      "40us\u0000"
+    ],
+    [
+      672,
+      "100us\u0000"
+    ],
+    [
+      673,
+      "UMI & GPP TX Drive Strength\u0000"
+    ],
+    [
+      674,
+      "UMI GPP TX Driver Strength\u0000"
+    ],
+    [
+      675,
+      "18ma\u0000"
+    ],
+    [
+      676,
+      "20ma\u0000"
+    ],
+    [
+      677,
+      "22ma\u0000"
+    ],
+    [
+      678,
+      "24ma\u0000"
+    ],
+    [
+      679,
+      "AC/DC change message delivery\u0000"
+    ],
+    [
+      680,
+      "Send A Message To CPU To Indicate The Power Mode (AC VS Battery)\u0000"
+    ],
+    [
+      681,
+      "TimerTick tracking\u0000"
+    ],
+    [
+      682,
+      "Send A Message To CPU To Indicate The Latest Periodic Timer Interval\u0000"
+    ],
+    [
+      683,
+      "Clock interrupt tag\u0000"
+    ],
+    [
+      684,
+      "Mark The Periodic Timer Interrupt\u0000"
+    ],
+    [
+      685,
+      "OHCI traffic handling\u0000"
+    ],
+    [
+      686,
+      "OHCI traffic handling Enable/Disable\u0000"
+    ],
+    [
+      687,
+      "EHCI traffic handling\u0000"
+    ],
+    [
+      688,
+      "Cause CPU To Break Out From C State When USB EHCI Has Pending Traffic\u0000"
+    ],
+    [
+      689,
+      "Fusion message C Multi-core\u0000"
+    ],
+    [
+      690,
+      "Track Of CPU C State By Monitoring Each Core's C State Message\u0000"
+    ],
+    [
+      691,
+      "Fusion message C state\u0000"
+    ],
+    [
+      692,
+      "Enable The FCH C State Coordination Logic\u0000"
+    ],
+    [
+      693,
+      "SPI Auto Mode\u0000"
+    ],
+    [
+      694,
+      "SPI Read Mode\u0000"
+    ],
+    [
+      695,
+      "Qual IO 1-4-4\u0000"
+    ],
+    [
+      696,
+      "Qual IO 1-2-2\u0000"
+    ],
+    [
+      697,
+      "Qual IO 1-1-4\u0000"
+    ],
+    [
+      698,
+      "Qual IO 1-1-2\u0000"
+    ],
+    [
+      699,
+      "Fast Read\u0000"
+    ],
+    [
+      700,
+      "Normal\u0000"
+    ],
+    [
+      701,
+      "0-0-0\u0000"
+    ],
+    [
+      702,
+      "Change dependent on Flash Part\u0000"
+    ],
+    [
+      703,
+      "SPI Fast Read Speed\u0000"
+    ],
+    [
+      704,
+      "66MHz\u0000"
+    ],
+    [
+      705,
+      "33MHz\u0000"
+    ],
+    [
+      706,
+      "22MHz\u0000"
+    ],
+    [
+      707,
+      "16.5MHz\u0000"
+    ],
+    [
+      708,
+      "SPI Normal Speed\u0000"
+    ],
+    [
+      709,
+      "SPI Burst Write\u0000"
+    ],
+    [
+      710,
+      "SB C1E SUPPORT\u0000"
+    ],
+    [
+      711,
+      "C1E feature need south bridge and CPU supported. This item open the SB part of C1E\u0000"
+    ],
+    [
+      712,
+      "GPP Serial Debug Bus Enable\u0000"
+    ],
+    [
+      713,
+      "GPP Serial Debug Bus Enable/Disable\u0000"
+    ],
+    [
+      714,
+      "HWM Enable\u0000"
+    ],
+    [
+      715,
+      "Enable/Disable all HWM functions\u0000"
+    ],
+    [
+      716,
+      "SB-TSI Auto Poll\u0000"
+    ],
+    [
+      717,
+      "SB polls cpu temperature by SB-TSI\u0000"
+    ],
+    [
+      718,
+      "SampleFreqDiv\u0000"
+    ],
+    [
+      719,
+      "These bits determine the sampling rate of Fan Speed. 00:BASE(22.72K) 01:BASE/2 10:BASE/4 11:BASE/8\u0000"
+    ],
+    [
+      720,
+      "HWM Display\u0000"
+    ],
+    [
+      721,
+      "HWM Fan0\u0000"
+    ],
+    [
+      722,
+      "HWM Fan1\u0000"
+    ],
+    [
+      723,
+      "HWM Fan2\u0000"
+    ],
+    [
+      724,
+      "HWM Fan3\u0000"
+    ],
+    [
+      725,
+      "HWM Fan4\u0000"
+    ],
+    [
+      726,
+      "CPUFAN\u0000"
+    ],
+    [
+      727,
+      "Not Detected\u0000"
+    ],
+    [
+      728,
+      "BACKFAN\u0000"
+    ],
+    [
+      729,
+      "Not Detected\u0000"
+    ],
+    [
+      730,
+      "FrontFAN\u0000"
+    ],
+    [
+      731,
+      "Not Detected\u0000"
+    ],
+    [
+      732,
+      "FAN3 Speed\u0000"
+    ],
+    [
+      733,
+      "Not Detected\u0000"
+    ],
+    [
+      734,
+      "FAN4 Speed\u0000"
+    ],
+    [
+      735,
+      "Not Detected\u0000"
+    ],
+    [
+      736,
+      "IntTemp\u0000"
+    ],
+    [
+      737,
+      "Not Detected\u0000"
+    ],
+    [
+      738,
+      "CPU\u0000"
+    ],
+    [
+      739,
+      "Not Detected\u0000"
+    ],
+    [
+      740,
+      "SB-TSI\u0000"
+    ],
+    [
+      741,
+      "Not Detected\u0000"
+    ],
+    [
+      742,
+      "Internal Temp\u0000"
+    ],
+    [
+      743,
+      "Not Detected\u0000"
+    ],
+    [
+      744,
+      "VRM\u0000"
+    ],
+    [
+      745,
+      "Not Detected\u0000"
+    ],
+    [
+      746,
+      "PCIE\u0000"
+    ],
+    [
+      747,
+      "Not Detected\u0000"
+    ],
+    [
+      748,
+      "Temp3\u0000"
+    ],
+    [
+      749,
+      "Not Detected\u0000"
+    ],
+    [
+      750,
+      "APU VDDIO\u0000"
+    ],
+    [
+      751,
+      "Not Detected\u0000"
+    ],
+    [
+      752,
+      "APU VDD\u0000"
+    ],
+    [
+      753,
+      "Not Detected\u0000"
+    ],
+    [
+      754,
+      "APU VDDNB\u0000"
+    ],
+    [
+      755,
+      "Not Detected\u0000"
+    ],
+    [
+      756,
+      "APU VDDR\u0000"
+    ],
+    [
+      757,
+      "Not Detected\u0000"
+    ],
+    [
+      758,
+      "APU VDDP\u0000"
+    ],
+    [
+      759,
+      "Not Detected\u0000"
+    ],
+    [
+      760,
+      "+1.1v\u0000"
+    ],
+    [
+      761,
+      "Not Detected\u0000"
+    ],
+    [
+      762,
+      "+1.8v\u0000"
+    ],
+    [
+      763,
+      "Not Detected\u0000"
+    ],
+    [
+      764,
+      "+3.3v\u0000"
+    ],
+    [
+      765,
+      "Not Detected\u0000"
+    ],
+    [
+      766,
+      "FanInputControl\u0000"
+    ],
+    [
+      767,
+      "0-4, FanOut is enabled with IntTemp/Temp0/Temp1/Temp2/Temp3, 5 & 7:Disabled 6: FanOut Enabled without Temp input\u0000"
+    ],
+    [
+      768,
+      "FanControl\u0000"
+    ],
+    [
+      769,
+      "BIT0:Automode; BIT1:LinearMode ;BIT2:FanPolarity; BIT[7:3]:LinearAdjust\u0000"
+    ],
+    [
+      770,
+      "FanFreq\u0000"
+    ],
+    [
+      771,
+      "00:28.64Khz, 05:18.41Khz; 0x05-0xF7 Freq=1(FreqDiv*2048*15ns); 0xF7:100Hz;0xFF:11Hz\u0000"
+    ],
+    [
+      772,
+      "LowDuty\u0000"
+    ],
+    [
+      773,
+      "Percentage\u0000"
+    ],
+    [
+      774,
+      "MedDuty\u0000"
+    ],
+    [
+      775,
+      "Percentage\u0000"
+    ],
+    [
+      776,
+      "Multiplier\u0000"
+    ],
+    [
+      777,
+      "[5:0] Multplier; [7:6]DutyDivider\u0000"
+    ],
+    [
+      778,
+      "LowTempThreshold\u0000"
+    ],
+    [
+      779,
+      "Low Temperature Threshold\u0000"
+    ],
+    [
+      780,
+      "MedTempThreshold\u0000"
+    ],
+    [
+      781,
+      "Med Temperature Threshold\u0000"
+    ],
+    [
+      782,
+      "HighTempThreshold\u0000"
+    ],
+    [
+      783,
+      "High Temperature Threshold\u0000"
+    ],
+    [
+      784,
+      "LinearRange\u0000"
+    ],
+    [
+      785,
+      "Variable range thatn Fan can tolerate. Fan will not be affected if temperature varies within this range\u0000"
+    ],
+    [
+      786,
+      "LinearHoldCount\u0000"
+    ],
+    [
+      787,
+      "Fan cycle to be waited before duty cycle can be changed\u0000"
+    ],
+    [
+      788,
+      "FAN\u0000"
+    ],
+    [
+      789,
+      "Temperature\u0000"
+    ],
+    [
+      790,
+      "Voltage\u0000"
+    ],
+    [
+      791,
+      "IMC Fan Control\u0000"
+    ],
+    [
+      792,
+      "By Jumper\u0000"
+    ],
+    [
+      793,
+      "CPU Thermal Zone 1\u0000"
+    ],
+    [
+      794,
+      "CPU Thermal Zone 2\u0000"
+    ],
+    [
+      795,
+      "Warning! Please follow board design to select\u0000"
+    ],
+    [
+      796,
+      "CPU Hysteresis\u0000"
+    ],
+    [
+      797,
+      "CPU Hysteresis Information\u0000"
+    ],
+    [
+      798,
+      "CPU Fan PWM Stepping %\u0000"
+    ],
+    [
+      799,
+      "Fan PWM Stepping Rate In Unit Of PWM Level Percentage\u0000"
+    ],
+    [
+      800,
+      "CPU Fan PWM Ramping Rate\u0000"
+    ],
+    [
+      801,
+      "Fan PWM Ramping Rate In 5ms Unit\u0000"
+    ],
+    [
+      802,
+      "CPU _AC0\u0000"
+    ],
+    [
+      803,
+      "Integrated The Highest Temperature Threshold In Degrees Of Celsius\u0000"
+    ],
+    [
+      804,
+      "CPU _AC1\u0000"
+    ],
+    [
+      805,
+      "Integrated The 2nd Highest Temperature Threshold In Degrees Of Celsius\u0000"
+    ],
+    [
+      806,
+      "CPU _AC2\u0000"
+    ],
+    [
+      807,
+      "Integrated The 3nd Highest Temperature Threshold In Degrees Of Celsius\u0000"
+    ],
+    [
+      808,
+      "CPU _AC3\u0000"
+    ],
+    [
+      809,
+      "Integrated The 4nd Highest Temperature Threshold In Degrees Of Celsius\u0000"
+    ],
+    [
+      810,
+      "CPU _AC4\u0000"
+    ],
+    [
+      811,
+      "Integrated The 5nd Highest Temperature Threshold In Degrees Of Celsius\u0000"
+    ],
+    [
+      812,
+      "CPU _AC5\u0000"
+    ],
+    [
+      813,
+      "Integrated The 6nd Highest Temperature Threshold In Degrees Of Celsius\u0000"
+    ],
+    [
+      814,
+      "CPU _AC6\u0000"
+    ],
+    [
+      815,
+      "Integrated The 7nd Highest Temperature Threshold In Degrees Of Celsius\u0000"
+    ],
+    [
+      816,
+      "CPU _AC7\u0000"
+    ],
+    [
+      817,
+      "Integrated The 8nd Highest Temperature Threshold In Degrees Of Celsius\u0000"
+    ],
+    [
+      818,
+      "CPU _CRT\u0000"
+    ],
+    [
+      819,
+      "CPU _CRT\u0000"
+    ],
+    [
+      820,
+      "CPU _AL0\u0000"
+    ],
+    [
+      821,
+      "AL0 PWM Level In Percentage (0 - 100%)\u0000"
+    ],
+    [
+      822,
+      "CPU _AL1\u0000"
+    ],
+    [
+      823,
+      "AL1 PWM Level In Percentage (0 - 100%)\u0000"
+    ],
+    [
+      824,
+      "CPU _AL2\u0000"
+    ],
+    [
+      825,
+      "AL2 PWM Level In Percentage (0 - 100%)\u0000"
+    ],
+    [
+      826,
+      "CPU _AL3\u0000"
+    ],
+    [
+      827,
+      "AL3 PWM Level In Percentage (0 - 100%)\u0000"
+    ],
+    [
+      828,
+      "CPU _AL4\u0000"
+    ],
+    [
+      829,
+      "AL4 PWM Level In Percentage (0 - 100%)\u0000"
+    ],
+    [
+      830,
+      "CPU _AL5\u0000"
+    ],
+    [
+      831,
+      "AL5 PWM Level In Percentage (0 - 100%)\u0000"
+    ],
+    [
+      832,
+      "CPU _AL6\u0000"
+    ],
+    [
+      833,
+      "AL6 PWM Level In Percentage (0 - 100%)\u0000"
+    ],
+    [
+      834,
+      "CPU _AL7\u0000"
+    ],
+    [
+      835,
+      "AL7 PWM Level In Percentage (0 - 100%)\u0000"
+    ],
+    [
+      836,
+      "Power Down DISP2/RCLK CLK \u0000"
+    ],
+    [
+      837,
+      "Power down DISP2_CLK and PCIE_RCLK_Output for power savings\u0000"
+    ],
+    [
+      838,
+      "PATA Master Status\u0000"
+    ],
+    [
+      839,
+      "PATA Slave Status\u0000"
+    ],
+    [
+      840,
+      "SATA Port Status\u0000"
+    ],
+    [
+      841,
+      "SATA Port Status\u0000"
+    ],
+    [
+      842,
+      "SATA Port Status\u0000"
+    ],
+    [
+      843,
+      "SATA Port Status\u0000"
+    ],
+    [
+      844,
+      "SATA Port Status\u0000"
+    ],
+    [
+      845,
+      "SATA Port Status\u0000"
+    ],
+    [
+      846,
+      "SATA Port Status\u0000"
+    ],
+    [
+      847,
+      "SATA Port Status\u0000"
+    ],
+    [
+      848,
+      "Enable/Disable CG1_PLL Spread Spectrum\u0000"
+    ],
+    [
+      849,
+      "HPET Function Switch\u0000"
+    ],
+    [
+      850,
+      "PCIe NativePcieSupport - Debug function.\u0000"
+    ],
+    [
+      851,
+      "PCIB_CLK_Stop Override\u0000"
+    ],
+    [
+      852,
+      "Restore Status On AC Power Loss\u0000"
+    ],
+    [
+      853,
+      "IMC Fan Control\u0000"
+    ],
+    [
+      854,
+      "Integrated Micro Controller (IMC) Fan Control Operations\u0000"
+    ],
+    [
+      855,
+      "Boot option File Path\u0000"
+    ],
+    [
+      856,
+      "File path for newly created boot option\u0000"
+    ],
+    [
+      857,
+      "Creates the newly formed boot option\u0000"
+    ],
+    [
+      858,
+      "Driver Option Priorities\u0000"
+    ],
+    [
+      859,
+      "Driver Option #%d\u0000"
+    ],
+    [
+      860,
+      "Sets the system driver order\u0000"
+    ],
+    [
+      861,
+      "Add New Driver Option\u0000"
+    ],
+    [
+      862,
+      "Add a new EFI Driver option to the driver order\u0000"
+    ],
+    [
+      863,
+      "Delete Driver Option\u0000"
+    ],
+    [
+      864,
+      "Remove an EFI Driver option from the driver order\u0000"
+    ],
+    [
+      865,
+      "Add driver option\u0000"
+    ],
+    [
+      866,
+      "Specify name for new driver option\u0000"
+    ],
+    [
+      867,
+      "Path for driver option\u0000"
+    ],
+    [
+      868,
+      "Enter the path to the driver option in the format fsx:\\path\\filename.efi\u0000"
+    ],
+    [
+      869,
+      "Driver option File Path\u0000"
+    ],
+    [
+      870,
+      "File path for newly created driver\u0000"
+    ],
+    [
+      871,
+      "Creates the newly formed driver option\u0000"
+    ],
+    [
+      872,
+      "ACPI Settings\u0000"
+    ],
+    [
+      873,
+      "System ACPI Parameters.\u0000"
+    ],
+    [
+      874,
+      "ACPI Sleep State\u0000"
+    ],
+    [
+      875,
+      "Select the highest ACPI sleep state the system will enter when the SUSPEND button is pressed.\u0000"
+    ],
+    [
+      876,
+      "S1 (CPU Stop Clock)\u0000"
+    ],
+    [
+      877,
+      "S3 (Suspend to RAM)\u0000"
+    ],
+    [
+      878,
+      "Suspend Disabled\u0000"
+    ],
+    [
+      879,
+      "Enable Hibernation\u0000"
+    ],
+    [
+      880,
+      "Enables or Disables System ability to Hibernate (OS/S4 Sleep State). This option may not be effective with some operating systems.\u0000"
+    ],
+    [
+      881,
+      "Lock Legacy Resources\u0000"
+    ],
+    [
+      882,
+      "Enables or Disables Lock of Legacy Resources\u0000"
+    ],
+    [
+      883,
+      "Enable ACPI Auto Configuration\u0000"
+    ],
+    [
+      884,
+      "Enables or Disables BIOS ACPI Auto Configuration.\u0000"
+    ],
+    [
+      885,
+      "S3 Video Repost\u0000"
+    ],
+    [
+      886,
+      "Enable or Disable S3 Video Repost\u0000"
+    ],
+    [
+      887,
+      "Force to ACPI ver. 1.1\u0000"
+    ],
+    [
+      888,
+      "Enable or Disable Generate only ACPI tables for version 1.1\u0000"
+    ],
+    [
+      889,
+      "Disabled\u0000"
+    ],
+    [
+      890,
+      "Enabled\u0000"
+    ],
+    [
+      891,
+      "New Boot Option Policy\u0000"
+    ],
+    [
+      892,
+      "Controls the placement of newly detected UEFI boot options\u0000"
+    ],
+    [
+      893,
+      "Default\u0000"
+    ],
+    [
+      894,
+      "Place First\u0000"
+    ],
+    [
+      895,
+      "Place Last\u0000"
+    ],
+    [
+      896,
+      "SIO Configuration\u0000"
+    ],
+    [
+      897,
+      "Floppy Disk Controller\u0000"
+    ],
+    [
+      898,
+      "Enable or Disable Floppy Disk Controller\u0000"
+    ],
+    [
+      899,
+      "Change Mode of Floppy Disk Controller. Select <Read Write> mode for Normal operation. Select <Write Protect> mode for Readonly operation.\u0000"
+    ],
+    [
+      900,
+      "Read Write\u0000"
+    ],
+    [
+      901,
+      "Write Protect\u0000"
+    ],
+    [
+      902,
+      "Reset Required\u0000"
+    ],
+    [
+      903,
+      "IO=3F0h; IRQ=6; DMA=2;\u0000"
+    ],
+    [
+      904,
+      "Set Parameters of Serial Port 1 (COMA)\u0000"
+    ],
+    [
+      905,
+      "Set Parameters of Serial Port 2 (COMB)\u0000"
+    ],
+    [
+      906,
+      "Set Parameters of Serial Port 3 (COMC)\u0000"
+    ],
+    [
+      907,
+      "Set Parameters of Serial Port 4 (COMD)\u0000"
+    ],
+    [
+      908,
+      "Set Parameters of Serial Port 5 (COME)\u0000"
+    ],
+    [
+      909,
+      "Set Parameters of Serial Port 6 (COMF)\u0000"
+    ],
+    [
+      910,
+      "Serial Port\u0000"
+    ],
+    [
+      911,
+      "Enable or Disable Serial Port (COM)\u0000"
+    ],
+    [
+      912,
+      "Reset Required\u0000"
+    ],
+    [
+      913,
+      "Reset Required\u0000"
+    ],
+    [
+      914,
+      "Reset Required\u0000"
+    ],
+    [
+      915,
+      "Reset Required\u0000"
+    ],
+    [
+      916,
+      "Reset Required\u0000"
+    ],
+    [
+      917,
+      "Reset Required\u0000"
+    ],
+    [
+      918,
+      "IO=3F8h; IRQ=4;\u0000"
+    ],
+    [
+      919,
+      "IO=2F8h; IRQ=3;\u0000"
+    ],
+    [
+      920,
+      "IO=3E8h; IRQ=7;\u0000"
+    ],
+    [
+      921,
+      "IO=2E8h; IRQ=7;\u0000"
+    ],
+    [
+      922,
+      "IO=2F0h; IRQ=10;\u0000"
+    ],
+    [
+      923,
+      "IO=2E0h; IRQ=10;\u0000"
+    ],
+    [
+      924,
+      "IO=3F8h; IRQ=3,4,5,6,7,9,10,11,12;\u0000"
+    ],
+    [
+      925,
+      "IO=2F8h; IRQ=3,4,5,6,7,9,10,11,12;\u0000"
+    ],
+    [
+      926,
+      "IO=3E8h; IRQ=3,4,5,6,7,9,10,11,12;\u0000"
+    ],
+    [
+      927,
+      "IO=2E8h; IRQ=3,4,5,6,7,9,10,11,12;\u0000"
+    ],
+    [
+      928,
+      "IO=2F0h; IRQ=3,4,5,6,7,9,10,11,12;\u0000"
+    ],
+    [
+      929,
+      "IO=2E0h; IRQ=3,4,5,6,7,9,10,11,12;\u0000"
+    ],
+    [
+      930,
+      "Reset Required\u0000"
+    ],
+    [
+      931,
+      "Reset Required\u0000"
+    ],
+    [
+      932,
+      "Reset Required\u0000"
+    ],
+    [
+      933,
+      "Reset Required\u0000"
+    ],
+    [
+      934,
+      "Reset Required\u0000"
+    ],
+    [
+      935,
+      "Reset Required\u0000"
+    ],
+    [
+      936,
+      "Parallel Port\u0000"
+    ],
+    [
+      937,
+      "Enable or Disable Parallel Port (LPT/LPTE)\u0000"
+    ],
+    [
+      938,
+      "Change the Printer Port mode.\u0000"
+    ],
+    [
+      939,
+      "Reset Required\u0000"
+    ],
+    [
+      940,
+      "IO=378h; IRQ=5;\u0000"
+    ],
+    [
+      941,
+      "IO=378h; IRQ=5,6,7,9,10,11,12;\u0000"
+    ],
+    [
+      942,
+      "IO=278h; IRQ=5,6,7,9,10,11,12;\u0000"
+    ],
+    [
+      943,
+      "IO=3BCh; IRQ=5,6,7,9,10,11,12;\u0000"
+    ],
+    [
+      944,
+      "IO=378h;(Default)\u0000"
+    ],
+    [
+      945,
+      "IO=378h;\u0000"
+    ],
+    [
+      946,
+      "IO=278h;\u0000"
+    ],
+    [
+      947,
+      "IO=3BCh;\u0000"
+    ],
+    [
+      948,
+      "IO=378h; IRQ=5; DMA=3;\u0000"
+    ],
+    [
+      949,
+      "IO=378h; IRQ=5,6,7,9,10,11,12; DMA=1,3;\u0000"
+    ],
+    [
+      950,
+      "IO=278h; IRQ=5,6,7,9,10,11,12; DMA=1,3;\u0000"
+    ],
+    [
+      951,
+      "IO=3BCh; IRQ=5,6,7,9,10,11,12; DMA=1,3;\u0000"
+    ],
+    [
+      952,
+      "IO=378h; DMA=1,3;\u0000"
+    ],
+    [
+      953,
+      "IO=278h; DMA=1,3;\u0000"
+    ],
+    [
+      954,
+      "IO=3BCh; DMA=1,3;\u0000"
+    ],
+    [
+      955,
+      "Select an optimal settings for Super IO Device\u0000"
+    ],
+    [
+      956,
+      "Change Settings\u0000"
+    ],
+    [
+      957,
+      "Device Settings\u0000"
+    ],
+    [
+      958,
+      "Device Mode\u0000"
+    ],
+    [
+      959,
+      "System temperature1\u0000"
+    ],
+    [
+      960,
+      "N/A\u0000"
+    ],
+    [
+      961,
+      "System temperature2\u0000"
+    ],
+    [
+      962,
+      "N/A\u0000"
+    ],
+    [
+      963,
+      "System temperature3\u0000"
+    ],
+    [
+      964,
+      "N/A\u0000"
+    ],
+    [
+      965,
+      "System temperature4\u0000"
+    ],
+    [
+      966,
+      "N/A\u0000"
+    ],
+    [
+      967,
+      "System temperature5\u0000"
+    ],
+    [
+      968,
+      "N/A\u0000"
+    ],
+    [
+      969,
+      "System temperature6\u0000"
+    ],
+    [
+      970,
+      "N/A\u0000"
+    ],
+    [
+      971,
+      "System temperature7\u0000"
+    ],
+    [
+      972,
+      "N/A\u0000"
+    ],
+    [
+      973,
+      "System temperature8\u0000"
+    ],
+    [
+      974,
+      "N/A\u0000"
+    ],
+    [
+      975,
+      "System temperature9\u0000"
+    ],
+    [
+      976,
+      "N/A\u0000"
+    ],
+    [
+      977,
+      "System temperature10\u0000"
+    ],
+    [
+      978,
+      "N/A\u0000"
+    ],
+    [
+      979,
+      "Fan1 Speed\u0000"
+    ],
+    [
+      980,
+      "N/A\u0000"
+    ],
+    [
+      981,
+      "Fan2 Speed\u0000"
+    ],
+    [
+      982,
+      "N/A\u0000"
+    ],
+    [
+      983,
+      "Fan3 Speed\u0000"
+    ],
+    [
+      984,
+      "N/A\u0000"
+    ],
+    [
+      985,
+      "Fan4 Speed\u0000"
+    ],
+    [
+      986,
+      "N/A\u0000"
+    ],
+    [
+      987,
+      "Fan5 Speed\u0000"
+    ],
+    [
+      988,
+      "N/A\u0000"
+    ],
+    [
+      989,
+      "Fan6 Speed\u0000"
+    ],
+    [
+      990,
+      "N/A\u0000"
+    ],
+    [
+      991,
+      "Fan7 Speed\u0000"
+    ],
+    [
+      992,
+      "N/A\u0000"
+    ],
+    [
+      993,
+      "Fan8 Speed\u0000"
+    ],
+    [
+      994,
+      "N/A\u0000"
+    ],
+    [
+      995,
+      "Fan9 Speed\u0000"
+    ],
+    [
+      996,
+      "N/A\u0000"
+    ],
+    [
+      997,
+      "Fan10 Speed\u0000"
+    ],
+    [
+      998,
+      "N/A\u0000"
+    ],
+    [
+      999,
+      "VIN1\u0000"
+    ],
+    [
+      1000,
+      "N/A\u0000"
+    ],
+    [
+      1001,
+      "VIN2\u0000"
+    ],
+    [
+      1002,
+      "N/A\u0000"
+    ],
+    [
+      1003,
+      "VIN3\u0000"
+    ],
+    [
+      1004,
+      "N/A\u0000"
+    ],
+    [
+      1005,
+      "VIN4\u0000"
+    ],
+    [
+      1006,
+      "N/A\u0000"
+    ],
+    [
+      1007,
+      "VIN5\u0000"
+    ],
+    [
+      1008,
+      "N/A\u0000"
+    ],
+    [
+      1009,
+      "VIN6\u0000"
+    ],
+    [
+      1010,
+      "N/A\u0000"
+    ],
+    [
+      1011,
+      "VIN7\u0000"
+    ],
+    [
+      1012,
+      "N/A\u0000"
+    ],
+    [
+      1013,
+      "VIN8\u0000"
+    ],
+    [
+      1014,
+      "N/A\u0000"
+    ],
+    [
+      1015,
+      "VIN9\u0000"
+    ],
+    [
+      1016,
+      "N/A\u0000"
+    ],
+    [
+      1017,
+      "VIN10\u0000"
+    ],
+    [
+      1018,
+      "N/A\u0000"
+    ],
+    [
+      1019,
+      "VCC3V\u0000"
+    ],
+    [
+      1020,
+      "N/A\u0000"
+    ],
+    [
+      1021,
+      "VSB3V\u0000"
+    ],
+    [
+      1022,
+      "N/A\u0000"
+    ],
+    [
+      1023,
+      "VSB5V\u0000"
+    ],
+    [
+      1024,
+      "N/A\u0000"
+    ],
+    [
+      1025,
+      "VBAT\u0000"
+    ],
+    [
+      1026,
+      "N/A\u0000"
+    ],
+    [
+      1027,
+      "N/A\u0000"
+    ],
+    [
+      1028,
+      "N/A\u0000"
+    ],
+    [
+      1029,
+      "N/A\u0000"
+    ],
+    [
+      1030,
+      "N/A\u0000"
+    ],
+    [
+      1031,
+      "N/A\u0000"
+    ],
+    [
+      1032,
+      "N/A\u0000"
+    ],
+    [
+      1033,
+      "N/A\u0000"
+    ],
+    [
+      1034,
+      "N/A\u0000"
+    ],
+    [
+      1035,
+      "N/A\u0000"
+    ],
+    [
+      1036,
+      "N/A\u0000"
+    ],
+    [
+      1037,
+      "N/A\u0000"
+    ],
+    [
+      1038,
+      "N/A\u0000"
+    ],
+    [
+      1039,
+      "N/A\u0000"
+    ],
+    [
+      1040,
+      "N/A\u0000"
+    ],
+    [
+      1041,
+      "N/A\u0000"
+    ],
+    [
+      1042,
+      "N/A\u0000"
+    ],
+    [
+      1043,
+      "N/A\u0000"
+    ],
+    [
+      1044,
+      "N/A\u0000"
+    ],
+    [
+      1045,
+      "N/A\u0000"
+    ],
+    [
+      1046,
+      "N/A\u0000"
+    ],
+    [
+      1047,
+      "N/A\u0000"
+    ],
+    [
+      1048,
+      "N/A\u0000"
+    ],
+    [
+      1049,
+      "N/A\u0000"
+    ],
+    [
+      1050,
+      "N/A\u0000"
+    ],
+    [
+      1051,
+      "N/A\u0000"
+    ],
+    [
+      1052,
+      "N/A\u0000"
+    ],
+    [
+      1053,
+      "N/A\u0000"
+    ],
+    [
+      1054,
+      "N/A\u0000"
+    ],
+    [
+      1055,
+      "N/A\u0000"
+    ],
+    [
+      1056,
+      "N/A\u0000"
+    ],
+    [
+      1057,
+      "N/A\u0000"
+    ],
+    [
+      1058,
+      "N/A\u0000"
+    ],
+    [
+      1059,
+      "N/A\u0000"
+    ],
+    [
+      1060,
+      "PCI Subsystem Settings\u0000"
+    ],
+    [
+      1061,
+      "PCI Hot-Plug Settings\u0000"
+    ],
+    [
+      1062,
+      "PCI Express Settings\u0000"
+    ],
+    [
+      1063,
+      "PCI Express GEN 2 Settings\u0000"
+    ],
+    [
+      1064,
+      "PCI Bus Driver Version\u0000"
+    ],
+    [
+      1065,
+      "00.00\u0000"
+    ],
+    [
+      1066,
+      "PCI, PCI-X and PCI Express Settings.\u0000"
+    ],
+    [
+      1067,
+      "Change PCI Express Hot-Plug and Standard HP Controller Settings.\u0000"
+    ],
+    [
+      1068,
+      "Change PCI Express Devices Settings.\u0000"
+    ],
+    [
+      1069,
+      "Change PCI Express GEN Devices Settings.\u0000"
+    ],
+    [
+      1070,
+      "PCI Latency Timer\u0000"
+    ],
+    [
+      1071,
+      "PCI-X Latency Timer\u0000"
+    ],
+    [
+      1072,
+      "Value to be programmed into PCI Latency Timer Register.\u0000"
+    ],
+    [
+      1073,
+      "PCI Devices Common Settings:\u0000"
+    ],
+    [
+      1074,
+      "PCI Express Device Register Settings\u0000"
+    ],
+    [
+      1075,
+      "PCI Express GEN2 Device Register Settings\u0000"
+    ],
+    [
+      1076,
+      "PCI Express Link Register Settings\u0000"
+    ],
+    [
+      1077,
+      "PCI Express GEN2 Link Register Settings\u0000"
+    ],
+    [
+      1078,
+      "VGA Palette Snoop\u0000"
+    ],
+    [
+      1079,
+      "Enables or Disables VGA Palette Registers Snooping.\u0000"
+    ],
+    [
+      1080,
+      "PERR# Generation\u0000"
+    ],
+    [
+      1081,
+      "Enables or Disables PCI Device to Generate PERR#.\u0000"
+    ],
+    [
+      1082,
+      "SERR# Generation\u0000"
+    ],
+    [
+      1083,
+      "Enables or Disables PCI Device to Generate SERR#.\u0000"
+    ],
+    [
+      1084,
+      "Above 4G Decoding\u0000"
+    ],
+    [
+      1085,
+      "Enables or Disables 64bit capable Devices to be Decoded in Above 4G Address Space (Only if System Supports 64 bit PCI Decoding).\u0000"
+    ],
+    [
+      1086,
+      "SR-IOV Support\u0000"
+    ],
+    [
+      1087,
+      "If system has SR-IOV capable PCIe Devices, this option Enables or Disables Single Root IO Virtualization Support.\u0000"
+    ],
+    [
+      1088,
+      "Don't Reset VC-TC Mapping\u0000"
+    ],
+    [
+      1089,
+      "If system has Vitrtual Channels, Software can reset Traffic Class mapping through Virtual Channels, to it's default state. Setting this option to Enabled will not modify VC Resources.\u0000"
+    ],
+    [
+      1090,
+      "32 PCI Bus Clocks\u0000"
+    ],
+    [
+      1091,
+      "64 PCI Bus Clocks\u0000"
+    ],
+    [
+      1092,
+      "96 PCI Bus Clocks\u0000"
+    ],
+    [
+      1093,
+      "128 PCI Bus Clocks\u0000"
+    ],
+    [
+      1094,
+      "160 PCI Bus Clocks\u0000"
+    ],
+    [
+      1095,
+      "192 PCI Bus Clocks\u0000"
+    ],
+    [
+      1096,
+      "224 PCI Bus Clocks\u0000"
+    ],
+    [
+      1097,
+      "248 PCI Bus Clocks\u0000"
+    ],
+    [
+      1098,
+      "Relaxed Ordering\u0000"
+    ],
+    [
+      1099,
+      "Enables or Disables PCI Express Device Relaxed Ordering.\u0000"
+    ],
+    [
+      1100,
+      "No Snoop\u0000"
+    ],
+    [
+      1101,
+      "Enables or Disables PCI Express Device No Snoop option.\u0000"
+    ],
+    [
+      1102,
+      "Maximum Payload\u0000"
+    ],
+    [
+      1103,
+      "Set Maximum Payload of PCI Express Device or allow System BIOS to select the value.\u0000"
+    ],
+    [
+      1104,
+      "Maximum Read Request\u0000"
+    ],
+    [
+      1105,
+      "Set Maximum Read Request Size of PCI Express Device or allow System BIOS to select the value.\u0000"
+    ],
+    [
+      1106,
+      "128 Bytes\u0000"
+    ],
+    [
+      1107,
+      "256 Bytes\u0000"
+    ],
+    [
+      1108,
+      "512 Bytes\u0000"
+    ],
+    [
+      1109,
+      "1024 Bytes\u0000"
+    ],
+    [
+      1110,
+      "2048 Bytes\u0000"
+    ],
+    [
+      1111,
+      "4096 Bytes\u0000"
+    ],
+    [
+      1112,
+      "ASPM Support\u0000"
+    ],
+    [
+      1113,
+      "Set the ASPM Level:\r\nForce L0s - Force all links to L0s State\r\nAUTO - BIOS auto configure\r\nDISABLE - Disables ASPM\u0000"
+    ],
+    [
+      1114,
+      "WARNING: Enabling ASPM may cause some\u0000"
+    ],
+    [
+      1115,
+      "         PCI-E devices to fail\u0000"
+    ],
+    [
+      1116,
+      "Force L0s\u0000"
+    ],
+    [
+      1117,
+      "Extended Synch\u0000"
+    ],
+    [
+      1118,
+      "If ENABLED allows generation of Extended Synchronization patterns.\u0000"
+    ],
+    [
+      1119,
+      "Extended Tag\u0000"
+    ],
+    [
+      1120,
+      "If ENABLED allows Device to use 8-bit Tag field as a requester.\u0000"
+    ],
+    [
+      1121,
+      "BIOS Hot-Plug Support\u0000"
+    ],
+    [
+      1122,
+      "If ENABLED allows BIOS build in Hot-Pug support. Use this feature if OS does not support PCI Express and SHPC hot-plug natively.\u0000"
+    ],
+    [
+      1123,
+      "PCI Buses Padding\u0000"
+    ],
+    [
+      1124,
+      "Padd PCI Buses behind the bridge for Hot-Plug.\u0000"
+    ],
+    [
+      1125,
+      "1\u0000"
+    ],
+    [
+      1126,
+      "2\u0000"
+    ],
+    [
+      1127,
+      "3\u0000"
+    ],
+    [
+      1128,
+      "4\u0000"
+    ],
+    [
+      1129,
+      "5\u0000"
+    ],
+    [
+      1130,
+      "I/O Resources Padding\u0000"
+    ],
+    [
+      1131,
+      "Padd PCI I/O Resources behind the bridge for Hot-Plug.\u0000"
+    ],
+    [
+      1132,
+      "4 K\u0000"
+    ],
+    [
+      1133,
+      "8 K\u0000"
+    ],
+    [
+      1134,
+      "16 K\u0000"
+    ],
+    [
+      1135,
+      "32 K\u0000"
+    ],
+    [
+      1136,
+      "MMIO 32 bit Resources Padding\u0000"
+    ],
+    [
+      1137,
+      "Padd PCI MMIO 32-bit Resources behind the bridge for Hot-Plug.\u0000"
+    ],
+    [
+      1138,
+      "PFMMIO 32 bit Resources Padding\u0000"
+    ],
+    [
+      1139,
+      "Padd PCI MMIO 32-bit Prefetchable Resources behind the bridge for Hot-Plug.\u0000"
+    ],
+    [
+      1140,
+      "PFMMIO 64 bit Resources Padding\u0000"
+    ],
+    [
+      1141,
+      "Padd PCI MMIO 64-bit Prefetchable Resources behind the bridge for Hot-Plug.\u0000"
+    ],
+    [
+      1142,
+      "1 M\u0000"
+    ],
+    [
+      1143,
+      "2 M\u0000"
+    ],
+    [
+      1144,
+      "4 M\u0000"
+    ],
+    [
+      1145,
+      "8 M\u0000"
+    ],
+    [
+      1146,
+      "16 M\u0000"
+    ],
+    [
+      1147,
+      "32 M\u0000"
+    ],
+    [
+      1148,
+      "64 M\u0000"
+    ],
+    [
+      1149,
+      "128 M\u0000"
+    ],
+    [
+      1150,
+      "256 M\u0000"
+    ],
+    [
+      1151,
+      "512 M\u0000"
+    ],
+    [
+      1152,
+      "1 G\u0000"
+    ],
+    [
+      1153,
+      "2 G\u0000"
+    ],
+    [
+      1154,
+      "4 G\u0000"
+    ],
+    [
+      1155,
+      "8 G\u0000"
+    ],
+    [
+      1156,
+      "16 G\u0000"
+    ],
+    [
+      1157,
+      "32 G\u0000"
+    ],
+    [
+      1158,
+      "64 G\u0000"
+    ],
+    [
+      1159,
+      "128 G\u0000"
+    ],
+    [
+      1160,
+      "256 G\u0000"
+    ],
+    [
+      1161,
+      "Link Training Retry\u0000"
+    ],
+    [
+      1162,
+      "Defines number of Retry Attempts software will take to retrain the link if previous training attempt was unsuccessful.\u0000"
+    ],
+    [
+      1163,
+      "Link Training Timeout (uS)\u0000"
+    ],
+    [
+      1164,
+      "Defines number of Microseconds software will wait before polling 'Link Training' bit in Link Status register. Value range from 10 to 10000 uS.\u0000"
+    ],
+    [
+      1165,
+      "Restore PCIE Registers\u0000"
+    ],
+    [
+      1166,
+      "On non-PCI Express aware OS's (Pre Windows Vista) some devices may not be correctly reinitialized after S3. Enabling this restors PCI Express device configurations on S3 resume. Warning: Enabling this may cause issues with other hardware after S3 resume.\u0000"
+    ],
+    [
+      1167,
+      "Completion Timeout\u0000"
+    ],
+    [
+      1168,
+      "In device Functions that support Completion Timeout programmability, allows system software to modify the Completion Timeout value. 'Default' 50us to 50ms. If 'Shorter' is selected, software will use shorter timeout ranges supported by hardware. If 'Longer' is selected, software will use longer timeout ranges.\u0000"
+    ],
+    [
+      1169,
+      "Default\u0000"
+    ],
+    [
+      1170,
+      "ARI Forwarding\u0000"
+    ],
+    [
+      1171,
+      "If supported by hardware and set to 'Enabled', the Downstream Port disables its traditional Device Number field being 0 enforcement when turning a Type1 Configuration Request into a Type0 Configuration Request, permitting access to Extended Functions in an ARI Device immediately below the Port. Default value: Disabled\u0000"
+    ],
+    [
+      1172,
+      "AtomicOp Requester Enable\u0000"
+    ],
+    [
+      1173,
+      "If supported by hardware and set to 'Enabled', this function initiates AtomicOp Requests only if Bus Master Enable bit is in the Command Register Set.\u0000"
+    ],
+    [
+      1174,
+      "AtomicOp Egress Blocking\u0000"
+    ],
+    [
+      1175,
+      "If supported by hardware and set to 'Enabled', outbound AtomicOp Requests via Egress Ports will be blocked.\u0000"
+    ],
+    [
+      1176,
+      "IDO Request Enable\u0000"
+    ],
+    [
+      1177,
+      "If supported by hardware and set to 'Enabled', this permits setting the number of ID-Based Ordering (IDO) bit (Attribute[2]) requests to be initiated.\u0000"
+    ],
+    [
+      1178,
+      "IDO Completion Enable\u0000"
+    ],
+    [
+      1179,
+      "If supported by hardware and set to 'Enabled', this permits setting the number of ID-Based Ordering (IDO) bit (Attribute[2]) requests to be initiated.\u0000"
+    ],
+    [
+      1180,
+      "LTR Mechanism Enable\u0000"
+    ],
+    [
+      1181,
+      "If supported by hardware and set to 'Enabled', this enables the Latency Tolerance Reporting (LTR) Mechanism.\u0000"
+    ],
+    [
+      1182,
+      "End-End TLP Prefix Blocking\u0000"
+    ],
+    [
+      1183,
+      "If supported by hardware and set to 'Enabled', this function will block forwarding of TLPs containing End-End TLP Prefixes.\u0000"
+    ],
+    [
+      1184,
+      "Target Link Speed\u0000"
+    ],
+    [
+      1185,
+      "If supported by hardware and set to 'Force to X.X GT/s' for Downstream Ports, this sets an upper limit on Link operational speed by restricting the values advertised by the Upstream component in its training sequences. When 'Auto' is selected HW initialized data will be used.\u0000"
+    ],
+    [
+      1186,
+      "Force to 2.5 GT/s\u0000"
+    ],
+    [
+      1187,
+      "Force to 5.0 GT/s\u0000"
+    ],
+    [
+      1188,
+      "Force to 8.0 GT/s\u0000"
+    ],
+    [
+      1189,
+      "Compliance SOS\u0000"
+    ],
+    [
+      1190,
+      "If supported by hardware and set to 'Enabled', this will force LTSSM to send SKP Ordered Sets between sequences when sending Compliance Pattern or Modified Compliance Pattern.\u0000"
+    ],
+    [
+      1191,
+      "Hardware Autonomous Width\u0000"
+    ],
+    [
+      1192,
+      "If supported by hardware and set to 'Disabled', this will disable the hardware's ability to change link width except width size reduction for the purpose of correcting unstable link operation.\u0000"
+    ],
+    [
+      1193,
+      "Hardware Autonomous Speed\u0000"
+    ],
+    [
+      1194,
+      "If supported by hardware and set to 'Disabled', this will disable the hardware's ability to change link speed except speed rate reduction for the purpose of correcting unstable link operation.\u0000"
+    ],
+    [
+      1195,
+      "Clock Power Management\u0000"
+    ],
+    [
+      1196,
+      "If supported by hardware and set to 'Enabled', the device is permitted to use CLKREQ# signal for power management of Link clock in accordance to protocol defined in appropriate form factor specification.\u0000"
+    ],
+    [
+      1197,
+      "Shorter\u0000"
+    ],
+    [
+      1198,
+      "Longer\u0000"
+    ],
+    [
+      1199,
+      "Unpopulated Links\u0000"
+    ],
+    [
+      1200,
+      "In order to save power, software will disable unpopulated PCI Express links, if this option set to 'Disable Link'.\u0000"
+    ],
+    [
+      1201,
+      "Keep Link ON\u0000"
+    ],
+    [
+      1202,
+      "WARNING:\r\nDue to the Bridge Architecture Specification\r\nSoftware can not apply selected padding for\r\n64 and 32 bit PFMMIO window at the same time.\r\nUser must pick which PFMMIO he wants to padd\r\nby setting another resource to Disable state.\r\nIf both PFMMIO set, 32 bit resource will be used.\u0000"
+    ],
+    [
+      1203,
+      "Network Stack\u0000"
+    ],
+    [
+      1204,
+      "Enable/Disable UEFI Network Stack\u0000"
+    ],
+    [
+      1205,
+      "Network Stack Configuration\u0000"
+    ],
+    [
+      1206,
+      "Network Stack Settings\u0000"
+    ],
+    [
+      1207,
+      "Ipv4 PXE Support\u0000"
+    ],
+    [
+      1208,
+      "Enable/Disable IPv4 PXE boot support. If disabled, IPv4 PXE boot support will not be available.\u0000"
+    ],
+    [
+      1209,
+      "Ipv6 PXE Support\u0000"
+    ],
+    [
+      1210,
+      "Enable/Disable IPv6 PXE boot support. If disabled, IPv6 PXE boot support will not be available.\u0000"
+    ],
+    [
+      1211,
+      "IPSEC Certificate\u0000"
+    ],
+    [
+      1212,
+      "Support to Enable/Disable IPSEC certificate for Ikev.\u0000"
+    ],
+    [
+      1213,
+      "PXE boot wait time\u0000"
+    ],
+    [
+      1214,
+      "Wait time to press ESC key to abort the PXE boot\u0000"
+    ],
+    [
+      1215,
+      "Media detect count\u0000"
+    ],
+    [
+      1216,
+      "Number of times presence of media will be checked\u0000"
+    ],
+    [
+      1217,
+      "Ipv4 HTTP Support\u0000"
+    ],
+    [
+      1218,
+      "Enable/Disable IPv4 HTTP boot support. If disabled, IPv4 HTTP boot support will not be available.\u0000"
+    ],
+    [
+      1219,
+      "Ipv6 HTTP Support\u0000"
+    ],
+    [
+      1220,
+      "Enable/Disable IPv6 HTTP boot support. If disabled, IPv6 HTTP boot support will not be available.\u0000"
+    ],
+    [
+      1221,
+      "IP6 Configuration Policy\u0000"
+    ],
+    [
+      1222,
+      "Set IP6 Configuration Policy\u0000"
+    ],
+    [
+      1223,
+      "Automatic\u0000"
+    ],
+    [
+      1224,
+      "Manual\u0000"
+    ],
+    [
+      1225,
+      " SATA Support\u0000"
+    ],
+    [
+      1226,
+      "If Last Boot HDD Only, Only last boot HDD device will be available in Post. If All Sata Devices, all SATA devices will be available in OS and Post.\u0000"
+    ],
+    [
+      1227,
+      " USB Support\u0000"
+    ],
+    [
+      1228,
+      "If Disabled, all USB devices will NOT be available until after OS boot. If Partial Initial, USB Mass Storage and specific USB port/device will NOT be available before OS boot. If Enabled, all USB devices will be available in OS and Post.\u0000"
+    ],
+    [
+      1229,
+      " PS2 Devices Support\u0000"
+    ],
+    [
+      1230,
+      "If Disabled, PS2 devices will be skipped.\u0000"
+    ],
+    [
+      1231,
+      " VGA Support\u0000"
+    ],
+    [
+      1232,
+      "If Auto, only install Legacy OpRom with Legacy OS and logo would NOT be shown during post. Efi driver will still be installed with EFI OS.\u0000"
+    ],
+    [
+      1233,
+      " NetWork Stack Driver Support\u0000"
+    ],
+    [
+      1234,
+      "If Disabled, NetWork Stack Driver will be skipped.\u0000"
+    ],
+    [
+      1235,
+      "Full Initial\u0000"
+    ],
+    [
+      1236,
+      "Partial Initial\u0000"
+    ],
+    [
+      1237,
+      "EFI Driver\u0000"
+    ],
+    [
+      1238,
+      "HDD Only\u0000"
+    ],
+    [
+      1239,
+      "All Sata Devices\u0000"
+    ],
+    [
+      1240,
+      "Last Boot HDD Only\u0000"
+    ],
+    [
+      1241,
+      "Redirection Support\u0000"
+    ],
+    [
+      1242,
+      "If disable, Redirection function will be disabled.\u0000"
+    ],
+    [
+      1243,
+      "NVMe Configuration\u0000"
+    ],
+    [
+      1244,
+      "NVMe Device Options Settings\u0000"
+    ],
+    [
+      1245,
+      "USB Configuration\u0000"
+    ],
+    [
+      1246,
+      "USB Configuration Parameters\u0000"
+    ],
+    [
+      1247,
+      "USB Support\u0000"
+    ],
+    [
+      1248,
+      "USB Support Parameters\u0000"
+    ],
+    [
+      1249,
+      "XHCI Legacy Support\u0000"
+    ],
+    [
+      1250,
+      "Enable/Disable XHCI Controller Legacy support.\u0000"
+    ],
+    [
+      1251,
+      "Enabled\u0000"
+    ],
+    [
+      1252,
+      "Disabled\u0000"
+    ],
+    [
+      1253,
+      "Auto\u0000"
+    ],
+    [
+      1254,
+      "USB Controllers:\u0000"
+    ],
+    [
+      1255,
+      "N/A\u0000"
+    ],
+    [
+      1256,
+      "USB Devices:\u0000"
+    ],
+    [
+      1257,
+      "N/A\u0000"
+    ],
+    [
+      1258,
+      "Legacy USB Support\u0000"
+    ],
+    [
+      1259,
+      "Enables Legacy USB support. AUTO option disables legacy support if no USB devices are connected. DISABLE option will keep USB devices available only for EFI applications.\u0000"
+    ],
+    [
+      1260,
+      "Enables Legacy USB support. AUTO option disables legacy support if no USB devices are connected.\u0000"
+    ],
+    [
+      1261,
+      "XHCI Hand-off\u0000"
+    ],
+    [
+      1262,
+      "This is a workaround for OSes without XHCI hand-off support. The XHCI ownership change should be claimed by XHCI driver.\u0000"
+    ],
+    [
+      1263,
+      "EHCI Hand-off\u0000"
+    ],
+    [
+      1264,
+      "This is a workaround for OSes without EHCI hand-off support. The EHCI ownership change should be claimed by EHCI driver.\u0000"
+    ],
+    [
+      1265,
+      "OHCI Hand-off\u0000"
+    ],
+    [
+      1266,
+      "This is a workaround for OSes without OHCI hand-off support. The OHCI ownership change should be claimed by OHCI driver.\u0000"
+    ],
+    [
+      1267,
+      "Hotplug USB FDD\u0000"
+    ],
+    [
+      1268,
+      "A dummy FDD device is created that will be associated with the hot-plugged FDD later. AUTO option creates this dummy device only if there is no USB FDD present.\u0000"
+    ],
+    [
+      1269,
+      "Hotplug USB HDD\u0000"
+    ],
+    [
+      1270,
+      "A dummy HDD device is created that will be associated with the hot-plugged HDD later. AUTO option creates this dummy device only if there is no USB HDD present.\u0000"
+    ],
+    [
+      1271,
+      "Hotplug USB CD-ROM\u0000"
+    ],
+    [
+      1272,
+      "A dummy CDROM device is created that will be associated with the hot-plugged CDROM later. AUTO option creates this dummy device only if there is no USB CDROM present.\u0000"
+    ],
+    [
+      1273,
+      "USB hardware delays and time-outs:\u0000"
+    ],
+    [
+      1274,
+      "Device reset time-out\u0000"
+    ],
+    [
+      1275,
+      "USB mass storage device Start Unit command time-out.\u0000"
+    ],
+    [
+      1276,
+      "USB transfer time-out\u0000"
+    ],
+    [
+      1277,
+      "The time-out value for Control, Bulk, and Interrupt transfers.\u0000"
+    ],
+    [
+      1278,
+      "Device power-up delay\u0000"
+    ],
+    [
+      1279,
+      "Maximum time the device will take before it properly reports itself to the Host Controller. 'Auto' uses default value: for a Root port it is 100 ms, for a Hub port the delay is taken from Hub descriptor.\u0000"
+    ],
+    [
+      1280,
+      "Manual\u0000"
+    ],
+    [
+      1281,
+      "Device power-up delay in seconds\u0000"
+    ],
+    [
+      1282,
+      "Delay range is 1..40 seconds, in one second increments\u0000"
+    ],
+    [
+      1283,
+      "1 sec\u0000"
+    ],
+    [
+      1284,
+      "5 sec\u0000"
+    ],
+    [
+      1285,
+      "10 sec\u0000"
+    ],
+    [
+      1286,
+      "20 sec\u0000"
+    ],
+    [
+      1287,
+      "30 sec\u0000"
+    ],
+    [
+      1288,
+      "40 sec\u0000"
+    ],
+    [
+      1289,
+      "N/A\u0000"
+    ],
+    [
+      1290,
+      "N/A\u0000"
+    ],
+    [
+      1291,
+      "N/A\u0000"
+    ],
+    [
+      1292,
+      "N/A\u0000"
+    ],
+    [
+      1293,
+      "N/A\u0000"
+    ],
+    [
+      1294,
+      "N/A\u0000"
+    ],
+    [
+      1295,
+      "N/A\u0000"
+    ],
+    [
+      1296,
+      "N/A\u0000"
+    ],
+    [
+      1297,
+      "N/A\u0000"
+    ],
+    [
+      1298,
+      "N/A\u0000"
+    ],
+    [
+      1299,
+      "N/A\u0000"
+    ],
+    [
+      1300,
+      "N/A\u0000"
+    ],
+    [
+      1301,
+      "N/A\u0000"
+    ],
+    [
+      1302,
+      "N/A\u0000"
+    ],
+    [
+      1303,
+      "N/A\u0000"
+    ],
+    [
+      1304,
+      "N/A\u0000"
+    ],
+    [
+      1305,
+      "Mass Storage Devices:\u0000"
+    ],
+    [
+      1306,
+      "Floppy\u0000"
+    ],
+    [
+      1307,
+      "Forced FDD\u0000"
+    ],
+    [
+      1308,
+      "Hard Disk\u0000"
+    ],
+    [
+      1309,
+      "CD-ROM\u0000"
+    ],
+    [
+      1310,
+      "Mass storage device emulation type. 'AUTO' enumerates devices less than 530MB as floppies. Forced FDD option can be used to force HDD formatted drive to boot as FDD (e.g. ZIP drive).\u0000"
+    ],
+    [
+      1311,
+      "Mass storage device emulation type. 'AUTO' enumerates devices according to their media format. Optical drives are emulated as 'CDROM', drives with no media will be emulated according to a drive type.\u0000"
+    ],
+    [
+      1312,
+      "Port 60/64 Emulation\u0000"
+    ],
+    [
+      1313,
+      "Enables I/O port 60h/64h emulation support. This should be enabled for the complete USB keyboard legacy support for non-USB aware OSes.\u0000"
+    ],
+    [
+      1314,
+      "USB 2.0 Controller Mode\u0000"
+    ],
+    [
+      1315,
+      "Configures the USB 2.0 controller in HiSpeed (480Mbps) or FullSpeed (12Mbps).\u0000"
+    ],
+    [
+      1316,
+      "HiSpeed\u0000"
+    ],
+    [
+      1317,
+      "FullSpeed\u0000"
+    ],
+    [
+      1318,
+      "USB Mass Storage Driver Support\u0000"
+    ],
+    [
+      1319,
+      "Enable/Disable USB Mass Storage Driver Support.\u0000"
+    ],
+    [
+      1320,
+      "00.00\u0000"
+    ],
+    [
+      1321,
+      "USB Module Version\u0000"
+    ],
+    [
+      1322,
+      "USB S5 Wakeup Support\u0000"
+    ],
+    [
+      1323,
+      "Enable/Disable USB S5 Wakeup Support.\u0000"
+    ],
+    [
+      1324,
+      "USB Camera\u0000"
+    ],
+    [
+      1325,
+      "USB Video Class (UVC) compliant camera settings\u0000"
+    ],
+    [
+      1326,
+      "AMD fTPM configuration\u0000"
+    ],
+    [
+      1327,
+      "AMD fTPM Settings\u0000"
+    ],
+    [
+      1328,
+      "AMD fTPM switch\u0000"
+    ],
+    [
+      1329,
+      "To select.0:AMD CPU fTPM. 1:AMD CPU fTPM Disabled.\u0000"
+    ],
+    [
+      1330,
+      "AMD CPU fTPM Disabled\u0000"
+    ],
+    [
+      1331,
+      "AMD CPU fTPM\u0000"
+    ],
+    [
+      1332,
+      "Erase fTPM NV for factory reset\u0000"
+    ],
+    [
+      1333,
+      "When New CPU is installed, Select \"Enabled\" to reset fTPM, if you have BitLocker or encryption-enabled system, the system will not boot without a recovery key. Select \"Disabled\" to keep previous fTPM record and continue system boot, fTPM will NOT be enabled with new CPU unless fTPM is reset (reinitialized), you could swap back to the old CPU to recover TPM related keys and data.\u0000"
+    ],
+    [
+      1334,
+      "Disabled\u0000"
+    ],
+    [
+      1335,
+      "Enabled\u0000"
+    ],
+    [
+      1336,
+      "PSP Firmware Version\u0000"
+    ],
+    [
+      1337,
+      "PSP Firmware Version Parameters\u0000"
+    ],
+    [
+      1338,
+      "-------PSP Directory Level 1 Region-------\u0000"
+    ],
+    [
+      1339,
+      "-------PSP Directory Level 2 Region(Updatable)---\u0000"
+    ],
+    [
+      1340,
+      "PSP BootLoader Version Parameters\u0000"
+    ],
+    [
+      1341,
+      "PSP BootLoader Version\u0000"
+    ],
+    [
+      1342,
+      "N/A\u0000"
+    ],
+    [
+      1343,
+      "N/A\u0000"
+    ],
+    [
+      1344,
+      "PSP Secure OS Version Parameters\u0000"
+    ],
+    [
+      1345,
+      "PSP Secure OS Version\u0000"
+    ],
+    [
+      1346,
+      "N/A\u0000"
+    ],
+    [
+      1347,
+      "SMU FW Version Parameters\u0000"
+    ],
+    [
+      1348,
+      "SMU FW Version\u0000"
+    ],
+    [
+      1349,
+      "N/A\u0000"
+    ],
+    [
+      1350,
+      "N/A\u0000"
+    ],
+    [
+      1351,
+      "N/A\u0000"
+    ],
+    [
+      1352,
+      "ABL Version Parameters\u0000"
+    ],
+    [
+      1353,
+      "ABL Version\u0000"
+    ],
+    [
+      1354,
+      "N/A\u0000"
+    ],
+    [
+      1355,
+      "N/A\u0000"
+    ],
+    [
+      1356,
+      "APCB Version Parameters\u0000"
+    ],
+    [
+      1357,
+      "APCB Version\u0000"
+    ],
+    [
+      1358,
+      "N/A\u0000"
+    ],
+    [
+      1359,
+      "N/A\u0000"
+    ],
+    [
+      1360,
+      "APOB Version Parameters\u0000"
+    ],
+    [
+      1361,
+      "APOB Version\u0000"
+    ],
+    [
+      1362,
+      "N/A\u0000"
+    ],
+    [
+      1363,
+      "N/A\u0000"
+    ],
+    [
+      1364,
+      "APPB Version Parameters\u0000"
+    ],
+    [
+      1365,
+      "APPB Version\u0000"
+    ],
+    [
+      1366,
+      "N/A\u0000"
+    ],
+    [
+      1367,
+      "N/A\u0000"
+    ],
+    [
+      1368,
+      "Demo Board\u0000"
+    ],
+    [
+      1369,
+      "Demo Board Parameters\u0000"
+    ],
+    [
+      1370,
+      "PCI-E Port\u0000"
+    ],
+    [
+      1371,
+      "PCI-E Port Parameters\u0000"
+    ],
+    [
+      1372,
+      "Onboard PCIE LAN PXE ROM\u0000"
+    ],
+    [
+      1373,
+      "The Onboard PCIE LAN PXE ROM \u0000"
+    ],
+    [
+      1374,
+      "  ASPM Mode Control\u0000"
+    ],
+    [
+      1375,
+      "NB Root Port ASPM Mode Control\u0000"
+    ],
+    [
+      1376,
+      "L0s Entry\u0000"
+    ],
+    [
+      1377,
+      "L1 Entry\u0000"
+    ],
+    [
+      1378,
+      "L0s And L1 Entry\u0000"
+    ],
+    [
+      1379,
+      "  Hotplug Mode Control\u0000"
+    ],
+    [
+      1380,
+      "NB Root Port Hotplug Mode Control\u0000"
+    ],
+    [
+      1381,
+      "Hotplug Basic\u0000"
+    ],
+    [
+      1382,
+      "Hotplug Server\u0000"
+    ],
+    [
+      1383,
+      "Hotplug Enhanced\u0000"
+    ],
+    [
+      1384,
+      "Hotplug Inboard\u0000"
+    ],
+    [
+      1385,
+      " Pcie Port Control\u0000"
+    ],
+    [
+      1386,
+      "Disabled: Skip this page setup item, and use the default CRB setting\u0000"
+    ],
+    [
+      1387,
+      "To select.0:Auto(Depend on Tcg modudle). 1:Disabled fTPM. 2:OnBoard SPI TPM2.0\u0000"
+    ],
+    [
+      1388,
+      "Route to LPC TPM\u0000"
+    ],
+    [
+      1389,
+      "Route to SPI TPM\u0000"
+    ],
+    [
+      1390,
+      "AMD CRB EHCI Debug port switch\u0000"
+    ],
+    [
+      1391,
+      "To select. 0 - disable debug port.   1 - enable EHCI debug port for WHCK - Debug Capability Test\u0000"
+    ],
+    [
+      1392,
+      "AMD CRB SD Connector\u0000"
+    ],
+    [
+      1393,
+      "If selectFCH-SD, M2 connector disabled.\u0000"
+    ],
+    [
+      1394,
+      "FCH-SD\u0000"
+    ],
+    [
+      1395,
+      "Realtek chip-SD\u0000"
+    ],
+    [
+      1396,
+      "Device0\u0000"
+    ],
+    [
+      1397,
+      "Enable/Disable/Auto, Auto used board default setting\u0000"
+    ],
+    [
+      1398,
+      "Device1\u0000"
+    ],
+    [
+      1399,
+      "Device2\u0000"
+    ],
+    [
+      1400,
+      "Device3\u0000"
+    ],
+    [
+      1401,
+      "Device4\u0000"
+    ],
+    [
+      1402,
+      "Device5\u0000"
+    ],
+    [
+      1403,
+      "Device6\u0000"
+    ],
+    [
+      1404,
+      "Device7\u0000"
+    ],
+    [
+      1405,
+      "Fan Tuning\u0000"
+    ],
+    [
+      1406,
+      "Detect the lowest fan speed in the system\u0000"
+    ],
+    [
+      1407,
+      "FanTuning Function\u0000"
+    ],
+    [
+      1408,
+      "FanTuning Complete\u0000"
+    ],
+    [
+      1409,
+      "Detecting Your Fan Speed ...\u0000"
+    ],
+    [
+      1410,
+      "CHA_FAN2 / W_PUMP Switch\u0000"
+    ],
+    [
+      1411,
+      "Switch CHA_FAN2 / W_PUMP header function\u0000"
+    ],
+    [
+      1412,
+      "CPU_OPT / W_PUMP Switch\u0000"
+    ],
+    [
+      1413,
+      "Switch CPU_OPT / W_PUMP header function\u0000"
+    ],
+    [
+      1414,
+      "CHA_FAN1 / W_PUMP Switch\u0000"
+    ],
+    [
+      1415,
+      "Switch CHA_FAN1 / W_PUMP header function\u0000"
+    ],
+    [
+      1416,
+      "CHA_FAN2 / W_PUMP Switch\u0000"
+    ],
+    [
+      1417,
+      "Switch CHA_FAN2 / W_PUMP header function\u0000"
+    ],
+    [
+      1418,
+      "CHA_FAN4 / W_PUMP Switch\u0000"
+    ],
+    [
+      1419,
+      "Switch CHA_FAN4 / W_PUMP header function\u0000"
+    ],
+    [
+      1420,
+      "CHA_FAN4 / W_PUMP Switch\u0000"
+    ],
+    [
+      1421,
+      "Switch CHA_FAN4 / W_PUMP header function\u0000"
+    ],
+    [
+      1422,
+      "CHA_FAN5 / W_PUMP Switch\u0000"
+    ],
+    [
+      1423,
+      "Switch CHA_FAN5 / W_PUMP header function\u0000"
+    ],
+    [
+      1424,
+      "CHA_FAN6 / W_PUMP Switch\u0000"
+    ],
+    [
+      1425,
+      "Switch CHA_FAN6 / W_PUMP header function\u0000"
+    ],
+    [
+      1426,
+      "CPU_OPT\u0000"
+    ],
+    [
+      1427,
+      "CHA_FAN1\u0000"
+    ],
+    [
+      1428,
+      "CHA_FAN2\u0000"
+    ],
+    [
+      1429,
+      "CHA_FAN3\u0000"
+    ],
+    [
+      1430,
+      "CHA_FAN4\u0000"
+    ],
+    [
+      1431,
+      "CHA_FAN5\u0000"
+    ],
+    [
+      1432,
+      "CHA_FAN6\u0000"
+    ],
+    [
+      1433,
+      "W_PUMP\u0000"
+    ],
+    [
+      1434,
+      "Chassis Fan 2 Control Mode\u0000"
+    ],
+    [
+      1435,
+      "Select DC/PWM mode for Chassis Fan 2\u0000"
+    ],
+    [
+      1436,
+      "CPU Optional Fan Control Mode\u0000"
+    ],
+    [
+      1437,
+      "Select DC/PWM mode for CPU Optional Fan\u0000"
+    ],
+    [
+      1438,
+      "Chassis Fan 1 Control Mode\u0000"
+    ],
+    [
+      1439,
+      "Select DC/PWM mode for Chassis Fan 1\u0000"
+    ],
+    [
+      1440,
+      "Chassis Fan 2 Control Mode\u0000"
+    ],
+    [
+      1441,
+      "Select DC/PWM mode for Chassis Fan 2\u0000"
+    ],
+    [
+      1442,
+      "Chassis Fan 4 Control Mode\u0000"
+    ],
+    [
+      1443,
+      "Select DC/PWM mode for Chassis Fan 4\u0000"
+    ],
+    [
+      1444,
+      "Chassis Fan 4 Control Mode\u0000"
+    ],
+    [
+      1445,
+      "Select DC/PWM mode for Chassis Fan 4\u0000"
+    ],
+    [
+      1446,
+      "Chassis Fan 5 Control Mode\u0000"
+    ],
+    [
+      1447,
+      "Select DC/PWM mode for Chassis Fan 5\u0000"
+    ],
+    [
+      1448,
+      "Chassis Fan 6 Control Mode\u0000"
+    ],
+    [
+      1449,
+      "Select DC/PWM mode for Chassis Fan 6\u0000"
+    ],
+    [
+      1450,
+      "Water Pump Control Mode\u0000"
+    ],
+    [
+      1451,
+      "Water Pump Control Mode\u0000"
+    ],
+    [
+      1452,
+      "Water Pump Control Mode\u0000"
+    ],
+    [
+      1453,
+      "Water Pump Control Mode\u0000"
+    ],
+    [
+      1454,
+      "Water Pump Control Mode\u0000"
+    ],
+    [
+      1455,
+      "Water Pump Control Mode\u0000"
+    ],
+    [
+      1456,
+      "Water Pump Control Mode\u0000"
+    ],
+    [
+      1457,
+      "Water Pump Control Mode\u0000"
+    ],
+    [
+      1458,
+      "Select DC/PWM mode for Water Pump\u0000"
+    ],
+    [
+      1459,
+      "PWM Mode\u0000"
+    ],
+    [
+      1460,
+      "DC Mode\u0000"
+    ],
+    [
+      1461,
+      "Water Pump Setting\u0000"
+    ],
+    [
+      1462,
+      "Water Pump Setting\u0000"
+    ],
+    [
+      1463,
+      "Water Pump Setting\u0000"
+    ],
+    [
+      1464,
+      "Water Pump Setting\u0000"
+    ],
+    [
+      1465,
+      "Water Pump Setting\u0000"
+    ],
+    [
+      1466,
+      "Water Pump Setting\u0000"
+    ],
+    [
+      1467,
+      "Water Pump Setting\u0000"
+    ],
+    [
+      1468,
+      "Water Pump Setting\u0000"
+    ],
+    [
+      1469,
+      "Water Pump Temp Source\u0000"
+    ],
+    [
+      1470,
+      "Water Pump Temp Source\u0000"
+    ],
+    [
+      1471,
+      "Water Pump Temp Source\u0000"
+    ],
+    [
+      1472,
+      "Water Pump Temp Source\u0000"
+    ],
+    [
+      1473,
+      "Water Pump Temp Source\u0000"
+    ],
+    [
+      1474,
+      "Water Pump Temp Source\u0000"
+    ],
+    [
+      1475,
+      "Water Pump Temp Source\u0000"
+    ],
+    [
+      1476,
+      "Water Pump Temp Source\u0000"
+    ],
+    [
+      1477,
+      "Water Pump Speed\u0000"
+    ],
+    [
+      1478,
+      "FFSGUID:DD9EE903-68AF-40c8-B16E-1B0BC11B85F2\u0000"
+    ],
+    [
+      1479,
+      "  Tolerance\u0000"
+    ],
+    [
+      1480,
+      "Tolerance of hardware monitor in, the rule of the filter is like shumitt trigger\r\nRange from 0 to 15.\u0000"
+    ],
+    [
+      1481,
+      "  Fan Stop Temperature\u0000"
+    ],
+    [
+      1482,
+      "The Fan Stop temperature, if current monitor temerature value is lower than this data, fan will stop spinning.\u0000"
+    ],
+    [
+      1483,
+      "  Gate PWM\u0000"
+    ],
+    [
+      1484,
+      "The gate PWM value.\u0000"
+    ],
+    [
+      1485,
+      "Fan 1 Speed\u0000"
+    ],
+    [
+      1486,
+      "Fan Setting\u0000"
+    ],
+    [
+      1487,
+      "Fan 2 Speed\u0000"
+    ],
+    [
+      1488,
+      "Fan 2 Setting\u0000"
+    ],
+    [
+      1489,
+      "Fan 2 Temp Source\u0000"
+    ],
+    [
+      1490,
+      "Fan 3 Speed\u0000"
+    ],
+    [
+      1491,
+      "Fan 3 Setting\u0000"
+    ],
+    [
+      1492,
+      "Fan 3 Temp Source\u0000"
+    ],
+    [
+      1493,
+      "Fan 4 Speed\u0000"
+    ],
+    [
+      1494,
+      "Fan 4 Setting\u0000"
+    ],
+    [
+      1495,
+      "Fan 4 Temp Source\u0000"
+    ],
+    [
+      1496,
+      "Fan 5 Speed\u0000"
+    ],
+    [
+      1497,
+      "Fan 5 Setting\u0000"
+    ],
+    [
+      1498,
+      "Fan 5 Temp Source\u0000"
+    ],
+    [
+      1499,
+      "Chassis Fan 3 Speed\u0000"
+    ],
+    [
+      1500,
+      "MOS Fan 1 Setting\u0000"
+    ],
+    [
+      1501,
+      "MOS Fan 1 Temp Source\u0000"
+    ],
+    [
+      1502,
+      "Chassis Fan 4 Setting\u0000"
+    ],
+    [
+      1503,
+      "Chassis Fan 4 Temp Source\u0000"
+    ],
+    [
+      1504,
+      "Chassis Fan 5 Setting\u0000"
+    ],
+    [
+      1505,
+      "Chassis Fan 5 Temp Source\u0000"
+    ],
+    [
+      1506,
+      "Chassis Fan 6 Setting\u0000"
+    ],
+    [
+      1507,
+      "Chassis Fan 6 Temp Source\u0000"
+    ],
+    [
+      1508,
+      "  Allow Fan Stop\u0000"
+    ],
+    [
+      1509,
+      "This function allow fan to run at 0% duty cycle when the temperature of source is dropped below temperature 1\u0000"
+    ],
+    [
+      1510,
+      "  Allow Fan Stop\u0000"
+    ],
+    [
+      1511,
+      "This function allow fan to run at 0% duty cycle when the temperature of source is dropped below temperature 1\u0000"
+    ],
+    [
+      1512,
+      "  Allow Fan Stop\u0000"
+    ],
+    [
+      1513,
+      "This function allow fan to run at 0% duty cycle when the temperature of source is dropped below temperature 1\u0000"
+    ],
+    [
+      1514,
+      "  Allow Fan Stop\u0000"
+    ],
+    [
+      1515,
+      "This function allow fan to run at 0% duty cycle when the temperature of source is dropped below temperature 1\u0000"
+    ],
+    [
+      1516,
+      "  Allow Fan Stop\u0000"
+    ],
+    [
+      1517,
+      "This function allow fan to run at 0% duty cycle when the temperature of source is dropped below temperature 1\u0000"
+    ],
+    [
+      1518,
+      "  Allow Fan Stop\u0000"
+    ],
+    [
+      1519,
+      "This function allow fan to run at 0% duty cycle when the temperature of source is dropped below temperature 1\u0000"
+    ],
+    [
+      1520,
+      "  Allow Fan Stop\u0000"
+    ],
+    [
+      1521,
+      "This function allow fan to run at 0% duty cycle when the temperature of source is dropped below temperature 1\u0000"
+    ],
+    [
+      1522,
+      "  Allow Fan Stop\u0000"
+    ],
+    [
+      1523,
+      "This function allow fan to run at 0% duty cycle when the temperature of source is dropped below temperature 1\u0000"
+    ],
+    [
+      1524,
+      "  Allow Fan Stop\u0000"
+    ],
+    [
+      1525,
+      "This function allow fan to run at 0% duty cycle when the temperature of source is dropped below temperature 1\u0000"
+    ],
+    [
+      1526,
+      "  CPU Fan 1 Step Up\u0000"
+    ],
+    [
+      1527,
+      "The Value of CPU Fan 1 Step Up\u0000"
+    ],
+    [
+      1528,
+      "  CPU Fan 1 Step Down\u0000"
+    ],
+    [
+      1529,
+      "The Value of CPU Fan 1 Step Down\u0000"
+    ],
+    [
+      1530,
+      "  CPU Fan 2 Step Up\u0000"
+    ],
+    [
+      1531,
+      "The Value of CPU Optional Fan Step Up\u0000"
+    ],
+    [
+      1532,
+      "  CPU Fan 2 Step Down\u0000"
+    ],
+    [
+      1533,
+      "The Value of CPU Optional Fan Step Down\u0000"
+    ],
+    [
+      1534,
+      "  Chassis Fan 1 Step Up\u0000"
+    ],
+    [
+      1535,
+      "The Value of Chassis Fan 1 Step Up\u0000"
+    ],
+    [
+      1536,
+      "  Chassis Fan 1 Step Down\u0000"
+    ],
+    [
+      1537,
+      "The Value of Chassis Fan 1 Step Down\u0000"
+    ],
+    [
+      1538,
+      "  Chassis Fan 2 Step Up\u0000"
+    ],
+    [
+      1539,
+      "The Value of Chassis Fan 2 Step Up\u0000"
+    ],
+    [
+      1540,
+      "  Chassis Fan 2 Step Down\u0000"
+    ],
+    [
+      1541,
+      "The Value of Chassis Fan 2 Step Down\u0000"
+    ],
+    [
+      1542,
+      "  MOS Fan 1 Step Up\u0000"
+    ],
+    [
+      1543,
+      "The Value of MOS Fan 1 Step Up\u0000"
+    ],
+    [
+      1544,
+      "  MOS Fan 1 Step Down\u0000"
+    ],
+    [
+      1545,
+      "The Value of MOS Fan 1 Step Down\u0000"
+    ],
+    [
+      1546,
+      "  Chassis Fan 4 Step Up\u0000"
+    ],
+    [
+      1547,
+      "The Value of Chassis Fan 4 Step Up\u0000"
+    ],
+    [
+      1548,
+      "  Chassis Fan 4 Step Down\u0000"
+    ],
+    [
+      1549,
+      "The Value of Chassis Fan 4 Step Down\u0000"
+    ],
+    [
+      1550,
+      "  Chassis Fan 5 Step Up\u0000"
+    ],
+    [
+      1551,
+      "The Value of Chassis Fan 5 Step Up\u0000"
+    ],
+    [
+      1552,
+      "  Chassis Fan 5 Step Down\u0000"
+    ],
+    [
+      1553,
+      "The Value of Chassis Fan 5 Step Down\u0000"
+    ],
+    [
+      1554,
+      "  Chassis Fan 6 Step Up\u0000"
+    ],
+    [
+      1555,
+      "The Value of Chassis Fan 6 Step Up\u0000"
+    ],
+    [
+      1556,
+      "  Chassis Fan 6 Step Down\u0000"
+    ],
+    [
+      1557,
+      "The Value of Chassis Fan 6 Step Down\u0000"
+    ],
+    [
+      1558,
+      "  Chassis Fan 3 Step Up\u0000"
+    ],
+    [
+      1559,
+      "The Value of Chassis Fan 3 Step Up\u0000"
+    ],
+    [
+      1560,
+      "  Chassis Fan 3 Step Down\u0000"
+    ],
+    [
+      1561,
+      "The Value of Chassis Fan 3 Step Down\u0000"
+    ],
+    [
+      1562,
+      "Select a fan mode for Fan, or choose Customize to set 5 CPU temperatures and assign a respective fan speed for each temperature.\u0000"
+    ],
+    [
+      1563,
+      "  Fan Speed for Temperature 1\u0000"
+    ],
+    [
+      1564,
+      "  Fan Speed for Temperature 2\u0000"
+    ],
+    [
+      1565,
+      "  Fan Speed for Temperature 3\u0000"
+    ],
+    [
+      1566,
+      "  Fan Speed for Temperature 4\u0000"
+    ],
+    [
+      1567,
+      "  Fan Speed for Temperature 1\u0000"
+    ],
+    [
+      1568,
+      "  Fan Speed for Temperature 2\u0000"
+    ],
+    [
+      1569,
+      "  Fan Speed for Temperature 3\u0000"
+    ],
+    [
+      1570,
+      "  Fan Speed for Temperature 4\u0000"
+    ],
+    [
+      1571,
+      "  Fan Speed for Temperature 1\u0000"
+    ],
+    [
+      1572,
+      "  Fan Speed for Temperature 2\u0000"
+    ],
+    [
+      1573,
+      "  Fan Speed for Temperature 3\u0000"
+    ],
+    [
+      1574,
+      "  Fan Speed for Temperature 4\u0000"
+    ],
+    [
+      1575,
+      "  Fan Speed for Temperature 1\u0000"
+    ],
+    [
+      1576,
+      "  Fan Speed for Temperature 2\u0000"
+    ],
+    [
+      1577,
+      "  Fan Speed for Temperature 3\u0000"
+    ],
+    [
+      1578,
+      "  Fan Speed for Temperature 4\u0000"
+    ],
+    [
+      1579,
+      "  Fan Speed for Temperature 1\u0000"
+    ],
+    [
+      1580,
+      "  Fan Speed for Temperature 2\u0000"
+    ],
+    [
+      1581,
+      "  Fan Speed for Temperature 3\u0000"
+    ],
+    [
+      1582,
+      "  Fan Speed for Temperature 4\u0000"
+    ],
+    [
+      1583,
+      "  Fan Speed for Temperature 1\u0000"
+    ],
+    [
+      1584,
+      "  Fan Speed for Temperature 2\u0000"
+    ],
+    [
+      1585,
+      "  Fan Speed for Temperature 3\u0000"
+    ],
+    [
+      1586,
+      "  Fan Speed for Temperature 4\u0000"
+    ],
+    [
+      1587,
+      "  Fan Duty for Temperature 1(%)\u0000"
+    ],
+    [
+      1588,
+      "  Fan Duty for Temperature 2(%)\u0000"
+    ],
+    [
+      1589,
+      "  Fan Duty for Temperature 3(%)\u0000"
+    ],
+    [
+      1590,
+      "  Fan Duty for Temperature 4(%)\u0000"
+    ],
+    [
+      1591,
+      "  Fan Duty for Temperature 1(%)\u0000"
+    ],
+    [
+      1592,
+      "  Fan Duty for Temperature 2(%)\u0000"
+    ],
+    [
+      1593,
+      "  Fan Duty for Temperature 3(%)\u0000"
+    ],
+    [
+      1594,
+      "  Fan Duty for Temperature 4(%)\u0000"
+    ],
+    [
+      1595,
+      "  Fan Duty for Temperature 1(%)\u0000"
+    ],
+    [
+      1596,
+      "  Fan Duty for Temperature 2(%)\u0000"
+    ],
+    [
+      1597,
+      "  Fan Duty for Temperature 3(%)\u0000"
+    ],
+    [
+      1598,
+      "  Fan Duty for Temperature 4(%)\u0000"
+    ],
+    [
+      1599,
+      "%s\u0000"
+    ],
+    [
+      1600,
+      "%s\u0000"
+    ],
+    [
+      1601,
+      "%s\u0000"
+    ],
+    [
+      1602,
+      "%s\u0000"
+    ],
+    [
+      1603,
+      "%s\u0000"
+    ],
+    [
+      1604,
+      "%s\u0000"
+    ],
+    [
+      1605,
+      "%s\u0000"
+    ],
+    [
+      1606,
+      "%s\u0000"
+    ],
+    [
+      1607,
+      "%s\u0000"
+    ],
+    [
+      1608,
+      "%s\u0000"
+    ],
+    [
+      1609,
+      "%s\u0000"
+    ],
+    [
+      1610,
+      "%s\u0000"
+    ],
+    [
+      1611,
+      "%s\u0000"
+    ],
+    [
+      1612,
+      "%s\u0000"
+    ],
+    [
+      1613,
+      "%s\u0000"
+    ],
+    [
+      1614,
+      "%s\u0000"
+    ],
+    [
+      1615,
+      "%s\u0000"
+    ],
+    [
+      1616,
+      "%s\u0000"
+    ],
+    [
+      1617,
+      "%s\u0000"
+    ],
+    [
+      1618,
+      "%s\u0000"
+    ],
+    [
+      1619,
+      "AMD Firmware Version\u0000"
+    ],
+    [
+      1620,
+      "AGESA Version\u0000"
+    ],
+    [
+      1621,
+      "\u0000"
+    ],
+    [
+      1622,
+      "PSP BootLoader Version\u0000"
+    ],
+    [
+      1623,
+      "\u0000"
+    ],
+    [
+      1624,
+      "PSP SecureOS Version\u0000"
+    ],
+    [
+      1625,
+      "\u0000"
+    ],
+    [
+      1626,
+      "ABL Version\u0000"
+    ],
+    [
+      1627,
+      "\u0000"
+    ],
+    [
+      1628,
+      "APCB Version\u0000"
+    ],
+    [
+      1629,
+      "\u0000"
+    ],
+    [
+      1630,
+      "APOB Version\u0000"
+    ],
+    [
+      1631,
+      "\u0000"
+    ],
+    [
+      1632,
+      "Ucode Patch Version\u0000"
+    ],
+    [
+      1633,
+      "\u0000"
+    ],
+    [
+      1634,
+      "SMU FW Version\u0000"
+    ],
+    [
+      1635,
+      "\u0000"
+    ],
+    [
+      1636,
+      "DXIO FW Version\u0000"
+    ],
+    [
+      1637,
+      "\u0000"
+    ],
+    [
+      1638,
+      "Hardware Monitor\u0000"
+    ],
+    [
+      1639,
+      "Monitor hardware status\u0000"
+    ],
+    [
+      1640,
+      "Pc Health Status\u0000"
+    ],
+    [
+      1641,
+      "\u00b0C\u0000"
+    ],
+    [
+      1642,
+      "CPU Temperature\u0000"
+    ],
+    [
+      1643,
+      "N/A\u0000"
+    ],
+    [
+      1644,
+      "MB Temperature\u0000"
+    ],
+    [
+      1645,
+      "N/A\u0000"
+    ],
+    [
+      1646,
+      "VR temperature\u0000"
+    ],
+    [
+      1647,
+      "N/A\u0000"
+    ],
+    [
+      1648,
+      "System temperature4\u0000"
+    ],
+    [
+      1649,
+      "N/A\u0000"
+    ],
+    [
+      1650,
+      ": N/A\u0000"
+    ],
+    [
+      1651,
+      ": N/A\u0000"
+    ],
+    [
+      1652,
+      ": N/A\u0000"
+    ],
+    [
+      1653,
+      ": N/A\u0000"
+    ],
+    [
+      1654,
+      ": N/A\u0000"
+    ],
+    [
+      1655,
+      ": N/A\u0000"
+    ],
+    [
+      1656,
+      "+ 5.00V\u0000"
+    ],
+    [
+      1657,
+      "N/A\u0000"
+    ],
+    [
+      1658,
+      "+ 12.00V\u0000"
+    ],
+    [
+      1659,
+      "N/A\u0000"
+    ],
+    [
+      1660,
+      "VCCST SIO\u0000"
+    ],
+    [
+      1661,
+      "N/A\u0000"
+    ],
+    [
+      1662,
+      "N/A\u0000"
+    ],
+    [
+      1663,
+      "N/A\u0000"
+    ],
+    [
+      1664,
+      "VCCSA SIO\u0000"
+    ],
+    [
+      1665,
+      "N/A\u0000"
+    ],
+    [
+      1666,
+      "VMEMIO\u0000"
+    ],
+    [
+      1667,
+      "N/A\u0000"
+    ],
+    [
+      1668,
+      "VDDC_GFX\u0000"
+    ],
+    [
+      1669,
+      "N/A\u0000"
+    ],
+    [
+      1670,
+      "+ 5.00V\u0000"
+    ],
+    [
+      1671,
+      "N/A\u0000"
+    ],
+    [
+      1672,
+      "VDDC_SOC\u0000"
+    ],
+    [
+      1673,
+      "N/A\u0000"
+    ],
+    [
+      1674,
+      "CPU Vcore Voltage\u0000"
+    ],
+    [
+      1675,
+      "N/A\u0000"
+    ],
+    [
+      1676,
+      "+ 3.30V\u0000"
+    ],
+    [
+      1677,
+      "N/A\u0000"
+    ],
+    [
+      1678,
+      "Customize\u0000"
+    ],
+    [
+      1679,
+      "Silent Mode\u0000"
+    ],
+    [
+      1680,
+      "Standard Mode\u0000"
+    ],
+    [
+      1681,
+      "Performance Mode\u0000"
+    ],
+    [
+      1682,
+      "Full Speed\u0000"
+    ],
+    [
+      1683,
+      "  Temperature 1\u0000"
+    ],
+    [
+      1684,
+      "  Temperature 2\u0000"
+    ],
+    [
+      1685,
+      "  Temperature 3\u0000"
+    ],
+    [
+      1686,
+      "  Temperature 4\u0000"
+    ],
+    [
+      1687,
+      "  Critical Temperature\u0000"
+    ],
+    [
+      1688,
+      "  Temperature 1\u0000"
+    ],
+    [
+      1689,
+      "  Temperature 2\u0000"
+    ],
+    [
+      1690,
+      "  Temperature 3\u0000"
+    ],
+    [
+      1691,
+      "  Temperature 4\u0000"
+    ],
+    [
+      1692,
+      "  Critical Temperature\u0000"
+    ],
+    [
+      1693,
+      "  Temperature 1\u0000"
+    ],
+    [
+      1694,
+      "  Temperature 2\u0000"
+    ],
+    [
+      1695,
+      "  Temperature 3\u0000"
+    ],
+    [
+      1696,
+      "  Temperature 4\u0000"
+    ],
+    [
+      1697,
+      "  Critical Temperature\u0000"
+    ],
+    [
+      1698,
+      "  Temperature 1\u0000"
+    ],
+    [
+      1699,
+      "  Temperature 2\u0000"
+    ],
+    [
+      1700,
+      "  Temperature 3\u0000"
+    ],
+    [
+      1701,
+      "  Temperature 4\u0000"
+    ],
+    [
+      1702,
+      "  Critical Temperature\u0000"
+    ],
+    [
+      1703,
+      "  Temperature 1\u0000"
+    ],
+    [
+      1704,
+      "  Temperature 2\u0000"
+    ],
+    [
+      1705,
+      "  Temperature 3\u0000"
+    ],
+    [
+      1706,
+      "  Temperature 4\u0000"
+    ],
+    [
+      1707,
+      "  Critical Temperature\u0000"
+    ],
+    [
+      1708,
+      "  Temperature 1\u0000"
+    ],
+    [
+      1709,
+      "  Temperature 2\u0000"
+    ],
+    [
+      1710,
+      "  Temperature 3\u0000"
+    ],
+    [
+      1711,
+      "  Temperature 4\u0000"
+    ],
+    [
+      1712,
+      "  Critical Temperature\u0000"
+    ],
+    [
+      1713,
+      "Select Fan Temperature Source\u0000"
+    ],
+    [
+      1714,
+      "Monitor CPU\u0000"
+    ],
+    [
+      1715,
+      "Monitor M/B\u0000"
+    ],
+    [
+      1716,
+      "\u00b0F\u0000"
+    ],
+    [
+      1717,
+      "BIOS Version\u0000"
+    ],
+    [
+      1718,
+      "\u0000"
+    ],
+    [
+      1719,
+      "Build Date\u0000"
+    ],
+    [
+      1720,
+      "N/A\u0000"
+    ],
+    [
+      1721,
+      "Processor Type\u0000"
+    ],
+    [
+      1722,
+      "\u0000"
+    ],
+    [
+      1723,
+      "Processor Speed\u0000"
+    ],
+    [
+      1724,
+      "\u0000"
+    ],
+    [
+      1725,
+      "Microcode Update\u0000"
+    ],
+    [
+      1726,
+      "\u0000"
+    ],
+    [
+      1727,
+      "Total Memory\u0000"
+    ],
+    [
+      1728,
+      "\u0000"
+    ],
+    [
+      1729,
+      "VCORE Fix Voltage\u0000"
+    ],
+    [
+      1730,
+      "Input voltage for the processor by the external voltage regulator.\u0000"
+    ],
+    [
+      1731,
+      "  Voltage(mV)\u0000"
+    ],
+    [
+      1732,
+      "System may be damaged or reduce its life cycle when overvoltage.\u0000"
+    ],
+    [
+      1733,
+      "VCORE Loadline\u0000"
+    ],
+    [
+      1734,
+      "\u0000"
+    ],
+    [
+      1735,
+      "0.2 Ohm\u0000"
+    ],
+    [
+      1736,
+      "0.3 Ohm\u0000"
+    ],
+    [
+      1737,
+      "0.4 Ohm\u0000"
+    ],
+    [
+      1738,
+      "0.5 Ohm\u0000"
+    ],
+    [
+      1739,
+      "0.6 Ohm\u0000"
+    ],
+    [
+      1740,
+      "GFX Fix Voltage\u0000"
+    ],
+    [
+      1741,
+      "  Voltage(mV)\u0000"
+    ],
+    [
+      1742,
+      "System may be damaged or reduce its life cycle when overvoltage.\u0000"
+    ],
+    [
+      1743,
+      "Voltage Configuration\u0000"
+    ],
+    [
+      1744,
+      "GFX Loadline\u0000"
+    ],
+    [
+      1745,
+      "\u0000"
+    ],
+    [
+      1746,
+      "MEMIO Fix Voltage\u0000"
+    ],
+    [
+      1747,
+      "Input voltage for the processor by the external voltage regulator.\u0000"
+    ],
+    [
+      1748,
+      "  Voltage\u0000"
+    ],
+    [
+      1749,
+      "System may be damaged or reduce its life cycle when overvoltage.\u0000"
+    ],
+    [
+      1750,
+      "1.20 V\u0000"
+    ],
+    [
+      1751,
+      "1.25 V\u0000"
+    ],
+    [
+      1752,
+      "1.30 V\u0000"
+    ],
+    [
+      1753,
+      "1.35 V\u0000"
+    ],
+    [
+      1754,
+      "1.40 V\u0000"
+    ],
+    [
+      1755,
+      "1.45 V\u0000"
+    ]
+  ]
+}

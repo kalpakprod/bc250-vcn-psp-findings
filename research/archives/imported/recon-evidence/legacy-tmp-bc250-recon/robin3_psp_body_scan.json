@@ -1,0 +1,398 @@
+[
+  {
+    "file": "ABL1~0x31_21.11.26.0.body",
+    "size": 48336,
+    "literals": {
+      "VCN_SEG0_DW": [
+        "0xb55f"
+      ]
+    },
+    "strings": [
+      {
+        "offset": "0x5c34",
+        "text": "Send PSPSMC_MSG_QueryMemFreqOfDfPstate 0x%x"
+      },
+      {
+        "offset": "0x5ce4",
+        "text": "Send PSPSMC_MSG_QueryNumberOfDfPstates 0x%x"
+      },
+      {
+        "offset": "0x5f34",
+        "text": "Send PSPSMC_MSG_ConfigSocRail 0x%x"
+      },
+      {
+        "offset": "0x5f73",
+        "text": "?Send PSPSMC_MSG_SetupFclkPll 0x%x"
+      },
+      {
+        "offset": "0x5f98",
+        "text": "Send PSPSMC_MSG_SetupUclkPll  0x%x"
+      },
+      {
+        "offset": "0x6028",
+        "text": "Send PSPSMC_MSG_ChangeGfxMode 0x%x"
+      },
+      {
+        "offset": "0x60bc",
+        "text": "Send PSPSMC_MSG_RequestModeSwitch 0x%x"
+      },
+      {
+        "offset": "0x6af4",
+        "text": "PspBootRomServices:DiesPerSocket DieNum: %d"
+      },
+      {
+        "offset": "0x6b38",
+        "text": "PspBootRomServices:PhysDieId: %d"
+      },
+      {
+        "offset": "0x6b70",
+        "text": "PspBootRomServices:SocketId: %d"
+      },
+      {
+        "offset": "0x6ba8",
+        "text": "PspBootRomServices:SystemDieCount: %d"
+      },
+      {
+        "offset": "0x6be4",
+        "text": "PspBootRomServices:SystemSocketCount: %d"
+      },
+      {
+        "offset": "0x6caa",
+        "text": "~SMN R [0x%0x]"
+      },
+      {
+        "offset": "0x6d76",
+        "text": "~SMN BW [0x%0x] = 0x%0x"
+      },
+      {
+        "offset": "0x6d92",
+        "text": "~SMN W [0x%0x] = 0x%0x"
+      },
+      {
+        "offset": "0x9cdc",
+        "text": "~R SMN_UMC%d_CH%d % 6x [%d:%d] = %x"
+      },
+      {
+        "offset": "0x9d04",
+        "text": "~R SMN_UMC%d_CTRL%d % 6x [%d:%d] = %x"
+      }
+    ]
+  },
+  {
+    "file": "ABL2~0x32_21.11.26.0.body",
+    "size": 15728,
+    "literals": {},
+    "strings": [
+      {
+        "offset": "0x3018",
+        "text": "PspBootRomServices:DiesPerSocket DieNum: %d"
+      },
+      {
+        "offset": "0x305c",
+        "text": "PspBootRomServices:PhysDieId: %d"
+      },
+      {
+        "offset": "0x3094",
+        "text": "PspBootRomServices:SocketId: %d"
+      },
+      {
+        "offset": "0x30cc",
+        "text": "PspBootRomServices:SystemDieCount: %d"
+      },
+      {
+        "offset": "0x3108",
+        "text": "PspBootRomServices:SystemSocketCount: %d"
+      },
+      {
+        "offset": "0x31b6",
+        "text": "~SMN R [0x%0x]"
+      },
+      {
+        "offset": "0x3282",
+        "text": "~SMN BW [0x%0x] = 0x%0x"
+      },
+      {
+        "offset": "0x329e",
+        "text": "~SMN W [0x%0x] = 0x%0x"
+      }
+    ]
+  },
+  {
+    "file": "ABL3~0x33_21.11.26.0.body",
+    "size": 40800,
+    "literals": {},
+    "strings": [
+      {
+        "offset": "0xfa5",
+        "text": "Master: Pass unified APOB to PSP BL"
+      },
+      {
+        "offset": "0x6628",
+        "text": "Hybrid Secure"
+      },
+      {
+        "offset": "0x7204",
+        "text": "MagicAddrCfg[%d].DstFabricID:     %d"
+      },
+      {
+        "offset": "0x77a4",
+        "text": "DramMap[%d].MapLimit.DstFabricID:     %d"
+      },
+      {
+        "offset": "0x925c",
+        "text": "PspBootRomServices:DiesPerSocket DieNum: %d"
+      },
+      {
+        "offset": "0x92a4",
+        "text": "PspBootRomServices:EnabledCoreCountOnDie: %d"
+      },
+      {
+        "offset": "0x93ac",
+        "text": "PspBootRomServices:PhysicalCoreComplexCount: %d"
+      },
+      {
+        "offset": "0x93e4",
+        "text": "PspBootRomServices:PhysicalCoreCount: %d"
+      },
+      {
+        "offset": "0x9410",
+        "text": "PspBootRomServices:PhysComplex: %d"
+      },
+      {
+        "offset": "0x9434",
+        "text": "PspBootRomServices:PhysCore: %d"
+      },
+      {
+        "offset": "0x94ac",
+        "text": "PspBootRomServices:LogicalCoresPerPhysicalComplex[%d]: %d"
+      },
+      {
+        "offset": "0x94e8",
+        "text": "PspBootRomServices:PhysCcxEnableMap: 0x%0x"
+      },
+      {
+        "offset": "0x9590",
+        "text": "PspBootRomServices:Logical2PhysicalCoreMapping"
+      },
+      {
+        "offset": "0x95c0",
+        "text": "PspBootRomServices:[%d].CoreComplex: %d"
+      },
+      {
+        "offset": "0x95ec",
+        "text": "PspBootRomServices:[%d].Core: %d"
+      },
+      {
+        "offset": "0x9610",
+        "text": "PspBootRomServices:PhysCoreEnableMap: 0x%0x"
+      },
+      {
+        "offset": "0x9654",
+        "text": "PspBootRomServices:PhysDieId: %d"
+      },
+      {
+        "offset": "0x968c",
+        "text": "PspBootRomServices:SocketId: %d"
+      },
+      {
+        "offset": "0x96c8",
+        "text": "PspBootRomServices:SystemDieCount: %d"
+      },
+      {
+        "offset": "0x9704",
+        "text": "PspBootRomServices:SystemSocketCount: %d"
+      },
+      {
+        "offset": "0x9768",
+        "text": "PspBootRomServices:IsSecure: %s  (SecurityState: %d)"
+      },
+      {
+        "offset": "0x983d",
+        "text": "~SMN RI F%xx%x_x[%x]"
+      },
+      {
+        "offset": "0x9859",
+        "text": "~SMN RI Data32: 0x%08x"
+      },
+      {
+        "offset": "0x9875",
+        "text": "~SMN RI Data32Hi: 0x%08x"
+      },
+      {
+        "offset": "0x992e",
+        "text": "~SMN WI F%xx%x_x[%x] = 0x%0x"
+      },
+      {
+        "offset": "0x994d",
+        "text": "~SMN WI Data32: 0x%08x"
+      },
+      {
+        "offset": "0x996d",
+        "text": "~SMN WI Data32Hi: 0x%08x"
+      },
+      {
+        "offset": "0x9a0a",
+        "text": "~SMN R [0x%0x]"
+      },
+      {
+        "offset": "0x9ad6",
+        "text": "~SMN BW [0x%0x] = 0x%0x"
+      },
+      {
+        "offset": "0x9af2",
+        "text": "~SMN W [0x%0x] = 0x%0x"
+      }
+    ]
+  },
+  {
+    "file": "ABL4~0x34_21.11.26.0.body",
+    "size": 40416,
+    "literals": {},
+    "strings": [
+      {
+        "offset": "0x6c5",
+        "text": "Master: Pass APOB to PSP BL for <= 1 die"
+      },
+      {
+        "offset": "0x17e1",
+        "text": "Master: Pass unified APOB to PSP BL"
+      },
+      {
+        "offset": "0x2076",
+        "text": "Encryption Flags, AddrTweakEn passed to PSP BL: %x, %x"
+      },
+      {
+        "offset": "0x84f0",
+        "text": "Begin DF security widget init"
+      },
+      {
+        "offset": "0x8514",
+        "text": "DF security widget init complete"
+      },
+      {
+        "offset": "0x9468",
+        "text": "Send PSPSMC_MSG_SwitchToStartupDfPstate 0x%x"
+      },
+      {
+        "offset": "0x9510",
+        "text": "Send PSPSMC_MSG_RequestMemoryTraining 0x%x"
+      },
+      {
+        "offset": "0x9d48",
+        "text": "PspBootRomServices:DiesPerSocket DieNum: %d"
+      },
+      {
+        "offset": "0x9d90",
+        "text": "PspBootRomServices:EnabledCoreCountOnDie: %d"
+      }
+    ]
+  },
+  {
+    "file": "DEBUG_UNLOCK~0x13_29.1C.0.1.body",
+    "size": 7680,
+    "literals": {},
+    "strings": [
+      {
+        "offset": "0xfc5",
+        "text": "DBG_UNLOCK_MODULE::FAIL - SecureUnlock with HdtError = "
+      },
+      {
+        "offset": "0x1001",
+        "text": "DBG_UNLOCK_MODULE::Securely UNLOCKED"
+      }
+    ]
+  },
+  {
+    "file": "DRIVER_ENTRIES~0x28_0.1C.0.2.body",
+    "size": 107888,
+    "literals": {},
+    "strings": [
+      {
+        "offset": "0x161c4",
+        "text": "dBiF"
+      },
+      {
+        "offset": "0x172bc",
+        "text": "$PSP"
+      },
+      {
+        "offset": "0x17884",
+        "text": "HMAC Signature Key for PSP Data saved in DRAM"
+      }
+    ]
+  },
+  {
+    "file": "HARDWARE_IP_CONFIG~0x20_0.0.0.1.body",
+    "size": 1104,
+    "literals": {
+      "VCN_FABRIC": [
+        "0x320"
+      ],
+      "GC_FABRIC": [
+        "0x178",
+        "0x27c",
+        "0x290"
+      ],
+      "THM_FABRIC": [
+        "0x2cc"
+      ],
+      "VCN_SEG0_DW": [
+        "0x318"
+      ],
+      "VCN_SEG1_DW": [
+        "0x31c"
+      ],
+      "UVD_REGFILE_MMIO": [
+        "0x32b"
+      ]
+    },
+    "strings": []
+  },
+  {
+    "file": "metadata.json",
+    "size": 5419,
+    "literals": {},
+    "strings": [
+      {
+        "offset": "0xd18",
+        "text": "    \"file\": \"PSP_FW_TRUSTED_OS~0x2_0.1C.0.2\","
+      },
+      {
+        "offset": "0xd47",
+        "text": "    \"body_file\": \"PSP_FW_TRUSTED_OS~0x2_0.1C.0.2.body\","
+      },
+      {
+        "offset": "0xe72",
+        "text": "    \"file\": \"SEC_GASKET~0x24_B.51.0.16\","
+      },
+      {
+        "offset": "0xe9c",
+        "text": "    \"body_file\": \"SEC_GASKET~0x24_B.51.0.16.body\","
+      },
+      {
+        "offset": "0x13cd",
+        "text": "    \"file\": \"TOS_SECURITY_POLICY~0x45_B.51.1.16\","
+      },
+      {
+        "offset": "0x1400",
+        "text": "    \"body_file\": \"TOS_SECURITY_POLICY~0x45_B.51.1.16.body\","
+      }
+    ]
+  },
+  {
+    "file": "SMU_OFFCHIP_FW~0x8_0.58.6.0.body",
+    "size": 262144,
+    "literals": {
+      "VCN_SEG0_DW": [
+        "0xf6e7",
+        "0xf72f",
+        "0x15ebc",
+        "0x15f4c"
+      ],
+      "DOM6_BLOCK": [
+        "0xf708"
+      ]
+    },
+    "strings": []
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "command": [
+    "tools/abl-emulator-venv/bin/python",
+    "evidence/firmware-audit/20260923-abl95fc-next/emulate_abl0_load.py"
+  ],
+  "exit": 0,
+  "stdout": "baseline return 0 fatal None pc 0x18000\nbad_checksum return 16 fatal 16 pc 0x64\nservice_failure return 16 fatal 16 pc 0x64\nrestored return 0 fatal None pc 0x18000\nPASS4 ABL0 load-request/validation cases\n",
+  "stderr": ""
+}

@@ -1,0 +1,30 @@
+{
+  "classification": "offline-candidate",
+  "source": "/tmp/d3a_flash/pre_d3b2_retest.bin",
+  "source_size": 16777216,
+  "source_sha256": "e54709e8c3432271ff53501b519f3c5e4d0dd2db9aa2f6c7e63bdd86e9f8cd45",
+  "replacement": "candidates/d9-smu-unlock-explicit-lzma/Bc250SmuUnlockDxe.efi",
+  "replacement_size": 12288,
+  "replacement_sha256": "f8774ab43ece688da6ef96c28f606a92b43a1927d4abab1397a6c310e4bd76e2",
+  "original_pe32_size": 12288,
+  "original_pe32_sha256": "7d22d80284cd4c9c8af997611002f6916b4fa4b0d3ca9e3e34e450abbe885c55",
+  "output": "candidates/d9-smu-unlock-explicit-lzma/BC250_D9_SMU_UNLOCK_EXPLICIT_LZMA_from_pre-d3b2-retest.bin",
+  "output_size": 16777216,
+  "output_sha256": "b0a3cb7a58ff4b87e2197c2f3ed83adbf471b60a39dcb222c3d066844a3331cb",
+  "target_ffs_guid": "2F3D426D-6A54-4A6B-82D0-1207CC5B6D92",
+  "target_ffs_offset_in_decompressed_fv": "0x88",
+  "target_pe32_payload_offset_in_decompressed_fv": "0xa4",
+  "decompressed_fv_size_unchanged": true,
+  "decompressed_bytes_outside_target_pe32_identical": true,
+  "lzma_header_hex": "5d000000011000420000000000",
+  "lzma_header_uncompressed_size": 4325392,
+  "signed_psp_region_0x8e0000_0xae0000_identical": true,
+  "old_capsule_size": 1339028,
+  "new_capsule_size": 1337203,
+  "unrun": [
+    "BC-250 cold boot",
+    "DXE dispatch",
+    "SMU unlock readback",
+    "VCN function"
+  ]
+}

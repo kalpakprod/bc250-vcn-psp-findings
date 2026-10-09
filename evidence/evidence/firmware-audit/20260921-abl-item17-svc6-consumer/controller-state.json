@@ -1,0 +1,16 @@
+{
+  "ACTIVE_OBJECT": "exact CLV ABL1 Thumb-2 ELF wrapper",
+  "LAST_CONFIRMED_RESULT": {
+    "status": "PASS",
+    "checks": 136,
+    "unresolved_boundary": "SVC #6 handler/recipient behind ABL transfer helpers; runtime dispatch base and physical PLL/training consumer remain unresolved."
+  },
+  "NEXT_EXECUTABLE_ACTION": "bounded llvm-objdump of ABL1 service/caller ABI around 0x0DD4..0x12C0",
+  "INPUT_PATHS": [
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-consumer/item17-consumer-result.json",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-consumer/ABL1-clv-decompressed.bin",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-consumer/ABL1-clv-full-thumb.elf.o"
+  ],
+  "ACCEPTANCE_EVENT": "objdump exit 0 with bounded bytes and empty stderr; classify SVC #6 ABI without repeating item17 mapping",
+  "controller_command_metadata": null
+}

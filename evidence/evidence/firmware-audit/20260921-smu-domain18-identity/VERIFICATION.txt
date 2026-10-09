@@ -1,0 +1,71 @@
+SMU domain ID 0x18 identity — verification ledger
+Date: 2026-09-21 Asia/Almaty
+Root: /home/OWNER/orca/projects/bc250
+
+Bound immutable inputs
+- CLV: evidence/donor/retroweb-20260916/BC250_5.00_clv.bin
+  size 16777216; SHA-256 ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8
+- Robin-5: import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5
+  size 262400; SHA-256 cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37
+- Embedded slice: ROM offset 0x8FEF00, 262400 bytes; slice SHA-256 equals Robin-5 body hash above.
+- Setup baseline: ROM[0x7E5] = 0x24 (`AmdSetup+0x316`, IFR label `1800MHz`); unchanged.
+- Existing `OcConsumerRead.java`: SHA-256 e2cbf970afc422d31ee6651035a1f67132a5c4842801290fc3d60d5db408dd3b.
+- Ghidra: /home/OWNER/tools/ghidra_12.1.3_PUBLIC/support/analyzeHeadless, release 12.1.3.
+
+Focused current-Robin-5 Ghidra command
+/home/OWNER/tools/ghidra_12.1.3_PUBLIC/support/analyzeHeadless \
+  evidence/firmware-audit/20260921-smu-domain18-identity/ghidra-project OCConsumer \
+  -process smu_fw_robin_5 -noanalysis \
+  -scriptPath evidence/firmware-audit/20260919-oc-final-consumer-pass \
+  -postScript OcConsumerRead.java \
+  import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5 \
+  evidence/firmware-audit/20260921-smu-domain18-identity/focused-clock-slice.txt \
+  0x2387c 0x2375c 0x23cb4 0x29e34
+
+- Process exit: 0 (`ghidra.exit`).
+- Process stdout: `ghidra.stdout`, 4,075 bytes, SHA-256 c490ae041fd7a55087effe0a442876fd011846bc6aec597d7039215243ed4951.
+- Process stderr: `ghidra.stderr`, 196 bytes, SHA-256 7703b95d2ffc42923374d85e95b1ed3cde548aea08dc30bbebe98b1f6de9dbfb. It contains only the Java 21 runtime version lines; it is not empty.
+- Script output: `focused-clock-slice.txt`, SHA-256 c602b7c12d25977ee5548bf79a392761341b66fafef2e1f830463457551e6763. Literal first line: `PASS: entire loaded program memory equals clv-matching robin-5 body, bytes=262400`.
+- Requested address `0x23CB4` produced `NO EXISTING FUNCTION`; this exact-entry view is not used for a semantic conclusion.
+
+Aligned helper-boundary follow-up (separate project copy)
+/home/OWNER/tools/ghidra_12.1.3_PUBLIC/support/analyzeHeadless \
+  evidence/firmware-audit/20260921-smu-domain18-identity/ghidra-project-pass2 OCConsumer \
+  -process smu_fw_robin_5 -noanalysis \
+  -scriptPath evidence/firmware-audit/20260919-oc-final-consumer-pass \
+  -postScript OcConsumerRead.java \
+  import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5 \
+  evidence/firmware-audit/20260921-smu-domain18-identity/focused-writer-slice.txt \
+  0x23ca8 0x23cb8
+
+- Process exit: 0 (`ghidra-pass2.exit`).
+- Output `focused-writer-slice.txt`, SHA-256 ef66e4fbd870bc2b39b73acdcd48b9c156acbbb2f25f63cf62773141085bcd56. Literal first line: `PASS: entire loaded program memory equals clv-matching robin-5 body, bytes=262400`.
+- `0x23CA8` was not a function entry; `0x23CB8` decoded as `FUN_00023cb8`. It performs floating-point and integer/division arithmetic; no physical clock name is emitted.
+- Pass 2 stderr is only Java 21 runtime version lines; process status is recorded separately.
+
+Raw byte readback
+Executed with `python3 -B`; source is the exact Robin-5 body. The preserved stdout is `raw-table-readback.stdout`, SHA-256 a9c0032844d200a1b50c904f9bcff7a15a85265875dde2535a69d15e5e05a3c2; stderr is empty; exit status 0. Key literal output:
+- `raw[0xfa48:0xfa64]=060200000000000000000000000000000000000050d1060000000000`
+- `word[0xfa5c]=50d10600 u32=0x0006d150`
+
+Local semantic text search
+- Command: `rg -n -i '0x0*fa38|\bfa38\b|0x0*6d150|\b6d150\b|slot.{0,10}24|VclkFrequency|DclkFrequency|Group.?6|domain.?0x18' docs/research docs/action-logs memory/firmware-audit.md memory/oc-recheck.md import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering import/from-windows/Users/kukuruza/tmp_bc250/recon --glob '!*.bin' --glob '!*.out' --glob '!*.json' --glob '!*.gpr' --glob '!*.pyc'`
+- Exit status: 0 (matches were found); stderr empty. Stdout is `source-semantic-search.stdout`, 16,249 bytes, SHA-256 a717fbb2a9040ffc0bc47378acd2cd3d55953d69678d1206f2a3ef22bc5061fc.
+- The search finds Group-6/internal labels and historical or different-namespace uses, but no exact physical-clock assignment for this target.
+- Existing bounded header result was reused, not rerun: `2026-09-21-smn-clock-register-corroboration/smn-header-match-result.json` reports `NO_DIRECT_HEADER_MATCH`, 4/4 checks passed, zero literal matches in the five header inputs. Its `SHA256SUMS.final` rechecked 5/5 OK.
+
+Integrity/readback
+- `input-and-project-readback.txt` confirms body/ROM hashes, embedded slice SHA-256, `ROM[0x7E5]=24`, and copied project identical before the run; SHA-256 3a5f6ddaf97ec4dc4cae2e8b36ac28b13e1e1913a07205212b1add88ff0e8027.
+- Prior selector evidence manifest rechecked successfully; original source-project manifest rechecked successfully (18/18 entries).
+- New copied project manifests: `ghidra-project-manifest.sha256` and `ghidra-project-pass2-manifest.sha256`; both were checked successfully after their Ghidra runs.
+- `domain18-identity-result.json` parses with `python3 -m json.tool` (PASS); SHA-256 f4a005400dba428ff8ba8f782d67bfa608c9e5fc714c5771075c48d6467e5cbe.
+- No hardware, mailbox, register, network, ROM, NVRAM, firmware, candidate, or installation action occurred.
+
+Tool errors retained
+- `/usr/bin/bash: line 1: xxd: command not found` (observed command exit 127); no input changed. The read-only byte view was changed to Python `struct` extraction, which produced the captured `raw-table-readback.stdout` with exit 0.
+- One attempt to check the old project manifest used the copied-project directory as cwd, so `sha256sum` printed `FAILED open or read` for prefixed paths. The corrected command ran from `evidence/firmware-audit/20260921-smu-domain-selector/` and verified all 18/18 entries. No files were changed by the failed check.
+
+Result classification
+- PASS: internal domain ID, Group 6, and SMN program/poll address boundary.
+- NOT PROVEN: physical clock identity, engineering units, MCLK/UCLK/FCLK/VCN assignment.
+- UNRUN: hardware behavior, physical counters/readback, divider/synchronous-crossing acceptance.

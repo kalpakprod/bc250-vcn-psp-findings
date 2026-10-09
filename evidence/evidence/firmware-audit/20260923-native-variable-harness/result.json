@@ -1,0 +1,80 @@
+{
+  "status": "PASS_NATIVE_LOOKUP_HOST_PROCESS",
+  "native_entry": "NvramPei RVA0xBF8 at VA0x09ED81CC",
+  "native_module_sha256": "cbc1def3ce53e947091d3bf1e950d78a4e78afbc69c67369124979736ab2116f",
+  "firmware_section_exact": true,
+  "cases": {
+    "size_probe": "BUFFER_TOO_SMALL 0x8B5",
+    "live": "SUCCESS MCLK enum0x24 DF request1420",
+    "defaults_only": "NOT_FOUND",
+    "in_memory_modified": "SUCCESS MCLK enum0x23",
+    "in_memory_restored": "SUCCESS MCLK enum0x24"
+  },
+  "runs": [
+    {
+      "command": [
+        "as",
+        "--32",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-variable-harness/test.s",
+        "-o",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-variable-harness/test.o"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "ld",
+        "-m",
+        "elf_i386",
+        "--section-start=.firmware=0x09ed7764",
+        "-o",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-variable-harness/test.elf",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-variable-harness/test.o"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "objcopy",
+        "--dump-section",
+        ".firmware=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-variable-harness/firmware-readback.bin",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-variable-harness/test.elf"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "timeout",
+        "3",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-variable-harness/test.elf"
+      ],
+      "exit": 0,
+      "stdout_hex": "05000080b508000000000000240000008c0500000e00008000000000230000000000000024000000",
+      "stderr": "",
+      "words": [
+        "0x80000005",
+        "0x8b5",
+        "0x0",
+        "0x24",
+        "0x58c",
+        "0x8000000e",
+        "0x0",
+        "0x23",
+        "0x0",
+        "0x24"
+      ]
+    }
+  ],
+  "limits": [
+    "Actual IA32 instructions executed in Linux user process, not BC250 boot",
+    "Descriptors explicitly supplied, not selected by firmware initialization",
+    "No CMOS reads or hardware I/O, clock setting, SoC or latency test",
+    "Input ROM unchanged; byte mutation only in process memory"
+  ]
+}

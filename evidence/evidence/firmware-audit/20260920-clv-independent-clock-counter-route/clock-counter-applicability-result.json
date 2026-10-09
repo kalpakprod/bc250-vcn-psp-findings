@@ -1,0 +1,172 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 23,
+    "total": 23
+  },
+  "checks_detail": [
+    {
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "label": "rom-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": 262400,
+      "got": 262400,
+      "label": "clv-type8-body-length",
+      "status": "PASS"
+    },
+    {
+      "expected": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+      "got": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+      "label": "type8-body-hash-recorded?",
+      "status": "PASS"
+    },
+    {
+      "expected": [],
+      "got": [],
+      "label": "PMFW-direct-literal-0x4c30",
+      "status": "PASS"
+    },
+    {
+      "expected": [],
+      "got": [],
+      "label": "PMFW-direct-literal-0x4c31",
+      "status": "PASS"
+    },
+    {
+      "expected": [],
+      "got": [],
+      "label": "PMFW-direct-literal-0x4c32",
+      "status": "PASS"
+    },
+    {
+      "expected": [],
+      "got": [],
+      "label": "PMFW-direct-literal-0x4c33",
+      "status": "PASS"
+    },
+    {
+      "expected": [],
+      "got": [],
+      "label": "PMFW-direct-literal-0x4c34",
+      "status": "PASS"
+    },
+    {
+      "expected": [],
+      "got": [],
+      "label": "PMFW-direct-literal-0x4c35",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "label": "header-offset-mmRLC_CLK_COUNT_GFXCLK_LSB",
+      "status": "PASS"
+    },
+    {
+      "expected": "1",
+      "got": "1",
+      "label": "header-base-index-mmRLC_CLK_COUNT_GFXCLK_LSB",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "label": "header-offset-mmRLC_CLK_COUNT_GFXCLK_MSB",
+      "status": "PASS"
+    },
+    {
+      "expected": "1",
+      "got": "1",
+      "label": "header-base-index-mmRLC_CLK_COUNT_GFXCLK_MSB",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "label": "header-offset-mmRLC_CLK_COUNT_REFCLK_LSB",
+      "status": "PASS"
+    },
+    {
+      "expected": "1",
+      "got": "1",
+      "label": "header-base-index-mmRLC_CLK_COUNT_REFCLK_LSB",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "label": "header-offset-mmRLC_CLK_COUNT_REFCLK_MSB",
+      "status": "PASS"
+    },
+    {
+      "expected": "1",
+      "got": "1",
+      "label": "header-base-index-mmRLC_CLK_COUNT_REFCLK_MSB",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "label": "header-offset-mmRLC_CLK_COUNT_CTRL",
+      "status": "PASS"
+    },
+    {
+      "expected": "1",
+      "got": "1",
+      "label": "header-base-index-mmRLC_CLK_COUNT_CTRL",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "label": "header-offset-mmRLC_CLK_COUNT_STAT",
+      "status": "PASS"
+    },
+    {
+      "expected": "1",
+      "got": "1",
+      "label": "header-base-index-mmRLC_CLK_COUNT_STAT",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": "no direct symbol in retained SMU source",
+      "label": "SMU-source-no-counter-usage",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": "negative semantics retained",
+      "label": "existing-negative-SMU-query",
+      "status": "PASS"
+    }
+  ],
+  "decision": "The RLC counter block remains an external-primary/source static prototype only. No direct 0x4C30..0x4C35 literal was found in the exact CLV type-0x08 PMFW body, no retained SMU source uses the symbols, and no UMC/DF/UCLK binding exists in this bounded evidence. Do not adopt this block as an exact-board MCLK/UCLK/FCLK route until domain/register provenance is recovered.",
+  "exact_clv": {
+    "body_sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+    "container_size": "0x40200",
+    "direct_literals": {
+      "0x4c30": [],
+      "0x4c31": [],
+      "0x4c32": [],
+      "0x4c33": [],
+      "0x4c34": [],
+      "0x4c35": []
+    },
+    "psp_type8_container_offset": "0x8fee00",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+  },
+  "header": {
+    "exact_clv_binding": "not established",
+    "register_offsets": "DWORD-index declarations with BASE_IDX=1 in imported header"
+  },
+  "limits": [
+    "A computed/indirect register route may exist outside direct scalar literal scan.",
+    "No hardware or live read.",
+    "No DWORD-index-to-byte-MMIO conversion is assumed for this board."
+  ],
+  "status": "PASS"
+}

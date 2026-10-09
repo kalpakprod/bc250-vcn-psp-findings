@@ -1,0 +1,33 @@
+{
+  "classification": "offline-candidate",
+  "source": "/tmp/d3a_flash/pre_d3b2_retest.bin",
+  "source_size": 16777216,
+  "source_sha256": "e54709e8c3432271ff53501b519f3c5e4d0dd2db9aa2f6c7e63bdd86e9f8cd45",
+  "driver_ffs": "candidates/d5-smu-unlock-lab/Bc250SmuUnlockDxe.ffs",
+  "driver_ffs_sha256": "daaa4fc102fb512b4af7b1646d82686c3f1f02e1eb561804dd9949d88f732a1a",
+  "output": "candidates/d5-smu-unlock-lab/BC250_D5_SMU_UNLOCK_LAB_from_pre-d3b2-retest.bin",
+  "output_size": 16777216,
+  "output_sha256": "dec17ca81f513c28fa5a3227b3745c4c6ceb6aba68fe3d24fce8110df54ae3f1",
+  "signed_psp_region_0x8e0000_0xae0000_identical": true,
+  "apcb_0xab1000_0xab1b70_identical": true,
+  "details": {
+    "outer_fv": [
+      "0xae0000",
+      "0xe00000"
+    ],
+    "old_capsule_size": 1339028,
+    "new_capsule_size": 1337785,
+    "inner_fv_size": 4341760,
+    "driver_ffs_size": 12364,
+    "driver_insertion_offset_in_decompressed_stream": "0xf8b0",
+    "driver_guid_occurrences_after_reextract": 2,
+    "full_driver_ffs_occurrences_after_reextract": 1
+  },
+  "unrun": [
+    "QEMU hardware semantics",
+    "BC-250 cold boot",
+    "DXE dispatch",
+    "SMU unlock readback",
+    "VCN function"
+  ]
+}

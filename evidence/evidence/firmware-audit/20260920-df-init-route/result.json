@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "evidence_class": "observed-bytes/static-analysis",
+  "instruction_byte_checks": {
+    "df-init.txt": 380,
+    "df-init-side.txt": 475
+  },
+  "branches": [
+    {
+      "branch": "config != 7",
+      "indices": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "row_pointers": [
+        "0xcf84",
+        "0xcf5c",
+        "0xcf34",
+        "0xcf0c"
+      ]
+    },
+    {
+      "branch": "config == 7",
+      "indices": [
+        0,
+        255,
+        255,
+        255
+      ],
+      "row_pointers": [
+        "0xcfac",
+        null,
+        null,
+        null
+      ]
+    }
+  ],
+  "mailbox_argument_fields": {
+    "31:24": "CEE0+11; bitmask used by 1EF18",
+    "7:0": "CEE0+12",
+    "16": "1105C+2A",
+    "17": "1105C+2B"
+  },
+  "1e1d0_store_addresses": [
+    "0x115c1a0",
+    "0x115c1a4",
+    "0x115c1a8"
+  ],
+  "1e260_store_addresses": [
+    "0x115c9a0",
+    "0x115c9a4",
+    "0x115c9a8",
+    "0x115c9ac",
+    "0x116c1a0",
+    "0x116c1a4",
+    "0x116c1a8",
+    "0x116c1ac"
+  ],
+  "limitations": [
+    "No CPU emulation or board execution.",
+    "Initial config word 8 is not a live readback.",
+    "Instruction byte equality does not validate all decompiler semantics; loopgtz interpreted from assembly.",
+    "Indirect/runtime writers and full transitive side callees are not exhausted.",
+    "Queue5 naming inherited; handler pointer checked, BIOS sender not located."
+  ]
+}

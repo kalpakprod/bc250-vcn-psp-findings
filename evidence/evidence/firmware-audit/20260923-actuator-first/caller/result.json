@@ -1,0 +1,832 @@
+[
+  {
+    "rail_label": "VCORE_label",
+    "case": "baseline",
+    "enable": 0,
+    "word": 291,
+    "entry_rva": "0x30a",
+    "commands": [
+      {
+        "command": [
+          "as",
+          "--32",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/baseline/test.s",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/baseline/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ld",
+          "-m",
+          "elf_i386",
+          "--section-start=.instrumented=0x09ed2c74",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/baseline/test.elf",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/baseline/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".instrumented=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/baseline/module.bin",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/baseline/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "timeout",
+          "3",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/baseline/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "65000000c0000000660000002100000070000000840000007100000003000000630000000300000060000000c0000000",
+        "stderr": ""
+      }
+    ],
+    "trace": [
+      [
+        101,
+        192
+      ],
+      [
+        102,
+        33
+      ],
+      [
+        112,
+        132
+      ],
+      [
+        113,
+        3
+      ],
+      [
+        99,
+        3
+      ],
+      [
+        96,
+        192
+      ]
+    ],
+    "noninstrumented_bytes_exact": true
+  },
+  {
+    "rail_label": "VCORE_label",
+    "case": "modified",
+    "enable": 1,
+    "word": 291,
+    "entry_rva": "0x30a",
+    "commands": [
+      {
+        "command": [
+          "as",
+          "--32",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/modified/test.s",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/modified/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ld",
+          "-m",
+          "elf_i386",
+          "--section-start=.instrumented=0x09ed2c74",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/modified/test.elf",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/modified/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".instrumented=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/modified/module.bin",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/modified/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "timeout",
+          "3",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/modified/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "65000000c0000000660000002100000070000000230000007100000001000000630000000300000060000000c0000000",
+        "stderr": ""
+      }
+    ],
+    "trace": [
+      [
+        101,
+        192
+      ],
+      [
+        102,
+        33
+      ],
+      [
+        112,
+        35
+      ],
+      [
+        113,
+        1
+      ],
+      [
+        99,
+        3
+      ],
+      [
+        96,
+        192
+      ]
+    ],
+    "noninstrumented_bytes_exact": true
+  },
+  {
+    "rail_label": "VCORE_label",
+    "case": "changed_word",
+    "enable": 1,
+    "word": 1110,
+    "entry_rva": "0x30a",
+    "commands": [
+      {
+        "command": [
+          "as",
+          "--32",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/changed_word/test.s",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/changed_word/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ld",
+          "-m",
+          "elf_i386",
+          "--section-start=.instrumented=0x09ed2c74",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/changed_word/test.elf",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/changed_word/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".instrumented=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/changed_word/module.bin",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/changed_word/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "timeout",
+          "3",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/changed_word/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "65000000c0000000660000002100000070000000560000007100000004000000630000000300000060000000c0000000",
+        "stderr": ""
+      }
+    ],
+    "trace": [
+      [
+        101,
+        192
+      ],
+      [
+        102,
+        33
+      ],
+      [
+        112,
+        86
+      ],
+      [
+        113,
+        4
+      ],
+      [
+        99,
+        3
+      ],
+      [
+        96,
+        192
+      ]
+    ],
+    "noninstrumented_bytes_exact": true
+  },
+  {
+    "rail_label": "VCORE_label",
+    "case": "disabled_changed_word",
+    "enable": 0,
+    "word": 1110,
+    "entry_rva": "0x30a",
+    "commands": [
+      {
+        "command": [
+          "as",
+          "--32",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/disabled_changed_word/test.s",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/disabled_changed_word/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ld",
+          "-m",
+          "elf_i386",
+          "--section-start=.instrumented=0x09ed2c74",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/disabled_changed_word/test.elf",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/disabled_changed_word/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".instrumented=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/disabled_changed_word/module.bin",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/disabled_changed_word/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "timeout",
+          "3",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/disabled_changed_word/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "65000000c0000000660000002100000070000000840000007100000003000000630000000300000060000000c0000000",
+        "stderr": ""
+      }
+    ],
+    "trace": [
+      [
+        101,
+        192
+      ],
+      [
+        102,
+        33
+      ],
+      [
+        112,
+        132
+      ],
+      [
+        113,
+        3
+      ],
+      [
+        99,
+        3
+      ],
+      [
+        96,
+        192
+      ]
+    ],
+    "noninstrumented_bytes_exact": true
+  },
+  {
+    "rail_label": "VCORE_label",
+    "case": "restored",
+    "enable": 0,
+    "word": 291,
+    "entry_rva": "0x30a",
+    "commands": [
+      {
+        "command": [
+          "as",
+          "--32",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/restored/test.s",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/restored/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ld",
+          "-m",
+          "elf_i386",
+          "--section-start=.instrumented=0x09ed2c74",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/restored/test.elf",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/restored/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".instrumented=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/restored/module.bin",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/restored/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "timeout",
+          "3",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/VCORE_label/restored/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "65000000c0000000660000002100000070000000840000007100000003000000630000000300000060000000c0000000",
+        "stderr": ""
+      }
+    ],
+    "trace": [
+      [
+        101,
+        192
+      ],
+      [
+        102,
+        33
+      ],
+      [
+        112,
+        132
+      ],
+      [
+        113,
+        3
+      ],
+      [
+        99,
+        3
+      ],
+      [
+        96,
+        192
+      ]
+    ],
+    "noninstrumented_bytes_exact": true
+  },
+  {
+    "rail_label": "GFX_label",
+    "case": "baseline",
+    "enable": 0,
+    "word": 291,
+    "entry_rva": "0x3a8",
+    "commands": [
+      {
+        "command": [
+          "as",
+          "--32",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/baseline/test.s",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/baseline/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ld",
+          "-m",
+          "elf_i386",
+          "--section-start=.instrumented=0x09ed2c74",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/baseline/test.elf",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/baseline/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".instrumented=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/baseline/module.bin",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/baseline/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "timeout",
+          "3",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/baseline/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "65000000c0000000660000002100000070000000840000007100000003000000630000000300000060000000c0000000",
+        "stderr": ""
+      }
+    ],
+    "trace": [
+      [
+        101,
+        192
+      ],
+      [
+        102,
+        33
+      ],
+      [
+        112,
+        132
+      ],
+      [
+        113,
+        3
+      ],
+      [
+        99,
+        3
+      ],
+      [
+        96,
+        192
+      ]
+    ],
+    "noninstrumented_bytes_exact": true
+  },
+  {
+    "rail_label": "GFX_label",
+    "case": "modified",
+    "enable": 1,
+    "word": 291,
+    "entry_rva": "0x3a8",
+    "commands": [
+      {
+        "command": [
+          "as",
+          "--32",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/modified/test.s",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/modified/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ld",
+          "-m",
+          "elf_i386",
+          "--section-start=.instrumented=0x09ed2c74",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/modified/test.elf",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/modified/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".instrumented=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/modified/module.bin",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/modified/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "timeout",
+          "3",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/modified/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "65000000c0000000660000002100000070000000230000007100000001000000630000000300000060000000c0000000",
+        "stderr": ""
+      }
+    ],
+    "trace": [
+      [
+        101,
+        192
+      ],
+      [
+        102,
+        33
+      ],
+      [
+        112,
+        35
+      ],
+      [
+        113,
+        1
+      ],
+      [
+        99,
+        3
+      ],
+      [
+        96,
+        192
+      ]
+    ],
+    "noninstrumented_bytes_exact": true
+  },
+  {
+    "rail_label": "GFX_label",
+    "case": "changed_word",
+    "enable": 1,
+    "word": 1110,
+    "entry_rva": "0x3a8",
+    "commands": [
+      {
+        "command": [
+          "as",
+          "--32",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/changed_word/test.s",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/changed_word/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ld",
+          "-m",
+          "elf_i386",
+          "--section-start=.instrumented=0x09ed2c74",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/changed_word/test.elf",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/changed_word/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".instrumented=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/changed_word/module.bin",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/changed_word/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "timeout",
+          "3",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/changed_word/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "65000000c0000000660000002100000070000000560000007100000004000000630000000300000060000000c0000000",
+        "stderr": ""
+      }
+    ],
+    "trace": [
+      [
+        101,
+        192
+      ],
+      [
+        102,
+        33
+      ],
+      [
+        112,
+        86
+      ],
+      [
+        113,
+        4
+      ],
+      [
+        99,
+        3
+      ],
+      [
+        96,
+        192
+      ]
+    ],
+    "noninstrumented_bytes_exact": true
+  },
+  {
+    "rail_label": "GFX_label",
+    "case": "disabled_changed_word",
+    "enable": 0,
+    "word": 1110,
+    "entry_rva": "0x3a8",
+    "commands": [
+      {
+        "command": [
+          "as",
+          "--32",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/disabled_changed_word/test.s",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/disabled_changed_word/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ld",
+          "-m",
+          "elf_i386",
+          "--section-start=.instrumented=0x09ed2c74",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/disabled_changed_word/test.elf",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/disabled_changed_word/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".instrumented=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/disabled_changed_word/module.bin",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/disabled_changed_word/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "timeout",
+          "3",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/disabled_changed_word/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "65000000c0000000660000002100000070000000840000007100000003000000630000000300000060000000c0000000",
+        "stderr": ""
+      }
+    ],
+    "trace": [
+      [
+        101,
+        192
+      ],
+      [
+        102,
+        33
+      ],
+      [
+        112,
+        132
+      ],
+      [
+        113,
+        3
+      ],
+      [
+        99,
+        3
+      ],
+      [
+        96,
+        192
+      ]
+    ],
+    "noninstrumented_bytes_exact": true
+  },
+  {
+    "rail_label": "GFX_label",
+    "case": "restored",
+    "enable": 0,
+    "word": 291,
+    "entry_rva": "0x3a8",
+    "commands": [
+      {
+        "command": [
+          "as",
+          "--32",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/restored/test.s",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/restored/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ld",
+          "-m",
+          "elf_i386",
+          "--section-start=.instrumented=0x09ed2c74",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/restored/test.elf",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/restored/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".instrumented=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/restored/module.bin",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/restored/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "timeout",
+          "3",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/caller/GFX_label/restored/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "65000000c0000000660000002100000070000000840000007100000003000000630000000300000060000000c0000000",
+        "stderr": ""
+      }
+    ],
+    "trace": [
+      [
+        101,
+        192
+      ],
+      [
+        102,
+        33
+      ],
+      [
+        112,
+        132
+      ],
+      [
+        113,
+        3
+      ],
+      [
+        99,
+        3
+      ],
+      [
+        96,
+        192
+      ]
+    ],
+    "noninstrumented_bytes_exact": true
+  }
+]

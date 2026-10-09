@@ -1,0 +1,318 @@
+{
+  "generated_at": "2026-09-11T12:11:16.482048+00:00",
+  "project": "/home/OWNER/orca/projects/bc250",
+  "scope": "Derived and current-state evidence inventory for the BC-250 audit; immutable source files are referenced but not duplicated.",
+  "entries": [
+    {
+      "path": "evidence/programmer/reads/20260911/manifest.json",
+      "size": 3154,
+      "sha256": "80b34cb2be1706abeac499d95cc4ae1d0c55b05183add75b015ad85780cccb60",
+      "evidence_class": "hardware-verified readback provenance",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/programmer/probe-20260911.txt",
+      "size": 274,
+      "sha256": "c89588ff0a4889bf03d9ab2f7b12e0c56eb891c5f8746b5793f0664944c7cd1e",
+      "evidence_class": "hardware-verified readback probe log",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/programmer/reads/20260911/read-a.bin",
+      "size": 16777216,
+      "sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+      "evidence_class": "hardware-verified full SPI read",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/programmer/reads/20260911/read-b.bin",
+      "size": 16777216,
+      "sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+      "evidence_class": "hardware-verified full SPI read",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/programmer/reads/20260911/firmware-audit/inventory.json",
+      "size": 24239,
+      "sha256": "e982f755981cac0231c52074872f6478005f9e4826e6063512c6664a963c76b4",
+      "evidence_class": "observed-bytes/static-analysis fresh firmware inventory",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/programmer/reads/20260911/firmware-audit/read-a-inventory-with-extract.json",
+      "size": 129257,
+      "sha256": "e914cf3e72dd6726337838140515f85c5504183301f28d31e8f3d37890786053",
+      "evidence_class": "observed-bytes/static-analysis fresh executable extraction",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/programmer/reads/20260911/firmware-audit/read-a-nvar-primary.json",
+      "size": 272987,
+      "sha256": "d3e769533368d0fcbfad476e6c2b75f510d1b4f80d356c4b8ff72bdfd3673b65",
+      "evidence_class": "observed-bytes/static-analysis fresh NVAR parse",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/firmware-audit/ip-discovery/read-a-hardware-ip-config.bin",
+      "size": 1104,
+      "sha256": "1b5b798a93abac86f0f25ef188627ee9a86fcfc27d68af0a444bc8cfdc896bc5",
+      "evidence_class": "observed-bytes fresh IPDS extract",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/firmware-audit/ip-discovery/read-a-hardware-ip-config.json",
+      "size": 12985,
+      "sha256": "c327fb0ae3dbe276329e76a8b296c05c59449338361afef8e6491ac4fa516ecc",
+      "evidence_class": "static-analysis IPDS parse",
+      "status": "PASS"
+    },
+    {
+      "path": "scripts/build_apcb_dfg_candidate.py",
+      "size": 3939,
+      "sha256": "9235d0137abbfa17c49de3323cf82f4d65d5ded9fcbbe1dad246bcad9248ea2f",
+      "evidence_class": "deterministic offline candidate builder",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/candidates/BC250_APCB_DFG_only_v001/build-manifest.json",
+      "size": 3759,
+      "sha256": "8aa0e639d91e2e937c1c561f9a0c205552a68801725d7c545ffa7d7c2bfacda3",
+      "evidence_class": "candidate provenance",
+      "status": "PASS"
+    },
+    {
+      "path": "candidates/BC250_APCB_DFG_only_v001_from_read-a.bin",
+      "size": 16777216,
+      "sha256": "6b1fe8ef504142d5d5273a85b6c9febdf0b1fb8fc08ebab2593281c320cb9d70",
+      "evidence_class": "static-analysis candidate",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/candidates/BC250_APCB_DFG_only_v001/apcb-detail.json",
+      "size": 249223,
+      "sha256": "01feebf8bb82ea17d6ef12138445573128eae94d171ee8180608ec0cb72abf9e",
+      "evidence_class": "candidate structural report",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/candidates/BC250_APCB_DFG_only_v001/firmware-audit.json",
+      "size": 12244,
+      "sha256": "0b1b273dd233e3e102cc9df333221eee68b593ac80736e9e38bfb5ee4cb26fac",
+      "evidence_class": "candidate structural report",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/candidates/BC250_APCB_DFG_only_v001/independent-review-gemini.md",
+      "size": 3108,
+      "sha256": "90e15006a3093c8ba484fa702d4dab12225d522878892e6bba01d39666db7905",
+      "evidence_class": "independent review",
+      "status": "PASS"
+    },
+    {
+      "path": "scripts/build_amdsetup_memory_candidate.py",
+      "size": 3155,
+      "sha256": "3d015676c4e2d8bc5fbee235aaea18802fb93332d1b4bab0610ab4f20dd0ea36",
+      "evidence_class": "deterministic offline candidate builder",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/candidates/BC250_MemoryClock_1750_only_v001/build-manifest.json",
+      "size": 3250,
+      "sha256": "ec3e7772d6271c8eff70b4931ae2b7bd759e24282e16af4ba3021c46bfc12759",
+      "evidence_class": "candidate provenance",
+      "status": "PASS"
+    },
+    {
+      "path": "candidates/BC250_MemoryClock_1750_only_v001_from_read-a.bin",
+      "size": 16777216,
+      "sha256": "63cd074197ce26bafe7d2f943eeceb69b331cdba94f12662820de710fc193fee",
+      "evidence_class": "static-analysis candidate",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/candidates/BC250_MemoryClock_1750_only_v001/nvar-primary.json",
+      "size": 273000,
+      "sha256": "06710664aa71770881221401da74c1fa1ce224e8eaf1e5940176490a69a927f5",
+      "evidence_class": "candidate NVAR report",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/candidates/BC250_MemoryClock_1750_only_v001/firmware-audit.json",
+      "size": 12252,
+      "sha256": "83b82cd738bc7d668ac90f568066ef451ffc2075af36d2b2fde5bc4e951dcae8",
+      "evidence_class": "candidate structural report",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/candidates/BC250_MemoryClock_1750_only_v001/independent-review-gemini.md",
+      "size": 2784,
+      "sha256": "47a9b6a7be4628861ac04031e959a6ea76b1b67bfe7f724c8ba0b66b330123fb",
+      "evidence_class": "independent review",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/firmware-audit/vcn-evidence-map.json",
+      "size": 40365,
+      "sha256": "7070e9b19f8115a5ae40e47bf053fd851b782719361de813818dc893620b0b9e",
+      "evidence_class": "VCN map",
+      "status": "PASS with unknown runtime"
+    },
+    {
+      "path": "evidence/firmware-audit/memory-soc-voltage-evidence-map.json",
+      "size": 63536,
+      "sha256": "3c70d6b1cf39956bc7e45a9da70c43d660b1fdbc02e6fa0eaa62c67411921803",
+      "evidence_class": "memory/SoC map",
+      "status": "PASS with unknown runtime/unit"
+    },
+    {
+      "path": "evidence/firmware-audit/soc-voltage-static-review-root.md",
+      "size": 11964,
+      "sha256": "fa6a69fb287901d56d5ec27ed7c553b03f2d61f59d58c519734041e885733281",
+      "evidence_class": "root SoC review",
+      "status": "PASS with unknown runtime/unit"
+    },
+    {
+      "path": "specs/2026-09-11-memory-soc-candidate.md",
+      "size": 9174,
+      "sha256": "fdf769124193d2f5c301e2998eb91da0b1825bab8fac3d21ccb950fd7eeb2f03",
+      "evidence_class": "active candidate specification",
+      "status": "ACTIVE"
+    },
+    {
+      "path": "candidates/README.md",
+      "size": 4023,
+      "sha256": "17b6fdfff2fef69b234104cff793e49696f0afb8ea627b4e43e16ad1f6440719",
+      "evidence_class": "candidate catalog",
+      "status": "ACTIVE"
+    },
+    {
+      "path": "docs/runbooks/2026-09-11-bc250-programmer-and-candidate-gates.md",
+      "size": 7775,
+      "sha256": "256d5f55ac3267040f40d426445644bddba22ca14d48d9f22f3debe34f8f94ac",
+      "evidence_class": "recovery-gate runbook",
+      "status": "ACTIVE"
+    },
+    {
+      "path": "docs/research/2026-09-11-programmer-cli-evaluation.md",
+      "size": 8650,
+      "sha256": "3e082b56514be95a94011f183b23ccda1dca8a6d4fbd6e7e72ce92030b193d57",
+      "evidence_class": "external stack/provenance research",
+      "status": "ADOPT read-only"
+    },
+    {
+      "path": "memory/decisions.md",
+      "size": 8047,
+      "sha256": "d85035d938d366d9a844c036ba6aa73dfe8e6454f5800d7f1732891fe6f38abe",
+      "evidence_class": "durable decisions",
+      "status": "ACTIVE"
+    },
+    {
+      "path": "memory/project-state.md",
+      "size": 2192,
+      "sha256": "73e6d367ccf7a3dd82c6a2fb4be8fccb329d0c3e1421667dff1a851fac029779",
+      "evidence_class": "current project state",
+      "status": "ACTIVE"
+    },
+    {
+      "path": "evidence/boardview/jtag-readiness-20260911.json",
+      "size": 1811,
+      "sha256": "8a4e35a2d5d34761b4275754e439e8af9374f60cc2c6d8ef6599efd15be738c7",
+      "evidence_class": "JTAG readiness",
+      "status": "UNRUN"
+    },
+    {
+      "path": "evidence/firmware-audit/completion-matrix-20260911.json",
+      "size": 6955,
+      "sha256": "7b4257bcd34a5a022bb423e36f518af3db708d4a9a0863f22845a8593353772c",
+      "evidence_class": "objective completion matrix",
+      "status": "ACTIVE_INCOMPLETE"
+    },
+    {
+      "path": "evidence/firmware-audit/soc-voltage-encoding-comparison.json",
+      "size": 2774,
+      "sha256": "3576ead3e78ab343cd93727046f2de44e135fb4a4d67024228fee114061823c5",
+      "evidence_class": "host-tested encoding ambiguity",
+      "status": "PASS"
+    },
+    {
+      "path": "scripts/collect_stock_runtime_readonly.py",
+      "size": 7016,
+      "sha256": "ea128ffe4f7fb7151fd63575722e570c7920547c6b8251f923227a447d4571a9",
+      "evidence_class": "read-only collector",
+      "status": "PASS synthetic fixture"
+    },
+    {
+      "path": "evidence/firmware-audit/collector-fixture-test.json",
+      "size": 1168,
+      "sha256": "2c83872ef57929fdc5006e41ee67e4fe89db5bcc19137f57505419f1764c59f7",
+      "evidence_class": "collector fixture evidence",
+      "status": "PASS synthetic fixture"
+    },
+    {
+      "path": "evidence/firmware-audit/rizin/CbsBasePei-setup-defaults-context.txt",
+      "size": 30741,
+      "sha256": "04f27d70a345d06a66dfae3f0af07185f5c742dd1049acd4057d167b9f53db2e",
+      "evidence_class": "static-analysis direct CbsBasePei context",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/firmware-audit/rizin/AmdNbioGfxARIPei.df-window-context.txt",
+      "size": 13139,
+      "sha256": "95ce1c7917dd12789e6af168dbbdfa046d0003ec653116e3f276da6ea74b8c68",
+      "evidence_class": "static-analysis direct Gfx PEI context",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/firmware-audit/rizin/AmdNbioSmuV10Dxe.mailbox-context.txt",
+      "size": 14529,
+      "sha256": "c81b065ee241d336efa5354b38aa44668f3041d3162254152e2563eaf8a4e76c",
+      "evidence_class": "static-analysis direct SMU mailbox context",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/firmware-audit/rizin/AmdApcbObrDxe.dfg-context.txt",
+      "size": 11644,
+      "sha256": "fcb666f776d700933878024166c39929147cf06210d85fd9ffbeceac72241201",
+      "evidence_class": "static-analysis direct APCB DFG context",
+      "status": "PASS"
+    },
+    {
+      "path": "scripts/verify_bc250_audit_state.py",
+      "size": 7404,
+      "sha256": "88ebabef801051fd11ca64fcb02e2a729c475c0ad861cf7ce413f60fb5439d1f",
+      "evidence_class": "audit-state verifier",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/firmware-audit/audit-state-verification-20260911.json",
+      "size": 2038,
+      "sha256": "d25777f9badce31633509f5746f590be0e843969c6bbce9148f2922128a6cc2b",
+      "evidence_class": "audit-state verification evidence",
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/programmer/reads/20260911/apcb-v001-hardware-trial-manifest.json",
+      "size": 2182,
+      "sha256": "e0488e8cc0d8d99c25b626ae08dec04db496256d20303fcaa03912b907c3e696",
+      "evidence_class": "hardware-verified SPI write and independent full-chip readback",
+      "status": "PASS at programmer layer; boot/runtime UNRUN"
+    }
+  ],
+  "mutations_performed": {
+    "firmware_write": true,
+    "register_write": false,
+    "programmer_write": true,
+    "jtag_target_memory_write": false,
+    "flash": true
+  },
+  "open_gates": [
+    "PSP signature acceptance",
+    "modified-image boot",
+    "VCN runtime/codec",
+    "memory training/stability/live clocks",
+    "SoC-voltage units/consumer/rails",
+    "full MCP pending-module context",
+    "JTAG attach"
+  ],
+  "note": "Action logs are append-only and intentionally omitted from this hash snapshot to avoid stale self-referential metadata; see their current paths in the project."
+}

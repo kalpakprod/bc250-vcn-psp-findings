@@ -1,0 +1,208 @@
+{
+  "status": "PASS",
+  "checks": 26,
+  "route": "CbsBasePei InstallPpi/NotifyPpi -> interface method 0x250 -> wildcard callback dispatch -> counterpart registration records",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "owner": {
+    "module": "CbsBasePei",
+    "descriptor_rva": "0x13ed4",
+    "guid": "04126c85-5c4e-458f-abc1-29f1f7da365e",
+    "ppi_rva": "0x13ec0",
+    "method_rva": "0x250",
+    "notify_descriptor_rva": "0x13ee0",
+    "notify_guid": "60db76a0-5d55-47bb-970f-34d8d0be369e",
+    "notify_callback_rva": "0x4d0"
+  },
+  "counterparts": {
+    "AmdNbioGfxARIPei": {
+      "guid_body_off": "0x14ec8",
+      "guid_rva": null,
+      "descriptor_bytes": "ffffffff000000000000000000000000241ae409feffffff",
+      "callback_va": "0x9e41a24",
+      "callback_rva": "0x4df0"
+    },
+    "AmdNbioSmuV10Pei": {
+      "guid_body_off": "0x158c0",
+      "guid_rva": null,
+      "descriptor_bytes": "ffffffff0000000000000000000000001ce7e809feffffff",
+      "callback_va": "0x9e8e71c",
+      "callback_rva": "0x5740"
+    }
+  },
+  "fresh_result": "CbsBasePei owns and registers the CBS PPI at entry, registers an AmdSetup NotifyPpi descriptor, and its interface method RVA 0x250 contains the exact indirect callback dispatch window. Gfx and SMU carry byte-identical CBS GUID + Notify GUID + wildcard/event callback registration records. This establishes static registration/dispatch ownership for FCLK record 0x1331 and UCLK record 0x1204; runtime invocation and downstream requester use remain unverified.",
+  "limits": "Static exact-clv lifecycle only; no runtime PPI database, firmware execution, hardware, computed dispatch beyond checked method window, or shared-state change.",
+  "checks_detail": [
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ROM size",
+      "passed": true,
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "check": "Cbs hash",
+      "passed": true,
+      "got": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    {
+      "check": "Cbs InstallPpi push",
+      "passed": true,
+      "got": "6860dfec09",
+      "expected": "6860dfec09"
+    },
+    {
+      "check": "Cbs InstallPpi slot",
+      "passed": true,
+      "got": "8b4218ffd0",
+      "expected": "8b4218ffd0"
+    },
+    {
+      "check": "Cbs NotifyPpi push",
+      "passed": true,
+      "got": "686cdfec09",
+      "expected": "686cdfec09"
+    },
+    {
+      "check": "Cbs NotifyPpi slot",
+      "passed": true,
+      "got": "8b4824ffd1",
+      "expected": "8b4824ffd1"
+    },
+    {
+      "check": "Cbs owner descriptor flags",
+      "passed": true,
+      "got": 2147483664,
+      "expected": 2147483664
+    },
+    {
+      "check": "Cbs owner GUID",
+      "passed": true,
+      "got": "04126c85-5c4e-458f-abc1-29f1f7da365e",
+      "expected": "04126c85-5c4e-458f-abc1-29f1f7da365e"
+    },
+    {
+      "check": "Cbs interface method RVA",
+      "passed": true,
+      "got": 592,
+      "expected": 592
+    },
+    {
+      "check": "Cbs method prologue",
+      "passed": true,
+      "got": "558bec",
+      "expected": "558bec"
+    },
+    {
+      "check": "Cbs notify flags",
+      "passed": true,
+      "got": 2147483712,
+      "expected": 2147483712
+    },
+    {
+      "check": "Cbs notify GUID",
+      "passed": true,
+      "got": "60db76a0-5d55-47bb-970f-34d8d0be369e",
+      "expected": "60db76a0-5d55-47bb-970f-34d8d0be369e"
+    },
+    {
+      "check": "Cbs notify callback RVA",
+      "passed": true,
+      "got": 1232,
+      "expected": 1232
+    },
+    {
+      "check": "Cbs callback prologue",
+      "passed": true,
+      "got": "558bec",
+      "expected": "558bec"
+    },
+    {
+      "check": "Cbs callback indirect dispatch window",
+      "passed": true,
+      "got": "8d9538f7ffff528b450c508b4d08518b9518f7ffff8b4210ffd083c40c",
+      "expected": "8d9538f7ffff528b450c508b4d08518b9518f7ffff8b4210ffd083c40c"
+    },
+    {
+      "check": "AmdNbioGfxARIPei hash",
+      "passed": true,
+      "got": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+      "expected": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8"
+    },
+    {
+      "check": "AmdNbioGfxARIPei CBS GUID pattern count",
+      "passed": true,
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "check": "AmdNbioGfxARIPei notify GUID after CBS GUID",
+      "passed": true,
+      "got": "60db76a0-5d55-47bb-970f-34d8d0be369e",
+      "expected": "60db76a0-5d55-47bb-970f-34d8d0be369e"
+    },
+    {
+      "check": "AmdNbioGfxARIPei counterpart wildcard CPU",
+      "passed": true,
+      "got": [
+        4294967295,
+        0
+      ],
+      "expected": [
+        4294967295,
+        0
+      ]
+    },
+    {
+      "check": "AmdNbioGfxARIPei counterpart event",
+      "passed": true,
+      "got": 4294967294,
+      "expected": 4294967294
+    },
+    {
+      "check": "AmdNbioSmuV10Pei hash",
+      "passed": true,
+      "got": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "expected": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei CBS GUID pattern count",
+      "passed": true,
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "check": "AmdNbioSmuV10Pei notify GUID after CBS GUID",
+      "passed": true,
+      "got": "60db76a0-5d55-47bb-970f-34d8d0be369e",
+      "expected": "60db76a0-5d55-47bb-970f-34d8d0be369e"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei counterpart wildcard CPU",
+      "passed": true,
+      "got": [
+        4294967295,
+        0
+      ],
+      "expected": [
+        4294967295,
+        0
+      ]
+    },
+    {
+      "check": "AmdNbioSmuV10Pei counterpart event",
+      "passed": true,
+      "got": 4294967294,
+      "expected": 4294967294
+    }
+  ]
+}

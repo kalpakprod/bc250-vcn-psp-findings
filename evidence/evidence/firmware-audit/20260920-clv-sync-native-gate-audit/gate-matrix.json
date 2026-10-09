@@ -1,0 +1,864 @@
+{
+  "artifact_class": "offline_native_sync_semantic_gate_audit",
+  "checks": {
+    "blocked": 6,
+    "partial": 1,
+    "passed": 3,
+    "total": 12,
+    "unrun": 2
+  },
+  "decision": "Do not build a sync candidate. Keep existing df1400-only builder unchanged. The conditional four-byte template is BLOCKED and not internally closed; 1:1:1 remains disallowed.",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis",
+    "emulated-or-host-tested",
+    "unrun-hardware"
+  ],
+  "gate_matrix": [
+    {
+      "command": "sha256sum evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "consequence": "The audit is bound to one immutable 16 MiB donor.",
+      "evidence_class": [
+        "observed-bytes"
+      ],
+      "gate": "G0",
+      "observed": {
+        "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "size": 16777216
+      },
+      "requirement": "Pinned source identity",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 evidence/.../configuration_domain_matrix.py; python3 evidence/.../stage2_defaults_verify.py",
+      "consequence": "Native metadata is exact, but IFR help/conditions are not proof of runtime enforcement.",
+      "evidence_class": [
+        "observed-bytes",
+        "static-analysis"
+      ],
+      "gate": "G1",
+      "observed": {
+        "fields": {
+          "DfClockOverrideControl": {
+            "absolute_offset": "0xbd2",
+            "body_offset": "0x703",
+            "ifr": {
+              "callback": false,
+              "conditions": [],
+              "help": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+              "label": "DF Clock Override Control",
+              "options": [
+                {
+                  "default": true,
+                  "label": "Auto",
+                  "value": 255
+                },
+                {
+                  "default": false,
+                  "label": "Manual",
+                  "value": 1
+                }
+              ],
+              "qid": "0x37d"
+            },
+            "raw": "01",
+            "record": "0x1373",
+            "value": 1,
+            "width": 1
+          },
+          "DfClockOvrd": {
+            "absolute_offset": "0xbd3",
+            "body_offset": "0x704",
+            "ifr": {
+              "callback": false,
+              "conditions": [],
+              "help": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+              "label": "DF Clock Override",
+              "options": [],
+              "qid": "0x37e"
+            },
+            "raw": "8c05",
+            "record": "0x1374",
+            "value": 1420,
+            "width": 2
+          },
+          "FclkDpm": {
+            "absolute_offset": "0xb72",
+            "body_offset": "0x6a3",
+            "ifr": {
+              "callback": true,
+              "conditions": [],
+              "help": "FEATURE_FCLK_DPM_MASK",
+              "label": "FCLK_DPM",
+              "options": [
+                {
+                  "default": false,
+                  "label": "Disabled",
+                  "value": 0
+                },
+                {
+                  "default": false,
+                  "label": "Enabled",
+                  "value": 1
+                },
+                {
+                  "default": true,
+                  "label": "Auto",
+                  "value": 15
+                }
+              ],
+              "qid": "0x7045"
+            },
+            "raw": "0f",
+            "record": "0x1331",
+            "value": 15,
+            "width": 1
+          },
+          "MemoryClockSpeed": {
+            "absolute_offset": "0x7e5",
+            "body_offset": "0x316",
+            "ifr": {
+              "callback": false,
+              "conditions": [],
+              "help": "Set the memory clock frequency.",
+              "label": "Memory Clock Speed",
+              "options": [
+                {
+                  "default": true,
+                  "label": "Auto",
+                  "value": 255
+                },
+                {
+                  "default": false,
+                  "label": "125MHz",
+                  "value": 2
+                },
+                {
+                  "default": false,
+                  "label": "225MHz",
+                  "value": 4
+                },
+                {
+                  "default": false,
+                  "label": "250MHz",
+                  "value": 5
+                },
+                {
+                  "default": false,
+                  "label": "400MHz",
+                  "value": 8
+                },
+                {
+                  "default": false,
+                  "label": "450MHz",
+                  "value": 9
+                },
+                {
+                  "default": false,
+                  "label": "500MHz",
+                  "value": 10
+                },
+                {
+                  "default": false,
+                  "label": "750MHz",
+                  "value": 15
+                },
+                {
+                  "default": false,
+                  "label": "850MHz",
+                  "value": 17
+                },
+                {
+                  "default": false,
+                  "label": "1000MHz",
+                  "value": 20
+                },
+                {
+                  "default": false,
+                  "label": "1250MHz",
+                  "value": 25
+                },
+                {
+                  "default": false,
+                  "label": "1330MHz",
+                  "value": 26
+                },
+                {
+                  "default": false,
+                  "label": "1375MHz",
+                  "value": 27
+                },
+                {
+                  "default": false,
+                  "label": "1500MHz",
+                  "value": 30
+                },
+                {
+                  "default": false,
+                  "label": "1600MHz",
+                  "value": 32
+                },
+                {
+                  "default": false,
+                  "label": "1650MHz",
+                  "value": 33
+                },
+                {
+                  "default": false,
+                  "label": "1700MHz",
+                  "value": 34
+                },
+                {
+                  "default": false,
+                  "label": "1750MHz",
+                  "value": 35
+                },
+                {
+                  "default": false,
+                  "label": "1800MHz",
+                  "value": 36
+                },
+                {
+                  "default": false,
+                  "label": "1850MHz",
+                  "value": 37
+                },
+                {
+                  "default": false,
+                  "label": "1900MHz",
+                  "value": 38
+                },
+                {
+                  "default": false,
+                  "label": "1950MHz",
+                  "value": 39
+                },
+                {
+                  "default": false,
+                  "label": "2000MHz",
+                  "value": 40
+                }
+              ],
+              "qid": "0x20f"
+            },
+            "raw": "24",
+            "record": "0x11ED",
+            "value": 36,
+            "width": 1
+          },
+          "MemoryPstate": {
+            "absolute_offset": "0x83c",
+            "body_offset": "0x36d",
+            "ifr": {
+              "callback": null,
+              "conditions": null,
+              "help": null,
+              "label": null,
+              "options": null,
+              "qid": null
+            },
+            "raw": "ff",
+            "record": "0x123D",
+            "value": 255,
+            "width": 1
+          },
+          "UclkDiv1M0": {
+            "absolute_offset": "0x7ff",
+            "body_offset": "0x330",
+            "ifr": {
+              "callback": false,
+              "conditions": [],
+              "help": "UclkDiv1 option, relative to FCLK.",
+              "label": "UclkDiv1M0",
+              "options": [
+                {
+                  "default": true,
+                  "label": "Auto",
+                  "value": 255
+                },
+                {
+                  "default": false,
+                  "label": "Enabled",
+                  "value": 1
+                }
+              ],
+              "qid": "0x229"
+            },
+            "raw": "01",
+            "record": "0x1204",
+            "value": 1,
+            "width": 1
+          }
+        },
+        "menu_sha256": "6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a",
+        "template_strings_present": true
+      },
+      "requirement": "Native IFR fields/defaults/help reopened",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 evidence/.../token_matrix_verify.py; python3 evidence/.../record_ownership_verify.py",
+      "consequence": "Serializer handoffs are mapped; this is not final divider/training consumption.",
+      "evidence_class": [
+        "observed-bytes",
+        "static-analysis"
+      ],
+      "gate": "G2",
+      "observed": {
+        "ownership_checks": {
+          "failed": 0,
+          "passed": 12,
+          "total": 12
+        },
+        "ownership_status": "PASS",
+        "token_checks": {
+          "failed": 0,
+          "passed": 45,
+          "total": 45
+        },
+        "token_status": "PASS"
+      },
+      "requirement": "Serializer ownership for all candidate fields",
+      "status": "PASS"
+    },
+    {
+      "command": "python3 evidence/.../uclk_semantics_verify.py; python3 evidence/.../configuration_domain_matrix.py",
+      "consequence": "The first static edge is an INV adapter/registration candidate; installed/invoked dispatcher and final actuator are not joined.",
+      "evidence_class": [
+        "static-analysis",
+        "emulated-or-host-tested"
+      ],
+      "gate": "G3",
+      "observed": {
+        "matrix_gate": "OPEN",
+        "uclk_conclusion": "No exact-clv downstream code in this bounded path assigns UclkDiv1M0 a ratio relative to FCLK. CbsBasePei and AmdFabricAriPei preserve typed bytes as INV records 0x1204 and 0x123C; bounded direct reader calls use 0x10FF/0x1104. A generic ABL memory-training routine handles memory-speed synchronization and P-state structures, but is not connected here to either exact clv record.",
+        "uclk_status": "PASS"
+      },
+      "requirement": "0x1204 requester/consumer/final actuator",
+      "status": "BLOCKED"
+    },
+    {
+      "command": "python3 evidence/.../configuration_domain_matrix.py; python3 evidence/.../token_matrix_verify.py",
+      "consequence": "MHz labels and 0..2000 numeric bounds overlap only; enum bytes and numeric DF value are not proven to share units.",
+      "evidence_class": [
+        "static-analysis"
+      ],
+      "gate": "G4",
+      "observed": {
+        "interpretation": "The labels/range overlap numerically only. No shared unit, clock-domain identity, rate conversion, training range, or synchronous-crossing selection is proven.",
+        "ui_overlap": true
+      },
+      "requirement": "Units/rate conversion and supported shared range",
+      "status": "BLOCKED"
+    },
+    {
+      "command": "python3 evidence/.../uclk_semantics_verify.py",
+      "consequence": "Enabled=1 is preserved as a byte; no ratio, crossing selector, or independent clock relation is established.",
+      "evidence_class": [
+        "static-analysis",
+        "emulated-or-host-tested"
+      ],
+      "gate": "G5",
+      "observed": {
+        "conclusion": "No exact-clv downstream code in this bounded path assigns UclkDiv1M0 a ratio relative to FCLK. CbsBasePei and AmdFabricAriPei preserve typed bytes as INV records 0x1204 and 0x123C; bounded direct reader calls use 0x10FF/0x1104. A generic ABL memory-training routine handles memory-speed synchronization and P-state structures, but is not connected here to either exact clv record.",
+        "field": {
+          "absolute_offset": "0x7ff",
+          "body_offset": "0x330",
+          "ifr": {
+            "callback": false,
+            "conditions": [],
+            "help": "UclkDiv1 option, relative to FCLK.",
+            "label": "UclkDiv1M0",
+            "options": [
+              {
+                "default": true,
+                "label": "Auto",
+                "value": 255
+              },
+              {
+                "default": false,
+                "label": "Enabled",
+                "value": 1
+              }
+            ],
+            "qid": "0x229"
+          },
+          "raw": "01",
+          "record": "0x1204",
+          "value": 1,
+          "width": 1
+        },
+        "ratio_arithmetic_in_serializer": false
+      },
+      "requirement": "UclkDiv1M0 ratio and synchronous crossing",
+      "status": "BLOCKED"
+    },
+    {
+      "command": "python3 evidence/.../memory_pstate_verify.py; python3 evidence/.../configuration_domain_matrix.py",
+      "consequence": "New contradiction: the four-byte template changes/uses DF override while leaving Memory P-state Auto (0xFF), but native help names Disabled (0x00) as the required precondition. No static proof shows Auto resolves to Disabled before the override consumer; adding 0x83C=00 would raise the minimum to five changed bytes, and still would not prove training.",
+      "evidence_class": [
+        "observed-bytes",
+        "static-analysis"
+      ],
+      "gate": "G6",
+      "observed": {
+        "baseline_memory_pstate": 255,
+        "disabled_option": 0,
+        "help": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+        "help_requires_disabled": true,
+        "pstate_record": "0x123D",
+        "pstate_static_result": "PASS",
+        "template_leaves_pstate": true
+      },
+      "requirement": "Memory-P-state/training relation and native override precondition",
+      "status": "BLOCKED"
+    },
+    {
+      "command": "python3 evidence/.../record_ownership_verify.py; python3 evidence/.../stage2_defaults_verify.py",
+      "consequence": "+0x6A3 is callback-bearing and serializes to 0x1331, but its downstream precedence relative to manual DF override is unknown; leaving Auto is not justified as irrelevant.",
+      "evidence_class": [
+        "observed-bytes",
+        "static-analysis"
+      ],
+      "gate": "G7",
+      "observed": {
+        "defaults": {
+          "action_0x1000": "EFI_BROWSER_ACTION_DEFAULT_STANDARD",
+          "action_2": "EFI_BROWSER_ACTION_RETRIEVE -> callback path 0xA1D (not helper 0x2FE4)",
+          "branch_target": "0x2fe4",
+          "callback_rva": "0x950",
+          "execution_status": "STATIC_ONLY_CALLBACK_NOT_EXECUTED",
+          "numeric_0x704": 1000,
+          "question_gates": {
+            "0x316": {
+              "callback": false,
+              "qid": "0x20f"
+            },
+            "0x330": {
+              "callback": false,
+              "qid": "0x229"
+            },
+            "0x6A3": {
+              "callback": true,
+              "qid": "0x7045"
+            },
+            "0x703": {
+              "callback": false,
+              "qid": "0x37d"
+            },
+            "0x704": {
+              "callback": false,
+              "qid": "0x37e"
+            }
+          },
+          "registration": "EFI_HII_CONFIG_ACCESS_PROTOCOL interface+0x48"
+        },
+        "fclk_dpm": {
+          "absolute_offset": "0xb72",
+          "body_offset": "0x6a3",
+          "ifr": {
+            "callback": true,
+            "conditions": [],
+            "help": "FEATURE_FCLK_DPM_MASK",
+            "label": "FCLK_DPM",
+            "options": [
+              {
+                "default": false,
+                "label": "Disabled",
+                "value": 0
+              },
+              {
+                "default": false,
+                "label": "Enabled",
+                "value": 1
+              },
+              {
+                "default": true,
+                "label": "Auto",
+                "value": 15
+              }
+            ],
+            "qid": "0x7045"
+          },
+          "raw": "0f",
+          "record": "0x1331",
+          "value": 15,
+          "width": 1
+        },
+        "serializer_owner": {
+          "corrected": "destination-pointer dataflow pairs +0x6A3 with token 0x1331; +0x6A4 with token 0x1332",
+          "superseded": "nearest-RVA pairing of +0x6A3 with token 0x1332"
+        }
+      },
+      "requirement": "FclkDpm/override precedence",
+      "status": "BLOCKED"
+    },
+    {
+      "command": "python3 evidence/.../stage2_defaults_verify.py",
+      "consequence": "Existing-variable and fallback values are statically mapped; browser invocation, reset and post-reset readback are unrun.",
+      "evidence_class": [
+        "observed-bytes",
+        "static-analysis"
+      ],
+      "gate": "G8",
+      "observed": {
+        "callback_execution_status": "STATIC_ONLY_CALLBACK_NOT_EXECUTED",
+        "defaults_status": "PASS",
+        "existing_nvar": null,
+        "fallback": null,
+        "ifr": null
+      },
+      "requirement": "Existing-NVRAM/default/fallback/migration precedence",
+      "status": "PARTIAL"
+    },
+    {
+      "command": "python3 native_gate_audit.py",
+      "consequence": "The four-byte set remains a conditional template only; the explicit native precondition is not met and semantic consumer/units/crossing gates remain open.",
+      "evidence_class": [
+        "observed-bytes",
+        "static-analysis"
+      ],
+      "gate": "G9",
+      "observed": {
+        "baseline_pstate": "0xFF Auto",
+        "native_help_precondition": "0x703=Manual + 0x704 override => FCLK>UCLK and MemoryPstate=Disabled",
+        "template_asserts": [
+          "0x703=1",
+          "0x36D unchanged",
+          "0x6A3 unchanged"
+        ],
+        "template_changed_absolute_offsets": [
+          "0x7E5",
+          "0x7FF",
+          "0xBD3",
+          "0xBD4"
+        ]
+      },
+      "requirement": "Conditional template internally coherent",
+      "status": "BLOCKED"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest discover -s tests -p 'test_clv_oc_builder.py' -v",
+      "consequence": "Only the supported df1400 regression was exercised; sync refusal is tested. No native-sync candidate or four-role transaction was created.",
+      "evidence_class": [
+        "emulated-or-host-tested",
+        "unrun"
+      ],
+      "gate": "G10",
+      "observed": {
+        "builder_regression": "7/7 PASS",
+        "four_roles": "UNRUN",
+        "sync_candidate_built": false,
+        "tests_output_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-native-gate-audit/builder-tests.stderr",
+        "unsupported_sync_rejected": true
+      },
+      "requirement": "Four-role native-sync candidate transaction/build",
+      "status": "UNRUN"
+    },
+    {
+      "command": "No hardware/settings/flash command (by task constraint)",
+      "consequence": "No physical clock, divider, crossing, training, performance or stability claim follows.",
+      "evidence_class": [
+        "unrun"
+      ],
+      "gate": "G11",
+      "observed": {
+        "hardware": "UNRUN",
+        "physical_clocks": "UNRUN",
+        "recovery_readback": "UNRUN",
+        "training": "UNRUN"
+      },
+      "requirement": "Hardware acceptance",
+      "status": "UNRUN"
+    }
+  ],
+  "inputs": {
+    "menu": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-df-init-route/menu-result.json",
+      "sha256": "6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a"
+    },
+    "plan": {
+      "path": "/home/OWNER/orca/projects/bc250/specs/2026-09-20-clv-sync-development-plan.md",
+      "sha256": "d829ac5331d4c7ee029ab592f93766eb5054409ae119fb45d5138c5dbb2132ca"
+    },
+    "spec": {
+      "path": "/home/OWNER/orca/projects/bc250/docs/research/20260920-clv-sync-conditional-candidate-spec.md",
+      "sha256": "fd85a11da05de92ed6bc2e68ef188b7658923d65d27cec3ca806263186ac167c"
+    }
+  },
+  "native_fields": {
+    "DfClockOverrideControl": {
+      "absolute_offset": "0xbd2",
+      "body_offset": "0x703",
+      "ifr": {
+        "callback": false,
+        "conditions": [],
+        "help": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+        "label": "DF Clock Override Control",
+        "options": [
+          {
+            "default": true,
+            "label": "Auto",
+            "value": 255
+          },
+          {
+            "default": false,
+            "label": "Manual",
+            "value": 1
+          }
+        ],
+        "qid": "0x37d"
+      },
+      "raw": "01",
+      "record": "0x1373",
+      "value": 1,
+      "width": 1
+    },
+    "DfClockOvrd": {
+      "absolute_offset": "0xbd3",
+      "body_offset": "0x704",
+      "ifr": {
+        "callback": false,
+        "conditions": [],
+        "help": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+        "label": "DF Clock Override",
+        "options": [],
+        "qid": "0x37e"
+      },
+      "raw": "8c05",
+      "record": "0x1374",
+      "value": 1420,
+      "width": 2
+    },
+    "FclkDpm": {
+      "absolute_offset": "0xb72",
+      "body_offset": "0x6a3",
+      "ifr": {
+        "callback": true,
+        "conditions": [],
+        "help": "FEATURE_FCLK_DPM_MASK",
+        "label": "FCLK_DPM",
+        "options": [
+          {
+            "default": false,
+            "label": "Disabled",
+            "value": 0
+          },
+          {
+            "default": false,
+            "label": "Enabled",
+            "value": 1
+          },
+          {
+            "default": true,
+            "label": "Auto",
+            "value": 15
+          }
+        ],
+        "qid": "0x7045"
+      },
+      "raw": "0f",
+      "record": "0x1331",
+      "value": 15,
+      "width": 1
+    },
+    "MemoryClockSpeed": {
+      "absolute_offset": "0x7e5",
+      "body_offset": "0x316",
+      "ifr": {
+        "callback": false,
+        "conditions": [],
+        "help": "Set the memory clock frequency.",
+        "label": "Memory Clock Speed",
+        "options": [
+          {
+            "default": true,
+            "label": "Auto",
+            "value": 255
+          },
+          {
+            "default": false,
+            "label": "125MHz",
+            "value": 2
+          },
+          {
+            "default": false,
+            "label": "225MHz",
+            "value": 4
+          },
+          {
+            "default": false,
+            "label": "250MHz",
+            "value": 5
+          },
+          {
+            "default": false,
+            "label": "400MHz",
+            "value": 8
+          },
+          {
+            "default": false,
+            "label": "450MHz",
+            "value": 9
+          },
+          {
+            "default": false,
+            "label": "500MHz",
+            "value": 10
+          },
+          {
+            "default": false,
+            "label": "750MHz",
+            "value": 15
+          },
+          {
+            "default": false,
+            "label": "850MHz",
+            "value": 17
+          },
+          {
+            "default": false,
+            "label": "1000MHz",
+            "value": 20
+          },
+          {
+            "default": false,
+            "label": "1250MHz",
+            "value": 25
+          },
+          {
+            "default": false,
+            "label": "1330MHz",
+            "value": 26
+          },
+          {
+            "default": false,
+            "label": "1375MHz",
+            "value": 27
+          },
+          {
+            "default": false,
+            "label": "1500MHz",
+            "value": 30
+          },
+          {
+            "default": false,
+            "label": "1600MHz",
+            "value": 32
+          },
+          {
+            "default": false,
+            "label": "1650MHz",
+            "value": 33
+          },
+          {
+            "default": false,
+            "label": "1700MHz",
+            "value": 34
+          },
+          {
+            "default": false,
+            "label": "1750MHz",
+            "value": 35
+          },
+          {
+            "default": false,
+            "label": "1800MHz",
+            "value": 36
+          },
+          {
+            "default": false,
+            "label": "1850MHz",
+            "value": 37
+          },
+          {
+            "default": false,
+            "label": "1900MHz",
+            "value": 38
+          },
+          {
+            "default": false,
+            "label": "1950MHz",
+            "value": 39
+          },
+          {
+            "default": false,
+            "label": "2000MHz",
+            "value": 40
+          }
+        ],
+        "qid": "0x20f"
+      },
+      "raw": "24",
+      "record": "0x11ED",
+      "value": 36,
+      "width": 1
+    },
+    "MemoryPstate": {
+      "absolute_offset": "0x83c",
+      "body_offset": "0x36d",
+      "ifr": {
+        "callback": null,
+        "conditions": null,
+        "help": null,
+        "label": null,
+        "options": null,
+        "qid": null
+      },
+      "raw": "ff",
+      "record": "0x123D",
+      "value": 255,
+      "width": 1
+    },
+    "UclkDiv1M0": {
+      "absolute_offset": "0x7ff",
+      "body_offset": "0x330",
+      "ifr": {
+        "callback": false,
+        "conditions": [],
+        "help": "UclkDiv1 option, relative to FCLK.",
+        "label": "UclkDiv1M0",
+        "options": [
+          {
+            "default": true,
+            "label": "Auto",
+            "value": 255
+          },
+          {
+            "default": false,
+            "label": "Enabled",
+            "value": 1
+          }
+        ],
+        "qid": "0x229"
+      },
+      "raw": "01",
+      "record": "0x1204",
+      "value": 1,
+      "width": 1
+    }
+  },
+  "new_finding": {
+    "classification": "offline semantic contradiction / closure condition, not runtime rejection",
+    "id": "F1",
+    "minimum_change_if_help_is_treated_as_required": "Add AmdSetup+0x36D=0x00 at absolute ROM offset 0x83C, making at least five changed bytes (0x7E5, 0x7FF, 0x83C, 0xBD3, 0xBD4).",
+    "observed": "Exact DF override help says FCLK > UCLK and Memory P-state disabled; baseline +0x36D=0xFF Auto; exact IFR Disabled option is 0x00; template holds +0x36D unchanged while changing +0x704 and asserting +0x703=Manual.",
+    "qualification": "Because exact IFR has no conditions and retained evidence calls help guidance, this does not prove the firmware will reject Auto; it proves the current four-byte template cannot claim that the documented native precondition is satisfied without an additional proof that Auto resolves to Disabled.",
+    "remaining_blockers": [
+      "0x1204 final consumer/actuator",
+      "units and GDDR6 rate conversion",
+      "UclkDiv1M0 ratio/crossing",
+      "FclkDpm precedence",
+      "training semantics",
+      "default/migration execution"
+    ],
+    "title": "Four-byte template omits native Memory-P-state precondition"
+  },
+  "source": {
+    "amdsetup_body": "0x4cf",
+    "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "size": 16777216
+  },
+  "status": "BLOCKED"
+}

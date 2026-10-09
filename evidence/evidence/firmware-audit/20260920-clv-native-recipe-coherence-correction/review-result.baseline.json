@@ -1,0 +1,145 @@
+{
+  "status": "FAIL",
+  "checks": 23,
+  "failed": 1,
+  "checks_detail": [
+    {
+      "name": "memory_1330",
+      "status": "PASS",
+      "detail": "1330 enum/field mapping"
+    },
+    {
+      "name": "memory_1750",
+      "status": "PASS",
+      "detail": "1750 enum/field mapping"
+    },
+    {
+      "name": "uclk",
+      "status": "PASS",
+      "detail": "UclkDiv1M0 mapping"
+    },
+    {
+      "name": "memory_pstate",
+      "status": "PASS",
+      "detail": "Memory P-state mapping"
+    },
+    {
+      "name": "fclk_dpm",
+      "status": "PASS",
+      "detail": "FCLK_DPM mapping"
+    },
+    {
+      "name": "df_control",
+      "status": "PASS",
+      "detail": "DF control mapping"
+    },
+    {
+      "name": "df_value",
+      "status": "PASS",
+      "detail": "DF numeric mapping"
+    },
+    {
+      "name": "canonical_1330",
+      "status": "PASS",
+      "detail": "canonical guide contains 1330MHz=0x1A"
+    },
+    {
+      "name": "canonical_1750",
+      "status": "PASS",
+      "detail": "canonical guide contains 1750MHz=0x23"
+    },
+    {
+      "name": "canonical_uclk",
+      "status": "PASS",
+      "detail": "canonical guide contains UclkDiv1M0"
+    },
+    {
+      "name": "canonical_memory_pstate",
+      "status": "PASS",
+      "detail": "canonical guide contains Memory P-state"
+    },
+    {
+      "name": "canonical_fclk",
+      "status": "PASS",
+      "detail": "canonical guide contains FCLK_DPM"
+    },
+    {
+      "name": "canonical_df",
+      "status": "PASS",
+      "detail": "canonical guide contains DF Clock Override"
+    },
+    {
+      "name": "machine_status",
+      "status": "PASS",
+      "detail": "STATIC_EXPERIMENTAL_MENU_HYPOTHESIS"
+    },
+    {
+      "name": "machine_h1750",
+      "status": "PASS",
+      "detail": "H1750-native-help"
+    },
+    {
+      "name": "recipe_recommends_1330",
+      "status": "PASS",
+      "detail": "current recipe recommendation is H1330"
+    },
+    {
+      "name": "machine_result_coherence",
+      "status": "FAIL",
+      "detail": "machine result still names H1750 while recipe now recommends H1330; refresh or label result as historical H1750"
+    },
+    {
+      "name": "machine_values",
+      "status": "PASS",
+      "detail": "machine H1750 values"
+    },
+    {
+      "name": "recipe_warns_alias",
+      "status": "PASS",
+      "detail": "alias warning"
+    },
+    {
+      "name": "recipe_warns_ratio",
+      "status": "PASS",
+      "detail": "ratio warning"
+    },
+    {
+      "name": "recipe_warns_help_conflict",
+      "status": "PASS",
+      "detail": "help conflict warning"
+    },
+    {
+      "name": "pointer_boundary_preserved",
+      "status": "PASS",
+      "detail": "pointer boundary"
+    },
+    {
+      "name": "uclk_boundary_preserved",
+      "status": "PASS",
+      "detail": "clock boundary"
+    }
+  ],
+  "scope": "field/value consistency only; no firmware or hardware action",
+  "inputs": {
+    "docs/research/2026-09-20-clv-native-operator-recipe.md": {
+      "size": 4379,
+      "sha256": "107b6a42e4945855ef610a84bd35d42d482eeb27043276bef0fcf94f7a1495f6"
+    },
+    "evidence/firmware-audit/20260920-clv-native-1to1-recipe/recipe-result.json": {
+      "size": 2152,
+      "sha256": "e4a2c4231070d83829f14c65087cd1ec3aadd20a00cd4b8ef2872de08849477d"
+    },
+    "docs/research/2026-09-20-clv-native-menu-1to1-guide.md": {
+      "size": 14805,
+      "sha256": "03a7239adf248a32558ea8fc0bea801325cb010035a41198df888350aa8236e6"
+    },
+    "docs/research/20260920-clv-abl1-r6-3c4-producer-trace.md": {
+      "size": 4250,
+      "sha256": "655e99c5456453e59643ae9bce287f8414ab0387025e157c687dd862a0f267ab"
+    },
+    "docs/research/2026-09-20-clv-uclk-discrimination-guide.md": {
+      "size": 6269,
+      "sha256": "6c5dc2ef21a755a16a5a47c8106cd70cd3e6c4fa37783deda717250bf1f0c925"
+    }
+  }
+}

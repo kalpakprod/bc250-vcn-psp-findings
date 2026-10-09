@@ -1,0 +1,99 @@
+{
+  "af58_report": "/home/OWNER/orca/projects/bc250/docs/research/2026-09-21-abl7378-indirect-entry.md",
+  "af58_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl7378-indirect-entry/run-20260921T200924+0500/helper-contract-result-corrected.json",
+  "checks": {
+    "failed": 0,
+    "passed": 17,
+    "total": 17
+  },
+  "details": [
+    {
+      "detail": "present=True",
+      "name": "guide-token:HEAP claim status: WITHDRAWN",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "guide-token:ABL1 AF58 helper contract",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "guide-token:Item `0x17` callback/output edge",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "guide-token:Hardware acceptance gate",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "guide-token:0x5CBE",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "guide-token:0xFE60",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "guide-token:[2,1]",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "guide-token:0x7378",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "guide-token:0xAF90",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "guide-token:no frequency/unit/clock meaning established",
+      "status": "PASS"
+    },
+    {
+      "detail": "present=True",
+      "name": "guide-token:NOT READY",
+      "status": "PASS"
+    },
+    {
+      "detail": "report corrected result line present",
+      "name": "af58-report-result-pass",
+      "status": "PASS"
+    },
+    {
+      "detail": "AF58 helper limit present",
+      "name": "af58-report-no-direct-clock-link",
+      "status": "PASS"
+    },
+    {
+      "detail": "{'passed': 22, 'failed': 0, 'total': 22}",
+      "name": "af58-machine-status",
+      "status": "PASS"
+    },
+    {
+      "detail": "7fa682acc22fb4fe186e529d3c63992e45bda83acdf4159d0d87e81a607267f2",
+      "name": "af58-input-hash",
+      "status": "PASS"
+    },
+    {
+      "detail": "item17 report preserves conditional/no-unit boundary",
+      "name": "item17-conditional-boundary",
+      "status": "PASS"
+    },
+    {
+      "detail": "item17 report retains no-hardware-action boundary",
+      "name": "item17-hardware-boundary",
+      "status": "PASS"
+    }
+  ],
+  "guide": "/home/OWNER/orca/projects/bc250/docs/guides/bc250-clv-111-evidence-draft-corrected.md",
+  "item17_report": "/home/OWNER/orca/projects/bc250/docs/research/2026-09-21-abl-item17-reachable-output.md",
+  "status": "PASS"
+}

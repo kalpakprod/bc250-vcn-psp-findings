@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-09-11T11:18:06.595581+00:00",
+  "script": "scripts/collect_stock_runtime_readonly.py",
+  "script_sha256": "ea128ffe4f7fb7151fd63575722e570c7920547c6b8251f923227a447d4571a9",
+  "test_command": "python3 scripts/collect_stock_runtime_readonly.py <fixture>/out --sysfs-drm <fixture>/sys/class/drm --proc-cmdline <fixture>/proc_cmdline --skip-journal",
+  "test_class": "emulated-or-host-tested",
+  "fixture": {
+    "synthetic_amd_card_count": 1,
+    "synthetic_files": [
+      "gpu_metrics",
+      "pp_dpm_mclk"
+    ],
+    "proc_cmdline_contains_uuid_and_serial": true
+  },
+  "observed": {
+    "manifest_cards": 1,
+    "manifest_outputs": 7,
+    "hardware_mutation": false,
+    "uuid_redacted": true,
+    "serial_redacted": true,
+    "fixture_binary_hashed": true
+  },
+  "checks": {
+    "allowlist_enforced": true,
+    "no_b250_smu_import": true,
+    "no_pci_config_open": true,
+    "no_dev_mem_access": true,
+    "no_sysfs_write": true,
+    "sanitization_pass": true
+  },
+  "cleanup": "Temporary fixture and outputs deleted after test; no raw fixture retained.",
+  "limitations": "This test does not exercise a real BC-250 kernel or hardware."
+}

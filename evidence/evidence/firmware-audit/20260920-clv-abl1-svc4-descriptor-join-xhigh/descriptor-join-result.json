@@ -1,0 +1,327 @@
+{
+  "active_boundary": "Existing HEAP path B264/B266 returns before fallback initializer; fallback join is exact, but active HEAP-vs-fallback selection and context+0x40 high-bit merge remain runtime/provider boundaries",
+  "checks": 61,
+  "checks_detail": [
+    {
+      "detail": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "payload_sha256",
+      "ok": true
+    },
+    {
+      "detail": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "name": "listing_sha256",
+      "ok": true
+    },
+    {
+      "detail": "14f71a9b17faa3b669681c574036ccb8edb3d75b7fde966a73aa0beb9dd9f7c0",
+      "name": "prior_descriptor_result_sha256",
+      "ok": true
+    },
+    {
+      "detail": "3122a0dce28bc61942a22d567acdc29e318a714097b48877eb0391094a7d0e43",
+      "name": "map_report_sha256",
+      "ok": true
+    },
+    {
+      "detail": "0xB228 got=2de9f04ff7b004464ff092750495016804a8fbf79bf8 expected=2de9f04ff7b004464ff092750495016804a8fbf79bf8",
+      "name": "b228_entry",
+      "ok": true
+    },
+    {
+      "detail": "0xB230 mov.w\tr5, #0x1240000",
+      "name": "heap_key_constant",
+      "ok": true
+    },
+    {
+      "detail": "0xB236 ldr\tr1, [r0]",
+      "name": "owner_load",
+      "ok": true
+    },
+    {
+      "detail": "0xB23A bl\t0x6374",
+      "name": "heap_lookup_call",
+      "ok": true
+    },
+    {
+      "detail": "0xB23E cbz\tr0, 0xb264",
+      "name": "heap_existing_branch",
+      "ok": true
+    },
+    {
+      "detail": "0xB264 ldr\tr0, [sp, #0x18]",
+      "name": "existing_body_pointer",
+      "ok": true
+    },
+    {
+      "detail": "0xB266 str\tr0, [r4, #0x44]",
+      "name": "existing_table_install",
+      "ok": true
+    },
+    {
+      "detail": "0xB240 movw\tr0, #0x26c0",
+      "name": "fallback_size",
+      "ok": true
+    },
+    {
+      "detail": "0xB244 strd\tr0, r5, [sp]",
+      "name": "fallback_size_key",
+      "ok": true
+    },
+    {
+      "detail": "0xB248 movs\tr0, #0x4",
+      "name": "fallback_type",
+      "ok": true
+    },
+    {
+      "detail": "0xB252 bl\t0x6238",
+      "name": "fallback_alloc_call",
+      "ok": true
+    },
+    {
+      "detail": "0xB256 cbz\tr0, 0xb26a",
+      "name": "fallback_success_branch",
+      "ok": true
+    },
+    {
+      "detail": "0xB26A ldr\tr1, [sp, #0xc]",
+      "name": "fallback_table_base_load",
+      "ok": true
+    },
+    {
+      "detail": "0xB274 str\tr1, [r4, #0x44]",
+      "name": "fallback_table_install",
+      "ok": true
+    },
+    {
+      "detail": "0xB276 str.w\tr2, [r1, r0, lsl #2]",
+      "name": "fallback_zero_loop",
+      "ok": true
+    },
+    {
+      "detail": "0xB280 blo\t0xb276",
+      "name": "fallback_zero_loop_bound",
+      "ok": true
+    },
+    {
+      "detail": "R1 states=[112]",
+      "name": "cfg_reaches_C210",
+      "ok": true
+    },
+    {
+      "detail": "R1 states=['0x70']",
+      "name": "cfg_R1_table_plus_70_C210",
+      "ok": true
+    },
+    {
+      "detail": "R1 states=[112]",
+      "name": "cfg_reaches_CC22",
+      "ok": true
+    },
+    {
+      "detail": "R1 states=['0x70']",
+      "name": "cfg_R1_table_plus_70_CC22",
+      "ok": true
+    },
+    {
+      "detail": "R1 states=[112]",
+      "name": "cfg_reaches_C79A",
+      "ok": true
+    },
+    {
+      "detail": "R1 states=['0x70']",
+      "name": "cfg_R1_table_plus_70_C79A",
+      "ok": true
+    },
+    {
+      "detail": "R1 states=[112]",
+      "name": "cfg_reaches_C7DE",
+      "ok": true
+    },
+    {
+      "detail": "R1 states=['0x70']",
+      "name": "cfg_R1_table_plus_70_C7DE",
+      "ok": true
+    },
+    {
+      "detail": "R1 states=[112]",
+      "name": "cfg_reaches_C7E8",
+      "ok": true
+    },
+    {
+      "detail": "R1 states=['0x70']",
+      "name": "cfg_R1_table_plus_70_C7E8",
+      "ok": true
+    },
+    {
+      "detail": "0xC7DE R1 states={112}",
+      "name": "cfg_c7de_r1_state",
+      "ok": true
+    },
+    {
+      "detail": "0xC7E8 R1 states={112}",
+      "name": "cfg_c7e8_r1_state",
+      "ok": true
+    },
+    {
+      "detail": "4657 states visited",
+      "name": "cfg_visited",
+      "ok": true
+    },
+    {
+      "detail": "0xC202 movw\tr0, #0x1808",
+      "name": "first_slot_offset_instruction",
+      "ok": true
+    },
+    {
+      "detail": "0xC206 add\tr0, r1",
+      "name": "first_slot_address_add",
+      "ok": true
+    },
+    {
+      "detail": "0xC20C ldr\tr2, [pc, #0x26c]",
+      "name": "first_slot_literal_load",
+      "ok": true
+    },
+    {
+      "detail": "0xC210 str\tr2, [r0]",
+      "name": "first_slot_store",
+      "ok": true
+    },
+    {
+      "detail": "R1=TABLE+0x70 plus 0x1808",
+      "name": "first_slot_offset",
+      "ok": true
+    },
+    {
+      "detail": "0x1878/4",
+      "name": "first_slot_index",
+      "ok": true
+    },
+    {
+      "detail": "pool C47C=0x006CA7C0",
+      "name": "first_slot_value",
+      "ok": true
+    },
+    {
+      "detail": "first_slot>>12 = 0x6CA",
+      "name": "first_slot_nested_index",
+      "ok": true
+    },
+    {
+      "detail": "0xCC18 movw\tr2, #0x1ab8",
+      "name": "nested_slot_offset_instruction",
+      "ok": true
+    },
+    {
+      "detail": "0xCC22 str\tr0, [r1, r2]",
+      "name": "nested_slot_store",
+      "ok": true
+    },
+    {
+      "detail": "R1=TABLE+0x70 plus 0x1AB8",
+      "name": "nested_slot_offset",
+      "ok": true
+    },
+    {
+      "detail": "reachable c79A store uses T+0x1BB4 (index 0x6ED), not T+0x1B28 (index 0x6CA)",
+      "name": "c79a_literal_store_not_nested_slot",
+      "ok": true
+    },
+    {
+      "detail": "0x1B28/4",
+      "name": "nested_slot_index",
+      "ok": true
+    },
+    {
+      "detail": "pool CF40=0x006F47C0",
+      "name": "nested_slot_value",
+      "ok": true
+    },
+    {
+      "detail": "descriptor chain exact fallback literals",
+      "name": "nested_descriptor_equals_callback_value",
+      "ok": true
+    },
+    {
+      "detail": "low12=0x7C0",
+      "name": "nested_low12",
+      "ok": true
+    },
+    {
+      "detail": "start={nested&0x3f}",
+      "name": "nested_start",
+      "ok": true
+    },
+    {
+      "detail": "end=31",
+      "name": "nested_end",
+      "ok": true
+    },
+    {
+      "detail": "raw kind=0; callback context+0x40 can rewrite high bits",
+      "name": "nested_raw_kind",
+      "ok": true
+    },
+    {
+      "detail": "bit30=0",
+      "name": "nested_raw_bit30",
+      "ok": true
+    },
+    {
+      "detail": "0x9B82 ldr\tr0, [r5, #0x40]",
+      "name": "context_40_descriptor_high_merge_source",
+      "ok": true
+    },
+    {
+      "detail": "0x9B88 bfi\tr6, r1, #15, #5",
+      "name": "context_40_merge_bits15_19",
+      "ok": true
+    },
+    {
+      "detail": "0x9B90 lsrs\tr0, r0, #0x1c",
+      "name": "context_40_merge_bits28_31",
+      "ok": true
+    },
+    {
+      "detail": "0x9B98 bfi\tr6, r0, #28, #4",
+      "name": "context_40_merge_bits28_31_store",
+      "ok": true
+    },
+    {
+      "detail": "0x9C28 mov\tr1, r4",
+      "name": "read_R1_helper",
+      "ok": true
+    },
+    {
+      "detail": "0x9C2A bl\t0x6da4",
+      "name": "read_helper",
+      "ok": true
+    },
+    {
+      "detail": "0x9D94 mov\tr1, r4",
+      "name": "write_R1_helper",
+      "ok": true
+    },
+    {
+      "detail": "0x9D96 bl\t0x6e70",
+      "name": "write_helper",
+      "ok": true
+    }
+  ],
+  "inputs": {
+    "listing_sha256": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+    "map_report_sha256": "3122a0dce28bc61942a22d567acdc29e318a714097b48877eb0391094a7d0e43",
+    "payload_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "prior_descriptor_result_sha256": "14f71a9b17faa3b669681c574036ccb8edb3d75b7fde966a73aa0beb9dd9f7c0"
+  },
+  "passed": 61,
+  "r1_physical": "No physical SMN/MMIO claim; callback context+0x40 may rewrite descriptor high fields before R4 construction, and SVC#4 translation remains opaque",
+  "status": "PASS",
+  "symbolic_join": {
+    "descriptor_decode": "table[0x61E]=0x006CA7C0 -> nested index 0x6CA -> table[0x6CA]=0x006F47C0; raw descriptor low12 0x7C0, bits0..5=0, bits6..11=31, raw kind bits27..29=0, bit30=0",
+    "rejected_linear_candidates": "C7DE/C7E8 are unreachable from the B26A fallback CFG; reachable C79A has R1=TABLE+0x70 so R2=0x1B44 targets TABLE+0x1BB4/index0x6ED, not nested TABLE+0x1B28/index0x6CA",
+    "start": "B26A: R1=TABLE=[SP+0xC], fallback pointer later stored at context+0x44",
+    "target_c210": "CFG proves R1=TABLE+0x70; R0=R1+0x1808 => TABLE+0x1878 => table index 0x61E; store literal 0x006CA7C0 from pool C47C",
+    "target_cc22": "CFG proves R1=TABLE+0x70; R2=0x1AB8 => TABLE+0x1B28 => table index 0x6CA; store literal 0x006F47C0 from pool CF40"
+  }
+}

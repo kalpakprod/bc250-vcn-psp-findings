@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/home/OWNER/vcn_unlock/dump_nbio_vcn_route.py", line 74, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/OWNER/vcn_unlock/dump_nbio_vcn_route.py", line 57, in main
+    result["secure_access_enabled"] = smu.secure_access_enabled()
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/OWNER/vcn_unlock/bc250-smu-unlock/bc250_smu/api_q3.py", line 370, in secure_access_enabled
+    st, _ = self.send_message(3, 0x2A, check_status=False)
+            ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/OWNER/vcn_unlock/bc250-smu-unlock/bc250_smu/api.py", line 35, in send_message
+    st, ret = self._get_queue(queue_id).send(msg_id, args)
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/OWNER/vcn_unlock/bc250-smu-unlock/bc250_smu/mailbox.py", line 35, in send
+    return self._wait_done(msg_id)
+           ~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/OWNER/vcn_unlock/bc250-smu-unlock/bc250_smu/mailbox.py", line 52, in _wait_done
+    raise SmuTimeout(self._queue, msg_id)
+bc250_smu.errors.SmuTimeout: queue 3 msg 0x2A timed out - SMU wedged, cold cycle

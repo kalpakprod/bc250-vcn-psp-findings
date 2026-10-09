@@ -1,0 +1,7 @@
+Inputs are hash-pinned in the report/action log; this root-owned directory is separate from the concurrent outer864-origin output.
+Tool: LLVM 22.1.8 llvm-objdump; raw dump: xxd -g1.
+Disassembly commands use:
+  llvm-objdump -D --section=.data --triple=thumbv7m-none-eabi --start-address=START --stop-address=STOP evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o
+Raw-byte commands use:
+  xxd -g1 -s OFFSET -l LENGTH evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin
+No verifier script or prior 34-check verifier is run in this method pivot.

@@ -1,0 +1,92 @@
+{
+  "candidate": "candidates/BC250_clv_MeiMeiDXEv3_8c_omarchy_v001.bin",
+  "status": "BUILT_OFFLINE_STATIC_VERIFIED",
+  "hardware_written": false,
+  "date": "2026-09-17",
+  "output": {
+    "path": "candidates/BC250_clv_MeiMeiDXEv3_8c_omarchy_v001.bin",
+    "size": 16777216,
+    "sha256": "af53102601bc85027d3b62a9035d2b1767811833ee688d33568fcbaf91dae152"
+  },
+  "sources": {
+    "base_clv": {
+      "path": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    "fd_dxe_fv_donor": {
+      "variant": "BC250_3.00_MeiMeiDXEv3 (plain logo slot; logo file replaced in-situ by omarchy)",
+      "path": "/tmp/fd-fw/Firmware/BC250_3.00_MeiMeiDXEv3",
+      "sha256": "606a7a7f9ef8fb1c445d8ccfa9640de0339bfec5ab52969135a9e87d62028182",
+      "provenance": "Forbidden-Darkness AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script repo @/tmp/fd-v22 (extracted /tmp/fd-fw), all variants 3.00-based, diff vs stock 3.00 confined to 0xAE0088-0xC2654B"
+    },
+    "logo_asset": {
+      "path": "/usr/share/omarchy/icon.png",
+      "sha256": "edd69e61d711d8b423555f27a5afc64935c299f6e7f779112d2ce970ec0236e4",
+      "format": "PNG 300x300 8-bit sRGB"
+    }
+  },
+  "graft": {
+    "region": "0xAE0000-0xE00000 (single self-contained DXE FV, FV header byte-identical across clv/5.00/3.00/FD: GUID 78E58C8C-8A3D-4F1C-9935-896185C32DD3, len 0x320000, hdrlen 0x48)",
+    "compatibility": "COMPATIBLE: both stock 5.00-lineage and FD 3.00 images carry one FV at 0xAE0000 with identical header and 0xFF tail padding; replaced whole FV region from FD into clv",
+    "changed_ranges_vs_clv": [
+      {"start": "0xAE0000", "end": "0xC26000", "bytes": 1335296}
+    ],
+    "outside_0xAE0000_0xE00000": "byte-identical to clv (verified)"
+  },
+  "inner_structure": {
+    "outer_ffs": "9E21FD93-9C72-4C15-8C4B-E77F1DB2D792 (type 0x0B), GUIDED section EE4E5898-3914-4259-9D6E-DC7BD79403CF (LZMA), new size 0x146984 (FD original 0x1464d4)",
+    "section_stream": "RAW section (12B) + FV_IMAGE section (type 0x17, size 0x433004)",
+    "inner_fv": {
+      "old_len": "0x432000",
+      "new_len": "0x433000",
+      "reason": "new omarchy logo FFS (0x30e) exceeds old logo FFS (0x218) + free tail padding (0x2a6); FV grown by one 0x1000 block, header 16-bit checksum recomputed (PASS), blockmap NumBlocks 0x432->0x433",
+      "file_count": "unchanged (192)",
+      "last_file": "6C98E4F3-9D8B-4E5A-B2E7-31A45B9C5D81 (unchanged)"
+    },
+    "logo_ffs": {
+      "guid": "7BB28B99-61BB-11D5-9A5D-0090273FC14D",
+      "old_size": "0x218 (FD plain, 741-byte JPEG)",
+      "new_size": "0x30e",
+      "payload_format": "[u24 = 4+len(image)][0x19][image][UTF-16LE filename NUL-terminated] — decoded empirically from 18 samples (16 FD variants + stock clv PNG + stock 3.00 JPEG)",
+      "embedded": "omarchy icon.png 300x300, name 'omarchy.png', LZMA (EFI ALONE props 5d, dict 0x01000000) in GUIDED section, FFS header checksum recomputed",
+      "round_trip": "decompress from built output -> byte-exact PNG match: True"
+    }
+  },
+  "identity_checks": {
+    "psp_dir_fletcher32": {"stored": "0x17AA38B9", "calculated": "0x17AA38B9", "match": true, "entry_count": 19, "entry_sizes_equal_clv": true},
+    "apcb_incl_cbsg_0xAB0000_0xAB2000": "byte-identical to clv, checksum PASS",
+    "bhd": "identical to clv",
+    "t8_smu": "clv lineage SMU bodies carried unchanged (PSP region byte-identical to clv; FD t8 6a3da1ef not grafted)",
+    "region_0x00000000_0x0AE0000": "identical",
+    "region_0x0E00000_0x1000000": "identical"
+  },
+  "fv_checksums_output": [
+    {"base": "0x0", "len": "0x20000", "cksum": "PASS"},
+    {"base": "0xAE0000", "len": "0x320000", "cksum": "PASS"},
+    {"base": "0xE00000", "len": "0x200000", "cksum": "PASS"},
+    {"base": "0xE02000", "len": "0x1FE000", "cksum": "PASS"}
+  ],
+  "eight_core_unlock_evidence": {
+    "class": "static-analysis (observed bytes, not hardware)",
+    "driver": "7A8B9C0D-1E2F-3A4B-5C6D-7E8F9A0B1C2D (type 0x07) present in grafted inner FV; PE debug path string 'MeiMeiDXEv3_SMU_Core_Unlock.dll' (edk2 build BC250DXEv3SMUCoreUnlockDxe) — present in FD, absent in clv",
+    "literal_0x115A870": "NOT found as a raw 4-byte literal in any decompressed section — address is composed at runtime (open observation); driver presence + provenance is the graft-surface evidence",
+    "acpi": "8-core ACPI tables (C00F) not found in FV; per docs ACPI update is OS-side (initcpio acpi_override), FV carries the pre-OS SMU unlock driver"
+  },
+  "validation": {
+    "firmware_audit_py": "scripts/firmware_audit.py run on clv + candidate: PSP Fletcher32 PASS, entry count 19 (all sizes equal clv), APCB checksum PASS and equal, BHD equal",
+    "second_parser": "independent re-scan of output: 4 outer FVs checksum PASS, inner section stream re-decompressed, inner FV header checksum PASS, logo round-trip byte-exact"
+  },
+  "not_verified": [
+    "hardware acceptance of the grafted 3.00-family DXE FV on a 5.00-lineage PSP/APCB base (clv differs from 5.00 stock in PSP/APCB/FV regions; FD FV was built for 3.00)",
+    "actual boot, BDS logo rendering, and 8-core unlock behavior"
+  ],
+  "commands": [
+    "sha256sum of all inputs before use (all matched expected)",
+    "diff clv vs 5.00: regions 0x0-0x3000, 0x1f000-0x20000, 0xab1000-0xab2000 (APCB CBSG), 0xae0000-0xc26000 (FV)",
+    "_FVH scan: FVs at 0x0, 0xae0000 (len 0x320000), 0xe00000, 0xe02000 in all images; headers identical",
+    "FD inner FFS parse via LZMA (FORMAT_ALONE) + FFS walk; variant diff isolated logo to GUID 7BB28B99",
+    "logo payload format decoded from 18 samples; omarchy icon.png embedded with recomputed FFS/FV checksums",
+    "scripts/firmware_audit.py + independent structural re-scan on output"
+  ],
+  "rollback": "delete candidate file; no baselines or other files touched"
+}

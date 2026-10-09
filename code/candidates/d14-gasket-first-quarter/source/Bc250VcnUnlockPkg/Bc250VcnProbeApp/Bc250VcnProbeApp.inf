@@ -1,0 +1,27 @@
+# Standalone BC-250 VCN UEFI probe application.
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = Bc250VcnProbeApp
+  FILE_GUID                      = e14a3821-2003-4c91-992a-b625078013fe
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+[Sources]
+  Bc250VcnProbeApp.c
+  ../Bc250VcnUnlockDxe/Bc250VcnUnlockDxe.h
+
+[Packages]
+  MdePkg/MdePkg.dec
+  Bc250VcnUnlockPkg/Bc250VcnUnlockPkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  UefiLib
+  BaseLib
+  BaseMemoryLib
+  PciSegmentLib
+  IoLib
+  PrintLib

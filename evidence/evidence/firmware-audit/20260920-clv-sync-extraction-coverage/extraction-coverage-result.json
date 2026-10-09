@@ -1,0 +1,2304 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 8,
+    "total": 8
+  },
+  "checks_detail": [
+    {
+      "details": {
+        "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+      },
+      "label": "rom-pin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+      },
+      "label": "census-input-pin",
+      "status": "PASS"
+    },
+    {
+      "details": 233,
+      "label": "census-record-count",
+      "status": "PASS"
+    },
+    {
+      "details": 42,
+      "label": "coverage-module-count",
+      "status": "PASS"
+    },
+    {
+      "details": 233,
+      "label": "census-body-files",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "PE32": 178,
+        "TE": 55
+      },
+      "label": "pe32-te-only-census",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "nested/guided/freeform": 178,
+        "outer/raw": 54,
+        "security-core": 1
+      },
+      "label": "nested-origin-representation",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "field_or_token_hit_count": 0,
+          "field_or_token_hits": [],
+          "name": "MemDetect",
+          "origin": "outer",
+          "present": true,
+          "sha256": "6ba86d23491b370f63bfd04307ab0ee82e2aa5bf0f3c9e216c8d71e039630f13",
+          "size": 4832,
+          "stem": "MemDetect-6ba86d23491b",
+          "type": "TE"
+        },
+        {
+          "field_or_token_hit_count": 0,
+          "field_or_token_hits": [],
+          "name": "AmdMemAm4Pei",
+          "origin": "outer",
+          "present": true,
+          "sha256": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8",
+          "size": 5192,
+          "stem": "AmdMemAm4Pei-1ef4e7b94467",
+          "type": "TE"
+        },
+        {
+          "field_or_token_hit_count": 0,
+          "field_or_token_hits": [],
+          "name": "AmdMemoryHobInfoPeim",
+          "origin": "outer",
+          "present": true,
+          "sha256": "aad3f828ccef4cf8878cad8c9ee1e47743748f652a1ef54af04de759983b4619",
+          "size": 6472,
+          "stem": "AmdMemoryHobInfoPeim-aad3f828ccef",
+          "type": "TE"
+        },
+        {
+          "field_or_token_hit_count": 0,
+          "field_or_token_hits": [],
+          "name": "PlatformMemoryConfigurationPei",
+          "origin": "outer",
+          "present": true,
+          "sha256": "6a1ab7fe72ad3ee0e8f9238e2ba2d166c97e44812761e6d16a725525e1817085",
+          "size": 128,
+          "stem": "PlatformMemoryConfigurationPei-6a1ab7fe72ad",
+          "type": "TE"
+        },
+        {
+          "field_or_token_hit_count": 27,
+          "field_or_token_hits": [
+            {
+              "bytes": "c68216030000ff",
+              "operands": "BYTE PTR [edx+0x316],0xff",
+              "rva": "0x1a4b"
+            },
+            {
+              "bytes": "c68130030000ff",
+              "operands": "BYTE PTR [ecx+0x330],0xff",
+              "rva": "0x1b3d"
+            },
+            {
+              "bytes": "c68068030000ff",
+              "operands": "BYTE PTR [eax+0x368],0xff",
+              "rva": "0x1d42"
+            },
+            {
+              "bytes": "c6826d030000ff",
+              "operands": "BYTE PTR [edx+0x36d],0xff",
+              "rva": "0x1d74"
+            },
+            {
+              "bytes": "c681a20600000f",
+              "operands": "BYTE PTR [ecx+0x6a2],0xf",
+              "rva": "0x2941"
+            },
+            {
+              "bytes": "c682a30600000f",
+              "operands": "BYTE PTR [edx+0x6a3],0xf",
+              "rva": "0x294b"
+            },
+            {
+              "bytes": "c68203070000ff",
+              "operands": "BYTE PTR [edx+0x703],0xff",
+              "rva": "0x2c0f"
+            },
+            {
+              "bytes": "66898104070000",
+              "operands": "WORD PTR [ecx+0x704],ax",
+              "rva": "0x2c1e"
+            },
+            {
+              "bytes": "baed110000",
+              "operands": "edx,0x11ed",
+              "rva": "0x9837"
+            },
+            {
+              "bytes": "8a8216030000",
+              "operands": "al,BYTE PTR [edx+0x316]",
+              "rva": "0x9857"
+            },
+            {
+              "bytes": "ba04120000",
+              "operands": "edx,0x1204",
+              "rva": "0x9cc4"
+            },
+            {
+              "bytes": "8a8230030000",
+              "operands": "al,BYTE PTR [edx+0x330]",
+              "rva": "0x9ce4"
+            },
+            {
+              "bytes": "ba37120000",
+              "operands": "edx,0x1237",
+              "rva": "0xa6c7"
+            },
+            {
+              "bytes": "8a8268030000",
+              "operands": "al,BYTE PTR [edx+0x368]",
+              "rva": "0xa6e7"
+            },
+            {
+              "bytes": "ba3c120000",
+              "operands": "edx,0x123c",
+              "rva": "0xa7c1"
+            },
+            {
+              "bytes": "8a826d030000",
+              "operands": "al,BYTE PTR [edx+0x36d]",
+              "rva": "0xa7e1"
+            },
+            {
+              "bytes": "8a82a2060000",
+              "operands": "al,BYTE PTR [edx+0x6a2]",
+              "rva": "0xd9ce"
+            },
+            {
+              "bytes": "ba31130000",
+              "operands": "edx,0x1331",
+              "rva": "0xd9e0"
+            },
+            {
+              "bytes": "8a82a3060000",
+              "operands": "al,BYTE PTR [edx+0x6a3]",
+              "rva": "0xda00"
+            },
+            {
+              "bytes": "ba32130000",
+              "operands": "edx,0x1332",
+              "rva": "0xda12"
+            },
+            {
+              "bytes": "ba73130000",
+              "operands": "edx,0x1373",
+              "rva": "0xe706"
+            },
+            {
+              "bytes": "8a8203070000",
+              "operands": "al,BYTE PTR [edx+0x703]",
+              "rva": "0xe726"
+            },
+            {
+              "bytes": "ba74130000",
+              "operands": "edx,0x1374",
+              "rva": "0xe738"
+            },
+            {
+              "bytes": "668b8204070000",
+              "operands": "ax,WORD PTR [edx+0x704]",
+              "rva": "0xe75b"
+            },
+            {
+              "bytes": "740d",
+              "operands": "0x13313",
+              "rva": "0x13304"
+            },
+            {
+              "bytes": "740d",
+              "operands": "0x1332b",
+              "rva": "0x1331c"
+            },
+            {
+              "bytes": "751f",
+              "operands": "0x13736",
+              "rva": "0x13715"
+            }
+          ],
+          "name": "CbsBasePei",
+          "origin": "outer",
+          "present": true,
+          "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+          "size": 81520,
+          "stem": "CbsBasePei-6ff112922ad8",
+          "type": "TE"
+        },
+        {
+          "field_or_token_hit_count": 25,
+          "field_or_token_hits": [
+            {
+              "bytes": "ebc9",
+              "operands": "0x3681",
+              "rva": "0x36b6"
+            },
+            {
+              "bytes": "c68216030000ff",
+              "operands": "BYTE PTR [edx+0x316],0xff",
+              "rva": "0x4fbb"
+            },
+            {
+              "bytes": "c68130030000ff",
+              "operands": "BYTE PTR [ecx+0x330],0xff",
+              "rva": "0x50ad"
+            },
+            {
+              "bytes": "c68068030000ff",
+              "operands": "BYTE PTR [eax+0x368],0xff",
+              "rva": "0x52b2"
+            },
+            {
+              "bytes": "c6826d030000ff",
+              "operands": "BYTE PTR [edx+0x36d],0xff",
+              "rva": "0x52e4"
+            },
+            {
+              "bytes": "c681a20600000f",
+              "operands": "BYTE PTR [ecx+0x6a2],0xf",
+              "rva": "0x5eb1"
+            },
+            {
+              "bytes": "c682a30600000f",
+              "operands": "BYTE PTR [edx+0x6a3],0xf",
+              "rva": "0x5ebb"
+            },
+            {
+              "bytes": "c68203070000ff",
+              "operands": "BYTE PTR [edx+0x703],0xff",
+              "rva": "0x617f"
+            },
+            {
+              "bytes": "66898104070000",
+              "operands": "WORD PTR [ecx+0x704],ax",
+              "rva": "0x618e"
+            },
+            {
+              "bytes": "baed110000",
+              "operands": "edx,0x11ed",
+              "rva": "0xcd97"
+            },
+            {
+              "bytes": "8a8216030000",
+              "operands": "al,BYTE PTR [edx+0x316]",
+              "rva": "0xcdb7"
+            },
+            {
+              "bytes": "ba04120000",
+              "operands": "edx,0x1204",
+              "rva": "0xd224"
+            },
+            {
+              "bytes": "8a8230030000",
+              "operands": "al,BYTE PTR [edx+0x330]",
+              "rva": "0xd244"
+            },
+            {
+              "bytes": "ba37120000",
+              "operands": "edx,0x1237",
+              "rva": "0xdc27"
+            },
+            {
+              "bytes": "8a8268030000",
+              "operands": "al,BYTE PTR [edx+0x368]",
+              "rva": "0xdc47"
+            },
+            {
+              "bytes": "ba3c120000",
+              "operands": "edx,0x123c",
+              "rva": "0xdd21"
+            },
+            {
+              "bytes": "8a826d030000",
+              "operands": "al,BYTE PTR [edx+0x36d]",
+              "rva": "0xdd41"
+            },
+            {
+              "bytes": "8a82a2060000",
+              "operands": "al,BYTE PTR [edx+0x6a2]",
+              "rva": "0x10f2e"
+            },
+            {
+              "bytes": "ba31130000",
+              "operands": "edx,0x1331",
+              "rva": "0x10f40"
+            },
+            {
+              "bytes": "8a82a3060000",
+              "operands": "al,BYTE PTR [edx+0x6a3]",
+              "rva": "0x10f60"
+            },
+            {
+              "bytes": "ba32130000",
+              "operands": "edx,0x1332",
+              "rva": "0x10f72"
+            },
+            {
+              "bytes": "ba73130000",
+              "operands": "edx,0x1373",
+              "rva": "0x11c66"
+            },
+            {
+              "bytes": "8a8203070000",
+              "operands": "al,BYTE PTR [edx+0x703]",
+              "rva": "0x11c86"
+            },
+            {
+              "bytes": "ba74130000",
+              "operands": "edx,0x1374",
+              "rva": "0x11c98"
+            },
+            {
+              "bytes": "668b8204070000",
+              "operands": "ax,WORD PTR [edx+0x704]",
+              "rva": "0x11cbb"
+            }
+          ],
+          "name": "AmdFabricAriPei",
+          "origin": "outer",
+          "present": true,
+          "sha256": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+          "size": 96680,
+          "stem": "AmdFabricAriPei-c5b99650a442",
+          "type": "TE"
+        },
+        {
+          "field_or_token_hit_count": 24,
+          "field_or_token_hits": [
+            {
+              "bytes": "c68216030000ff",
+              "operands": "BYTE PTR [edx+0x316],0xff",
+              "rva": "0x3adb"
+            },
+            {
+              "bytes": "c68130030000ff",
+              "operands": "BYTE PTR [ecx+0x330],0xff",
+              "rva": "0x3bcd"
+            },
+            {
+              "bytes": "c68068030000ff",
+              "operands": "BYTE PTR [eax+0x368],0xff",
+              "rva": "0x3dd2"
+            },
+            {
+              "bytes": "c6826d030000ff",
+              "operands": "BYTE PTR [edx+0x36d],0xff",
+              "rva": "0x3e04"
+            },
+            {
+              "bytes": "c681a20600000f",
+              "operands": "BYTE PTR [ecx+0x6a2],0xf",
+              "rva": "0x49d1"
+            },
+            {
+              "bytes": "c682a30600000f",
+              "operands": "BYTE PTR [edx+0x6a3],0xf",
+              "rva": "0x49db"
+            },
+            {
+              "bytes": "c68203070000ff",
+              "operands": "BYTE PTR [edx+0x703],0xff",
+              "rva": "0x4c9f"
+            },
+            {
+              "bytes": "66898104070000",
+              "operands": "WORD PTR [ecx+0x704],ax",
+              "rva": "0x4cae"
+            },
+            {
+              "bytes": "baed110000",
+              "operands": "edx,0x11ed",
+              "rva": "0xb8b7"
+            },
+            {
+              "bytes": "8a8216030000",
+              "operands": "al,BYTE PTR [edx+0x316]",
+              "rva": "0xb8d7"
+            },
+            {
+              "bytes": "ba04120000",
+              "operands": "edx,0x1204",
+              "rva": "0xbd44"
+            },
+            {
+              "bytes": "8a8230030000",
+              "operands": "al,BYTE PTR [edx+0x330]",
+              "rva": "0xbd64"
+            },
+            {
+              "bytes": "ba37120000",
+              "operands": "edx,0x1237",
+              "rva": "0xc747"
+            },
+            {
+              "bytes": "8a8268030000",
+              "operands": "al,BYTE PTR [edx+0x368]",
+              "rva": "0xc767"
+            },
+            {
+              "bytes": "ba3c120000",
+              "operands": "edx,0x123c",
+              "rva": "0xc841"
+            },
+            {
+              "bytes": "8a826d030000",
+              "operands": "al,BYTE PTR [edx+0x36d]",
+              "rva": "0xc861"
+            },
+            {
+              "bytes": "8a82a2060000",
+              "operands": "al,BYTE PTR [edx+0x6a2]",
+              "rva": "0xfa4e"
+            },
+            {
+              "bytes": "ba31130000",
+              "operands": "edx,0x1331",
+              "rva": "0xfa60"
+            },
+            {
+              "bytes": "8a82a3060000",
+              "operands": "al,BYTE PTR [edx+0x6a3]",
+              "rva": "0xfa80"
+            },
+            {
+              "bytes": "ba32130000",
+              "operands": "edx,0x1332",
+              "rva": "0xfa92"
+            },
+            {
+              "bytes": "ba73130000",
+              "operands": "edx,0x1373",
+              "rva": "0x10786"
+            },
+            {
+              "bytes": "8a8203070000",
+              "operands": "al,BYTE PTR [edx+0x703]",
+              "rva": "0x107a6"
+            },
+            {
+              "bytes": "ba74130000",
+              "operands": "edx,0x1374",
+              "rva": "0x107b8"
+            },
+            {
+              "bytes": "668b8204070000",
+              "operands": "ax,WORD PTR [edx+0x704]",
+              "rva": "0x107db"
+            }
+          ],
+          "name": "AmdNbioSmuV10Pei",
+          "origin": "outer",
+          "present": true,
+          "sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+          "size": 90672,
+          "stem": "AmdNbioSmuV10Pei-905b8be68afd",
+          "type": "TE"
+        },
+        {
+          "field_or_token_hit_count": 24,
+          "field_or_token_hits": [
+            {
+              "bytes": "c68216030000ff",
+              "operands": "BYTE PTR [edx+0x316],0xff",
+              "rva": "0x318b"
+            },
+            {
+              "bytes": "c68130030000ff",
+              "operands": "BYTE PTR [ecx+0x330],0xff",
+              "rva": "0x327d"
+            },
+            {
+              "bytes": "c68068030000ff",
+              "operands": "BYTE PTR [eax+0x368],0xff",
+              "rva": "0x3482"
+            },
+            {
+              "bytes": "c6826d030000ff",
+              "operands": "BYTE PTR [edx+0x36d],0xff",
+              "rva": "0x34b4"
+            },
+            {
+              "bytes": "c681a20600000f",
+              "operands": "BYTE PTR [ecx+0x6a2],0xf",
+              "rva": "0x4081"
+            },
+            {
+              "bytes": "c682a30600000f",
+              "operands": "BYTE PTR [edx+0x6a3],0xf",
+              "rva": "0x408b"
+            },
+            {
+              "bytes": "c68203070000ff",
+              "operands": "BYTE PTR [edx+0x703],0xff",
+              "rva": "0x434f"
+            },
+            {
+              "bytes": "66898104070000",
+              "operands": "WORD PTR [ecx+0x704],ax",
+              "rva": "0x435e"
+            },
+            {
+              "bytes": "baed110000",
+              "operands": "edx,0x11ed",
+              "rva": "0xaf67"
+            },
+            {
+              "bytes": "8a8216030000",
+              "operands": "al,BYTE PTR [edx+0x316]",
+              "rva": "0xaf87"
+            },
+            {
+              "bytes": "ba04120000",
+              "operands": "edx,0x1204",
+              "rva": "0xb3f4"
+            },
+            {
+              "bytes": "8a8230030000",
+              "operands": "al,BYTE PTR [edx+0x330]",
+              "rva": "0xb414"
+            },
+            {
+              "bytes": "ba37120000",
+              "operands": "edx,0x1237",
+              "rva": "0xbdf7"
+            },
+            {
+              "bytes": "8a8268030000",
+              "operands": "al,BYTE PTR [edx+0x368]",
+              "rva": "0xbe17"
+            },
+            {
+              "bytes": "ba3c120000",
+              "operands": "edx,0x123c",
+              "rva": "0xbef1"
+            },
+            {
+              "bytes": "8a826d030000",
+              "operands": "al,BYTE PTR [edx+0x36d]",
+              "rva": "0xbf11"
+            },
+            {
+              "bytes": "8a82a2060000",
+              "operands": "al,BYTE PTR [edx+0x6a2]",
+              "rva": "0xf0fe"
+            },
+            {
+              "bytes": "ba31130000",
+              "operands": "edx,0x1331",
+              "rva": "0xf110"
+            },
+            {
+              "bytes": "8a82a3060000",
+              "operands": "al,BYTE PTR [edx+0x6a3]",
+              "rva": "0xf130"
+            },
+            {
+              "bytes": "ba32130000",
+              "operands": "edx,0x1332",
+              "rva": "0xf142"
+            },
+            {
+              "bytes": "ba73130000",
+              "operands": "edx,0x1373",
+              "rva": "0xfe36"
+            },
+            {
+              "bytes": "8a8203070000",
+              "operands": "al,BYTE PTR [edx+0x703]",
+              "rva": "0xfe56"
+            },
+            {
+              "bytes": "ba74130000",
+              "operands": "edx,0x1374",
+              "rva": "0xfe68"
+            },
+            {
+              "bytes": "668b8204070000",
+              "operands": "ax,WORD PTR [edx+0x704]",
+              "rva": "0xfe8b"
+            }
+          ],
+          "name": "AmdNbioGfxARIPei",
+          "origin": "outer",
+          "present": true,
+          "sha256": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+          "size": 87048,
+          "stem": "AmdNbioGfxARIPei-63413be2ac29",
+          "type": "TE"
+        },
+        {
+          "field_or_token_hit_count": 28,
+          "field_or_token_hits": [
+            {
+              "bytes": "7445",
+              "operands": "0x316a",
+              "rva": "0x3123"
+            },
+            {
+              "bytes": "7537",
+              "operands": "0x3168",
+              "rva": "0x312f"
+            },
+            {
+              "bytes": "eb15",
+              "operands": "0x3168",
+              "rva": "0x3151"
+            },
+            {
+              "bytes": "770c",
+              "operands": "0x3308",
+              "rva": "0x32fa"
+            },
+            {
+              "bytes": "c68216030000ff",
+              "operands": "BYTE PTR [edx+0x316],0xff",
+              "rva": "0x5dcb"
+            },
+            {
+              "bytes": "c68130030000ff",
+              "operands": "BYTE PTR [ecx+0x330],0xff",
+              "rva": "0x5ebd"
+            },
+            {
+              "bytes": "c68068030000ff",
+              "operands": "BYTE PTR [eax+0x368],0xff",
+              "rva": "0x60c2"
+            },
+            {
+              "bytes": "c6826d030000ff",
+              "operands": "BYTE PTR [edx+0x36d],0xff",
+              "rva": "0x60f4"
+            },
+            {
+              "bytes": "c681a20600000f",
+              "operands": "BYTE PTR [ecx+0x6a2],0xf",
+              "rva": "0x6cc1"
+            },
+            {
+              "bytes": "c682a30600000f",
+              "operands": "BYTE PTR [edx+0x6a3],0xf",
+              "rva": "0x6ccb"
+            },
+            {
+              "bytes": "c68203070000ff",
+              "operands": "BYTE PTR [edx+0x703],0xff",
+              "rva": "0x6f8f"
+            },
+            {
+              "bytes": "66898104070000",
+              "operands": "WORD PTR [ecx+0x704],ax",
+              "rva": "0x6f9e"
+            },
+            {
+              "bytes": "baed110000",
+              "operands": "edx,0x11ed",
+              "rva": "0xdba7"
+            },
+            {
+              "bytes": "8a8216030000",
+              "operands": "al,BYTE PTR [edx+0x316]",
+              "rva": "0xdbc7"
+            },
+            {
+              "bytes": "ba04120000",
+              "operands": "edx,0x1204",
+              "rva": "0xe034"
+            },
+            {
+              "bytes": "8a8230030000",
+              "operands": "al,BYTE PTR [edx+0x330]",
+              "rva": "0xe054"
+            },
+            {
+              "bytes": "ba37120000",
+              "operands": "edx,0x1237",
+              "rva": "0xea37"
+            },
+            {
+              "bytes": "8a8268030000",
+              "operands": "al,BYTE PTR [edx+0x368]",
+              "rva": "0xea57"
+            },
+            {
+              "bytes": "ba3c120000",
+              "operands": "edx,0x123c",
+              "rva": "0xeb31"
+            },
+            {
+              "bytes": "8a826d030000",
+              "operands": "al,BYTE PTR [edx+0x36d]",
+              "rva": "0xeb51"
+            },
+            {
+              "bytes": "8a82a2060000",
+              "operands": "al,BYTE PTR [edx+0x6a2]",
+              "rva": "0x11d3e"
+            },
+            {
+              "bytes": "ba31130000",
+              "operands": "edx,0x1331",
+              "rva": "0x11d50"
+            },
+            {
+              "bytes": "8a82a3060000",
+              "operands": "al,BYTE PTR [edx+0x6a3]",
+              "rva": "0x11d70"
+            },
+            {
+              "bytes": "ba32130000",
+              "operands": "edx,0x1332",
+              "rva": "0x11d82"
+            },
+            {
+              "bytes": "ba73130000",
+              "operands": "edx,0x1373",
+              "rva": "0x12a76"
+            },
+            {
+              "bytes": "8a8203070000",
+              "operands": "al,BYTE PTR [edx+0x703]",
+              "rva": "0x12a96"
+            },
+            {
+              "bytes": "ba74130000",
+              "operands": "edx,0x1374",
+              "rva": "0x12aa8"
+            },
+            {
+              "bytes": "668b8204070000",
+              "operands": "ax,WORD PTR [edx+0x704]",
+              "rva": "0x12acb"
+            }
+          ],
+          "name": "AmdNbioBaseARIPei",
+          "origin": "outer",
+          "present": true,
+          "sha256": "51d96c1e5a5e2c39f04fb962b0b5be686dea0a05eecbde829a4595fe3356884f",
+          "size": 105264,
+          "stem": "AmdNbioBaseARIPei-51d96c1e5a5e",
+          "type": "TE"
+        },
+        {
+          "field_or_token_hit_count": 28,
+          "field_or_token_hits": [
+            {
+              "bytes": "741e",
+              "operands": "0x3303",
+              "rva": "0x32e3"
+            },
+            {
+              "bytes": "0f86f6010000",
+              "operands": "0x3685",
+              "rva": "0x3489"
+            },
+            {
+              "bytes": "7504",
+              "operands": "0x36db",
+              "rva": "0x36d5"
+            },
+            {
+              "bytes": "eb02",
+              "operands": "0x36dd",
+              "rva": "0x36d9"
+            },
+            {
+              "bytes": "c68216030000ff",
+              "operands": "BYTE PTR [edx+0x316],0xff",
+              "rva": "0x68cb"
+            },
+            {
+              "bytes": "c68130030000ff",
+              "operands": "BYTE PTR [ecx+0x330],0xff",
+              "rva": "0x69bd"
+            },
+            {
+              "bytes": "c68068030000ff",
+              "operands": "BYTE PTR [eax+0x368],0xff",
+              "rva": "0x6bc2"
+            },
+            {
+              "bytes": "c6826d030000ff",
+              "operands": "BYTE PTR [edx+0x36d],0xff",
+              "rva": "0x6bf4"
+            },
+            {
+              "bytes": "c681a20600000f",
+              "operands": "BYTE PTR [ecx+0x6a2],0xf",
+              "rva": "0x77c1"
+            },
+            {
+              "bytes": "c682a30600000f",
+              "operands": "BYTE PTR [edx+0x6a3],0xf",
+              "rva": "0x77cb"
+            },
+            {
+              "bytes": "c68203070000ff",
+              "operands": "BYTE PTR [edx+0x703],0xff",
+              "rva": "0x7a8f"
+            },
+            {
+              "bytes": "66898104070000",
+              "operands": "WORD PTR [ecx+0x704],ax",
+              "rva": "0x7a9e"
+            },
+            {
+              "bytes": "baed110000",
+              "operands": "edx,0x11ed",
+              "rva": "0xe6b7"
+            },
+            {
+              "bytes": "8a8216030000",
+              "operands": "al,BYTE PTR [edx+0x316]",
+              "rva": "0xe6d7"
+            },
+            {
+              "bytes": "ba04120000",
+              "operands": "edx,0x1204",
+              "rva": "0xeb44"
+            },
+            {
+              "bytes": "8a8230030000",
+              "operands": "al,BYTE PTR [edx+0x330]",
+              "rva": "0xeb64"
+            },
+            {
+              "bytes": "ba37120000",
+              "operands": "edx,0x1237",
+              "rva": "0xf547"
+            },
+            {
+              "bytes": "8a8268030000",
+              "operands": "al,BYTE PTR [edx+0x368]",
+              "rva": "0xf567"
+            },
+            {
+              "bytes": "ba3c120000",
+              "operands": "edx,0x123c",
+              "rva": "0xf641"
+            },
+            {
+              "bytes": "8a826d030000",
+              "operands": "al,BYTE PTR [edx+0x36d]",
+              "rva": "0xf661"
+            },
+            {
+              "bytes": "8a82a2060000",
+              "operands": "al,BYTE PTR [edx+0x6a2]",
+              "rva": "0x1284e"
+            },
+            {
+              "bytes": "ba31130000",
+              "operands": "edx,0x1331",
+              "rva": "0x12860"
+            },
+            {
+              "bytes": "8a82a3060000",
+              "operands": "al,BYTE PTR [edx+0x6a3]",
+              "rva": "0x12880"
+            },
+            {
+              "bytes": "ba32130000",
+              "operands": "edx,0x1332",
+              "rva": "0x12892"
+            },
+            {
+              "bytes": "ba73130000",
+              "operands": "edx,0x1373",
+              "rva": "0x13586"
+            },
+            {
+              "bytes": "8a8203070000",
+              "operands": "al,BYTE PTR [edx+0x703]",
+              "rva": "0x135a6"
+            },
+            {
+              "bytes": "ba74130000",
+              "operands": "edx,0x1374",
+              "rva": "0x135b8"
+            },
+            {
+              "bytes": "668b8204070000",
+              "operands": "ax,WORD PTR [edx+0x704]",
+              "rva": "0x135db"
+            }
+          ],
+          "name": "AmdNbioPcieARIPei",
+          "origin": "outer",
+          "present": true,
+          "sha256": "62b1398c4ba9b5a03ea533306cd8200257fac323c8fa688caa057667a5871312",
+          "size": 108776,
+          "stem": "AmdNbioPcieARIPei-62b1398c4ba9",
+          "type": "TE"
+        },
+        {
+          "field_or_token_hit_count": 25,
+          "field_or_token_hits": [
+            {
+              "bytes": "c68216030000ff",
+              "operands": "BYTE PTR [edx+0x316],0xff",
+              "rva": "0x380b"
+            },
+            {
+              "bytes": "c68130030000ff",
+              "operands": "BYTE PTR [ecx+0x330],0xff",
+              "rva": "0x38fd"
+            },
+            {
+              "bytes": "c68068030000ff",
+              "operands": "BYTE PTR [eax+0x368],0xff",
+              "rva": "0x3b02"
+            },
+            {
+              "bytes": "c6826d030000ff",
+              "operands": "BYTE PTR [edx+0x36d],0xff",
+              "rva": "0x3b34"
+            },
+            {
+              "bytes": "c681a20600000f",
+              "operands": "BYTE PTR [ecx+0x6a2],0xf",
+              "rva": "0x4701"
+            },
+            {
+              "bytes": "c682a30600000f",
+              "operands": "BYTE PTR [edx+0x6a3],0xf",
+              "rva": "0x470b"
+            },
+            {
+              "bytes": "c68203070000ff",
+              "operands": "BYTE PTR [edx+0x703],0xff",
+              "rva": "0x49cf"
+            },
+            {
+              "bytes": "66898104070000",
+              "operands": "WORD PTR [ecx+0x704],ax",
+              "rva": "0x49de"
+            },
+            {
+              "bytes": "baed110000",
+              "operands": "edx,0x11ed",
+              "rva": "0xb5f7"
+            },
+            {
+              "bytes": "8a8216030000",
+              "operands": "al,BYTE PTR [edx+0x316]",
+              "rva": "0xb617"
+            },
+            {
+              "bytes": "ba04120000",
+              "operands": "edx,0x1204",
+              "rva": "0xba84"
+            },
+            {
+              "bytes": "8a8230030000",
+              "operands": "al,BYTE PTR [edx+0x330]",
+              "rva": "0xbaa4"
+            },
+            {
+              "bytes": "ba37120000",
+              "operands": "edx,0x1237",
+              "rva": "0xc487"
+            },
+            {
+              "bytes": "8a8268030000",
+              "operands": "al,BYTE PTR [edx+0x368]",
+              "rva": "0xc4a7"
+            },
+            {
+              "bytes": "ba3c120000",
+              "operands": "edx,0x123c",
+              "rva": "0xc581"
+            },
+            {
+              "bytes": "8a826d030000",
+              "operands": "al,BYTE PTR [edx+0x36d]",
+              "rva": "0xc5a1"
+            },
+            {
+              "bytes": "8a82a2060000",
+              "operands": "al,BYTE PTR [edx+0x6a2]",
+              "rva": "0xf78e"
+            },
+            {
+              "bytes": "ba31130000",
+              "operands": "edx,0x1331",
+              "rva": "0xf7a0"
+            },
+            {
+              "bytes": "8a82a3060000",
+              "operands": "al,BYTE PTR [edx+0x6a3]",
+              "rva": "0xf7c0"
+            },
+            {
+              "bytes": "ba32130000",
+              "operands": "edx,0x1332",
+              "rva": "0xf7d2"
+            },
+            {
+              "bytes": "ba73130000",
+              "operands": "edx,0x1373",
+              "rva": "0x104c6"
+            },
+            {
+              "bytes": "8a8203070000",
+              "operands": "al,BYTE PTR [edx+0x703]",
+              "rva": "0x104e6"
+            },
+            {
+              "bytes": "ba74130000",
+              "operands": "edx,0x1374",
+              "rva": "0x104f8"
+            },
+            {
+              "bytes": "668b8204070000",
+              "operands": "ax,WORD PTR [edx+0x704]",
+              "rva": "0x1051b"
+            },
+            {
+              "bytes": "7505",
+              "operands": "0x13732",
+              "rva": "0x1372b"
+            }
+          ],
+          "name": "AmdSocBl5AriPei",
+          "origin": "outer",
+          "present": true,
+          "sha256": "79e13211d5ae6b416311d67f735e68d946ea4045708d8463f7b92c495dff80b0",
+          "size": 89416,
+          "stem": "AmdSocBl5AriPei-79e13211d5ae",
+          "type": "TE"
+        },
+        {
+          "field_or_token_hit_count": 0,
+          "field_or_token_hits": [],
+          "name": "GnbPei",
+          "origin": "outer",
+          "present": true,
+          "sha256": "05d1364a0861b85b6afd552c91778b7d4616c9651b5eef3c56ce99d09bae666d",
+          "size": 744,
+          "stem": "GnbPei-05d1364a0861",
+          "type": "TE"
+        },
+        {
+          "field_or_token_hit_count": 1,
+          "field_or_token_hits": [
+            {
+              "bytes": "75cc",
+              "operands": "0x36d",
+              "rva": "0x39f"
+            }
+          ],
+          "name": "NbPei",
+          "origin": "outer",
+          "present": true,
+          "sha256": "7ce155eea0eb4e8156afd346627b2a6e1df2fc8f71875e18beb1718ddc66cc68",
+          "size": 1352,
+          "stem": "NbPei-7ce155eea0eb",
+          "type": "TE"
+        },
+        {
+          "field_or_token_hit_count": 4,
+          "field_or_token_hits": [
+            {
+              "bytes": "7524",
+              "operands": "0x6a2",
+              "rva": "0x67c"
+            },
+            {
+              "bytes": "7519",
+              "operands": "0x6a2",
+              "rva": "0x687"
+            },
+            {
+              "bytes": "750e",
+              "operands": "0x6a2",
+              "rva": "0x692"
+            },
+            {
+              "bytes": "7503",
+              "operands": "0x6a2",
+              "rva": "0x69d"
+            }
+          ],
+          "name": "AmiAgesaPei",
+          "origin": "outer",
+          "present": true,
+          "sha256": "2e40ead690966912df78c79047f8e6e439070678fe5a7f0a34e8824224f4b920",
+          "size": 1912,
+          "stem": "AmiAgesaPei-2e40ead69096",
+          "type": "TE"
+        }
+      ],
+      "label": "relevant-premem-records-present",
+      "status": "PASS"
+    }
+  ],
+  "conclusion": {
+    "raw_payload_gap": "PSP/ABL/SMU/raw non-x86 payloads and arbitrary non-executable/computed runtime paths are outside this x86 executable census and require their existing separate evidence paths.",
+    "semantic_consumer": "No relevant module is promoted as the actual clock/training consumer by extraction coverage alone; pre-memory ownership and downstream dataflow remain separate questions.",
+    "x86_pei_extraction": "No coverage gap found for named exact-clv PEI/x86 modules in the 233-record census; MemDetect/AmdMemAm4Pei/AmdMemoryHobInfoPeim/PlatformMemoryConfigurationPei/CbsBasePei/AmdNbio/AmdFabric candidates are present with hashes and origins."
+  },
+  "coverage_summary": {
+    "extractor_scope": "All 233 supported executable code sections; objdump linear boundaries, direct branches, exact stored pointers and RIP-relative materializations. Arbitrary runtime/computed indirect targets not solved.",
+    "origin_classes": {
+      "nested/guided/freeform": 178,
+      "outer/raw": 54,
+      "security-core": 1
+    },
+    "raw_gap_classification": {
+      "non_executable_sections_and_runtime_indirects": {
+        "reason": "extractor saves PE32/TE executable sections and coverage explicitly leaves arbitrary runtime/computed indirect targets unresolved",
+        "status": "not-exhaustively-covered"
+      },
+      "raw_non_x86_psp_abl_smu": {
+        "reason": "census records are PE32/TE executable sections; PSP/BHD/raw payload bodies are separate firmware_audit/PSP evidence",
+        "status": "not-in-233-x86-census"
+      },
+      "x86_executable_sections": {
+        "covered_records": 233,
+        "nested_records": 178,
+        "outer_te_records": 54,
+        "status": "covered-by-existing-census",
+        "types": {
+          "PE32": 178,
+          "TE": 55
+        }
+      }
+    },
+    "records": 233,
+    "type_counts": {
+      "PE32": 178,
+      "TE": 55
+    }
+  },
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "census": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/census.json",
+    "census_extractor_sha256": "5ead8605678fc5a13eb0cf49c01b43037560ddc485d8ad2686abf0e9c34d9593",
+    "census_sha256": "506b8eefd0ef3847782dddd88a458b95e32082f473346d7d645703dce6b60d39",
+    "coverage": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/coverage.json",
+    "coverage_sha256": "0355c37cace8ae69094a5bfbbe4ea5ac14c52b2a5f3f9f6b2300858dfe206c46",
+    "objdump": "GNU objdump (GNU Binutils) 2.47",
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+  },
+  "relevant_pre_memory_modules": [
+    {
+      "field_or_token_hit_count": 0,
+      "field_or_token_hits": [],
+      "name": "MemDetect",
+      "origin": "outer",
+      "present": true,
+      "sha256": "6ba86d23491b370f63bfd04307ab0ee82e2aa5bf0f3c9e216c8d71e039630f13",
+      "size": 4832,
+      "stem": "MemDetect-6ba86d23491b",
+      "type": "TE"
+    },
+    {
+      "field_or_token_hit_count": 0,
+      "field_or_token_hits": [],
+      "name": "AmdMemAm4Pei",
+      "origin": "outer",
+      "present": true,
+      "sha256": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8",
+      "size": 5192,
+      "stem": "AmdMemAm4Pei-1ef4e7b94467",
+      "type": "TE"
+    },
+    {
+      "field_or_token_hit_count": 0,
+      "field_or_token_hits": [],
+      "name": "AmdMemoryHobInfoPeim",
+      "origin": "outer",
+      "present": true,
+      "sha256": "aad3f828ccef4cf8878cad8c9ee1e47743748f652a1ef54af04de759983b4619",
+      "size": 6472,
+      "stem": "AmdMemoryHobInfoPeim-aad3f828ccef",
+      "type": "TE"
+    },
+    {
+      "field_or_token_hit_count": 0,
+      "field_or_token_hits": [],
+      "name": "PlatformMemoryConfigurationPei",
+      "origin": "outer",
+      "present": true,
+      "sha256": "6a1ab7fe72ad3ee0e8f9238e2ba2d166c97e44812761e6d16a725525e1817085",
+      "size": 128,
+      "stem": "PlatformMemoryConfigurationPei-6a1ab7fe72ad",
+      "type": "TE"
+    },
+    {
+      "field_or_token_hit_count": 27,
+      "field_or_token_hits": [
+        {
+          "bytes": "c68216030000ff",
+          "operands": "BYTE PTR [edx+0x316],0xff",
+          "rva": "0x1a4b"
+        },
+        {
+          "bytes": "c68130030000ff",
+          "operands": "BYTE PTR [ecx+0x330],0xff",
+          "rva": "0x1b3d"
+        },
+        {
+          "bytes": "c68068030000ff",
+          "operands": "BYTE PTR [eax+0x368],0xff",
+          "rva": "0x1d42"
+        },
+        {
+          "bytes": "c6826d030000ff",
+          "operands": "BYTE PTR [edx+0x36d],0xff",
+          "rva": "0x1d74"
+        },
+        {
+          "bytes": "c681a20600000f",
+          "operands": "BYTE PTR [ecx+0x6a2],0xf",
+          "rva": "0x2941"
+        },
+        {
+          "bytes": "c682a30600000f",
+          "operands": "BYTE PTR [edx+0x6a3],0xf",
+          "rva": "0x294b"
+        },
+        {
+          "bytes": "c68203070000ff",
+          "operands": "BYTE PTR [edx+0x703],0xff",
+          "rva": "0x2c0f"
+        },
+        {
+          "bytes": "66898104070000",
+          "operands": "WORD PTR [ecx+0x704],ax",
+          "rva": "0x2c1e"
+        },
+        {
+          "bytes": "baed110000",
+          "operands": "edx,0x11ed",
+          "rva": "0x9837"
+        },
+        {
+          "bytes": "8a8216030000",
+          "operands": "al,BYTE PTR [edx+0x316]",
+          "rva": "0x9857"
+        },
+        {
+          "bytes": "ba04120000",
+          "operands": "edx,0x1204",
+          "rva": "0x9cc4"
+        },
+        {
+          "bytes": "8a8230030000",
+          "operands": "al,BYTE PTR [edx+0x330]",
+          "rva": "0x9ce4"
+        },
+        {
+          "bytes": "ba37120000",
+          "operands": "edx,0x1237",
+          "rva": "0xa6c7"
+        },
+        {
+          "bytes": "8a8268030000",
+          "operands": "al,BYTE PTR [edx+0x368]",
+          "rva": "0xa6e7"
+        },
+        {
+          "bytes": "ba3c120000",
+          "operands": "edx,0x123c",
+          "rva": "0xa7c1"
+        },
+        {
+          "bytes": "8a826d030000",
+          "operands": "al,BYTE PTR [edx+0x36d]",
+          "rva": "0xa7e1"
+        },
+        {
+          "bytes": "8a82a2060000",
+          "operands": "al,BYTE PTR [edx+0x6a2]",
+          "rva": "0xd9ce"
+        },
+        {
+          "bytes": "ba31130000",
+          "operands": "edx,0x1331",
+          "rva": "0xd9e0"
+        },
+        {
+          "bytes": "8a82a3060000",
+          "operands": "al,BYTE PTR [edx+0x6a3]",
+          "rva": "0xda00"
+        },
+        {
+          "bytes": "ba32130000",
+          "operands": "edx,0x1332",
+          "rva": "0xda12"
+        },
+        {
+          "bytes": "ba73130000",
+          "operands": "edx,0x1373",
+          "rva": "0xe706"
+        },
+        {
+          "bytes": "8a8203070000",
+          "operands": "al,BYTE PTR [edx+0x703]",
+          "rva": "0xe726"
+        },
+        {
+          "bytes": "ba74130000",
+          "operands": "edx,0x1374",
+          "rva": "0xe738"
+        },
+        {
+          "bytes": "668b8204070000",
+          "operands": "ax,WORD PTR [edx+0x704]",
+          "rva": "0xe75b"
+        },
+        {
+          "bytes": "740d",
+          "operands": "0x13313",
+          "rva": "0x13304"
+        },
+        {
+          "bytes": "740d",
+          "operands": "0x1332b",
+          "rva": "0x1331c"
+        },
+        {
+          "bytes": "751f",
+          "operands": "0x13736",
+          "rva": "0x13715"
+        }
+      ],
+      "name": "CbsBasePei",
+      "origin": "outer",
+      "present": true,
+      "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "size": 81520,
+      "stem": "CbsBasePei-6ff112922ad8",
+      "type": "TE"
+    },
+    {
+      "field_or_token_hit_count": 25,
+      "field_or_token_hits": [
+        {
+          "bytes": "ebc9",
+          "operands": "0x3681",
+          "rva": "0x36b6"
+        },
+        {
+          "bytes": "c68216030000ff",
+          "operands": "BYTE PTR [edx+0x316],0xff",
+          "rva": "0x4fbb"
+        },
+        {
+          "bytes": "c68130030000ff",
+          "operands": "BYTE PTR [ecx+0x330],0xff",
+          "rva": "0x50ad"
+        },
+        {
+          "bytes": "c68068030000ff",
+          "operands": "BYTE PTR [eax+0x368],0xff",
+          "rva": "0x52b2"
+        },
+        {
+          "bytes": "c6826d030000ff",
+          "operands": "BYTE PTR [edx+0x36d],0xff",
+          "rva": "0x52e4"
+        },
+        {
+          "bytes": "c681a20600000f",
+          "operands": "BYTE PTR [ecx+0x6a2],0xf",
+          "rva": "0x5eb1"
+        },
+        {
+          "bytes": "c682a30600000f",
+          "operands": "BYTE PTR [edx+0x6a3],0xf",
+          "rva": "0x5ebb"
+        },
+        {
+          "bytes": "c68203070000ff",
+          "operands": "BYTE PTR [edx+0x703],0xff",
+          "rva": "0x617f"
+        },
+        {
+          "bytes": "66898104070000",
+          "operands": "WORD PTR [ecx+0x704],ax",
+          "rva": "0x618e"
+        },
+        {
+          "bytes": "baed110000",
+          "operands": "edx,0x11ed",
+          "rva": "0xcd97"
+        },
+        {
+          "bytes": "8a8216030000",
+          "operands": "al,BYTE PTR [edx+0x316]",
+          "rva": "0xcdb7"
+        },
+        {
+          "bytes": "ba04120000",
+          "operands": "edx,0x1204",
+          "rva": "0xd224"
+        },
+        {
+          "bytes": "8a8230030000",
+          "operands": "al,BYTE PTR [edx+0x330]",
+          "rva": "0xd244"
+        },
+        {
+          "bytes": "ba37120000",
+          "operands": "edx,0x1237",
+          "rva": "0xdc27"
+        },
+        {
+          "bytes": "8a8268030000",
+          "operands": "al,BYTE PTR [edx+0x368]",
+          "rva": "0xdc47"
+        },
+        {
+          "bytes": "ba3c120000",
+          "operands": "edx,0x123c",
+          "rva": "0xdd21"
+        },
+        {
+          "bytes": "8a826d030000",
+          "operands": "al,BYTE PTR [edx+0x36d]",
+          "rva": "0xdd41"
+        },
+        {
+          "bytes": "8a82a2060000",
+          "operands": "al,BYTE PTR [edx+0x6a2]",
+          "rva": "0x10f2e"
+        },
+        {
+          "bytes": "ba31130000",
+          "operands": "edx,0x1331",
+          "rva": "0x10f40"
+        },
+        {
+          "bytes": "8a82a3060000",
+          "operands": "al,BYTE PTR [edx+0x6a3]",
+          "rva": "0x10f60"
+        },
+        {
+          "bytes": "ba32130000",
+          "operands": "edx,0x1332",
+          "rva": "0x10f72"
+        },
+        {
+          "bytes": "ba73130000",
+          "operands": "edx,0x1373",
+          "rva": "0x11c66"
+        },
+        {
+          "bytes": "8a8203070000",
+          "operands": "al,BYTE PTR [edx+0x703]",
+          "rva": "0x11c86"
+        },
+        {
+          "bytes": "ba74130000",
+          "operands": "edx,0x1374",
+          "rva": "0x11c98"
+        },
+        {
+          "bytes": "668b8204070000",
+          "operands": "ax,WORD PTR [edx+0x704]",
+          "rva": "0x11cbb"
+        }
+      ],
+      "name": "AmdFabricAriPei",
+      "origin": "outer",
+      "present": true,
+      "sha256": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "size": 96680,
+      "stem": "AmdFabricAriPei-c5b99650a442",
+      "type": "TE"
+    },
+    {
+      "field_or_token_hit_count": 24,
+      "field_or_token_hits": [
+        {
+          "bytes": "c68216030000ff",
+          "operands": "BYTE PTR [edx+0x316],0xff",
+          "rva": "0x3adb"
+        },
+        {
+          "bytes": "c68130030000ff",
+          "operands": "BYTE PTR [ecx+0x330],0xff",
+          "rva": "0x3bcd"
+        },
+        {
+          "bytes": "c68068030000ff",
+          "operands": "BYTE PTR [eax+0x368],0xff",
+          "rva": "0x3dd2"
+        },
+        {
+          "bytes": "c6826d030000ff",
+          "operands": "BYTE PTR [edx+0x36d],0xff",
+          "rva": "0x3e04"
+        },
+        {
+          "bytes": "c681a20600000f",
+          "operands": "BYTE PTR [ecx+0x6a2],0xf",
+          "rva": "0x49d1"
+        },
+        {
+          "bytes": "c682a30600000f",
+          "operands": "BYTE PTR [edx+0x6a3],0xf",
+          "rva": "0x49db"
+        },
+        {
+          "bytes": "c68203070000ff",
+          "operands": "BYTE PTR [edx+0x703],0xff",
+          "rva": "0x4c9f"
+        },
+        {
+          "bytes": "66898104070000",
+          "operands": "WORD PTR [ecx+0x704],ax",
+          "rva": "0x4cae"
+        },
+        {
+          "bytes": "baed110000",
+          "operands": "edx,0x11ed",
+          "rva": "0xb8b7"
+        },
+        {
+          "bytes": "8a8216030000",
+          "operands": "al,BYTE PTR [edx+0x316]",
+          "rva": "0xb8d7"
+        },
+        {
+          "bytes": "ba04120000",
+          "operands": "edx,0x1204",
+          "rva": "0xbd44"
+        },
+        {
+          "bytes": "8a8230030000",
+          "operands": "al,BYTE PTR [edx+0x330]",
+          "rva": "0xbd64"
+        },
+        {
+          "bytes": "ba37120000",
+          "operands": "edx,0x1237",
+          "rva": "0xc747"
+        },
+        {
+          "bytes": "8a8268030000",
+          "operands": "al,BYTE PTR [edx+0x368]",
+          "rva": "0xc767"
+        },
+        {
+          "bytes": "ba3c120000",
+          "operands": "edx,0x123c",
+          "rva": "0xc841"
+        },
+        {
+          "bytes": "8a826d030000",
+          "operands": "al,BYTE PTR [edx+0x36d]",
+          "rva": "0xc861"
+        },
+        {
+          "bytes": "8a82a2060000",
+          "operands": "al,BYTE PTR [edx+0x6a2]",
+          "rva": "0xfa4e"
+        },
+        {
+          "bytes": "ba31130000",
+          "operands": "edx,0x1331",
+          "rva": "0xfa60"
+        },
+        {
+          "bytes": "8a82a3060000",
+          "operands": "al,BYTE PTR [edx+0x6a3]",
+          "rva": "0xfa80"
+        },
+        {
+          "bytes": "ba32130000",
+          "operands": "edx,0x1332",
+          "rva": "0xfa92"
+        },
+        {
+          "bytes": "ba73130000",
+          "operands": "edx,0x1373",
+          "rva": "0x10786"
+        },
+        {
+          "bytes": "8a8203070000",
+          "operands": "al,BYTE PTR [edx+0x703]",
+          "rva": "0x107a6"
+        },
+        {
+          "bytes": "ba74130000",
+          "operands": "edx,0x1374",
+          "rva": "0x107b8"
+        },
+        {
+          "bytes": "668b8204070000",
+          "operands": "ax,WORD PTR [edx+0x704]",
+          "rva": "0x107db"
+        }
+      ],
+      "name": "AmdNbioSmuV10Pei",
+      "origin": "outer",
+      "present": true,
+      "sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "size": 90672,
+      "stem": "AmdNbioSmuV10Pei-905b8be68afd",
+      "type": "TE"
+    },
+    {
+      "field_or_token_hit_count": 24,
+      "field_or_token_hits": [
+        {
+          "bytes": "c68216030000ff",
+          "operands": "BYTE PTR [edx+0x316],0xff",
+          "rva": "0x318b"
+        },
+        {
+          "bytes": "c68130030000ff",
+          "operands": "BYTE PTR [ecx+0x330],0xff",
+          "rva": "0x327d"
+        },
+        {
+          "bytes": "c68068030000ff",
+          "operands": "BYTE PTR [eax+0x368],0xff",
+          "rva": "0x3482"
+        },
+        {
+          "bytes": "c6826d030000ff",
+          "operands": "BYTE PTR [edx+0x36d],0xff",
+          "rva": "0x34b4"
+        },
+        {
+          "bytes": "c681a20600000f",
+          "operands": "BYTE PTR [ecx+0x6a2],0xf",
+          "rva": "0x4081"
+        },
+        {
+          "bytes": "c682a30600000f",
+          "operands": "BYTE PTR [edx+0x6a3],0xf",
+          "rva": "0x408b"
+        },
+        {
+          "bytes": "c68203070000ff",
+          "operands": "BYTE PTR [edx+0x703],0xff",
+          "rva": "0x434f"
+        },
+        {
+          "bytes": "66898104070000",
+          "operands": "WORD PTR [ecx+0x704],ax",
+          "rva": "0x435e"
+        },
+        {
+          "bytes": "baed110000",
+          "operands": "edx,0x11ed",
+          "rva": "0xaf67"
+        },
+        {
+          "bytes": "8a8216030000",
+          "operands": "al,BYTE PTR [edx+0x316]",
+          "rva": "0xaf87"
+        },
+        {
+          "bytes": "ba04120000",
+          "operands": "edx,0x1204",
+          "rva": "0xb3f4"
+        },
+        {
+          "bytes": "8a8230030000",
+          "operands": "al,BYTE PTR [edx+0x330]",
+          "rva": "0xb414"
+        },
+        {
+          "bytes": "ba37120000",
+          "operands": "edx,0x1237",
+          "rva": "0xbdf7"
+        },
+        {
+          "bytes": "8a8268030000",
+          "operands": "al,BYTE PTR [edx+0x368]",
+          "rva": "0xbe17"
+        },
+        {
+          "bytes": "ba3c120000",
+          "operands": "edx,0x123c",
+          "rva": "0xbef1"
+        },
+        {
+          "bytes": "8a826d030000",
+          "operands": "al,BYTE PTR [edx+0x36d]",
+          "rva": "0xbf11"
+        },
+        {
+          "bytes": "8a82a2060000",
+          "operands": "al,BYTE PTR [edx+0x6a2]",
+          "rva": "0xf0fe"
+        },
+        {
+          "bytes": "ba31130000",
+          "operands": "edx,0x1331",
+          "rva": "0xf110"
+        },
+        {
+          "bytes": "8a82a3060000",
+          "operands": "al,BYTE PTR [edx+0x6a3]",
+          "rva": "0xf130"
+        },
+        {
+          "bytes": "ba32130000",
+          "operands": "edx,0x1332",
+          "rva": "0xf142"
+        },
+        {
+          "bytes": "ba73130000",
+          "operands": "edx,0x1373",
+          "rva": "0xfe36"
+        },
+        {
+          "bytes": "8a8203070000",
+          "operands": "al,BYTE PTR [edx+0x703]",
+          "rva": "0xfe56"
+        },
+        {
+          "bytes": "ba74130000",
+          "operands": "edx,0x1374",
+          "rva": "0xfe68"
+        },
+        {
+          "bytes": "668b8204070000",
+          "operands": "ax,WORD PTR [edx+0x704]",
+          "rva": "0xfe8b"
+        }
+      ],
+      "name": "AmdNbioGfxARIPei",
+      "origin": "outer",
+      "present": true,
+      "sha256": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+      "size": 87048,
+      "stem": "AmdNbioGfxARIPei-63413be2ac29",
+      "type": "TE"
+    },
+    {
+      "field_or_token_hit_count": 28,
+      "field_or_token_hits": [
+        {
+          "bytes": "7445",
+          "operands": "0x316a",
+          "rva": "0x3123"
+        },
+        {
+          "bytes": "7537",
+          "operands": "0x3168",
+          "rva": "0x312f"
+        },
+        {
+          "bytes": "eb15",
+          "operands": "0x3168",
+          "rva": "0x3151"
+        },
+        {
+          "bytes": "770c",
+          "operands": "0x3308",
+          "rva": "0x32fa"
+        },
+        {
+          "bytes": "c68216030000ff",
+          "operands": "BYTE PTR [edx+0x316],0xff",
+          "rva": "0x5dcb"
+        },
+        {
+          "bytes": "c68130030000ff",
+          "operands": "BYTE PTR [ecx+0x330],0xff",
+          "rva": "0x5ebd"
+        },
+        {
+          "bytes": "c68068030000ff",
+          "operands": "BYTE PTR [eax+0x368],0xff",
+          "rva": "0x60c2"
+        },
+        {
+          "bytes": "c6826d030000ff",
+          "operands": "BYTE PTR [edx+0x36d],0xff",
+          "rva": "0x60f4"
+        },
+        {
+          "bytes": "c681a20600000f",
+          "operands": "BYTE PTR [ecx+0x6a2],0xf",
+          "rva": "0x6cc1"
+        },
+        {
+          "bytes": "c682a30600000f",
+          "operands": "BYTE PTR [edx+0x6a3],0xf",
+          "rva": "0x6ccb"
+        },
+        {
+          "bytes": "c68203070000ff",
+          "operands": "BYTE PTR [edx+0x703],0xff",
+          "rva": "0x6f8f"
+        },
+        {
+          "bytes": "66898104070000",
+          "operands": "WORD PTR [ecx+0x704],ax",
+          "rva": "0x6f9e"
+        },
+        {
+          "bytes": "baed110000",
+          "operands": "edx,0x11ed",
+          "rva": "0xdba7"
+        },
+        {
+          "bytes": "8a8216030000",
+          "operands": "al,BYTE PTR [edx+0x316]",
+          "rva": "0xdbc7"
+        },
+        {
+          "bytes": "ba04120000",
+          "operands": "edx,0x1204",
+          "rva": "0xe034"
+        },
+        {
+          "bytes": "8a8230030000",
+          "operands": "al,BYTE PTR [edx+0x330]",
+          "rva": "0xe054"
+        },
+        {
+          "bytes": "ba37120000",
+          "operands": "edx,0x1237",
+          "rva": "0xea37"
+        },
+        {
+          "bytes": "8a8268030000",
+          "operands": "al,BYTE PTR [edx+0x368]",
+          "rva": "0xea57"
+        },
+        {
+          "bytes": "ba3c120000",
+          "operands": "edx,0x123c",
+          "rva": "0xeb31"
+        },
+        {
+          "bytes": "8a826d030000",
+          "operands": "al,BYTE PTR [edx+0x36d]",
+          "rva": "0xeb51"
+        },
+        {
+          "bytes": "8a82a2060000",
+          "operands": "al,BYTE PTR [edx+0x6a2]",
+          "rva": "0x11d3e"
+        },
+        {
+          "bytes": "ba31130000",
+          "operands": "edx,0x1331",
+          "rva": "0x11d50"
+        },
+        {
+          "bytes": "8a82a3060000",
+          "operands": "al,BYTE PTR [edx+0x6a3]",
+          "rva": "0x11d70"
+        },
+        {
+          "bytes": "ba32130000",
+          "operands": "edx,0x1332",
+          "rva": "0x11d82"
+        },
+        {
+          "bytes": "ba73130000",
+          "operands": "edx,0x1373",
+          "rva": "0x12a76"
+        },
+        {
+          "bytes": "8a8203070000",
+          "operands": "al,BYTE PTR [edx+0x703]",
+          "rva": "0x12a96"
+        },
+        {
+          "bytes": "ba74130000",
+          "operands": "edx,0x1374",
+          "rva": "0x12aa8"
+        },
+        {
+          "bytes": "668b8204070000",
+          "operands": "ax,WORD PTR [edx+0x704]",
+          "rva": "0x12acb"
+        }
+      ],
+      "name": "AmdNbioBaseARIPei",
+      "origin": "outer",
+      "present": true,
+      "sha256": "51d96c1e5a5e2c39f04fb962b0b5be686dea0a05eecbde829a4595fe3356884f",
+      "size": 105264,
+      "stem": "AmdNbioBaseARIPei-51d96c1e5a5e",
+      "type": "TE"
+    },
+    {
+      "field_or_token_hit_count": 28,
+      "field_or_token_hits": [
+        {
+          "bytes": "741e",
+          "operands": "0x3303",
+          "rva": "0x32e3"
+        },
+        {
+          "bytes": "0f86f6010000",
+          "operands": "0x3685",
+          "rva": "0x3489"
+        },
+        {
+          "bytes": "7504",
+          "operands": "0x36db",
+          "rva": "0x36d5"
+        },
+        {
+          "bytes": "eb02",
+          "operands": "0x36dd",
+          "rva": "0x36d9"
+        },
+        {
+          "bytes": "c68216030000ff",
+          "operands": "BYTE PTR [edx+0x316],0xff",
+          "rva": "0x68cb"
+        },
+        {
+          "bytes": "c68130030000ff",
+          "operands": "BYTE PTR [ecx+0x330],0xff",
+          "rva": "0x69bd"
+        },
+        {
+          "bytes": "c68068030000ff",
+          "operands": "BYTE PTR [eax+0x368],0xff",
+          "rva": "0x6bc2"
+        },
+        {
+          "bytes": "c6826d030000ff",
+          "operands": "BYTE PTR [edx+0x36d],0xff",
+          "rva": "0x6bf4"
+        },
+        {
+          "bytes": "c681a20600000f",
+          "operands": "BYTE PTR [ecx+0x6a2],0xf",
+          "rva": "0x77c1"
+        },
+        {
+          "bytes": "c682a30600000f",
+          "operands": "BYTE PTR [edx+0x6a3],0xf",
+          "rva": "0x77cb"
+        },
+        {
+          "bytes": "c68203070000ff",
+          "operands": "BYTE PTR [edx+0x703],0xff",
+          "rva": "0x7a8f"
+        },
+        {
+          "bytes": "66898104070000",
+          "operands": "WORD PTR [ecx+0x704],ax",
+          "rva": "0x7a9e"
+        },
+        {
+          "bytes": "baed110000",
+          "operands": "edx,0x11ed",
+          "rva": "0xe6b7"
+        },
+        {
+          "bytes": "8a8216030000",
+          "operands": "al,BYTE PTR [edx+0x316]",
+          "rva": "0xe6d7"
+        },
+        {
+          "bytes": "ba04120000",
+          "operands": "edx,0x1204",
+          "rva": "0xeb44"
+        },
+        {
+          "bytes": "8a8230030000",
+          "operands": "al,BYTE PTR [edx+0x330]",
+          "rva": "0xeb64"
+        },
+        {
+          "bytes": "ba37120000",
+          "operands": "edx,0x1237",
+          "rva": "0xf547"
+        },
+        {
+          "bytes": "8a8268030000",
+          "operands": "al,BYTE PTR [edx+0x368]",
+          "rva": "0xf567"
+        },
+        {
+          "bytes": "ba3c120000",
+          "operands": "edx,0x123c",
+          "rva": "0xf641"
+        },
+        {
+          "bytes": "8a826d030000",
+          "operands": "al,BYTE PTR [edx+0x36d]",
+          "rva": "0xf661"
+        },
+        {
+          "bytes": "8a82a2060000",
+          "operands": "al,BYTE PTR [edx+0x6a2]",
+          "rva": "0x1284e"
+        },
+        {
+          "bytes": "ba31130000",
+          "operands": "edx,0x1331",
+          "rva": "0x12860"
+        },
+        {
+          "bytes": "8a82a3060000",
+          "operands": "al,BYTE PTR [edx+0x6a3]",
+          "rva": "0x12880"
+        },
+        {
+          "bytes": "ba32130000",
+          "operands": "edx,0x1332",
+          "rva": "0x12892"
+        },
+        {
+          "bytes": "ba73130000",
+          "operands": "edx,0x1373",
+          "rva": "0x13586"
+        },
+        {
+          "bytes": "8a8203070000",
+          "operands": "al,BYTE PTR [edx+0x703]",
+          "rva": "0x135a6"
+        },
+        {
+          "bytes": "ba74130000",
+          "operands": "edx,0x1374",
+          "rva": "0x135b8"
+        },
+        {
+          "bytes": "668b8204070000",
+          "operands": "ax,WORD PTR [edx+0x704]",
+          "rva": "0x135db"
+        }
+      ],
+      "name": "AmdNbioPcieARIPei",
+      "origin": "outer",
+      "present": true,
+      "sha256": "62b1398c4ba9b5a03ea533306cd8200257fac323c8fa688caa057667a5871312",
+      "size": 108776,
+      "stem": "AmdNbioPcieARIPei-62b1398c4ba9",
+      "type": "TE"
+    },
+    {
+      "field_or_token_hit_count": 25,
+      "field_or_token_hits": [
+        {
+          "bytes": "c68216030000ff",
+          "operands": "BYTE PTR [edx+0x316],0xff",
+          "rva": "0x380b"
+        },
+        {
+          "bytes": "c68130030000ff",
+          "operands": "BYTE PTR [ecx+0x330],0xff",
+          "rva": "0x38fd"
+        },
+        {
+          "bytes": "c68068030000ff",
+          "operands": "BYTE PTR [eax+0x368],0xff",
+          "rva": "0x3b02"
+        },
+        {
+          "bytes": "c6826d030000ff",
+          "operands": "BYTE PTR [edx+0x36d],0xff",
+          "rva": "0x3b34"
+        },
+        {
+          "bytes": "c681a20600000f",
+          "operands": "BYTE PTR [ecx+0x6a2],0xf",
+          "rva": "0x4701"
+        },
+        {
+          "bytes": "c682a30600000f",
+          "operands": "BYTE PTR [edx+0x6a3],0xf",
+          "rva": "0x470b"
+        },
+        {
+          "bytes": "c68203070000ff",
+          "operands": "BYTE PTR [edx+0x703],0xff",
+          "rva": "0x49cf"
+        },
+        {
+          "bytes": "66898104070000",
+          "operands": "WORD PTR [ecx+0x704],ax",
+          "rva": "0x49de"
+        },
+        {
+          "bytes": "baed110000",
+          "operands": "edx,0x11ed",
+          "rva": "0xb5f7"
+        },
+        {
+          "bytes": "8a8216030000",
+          "operands": "al,BYTE PTR [edx+0x316]",
+          "rva": "0xb617"
+        },
+        {
+          "bytes": "ba04120000",
+          "operands": "edx,0x1204",
+          "rva": "0xba84"
+        },
+        {
+          "bytes": "8a8230030000",
+          "operands": "al,BYTE PTR [edx+0x330]",
+          "rva": "0xbaa4"
+        },
+        {
+          "bytes": "ba37120000",
+          "operands": "edx,0x1237",
+          "rva": "0xc487"
+        },
+        {
+          "bytes": "8a8268030000",
+          "operands": "al,BYTE PTR [edx+0x368]",
+          "rva": "0xc4a7"
+        },
+        {
+          "bytes": "ba3c120000",
+          "operands": "edx,0x123c",
+          "rva": "0xc581"
+        },
+        {
+          "bytes": "8a826d030000",
+          "operands": "al,BYTE PTR [edx+0x36d]",
+          "rva": "0xc5a1"
+        },
+        {
+          "bytes": "8a82a2060000",
+          "operands": "al,BYTE PTR [edx+0x6a2]",
+          "rva": "0xf78e"
+        },
+        {
+          "bytes": "ba31130000",
+          "operands": "edx,0x1331",
+          "rva": "0xf7a0"
+        },
+        {
+          "bytes": "8a82a3060000",
+          "operands": "al,BYTE PTR [edx+0x6a3]",
+          "rva": "0xf7c0"
+        },
+        {
+          "bytes": "ba32130000",
+          "operands": "edx,0x1332",
+          "rva": "0xf7d2"
+        },
+        {
+          "bytes": "ba73130000",
+          "operands": "edx,0x1373",
+          "rva": "0x104c6"
+        },
+        {
+          "bytes": "8a8203070000",
+          "operands": "al,BYTE PTR [edx+0x703]",
+          "rva": "0x104e6"
+        },
+        {
+          "bytes": "ba74130000",
+          "operands": "edx,0x1374",
+          "rva": "0x104f8"
+        },
+        {
+          "bytes": "668b8204070000",
+          "operands": "ax,WORD PTR [edx+0x704]",
+          "rva": "0x1051b"
+        },
+        {
+          "bytes": "7505",
+          "operands": "0x13732",
+          "rva": "0x1372b"
+        }
+      ],
+      "name": "AmdSocBl5AriPei",
+      "origin": "outer",
+      "present": true,
+      "sha256": "79e13211d5ae6b416311d67f735e68d946ea4045708d8463f7b92c495dff80b0",
+      "size": 89416,
+      "stem": "AmdSocBl5AriPei-79e13211d5ae",
+      "type": "TE"
+    },
+    {
+      "field_or_token_hit_count": 0,
+      "field_or_token_hits": [],
+      "name": "GnbPei",
+      "origin": "outer",
+      "present": true,
+      "sha256": "05d1364a0861b85b6afd552c91778b7d4616c9651b5eef3c56ce99d09bae666d",
+      "size": 744,
+      "stem": "GnbPei-05d1364a0861",
+      "type": "TE"
+    },
+    {
+      "field_or_token_hit_count": 1,
+      "field_or_token_hits": [
+        {
+          "bytes": "75cc",
+          "operands": "0x36d",
+          "rva": "0x39f"
+        }
+      ],
+      "name": "NbPei",
+      "origin": "outer",
+      "present": true,
+      "sha256": "7ce155eea0eb4e8156afd346627b2a6e1df2fc8f71875e18beb1718ddc66cc68",
+      "size": 1352,
+      "stem": "NbPei-7ce155eea0eb",
+      "type": "TE"
+    },
+    {
+      "field_or_token_hit_count": 4,
+      "field_or_token_hits": [
+        {
+          "bytes": "7524",
+          "operands": "0x6a2",
+          "rva": "0x67c"
+        },
+        {
+          "bytes": "7519",
+          "operands": "0x6a2",
+          "rva": "0x687"
+        },
+        {
+          "bytes": "750e",
+          "operands": "0x6a2",
+          "rva": "0x692"
+        },
+        {
+          "bytes": "7503",
+          "operands": "0x6a2",
+          "rva": "0x69d"
+        }
+      ],
+      "name": "AmiAgesaPei",
+      "origin": "outer",
+      "present": true,
+      "sha256": "2e40ead690966912df78c79047f8e6e439070678fe5a7f0a34e8824224f4b920",
+      "size": 1912,
+      "stem": "AmiAgesaPei-2e40ead69096",
+      "type": "TE"
+    }
+  ],
+  "status": "PASS"
+}

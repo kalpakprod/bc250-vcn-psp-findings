@@ -1,0 +1,92 @@
+{
+  "status": "PASS_BOUNDED_STATIC_WITH_CALLER_IDENTITY_UNRESOLVED",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "target": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl660-object-identity/ABL1-clv-full-thumb.elf.o",
+    "sha256": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+    "isa": "Thumb-2"
+  },
+  "reused_exact_field660_report": {
+    "path": "/home/OWNER/orca/projects/bc250/docs/research/20260920-clv-abl1-context660-callback-xhigh.md",
+    "sha256": "039d8024d8db386fc9d136bedd7943abb8dcbad8aeb6ed2594a15ce9572aa8ad",
+    "machine_result_sha256": "cf16bf73c370bac1c4426f7c79e64890898a11da7743304528ddeccfe3cd7ecb",
+    "status": "PASS 97 checks; reused, not repeated"
+  },
+  "initializer_entry": {
+    "entry": "0x7378",
+    "register_args": {
+      "R0": "root object pointer saved in R5",
+      "R1": "input context saved in R6",
+      "R2": "saved in R8",
+      "R3": "saved in R4"
+    },
+    "object_writes": [
+      "0x739E stores R6 to [R5]",
+      "0x73A8 stores R4 to [R5+0x20]",
+      "0x73AA stores [R6+0x28] to [R5+0x4]",
+      "0x73B2 stores [R6+0x3C4] to [R5+0x8]"
+    ],
+    "initializer_call": "0x74DE sets R0=R5 and calls 0xAF90"
+  },
+  "field660_store": {
+    "setter": "0xAF90",
+    "R4_provenance": [
+      "0xAF94: R4=R0",
+      "0xAFA8: R4=R4+0x3C",
+      "0xB04E: LDR R3,[R4,#-0x3C]! restores R4 to the incoming root object"
+    ],
+    "store": "0xB0C2 loads literal at 0xB168; 0xB0C4 stores it to [R4+0x660]"
+  },
+  "active_consumer": {
+    "entry": "0x10958",
+    "instructions": [
+      "0x1095A loads [R0+0x660] into R4",
+      "0x1095E copies incoming R2 to R3",
+      "0x10960 copies incoming R1 to R2",
+      "0x10962 puts pointer in R12",
+      "0x10966 sets R1=1",
+      "0x10968 BX R12"
+    ],
+    "base": "current consumer R0; its identity with initializer root R5 is unresolved"
+  },
+  "constructor_direct_call_search": {
+    "command": "grep -nE 'bl[[:space:]]+0x7378([[:space:]]|<)' evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+    "exit": 1,
+    "stdout_lines": 0,
+    "meaning": "No direct BL to 0x7378 in the retained listing; does not exclude indirect or external invocation"
+  },
+  "candidate_target_reuse": {
+    "pointer_literal": "0x00060BD9 at initializer literal site 0xB168",
+    "conditional_mapping": "prior evidence maps this to candidate entry 0x9AD8 under base 0x57100; base and active-field identity are not proven",
+    "callback_body": "reused prior exact 97-check analysis; not rescanned"
+  },
+  "exact_missing_input": "The constructor invocation/indirect target that supplies R0 at entry 0x7378, or a bounded runtime/address trace giving that root object pointer and the current R0 used by 0x10958 so the two [object+0x660] addresses can be compared.",
+  "commands": [
+    {
+      "name": "initializer-entry-7378",
+      "range": "0x7378..0x7500",
+      "exit": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "initializer-store-af90-b0d0",
+      "range": "0xAF90..0xB0D0",
+      "exit": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "active-field-reader-10958",
+      "range": "0x10958..0x1096C",
+      "exit": 0,
+      "stderr_bytes": 0
+    }
+  ],
+  "limits": [
+    "No direct caller is found in the exact full listing; an indirect or external caller remains possible.",
+    "Candidate pointer mapping under 0x57100 remains conditional and is reused, not re-proven.",
+    "No runtime object identity, hardware behavior, or callback effect is established."
+  ]
+}

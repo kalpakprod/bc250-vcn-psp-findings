@@ -1,0 +1,13 @@
+VP=./daveconde-bc250-vcn-enable/enable_vcn.py SP=./bc250-smu-unlock
+[*] SMU alive
+[*] secure access open (unlocked SMU debug path active)
+[*] dom6 state word @0xf714 = 0x00010101 (state byte = 0x01)
+[*] per-slot state, BEFORE:
+    slot 0x16  dom=6  table: cur(+130)= 18 remembered(+134)= 18   gate@0x06d100
+        +0x00 clock   = 0x00000012    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x01290050 READY(bit16)
+    slot 0x17  dom=6  table: cur(+130)= 32 remembered(+134)= 32   gate@0x06d128
+        +0x00 clock   = 0x00000020    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x02090050 READY(bit16)
+    slot 0x18  dom=6  table: cur(+130)= 20 remembered(+134)= 20   gate@0x06d150
+        +0x00 clock   = 0x00000014    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x01490050 READY(bit16)
+
+[--verify: read-only. exiting]

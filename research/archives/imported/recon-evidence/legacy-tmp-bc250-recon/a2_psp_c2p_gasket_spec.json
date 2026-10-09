@@ -1,0 +1,12 @@
+{
+ "spec": "PSP C2P 'load IP firmware' (vendor: amd/MxGPU-Virtualization libgv, recon/libgv_amdgv_psp_gfx_if.h)",
+ "cmd": "struct psp_cmd_km { u32 cmd_id; union { ... psp_cmd_km_load_ip_fw ... } cmd; }; cmd_id = PSP_CMD_KM_TYPE__LOAD_IP_FW = 6",
+ "payload": "struct psp_cmd_km_load_ip_fw { u32 fw_addr_lo; u32 fw_addr_hi; u32 fw_size; u32 fw_type; } // fw_type: 0x4B SEC_GASKET, 0x4C GFX_SEC_GASKET, 0x4D SRIOV_SEC_GASKET; buffer 4KB-aligned",
+ "vbios_link": "navi32_vbios.c: PSP_DIR_ENTRY_TYPE_SECURITY_GASKET (0x24 in $PSP dir) -> fw_id 0x4B (conforms to $PSP type 0x24 = our SEC_GASKET!)",
+ "response": "struct psp_gfx_cmd_resp { u32 buf_size; u32 buf_version; u32 cmd_id; ... }",
+ "ap_psp_adaptation": "BC-250 AP-PSP: Keshas SOS interface C2PMSG_35/81/82/90 (C2PMSG_81 = SOS alive, C2PMSG_82 = SMU response, C2PMSG_90 = status 1 OK/0xFF err); implement via /dev/mem on Linux once board is up",
+ "files": [
+  "recon/libgv_amdgv_psp_gfx_if.h",
+  "recon/libgv_navi32_vbios.c"
+ ]
+}

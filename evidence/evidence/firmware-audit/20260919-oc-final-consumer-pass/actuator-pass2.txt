@@ -1,0 +1,640 @@
+PASS: entire loaded program memory equals clv-matching robin-5 body, bytes=262400
+===== 0002f6f4 FUN_0002f6f4 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002f6f4(void)
+
+{
+  float *pfVar1;
+  int iVar2;
+  float fVar3;
+  float fVar4;
+  
+  iVar2 = _DAT_00017aa8;
+  fVar3 = *(float *)(_DAT_00017aa8 + 0x70);
+  pfVar1 = (float *)(_DAT_00017aa8 + 0x2c);
+  fVar4 = *(float *)(_DAT_00017aa8 + 0x28) + *pfVar1;
+  *(undefined4 *)(_DAT_00017aa8 + 0x90) = *(undefined4 *)(_DAT_00017aa8 + 0x30);
+  *(float *)(iVar2 + 0x8c) = *pfVar1;
+  if (fVar4 < fVar3) {
+    fVar3 = fVar4;
+  }
+  *(float *)(iVar2 + 0x88) = fVar3;
+  return;
+}
+
+
+0002f6f4 364100 entry a1,0x20
+0002f6f7 21eca0 l32r a2,0x00017aa8
+0002f6fa 03021c lsi f0,a2,0x70
+0002f6fd 23020b lsi f2,a2,0x2c
+0002f700 43020a lsi f4,a2,0x28
+0002f703 20340a add.s f3,f4,f2
+0002f706 13020c lsi f1,a2,0x30
+0002f709 134224 ssi f1,a2,0x90
+0002f70c 234223 ssi f2,a2,0x8c
+0002f70f 00034b olt.s b0,f3,f0
+0002f712 0003db movt.s f0,f3,b0
+0002f715 034222 ssi f0,a2,0x88
+0002f718 1df0 retw.n
+===== 0002fd24 FUN_0002fd24 =====
+
+/* WARNING: Removing unreachable block (ram,0x0002fd65) */
+/* WARNING: Removing unreachable block (ram,0x0002fdc5) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002fd24(void)
+
+{
+  char cVar1;
+  short *psVar2;
+  int iVar3;
+  byte bVar4;
+  uint uVar5;
+  int iVar6;
+  int iVar7;
+  float *pfVar8;
+  float *pfVar9;
+  float *pfVar10;
+  float *pfVar11;
+  int iVar12;
+  float fVar13;
+  float fVar14;
+  float fVar15;
+  float fVar16;
+  float fVar17;
+  float fVar18;
+  float fVar19;
+  float fVar20;
+  int iVar21;
+  float afStack_40 [3];
+  int iStack_34;
+  undefined4 uStack_30;
+  float fStack_2c;
+  float fStack_28;
+  float fStack_24;
+  
+  iVar3 = _DAT_00017aa8;
+  pfVar11 = _DAT_00017604;
+  iVar6 = _DAT_00017060;
+  pfVar8 = afStack_40;
+  pfVar9 = afStack_40;
+  bVar4 = 0;
+  afStack_40[1] = 0.0;
+  afStack_40[0] = 0.0;
+  fVar13 = 0.0;
+  fStack_2c = 0.0;
+  fStack_28 = 0.0;
+  fVar18 = *(float *)(_DAT_00017aa8 + 0xe0);
+  fVar17 = *(float *)(_DAT_00017aa8 + 0xe4);
+  fVar14 = *(float *)(_DAT_00017aa8 + 0xdc);
+  cVar1 = *(char *)(_DAT_000171bc + 0x18);
+  fVar16 = _DAT_00017604[0x43b];
+  fVar15 = _DAT_00017604[0x43a];
+  iVar21 = 7;
+  iVar7 = _DAT_00017aa8;
+  pfVar10 = _DAT_00017604;
+  iVar12 = _DAT_00017060;
+  while( true ) {
+    if (((*(uint *)(iVar3 + 0x34) & 1 << (bVar4 & 0x1f)) != 0) && (*(char *)(iVar12 + 0x28) != '\0')
+       ) {
+      if (cVar1 == '\0') {
+        fVar14 = *pfVar10;
+      }
+      fVar20 = pfVar10[0x50] * fVar14 * (fVar14 * fVar15 + fVar16);
+      fVar19 = fVar18 * fVar20;
+      fStack_2c = fStack_2c + fVar17 * fVar20;
+      fVar13 = fVar19 + fVar13;
+      *(float *)(iVar7 + 0xa0) = fVar19;
+    }
+    bVar4 = bVar4 + 1;
+    iVar12 = iVar12 + 1;
+    iVar7 = iVar7 + 4;
+    pfVar10 = pfVar10 + 0x5e;
+    if (iVar21 == 0) break;
+    iVar21 = iVar21 + -1;
+  }
+  fVar18 = *(float *)(iVar3 + 0xec);
+  fVar17 = *(float *)(iVar3 + 0xe8);
+  fVar14 = *(float *)(iVar3 + 0xdc);
+  iStack_34 = _DAT_000182e8;
+  fVar16 = *(float *)(_DAT_00017f48 + 0x58);
+  fVar15 = *(float *)(_DAT_00017f48 + 0x54);
+  iVar21 = 1;
+  iVar7 = iVar6;
+  iVar12 = _DAT_00017b90;
+  while( true ) {
+    psVar2 = (short *)(iVar7 + 0x50);
+    iVar7 = iVar7 + 2;
+    if (*psVar2 == 0) {
+      *pfVar8 = 0.0;
+    }
+    else {
+      fVar20 = *(float *)(iVar12 + 0x254) * (fVar15 * fVar14 + fVar16) * fVar14;
+      fVar19 = fVar20 * fVar17;
+      fVar13 = fVar19 + fVar13;
+      *pfVar8 = fVar19;
+      fStack_2c = fStack_2c + fVar20 * fVar18;
+      fStack_28 = fVar19 + fStack_28;
+    }
+    pfVar8 = pfVar8 + 1;
+    iVar12 = iVar12 + 0xdc;
+    if (iVar21 == 0) break;
+    iVar21 = iVar21 + -1;
+  }
+  uVar5 = 0;
+  *(float *)(iVar3 + 0x28) = fVar13;
+  uStack_30 = _DAT_00017b1c;
+  fStack_24 = 0.0;
+  iVar7 = iVar3;
+  do {
+    if (((*(uint *)(iVar3 + 0x34) & 1 << ((byte)uVar5 & 0x1f)) != 0) &&
+       (*(short *)((uVar5 >> 2) * 2 + iVar6 + 0x50) != 0)) {
+      fVar14 = *(float *)(iVar3 + 0xdc);
+      if (*(char *)(_DAT_000171bc + 0x18) == '\0') {
+        fVar14 = *pfVar11;
+      }
+      fVar14 = (float)func_0x00026f70(uStack_30,fVar14,pfVar11[7],*_DAT_000182c4);
+      fStack_24 = fVar14 + fStack_24;
+      *(float *)(iVar7 + 4) = *(float *)(iVar7 + 0xa0) + fVar14;
+    }
+    iVar7 = iVar7 + 4;
+    pfVar11 = pfVar11 + 0x5e;
+    uVar5 = uVar5 + 1;
+  } while (uVar5 != 8);
+  afStack_40[2] = (float)_DAT_00017b70;
+  iVar7 = _DAT_00017b90;
+  iVar12 = iVar3;
+  do {
+    if (*(short *)(iVar6 + 0x50) != 0) {
+      fVar14 = (float)func_0x00026f70(afStack_40[2],*(undefined4 *)(iVar3 + 0xdc),
+                                      *(undefined4 *)(iVar7 + 0x1a8),*_DAT_000182c4);
+      fStack_28 = fVar14 + fStack_28;
+      fStack_24 = fVar14 + fStack_24;
+      *(float *)(iVar12 + 0xc0) = *pfVar9 + fVar14;
+    }
+    iVar12 = iVar12 + 4;
+    pfVar9 = pfVar9 + 1;
+    iVar7 = iVar7 + 0xdc;
+    iVar6 = iVar6 + 2;
+  } while (iVar6 != iStack_34);
+  *(float *)(iVar3 + 0x2c) = fStack_24;
+  *(float *)(iVar3 + 0x30) = fStack_2c;
+  *(float *)(iVar3 + 0x24) = fStack_28;
+  return;
+}
+
+
+0002fd24 368100 entry a1,0x40
+0002fd27 62a178 movi a6,0x178
+0002fd2a 0c88 movi.n a8,0x8
+0002fd2c c1249d l32r a12,0x000171bc
+0002fd2f 71cc9c l32r a7,0x00017060
+0002fd32 515d9f l32r a5,0x00017aa8
+0002fd35 a1339e l32r a10,0x00017604
+0002fd38 3010fa const.sf f1,0x0
+0002fd3b 0c02 movi.n a2,0x0
+0002fd3d 2911 s32i.n a2,a1,0x4
+0002fd3f 2901 s32i.n a2,a1,0x0
+0002fd41 0001fa mov.s f0,f1
+0002fd44 134105 ssi f1,a1,0x14
+0002fd47 134106 ssi f1,a1,0x18
+0002fd4a 4d0a mov.n a4,a10
+0002fd4c 3d05 mov.n a3,a5
+0002fd4e 630538 lsi f6,a5,0xe0
+0002fd51 530539 lsi f5,a5,0xe4
+0002fd54 230537 lsi f2,a5,0xdc
+0002fd57 bd07 mov.n a11,a7
+0002fd59 c20c18 l8ui a12,a12,0x18
+0002fd5c d2da0e addmi a13,a10,0xe00
+0002fd5f 430dbb lsi f4,a13,0x2ec
+0002fd62 330dba lsi f3,a13,0x2e8
+0002fd65 76a83b loopgtz a8,0x0002fda4
+0002fd68 e8d5 l32i.n a14,a5,0x34
+0002fd6a f20b28 l8ui a15,a11,0x28
+0002fd6d 275e2b bbc a14,a2,0x0002fd9c
+0002fd70 ac8f beqz.n a15,0x0002fd9c
+0002fd72 f30400 lsi f15,a4,0x0
+0002fd75 c02f8b moveqz.s f2,f15,a12
+0002fd78 30e22a mul.s f14,f2,f3
+0002fd7b 40de0a add.s f13,f14,f4
+0002fd7e d0c22a mul.s f12,f2,f13
+0002fd81 b30450 lsi f11,a4,0x140
+0002fd84 c0ab2a mul.s f10,f11,f12
+0002fd87 a0852a mul.s f8,f5,f10
+0002fd8a a0962a mul.s f9,f6,f10
+0002fd8d 730105 lsi f7,a1,0x14
+0002fd90 80770a add.s f7,f7,f8
+0002fd93 00090a add.s f0,f9,f0
+0002fd96 934328 ssi f9,a3,0xa0
+0002fd99 734105 ssi f7,a1,0x14
+0002fd9c 1b22 addi.n a2,a2,0x1
+0002fd9e 1bbb addi.n a11,a11,0x1
+0002fda0 4b33 addi.n a3,a3,0x4
+0002fda2 6a44 add.n a4,a4,a6
+0002fda4 2d07 mov.n a2,a7
+0002fda6 3d01 mov.n a3,a1
+0002fda8 63053b lsi f6,a5,0xec
+0002fdab 53053a lsi f5,a5,0xe8
+0002fdae 230537 lsi f2,a5,0xdc
+0002fdb1 41779f l32r a4,0x00017b90
+0002fdb4 0c28 movi.n a8,0x2
+0002fdb6 b164a0 l32r a11,0x00017f48
+0002fdb9 c14ba1 l32r a12,0x000182e8
+0002fdbc c26103 s32i a12,a1,0xc
+0002fdbf 430b16 lsi f4,a11,0x58
+0002fdc2 330b15 lsi f3,a11,0x54
+0002fdc5 76a841 loopgtz a8,0x0002fe0a
+0002fdc8 d21228 l16ui a13,a2,0x50
+0002fdcb 730105 lsi f7,a1,0x14
+0002fdce 2b22 addi.n a2,a2,0x2
+0002fdd0 cc4d bnez.n a13,0x0002fdd8
+0002fdd2 134300 ssi f1,a3,0x0
+0002fdd5 460a00 j 0x0002fe02
+0002fdd8 20f32a mul.s f15,f3,f2
+0002fddb 40ef0a add.s f14,f15,f4
+0002fdde 20de2a mul.s f13,f14,f2
+0002fde1 c30495 lsi f12,a4,0x254
+0002fde4 d0bc2a mul.s f11,f12,f13
+0002fde7 509b2a mul.s f9,f11,f5
+0002fdea 608b2a mul.s f8,f11,f6
+0002fded a30106 lsi f10,a1,0x18
+0002fdf0 a0a90a add.s f10,f9,f10
+0002fdf3 80770a add.s f7,f7,f8
+0002fdf6 00090a add.s f0,f9,f0
+0002fdf9 934300 ssi f9,a3,0x0
+0002fdfc a34106 ssi f10,a1,0x18
+0002fdff 734105 ssi f7,a1,0x14
+0002fe02 4b33 addi.n a3,a3,0x4
+0002fe04 42d401 addmi a4,a4,0x100
+0002fe07 42c4dc addi a4,a4,-0x24
+0002fe0a 4d0a mov.n a4,a10
+0002fe0c 3d05 mov.n a3,a5
+0002fe0e 0c02 movi.n a2,0x0
+0002fe10 03450a ssi f0,a5,0x28
+0002fe13 e1429f l32r a14,0x00017b1c
+0002fe16 e941 s32i.n a14,a1,0x10
+0002fe18 0001fa mov.s f0,f1
+0002fe1b f8d5 l32i.n a15,a5,0x34
+0002fe1d 208241 srli a8,a2,0x2
+0002fe20 708890 addx2 a8,a8,a7
+0002fe23 275f3b bbc a15,a2,0x0002fe62
+0002fe26 821828 l16ui a8,a8,0x50
+0002fe29 034107 ssi f0,a1,0x1c
+0002fe2c bc28 beqz.n a8,0x0002fe62
+0002fe2e c874 l32i.n a12,a4,0x1c
+0002fe30 530400 lsi f5,a4,0x0
+0002fe33 a1e29c l32r a10,0x000171bc
+0002fe36 9123a1 l32r a9,0x000182c4
+0002fe39 430537 lsi f4,a5,0xdc
+0002fe3c a20a18 l8ui a10,a10,0x18
+0002fe3f 330900 lsi f3,a9,0x0
+0002fe42 40d3fa rfr a13,f3
+0002fe45 a0458b moveqz.s f4,f5,a10
+0002fe48 40b4fa rfr a11,f4
+0002fe4b a841 l32i.n a10,a1,0x10
+0002fe4d 2512f7 call8 0x00026f70
+0002fe50 507afa wfr f7,a10
+0002fe53 830328 lsi f8,a3,0xa0
+0002fe56 70680a add.s f6,f8,f7
+0002fe59 030107 lsi f0,a1,0x1c
+0002fe5c 00070a add.s f0,f7,f0
+0002fe5f 634301 ssi f6,a3,0x4
+0002fe62 4b33 addi.n a3,a3,0x4
+0002fe64 6a44 add.n a4,a4,a6
+0002fe66 1b22 addi.n a2,a2,0x1
+0002fe68 6682af bnei a2,0x8,0x0002fe1b
+0002fe6b 2d07 mov.n a2,a7
+0002fe6d 41489f l32r a4,0x00017b90
+0002fe70 6d05 mov.n a6,a5
+0002fe72 3d01 mov.n a3,a1
+0002fe74 b13f9f l32r a11,0x00017b70
+0002fe77 b921 s32i.n a11,a1,0x8
+0002fe79 c21228 l16ui a12,a2,0x50
+0002fe7c 72a0dc movi a7,0xdc
+0002fe7f 034107 ssi f0,a1,0x1c
+0002fe82 acdc beqz.n a12,0x0002feb3
+0002fe84 a821 l32i.n a10,a1,0x8
+0002fe86 d10fa1 l32r a13,0x000182c4
+0002fe89 b22537 l32i a11,a5,0xdc
+0002fe8c c2246a l32i a12,a4,0x1a8
+0002fe8f 930d00 lsi f9,a13,0x0
+0002fe92 40d9fa rfr a13,f9
+0002fe95 a50df7 call8 0x00026f70
+0002fe98 d30300 lsi f13,a3,0x0
+0002fe9b b30106 lsi f11,a1,0x18
+0002fe9e 50cafa wfr f12,a10
+0002fea1 b0bc0a add.s f11,f12,f11
+0002fea4 c0ad0a add.s f10,f13,f12
+0002fea7 030107 lsi f0,a1,0x1c
+0002feaa 000c0a add.s f0,f12,f0
+0002fead b34106 ssi f11,a1,0x18
+0002feb0 a34630 ssi f10,a6,0xc0
+0002feb3 4b66 addi.n a6,a6,0x4
+0002feb5 4b33 addi.n a3,a3,0x4
+0002feb7 e831 l32i.n a14,a1,0xc
+0002feb9 7a44 add.n a4,a4,a7
+0002febb 2b22 addi.n a2,a2,0x2
+0002febd e792b8 bne a2,a14,0x0002fe79
+0002fec0 03450b ssi f0,a5,0x2c
+0002fec3 e30106 lsi f14,a1,0x18
+0002fec6 f30105 lsi f15,a1,0x14
+0002fec9 f3450c ssi f15,a5,0x30
+0002fecc e34509 ssi f14,a5,0x24
+0002fecf 1df0 retw.n
+===== 0002fed4 FUN_0002fed4 =====
+
+/* WARNING: Removing unreachable block (ram,0x0002ffbf) */
+/* WARNING: Removing unreachable block (ram,0x0002ff29) */
+/* WARNING: Removing unreachable block (ram,0x00030039) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002fed4(void)
+
+{
+  char cVar1;
+  float *pfVar2;
+  float *pfVar3;
+  bool bVar4;
+  float *pfVar5;
+  float *pfVar6;
+  float *pfVar7;
+  float *pfVar8;
+  float *pfVar9;
+  float fVar10;
+  float fVar11;
+  float fVar12;
+  float fVar13;
+  float fVar14;
+  float fVar15;
+  float fVar16;
+  float fVar17;
+  float fVar18;
+  float fVar19;
+  float fVar20;
+  float fVar21;
+  int iVar22;
+  int iVar23;
+  
+  pfVar9 = _DAT_000182ac;
+  iVar23 = _DAT_00017f48;
+  pfVar5 = _DAT_00017aa8;
+  fVar10 = 0.0;
+  cVar1 = *(char *)(_DAT_000171bc + 0x18);
+  fVar20 = _DAT_00017aa8[0x71];
+  fVar19 = _DAT_00017aa8[0x72];
+  pfVar8 = (float *)(_DAT_00017ed0 + -0xe00);
+  fVar13 = *(float *)(_DAT_00017ed0 + 0x2e8);
+  fVar11 = _DAT_00017aa8[0x70];
+  fVar15 = *(float *)(_DAT_00017ed0 + 0x2ec);
+  fVar14 = _DAT_00017aa8[0x6e];
+  fVar12 = _DAT_00017aa8[0x6f];
+  bVar4 = *(char *)((int)_DAT_00017aa8 + 0x9a) == '\0';
+  iVar22 = 7;
+  pfVar6 = _DAT_00017aa8;
+  while( true ) {
+    fVar17 = pfVar5[0x37];
+    if (cVar1 == '\0') {
+      fVar17 = *pfVar8;
+    }
+    pfVar7 = pfVar8 + 0x50;
+    pfVar2 = pfVar8 + 0x5b;
+    fVar21 = pfVar6[0x74] - fVar20;
+    pfVar3 = pfVar8 + 1;
+    pfVar8 = pfVar8 + 0x5e;
+    fVar17 = fVar17 * *pfVar7 * fVar11 * (fVar17 * fVar13 + fVar15);
+    fVar18 = pfVar6[0x7c] + fVar12 * (*pfVar2 - fVar14);
+    if (fVar21 < *pfVar3) {
+      fVar21 = *pfVar3;
+    }
+    if (fVar17 < fVar21) {
+      fVar17 = fVar21;
+    }
+    fVar21 = 0.0;
+    if (0.0 < fVar18) {
+      fVar21 = fVar18;
+    }
+    fVar18 = fVar19;
+    if (fVar21 < fVar19) {
+      fVar18 = fVar21;
+    }
+    pfVar6[0x74] = fVar17;
+    pfVar6[0x7c] = fVar18;
+    fVar21 = 1.0;
+    if (bVar4) {
+      fVar21 = fVar18 + fVar17;
+    }
+    pfVar6[0x84] = fVar21;
+    pfVar7 = _DAT_000182ec;
+    fVar10 = fVar21 + fVar10;
+    pfVar6 = pfVar6 + 1;
+    if (iVar22 == 0) break;
+    iVar22 = iVar22 + -1;
+  }
+  fVar13 = *(float *)(iVar23 + 0x58);
+  fVar11 = *(float *)(iVar23 + 0x54);
+  fVar15 = _DAT_000182ec[-7];
+  iVar23 = 1;
+  pfVar6 = _DAT_000182ec;
+  pfVar8 = pfVar9;
+  while( true ) {
+    fVar17 = pfVar6[-6] - fVar20;
+    fVar21 = pfVar8[-5] * fVar15 * (fVar11 * pfVar5[0x37] + fVar13) * pfVar5[0x37];
+    fVar18 = pfVar6[-4] + fVar12 * (pfVar8[-1] - fVar14);
+    if (fVar17 < pfVar8[-0x34]) {
+      fVar17 = pfVar8[-0x34];
+    }
+    fVar16 = 0.0;
+    if (0.0 < fVar18) {
+      fVar16 = fVar18;
+    }
+    if (fVar21 < fVar17) {
+      fVar21 = fVar17;
+    }
+    fVar17 = fVar19;
+    if (fVar16 < fVar19) {
+      fVar17 = fVar16;
+    }
+    pfVar6[-6] = fVar21;
+    pfVar6[-4] = fVar17;
+    fVar18 = 1.0;
+    if (bVar4) {
+      fVar18 = fVar17 + fVar21;
+    }
+    pfVar6[-2] = fVar18;
+    fVar10 = fVar18 + fVar10;
+    if (iVar23 == 0) break;
+    iVar23 = iVar23 + -1;
+    pfVar6 = pfVar6 + 1;
+    pfVar8 = pfVar8 + 0x37;
+  }
+  iVar23 = 1;
+  while( true ) {
+    pfVar9 = pfVar9 + 0x37;
+    fVar13 = *pfVar7 + fVar12 * (*pfVar9 - fVar14);
+    fVar11 = 0.0;
+    if (0.0 < fVar13) {
+      fVar11 = fVar13;
+    }
+    fVar13 = pfVar5[0x73];
+    if (fVar11 < pfVar5[0x73]) {
+      fVar13 = fVar11;
+    }
+    fVar11 = 1.0;
+    if (bVar4) {
+      fVar11 = fVar13;
+    }
+    fVar10 = fVar11 + fVar10;
+    *pfVar7 = fVar11;
+    pfVar7 = pfVar7 + 1;
+    if (iVar23 == 0) break;
+    iVar23 = iVar23 + -1;
+  }
+  *pfVar5 = fVar10;
+  return;
+}
+
+
+0002fed4 366100 entry a1,0x30
+0002fed7 92a178 movi a9,0x178
+0002feda 3011fa const.sf f1,0x3f800000
+0002fedd 0c2d movi.n a13,0x2
+0002fedf f11aa0 l32r a15,0x00017f48
+0002fee2 b1f2a0 l32r a11,0x000182ac
+0002fee5 0c82 movi.n a2,0x8
+0002fee7 0c18 movi.n a8,0x1
+0002fee9 0c05 movi.n a5,0x0
+0002feeb a1f99f l32r a10,0x00017ed0
+0002feee 61ee9e l32r a6,0x00017aa8
+0002fef1 71b29c l32r a7,0x000171bc
+0002fef4 3020fa const.sf f2,0x0
+0002fef7 0002fa mov.s f0,f2
+0002fefa 720718 l8ui a7,a7,0x18
+0002fefd 3d06 mov.n a3,a6
+0002feff b30671 lsi f11,a6,0x1c4
+0002ff02 a30672 lsi f10,a6,0x1c8
+0002ff05 42daf2 addmi a4,a10,-0xe00
+0002ff08 430aba lsi f4,a10,0x2e8
+0002ff0b 330670 lsi f3,a6,0x1c0
+0002ff0e 530abb lsi f5,a10,0x2ec
+0002ff11 534102 ssi f5,a1,0x8
+0002ff14 334101 ssi f3,a1,0x4
+0002ff17 434103 ssi f4,a1,0xc
+0002ff1a a2069a l8ui a10,a6,0x9a
+0002ff1d 43066e lsi f4,a6,0x1b8
+0002ff20 33066f lsi f3,a6,0x1bc
+0002ff23 a05883 moveqz a5,a8,a10
+0002ff26 a2a001 movi a10,0x1
+0002ff29 76a277 loopgtz a2,0x0002ffa4
+0002ff2c 930103 lsi f9,a1,0xc
+0002ff2f c30400 lsi f12,a4,0x0
+0002ff32 830637 lsi f8,a6,0xdc
+0002ff35 708c8b moveqz.s f8,f12,a7
+0002ff38 90682a mul.s f6,f8,f9
+0002ff3b 0c0c movi.n a12,0x0
+0002ff3d d30450 lsi f13,a4,0x140
+0002ff40 730102 lsi f7,a1,0x8
+0002ff43 70560a add.s f5,f6,f7
+0002ff46 f30101 lsi f15,a1,0x4
+0002ff49 c3045b lsi f12,a4,0x16c
+0002ff4c 730374 lsi f7,a3,0x1d0
+0002ff4f 50ef2a mul.s f14,f15,f5
+0002ff52 405c1a sub.s f5,f12,f4
+0002ff55 b0c71a sub.s f12,f7,f11
+0002ff58 007afa mov.s f7,f10
+0002ff5b e09d2a mul.s f9,f13,f14
+0002ff5e 50f32a mul.s f15,f3,f5
+0002ff61 d30401 lsi f13,a4,0x4
+0002ff64 e3037c lsi f14,a3,0x1f0
+0002ff67 9a44 add.n a4,a4,a9
+0002ff69 d07c4b olt.s b7,f12,f13
+0002ff6c 90682a mul.s f6,f8,f9
+0002ff6f 0082fa mov.s f8,f2
+0002ff72 f09e0a add.s f9,f14,f15
+0002ff75 70c8d3 movt a12,a8,b7
+0002ff78 c0cd9b movnez.s f12,f13,a12
+0002ff7b c0664b olt.s b6,f6,f12
+0002ff7e 606cdb movt.s f6,f12,b6
+0002ff81 90524b olt.s b5,f2,f9
+0002ff84 5089db movt.s f8,f9,b5
+0002ff87 a0484b olt.s b4,f8,f10
+0002ff8a 4078db movt.s f7,f8,b4
+0002ff8d 60570a add.s f5,f7,f6
+0002ff90 00f1fa mov.s f15,f1
+0002ff93 634374 ssi f6,a3,0x1d0
+0002ff96 73437c ssi f7,a3,0x1f0
+0002ff99 50f59b movnez.s f15,f5,a5
+0002ff9c f34384 ssi f15,a3,0x210
+0002ff9f 000f0a add.s f0,f15,f0
+0002ffa2 4b33 addi.n a3,a3,0x4
+0002ffa4 82a0dc movi a8,0xdc
+0002ffa7 e30f16 lsi f14,a15,0x58
+0002ffaa c1d0a0 l32r a12,0x000182ec
+0002ffad d30f15 lsi f13,a15,0x54
+0002ffb0 4d0b mov.n a4,a11
+0002ffb2 3d0c mov.n a3,a12
+0002ffb4 e2ccb4 addi a14,a12,-0x4c
+0002ffb7 f30e0c lsi f15,a14,0x30
+0002ffba f34100 ssi f15,a1,0x0
+0002ffbd 0c2e movi.n a14,0x2
+0002ffbf 76ad71 loopgtz a13,0x00030034
+0002ffc2 0c09 movi.n a9,0x0
+0002ffc4 930637 lsi f9,a6,0xdc
+0002ffc7 907d2a mul.s f7,f13,f9
+0002ffca 530100 lsi f5,a1,0x0
+0002ffcd d2d4ff addmi a13,a4,-0x100
+0002ffd0 72d3ff addmi a7,a3,-0x100
+0002ffd3 e0670a add.s f6,f7,f14
+0002ffd6 4b33 addi.n a3,a3,0x4
+0002ffd8 8a44 add.n a4,a4,a8
+0002ffda c30d3b lsi f12,a13,0xec
+0002ffdd 60f52a mul.s f15,f5,f6
+0002ffe0 730d3f lsi f7,a13,0xfc
+0002ffe3 40571a sub.s f5,f7,f4
+0002ffe6 63073a lsi f6,a7,0xe8
+0002ffe9 f08c2a mul.s f8,f12,f15
+0002ffec b0761a sub.s f7,f6,f11
+0002ffef 50f32a mul.s f15,f3,f5
+0002fff2 0052fa mov.s f5,f2
+0002fff5 90c82a mul.s f12,f8,f9
+0002fff8 93073c lsi f9,a7,0xf0
+0002fffb 830d0c lsi f8,a13,0x30
+0002fffe 80e74b olt.s b14,f7,f8
+00030001 f0690a add.s f6,f9,f15
+00030004 00fafa mov.s f15,f10
+00030007 e09ad3 movt a9,a10,b14
+0003000a 90789b movnez.s f7,f8,a9
+0003000d 60c24b olt.s b12,f2,f6
+00030010 c056db movt.s f5,f6,b12
+00030013 70dc4b olt.s b13,f12,f7
+00030016 d0c7db movt.s f12,f7,b13
+00030019 a0b54b olt.s b11,f5,f10
+0003001c b0f5db movt.s f15,f5,b11
+0003001f c09f0a add.s f9,f15,f12
+00030022 0081fa mov.s f8,f1
+00030025 c3473a ssi f12,a7,0xe8
+00030028 f3473c ssi f15,a7,0xf0
+0003002b 50899b movnez.s f8,f9,a5
+0003002e 83473e ssi f8,a7,0xf8
+00030031 00080a add.s f0,f8,f0
+00030034 3d0c mov.n a3,a12
+00030036 b04b20 mov a4,a11
+00030039 76ae2c loopgtz a14,0x00030069
+0003003c 80f418 lsxu f15,a4,a8
+0003003f 40ef1a sub.s f14,f15,f4
+00030042 e0d32a mul.s f13,f3,f14
+00030045 c30300 lsi f12,a3,0x0
+00030048 d0bc0a add.s f11,f12,f13
+0003004b 0081fa mov.s f8,f1
+0003004e 930673 lsi f9,a6,0x1cc
+00030051 00a2fa mov.s f10,f2
+00030054 b0024b olt.s b0,f2,f11
+00030057 00abdb movt.s f10,f11,b0
+0003005a 90fa4b olt.s b15,f10,f9
+0003005d f09adb movt.s f9,f10,b15
+00030060 50899b movnez.s f8,f9,a5
+00030063 00080a add.s f0,f8,f0
+00030066 83c301 ssip f8,a3,0x4
+00030069 034600 ssi f0,a6,0x0
+0003006c 1df0 retw.n

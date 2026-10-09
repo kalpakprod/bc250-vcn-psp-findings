@@ -1,0 +1,641 @@
+{
+  "status": "PASS",
+  "checks": 97,
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "abl": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "dis": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+    "branch": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-context-branch-consumer-xhigh/abl1-context-branch-consumer-result.json",
+    "base": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-producer-trace-result.json"
+  },
+  "hashes": {
+    "rom": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "abl": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "dis": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+    "branch": "269049d9fb13f32dbf8c037f85ebfe695fd5099e37fe354e8b2a939d1c4cf671",
+    "base": "d9b40965d4901df0544e460da7e16ac30b4ccd4cd97b07d2de2ec8b1afddf5f8"
+  },
+  "pointer_map": {
+    "literal_site": "0xB168",
+    "pointer_literal": "0x00060BD9",
+    "candidate_base": "0x57100 (conditional static mapping, not loader proof)",
+    "thumb_target": "0x9AD9",
+    "local_code_entry": "0x9AD8",
+    "independent_prior_anchor_count": 4,
+    "same_initializer_adjacent_anchors": [
+      "0xB16C->0x10C54",
+      "0xB170->0x9A30",
+      "0xB174->0x9A8C"
+    ]
+  },
+  "ownership": {
+    "initializer_call": "0x74DE R0=R5; 0x74E0 BL 0xAF90; 0xAF94 R4=R0; 0xB0C4 stores [initializer R4+0x660], so the slot base is parent R5",
+    "active_dispatch": "0x73AE loads a child pointer candidate from [R6+0x3C4] into R4; 0x73B2 stores that pointer at [R5+8]. At 0x8426 the current R4 is passed to 0x10200, and 0x10958 later loads [current R0+0x660]. The exact current value at 0x8426 is not reconstructed here.",
+    "intervening_register_fact": "raw instructions 0x7F4C and 0x7FC2 explicitly add/subtract 0x2C0 from R4 in the parent span; this verifier does not prove these adjustments restore the same child pointer on the path to 0x8426",
+    "prior_context_alias_claim": "the prior 89-check result claimed the same R4 base at 0x7E74 and 0x8428 using a no-write scan; that scanner was malformed and the claim is withdrawn",
+    "identity": "not proven: installer base is parent R5; active dispatcher receives the current R4 at 0x8426. R4 is set from an R6+0x3C4 child-pointer load at 0x73AE and has later explicit adjustments; no direct dataflow links that slot to the B0C4-installed +0x660, and BLX R1 at 0x74EA is unresolved."
+  },
+  "candidate_callback_effect": {
+    "input_mapping": "branch-selected incoming R2 at 0x10958 becomes callback R3; callback 0x9AD8 copies R3 into R11 at 0x9AE2",
+    "token_mapping": "incoming dispatcher R1=0x61E becomes callback R2; 0x9AE8 extracts low 12 bits and indexes [R5+0x44]",
+    "local_state": "R11 can be stored in [SP+0x14] at 0x9BFA and transformed by bitfield sequence 0x9D20..0x9D28; return path reloads [SP+0x14] into R0 at 0x9E6A",
+    "helper_effect": "0x9D38 calls 0x6C1E, whose exact instruction is BX LR. Another path calls 0x6DA4 with R2=SP+0x14; the helper uses SVC #4 then copies byte/halfword/word into the supplied output pointer. SVC #4 mapping semantics remain opaque.",
+    "direct_write_class": "candidate callback direct stores are to its stack frame; no direct MMIO or PLL write is present in this bounded callback body"
+  },
+  "second_660_writer": {
+    "site": "0xCABE STR.W R0,[R1,#0x660]",
+    "pointer_literal_site": "0xCE78",
+    "literal": "0x006EC140",
+    "conditional_base_mapping": "0x697040, not a local ABL1 file offset under base 0x57100; this does not establish an external address or target",
+    "owner": "R1 ownership unresolved in this bounded trace"
+  },
+  "claim_boundary": "A candidate initializer literal maps to exact local callback code under the conditional 0x57100 base and has validating anchors. Exact identity between the installed parent-object slot and the active child-object [R4+0x660] dispatch slot is not proven. Therefore the callback candidate is not asserted to be the callback actually invoked for Fclk; neither callback hardware effect nor MCLK=UCLK=FCLK is established.",
+  "checks_detail": [
+    {
+      "check": "rom exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "rom SHA-256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "abl exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "abl SHA-256",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "dis exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "dis SHA-256",
+      "passed": true,
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    {
+      "check": "branch exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "branch SHA-256",
+      "passed": true,
+      "got": "269049d9fb13f32dbf8c037f85ebfe695fd5099e37fe354e8b2a939d1c4cf671",
+      "expected": "269049d9fb13f32dbf8c037f85ebfe695fd5099e37fe354e8b2a939d1c4cf671"
+    },
+    {
+      "check": "base exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "base SHA-256",
+      "passed": true,
+      "got": "d9b40965d4901df0544e460da7e16ac30b4ccd4cd97b07d2de2ec8b1afddf5f8",
+      "expected": "d9b40965d4901df0544e460da7e16ac30b4ccd4cd97b07d2de2ec8b1afddf5f8"
+    },
+    {
+      "check": "prior branch result status",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "prior branch checks reused by hash",
+      "passed": true,
+      "got": 89,
+      "expected": 89
+    },
+    {
+      "check": "prior base result status",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "prior conditional base",
+      "passed": true,
+      "got": "0x57100",
+      "expected": "0x57100"
+    },
+    {
+      "check": "prior independent base anchors",
+      "passed": true,
+      "got": 4,
+      "expected": 4
+    },
+    {
+      "check": "base anchor count",
+      "passed": true,
+      "got": 4,
+      "expected": 4
+    },
+    {
+      "check": "base anchor 0x00067ABD maps Thumb target",
+      "passed": true,
+      "got": "0x109bd",
+      "expected": "0x109bd"
+    },
+    {
+      "check": "base anchor 0x00067ABD maps entry",
+      "passed": true,
+      "got": "0x109bc",
+      "expected": "0x109bc"
+    },
+    {
+      "check": "base anchor 0x00067A95 maps Thumb target",
+      "passed": true,
+      "got": "0x10995",
+      "expected": "0x10995"
+    },
+    {
+      "check": "base anchor 0x00067A95 maps entry",
+      "passed": true,
+      "got": "0x10994",
+      "expected": "0x10994"
+    },
+    {
+      "check": "base anchor 0x00061E19 maps Thumb target",
+      "passed": true,
+      "got": "0xad19",
+      "expected": "0xad19"
+    },
+    {
+      "check": "base anchor 0x00061E19 maps entry",
+      "passed": true,
+      "got": "0xad18",
+      "expected": "0xad18"
+    },
+    {
+      "check": "base anchor 0x00067A59 maps Thumb target",
+      "passed": true,
+      "got": "0x10959",
+      "expected": "0x10959"
+    },
+    {
+      "check": "base anchor 0x00067A59 maps entry",
+      "passed": true,
+      "got": "0x10958",
+      "expected": "0x10958"
+    },
+    {
+      "check": "raw bytes at 0x7378",
+      "passed": true,
+      "got": "2de9f043",
+      "expected": "2de9f043"
+    },
+    {
+      "check": "raw bytes at 0x737c",
+      "passed": true,
+      "got": "0546",
+      "expected": "0546"
+    },
+    {
+      "check": "raw bytes at 0x7384",
+      "passed": true,
+      "got": "0e46",
+      "expected": "0e46"
+    },
+    {
+      "check": "raw bytes at 0x738a",
+      "passed": true,
+      "got": "1c46",
+      "expected": "1c46"
+    },
+    {
+      "check": "raw bytes at 0x73ae",
+      "passed": true,
+      "got": "d6f8c443",
+      "expected": "d6f8c443"
+    },
+    {
+      "check": "raw bytes at 0x73b2",
+      "passed": true,
+      "got": "ac60",
+      "expected": "ac60"
+    },
+    {
+      "check": "raw bytes at 0x74de",
+      "passed": true,
+      "got": "2846",
+      "expected": "2846"
+    },
+    {
+      "check": "raw bytes at 0x74e0",
+      "passed": true,
+      "got": "03f056fd",
+      "expected": "03f056fd"
+    },
+    {
+      "check": "raw bytes at 0x7e72",
+      "passed": true,
+      "got": "2046",
+      "expected": "2046"
+    },
+    {
+      "check": "raw bytes at 0x7e74",
+      "passed": true,
+      "got": "fdf7f8ff",
+      "expected": "fdf7f8ff"
+    },
+    {
+      "check": "raw bytes at 0x8426",
+      "passed": true,
+      "got": "2046",
+      "expected": "2046"
+    },
+    {
+      "check": "raw bytes at 0x8428",
+      "passed": true,
+      "got": "07f0eafe",
+      "expected": "07f0eafe"
+    },
+    {
+      "check": "raw bytes at 0x7f4c",
+      "passed": true,
+      "got": "04f53074",
+      "expected": "04f53074"
+    },
+    {
+      "check": "raw bytes at 0x7fc2",
+      "passed": true,
+      "got": "a4f53074",
+      "expected": "a4f53074"
+    },
+    {
+      "check": "raw bytes at 0xaf90",
+      "passed": true,
+      "got": "2de9f047",
+      "expected": "2de9f047"
+    },
+    {
+      "check": "raw bytes at 0xaf94",
+      "passed": true,
+      "got": "0446",
+      "expected": "0446"
+    },
+    {
+      "check": "raw bytes at 0xb0c2",
+      "passed": true,
+      "got": "2948",
+      "expected": "2948"
+    },
+    {
+      "check": "raw bytes at 0xb0c4",
+      "passed": true,
+      "got": "c4f86006",
+      "expected": "c4f86006"
+    },
+    {
+      "check": "raw bytes at 0xb168",
+      "passed": true,
+      "got": "d90b0600",
+      "expected": "d90b0600"
+    },
+    {
+      "check": "raw bytes at 0xb16c",
+      "passed": true,
+      "got": "557d0600",
+      "expected": "557d0600"
+    },
+    {
+      "check": "raw bytes at 0xb170",
+      "passed": true,
+      "got": "310b0600",
+      "expected": "310b0600"
+    },
+    {
+      "check": "raw bytes at 0xb174",
+      "passed": true,
+      "got": "8d0b0600",
+      "expected": "8d0b0600"
+    },
+    {
+      "check": "raw bytes at 0xb178",
+      "passed": true,
+      "got": "07920600",
+      "expected": "07920600"
+    },
+    {
+      "check": "raw bytes at 0xcabe",
+      "passed": true,
+      "got": "c1f86006",
+      "expected": "c1f86006"
+    },
+    {
+      "check": "raw bytes at 0xce78",
+      "passed": true,
+      "got": "40406d00",
+      "expected": "40406d00"
+    },
+    {
+      "check": "raw bytes at 0x1081e",
+      "passed": true,
+      "got": "2046",
+      "expected": "2046"
+    },
+    {
+      "check": "raw bytes at 0x10820",
+      "passed": true,
+      "got": "00f09af8",
+      "expected": "00f09af8"
+    },
+    {
+      "check": "raw bytes at 0x10958",
+      "passed": true,
+      "got": "30b4",
+      "expected": "30b4"
+    },
+    {
+      "check": "raw bytes at 0x1095a",
+      "passed": true,
+      "got": "d0f86046",
+      "expected": "d0f86046"
+    },
+    {
+      "check": "raw bytes at 0x1095e",
+      "passed": true,
+      "got": "1346",
+      "expected": "1346"
+    },
+    {
+      "check": "raw bytes at 0x10960",
+      "passed": true,
+      "got": "0a46",
+      "expected": "0a46"
+    },
+    {
+      "check": "raw bytes at 0x10962",
+      "passed": true,
+      "got": "a446",
+      "expected": "a446"
+    },
+    {
+      "check": "raw bytes at 0x10964",
+      "passed": true,
+      "got": "30bc",
+      "expected": "30bc"
+    },
+    {
+      "check": "raw bytes at 0x10966",
+      "passed": true,
+      "got": "0121",
+      "expected": "0121"
+    },
+    {
+      "check": "raw bytes at 0x10968",
+      "passed": true,
+      "got": "6047",
+      "expected": "6047"
+    },
+    {
+      "check": "raw bytes at 0x9ad8",
+      "passed": true,
+      "got": "2de9ff4f",
+      "expected": "2de9ff4f"
+    },
+    {
+      "check": "raw bytes at 0x9ade",
+      "passed": true,
+      "got": "0546",
+      "expected": "0546"
+    },
+    {
+      "check": "raw bytes at 0x9ae2",
+      "passed": true,
+      "got": "9b46",
+      "expected": "9b46"
+    },
+    {
+      "check": "raw bytes at 0x9ae8",
+      "passed": true,
+      "got": "c2f30b00",
+      "expected": "c2f30b00"
+    },
+    {
+      "check": "raw bytes at 0x9bfa",
+      "passed": true,
+      "got": "cdf814b0",
+      "expected": "cdf814b0"
+    },
+    {
+      "check": "raw bytes at 0x9d20",
+      "passed": true,
+      "got": "0bea0002",
+      "expected": "0bea0002"
+    },
+    {
+      "check": "raw bytes at 0x9d28",
+      "passed": true,
+      "got": "0592",
+      "expected": "0592"
+    },
+    {
+      "check": "raw bytes at 0x9d38",
+      "passed": true,
+      "got": "fcf771ff",
+      "expected": "fcf771ff"
+    },
+    {
+      "check": "raw bytes at 0x9e6a",
+      "passed": true,
+      "got": "0598",
+      "expected": "0598"
+    },
+    {
+      "check": "raw bytes at 0x9e6e",
+      "passed": true,
+      "got": "bde8f08f",
+      "expected": "bde8f08f"
+    },
+    {
+      "check": "raw bytes at 0x6c1e",
+      "passed": true,
+      "got": "7047",
+      "expected": "7047"
+    },
+    {
+      "check": "raw bytes at 0x9c26",
+      "passed": true,
+      "got": "05aa",
+      "expected": "05aa"
+    },
+    {
+      "check": "raw bytes at 0x9c2a",
+      "passed": true,
+      "got": "fdf7bbf8",
+      "expected": "fdf7bbf8"
+    },
+    {
+      "check": "raw bytes at 0x6da4",
+      "passed": true,
+      "got": "2de9f041",
+      "expected": "2de9f041"
+    },
+    {
+      "check": "raw bytes at 0x6dae",
+      "passed": true,
+      "got": "1546",
+      "expected": "1546"
+    },
+    {
+      "check": "raw bytes at 0x6dd4",
+      "passed": true,
+      "got": "04df",
+      "expected": "04df"
+    },
+    {
+      "check": "raw bytes at 0x6e06",
+      "passed": true,
+      "got": "2b70",
+      "expected": "2b70"
+    },
+    {
+      "check": "raw bytes at 0x6e0e",
+      "passed": true,
+      "got": "2b80",
+      "expected": "2b80"
+    },
+    {
+      "check": "raw bytes at 0x6e1e",
+      "passed": true,
+      "got": "2b60",
+      "expected": "2b60"
+    },
+    {
+      "check": "pointer at 0xb168",
+      "passed": true,
+      "got": 396249,
+      "expected": 396249
+    },
+    {
+      "check": "pointer at 0xb168 conditional Thumb mapping",
+      "passed": true,
+      "got": 39641,
+      "expected": 39641
+    },
+    {
+      "check": "pointer at 0xb168 target code anchor",
+      "passed": true,
+      "got": "2de9ff4f",
+      "expected": "2de9ff4f"
+    },
+    {
+      "check": "pointer at 0xb16c",
+      "passed": true,
+      "got": 425301,
+      "expected": 425301
+    },
+    {
+      "check": "pointer at 0xb16c conditional Thumb mapping",
+      "passed": true,
+      "got": 68693,
+      "expected": 68693
+    },
+    {
+      "check": "pointer at 0xb16c target code anchor",
+      "passed": true,
+      "got": "2de9f041",
+      "expected": "2de9f041"
+    },
+    {
+      "check": "pointer at 0xb170",
+      "passed": true,
+      "got": 396081,
+      "expected": 396081
+    },
+    {
+      "check": "pointer at 0xb170 conditional Thumb mapping",
+      "passed": true,
+      "got": 39473,
+      "expected": 39473
+    },
+    {
+      "check": "pointer at 0xb170 target code anchor",
+      "passed": true,
+      "got": "2de9f041",
+      "expected": "2de9f041"
+    },
+    {
+      "check": "pointer at 0xb174",
+      "passed": true,
+      "got": 396173,
+      "expected": 396173
+    },
+    {
+      "check": "pointer at 0xb174 conditional Thumb mapping",
+      "passed": true,
+      "got": 39565,
+      "expected": 39565
+    },
+    {
+      "check": "pointer at 0xb174 target code anchor",
+      "passed": true,
+      "got": "2de9f041",
+      "expected": "2de9f041"
+    },
+    {
+      "check": "initializer/dispatcher ownership remains explicitly distinct",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing shows R4 adjustment at 0x7F4C",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing shows R4 adjustment at 0x7FC2",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "candidate callback local code entry",
+      "passed": true,
+      "got": 39640,
+      "expected": 39640
+    },
+    {
+      "check": "candidate callback non-stack direct stores",
+      "passed": true,
+      "got": [],
+      "expected": []
+    },
+    {
+      "check": "candidate helper 6DA4 output is SP+0x14",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "SVC #4 helper only writes through supplied output pointer",
+      "passed": true,
+      "got": true,
+      "expected": true
+    }
+  ]
+}

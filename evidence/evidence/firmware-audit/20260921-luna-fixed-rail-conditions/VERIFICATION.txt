@@ -1,0 +1,15 @@
+Read-only applicability check (2026-09-21, Asia/Almaty)
+
+Commands: (1) initial inline, read-only direct parse captured in `applicability-check.stdout`/`.stderr`/`.exit`; (2) reproducible saved script `PYTHONDONTWRITEBYTECODE=1 python3 -B evidence/firmware-audit/20260921-luna-fixed-rail-conditions/applicability_check.py` captured in `applicability-check-replay.stdout`/`.stderr`/`.exit`. Inputs are read-only. The saved script SHA-256 is `7380ffb4980ed2b3070e9f7f568fb9146f2c03f169d5f63aa7e183a937b62623`. Replay exited `0`, stderr is 0 bytes, stdout SHA-256 is `7a4b42a127f0badeae0994aed103b52d188b0c10281f7821bc0707fe5e0019e9`, and it is byte-identical to the initial stdout (`cmp -s` passed).
+
+Result: both commands exit 0; both stderr files are 0 bytes; both stdout files have SHA-256 `7a4b42a127f0badeae0994aed103b52d188b0c10281f7821bc0707fe5e0019e9`. `status=PASS`; stdout is byte-identical.
+
+Direct checks passed:
+- donor `/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin`: 16,777,216 bytes; SHA-256 ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8.
+- FFS GUID/type/state/size and first PEI_DEPEX section were read directly at FFS offsets 0xED2C30 and 0xED3D48.
+- Both depex bodies are identical, SHA-256 c6395f7b9e6fb2e28298ee78381450f996a4f558309cd786b6ad30e171725788; exact sequence is PUSH F894643D-C449-42D1-8EA8-85BDD8C65BDE, PUSH 01F34D25-4DE2-23AD-3FF3-36353FF323F1, AND, END.
+- Direct ROM depex bodies match the corresponding existing UEFITool `body.bin` and parsed `info.txt` outputs.
+- Direct ROM TE sections match the prior extracted files: ISL69247 0xED2C74/4264 bytes/SHA-256 3e1f753a627922d16e5a638a527e39f4dd26242144edae25b0ac849db6421e34; ISL95712 0xED3D8C/3624 bytes/SHA-256 c0cc17d2d54f9cde65f471d2971596837b024d4764a28b33286032cfa95d43a9.
+- Existing objdump entry-path conditional branches were enumerated from the already-decoded files; see `applicability-check.stdout` and the report for interpretation.
+
+Limit: static only. No PEI execution/dispatch, board, ROM write, NVRAM write, register I/O, network, physical rail, VR ID, applied voltage, or safety conclusion.

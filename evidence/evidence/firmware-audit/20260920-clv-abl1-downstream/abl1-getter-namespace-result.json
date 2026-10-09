@@ -1,0 +1,467 @@
+{
+  "status": "PASS",
+  "checks": 27,
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "payload_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "getter_args": {
+    "case_entry": "0x2220",
+    "token": 7,
+    "timepoint": 2,
+    "transport": "0x1F2C -> 0x47D0 -> 0x49CC",
+    "message_or_group_at_0x47D0": 13
+  },
+  "apcb_cbs_token7_rows": [
+    {
+      "group_gid": "0x1707",
+      "instance": 13,
+      "absolute": "0xAB1464",
+      "body_offset": "0x18",
+      "u8_0": 1,
+      "u8_1": 7,
+      "u16_le": 0
+    },
+    {
+      "group_gid": "0x1707",
+      "instance": 15,
+      "absolute": "0xAB1710",
+      "body_offset": "0x27C",
+      "u8_0": 1,
+      "u8_1": 7,
+      "u16_le": 97
+    }
+  ],
+  "ifr_question": {
+    "qid": "0x20f",
+    "offset": "0x316",
+    "label": "Memory Clock Speed",
+    "default": {
+      "label": "Auto",
+      "value": 255,
+      "default": true
+    },
+    "options": [
+      {
+        "label": "Auto",
+        "value": 255,
+        "default": true
+      },
+      {
+        "label": "125MHz",
+        "value": 2,
+        "default": false
+      },
+      {
+        "label": "225MHz",
+        "value": 4,
+        "default": false
+      },
+      {
+        "label": "250MHz",
+        "value": 5,
+        "default": false
+      },
+      {
+        "label": "400MHz",
+        "value": 8,
+        "default": false
+      },
+      {
+        "label": "450MHz",
+        "value": 9,
+        "default": false
+      },
+      {
+        "label": "500MHz",
+        "value": 10,
+        "default": false
+      },
+      {
+        "label": "750MHz",
+        "value": 15,
+        "default": false
+      },
+      {
+        "label": "850MHz",
+        "value": 17,
+        "default": false
+      },
+      {
+        "label": "1000MHz",
+        "value": 20,
+        "default": false
+      },
+      {
+        "label": "1250MHz",
+        "value": 25,
+        "default": false
+      },
+      {
+        "label": "1330MHz",
+        "value": 26,
+        "default": false
+      },
+      {
+        "label": "1375MHz",
+        "value": 27,
+        "default": false
+      },
+      {
+        "label": "1500MHz",
+        "value": 30,
+        "default": false
+      },
+      {
+        "label": "1600MHz",
+        "value": 32,
+        "default": false
+      },
+      {
+        "label": "1650MHz",
+        "value": 33,
+        "default": false
+      },
+      {
+        "label": "1700MHz",
+        "value": 34,
+        "default": false
+      },
+      {
+        "label": "1750MHz",
+        "value": 35,
+        "default": false
+      },
+      {
+        "label": "1800MHz",
+        "value": 36,
+        "default": false
+      },
+      {
+        "label": "1850MHz",
+        "value": 37,
+        "default": false
+      },
+      {
+        "label": "1900MHz",
+        "value": 38,
+        "default": false
+      },
+      {
+        "label": "1950MHz",
+        "value": 39,
+        "default": false
+      },
+      {
+        "label": "2000MHz",
+        "value": 40,
+        "default": false
+      }
+    ]
+  },
+  "enum_map": [
+    {
+      "enum": 2,
+      "policy_value": 125,
+      "ifr_label": "125MHz"
+    },
+    {
+      "enum": 4,
+      "policy_value": 225,
+      "ifr_label": "225MHz"
+    },
+    {
+      "enum": 5,
+      "policy_value": 250,
+      "ifr_label": "250MHz"
+    },
+    {
+      "enum": 8,
+      "policy_value": 400,
+      "ifr_label": "400MHz"
+    },
+    {
+      "enum": 9,
+      "policy_value": 450,
+      "ifr_label": "450MHz"
+    },
+    {
+      "enum": 10,
+      "policy_value": 500,
+      "ifr_label": "500MHz"
+    },
+    {
+      "enum": 15,
+      "policy_value": 750,
+      "ifr_label": "750MHz"
+    },
+    {
+      "enum": 17,
+      "policy_value": 850,
+      "ifr_label": "850MHz"
+    },
+    {
+      "enum": 20,
+      "policy_value": 1000,
+      "ifr_label": "1000MHz"
+    },
+    {
+      "enum": 25,
+      "policy_value": 1250,
+      "ifr_label": "1250MHz"
+    },
+    {
+      "enum": 26,
+      "policy_value": 1330,
+      "ifr_label": "1330MHz"
+    },
+    {
+      "enum": 27,
+      "policy_value": 1375,
+      "ifr_label": "1375MHz"
+    },
+    {
+      "enum": 30,
+      "policy_value": 1500,
+      "ifr_label": "1500MHz"
+    },
+    {
+      "enum": 32,
+      "policy_value": 1600,
+      "ifr_label": "1600MHz"
+    },
+    {
+      "enum": 33,
+      "policy_value": 1650,
+      "ifr_label": "1650MHz"
+    },
+    {
+      "enum": 34,
+      "policy_value": 1700,
+      "ifr_label": "1700MHz"
+    },
+    {
+      "enum": 35,
+      "policy_value": 1750,
+      "ifr_label": "1750MHz"
+    },
+    {
+      "enum": 36,
+      "policy_value": 1800,
+      "ifr_label": "1800MHz"
+    },
+    {
+      "enum": 37,
+      "policy_value": 1850,
+      "ifr_label": "1850MHz"
+    },
+    {
+      "enum": 40,
+      "policy_value": 2000,
+      "ifr_label": "2000MHz"
+    }
+  ],
+  "missing_ifr_codes": [
+    38,
+    39
+  ],
+  "missing_ifr_labels": {
+    "0x26": "1900MHz",
+    "0x27": "1950MHz"
+  },
+  "precedence": {
+    "existing_amdsetup_0x316": 36,
+    "missing_variable_fallback_0x316": 255,
+    "interpretation": "existing AmdSetup wins over missing-variable fallback in the exact defaults trace; APCB/CBS getter token7 namespace is not directly joined to AmdSetup/INV 0x11ED"
+  },
+  "conclusion": "Exact current ABL1 call arguments identify config getter token 7 at timepoint 2 through 0x1F2C/0x47D0/0x49CC. Exact clv APCB CBSG contains two raw rows whose second byte is 7, at 0xAB1464 value 0 and 0xAB1710 value 97; the bounded trace does not prove which subgroup/timepoint branch supplies the returned enum. The exact IFR Memory Clock Speed question has 22 non-Auto options; the ABL table maps 20 of them to the same displayed values, while enum codes 0x26 (1900 MHz) and 0x27 (1950 MHz) fall through the invalid/default branch and are not mapped. Existing AmdSetup precedence is separately proven: stored +0x316 wins; missing-variable fallback is Auto 0xFF. No direct APCB/CBS-token7 -> AmdSetup/INV edge is proven.",
+  "limits": [
+    "APCB row schema is preserved as raw u8_0/u8_1/u16; token-name semantics are not silently promoted beyond parser fields.",
+    "No runtime/default branch execution.",
+    "No units, training, clock, synchronization, or hardware claim."
+  ],
+  "checks_detail": [
+    {
+      "name": "payload hash",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "name": "ROM hash",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "name": "semantic 0x2220",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "semantic 0x2222",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "semantic 0x2264",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "semantic 0x2266",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "semantic 0x1F56",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "semantic 0x47DE",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "semantic 0x47E6",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "semantic 0x47E8",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "semantic 0x47EA",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "semantic 0x77E2",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "semantic 0x77F4",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "APCB parser image hash",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "name": "exact CBSG token-byte rows for selector 7",
+      "passed": true,
+      "got": 2,
+      "expected": 2
+    },
+    {
+      "name": "CBSG token-7 raw locations",
+      "passed": true,
+      "got": [
+        "0xAB1464",
+        "0xAB1710"
+      ],
+      "expected": [
+        "0xAB1464",
+        "0xAB1710"
+      ]
+    },
+    {
+      "name": "CBSG token-7 values",
+      "passed": true,
+      "got": [
+        0,
+        97
+      ],
+      "expected": [
+        0,
+        97
+      ]
+    },
+    {
+      "name": "IFR memory-clock question offset",
+      "passed": true,
+      "got": "0x316",
+      "expected": "0x316"
+    },
+    {
+      "name": "IFR memory-clock QID",
+      "passed": true,
+      "got": "0x20f",
+      "expected": "0x20f"
+    },
+    {
+      "name": "IFR option count",
+      "passed": true,
+      "got": 22,
+      "expected": 22
+    },
+    {
+      "name": "TBB exact table hash fragment",
+      "passed": true,
+      "got": "1450161a50501c1f225050505025502850502b505050502e3134505037503a3d4044474a50504d00",
+      "expected": "1450161a50501c1f225050505025502850502b505050502e3134505037503a3d4044474a50504d00"
+    },
+    {
+      "name": "TBB valid enum count",
+      "passed": true,
+      "got": 20,
+      "expected": 20
+    },
+    {
+      "name": "enum code set is subset of IFR option values",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "missing IFR enum codes",
+      "passed": true,
+      "got": [
+        38,
+        39
+      ],
+      "expected": [
+        38,
+        39
+      ]
+    },
+    {
+      "name": "defaults verifier status",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "name": "existing NVAR MemoryClock value",
+      "passed": true,
+      "got": 36,
+      "expected": 36
+    },
+    {
+      "name": "missing-variable fallback MemoryClock",
+      "passed": true,
+      "got": 255,
+      "expected": 255
+    }
+  ]
+}

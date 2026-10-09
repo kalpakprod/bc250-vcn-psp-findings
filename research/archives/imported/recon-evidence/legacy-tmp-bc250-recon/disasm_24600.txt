@@ -1,0 +1,23 @@
+0x0/3: l32r a15, 0x3ffff2f38
+   0: a15 = ram[ffff2f38:4]
+0x3/3: memw 
+   0: memw()
+0x6/3: s32i a15, a2, 0x358
+   0: unique[10880:4] = a2 + 0x358
+   1: *[ram]unique[10880:4] = a15
+0x9/2: movi.n a14, 0x0
+   0: a14 = sext(0x0)
+0xb/3: memw 
+   0: memw()
+0xe/3: s32i a14, a2, 0x374
+   0: unique[10880:4] = a2 + 0x374
+   1: *[ram]unique[10880:4] = a14
+0x11/2: retw.n 
+   0: unique[ed80:4] = a0 & 0x3fffffff
+   1: unique[ee00:4] = 0x11 & 0xc0000000
+   2: unique[ef00:4] = unique[ed80:4] | unique[ee00:4]
+   3: restoreRegWindow()
+   4: return unique[ef00:4]
+0x13/3: srli a3, a0, 0x6
+   0: a3 = a0 >> 0x6
+

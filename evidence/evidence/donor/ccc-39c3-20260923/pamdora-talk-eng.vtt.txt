@@ -1,0 +1,2470 @@
+URL Content from: "https://static.media.ccc.de/media/congress/2025/1423-3aa9e859-d4b0-5e7d-8f5c-7741e6c9856e-eng.vtt"
+Title: https://static.media.ccc.de/media/congress/2025/1423-3aa9e859-d4b0-5e7d-8f5c-7741e6c9856e-eng.vtt
+Status: 200
+Markdown content:
+
+WEBVTT This file was generated using transcribee. Find out more at https://github.com/bugbakery/transcribee
+
+00:00:04.379 --> 00:00:17.649
+All right. Thank you very much.
+
+00:00:17.890 --> 00:00:20.929
+I will be presenting opening
+pAMD dora's box and unleashing a
+
+00:00:20.929 --> 00:00:23.969
+thousand paths on the journey
+to play Beat Saber custom songs.
+
+00:00:24.250 --> 00:00:26.489
+Quick disclaimer, this
+is collaborative work.
+
+00:00:26.629 --> 00:00:30.890
+This is a collaboration of several
+people, by no means a one -man project.
+
+00:00:31.269 --> 00:00:33.810
+Many have contributed to a
+greater or lesser extent.
+
+00:00:33.990 --> 00:00:35.850
+Unfortunately, many are
+bound by corporation and
+
+00:00:35.850 --> 00:00:38.049
+cannot or simply don't
+want to be named publicly.
+
+00:00:38.049 --> 00:00:40.289
+So, just so you know, I'm
+not trying to monopolize
+
+00:00:40.289 --> 00:00:42.530
+credits, I'm just presenting
+collaborative work.
+
+00:00:43.250 --> 00:00:45.590
+Also, another disclaimer, we
+haven't reached the destination yet.
+
+00:00:45.750 --> 00:00:47.170
+This presentation is just mid results.
+
+00:00:47.670 --> 00:00:51.170
+So, the back story is, I bought
+a commercial gaming console.
+
+00:00:52.929 --> 00:00:55.549
+And I bought the VR headset
+for that console because
+
+00:00:55.549 --> 00:00:57.729
+it had an exclusive game
+that I wanted to play.
+
+00:00:57.950 --> 00:01:02.070
+But I also wanted to play Beat
+Saber, the game is obviously purchased.
+
+00:01:03.950 --> 00:01:05.950
+So the built -in song selection is limited.
+
+00:01:05.950 --> 00:01:08.930
+Custom songs exist, but
+unfortunately not for this console.
+
+00:01:09.609 --> 00:01:12.310
+You can create custom songs.
+There's tutorials online.
+
+00:01:12.569 --> 00:01:16.590
+And there is even AI which you can feed
+in a song and it generates a map for you.
+
+00:01:17.829 --> 00:01:21.689
+I didn't really want to buy another
+headset, either for PC or standalone.
+
+00:01:22.170 --> 00:01:24.890
+And instead, I ended up buying
+a second console for hacking.
+
+00:01:25.450 --> 00:01:28.769
+You may be wondering why, but I
+tell you the reason is simple.
+
+00:01:29.049 --> 00:01:31.909
+My motto in life is: " wer
+committed muss auch pushen!".
+
+00:01:33.469 --> 00:01:36.069
+Or in English: " if you
+commit, you need to push".
+
+00:01:37.930 --> 00:01:42.569
+So prior research, there were no major
+hacks for the device at the time.
+
+00:01:42.569 --> 00:01:45.349
+And then still, no hacks for
+firmware high enough to play
+
+00:01:45.349 --> 00:01:49.290
+Beat Saber, which was the
+case when I submitted that.
+
+00:01:49.650 --> 00:01:55.489
+After I submitted and it got accepted, new
+major exploits dropped publicly just last month.
+
+00:01:56.430 --> 00:02:00.549
+And yeah, there's severe restrictions
+on downloading digital -only titles
+
+00:02:00.549 --> 00:02:03.569
+because to access the store, you
+need to be on the latest firmware.
+
+00:02:03.569 --> 00:02:08.250
+So, upgrading to latest is required,
+but then if you do that, you probably
+
+00:02:08.250 --> 00:02:11.289
+have all the bugs patched so you
+cannot really hack the console anymore.
+
+00:02:12.389 --> 00:02:13.870
+There were some failed attempts.
+
+00:02:14.389 --> 00:02:18.310
+So there was some user space software
+hacks existed at the time at least for
+
+00:02:18.310 --> 00:02:22.990
+the latest version, but only in the
+compatibility mode for the old gen software.
+
+00:02:23.270 --> 00:02:25.449
+It was a really good entry
+point, but unfortunately,
+
+00:02:25.610 --> 00:02:28.490
+lack of skills on my side
+prevented from finding bugs.
+
+00:02:28.969 --> 00:02:32.069
+Or actually, we did have bugs,
+but we couldn't even trigger them
+
+00:02:32.069 --> 00:02:36.090
+because of restricted attack
+surface, sandboxing, syscalls weren't
+
+00:02:36.090 --> 00:02:39.210
+available, which would trigger a
+vulnerable call pass, s o, meh.
+
+00:02:39.569 --> 00:02:42.710
+Also, the approach is not sustainable
+anyways, because the next upgrade
+
+00:02:42.710 --> 00:02:45.949
+would fix all the bugs, and then that
+would kind of prevent us from sharing
+
+00:02:45.949 --> 00:02:49.310
+all the efforts with other people,
+which would be really cool to do.
+
+00:02:49.729 --> 00:02:53.710
+So, demotivation kind of hit, and I
+didn't really want to continue this path.
+
+00:02:53.870 --> 00:02:57.750
+And I was thinking, okay, what if
+we hack hardware instead, right?
+
+00:02:58.389 --> 00:03:00.370
+Everyone and their mother
+are doing glitching lately.
+
+00:03:00.370 --> 00:03:05.710
+Mod chips were cool in the past and are still
+cool today, those without baggage at least.
+
+00:03:06.030 --> 00:03:09.750
+Others have successfully gone similar
+routes in the past privately.
+
+00:03:10.590 --> 00:03:14.849
+They didn't publish any things, but they
+did tell that they have done it privately.
+
+00:03:15.030 --> 00:03:18.189
+And I was like, okay, how
+hard can that really be, right?
+
+00:03:19.449 --> 00:03:21.310
+So, at this point, we're
+going to switch the target
+
+00:03:21.310 --> 00:03:23.770
+because consoles are actually
+super expensive, right?
+
+00:03:23.770 --> 00:03:28.389
+But when the console is manufactured,
+sometimes the chips are broken.
+
+00:03:28.770 --> 00:03:31.629
+So, instead of throwing them
+away, the manufacturer packs
+
+00:03:31.629 --> 00:03:35.069
+those chips, disables the GPU,
+and puts them on a desktop
+
+00:03:35.069 --> 00:03:37.889
+mainboard and sells those to
+still recover some of the money.
+
+00:03:38.389 --> 00:03:40.289
+And these are actually much, much cheaper,
+
+00:03:40.430 --> 00:03:43.030
+especially if you buy also
+with the broken boards.
+
+00:03:43.030 --> 00:03:48.490
+It has the exact same chip, it has the exact
+same ROM, and has a very similar boot flow.
+
+00:03:48.710 --> 00:03:50.889
+So, what if we can hack this instead?
+
+00:03:51.430 --> 00:03:54.710
+At this point, a quick reminder,
+this is not a console hacking talk.
+
+00:03:54.930 --> 00:03:58.349
+From here on, we will focus
+only on the desktop board.
+
+00:03:58.349 --> 00:04:03.210
+So, the target that we have
+at hand is an AMD 8 -core
+
+00:04:03.210 --> 00:04:07.310
+x86 64 -bit CPU, which is
+the AMD Zen 2 generation.
+
+00:04:07.629 --> 00:04:09.650
+It has 16 gigabytes of RAM.
+
+00:04:09.909 --> 00:04:12.689
+It can boot from Zeta drives,
+and all what I just said is not
+
+00:04:12.689 --> 00:04:18.310
+relevant at all, because that is not
+the root of trust anyways, right?
+
+00:04:18.930 --> 00:04:23.589
+Yeah. If you buy broken boards, you're
+like 25 euro per piece on eBay.
+
+00:04:23.910 --> 00:04:25.930
+These are for my chip -decapping friends.
+
+00:04:25.930 --> 00:04:28.470
+If we have some time at the end,
+I will tell you more about that.
+
+00:04:29.410 --> 00:04:33.550
+The real target here is the
+AMD P latform S ecurity P rocessor.
+
+00:04:33.810 --> 00:04:37.129
+This is a Cortex -A5, I think.
+I didn't really bother to check.
+
+00:04:37.709 --> 00:04:40.990
+It's a 32 -bit ARM core
+inside the actual CPU.
+
+00:04:41.490 --> 00:04:44.990
+It takes care of hardware bring up,
+for example, initializing the DRAM.
+
+00:04:45.149 --> 00:04:49.290
+It also takes care of the secure boot
+chain. And this is the real root of trust.
+
+00:04:49.449 --> 00:04:54.129
+This is where things get juicy. The
+boot flow is somewhat like this.
+
+00:04:54.129 --> 00:04:56.990
+You push the power
+button. Some stuff happens.
+
+00:04:57.310 --> 00:05:03.569
+Then the P latform S ecurity P rocessor is
+released from reset. The PSP ROM runs.
+
+00:05:03.750 --> 00:05:07.430
+It does some hardware initialization.
+It does some crypto initialization.
+
+00:05:07.850 --> 00:05:11.490
+It loads, decrypts, and verifies
+the off -chip boot loader.
+
+00:05:11.610 --> 00:05:14.250
+And when the off -chip boot
+loader runs, it loads ABLs.
+
+00:05:14.250 --> 00:05:17.290
+I think it stands for "AGESA B oot L oader".
+
+00:05:17.430 --> 00:05:21.410
+These are like mini -app snippets, and
+there's like, I don't know, seven of them.
+
+00:05:21.649 --> 00:05:26.290
+And they do initialization, like more
+hardware you need. They need DRAM.
+
+00:05:26.430 --> 00:05:27.449
+They load the BIOS.
+
+00:05:28.089 --> 00:05:31.670
+And once that is done, control flow is
+redirected back to the off -chip boot loader
+
+00:05:31.670 --> 00:05:37.029
+and then loads like a secure OS for stuff
+like I think FTPM or remote attestation.
+
+00:05:37.029 --> 00:05:41.689
+And then the x86 is released from
+reset, and then the x86 BIOS runs.
+
+00:05:42.149 --> 00:05:46.410
+So the real root of trust is the ROM,
+but also this off -chip boot loader.
+
+00:05:46.970 --> 00:05:51.970
+So if we can glitch and compromise code at
+this point, that means we have full control.
+
+00:05:52.410 --> 00:05:56.829
+So running code in or after the boot
+ROM gives access to all the keys.
+
+00:05:57.290 --> 00:06:00.230
+It gives control over
+everything that runs afterwards.
+
+00:06:00.990 --> 00:06:04.750
+We can patch out all further
+security, that means we can inject
+
+00:06:04.750 --> 00:06:08.410
+custom code into the boot loader,
+into the hypervisor, into the
+
+00:06:08.410 --> 00:06:11.949
+kernel, into user space, and of
+course our target into Beat Saber.
+
+00:06:13.350 --> 00:06:18.509
+This is not really patchable if you glitch,
+you know, ROM stuff or compromise there.
+
+00:06:19.449 --> 00:06:21.910
+But how? How do we do that, right?
+
+00:06:22.550 --> 00:06:27.089
+That's what I was asking myself, and
+luckily there's a cookbook for this project.
+
+00:06:27.089 --> 00:06:30.910
+There's a nice paper: " one
+glitch to rule them all, fault
+
+00:06:30.910 --> 00:06:34.350
+injection attacks against AMD
+secure encrypted virtualization".
+
+00:06:34.769 --> 00:06:38.709
+Basically this paper describes
+how to fault inject AMD CPUs.
+
+00:06:38.910 --> 00:06:44.529
+So what they do is they hijack the
+SVI2 protocol of a smart voltage
+
+00:06:44.529 --> 00:06:49.629
+regulator, which is basically some
+fancy I2C, and then make the board
+
+00:06:49.629 --> 00:06:53.230
+glitch itself by telling the
+voltage regulator to regulate down.
+
+00:06:53.730 --> 00:06:54.829
+Easy enough, right?
+
+00:06:56.189 --> 00:06:59.649
+The problem, the target
+voltage rail for this
+
+00:06:59.649 --> 00:07:02.170
+core that we want to
+glitch isn't really smart.
+
+00:07:02.389 --> 00:07:04.790
+It's not SVI2- aware voltage regulator.
+
+00:07:04.970 --> 00:07:07.750
+This is just a simple dump
+one which you can't talk to.
+
+00:07:08.189 --> 00:07:11.170
+Aside of that, black box
+glitching is extremely hard.
+
+00:07:11.550 --> 00:07:15.470
+The ROM probably deviates
+a lot from standard AMD
+
+00:07:15.470 --> 00:07:18.430
+CPUs, and we don't really
+have any info whatsoever.
+
+00:07:18.949 --> 00:07:20.750
+The internal state is not observable.
+
+00:07:20.750 --> 00:07:25.870
+So it doesn't make sense to get the ROM
+dump first to even see what's going on.
+
+00:07:26.110 --> 00:07:30.310
+This has been done before privately,
+but nothing has been shared.
+
+00:07:30.949 --> 00:07:34.089
+Some info exists about
+similar off -chip bootloaders,
+
+00:07:34.310 --> 00:07:36.750
+so the idea is, okay, what
+if we attack that first?
+
+00:07:37.110 --> 00:07:40.730
+It's a bit more chattier, and that can
+maybe help us to get the ROM dump.
+
+00:07:40.730 --> 00:07:45.250
+So, the next step on our
+road is to get a ROM dump.
+
+00:07:46.269 --> 00:07:47.790
+Let's take a look at the boot flow.
+
+00:07:47.790 --> 00:07:51.970
+So, the ROM loads the off
+-chip bootloader from SPI flash.
+
+00:07:52.250 --> 00:07:54.170
+It does decryption and sig checks.
+
+00:07:54.850 --> 00:07:57.490
+The off -chip bootloader
+loads several ABL applets
+
+00:07:57.490 --> 00:08:01.370
+from SPI, which are signed
+but not actually encrypted.
+
+00:08:02.470 --> 00:08:05.069
+ABL does init stuff like DRAM and so on.
+
+00:08:05.310 --> 00:08:07.610
+And then the off -chip
+bootloader loads the secure
+
+00:08:07.610 --> 00:08:10.430
+OS from SPI, which is also
+signed but not encrypted.
+
+00:08:10.430 --> 00:08:16.310
+And at some point x86 starts, and AMD P latform
+S ecurity P rocessor stays in the secure OS.
+
+00:08:17.310 --> 00:08:21.290
+And now we're going to do, like,
+a detour and talk about postcodes.
+
+00:08:21.850 --> 00:08:24.129
+So post is the "P ower-O n-S elf -Test".
+
+00:08:24.329 --> 00:08:30.329
+This is run during x86 boot, and different
+stages statuses are logged via postcodes.
+
+00:08:30.550 --> 00:08:36.409
+And if your PC doesn't boot, you can
+debug it. Early PCs print them on PCI.
+
+00:08:36.409 --> 00:08:39.690
+More modern PCs print
+them on the LPC bus.
+
+00:08:40.509 --> 00:08:44.669
+And the target board also
+uses postcodes, and the
+
+00:08:44.669 --> 00:08:47.190
+ROM has them, but it
+doesn't actually output them.
+
+00:08:47.409 --> 00:08:51.830
+You can, I think, internally access them via
+JTagger, but we don't have any of that access.
+
+00:08:52.129 --> 00:08:54.830
+But the off -chip bootloader
+does actually put them onto
+
+00:08:54.830 --> 00:08:58.789
+the LPC bus, so we can see
+the postcodes and we can figure
+
+00:08:58.789 --> 00:09:01.710
+out the different boot stages
+the board goes through.
+
+00:09:02.950 --> 00:09:07.850
+So, again, off -chip bootloader loads
+ABLs from SPI, sig checks and runs them,
+
+00:09:08.049 --> 00:09:13.210
+and the progress and status, like success
+and error, is logged via postcodes.
+
+00:09:13.389 --> 00:09:14.509
+And we can observe that.
+
+00:09:15.590 --> 00:09:20.909
+So the first thing we did is we built
+an LPC sniffer to get to those postcodes.
+
+00:09:21.710 --> 00:09:25.850
+I over -engineered this a bit
+and made this nice screens.
+
+00:09:26.110 --> 00:09:28.529
+We didn't end up using them because
+that wasn't convenient at all.
+
+00:09:28.629 --> 00:09:32.289
+We just ended up getting that from
+the serial log from Raspberry Pi Pico.
+
+00:09:33.610 --> 00:09:38.330
+All right, t he plan is: boot the
+off -chip bootloader from SPI, replace
+
+00:09:38.330 --> 00:09:42.269
+ABL, which is unencrypted, glitch
+off -chip bootloader during ABL
+
+00:09:42.269 --> 00:09:46.850
+verification, and then run custom
+code inside ABL context, and from
+
+00:09:46.850 --> 00:09:50.629
+there we have a foot in the software
+already, and we can try to exploit
+
+00:09:50.629 --> 00:09:53.950
+the software from them and try to
+figure out how we can dump the ROM.
+
+00:09:55.490 --> 00:09:56.830
+Okay, b ut how do we glitch?
+
+00:09:58.669 --> 00:10:01.669
+So the first idea we had is
+to smartify the voltage rail.
+
+00:10:01.909 --> 00:10:06.289
+So basically what we did is we
+removed the dumb voltage regulator from
+
+00:10:06.289 --> 00:10:10.889
+the target rail, and then we bridged
+the target rail to a different
+
+00:10:10.889 --> 00:10:15.690
+unrelated rail which did have a
+smart voltage regulator, and then we
+
+00:10:15.690 --> 00:10:19.929
+could do SVI2 injection which would
+now essentially control two rails.
+
+00:10:20.509 --> 00:10:23.289
+One we don't really know what it
+does, and the other one is our target
+
+00:10:23.289 --> 00:10:26.950
+rail, and then we try to replicate
+the one -glitch paper and profit, right?
+
+00:10:27.769 --> 00:10:29.970
+So this is our glitch setup one.
+
+00:10:30.330 --> 00:10:34.289
+We monitor the SPI lines and
+time the glitch based on that.
+
+00:10:34.549 --> 00:10:37.370
+We monitor postcodes
+and observe the errors.
+
+00:10:37.730 --> 00:10:41.490
+We compare postcodes to other
+resources and learn from observation.
+
+00:10:41.490 --> 00:10:44.009
+Like, if you Google online,
+you can figure out, okay, this
+
+00:10:44.009 --> 00:10:48.049
+postcode means SHA error, sig
+error, boot success, if you compare
+
+00:10:48.049 --> 00:10:52.909
+it to the postcode output of a
+normal thing, or fail, and so on.
+
+00:10:54.429 --> 00:11:01.389
+And we never got a successful glitch
+with that... Because of a bootloader bug?
+
+00:11:01.669 --> 00:11:03.309
+What? Wait, what?
+
+00:11:03.950 --> 00:11:08.690
+So, if you observe the SPI
+lines, you can see it reads
+
+00:11:08.690 --> 00:11:14.169
+the ABL 0 header, then it reads
+the ABL 0 body, and then it
+
+00:11:14.169 --> 00:11:19.269
+reads the ABL 0 body again,
+okay, so where should we glitch?
+
+00:11:19.509 --> 00:11:24.970
+Like, normally you would glitch after ABL
+was read during the verification, right?
+
+00:11:25.169 --> 00:11:26.330
+But where do we glitch here?
+
+00:11:26.470 --> 00:11:29.370
+Should we glitch after the first
+read, after the second read?
+
+00:11:29.370 --> 00:11:33.649
+And then the question is, why
+is it being read twice anyways?
+
+00:11:34.610 --> 00:11:38.330
+So we were trying to glitch
+here, and we never managed to
+
+00:11:38.330 --> 00:11:41.009
+bypass the sig checks, which
+apparently is a skill issue.
+
+00:11:42.350 --> 00:11:46.269
+Glitching here gives SHA errors,
+which we can see through the
+
+00:11:46.269 --> 00:11:50.230
+postcodes, and then glitching
+here, nothing really happens.
+
+00:11:50.230 --> 00:11:55.610
+And if you move it more inside the
+payload, then still nothing happens.
+
+00:11:55.889 --> 00:11:58.429
+And we 're like, okay, this is weird.
+
+00:11:59.110 --> 00:12:01.529
+So apparently we have a
+TOCTOU bug here, right?
+
+00:12:02.049 --> 00:12:07.009
+The first read is copied into
+SRAM and executed, and the second
+
+00:12:07.009 --> 00:12:11.110
+read is hashed in flight with the
+crypto coprocessor and verified.
+
+00:12:13.639 --> 00:12:17.559
+So first attempts at exploiting
+this with the two -chip method.
+
+00:12:17.559 --> 00:12:22.539
+Basically, you remove the SPI flash,
+and instead you put two SPI flashes
+
+00:12:22.539 --> 00:12:25.279
+on there and connect it to the
+mainboard because it has nice headers.
+
+00:12:25.700 --> 00:12:30.720
+You proxy the chip select lines of both
+of the flashes through a Raspberry Pi
+
+00:12:30.720 --> 00:12:34.000
+Pico, and then you connect the Pico to
+the chip select line on the mainboard.
+
+00:12:34.440 --> 00:12:37.120
+You monitor with the
+Pico the SPI read access,
+
+00:12:37.419 --> 00:12:40.500
+and when address is seen,
+you switch the chip.
+
+00:12:40.620 --> 00:12:43.919
+Basically every time the chip select is
+triggered, you forward it to the one chip,
+
+00:12:44.059 --> 00:12:47.639
+and then once you see this trigger
+address, you forward it to the other chip.
+
+00:12:47.919 --> 00:12:51.740
+So the first read from the first
+flash is our custom binary, and
+
+00:12:51.740 --> 00:12:55.720
+then the second read from the
+second flash is our original binary.
+
+00:12:56.399 --> 00:12:59.200
+And if we do that, we
+get custom postcodes.
+
+00:12:58.720 --> 00:12:59.200
+Public: (applause)
+
+00:13:08.070 --> 00:13:09.789
+tihmstar: Alright. Later we have
+a production -grade exploit.
+
+00:13:09.970 --> 00:13:12.110
+You don't need two extra SPI flashes.
+
+00:13:12.309 --> 00:13:14.870
+You can directly inject
+the payload with RP2040.
+
+00:13:14.870 --> 00:13:18.370
+Basically, you put RP2040 on
+the bus, and then you proxy
+
+00:13:18.370 --> 00:13:21.529
+the chip select line, and this
+is how the setup looks like.
+
+00:13:21.649 --> 00:13:23.629
+Just take a Pico and
+connect it to the mainboard.
+
+00:13:23.789 --> 00:13:26.990
+Really the only thing you need
+to do is you take the original
+
+00:13:26.990 --> 00:13:30.210
+flash, you lift one of the
+pins, make sure it doesn't touch
+
+00:13:30.210 --> 00:13:32.549
+the mainboard, and then you
+solder to the chip select pin.
+
+00:13:32.809 --> 00:13:37.929
+That's the whole setup. And it looks
+nice and cosy like this. Al right.
+
+00:13:38.169 --> 00:13:42.210
+So the entry hacks, we can replace arbitrary
+binary loaded by off -chip bootloader.
+
+00:13:42.210 --> 00:13:46.730
+The only restriction here is it
+must be smaller or equal than the
+
+00:13:46.730 --> 00:13:49.950
+original size, and we can exploit
+the software bug with a mod chip.
+
+00:13:50.429 --> 00:13:53.309
+Unfortunately this doesn't work
+on console, otherwise it would
+
+00:13:53.309 --> 00:13:56.129
+have been done, and the reason
+is it doesn't actually boot
+
+00:13:56.129 --> 00:14:00.070
+from SPI, and it has an entirely
+different off -chip bootloader.
+
+00:14:00.429 --> 00:14:06.529
+Well we need to continue our path then.
+So for the entry strategy, ABL0 is tiny.
+
+00:14:06.870 --> 00:14:08.730
+Maybe we can replace something else.
+
+00:14:08.730 --> 00:14:12.710
+Also, ABLs are a bit annoying to
+work with because they're sandboxed,
+
+00:14:12.809 --> 00:14:16.409
+so they run in EL0 while the
+off -chip bootloader runs in EL1.
+
+00:14:17.330 --> 00:14:23.250
+But if we replace secure OS, it gives EL1 code
+execution for free because that starts there.
+
+00:14:23.450 --> 00:14:29.649
+So what we did is we compiled our insecure
+OS, which is code that is running in EL1.
+
+00:14:29.649 --> 00:14:34.070
+We can replace it as it's a fairly large
+binary, and it's also easily elevatable
+
+00:14:34.070 --> 00:14:39.149
+to EL3 because... I t's not even used, I
+think we didn't even end up using EL3,
+
+00:14:39.330 --> 00:14:42.870
+but you can just overwrite the exception
+vector and then trigger EL3 exception.
+
+00:14:43.029 --> 00:14:46.490
+It can be in EL3, but it's kind of
+useless because you don't need it.
+
+00:14:47.210 --> 00:14:53.049
+You can output postcodes to the LPC bus, and
+you can also read and write to the SPI bus.
+
+00:14:53.049 --> 00:14:57.129
+So, you can also define magic
+addresses, and when you write
+
+00:14:57.129 --> 00:15:01.169
+to them, you can monitor those
+writes from your Pico, and then
+
+00:15:01.169 --> 00:15:04.009
+we build a logging prerogative
+basically for, like, printf.
+
+00:15:04.269 --> 00:15:09.069
+You can also read custom data by reading
+from magic addresses, t he Pico, uh, sniffs
+
+00:15:09.069 --> 00:15:14.229
+those and then injects custom data if you
+need to insert more data into the chip.
+
+00:15:15.370 --> 00:15:18.789
+We can also dump the off -chip
+bootloader because secure OS lives in
+
+00:15:18.789 --> 00:15:22.809
+DRAM, but the off -chip bootloader
+lives in SRAM, and it's still there at
+
+00:15:22.809 --> 00:15:26.729
+the point in time when we get code
+execution in the insecure OS, right?
+
+00:15:26.889 --> 00:15:29.229
+And this is how we got our
+first off -chip bootloader
+
+00:15:29.229 --> 00:15:32.250
+dump and how we could
+finally start reversing.
+
+00:15:32.769 --> 00:15:35.229
+Al right, l et's explore some crypto.
+
+00:15:35.229 --> 00:15:42.659
+1So the C ryptoC oProcessor has
+its own memory just for keys.
+
+00:15:42.919 --> 00:15:45.299
+It's called LSB or "L ocal S torage B locks".
+
+00:15:45.579 --> 00:15:49.899
+This is eight blocks with
+16 slots with 32 bytes each.
+
+00:15:50.500 --> 00:15:53.599
+But really, this is just private
+memory, and the slots can be
+
+00:15:53.599 --> 00:15:57.679
+protected so you can no longer read
+out the keys but only use them.
+
+00:15:58.319 --> 00:16:04.019
+Fortunately this protection isn't very
+good. So let's get to slot hacks.
+
+00:16:04.019 --> 00:16:11.059
+Basically, protecting a slot prevents the
+CCP from reading it but not using it
+
+00:16:11.059 --> 00:16:14.019
+as a key, which is kind of the whole
+point of the storage in the first place.
+
+00:16:14.240 --> 00:16:21.000
+The CCP address slots are
+addressed by memory type and byte
+
+00:16:21.000 --> 00:16:24.399
+offset, not index, because
+this is kind of just memory.
+
+00:16:24.399 --> 00:16:28.980
+And the offset in a slot does
+not need to be at byte zero.
+
+00:16:28.980 --> 00:16:33.579
+So if the key of a previous
+slot is known, we can increment
+
+00:16:33.579 --> 00:16:36.519
+the offset and use key
+bytes from different slots.
+
+00:16:36.639 --> 00:16:40.279
+Basically, instead of using slot
+zero byte zero, slot zero byte
+
+00:16:40.279 --> 00:16:44.859
+one, and until slot zero byte 31,
+you increment the offset by one,
+
+00:16:45.000 --> 00:16:48.740
+and then you start with slot zero
+key one, slot zero key two, until
+
+00:16:48.740 --> 00:16:52.500
+slot zero key 31, and then you
+have one byte from the next slot.
+
+00:16:52.500 --> 00:16:53.079
+Right?
+
+00:16:53.259 --> 00:16:57.279
+And now we have only one unknown
+byte, and you try to encrypt some
+
+00:16:57.279 --> 00:17:01.119
+ciphertext, and then you brute force
+the one byte that you don't know,
+
+00:17:01.319 --> 00:17:04.980
+and then you compare the ciphertext,
+and then how you get the whole keys.
+
+00:17:05.259 --> 00:17:10.019
+Right? Repeat for the remaining bytes.
+Al right! CCP has readout protection.
+
+00:17:10.420 --> 00:17:15.139
+We write a super cool exploit, but it
+turns out all the keys are useless. Wait.
+
+00:17:15.779 --> 00:17:20.779
+Useless? Damn. Okay, et's continue
+with exploring the hardware more.
+
+00:17:21.079 --> 00:17:24.779
+No more keys here. So we can
+interact with the CCP engine.
+
+00:17:25.000 --> 00:17:27.460
+We can dump the key slots
+from the L ocal S torage B locks.
+
+00:17:27.679 --> 00:17:31.879
+All of them are kinda useless.
+Can we dump the B ootROM?
+
+00:17:32.019 --> 00:17:34.819
+Because this is why we're here
+in the first place, right? Nope.
+
+00:17:35.500 --> 00:17:40.700
+Unfortunately, the BootROM is protected from
+reading by either the CPU or the CCP.
+
+00:17:40.980 --> 00:17:43.480
+We tried to just DMA it out,
+but it doesn't work either.
+
+00:17:43.480 --> 00:17:47.659
+And except for that, for us, nothing
+else is really interesting in hardware.
+
+00:17:47.879 --> 00:17:50.139
+So we need to focus
+on dumping the BootROM.
+
+00:17:51.059 --> 00:17:54.279
+So we got some hints from people who
+did dump the BootROM before, and the
+
+00:17:54.279 --> 00:17:59.740
+two key hints that we got is, one, reset
+the CPU while DMA at the same time.
+
+00:17:59.899 --> 00:18:02.460
+So apparently the reset is the
+important part because we did try DMA.
+
+00:18:02.759 --> 00:18:07.159
+And then the other hint was,
+secure OS might be too late. Okay.
+
+00:18:07.339 --> 00:18:09.119
+So let's go back to ABL 0.
+
+00:18:09.119 --> 00:18:12.920
+But what we also did is
+we downgraded the BIOS to
+
+00:18:12.920 --> 00:18:16.099
+the lowest possible version
+for a good measure.
+
+00:18:16.220 --> 00:18:19.480
+When I say BIOS, it's basically
+the contents of the SPI
+
+00:18:19.480 --> 00:18:23.339
+flash, which got a couple,
+like, upgrades over the time.
+
+00:18:23.519 --> 00:18:27.539
+But if you Google this board and
+BIOS, you will find the right thing.
+
+00:18:27.639 --> 00:18:30.480
+This is why I just call it BIOS,
+even though it's technically not BIOS.
+
+00:18:32.319 --> 00:18:37.000
+Earlier BIOS doesn't even have secure
+OS, so we kind of need to go for ABLs.
+
+00:18:37.460 --> 00:18:40.259
+ABL 0 runs in EL0. It can read everything.
+
+00:18:40.559 --> 00:18:44.059
+It cannot write to EL1 protected
+memory, although it can read it.
+
+00:18:44.339 --> 00:18:50.679
+It can write to MMIO registers for
+system bring -up, including CCP registers.
+
+00:18:51.039 --> 00:18:54.659
+I mean, come on, guys. So, ABL 0 hacks.
+
+00:18:54.899 --> 00:18:59.000
+We put the CCP configuration
+into some memory in EL0.
+
+00:18:59.179 --> 00:19:01.819
+We point the MMIO
+registers to that config.
+
+00:19:02.139 --> 00:19:06.960
+We use CCP pass through modes to override
+the EL1 exception vector from the
+
+00:19:06.960 --> 00:19:11.759
+CCP engine, and then we get, again,
+EL1 code execution, and, yeah, nice.
+
+00:19:12.839 --> 00:19:17.240
+Interestingly, a newer BIOS
+update fixed this problem
+
+00:19:17.240 --> 00:19:20.539
+because they don't map MMIO
+registers to EL0 anymore.
+
+00:19:20.539 --> 00:19:25.819
+However, they introduced a peek and poke
+syscalls, at least that's what we call
+
+00:19:25.819 --> 00:19:30.659
+it, and then you cannot use them to write
+to EL1 code or data that is blacklisted.
+
+00:19:30.980 --> 00:19:36.220
+Some MMIO devices are blacklisted,
+but not the CCP MMIO registers.
+
+00:19:36.720 --> 00:19:40.159
+You want to see the same exploit again?
+All right, the same exploit again!
+
+00:19:40.960 --> 00:19:44.139
+So put the CCP
+configuration in EL0 memory.
+
+00:19:44.339 --> 00:19:47.279
+Use the poke syscalls to
+write the CCP MMIO registers.
+
+00:19:47.279 --> 00:19:50.279
+Use pass -through mode
+to override EL1 exception
+
+00:19:50.279 --> 00:19:52.619
+vector, and then get
+EL1 code execution again.
+
+00:19:54.019 --> 00:19:56.299
+Al right. Next stage payload.
+
+00:19:56.519 --> 00:19:59.639
+So, the thing is, replacing
+ABL 0 is really, really tiny.
+
+00:19:59.900 --> 00:20:01.839
+So, you want to have, like, a stage 2.
+
+00:20:01.960 --> 00:20:04.799
+And basically what we did there
+after we elevate privileges to EL1,
+
+00:20:04.940 --> 00:20:09.259
+we keep reading from the same
+magic address, which is SPI mapped.
+
+00:20:09.259 --> 00:20:14.079
+And then the RP2040 intercepts those
+reads and then pushes in our stage
+
+00:20:14.079 --> 00:20:17.900
+2 payload, and then that's how we
+can run a larger stage 2 payload.
+
+00:20:19.379 --> 00:20:20.039
+All right.
+
+00:20:20.299 --> 00:20:23.440
+So, the ROM dump strategy
+basically is we got code execution
+
+00:20:23.440 --> 00:20:27.699
+very early, as early as we can
+with our primitives that we have.
+
+00:20:28.000 --> 00:20:31.000
+We can use CCP pass
+through to DMA to ROM.
+
+00:20:31.000 --> 00:20:34.819
+Now, the final missing piece
+is how do we reset the CPU
+
+00:20:34.819 --> 00:20:37.819
+without resetting the CCP or
+the whole board altogether?
+
+00:20:38.319 --> 00:20:41.639
+So we did a bit of research,
+and it turns out that there
+
+00:20:41.639 --> 00:20:44.839
+are some Chromebooks which
+have similar CPUs, and we're
+
+00:20:44.839 --> 00:20:47.599
+like, oh, cool, so it does
+exist, we just need to find it.
+
+00:20:47.740 --> 00:20:50.359
+It mentions warm resets.
+
+00:20:51.099 --> 00:20:55.539
+We tried to reverse, but then it got
+tedious, and we didn't really want to do it.
+
+00:20:55.539 --> 00:20:58.059
+So instead, we decided just
+to brute force it, right?
+
+00:20:58.519 --> 00:21:04.199
+So we just write FFFFFFFF to the whole
+MMIO address space and see what happens.
+
+00:21:04.599 --> 00:21:07.139
+So if nothing happens, this
+is not an interesting register.
+
+00:21:07.400 --> 00:21:11.859
+If the CPU hangs, because we can do
+prints after every write, then it is an
+
+00:21:11.859 --> 00:21:15.480
+interesting register, and if we get a data
+abort, then the memory simply doesn't exist.
+
+00:21:16.019 --> 00:21:20.339
+So it turns out most MMIO order
+space is unmapped, but there were like
+
+00:21:20.339 --> 00:21:26.539
+two hits which we found, and then
+we test writing just random bits to
+
+00:21:26.539 --> 00:21:31.139
+it, and the second match was the
+register that we wanted to find, and
+
+00:21:31.139 --> 00:21:35.659
+then simply by writing "1" to that,
+we could get exactly what we wanted.
+
+00:21:36.759 --> 00:21:38.000
+So how do we dump the ROM?
+
+00:21:38.139 --> 00:21:40.960
+So basically we need to make
+sure the CPU is " dead" when
+
+00:21:40.960 --> 00:21:44.199
+the DMA starts, otherwise we
+may miss the start of the ROM.
+
+00:21:44.359 --> 00:21:48.420
+So what we're doing is we delay
+the DMA with an unrelated copy which
+
+00:21:48.420 --> 00:21:52.539
+gives time for the CPU to stop,
+because the CPU writes into MMIO for
+
+00:21:52.539 --> 00:21:56.179
+the CCP, be like, okay, start the
+DMA, and then the CPU writes into a
+
+00:21:56.179 --> 00:21:59.319
+different MMIO, okay, shut yourself
+down, or reset, or whatever it does.
+
+00:21:59.539 --> 00:22:02.240
+And we need to make sure the
+DMA doesn't start too early.
+
+00:22:02.379 --> 00:22:06.539
+So we copy unrelated memory somewhere
+else to delay it, and then we
+
+00:22:06.539 --> 00:22:10.639
+can chain the second DMA transfer
+which then copies the ROM to SRAM,
+
+00:22:10.799 --> 00:22:15.460
+and then we just reset the board,
+and the SRAM content stays in there.
+
+00:22:15.460 --> 00:22:19.440
+We tested that, and then when we read
+it, when we boot the second time, we can
+
+00:22:19.440 --> 00:22:24.879
+just read the SRAM content and slowly
+push it over using our SPI primitive, and
+
+00:22:24.879 --> 00:22:28.679
+then dump it on the Pico and the USB serial
+console, and that's how we get the ROM.
+
+00:22:29.400 --> 00:22:33.079
+If you want to try yourself, this is
+the hash you want to be looking for.
+
+00:22:33.159 --> 00:22:35.720
+You need to remove always
+30 bytes at the end, because
+
+00:22:35.720 --> 00:22:39.659
+that is some random stuff
+which changes across the boards.
+
+00:22:39.659 --> 00:22:47.059
+But yeah, this is how the ROM looks
+like in SHA. ROM reversing time!
+
+00:22:47.519 --> 00:22:48.500
+Now we have the ROM.
+
+00:22:48.639 --> 00:22:52.339
+Now we can do the juicy stuff, and the
+first question is, are there any bugs?
+
+00:22:53.579 --> 00:22:59.019
+Actually, yes, there are. But we're not
+sure if they're exploitable, so we'll see.
+
+00:22:59.400 --> 00:23:01.960
+Let's talk about the boot flow, right?
+
+00:23:02.220 --> 00:23:06.940
+So basically what the ROM does on
+a high level, the entry goes to the
+
+00:23:06.940 --> 00:23:10.420
+hardware you need, then it waits for
+external boot address, it does some key
+
+00:23:10.420 --> 00:23:15.440
+derivation, it loads, decrypts, and
+verifies the off -chip bootloader , then
+
+00:23:15.440 --> 00:23:20.420
+it calls a function which we call
+"clear regs and stack, then boot", and
+
+00:23:20.420 --> 00:23:24.720
+then it jumps to the off -chip bootloader
+, which is mapped at SRAM address 0.
+
+00:23:25.400 --> 00:23:26.519
+What else can happen?
+
+00:23:26.659 --> 00:23:29.480
+Well, if we don't give it
+an external boot address, then
+
+00:23:29.480 --> 00:23:32.179
+we have some watchdog timeout
+which will trigger an FIQ.
+
+00:23:32.379 --> 00:23:35.940
+The FIQ handler checks " is the source
+the watchdog timer?", and there's
+
+00:23:35.940 --> 00:23:39.980
+really just one single source, and
+if yes, it does a system reset.
+
+00:23:40.900 --> 00:23:42.099
+Okay, what else can go wrong?
+
+00:23:42.259 --> 00:23:44.579
+Well, if you give it some
+corrupt weird data, some
+
+00:23:44.579 --> 00:23:47.480
+header checks or sig checks
+fail, then it will also panic.
+
+00:23:47.659 --> 00:23:52.480
+Then it also calls the "clear regs
+and stack then boot" function,
+
+00:23:52.759 --> 00:23:56.139
+but instead of jumping to the off
+-chip bootloader, it hangs forever.
+
+00:23:57.000 --> 00:23:58.019
+Okay, wait a minute.
+
+00:23:58.179 --> 00:24:03.139
+So apparently this function is " clear
+regs and stack, then boot or hang".
+
+00:24:04.339 --> 00:24:07.639
+And this is a bit fishy, right?
+Maybe we should take a look there.
+
+00:24:08.880 --> 00:24:11.779
+So taking a look at this exact
+function, it takes two arguments.
+
+00:24:11.980 --> 00:24:14.719
+The first is the boot address, and
+the second is the boolean, which
+
+00:24:14.719 --> 00:24:18.799
+is " true" when it should panic and
+" false" if it should not panic.
+
+00:24:18.960 --> 00:24:24.159
+It clears the stack and the
+BSS, clears all registers, zeroes
+
+00:24:24.159 --> 00:24:30.359
+all registers except for R11,
+which holds the " should panic".
+
+00:24:30.359 --> 00:24:33.759
+And then R12, which
+holds the boot address.
+
+00:24:34.400 --> 00:24:38.920
+It then switches on all the R
+modes into FIQ, IRQ, undefined,
+
+00:24:39.039 --> 00:24:42.139
+data board, and clears also
+all the banked exception modes.
+
+00:24:42.460 --> 00:24:47.179
+And then it returns to the original
+exception state that was there when
+
+00:24:47.179 --> 00:24:52.440
+you entered the function, and then
+it boots to the target or hangs.
+
+00:24:52.699 --> 00:24:54.940
+Can you spot the bug? Hands
+up who can spot the bug.
+
+00:24:55.500 --> 00:24:59.279
+Unfortunately, I don't really have
+time to wait. So let's keep going.
+
+00:24:59.279 --> 00:25:05.719
+So the problem here is that in FIQ
+mode, R11 and R12 are also banked.
+
+00:25:05.880 --> 00:25:11.440
+So if the function is entered in FIQ
+mode, then these values are stored in
+
+00:25:11.440 --> 00:25:15.759
+these two registers, then it switches
+into the FIQ banked mode, zeroes them
+
+00:25:15.759 --> 00:25:20.179
+out, and then it switches back into the
+original state, which is still FIQ mode.
+
+00:25:20.359 --> 00:25:23.199
+And by that time, those
+two registers are zeroed.
+
+00:25:23.199 --> 00:25:27.059
+So the should panic becomes no,
+don't panic, and the boot address
+
+00:25:27.059 --> 00:25:30.279
+becomes zero, which basically
+corresponds to the regular boot flow.
+
+00:25:30.619 --> 00:25:32.359
+So how do we exploit that?
+
+00:25:32.460 --> 00:25:36.279
+Basically any FIQ triggered
+not by watchdog timeout will
+
+00:25:36.279 --> 00:25:39.940
+cause a jump booting to
+address zero because in the FIQ
+
+00:25:39.940 --> 00:25:43.699
+handler it panics if the source
+is not the watchdog timeout.
+
+00:25:45.359 --> 00:25:49.259
+So the BootROM exploit plan is
+stash a payload into address zero.
+
+00:25:49.259 --> 00:25:52.440
+This already is very tricky
+because it does have file system
+
+00:25:52.440 --> 00:25:56.259
+encryption, so that's a challenge on
+its own, but we think it's doable.
+
+00:25:57.000 --> 00:26:02.980
+Then you cause an FIQ for something other than
+the watchdog timeout and then profit, right?
+
+00:26:03.659 --> 00:26:07.279
+You'll be like, you found a BootROM bug,
+that means you got code execution, right?
+
+00:26:09.240 --> 00:26:13.480
+Unfortunately, we have no idea how
+to trigger an FIQ which is not the
+
+00:26:13.480 --> 00:26:17.259
+watchdog timeout, thus we don't
+know if this is exploitable or not.
+
+00:26:17.259 --> 00:26:22.219
+So we did not manage to exploit that.
+If you have any ideas, feel free to try.
+
+00:26:22.960 --> 00:26:28.279
+So unfortunately, no BootROM exploits for
+us. We got to go back to glitching.
+
+00:26:29.639 --> 00:26:33.119
+So if we want to glitch the
+BootROM, there's one really
+
+00:26:33.119 --> 00:26:37.400
+good target, and there is
+a branch into a main...
+
+00:26:37.400 --> 00:26:39.900
+In the main function there's
+a branch which switches to
+
+00:26:39.900 --> 00:26:42.519
+alternate boot path, I think
+it's decided based on fuses.
+
+00:26:42.519 --> 00:26:47.219
+There's no decryption, there's no signature
+checks, there's very basic header parsing.
+
+00:26:47.440 --> 00:26:49.299
+We think it's some kind of test mode.
+
+00:26:49.500 --> 00:26:55.000
+So basically, if you manage to glitch at
+that point, you just run your payload, right?
+
+00:26:55.500 --> 00:26:57.159
+So glitch attempt number two.
+
+00:26:57.319 --> 00:27:00.839
+We know the target, which is this
+value. S ource: " trust me, bro".
+
+00:27:01.679 --> 00:27:06.859
+We can stash a payload into SPI
+or emulate sending it with a Pico.
+
+00:27:07.319 --> 00:27:12.000
+We can reverse engineer the needed payload
+format because we have the ROM dump, right?
+
+00:27:12.539 --> 00:27:16.359
+But now the question is when do we
+glitch, right? We still need a trigger.
+
+00:27:18.099 --> 00:27:21.619
+So, taking back a look at
+the boot flow, how exactly
+
+00:27:21.619 --> 00:27:24.219
+does this wait for
+external boot address work?
+
+00:27:24.759 --> 00:27:31.539
+So the real boot flow is you push the
+power button, the AMD PSP is released
+
+00:27:31.539 --> 00:27:35.719
+from reset, some hardware init happens,
+then it waits for the boot address.
+
+00:27:36.000 --> 00:27:39.900
+Some other component on the
+board sends the boot address
+
+00:27:39.900 --> 00:27:43.599
+and the boot command, and we
+got the hint here, I2C is used.
+
+00:27:44.339 --> 00:27:47.859
+And from that point on, AMD
+PSP continues to load off-
+
+00:27:47.859 --> 00:27:52.420
+chip boot loader from that
+address and keeps booting.
+
+00:27:53.159 --> 00:27:55.980
+So if we take a closer look
+at this mainboard, we can
+
+00:27:55.980 --> 00:27:58.960
+see that there's a CPU missing,
+but that's not the point.
+
+00:27:59.139 --> 00:28:04.339
+If we take a more closer look, we
+find a suspicious chip there, which
+
+00:28:04.339 --> 00:28:08.559
+is not the SPI flash, and just
+hooking up the logic analyzer to it
+
+00:28:08.559 --> 00:28:12.980
+reveals I2C communication, boom,
+that's what we were looking for.
+
+00:28:13.420 --> 00:28:16.539
+It's some random I2C which
+we didn't investigate further.
+
+00:28:16.960 --> 00:28:18.480
+We did observe the following writes.
+
+00:28:18.659 --> 00:28:23.039
+It writes to A0, this
+value, FF 8 0, and then 0s.
+
+00:28:23.539 --> 00:28:30.559
+To the address A4, it writes 002 1
+000, and then on A8, it writes 3.
+
+00:28:30.559 --> 00:28:36.380
+So, reversing the boot, we can see that
+the registers A0 and A4 are just added.
+
+00:28:36.639 --> 00:28:40.339
+So the boot address becomes FF 8 21000 .
+
+00:28:40.519 --> 00:28:43.179
+And once the writes to the
+address A8 goes through,
+
+00:28:43.400 --> 00:28:45.240
+this is basically what
+triggers the actual boot.
+
+00:28:47.099 --> 00:28:52.199
+So we removed the entire IC. We
+hooked up the I2C lines to the Pico.
+
+00:28:52.480 --> 00:28:58.900
+We can manually, uhm, send the boot command
+after pushing the reset button with the Pico.
+
+00:28:58.900 --> 00:29:02.719
+We also hooked up the reset button so
+we can reset the board with the Pico.
+
+00:29:03.000 --> 00:29:08.219
+We can delay, and then we can
+glitch. But how do we actually glitch?
+
+00:29:09.059 --> 00:29:13.000
+The problem is, our initial idea was
+to remove the dumb voltage regulator.
+
+00:29:13.480 --> 00:29:18.059
+We bridged other way up with the smart voltage
+regulator, SVI2, and make it glitch itself.
+
+00:29:18.299 --> 00:29:23.019
+The problem here is, this is not really
+viable for m odchip because we can't
+
+00:29:23.019 --> 00:29:29.179
+expect to turn on the X86 CPU afterwards,
+even if we succeed, and then be
+
+00:29:29.179 --> 00:29:32.639
+stable enough to run Beat Saber, because
+that's why we're here for, right?
+
+00:29:33.279 --> 00:29:36.639
+So for the actual payload, we
+need to figure out something else.
+
+00:29:38.039 --> 00:29:43.359
+So the idea was, what if we smartify
+the voltage regulator ourselves?
+
+00:29:44.099 --> 00:29:49.019
+So a quick voltage regulator 101,
+basically you have an unregulated input
+
+00:29:49.019 --> 00:29:52.900
+voltage, which in this case is like
+12V, it goes through the controller, and
+
+00:29:52.900 --> 00:29:57.299
+the controller outputs regulated output
+voltage, which in our case is 0 .8V.
+
+00:29:57.619 --> 00:30:01.400
+Then it goes into a sampling
+circuit, which gives a feedback signal
+
+00:30:01.400 --> 00:30:05.539
+into a comparator circuit, and
+that compares it to a reference
+
+00:30:05.539 --> 00:30:08.980
+voltage, which is internally
+generated, and in this case is 0 .7V.
+
+00:30:09.619 --> 00:30:13.159
+And the comparator gives an error
+signal to the controller, right?
+
+00:30:13.159 --> 00:30:16.940
+So, the sampling circuit is
+basically voltage divider.
+
+00:30:16.960 --> 00:30:22.500
+Input is 0 .8V, output 0 .7V, and
+the output voltage is adjusted
+
+00:30:22.500 --> 00:30:27.719
+such that the feedback voltage is
+equal to the reference voltage.
+
+00:30:28.079 --> 00:30:32.579
+So if the output voltage drops,
+for example, if the SoC consumes
+
+00:30:32.579 --> 00:30:37.199
+more power, then the feedback
+voltage also drops, and then the
+
+00:30:37.199 --> 00:30:40.500
+controller increases output
+until feedback equals reference.
+
+00:30:40.500 --> 00:30:43.779
+If output voltage rises,
+for example, then the SoC
+
+00:30:43.779 --> 00:30:46.179
+computes less power, the
+controller decreases the output.
+
+00:30:46.319 --> 00:30:48.519
+This is basically how the
+voltage regulator works.
+
+00:30:49.219 --> 00:30:54.039
+So what if we lie in
+the feedback loop, right?
+
+00:30:54.259 --> 00:31:02.259
+What if we add fake voltage to the feedback,
+then the real output voltage would drop, right?
+
+00:31:02.460 --> 00:31:07.839
+If we subtract voltage, then the
+feedback, the real output would rise.
+
+00:31:07.839 --> 00:31:11.119
+So, we build a mod chip
+to do exactly that.
+
+00:31:11.639 --> 00:31:17.139
+This is the schematic, and we use
+basically an op amp. We use OPA354.
+
+00:31:17.240 --> 00:31:21.240
+I know I missed the chance to use
+OPA334, but this is the better chip.
+
+00:31:22.019 --> 00:31:24.699
+You can look it up later,
+t his is not too important.
+
+00:31:26.679 --> 00:31:31.319
+So basically how to connect the mod chip.
+So this is the voltage divider circuit.
+
+00:31:31.319 --> 00:31:34.339
+So we inject our mod chip
+to the voltage divider.
+
+00:31:34.639 --> 00:31:41.559
+We cut the trace between Vout and R1,
+and then we put the mod chip in between.
+
+00:31:43.679 --> 00:31:47.719
+So for the voltage regulator mod,
+increasing feedback voltage reduces
+
+00:31:47.719 --> 00:31:52.599
+the output voltage, and that essentially
+allows us to undervolt the chip.
+
+00:31:52.599 --> 00:31:57.279
+We get a fine -grained control
+over the exact voltage, because the
+
+00:31:57.279 --> 00:32:00.500
+more we add, the more it drops,
+and we can precisely regulate that.
+
+00:32:01.039 --> 00:32:05.719
+Going too fast, too low trips the voltage
+regulator, but if you just don't do
+
+00:32:05.719 --> 00:32:10.240
+that, then there's no limits if you go
+slow enough, well, until the SoC dies.
+
+00:32:11.019 --> 00:32:13.359
+This is how you install
+the voltage regulator mod.
+
+00:32:13.579 --> 00:32:18.720
+You have one big ground, then you cut
+one trace, then you have one side of
+
+00:32:18.720 --> 00:32:22.720
+the trace is the Vreg, and then the
+other side of the trace is the Vout.
+
+00:32:23.539 --> 00:32:28.399
+And this is how it looks like if
+you put on the voltage regulator
+
+00:32:28.399 --> 00:32:32.319
+mod, and at that point, look at
+me, I'm the voltage regulator now.
+
+00:32:35.200 --> 00:32:40.079
+So for the voltage injection, regulating
+voltage rail works fairly well.
+
+00:32:40.500 --> 00:32:44.019
+Caps are still in place, and we
+don't actually want to remove them
+
+00:32:44.019 --> 00:32:46.139
+because, you know, we want to
+still play Beat Saber afterwards.
+
+00:32:46.740 --> 00:32:49.879
+So the discharge is super slow.
+
+00:32:49.879 --> 00:32:53.440
+Raising voltage, on the other hand, is
+actually super fast, and we have a fine
+
+00:32:53.440 --> 00:32:56.819
+-grained control over the voltage rail,
+but, well, with the caps interfering.
+
+00:32:57.460 --> 00:33:01.539
+There was a good point in time to
+take out my good scope, which I barely
+
+00:33:01.539 --> 00:33:07.139
+used, and you can take a look and see
+how we can manipulate the voltage rails.
+
+00:33:07.319 --> 00:33:10.079
+So we have, like, step
+down the voltage, not trip
+
+00:33:10.079 --> 00:33:13.559
+the voltage regulator, and
+then we can step it up.
+
+00:33:13.559 --> 00:33:14.919
+We can have custom shapes.
+
+00:33:15.240 --> 00:33:22.619
+We can also do shapes like this, more
+nicer slides to go down, nicer step- ups.
+
+00:33:22.819 --> 00:33:26.079
+We can also do custom
+shapes to some degree.
+
+00:33:27.379 --> 00:33:33.279
+We can also do really steep rises with,
+like, mini steps that you barely see.
+
+00:33:33.279 --> 00:33:41.299
+And my strategy here was to go
+down, have the caps which kinda
+
+00:33:41.299 --> 00:33:45.440
+slower down the discharge until
+you reach a self -undervolt voltage.
+
+00:33:45.980 --> 00:33:49.819
+Once there, you do a small dip to
+the critical level, which is the
+
+00:33:49.819 --> 00:33:53.759
+actual glitch, and from there you
+have a steep rise with some overshoot.
+
+00:33:53.759 --> 00:33:55.700
+I don't know if that's
+necessary, but it looks cool.
+
+00:33:56.519 --> 00:33:59.460
+And this is how I was
+trying to glitch the chip.
+
+00:34:00.539 --> 00:34:06.859
+If you run test code in SRAM, which we
+could do, it successfully glitches it.
+
+00:34:06.960 --> 00:34:11.460
+So basically the code is we have
+two nested for loops which run 5 ,000
+
+00:34:11.460 --> 00:34:14.720
+times and just increment the counter,
+and at the end you print the values.
+
+00:34:14.720 --> 00:34:26.480
+And, as you can see on the right, the 1, 2,
+3rd column should be 25 ,000 ,000, or 25 ,000.
+
+00:34:28.399 --> 00:34:30.619
+And, as you can see, this is not.
+
+00:34:30.800 --> 00:34:34.119
+And the reason this is not
+is because we inject a glitch
+
+00:34:34.119 --> 00:34:38.800
+and make something happen
+that the value changes, right?
+
+00:34:38.920 --> 00:34:41.639
+So this basically proves that
+we can successfully glitch.
+
+00:34:42.300 --> 00:34:45.940
+To do that, a very weak
+glitch is needed, unlike the
+
+00:34:45.940 --> 00:34:48.539
+one I showed before, that
+was a very strong glitch.
+
+00:34:49.079 --> 00:34:51.559
+But we couldn't actually glitch the ROM.
+
+00:34:51.840 --> 00:34:54.619
+No observer glitch unless
+the glitch is like 10 times
+
+00:34:54.619 --> 00:34:58.440
+stronger than what we needed
+to glitch code in SRAM.
+
+00:34:59.019 --> 00:35:03.739
+So the observations to the
+glitch are memory bus is likely
+
+00:35:03.739 --> 00:35:07.940
+the victim, load and stores
+are super easy targets, also
+
+00:35:07.940 --> 00:35:12.260
+instruction fetches from SRAM
+are also likely very vulnerable.
+
+00:35:12.599 --> 00:35:16.279
+So if it fetches an instruction and
+we corrupt something in the bus,
+
+00:35:16.420 --> 00:35:19.760
+this is essentially how this glitch
+skips or changes an instruction.
+
+00:35:20.000 --> 00:35:23.500
+The problem is the ROM is
+much, much, much more robust.
+
+00:35:23.779 --> 00:35:27.840
+You can still glitch load and
+store because that still accesses
+
+00:35:27.840 --> 00:35:33.199
+the memory bus from SRAM, but
+non -memory instructions are harder
+
+00:35:33.199 --> 00:35:36.180
+to glitch because the ROM bus
+itself is much more robust.
+
+00:35:36.180 --> 00:35:40.739
+In our case, the glitch target
+is to skip a branch equal.
+
+00:35:42.139 --> 00:35:49.779
+Or alternatively, we could corrupt a TST or
+UBFX instruction or one single push or pop.
+
+00:35:49.899 --> 00:35:53.840
+The problem with the push or pop is
+that not only the target value is going
+
+00:35:53.840 --> 00:35:57.079
+to be pushed and popped from the stack,
+but also the link register and the PC.
+
+00:35:57.319 --> 00:35:59.659
+And if that gets corrupted,
+it also may corrupt the flow.
+
+00:36:00.619 --> 00:36:03.119
+So we didn't figure this
+out yet, unfortunately.
+
+00:36:03.819 --> 00:36:09.019
+My theory why this doesn't work
+is because we go down with
+
+00:36:09.019 --> 00:36:12.420
+the voltage and at some point
+we reached a level where the
+
+00:36:12.420 --> 00:36:17.119
+SRAM bus is glitched, but the
+ROM glitch is much further down.
+
+00:36:17.279 --> 00:36:20.300
+And then if we go down, down,
+down, sometimes we probably reach the
+
+00:36:20.300 --> 00:36:24.420
+ROM glitching, but the area where
+we stay in the SRAM glitching gets
+
+00:36:24.420 --> 00:36:29.699
+too long such that an unrelated
+memory instruction, like a load, a
+
+00:36:29.699 --> 00:36:33.599
+store, push, pop, always gets
+corrupted during that time window.
+
+00:36:34.119 --> 00:36:38.739
+And the reason for that is because the caps
+are still there and the discharge is slow.
+
+00:36:39.000 --> 00:36:42.480
+We were thinking of combining this
+technique with the crowbar mod
+
+00:36:42.480 --> 00:36:47.239
+only to discharge the caps faster,
+but we haven't tried it yet.
+
+00:36:48.380 --> 00:36:51.359
+Sorry, no Beat Saber custom songs yet.
+
+00:36:51.680 --> 00:36:57.920
+At least that's what I would have said like
+two days ago, because we did figure it out.
+
+00:36:58.940 --> 00:37:03.800
+But before we get there, we
+open sourced a couple things.
+
+00:37:04.220 --> 00:37:10.319
+We have the ROM dumping payload, which is
+basically the firmware for Raspberry Pi Pico.
+
+00:37:10.319 --> 00:37:15.340
+We have the modchip PCB, which
+you can also put a Pico on
+
+00:37:15.340 --> 00:37:17.859
+and then buy the components
+and try the glitching itself.
+
+00:37:18.599 --> 00:37:23.159
+We also have the modchip firmware where
+you can see some of our glitch attempts.
+
+00:37:24.079 --> 00:37:28.680
+And then we have some nice X
+-ray pictures of the mainboard,
+
+00:37:28.819 --> 00:37:32.099
+and on my T -shirt I'm wearing
+one of these X -ray images.
+
+00:37:33.279 --> 00:37:35.399
+Yeah, so you can take
+a look and play around.
+
+00:37:35.399 --> 00:37:39.599
+And before we get to the Q &A, we
+actually have time for bonus slides.
+
+00:37:41.059 --> 00:37:44.099
+So bonus one. How do
+we get to all the keys?
+
+00:37:44.300 --> 00:37:47.440
+As mentioned before, we dump the
+keys, but they are kind of useless.
+
+00:37:47.619 --> 00:37:52.359
+And the reason is because the slot with
+the juicy key gets overwritten, so the
+
+00:37:52.359 --> 00:37:56.019
+key, the one that decrypts the offchip
+bootloader, it gets overwritten with a
+
+00:37:56.019 --> 00:38:00.639
+different key before the control flow
+is transferred to the offchip bootloader.
+
+00:38:00.639 --> 00:38:04.359
+So, when we run the offchip
+bootloader, we no longer have the
+
+00:38:04.359 --> 00:38:07.480
+key in the slot, which actually
+decrypts the offchip bootloader,
+
+00:38:07.519 --> 00:38:10.199
+so we can't actually decrypt all
+the other offchip bootloaders.
+
+00:38:11.180 --> 00:38:14.300
+We have the ROM, so we can
+reverse the key derivation
+
+00:38:14.300 --> 00:38:17.779
+algorithm, and really the
+only missing part is fuses.
+
+00:38:18.099 --> 00:38:21.079
+If we manage to do the glitch,
+then this is for free, because
+
+00:38:21.079 --> 00:38:23.859
+we can access fuses, we can
+access keys, and we're good.
+
+00:38:24.940 --> 00:38:29.840
+If we don't succeed in glitching, we
+can try to do something else, so I've
+
+00:38:29.840 --> 00:38:34.180
+heard people manage to do some other
+crazy hacks and re -enable the fuses.
+
+00:38:34.680 --> 00:38:39.500
+This is kind of not a priority, because I
+don't really need that to play the Beat Saber.
+
+00:38:41.159 --> 00:38:45.199
+But another cool thing to just have
+would be try to read them from hardware.
+
+00:38:45.819 --> 00:38:49.239
+And back to the beginning, you might be
+wondering, why do you need so many boards?
+
+00:38:49.380 --> 00:38:50.760
+You can see four boards here.
+
+00:38:50.760 --> 00:38:54.440
+We actually have, like, three
+more, but these boards, those are
+
+00:38:54.440 --> 00:39:00.019
+from my friends who removed the
+chip and make some nice pictures
+
+00:39:00.019 --> 00:39:06.300
+of the main board, also the X -ray
+board, X -ray of the main board.
+
+00:39:08.019 --> 00:39:13.340
+And they cut up and polish it
+down, this chip, and then they cook
+
+00:39:13.340 --> 00:39:18.779
+it in acid and take some nice
+pictures of it, and then they put it
+
+00:39:18.779 --> 00:39:22.859
+onto a microscope, and then take
+some even nicer pictures of it.
+
+00:39:23.559 --> 00:39:30.279
+And then if we zoom to the right, this is
+maybe where the platform security processor is.
+
+00:39:30.800 --> 00:39:34.340
+Unfortunately, I asked them to do that
+for me, and I don't pay them money, so
+
+00:39:34.340 --> 00:39:37.899
+this is not a high priority for them,
+and they didn't manage to get it in time.
+
+00:39:38.139 --> 00:39:41.279
+Also a couple days ago, their
+equipment broke, so unfortunately
+
+00:39:41.279 --> 00:39:44.199
+they didn't actually manage
+to extract the fuses yet.
+
+00:39:44.559 --> 00:39:49.300
+They have a general idea where the ROM
+could be, because you can theoretically also
+
+00:39:49.300 --> 00:39:54.579
+just optically read it out, but, yeah, that
+could be an option to get to the fuses.
+
+00:39:55.220 --> 00:40:01.699
+In this particular case, the console
+fuses, consoles are fused differently
+
+00:40:01.699 --> 00:40:05.639
+and uniquely, so getting the desktop
+kit fuses is really just useless.
+
+00:40:06.139 --> 00:40:09.260
+But if you maybe want to
+give them a console chip
+
+00:40:09.260 --> 00:40:11.440
+and ask them for some
+services, these are my friends.
+
+00:40:13.039 --> 00:40:18.359
+But the actual question is, when ETA custom
+songs? Because this is why we're here.
+
+00:40:18.800 --> 00:40:23.859
+This is why we're doing this. There has
+been some updates on the Beat Saber thing.
+
+00:40:24.119 --> 00:40:27.699
+After the announcement of the talk, a
+lot happened in the console hacking scene.
+
+00:40:27.699 --> 00:40:32.039
+There were multiple exploits,
+hacks, jailbreaks released, including
+
+00:40:32.039 --> 00:40:35.460
+firmware high enough to play
+Beat Saber and compatible with my
+
+00:40:35.460 --> 00:40:39.420
+console, so my theory is that
+people got scared that their bug is
+
+00:40:39.420 --> 00:40:42.279
+going to be useless after seeing
+the announcement, and it just dropped
+
+00:40:42.279 --> 00:40:45.399
+everything, which works out nicely
+for me, so I can achieve my goal.
+
+00:40:47.279 --> 00:40:50.940
+So I can jailbreak my
+console with public stuff and
+
+00:40:50.940 --> 00:40:54.559
+then work on the last
+missing piece, and we did.
+
+00:40:55.159 --> 00:41:02.739
+The roadmap was first I learned to sing, then
+I recorded an original song, I run through
+
+00:41:02.739 --> 00:41:06.859
+the Beat Sage AI to
+generate a Beat Saber map, I
+
+00:41:06.859 --> 00:41:09.399
+jailbroke the console
+with Beat Saber installed,
+
+00:41:10.180 --> 00:41:15.880
+then you dump and decrypt the Beat Saber, you
+convert the custom map from the Beat Saber
+
+00:41:15.880 --> 00:41:22.180
+from JSON to some binary format compatible with
+the console, you replace some existing song
+
+00:41:22.180 --> 00:41:26.059
+with the own song by binary
+patching, you reinstall
+
+00:41:26.059 --> 00:41:28.480
+the patched game, and
+the goal is achieved.
+
+00:41:29.720 --> 00:41:35.180
+The map is available to download right here,
+and there is also a YouTube video of me playing
+
+00:41:35.180 --> 00:41:39.279
+it. Don't complain that I suck, I had
+to record the demo yesterday night.
+
+00:41:40.380 --> 00:41:43.099
+Now we have time for some
+questions. Thank you very much.
+
+00:41:56.819 --> 00:42:01.480
+Thank you very much for your talk. We
+have now time for questions, as you said.
+
+00:42:02.000 --> 00:42:09.039
+We have six microphones here in the room, so
+please gather there and start your questions.
+
+00:42:09.899 --> 00:42:12.840
+First of all, are there
+questions from the internet?
+
+00:42:21.699 --> 00:42:25.000
+The signal angel's
+microphone is not working.
+
+00:42:25.220 --> 00:42:27.119
+Now we have connection to the internet.
+
+00:42:27.119 --> 00:42:29.899
+Hi-Tech... yes, the internet has a question.
+
+00:42:30.380 --> 00:42:36.819
+Given the AMD PSP has been used in so many
+different CPUs, how many of the techniques
+
+00:42:36.819 --> 00:42:42.220
+and approaches you took are transferable, and
+are you aware of others using these or similar
+
+00:42:42.220 --> 00:42:44.039
+approaches for other AMD chips as well?
+
+00:42:45.000 --> 00:42:49.899
+tihmstar: So I don't know
+exactly what CPUs are affected,
+
+00:42:50.119 --> 00:42:52.720
+because there is this one
+CPU which runs Beat Saber,
+
+00:42:52.720 --> 00:42:57.420
+which is what I care about, but I would think
+that they share a lot of code, and you can
+
+00:42:57.420 --> 00:43:04.859
+potentially apply some of the exploits,
+bugs, strategies... also on other AMD CPUs.
+
+00:43:04.960 --> 00:43:11.000
+That wouldn't surprise me, but I have not
+looked into any other CPUs other than this one.
+
+00:43:11.880 --> 00:43:14.579
+Microphone 2. Thanks for your talk.
+
+00:43:14.779 --> 00:43:19.079
+You mentioned having to reset the
+CPU to get DMA to dump the ROM.
+
+00:43:19.079 --> 00:43:23.899
+Do you know what the relation is? Why does
+the CPU need to be in reset for that?
+
+00:43:24.840 --> 00:43:32.720
+tihmstar: Apparently, there is some kind of mechanism
+which locks down the ROM from being read after
+
+00:43:32.720 --> 00:43:40.619
+the ROM is done executing, and by doing some
+warm resets, there is a way to re -enable the
+
+00:43:40.619 --> 00:43:44.399
+ROM being active, but
+the CPU cannot execute
+
+00:43:44.399 --> 00:43:48.079
+anything outside of the
+ROM, and the ROM will still
+
+00:43:48.079 --> 00:43:50.739
+be there. So it just locks itself
+out. There is some protection.
+
+00:43:51.699 --> 00:43:57.460
+Okay. Thank you. And one last question
+from Microphone 3. Hi. Nice talk.
+
+00:43:57.920 --> 00:44:05.059
+As you mentioned, you got some hints from the
+previous research that they have dumped the
+
+00:44:05.059 --> 00:44:09.779
+boot room from this kind of AMD chip.
+
+00:44:10.059 --> 00:44:20.260
+Is this the way they dumped the
+boot room from the 480 -800S?
+
+00:44:21.239 --> 00:44:26.340
+tihmstar: I have not been shared
+any details on how they dumped.
+
+00:44:26.340 --> 00:44:32.199
+All I've heard is we did some glitching, we
+did some hacks, but people didn't really share
+
+00:44:32.199 --> 00:44:32.739
+the techniques.

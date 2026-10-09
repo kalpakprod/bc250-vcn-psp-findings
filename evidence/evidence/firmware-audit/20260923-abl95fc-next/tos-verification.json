@@ -1,0 +1,9 @@
+{
+  "command": [
+    "tools/abl-emulator-venv/bin/python",
+    "evidence/firmware-audit/20260923-abl95fc-next/verify_tos_boundary.py"
+  ],
+  "exit": 0,
+  "stdout": "TOS dispatcher service 0x28 ->9\nTOS dispatcher service 0x2d ->9\nPASS2 TOS dispatcher cases; no hardware IO, no firmware patch\n",
+  "stderr": ""
+}

@@ -1,0 +1,625 @@
+{
+  "generated_at": "2026-09-11T05:18:07.067076+00:00",
+  "method": "direct little-endian u32 scans over immutable extracted executable bodies",
+  "values": {
+    "APCB_PSPG_gid": "0x00001701",
+    "APCB_DFG_gid": "0x00001703",
+    "APCB_MEMG_gid": "0x00001704",
+    "APCB_FCHG_gid": "0x00001706",
+    "APCB_CBSG_gid": "0x00001707",
+    "DFG_wildcard": "0x001FFF00",
+    "SMN_core_mask": "0x0115A870",
+    "SMN_VCN_bank_probe": "0x0900C234",
+    "SMN_VCN_bank_lock": "0x0900CB80",
+    "SMN_VCN_policy_mask": "0x0900C910",
+    "SMN_VCN_policy_mask_hi": "0x0900C914",
+    "VCN_SEG_enable": "0x0003E810",
+    "VCN_SEG_binding": "0x0003E814",
+    "VCN_fabric_base": "0x02403000",
+    "SMU_Q3_CMD": "0x03B10A20",
+    "SMU_Q3_RSP": "0x03B10A80",
+    "SMU_Q3_ARG": "0x03B10A88",
+    "SMU_Q2_CMD": "0x03B10528",
+    "SMU_Q2_RSP": "0x03B10564",
+    "SMU_Q2_ARG": "0x03B10998",
+    "DF_indirect_window": "0xE0000000",
+    "DF_target_control": "0x0000405C",
+    "DF_target_window": "0x00004098",
+    "Setup_fast_ppt_value": "0x000157C0",
+    "AmdSetup_MCLK_offset": "0x00000316",
+    "AmdSetup_FCLK_DPM_offset": "0x000006A3",
+    "AmdSetup_VDD_offset": "0x000006E6",
+    "AmdSetup_DF_offset": "0x00000704"
+  },
+  "modules": [
+    {
+      "name": "AmdApcbObrDxe",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0033_AmdApcbObrDxe_pe32.bin",
+      "sha256": "e0bc6cb786469818ac6af66d7c2d06ffd5d9026ad550b651911e45334746604c",
+      "size": 19328,
+      "little_endian_u32_hits": {
+        "APCB_PSPG_gid": {
+          "value": "0x00001701",
+          "offsets": [
+            "0x1B0E"
+          ]
+        },
+        "APCB_DFG_gid": {
+          "value": "0x00001703",
+          "offsets": [
+            "0x1AE4"
+          ]
+        },
+        "APCB_MEMG_gid": {
+          "value": "0x00001704",
+          "offsets": [
+            "0x1ACB"
+          ]
+        },
+        "APCB_FCHG_gid": {
+          "value": "0x00001706",
+          "offsets": [
+            "0x1B7A"
+          ]
+        },
+        "APCB_CBSG_gid": {
+          "value": "0x00001707",
+          "offsets": [
+            "0x5ED",
+            "0x1B55",
+            "0x1B65"
+          ]
+        },
+        "DFG_wildcard": {
+          "value": "0x001FFF00",
+          "offsets": [
+            "0x1BD2",
+            "0x1C12",
+            "0x202D"
+          ]
+        },
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x4B45"
+          ]
+        }
+      }
+    },
+    {
+      "name": "AmiApcbLibInterface",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0039_AmiApcbLibInterface_pe32.bin",
+      "sha256": "4d65e6dc2ca83c8d7bed8812275b78e9821fd126cba413f94ba9390e91a56336",
+      "size": 9408,
+      "little_endian_u32_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x1D79"
+          ]
+        }
+      }
+    },
+    {
+      "name": "AmdFabricAriDxe",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0021_AmdFabricAriDxe_pe32.bin",
+      "sha256": "b9702a29ed28cdd253b82a7a4b1ccd62ec318705b105b9d9939b212360bec929",
+      "size": 28320,
+      "little_endian_u32_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x17D",
+            "0x281",
+            "0x289",
+            "0x310C",
+            "0x3243",
+            "0x3B9C",
+            "0x3BE7",
+            "0x3CED",
+            "0x5AED",
+            "0x6555",
+            "0x65BD"
+          ]
+        },
+        "DF_target_control": {
+          "value": "0x0000405C",
+          "offsets": [
+            "0x3156"
+          ]
+        },
+        "DF_target_window": {
+          "value": "0x00004098",
+          "offsets": [
+            "0x317D"
+          ]
+        }
+      }
+    },
+    {
+      "name": "AmdNbioSmuV10Dxe",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0031_AmdNbioSmuV10Dxe_pe32.bin",
+      "sha256": "546a0689e607a3a87b8c437c7fe7191e55757f56b35792fb8d84f539844b500e",
+      "size": 33024,
+      "little_endian_u32_hits": {
+        "APCB_FCHG_gid": {
+          "value": "0x00001706",
+          "offsets": [
+            "0x17CE",
+            "0x1E26"
+          ]
+        },
+        "SMU_Q2_CMD": {
+          "value": "0x03B10528",
+          "offsets": [
+            "0x30B0"
+          ]
+        },
+        "SMU_Q2_RSP": {
+          "value": "0x03B10564",
+          "offsets": [
+            "0x3006",
+            "0x3024",
+            "0x30EC",
+            "0x31EB"
+          ]
+        },
+        "SMU_Q2_ARG": {
+          "value": "0x03B10998",
+          "offsets": [
+            "0x303D",
+            "0x32B3"
+          ]
+        },
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x51C9",
+            "0x51D6",
+            "0x51E3",
+            "0x522D",
+            "0x523C",
+            "0x524D",
+            "0x5F49",
+            "0x600D",
+            "0x638D"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x5FC0"
+          ]
+        }
+      }
+    },
+    {
+      "name": "AmdNbioGfxARIDxe",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0025_AmdNbioGfxARIDxe_pe32.bin",
+      "sha256": "a1b5855a339875f09cfaec8a1c17abf54251bab2c43ff577bc3cdf8711e2f61c",
+      "size": 13376,
+      "little_endian_u32_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x29A5"
+          ]
+        }
+      }
+    },
+    {
+      "name": "AmdNbioGfxARIPei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0193_AmdNbioGfxARIPei_te.bin",
+      "sha256": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+      "size": 87048,
+      "little_endian_u32_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x14AF",
+            "0x14BA",
+            "0x14C3",
+            "0x14EC",
+            "0x14F7",
+            "0x1502",
+            "0x150C",
+            "0x1513",
+            "0x151A",
+            "0x14B06",
+            "0x14BC5",
+            "0x14BF1",
+            "0x14C04",
+            "0x15039"
+          ]
+        },
+        "DF_target_control": {
+          "value": "0x0000405C",
+          "offsets": [
+            "0x14AFB",
+            "0x14BE8"
+          ]
+        },
+        "DF_target_window": {
+          "value": "0x00004098",
+          "offsets": [
+            "0x14B10",
+            "0x14BFE"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x4212"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x18DE",
+            "0x2FF5",
+            "0xADF1"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0x3EF5",
+            "0xEF9A"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x410D",
+            "0xF9B3"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x41C9",
+            "0xFCF6"
+          ]
+        }
+      }
+    },
+    {
+      "name": "AmdNbioPcieARIPei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0197_AmdNbioPcieARIPei_te.bin",
+      "sha256": "62b1398c4ba9b5a03ea533306cd8200257fac323c8fa688caa057667a5871312",
+      "size": 108776,
+      "little_endian_u32_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x55",
+            "0x6C9",
+            "0x1D62",
+            "0x1D6D",
+            "0x1D76",
+            "0x1D9F",
+            "0x1DAA",
+            "0x1DB5",
+            "0x1DBF",
+            "0x1DC6",
+            "0x1DCD",
+            "0x43E7",
+            "0x4440",
+            "0x444F",
+            "0x447E",
+            "0x4A32",
+            "0x4A41",
+            "0x4B80",
+            "0x18256",
+            "0x18315",
+            "0x18341",
+            "0x18354"
+          ]
+        },
+        "DF_target_control": {
+          "value": "0x0000405C",
+          "offsets": [
+            "0x1824B",
+            "0x18338"
+          ]
+        },
+        "DF_target_window": {
+          "value": "0x00004098",
+          "offsets": [
+            "0x18260",
+            "0x1834E"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x7952"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x501E",
+            "0x6735",
+            "0xE541"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0x7635",
+            "0x126EA"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x784D",
+            "0x13103"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x7909",
+            "0x13446"
+          ]
+        }
+      }
+    },
+    {
+      "name": "AmdNbioBaseARIPei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0196_AmdNbioBaseARIPei_te.bin",
+      "sha256": "51d96c1e5a5e2c39f04fb962b0b5be686dea0a05eecbde829a4595fe3356884f",
+      "size": 105264,
+      "little_endian_u32_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x1449",
+            "0x1455",
+            "0x145F",
+            "0x148B",
+            "0x1496",
+            "0x14A1",
+            "0x14AB",
+            "0x14B2",
+            "0x14B9",
+            "0x22B0",
+            "0x2339",
+            "0x2435",
+            "0x3CD8",
+            "0x3D98",
+            "0x3DC1",
+            "0x3DD4",
+            "0x179B1",
+            "0x185C4",
+            "0x18800",
+            "0x18B1C",
+            "0x18B20"
+          ]
+        },
+        "DF_target_control": {
+          "value": "0x0000405C",
+          "offsets": [
+            "0x3CCD",
+            "0x3DB8"
+          ]
+        },
+        "DF_target_window": {
+          "value": "0x00004098",
+          "offsets": [
+            "0x3CE2",
+            "0x3DCE"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x6E5A"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x4526",
+            "0x5C3D",
+            "0xDA39"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0xE23",
+            "0x6B3D",
+            "0x11BE2"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x6D55",
+            "0x125FB"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x6E11",
+            "0x1293E"
+          ]
+        }
+      }
+    },
+    {
+      "name": "AmdMemAm4Pei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0191_AmdMemAm4Pei_te.bin",
+      "sha256": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8",
+      "size": 5192,
+      "little_endian_u32_hits": {}
+    },
+    {
+      "name": "CbsBasePei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0204_CbsBasePei_te.bin",
+      "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "size": 81520,
+      "little_endian_u32_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x1333F",
+            "0x13346",
+            "0x1334D",
+            "0x135CC",
+            "0x1368B",
+            "0x136B7",
+            "0x136CA"
+          ]
+        },
+        "DF_target_control": {
+          "value": "0x0000405C",
+          "offsets": [
+            "0x135C1",
+            "0x136AE"
+          ]
+        },
+        "DF_target_window": {
+          "value": "0x00004098",
+          "offsets": [
+            "0x135D6",
+            "0x136C4"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x2ADA"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x18BD",
+            "0x96C9"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0x27BD",
+            "0xD872"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x29D5",
+            "0xE28B"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x2A91",
+            "0xE5CE"
+          ]
+        }
+      }
+    },
+    {
+      "name": "CbsSetupDxe",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0040_CbsSetupDxe_pe32.bin",
+      "sha256": "9fae1341693fe1b89e6f070f8740c94228f5161cca701ac31425bc5d438533b3",
+      "size": 264160,
+      "little_endian_u32_hits": {
+        "DFG_wildcard": {
+          "value": "0x001FFF00",
+          "offsets": [
+            "0x5FD9",
+            "0x8A23"
+          ]
+        },
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x10D",
+            "0x3F6BD",
+            "0x3F7AD"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x4784",
+            "0x16763"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x3C82",
+            "0x5CC1",
+            "0x60B3"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0x4563"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x46D7"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x4750",
+            "0xA684"
+          ]
+        }
+      }
+    },
+    {
+      "name": "AmdPspPeiV2",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0199_AmdPspPeiV2_te.bin",
+      "sha256": "1158720bbf95af537f3337ce8572359df84968ee465f5fabcbb036a839460d0e",
+      "size": 11264,
+      "little_endian_u32_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x16A1",
+            "0x172A",
+            "0x1826",
+            "0x201E"
+          ]
+        }
+      }
+    },
+    {
+      "name": "AmdPspDxeV2",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0032_AmdPspDxeV2_pe32.bin",
+      "sha256": "554e1b4bc50d38578b09d58cc2fcdb0f460ad3c164eab9009be706a551dc1c92",
+      "size": 14368,
+      "little_endian_u32_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x225",
+            "0x2B71"
+          ]
+        }
+      }
+    }
+  ],
+  "evidence_class": "static-analysis",
+  "caveats": [
+    "A scalar hit is not proof of a register access or semantic use; callers/instruction context must be checked.",
+    "Absence of a literal does not prove absence of computed access.",
+    "TE modules require independent endian-aware interpretation."
+  ]
+}

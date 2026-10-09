@@ -1,0 +1,183 @@
+{
+  "bounded_verdict": "No exact physical-clock semantics identified in the two independently retrieved source families. The new SMU domain18 trace still lacks an exact AMD/AGESA register/domain map for the program/poll pair.",
+  "checked_source_families": [
+    {
+      "direct_match": false,
+      "family": "coreboot/coreboot",
+      "file": "src/soc/amd/cezanne/include/soc/data_fabric.h",
+      "license": "SPDX GPL-2.0-only",
+      "revision": "b7931d1afacdc6666b4812305a14ed3deb431201",
+      "scope": "DF routing/config access definitions; no clock-domain name"
+    },
+    {
+      "direct_match": false,
+      "family": "torvalds/linux",
+      "files": [
+        "drivers/gpu/drm/amd/include/asic_reg/gc/gc_10_1_0_offset.h",
+        "drivers/gpu/drm/amd/amdgpu/gfx_v10_0.c"
+      ],
+      "license": "AMD permissive license notice in each source",
+      "revision": "v6.8",
+      "scope": "exact target address literals only; no other clock implementation claims made"
+    }
+  ],
+  "checks": {
+    "failed": 0,
+    "passed": 16,
+    "total": 16
+  },
+  "checks_detail": [
+    {
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "name": "clv-pinned",
+      "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "status": "PASS"
+    },
+    {
+      "expected": "f4a005400dba428ff8ba8f782d67bfa608c9e5fc714c5771075c48d6467e5cbe",
+      "name": "domain18-result-pinned",
+      "observed": "f4a005400dba428ff8ba8f782d67bfa608c9e5fc714c5771075c48d6467e5cbe",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "name": "latest-result-static-address-path",
+      "observed": {
+        "domain": "0x18",
+        "group": 6,
+        "poll": "0x0116D174",
+        "program": "0x0116D150",
+        "verdict": "INTERNAL_GROUP6_ONLY; PHYSICAL_CLOCK_IDENTITY_UNRESOLVED"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "rom_offset": "0x7E5",
+        "value": "0x24"
+      },
+      "name": "clv-request-preserved",
+      "observed": {
+        "label": "1800MHz (IFR label only)",
+        "rom_offset": "0x7E5",
+        "value": "0x24"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": "b7931d1afacdc6666b4812305a14ed3deb431201",
+      "name": "coreboot-commit",
+      "observed": "b7931d1afacdc6666b4812305a14ed3deb431201",
+      "status": "PASS"
+    },
+    {
+      "expected": "https://github.com/coreboot/coreboot.git",
+      "name": "coreboot-origin",
+      "observed": "https://github.com/coreboot/coreboot.git",
+      "status": "PASS"
+    },
+    {
+      "expected": "bd438484a85441daf8eb4bfd1a89b102c3638e16317e766dd826384f46689af3",
+      "name": "coreboot-header-hash",
+      "observed": "bd438484a85441daf8eb4bfd1a89b102c3638e16317e766dd826384f46689af3",
+      "status": "PASS"
+    },
+    {
+      "expected": "fdf8b9a6a6b45e75fd4dd8b2031708ad8baffdec96005f9885c923d830afc460",
+      "name": "coreboot-jina-response-hash",
+      "observed": "fdf8b9a6a6b45e75fd4dd8b2031708ad8baffdec96005f9885c923d830afc460",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "name": "coreboot-pinned-public-body-equals-local-copy",
+      "observed": true,
+      "status": "PASS"
+    },
+    {
+      "expected": false,
+      "name": "coreboot-has-no-target-address-literal",
+      "observed": false,
+      "status": "PASS"
+    },
+    {
+      "expected": [],
+      "name": "coreboot-has-no-physical-clock-label",
+      "observed": [],
+      "status": "PASS"
+    },
+    {
+      "expected": "0834a1a258b52935e37d56fea479fa62ce2c845c7a76a93c8efad5c3b886e8d2",
+      "name": "linux-v6.8-offset-response-hash",
+      "observed": "0834a1a258b52935e37d56fea479fa62ce2c845c7a76a93c8efad5c3b886e8d2",
+      "status": "PASS"
+    },
+    {
+      "expected": false,
+      "name": "linux-v6.8-offset-source-has-no-target-literal",
+      "observed": false,
+      "status": "PASS"
+    },
+    {
+      "expected": "4bd9bb4a4738817158d0a907d304bd9ac955a6631b54746a0b93d3ec904c42fb",
+      "name": "linux-v6.8-gfx-response-hash",
+      "observed": "4bd9bb4a4738817158d0a907d304bd9ac955a6631b54746a0b93d3ec904c42fb",
+      "status": "PASS"
+    },
+    {
+      "expected": false,
+      "name": "linux-v6.8-gfx-source-has-no-target-literal",
+      "observed": false,
+      "status": "PASS"
+    },
+    {
+      "expected": "< = 3",
+      "name": "source-limit-not-exceeded",
+      "observed": 3,
+      "status": "PASS"
+    }
+  ],
+  "derived_target": {
+    "domain_id": "0x18",
+    "group": 6,
+    "poll": "0x0116D174",
+    "program": "0x0116D150",
+    "units_or_clock_name": "unresolved"
+  },
+  "evidence_class": [
+    "observed-bytes",
+    "external-primary",
+    "static-analysis"
+  ],
+  "inputs": {
+    "clv_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "coreboot_commit": "b7931d1afacdc6666b4812305a14ed3deb431201",
+    "coreboot_data_fabric_sha256": "bd438484a85441daf8eb4bfd1a89b102c3638e16317e766dd826384f46689af3",
+    "latest_domain18_result_sha256": "f4a005400dba428ff8ba8f782d67bfa608c9e5fc714c5771075c48d6467e5cbe"
+  },
+  "missing_source": "A pinned AMD Cezanne/Ariel/Cyan Skillfish SMN/PMFW register or domain dictionary naming 0x0116D150/0x0116D174 and mapping dynamic domain ID 0x18/Group 6 to a physical clock tree, register fields, and units.",
+  "scope": "bounded public-source retrieval, max 3 source files; no credentials, installs, hardware, firmware, ROM or register action",
+  "search_blockers": [
+    {
+      "observation": "HTTP 429 Vercel Security Checkpoint",
+      "url": "https://grep.app/api/search?q=116D150",
+      "via": "Jina Reader"
+    },
+    {
+      "observation": "No results found",
+      "url": "https://html.duckduckgo.com/html/?q=%220x116D150%22+AMD+SMN",
+      "via": "Jina Reader"
+    },
+    {
+      "observation": "No results found",
+      "url": "https://html.duckduckgo.com/html/?q=%226D150%22+%22SMN%22+AMD+clock",
+      "via": "Jina Reader"
+    },
+    {
+      "observation": "GitHub code search page requires sign-in; no login attempted",
+      "url": "https://github.com/search?q=0x116D150&type=code",
+      "via": "Jina Reader"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,27 @@
+{
+  "image": "waveshare-adapter-core-v001-test.uf2",
+  "sha256": "e822a65145dbe23cef60a22cf098223707cccef2db9f7ef2bcdbd62a9444ecaa",
+  "size": 1642496,
+  "source_fingerprint": "4f8b59ef6f97",
+  "evidence_class": "compiled_and_offline_tested_not_flashed",
+  "hardware_acceptance": false,
+  "scope": "controller USB identity readiness; bounded HID; async WiFi; authenticated HTTP; age-tagged telemetry MQTT; recent PS rising-edge and boot ID; fresh Linux metrics; default-disabled RX-only UART1 GP9; host private UART capture, offline BIOS audit, state-gated HA and read-only Decky; bounded Russian embedded read-only dashboard with unknown/stale clearing; controlled transport tests; fresh fan1_rpm/fan2_rpm preserving Linux indices; no PWM writes; explicit RAM-only passive diagnostic isolation with controller output gating and UART capture original-mode restoration; bounded input-only passive SPI waveform observer PIO/DMA in diagnostic mode, not ROM acquisition; finite self-stopping PIO waveform with clk_sys/2 reported sample rate and RXSTALL rejection; conventional flash protocol/engine/physical transport source prototypes, no active CDC endpoint or exact-image authority binding; shared passive/active SPI pin profile10SCK11MOSI12MISO13CS; guarded local-CDC identify/read service, destructive image preflight binding not exposed; bound destructive service source API, immutable sector/page payload, no destructive CDC endpoint; localUSB CRC approval/sector framing and erase/program integration; shared inactive observer scratch preserves32KiB audio stack",
+  "unimplemented": [
+    "external_GPIO_electrical_acceptance",
+    "live_AMD_runtime_acceptance",
+    "HA_Decky_install_and_config_acceptance",
+    "SPI_BIOS_read_path_electrical_acceptance",
+    "power_off_control",
+    "PSP_bypass_excluded"
+  ],
+  "recovery": {
+    "two_reads_verified_equal": true,
+    "private_full_flash_copies": true,
+    "restore_upload_tested": false
+  },
+  "upload_authorized": false,
+  "release_state": "NOT_FINAL_DO_NOT_FLASH",
+  "descriptive_alias": "Waveshare-RP2350B-Plus-W-DualSense-WiFi-MQTT-LinuxMetrics-TEST.uf2",
+  "status": "NOT_FINAL_DO_NOT_FLASH",
+  "actual_build_flags_verified": true
+}

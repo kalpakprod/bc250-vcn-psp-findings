@@ -1,0 +1,114 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 14,
+    "total": 14
+  },
+  "checks_detail": [
+    {
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "label": "payload-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "2de9f04f",
+      "got": "2de9f04f",
+      "label": "owner-prologue",
+      "status": "PASS"
+    },
+    {
+      "expected": "0646",
+      "got": "0646",
+      "label": "owner-r0-to-r6",
+      "status": "PASS"
+    },
+    {
+      "expected": "3068d0f8bc62",
+      "got": "3068d0f8bc62",
+      "label": "root-and-aggregate-load",
+      "status": "PASS"
+    },
+    {
+      "expected": "3146fff762fb",
+      "got": "3146fff762fb",
+      "label": "aggregate-to-classifier-call",
+      "status": "PASS"
+    },
+    {
+      "expected": "0898ff28",
+      "got": "0898ff28",
+      "label": "selector-stack-load",
+      "status": "PASS"
+    },
+    {
+      "expected": "30b5084b08240022",
+      "got": "30b5084b08240022",
+      "label": "classifier-prologue-table-load-init",
+      "status": "PASS"
+    },
+    {
+      "expected": "33f812508d4202d0521ca242f8d3",
+      "got": "33f812508d4202d0521ca242f8d3",
+      "label": "classifier-eight-entry-loop",
+      "status": "PASS"
+    },
+    {
+      "expected": "062801d0002030bd072030bd",
+      "got": "062801d0002030bd072030bd",
+      "label": "classifier-selector-0or7",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x6db04",
+      "got": "0x6db04",
+      "label": "classifier-table-pointer-nonzero",
+      "status": "PASS"
+    },
+    {
+      "expected": 94624,
+      "got": 449284,
+      "label": "classifier-table-outside-payload",
+      "status": "PASS"
+    },
+    {
+      "expected": "ff200890",
+      "got": "ff200890",
+      "label": "selector-initial-ff",
+      "status": "PASS"
+    },
+    {
+      "expected": "4ff0060b",
+      "got": "4ff0060b",
+      "label": "selector-candidate-6",
+      "status": "PASS"
+    },
+    {
+      "expected": "cdf820b0",
+      "got": "cdf820b0",
+      "label": "selector-write-6",
+      "status": "PASS"
+    }
+  ],
+  "classifier_semantics": {
+    "loop_bound": 8,
+    "match_loop": "ldrh table[index*2], compare r5/r1, increment index until index==8; no error return branch",
+    "raw_table_values": "UNAVAILABLE from exact ABL1 payload because pointer 0x6DB04 exceeds payload length 0x171A0",
+    "result": "compare selector r0 with 6; return 7 if equal, otherwise 0",
+    "table_pointer_in_payload": false,
+    "table_pointer_literal": "0x6DB04"
+  },
+  "conclusion": "The ABL1 aggregate consumer is a control-classifier. It scans an external/runtime 8-entry halfword table, but match versus no-match converges to the same selector-based return block; the returned class is 0 or 7 based on selector r0, not an index-range/error result. The exact table values are not in the payload. No units, physical domain, MCLK/UCLK/FCLK identity, or hardware claim follows.",
+  "limitations": [
+    "No external table provenance or caller execution.",
+    "No physical/unit semantics.",
+    "No hardware or firmware execution."
+  ],
+  "provenance": {
+    "classifier": "0x751C",
+    "owner_function": "0x75CC",
+    "root_load": "0x7E3E [r6] -> r0; 0x7E40 [r0+0x2BC] -> r6",
+    "selector": "0x7E44 [sp+0x20] -> r0; initialized FF at 0x75DC/0x75DE; conditional 6 at 0x7636/0x7644"
+  },
+  "status": "PASS"
+}

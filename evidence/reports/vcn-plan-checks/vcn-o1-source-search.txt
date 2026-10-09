@@ -1,0 +1,13 @@
+scripts/verify_vcn_d3b2_candidate.py:99:    check("gasket_targets", values(gasket_groups, 0x03E810) == [6] and values(gasket_groups, 0x03A2011C) == [0x107FF, 0x107FF] and values(gasket_groups, 0x03A20124) == [0x10FFF])
+scripts/verify_vcn_d3b2_candidate.py:113:    check("policy_targets", values(policy_groups, 0x03E810) == [6] and values(policy_groups, 0x03A2011C) == [0x107FF])
+scripts/verify_vcn_d3b2_candidate.py:123:    check("policy_exact_prefix_delta", policy_prefix_diff == [0x4C, 0xBC, 0x245, 0x246], offsets=[hex(index) for index in policy_prefix_diff])
+scripts/build_glitch_unlock_candidate.py:52:MAILBOX_HDR = (0x03E810, 0x00000006)
+scripts/build_vcn_d3b2_candidate.py:102:        (0x295C, 0, 6, "SEC_GASKET group 0x210: 0x03E810 0 -> 6"),
+scripts/build_vcn_d3b2_candidate.py:144:                if address == 0x03E810:
+scripts/build_vcn_d3b2_candidate.py:145:                    require(value == 0, "type-0x45 0x03E810 pre-state mismatch")
+scripts/build_vcn_d3b2_candidate.py:174:        {"reason": "type-0x45 group 0x210: 0x03E810 0 -> 6", "occurrences": patched_e810},
+
+STDERR
+rg: scratchpad/vcn: No such file or directory (os error 2)
+
+EXIT 2

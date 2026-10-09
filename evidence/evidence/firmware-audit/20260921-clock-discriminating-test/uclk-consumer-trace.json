@@ -1,0 +1,219 @@
+{
+  "status": "PASS",
+  "route": "CbsBasePei callback adapter; final UclkDiv1M0 actuator remains unresolved",
+  "input": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "module": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin",
+  "module_sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+  "path": [
+    {
+      "site": "CbsBasePei",
+      "rva": "0x9cc4",
+      "effect": "write record ID 0x1204"
+    },
+    {
+      "site": "CbsBasePei",
+      "rva": "0x9ce4",
+      "effect": "load byte Setup+0x330"
+    },
+    {
+      "site": "CbsBasePei",
+      "rva": "0x9cea",
+      "effect": "store loaded byte at record +0x3"
+    },
+    {
+      "site": "CbsBasePei callback table",
+      "rva": "0x13e20/+0x10 -> 0x13dc0/+0x10",
+      "effect": "bind first callback to RVA 0x36c0"
+    },
+    {
+      "site": "CbsBasePei",
+      "rva": "0x36c0 -> 0x36f0",
+      "effect": "adapter builds INV record buffer; writes $INV header at 0x3728"
+    },
+    {
+      "site": "CbsBasePei",
+      "rva": "0x47d..0x499",
+      "effect": "dispatcher invokes callback indirectly; no direct actuator write in bounded window"
+    }
+  ],
+  "fresh_result": "For setup bytes 00/01/7f at +0x330, the immediate callback output record remains ID 0x1204 with value 00/01/7f respectively. The first static callback is an INV adapter (0x36c0->0x36f0), not a clock/register consumer.",
+  "bounded_uncertainty": "The final consumer/override after the INV buffer remains unresolved within the bounded static-analysis coverage of the exact 233-module x86/TE census. No hardware behavior, clock mapping, default precedence, or firmware acceptance is claimed.",
+  "checks": [
+    {
+      "check": "pinned ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "pinned ROM size",
+      "passed": true,
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "check": "CbsBasePei body sha256",
+      "passed": true,
+      "got": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    {
+      "check": "CbsBasePei body size",
+      "passed": true,
+      "got": 81520,
+      "expected": 81520
+    },
+    {
+      "check": "record ID load at CbsBasePei+0x9cc4",
+      "passed": true,
+      "got": "ba04120000",
+      "expected": "ba04120000"
+    },
+    {
+      "check": "Setup+0x330 load context at CbsBasePei+0x9ce1",
+      "passed": true,
+      "got": "8b55fc8a8230030000",
+      "expected": "8b55fc8a8230030000"
+    },
+    {
+      "check": "serialized record ID write",
+      "passed": true,
+      "got": "8b45f8668910",
+      "expected": "8b45f8668910"
+    },
+    {
+      "check": "Setup+0x330 source load at CbsBasePei+0x9ce4",
+      "passed": true,
+      "got": "8a8230030000",
+      "expected": "8a8230030000"
+    },
+    {
+      "check": "serialized Uclk value store at CbsBasePei+0x9cea",
+      "passed": true,
+      "got": "884103",
+      "expected": "884103"
+    },
+    {
+      "check": "first callback list provider pointer",
+      "passed": true,
+      "got": "0x13dc0",
+      "expected": "0x13dc0"
+    },
+    {
+      "check": "first callback provider function",
+      "passed": true,
+      "got": "0x36c0",
+      "expected": "0x36c0"
+    },
+    {
+      "check": "callback body 0x36c0",
+      "passed": true,
+      "got": "558bec518b450c8b4804894dfc8b55fc8b4204508b4dfc8b11528b451050e80d00000083",
+      "expected": "558bec518b450c8b4804894dfc8b55fc8b4204508b4dfc8b11528b451050e80d00000083"
+    },
+    {
+      "check": "callback serializer call 0x36de",
+      "passed": true,
+      "got": "e80d000000",
+      "expected": "e80d000000"
+    },
+    {
+      "check": "serializer entry 0x36f0",
+      "passed": true,
+      "got": "558bec83ec0ce885e10000",
+      "expected": "558bec83ec0ce885e10000"
+    },
+    {
+      "check": "serializer INV header write 0x3728",
+      "passed": true,
+      "got": "c70224494e56",
+      "expected": "c70224494e56"
+    },
+    {
+      "check": "serializer version write 0x3731",
+      "passed": true,
+      "got": "c7400401000000",
+      "expected": "c7400401000000"
+    },
+    {
+      "check": "dispatcher callback indirect call",
+      "passed": true,
+      "got": "8d9538f7ffff528b450c508b4d08518b9518f7ffff8b4210ffd083c40c",
+      "expected": "8d9538f7ffff528b450c508b4d08518b9518f7ffff8b4210ffd083c40c"
+    },
+    {
+      "check": "dispatcher window has no 0x1204 literal",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "synthetic value discrimination",
+      "passed": true,
+      "got": [
+        {
+          "setup_plus_0x330": 0,
+          "record_bytes": "04120000",
+          "record_id": "0x1204",
+          "value_byte": 0
+        },
+        {
+          "setup_plus_0x330": 1,
+          "record_bytes": "04120001",
+          "record_id": "0x1204",
+          "value_byte": 1
+        },
+        {
+          "setup_plus_0x330": 127,
+          "record_bytes": "0412007f",
+          "record_id": "0x1204",
+          "value_byte": 127
+        }
+      ],
+      "expected": [
+        {
+          "setup_plus_0x330": 0,
+          "record_bytes": "04120000",
+          "record_id": "0x1204",
+          "value_byte": 0
+        },
+        {
+          "setup_plus_0x330": 1,
+          "record_bytes": "04120001",
+          "record_id": "0x1204",
+          "value_byte": 1
+        },
+        {
+          "setup_plus_0x330": 127,
+          "record_bytes": "0412007f",
+          "record_id": "0x1204",
+          "value_byte": 127
+        }
+      ]
+    },
+    {
+      "check": "CbsBasePei exact 0x1204 target candidate count",
+      "passed": true,
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "check": "CbsBasePei 0x1204 candidate classification",
+      "passed": true,
+      "got": "immediate-candidate",
+      "expected": "immediate-candidate"
+    },
+    {
+      "check": "retained matrix does not classify CbsBasePei as INV reader",
+      "passed": true,
+      "got": true,
+      "expected": true
+    }
+  ],
+  "source_reports": [
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/caller-matrix.md",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/verification.json",
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/coverage.json"
+  ]
+}

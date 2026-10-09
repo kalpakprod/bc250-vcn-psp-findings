@@ -1,0 +1,264 @@
+{
+  "status": "PASS",
+  "checks": {
+    "passed": 34,
+    "failed": 0,
+    "total": 34
+  },
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "rom": {
+      "path": "/tmp/bc250-heap-populator-verify-ociocbt3/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "size": 16777216
+    },
+    "abl1": {
+      "path": "/tmp/bc250-heap-populator-verify-ociocbt3/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+      "sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "size": 94624
+    },
+    "object": {
+      "path": "/tmp/bc250-heap-populator-verify-ociocbt3/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o",
+      "sha256": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135",
+      "size": 95312
+    },
+    "cbs": {
+      "path": "/tmp/bc250-heap-populator-verify-ociocbt3/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin",
+      "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    "amdmem": {
+      "path": "/tmp/bc250-heap-populator-verify-ociocbt3/evidence/firmware-audit/20260919-inv-token-consumers/AmdMemAm4Pei-1ef4e7b94467.bin",
+      "sha256": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8"
+    }
+  },
+  "dataflow": {
+    "selector_case": "provider 0x49CC selector 0x0F -> fixed key 0xA04E at 0x4B1A",
+    "miss_writer": "0x4B5A -> 0x6238; descriptor SP+0x14 +4 supplies key and R1 supplies source pointer",
+    "heap_node": "0x6238 reads descriptor +4, writes node key at node+0, then calls 0x6B78 to copy from R10/source into node+0x10",
+    "source_field": "constructor 0xC00 receives outer object R1 from caller 0xB84; outer+0x864 is saved at SP+0xA4 and initialized to external pointer 0x006CD4D0",
+    "heap_base": "literal 0x73000; signature HEAP"
+  },
+  "apob_inv_boundary": {
+    "apob_service": "AmdMemAm4Pei 0x8A0/0x8CA/0x8CF/0x8D1 = 0x9E3B14C/0xFF/0x61/call 0xCD9",
+    "native_inv": "CbsBasePei 0x9837/0x9857 = 0x11ED from Setup+0x316",
+    "join": "none in inspected exact bytes; ABL1 source field outer+0x864 and external pointer 0x006CD4D0 are not byte-joined to APOB service output or INV payload"
+  },
+  "first_unresolved_boundary": {
+    "location": "producer of the outer ABL1 object passed as R1 at 0xB84/0xBD2 and population/meaning of its +0x864 field (initialized with 0x006CD4D0) relative to AmdMem APOB service output and native INV 0x11ED",
+    "statement": "The exact HEAP node writer is now closed to a runtime field-backed source: provider key 0xA04E -> descriptor -> 0x6238 -> node key/payload. The first missing cross-stage edge is upstream of that field: no byte-backed path joins outer+0x864, APOB service 0x9E3B14C/message0x61/arg0xFF, and `$INV 0x11ED`; no training/clock/SMU actuator is claimed."
+  },
+  "limits": [
+    "Static exact bytes only; no ABL1 loader/runtime execution, APOB service execution, PPI invocation, HOB capture, SMU execution, or hardware.",
+    "The no-marker checks are bounded direct-literal checks, not computed/indirect/DMA absence claims.",
+    "No PPI GUID proof and no 0x1204 serializer/HOB proof was repeated."
+  ],
+  "checks_detail": [
+    {
+      "name": "abl-hash",
+      "status": "PASS",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "name": "obj-hash",
+      "status": "PASS",
+      "got": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135",
+      "expected": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135"
+    },
+    {
+      "name": "rom-hash",
+      "status": "PASS",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "name": "cbs-hash",
+      "status": "PASS",
+      "got": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    {
+      "name": "amdmem-hash",
+      "status": "PASS",
+      "got": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8",
+      "expected": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8"
+    },
+    {
+      "name": "provider fixed key MOVW 0xA04E",
+      "status": "PASS",
+      "got": "4af24e06",
+      "expected": "4af24e06"
+    },
+    {
+      "name": "provider lookup descriptor address SP+0x24",
+      "status": "PASS",
+      "got": "09a8",
+      "expected": "09a8"
+    },
+    {
+      "name": "provider stores key in lookup descriptor",
+      "status": "PASS",
+      "got": "0996",
+      "expected": "0996"
+    },
+    {
+      "name": "provider miss path builds HEAP descriptor SP+0x14",
+      "status": "PASS",
+      "got": "cde90506",
+      "expected": "cde90506"
+    },
+    {
+      "name": "provider miss sets metadata 4",
+      "status": "PASS",
+      "got": "042029998df81c00",
+      "expected": "042029998df81c00"
+    },
+    {
+      "name": "provider miss calls HEAP producer 0x6238",
+      "status": "PASS",
+      "got": "05a801f06cfb",
+      "expected": "05a801f06cfb"
+    },
+    {
+      "name": "heap producer prologue",
+      "status": "PASS",
+      "got": "2de9f84f0446484f00208a46",
+      "expected": "2de9f84f0446484f00208a46"
+    },
+    {
+      "name": "heap producer reads descriptor key +4",
+      "status": "PASS",
+      "got": "6268",
+      "expected": "6268"
+    },
+    {
+      "name": "heap producer writes node key",
+      "status": "PASS",
+      "got": "60682860",
+      "expected": "60682860"
+    },
+    {
+      "name": "heap producer source register to copy helper",
+      "status": "PASS",
+      "got": "534600f0",
+      "expected": "534600f0"
+    },
+    {
+      "name": "heap producer calls byte-copy helper 0x6B78",
+      "status": "PASS",
+      "got": "00f02afc",
+      "expected": "00f02afc"
+    },
+    {
+      "name": "byte-copy helper reads source and writes node payload",
+      "status": "PASS",
+      "got": "00f8011b521efbd2",
+      "expected": "00f8011b521efbd2"
+    },
+    {
+      "name": "heap global pointer literal 0x73000",
+      "status": "PASS",
+      "got": 471040,
+      "expected": 471040
+    },
+    {
+      "name": "heap signature literal HEAP",
+      "status": "PASS",
+      "got": "48454150",
+      "expected": "48454150"
+    },
+    {
+      "name": "constructor caller enters 0xC00",
+      "status": "PASS",
+      "got": "204600f015f8",
+      "expected": "204600f015f8"
+    },
+    {
+      "name": "constructor prologue and preserves R1",
+      "status": "PASS",
+      "got": "2de9fc4107468846",
+      "expected": "2de9fc4107468846"
+    },
+    {
+      "name": "constructor computes outer+0x864",
+      "status": "PASS",
+      "got": "01f66400c1f86c28",
+      "expected": "01f66400c1f86c28"
+    },
+    {
+      "name": "constructor stores source field pointer at SP+0xA4",
+      "status": "PASS",
+      "got": "299001f50760",
+      "expected": "299001f50760"
+    },
+    {
+      "name": "constructor stores external pointer into outer+0x864",
+      "status": "PASS",
+      "got": "c1f86428814a",
+      "expected": "c1f86428814a"
+    },
+    {
+      "name": "constructor literal table value 0x006CD4D0",
+      "status": "PASS",
+      "got": 7132368,
+      "expected": 7132368
+    },
+    {
+      "name": "native INV 0x11ED producer header",
+      "status": "PASS",
+      "got": "baed110000",
+      "expected": "baed110000"
+    },
+    {
+      "name": "native Setup+0x316 load",
+      "status": "PASS",
+      "got": "8a8216030000",
+      "expected": "8a8216030000"
+    },
+    {
+      "name": "APOB service pointer 0x9E3B14C",
+      "status": "PASS",
+      "got": "684cb1e309",
+      "expected": "684cb1e309"
+    },
+    {
+      "name": "APOB service arg 0xFF",
+      "status": "PASS",
+      "got": "68ff000000",
+      "expected": "68ff000000"
+    },
+    {
+      "name": "APOB service message 0x61",
+      "status": "PASS",
+      "got": "6a61",
+      "expected": "6a61"
+    },
+    {
+      "name": "APOB service call 0xCD9",
+      "status": "PASS",
+      "got": "e803040000",
+      "expected": "e803040000"
+    },
+    {
+      "name": "ABL1 has no direct $INV marker",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "ABL1 has no direct 0x11ED literal",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "ABL1 has no direct AmdMem service pointer",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    }
+  ]
+}

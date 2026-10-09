@@ -1,0 +1,8 @@
+0x00ffc: entry      a1, 0x20
+0x00fff: l32r       a3, 0x400000ba0
+0x01002: addx2      a2, a2, a2
+0x01005: addx4      a2, a2, a3
+0x01008: l32i.n     a2, a2, 0xc
+0x0100a: memw       
+0x0100d: l32i.n     a2, a2, 0x0
+0x0100f: retw.n     

@@ -1,0 +1,43 @@
+{
+  "input_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "module_hashes": {
+    "AmdFabricAriPei": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+    "AmdNbioGfxARIPei": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+    "AmdNbioBaseARIPei": "51d96c1e5a5e2c39f04fb962b0b5be686dea0a05eecbde829a4595fe3356884f",
+    "AmdNbioPcieARIPei": "62b1398c4ba9b5a03ea533306cd8200257fac323c8fa688caa057667a5871312",
+    "AmdNbioSmuV10Pei": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+    "AmdSocBl5AriPei": "79e13211d5ae6b416311d67f735e68d946ea4045708d8463f7b92c495dff80b0",
+    "CbsBasePei": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+  },
+  "raw_checks": [
+    "CBS InstallPpi",
+    "CBS dispatch compare",
+    "CBS callback call",
+    "CBS size branch",
+    "CBS signature store",
+    "CBS size constant",
+    "Fabric signed request",
+    "Fabric query",
+    "Fabric fill",
+    "Fabric first reader",
+    "Fabric record compare",
+    "Fabric CreateHob",
+    "Fabric event request",
+    "Fabric lookup10FF",
+    "Fabric lookup1104"
+  ],
+  "table_tests": 6,
+  "synthetic_reader_tests": 7,
+  "required_size": "0x1605",
+  "heap_guid": "d97d161a-16cd-4ada-b9f6-aec3f9fccc2c",
+  "hob_layout": {
+    "guid_header": "0x18",
+    "heap_header": "0x10",
+    "INV_offset": "0x28",
+    "requested_hob_size_before_alignment": "0x1695",
+    "sentinel_INV_offset": "0x1669"
+  },
+  "model_limit": "Host structural models only; no firmware execution or dynamic buffer capture.",
+  "python": "3.14.7",
+  "objdump": "GNU objdump (GNU Binutils) 2.47"
+}

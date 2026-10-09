@@ -1,0 +1,8 @@
+BC250_vcn-driver-FULL_deferred-to-readyboot_appended-at-end.bin
+Old technical name (alias): v009-rtb
+SHA-256: 56df6244fb8095c9bbcb53e7cbed20d02da4fbc960448aa69c7e66a9d54f839d
+Built by: scripts/build_FULL_deferred_readyboot_appended_at_end.py
+What is inside: booted pre-dump + ReadyToBoot VCN driver APPENDED at FV end; all 193 base files at identical offsets; explicit LZMA
+Question it answers: does DXE complete when the sequence fires on ReadyToBoot?
+Verdict: STAGED: flash if STUB boots and FULL-appended + safe-reads hang.
+Вердикт: На полке: шьём, если заглушка загрузится, а полный-дописанный и безопасный встанут.

@@ -1,0 +1,66 @@
+{
+  "candidate": "candidates/BC250_5.00_clv_MeiMeiDXEv3-drivers-only_v001.bin",
+  "base": {
+    "path": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+  },
+  "donor": {
+    "path": "import/from-windows/Users/kukuruza/tmp_bc250/ext/fd_repo/extracted/BC250_3.00_MeiMeiDXEv3",
+    "sha256": "606a7a7f9ef8fb1c445d8ccfa9640de0339bfec5ab52969135a9e87d62028182"
+  },
+  "output_sha256": "0968a70c4d6fbb51f43d3e0fb5e4b3783dec41e881246356a75c66dc5f19c554",
+  "inner_fv": {
+    "old_len": "0x41c000",
+    "new_len": "0x437000",
+    "old_files": 187,
+    "new_files": 193
+  },
+  "injected": [
+    {
+      "guid": "A3F8B2D5-7C4E-4F0A-B1D2-9E6F3C8A5B71",
+      "name": "MeiMeiDXEv3_SMU_Unlock",
+      "fv_off": "0x41c000",
+      "size": "0x3066"
+    },
+    {
+      "guid": "7A8B9C0D-1E2F-3A4B-5C6D-7E8F9A0B1C2D",
+      "name": "MeiMeiDXEv3_SMU_Core_Unlock",
+      "fv_off": "0x41f068",
+      "size": "0x3080"
+    },
+    {
+      "guid": "0DDDE9E4-4A0C-4679-BEDC-90A37610AB85",
+      "name": "MeiMeiDXEv3_Menu_Driver",
+      "fv_off": "0x4220e8",
+      "size": "0x708c"
+    },
+    {
+      "guid": "A9981D14-6329-4698-AD20-173C4363DD30",
+      "name": "MeiMeiDXEv3_ACPI_AutoInject",
+      "fv_off": "0x429178",
+      "size": "0x5094"
+    },
+    {
+      "guid": "9D4E5E12-3C7A-4F88-A2B7-0D8D6B7F2E41",
+      "name": "MeiMeiDXEv3_SMU_Patch",
+      "fv_off": "0x42e210",
+      "size": "0x3074"
+    },
+    {
+      "guid": "6C98E4F3-9D8B-4E5A-B2E7-31A45B9C5D81",
+      "name": "MeiMeiDXEv3_ColdBoot",
+      "fv_off": "0x431288",
+      "size": "0x5062"
+    }
+  ],
+  "changed_range": {
+    "first": "0xae0088",
+    "last": "0xc28f45",
+    "ndiff": 1342158
+  },
+  "outside_0xAE0000_0xE00000": "byte-identical",
+  "compressed": {
+    "old_csz": "0x14550f",
+    "new_csz": "0x148ece"
+  }
+}

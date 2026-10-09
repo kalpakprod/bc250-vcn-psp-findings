@@ -1,0 +1,1465 @@
+{
+  "generated_at": "2026-09-11T05:16:56.609786+00:00",
+  "tool": "Rizin 0.9.1",
+  "commit": "c3a90e9226d977f58f4e9c75f78fa6b07afe13c7",
+  "analysis_command": "rizin -qq -A -c \"iIj; iSj; ii; iEj; aflj; s entry0; pd 48; izzj\" <module>",
+  "inputs": "copied executable bodies extracted from dump/2.bin",
+  "modules": [
+    {
+      "name": "Bc250CoreUnlockDxe",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0000_Bc250CoreUnlockDxe_pe32.bin",
+      "input_sha256": "7d22d80284cd4c9c8af997611002f6916b4fa4b0d3ca9e3e34e450abbe885c55",
+      "output": "evidence/firmware-audit/rizin/Bc250CoreUnlockDxe.analysis.txt",
+      "output_sha256": "0d10078b4f33bf7f4f249eca56aa4a7f8009ca5d00f7800590371849e393ccfc",
+      "output_size": 25325,
+      "meta": {
+        "arch": "x86",
+        "baddr": 65536,
+        "binsz": 12288,
+        "bintype": "pe",
+        "bits": 64,
+        "class": "PE32+",
+        "cmp.csum": "0x000064e4",
+        "compiled": "Thu Jan  1 06:00:00 1970 UTC+6",
+        "dbg_file": "/cache/edk2/Build/Bc250CoreUnlockPkg/RELEASE_CLANGDWARF/X64/Bc250CoreUnlockPkg/Bc250CoreUnlockDxe/Bc250CoreUnlockDxe/DEBUG/Bc250CoreUnlockDxe.dll",
+        "endian": "LE",
+        "hdr.csum": "0x00000000",
+        "guid": "00",
+        "laddr": 0,
+        "lang": "c",
+        "machine": "AMD 64",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "overlay": false,
+        "cc": "ms",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": false,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": true,
+        "lsyms": true,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": true
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 4096,
+          "vsize": 4096,
+          "perm": "-r-x",
+          "flags": [
+            "CNT_CODE"
+          ],
+          "paddr": 4096,
+          "vaddr": 69632
+        },
+        {
+          "name": ".data",
+          "size": 4096,
+          "vsize": 4096,
+          "perm": "-rw-",
+          "flags": [
+            "CNT_INITIALIZED_DATA"
+          ],
+          "paddr": 8192,
+          "vaddr": 73728
+        }
+      ],
+      "function_count": 5,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0x11037",
+          "size": 571
+        }
+      ],
+      "relevant_text_hits": {
+        "mask_0x115a870": 1,
+        "setup_string": 2
+      },
+      "te_endian_caveat": false
+    },
+    {
+      "name": "AmdNbioGfxARIPei",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0193_AmdNbioGfxARIPei_te.bin",
+      "input_sha256": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+      "output": "evidence/firmware-audit/rizin/AmdNbioGfxARIPei.analysis.txt",
+      "output_sha256": "721911fdde66d0e7796cff4c215fb371380538812a4361964ed51386343cf47b",
+      "output_size": 381297,
+      "meta": {
+        "arch": "x86",
+        "baddr": 165923892,
+        "binsz": 87048,
+        "bintype": "te",
+        "bits": 32,
+        "class": "TE",
+        "endian": "BE",
+        "laddr": 0,
+        "machine": "i386",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": true,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 85440,
+          "vsize": 85423,
+          "perm": "-r-x",
+          "paddr": 168,
+          "vaddr": 168
+        },
+        {
+          "name": ".data",
+          "size": 1152,
+          "vsize": 1128,
+          "perm": "-rw-",
+          "paddr": 85608,
+          "vaddr": 85608
+        },
+        {
+          "name": ".reloc",
+          "size": 288,
+          "vsize": 272,
+          "perm": "-r--",
+          "paddr": 86760,
+          "vaddr": 86760
+        }
+      ],
+      "function_count": 78,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0xA8",
+          "size": 14
+        }
+      ],
+      "relevant_text_hits": {
+        "setup_string": 1
+      },
+      "te_endian_caveat": true
+    },
+    {
+      "name": "AmdNbioPcieARIPei",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0197_AmdNbioPcieARIPei_te.bin",
+      "input_sha256": "62b1398c4ba9b5a03ea533306cd8200257fac323c8fa688caa057667a5871312",
+      "output": "evidence/firmware-audit/rizin/AmdNbioPcieARIPei.analysis.txt",
+      "output_sha256": "0db5832885ab4ad3d11cb6b68329e96fa1aa2de0ee2dc0b5081cda6e36b571b3",
+      "output_size": 441564,
+      "meta": {
+        "arch": "x86",
+        "baddr": 166127156,
+        "binsz": 108776,
+        "bintype": "te",
+        "bits": 32,
+        "class": "TE",
+        "endian": "BE",
+        "laddr": 0,
+        "machine": "i386",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": true,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 99584,
+          "vsize": 99583,
+          "perm": "-r-x",
+          "paddr": 168,
+          "vaddr": 168
+        },
+        {
+          "name": ".data",
+          "size": 8160,
+          "vsize": 8160,
+          "perm": "-rw-",
+          "paddr": 99752,
+          "vaddr": 99752
+        },
+        {
+          "name": ".reloc",
+          "size": 864,
+          "vsize": 860,
+          "perm": "-r--",
+          "paddr": 107912,
+          "vaddr": 107912
+        }
+      ],
+      "function_count": 121,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0xA8",
+          "size": 107
+        }
+      ],
+      "relevant_text_hits": {
+        "setup_string": 1
+      },
+      "te_endian_caveat": true
+    },
+    {
+      "name": "AmdNbioSmuV10Pei",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0198_AmdNbioSmuV10Pei_te.bin",
+      "input_sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "output": "evidence/firmware-audit/rizin/AmdNbioSmuV10Pei.analysis.txt",
+      "output_sha256": "cf7caf2417800aab5a157fe77a07f5b3da3ec1781cc9e680738a1d7451d5e072",
+      "output_size": 332204,
+      "meta": {
+        "arch": "x86",
+        "baddr": 166236124,
+        "binsz": 90672,
+        "bintype": "te",
+        "bits": 32,
+        "class": "TE",
+        "endian": "BE",
+        "laddr": 0,
+        "machine": "i386",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": true,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 87936,
+          "vsize": 87935,
+          "perm": "-r-x",
+          "paddr": 176,
+          "vaddr": 176
+        },
+        {
+          "name": ".data",
+          "size": 2112,
+          "vsize": 2096,
+          "perm": "-rw-",
+          "paddr": 88112,
+          "vaddr": 88112
+        },
+        {
+          "name": ".reloc",
+          "size": 448,
+          "vsize": 420,
+          "perm": "-r--",
+          "paddr": 90224,
+          "vaddr": 90224
+        }
+      ],
+      "function_count": 90,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0xB0",
+          "size": 14
+        }
+      ],
+      "relevant_text_hits": {
+        "setup_string": 1
+      },
+      "te_endian_caveat": true
+    },
+    {
+      "name": "AmdNbioGfxARIDxe",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0025_AmdNbioGfxARIDxe_pe32.bin",
+      "input_sha256": "a1b5855a339875f09cfaec8a1c17abf54251bab2c43ff577bc3cdf8711e2f61c",
+      "output": "evidence/firmware-audit/rizin/AmdNbioGfxARIDxe.analysis.txt",
+      "output_sha256": "86ae8e28ab8833ea25db14bef5fbae3536d7b1c9109f79a89736556d7a55bab7",
+      "output_size": 106793,
+      "meta": {
+        "arch": "x86",
+        "baddr": 65536,
+        "binsz": 13376,
+        "bintype": "pe",
+        "bits": 64,
+        "class": "PE32+",
+        "cmp.csum": "0x0001038b",
+        "compiled": "Thu Jan  1 06:00:00 1970 UTC+6",
+        "compiler": "Linker 09.00",
+        "endian": "LE",
+        "hdr.csum": "0x00000000",
+        "laddr": 0,
+        "lang": "c",
+        "machine": "AMD 64",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "overlay": false,
+        "cc": "ms",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": false,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 9696,
+          "vsize": 9696,
+          "perm": "-r-x",
+          "flags": [
+            "CNT_CODE",
+            "MEM_NOT_PAGED"
+          ],
+          "paddr": 672,
+          "vaddr": 66208
+        },
+        {
+          "name": ".data",
+          "size": 2144,
+          "vsize": 2144,
+          "perm": "-rw-",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_NOT_PAGED"
+          ],
+          "paddr": 10368,
+          "vaddr": 75904
+        },
+        {
+          "name": "sect_2",
+          "size": 544,
+          "vsize": 544,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 12512,
+          "vaddr": 78048
+        },
+        {
+          "name": ".xdata",
+          "size": 256,
+          "vsize": 256,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 13056,
+          "vaddr": 78592
+        },
+        {
+          "name": ".reloc",
+          "size": 64,
+          "vsize": 64,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 13312,
+          "vaddr": 78848
+        }
+      ],
+      "function_count": 58,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0x102A0",
+          "size": 75
+        }
+      ],
+      "relevant_text_hits": {},
+      "te_endian_caveat": false
+    },
+    {
+      "name": "AmdNbioSmuV10Dxe",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0031_AmdNbioSmuV10Dxe_pe32.bin",
+      "input_sha256": "546a0689e607a3a87b8c437c7fe7191e55757f56b35792fb8d84f539844b500e",
+      "output": "evidence/firmware-audit/rizin/AmdNbioSmuV10Dxe.analysis.txt",
+      "output_sha256": "80096cd54a67ca6d8af32ec30ee8dfa02e75a5ba6d193b19495704037db27e6c",
+      "output_size": 212235,
+      "meta": {
+        "arch": "x86",
+        "baddr": 65536,
+        "binsz": 33024,
+        "bintype": "pe",
+        "bits": 64,
+        "class": "PE32+",
+        "cmp.csum": "0x0000ee94",
+        "compiled": "Thu Jan  1 06:00:00 1970 UTC+6",
+        "compiler": "Linker 09.00",
+        "endian": "LE",
+        "hdr.csum": "0x00000000",
+        "laddr": 0,
+        "lang": "c",
+        "machine": "AMD 64",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "overlay": false,
+        "cc": "ms",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": false,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 22336,
+          "vsize": 22336,
+          "perm": "-r-x",
+          "flags": [
+            "CNT_CODE",
+            "MEM_NOT_PAGED"
+          ],
+          "paddr": 672,
+          "vaddr": 66208
+        },
+        {
+          "name": ".data",
+          "size": 8448,
+          "vsize": 8448,
+          "perm": "-rw-",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_NOT_PAGED"
+          ],
+          "paddr": 23008,
+          "vaddr": 88544
+        },
+        {
+          "name": "sect_2",
+          "size": 928,
+          "vsize": 928,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 31456,
+          "vaddr": 96992
+        },
+        {
+          "name": ".xdata",
+          "size": 544,
+          "vsize": 544,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 32384,
+          "vaddr": 97920
+        },
+        {
+          "name": ".reloc",
+          "size": 96,
+          "vsize": 96,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 32928,
+          "vaddr": 98464
+        }
+      ],
+      "function_count": 86,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0x102A0",
+          "size": 75
+        }
+      ],
+      "relevant_text_hits": {},
+      "te_endian_caveat": false
+    },
+    {
+      "name": "AmdFabricAriDxe",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0021_AmdFabricAriDxe_pe32.bin",
+      "input_sha256": "b9702a29ed28cdd253b82a7a4b1ccd62ec318705b105b9d9939b212360bec929",
+      "output": "evidence/firmware-audit/rizin/AmdFabricAriDxe.analysis.txt",
+      "output_sha256": "a590895233d4adf54c42efaddb4c453023bf0b61927e1046ba97292c2b766395",
+      "output_size": 172283,
+      "meta": {
+        "arch": "x86",
+        "baddr": 65536,
+        "binsz": 28320,
+        "bintype": "pe",
+        "bits": 64,
+        "class": "PE32+",
+        "cmp.csum": "0x0000e70c",
+        "compiled": "Thu Jan  1 06:00:00 1970 UTC+6",
+        "compiler": "Linker 09.00",
+        "endian": "LE",
+        "hdr.csum": "0x00000000",
+        "laddr": 0,
+        "lang": "c",
+        "machine": "AMD 64",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "overlay": false,
+        "cc": "ms",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": false,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 22016,
+          "vsize": 22016,
+          "perm": "-r-x",
+          "flags": [
+            "CNT_CODE",
+            "MEM_NOT_PAGED"
+          ],
+          "paddr": 672,
+          "vaddr": 66208
+        },
+        {
+          "name": ".data",
+          "size": 3968,
+          "vsize": 3968,
+          "perm": "-rw-",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_NOT_PAGED"
+          ],
+          "paddr": 22688,
+          "vaddr": 88224
+        },
+        {
+          "name": "sect_2",
+          "size": 896,
+          "vsize": 896,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 26656,
+          "vaddr": 92192
+        },
+        {
+          "name": ".xdata",
+          "size": 576,
+          "vsize": 576,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 27552,
+          "vaddr": 93088
+        },
+        {
+          "name": ".reloc",
+          "size": 192,
+          "vsize": 192,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 28128,
+          "vaddr": 93664
+        }
+      ],
+      "function_count": 81,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0x102A0",
+          "size": 75
+        }
+      ],
+      "relevant_text_hits": {},
+      "te_endian_caveat": false
+    },
+    {
+      "name": "AmiApcbLibInterface",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0039_AmiApcbLibInterface_pe32.bin",
+      "input_sha256": "4d65e6dc2ca83c8d7bed8812275b78e9821fd126cba413f94ba9390e91a56336",
+      "output": "evidence/firmware-audit/rizin/AmiApcbLibInterface.analysis.txt",
+      "output_sha256": "cf31336645eeda225a0c298ce1eb0c9094a7fa3d54529f34fe51c834c7f799dc",
+      "output_size": 71797,
+      "meta": {
+        "arch": "x86",
+        "baddr": 65536,
+        "binsz": 9408,
+        "bintype": "pe",
+        "bits": 64,
+        "class": "PE32+",
+        "cmp.csum": "0x00007a79",
+        "compiled": "Thu Jan  1 06:00:00 1970 UTC+6",
+        "compiler": "Linker 09.00",
+        "endian": "LE",
+        "hdr.csum": "0x00000000",
+        "laddr": 0,
+        "lang": "c",
+        "machine": "AMD 64",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "overlay": false,
+        "cc": "ms",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": false,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 5888,
+          "vsize": 5888,
+          "perm": "-r-x",
+          "flags": [
+            "CNT_CODE",
+            "MEM_NOT_PAGED"
+          ],
+          "paddr": 672,
+          "vaddr": 66208
+        },
+        {
+          "name": ".data",
+          "size": 2336,
+          "vsize": 2336,
+          "perm": "-rw-",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_NOT_PAGED"
+          ],
+          "paddr": 6560,
+          "vaddr": 72096
+        },
+        {
+          "name": "sect_2",
+          "size": 320,
+          "vsize": 320,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 8896,
+          "vaddr": 74432
+        },
+        {
+          "name": ".xdata",
+          "size": 160,
+          "vsize": 160,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 9216,
+          "vaddr": 74752
+        },
+        {
+          "name": ".reloc",
+          "size": 32,
+          "vsize": 32,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 9376,
+          "vaddr": 74912
+        }
+      ],
+      "function_count": 31,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0x102A0",
+          "size": 16
+        }
+      ],
+      "relevant_text_hits": {},
+      "te_endian_caveat": false
+    },
+    {
+      "name": "AmdApcbObrDxe",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0033_AmdApcbObrDxe_pe32.bin",
+      "input_sha256": "e0bc6cb786469818ac6af66d7c2d06ffd5d9026ad550b651911e45334746604c",
+      "output": "evidence/firmware-audit/rizin/AmdApcbObrDxe.analysis.txt",
+      "output_sha256": "d984e87aeab3caa32d9576742f29c6685f93a9dc45546ca39d48d4d9967efa5f",
+      "output_size": 126790,
+      "meta": {
+        "arch": "x86",
+        "baddr": 65536,
+        "binsz": 19328,
+        "bintype": "pe",
+        "bits": 64,
+        "class": "PE32+",
+        "cmp.csum": "0x00007c5f",
+        "compiled": "Thu Jan  1 06:00:00 1970 UTC+6",
+        "compiler": "Linker 09.00",
+        "endian": "LE",
+        "hdr.csum": "0x00000000",
+        "laddr": 0,
+        "lang": "c",
+        "machine": "AMD 64",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "overlay": false,
+        "cc": "ms",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": false,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 12672,
+          "vsize": 12672,
+          "perm": "-r-x",
+          "flags": [
+            "CNT_CODE",
+            "MEM_NOT_PAGED"
+          ],
+          "paddr": 672,
+          "vaddr": 66208
+        },
+        {
+          "name": ".data",
+          "size": 4928,
+          "vsize": 4928,
+          "perm": "-rw-",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_NOT_PAGED"
+          ],
+          "paddr": 13344,
+          "vaddr": 78880
+        },
+        {
+          "name": "sect_2",
+          "size": 576,
+          "vsize": 576,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 18272,
+          "vaddr": 83808
+        },
+        {
+          "name": ".xdata",
+          "size": 416,
+          "vsize": 416,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 18848,
+          "vaddr": 84384
+        },
+        {
+          "name": ".reloc",
+          "size": 64,
+          "vsize": 64,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 19264,
+          "vaddr": 84800
+        }
+      ],
+      "function_count": 50,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0x102A0",
+          "size": 134
+        }
+      ],
+      "relevant_text_hits": {},
+      "te_endian_caveat": false
+    },
+    {
+      "name": "CbsSetupDxe",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0040_CbsSetupDxe_pe32.bin",
+      "input_sha256": "9fae1341693fe1b89e6f070f8740c94228f5161cca701ac31425bc5d438533b3",
+      "output": "evidence/firmware-audit/rizin/CbsSetupDxe.analysis.txt",
+      "output_sha256": "b80dcc8a717b3c5c803c146acc5cbba14aaf25fd2fbf07efce62dd4dfc4d2e69",
+      "output_size": 542305,
+      "meta": {
+        "arch": "x86",
+        "baddr": 65536,
+        "binsz": 264160,
+        "bintype": "pe",
+        "bits": 64,
+        "class": "PE32+",
+        "cmp.csum": "0x00048f4f",
+        "compiled": "Thu Jan  1 06:00:00 1970 UTC+6",
+        "compiler": "Linker 09.00",
+        "endian": "LE",
+        "hdr.csum": "0x00000000",
+        "laddr": 0,
+        "lang": "c",
+        "machine": "AMD 64",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "overlay": false,
+        "cc": "ms",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": false,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 44768,
+          "vsize": 44768,
+          "perm": "-r-x",
+          "flags": [
+            "CNT_CODE",
+            "MEM_NOT_PAGED"
+          ],
+          "paddr": 672,
+          "vaddr": 66208
+        },
+        {
+          "name": ".data",
+          "size": 217504,
+          "vsize": 217504,
+          "perm": "-rw-",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_NOT_PAGED"
+          ],
+          "paddr": 45440,
+          "vaddr": 110976
+        },
+        {
+          "name": "sect_2",
+          "size": 576,
+          "vsize": 576,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 262944,
+          "vaddr": 328480
+        },
+        {
+          "name": ".xdata",
+          "size": 544,
+          "vsize": 544,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 263520,
+          "vaddr": 329056
+        },
+        {
+          "name": ".reloc",
+          "size": 96,
+          "vsize": 96,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 264064,
+          "vaddr": 329600
+        }
+      ],
+      "function_count": 63,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0x102A0",
+          "size": 75
+        }
+      ],
+      "relevant_text_hits": {
+        "setup_string": 3
+      },
+      "te_endian_caveat": false
+    },
+    {
+      "name": "AmdPspPeiV2",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0199_AmdPspPeiV2_te.bin",
+      "input_sha256": "1158720bbf95af537f3337ce8572359df84968ee465f5fabcbb036a839460d0e",
+      "output": "evidence/firmware-audit/rizin/AmdPspPeiV2.analysis.txt",
+      "output_sha256": "63821a1c2915507e8362eb49c70cf344790d8152be593b548a1b74b1352467fa",
+      "output_size": 90001,
+      "meta": {
+        "arch": "x86",
+        "baddr": 166326908,
+        "binsz": 11264,
+        "bintype": "te",
+        "bits": 32,
+        "class": "TE",
+        "endian": "BE",
+        "laddr": 0,
+        "machine": "i386",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": true,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 9120,
+          "vsize": 9118,
+          "perm": "-r-x",
+          "paddr": 160,
+          "vaddr": 160
+        },
+        {
+          "name": ".data",
+          "size": 1824,
+          "vsize": 1808,
+          "perm": "-rw-",
+          "paddr": 9280,
+          "vaddr": 9280
+        },
+        {
+          "name": ".reloc",
+          "size": 160,
+          "vsize": 160,
+          "perm": "-r--",
+          "paddr": 11104,
+          "vaddr": 11104
+        }
+      ],
+      "function_count": 60,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0xA0",
+          "size": 16
+        }
+      ],
+      "relevant_text_hits": {},
+      "te_endian_caveat": true
+    },
+    {
+      "name": "AmdPspDxeV2",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0032_AmdPspDxeV2_pe32.bin",
+      "input_sha256": "554e1b4bc50d38578b09d58cc2fcdb0f460ad3c164eab9009be706a551dc1c92",
+      "output": "evidence/firmware-audit/rizin/AmdPspDxeV2.analysis.txt",
+      "output_sha256": "5027c49babc09944352d2517c501c346cdb2fb68309ce9895d5ffd17a3c9e72f",
+      "output_size": 97229,
+      "meta": {
+        "arch": "x86",
+        "baddr": 65536,
+        "binsz": 14368,
+        "bintype": "pe",
+        "bits": 64,
+        "class": "PE32+",
+        "cmp.csum": "0x000048ed",
+        "compiled": "Thu Jan  1 06:00:00 1970 UTC+6",
+        "compiler": "Linker 09.00",
+        "endian": "LE",
+        "hdr.csum": "0x00000000",
+        "laddr": 0,
+        "lang": "c",
+        "machine": "AMD 64",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "overlay": false,
+        "cc": "ms",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": false,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 9312,
+          "vsize": 9312,
+          "perm": "-r-x",
+          "flags": [
+            "CNT_CODE",
+            "MEM_NOT_PAGED"
+          ],
+          "paddr": 672,
+          "vaddr": 66208
+        },
+        {
+          "name": ".data",
+          "size": 3520,
+          "vsize": 3520,
+          "perm": "-rw-",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_NOT_PAGED"
+          ],
+          "paddr": 9984,
+          "vaddr": 75520
+        },
+        {
+          "name": "sect_2",
+          "size": 480,
+          "vsize": 480,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 13504,
+          "vaddr": 79040
+        },
+        {
+          "name": ".xdata",
+          "size": 352,
+          "vsize": 352,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 13984,
+          "vaddr": 79520
+        },
+        {
+          "name": ".reloc",
+          "size": 32,
+          "vsize": 32,
+          "perm": "-r--",
+          "flags": [
+            "CNT_INITIALIZED_DATA",
+            "MEM_DISCARDABLE"
+          ],
+          "paddr": 14336,
+          "vaddr": 79872
+        }
+      ],
+      "function_count": 42,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0x102A0",
+          "size": 75
+        }
+      ],
+      "relevant_text_hits": {},
+      "te_endian_caveat": false
+    },
+    {
+      "name": "AmdNbioBaseARIPei",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0196_AmdNbioBaseARIPei_te.bin",
+      "input_sha256": "51d96c1e5a5e2c39f04fb962b0b5be686dea0a05eecbde829a4595fe3356884f",
+      "output": "evidence/firmware-audit/rizin/AmdNbioBaseARIPei.analysis.txt",
+      "output_sha256": "fa91aba04ce80010702542cfbd9e93fa030b220a4989d46ff18abff9373e0e8a",
+      "output_size": 401548,
+      "meta": {
+        "arch": "x86",
+        "baddr": 166021720,
+        "binsz": 105264,
+        "bintype": "te",
+        "bits": 32,
+        "class": "TE",
+        "endian": "BE",
+        "laddr": 0,
+        "machine": "i386",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": true,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 96192,
+          "vsize": 96174,
+          "perm": "-r-x",
+          "paddr": 176,
+          "vaddr": 176
+        },
+        {
+          "name": ".data",
+          "size": 8352,
+          "vsize": 8352,
+          "perm": "-rw-",
+          "paddr": 96368,
+          "vaddr": 96368
+        },
+        {
+          "name": ".reloc",
+          "size": 544,
+          "vsize": 536,
+          "perm": "-r--",
+          "paddr": 104720,
+          "vaddr": 104720
+        }
+      ],
+      "function_count": 117,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0xB0",
+          "size": 22
+        }
+      ],
+      "relevant_text_hits": {
+        "setup_string": 1
+      },
+      "te_endian_caveat": true
+    },
+    {
+      "name": "CbsBasePei",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0204_CbsBasePei_te.bin",
+      "input_sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "output": "evidence/firmware-audit/rizin/CbsBasePei.analysis.txt",
+      "output_sha256": "0f22db632806b7364d21d71b32c99f4d2e01a086817499d8bc2e7413f10dd548",
+      "output_size": 257160,
+      "meta": {
+        "arch": "x86",
+        "baddr": 166437004,
+        "binsz": 81520,
+        "bintype": "te",
+        "bits": 32,
+        "class": "TE",
+        "endian": "BE",
+        "laddr": 0,
+        "machine": "i386",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": true,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 80704,
+          "vsize": 80697,
+          "perm": "-r-x",
+          "paddr": 176,
+          "vaddr": 176
+        },
+        {
+          "name": ".data",
+          "size": 512,
+          "vsize": 512,
+          "perm": "-rw-",
+          "paddr": 80880,
+          "vaddr": 80880
+        },
+        {
+          "name": ".reloc",
+          "size": 128,
+          "vsize": 100,
+          "perm": "-r--",
+          "paddr": 81392,
+          "vaddr": 81392
+        }
+      ],
+      "function_count": 39,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0xB0",
+          "size": 11
+        }
+      ],
+      "relevant_text_hits": {
+        "setup_string": 1
+      },
+      "te_endian_caveat": true
+    },
+    {
+      "name": "AmdMemAm4Pei",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0191_AmdMemAm4Pei_te.bin",
+      "input_sha256": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8",
+      "output": "evidence/firmware-audit/rizin/AmdMemAm4Pei.analysis.txt",
+      "output_sha256": "2c5cac67332d8b29709e87b7f882765e8f14643ed36d6e0f8797abaddca98aa5",
+      "output_size": 54360,
+      "meta": {
+        "arch": "x86",
+        "baddr": 165912096,
+        "binsz": 5192,
+        "bintype": "te",
+        "bits": 32,
+        "class": "TE",
+        "endian": "BE",
+        "laddr": 0,
+        "machine": "i386",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": true,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 3904,
+          "vsize": 3897,
+          "perm": "-r-x",
+          "paddr": 168,
+          "vaddr": 168
+        },
+        {
+          "name": ".data",
+          "size": 1024,
+          "vsize": 1008,
+          "perm": "-rw-",
+          "paddr": 4072,
+          "vaddr": 4072
+        },
+        {
+          "name": ".reloc",
+          "size": 96,
+          "vsize": 88,
+          "perm": "-r--",
+          "paddr": 5096,
+          "vaddr": 5096
+        }
+      ],
+      "function_count": 34,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0xA8",
+          "size": 14
+        }
+      ],
+      "relevant_text_hits": {},
+      "te_endian_caveat": true
+    },
+    {
+      "name": "SecurityCore",
+      "input": "evidence/firmware-audit/dump-2-extract/modules/0233_1BA0062E-C779-4582-8566-336AE8F78F09_te.bin",
+      "input_sha256": "93ea4e943d9d8feeb92e5000ffc9185028cb38e19576a41fa3de674bd788bc3b",
+      "output": "evidence/firmware-audit/rizin/SecurityCore.analysis.txt",
+      "output_sha256": "78449f4d3ba47cde3d2e5f69cd8c0bc99b9e2d19dccfc85db343f34d996e2854",
+      "output_size": 27263,
+      "meta": {
+        "arch": "x86",
+        "baddr": 167766392,
+        "binsz": 5296,
+        "bintype": "te",
+        "bits": 32,
+        "class": "TE",
+        "endian": "BE",
+        "laddr": 0,
+        "machine": "i386",
+        "maxopsz": 16,
+        "minopsz": 1,
+        "os": "efi",
+        "pcalign": 1,
+        "subsys": "EFI Boot Service Driver",
+        "stripped": true,
+        "havecode": true,
+        "va": true,
+        "static": true,
+        "linenum": false,
+        "lsyms": false,
+        "canary": false,
+        "pie": false,
+        "relrocs": false,
+        "nx": false
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": 1536,
+          "vsize": 1519,
+          "perm": "-r-x",
+          "paddr": 208,
+          "vaddr": 208
+        },
+        {
+          "name": "STARTUP",
+          "size": 3328,
+          "vsize": 3301,
+          "perm": "-r-x",
+          "paddr": 1744,
+          "vaddr": 1744
+        },
+        {
+          "name": ".data",
+          "size": 224,
+          "vsize": 200,
+          "perm": "-rw-",
+          "paddr": 5072,
+          "vaddr": 5072
+        },
+        {
+          "name": ".reloc",
+          "size": 0,
+          "vsize": 0,
+          "perm": "-r--",
+          "paddr": 5296,
+          "vaddr": 5296
+        }
+      ],
+      "function_count": 11,
+      "entrypoints": [
+        {
+          "name": "entry0",
+          "offset": "0x6D0",
+          "size": 2391
+        }
+      ],
+      "relevant_text_hits": {},
+      "te_endian_caveat": true
+    }
+  ],
+  "evidence_class": "static-analysis",
+  "caveats": [
+    "Relevant-text hits are triage indicators, not semantic proof.",
+    "Rizin labels TE inputs endian=BE in metadata; TE semantics need independent check.",
+    "Full raw reports remain in the per-module .analysis.txt files."
+  ]
+}

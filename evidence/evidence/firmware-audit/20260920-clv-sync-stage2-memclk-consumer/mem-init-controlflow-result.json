@@ -1,0 +1,365 @@
+{
+  "amd_mem_am4_pei": {
+    "checksum_helpers": [
+      "0xbc9",
+      "0xbe2"
+    ],
+    "entry": "0x240 -> call 0x876 -> jmp 0x2f6",
+    "handoff_checks": [
+      "0x424f5041 (APOB)",
+      "0x50535024 ($PSP)",
+      "0x44484224 ($BHD)"
+    ],
+    "helper_0x876": {
+      "calls": [
+        "0xdde",
+        "0x5f1",
+        "0xb09",
+        "0xcd9"
+      ],
+      "service_argument_literals": [
+        "0x9e3b14c",
+        "0x80000000",
+        "0x61",
+        "0xff"
+      ]
+    },
+    "main_protocol_method_offsets": [
+      "+0x4c",
+      "+0x18"
+    ]
+  },
+  "checks": {
+    "failed": 0,
+    "passed": 27,
+    "total": 27
+  },
+  "checks_detail": [
+    {
+      "details": {
+        "expected": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8",
+        "observed": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdMemAm4Pei-1ef4e7b94467.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "6a1ab7fe72ad3ee0e8f9238e2ba2d166c97e44812761e6d16a725525e1817085",
+        "observed": "6a1ab7fe72ad3ee0e8f9238e2ba2d166c97e44812761e6d16a725525e1817085"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/PlatformMemoryConfigurationPei-6a1ab7fe72ad.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes": "33c0",
+        "mnemonic": "xor",
+        "operands": "eax,eax",
+        "rva": 480
+      },
+      "label": "PlatformMemoryConfigurationPei-byte:0x1e0",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes": "c3",
+        "mnemonic": "ret",
+        "operands": "",
+        "rva": 482
+      },
+      "label": "PlatformMemoryConfigurationPei-byte:0x1e2",
+      "status": "PASS"
+    },
+    {
+      "details": 17,
+      "label": "PlatformMemoryConfigurationPei-instruction-count",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "PlatformMemoryConfigurationPei-no-calls",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "e831060000",
+        "observed": {
+          "bytes": "e831060000",
+          "mnemonic": "call",
+          "operands": "0x876",
+          "rva": 576
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x240",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8b442408",
+        "observed": {
+          "bytes": "8b442408",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esp+0x8]",
+          "rva": 581
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x245",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "e9a8000000",
+        "observed": {
+          "bytes": "e9a8000000",
+          "mnemonic": "jmp",
+          "operands": "0x2f6",
+          "rva": 585
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x249",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "55",
+        "observed": {
+          "bytes": "55",
+          "mnemonic": "push",
+          "operands": "ebp",
+          "rva": 2166
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x876",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "e857050000",
+        "observed": {
+          "bytes": "e857050000",
+          "mnemonic": "call",
+          "operands": "0xdde",
+          "rva": 2178
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x882",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "e859fdffff",
+        "observed": {
+          "bytes": "e859fdffff",
+          "mnemonic": "call",
+          "operands": "0x5f1",
+          "rva": 2195
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x893",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "684cb1e309",
+        "observed": {
+          "bytes": "684cb1e309",
+          "mnemonic": "push",
+          "operands": "0x9e3b14c",
+          "rva": 2208
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x8a0",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "56",
+        "observed": {
+          "bytes": "56",
+          "mnemonic": "push",
+          "operands": "esi",
+          "rva": 2221
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x8ad",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "e856020000",
+        "observed": {
+          "bytes": "e856020000",
+          "mnemonic": "call",
+          "operands": "0xb09",
+          "rva": 2222
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x8ae",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "68ff000000",
+        "observed": {
+          "bytes": "68ff000000",
+          "mnemonic": "push",
+          "operands": "0xff",
+          "rva": 2250
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x8ca",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "6a61",
+        "observed": {
+          "bytes": "6a61",
+          "mnemonic": "push",
+          "operands": "0x61",
+          "rva": 2255
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x8cf",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "e803040000",
+        "observed": {
+          "bytes": "e803040000",
+          "mnemonic": "call",
+          "operands": "0xcd9",
+          "rva": 2257
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x8d1",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "813b41504f42",
+        "observed": {
+          "bytes": "813b41504f42",
+          "mnemonic": "cmp",
+          "operands": "DWORD PTR [ebx],0x424f5041",
+          "rva": 2300
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x8fc",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "813e24505350",
+        "observed": {
+          "bytes": "813e24505350",
+          "mnemonic": "cmp",
+          "operands": "DWORD PTR [esi],0x50535024",
+          "rva": 3187
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0xc73",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "813f24424844",
+        "observed": {
+          "bytes": "813f24424844",
+          "mnemonic": "cmp",
+          "operands": "DWORD PTR [edi],0x44484224",
+          "rva": 3222
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0xc96",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "e836ffffff",
+        "observed": {
+          "bytes": "e836ffffff",
+          "mnemonic": "call",
+          "operands": "0xbc9",
+          "rva": 3214
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0xc8e",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "e839ffffff",
+        "observed": {
+          "bytes": "e839ffffff",
+          "mnemonic": "call",
+          "operands": "0xbe2",
+          "rva": 3236
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0xca4",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "55",
+        "observed": {
+          "bytes": "55",
+          "mnemonic": "push",
+          "operands": "ebp",
+          "rva": 758
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x2f6",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ff504c",
+        "observed": {
+          "bytes": "ff504c",
+          "mnemonic": "call",
+          "operands": "DWORD PTR [eax+0x4c]",
+          "rva": 790
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x316",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ff504c",
+        "observed": {
+          "bytes": "ff504c",
+          "mnemonic": "call",
+          "operands": "DWORD PTR [eax+0x4c]",
+          "rva": 938
+        }
+      },
+      "label": "AmdMemAm4Pei-byte:0x3aa",
+      "status": "PASS"
+    }
+  ],
+  "conclusion": "AmdMemAm4Pei is a PSP/APOB/BHD validation and protocol handoff wrapper; PlatformMemoryConfigurationPei is a zero-return stub. Neither exposes a direct MemoryClockSpeed enum/training write. The missing edge is the opaque service/AGESA/PSP memory-init consumer reached through AmdMem protocol methods and/or APOB structures.",
+  "limitations": [
+    "No service GUID names recovered from this bounded window; literals are preserved exactly.",
+    "No exact clv Setup+0x316-to-APOB field edge proven.",
+    "No firmware execution, memory training, hardware, clock, voltage, or settings action."
+  ],
+  "platform_memory_configuration": {
+    "entry_rva": "0x1e0 / instruction RVA 0x1e0?",
+    "observed": "xor eax,eax; ret; no calls",
+    "role": "zero-return stub"
+  },
+  "status": "PASS"
+}

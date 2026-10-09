@@ -1,0 +1,10 @@
+S2 C2P preflight 2026-09-12, board BC250-01, kernel 7.2.0-1.92-cachyos-vcn-bc250,
+cmdline: mode2 + modprobe.blacklist=amdgpu, amdgpu not loaded. BAR5 = sysfs resource5, 0x80000 bytes.
+Read-only reads (no writes):
+C2PMSG_35 0x5818C = 0xFFFFFFFF
+C2PMSG_36 0x58190 = 0xFFFFFFFF
+C2PMSG_37 0x58194 = 0x00000000
+C2PMSG_64 0x58200 = 0x80000000  (bit31 set: TOS ready)
+C2PMSG_67 0x5820C = 0x00000000
+C2PMSG_81 0x58244 = 0x002AF518  (non-degenerate value; bit31 clear)
+Interpretation: MP0/C2P window responds (reads do not hang); TOS-ready bit set per recipe.

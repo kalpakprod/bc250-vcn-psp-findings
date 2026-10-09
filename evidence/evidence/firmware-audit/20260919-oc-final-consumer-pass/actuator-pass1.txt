@@ -1,0 +1,56 @@
+PASS: entire loaded program memory equals clv-matching robin-5 body, bytes=262400
+===== 00030070 FUN_00030070 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00030070(void)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  
+  iVar1 = _DAT_000170a4;
+  memw();
+  iVar4 = *(int *)(_DAT_000170a4 + 0x3f0);
+  func_0x0002f6f4();
+  func_0x0002fd24();
+  iVar2 = _DAT_00017aa8;
+  *(undefined4 *)(_DAT_00017aa8 + 0x94) = *(undefined4 *)(_DAT_00017aa8 + 0x88);
+  memw();
+  iVar3 = *(int *)(iVar1 + 0x3f0);
+  *(int *)(iVar2 + 0x254) = iVar3 - iVar4;
+  func_0x0002fed4();
+  memw();
+  iVar4 = *(int *)(iVar1 + 0x3f0);
+  *(int *)(iVar2 + 600) = iVar4 - iVar3;
+  memw();
+  *(int *)(iVar2 + 0x25c) = *(int *)(iVar1 + 0x3f0) - iVar4;
+  return;
+}
+
+
+00030070 364100 entry a1,0x20
+00030073 210c9c l32r a2,0x000170a4
+00030076 c02000 memw
+00030079 4222fc l32i a4,a2,0x3f0
+0003007c 6567ff call8 0x0002f6f4
+0003007f 65caff call8 0x0002fd24
+00030082 51899e l32r a5,0x00017aa8
+00030085 030522 lsi f0,a5,0x88
+00030088 034525 ssi f0,a5,0x94
+0003008b c02000 memw
+0003008e 3222fc l32i a3,a2,0x3f0
+00030091 4083c0 sub a8,a3,a4
+00030094 826595 s32i a8,a5,0x254
+00030097 e5e3ff call8 0x0002fed4
+0003009a c02000 memw
+0003009d a222fc l32i a10,a2,0x3f0
+000300a0 30bac0 sub a11,a10,a3
+000300a3 b26596 s32i a11,a5,0x258
+000300a6 c02000 memw
+000300a9 9222fc l32i a9,a2,0x3f0
+000300ac a099c0 sub a9,a9,a10
+000300af 926597 s32i a9,a5,0x25c
+000300b2 1df0 retw.n

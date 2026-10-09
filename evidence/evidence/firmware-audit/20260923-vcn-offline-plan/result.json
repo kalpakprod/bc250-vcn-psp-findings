@@ -1,0 +1,145 @@
+{
+  "classification": "offline source execution with mock transport + byte checks, NOT hardware",
+  "p1": {
+    "addresses": [
+      {
+        "name": "UVD_VERSION",
+        "segment_index": 1,
+        "offset": "0x5c9",
+        "dword_index": "0x83c9",
+        "mmio_byte_offset": "0x20f24"
+      },
+      {
+        "name": "UVD_POWER_STATUS",
+        "segment_index": 1,
+        "offset": "0x4",
+        "dword_index": "0x7e04",
+        "mmio_byte_offset": "0x1f810"
+      },
+      {
+        "name": "UVD_CGC_CTRL",
+        "segment_index": 1,
+        "offset": "0x1ec",
+        "dword_index": "0x7fec",
+        "mmio_byte_offset": "0x1ffb0"
+      }
+    ],
+    "pci_mock": [
+      {
+        "input": "0x20f24",
+        "calls": [
+          [
+            "pwrite",
+            123,
+            "240f0200",
+            "0xb8"
+          ],
+          [
+            "pread",
+            123,
+            4,
+            "0xbc"
+          ]
+        ]
+      },
+      {
+        "input": "0x7fec",
+        "calls": [
+          [
+            "pwrite",
+            123,
+            "ec7f0000",
+            "0xb8"
+          ],
+          [
+            "pread",
+            123,
+            4,
+            "0xbc"
+          ]
+        ]
+      },
+      {
+        "input": "0x2402c00",
+        "calls": [
+          [
+            "pwrite",
+            123,
+            "002c4002",
+            "0xb8"
+          ],
+          [
+            "pread",
+            123,
+            4,
+            "0xbc"
+          ]
+        ]
+      },
+      {
+        "input": "0x2403000",
+        "calls": [
+          [
+            "pwrite",
+            123,
+            "00304002",
+            "0xb8"
+          ],
+          [
+            "pread",
+            123,
+            4,
+            "0xbc"
+          ]
+        ]
+      }
+    ],
+    "smn_mmio_alias": "UNPROVEN",
+    "gc_control": "0x02402c00 is a retained fabric slice anchor, not established mirror of a named GC MMIO register",
+    "0x7fec": "dword index of CGC_CTRL with supplied base, NOT its MMIO byte offset",
+    "0x3e810_write_already_recorded": {
+      "n": 1,
+      "g": "0x210",
+      "a": "0x0003e810",
+      "v": "0x00000006"
+    },
+    "historical_readback_0x3e810": "not present, only C234 commit readback"
+  },
+  "p2": {
+    "gate_zero_branch_body_target": "0x12208",
+    "gate_pointer_literals_body": [
+      "0x9088",
+      "0xcdc8",
+      "0xe864",
+      "0xe9e8",
+      "0x1220c"
+    ],
+    "permitted_alternative_request_path": "NOT ESTABLISHED in bounded check",
+    "warning": "nonzero gate also requires +0x10/+0x14 fields, not just flag; producer and service semantics unresolved"
+  },
+  "p3": {
+    "old_literals": {
+      "0x1711c": "0xfffff",
+      "0x1713c": "0xfffe00",
+      "0x17390": "0x150b0"
+    },
+    "clv_same_offset_literals": {
+      "0x1711c": "0x7b5c",
+      "0x1713c": "0x3030008",
+      "0x17390": "0x80090"
+    },
+    "tables_equal": true,
+    "exact_old_function_occurrences_in_clv": 0,
+    "old_function_local_store_example": "0x0100c230 <- 0",
+    "clv_function_identity": "UNRESOLVED; old 1dd74 disassembly cannot be transferred by address"
+  },
+  "sources": {
+    "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/upstream/daveconde-bc250-vcn-enable/enable_vcn.py": "8abc1761f7890393a058750ff353fd6e50c95e468e046c2c8f22566c9d8c7c9f",
+    "/home/OWNER/orca/projects/projector/firmware-analysis/forum-1117702-2026-09-20/runs/kernel_patch_research_20260920T193000Z/linux-v5.10/drivers/gpu/drm/amd/include/asic_reg/vcn/vcn_2_0_0_offset.h": "026dabdbf0f2b731db71cd99a4f617f347589a61d8015afe29abb82f94ad5eb7",
+    "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/upstream/bc250-smu-unlock/bc250_smu/transport.py": "3aa955bb45fe8ed7680c8ffea3ce73c4bd2118785b95ed83b16e50e068a353ce",
+    "/home/OWNER/orca/projects/bc250/evidence/runtime/20260914-board-retrieval/stage2b_writefirst_20260912_052757.json": "f4eedfb5d287576b75941f4cd6215b54f669a778ea9f50a8174a48c028056553",
+    "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin3_psp_bodies/SMU_OFFCHIP_FW~0x8_0.58.6.0.body": "5c805026581ace101ba43ef4d0f6b34354f4a61461a1c78d2fa6a335a53d9936",
+    "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37"
+  }
+}

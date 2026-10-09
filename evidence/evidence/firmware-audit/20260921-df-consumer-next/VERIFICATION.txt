@@ -1,0 +1,30 @@
+DF consumer handoff verification — 2026-09-21
+
+TARGET
+  /home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin
+  size=16777216
+  sha256=ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8
+
+COMMAND
+  python3 -B evidence/firmware-audit/20260921-df-consumer-next/verify_df_consumer_trace.py
+
+FINAL OBSERVED RESULT
+  stdout: {"status":"PASS","checks_passed":34,"checks_failed":0,"memory_request":"AmdSetup+0x316=0x24 (1800MHz label), preserved","df_serializer":"AmdSetup+0x703 u8->$INV 0x1373; +0x704 u16 LE->$INV 0x1374","fclk_path":"ABL1 0x463C -> descriptors 0x015F/0x0160 -> reader 0x1FB4 -> output [R5]","help_text_enforcement":"NOT_OBSERVED_IN_CHECKED_PATHS; GLOBAL_ENFORCEMENT_UNRESOLVED","first_unresolved":"token 0x1373/0x1374 receiver-to-ABL1 FCLK-key join; ABL1 helper/provider request data origin"}
+  exit_status=0
+  stderr=empty
+
+INITIAL CORRECTED-TEST ERROR (PRESERVED IN ACTION LOG)
+  exit_status=1 after 31 checks; verifier expected context CMP address 0x1080A, but the observed exact listing places cmp.w r0,#0x4B0 at 0x107F2. This was a verifier expectation error; no input bytes changed. Corrected rerun passed 34/34.
+
+STATIC EDGES
+  CbsBasePei 0xE706 -> INV 0x1373; 0xE726 reads Setup+0x703; 0xE738 -> INV 0x1374; 0xE75B reads Setup+0x704; 0xE762 copies u16.
+  AmdNbioSmuV10Pei mirrors at 0x10786/0x107A6 and 0x107B8/0x107DB.
+  AmdFabricAriPei 0x11C98 emits 0x1374; 0x11CBB reads Setup+0x704.
+  ABL1 0x463C selector R1==0x0F -> descriptor 0x015F/0x0160 -> 0x1FB4 -> output [R5] at 0x4682.
+  No checked FCLK>UCLK or Memory-P-state comparison; HII string/range remain metadata.
+
+BOUNDARY
+  First unresolved instruction boundary is the post-serializer receiver/provider that would join INV 0x1373/0x1374 to ABL1 FCLK keys 0x015F/0x0160. No conversion, physical limit, runtime invocation, divider/PLL actuation, synchronization or hardware behavior is proved.
+
+NO ACTION
+  No firmware, ROM, NVRAM, register, hardware, network, installation or candidate change.

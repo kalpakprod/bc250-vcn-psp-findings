@@ -1,0 +1,211 @@
+{
+  "actual_kind0_decode": {
+    "R1_at_0x9c28": "R4; raw-kind0 path 0x000007C0 unless context merge changes kind dispatch",
+    "R4_before_context_kind_dispatch": "0x000007C0",
+    "branch": "0x9B72 BHS -> 0x9BE0; 0x9BE6 compare 0x6CA vs 0x671; 0x9BEA extracts descriptor low12; 0x9BF0 ORS into R4; raw kind 0 -> 0x9C16 log -> 0x9C22 read",
+    "context40_rewrite_mask": "0xFFFF8000",
+    "svc4_encoding": "page=(R1>>12)<<12; offset=R1&0xFFF; raw-kind0 example page=0, offset=0x7C0"
+  },
+  "boundary": "Context+0x40 may rewrite high descriptor bits and switch to kind1..4 branches; active HEAP/fallback and runtime context value remain unresolved.",
+  "checks": 38,
+  "checks_detail": [
+    {
+      "detail": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "payload_hash",
+      "ok": true
+    },
+    {
+      "detail": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "name": "listing_hash",
+      "ok": true
+    },
+    {
+      "detail": "31e2c2952d6d4074ddaf52fea5bed68f7656ec6a0867e225e06aab7b432f6a5c",
+      "name": "prior_join_hash",
+      "ok": true
+    },
+    {
+      "detail": "reused prior 61/61",
+      "name": "prior_join_pass",
+      "ok": true
+    },
+    {
+      "detail": "0xC47C=0x006CA7C0",
+      "name": "fallback_slot_literal",
+      "ok": true
+    },
+    {
+      "detail": "0xCF40=0x006F47C0",
+      "name": "fallback_descriptor_literal",
+      "ok": true
+    },
+    {
+      "detail": "first_slot>>12=0x6CA",
+      "name": "nested_index",
+      "ok": true
+    },
+    {
+      "detail": "0x9B6A ldr\tr0, [sp, #0x28]",
+      "name": "nested_index_source",
+      "ok": true
+    },
+    {
+      "detail": "0x9B70 str\tr0, [sp, #0x2c]",
+      "name": "local_2c_store",
+      "ok": true
+    },
+    {
+      "detail": "0x9B72 cmp\tr0, #0x1e",
+      "name": "local_2c_compare",
+      "ok": true
+    },
+    {
+      "detail": "0x9B74 bhs\t0x9be0",
+      "name": "local_2c_kind_path",
+      "ok": true
+    },
+    {
+      "detail": "0x9BE0 ldr\tr0, [sp, #0x28]",
+      "name": "raw_nested_index_reload",
+      "ok": true
+    },
+    {
+      "detail": "0x9BE2 movw\tr1, #0x671",
+      "name": "nested_index_threshold",
+      "ok": true
+    },
+    {
+      "detail": "0x9BE6 cmp\tr0, r1",
+      "name": "nested_index_threshold_compare",
+      "ok": true
+    },
+    {
+      "detail": "0x9BE8 bls\t0x9cea",
+      "name": "nested_index_low_fallback_branch",
+      "ok": true
+    },
+    {
+      "detail": "0x9BEA ubfx\tr0, r6, #0x0, #0xc",
+      "name": "descriptor_low12_extract",
+      "ok": true
+    },
+    {
+      "detail": "0x9BF0 orrs\tr4, r0",
+      "name": "R4_low12_construction",
+      "ok": true
+    },
+    {
+      "detail": "0x6CA-0x653=0x77; BHS 0x1E",
+      "name": "local_2c_value",
+      "ok": true
+    },
+    {
+      "detail": "0x6CA > 0x671; BLS not taken, reaches 0x9BEA",
+      "name": "threshold_branch",
+      "ok": true
+    },
+    {
+      "detail": "raw kind=0",
+      "name": "raw_kind_zero",
+      "ok": true
+    },
+    {
+      "detail": "raw bit30=0",
+      "name": "raw_bit30_zero",
+      "ok": true
+    },
+    {
+      "detail": "R4=descriptor&0xFFF=0x7C0 before kind dispatch",
+      "name": "r4_kind0_value",
+      "ok": true
+    },
+    {
+      "detail": "0x9B82 ldr\tr0, [r5, #0x40]",
+      "name": "context40_read",
+      "ok": true
+    },
+    {
+      "detail": "0x9B88 bfi\tr6, r1, #15, #5",
+      "name": "context40_bits15_19",
+      "ok": true
+    },
+    {
+      "detail": "0x9B92 bfi\tr6, r1, #20, #8",
+      "name": "context40_bits20_27",
+      "ok": true
+    },
+    {
+      "detail": "0x9B98 bfi\tr6, r0, #28, #4",
+      "name": "context40_bits28_31",
+      "ok": true
+    },
+    {
+      "detail": "0x9C00 ubfx\tr0, r6, #0x1b, #0x3",
+      "name": "kind_dispatch_extract",
+      "ok": true
+    },
+    {
+      "detail": "0x9C16 ldr\tr0, [pc, #0x25c]",
+      "name": "kind0_invalid_log_path",
+      "ok": true
+    },
+    {
+      "detail": "0x9C1E b\t0x9c22",
+      "name": "kind0_to_mapped_read",
+      "ok": true
+    },
+    {
+      "detail": "0x9C28 mov\tr1, r4",
+      "name": "kind0_R1_R4",
+      "ok": true
+    },
+    {
+      "detail": "0x9C2A bl\t0x6da4",
+      "name": "kind0_mapped_read",
+      "ok": true
+    },
+    {
+      "detail": "context+0x40 replaces descriptor mask 0xFFFF8000; low15 bits including low12 preserved",
+      "name": "context40_merge_mask",
+      "ok": true
+    },
+    {
+      "detail": "kind0 branch R1=0x000007C0 before any alternative kind branch",
+      "name": "kind0_R1_encoded",
+      "ok": true
+    },
+    {
+      "detail": "0x6DCC lsrs\tr0, r6, #0xc",
+      "name": "svc4_read_high_split",
+      "ok": true
+    },
+    {
+      "detail": "0x6DCE ubfx\tr4, r6, #0x0, #0xc",
+      "name": "svc4_read_low12_split",
+      "ok": true
+    },
+    {
+      "detail": "0x6DD2 lsls\tr0, r0, #0xc",
+      "name": "svc4_read_page_align",
+      "ok": true
+    },
+    {
+      "detail": "0x6DD4 svc\t#0x4",
+      "name": "svc4_read",
+      "ok": true
+    },
+    {
+      "detail": "encoded R1=0x7C0 -> SVC page=0, offset=0x7C0",
+      "name": "kind0_page_offset",
+      "ok": true
+    }
+  ],
+  "correction": "Earlier wording that raw kind0 leaves R4 zero was wrong: exact bytes at 0x9BEA/0x9BF0 set R4 to descriptor low12 0x7C0 before 0x9C00 kind dispatch. No physical map claim.",
+  "fallback_values": {
+    "descriptor": "0x006F47C0",
+    "nested_index": "0x6CA",
+    "table_0x61e": "0x006CA7C0"
+  },
+  "passed": 38,
+  "status": "PASS"
+}

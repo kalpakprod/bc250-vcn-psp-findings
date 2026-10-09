@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-09-19T13:11:18.254667+00:00",
+  "python": "3.14.7 (main, Aug 13 2026, 07:40:04) [GCC 16.2.1 20260810]",
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_altered_source_rejected (test_clv_oc_builder.ClvBuilderTests.test_altered_source_rejected) ... ok\ntest_exact_delta_and_source_preserved (test_clv_oc_builder.ClvBuilderTests.test_exact_delta_and_source_preserved) ... ok\ntest_existing_manifest_preserved (test_clv_oc_builder.ClvBuilderTests.test_existing_manifest_preserved) ... ok\ntest_existing_output_preserved (test_clv_oc_builder.ClvBuilderTests.test_existing_output_preserved) ... ok\ntest_in_place_rejected (test_clv_oc_builder.ClvBuilderTests.test_in_place_rejected) ... ok\ntest_missing_record_and_truncation_rejected (test_clv_oc_builder.ClvBuilderTests.test_missing_record_and_truncation_rejected) ... ok\ntest_unsupported_voltage_sync_and_frequency_rejected (test_clv_oc_builder.ClvBuilderTests.test_unsupported_voltage_sync_and_frequency_rejected) ... ok\ntest_invalid_size_is_reported (test_nvar_audit.NvarAuditTests.test_invalid_size_is_reported) ... ok\ntest_parse_name_body_and_little_endian_fields (test_nvar_audit.NvarAuditTests.test_parse_name_body_and_little_endian_fields) ... ok\ntest_security_name_is_redacted (test_nvar_audit.NvarAuditTests.test_security_name_is_redacted) ... ok\ntest_truncated_record_is_reported (test_nvar_audit.NvarAuditTests.test_truncated_record_is_reported) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 2.372s\n\nOK\n",
+  "hashes": {
+    "scripts/build_clv_oc_candidate.py": "a71b07d19315b48ed136fb3883502d32b3dcbc3bd54d35d9bb43c0718e447ba2",
+    "tests/test_clv_oc_builder.py": "6f42c94e5300ae273b462eccafb5fb2eef5c17f01b52b00850b753e9b0fa08ac",
+    "tests/test_nvar_audit.py": "689020cc061c9e99c81b24a96fb8abf768d25973a05ec2e7cd2ddbb79bb7a78f",
+    "candidates/BC250_5.00_clv_DF1400_REQUEST_ONLY_v003.bin": "4811e1bdc95fa96a74fc7d6e688d6d44aa2cc306c52803c89c635d81917df841",
+    "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+  }
+}

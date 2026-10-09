@@ -1,0 +1,29 @@
+[
+  {
+    "command": [
+      "cc",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "/home/OWNER/orca/projects/bc250/reports/waveshare-implementation-20260930/host-tests/network-mocks",
+      "-I",
+      "candidates/waveshare-adapter-safe-v001/src",
+      "/home/OWNER/orca/projects/bc250/reports/waveshare-implementation-20260930/host-tests/network_test.c",
+      "-o",
+      "/home/OWNER/orca/projects/bc250/reports/waveshare-implementation-20260930/host-tests/network_test"
+    ],
+    "stdout": "",
+    "stderr": "",
+    "exit_status": 0
+  },
+  {
+    "command": [
+      "/home/OWNER/orca/projects/bc250/reports/waveshare-implementation-20260930/host-tests/network_test"
+    ],
+    "stdout": "Exact embedded HTTP source: auth, fixed routes, copied response, abort return, no flash: PASS\n",
+    "stderr": "",
+    "exit_status": 0
+  }
+]

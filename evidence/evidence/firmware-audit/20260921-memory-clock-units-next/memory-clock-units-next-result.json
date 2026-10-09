@@ -1,0 +1,293 @@
+{
+  "status": "PASS",
+  "checks": 38,
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "input": {
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "size": 16777216,
+    "abl1_payload": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "payload_size": 94624
+  },
+  "reused_verifier": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-memory-clock-units-next/prior_producer_input_verify.py",
+    "status": "PASS",
+    "checks": 65
+  },
+  "enum_to_policy": {
+    "field": "AmdSetup+0x316; IFR QID 0x20F",
+    "stored_enum": "0x24",
+    "IFR_label": "1800MHz",
+    "ABL_lookup": "token 7 / timepoint 2 in existing ABL1 selector path; direct source identity with AmdSetup/$INV is not proven",
+    "TBB_target": "0x2318",
+    "emitted_literal": "0x708",
+    "decimal_policy_value": 1800,
+    "unit_evidence": "Exact ABL1 strings name MemClkFreq and memory-clock values in MHz; this is a MHz-tagged policy integer, not proof of physical clock or GDDR6 data rate.",
+    "string_offsets": {
+      "MemClkFreq = %d MHz": [
+        "0x87dd"
+      ],
+      "Read Memory Clock Speed     :  %04d MHz": [
+        "0x7ab0"
+      ],
+      "Override Memory Clock Speed: %04dMHz": [
+        "0x25f5"
+      ],
+      "Program DRAM timing per memory clock": [
+        "0x87f5"
+      ],
+      "Highest Common MemClkFreq for all channels: %d": [
+        "0x1103b"
+      ]
+    }
+  },
+  "memory_policy_path": {
+    "caller": "0x7DAE -> 0x221C with same context r4 and selector 2",
+    "table": "0x228A + 2*(enum-2); enum 0x24 selects 0x2318 -> MOVW r0,#0x708",
+    "config_context": "0x22BA stores numeric result to [r4+0x04]+0x2C; mode 2 is stored at 0x2332",
+    "speed_writer": "0x7E00 -> 0xAD58; in branch mode==2, 0xADF8 loads context+0x2C; 0xAE22 writes selected halfword to channel+0x20",
+    "reducer": "0x7E30 -> 0x10CC0; 0x10E50 writes reduced halfword to channel+0x20",
+    "next_call": "0x7E34..0x7E3A passes ABL item 0x17 and context r4 to 0x0C60"
+  },
+  "first_missing_consumer_boundary": "ABL service item 0x17 called at payload 0x7E3A into 0x0C60. This track stops at the service boundary; the provider/consumer is unresolved and is owned by the separate APOB/ABL handoff track.",
+  "limits": [
+    "No direct AmdSetup+0x316/$INV 0x11ED -> ABL token-7 input edge is established.",
+    "No PLL/register conversion, physical MCLK, GDDR6 edge/data-rate conversion, WCK, synchronous crossing, training acceptance or hardware result is established.",
+    "No UCLK divider or DF override consumer was followed.",
+    "No board, firmware execution, candidate, NVRAM, MMIO or hardware operation occurred."
+  ],
+  "checks_detail": [
+    {
+      "name": "pinned ROM hash",
+      "status": "PASS",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "name": "exact ABL1 payload hash",
+      "status": "PASS",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "name": "exact ABL1 payload length",
+      "status": "PASS",
+      "got": 94624,
+      "expected": 94624
+    },
+    {
+      "name": "Thumb listing hash",
+      "status": "PASS",
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    {
+      "name": "exact IFR report hash",
+      "status": "PASS",
+      "got": "6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a",
+      "expected": "6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a"
+    },
+    {
+      "name": "IFR report ROM identity",
+      "status": "PASS",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "name": "IFR field offset",
+      "status": "PASS",
+      "got": "0x316",
+      "expected": "0x316"
+    },
+    {
+      "name": "IFR field label",
+      "status": "PASS",
+      "got": "Memory Clock Speed",
+      "expected": "Memory Clock Speed"
+    },
+    {
+      "name": "IFR enum 0x24 label",
+      "status": "PASS",
+      "got": "1800MHz",
+      "expected": "1800MHz"
+    },
+    {
+      "name": "current stored byte at ROM 0x7E5",
+      "status": "PASS",
+      "got": 36,
+      "expected": 36
+    },
+    {
+      "name": "reused producer verifier exit",
+      "status": "PASS",
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "name": "reused producer verifier status",
+      "status": "PASS",
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "name": "reused producer verifier check count",
+      "status": "PASS",
+      "got": 65,
+      "expected": 65
+    },
+    {
+      "name": "selector token source",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "selector call",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "TBB branch-table instruction",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "TBB enum-0x24 target",
+      "status": "PASS",
+      "got": 8984,
+      "expected": 8984
+    },
+    {
+      "name": "TBB selected MOVW",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "MOVW emitted policy integer",
+      "status": "PASS",
+      "got": 1800,
+      "expected": 1800
+    },
+    {
+      "name": "policy value store into context+0x2C",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "selector mode literal",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "selector mode store",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "instruction semantics at 0x7dae",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "instruction semantics at 0x7e00",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "instruction semantics at 0xadcc",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "instruction semantics at 0xadd0",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "instruction semantics at 0xadf8",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "instruction semantics at 0xae22",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "instruction semantics at 0x7e30",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "instruction semantics at 0x10e50",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "post-reducer service item",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "post-reducer service context",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "first unresolved service call",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "exact policy-unit string MemClkFreq = %d MHz",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "exact policy-unit string Read Memory Clock Speed     :  %04d MHz",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "exact policy-unit string Override Memory Clock Speed: %04dMHz",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "exact policy-unit string Program DRAM timing per memory clock",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "exact policy-unit string Highest Common MemClkFreq for all channels: %d",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    }
+  ]
+}

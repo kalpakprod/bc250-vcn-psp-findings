@@ -1,0 +1,129 @@
+{
+  "patch": {
+    "offset": "0x5F32",
+    "old": "0x54",
+    "new": "0x04",
+    "instruction": "LSR.W R8,R4,#1 -> LSL.W R8,R4,#0 == MOV.W R8,R4 (imm2 01->00, type 01->00)",
+    "original_abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "patched_abl1_sha256": "144416a0dc4660b2c5973b59ae448843229bc5553d54648802602e663a6d0a66",
+    "diff": [
+      "0x5F32"
+    ]
+  },
+  "apcb": "candidates/BC250_5.00_clv_FCLK1800_APCB_v001.bin[0xAB1000:0xAB1B9C]",
+  "cases": [
+    {
+      "case": "control_unpatched",
+      "input_word": 1800,
+      "abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": {
+        "fclk": 1800,
+        "uclk": 900
+      },
+      "external_calls": [
+        351,
+        352
+      ],
+      "svc": [
+        {
+          "selector": 14,
+          "argument": 1800
+        },
+        {
+          "selector": 15,
+          "argument": 900
+        }
+      ],
+      "instruction_count": 44909,
+      "context_78": 1800,
+      "status": "PASS_BOUNDED_EMULATION",
+      "svc_pairs": [
+        [
+          14,
+          1800
+        ],
+        [
+          15,
+          900
+        ]
+      ]
+    },
+    {
+      "case": "uclk_patch",
+      "input_word": 1800,
+      "abl1_sha256": "144416a0dc4660b2c5973b59ae448843229bc5553d54648802602e663a6d0a66",
+      "expected": {
+        "fclk": 1800,
+        "uclk": 1800
+      },
+      "external_calls": [
+        351,
+        352
+      ],
+      "svc": [
+        {
+          "selector": 14,
+          "argument": 1800
+        },
+        {
+          "selector": 15,
+          "argument": 1800
+        }
+      ],
+      "instruction_count": 44909,
+      "context_78": 1800,
+      "status": "PASS_BOUNDED_EMULATION",
+      "svc_pairs": [
+        [
+          14,
+          1800
+        ],
+        [
+          15,
+          1800
+        ]
+      ]
+    },
+    {
+      "case": "uclk_patch_input1750",
+      "input_word": 1750,
+      "abl1_sha256": "144416a0dc4660b2c5973b59ae448843229bc5553d54648802602e663a6d0a66",
+      "expected": {
+        "fclk": 1800,
+        "uclk": 1750
+      },
+      "external_calls": [
+        351,
+        352
+      ],
+      "svc": [
+        {
+          "selector": 14,
+          "argument": 1800
+        },
+        {
+          "selector": 15,
+          "argument": 1750
+        }
+      ],
+      "instruction_count": 44828,
+      "context_78": 1800,
+      "status": "PASS_BOUNDED_EMULATION",
+      "svc_pairs": [
+        [
+          14,
+          1800
+        ],
+        [
+          15,
+          1750
+        ]
+      ]
+    }
+  ],
+  "limits": [
+    "Bounded window 0x5F1F..0x601A with synthetic frame; SVC28 intercepted",
+    "Proves the SERVICE ARGUMENT, not physical UCLK or transport semantics",
+    "The steady-state DF P-state path and later ABL4 switching are NOT covered"
+  ]
+}

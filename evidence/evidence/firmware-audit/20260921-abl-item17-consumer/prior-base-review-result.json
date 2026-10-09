@@ -1,0 +1,257 @@
+{
+  "anchors": [
+    {
+      "literal": "0xb218",
+      "mapped_entry": "0x109bc",
+      "prologue": "13b5",
+      "value": "0x67abd"
+    },
+    {
+      "literal": "0xb21c",
+      "mapped_entry": "0x10994",
+      "prologue": "01b1",
+      "value": "0x67a95"
+    },
+    {
+      "literal": "0xb220",
+      "mapped_entry": "0xad18",
+      "prologue": "30b4",
+      "value": "0x61e19"
+    },
+    {
+      "literal": "0xb224",
+      "mapped_entry": "0x10958",
+      "prologue": "30b4",
+      "value": "0x67a59"
+    }
+  ],
+  "callback_path": {
+    "callback": "0x109BC",
+    "callback_channel_count": "[r0+0x4B]",
+    "callback_context_write": "[r4+0x0C]",
+    "slot": "0xB1F8 -> [r0+0x52C]"
+  },
+  "candidate_base": "0x57100",
+  "checks": {
+    "failed": 0,
+    "passed": 28,
+    "total": 28
+  },
+  "checks_detail": [
+    {
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "label": "payload-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": ">1M",
+      "got": 2586986,
+      "label": "full-disassembly-present",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x67abd",
+      "got": "0x67abd",
+      "label": "literal-0xb218",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x109bd",
+      "got": "0x109bd",
+      "label": "map-0xb218",
+      "status": "PASS"
+    },
+    {
+      "expected": "13b5",
+      "got": "13b5",
+      "label": "code-0x109bc",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x67a95",
+      "got": "0x67a95",
+      "label": "literal-0xb21c",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x10995",
+      "got": "0x10995",
+      "label": "map-0xb21c",
+      "status": "PASS"
+    },
+    {
+      "expected": "01b1",
+      "got": "01b1",
+      "label": "code-0x10994",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x61e19",
+      "got": "0x61e19",
+      "label": "literal-0xb220",
+      "status": "PASS"
+    },
+    {
+      "expected": "0xad19",
+      "got": "0xad19",
+      "label": "map-0xb220",
+      "status": "PASS"
+    },
+    {
+      "expected": "30b4",
+      "got": "30b4",
+      "label": "code-0xad18",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x67a59",
+      "got": "0x67a59",
+      "label": "literal-0xb224",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x10959",
+      "got": "0x10959",
+      "label": "map-0xb224",
+      "status": "PASS"
+    },
+    {
+      "expected": "30b4",
+      "got": "30b4",
+      "label": "code-0x10958",
+      "status": "PASS"
+    },
+    {
+      "expected": "c0f82c15",
+      "got": "c0f82c15",
+      "label": "raw-0xb1f8",
+      "status": "PASS"
+    },
+    {
+      "expected": "a5f86000",
+      "got": "a5f86000",
+      "label": "raw-0x757c",
+      "status": "PASS"
+    },
+    {
+      "expected": "00f021f8",
+      "got": "00f021f8",
+      "label": "raw-0x7586",
+      "status": "PASS"
+    },
+    {
+      "expected": "7468",
+      "got": "7468",
+      "label": "raw-0x75e2",
+      "status": "PASS"
+    },
+    {
+      "expected": "02f0aaff",
+      "got": "02f0aaff",
+      "label": "raw-0x7e00",
+      "status": "PASS"
+    },
+    {
+      "expected": "08f046ff",
+      "got": "08f046ff",
+      "label": "raw-0x7e30",
+      "status": "PASS"
+    },
+    {
+      "expected": "0684",
+      "got": "0684",
+      "label": "raw-0xae22",
+      "status": "PASS"
+    },
+    {
+      "expected": "008c",
+      "got": "008c",
+      "label": "raw-0x10d40",
+      "status": "PASS"
+    },
+    {
+      "expected": "0784",
+      "got": "0784",
+      "label": "raw-0x10e50",
+      "status": "PASS"
+    },
+    {
+      "expected": "90f8",
+      "got": "90f8",
+      "label": "raw-0x109c0",
+      "status": "PASS"
+    },
+    {
+      "expected": "e160",
+      "got": "e160",
+      "label": "raw-0x10a04",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x6db04",
+      "got": "0x6db04",
+      "label": "classifier-literal",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x16a04",
+      "got": "0x16a04",
+      "label": "mapped-table-offset",
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        "0x6d6",
+        "0x532",
+        "0x532",
+        "0x352",
+        "0xe1",
+        "0x0",
+        "0x0",
+        "0xe1"
+      ],
+      "got": [
+        "0x6d6",
+        "0x532",
+        "0x532",
+        "0x352",
+        "0xe1",
+        "0x0",
+        "0x0",
+        "0xe1"
+      ],
+      "label": "table-8-halfwords",
+      "status": "PASS"
+    }
+  ],
+  "conclusion": "Four independent absolute pointer literals map under conditional base 0x57100 to local Thumb code, including the callback stored in +0x52C. The classifier table literal maps to payload offset 0x16A04 with eight observed halfwords. The producer chain writes the per-channel +0x20 field before/around the memory policy flow. Base 0x57100 is conditional static coherence, not loader/runtime proof; raw table values have no assigned units or physical-domain meaning.",
+  "limitations": [
+    "No loader relocation contract or runtime execution.",
+    "No MCLK/UCLK/FCLK unit or hardware claim.",
+    "No direct BL/BLX to 0x95FC; callback/producer path is the recovered local edge."
+  ],
+  "producer_chain": [
+    "0x7548 -> r5=[r0+4]",
+    "0x757C -> [r5+0x60]=0x0320",
+    "0x7586 -> BL 0x75CC",
+    "0x7E00 -> BL 0xAD58",
+    "0x7E30 -> BL 0x10CC0",
+    "0xAD58/0x10CC0 -> [channel+0x20] writes"
+  ],
+  "status": "PASS",
+  "table": {
+    "literal": "0x6DB04",
+    "mapped_payload_offset": "0x16A04",
+    "raw_halfwords": [
+      "0x6d6",
+      "0x532",
+      "0x532",
+      "0x352",
+      "0xe1",
+      "0x0",
+      "0x0",
+      "0xe1"
+    ]
+  }
+}

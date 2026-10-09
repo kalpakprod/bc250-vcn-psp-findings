@@ -1,0 +1,35 @@
+{
+  "base": "evidence/donor/fd-v22-20260923/BC250_3.00_MeiMeiDXEv3",
+  "base_sha256": "606a7a7f9ef8fb1c445d8ccfa9640de0339bfec5ab52969135a9e87d62028182",
+  "out": "candidates/BC250_3.00_MeiMeiDXEv3_PSP-entry-absence_0x24-0x45_v001.bin",
+  "out_sha256": "28cc548decbae0c6d2a5c5ef528c5c9a4ba407e1c381db0eca59c8c74100498e",
+  "removed_entries": {
+    "0x24": {
+      "index": 7,
+      "was_size": 11856,
+      "was_location": "0xff982000"
+    },
+    "0x45": {
+      "index": 15,
+      "was_size": 1760,
+      "was_location": "0xff9ca400"
+    }
+  },
+  "fletcher": {
+    "was": "0x63fffcc8",
+    "now": "0x3d1e03f9",
+    "span": [
+      "0x8e0008",
+      "0x8e0140"
+    ]
+  },
+  "checks": {
+    "lock_types_absent": true,
+    "remaining_entry_count": 17,
+    "fletcher_ok": true,
+    "diff_confinement": true,
+    "changed_bytes": 34
+  },
+  "gate": "PASS",
+  "claim_boundary": "static candidate only; PSP boot behavior UNRUN; no flash"
+}

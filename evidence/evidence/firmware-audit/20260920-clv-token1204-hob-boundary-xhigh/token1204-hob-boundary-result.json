@@ -1,0 +1,134 @@
+{
+  "checks": 22,
+  "checks_detail": [
+    {
+      "detail": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "name": "rom_hash",
+      "ok": true
+    },
+    {
+      "detail": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "name": "cbs_hash",
+      "ok": true
+    },
+    {
+      "detail": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "name": "fabric_hash",
+      "ok": true
+    },
+    {
+      "detail": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-consumer/consumer-boundary-result.json",
+      "name": "prior_result_reopened",
+      "ok": true
+    },
+    {
+      "detail": "hits=['0x9b34']",
+      "name": "cbs_token1204_header",
+      "ok": true
+    },
+    {
+      "detail": "hits=['0x9b51']",
+      "name": "cbs_setup330_load",
+      "ok": true
+    },
+    {
+      "detail": "hits=['0x35d4', '0x3603', '0x3632', '0x3661', '0x3690', '0x36bf', '0x36ee', '0x371d', '0x37b0', '0x3843', '0x38d6', '0x3969', '0x39fc', '0x3a8f', '0x3b22', '0x3bb5', '0x3c48', '0x3cdb', '0x3d6e', '0x3e01']",
+      "name": "cbs_payload_byte_store",
+      "ok": true
+    },
+    {
+      "detail": "token=[39732],source=[39761],store_after=[39770, 39820, 39870, 39920]",
+      "name": "cbs_token_source_store_order",
+      "ok": true
+    },
+    {
+      "detail": "hits=['0x1bb6']",
+      "name": "fabric_nvtb_literal",
+      "ok": true
+    },
+    {
+      "detail": "hits=['0x1bc8']",
+      "name": "fabric_cache_branch",
+      "ok": true
+    },
+    {
+      "detail": "hits=['0x1d6c']",
+      "name": "fabric_miss_size_call",
+      "ok": true
+    },
+    {
+      "detail": "hits=['0x1e01']",
+      "name": "fabric_inv_gate",
+      "ok": true
+    },
+    {
+      "detail": "nvtb=[7094],cache=[7112]",
+      "name": "nvtb_cache_order",
+      "ok": true
+    },
+    {
+      "detail": "cache=[7112],miss=[7532]",
+      "name": "miss_path_after_cache",
+      "ok": true
+    },
+    {
+      "detail": "miss=[7532],inv=[7681]",
+      "name": "inv_gate_after_miss",
+      "ok": true
+    },
+    {
+      "detail": "hits=['0x16c', '0x2b3', '0x3b3', '0x3e4', '0x1843', '0x1eb9', '0x2115', '0x3475']",
+      "name": "direct_token_10ff_push",
+      "ok": true
+    },
+    {
+      "detail": "hits=['0x1df3']",
+      "name": "direct_token_1104_push",
+      "ok": true
+    },
+    {
+      "detail": "hits=['0x1ec0']",
+      "name": "direct_10ff_call_tail",
+      "ok": true
+    },
+    {
+      "detail": "hits=['0x1dfc']",
+      "name": "direct_1104_call_tail",
+      "ok": true
+    },
+    {
+      "detail": "token=[364, 691, 947, 996, 6211, 7865, 8469, 13429],call_after=[7872]",
+      "name": "direct_request_10ff_call",
+      "ok": true
+    },
+    {
+      "detail": "token=[7667],call_after=[7676]",
+      "name": "direct_request_1104_call",
+      "ok": true
+    },
+    {
+      "detail": "full exact AmdFabric body has no push 0x1204 direct-request encoding",
+      "name": "no_selected_direct_1204_request",
+      "ok": true
+    }
+  ],
+  "confirmed_edge": {
+    "direct_requesters": [
+      "exact body pushes 0x10FF then calls",
+      "exact body pushes 0x1104 then calls"
+    ],
+    "hob_reader": "AmdFabric body contains NVTB literal, cache branch, miss sizing/serialization call and later $INV gate",
+    "serializer": "CbsBasePei body occurrence token header 0x1204, Setup+0x330 source load, byte store; exact order verified",
+    "token1204_status": "no direct push 0x1204 requester encoding in full AmdFabric body; computed/indirect/HOB/DMA/later phase paths not excluded"
+  },
+  "inputs": {
+    "cbs_sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+    "fabric_sha256": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+    "prior_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-consumer/consumer-boundary-result.json",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+  },
+  "missing_boundary": "The exact native token reaches the NVTB/GUID-HOB generic reader boundary, but no direct 0x1204 requester is byte-backed in the checked AmdFabric body. Provider/consumer continuation is a missing HOB/indirect/computed/runtime boundary, not a census-wide absence proof. No final clock/divider actuator or hardware claim.",
+  "passed": 22,
+  "route": "CbsBasePei Setup+0x330 -> INV token 0x1204 -> AmdFabricAriPei NVTB/GUID-HOB cache/miss -> generic INV reader boundary",
+  "status": "PASS"
+}

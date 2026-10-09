@@ -1,0 +1,155 @@
+{
+  "generated_at": "2026-09-14T12:02:42.313041+00:00",
+  "tool": "scripts/trace_te_entry.py",
+  "pypcode_version": "4.0.0",
+  "input": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/programmer/reads/20260911/firmware-audit/read-a-extract/modules/0193_AmdNbioGfxARIPei_te.bin",
+    "size": 87048,
+    "sha256": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8"
+  },
+  "te": {
+    "machine": "0x14C",
+    "stripped_size": "0x1C0",
+    "delta": "0x198",
+    "entry_rva": "0x240",
+    "trace_start_rva": "0x13B1",
+    "sections": [
+      {
+        "name": ".text",
+        "virtual_address": "0x240",
+        "virtual_size": 85423,
+        "raw_size": 85440,
+        "file_offset": "0xA8"
+      },
+      {
+        "name": ".data",
+        "virtual_address": "0x15000",
+        "virtual_size": 1128,
+        "raw_size": 1152,
+        "file_offset": "0x14E68"
+      },
+      {
+        "name": ".reloc",
+        "virtual_address": "0x15480",
+        "virtual_size": 272,
+        "raw_size": 288,
+        "file_offset": "0x152E8"
+      }
+    ]
+  },
+  "trace": {
+    "instruction_count": 15,
+    "instructions": [
+      {
+        "address": "0x13B1",
+        "length": 1,
+        "mnemonic": "PUSH",
+        "body": "ECX"
+      },
+      {
+        "address": "0x13B2",
+        "length": 4,
+        "mnemonic": "PUSH",
+        "body": "dword ptr [ESP + 0xc]"
+      },
+      {
+        "address": "0x13B6",
+        "length": 4,
+        "mnemonic": "PUSH",
+        "body": "dword ptr [ESP + 0xc]"
+      },
+      {
+        "address": "0x13BA",
+        "length": 5,
+        "mnemonic": "CALL",
+        "body": "0x132d"
+      },
+      {
+        "address": "0x13BF",
+        "length": 1,
+        "mnemonic": "POP",
+        "body": "ECX"
+      },
+      {
+        "address": "0x13C0",
+        "length": 1,
+        "mnemonic": "POP",
+        "body": "ECX"
+      },
+      {
+        "address": "0x13C1",
+        "length": 3,
+        "mnemonic": "CMP",
+        "body": "EAX,0x1"
+      },
+      {
+        "address": "0x13C4",
+        "length": 2,
+        "mnemonic": "JNZ",
+        "body": "0x13d8"
+      },
+      {
+        "address": "0x13C6",
+        "length": 2,
+        "mnemonic": "PUSH",
+        "body": "0x0"
+      },
+      {
+        "address": "0x13C8",
+        "length": 4,
+        "mnemonic": "PUSH",
+        "body": "dword ptr [ESP + 0x10]"
+      },
+      {
+        "address": "0x13CC",
+        "length": 4,
+        "mnemonic": "PUSH",
+        "body": "dword ptr [ESP + 0x10]"
+      },
+      {
+        "address": "0x13D0",
+        "length": 5,
+        "mnemonic": "CALL",
+        "body": "0x1920"
+      },
+      {
+        "address": "0x13D5",
+        "length": 3,
+        "mnemonic": "ADD",
+        "body": "ESP,0xc"
+      },
+      {
+        "address": "0x13D8",
+        "length": 1,
+        "mnemonic": "POP",
+        "body": "ECX"
+      },
+      {
+        "address": "0x13D9",
+        "length": 1,
+        "mnemonic": "RET",
+        "body": ""
+      }
+    ],
+    "direct_calls": [
+      {
+        "site": "0x13BA",
+        "target": "0x132D",
+        "body": "0x132d"
+      },
+      {
+        "site": "0x13D0",
+        "target": "0x1920",
+        "body": "0x1920"
+      }
+    ],
+    "indirect_calls": [],
+    "exits": [
+      {
+        "address": "0x13D9",
+        "kind": "RET"
+      }
+    ],
+    "errors": []
+  }
+}

@@ -1,0 +1,39 @@
++ echo '=== remove amdgpu ==='
+=== remove amdgpu ===
++ sudo modprobe -r amdgpu
+modprobe: FATAL: Module amdgpu is in use.
++ echo 'removed rc=1'
+removed rc=1
++ echo '=== lsmod amdgpu ==='
+=== lsmod amdgpu ===
++ lsmod
++ grep amdgpu
+amdgpu              18808832  42
+drm_panel_backlight_quirks    12288  1 amdgpu
+drm_buddy              12288  1 amdgpu
+drm_suballoc_helper    24576  1 amdgpu
+i2c_algo_bit           20480  1 amdgpu
+drm_exec               16384  1 amdgpu
+gpu_sched              77824  1 amdgpu
+amdxcp                 12288  1 amdgpu
+drm_ttm_helper         20480  2 amdgpu
+ttm                   163840  2 amdgpu,drm_ttm_helper
+drm_display_helper    311296  1 amdgpu
+video                  81920  1 amdgpu
+cec                   102400  2 drm_display_helper,amdgpu
++ echo '=== SMU test (no amdgpu) ==='
+=== SMU test (no amdgpu) ===
++ SP=/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc
++ sudo /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/bin/python -
+test_message ERR: RuntimeError('smu returned status 0x00 for queue 3 msg 0x01')
+q3_0x47 ERR: RuntimeError('smu returned status 0x00 for queue 3 msg 0x47')
+q3_0x48 ERR: RuntimeError('smu returned status 0x00 for queue 3 msg 0x48')
+q3_0x98 ERR: RuntimeError('smu returned status 0x00 for queue 3 msg 0x98')
+q2_0x03 ERR: RuntimeError('smu returned status 0x00 for queue 2 msg 0x03')
++ echo '=== re-add amdgpu ==='
+=== re-add amdgpu ===
++ sudo modprobe amdgpu
++ echo 'added rc=0'
+added rc=0
++ echo '=== done ==='
+=== done ===

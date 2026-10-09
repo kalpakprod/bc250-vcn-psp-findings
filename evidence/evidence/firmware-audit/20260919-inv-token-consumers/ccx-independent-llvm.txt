@@ -1,0 +1,173 @@
+
+evidence/firmware-audit/20260919-inv-token-consumers/AmdCcxVhAriDxe-d9bc6337e3d0.bin:	file format coff-x86-64
+
+Disassembly of section .text:
+
+00000000000002a0 <.text>:
+    5ac4: 48 8b c4                     	mov	rax, rsp
+    5ac7: 48 89 58 08                  	mov	qword ptr [rax + 0x8], rbx
+    5acb: 48 89 68 10                  	mov	qword ptr [rax + 0x10], rbp
+    5acf: 48 89 70 20                  	mov	qword ptr [rax + 0x20], rsi
+    5ad3: 57                           	push	rdi
+    5ad4: 41 54                        	push	r12
+    5ad6: 41 55                        	push	r13
+    5ad8: 48 83 ec 50                  	sub	rsp, 0x50
+    5adc: 44 0f b7 e1                  	movzx	r12d, cx
+    5ae0: 48 8b ea                     	mov	rbp, rdx
+    5ae3: 48 8d 48 b8                  	lea	rcx, [rax - 0x48]
+    5ae7: 33 ff                        	xor	edi, edi
+    5ae9: be 4e 56 54 42               	mov	esi, 0x4254564e
+    5aee: 33 d2                        	xor	edx, edx
+    5af0: 48 89 78 c0                  	mov	qword ptr [rax - 0x40], rdi
+    5af4: 89 70 b8                     	mov	dword ptr [rax - 0x48], esi
+    5af7: e8 b4 e4 ff ff               	call	0x3fb0 <.text+0x3d10>
+    5afc: 48 8b 5c 24 28               	mov	rbx, qword ptr [rsp + 0x28]
+    5b01: 3b c7                        	cmp	eax, edi
+    5b03: 0f 84 b5 00 00 00            	je	0x5bbe <.text+0x591e>
+    5b09: 48 8d 94 24 80 00 00 00      	lea	rdx, [rsp + 0x80]
+    5b11: 33 c9                        	xor	ecx, ecx
+    5b13: 89 bc 24 80 00 00 00         	mov	dword ptr [rsp + 0x80], edi
+    5b1a: e8 c1 1e 00 00               	call	0x79e0 <.text+0x7740>
+    5b1f: 8b 84 24 80 00 00 00         	mov	eax, dword ptr [rsp + 0x80]
+    5b26: 3b c7                        	cmp	eax, edi
+    5b28: 75 08                        	jne	0x5b32 <.text+0x5892>
+    5b2a: 8d 47 01                     	lea	eax, [rdi + 0x1]
+    5b2d: e9 19 01 00 00               	jmp	0x5c4b <.text+0x59ab>
+    5b32: 83 c0 68                     	add	eax, 0x68
+    5b35: 48 8d 4c 24 30               	lea	rcx, [rsp + 0x30]
+    5b3a: 33 d2                        	xor	edx, edx
+    5b3c: 89 74 24 34                  	mov	dword ptr [rsp + 0x34], esi
+    5b40: c6 44 24 38 07               	mov	byte ptr [rsp + 0x38], 0x7
+    5b45: 48 89 7c 24 39               	mov	qword ptr [rsp + 0x39], rdi
+    5b4a: 89 44 24 30                  	mov	dword ptr [rsp + 0x30], eax
+    5b4e: e8 cd e2 ff ff               	call	0x3e20 <.text+0x3b80>
+    5b53: 4c 8b 5c 24 39               	mov	r11, qword ptr [rsp + 0x39]
+    5b58: 4c 3b df                     	cmp	r11, rdi
+    5b5b: 75 0f                        	jne	0x5b6c <.text+0x58cc>
+    5b5d: b9 16 02 80 20               	mov	ecx, 0x20800216
+    5b62: e8 1d d8 ff ff               	call	0x3384 <.text+0x30e4>
+    5b67: 4c 8b 5c 24 39               	mov	r11, qword ptr [rsp + 0x39]
+    5b6c: 8b 84 24 80 00 00 00         	mov	eax, dword ptr [rsp + 0x80]
+    5b73: be aa 55 00 00               	mov	esi, 0x55aa
+    5b78: 48 8d 94 24 80 00 00 00      	lea	rdx, [rsp + 0x80]
+    5b80: 42 89 74 18 64               	mov	dword ptr [rax + r11 + 0x64], esi
+    5b85: 48 8b 4c 24 39               	mov	rcx, qword ptr [rsp + 0x39]
+    5b8a: e8 51 1e 00 00               	call	0x79e0 <.text+0x7740>
+    5b8f: 3b c7                        	cmp	eax, edi
+    5b91: 74 0a                        	je	0x5b9d <.text+0x58fd>
+    5b93: b9 22 02 80 20               	mov	ecx, 0x20800222
+    5b98: e8 e7 d7 ff ff               	call	0x3384 <.text+0x30e4>
+    5b9d: 8b 84 24 80 00 00 00         	mov	eax, dword ptr [rsp + 0x80]
+    5ba4: 48 8b 5c 24 39               	mov	rbx, qword ptr [rsp + 0x39]
+    5ba9: 39 74 18 64                  	cmp	dword ptr [rax + rbx + 0x64], esi
+    5bad: 74 0f                        	je	0x5bbe <.text+0x591e>
+    5baf: b9 24 02 80 20               	mov	ecx, 0x20800224
+    5bb4: e8 cb d7 ff ff               	call	0x3384 <.text+0x30e4>
+    5bb9: 48 8b 5c 24 39               	mov	rbx, qword ptr [rsp + 0x39]
+    5bbe: 81 3b 24 49 4e 56            	cmp	dword ptr [rbx], 0x564e4924
+    5bc4: 74 0a                        	je	0x5bd0 <.text+0x5930>
+    5bc6: b9 28 02 80 20               	mov	ecx, 0x20800228
+    5bcb: e8 b4 d7 ff ff               	call	0x3384 <.text+0x30e4>
+    5bd0: 48 8b f7                     	mov	rsi, rdi
+    5bd3: 48 83 c3 20                  	add	rbx, 0x20
+    5bd7: 41 bd ff ff 00 00            	mov	r13d, 0xffff
+    5bdd: eb 5c                        	jmp	0x5c3b <.text+0x599b>
+    5bdf: 0f b6 4b 02                  	movzx	ecx, byte ptr [rbx + 0x2]
+    5be3: 83 e1 03                     	and	ecx, 0x3
+    5be6: 3b cf                        	cmp	ecx, edi
+    5be8: 74 3b                        	je	0x5c25 <.text+0x5985>
+    5bea: 83 e9 01                     	sub	ecx, 0x1
+    5bed: 74 2b                        	je	0x5c1a <.text+0x597a>
+    5bef: 83 e9 01                     	sub	ecx, 0x1
+    5bf2: 74 1c                        	je	0x5c10 <.text+0x5970>
+    5bf4: 83 f9 01                     	cmp	ecx, 0x1
+    5bf7: 74 0c                        	je	0x5c05 <.text+0x5965>
+    5bf9: b9 51 02 80 20               	mov	ecx, 0x20800251
+    5bfe: e8 81 d7 ff ff               	call	0x3384 <.text+0x30e4>
+    5c03: eb 2d                        	jmp	0x5c32 <.text+0x5992>
+    5c05: 48 8b 43 03                  	mov	rax, qword ptr [rbx + 0x3]
+    5c09: be 0b 00 00 00               	mov	esi, 0xb
+    5c0e: eb 1e                        	jmp	0x5c2e <.text+0x598e>
+    5c10: 8b 43 03                     	mov	eax, dword ptr [rbx + 0x3]
+    5c13: be 07 00 00 00               	mov	esi, 0x7
+    5c18: eb 14                        	jmp	0x5c2e <.text+0x598e>
+    5c1a: 0f b7 43 03                  	movzx	eax, word ptr [rbx + 0x3]
+    5c1e: be 05 00 00 00               	mov	esi, 0x5
+    5c23: eb 09                        	jmp	0x5c2e <.text+0x598e>
+    5c25: 0f b6 43 03                  	movzx	eax, byte ptr [rbx + 0x3]
+    5c29: be 04 00 00 00               	mov	esi, 0x4
+    5c2e: 48 89 45 00                  	mov	qword ptr [rbp], rax
+    5c32: 66 44 39 23                  	cmp	word ptr [rbx], r12w
+    5c36: 74 09                        	je	0x5c41 <.text+0x59a1>
+    5c38: 48 03 de                     	add	rbx, rsi
+    5c3b: 66 44 39 2b                  	cmp	word ptr [rbx], r13w
+    5c3f: 75 9e                        	jne	0x5bdf <.text+0x593f>
+    5c41: 66 44 39 2b                  	cmp	word ptr [rbx], r13w
+    5c45: 40 0f 94 c7                  	sete	dil
+    5c49: 8b c7                        	mov	eax, edi
+    5c4b: 4c 8d 5c 24 50               	lea	r11, [rsp + 0x50]
+    5c50: 49 8b 5b 20                  	mov	rbx, qword ptr [r11 + 0x20]
+    5c54: 49 8b 6b 28                  	mov	rbp, qword ptr [r11 + 0x28]
+    5c58: 49 8b 73 38                  	mov	rsi, qword ptr [r11 + 0x38]
+    5c5c: 49 8b e3                     	mov	rsp, r11
+    5c5f: 41 5d                        	pop	r13
+    5c61: 41 5c                        	pop	r12
+    5c63: 5f                           	pop	rdi
+    5c64: c3                           	ret
+    5c65: cc                           	int3
+    5c66: cc                           	int3
+    5c67: cc                           	int3
+    5c68: 40 53                        	push	rbx
+    5c6a: 48 83 ec 30                  	sub	rsp, 0x30
+    5c6e: b9 1b 00 00 00               	mov	ecx, 0x1b
+    5c73: 0f 32                        	rdmsr
+    5c75: 48 c1 e2 20                  	shl	rdx, 0x20
+    5c79: 33 db                        	xor	ebx, ebx
+    5c7b: 48 0b c2                     	or	rax, rdx
+    5c7e: 48 c1 e8 08                  	shr	rax, 0x8
+    5c82: a8 01                        	test	al, 0x1
+    5c84: 0f 84 ac 00 00 00            	je	0x5d36 <.text+0x5a96>
+    5c8a: 48 8d 15 d7 33 00 00         	lea	rdx, [rip + 0x33d7]     # 0x9068
+    5c91: b9 00 04 00 00               	mov	ecx, 0x400
+    5c96: e8 ed d7 ff ff               	call	0x3488 <.text+0x31e8>
+    5c9b: 48 8d 54 24 58               	lea	rdx, [rsp + 0x58]
+    5ca0: b9 00 10 00 00               	mov	ecx, 0x1000
+    5ca5: e8 1a fe ff ff               	call	0x5ac4 <.text+0x5824>
+    5caa: 3b c3                        	cmp	eax, ebx
+    5cac: 75 39                        	jne	0x5ce7 <.text+0x5a47>
+    5cae: 4c 8b 44 24 58               	mov	r8, qword ptr [rsp + 0x58]
+    5cb3: 49 81 f8 ff 00 00 00         	cmp	r8, 0xff
+    5cba: 74 2b                        	je	0x5ce7 <.text+0x5a47>
+    5cbc: b9 29 10 01 c0               	mov	ecx, 0xc0011029
+    5cc1: 0f 32                        	rdmsr
+    5cc3: 49 c1 e0 0e                  	shl	r8, 0xe
+    5cc7: 48 c1 e2 20                  	shl	rdx, 0x20
+    5ccb: 48 0b c2                     	or	rax, rdx
+    5cce: 4c 33 c0                     	xor	r8, rax
+    5cd1: 41 81 e0 00 40 00 00         	and	r8d, 0x4000
+    5cd8: 4c 33 c0                     	xor	r8, rax
+    5cdb: 49 8b d0                     	mov	rdx, r8
+    5cde: 41 8b c0                     	mov	eax, r8d
+    5ce1: 48 c1 ea 20                  	shr	rdx, 0x20
+    5ce5: 0f 30                        	wrmsr
+    5ce7: 48 8d 54 24 58               	lea	rdx, [rsp + 0x58]
+    5cec: b9 01 10 00 00               	mov	ecx, 0x1001
+    5cf1: e8 ce fd ff ff               	call	0x5ac4 <.text+0x5824>
+    5cf6: 3b c3                        	cmp	eax, ebx
+    5cf8: 75 3c                        	jne	0x5d36 <.text+0x5a96>
+    5cfa: 4c 8b 44 24 58               	mov	r8, qword ptr [rsp + 0x58]
+    5cff: 49 83 f8 03                  	cmp	r8, 0x3
+    5d03: 74 31                        	je	0x5d36 <.text+0x5a96>
+    5d05: b9 23 10 01 c0               	mov	ecx, 0xc0011023
+    5d0a: 0f 32                        	rdmsr
+    5d0c: 48 c1 e2 20                  	shl	rdx, 0x20
+    5d10: 49 c1 e0 2d                  	shl	r8, 0x2d
+    5d14: 48 0b c2                     	or	rax, rdx
+    5d17: 48 ba 00 00 00 00 00 20 00 00	movabs	rdx, 0x200000000000
+    5d21: 4c 33 c0                     	xor	r8, rax
+    5d24: 4c 23 c2                     	and	r8, rdx
+    5d27: 4c 33 c0                     	xor	r8, rax
+    5d2a: 49 8b d0                     	mov	rdx, r8
+    5d2d: 41 8b c0                     	mov	eax, r8d
+    5d30: 48 c1 ea 20                  	shr	rdx, 0x20
+    5d34: 0f 30                        	wrmsr

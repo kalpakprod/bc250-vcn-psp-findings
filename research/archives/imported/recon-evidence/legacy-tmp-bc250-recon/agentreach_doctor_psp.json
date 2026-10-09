@@ -1,0 +1,161 @@
+{
+  "github": {
+    "status": "warn",
+    "name": "GitHub 仓库和代码",
+    "message": "gh CLI 可执行，且检测到显式认证配置；Doctor 不执行会写 device-id 的 `gh auth status`，因此未实时验证，未标记为可用。",
+    "tier": 0,
+    "backends": [
+      "gh CLI"
+    ],
+    "active_backend": null
+  },
+  "twitter": {
+    "status": "warn",
+    "name": "Twitter/X 推文",
+    "message": "twitter-cli 已安装但没有完整的显式凭据。请用 Cookie-Editor 从 x.com 导出后运行：\n  agent-reach configure twitter-cookies '<Cookie-Editor Header String>'\nDoctor 不会自动读取浏览器 Cookie。",
+    "tier": 1,
+    "backends": [
+      "twitter-cli",
+      "OpenCLI",
+      "bird CLI (legacy)"
+    ],
+    "active_backend": null
+  },
+  "youtube": {
+    "status": "ok",
+    "name": "YouTube 视频和字幕",
+    "message": "可提取视频信息和字幕",
+    "tier": 0,
+    "backends": [
+      "yt-dlp"
+    ],
+    "active_backend": "yt-dlp"
+  },
+  "reddit": {
+    "status": "warn",
+    "name": "Reddit 帖子和评论",
+    "message": "OpenCLI 桥接已连接，但 Reddit 登录态和实际命令未实时验证；Doctor 不执行平台命令，因此当前不标记为可用。",
+    "tier": 1,
+    "backends": [
+      "OpenCLI",
+      "rdt-cli"
+    ],
+    "active_backend": null
+  },
+  "facebook": {
+    "status": "warn",
+    "name": "Facebook 帖子、主页和群组",
+    "message": "OpenCLI 桥接已连接，但 Facebook 帖子、主页和群组 的登录态和实际命令未实时验证；Doctor 不执行平台命令，因此当前不标记为可用。需要时请先在 Chrome 里登录 facebook.com",
+    "tier": 1,
+    "backends": [
+      "OpenCLI"
+    ],
+    "active_backend": null
+  },
+  "instagram": {
+    "status": "warn",
+    "name": "Instagram 用户、主页和指定用户帖子",
+    "message": "OpenCLI 桥接已连接，但 Instagram 用户、主页和指定用户帖子 的登录态和实际命令未实时验证；Doctor 不执行平台命令，因此当前不标记为可用。需要时请先在 Chrome 里登录 instagram.com",
+    "tier": 1,
+    "backends": [
+      "OpenCLI"
+    ],
+    "active_backend": null
+  },
+  "bilibili": {
+    "status": "ok",
+    "name": "B站视频、字幕和搜索",
+    "message": "bili-cli 可用（搜索/热门/排行/视频详情/音频，无需登录；字幕需 OpenCLI。上游 2026-03 起停更）",
+    "tier": 1,
+    "backends": [
+      "bili-cli",
+      "OpenCLI",
+      "B站搜索 API"
+    ],
+    "active_backend": "bili-cli"
+  },
+  "xiaohongshu": {
+    "status": "warn",
+    "name": "小红书笔记",
+    "message": "OpenCLI 桥接已连接，但小红书登录态和实际命令未实时验证；Doctor 不执行平台命令，因此当前不标记为可用。",
+    "tier": 1,
+    "backends": [
+      "OpenCLI",
+      "xiaohongshu-mcp",
+      "xhs-cli (xiaohongshu-cli)"
+    ],
+    "active_backend": null
+  },
+  "linkedin": {
+    "status": "warn",
+    "name": "LinkedIn 职业社交",
+    "message": "mcporter 本地配置未发现 LinkedIn MCP；配置还启用了 editor imports，Doctor 为避免扩大凭据读取范围没有展开，当前未验证。",
+    "tier": 2,
+    "backends": [
+      "linkedin-scraper-mcp",
+      "Jina Reader"
+    ],
+    "active_backend": null
+  },
+  "xiaoyuzhou": {
+    "status": "warn",
+    "name": "小宇宙播客转文字",
+    "message": "需要配置 Groq API Key（免费）。步骤：\n  1. 注册 https://console.groq.com\n  2. 运行: agent-reach configure groq-key gsk_xxxxx",
+    "tier": 1,
+    "backends": [
+      "groq-whisper",
+      "ffmpeg"
+    ],
+    "active_backend": null
+  },
+  "v2ex": {
+    "status": "ok",
+    "name": "V2EX 节点、主题与回复",
+    "message": "公开 API 可用（热门主题、节点浏览、主题详情、用户信息）",
+    "tier": 0,
+    "backends": [
+      "V2EX API (public)"
+    ],
+    "active_backend": "V2EX API (public)"
+  },
+  "xueqiu": {
+    "status": "warn",
+    "name": "雪球股票行情与社区动态",
+    "message": "Xueqiu API 连接失败：HTTP Error 400。如需登录 Cookie，请运行：agent-reach configure --from-browser chrome --platform xueqiu；doctor 不会自动读取浏览器 Cookie。",
+    "tier": 1,
+    "backends": [
+      "Xueqiu API (需要登录 Cookie)"
+    ],
+    "active_backend": null
+  },
+  "rss": {
+    "status": "ok",
+    "name": "RSS/Atom 订阅源",
+    "message": "可读取 RSS/Atom 源",
+    "tier": 0,
+    "backends": [
+      "feedparser"
+    ],
+    "active_backend": "feedparser"
+  },
+  "exa_search": {
+    "status": "warn",
+    "name": "全网语义搜索",
+    "message": "Exa 已写入 mcporter 配置，但 Doctor 未启动远端服务做连通验证，不能仅凭配置宣称可用。",
+    "tier": 0,
+    "backends": [
+      "Exa via mcporter"
+    ],
+    "active_backend": null
+  },
+  "web": {
+    "status": "ok",
+    "name": "任意网页",
+    "message": "通过 Jina Reader 读取任意网页（curl https://r.jina.ai/URL）",
+    "tier": 0,
+    "backends": [
+      "Jina Reader"
+    ],
+    "active_backend": "Jina Reader"
+  }
+}

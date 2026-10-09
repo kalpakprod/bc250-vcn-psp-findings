@@ -1,0 +1,49 @@
+{
+  "evidence_class": "offline_file_integrity",
+  "source": {
+    "size": 16777216,
+    "sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+    "marker_counts": {
+      "$PSP": 10,
+      "$BHD": 9
+    },
+    "board_identity": "not_established_from_bytes",
+    "signed_region_preservation": "not_verified",
+    "raw_bytes_or_offsets_printed": false,
+    "writes_performed": false
+  },
+  "hardware_acceptance": false,
+  "baseline": {
+    "size": 16777216,
+    "sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+    "marker_counts": {
+      "$PSP": 10,
+      "$BHD": 9
+    },
+    "board_identity": "not_established_from_bytes",
+    "signed_region_preservation": "not_verified",
+    "raw_bytes_or_offsets_printed": false,
+    "writes_performed": false
+  },
+  "identical_to_baseline": true,
+  "structure": {
+    "parser_sha256": "5ead8605678fc5a13eb0cf49c01b43037560ddc485d8ad2686abf0e9c34d9593",
+    "evidence_class": "static_directory_structure_only",
+    "signature_acceptance": "not_verified",
+    "private_material_emitted": false,
+    "PSP": {
+      "state": "parsed",
+      "entry_count": 19,
+      "checksum_match": true,
+      "entries_with_valid_image_bounds": 19,
+      "entries_with_invalid_image_bounds": 0
+    },
+    "BHD": {
+      "state": "parsed",
+      "entry_count": 4,
+      "checksum_match": true,
+      "entries_with_valid_image_bounds": 3,
+      "entries_with_invalid_image_bounds": 1
+    }
+  }
+}

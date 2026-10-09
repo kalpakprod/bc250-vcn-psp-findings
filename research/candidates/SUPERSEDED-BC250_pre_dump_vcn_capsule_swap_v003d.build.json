@@ -1,0 +1,30 @@
+{
+  "variant": "v003d",
+  "what": "booted pre-dump + ONLY the v003c capsule window (donor DXE + VCN driver before Bds); live NVRAM/APCB fully preserved",
+  "base": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/programmer/reads/20260924-v003c/pre-v003c-read-a.bin",
+    "sha256": "64973ba364ae4417de10bd905d2cf8bad165af3b544d175b3cc315f0e28d621a"
+  },
+  "capsule_source": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/programmer/reads/20260924-v003c/post-v003c-readback.bin",
+    "sha256": "dafb323a5d701f29b9c1b74f0a6bc728572590ced54a8389c01b20c0a4f828b0"
+  },
+  "output_sha256": "7e93a59c212a9ed8e81fb374ffabfd8c0276beb2866c8896d6069d6e5589c487",
+  "capsule": {
+    "cpos": "0xae0078",
+    "old_csz": "0x1509f4",
+    "new_csz": "0x145d75",
+    "erased_after": "0xc25e05"
+  },
+  "inner_fv": {
+    "files": 194,
+    "len": "0x436000"
+  },
+  "diff_window": {
+    "first": "0xae0088",
+    "last": "0xc30a6b",
+    "ndiff": 1373400
+  },
+  "hardware_written": false,
+  "superseded": true
+}

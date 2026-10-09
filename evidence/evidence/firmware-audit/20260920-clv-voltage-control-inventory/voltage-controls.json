@@ -1,0 +1,1545 @@
+{
+  "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "module_reports": {
+    "CbsSetupDxe": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-df-init-route/menu-CbsSetupDxe.txt",
+    "Setup": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-df-init-route/menu-Setup.txt"
+  },
+  "parser_route": "Existing extracted HII report/menu verifier; one-off line parser only for machine inventory",
+  "errors": [],
+  "controls": [
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "Power Management Debug Options",
+      "qid": "0x103",
+      "varstore": "AmdSetup",
+      "offset": "0x21a",
+      "flags": "0x10",
+      "label": "BTC Control",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "Disable",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Auto",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x10"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "01",
+      "stored_value": 1,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> Vh Debug Options (0x7002) -> CPU Debug Control (0x700C) -> Power Management Debug Options (0x700E)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "GDDR6 Diagnostic and Debug Features",
+      "qid": "0x271",
+      "varstore": "AmdSetup",
+      "offset": "0x37c",
+      "flags": "0x10",
+      "label": "VMEMP Voltage Control",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "0.7V",
+          "value": 136,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.725V",
+          "value": 132,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.75V",
+          "value": 128,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.775V",
+          "value": 124,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.8V",
+          "value": 120,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.825V",
+          "value": 116,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.85V",
+          "value": 112,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.875V",
+          "value": 108,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.9V",
+          "value": 104,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.925V",
+          "value": 100,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.95V",
+          "value": 96,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.975V",
+          "value": 92,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "1.0V",
+          "value": 88,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "1.025V",
+          "value": 84,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "1.05V",
+          "value": 80,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "1.075V",
+          "value": 76,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "1.1V",
+          "value": 72,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Auto",
+          "value": 255,
+          "type": "0x0",
+          "flags": "0x10"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "ff",
+      "stored_value": 255,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> UMC Debug Options (0x7008) -> GDDR6 Debug Options (0x702E) -> GDDR6 Diagnostic and Debug Features (0x7031)",
+      "category": "memory I/O rail voltage enum; physical rail/consumer unverified"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Features",
+      "qid": "0x705d",
+      "varstore": "AmdSetup",
+      "offset": "0x6bb",
+      "flags": "0x14",
+      "label": "DFLL_BTC_CALIBRATION",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "Disabled",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Enabled",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Auto",
+          "value": 15,
+          "type": "0x0",
+          "flags": "0x10"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "0f",
+      "stored_value": 15,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Features (0x703E)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Features",
+      "qid": "0x705f",
+      "varstore": "AmdSetup",
+      "offset": "0x6bd",
+      "flags": "0x14",
+      "label": "DLDO",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "Disabled",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Enabled",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Auto",
+          "value": 15,
+          "type": "0x0",
+          "flags": "0x10"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "0f",
+      "stored_value": 15,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Features (0x703E)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x35f",
+      "varstore": "AmdSetup",
+      "offset": "0x6d0",
+      "flags": "0x10",
+      "label": "GfxAvfsFtoVMargin Control",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "Auto",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x10"
+        },
+        {
+          "label": "Manual",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "00",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x360",
+      "varstore": "AmdSetup",
+      "offset": "0x6d1",
+      "flags": "0x10",
+      "label": "GfxAvfsFtoVMargin",
+      "kind": "NUMERIC",
+      "visibility_flags": [],
+      "options": [],
+      "bounds": [
+        0,
+        65535,
+        0
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x1",
+          "raw": "0000",
+          "value": 0
+        }
+      ],
+      "width_bytes": 2,
+      "stored_raw": "0000",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x361",
+      "varstore": "AmdSetup",
+      "offset": "0x6d3",
+      "flags": "0x10",
+      "label": "Core Dldo Psm Margin Control",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "Manual",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Auto",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x10"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "00",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x362",
+      "varstore": "AmdSetup",
+      "offset": "0x6d4",
+      "flags": "0x10",
+      "label": "Core Dldo Psm Margin",
+      "kind": "NUMERIC",
+      "visibility_flags": [],
+      "options": [],
+      "bounds": [
+        0,
+        65535,
+        0
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x1",
+          "raw": "0000",
+          "value": 0
+        }
+      ],
+      "width_bytes": 2,
+      "stored_raw": "0000",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x363",
+      "varstore": "AmdSetup",
+      "offset": "0x6d6",
+      "flags": "0x10",
+      "label": "Core DLDO Bypass",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "0",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "1",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Auto",
+          "value": 15,
+          "type": "0x0",
+          "flags": "0x10"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "0f",
+      "stored_value": 15,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x368",
+      "varstore": "AmdSetup",
+      "offset": "0x6db",
+      "flags": "0x10",
+      "label": "AvfsCoeffTable_Override",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "0",
+          "value": 0,
+          "type": "0x2",
+          "flags": "0x2"
+        },
+        {
+          "label": "1",
+          "value": 1,
+          "type": "0x2",
+          "flags": "0x2"
+        },
+        {
+          "label": "Auto",
+          "value": 15,
+          "type": "0x2",
+          "flags": "0x12"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "0f",
+      "stored_value": 15,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x36b",
+      "varstore": "AmdSetup",
+      "offset": "0x6e5",
+      "flags": "0x10",
+      "label": "VDDCR_VDD Voltage Offset Control",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "Manual",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Auto",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x10"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "00",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "voltage offset control/value; rail, unit, sign, consumer unverified"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x36c",
+      "varstore": "AmdSetup",
+      "offset": "0x6e6",
+      "flags": "0x10",
+      "label": "VDDCR_VDD Voltage Offset",
+      "kind": "NUMERIC",
+      "visibility_flags": [],
+      "options": [],
+      "bounds": [
+        0,
+        4294967295,
+        0
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x2",
+          "raw": "00000000",
+          "value": 0
+        }
+      ],
+      "width_bytes": 4,
+      "stored_raw": "00000000",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "voltage offset control/value; rail, unit, sign, consumer unverified"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x36d",
+      "varstore": "AmdSetup",
+      "offset": "0x6ea",
+      "flags": "0x10",
+      "label": "VDDCR_GFX Voltage Offset Control",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "Manual",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Auto",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x10"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "00",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "voltage offset control/value; rail, unit, sign, consumer unverified"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x36e",
+      "varstore": "AmdSetup",
+      "offset": "0x6eb",
+      "flags": "0x10",
+      "label": "VDDCR_GFX Voltage Offset",
+      "kind": "NUMERIC",
+      "visibility_flags": [],
+      "options": [],
+      "bounds": [
+        0,
+        4294967295,
+        0
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x2",
+          "raw": "00000000",
+          "value": 0
+        }
+      ],
+      "width_bytes": 4,
+      "stored_raw": "00000000",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "voltage offset control/value; rail, unit, sign, consumer unverified"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x375",
+      "varstore": "AmdSetup",
+      "offset": "0x6f6",
+      "flags": "0x10",
+      "label": "CPU DC BTC",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "Disabled",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Enabled",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Auto",
+          "value": 15,
+          "type": "0x0",
+          "flags": "0x10"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "0f",
+      "stored_value": 15,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x376",
+      "varstore": "AmdSetup",
+      "offset": "0x6f7",
+      "flags": "0x10",
+      "label": "CPU DC BTC Set voltage in mV",
+      "kind": "NUMERIC",
+      "visibility_flags": [],
+      "options": [],
+      "bounds": [
+        0,
+        65535,
+        0
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x1",
+          "raw": "0000",
+          "value": 0
+        }
+      ],
+      "width_bytes": 2,
+      "stored_raw": "0000",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x377",
+      "varstore": "AmdSetup",
+      "offset": "0x6f9",
+      "flags": "0x10",
+      "label": "CPU DC BTC error offset in mV",
+      "kind": "NUMERIC",
+      "visibility_flags": [],
+      "options": [],
+      "bounds": [
+        0,
+        65535,
+        0
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x1",
+          "raw": "0000",
+          "value": 0
+        }
+      ],
+      "width_bytes": 2,
+      "stored_raw": "0000",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x378",
+      "varstore": "AmdSetup",
+      "offset": "0x6fb",
+      "flags": "0x10",
+      "label": "GFX DC BTC",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "Disabled",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Enabled",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Auto",
+          "value": 15,
+          "type": "0x0",
+          "flags": "0x10"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "0f",
+      "stored_value": 15,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x379",
+      "varstore": "AmdSetup",
+      "offset": "0x6fc",
+      "flags": "0x10",
+      "label": "GFX DC BTC Set voltage in mV",
+      "kind": "NUMERIC",
+      "visibility_flags": [],
+      "options": [],
+      "bounds": [
+        0,
+        65535,
+        0
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x1",
+          "raw": "0000",
+          "value": 0
+        }
+      ],
+      "width_bytes": 2,
+      "stored_raw": "0000",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "SMU Debug",
+      "qid": "0x37a",
+      "varstore": "AmdSetup",
+      "offset": "0x6fe",
+      "flags": "0x10",
+      "label": "GFX DC BTC error offset in mV",
+      "kind": "NUMERIC",
+      "visibility_flags": [],
+      "options": [],
+      "bounds": [
+        0,
+        65535,
+        0
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x1",
+          "raw": "0000",
+          "value": 0
+        }
+      ],
+      "width_bytes": 2,
+      "stored_raw": "0000",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "AVFS coeffients",
+      "qid": "0x39f",
+      "varstore": "AmdSetup",
+      "offset": "0x74c",
+      "flags": "0x10",
+      "label": "AVFS Control",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "Manual",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "Auto",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x10"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "00",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F)",
+      "category": "power/voltage-related margin/calibration control; not a decoded voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "CBS Telemetry setup",
+      "qid": "0x3a8",
+      "varstore": "AmdSetup",
+      "offset": "0x76d",
+      "flags": "0x10",
+      "label": "Telemetry Control",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "Auto",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x10"
+        },
+        {
+          "label": "Manual",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "00",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F) -> CBS Telemetry setup (0x706A)",
+      "category": "telemetry calibration/measurement control, not voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "CBS Telemetry setup",
+      "qid": "0x3a9",
+      "varstore": "AmdSetup",
+      "offset": "0x76e",
+      "flags": "0x10",
+      "label": "VDDCR_VDD Telemetry slope",
+      "kind": "NUMERIC",
+      "visibility_flags": [],
+      "options": [],
+      "bounds": [
+        0,
+        4294967295,
+        0
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x2",
+          "raw": "00000000",
+          "value": 0
+        }
+      ],
+      "width_bytes": 4,
+      "stored_raw": "00000000",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F) -> CBS Telemetry setup (0x706A)",
+      "category": "telemetry calibration/measurement control, not voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "CBS Telemetry setup",
+      "qid": "0x3aa",
+      "varstore": "AmdSetup",
+      "offset": "0x772",
+      "flags": "0x10",
+      "label": "VDDCR_VDD Telemetry Offset Sign (positive/negative)",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "Positive",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x10"
+        },
+        {
+          "label": "Negative",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "00",
+      "stored_value": 0,
+      "signed_interpretation": "separate sign enum: 0=Positive, 1=Negative; magnitude field remains nonnegative u32",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F) -> CBS Telemetry setup (0x706A)",
+      "category": "telemetry calibration/measurement control, not voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "CBS Telemetry setup",
+      "qid": "0x3ab",
+      "varstore": "AmdSetup",
+      "offset": "0x773",
+      "flags": "0x10",
+      "label": "VDDCR_VDD Telemetry Offset Value (mA)",
+      "kind": "NUMERIC",
+      "visibility_flags": [],
+      "options": [],
+      "bounds": [
+        0,
+        4294967295,
+        0
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x2",
+          "raw": "00000000",
+          "value": 0
+        }
+      ],
+      "width_bytes": 4,
+      "stored_raw": "00000000",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F) -> CBS Telemetry setup (0x706A)",
+      "category": "telemetry calibration/measurement control, not voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "CBS Telemetry setup",
+      "qid": "0x3ac",
+      "varstore": "AmdSetup",
+      "offset": "0x777",
+      "flags": "0x10",
+      "label": "VDDCR_SOC Telemetry slope",
+      "kind": "NUMERIC",
+      "visibility_flags": [],
+      "options": [],
+      "bounds": [
+        0,
+        4294967295,
+        0
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x2",
+          "raw": "00000000",
+          "value": 0
+        }
+      ],
+      "width_bytes": 4,
+      "stored_raw": "00000000",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F) -> CBS Telemetry setup (0x706A)",
+      "category": "telemetry calibration/measurement control, not voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "CBS Telemetry setup",
+      "qid": "0x3ad",
+      "varstore": "AmdSetup",
+      "offset": "0x77b",
+      "flags": "0x10",
+      "label": "VDDCR_SOC Telemetry Offset Sign (positive/negative)",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "Positive",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x10"
+        },
+        {
+          "label": "Negative",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "00",
+      "stored_value": 0,
+      "signed_interpretation": "separate sign enum: 0=Positive, 1=Negative; magnitude field remains nonnegative u32",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F) -> CBS Telemetry setup (0x706A)",
+      "category": "telemetry calibration/measurement control, not voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "CBS Telemetry setup",
+      "qid": "0x3ae",
+      "varstore": "AmdSetup",
+      "offset": "0x77c",
+      "flags": "0x10",
+      "label": "VDDCR_SOC Telemetry Offset Value (mA)",
+      "kind": "NUMERIC",
+      "visibility_flags": [],
+      "options": [],
+      "bounds": [
+        0,
+        4294967295,
+        0
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x2",
+          "raw": "00000000",
+          "value": 0
+        }
+      ],
+      "width_bytes": 4,
+      "stored_raw": "00000000",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F) -> CBS Telemetry setup (0x706A)",
+      "category": "telemetry calibration/measurement control, not voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "CBS Telemetry setup",
+      "qid": "0x3af",
+      "varstore": "AmdSetup",
+      "offset": "0x780",
+      "flags": "0x10",
+      "label": "VDDCR_GFX Telemetry slope",
+      "kind": "NUMERIC",
+      "visibility_flags": [],
+      "options": [],
+      "bounds": [
+        0,
+        4294967295,
+        0
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x2",
+          "raw": "00000000",
+          "value": 0
+        }
+      ],
+      "width_bytes": 4,
+      "stored_raw": "00000000",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F) -> CBS Telemetry setup (0x706A)",
+      "category": "telemetry calibration/measurement control, not voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "CBS Telemetry setup",
+      "qid": "0x3b0",
+      "varstore": "AmdSetup",
+      "offset": "0x784",
+      "flags": "0x10",
+      "label": "VDDCR_GFX Telemetry Offset Sign (positive/negative)",
+      "kind": "ONE_OF",
+      "visibility_flags": [],
+      "options": [
+        {
+          "label": "Positive",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x10"
+        },
+        {
+          "label": "Negative",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "00",
+      "stored_value": 0,
+      "signed_interpretation": "separate sign enum: 0=Positive, 1=Negative; magnitude field remains nonnegative u32",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F) -> CBS Telemetry setup (0x706A)",
+      "category": "telemetry calibration/measurement control, not voltage setpoint"
+    },
+    {
+      "package": "CbsSetupDxe",
+      "scope": "Cbs path",
+      "form_label": "CBS Telemetry setup",
+      "qid": "0x3b1",
+      "varstore": "AmdSetup",
+      "offset": "0x785",
+      "flags": "0x10",
+      "label": "VDDCR_GFX Telemetry Offset Value (mA)",
+      "kind": "NUMERIC",
+      "visibility_flags": [],
+      "options": [],
+      "bounds": [
+        0,
+        4294967295,
+        0
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x2",
+          "raw": "00000000",
+          "value": 0
+        }
+      ],
+      "width_bytes": 4,
+      "stored_raw": "00000000",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "AMD CBS (0x7000) -> SMU Debug Options (0x7009) -> SMU Debug (0x703F) -> CBS Telemetry setup (0x706A)",
+      "category": "telemetry calibration/measurement control, not voltage setpoint"
+    },
+    {
+      "package": "Setup",
+      "scope": "Setup path",
+      "form_label": "Voltage Configuration",
+      "qid": "0x73",
+      "varstore": "Setup",
+      "offset": "0x1c9",
+      "flags": "0x10",
+      "label": "VCORE Fix Voltage",
+      "kind": "ONE_OF",
+      "visibility_flags": [
+        "GRAY"
+      ],
+      "options": [
+        {
+          "label": "Disabled",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x30"
+        },
+        {
+          "label": "Enabled",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "00",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "Setup (0x2710) -> Advanced (0x2712) -> hidden REF Voltage Configuration (0x28EA)",
+      "category": "Setup absolute-voltage/loadline control; hidden/gray; board/consumer unverified"
+    },
+    {
+      "package": "Setup",
+      "scope": "Setup path",
+      "form_label": "Voltage Configuration",
+      "qid": "0x74",
+      "varstore": "Setup",
+      "offset": "0x1ca",
+      "flags": "0x14",
+      "label": "  Voltage(mV)",
+      "kind": "NUMERIC",
+      "visibility_flags": [
+        "HIDDEN",
+        "GRAY"
+      ],
+      "options": [],
+      "bounds": [
+        700,
+        1250,
+        1
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x1",
+          "raw": "8403",
+          "value": 900
+        }
+      ],
+      "width_bytes": 2,
+      "stored_raw": "8403",
+      "stored_value": 900,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "Setup (0x2710) -> Advanced (0x2712) -> hidden REF Voltage Configuration (0x28EA)",
+      "category": "Setup absolute-voltage/loadline control; hidden/gray; board/consumer unverified"
+    },
+    {
+      "package": "Setup",
+      "scope": "Setup path",
+      "form_label": "Voltage Configuration",
+      "qid": "0x75",
+      "varstore": "Setup",
+      "offset": "0x1cc",
+      "flags": "0x10",
+      "label": "VCORE Loadline",
+      "kind": "ONE_OF",
+      "visibility_flags": [
+        "GRAY"
+      ],
+      "options": [
+        {
+          "label": "Disabled",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.2 Ohm",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.3 Ohm",
+          "value": 2,
+          "type": "0x0",
+          "flags": "0x30"
+        },
+        {
+          "label": "0.4 Ohm",
+          "value": 3,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.5 Ohm",
+          "value": 4,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.6 Ohm",
+          "value": 5,
+          "type": "0x0",
+          "flags": "0x0"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "02",
+      "stored_value": 2,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "Setup (0x2710) -> Advanced (0x2712) -> hidden REF Voltage Configuration (0x28EA)",
+      "category": "Setup absolute-voltage/loadline control; hidden/gray; board/consumer unverified"
+    },
+    {
+      "package": "Setup",
+      "scope": "Setup path",
+      "form_label": "Voltage Configuration",
+      "qid": "0x76",
+      "varstore": "Setup",
+      "offset": "0x1cd",
+      "flags": "0x10",
+      "label": "GFX Fix Voltage",
+      "kind": "ONE_OF",
+      "visibility_flags": [
+        "GRAY"
+      ],
+      "options": [
+        {
+          "label": "Disabled",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x30"
+        },
+        {
+          "label": "Enabled",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "00",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "Setup (0x2710) -> Advanced (0x2712) -> hidden REF Voltage Configuration (0x28EA)",
+      "category": "Setup absolute-voltage/loadline control; hidden/gray; board/consumer unverified"
+    },
+    {
+      "package": "Setup",
+      "scope": "Setup path",
+      "form_label": "Voltage Configuration",
+      "qid": "0x77",
+      "varstore": "Setup",
+      "offset": "0x1ce",
+      "flags": "0x14",
+      "label": "  Voltage(mV)",
+      "kind": "NUMERIC",
+      "visibility_flags": [
+        "HIDDEN",
+        "GRAY"
+      ],
+      "options": [],
+      "bounds": [
+        700,
+        1250,
+        1
+      ],
+      "default_opcodes": [
+        {
+          "id": "0x0",
+          "type": "0x1",
+          "raw": "8403",
+          "value": 900
+        }
+      ],
+      "width_bytes": 2,
+      "stored_raw": "8403",
+      "stored_value": 900,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "Setup (0x2710) -> Advanced (0x2712) -> hidden REF Voltage Configuration (0x28EA)",
+      "category": "Setup absolute-voltage/loadline control; hidden/gray; board/consumer unverified"
+    },
+    {
+      "package": "Setup",
+      "scope": "Setup path",
+      "form_label": "Voltage Configuration",
+      "qid": "0x78",
+      "varstore": "Setup",
+      "offset": "0x1d0",
+      "flags": "0x10",
+      "label": "GFX Loadline",
+      "kind": "ONE_OF",
+      "visibility_flags": [
+        "GRAY"
+      ],
+      "options": [
+        {
+          "label": "Disabled",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.2 Ohm",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.3 Ohm",
+          "value": 2,
+          "type": "0x0",
+          "flags": "0x30"
+        },
+        {
+          "label": "0.4 Ohm",
+          "value": 3,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.5 Ohm",
+          "value": 4,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "0.6 Ohm",
+          "value": 5,
+          "type": "0x0",
+          "flags": "0x0"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "02",
+      "stored_value": 2,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "Setup (0x2710) -> Advanced (0x2712) -> hidden REF Voltage Configuration (0x28EA)",
+      "category": "Setup absolute-voltage/loadline control; hidden/gray; board/consumer unverified"
+    },
+    {
+      "package": "Setup",
+      "scope": "Setup path",
+      "form_label": "Voltage Configuration",
+      "qid": "0x79",
+      "varstore": "Setup",
+      "offset": "0x1d1",
+      "flags": "0x10",
+      "label": "MEMIO Fix Voltage",
+      "kind": "ONE_OF",
+      "visibility_flags": [
+        "GRAY"
+      ],
+      "options": [
+        {
+          "label": "Disabled",
+          "value": 0,
+          "type": "0x0",
+          "flags": "0x30"
+        },
+        {
+          "label": "Enabled",
+          "value": 1,
+          "type": "0x0",
+          "flags": "0x0"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "00",
+      "stored_value": 0,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "Setup (0x2710) -> Advanced (0x2712) -> hidden REF Voltage Configuration (0x28EA)",
+      "category": "Setup absolute-voltage/loadline control; hidden/gray; board/consumer unverified"
+    },
+    {
+      "package": "Setup",
+      "scope": "Setup path",
+      "form_label": "Voltage Configuration",
+      "qid": "0x7a",
+      "varstore": "Setup",
+      "offset": "0x1d2",
+      "flags": "0x10",
+      "label": "  Voltage",
+      "kind": "ONE_OF",
+      "visibility_flags": [
+        "HIDDEN",
+        "GRAY"
+      ],
+      "options": [
+        {
+          "label": "1.20 V",
+          "value": 8,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "1.25 V",
+          "value": 14,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "1.30 V",
+          "value": 19,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "1.35 V",
+          "value": 30,
+          "type": "0x0",
+          "flags": "0x30"
+        },
+        {
+          "label": "1.40 V",
+          "value": 36,
+          "type": "0x0",
+          "flags": "0x0"
+        },
+        {
+          "label": "1.45 V",
+          "value": 41,
+          "type": "0x0",
+          "flags": "0x0"
+        }
+      ],
+      "bounds": null,
+      "default_opcodes": [],
+      "width_bytes": 1,
+      "stored_raw": "1e",
+      "stored_value": 30,
+      "signed_interpretation": "unsigned IFR numeric encoding; no negative range/option observed",
+      "path": "Setup (0x2710) -> Advanced (0x2712) -> hidden REF Voltage Configuration (0x28EA)",
+      "category": "Setup absolute-voltage/loadline control; hidden/gray; board/consumer unverified"
+    }
+  ],
+  "direct_recheck": {
+    "nvar_command": "PYTHONDONTWRITEBYTECODE=1 python3 -B scripts/nvar_audit.py <ROM> --store-offset 0 --store-length 0x10000 --variable AmdSetup/Setup",
+    "nvar_observed": "AmdSetup exit 0, records 53, selected 1, errors 0; Setup exit 0, records 53, selected 1, errors 0",
+    "menu_command": "PYTHONDONTWRITEBYTECODE=1 python3 -B evidence/firmware-audit/20260920-df-init-route/menu-verify.py",
+    "menu_observed": "exit 0, PASS, stderr empty; menu-result pre/post sha256 6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a",
+    "temporary_outputs": {
+      "AmdSetup_json_sha256": "4038ec8b6c6f1f3a41e3cb70c50b0ba529e6d54c093521e5659a684fba751d42",
+      "Setup_json_sha256": "33bed5068c3d9e44140fe99f60d2abfe56d8c18ca8f203a077507c37356ce512"
+    },
+    "parser_errors": []
+  },
+  "scope_notes": {
+    "actual_setup_controls": "Controls parsed as ONE_OF/NUMERIC in exact Setup/CbsSetupDxe HII packages; display-only Hardware Monitor voltage text is excluded.",
+    "signedness": "IFR numeric ranges are nonnegative; VDDCR offset help says signed integer [mV] but has u32 bounds 0..0xffffffff and no negative option. Telemetry sign uses a separate Positive/Negative enum plus nonnegative u32 magnitude. Setup voltage(mV) fields are u16 with 700..1250 bounds.",
+    "hardware": "No rail/consumer mapping, physical voltage, safe setpoint, or board behavior is proven."
+  }
+}

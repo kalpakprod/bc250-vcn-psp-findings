@@ -1,0 +1,20 @@
+[
+  {
+    "command": [
+      "tools/abl-emulator-venv/bin/python",
+      "evidence/firmware-audit/20260923-abl95fc-next/emulate_startup_df.py"
+    ],
+    "exit": 0,
+    "stdout": "stock_caller SVC28 selector7 argument 0x100 instructions 55\nmodified_argument SVC28 selector7 argument 0x101 instructions 53\nrestored_argument SVC28 selector7 argument 0x100 instructions 53\nPASS3 native ABL4 transition cases\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python",
+      "evidence/firmware-audit/20260923-abl95fc-next/verify_smu_transition.py"
+    ],
+    "exit": 0,
+    "stdout": "PASS dispatch entries and 332 SMU instruction bytes; exact ROM slice\n",
+    "stderr": ""
+  }
+]

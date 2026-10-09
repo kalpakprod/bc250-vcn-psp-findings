@@ -1,0 +1,75 @@
+0x00000000: ldr        sp,[0x28]
+0x00000004: ldr        r2,[0x2c]
+0x00000008: blx        r2
+0x0000000c: cpy        sp,r0
+0x00000010: ldr        lr,[0x30]
+0x00000014: ldr        r2,[0x34]
+0x00000018: blx        r2
+0x0000001c: b          0x1c
+0x00000020: stmia      r0!,{r1,r2}
+0x00000024: bx         lr
+0x00000028: andeq      r7,r5,r0, lsr #0x1c
+0x0000002c: andeq      r4,r5,sp, asr r4
+0x00000030: andeq      r4,r5,r12, lsl r1
+0x00000034: andeq      r4,r5,r9, asr #0x1e
+0x00000038: cmp        r2,#0x3
+0x0000003c: bls        0xa0
+0x00000040: ands       r12,r0,#0x3
+0x00000044: beq        0x6c
+0x00000048: ldrb       r3,[r1],#0x1
+0x0000004c: cmp        r12,#0x2
+0x00000050: add        r2,r2,r12
+0x00000054: ldrbls     r12,[r1],#0x1
+0x00000058: strb       r3,[r0],#0x1
+0x0000005c: ldrbcc     r3,[r1],#0x1
+0x00000060: strbls     r12,[r0],#0x1
+0x00000064: sub        r2,r2,#0x4
+0x00000068: strbcc     r3,[r0],#0x1
+0x0000006c: ands       r3,r1,#0x3
+0x00000070: beq        0xc4
+0x00000074: subs       r2,r2,#0x8
+0x00000078: bcc        0x90
+0x0000007c: ldr        r3,[r1],#0x4
+0x00000080: subs       r2,r2,#0x8
+0x00000084: ldr        r12,[r1],#0x4
+0x00000088: stmia      r0!,{r3,r12}
+0x0000008c: b          0x78
+0x00000090: adds       r2,r2,#0x4
+0x00000094: ldrpl      r3,[r1],#0x4
+0x00000098: strpl      r3,[r0],#0x4
+0x0000009c: cpy        r0,r0
+0x000000a0: movs       r2,r2, lsl #0x1f
+0x000000a4: ldrbcs     r3,[r1],#0x1
+0x000000a8: ldrbcs     r12,[r1],#0x1
+0x000000ac: ldrbmi     r2,[r1],#0x1
+0x000000b0: strbcs     r3,[r0],#0x1
+0x000000b4: strbcs     r12,[r0],#0x1
+0x000000b8: strbmi     r2,[r0],#0x1
+0x000000bc: bx         lr
+0x000000c0: uxtab16mi  r4,r0,r8, ror #8
+0x000000c4: stmdb      sp!,{r4,lr}
+0x000000c8: subs       r2,r2,#0x20
+0x000000cc: bcc        0xe8
+0x000000d0: ldmia      r1!,{r3,r4,r12,lr}
+0x000000d4: subs       r2,r2,#0x20
+0x000000d8: stmia      r0!,{r3,r4,r12,lr}
+0x000000dc: ldmia      r1!,{r3,r4,r12,lr}
+0x000000e0: stmia      r0!,{r3,r4,r12,lr}
+0x000000e4: bcs        0xd0
+0x000000e8: movs       r12,r2, lsl #0x1c
+0x000000ec: ldmiacs    r1!,{r3,r4,r12,lr}
+0x000000f0: stmiacs    r0!,{r3,r4,r12,lr}
+0x000000f4: ldmiami    r1!,{r3,r4}
+0x000000f8: stmiami    r0!,{r3,r4}
+0x000000fc: ldmia      sp!,{r4,lr}
+0x00000100: movs       r12,r2, lsl #0x1e
+0x00000104: ldrcs      r3,[r1],#0x4
+0x00000108: strcs      r3,[r0],#0x4
+0x0000010c: bxeq       lr
+0x00000110: movs       r2,r2, lsl #0x1f
+0x00000114: ldrhcs     r3,[r1],#0x2
+0x00000118: ldrbmi     r2,[r1],#0x1
+0x0000011c: strhcs     r3,[r0],#0x2
+0x00000120: strbmi     r2,[r0],#0x1
+0x00000124: bx         lr
+0x00000128: andeq      pc,r0,#0x4f

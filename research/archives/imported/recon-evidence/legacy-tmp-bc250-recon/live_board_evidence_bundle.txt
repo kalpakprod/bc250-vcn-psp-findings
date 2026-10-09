@@ -1,0 +1,296 @@
+LIVE BOARD EVIDENCE BUNDLE (127.0.0.1, stock 7.2.0-1.1-cachyos-bc250)
+
+
+########## live_board_readonly_snapshot.txt (2493b) ##########
+--- NBIO safe targets ---
+NBIO_RC=0
+read iohc_source_5c 0x13b1005c
+value iohc_source_5c=0x00008000
+read iohc_source_60 0x13b10060
+value iohc_source_60=0x0000ffff
+read iohc_source_4c 0x13b0004c
+value iohc_source_4c=0x00800000
+read nbio_target_6a140 0x0006a140
+value nbio_target_6a140=0x00008000
+read nbio_target_6a144 0x0006a144
+value nbio_target_6a144=0x0000ffff
+read nbio_target_6a148 0x0006a148
+value nbio_target_6a148=0x00800000
+read nbio_target_6a14c 0x0006a14c
+value nbio_target_6a14c=0x00000008
+read nbio_route_33e0 0x000033e0
+value nbio_route_33e0=0x00003820
+{
+  "iohc_source_4c": "0x00800000",
+  "iohc_source_5c": "0x00008000",
+  "iohc_source_60": "0x0000ffff",
+  "nbio_route_33e0": "0x00003820",
+  "nbio_target_6a140": "0x00008000",
+  "nbio_target_6a144": "0x0000ffff",
+  "nbio_target_6a148": "0x00800000",
+  "nbio_target_6a14c": "0x00000008"
+}
+--- gasket policy ---
+GSK_RC=0
+read 0x0322011c
+value 0xffffffff
+read 0x03220124
+value 0xffffffff
+read 0x0322012c
+value 0xffffffff
+read 0x03220174
+value 0xffffffff
+read 0x0322017c
+value 0xffffffff
+read 0x03220184
+value 0xffffffff
+read 0x0322018c
+value 0xffffffff
+read 0x03220120
+value 0xffffffff
+read 0x03220128
+value 0xffffffff
+read 0x03220130
+value 0xffffffff
+read 0x03220178
+value 0xffffffff
+read 0x03220180
+value 0xffffffff
+read 0x03220188
+value 0xffffffff
+read 0x03220190
+value 0xffffffff
+read 0x01033974
+value 0xffffffff
+read 0x01033978
+value 0xffffffff
+read 0x09033910
+value 0xffffffff
+read 0x09033914
+value 0xffffffff
+read 0x09033934
+value 0xffffffff
+read 0x09033938
+value 0xffffffff
+read 0x09033974
+value 0xffffffff
+read 0x09033978
+value 0xffffffff
+{
+  "0x01033974": "0xffffffff",
+  "0x01033978": "0xffffffff",
+  "0x0322011c": "0xffffffff",
+  "0x03220120": "0xffffffff",
+  "0x03220124": "0xffffffff",
+  "0x03220128": "0xffffffff",
+  "0x0322012c": "0xffffffff",
+  "0x03220130": "0xffffffff",
+  "0x03220174": "0xffffffff",
+  "0x03220178": "0xffffffff",
+  "0x0322017c": "0xffffffff",
+  "0x03220180": "0xffffffff",
+  "0x03220184": "0xffffffff",
+  "0x03220188": "0xffffffff",
+  "0x0322018c": "0xffffffff",
+  "0x03220190": "0xffffffff",
+  "0x09033910": "0xffffffff",
+  "0x09033914": "0xffffffff",
+  "0x09033934": "0xffffffff",
+  "0x09033938": "0xffffffff",
+  "0x09033974": "0xffffffff",
+  "0x09033978": "0xffffffff"
+}
+normal_matches=0/7
+debug_matches=0/7
+--- enable_vcn --verify ---
+VERIFY_RC=2
+python3: can't open file '/home/OWNER/vcn_unlock/daveonde-bc250-vcn-enable/enable_vcn.py': [Errno 2] No such file or directory
+DONE_RO
+
+
+
+########## live_board_verify2_probe.txt (656b) ##########
+PWD=/home/OWNER/vcn_unlock
+--- exact dir name (cat -A) ---
+ls: невозможно получить доступ к './dadeonde-bc250-vcn-enable': Нет такого файла или каталога
+--- cd + ls -la inside ---
+--- stat barefile ---
+bash: строка 1: cd: ./dadeonde-bc250-vcn-enable: Нет такого файла или каталога
+stat: не удалось выполнить statx для 'enable_vcn.py': Нет такого файла или каталога
+--- try run --verify directly ---
+VERIFY2_RC=2
+python3: can't open file '/home/OWNER/vcn_unlock/./enable_vcn.py': [Errno 2] No such file or directory
+
+
+
+########## live_board_verify3_dyn.txt (1360b) ##########
+VP=[./daveconde-bc250-vcn-enable/enable_vcn.py]
+VD=[./daveconde-bc250-vcn-enable]
+SP=[./bc250-smu-unlock]
+--- python ---
+/usr/bin/python3
+Python 3.14.7
+--- RUN --verify (dynamic paths, sudo env PYTHONPATH) ---
+VERIFY3_RC=0
+[*] SMU alive
+[*] secure access closed -- running the library unlock ...
+gate before: 0xFD (closed)
+dbg byte 0x01 entry byte 0x00
+P = 0x0797C N = 105
+fake table ok
+dbg unlocked; SMU still alive (this was a triumph..)
+fixup SMU state
+fixup done; only 0x7B3C (dbg) should differ from boot
+SMU alive: True
+[*] secure access open (unlocked SMU debug path active)
+[*] dom6 state word @0xf714 = 0x00010101 (state byte = 0x01)
+[*] per-slot state, BEFORE:
+    slot 0x16  dom=6  table: cur(+130)= 18 remembered(+134)= 18   gate@0x06d100
+        +0x00 clock   = 0x00000012    +0x08 enable = 0x00000000off    +0x14 divider = 0x00000005    +0x24 status = 0x01290053 READY(bit16)
+    slot 0x17  dom=6  table: cur(+130)=  0 remembered(+134)= 32   gate@0x06d128
+        +0x00 clock   = 0x00000000    +0x08 enable = 0x00000000off    +0x14 divider = 0x00000005    +0x24 status = 0x00090053 READY(bit16)
+    slot 0x18  dom=6  table: cur(+130)= 20 remembered(+134)= 20   gate@0x06d150
+        +0x00 clock   = 0x00000014    +0x08 enable = 0x00000000off    +0x14 divider = 0x00000005    +0x24 status = 0x01490053 READY(bit16)
+
+[--verify: read-only. exiting]
+
+
+
+########## live_board_enable_vcn_help.txt (4114b) ##########
+=== --help ===
+usage: enable_vcn.py [-h] [--no-fire] [--verify] [--force]
+                     [--fw-offset VRAM_OFF] [--direct-load [PATH]]
+                     [--keep-vcn] [--no-enable-engage] [--smn-vcn-probe]
+                     [--smn-vcn-addr SMN_VCN_ADDR] [--vcn-power-regs]
+                     [--vcn-power-regs-w] [--manual-powerup] [--thunk-writes]
+                     [--config-writes] [--force-thunk-writes] [--thunk-probe]
+                     [--inline-store-probe] [--dom6-dump] [--msg-table]
+                     [--probe-fn ADDR] [--probe-reg SMN]
+                     [--probe-value PROBE_VALUE] [--bdf BDF]
+
+options:
+  -h, --help            show this help message and exit
+  --no-fire             unlock + prechecks + install the sequence, but do not
+                        trigger
+  --verify              read-only: dump dom6/slot state, install nothing
+  --force               proceed even if the dom6 state byte is 0x00 (wrapper
+                        would auto-power dom6 first -- known wedge)
+  --fw-offset VRAM_OFF  with --direct-load: pin the VRAM staging offset
+                        (default: auto-walk zero spans at 8MB..24MB)
+  --direct-load [PATH]  after the Discord fire, stage the navi10 VCN fw in
+                        VRAM from USERSPACE and bring VCN up the driver's
+                        DIRECT way (no PSP/TEE) -- then run the driver's own
+                        ring test as proof. Needs amdgpu LOADED (raw MMIO/VRAM
+                        transport only)
+  --keep-vcn            with --direct-load: leave VCN running after the proof
+                        (default parks it again -- vcn_v2_0_stop register-
+                        level)
+  --no-enable-engage    skip the post-fire step that engages the three dom6
+                        per-slot clock ENABLE (+0x08)=1 bits (the safe bounded
+                        window write from README 2.4) and reads the dom6 power
+                        sequencer. Default: engage + read out.
+  --smn-vcn-probe       after the main stages, ONE SMN read THROUGH the SMU
+                        (Q3 msg 0x2A, the mem64 window) at --smn-vcn-addr.
+                        CORRECTED 2026-08-24: the fw MASKS the arg to 20 bits
+                        (base 0x01100000) -- the window reaches the NBIO frame
+                        ONLY and can never express a 0x024xxxxx fabric address
+                        (a fabric arg silently aliases into NBIO). WARNING: a
+                        dead NBIO offset stalls the SMN bus -- SMU wedge,
+                        self-recovers ~10s or cold cycle
+  --smn-vcn-addr SMN_VCN_ADDR
+                        SMN address --smn-vcn-probe reads, as passed to the
+                        mem64 window (default 0x01103010 -- the NBIO-frame-
+                        hypothesis spelling of the 2026-08-24 'fast 0' masked
+                        alias of the 0x02403010 arg; under the low-frame
+                        hypothesis the same read hit 0x00003010 -- the frame
+                        question is what route P step 0 discriminates). The
+                        sanity read uses the PROVEN 0x5A870 window offset
+                        (core mask). The 0x1F8xx family is refused (dead
+                        responder under either frame hypothesis -- the
+                        documented hard wedge)
+  --vcn-power-regs      standalone: FABRIC-SLICE PROBE -- dump VCN's
+                        0x024xxxxx slice (0x02403000 + 0x00..0x3C) plus THM/GC
+                        live-IP slice anchors through the PCI-config SMN
+                        window (root 00:00.0 config 0xB8/0xBC, the library
+                        transport; full 32-bit SMN addresses -- the ONE CPU-
+                        side transport not measured to hang). TRANSPORT FIX
+                        2026-08-24 evening: the old route P mmap'd BAR0
+                        (VRAM!) -- its reads were VRAM artifacts; the BAR5
+                        PCIE_INDEX2 window is the measured board-hang path.
+                        Step 0 also runs the FRAME DISCRIMINATOR: core mask at
+=== subcommands list ===
+
+
+
+########## live_board_nofire_output.txt (1508b) ##########
+=== --no-fire (install sequence, NO trigger) ===
+NOFIRE_RC=0
+[*] SMU alive
+[*] secure access open (unlocked SMU debug path active)
+[*] dom6 state word @0xf714 = 0x00010101 (state byte = 0x01)
+[*] per-slot state, BEFORE:
+    slot 0x16  dom=6  table: cur(+130)= 18 remembered(+134)= 18   gate@0x06d100
+        +0x00 clock   = 0x00000012    +0x08 enable = 0x00000000off    +0x14 divider = 0x00000005    +0x24 status = 0x01290053 READY(bit16)
+    slot 0x17  dom=6  table: cur(+130)=  0 remembered(+134)= 32   gate@0x06d128
+        +0x00 clock   = 0x00000000    +0x08 enable = 0x00000000off    +0x14 divider = 0x00000005    +0x24 status = 0x00090053 READY(bit16)
+    slot 0x18  dom=6  table: cur(+130)= 20 remembered(+134)= 20   gate@0x06d150
+        +0x00 clock   = 0x00000014    +0x08 enable = 0x00000000off    +0x14 divider = 0x00000005    +0x24 status = 0x01490053 READY(bit16)
+
+[*] installing the sequence at SMU SRAM 0x3ff00 (20 bytes, via smu_write32 debug path):
+      36 41 00 1c 6a e5 83 e3 1c 7a a5 83 e3 1c 8a 65 83 e3 1d f0
+      entry   a1, 0x20
+      movi.n  a10, 0x16
+      call8   0x23744
+      movi.n  a10, 0x17
+      call8   0x23744
+      movi.n  a10, 0x18
+      call8   0x23744
+      retw.n
+[+] sequence installed and read-back verified
+[*] Q3 msg-0x61 handler slot @0x776c -> 0x3ff00 (read-back ok)
+
+[--no-fire: install + repoint verified, NOTHING triggered. Disarming now (handler slot restored, thunk wiped).]
+[*] restored msg-0x61 handler slot -> 0 (read-back 0x0)
+[*] thunk scratch wiped
+
+
+================ LIVE-BOARD CONFIRMATION & RECIPE (2026-08-29, ~12:10) ================
+- Board LIVE on STOCK 7.2.0-1.1-cachyos-bc250 (boot-fix survived). ssh OK (.118 & .34).
+- --verify (read-only): SMU unlocked (dbg open); dom6 @0xf714=0x00010101 => G1 CONFIRMED live;
+  slots 0x16/17/18 table populated, status=READY BUT enable=0x00 OFF (all 3) => G2 clock-ENABLE PENDING.
+- read_sec_gasket_policy.py: Data-Fabric firewall regs 0x0322011c..,0x01033974/78,0x09033910..3978 ALL = 0xFFFFFFFF;
+  normal_matches 0/7, debug_matches 0/7 => G5 clamp ACTIVE on the live board (empirical confirmation of the blocker).
+- read_nbio_safe_targets.py (read-only NBIO snapshot, sudo+PYTHONPATH): 
+   0x13b1005c=0x8000  0x13b10060=0xffff  0x13b0004c=0x800000
+   nbio_target 6a140=0x8000 6a144=0xffff 6a148=0x800000 6a14c=0x8  route_33e0=0x3820
+   (these are the CURRENT clamped values -> baseline for the S4 un-clamp write).
+--no-fire (this turn): fire-sequence installed @SMU SRAM 0x3ff00 (movi a10,0x16/17/18; call8 0x23744 x3; retw),
+  msg-0x61 handler @0x776c->0x3ff00, read-back OK, DISARMED (handler->0, thunk wiped). NOTHING armed.
+
+- EXACT CLI RECIPE (resumed agent, sudo + PYTHONPATH, dynamic path):
+  cd ~/vcn_unlock; VP=$(find . -maxdepth 2 -type f -name enable_vcn.py|head -1);
+  SP=$(find . -maxdepth 1 -mindepth 1 -type d -name bc250-smu-unlock|head -1);
+  sudo env PYTHONPATH=$PWD/$SP python3 $VP --verify   # read-only
+  sudo env PYTHONPATH=$PWD/$SP python3 $VP --no-fire   # install, NO trigger (done)
+  sudo env PYTHONPATH=$PWD/$SP python3 $VP --force     # arm+fire -> slots enable=1 -> clocks up (NEXT write)
+  # G5 un-clamp (PATH A, Q3 0x98 SMN writes) via our smn_vcn_gasket_unclamp.py / vcn_safe_run.sh S4
+  # direct-load proof: sudo env PYTHONPATH=$PWD/$SP python3 $VP --direct-load navi10_vcn.bin   (ring-test)
+  # one SMN read-through-SMU proof: $VP --smn-vcn-probe --smn-vcn-addr 0x01103010 (PROVEN; NOT 0x1F8xx)
+- Gotchas: remote shell=FISH ($status not $?); default python3=3.14.7 (pycache has 3.11 too); module name 'bc250_smu'
+  needs PYTHONPATH; SMN window needs ROOT (sudo); --force avoids known auto-power-dom6 wedge.
+- SAFE orchestrator scripts DEPLOYED to ~/vcn_unlock/: vcn_safe_run.sh (verify->no-fire->fire->S4->direct-load), vcn_watch.sh, vcn_deploy.sh, VCN-START-SAFE.md (all bash -n OK).
+- NEXT agent: --force (arm clocks, watch for wedge, revert=power-cycle), verify VCLK!=0, then G5 un-clamp (PATH A), then --direct-load ring smoke, then vainfo/pm_info (V3/V5), cold-reboot V6.
+
+
+================ G5 CONFIRMATION + NBIO-DECODE (2026-08-29 ~12:40) ================
+--force (RC=0, board SURVIVED, self-disarmed): slots 0x16/17/18 enable=0x00000001 ON, status READY;
+  dom6 @0x06d190=0x01010101; ctrl @0x06d0f8=0x00000002 (dom clock-GATE latched slot0x17/bit1).
+  => G2 clock-enable DONE live.
+G5 PROBE (amdgpu_regs sudo, safe): ALL VCN regs=0xFFFF_FFFF incl mmUVD_VERSION => V2(!=FFFF) NOT met;
+  G2 alone did NOT open G5 (independent clamp confirmed).
+NBIO STABLE coldboot+vcn-clock(2026-08-25)==today: 0x13b1005c=0x8000 0x13b10060=0xffff 0x13b0004c=0x800000;
+  target 6a140=0x8000 6a144=0xffff 6a148=0x800000 6a14c=0x8 route_33e0=0x3820 -> NOT the gate.
+Gasket GAP: Robin SEC_GASKET VCN_FABRIC only group 0x280(0x03a2011c); CEZANNE adds group 0x201 regs 0x1c780/1c784
+  routing VCN_FABRIC 0x02403000 -> ROBIN OMITS IT (proved gasket gap).
+Bank-12 (smn_vcn_gasket_unclamp.py) = Peripheral Level-1; '56 writes done, bridge not opened' insufficient ->
+  need IF/Fabric level; current blocker: exact un-clamp targets unknown.

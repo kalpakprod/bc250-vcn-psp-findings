@@ -1,0 +1,169 @@
+0x0/3: entry a1, 0x30
+   0: unique[8d80:4] = a1
+   1: unique[8e00:4] = PS >> 0xc
+   2: unique[8e80:1] = SUBPIECE unique[8e00:4], 0x0
+   3: unique[8f80:1] = unique[8e80:1] & 0x3
+   4: rotateRegWindow(unique[8f80:1])
+   5: a1 = unique[8d80:4] - 0x30
+0x3/3: l32r a8, 0x3ffff3920
+   0: a8 = ram[ffff3920:4]
+0x6/2: mov.n a11, a3
+   0: a11 = a3
+0x8/3: addx8 a7, a2, a2
+   0: unique[2700:4] = a2 << 0x3
+   1: a7 = unique[2700:4] + a2
+0xb/3: addx8 a7, a7, a8
+   0: unique[2700:4] = a7 << 0x3
+   1: a7 = unique[2700:4] + a8
+0xe/3: l8ui a8, a7, 0x14
+   0: unique[9c00:4] = zext(0x14)
+   1: unique[9d00:4] = a7 + unique[9c00:4]
+   2: unique[9d80:1] = *[ram]unique[9d00:4]
+   3: a8 = zext(unique[9d80:1])
+0x11/3: l32r a4, 0x3ffff3608
+   0: a4 = ram[ffff3608:4]
+0x14/3: l32r a2, 0x3ffff3634
+   0: a2 = ram[ffff3634:4]
+0x17/3: beq a8, a3, 0x6c
+   0: unique[5e00:1] = a8 == a3
+   1: if (unique[5e00:1]) goto ram[6c:4]
+0x1a/2: l32i.n a12, a7, 0x8
+   0: unique[a800:4] = a7 + 0x8
+   1: a12 = *[ram]unique[a800:4]
+0x1c/2: l32i.n a6, a7, 0x34
+   0: unique[a800:4] = a7 + 0x34
+   1: a6 = *[ram]unique[a800:4]
+0x1e/2: l32i.n a10, a7, 0x38
+   0: unique[a800:4] = a7 + 0x38
+   1: a10 = *[ram]unique[a800:4]
+0x20/2: l32i.n a5, a7, 0x3c
+   0: unique[a800:4] = a7 + 0x3c
+   1: a5 = *[ram]unique[a800:4]
+0x22/2: add.n a6, a6, a12
+   0: a6 = a6 + a12
+0x24/2: add.n a10, a10, a12
+   0: a10 = a10 + a12
+0x26/2: s32i.n a10, a1, 0x4
+   0: unique[10980:4] = a1 + 0x4
+   1: *[ram]unique[10980:4] = a10
+0x28/2: s32i.n a6, a1, 0x0
+   0: unique[10980:4] = a1 + 0x0
+   1: *[ram]unique[10980:4] = a6
+0x2a/2: add.n a5, a5, a12
+   0: a5 = a5 + a12
+0x2c/3: and a3, a10, a4
+   0: a3 = a10 & a4
+0x2f/2: add.n a3, a3, a2
+   0: a3 = a3 + a2
+0x31/2: movi.n a6, 0x1
+   0: a6 = sext(0x1)
+0x33/3: memw 
+   0: memw()
+0x36/3: l32i a3, a3, 0x200
+   0: unique[a680:4] = a3 + 0x200
+   1: a3 = *[ram]unique[a680:4]
+0x39/2: beqz.n a11, 0x6e
+   0: unique[5f80:1] = a11 == 0x0
+   1: if (unique[5f80:1]) goto ram[6e:4]
+0x3b/3: or a11, a3, a6
+   0: a11 = a3 | a6
+0x3e/3: call8 -0x72c
+   0: unique[1c80:4] = 0x80000041
+   1: unique[6e00:4] = PS & 0xffffcfff
+   2: unique[6e80:4] = zext(0x2)
+   3: unique[6f00:4] = unique[6e80:4] << 0xc
+   4: PS = unique[6e00:4] | unique[6f00:4]
+   5: a8 = unique[1c80:4]
+   6: swap8()
+   7: call ram[fffff8d4:4]
+   8: restore8()
+0x41/2: l32i.n a9, a1, 0x0
+   0: unique[a800:4] = a1 + 0x0
+   1: a9 = *[ram]unique[a800:4]
+0x43/3: and a9, a9, a4
+   0: a9 = a9 & a4
+0x46/2: add.n a9, a9, a2
+   0: a9 = a9 + a2
+0x48/3: memw 
+   0: memw()
+0x4b/3: l32i a10, a9, 0x200
+   0: unique[a680:4] = a9 + 0x200
+   1: a10 = *[ram]unique[a680:4]
+0x4e/3: bbci a10, 0x8, 0x48
+   0: unique[5880:4] = 0x1 << 0x8
+   1: unique[5880:4] = a10 & unique[5880:4]
+   2: unique[5980:1] = unique[5880:4] == 0x0
+   3: if (unique[5980:1]) goto ram[48:4]
+0x51/2: mov.n a10, a5
+   0: a10 = a5
+0x53/3: l32r a11, 0x3ffff3a24
+   0: a11 = ram[ffff3a24:4]
+0x56/3: call8 -0x72c
+   0: unique[1c80:4] = 0x80000059
+   1: unique[6e00:4] = PS & 0xffffcfff
+   2: unique[6e80:4] = zext(0x2)
+   3: unique[6f00:4] = unique[6e80:4] << 0xc
+   4: PS = unique[6e00:4] | unique[6f00:4]
+   5: a8 = unique[1c80:4]
+   6: swap8()
+   7: call ram[fffff8d4:4]
+   8: restore8()
+0x59/3: and a9, a5, a4
+   0: a9 = a5 & a4
+0x5c/2: add.n a9, a9, a2
+   0: a9 = a9 + a2
+0x5e/3: memw 
+   0: memw()
+0x61/3: l32i a10, a9, 0x200
+   0: unique[a680:4] = a9 + 0x200
+   1: a10 = *[ram]unique[a680:4]
+0x64/3: bbsi a10, 0x10, 0x5e
+   0: unique[5c80:4] = 0x1 << 0x10
+   1: unique[5c80:4] = a10 & unique[5c80:4]
+   2: unique[5d80:1] = unique[5c80:4] != 0x0
+   3: if (unique[5d80:1]) goto ram[5e:4]
+0x67/3: s8i a6, a7, 0x14
+   0: unique[10180:4] = zext(0x14)
+   1: unique[10280:4] = a7 + unique[10180:4]
+   2: *[ram]unique[10280:4] = a6
+0x6a/2: retw.n 
+   0: unique[ed80:4] = a0 & 0x3fffffff
+   1: unique[ee00:4] = 0x6a & 0xc0000000
+   2: unique[ef00:4] = unique[ed80:4] | unique[ee00:4]
+   3: restoreRegWindow()
+   4: return unique[ef00:4]
+0x6c/2: retw.n 
+   0: unique[ed80:4] = a0 & 0x3fffffff
+   1: unique[ee00:4] = 0x6c & 0xc0000000
+   2: unique[ef00:4] = unique[ed80:4] | unique[ee00:4]
+   3: restoreRegWindow()
+   4: return unique[ef00:4]
+0x6e/2: l32i.n a6, a1, 0x4
+   0: unique[a800:4] = a1 + 0x4
+   1: a6 = *[ram]unique[a800:4]
+0x70/2: mov.n a10, a5
+   0: a10 = a5
+0x72/2: movi.n a11, 0x1
+   0: a11 = sext(0x1)
+0x74/3: call8 -0x72c
+   0: unique[1c80:4] = 0x80000077
+   1: unique[6e00:4] = PS & 0xffffcfff
+   2: unique[6e80:4] = zext(0x2)
+   3: unique[6f00:4] = unique[6e80:4] << 0xc
+   4: PS = unique[6e00:4] | unique[6f00:4]
+   5: a8 = unique[1c80:4]
+   6: swap8()
+   7: call ram[fffff8d4:4]
+   8: restore8()
+0x77/3: and a9, a5, a4
+   0: a9 = a5 & a4
+0x7a/2: add.n a9, a9, a2
+   0: a9 = a9 + a2
+0x7c/3: memw 
+   0: memw()
+0x7f/3: l8ui a10, a0, 0x0
+   0: unique[9c00:4] = zext(0x0)
+   1: unique[9d00:4] = a0 + unique[9c00:4]
+   2: unique[9d80:1] = *[ram]unique[9d00:4]
+   3: a10 = zext(unique[9d80:1])
+

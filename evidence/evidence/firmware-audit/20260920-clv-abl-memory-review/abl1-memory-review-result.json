@@ -1,0 +1,193 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 26,
+    "total": 26
+  },
+  "checks_detail": [
+    {
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "label": "payload-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "b62ef7532f64eda263485df6142e032ee10ed01e6572b3c3889db5d42a327b90",
+      "got": "b62ef7532f64eda263485df6142e032ee10ed01e6572b3c3889db5d42a327b90",
+      "label": "disasm-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "got": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "label": "disasm-stderr-empty",
+      "status": "PASS"
+    },
+    {
+      "expected": "2de9f04f",
+      "got": "2de9f04f",
+      "label": "raw-byte:0x95fc",
+      "status": "PASS"
+    },
+    {
+      "expected": "0468",
+      "got": "0468",
+      "label": "raw-byte:0x9600",
+      "status": "PASS"
+    },
+    {
+      "expected": "008c",
+      "got": "008c",
+      "label": "raw-byte:0x9672",
+      "status": "PASS"
+    },
+    {
+      "expected": "c1f87802",
+      "got": "c1f87802",
+      "label": "raw-byte:0x9674",
+      "status": "PASS"
+    },
+    {
+      "expected": "d4f8c403",
+      "got": "d4f8c403",
+      "label": "raw-byte:0x96f0",
+      "status": "PASS"
+    },
+    {
+      "expected": "90f87400",
+      "got": "90f87400",
+      "label": "raw-byte:0x96f4",
+      "status": "PASS"
+    },
+    {
+      "expected": "d2f87822",
+      "got": "d2f87822",
+      "label": "raw-byte:0x971a",
+      "status": "PASS"
+    },
+    {
+      "expected": "b242",
+      "got": "b242",
+      "label": "raw-byte:0x971e",
+      "status": "PASS"
+    },
+    {
+      "expected": "00d2",
+      "got": "00d2",
+      "label": "raw-byte:0x9720",
+      "status": "PASS"
+    },
+    {
+      "expected": "96b2",
+      "got": "96b2",
+      "label": "raw-byte:0x9722",
+      "status": "PASS"
+    },
+    {
+      "expected": "c4f8bc62",
+      "got": "c4f8bc62",
+      "label": "raw-byte:0x973e",
+      "status": "PASS"
+    },
+    {
+      "expected": "0684",
+      "got": "0684",
+      "label": "raw-byte:0x9758",
+      "status": "PASS"
+    },
+    {
+      "expected": "95f84b00",
+      "got": "95f84b00",
+      "label": "raw-byte:0x975a",
+      "status": "PASS"
+    },
+    {
+      "expected": "83e0",
+      "got": "83e0",
+      "label": "raw-byte:0x9744",
+      "status": "PASS"
+    },
+    {
+      "expected": "6f4a",
+      "got": "6f4a",
+      "label": "raw-byte:0x984e",
+      "status": "PASS"
+    },
+    {
+      "expected": "70e7",
+      "got": "70e7",
+      "label": "raw-byte:0x98aa",
+      "status": "PASS"
+    },
+    {
+      "expected": "0a4147455341204d454d",
+      "got": "0a4147455341204d454d",
+      "label": "raw-byte:0x98ac",
+      "status": "PASS"
+    },
+    {
+      "expected": "95fc: e92d 4ff0",
+      "got": "present",
+      "label": "disasm-prologue-little-endian",
+      "status": "PASS"
+    },
+    {
+      "expected": "9672/9674",
+      "got": "present",
+      "label": "disasm-input-store-window",
+      "status": "PASS"
+    },
+    {
+      "expected": "971a/9722/973e",
+      "got": "present",
+      "label": "disasm-min-window",
+      "status": "PASS"
+    },
+    {
+      "expected": "9758/975a",
+      "got": "present",
+      "label": "disasm-writeback-loop",
+      "status": "PASS"
+    },
+    {
+      "expected": "984e/98aa",
+      "got": "present",
+      "label": "disasm-function-continuation",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x0AAGESA MEM",
+      "got": "raw 0x98ac data",
+      "label": "code-to-data-boundary",
+      "status": "PASS"
+    }
+  ],
+  "conclusion": "Raw bytes and independent Thumb-v7 disassembly confirm the exact ABL1 function performs per-channel speed collection, a lower-value reduction over table +0x278, and selected-value writeback to runtime structure +0x20. The code continues through 0x98AB, with a data string beginning at 0x98AC. This is a structural memory-policy/training lead only; no AmdSetup+0x316/INV 0x11ED input edge, UclkDiv1M0/FCLK relation, MHz units, or 1:1:1 claim follows.",
+  "dataflow": {
+    "channel_count": "0x96F0 ldr [r4,#0x3C4]; 0x96F4 ldrb [r0,#0x74]",
+    "input": "0x9672 ldrh r0,[r0,#0x20]",
+    "minimum": "0x971A load [r2+0x278]; 0x971E compare r2/r6; 0x9722 update r6 from r2 when lower; 0x973E store r6->[r4+0x2BC]",
+    "store": "0x9674 str.w r0,[r1,#0x278]",
+    "writeback": "0x9758 strh r6,[r0,#0x20]; 0x975A channel count loop"
+  },
+  "function_boundary": {
+    "code_to_data": "0x98AC",
+    "continuation_branch": "0x9744 -> 0x984E",
+    "last_code_before_data": "0x98AB",
+    "loop_backedge": "0x98AA -> 0x978E",
+    "start": "0x95FC",
+    "worker_window_note": "worker disassembly stopped at 0x9870; independent review extends the code block to 0x98AB"
+  },
+  "limitations": [
+    "No execution or hardware training result.",
+    "Historical source provides structural context only; no source/binary hash identity.",
+    "Transitive caller/context population remains unknown."
+  ],
+  "payload_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+  "prologue": {
+    "interpretation": "push.w {r4-r11,lr}",
+    "raw_bytes": "2de9f04f",
+    "thumb_objdump": "e92d 4ff0"
+  },
+  "status": "PASS"
+}

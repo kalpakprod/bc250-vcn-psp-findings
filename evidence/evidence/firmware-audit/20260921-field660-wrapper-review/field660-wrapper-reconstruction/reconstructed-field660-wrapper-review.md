@@ -1,0 +1,47 @@
+# Field 660 wrapper review — ABL1 `0x10958`
+
+## Conclusion
+
+`wrapper_semantic_claim=PASS_R0_PRESERVED_NO_POINTEE_WRITE`. Within the exact wrapper bytes `0x10958..0x1096A`, incoming R0 is used as a pointer-like base to load the indirect target at `[R0+0x660]`, then preserved as callback argument R0. The wrapper does not write through R0. The wrapper-local pointee-mutation claim is rejected; the callback body may still mutate the object and is outside this review.
+
+## Bound objective and prior state
+
+- Objective attachment read first: `/home/OWNER/orca/projects/bc250/docs/research/20260920-clv-abl1-context660-target-semantics.md`. Its latest result `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-context660-target-semantics/abl1-context660-semantics-result.json` is `PASS`, 96 checks; it describes the candidate `0x9AD8` semantics as possible only and leaves active Fclk binding unproven.
+- No named field660 machine checkpoint was present in the scoped search. Per the parent task, this review is limited to the 0x10958 wrapper; it does not repeat initializer, 0x9AD8, table-mapping, or callback-target work.
+
+## Exact inputs and provenance
+
+- CLV 5.00 donor: `/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin`; 16,777,216 bytes; SHA-256 `ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8`.
+- Extracted ABL1: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin`; 94624 bytes; SHA-256 `af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a`.
+- Exact ABL1 ELF wrapper object: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o`; SHA-256 `adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6`. Its `.data` section is 94624 bytes and byte-identical to the exact ABL1 input.
+
+## Reproduced instructions and AAPCS trace
+
+Byte range `0x10958..0x1096A` (halfwords shown in LLVM Thumb notation; raw bytes separately reconciled):
+```text
+0x10958  push {r4, r5}
+0x1095A  ldr.w r4, [r0, #0x660]
+0x1095E  mov r3, r2
+0x10960  mov r2, r1
+0x10962  mov r12, r4
+0x10964  pop {r4, r5}
+0x10966  movs r1, #1
+0x10968  bx r12
+raw bytes: 30b4d0f8604613460a46a44630bc01216047
+```
+
+- `R0` is read as the base for `[R0+0x660]`, but none of the wrapper destinations writes R0. It therefore arrives unchanged at the indirect callback.
+- The loaded word is copied `R4 -> R12`; `R4/R5` are restored before the branch. `R12` is the target and the final `BX R12` is a tail branch; LR is preserved.
+- Callback register inputs are `R0=entry R0`, `R1=1`, `R2=entry R1`, `R3=entry R2`.
+- The wrapper has no `STR`/`STM` through R0. `PUSH/POP` touch the stack, not the object. Therefore the wrapper preserves a pointer and does not mutate its pointee in this bounded body.
+
+## Verification evidence
+
+- Fresh `llvm-objdump -D -j .data` listing: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T194546+0500-10958-wrapper-disassemble-all.objdump`; stderr empty; exit 0.
+- Fresh `llvm-objcopy --dump-section .data=...` extraction: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T195201+0500-10958-wrapper-byte-check.data.bin`; stderr empty; exit 0; extracted bytes equal the ABL1 payload.
+- Reproducible 12-check wrapper verifier: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T195521+0500-10958-wrapper-verification.py`; result `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T195521+0500-10958-wrapper-verification.json`; status `PASS`, 12/12; stderr empty; exit 0.
+- Literal verifier stdout is preserved at `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T195521+0500-10958-wrapper-verification.stdout`. The first `llvm-objdump -d` attempt is also preserved at `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T194314+0500-10958-wrapper.objdump`; it exited 0 but contained only the ELF header because `.data` lacked executable flags, and is not counted as verification.
+
+## Limits and next boundary
+
+Accepted/rejected claims apply only to the wrapper body. The callback target and its effects, the identity/population of the field at `[R0+0x660]`, initialization ownership, and runtime behavior are unresolved here. No SVC handler, MMIO/PLL write, physical clock, MCLK/UCLK/FCLK equality, hardware result, or safety claim follows. No hardware, network, ROM, or firmware write occurred.

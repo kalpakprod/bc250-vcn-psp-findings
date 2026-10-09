@@ -1,0 +1,12 @@
+Bounded local hit classification for domain ID 0x18 / raw 0x6D150 / candidate FA38 names
+
+1. Exact Robin-5 selector path is already reproduced at the exact CLV body: domain ID 0x18 -> internal Group 6 -> descriptor pointer 0x6D150. This gives only an internal group/address classification.
+2. `docs/research/oc-clock-actuator-chain.md` labels the row `CLK_GROUP_6` / `Group 6 Clock`. The name derives from the firmware group number; it does not name MCLK/UCLK/FCLK/VCLK/DCLK/VCN.
+3. `evidence/firmware-audit/20260914-smu-address-trace/slot-domain-map.json` is derived from Robin-3 body SHA-256 5c805026...; its slot index 24 / domain index 6 / raw 0x6D150 row has `semantic_name: null`. Cross-version only.
+4. `docs/action-logs/2026-09-14-metrics-producer.md` associates metric source 0xFA1C with VclkFrequency and 0xFA00 with DclkFrequency under interface-v8, and states slot24 is not named by those two video fields. That table mapping is Robin-3 evidence. Exact Robin-5 `FUN_00029E34` also reads 0xFA1C/0xFA00 as metric inputs, but the focused listing does not connect those fields to program address 0x6D150.
+5. `import/.../tables/set_smu_tick_handler_slots.txt` has `slot 24: feature_stapm_tick_0`, but this is an SMU tick-handler slot table, not the clock-slot/group table.
+6. `import/.../recon/a9_secured_os.txt` includes text address `0x00fa38`; it is a separate ABL disassembly address, not a symbol for the SMU domain/register.
+7. Historical runtime strings `slot 0x18 dom=6 gate@0x06d150` identify an ordinal/internal gate label only. They do not name a physical clock tree.
+8. Independent five-header literal-address test (report `2026-09-21-smn-clock-register-corroboration.md`) returned `NO_DIRECT_HEADER_MATCH`, zero matches, 4/4 bounded assertions PASS.
+
+Verdict: local material supports Group 6 and a static SMN program/poll address; no exact physical-clock symbol/consumer edge was recovered.

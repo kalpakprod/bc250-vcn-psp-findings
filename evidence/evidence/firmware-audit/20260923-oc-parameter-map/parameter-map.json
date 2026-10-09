@@ -1,0 +1,1528 @@
+{
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "rows": [
+    {
+      "field": "Memory Clock Speed",
+      "offset": "0x316",
+      "width": 1,
+      "stored_value": 36,
+      "stored_label": "1800MHz",
+      "question_id": "0x20f",
+      "form": "0x702c",
+      "help": "Set the memory clock frequency.",
+      "path_if_root_accessible": [
+        "UMC Common Options",
+        "GDDR6 Common Options",
+        "DRAM Timing Configuration",
+        "I Accept"
+      ],
+      "root_reachable_from_CBS": false,
+      "options": [
+        {
+          "label": "Auto",
+          "value": 255,
+          "default": true
+        },
+        {
+          "label": "125MHz",
+          "value": 2,
+          "default": false
+        },
+        {
+          "label": "225MHz",
+          "value": 4,
+          "default": false
+        },
+        {
+          "label": "250MHz",
+          "value": 5,
+          "default": false
+        },
+        {
+          "label": "400MHz",
+          "value": 8,
+          "default": false
+        },
+        {
+          "label": "450MHz",
+          "value": 9,
+          "default": false
+        },
+        {
+          "label": "500MHz",
+          "value": 10,
+          "default": false
+        },
+        {
+          "label": "750MHz",
+          "value": 15,
+          "default": false
+        },
+        {
+          "label": "850MHz",
+          "value": 17,
+          "default": false
+        },
+        {
+          "label": "1000MHz",
+          "value": 20,
+          "default": false
+        },
+        {
+          "label": "1250MHz",
+          "value": 25,
+          "default": false
+        },
+        {
+          "label": "1330MHz",
+          "value": 26,
+          "default": false
+        },
+        {
+          "label": "1375MHz",
+          "value": 27,
+          "default": false
+        },
+        {
+          "label": "1500MHz",
+          "value": 30,
+          "default": false
+        },
+        {
+          "label": "1600MHz",
+          "value": 32,
+          "default": false
+        },
+        {
+          "label": "1650MHz",
+          "value": 33,
+          "default": false
+        },
+        {
+          "label": "1700MHz",
+          "value": 34,
+          "default": false
+        },
+        {
+          "label": "1750MHz",
+          "value": 35,
+          "default": false
+        },
+        {
+          "label": "1800MHz",
+          "value": 36,
+          "default": false
+        },
+        {
+          "label": "1850MHz",
+          "value": 37,
+          "default": false
+        },
+        {
+          "label": "1900MHz",
+          "value": 38,
+          "default": false
+        },
+        {
+          "label": "1950MHz",
+          "value": 39,
+          "default": false
+        },
+        {
+          "label": "2000MHz",
+          "value": 40,
+          "default": false
+        }
+      ],
+      "bounds": null,
+      "serializer": {
+        "token": "0x11ed",
+        "id_rva": "0x9837",
+        "load_rva": "0x9857",
+        "window": [
+          {
+            "rva": 38967,
+            "bytes": "baed110000",
+            "mnemonic": "mov",
+            "operands": "edx,0x11ed"
+          },
+          {
+            "rva": 38972,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 38975,
+            "bytes": "668910",
+            "mnemonic": "mov",
+            "operands": "WORD PTR [eax],dx"
+          },
+          {
+            "rva": 38978,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 38981,
+            "bytes": "8a5102",
+            "mnemonic": "mov",
+            "operands": "dl,BYTE PTR [ecx+0x2]"
+          },
+          {
+            "rva": 38984,
+            "bytes": "80e2fc",
+            "mnemonic": "and",
+            "operands": "dl,0xfc"
+          },
+          {
+            "rva": 38987,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 38990,
+            "bytes": "885002",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [eax+0x2],dl"
+          },
+          {
+            "rva": 38993,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 38996,
+            "bytes": "8b55fc",
+            "mnemonic": "mov",
+            "operands": "edx,DWORD PTR [ebp-0x4]"
+          },
+          {
+            "rva": 38999,
+            "bytes": "8a8216030000",
+            "mnemonic": "mov",
+            "operands": "al,BYTE PTR [edx+0x316]"
+          },
+          {
+            "rva": 39005,
+            "bytes": "884103",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [ecx+0x3],al"
+          },
+          {
+            "rva": 39008,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 39011,
+            "bytes": "83c104",
+            "mnemonic": "add",
+            "operands": "ecx,0x4"
+          },
+          {
+            "rva": 39014,
+            "bytes": "894df8",
+            "mnemonic": "mov",
+            "operands": "DWORD PTR [ebp-0x8],ecx"
+          }
+        ]
+      },
+      "unequal_marker_execution": true,
+      "hardware_applied": "NOT TESTED",
+      "actuator": "UNRESOLVED"
+    },
+    {
+      "field": "DRAM Timing User Controls",
+      "offset": "0x32f",
+      "width": 1,
+      "stored_value": 1,
+      "stored_label": "Manual",
+      "question_id": "0x228",
+      "form": "0x702f",
+      "help": "DRAM Timing User Controls",
+      "path_if_root_accessible": [
+        "AMD CBS",
+        "UMC Debug Options",
+        "GDDR6 Debug Options",
+        "GDDR6 DRAM Timing Configuration"
+      ],
+      "root_reachable_from_CBS": true,
+      "options": [
+        {
+          "label": "Auto",
+          "value": 255,
+          "default": true
+        },
+        {
+          "label": "Manual",
+          "value": 1,
+          "default": false
+        }
+      ],
+      "bounds": null,
+      "serializer": {
+        "token": "0x1203",
+        "id_rva": "0x9c92",
+        "load_rva": "0x9cb2",
+        "window": [
+          {
+            "rva": 40082,
+            "bytes": "ba03120000",
+            "mnemonic": "mov",
+            "operands": "edx,0x1203"
+          },
+          {
+            "rva": 40087,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 40090,
+            "bytes": "668910",
+            "mnemonic": "mov",
+            "operands": "WORD PTR [eax],dx"
+          },
+          {
+            "rva": 40093,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 40096,
+            "bytes": "8a5102",
+            "mnemonic": "mov",
+            "operands": "dl,BYTE PTR [ecx+0x2]"
+          },
+          {
+            "rva": 40099,
+            "bytes": "80e2fc",
+            "mnemonic": "and",
+            "operands": "dl,0xfc"
+          },
+          {
+            "rva": 40102,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 40105,
+            "bytes": "885002",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [eax+0x2],dl"
+          },
+          {
+            "rva": 40108,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 40111,
+            "bytes": "8b55fc",
+            "mnemonic": "mov",
+            "operands": "edx,DWORD PTR [ebp-0x4]"
+          },
+          {
+            "rva": 40114,
+            "bytes": "8a822f030000",
+            "mnemonic": "mov",
+            "operands": "al,BYTE PTR [edx+0x32f]"
+          },
+          {
+            "rva": 40120,
+            "bytes": "884103",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [ecx+0x3],al"
+          },
+          {
+            "rva": 40123,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 40126,
+            "bytes": "83c104",
+            "mnemonic": "add",
+            "operands": "ecx,0x4"
+          },
+          {
+            "rva": 40129,
+            "bytes": "894df8",
+            "mnemonic": "mov",
+            "operands": "DWORD PTR [ebp-0x8],ecx"
+          }
+        ]
+      },
+      "unequal_marker_execution": false,
+      "hardware_applied": "NOT TESTED",
+      "actuator": "UNRESOLVED"
+    },
+    {
+      "field": "UclkDiv1M0",
+      "offset": "0x330",
+      "width": 1,
+      "stored_value": 1,
+      "stored_label": "Enabled",
+      "question_id": "0x229",
+      "form": "0x702f",
+      "help": "UclkDiv1 option, relative to FCLK.",
+      "path_if_root_accessible": [
+        "AMD CBS",
+        "UMC Debug Options",
+        "GDDR6 Debug Options",
+        "GDDR6 DRAM Timing Configuration"
+      ],
+      "root_reachable_from_CBS": true,
+      "options": [
+        {
+          "label": "Auto",
+          "value": 255,
+          "default": true
+        },
+        {
+          "label": "Enabled",
+          "value": 1,
+          "default": false
+        }
+      ],
+      "bounds": null,
+      "serializer": {
+        "token": "0x1204",
+        "id_rva": "0x9cc4",
+        "load_rva": "0x9ce4",
+        "window": [
+          {
+            "rva": 40132,
+            "bytes": "ba04120000",
+            "mnemonic": "mov",
+            "operands": "edx,0x1204"
+          },
+          {
+            "rva": 40137,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 40140,
+            "bytes": "668910",
+            "mnemonic": "mov",
+            "operands": "WORD PTR [eax],dx"
+          },
+          {
+            "rva": 40143,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 40146,
+            "bytes": "8a5102",
+            "mnemonic": "mov",
+            "operands": "dl,BYTE PTR [ecx+0x2]"
+          },
+          {
+            "rva": 40149,
+            "bytes": "80e2fc",
+            "mnemonic": "and",
+            "operands": "dl,0xfc"
+          },
+          {
+            "rva": 40152,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 40155,
+            "bytes": "885002",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [eax+0x2],dl"
+          },
+          {
+            "rva": 40158,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 40161,
+            "bytes": "8b55fc",
+            "mnemonic": "mov",
+            "operands": "edx,DWORD PTR [ebp-0x4]"
+          },
+          {
+            "rva": 40164,
+            "bytes": "8a8230030000",
+            "mnemonic": "mov",
+            "operands": "al,BYTE PTR [edx+0x330]"
+          },
+          {
+            "rva": 40170,
+            "bytes": "884103",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [ecx+0x3],al"
+          },
+          {
+            "rva": 40173,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 40176,
+            "bytes": "83c104",
+            "mnemonic": "add",
+            "operands": "ecx,0x4"
+          },
+          {
+            "rva": 40179,
+            "bytes": "894df8",
+            "mnemonic": "mov",
+            "operands": "DWORD PTR [ebp-0x8],ecx"
+          }
+        ]
+      },
+      "unequal_marker_execution": false,
+      "hardware_applied": "NOT TESTED",
+      "actuator": "UNRESOLVED"
+    },
+    {
+      "field": "FCLK_DPM",
+      "offset": "0x6a3",
+      "width": 1,
+      "stored_value": 15,
+      "stored_label": "Auto",
+      "question_id": "0x7045",
+      "form": "0x703e",
+      "help": "FEATURE_FCLK_DPM_MASK",
+      "path_if_root_accessible": [
+        "SMU Debug Options",
+        "SMU Features"
+      ],
+      "root_reachable_from_CBS": false,
+      "options": [
+        {
+          "label": "Disabled",
+          "value": 0,
+          "default": false
+        },
+        {
+          "label": "Enabled",
+          "value": 1,
+          "default": false
+        },
+        {
+          "label": "Auto",
+          "value": 15,
+          "default": true
+        }
+      ],
+      "bounds": null,
+      "serializer": {
+        "token": "0x1331",
+        "id_rva": "0xd9e0",
+        "load_rva": "0xda00",
+        "window": [
+          {
+            "rva": 55776,
+            "bytes": "ba31130000",
+            "mnemonic": "mov",
+            "operands": "edx,0x1331"
+          },
+          {
+            "rva": 55781,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 55784,
+            "bytes": "668910",
+            "mnemonic": "mov",
+            "operands": "WORD PTR [eax],dx"
+          },
+          {
+            "rva": 55787,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 55790,
+            "bytes": "8a5102",
+            "mnemonic": "mov",
+            "operands": "dl,BYTE PTR [ecx+0x2]"
+          },
+          {
+            "rva": 55793,
+            "bytes": "80e2fc",
+            "mnemonic": "and",
+            "operands": "dl,0xfc"
+          },
+          {
+            "rva": 55796,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 55799,
+            "bytes": "885002",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [eax+0x2],dl"
+          },
+          {
+            "rva": 55802,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 55805,
+            "bytes": "8b55fc",
+            "mnemonic": "mov",
+            "operands": "edx,DWORD PTR [ebp-0x4]"
+          },
+          {
+            "rva": 55808,
+            "bytes": "8a82a3060000",
+            "mnemonic": "mov",
+            "operands": "al,BYTE PTR [edx+0x6a3]"
+          },
+          {
+            "rva": 55814,
+            "bytes": "884103",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [ecx+0x3],al"
+          },
+          {
+            "rva": 55817,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 55820,
+            "bytes": "83c104",
+            "mnemonic": "add",
+            "operands": "ecx,0x4"
+          },
+          {
+            "rva": 55823,
+            "bytes": "894df8",
+            "mnemonic": "mov",
+            "operands": "DWORD PTR [ebp-0x8],ecx"
+          }
+        ]
+      },
+      "unequal_marker_execution": true,
+      "hardware_applied": "NOT TESTED",
+      "actuator": "UNRESOLVED"
+    },
+    {
+      "field": "VDDCR_VDD Voltage Offset Control",
+      "offset": "0x6e5",
+      "width": 1,
+      "stored_value": 0,
+      "stored_label": "Auto",
+      "question_id": "0x36b",
+      "form": "0x703f",
+      "help": "Manual = User can set customized VDDCR_VDD Voltage Offset",
+      "path_if_root_accessible": [
+        "SMU Debug Options",
+        "SMU Debug"
+      ],
+      "root_reachable_from_CBS": false,
+      "options": [
+        {
+          "label": "Manual",
+          "value": 1,
+          "default": false
+        },
+        {
+          "label": "Auto",
+          "value": 0,
+          "default": true
+        }
+      ],
+      "bounds": null,
+      "serializer": {
+        "token": "0x1363",
+        "id_rva": "0xe3c4",
+        "load_rva": "0xe3e4",
+        "window": [
+          {
+            "rva": 58308,
+            "bytes": "ba63130000",
+            "mnemonic": "mov",
+            "operands": "edx,0x1363"
+          },
+          {
+            "rva": 58313,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 58316,
+            "bytes": "668910",
+            "mnemonic": "mov",
+            "operands": "WORD PTR [eax],dx"
+          },
+          {
+            "rva": 58319,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 58322,
+            "bytes": "8a5102",
+            "mnemonic": "mov",
+            "operands": "dl,BYTE PTR [ecx+0x2]"
+          },
+          {
+            "rva": 58325,
+            "bytes": "80e2fc",
+            "mnemonic": "and",
+            "operands": "dl,0xfc"
+          },
+          {
+            "rva": 58328,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 58331,
+            "bytes": "885002",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [eax+0x2],dl"
+          },
+          {
+            "rva": 58334,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 58337,
+            "bytes": "8b55fc",
+            "mnemonic": "mov",
+            "operands": "edx,DWORD PTR [ebp-0x4]"
+          },
+          {
+            "rva": 58340,
+            "bytes": "8a82e5060000",
+            "mnemonic": "mov",
+            "operands": "al,BYTE PTR [edx+0x6e5]"
+          },
+          {
+            "rva": 58346,
+            "bytes": "884103",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [ecx+0x3],al"
+          },
+          {
+            "rva": 58349,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 58352,
+            "bytes": "83c104",
+            "mnemonic": "add",
+            "operands": "ecx,0x4"
+          },
+          {
+            "rva": 58355,
+            "bytes": "894df8",
+            "mnemonic": "mov",
+            "operands": "DWORD PTR [ebp-0x8],ecx"
+          }
+        ]
+      },
+      "unequal_marker_execution": false,
+      "hardware_applied": "NOT TESTED",
+      "actuator": "UNRESOLVED"
+    },
+    {
+      "field": "VDDCR_VDD Voltage Offset",
+      "offset": "0x6e6",
+      "width": 4,
+      "stored_value": 0,
+      "stored_label": "0",
+      "question_id": "0x36c",
+      "form": "0x703f",
+      "help": "Specify the voltage offset to apply to VDDCR_VDD -- signed integer [mV]",
+      "path_if_root_accessible": [
+        "SMU Debug Options",
+        "SMU Debug"
+      ],
+      "root_reachable_from_CBS": false,
+      "options": [],
+      "bounds": [
+        0,
+        4294967295,
+        0
+      ],
+      "serializer": {
+        "token": "0x1364",
+        "id_rva": "0xe3f6",
+        "load_rva": "0xe419",
+        "window": [
+          {
+            "rva": 58363,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 58366,
+            "bytes": "668910",
+            "mnemonic": "mov",
+            "operands": "WORD PTR [eax],dx"
+          },
+          {
+            "rva": 58369,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 58372,
+            "bytes": "8a5102",
+            "mnemonic": "mov",
+            "operands": "dl,BYTE PTR [ecx+0x2]"
+          },
+          {
+            "rva": 58375,
+            "bytes": "80e2fc",
+            "mnemonic": "and",
+            "operands": "dl,0xfc"
+          },
+          {
+            "rva": 58378,
+            "bytes": "80ca02",
+            "mnemonic": "or",
+            "operands": "dl,0x2"
+          },
+          {
+            "rva": 58381,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 58384,
+            "bytes": "885002",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [eax+0x2],dl"
+          },
+          {
+            "rva": 58387,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 58390,
+            "bytes": "8b55fc",
+            "mnemonic": "mov",
+            "operands": "edx,DWORD PTR [ebp-0x4]"
+          },
+          {
+            "rva": 58393,
+            "bytes": "8b82e6060000",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [edx+0x6e6]"
+          },
+          {
+            "rva": 58399,
+            "bytes": "894103",
+            "mnemonic": "mov",
+            "operands": "DWORD PTR [ecx+0x3],eax"
+          },
+          {
+            "rva": 58402,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 58405,
+            "bytes": "83c107",
+            "mnemonic": "add",
+            "operands": "ecx,0x7"
+          },
+          {
+            "rva": 58408,
+            "bytes": "894df8",
+            "mnemonic": "mov",
+            "operands": "DWORD PTR [ebp-0x8],ecx"
+          }
+        ]
+      },
+      "unequal_marker_execution": false,
+      "hardware_applied": "NOT TESTED",
+      "actuator": "UNRESOLVED"
+    },
+    {
+      "field": "DF Clock Override Control",
+      "offset": "0x703",
+      "width": 1,
+      "stored_value": 1,
+      "stored_label": "Manual",
+      "question_id": "0x37d",
+      "form": "0x703f",
+      "help": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+      "path_if_root_accessible": [
+        "SMU Debug Options",
+        "SMU Debug"
+      ],
+      "root_reachable_from_CBS": false,
+      "options": [
+        {
+          "label": "Auto",
+          "value": 255,
+          "default": true
+        },
+        {
+          "label": "Manual",
+          "value": 1,
+          "default": false
+        }
+      ],
+      "bounds": null,
+      "serializer": {
+        "token": "0x1373",
+        "id_rva": "0xe706",
+        "load_rva": "0xe726",
+        "window": [
+          {
+            "rva": 59142,
+            "bytes": "ba73130000",
+            "mnemonic": "mov",
+            "operands": "edx,0x1373"
+          },
+          {
+            "rva": 59147,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 59150,
+            "bytes": "668910",
+            "mnemonic": "mov",
+            "operands": "WORD PTR [eax],dx"
+          },
+          {
+            "rva": 59153,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 59156,
+            "bytes": "8a5102",
+            "mnemonic": "mov",
+            "operands": "dl,BYTE PTR [ecx+0x2]"
+          },
+          {
+            "rva": 59159,
+            "bytes": "80e2fc",
+            "mnemonic": "and",
+            "operands": "dl,0xfc"
+          },
+          {
+            "rva": 59162,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 59165,
+            "bytes": "885002",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [eax+0x2],dl"
+          },
+          {
+            "rva": 59168,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 59171,
+            "bytes": "8b55fc",
+            "mnemonic": "mov",
+            "operands": "edx,DWORD PTR [ebp-0x4]"
+          },
+          {
+            "rva": 59174,
+            "bytes": "8a8203070000",
+            "mnemonic": "mov",
+            "operands": "al,BYTE PTR [edx+0x703]"
+          },
+          {
+            "rva": 59180,
+            "bytes": "884103",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [ecx+0x3],al"
+          },
+          {
+            "rva": 59183,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 59186,
+            "bytes": "83c104",
+            "mnemonic": "add",
+            "operands": "ecx,0x4"
+          },
+          {
+            "rva": 59189,
+            "bytes": "894df8",
+            "mnemonic": "mov",
+            "operands": "DWORD PTR [ebp-0x8],ecx"
+          }
+        ]
+      },
+      "unequal_marker_execution": false,
+      "hardware_applied": "NOT TESTED",
+      "actuator": "UNRESOLVED"
+    },
+    {
+      "field": "DF Clock Override",
+      "offset": "0x704",
+      "width": 2,
+      "stored_value": 1420,
+      "stored_label": "1420",
+      "question_id": "0x37e",
+      "form": "0x703f",
+      "help": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+      "path_if_root_accessible": [
+        "SMU Debug Options",
+        "SMU Debug"
+      ],
+      "root_reachable_from_CBS": false,
+      "options": [],
+      "bounds": [
+        0,
+        2000,
+        0
+      ],
+      "serializer": {
+        "token": "0x1374",
+        "id_rva": "0xe738",
+        "load_rva": "0xe75b",
+        "window": [
+          {
+            "rva": 59197,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 59200,
+            "bytes": "668910",
+            "mnemonic": "mov",
+            "operands": "WORD PTR [eax],dx"
+          },
+          {
+            "rva": 59203,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 59206,
+            "bytes": "8a5102",
+            "mnemonic": "mov",
+            "operands": "dl,BYTE PTR [ecx+0x2]"
+          },
+          {
+            "rva": 59209,
+            "bytes": "80e2fc",
+            "mnemonic": "and",
+            "operands": "dl,0xfc"
+          },
+          {
+            "rva": 59212,
+            "bytes": "80ca01",
+            "mnemonic": "or",
+            "operands": "dl,0x1"
+          },
+          {
+            "rva": 59215,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 59218,
+            "bytes": "885002",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [eax+0x2],dl"
+          },
+          {
+            "rva": 59221,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 59224,
+            "bytes": "8b55fc",
+            "mnemonic": "mov",
+            "operands": "edx,DWORD PTR [ebp-0x4]"
+          },
+          {
+            "rva": 59227,
+            "bytes": "668b8204070000",
+            "mnemonic": "mov",
+            "operands": "ax,WORD PTR [edx+0x704]"
+          },
+          {
+            "rva": 59234,
+            "bytes": "66894103",
+            "mnemonic": "mov",
+            "operands": "WORD PTR [ecx+0x3],ax"
+          },
+          {
+            "rva": 59238,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 59241,
+            "bytes": "83c105",
+            "mnemonic": "add",
+            "operands": "ecx,0x5"
+          },
+          {
+            "rva": 59244,
+            "bytes": "894df8",
+            "mnemonic": "mov",
+            "operands": "DWORD PTR [ebp-0x8],ecx"
+          }
+        ]
+      },
+      "unequal_marker_execution": false,
+      "hardware_applied": "NOT TESTED",
+      "actuator": "UNRESOLVED"
+    },
+    {
+      "field": "Tcl",
+      "offset": "0x317",
+      "width": 1,
+      "stored_value": 255,
+      "stored_label": "Auto",
+      "question_id": "0x210",
+      "form": "0x702c",
+      "help": "Sets the tCL time.",
+      "path_if_root_accessible": [
+        "UMC Common Options",
+        "GDDR6 Common Options",
+        "DRAM Timing Configuration",
+        "I Accept"
+      ],
+      "root_reachable_from_CBS": false,
+      "options": [
+        {
+          "label": "8 Clk",
+          "value": 8,
+          "default": false
+        },
+        {
+          "label": "9 Clk",
+          "value": 9,
+          "default": false
+        },
+        {
+          "label": "0Ah Clk",
+          "value": 10,
+          "default": false
+        },
+        {
+          "label": "0Bh Clk",
+          "value": 11,
+          "default": false
+        },
+        {
+          "label": "0Ch Clk",
+          "value": 12,
+          "default": false
+        },
+        {
+          "label": "0Dh Clk",
+          "value": 13,
+          "default": false
+        },
+        {
+          "label": "0Eh Clk",
+          "value": 14,
+          "default": false
+        },
+        {
+          "label": "0Fh Clk",
+          "value": 15,
+          "default": false
+        },
+        {
+          "label": "10h Clk",
+          "value": 16,
+          "default": false
+        },
+        {
+          "label": "11h Clk",
+          "value": 17,
+          "default": false
+        },
+        {
+          "label": "12h Clk",
+          "value": 18,
+          "default": false
+        },
+        {
+          "label": "13h Clk",
+          "value": 19,
+          "default": false
+        },
+        {
+          "label": "14h Clk",
+          "value": 20,
+          "default": false
+        },
+        {
+          "label": "15h Clk",
+          "value": 21,
+          "default": false
+        },
+        {
+          "label": "16h Clk",
+          "value": 22,
+          "default": false
+        },
+        {
+          "label": "17h Clk",
+          "value": 23,
+          "default": false
+        },
+        {
+          "label": "18h Clk",
+          "value": 24,
+          "default": false
+        },
+        {
+          "label": "19h Clk",
+          "value": 25,
+          "default": false
+        },
+        {
+          "label": "1Ah Clk",
+          "value": 26,
+          "default": false
+        },
+        {
+          "label": "1Bh Clk",
+          "value": 27,
+          "default": false
+        },
+        {
+          "label": "1Ch Clk",
+          "value": 28,
+          "default": false
+        },
+        {
+          "label": "1Dh Clk",
+          "value": 29,
+          "default": false
+        },
+        {
+          "label": "1Eh Clk",
+          "value": 30,
+          "default": false
+        },
+        {
+          "label": "1Fh Clk",
+          "value": 31,
+          "default": false
+        },
+        {
+          "label": "20h Clk",
+          "value": 32,
+          "default": false
+        },
+        {
+          "label": "21h Clk",
+          "value": 33,
+          "default": false
+        },
+        {
+          "label": "Auto",
+          "value": 255,
+          "default": true
+        }
+      ],
+      "bounds": null,
+      "serializer": {
+        "token": "0x11ee",
+        "id_rva": "0x9869",
+        "load_rva": "0x9889",
+        "window": [
+          {
+            "rva": 39017,
+            "bytes": "baee110000",
+            "mnemonic": "mov",
+            "operands": "edx,0x11ee"
+          },
+          {
+            "rva": 39022,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 39025,
+            "bytes": "668910",
+            "mnemonic": "mov",
+            "operands": "WORD PTR [eax],dx"
+          },
+          {
+            "rva": 39028,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 39031,
+            "bytes": "8a5102",
+            "mnemonic": "mov",
+            "operands": "dl,BYTE PTR [ecx+0x2]"
+          },
+          {
+            "rva": 39034,
+            "bytes": "80e2fc",
+            "mnemonic": "and",
+            "operands": "dl,0xfc"
+          },
+          {
+            "rva": 39037,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 39040,
+            "bytes": "885002",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [eax+0x2],dl"
+          },
+          {
+            "rva": 39043,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 39046,
+            "bytes": "8b55fc",
+            "mnemonic": "mov",
+            "operands": "edx,DWORD PTR [ebp-0x4]"
+          },
+          {
+            "rva": 39049,
+            "bytes": "8a8217030000",
+            "mnemonic": "mov",
+            "operands": "al,BYTE PTR [edx+0x317]"
+          },
+          {
+            "rva": 39055,
+            "bytes": "884103",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [ecx+0x3],al"
+          },
+          {
+            "rva": 39058,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 39061,
+            "bytes": "83c104",
+            "mnemonic": "add",
+            "operands": "ecx,0x4"
+          },
+          {
+            "rva": 39064,
+            "bytes": "894df8",
+            "mnemonic": "mov",
+            "operands": "DWORD PTR [ebp-0x8],ecx"
+          }
+        ]
+      },
+      "unequal_marker_execution": false,
+      "hardware_applied": "NOT TESTED",
+      "actuator": "UNRESOLVED"
+    },
+    {
+      "field": "Memory P-state",
+      "offset": "0x36d",
+      "width": 1,
+      "stored_value": 255,
+      "stored_label": "Auto",
+      "question_id": "0x25e",
+      "form": "0x7032",
+      "help": "",
+      "path_if_root_accessible": [
+        "AMD CBS",
+        "UMC Debug Options",
+        "GDDR6 Debug Options",
+        "GDDR6 DRAM Controller Configuration",
+        "DRAM Power Options"
+      ],
+      "root_reachable_from_CBS": true,
+      "options": [
+        {
+          "default": true,
+          "label": "Auto",
+          "value": 255
+        },
+        {
+          "default": false,
+          "label": "Enabled",
+          "value": 1
+        },
+        {
+          "default": false,
+          "label": "Disabled",
+          "value": 0
+        }
+      ],
+      "bounds": null,
+      "serializer": {
+        "token": "0x123c",
+        "id_rva": "0xa7c1",
+        "load_rva": "0xa7e1",
+        "window": [
+          {
+            "rva": 42945,
+            "bytes": "ba3c120000",
+            "mnemonic": "mov",
+            "operands": "edx,0x123c"
+          },
+          {
+            "rva": 42950,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 42953,
+            "bytes": "668910",
+            "mnemonic": "mov",
+            "operands": "WORD PTR [eax],dx"
+          },
+          {
+            "rva": 42956,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 42959,
+            "bytes": "8a5102",
+            "mnemonic": "mov",
+            "operands": "dl,BYTE PTR [ecx+0x2]"
+          },
+          {
+            "rva": 42962,
+            "bytes": "80e2fc",
+            "mnemonic": "and",
+            "operands": "dl,0xfc"
+          },
+          {
+            "rva": 42965,
+            "bytes": "8b45f8",
+            "mnemonic": "mov",
+            "operands": "eax,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 42968,
+            "bytes": "885002",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [eax+0x2],dl"
+          },
+          {
+            "rva": 42971,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 42974,
+            "bytes": "8b55fc",
+            "mnemonic": "mov",
+            "operands": "edx,DWORD PTR [ebp-0x4]"
+          },
+          {
+            "rva": 42977,
+            "bytes": "8a826d030000",
+            "mnemonic": "mov",
+            "operands": "al,BYTE PTR [edx+0x36d]"
+          },
+          {
+            "rva": 42983,
+            "bytes": "884103",
+            "mnemonic": "mov",
+            "operands": "BYTE PTR [ecx+0x3],al"
+          },
+          {
+            "rva": 42986,
+            "bytes": "8b4df8",
+            "mnemonic": "mov",
+            "operands": "ecx,DWORD PTR [ebp-0x8]"
+          },
+          {
+            "rva": 42989,
+            "bytes": "83c104",
+            "mnemonic": "add",
+            "operands": "ecx,0x4"
+          },
+          {
+            "rva": 42992,
+            "bytes": "894df8",
+            "mnemonic": "mov",
+            "operands": "DWORD PTR [ebp-0x8],ecx"
+          }
+        ]
+      },
+      "unequal_marker_execution": true,
+      "hardware_applied": "NOT TESTED",
+      "actuator": "UNRESOLVED"
+    }
+  ],
+  "limits": [
+    "IFR metadata is not live BIOS visibility",
+    "Stored values are not actual clocks",
+    "Serializer is not actuator",
+    "No voltage/clock recipe justified yet"
+  ]
+}

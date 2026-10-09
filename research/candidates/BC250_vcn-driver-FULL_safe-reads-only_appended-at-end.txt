@@ -1,0 +1,8 @@
+BC250_vcn-driver-FULL_safe-reads-only_appended-at-end.bin
+Old technical name (alias): v008-secure
+SHA-256: c935e3ec4c0faee88fbe0600f003b4d0d16ac13f587ab8fb6943382e28025c6f
+Built by: scripts/build_FULL_safe_reads_appended_at_end.py
+What is inside: booted pre-dump + secure-reads VCN driver APPENDED at FV end; all 193 base files at identical offsets; explicit LZMA
+Question it answers: does DXE complete when the driver reads only via the secure mailbox?
+Verdict: STAGED: flash if STUB boots and FULL-appended hangs.
+Вердикт: На полке: шьём, если заглушка загрузится, а полный-дописанный встанет.

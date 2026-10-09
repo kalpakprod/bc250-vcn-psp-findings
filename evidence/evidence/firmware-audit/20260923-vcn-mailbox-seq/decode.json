@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "date": "2026-09-23",
+    "firmware": "import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5",
+    "size": 262400,
+    "method": "Ghidra 12.1.3 headless PortDev1.java + raw byte decode; vaddr==file offset, base 0",
+    "decompile_dumps": ["/tmp/vcn1.c", "/tmp/vcn2.c", "/tmp/vcn3.c"],
+    "status": "DRAFT, static analysis only, no hardware run"
+  },
+  "mailbox": {
+    "q3_cmd": "0x03B10A20", "q3_rsp": "0x03B10A80", "q3_arg": "0x03B10A88",
+    "access": "PCI config pair 0xB8/0xBC on 00:00.0 (SmnRead32/SmnWrite32)",
+    "send_order": "wait RSP in {1,0xFF,0xFE,0xFD,0xFC}; RSP=0; ARG=arg1; ARG+4=arg2; CMD=opcode; wait RSP"
+  },
+  "handlers": {
+    "q3_0x1A": {
+      "func": "FUN_0002A968", "table_row": 162, "also_q5_0x14": true,
+      "body": "FUN_0002A044() (transition state machine 3->0), response=1 via FUN_00000fa8",
+      "arg_source": "*(u32*)(0x031FFE00+0x3F0) (args block base DAT_000170A4=0x031FFE00)",
+      "calls_full_powerup": "tail of FUN_0002A044: if *(u8*)(0x12F2C+1)!=0 then FUN_0002A184() at 0x2a179",
+      "response": 1
+    },
+    "q3_0x1B": {
+      "func": "FUN_0002A958", "table_row": 163,
+      "body": "calls FUN_0002A184 directly at 0x2a95b (shortest power-up path)",
+      "response": "presumably 1 (same reply helper; not directly observed)"
+    },
+    "FUN_0002A184": {
+      "role": "full VCN/domain power-up with clock program",
+      "sequence": [
+        "read *(u32*)(0x031FFE00+0x3F0); skip if state *(u8*)(0x12F2C+2)==2",
+        "clear bit2 of *(u32*)(0x0220FE00+0x200)",
+        "FUN_0002bf1c; 0x0115A200: +0x120&=~2, +0x134|=0x30, +0x130=(old&~1)|1, delay FUN_00002b2c(10), +0x12C=(old&~7)|0x17",
+        "0x01D80600+0x214 |= 2",
+        "FUN_0001b488(9,...)/FUN_0001b4c0",
+        "FUN_00024594() — clock controller program",
+        "FUN_00024878() — second 0x0115F600-block writer",
+        "FUN_00023a64(0x19, *(u32*)(0x0104DC+0x3A0)); FUN_0002a2f4()",
+        "*(u32*)(0x0100AE00+0x204)=1; +0x208=1; *(u32*)(0x0100B200+0xE0)=0xF",
+        "FUN_0002a9d4(); FUN_0002a344(); FUN_0002cef4(0); FUN_0002B0F4()"
+      ]
+    },
+    "FUN_0002B0F4": {
+      "role": "VCN gate + power steps",
+      "guard": "FUN_0001dd34(6): bit 6 of *(u32*)(0x0000CCB0+8)=0x0000CCB8; if 0 -> skip all",
+      "calls": ["FUN_0002e4c4()", "FUN_0002b358()", "FUN_00023ae0(0x19) @0x2B10C", "FUN_00023ae0(0x1A) @0x2B111", "FUN_0002b6a8(0)", "FUN_0002b6b0()", "FUN_0001b1e4(0xB,PTR_00017DA4)", "FUN_0001b1e4(0x16,PTR_00018050)", "*(u32*)(0x0132E4+0x200)=0"],
+      "note": "0x2B10C/0x2B111 are NOT enable/disable branches; both are power steps for descriptor indices 0x19/0x1A"
+    },
+    "FUN_00023AE0": {
+      "sig": "void FUN_00023ae0(int idx)",
+      "body": "slot=*(u8*)(0xF728+idx*0x1C+0x80); read clock slot 0xF568+slot*0x48 via SMN 0x010FFE00 base (+0x200), mask 0xFFFFF; write status bits; FUN_00023ef8(slot); scan 27 descriptors at 0xF72C (0x1C stride), for matching slot: *(u8*)(desc+0x7E)=(plan>>0x14)&0x7F; FUN_00023f18(i)"
+    },
+    "FUN_00023B14": {"exists_as_separate_function": false, "note": "no xrefs; Ghidra merges 0x23B14 into FUN_00023AE0; thelamer's 2-arg call not reproducible in this image"}
+  },
+  "clock_controller": {
+    "writer": "FUN_00024594 (only caller: FUN_0002A184 @0x2a257)",
+    "base": "0x0115F600 (DAT_00017204); registers = base+0x200..",
+    "plan_table": {"copyA": "0x0115D000", "copyB": "0x0115D004", "reader": "FUN_0001cd80(bit,width): addr=copy + (bit>>3 & ~3), OR of both copies bit-by-bit"},
+    "registers": {
+      "+0x200": [[54784,9,0],[54793,4,9],[54797,5,13],[54802,4,22]],
+      "+0x210": [[54799,7,0]],
+      "+0x214": [[56341,7,0]],
+      "+0x250": [[54816,4,8],[54820,4,12],[54824,4,16],[54828,2,25]],
+      "+0x250_const_or": "0x06900000",
+      "+0x254": [[54830,8,0]],
+      "+0x258": [[54799,7,0],[54838,4,8],[54842,4,12],[54848,4,16],[54852,2,25]],
+      "+0x25C": [[54854,8,0]],
+      "+0x260": [[54799,7,0],[54862,4,8],[54866,4,12],[54870,4,16],[54874,2,25]],
+      "+0x264": [[54880,8,0]],
+      "+0x268": [[54799,7,0],[54888,4,8],[54892,4,12],[54896,4,16],[54900,2,25]],
+      "+0x26C": [[54902,8,0]],
+      "+0x2B4": [[54940,4,0],[54972,4,4],[55004,4,8],[55036,4,12]],
+      "+0x208": [[54806,1,0]],
+      "+0x218": "const 1; then poll *(u32*)(0x010FFE00+(plan-derived)&0xFFFFF+0x200)&0x100!=0"
+    },
+    "register_field_format": "[plan_bit_offset, width, reg_bit_low]",
+    "literal_pool_verified": {
+      "0x17978": "0x2B00", "0x1797C": "0x2B09", "0x17980": "0x2B0D", "0x17984": "0x2B12",
+      "0x17988": "0xFFFC1FFF", "0x1798C": "0xFC3FFFFF", "0x17990": "0x2B17", "0x17994": "0x2C15",
+      "0x17998": "0x2B20", "0x1799C": "0x2B24", "0x179A0": "0x2B28", "0x179A4": "0x2B2C",
+      "0x179A8": "0x06900000", "0x179AC": "0xFFFF0FFF", "0x179B0": "0xFF0FFFFF", "0x179B4": "0xF9FFFFFF",
+      "0x179B8": "0x2B2E", "0x179BC": "0x2B36", "0x179C0": "0x2B3A", "0x179C4": "0x2B40",
+      "0x179C8": "0x2B44", "0x179CC": "0x2B46", "0x179D0": "0x2B4E", "0x179D4": "0x2B52",
+      "0x179D8": "0x2B56", "0x179DC": "0x2B5A", "0x179E0": "0x2B60", "0x179E4": "0x2B68",
+      "0x179E8": "0x2B6C", "0x179EC": "0x2B70", "0x179F0": "0x2B74", "0x179F4": "0x2B76",
+      "0x179F8": "0x2B9C", "0x179FC": "0x2BBC", "0x17A00": "0x2BDC", "0x17A04": "0x2BFC",
+      "0x17A08": "0xFFFFF0FF", "0x17A0C": "0x2B16",
+      "0x170A4": "0x031FFE00", "0x17134": "0x000FFFFF", "0x17160": "0x010FFE00", "0x1716C": "0x01100000",
+      "0x17204": "0x0115F600", "0x172AC": "0x0115D004", "0x172B0": "0x0115D000",
+      "0x1745C": "0x0000F568", "0x178FC": "0x0000F728", "0x178C4": "0x0000F72C", "0x17900": "0x0000F730",
+      "0x17948": "0x0000F8A4", "0x17F9C": "0x01D80A00", "0x17FA0": "0x01D80600",
+      "0x17960": "0x0220FE00", "0x1739C": "0x0000CCB0", "0x17E90": "0x000104DC",
+      "0x17564": "0x0100AE00", "0x17FA8": "0x0100B200", "0x1755C": "0x01107E00", "0x1719C": "0x0115A200"
+    }
+  },
+  "q3_0x87_subops": {
+    "dispatcher": "FUN_0002937C: subop=arg>>4, valid if <0x12, else response 0",
+    "mechanism": "l32r a13,[0x17F28]=0x293A0; jx a13+3*subop -> 18 three-byte 'j' trampolines at 0x293A0..0x293D5",
+    "targets": {
+      "0": "0x294AC", "1": "0x2985F", "2": "0x2981A", "3": "0x297D5", "4": "0x29790",
+      "5": "0x2974B", "6": "0x29706", "7": "0x296C1", "8": "0x2967C", "9": "0x29637",
+      "10": "0x295F2", "11": "0x295AD", "12": "0x29568", "13": "0x2953B", "14": "0x2950E",
+      "15": "0x294E1", "16": "0x2949C", "17": "0x29457"
+    },
+    "decompiled": ["0x2985F", "0x297D5", "0x29790", "0x2974B", "0x2967C", "0x294E1(thunk to 0x293F2)", "0x2949C", "0x29457"],
+    "not_decompiled": ["0x294AC", "0x2981A", "0x29706", "0x296C1", "0x29637", "0x295F2", "0x295AD", "0x29568", "0x2953B", "0x2950E"],
+    "finding": "none of the decompiled sub-ops touch 0x0115F8xx/0x0115F9xx or call FUN_00024594; decompiled ones are DPM periodic-task handlers (counters, FUN_00039C50/FUN_0003AB90 copy, periodic FUN_00025264)",
+    "conclusion": "VCN clock programming is NOT in q3 0x87 sub-ops; it runs inside the power-up path FUN_0002A184 -> FUN_00024594"
+  },
+  "other_writers_of_0x0115F600": ["FUN_00023680 (reads plan, FUN_00023ef8/FUN_00023f18 refresh, request bits 0x0115AE00+0x3A8/0x3D0/0x3F8/0x20 via FUN_000235C8 (reg|0x11)&mask, status block 0x01D80200-ish +0x14/+0x18 poll)", "FUN_00024878", "FUN_0002492c", "FUN_0002490c", "FUN_00031470", "FUN_0001c668"],
+  "open_questions": {
+    "O1": "what raises *(u8*)(0x12F2C+1) so q3 0x1A reaches FUN_0002A184 (candidates q3 0x18/0x19)",
+    "O2": "FUN_00023B14(6,1): no separate function/xrefs in robin_5; Ghidra merges into FUN_00023AE0",
+    "O3": "which message sets bit 6 of the domain-enable bitmap word 0x0000CCB8 (else FUN_0002B0F4 silently skips VCN power steps)",
+    "O4": "9 of 18 q3 0x87 sub-ops not decompiled (no function start at trampoline targets)",
+    "O5": "exact encoding of the 0x1A argument word at 0x031FFE00+0x3F0 (domain id / enable flag packing; FUN_0001CB7C undecoded)"
+  }
+}

@@ -1,0 +1,187 @@
+{
+ "status": "PASS",
+ "checks": 350,
+ "failed": 0,
+ "failures": [],
+ "modules": [],
+ "field_map": {
+  "ISL69247-3e1f753a6279": {
+   "buffer_base": "ebp-0x178 (GetVariable Data)",
+   "fields": {
+    "0x1c9": {
+     "slot": "ebp+0x51",
+     "use": "enable test vs 0; default 0"
+    },
+    "0x1ca": {
+     "slot": "ebp+0x52",
+     "use": "u16 mV value; default 0x384 (900); written as register 0x21"
+    },
+    "0x1cc": {
+     "slot": "ebp+0x54",
+     "use": "loadline index; default 2; index -> {0,20,30,40,50,60}; written as register 0x28"
+    },
+    "0x1cd": {
+     "slot": "ebp+0x55",
+     "use": "enable test vs 0; default 0"
+    },
+    "0x1ce": {
+     "slot": "ebp+0x56",
+     "use": "u16 mV value; default 0x384 (900); written as register 0x21"
+    },
+    "0x1d0": {
+     "slot": "ebp+0x58",
+     "use": "loadline index; default 2; written as register 0x28"
+    }
+   }
+  },
+  "ISL95712-c0cc17d2d54f": {
+   "buffer_base": "ebp-0x1e0 (GetVariable Data)",
+   "fields": {
+    "0x1d1": {
+     "slot": "ebp-0xf",
+     "use": "enable test vs 0; default 0"
+    },
+    "0x1d2": {
+     "slot": "ebp-0xe",
+     "use": "enum value; default 0x1e (1.35 V); written as register 0xdf"
+    }
+   }
+  }
+ },
+ "rom_direct_reextraction": {
+  "ISL69247-3e1f753a6279": {
+   "rom_offset": "0xed2c74",
+   "sha256": "3e1f753a627922d16e5a638a527e39f4dd26242144edae25b0ac849db6421e34",
+   "matches_corpus_image": true
+  },
+  "ISL95712-c0cc17d2d54f": {
+   "rom_offset": "0xed3d8c",
+   "sha256": "c0cc17d2d54f9cde65f471d2971596837b024d4764a28b33286032cfa95d43a9",
+   "matches_corpus_image": true
+  }
+ },
+ "donor": {
+  "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "size": 16777216
+ },
+ "corpus": {
+  "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers",
+  "census": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/census.json",
+  "modules": 233
+ },
+ "setup_variable": {
+  "guid": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9",
+  "name": "Setup",
+  "size": "0x1d3",
+  "form": "0x28EA REF Voltage Configuration (Setup 0x2710 -> Advanced 0x2712)"
+ },
+ "get_variable_setup_modules": [
+  {
+   "stem": "CpuDxe-4fe9d6dc6dfe",
+   "ui": "CpuDxe",
+   "type": "PE32",
+   "ffs_guid": "E03ABADF-E536-4E88-B3A0-B77F78EB34FE",
+   "fv_base": "0x10",
+   "ffs_offset": "0x44cf0",
+   "setup_guid_va": "0x5e70",
+   "setup_name_va": "0x5e80",
+   "sha256": "4fe9d6dc6dfee4a95d4170e3f902c80c8b6a8e34839e40df9f466042cd85354c"
+  },
+  {
+   "stem": "ISL69247-3e1f753a6279",
+   "ui": "ISL69247",
+   "type": "TE",
+   "ffs_guid": "6E6D2018-28D0-4AD3-BEB3-B48E4981707D",
+   "fv_base": "0xe02000",
+   "ffs_offset": "0xed2c30",
+   "setup_guid_va": "0x9ed36c4",
+   "setup_name_va": "0x9ed36d4",
+   "sha256": "3e1f753a627922d16e5a638a527e39f4dd26242144edae25b0ac849db6421e34"
+  },
+  {
+   "stem": "ISL95712-c0cc17d2d54f",
+   "ui": "ISL95712",
+   "type": "TE",
+   "ffs_guid": "02544BE0-2CB9-4B75-8111-CD8CDC07B837",
+   "fv_base": "0xe02000",
+   "ffs_offset": "0xed3d48",
+   "setup_guid_va": "0x9ed455c",
+   "setup_name_va": "0x9ed456c",
+   "sha256": "c0cc17d2d54f9cde65f471d2971596837b024d4764a28b33286032cfa95d43a9"
+  }
+ ],
+ "setup_guid_only_modules": [
+  "ACPI-d73a4c23e02f",
+  "AMITSE-9cc06fc7f734",
+  "AmdSocBl5AriDxe-008e2638bd8f",
+  "AmdSocBl5AriPei-79e13211d5ae",
+  "Bds-f7cd209b8afb",
+  "CpuPei-69d0bca8e11d",
+  "CpuSetAgesaPcd-00816c19d891",
+  "FastBootRuntime-5c9859da1a78",
+  "NbDxe-741b3e575c5c",
+  "NvramDxe-eebdaa0bad92",
+  "NvramPei-cbc1def3ce53",
+  "PataController-7d6f61be2399",
+  "PeiRamBootPei-e202ac7f7953",
+  "SataController-0f8399ab45e8",
+  "SbDxe-4b9d66aa46b8",
+  "SbInterfaceDxe-6bd689800694",
+  "SbInterfacePei-9c3de774835b",
+  "SbPei-ac72a3b20e49",
+  "Setup-10cc728ae3f8",
+  "Uhcd-11b620c52cea"
+ ],
+ "fixed_voltage_fields": [
+  {
+   "offset": "0x1c9",
+   "width": 1,
+   "qid": "0x73",
+   "label": "VCORE Fix Voltage (Disabled=0/Enabled=1)"
+  },
+  {
+   "offset": "0x1ca",
+   "width": 2,
+   "qid": "0x74",
+   "label": "VCORE Voltage(mV) (700..1250, default 900)"
+  },
+  {
+   "offset": "0x1cc",
+   "width": 1,
+   "qid": "0x75",
+   "label": "VCORE Loadline (Disabled/0.2..0.6 Ohm index)"
+  },
+  {
+   "offset": "0x1cd",
+   "width": 1,
+   "qid": "0x76",
+   "label": "GFX Fix Voltage (Disabled=0/Enabled=1)"
+  },
+  {
+   "offset": "0x1ce",
+   "width": 2,
+   "qid": "0x77",
+   "label": "GFX Voltage(mV) (700..1250, default 900)"
+  },
+  {
+   "offset": "0x1d0",
+   "width": 1,
+   "qid": "0x78",
+   "label": "GFX Loadline (Disabled/0.2..0.6 Ohm index)"
+  },
+  {
+   "offset": "0x1d1",
+   "width": 1,
+   "qid": "0x79",
+   "label": "MEMIO Fix Voltage (Disabled=0/Enabled=1)"
+  },
+  {
+   "offset": "0x1d2",
+   "width": 1,
+   "qid": "0x7A",
+   "label": "MEMIO Voltage (enum 1.20..1.45 V, default 1.35 V = 0x1e)"
+  }
+ ],
+ "consumer_conclusion": "ISL69247 (PEIM) consumes Setup+0x1c9/0x1ca/0x1cc (VCORE) and Setup+0x1cd/0x1ce/0x1d0 (GFX); ISL95712 (PEIM) consumes Setup+0x1d1/0x1d2 (MEMIO). Both read the 0x1d3-byte Setup variable through the PEI Read-Only Variable2 PPI and drive a VR-controller register write helper. CpuDxe reads the Setup variable but does not touch the fixed-voltage block."
+}

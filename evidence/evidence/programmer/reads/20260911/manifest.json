@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-09-11T06:29:17.622311+00:00",
+  "project": "/home/OWNER/orca/projects/bc250",
+  "operation": "two independent full read-only SPI captures",
+  "evidence_class": "hardware-verified",
+  "operator_confirmation": {
+    "board_power": "BC-250 fully unpowered; BIOS battery removed; only programmer connected",
+    "received_at": "2026-09-11"
+  },
+  "programmer": {
+    "backend": "flashrom ch347_spi",
+    "version": "flashrom v1.8.0 (git:v1.8.0)",
+    "release_commit": "90b6b4376c7480a223e7bb5642e7116315ac6d09",
+    "package": "flashrom-1.8.0-1-x86_64.pkg.tar.zst",
+    "package_sha256": "b3804df8cf3a44461deb03bd0ac2edc37d616edc28eb95a9a0d3b3c16cc48316",
+    "package_signature": "gpgv good signature; key fingerprint 05C7775A9E8B977407FE08E69D4C5AA15426DA0A",
+    "binary_path": "/tmp/bc250-flashrom-trial-20260911/prefix/usr/bin/flashrom",
+    "binary_sha256": "5ee0b2e4ea215a81ec08997dad99c469bd9f2335d5237d623388dee29875573c",
+    "probe_command": "pkexec /tmp/bc250-flashrom-trial-20260911/prefix/usr/bin/flashrom -p ch347_spi:spispeed=1.875M --flash-name",
+    "read_command_template": "pkexec /tmp/bc250-flashrom-trial-20260911/prefix/usr/bin/flashrom -p ch347_spi:spispeed=1.875M -r <output>",
+    "spi_speed": "1.875M",
+    "mutations_performed": false
+  },
+  "usb": {
+    "vid": "1a86",
+    "pid": "55db",
+    "bus": "005",
+    "device": "003",
+    "product": "USB To UART+SPI+I2C",
+    "bcdDevice": "5.44",
+    "spi_interface": 2,
+    "write_endpoint": "0x06",
+    "read_endpoint": "0x86"
+  },
+  "chip": {
+    "probe_vendor": "Winbond",
+    "probe_name": "W25Q128.V",
+    "capacity_kib": 16384,
+    "expected_database_id": "EF 40 18",
+    "operator_marking": "W25Q128BV"
+  },
+  "captures": [
+    {
+      "path": "evidence/programmer/reads/20260911/read-a.bin",
+      "size": 16777216,
+      "sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+      "flashrom_log": "evidence/programmer/reads/20260911/read-a.flashrom.log"
+    },
+    {
+      "path": "evidence/programmer/reads/20260911/read-b.bin",
+      "size": 16777216,
+      "sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+      "flashrom_log": "evidence/programmer/reads/20260911/read-b.flashrom.log"
+    }
+  ],
+  "comparisons": {
+    "read_a_vs_read_b": "byte-identical (cmp exit 0)",
+    "read_a_vs_dump_2": "byte-identical (cmp exit 0)",
+    "read_b_vs_dump_2": "byte-identical (cmp exit 0)"
+  },
+  "evidence_paths": {
+    "probe_log": "evidence/programmer/probe-20260911.txt",
+    "action_log": "docs/action-logs/2026-09-10-programmer-preflight.md",
+    "research": "docs/research/2026-09-11-programmer-cli-evaluation.md"
+  },
+  "limitations": [
+    "Probe output names the chip family but does not print the raw JEDEC bytes; expected EF 40 18 is from the pinned flashrom database mapping.",
+    "The reads establish a matching SPI baseline only; they do not establish firmware bootability, PSP acceptance, VCN enablement, or modified-image hardware behavior.",
+    "Physical marking and clip orientation were operator-confirmed; no independent visual image of the live connection was captured."
+  ]
+}

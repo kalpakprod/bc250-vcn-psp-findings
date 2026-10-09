@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "module": "AmdIdsDebugPrintDxe-e177833c8a19.bin",
+  "section_mapping": [
+    [
+      672,
+      8960,
+      672
+    ],
+    [
+      9632,
+      1504,
+      9632
+    ],
+    [
+      11136,
+      416,
+      11136
+    ],
+    [
+      11552,
+      160,
+      11552
+    ],
+    [
+      11712,
+      128,
+      11712
+    ]
+  ],
+  "sha256": "e177833c8a196019762213622fea29e9fb16ed03cec7d4f601bc19573f85256f",
+  "anchors": {
+    "0xa32": "c744242019a00000",
+    "0xa4d": "e85efcffff",
+    "0xa60": "488b442440",
+    "0xa65": "8138cc9910db",
+    "0xa72": "488b442440",
+    "0xa77": "488901",
+    "0xae0": "48894c2408",
+    "0xaee": "e80dffffff",
+    "0xb05": "488b4018",
+    "0xb09": "488901"
+  },
+  "finding": "A019 lookup result is accepted only when object header DB1099CC matches; caller then reads object +0x18 and returns it to an IDS/debug-print path. No voltage token or SMU voltage register write appears in this bounded path.",
+  "scope": "bounded direct path; not proof about all computed callers"
+}

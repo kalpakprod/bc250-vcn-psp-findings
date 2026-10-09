@@ -1,0 +1,663 @@
+{
+  "candidate_class": "semantic-experiment only; no artifact generated",
+  "canonical_native_fields": {
+    "DfClockOverrideControl": {
+      "abs": 3026,
+      "body": 1795,
+      "raw": "01",
+      "token": "0x1373",
+      "value": 1,
+      "width": 1
+    },
+    "DfClockOvrd": {
+      "abs": 3027,
+      "body": 1796,
+      "raw": "8c05",
+      "token": "0x1374",
+      "value": 1420,
+      "width": 2
+    },
+    "FclkDpm": {
+      "abs": 2930,
+      "body": 1699,
+      "raw": "0f",
+      "token": "0x1331",
+      "value": 15,
+      "width": 1
+    },
+    "MemoryClockSpeed": {
+      "abs": 2021,
+      "body": 790,
+      "raw": "24",
+      "token": "0x11ed",
+      "value": 36,
+      "width": 1
+    },
+    "MemoryPstate": {
+      "abs": 2108,
+      "body": 877,
+      "raw": "ff",
+      "token": "0x123c",
+      "value": 255,
+      "width": 1
+    },
+    "PhyPowerSaving": {
+      "abs": 2103,
+      "body": 872,
+      "raw": "ff",
+      "token": "0x1237",
+      "value": 255,
+      "width": 1
+    },
+    "UclkDiv1M0": {
+      "abs": 2047,
+      "body": 816,
+      "raw": "01",
+      "token": "0x1204",
+      "value": 1,
+      "width": 1
+    }
+  },
+  "checks": {
+    "failed": 0,
+    "passed": 67,
+    "total": 67
+  },
+  "checks_detail": [
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:evidence/firmware-audit/20260920-df-init-route/menu-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:evidence/firmware-audit/20260920-clv-abl1-svc4-mapping/svc4-mapping-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:evidence/firmware-audit/20260920-clv-abl1-context660-target-semantics/abl1-context660-semantics-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:evidence/firmware-audit/20260920-native-gate-followup/native-gate-followup-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:evidence/firmware-audit/20260920-clv-sync-stage2-token-matrix/token-matrix-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:evidence/firmware-audit/20260920-clv-sync-stage2-record-lifetime-all-fields/all-fields-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:evidence/firmware-audit/20260920-clv-sync-stage2-uclk-semantics/uclk-semantics-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:evidence/firmware-audit/20260920-clv-sync-stage2-consumer/consumer-boundary-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:evidence/firmware-audit/20260920-clv-sync-stage2-defaults/stage2-defaults-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:evidence/firmware-audit/20260920-clv-abl1-context660-callback-xhigh/abl1-context660-callback-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:docs/research/20260920-clv-sync-conditional-candidate-spec.md",
+      "status": "PASS"
+    },
+    {
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "name": "hash:evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": "6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a",
+      "got": "6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a",
+      "name": "hash:evidence/firmware-audit/20260920-df-init-route/menu-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "reopened-retained-input",
+      "got": "4b9fa6b22d418ee31f284025d2d5f84931e56d222a32e37cfd5d69e08ac39cf0",
+      "name": "hash:evidence/firmware-audit/20260920-clv-abl1-svc4-mapping/svc4-mapping-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "reopened-retained-input",
+      "got": "b625689c4e58c5949469dc2b0cb241b94a22c3ba0edaf18fd138a14d7b3906c3",
+      "name": "hash:evidence/firmware-audit/20260920-clv-abl1-context660-target-semantics/abl1-context660-semantics-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "reopened-retained-input",
+      "got": "1c0bf58cfadbd51f9f45349054b714b2322b0141a586a65367683091609534f8",
+      "name": "hash:evidence/firmware-audit/20260920-native-gate-followup/native-gate-followup-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "reopened-retained-input",
+      "got": "d33120e48e2c71fb0ab7e2df3a24f1dd91c1e85b0b3639022155444bc0d5765a",
+      "name": "hash:evidence/firmware-audit/20260920-clv-sync-stage2-token-matrix/token-matrix-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "reopened-retained-input",
+      "got": "7f865e2a018c9be7f665e01286473593582967808963d8bb29c112514840fbbf",
+      "name": "hash:evidence/firmware-audit/20260920-clv-sync-stage2-record-lifetime-all-fields/all-fields-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "reopened-retained-input",
+      "got": "17cba83251f50a108341aa40bbe0d48aa758ff008000436570975428bbdb5059",
+      "name": "hash:evidence/firmware-audit/20260920-clv-sync-stage2-uclk-semantics/uclk-semantics-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "reopened-retained-input",
+      "got": "e7b1f6f66ed066029a93cf88ea7fb5cb8049df39570af9f3a1b86645882e10d1",
+      "name": "hash:evidence/firmware-audit/20260920-clv-sync-stage2-consumer/consumer-boundary-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "reopened-retained-input",
+      "got": "7983941a2b725df945b695716cc797228df511c609ac0c45a261ccfec5b169b2",
+      "name": "hash:evidence/firmware-audit/20260920-clv-sync-stage2-defaults/stage2-defaults-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "reopened-retained-input",
+      "got": "cf16bf73c370bac1c4426f7c79e64890898a11da7743304528ddeccfe3cd7ecb",
+      "name": "hash:evidence/firmware-audit/20260920-clv-abl1-context660-callback-xhigh/abl1-context660-callback-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "24",
+      "got": "24",
+      "name": "ROM field MemoryClockSpeed absolute 0x7e5",
+      "status": "PASS"
+    },
+    {
+      "expected": 36,
+      "got": 36,
+      "name": "ROM value MemoryClockSpeed",
+      "status": "PASS"
+    },
+    {
+      "expected": "01",
+      "got": "01",
+      "name": "ROM field UclkDiv1M0 absolute 0x7ff",
+      "status": "PASS"
+    },
+    {
+      "expected": 1,
+      "got": 1,
+      "name": "ROM value UclkDiv1M0",
+      "status": "PASS"
+    },
+    {
+      "expected": "ff",
+      "got": "ff",
+      "name": "ROM field PhyPowerSaving absolute 0x837",
+      "status": "PASS"
+    },
+    {
+      "expected": 255,
+      "got": 255,
+      "name": "ROM value PhyPowerSaving",
+      "status": "PASS"
+    },
+    {
+      "expected": "ff",
+      "got": "ff",
+      "name": "ROM field MemoryPstate absolute 0x83c",
+      "status": "PASS"
+    },
+    {
+      "expected": 255,
+      "got": 255,
+      "name": "ROM value MemoryPstate",
+      "status": "PASS"
+    },
+    {
+      "expected": "0f",
+      "got": "0f",
+      "name": "ROM field FclkDpm absolute 0xb72",
+      "status": "PASS"
+    },
+    {
+      "expected": 15,
+      "got": 15,
+      "name": "ROM value FclkDpm",
+      "status": "PASS"
+    },
+    {
+      "expected": "01",
+      "got": "01",
+      "name": "ROM field DfClockOverrideControl absolute 0xbd2",
+      "status": "PASS"
+    },
+    {
+      "expected": 1,
+      "got": 1,
+      "name": "ROM value DfClockOverrideControl",
+      "status": "PASS"
+    },
+    {
+      "expected": "8c05",
+      "got": "8c05",
+      "name": "ROM field DfClockOvrd absolute 0xbd3",
+      "status": "PASS"
+    },
+    {
+      "expected": 1420,
+      "got": 1420,
+      "name": "ROM value DfClockOvrd",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "IFR question exists MemoryClockSpeed",
+      "status": "PASS"
+    },
+    {
+      "expected": "Memory Clock Speed",
+      "got": "Memory Clock Speed",
+      "name": "IFR label MemoryClockSpeed",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "IFR question exists UclkDiv1M0",
+      "status": "PASS"
+    },
+    {
+      "expected": "UclkDiv1M0",
+      "got": "UclkDiv1M0",
+      "name": "IFR label UclkDiv1M0",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "IFR question exists FclkDpm",
+      "status": "PASS"
+    },
+    {
+      "expected": "FCLK_DPM",
+      "got": "FCLK_DPM",
+      "name": "IFR label FclkDpm",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "IFR question exists DfClockOverrideControl",
+      "status": "PASS"
+    },
+    {
+      "expected": "DF Clock Override Control",
+      "got": "DF Clock Override Control",
+      "name": "IFR label DfClockOverrideControl",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "IFR question exists DfClockOvrd",
+      "status": "PASS"
+    },
+    {
+      "expected": "DF Clock Override",
+      "got": "DF Clock Override",
+      "name": "IFR label DfClockOvrd",
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        "0x11ed"
+      ],
+      "got": [
+        "0x11ed"
+      ],
+      "name": "canonical serializer 0x316",
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        "0x1204"
+      ],
+      "got": [
+        "0x1204"
+      ],
+      "name": "canonical serializer 0x330",
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        "0x1237"
+      ],
+      "got": [
+        "0x1237"
+      ],
+      "name": "canonical serializer 0x368",
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        "0x123c"
+      ],
+      "got": [
+        "0x123c"
+      ],
+      "name": "canonical serializer 0x36d",
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        "0x1331"
+      ],
+      "got": [
+        "0x1331"
+      ],
+      "name": "canonical serializer 0x6a3",
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        "0x1373"
+      ],
+      "got": [
+        "0x1373"
+      ],
+      "name": "canonical serializer 0x703",
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        "0x1374"
+      ],
+      "got": [
+        "0x1374"
+      ],
+      "name": "canonical serializer 0x704",
+      "status": "PASS"
+    },
+    {
+      "expected": "PASS",
+      "got": "PASS",
+      "name": "SVC4 retained verifier status",
+      "status": "PASS"
+    },
+    {
+      "expected": 59,
+      "got": 59,
+      "name": "SVC4 retained verifier checks",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "SVC4 map is caller-contract only",
+      "status": "PASS"
+    },
+    {
+      "expected": "LDR R3,[R6,R4]; STR R3,[R5] for type R0=3",
+      "got": "LDR R3,[R6,R4]; STR R3,[R5] for type R0=3",
+      "name": "SVC4 read helper maps then type-3 loads",
+      "status": "PASS"
+    },
+    {
+      "expected": "LDR R0,[R4]; STR R0,[R5,R6] for type R0=3",
+      "got": "LDR R0,[R4]; STR R0,[R5,R6] for type R0=3",
+      "name": "SVC4 write helper maps then type-3 stores",
+      "status": "PASS"
+    },
+    {
+      "expected": "PASS",
+      "got": "PASS",
+      "name": "callback target semantics status",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "callback active binding remains unproven",
+      "status": "PASS"
+    },
+    {
+      "expected": "PASS",
+      "got": "PASS",
+      "name": "follow-up status",
+      "status": "PASS"
+    },
+    {
+      "expected": false,
+      "got": false,
+      "name": "no Auto-to-Disabled branch observed",
+      "status": "PASS"
+    },
+    {
+      "expected": false,
+      "got": false,
+      "name": "Uclk ratio not resolved",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "consumer has no direct 0x1204 reader request",
+      "status": "PASS"
+    },
+    {
+      "expected": "STATIC_ONLY_CALLBACK_NOT_EXECUTED",
+      "got": "STATIC_ONLY_CALLBACK_NOT_EXECUTED",
+      "name": "defaults callback not executed",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "callback target identity unproven",
+      "status": "PASS"
+    }
+  ],
+  "decision": "DO_NOT_BUILD_ROM_YET",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis",
+    "emulated-or-host-tested"
+  ],
+  "gate_matrix": [
+    {
+      "consequence": "This establishes mapped-window access at the caller boundary, not the physical register/page.",
+      "evidence": "59/59 direct checks; (R1>>12)<<12 -> SVC#4 -> returned R0 base + low12; type-3 LDR/STR; SVC#5 follows.",
+      "evidence_class": [
+        "observed-bytes",
+        "static-analysis"
+      ],
+      "gate": "SVC4",
+      "requirement": "Exact ABL1 SVC#4/#5 mapped-register caller sequence",
+      "status": "PASS"
+    },
+    {
+      "consequence": "Cannot bind SVC#4 to a particular clock register or prove the callback is the active FCLK path.",
+      "evidence": "Target semantics result 96/96 PASS but active_binding is explicitly unproven; context table/descriptor bytes and R4/R5 object identity are unresolved.",
+      "evidence_class": [
+        "observed-bytes",
+        "static-analysis"
+      ],
+      "gate": "BIND",
+      "requirement": "Runtime descriptor/table and active callback identity",
+      "status": "BLOCKED"
+    },
+    {
+      "consequence": "Field-to-serializer mapping is closed; it is not an actuator mapping.",
+      "evidence": "Exact CLV fields at 0x7E5/0x7FF/0x837/0x83C/0xB72/0xBD2/0xBD3..0xBD4; canonical records 0x11ED/0x1204/0x1237/0x123C/0x1331/0x1373/0x1374 in both exact modules.",
+      "evidence_class": [
+        "observed-bytes",
+        "static-analysis"
+      ],
+      "gate": "FIELDS",
+      "requirement": "Native AmdSetup byte values and canonical serializer ownership",
+      "status": "PASS"
+    },
+    {
+      "consequence": "No native-sync semantic manifest or candidate build.",
+      "evidence": "Consumer result: serializer reaches NVTB/GUID-HOB generic reader; direct readers request 0x10FF/0x1104, not 0x1204; computed/indirect/DMA/runtime paths remain open.",
+      "evidence_class": [
+        "observed-bytes",
+        "static-analysis",
+        "emulated-or-host-tested"
+      ],
+      "gate": "CONSUMER",
+      "requirement": "$INV 0x1204 final requester/consumer/actuator",
+      "status": "BLOCKED"
+    },
+    {
+      "consequence": "No trustworthy target value can be selected.",
+      "evidence": "Menu label overlap (125..2000 vs DF 0..2000) is only numeric UI overlap; no byte-backed common unit/domain conversion.",
+      "evidence_class": [
+        "static-analysis"
+      ],
+      "gate": "UNITS",
+      "requirement": "MCLK/FCLK/UCLK units, GDDR6 conversion, shared domain/rate",
+      "status": "BLOCKED"
+    },
+    {
+      "consequence": "Enabled=0x01 is not a decoded ratio or 1:1 crossing proof.",
+      "evidence": "Exact serializer preserves one byte as 0x1204; bounded result reports no ratio arithmetic and no exact-clv ratio assignment.",
+      "evidence_class": [
+        "observed-bytes",
+        "static-analysis",
+        "emulated-or-host-tested"
+      ],
+      "gate": "RATIO",
+      "requirement": "UclkDiv1M0 ratio and synchronous-crossing selection",
+      "status": "BLOCKED"
+    },
+    {
+      "consequence": "Changing DF fields alone could be ignored or superseded.",
+      "evidence": "FCLK_DPM +0x6A3=0x0F/Auto, callback-bearing, owns 0x1331; no consumer precedence over 0x1373/0x1374 is established.",
+      "evidence_class": [
+        "observed-bytes",
+        "static-analysis"
+      ],
+      "gate": "PRECEDENCE",
+      "requirement": "FCLK_DPM versus manual DF override precedence",
+      "status": "BLOCKED"
+    },
+    {
+      "consequence": "No training-safe native profile is established.",
+      "evidence": "Native help says FCLK > UCLK and Memory P-state disabled; +0x36D is 0xFF Auto; 46/46 follow-up finds no Auto->Disabled branch.",
+      "evidence_class": [
+        "observed-bytes",
+        "static-analysis"
+      ],
+      "gate": "TRAINING",
+      "requirement": "Memory-P-state and training relation",
+      "status": "BLOCKED"
+    },
+    {
+      "consequence": "An offline artifact may be labelled stored-request experiment only after semantic gates, never applied/default.",
+      "evidence": "72/72 defaults checks pass statically; existing GetVariable values are authoritative; callback status STATIC_ONLY_CALLBACK_NOT_EXECUTED; reset/browser/NVRAM readback unrun.",
+      "evidence_class": [
+        "observed-bytes",
+        "static-analysis",
+        "emulated-or-host-tested"
+      ],
+      "gate": "DEFAULTS",
+      "requirement": "Existing-variable/default/fallback/migration precedence",
+      "status": "PARTIAL"
+    },
+    {
+      "consequence": "Do not build yet. 1:1:1 claim is prohibited.",
+      "evidence": "Conditional spec says existing builder remains df1400-only and rejects sync; no semantic manifest, no four-role candidate, no ROM output.",
+      "evidence_class": [
+        "host-tested boundary"
+      ],
+      "gate": "BUILD",
+      "requirement": "Minimal offline candidate transaction",
+      "status": "BLOCKED"
+    },
+    {
+      "consequence": "Post-build acceptance remains separate and cannot be inferred offline.",
+      "evidence": "No candidate write or hardware acceptance was performed in this review.",
+      "evidence_class": [
+        "unrun-hardware"
+      ],
+      "gate": "HARDWARE",
+      "requirement": "Recovery/readback/training/physical clocks",
+      "status": "UNRUN"
+    }
+  ],
+  "limitations": [
+    "No ROM candidate built.",
+    "No firmware execution, NVRAM reset, hardware, physical clock, training, or 1:1:1 claim.",
+    "Retained reports are inputs; unsupported historical/spec claims are not promoted."
+  ],
+  "memory_pstate_0x83c": {
+    "baseline": "0xff / Auto",
+    "classification": "not required by observed enforcement; required only if UI help is imposed as a hard template precondition",
+    "conditional_minimum_if_help_is_hard": [
+      "0x7e5",
+      "0x7ff",
+      "0x83c",
+      "0xbd3",
+      "0xbd4"
+    ],
+    "direct_observation": "46/46 PASS; auto_to_disabled_branch_found=false",
+    "native_disabled": "0x00 / Disabled",
+    "safety": "UNJUSTIFIED/UNSAFE TO CHANGE NOW: no consumer, training, or hardware proof; retain baseline for any future minimal experiment unless a new gate closes"
+  },
+  "source": {
+    "amdsetup_body_base": "0x4cf",
+    "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "size": 16777216
+  },
+  "status": "BLOCKED",
+  "svc4_boundary": {
+    "resolved": "SMN-page map caller contract: aligned high part -> SVC#4 -> returned base + low12 type-3 access",
+    "unresolved": [
+      "SVC#4 handler/translation table",
+      "physical map/window destination",
+      "runtime descriptor value",
+      "active callback binding",
+      "physical register/clock semantics"
+    ]
+  }
+}

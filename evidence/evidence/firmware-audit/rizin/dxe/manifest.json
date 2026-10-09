@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-09-11T04:29:53.946914+00:00",
+  "tool": "bundled Rizin",
+  "version": "0.9.1",
+  "commit": "c3a90e9226d977f58f4e9c75f78fa6b07afe13c7",
+  "command": "rizin -qq -A -c \"iIj; iSj; ii; iEj; aflj; s entry0; pd 64; izzj\" <EFI binary>",
+  "reports": [
+    {
+      "name": "Bc250VcnUnlockDxe.efi",
+      "input": "import/from-windows/Users/kukuruza/tmp_bc250/dxe/bin/Bc250VcnUnlockDxe.efi",
+      "input_sha256": "95b7078285e377a721a0f821552091d541ceb7e95924b8e524f7ed9587747d3d",
+      "output": "evidence/firmware-audit/rizin/dxe/Bc250VcnUnlockDxe.analysis.txt",
+      "output_sha256": "555527417390e622c5548976677a4d5fe8f65d102339cca258dc9ebabd436afd",
+      "size": 5984,
+      "exit_code": 0,
+      "output_size": 52074
+    },
+    {
+      "name": "Bc250VcnProbeApp.efi",
+      "input": "import/from-windows/Users/kukuruza/tmp_bc250/dxe/bin/Bc250VcnProbeApp.efi",
+      "input_sha256": "59e9fc56c995ba849b19904401fb6226850aa07abd6fb97fee70d34242c728db",
+      "output": "evidence/firmware-audit/rizin/dxe/Bc250VcnProbeApp.analysis.txt",
+      "output_sha256": "fc5c1af3daa8500b029cbcd05f42a21f54c83b81f6dc1262f2e8f1efdb008363",
+      "size": 19168,
+      "exit_code": 0,
+      "output_size": 100800
+    }
+  ],
+  "evidence_class": "static-analysis",
+  "caveats": [
+    "Imported binaries were analyzed in place read-only; source files and binaries were not modified.",
+    "Static presence of SMN/SMU writes in the source/binary is not permission or proof of execution."
+  ]
+}

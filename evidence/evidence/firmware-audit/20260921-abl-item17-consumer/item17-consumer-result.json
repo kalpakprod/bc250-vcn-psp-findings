@@ -1,0 +1,886 @@
+{
+  "status": "PASS",
+  "checks": 136,
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "rom": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "size": 16777216,
+    "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+  },
+  "abl1": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-consumer/ABL1-clv-decompressed.bin",
+    "size": 94624,
+    "sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "isa": "Thumb-2"
+  },
+  "runtime_base": {
+    "candidate": "0x57100",
+    "status": "CONDITIONAL_STATIC_ONLY",
+    "loader_relation": "not proven; PS1 load_address is zero and no runtime loader map was recovered"
+  },
+  "service_item_17": {
+    "caller": "0x7E34..0x7E3A passes r0=[r4], r1=0x17, r2=r4 to 0x0C60",
+    "dispatcher": "0x0C60 selects 0x0E50 or 0x0FD8 from helper metadata; both compare request ID against an 8-byte callback table and BLX the selected pointer",
+    "table_literal": "payload[0x0F10] and payload[0x1084] = 0x0006E224",
+    "table_candidate_payload_offset": "0x17124",
+    "table_row_0x17": {
+      "index": 2,
+      "offset": "0x17134",
+      "sentinel": false,
+      "pointer": "0x606fd",
+      "selector": "0x17"
+    },
+    "candidate_target": {
+      "thumb_pointer": "0x000606FD",
+      "payload_code_offset": "0x000095FC",
+      "status": "CONDITIONAL under base 0x57100"
+    }
+  },
+  "memory_policy_handler": {
+    "payload_entry": "0x95FC",
+    "role": "memory-speed context/pstate reconciliation; reads per-channel halfword +0x20 and has a conditional multi-channel minimum path",
+    "helper_gate": "0x6C20 stores helper 0x6D10 return 1 at output+4; 0x95FC reads it as [SP+0x164], `<=1` branches to 0x9744 -> 0x984E",
+    "exact_local_path": "single-state/table path; the multi-channel min and all-channel writeback block (0x9692..0x9758) is bypassed under the locally produced gate value 1; aggregate +0x2BC is populated in the alternate window",
+    "conditional_data_exchange": [
+      "0x9780 -> 0x0DD4 / message selector 0x0B check",
+      "0x97E4 -> 0x118C / selector 0x0C -> 0x12AC/SVC #6",
+      "0x9800 -> 0x10C0 / selector 0x0B -> 0x12AC/SVC #6"
+    ]
+  },
+  "svc6_abi": {
+    "exact_wrapper": "0x12AC",
+    "argument_observations": "0x12AC retains input data pointer r2 in r4, clears byte [r4+0x40], loads R0 literal 0x0006A41C, then executes SVC #6 at 0x12C0",
+    "candidate_literal_target": "payload+0x1331C contains '\\nSlave: ABL, return result\\n' under candidate base 0x57100; this string correlation does not define SVC semantics",
+    "local_source_corroboration": "version-aligned historical ABL1_decompiled.c FUN_000013AC calls software_interrupt(6), after clearing param_3+0x40",
+    "handler": "outside the extracted ABL1 payload / unavailable in this bounded trace; no clock-applier semantics assigned"
+  },
+  "unresolved_boundary": "SVC #6 handler/recipient behind ABL transfer helpers; runtime dispatch base and physical PLL/training consumer remain unresolved.",
+  "limits": [
+    "The 0x17 callback target is a conditional local correlation under base 0x57100; the loader/runtime base remains unproven.",
+    "Helper 0x6D10 statically returns 1, so the exact local 0x95FC path bypasses the multi-channel min branch; do not describe the min branch as executed for this path.",
+    "No link from AmdSetup+0x316 / $INV 0x11ED to APCB/CBS token 7 or the 0x17 callback context is established.",
+    "No PLL, physical MCLK, GDDR6 data-rate, applied training setting, voltage, synchronization, hardware behavior, or performance result is established.",
+    "No board, network, ROM, NVRAM, register, firmware, candidate, or hardware action occurred."
+  ],
+  "checks_detail": [
+    {
+      "name": "exact CLV donor SHA-256",
+      "status": "PASS",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "name": "exact ABL1 payload SHA-256",
+      "status": "PASS",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "name": "exact ABL1 payload length",
+      "status": "PASS",
+      "got": 94624,
+      "expected": 94624
+    },
+    {
+      "name": "copied ELF wrapper SHA-256",
+      "status": "PASS",
+      "got": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+      "expected": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6"
+    },
+    {
+      "name": "reused candidate-base result SHA-256",
+      "status": "PASS",
+      "got": "ecb7953571d3b008e76798718d216362bf819a4b0ffcb3dc52da58e23e2c483b",
+      "expected": "ecb7953571d3b008e76798718d216362bf819a4b0ffcb3dc52da58e23e2c483b"
+    },
+    {
+      "name": "reused pstate-precedence result SHA-256",
+      "status": "PASS",
+      "got": "76cf4c684d5e4caaf8a40372b2b5ac71bb851fd2f8c101742efdc3ec72ad87a9",
+      "expected": "76cf4c684d5e4caaf8a40372b2b5ac71bb851fd2f8c101742efdc3ec72ad87a9"
+    },
+    {
+      "name": "historical version-aligned ABL1 source SHA-256",
+      "status": "PASS",
+      "got": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b",
+      "expected": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b"
+    },
+    {
+      "name": "prior pointer-anchor result status",
+      "status": "PASS",
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "name": "prior conditional candidate base",
+      "status": "PASS",
+      "got": "0x57100",
+      "expected": "0x57100"
+    },
+    {
+      "name": "prior pointer-anchor count",
+      "status": "PASS",
+      "got": 4,
+      "expected": 4
+    },
+    {
+      "name": "prior pstate result status",
+      "status": "PASS",
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "name": "prior pstate result checks",
+      "status": "PASS",
+      "got": 47,
+      "expected": 47
+    },
+    {
+      "name": "item17-dispatch objdump exit",
+      "status": "PASS",
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "name": "item17-dispatch objdump stderr empty",
+      "status": "PASS",
+      "got": "",
+      "expected": ""
+    },
+    {
+      "name": "item17-target-95fc objdump exit",
+      "status": "PASS",
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "name": "item17-target-95fc objdump stderr empty",
+      "status": "PASS",
+      "got": "",
+      "expected": ""
+    },
+    {
+      "name": "item17-output-dd4 objdump exit",
+      "status": "PASS",
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "name": "item17-output-dd4 objdump stderr empty",
+      "status": "PASS",
+      "got": "",
+      "expected": ""
+    },
+    {
+      "name": "item17-output-fb8 objdump exit",
+      "status": "PASS",
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "name": "item17-output-fb8 objdump stderr empty",
+      "status": "PASS",
+      "got": "",
+      "expected": ""
+    },
+    {
+      "name": "item17-caller objdump exit",
+      "status": "PASS",
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "name": "item17-caller objdump stderr empty",
+      "status": "PASS",
+      "got": "",
+      "expected": ""
+    },
+    {
+      "name": "item17-sync-api objdump exit",
+      "status": "PASS",
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "name": "item17-sync-api objdump stderr empty",
+      "status": "PASS",
+      "got": "",
+      "expected": ""
+    },
+    {
+      "name": "item17-helper-metadata objdump exit",
+      "status": "PASS",
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "name": "item17-helper-metadata objdump stderr empty",
+      "status": "PASS",
+      "got": "",
+      "expected": ""
+    },
+    {
+      "name": "callback anchor disassembler exit count",
+      "status": "PASS",
+      "got": 3,
+      "expected": 3
+    },
+    {
+      "name": "callback anchor command 0x2e8 exit",
+      "status": "PASS",
+      "got": "0",
+      "expected": "0"
+    },
+    {
+      "name": "callback anchor command 0x8bfc exit",
+      "status": "PASS",
+      "got": "0",
+      "expected": "0"
+    },
+    {
+      "name": "callback anchor command 0x1bc0 exit",
+      "status": "PASS",
+      "got": "0",
+      "expected": "0"
+    },
+    {
+      "name": "callback anchor disassembler stderr empty",
+      "status": "PASS",
+      "got": "",
+      "expected": ""
+    },
+    {
+      "name": "caller sets item 0x17",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "caller passes the same context",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "caller enters service wrapper",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0xc64",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0xc66",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0xc68",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0xc80",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0xc8e",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0xe8c",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0xe98",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0xe9a",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0xe9e",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0xea2",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0xea4",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0xea6",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0x1038",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0x1044",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0x1046",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0x104a",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0x104e",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0x1050",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "dispatch semantics 0x1052",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "E50 table pointer literal",
+      "status": "PASS",
+      "got": 451108,
+      "expected": 451108
+    },
+    {
+      "name": "FD8 table pointer literal",
+      "status": "PASS",
+      "got": 451108,
+      "expected": 451108
+    },
+    {
+      "name": "candidate-base table offset",
+      "status": "PASS",
+      "got": 94500,
+      "expected": 94500
+    },
+    {
+      "name": "callback-table sentinel row index",
+      "status": "PASS",
+      "got": 10,
+      "expected": 10
+    },
+    {
+      "name": "callback-table sentinel",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "callback-table item 0x17 row count",
+      "status": "PASS",
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "name": "table selector 0xf pointer",
+      "status": "PASS",
+      "got": 357353,
+      "expected": 357353
+    },
+    {
+      "name": "table selector 0xf Thumb tag",
+      "status": "PASS",
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "name": "table selector 0xf candidate code offset",
+      "status": "PASS",
+      "got": 744,
+      "expected": 744
+    },
+    {
+      "name": "table selector 0xf local Thumb prologue",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "table selector 0xa pointer",
+      "status": "PASS",
+      "got": 392445,
+      "expected": 392445
+    },
+    {
+      "name": "table selector 0xa Thumb tag",
+      "status": "PASS",
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "name": "table selector 0xa candidate code offset",
+      "status": "PASS",
+      "got": 35836,
+      "expected": 35836
+    },
+    {
+      "name": "table selector 0xa local Thumb prologue",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "table selector 0x17 pointer",
+      "status": "PASS",
+      "got": 395005,
+      "expected": 395005
+    },
+    {
+      "name": "table selector 0x17 Thumb tag",
+      "status": "PASS",
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "name": "table selector 0x17 candidate code offset",
+      "status": "PASS",
+      "got": 38396,
+      "expected": 38396
+    },
+    {
+      "name": "table selector 0x17 local Thumb prologue",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "table selector 0x13 pointer",
+      "status": "PASS",
+      "got": 363713,
+      "expected": 363713
+    },
+    {
+      "name": "table selector 0x13 Thumb tag",
+      "status": "PASS",
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "name": "table selector 0x13 candidate code offset",
+      "status": "PASS",
+      "got": 7104,
+      "expected": 7104
+    },
+    {
+      "name": "table selector 0x13 local Thumb prologue",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "table selector 0x18 pointer",
+      "status": "PASS",
+      "got": 363713,
+      "expected": 363713
+    },
+    {
+      "name": "table selector 0x18 Thumb tag",
+      "status": "PASS",
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "name": "table selector 0x18 candidate code offset",
+      "status": "PASS",
+      "got": 7104,
+      "expected": 7104
+    },
+    {
+      "name": "table selector 0x18 local Thumb prologue",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "table selector 0x19 pointer",
+      "status": "PASS",
+      "got": 363713,
+      "expected": 363713
+    },
+    {
+      "name": "table selector 0x19 Thumb tag",
+      "status": "PASS",
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "name": "table selector 0x19 candidate code offset",
+      "status": "PASS",
+      "got": 7104,
+      "expected": 7104
+    },
+    {
+      "name": "table selector 0x19 local Thumb prologue",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "table selector 0x1a pointer",
+      "status": "PASS",
+      "got": 363713,
+      "expected": 363713
+    },
+    {
+      "name": "table selector 0x1a Thumb tag",
+      "status": "PASS",
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "name": "table selector 0x1a candidate code offset",
+      "status": "PASS",
+      "got": 7104,
+      "expected": 7104
+    },
+    {
+      "name": "table selector 0x1a local Thumb prologue",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "table selector 0x1b pointer",
+      "status": "PASS",
+      "got": 363713,
+      "expected": 363713
+    },
+    {
+      "name": "table selector 0x1b Thumb tag",
+      "status": "PASS",
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "name": "table selector 0x1b candidate code offset",
+      "status": "PASS",
+      "got": 7104,
+      "expected": 7104
+    },
+    {
+      "name": "table selector 0x1b local Thumb prologue",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "table selector 0x1c pointer",
+      "status": "PASS",
+      "got": 363713,
+      "expected": 363713
+    },
+    {
+      "name": "table selector 0x1c Thumb tag",
+      "status": "PASS",
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "name": "table selector 0x1c candidate code offset",
+      "status": "PASS",
+      "got": 7104,
+      "expected": 7104
+    },
+    {
+      "name": "table selector 0x1c local Thumb prologue",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "table selector 0x1d pointer",
+      "status": "PASS",
+      "got": 363713,
+      "expected": 363713
+    },
+    {
+      "name": "table selector 0x1d Thumb tag",
+      "status": "PASS",
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "name": "table selector 0x1d candidate code offset",
+      "status": "PASS",
+      "got": 7104,
+      "expected": 7104
+    },
+    {
+      "name": "table selector 0x1d local Thumb prologue",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "item17 callback pointer",
+      "status": "PASS",
+      "got": 395005,
+      "expected": 395005
+    },
+    {
+      "name": "item17 conditional target",
+      "status": "PASS",
+      "got": 38396,
+      "expected": 38396
+    },
+    {
+      "name": "item17 target exact prologue",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "memory-handler semantics 0x9600",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "memory-handler semantics 0x9672",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "memory-handler semantics 0x971a",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "memory-handler semantics 0x971e",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "memory-handler semantics 0x9722",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "memory-handler semantics 0x973e",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "memory-handler semantics 0x9758",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "memory-handler semantics 0x962a",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "memory-handler semantics 0x962c",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "memory-handler semantics 0x963e",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "memory-handler semantics 0x9644",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "memory-handler semantics 0x9646",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "memory-handler semantics 0x9744",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "memory-handler semantics 0x989a",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "slot-164 producer semantics 0x6c2a",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "slot-164 producer semantics 0x6c2e",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "slot-164 producer semantics 0x6d1e",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "slot-164 producer semantics 0x6d20",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "prior single-state no-channel-write check",
+      "status": "PASS",
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "name": "helper6D10 -> slot+4 constant",
+      "status": "PASS",
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "name": "BLS target branch under slot value 1",
+      "status": "PASS",
+      "got": "0x9646 -> 0x9744 -> 0x984E",
+      "expected": "0x9646 -> 0x9744 -> 0x984E"
+    },
+    {
+      "name": "outbound ABL ABI semantics 0x9780",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "outbound ABL ABI semantics 0xdf6",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "outbound ABL ABI semantics 0xdfc",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "outbound ABL ABI semantics 0x10fa",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "outbound ABL ABI semantics 0x1104",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "outbound ABL ABI semantics 0x11e6",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "outbound ABL ABI semantics 0x11e8",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "outbound ABL ABI semantics 0x12bc",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "outbound ABL ABI semantics 0x12c0",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "SVC#6 wrapper literal",
+      "status": "PASS",
+      "got": 435228,
+      "expected": 435228
+    },
+    {
+      "name": "SVC#6 literal candidate offset",
+      "status": "PASS",
+      "got": 78620,
+      "expected": 78620
+    },
+    {
+      "name": "SVC#6 candidate string bytes",
+      "status": "PASS",
+      "got": "0a536c6176653a2041424c2c2072657475726e20726573756c740a00",
+      "expected": "0a536c6176653a2041424c2c2072657475726e20726573756c740a00"
+    },
+    {
+      "name": "historical local source SVC6 call",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    }
+  ]
+}

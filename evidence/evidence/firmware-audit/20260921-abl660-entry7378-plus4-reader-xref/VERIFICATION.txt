@@ -1,0 +1,20 @@
+Target: exact CLV ABL1; static-only; no firmware/ROM/hardware mutation.
+Fresh reader command:
+  /usr/bin/llvm-objdump -D --triple=thumbv7m-none-eabi --start-address=0x18a4 --stop-address=0x1920 /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o
+Observed: exit 0, stderr empty. Exact stdout: run-20260921T220000+0500/plus4-reader.stdout.
+Raw-field command:
+  /usr/bin/python3 -B /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl660-entry7378-plus4-reader-xref/run-20260921T220000+0500/plus4-raw-fields.py
+Observed: exit 0, stderr empty, 7/7 checks; exact stdout: run-20260921T220000+0500/plus4-raw-fields.stdout.
+Raw ABL1: 94,624 bytes, SHA-256 af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a.
+ELF wrapper: SHA-256 adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b7f5f000df2f6.
+The candidate base 0x57100 and resulting pointer mapping to RVA 0x7378 remain conditional/unproven.
+
+G7 correction: The ELF hash on the earlier line is a transcription error. Superseding value to be verified by direct sha256sum readback: adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6.
+
+Machine-readable reader result:
+  plus4-reader-result.json
+Raw field check stdout (7/7 PASS):
+  run-20260921T220000+0500/plus4-raw-fields.stdout
+Reader listing output:
+  run-20260921T220000+0500/plus4-reader.stdout
+This result is bounded static evidence; it does not establish relocation, runtime execution, callback return behavior, or the active consumer object identity.

@@ -1,0 +1,46 @@
+0x247e8: entry      a1, 0x30
+0x247eb: l32r       a8, 0x400017434
+0x247ee: addx8      a4, a2, a2
+0x247f1: addx8      a4, a4, a8
+0x247f4: l8ui       a8, a4, 0x15
+0x247f7: wfr        f0, a3
+0x247fa: l8ui       a9, a4, 0x16
+0x247fd: beqz       a8, 0x24896
+0x24800: ssi        f0, a1, 0x8
+0x24803: bnez       a9, 0x24896
+0x24806: l32i.n     a10, a4, 0x0
+0x24808: call8      0x2342c
+0x2480b: l32r       a11, 0x40001742c
+0x2480e: lsi        f0, a1, 0x8
+0x24811: wfr        f2, a10
+0x24814: rfr        a10, f0
+0x24817: ssi        f2, a1, 0x4
+0x2481a: call8      0x3a9b8
+0x2481d: wfr        f6, a10
+0x24820: l32r       a10, 0x4000179d0
+0x24823: lsi        f7, a10, 0x0
+0x24826: add.s      f5, f6, f7
+0x24829: lsi        f4, a1, 0x4
+0x2482c: mul.s      f3, f4, f5
+0x2482f: rfr        a10, f3
+0x24832: call8      0x2344c
+0x24835: l32i.n     a12, a4, 0x0
+0x24837: l32r       a14, 0x400017438
+0x2483a: extui      a15, a12, 0x10, 0x10
+0x2483d: ufloat.s   f13, a15, 0x0
+0x24840: wfr        f14, a14
+0x24843: mul.s      f11, f13, f14
+0x24846: extui      a13, a12, 0x0, 0x9
+0x24849: ufloat.s   f12, a13, 0x0
+0x2484c: add.s      f10, f11, f12
+0x2484f: lsi        f9, a1, 0x8
+0x24852: mul.s      f8, f9, f10
+0x24855: l32r       a11, 0x40001743c
+0x24858: mov.n      a3, a10
+0x2485a: s32i.n     a12, a1, 0x0
+0x2485c: rfr        a10, f8
+0x2485f: call8      0x3a9b8
+0x24862: l32r       a14, 0x400017440
+0x24865: wfr        f3, a10
+0x24868: wfr        f4, a14
+0x2486b: mul.s      f1, f3, f4

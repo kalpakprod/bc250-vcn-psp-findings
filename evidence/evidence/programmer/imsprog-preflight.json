@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-09-11T05:46:30.397291+00:00",
+  "operator_report": {
+    "programmer_model": "CH347T",
+    "programmer_variant": "CH347T (operator supplied; PCB revision not yet visually verified)",
+    "configured_chip": {
+      "type": "SPI_FLASH",
+      "manufacturer": "WINBOND",
+      "name": "W25Q128BV",
+      "capacity": "16 M",
+      "page_size": 256,
+      "block_size": "64 K",
+      "supply_voltage": "3.3 V",
+      "four_byte_address": "No"
+    },
+    "image_source": "/tmp/orca-paste-1789105289957-0f684e63-540f-4432-9e94-0ca12b46f193.png",
+    "image_sha256": "cd4a135c9cd1e8f9030f98de21a5a06c31deef5c20569c964c2041b804a4639c"
+  },
+  "host_observation": {
+    "usb_id": "1a86:55db",
+    "usb_description": "QinHeng Electronics USB To UART+SPI+I2C",
+    "usb_bcd_device": "5.44",
+    "device_node": "/dev/ttyACM0",
+    "vendor_string": "wch.cn",
+    "interface_classes": [
+      "CDC Communications",
+      "CDC Data",
+      "Vendor Specific"
+    ]
+  },
+  "software": {
+    "name": "IMSProg",
+    "package_version": "1.9.1-1",
+    "package_license": "GPL-3.0-only",
+    "binary_path": "/home/OWNER/.local/bin/IMSProg",
+    "binary_size": 159,
+    "binary_sha256": "ab5e02458b4d4567a50cf31f70e9ceee8177c48cae2fead61694c93d591a6368",
+    "source_root": "/home/OWNER/src/imsprog-1.9.1-native/src/IMSProg-1.9.1",
+    "source_pkg_sha256_from_PKGBUILD": "8be3cc8775929944ddd3c4dc0b3111c3269dc894cc086c151ff2117e0450c984",
+    "database_path": "/usr/share/imsprog/IMSProg.Dat",
+    "database_sha256": "875f24069aaf7a02e6e28e74fbfde648abc06097abd8e1cb1898fe2b44c895f3"
+  },
+  "preserved_screenshot": {
+    "path": "evidence/programmer/imsprog-chip-selection.png",
+    "sha256": "cd4a135c9cd1e8f9030f98de21a5a06c31deef5c20569c964c2041b804a4639c",
+    "size": 50522
+  },
+  "status": {
+    "chip_identity_from_screenshot": "operator-configured, not yet independently read via JEDEC command",
+    "voltage": "operator-configured 3.3 V; electrical measurement unrun",
+    "programmer_connection": "host USB observed; clip/board contact unverified",
+    "spi_read": "not yet performed",
+    "spi_write": "not performed",
+    "flash": "not performed"
+  },
+  "redaction": "No serial number or credential/access-bearing value was read or stored.",
+  "evidence_class": "observed-bytes/operator-provided configuration plus host USB metadata"
+}

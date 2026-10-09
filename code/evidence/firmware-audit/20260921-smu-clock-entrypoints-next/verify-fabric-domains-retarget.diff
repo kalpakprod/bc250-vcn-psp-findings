@@ -1,0 +1,8 @@
+     "evidence_classification": "observed/static"
+ }
+ 
+-out_path = Path('evidence/firmware-audit/20260919-oc-clock-provenance/fabric-domains-verification.json')
++out_path = Path('evidence/firmware-audit/20260921-smu-clock-entrypoints-next/fabric-domains-verification.json')
+ out_path.write_text(json.dumps(results, indent=2))
+ print(f"PASS: all fabric domain assertions passed. Verification written to {out_path}")
+ 

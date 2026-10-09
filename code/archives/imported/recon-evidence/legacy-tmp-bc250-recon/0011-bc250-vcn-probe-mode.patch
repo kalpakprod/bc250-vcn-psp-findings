@@ -1,0 +1,319 @@
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu.h b/drivers/gpu/drm/amd/amdgpu/amdgpu.h
+index e138ebc..d1eeaa3 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu.h
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu.h
+@@ -265,7 +265,13 @@ extern int amdgpu_umsch_mm_fwlog;
+ 
+ extern int amdgpu_user_partt_mode;
+ extern int amdgpu_agp;
+-extern bool amdgpu_bc250_vcn;
++enum {
++	AMDGPU_BC250_VCN_MODE_OFF = 0,
++	AMDGPU_BC250_VCN_MODE_PROBE = 1,
++	AMDGPU_BC250_VCN_MODE_HARDWARE = 2,
++};
++
++extern int amdgpu_bc250_vcn_mode;
+ extern int amdgpu_rebar;
+ 
+ extern int amdgpu_wbrf;
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_discovery.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_discovery.c
+index 58f785f..4857413 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu_discovery.c
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_discovery.c
+@@ -2665,10 +2665,25 @@ static int amdgpu_discovery_set_mm_ip_blocks(struct amdgpu_device *adev)
+ 				amdgpu_device_ip_block_add(adev, &jpeg_v2_0_ip_block);
+ 			break;
+ 		case IP_VERSION(2, 0, 3):
+-			if (amdgpu_bc250_vcn && adev->pdev->device == 0x13fe) {
+-				amdgpu_device_ip_block_add(adev, &vcn_v2_0_ip_block);
+-				if (!amdgpu_sriov_vf(adev))
+-					amdgpu_device_ip_block_add(adev, &jpeg_v2_0_ip_block);
++			if (adev->pdev->device == 0x13fe) {
++				int mode = amdgpu_bc250_vcn_mode;
++
++				if (mode < AMDGPU_BC250_VCN_MODE_OFF ||
++				    mode > AMDGPU_BC250_VCN_MODE_HARDWARE) {
++					dev_warn_once(adev->dev,
++						      "Invalid BC250 VCN mode %d; disabling VCN/n",
++						      mode);
++					mode = AMDGPU_BC250_VCN_MODE_OFF;
++				}
++
++				if (mode == AMDGPU_BC250_VCN_MODE_PROBE) {
++					amdgpu_device_ip_block_add(adev, &vcn_v2_0_probe_ip_block);
++				} else if (mode == AMDGPU_BC250_VCN_MODE_HARDWARE) {
++					amdgpu_device_ip_block_add(adev, &vcn_v2_0_ip_block);
++					if (!amdgpu_sriov_vf(adev))
++						amdgpu_device_ip_block_add(adev,
++									   &jpeg_v2_0_ip_block);
++				}
+ 			}
+ 			break;
+ 		case IP_VERSION(2, 5, 0):
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c
+index 142e461..1415cdc 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c
+@@ -241,7 +241,7 @@ int amdgpu_umsch_mm;
+ int amdgpu_seamless = -1; /* auto */
+ uint amdgpu_debug_mask;
+ int amdgpu_agp = -1; /* auto */
+-bool amdgpu_bc250_vcn;
++int amdgpu_bc250_vcn_mode = AMDGPU_BC250_VCN_MODE_OFF;
+ int amdgpu_wbrf = -1;
+ int amdgpu_damage_clips = -1; /* auto */
+ int amdgpu_umsch_mm_fwlog;
+@@ -814,13 +814,14 @@ module_param_unsafe(hws_gws_support, bool, 0444);
+ MODULE_PARM_DESC(hws_gws_support, "Assume MEC2 FW supports GWS barriers (false = rely on FW version check (Default), true = force supported)");
+ 
+ /**
+- * DOC: bc250_vcn (bool)
+- * Opt in to registering the VCN 2.0/JPEG blocks on AMD BC-250 device 13fe.
+- * Disabled by default. Direct firmware experiments additionally require
+- * amdgpu.fw_load_type=0 on the test boot entry.
++ * DOC: bc250_vcn_mode (int)
++ * Select VCN 2.0/JPEG registration on AMD BC-250 device 13fe:
++ * 0=off, 1=probe-only, 2=hardware. Mode 2 is experimental. Global firmware
++ * policy remains unchanged; VCN-specific placement is selected internally for modes 1/2.
+  */
+-module_param_named(bc250_vcn, amdgpu_bc250_vcn, bool, 0444);
+-MODULE_PARM_DESC(bc250_vcn, "Register experimental BC-250 VCN 2.0 support");
++module_param_named(bc250_vcn_mode, amdgpu_bc250_vcn_mode, int, 0444);
++MODULE_PARM_DESC(bc250_vcn_mode,
++		 "BC-250 VCN mode: 0=off, 1=probe-only, 2=hardware; mode 2 is experimental");
+ 
+ /**
+  * DOC: queue_preemption_timeout_ms (int)
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_vcn.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_vcn.c
+index 6169675..cafc6bb 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu_vcn.c
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_vcn.c
+@@ -99,6 +99,18 @@ MODULE_FIRMWARE(FIRMWARE_VCN5_3_0);
+ static void amdgpu_vcn_idle_work_handler(struct work_struct *work);
+ static void amdgpu_vcn_reg_dump_fini(struct amdgpu_device *adev);
+ 
++bool amdgpu_vcn_fw_is_psp(struct amdgpu_device *adev)
++{
++	if ((adev->apu_flags & AMD_APU_IS_CYAN_SKILLFISH2) &&
++	    adev->pdev->device == 0x13fe &&
++	    amdgpu_ip_version(adev, UVD_HWIP, 0) == IP_VERSION(2, 0, 3) &&
++	    (amdgpu_bc250_vcn_mode == AMDGPU_BC250_VCN_MODE_PROBE ||
++	     amdgpu_bc250_vcn_mode == AMDGPU_BC250_VCN_MODE_HARDWARE))
++		return false;
++
++	return adev->firmware.load_type == AMDGPU_FW_LOAD_PSP;
++}
++
+ int amdgpu_vcn_early_init(struct amdgpu_device *adev, int i)
+ {
+ 	char ucode_prefix[25];
+@@ -144,7 +156,7 @@ int amdgpu_vcn_sw_init(struct amdgpu_device *adev, int i)
+ 	atomic_set(&adev->vcn.inst[i].total_submission_cnt, 0);
+ 	INIT_DELAYED_WORK(&adev->vcn.inst[i].idle_work, amdgpu_vcn_idle_work_handler);
+ 	atomic_set(&adev->vcn.inst[i].dpg_enc_submission_cnt, 0);
+-	if ((adev->firmware.load_type == AMDGPU_FW_LOAD_PSP) &&
++	if (amdgpu_vcn_fw_is_psp(adev) &&
+ 	    (adev->pg_flags & AMD_PG_SUPPORT_VCN_DPG))
+ 		adev->vcn.inst[i].indirect_sram = true;
+ 
+@@ -203,7 +215,7 @@ int amdgpu_vcn_sw_init(struct amdgpu_device *adev, int i)
+ 	}
+ 
+ 	bo_size = AMDGPU_VCN_STACK_SIZE + AMDGPU_VCN_CONTEXT_SIZE;
+-	if (adev->firmware.load_type != AMDGPU_FW_LOAD_PSP)
++	if (!amdgpu_vcn_fw_is_psp(adev))
+ 		bo_size += AMDGPU_GPU_PAGE_ALIGN(le32_to_cpu(hdr->ucode_size_bytes) + 8);
+ 
+ 	if (amdgpu_ip_version(adev, UVD_HWIP, 0) >= IP_VERSION(5, 0, 0)) {
+@@ -394,7 +406,7 @@ int amdgpu_vcn_resume(struct amdgpu_device *adev, int i)
+ 		unsigned int offset;
+ 
+ 		hdr = (const struct common_firmware_header *)adev->vcn.inst[i].fw->data;
+-		if (adev->firmware.load_type != AMDGPU_FW_LOAD_PSP) {
++		if (!amdgpu_vcn_fw_is_psp(adev)) {
+ 			offset = le32_to_cpu(hdr->ucode_array_offset_bytes);
+ 			if (drm_dev_enter(adev_to_drm(adev), &idx)) {
+ 				memcpy_toio(adev->vcn.inst[i].cpu_addr,
+@@ -1129,7 +1141,7 @@ void amdgpu_vcn_setup_ucode(struct amdgpu_device *adev, int i)
+ {
+ 	unsigned int idx;
+ 
+-	if (adev->firmware.load_type == AMDGPU_FW_LOAD_PSP) {
++	if (amdgpu_vcn_fw_is_psp(adev)) {
+ 		const struct common_firmware_header *hdr;
+ 
+ 		if (adev->vcn.harvest_config & (1 << i))
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_vcn.h b/drivers/gpu/drm/amd/amdgpu/amdgpu_vcn.h
+index 82624b4..9a404d1 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu_vcn.h
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_vcn.h
+@@ -523,6 +523,7 @@ int amdgpu_vcn_suspend(struct amdgpu_device *adev, int i);
+ int amdgpu_vcn_resume(struct amdgpu_device *adev, int i);
+ void amdgpu_vcn_ring_begin_use(struct amdgpu_ring *ring);
+ void amdgpu_vcn_ring_end_use(struct amdgpu_ring *ring);
++bool amdgpu_vcn_fw_is_psp(struct amdgpu_device *adev);
+ 
+ bool amdgpu_vcn_is_disabled_vcn(struct amdgpu_device *adev,
+ 				enum vcn_ring_type type, uint32_t vcn_instance);
+diff --git a/drivers/gpu/drm/amd/amdgpu/vcn_v2_0.c b/drivers/gpu/drm/amd/amdgpu/vcn_v2_0.c
+index 0442bfc..92a4458 100644
+--- a/drivers/gpu/drm/amd/amdgpu/vcn_v2_0.c
++++ b/drivers/gpu/drm/amd/amdgpu/vcn_v2_0.c
+@@ -100,6 +100,21 @@ static int vcn_v2_0_pause_dpg_mode(struct amdgpu_vcn_inst *vinst,
+ static int vcn_v2_0_start_sriov(struct amdgpu_device *adev);
+ static int vcn_v2_0_reset(struct amdgpu_vcn_inst *vinst);
+ 
++static int vcn_v2_0_probe_set_pg_state(struct amdgpu_vcn_inst *vinst,
++				       enum amd_powergating_state state)
++{
++	return 0;
++}
++
++static int vcn_v2_0_probe_early_init(struct amdgpu_ip_block *ip_block) {
++	struct amdgpu_device *adev = ip_block->adev;
++
++	adev->vcn.inst[0].num_enc_rings = 0;
++	adev->vcn.inst->set_pg_state = vcn_v2_0_probe_set_pg_state;
++
++	return amdgpu_vcn_early_init(adev, 0);
++}
++
+ /**
+  * vcn_v2_0_early_init - set function pointers and load microcode
+  *
+@@ -388,7 +403,7 @@ static void vcn_v2_0_mc_resume(struct amdgpu_vcn_inst *vinst)
+ 		return;
+ 
+ 	/* cache window 0: fw */
+-	if (adev->firmware.load_type == AMDGPU_FW_LOAD_PSP) {
++	if (amdgpu_vcn_fw_is_psp(adev)) {
+ 		WREG32_SOC15(UVD, 0, mmUVD_LMI_VCPU_CACHE_64BIT_BAR_LOW,
+ 			(adev->firmware.ucode[AMDGPU_UCODE_ID_VCN].tmr_mc_addr_lo));
+ 		WREG32_SOC15(UVD, 0, mmUVD_LMI_VCPU_CACHE_64BIT_BAR_HIGH,
+@@ -443,7 +458,7 @@ static void vcn_v2_0_mc_resume_dpg_mode(struct amdgpu_vcn_inst *vinst,
+ 	uint32_t offset;
+ 
+ 	/* cache window 0: fw */
+-	if (adev->firmware.load_type == AMDGPU_FW_LOAD_PSP) {
++	if (amdgpu_vcn_fw_is_psp(adev)) {
+ 		if (!indirect) {
+ 			WREG32_SOC15_DPG_MODE(0, SOC15_DPG_MODE_OFFSET(
+ 				UVD, 0, mmUVD_LMI_VCPU_CACHE_64BIT_BAR_LOW),
+@@ -1988,7 +2003,7 @@ static int vcn_v2_0_start_sriov(struct amdgpu_device *adev)
+ 			0xFFFFFFFF, 0x00000004);
+ 
+ 		/* mc resume*/
+-		if (adev->firmware.load_type == AMDGPU_FW_LOAD_PSP) {
++		if (amdgpu_vcn_fw_is_psp(adev)) {
+ 			MMSCH_V2_0_INSERT_DIRECT_WT(
+ 				SOC15_REG_OFFSET(UVD, 0,
+ 					mmUVD_LMI_VCPU_CACHE_64BIT_BAR_LOW),
+@@ -2093,6 +2108,84 @@ static int vcn_v2_0_start_sriov(struct amdgpu_device *adev)
+ 	return vcn_v2_0_start_mmsch(adev, &adev->virt.mm_table);
+ }
+ 
++static int vcn_v2_0_probe_sw_init(struct amdgpu_ip_block *ip_block)
++{
++	struct amdgpu_device *adev = ip_block->adev;
++	int r;
++
++	r = amdgpu_vcn_sw_init(adev, 0);
++	if (r)
++		return r;
++
++	amdgpu_vcn_setup_ucode(adev, 0);
++
++	r = amdgpu_vcn_resume(adev, 0);
++	if (r) {
++		amdgpu_vcn_sw_fini(adev, 0);
++		return r;
++	}
++
++	return 0;
++}
++
++static int vcn_v2_0_probe_sw_fini(struct amdgpu_ip_block *ip_block)
++{
++	struct amdgpu_device *adev = ip_block->adev;
++	int r;
++
++	r = amdgpu_vcn_suspend(adev, 0);
++	amdgpu_vcn_sw_fini(adev, 0);
++
++	return r;
++}
++
++static int vcn_v2_0_probe_hw_init(struct amdgpu_ip_block *ip_block)
++{
++	struct amdgpu_device *adev = ip_block->adev;
++
++	dev_info(adev->dev, "VCN probe: fw_version=0x%08x fw_size=%zu vcpu_bo_size=%lu/n",
++		 adev->vcn.inst->fw_version, adev->vcn.inst->fw->size,
++		 amdgpu_bo_size(adev->vcn.inst->vcpu_bo));
++	return 0;
++}
++
++static int vcn_v2_0_probe_noop(struct amdgpu_ip_block *ip_block)
++{
++	return 0;
++}
++
++static bool vcn_v2_0_probe_is_idle(struct amdgpu_ip_block *ip_block)
++{
++	return true;
++}
++
++static int vcn_v2_0_probe_set_clockgating_state(struct amdgpu_ip_block *ip_block,
++						enum amd_clockgating_state state)
++{
++	return 0;
++}
++
++static int vcn_v2_0_probe_set_powergating_state(struct amdgpu_ip_block *ip_block,
++						enum amd_powergating_state state)
++{
++	return 0;
++}
++
++static const struct amd_ip_funcs vcn_v2_0_probe_ip_funcs = {
++	.name = "vcn_v2_0_probe",
++	.early_init = vcn_v2_0_probe_early_init,
++	.sw_init = vcn_v2_0_probe_sw_init,
++	.sw_fini = vcn_v2_0_probe_sw_fini,
++	.hw_init = vcn_v2_0_probe_hw_init,
++	.hw_fini = vcn_v2_0_probe_noop,
++	.suspend = vcn_v2_0_probe_noop,
++	.resume = vcn_v2_0_probe_noop,
++	.is_idle = vcn_v2_0_probe_is_idle,
++	.wait_for_idle = vcn_v2_0_probe_noop,
++	.set_clockgating_state = vcn_v2_0_probe_set_clockgating_state,
++	.set_powergating_state = vcn_v2_0_probe_set_powergating_state,
++};
++
+ static const struct amd_ip_funcs vcn_v2_0_ip_funcs = {
+ 	.name = "vcn_v2_0",
+ 	.early_init = vcn_v2_0_early_init,
+@@ -2205,3 +2298,11 @@ const struct amdgpu_ip_block_version vcn_v2_0_ip_block =
+ 		.rev = 0,
+ 		.funcs = &vcn_v2_0_ip_funcs,
+ };
++
++const struct amdgpu_ip_block_version vcn_v2_0_probe_ip_block = {
++		.type = AMD_IP_BLOCK_TYPE_VCN,
++		.major = 2,
++		.minor = 0,
++		.rev = 0,
++		.funcs = &vcn_v2_0_probe_ip_funcs,
++};
+diff --git a/drivers/gpu/drm/amd/amdgpu/vcn_v2_0.h b/drivers/gpu/drm/amd/amdgpu/vcn_v2_0.h
+index 6c9de18..74a6fc2 100644
+--- a/drivers/gpu/drm/amd/amdgpu/vcn_v2_0.h
++++ b/drivers/gpu/drm/amd/amdgpu/vcn_v2_0.h
+@@ -51,5 +51,6 @@ extern void vcn_v2_0_enc_ring_emit_vm_flush(struct amdgpu_ring *ring,
+ extern void vcn_v2_0_enc_ring_emit_wreg(struct amdgpu_ring *ring, uint32_t reg, uint32_t val);
+ 
+ extern const struct amdgpu_ip_block_version vcn_v2_0_ip_block;
++extern const struct amdgpu_ip_block_version vcn_v2_0_probe_ip_block;
+ 
+ #endif /* __VCN_V2_0_H__ */

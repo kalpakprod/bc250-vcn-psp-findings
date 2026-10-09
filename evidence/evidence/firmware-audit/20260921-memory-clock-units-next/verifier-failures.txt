@@ -1,0 +1,14 @@
+Observed verifier failures; all exact image inputs remained unchanged.
+
+1. Exit 1, assertion at payload 0xC70:
+   Expected raw `9b01012b`; actual slice `019b012b` (slice began one byte late / misread mixed code alignment).
+2. Exit 1 after first correction:
+   Slice at 0xC71 actual `9b012b01`; expected `9b01012b` (Thumb halfword byte-order/cursor transcription error).
+3. Exit 1, string assertion at payload 0x25D7:
+   Actual bytes begin in mixed code and do not equal the expected string. Exact search locates the string at 0x25E9, so hard-coded string offset was wrong.
+4. Exit 1, syntax error in the method-class rewrite:
+   `IndentationError: unexpected indent` at `memory_clock_units_next_verify.py:49`; parse failed before inputs were read.
+5. Exit 1 after a partial indentation correction:
+   Same parse error at line 49; later inspection showed the helper block and result write had also escaped `main()` indentation.
+
+Method change: use the existing passing 65-check verifier for the enum map; use decoded listing semantics plus computed branch/table bytes only for the new post-reducer call; use content search for strings. Do not claim the unrelated string at 0x25E9 is instruction evidence.

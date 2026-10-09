@@ -1,0 +1,87 @@
+body=/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin3_psp_bodies/SMU_OFFCHIP_FW~0x8_0.58.6.0.body size=262144
+call8_abi=caller outgoing a10/a11 -> callee incoming a2/a3 after window rotation
+function=0x2e448 coherent range 0x2e448..0x2e501; instruction boundaries are reconstructed sequentially
+call_context address=0x2e6fe mnemonic=call8 body='0x2268' pcode=unique[3900:4] = 0x8002e701 ; unique[dc00:4] = PS & 0xffffcfff ; unique[dd00:4] = zext(0x2) ; unique[de00:4] = unique[dd00:4] << 0xc ; PS = unique[dc00:4] | unique[de00:4] ; a8 = unique[3900:4] ; swap8() ; call ram[2268:4] ; restore8()
+call_context address=0x2e701 mnemonic=call8 body='0x2e448' pcode=unique[3900:4] = 0x8002e704 ; unique[dc00:4] = PS & 0xffffcfff ; unique[dd00:4] = zext(0x2) ; unique[de00:4] = unique[dd00:4] << 0xc ; PS = unique[dc00:4] | unique[de00:4] ; a8 = unique[3900:4] ; swap8() ; call ram[2e448:4] ; restore8()
+call_context address=0x2e47f mnemonic=mov.n body='a10, a4' pcode=a10 = a4
+call_context address=0x2e481 mnemonic=call8 body='0x23730' pcode=unique[3900:4] = 0x8002e484 ; unique[dc00:4] = PS & 0xffffcfff ; unique[dd00:4] = zext(0x2) ; unique[de00:4] = unique[dd00:4] << 0xc ; PS = unique[dc00:4] | unique[de00:4] ; a8 = unique[3900:4] ; swap8() ; call ram[23730:4] ; restore8()
+address	mnemonic	body	defs	uses	pcode
+0x2e448	entry	a1, 0x20	-	-	unique[11b00:4] = a1 ; unique[11c00:4] = PS >> 0xc ; unique[11d00:1] = SUBPIECE unique[11c00:4], 0x0 ; unique[11f00:1] = unique[11d00:1] & 0x3 ; rotateRegWindow(unique[11f00:1]) ; a1 = unique[11b00:4] - 0x20
+0x2e44b	l32r	a7, 0x4000181e0	a7	-	a7 = ram[181e0:4]
+0x2e44e	l32r	a5, 0x4000181e4	a5	-	a5 = ram[181e4:4]
+0x2e451	UNDECODABLE	r0x0002e451: Unable to resolve constructor	-	-	fallback_length=3 raw=3010fa note=GNU Xtensa cross-decoder identifies non-branch const.s f1,0
+0x2e454	l32i.n	a9, a7, 0x4	-	a7	unique[15000:4] = a7 + 0x4 ; a9 = *[ram]unique[15000:4]
+0x2e456	l32i.n	a8, a7, 0x0	-	a7	unique[15000:4] = a7 + 0x0 ; a8 = *[ram]unique[15000:4]
+0x2e458	l32r	a10, 0x4000173b0	-	-	a10 = ram[173b0:4]
+0x2e45b	mov.n	a2, a7	a2	a7	a2 = a7
+0x2e45d	bne	a8, a9, 0x2e463	-	-	unique[ce00:1] = a8 != a9 ; if (unique[ce00:1]) goto ram[2e463:4]
+0x2e460	j	0x2e501	-	-	goto ram[2e501:4]
+0x2e463	wfr	f0, a10	-	-	f0 = a10
+0x2e466	mov.n	a3, a7	a3	a7	a3 = a7
+0x2e468	lsi	f2, a2, 0x14c	-	a2	unique[15600:4] = a2 + 0x14c ; f2 = *[ram]unique[15600:4]
+0x2e46b	oeq.s	b0, f2, f0	-	-	unique[1b500:1] = nan(f2) ; unique[1b600:1] = !unique[1b500:1] ; unique[1b700:1] = nan(f0) ; unique[1b800:1] = !unique[1b700:1] ; unique[1b900:1] = unique[1b600:1] && unique[1b800:1] ; unique[1ba00:1] = f2 f== f0 ; b0 = unique[1b900:1] && unique[1ba00:1]
+0x2e46e	l32i.n	a4, a3, 0x8	-	a3	unique[15000:4] = a3 + 0x8 ; a4 = *[ram]unique[15000:4]
+0x2e470	bf	b0, 0x2e479	-	-	unique[c000:1] = !b0 ; if (unique[c000:1]) goto ram[2e479:4]
+0x2e473	ssi	f2, a2, 0x5c	-	a2	unique[23600:4] = a2 + 0x5c ; *[ram]unique[23600:4] = f2
+0x2e476	j	0x2e4f3	-	-	goto ram[2e4f3:4]
+0x2e479	oeq.s	b1, f2, f1	-	-	unique[1b500:1] = nan(f2) ; unique[1b600:1] = !unique[1b500:1] ; unique[1b700:1] = nan(f1) ; unique[1b800:1] = !unique[1b700:1] ; unique[1b900:1] = unique[1b600:1] && unique[1b800:1] ; unique[1ba00:1] = f2 f== f1 ; b1 = unique[1b900:1] && unique[1ba00:1]
+0x2e47c	bf	b1, 0x2e496	-	-	unique[c000:1] = !b1 ; if (unique[c000:1]) goto ram[2e496:4]
+0x2e47f	mov.n	a10, a4	-	-	a10 = a4
+0x2e481	call8	0x23730	-	-	unique[3900:4] = 0x8002e484 ; unique[dc00:4] = PS & 0xffffcfff ; unique[dd00:4] = zext(0x2) ; unique[de00:4] = unique[dd00:4] << 0xc ; PS = unique[dc00:4] | unique[de00:4] ; a8 = unique[3900:4] ; swap8() ; call ram[23730:4] ; restore8()
+0x2e484	l32r	a13, 0x4000181e8	-	-	a13 = ram[181e8:4]
+0x2e487	lsi	f2, a2, 0x14c	-	a2	unique[15600:4] = a2 + 0x14c ; f2 = *[ram]unique[15600:4]
+0x2e48a	ssi	f2, a2, 0x5c	-	a2	unique[23600:4] = a2 + 0x5c ; *[ram]unique[23600:4] = f2
+0x2e48d	lsi	f0, a13, 0x0	-	-	unique[15600:4] = a13 + 0x0 ; f0 = *[ram]unique[15600:4]
+0x2e490	lsi	f1, a13, 0x4	-	-	unique[15600:4] = a13 + 0x4 ; f1 = *[ram]unique[15600:4]
+0x2e493	j	0x2e4f3	-	-	goto ram[2e4f3:4]
+0x2e496	mov.n	a10, a4	-	-	a10 = a4
+0x2e498	call8	0x2384c	-	-	unique[3900:4] = 0x8002e49b ; unique[dc00:4] = PS & 0xffffcfff ; unique[dd00:4] = zext(0x2) ; unique[de00:4] = unique[dd00:4] << 0xc ; PS = unique[dc00:4] | unique[de00:4] ; a8 = unique[3900:4] ; swap8() ; call ram[2384c:4] ; restore8()
+0x2e49b	l32r	a15, 0x4000181e8	-	-	a15 = ram[181e8:4]
+0x2e49e	mov.n	a6, a10	-	-	a6 = a10
+0x2e4a0	lsi	f3, a2, 0x14c	-	a2	unique[15600:4] = a2 + 0x14c ; f3 = *[ram]unique[15600:4]
+0x2e4a3	lsi	f1, a15, 0x4	-	-	unique[15600:4] = a15 + 0x4 ; f1 = *[ram]unique[15600:4]
+0x2e4a6	oeq.s	b2, f3, f1	-	-	unique[1b500:1] = nan(f3) ; unique[1b600:1] = !unique[1b500:1] ; unique[1b700:1] = nan(f1) ; unique[1b800:1] = !unique[1b700:1] ; unique[1b900:1] = unique[1b600:1] && unique[1b800:1] ; unique[1ba00:1] = f3 f== f1 ; b2 = unique[1b900:1] && unique[1ba00:1]
+0x2e4a9	movi.n	a11, 0x0	-	-	a11 = sext(0x0)
+0x2e4ab	lsi	f0, a15, 0x0	-	-	unique[15600:4] = a15 + 0x0 ; f0 = *[ram]unique[15600:4]
+0x2e4ae	bt	b2, 0x2e4d9	-	-	if (b2) goto ram[2e4d9:4]
+0x2e4b1	mov.n	a10, a4	-	-	a10 = a4
+0x2e4b3	call8	0x23860	-	-	unique[3900:4] = 0x8002e4b6 ; unique[dc00:4] = PS & 0xffffcfff ; unique[dd00:4] = zext(0x2) ; unique[de00:4] = unique[dd00:4] << 0xc ; PS = unique[dc00:4] | unique[de00:4] ; a8 = unique[3900:4] ; swap8() ; call ram[23860:4] ; restore8()
+0x2e4b6	l32r	a8, 0x4000181ec	-	-	a8 = ram[181ec:4]
+0x2e4b9	lsi	f5, a2, 0x14c	-	a2	unique[15600:4] = a2 + 0x14c ; f5 = *[ram]unique[15600:4]
+0x2e4bc	lsi	f6, a8, 0x0	-	-	unique[15600:4] = a8 + 0x0 ; f6 = *[ram]unique[15600:4]
+0x2e4bf	mul.s	f4, f5, f6	-	-	f4 = f5 f* f6
+0x2e4c2	rfr	a11, f4	-	-	a11 = f4
+0x2e4c5	call8	0x23a14	-	-	unique[3900:4] = 0x8002e4c8 ; unique[dc00:4] = PS & 0xffffcfff ; unique[dd00:4] = zext(0x2) ; unique[de00:4] = unique[dd00:4] << 0xc ; PS = unique[dc00:4] | unique[de00:4] ; a8 = unique[3900:4] ; swap8() ; call ram[23a14:4] ; restore8()
+0x2e4c8	l32r	a11, 0x4000181e8	-	-	a11 = ram[181e8:4]
+0x2e4cb	l32r	a9, 0x4000181f0	-	-	a9 = ram[181f0:4]
+0x2e4ce	lsi	f0, a11, 0x0	-	-	unique[15600:4] = a11 + 0x0 ; f0 = *[ram]unique[15600:4]
+0x2e4d1	lsi	f1, a9, 0x0	-	-	unique[15600:4] = a9 + 0x0 ; f1 = *[ram]unique[15600:4]
+0x2e4d4	mov.n	a11, a10	-	-	a11 = a10
+0x2e4d6	j	0x2e4d9	-	-	goto ram[2e4d9:4]
+0x2e4d9	beq	a6, a11, 0x2e4ed	-	-	unique[bc00:1] = a6 == a11 ; if (unique[bc00:1]) goto ram[2e4ed:4]
+0x2e4dc	mov.n	a10, a4	-	-	a10 = a4
+0x2e4de	extui	a11, a11, 0x0, 0x8	-	-	unique[12300:4] = a11 >> 0x0 ; unique[12400:4] = 0x1 << 0x8 ; unique[12600:4] = unique[12400:4] - 0x1 ; a11 = unique[12300:4] & unique[12600:4]
+0x2e4e1	call8	0x2362c	-	-	unique[3900:4] = 0x8002e4e4 ; unique[dc00:4] = PS & 0xffffcfff ; unique[dd00:4] = zext(0x2) ; unique[de00:4] = unique[dd00:4] << 0xc ; PS = unique[dc00:4] | unique[de00:4] ; a8 = unique[3900:4] ; swap8() ; call ram[2362c:4] ; restore8()
+0x2e4e4	l32r	a13, 0x4000181e8	-	-	a13 = ram[181e8:4]
+0x2e4e7	lsi	f0, a13, 0x0	-	-	unique[15600:4] = a13 + 0x0 ; f0 = *[ram]unique[15600:4]
+0x2e4ea	lsi	f1, a13, 0x4	-	-	unique[15600:4] = a13 + 0x4 ; f1 = *[ram]unique[15600:4]
+0x2e4ed	lsi	f7, a2, 0x14c	-	a2	unique[15600:4] = a2 + 0x14c ; f7 = *[ram]unique[15600:4]
+0x2e4f0	ssi	f7, a2, 0x5c	-	a2	unique[23600:4] = a2 + 0x5c ; *[ram]unique[23600:4] = f7
+0x2e4f3	addi.n	a3, a3, 0x4	a3	a3	a3 = a3 + 0x4
+0x2e4f5	addi.n	a2, a2, 0xc	a2	a2	a2 = a2 + 0xc
+0x2e4f7	beq	a2, a5, 0x2e4fd	-	a2,a5	unique[bc00:1] = a2 == a5 ; if (unique[bc00:1]) goto ram[2e4fd:4]
+0x2e4fa	j	0x2e468	-	-	goto ram[2e468:4]
+0x2e4fd	l32i.n	a14, a7, 0x4	-	a7	unique[15000:4] = a7 + 0x4 ; a14 = *[ram]unique[15000:4]
+0x2e4ff	s32i.n	a14, a7, 0x0	-	a7	unique[21300:4] = a7 + 0x0 ; *[ram]unique[21300:4] = a14
+literal address=0x2e44b target=0x181e0 value=0x00013ed4
+literal address=0x2e44e target=0x181e4 value=0x00013fc4
+entry_definitions=a7=0x13ed4 @0x2e44b; a5=0x13fc4 @0x2e44e; a2=a7=0x13ed4 @0x2e45b; a3=a7 @0x2e466
+loop_backedge=0x2e4f3 a3+=4; 0x2e4f5 a2+=12; 0x2e4f7 compares a2 to a5; 0x2e4fa branches to 0x2e468
+q3_index_range=1..20; q3_value_field=*(0x13ed4 + 12*index + 0x140)
+domain_values_on_loop_entry=0xd,0x0,0x1,0x2,0x3,0x4,0x5,0x6,0x7,0xa,0x18,0x13,0x14,0x15,0x16,0x17,0xb,0x8,0x9,0xc
+domain_set_on_loop_entry=0x0,0x1,0x2,0x3,0x4,0x5,0x6,0x7,0x8,0x9,0xa,0xb,0xc,0xd,0x13,0x14,0x15,0x16,0x17,0x18
+consumer_float=0x2e468 reads *(0x13ed4 + 12*i + 0x14c) on loop entry path; this equals q3 field *(0x13ed4 + 12*(i+1) + 0x140) for index=i+1
+consumer_domain=0x2e46e reads *(0x13ed4 + 4*i + 8); 0x2e47f->0x23730->0x246f4 receives that value as d
+a2_producer=0x2e45b mov.n a2,a7; 0x2e451 EXCW/const.s f1,0 is non-branch under GNU floating-point configurations; 0x2e45d enters loop only when a8!=a9
+helper_2268_return=outgoing a10 at 0x2e701; overwritten by local a2=a7 before first loop read
+verdict=Q3-updated float field read is direct after local a2=a7 on the a8!=a9 loop path; d/value direct propagation to 0x246f4 remains float-gated and unproven

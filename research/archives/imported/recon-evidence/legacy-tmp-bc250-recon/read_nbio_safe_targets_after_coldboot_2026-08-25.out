@@ -1,0 +1,26 @@
+read iohc_source_5c 0x13b1005c
+value iohc_source_5c=0x00008000
+read iohc_source_60 0x13b10060
+value iohc_source_60=0x0000ffff
+read iohc_source_4c 0x13b0004c
+value iohc_source_4c=0x00800000
+read nbio_target_6a140 0x0006a140
+value nbio_target_6a140=0x00008000
+read nbio_target_6a144 0x0006a144
+value nbio_target_6a144=0x0000ffff
+read nbio_target_6a148 0x0006a148
+value nbio_target_6a148=0x00800000
+read nbio_target_6a14c 0x0006a14c
+value nbio_target_6a14c=0x00000008
+read nbio_route_33e0 0x000033e0
+value nbio_route_33e0=0x00003820
+{
+  "iohc_source_4c": "0x00800000",
+  "iohc_source_5c": "0x00008000",
+  "iohc_source_60": "0x0000ffff",
+  "nbio_route_33e0": "0x00003820",
+  "nbio_target_6a140": "0x00008000",
+  "nbio_target_6a144": "0x0000ffff",
+  "nbio_target_6a148": "0x00800000",
+  "nbio_target_6a14c": "0x00000008"
+}

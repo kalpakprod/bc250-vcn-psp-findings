@@ -1,0 +1,35 @@
+[
+  {
+    "role": "BASELINE",
+    "command": [
+      "/home/OWNER/orca/projects/bc250/reports/waveshare-implementation-20260930/host-tests/callback-baseline"
+    ],
+    "input": "report_id=0x20, cached bytes=64, requested bytes=10, output buffer allocated64 with sentinel 0x55",
+    "stdout": "requested=10 stored=64 returned=63 bytes_overwritten_after_request=53\n",
+    "stderr": "",
+    "exit_status": 0,
+    "source_extracted_from": "pristine firmware source archive"
+  },
+  {
+    "role": "MODIFIED",
+    "command": [
+      "/home/OWNER/orca/projects/bc250/reports/waveshare-implementation-20260930/host-tests/callback-modified"
+    ],
+    "input": "report_id=0x20, cached bytes=64, requested bytes=10, output buffer allocated64 with sentinel 0x55",
+    "stdout": "requested=10 stored=64 returned=10 bytes_overwritten_after_request=0\n",
+    "stderr": "",
+    "exit_status": 0,
+    "source_extracted_from": "staged firmware changed copy"
+  },
+  {
+    "role": "ROLLBACK",
+    "command": [
+      "/home/OWNER/orca/projects/bc250/reports/waveshare-implementation-20260930/host-tests/callback-rollback"
+    ],
+    "input": "report_id=0x20, cached bytes=64, requested bytes=10, output buffer allocated64 with sentinel 0x55",
+    "stdout": "requested=10 stored=64 returned=63 bytes_overwritten_after_request=53\n",
+    "stderr": "",
+    "exit_status": 0,
+    "source_extracted_from": "pristine firmware source archive"
+  }
+]

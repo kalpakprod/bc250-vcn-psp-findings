@@ -1,0 +1,321 @@
+{
+  "status": "PASS",
+  "checks": {
+    "passed": 43,
+    "failed": 0,
+    "total": 43
+  },
+  "input": {
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "abl1": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "abl1_size": 94624
+  },
+  "stack_path": {
+    "scope": "only the branch at 0x463C where r1==0x0F; runtime execution not shown",
+    "caller_0x463C": {
+      "stack_args": [
+        0,
+        0
+      ],
+      "call": "0x466A -> 0x1FB4"
+    },
+    "reader_0x1FB4": {
+      "saved_registers": 12,
+      "stack_delta": "0x30",
+      "loads": "LDRD R7,R9,[SP,#0x30]",
+      "forwards": "R9 to helper 0x4800 stack arg +0"
+    },
+    "wrapper_0x4800": {
+      "saved_registers": 6,
+      "stack_delta": "0x18",
+      "loads": "[SP,#0x18] = entrySP+0",
+      "forwards_to_0x49CC_stack_arg_plus4": 0
+    },
+    "service_0x49CC": {
+      "saved_registers": 13,
+      "locals": "0x6C",
+      "total_frame": "0xA0",
+      "load": "[SP,#0xA4] = entrySP+4",
+      "observed_value_on_selected_path": 0,
+      "call": "0x4B5C -> 0x6238"
+    },
+    "helper_0x6238": {
+      "r0": "caller-local descriptor pointer",
+      "r1": "zero on selected path",
+      "semantic_prototype": "not fully identified"
+    }
+  },
+  "fill_vs_copy": {
+    "copy_loop": "0x6B6A LDRB R3,[R1],#1; 0x6B6E STRB R3,[R0],#1",
+    "fill_loop": "0x6B7A STRB R1,[R0],#1; 0x6B7E decrement count; 0x6B80 loop while unsigned count remains",
+    "fill_byte_on_helper_path": "0 because 0x6316 MOVS R1,#0 immediately precedes the 0x6320 call to 0x6B78"
+  },
+  "separate_0x862_call": "constructs local descriptor [0x218,0xA045,type=2], passes caller context r4 as r1; this is not evidence that its input is the selected 0x4B5C stack argument",
+  "limits": [
+    "No function names or physical clock/ratio semantics assigned.",
+    "The branch and input are conditional; no firmware execution/hardware behavior inferred.",
+    "No $INV 0x11ED, AmdSetup field, FCLK, MCLK, or APOB link follows from this helper path."
+  ],
+  "checks_detail": [
+    {
+      "name": "ROM hash",
+      "passed": true,
+      "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "name": "ABL1 hash",
+      "passed": true,
+      "observed": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "name": "ABL1 size",
+      "passed": true,
+      "observed": 94624,
+      "expected": 94624
+    },
+    {
+      "name": "selector function entry instruction",
+      "passed": true,
+      "observed": "164a",
+      "expected": "164a"
+    },
+    {
+      "name": "selector compares r1 with 0x0F",
+      "passed": true,
+      "observed": "0f29",
+      "expected": "0f29"
+    },
+    {
+      "name": "non-0x0F branch bypasses zero-argument path",
+      "passed": true,
+      "observed": "1bd1",
+      "expected": "1bd1"
+    },
+    {
+      "name": "selected path sets r2=0",
+      "passed": true,
+      "observed": "0022",
+      "expected": "0022"
+    },
+    {
+      "name": "selected path stores first stack arg r2=0",
+      "passed": true,
+      "observed": "0092",
+      "expected": "0092"
+    },
+    {
+      "name": "selected path stores second stack arg r2=0",
+      "passed": true,
+      "observed": "0192",
+      "expected": "0192"
+    },
+    {
+      "name": "selector calls reader at 0x1FB4",
+      "passed": true,
+      "observed": "fdf7a3fc",
+      "expected": "fdf7a3fc"
+    },
+    {
+      "name": "reader push mask",
+      "passed": true,
+      "observed": "0x47ff",
+      "expected": "0x47ff"
+    },
+    {
+      "name": "reader saved register word count",
+      "passed": true,
+      "observed": 12,
+      "expected": 12
+    },
+    {
+      "name": "reader stack-pair load",
+      "passed": true,
+      "observed": "dde90c79",
+      "expected": "dde90c79"
+    },
+    {
+      "name": "reader forwards r9 (second stack arg) to helper stack",
+      "passed": true,
+      "observed": "cdf80090",
+      "expected": "cdf80090"
+    },
+    {
+      "name": "reader helper call to 0x4800",
+      "passed": true,
+      "observed": "02f00efc",
+      "expected": "02f00efc"
+    },
+    {
+      "name": "0x4800 wrapper push",
+      "passed": true,
+      "observed": "7cb5",
+      "expected": "7cb5"
+    },
+    {
+      "name": "wrapper load from entrySP+0",
+      "passed": true,
+      "observed": "0699",
+      "expected": "0699"
+    },
+    {
+      "name": "wrapper forwards value in r1 to outgoing stack arg +4",
+      "passed": true,
+      "observed": "cde90031",
+      "expected": "cde90031"
+    },
+    {
+      "name": "wrapper call to 0x49CC",
+      "passed": true,
+      "observed": "00f0d6f8",
+      "expected": "00f0d6f8"
+    },
+    {
+      "name": "0x49CC push mask",
+      "passed": true,
+      "observed": "0x4fff",
+      "expected": "0x4fff"
+    },
+    {
+      "name": "0x49CC saved register word count",
+      "passed": true,
+      "observed": 13,
+      "expected": 13
+    },
+    {
+      "name": "0x49CC frame delta",
+      "passed": true,
+      "observed": "0xa0",
+      "expected": "0xa0"
+    },
+    {
+      "name": "0x49CC subtracts 0x6C",
+      "passed": true,
+      "observed": "9bb0",
+      "expected": "9bb0"
+    },
+    {
+      "name": "0x4B54 load offset",
+      "passed": true,
+      "observed": "2999",
+      "expected": "2999"
+    },
+    {
+      "name": "0x4B54 [SP+0xA4] maps to entrySP+4",
+      "passed": true,
+      "observed": "0x4",
+      "expected": "0x4"
+    },
+    {
+      "name": "0x4B5C calls helper 0x6238",
+      "passed": true,
+      "observed": "01f06cfb",
+      "expected": "01f06cfb"
+    },
+    {
+      "name": "0x6238 helper push mask",
+      "passed": true,
+      "observed": "0x4ff8",
+      "expected": "0x4ff8"
+    },
+    {
+      "name": "0x6238 helper saved register word count",
+      "passed": true,
+      "observed": 10,
+      "expected": 10
+    },
+    {
+      "name": "helper captures r0 descriptor in r4",
+      "passed": true,
+      "observed": "0446",
+      "expected": "0446"
+    },
+    {
+      "name": "helper captures r1 scalar in r10",
+      "passed": true,
+      "observed": "8a46",
+      "expected": "8a46"
+    },
+    {
+      "name": "helper zeroes fill byte r1 before fill call",
+      "passed": true,
+      "observed": "0021",
+      "expected": "0021"
+    },
+    {
+      "name": "helper calls 0x6B78 fill loop",
+      "passed": true,
+      "observed": "00f02afc",
+      "expected": "00f02afc"
+    },
+    {
+      "name": "copy loop source byte load at 0x6B6A",
+      "passed": true,
+      "observed": "11f8013b",
+      "expected": "11f8013b"
+    },
+    {
+      "name": "copy loop writes loaded r3 at 0x6B6E",
+      "passed": true,
+      "observed": "00f8013b",
+      "expected": "00f8013b"
+    },
+    {
+      "name": "fill loop stores r1 directly at 0x6B7A",
+      "passed": true,
+      "observed": "00f8011b",
+      "expected": "00f8011b"
+    },
+    {
+      "name": "fill loop decrements length",
+      "passed": true,
+      "observed": "521e",
+      "expected": "521e"
+    },
+    {
+      "name": "fill loop branches while unsigned length remains",
+      "passed": true,
+      "observed": "fbd2",
+      "expected": "fbd2"
+    },
+    {
+      "name": "fill helper returns",
+      "passed": true,
+      "observed": "7047",
+      "expected": "7047"
+    },
+    {
+      "name": "separate call site stores 0x218 descriptor word",
+      "passed": true,
+      "observed": "0090",
+      "expected": "0090"
+    },
+    {
+      "name": "separate call site stores 0xA045 descriptor word",
+      "passed": true,
+      "observed": "0190",
+      "expected": "0190"
+    },
+    {
+      "name": "separate call site stores type 2",
+      "passed": true,
+      "observed": "8df80800",
+      "expected": "8df80800"
+    },
+    {
+      "name": "separate call site passes caller context r4",
+      "passed": true,
+      "observed": "2146",
+      "expected": "2146"
+    },
+    {
+      "name": "separate call site to 0x6238",
+      "passed": true,
+      "observed": "05f0e9fc",
+      "expected": "05f0e9fc"
+    }
+  ]
+}

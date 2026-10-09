@@ -1,0 +1,730 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 46,
+    "total": 46
+  },
+  "checks_detail": [
+    {
+      "details": {
+        "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin"
+      },
+      "label": "exists:/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+      },
+      "label": "sha256:/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-df-init-route/menu-result.json"
+      },
+      "label": "exists:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-df-init-route/menu-result.json",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a",
+        "observed": "6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a"
+      },
+      "label": "sha256:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-df-init-route/menu-result.json",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsSetupDxe-7ff717d51c9a.bin"
+      },
+      "label": "exists:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsSetupDxe-7ff717d51c9a.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8",
+        "observed": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8"
+      },
+      "label": "sha256:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsSetupDxe-7ff717d51c9a.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin"
+      },
+      "label": "exists:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+        "observed": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+      },
+      "label": "sha256:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/bc250-bios/tools/uefi/e1_ifr_dump.py"
+      },
+      "label": "exists:/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/bc250-bios/tools/uefi/e1_ifr_dump.py",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "480aa6fc70ed12e8d1dbec2c32dfb45ddadcd7c2f9075ceac6dad6486bc50ebb",
+        "observed": "480aa6fc70ed12e8d1dbec2c32dfb45ddadcd7c2f9075ceac6dad6486bc50ebb"
+      },
+      "label": "sha256:/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/bc250-bios/tools/uefi/e1_ifr_dump.py",
+      "status": "PASS"
+    },
+    {
+      "details": 16777216,
+      "label": "clv-size-16MiB",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "absolute": "0x83c",
+        "body_offset": "0x36d",
+        "raw": "0xff"
+      },
+      "label": "clv-MemoryPstate-Auto-byte",
+      "status": "PASS"
+    },
+    {
+      "details": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+      "label": "DF-help-names-MemoryPstate-disabled",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "callback": false,
+        "conditions": [],
+        "flags": "0x10",
+        "form": "0x7032",
+        "label": "Memory P-state",
+        "module_offset": "0x12870",
+        "options": [
+          {
+            "default": true,
+            "label": "Auto",
+            "value": 255
+          },
+          {
+            "default": false,
+            "label": "Enabled",
+            "value": 1
+          },
+          {
+            "default": false,
+            "label": "Disabled",
+            "value": 0
+          }
+        ],
+        "qid": "0x25e"
+      },
+      "label": "MemoryPstate-question-present",
+      "status": "PASS"
+    },
+    {
+      "details": "Memory P-state",
+      "label": "MemoryPstate-label",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "form": "0x7032",
+        "qid": "0x25e"
+      },
+      "label": "MemoryPstate-question-identity",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "callback": false,
+        "conditions": [],
+        "flags": "0x10"
+      },
+      "label": "MemoryPstate-unconditional-reset-only-question",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        [
+          "Auto",
+          255,
+          true
+        ],
+        [
+          "Enabled",
+          1,
+          false
+        ],
+        [
+          "Disabled",
+          0,
+          false
+        ]
+      ],
+      "label": "MemoryPstate-Auto-Disabled-enum",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "control": "0x37d",
+        "value": "0x37e"
+      },
+      "label": "DF-override-question-identities",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "488d0553feffff",
+        "observed": {
+          "bytes": "488d0553feffff",
+          "mnemonic": "lea",
+          "operands": "rax,[rip+0xfffffffffffffe53]        # 0x950",
+          "rva": 2806
+        }
+      },
+      "label": "CbsSetupDxe-byte:0xaf6",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "48894748",
+        "observed": {
+          "bytes": "48894748",
+          "mnemonic": "mov",
+          "operands": "QWORD PTR [rdi+0x48],rax",
+          "rva": 2819
+        }
+      },
+      "label": "CbsSetupDxe-byte:0xb03",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "483bda",
+        "observed": {
+          "bytes": "483bda",
+          "mnemonic": "cmp",
+          "operands": "rbx,rdx",
+          "rva": 2563
+        }
+      },
+      "label": "CbsSetupDxe-byte:0xa03",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "4881fb00100000",
+        "observed": {
+          "bytes": "4881fb00100000",
+          "mnemonic": "cmp",
+          "operands": "rbx,0x1000",
+          "rva": 2568
+        }
+      },
+      "label": "CbsSetupDxe-byte:0xa08",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "7537",
+        "observed": {
+          "bytes": "7537",
+          "mnemonic": "jne",
+          "operands": "0xa48",
+          "rva": 2575
+        }
+      },
+      "label": "CbsSetupDxe-byte:0xa0f",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "e8ce250000",
+        "observed": {
+          "bytes": "e8ce250000",
+          "mnemonic": "call",
+          "operands": "0x2fe4",
+          "rva": 2577
+        }
+      },
+      "label": "CbsSetupDxe-byte:0xa11",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "e845510000",
+        "observed": {
+          "bytes": "e845510000",
+          "mnemonic": "call",
+          "operands": "0x5b60",
+          "rva": 2582
+        }
+      },
+      "label": "CbsSetupDxe-byte:0xa16",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes": "7415",
+        "mnemonic": "je",
+        "operands": "0xa1d",
+        "rva": 2566
+      },
+      "label": "callback-action-2-retrieve-branch",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "7531",
+        "observed": {
+          "bytes": "7531",
+          "mnemonic": "jne",
+          "operands": "0xb82",
+          "rva": 2895
+        }
+      },
+      "label": "existing-variable-fallback-byte:0xb4f",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "752a",
+        "observed": {
+          "bytes": "752a",
+          "mnemonic": "jne",
+          "operands": "0xb82",
+          "rva": 2902
+        }
+      },
+      "label": "existing-variable-fallback-byte:0xb56",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "4885c0",
+        "observed": {
+          "bytes": "4885c0",
+          "mnemonic": "test",
+          "operands": "rax,rax",
+          "rva": 2941
+        }
+      },
+      "label": "existing-variable-fallback-byte:0xb7d",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "793d",
+        "observed": {
+          "bytes": "793d",
+          "mnemonic": "jns",
+          "operands": "0xbbf",
+          "rva": 2944
+        }
+      },
+      "label": "existing-variable-fallback-byte:0xb80",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "e859240000",
+        "observed": {
+          "bytes": "e859240000",
+          "mnemonic": "call",
+          "operands": "0x2fe4",
+          "rva": 2950
+        }
+      },
+      "label": "existing-variable-fallback-byte:0xb86",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "bytes": "c6816d030000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [rcx+0x36d],0xff",
+          "rva": 16041
+        },
+        {
+          "bytes": "4138b86d030000",
+          "mnemonic": "cmp",
+          "operands": "BYTE PTR [r8+0x36d],dil",
+          "rva": 28766
+        },
+        {
+          "bytes": "418a806d030000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [r8+0x36d]",
+          "rva": 37715
+        }
+      ],
+      "label": "CbsSetupDxe-complete-MemoryPstate-access-set",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "bytes": "c68103070000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [rcx+0x703],0xff",
+          "rva": 18241
+        },
+        {
+          "bytes": "4138b803070000",
+          "mnemonic": "cmp",
+          "operands": "BYTE PTR [r8+0x703],dil",
+          "rva": 35287
+        },
+        {
+          "bytes": "418a8003070000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [r8+0x703]",
+          "rva": 42592
+        }
+      ],
+      "label": "CbsSetupDxe-complete-DF-control-access-set",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "bytes": "66898104070000",
+          "mnemonic": "mov",
+          "operands": "WORD PTR [rcx+0x704],ax",
+          "rva": 18253
+        },
+        {
+          "bytes": "410fb78004070000",
+          "mnemonic": "movzx",
+          "operands": "eax,WORD PTR [r8+0x704]",
+          "rva": 42624
+        }
+      ],
+      "label": "CbsSetupDxe-complete-DF-value-access-set",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "bytes": "c6826d030000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [edx+0x36d],0xff",
+          "rva": 7540
+        },
+        {
+          "bytes": "8a826d030000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x36d]",
+          "rva": 42977
+        }
+      ],
+      "label": "CbsBasePei-complete-MemoryPstate-access-set",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "bytes": "c68203070000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [edx+0x703],0xff",
+          "rva": 11279
+        },
+        {
+          "bytes": "8a8203070000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x703]",
+          "rva": 59174
+        }
+      ],
+      "label": "CbsBasePei-complete-DF-control-access-set",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "bytes": "66898104070000",
+          "mnemonic": "mov",
+          "operands": "WORD PTR [ecx+0x704],ax",
+          "rva": 11294
+        },
+        {
+          "bytes": "668b8204070000",
+          "mnemonic": "mov",
+          "operands": "ax,WORD PTR [edx+0x704]",
+          "rva": 59227
+        }
+      ],
+      "label": "CbsBasePei-complete-DF-value-access-set",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "bytes": "c6816d030000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [rcx+0x36d],0xff",
+          "rva": 16041
+        }
+      ],
+      "label": "CbsSetupDxe-no-Auto-to-Disabled-write",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "bytes": "4138b86d030000",
+          "mnemonic": "cmp",
+          "operands": "BYTE PTR [r8+0x36d],dil",
+          "rva": 28766
+        }
+      ],
+      "label": "CbsSetupDxe-no-Auto-or-Disabled-compare",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        {
+          "bytes": "c6826d030000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [edx+0x36d],0xff",
+          "rva": 7540
+        }
+      ],
+      "label": "CbsBasePei-no-Auto-to-Disabled-write",
+      "status": "PASS"
+    },
+    {
+      "details": [],
+      "label": "CbsBasePei-no-Auto-or-Disabled-compare",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes": "c6816d030000ff",
+        "mnemonic": "mov",
+        "operands": "BYTE PTR [rcx+0x36d],0xff",
+        "rva": 16041
+      },
+      "label": "standard-default-helper-MemoryPstate-FF",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes": "c68103070000ff",
+        "mnemonic": "mov",
+        "operands": "BYTE PTR [rcx+0x703],0xff",
+        "rva": 18241
+      },
+      "label": "standard-default-helper-DF-control-FF",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "load": {
+          "bytes": "b8e8030000",
+          "mnemonic": "mov",
+          "operands": "eax,0x3e8",
+          "rva": 18248
+        },
+        "store": {
+          "bytes": "66898104070000",
+          "mnemonic": "mov",
+          "operands": "WORD PTR [rcx+0x704],ax",
+          "rva": 18253
+        }
+      },
+      "label": "standard-default-helper-DF-value-1000",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "DFControl": {
+          "bytes": "c68203070000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [edx+0x703],0xff",
+          "rva": 11279
+        },
+        "MemoryPstate": {
+          "bytes": "c6826d030000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [edx+0x36d],0xff",
+          "rva": 7540
+        }
+      },
+      "label": "CbsBasePei-fallback-defaults-Auto",
+      "status": "PASS"
+    }
+  ],
+  "finding": {
+    "auto_to_disabled_branch_found": false,
+    "df_default_behavior": "The same CbsSetupDxe helper writes DF control=0xff (Auto) and DF value=1000; persisted AmdSetup bytes remain authoritative on the valid GetVariable path.",
+    "evidence_boundary": "Static exact-module evidence; no firmware execution, browser/default action, NVRAM reset, candidate build, settings write, or hardware.",
+    "exact_default_behavior": "The standard-default/fallback writes retain MemoryPstate=0xff (Auto); no write or compare resolves it to 0x00 (Disabled) before DF control/value serialization.",
+    "fifth_byte": "0x83C is required only if the native help condition is treated as a hard candidate precondition; its runtime necessity is not proven. It is conservative closure, not an observed firmware enforcement rule."
+  },
+  "inputs": {
+    "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin": {
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "size": 16777216
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin": {
+      "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "size": 81520
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsSetupDxe-7ff717d51c9a.bin": {
+      "sha256": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8",
+      "size": 264160
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-df-init-route/menu-result.json": {
+      "sha256": "6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a",
+      "size": 31047
+    },
+    "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/bc250-bios/tools/uefi/e1_ifr_dump.py": {
+      "sha256": "480aa6fc70ed12e8d1dbec2c32dfb45ddadcd7c2f9075ceac6dad6486bc50ebb",
+      "size": 13319
+    }
+  },
+  "observed": {
+    "base_df_control_accesses": [
+      {
+        "bytes": "c68203070000ff",
+        "mnemonic": "mov",
+        "operands": "BYTE PTR [edx+0x703],0xff",
+        "rva": 11279
+      },
+      {
+        "bytes": "8a8203070000",
+        "mnemonic": "mov",
+        "operands": "al,BYTE PTR [edx+0x703]",
+        "rva": 59174
+      }
+    ],
+    "base_df_value_accesses": [
+      {
+        "bytes": "66898104070000",
+        "mnemonic": "mov",
+        "operands": "WORD PTR [ecx+0x704],ax",
+        "rva": 11294
+      },
+      {
+        "bytes": "668b8204070000",
+        "mnemonic": "mov",
+        "operands": "ax,WORD PTR [edx+0x704]",
+        "rva": 59227
+      }
+    ],
+    "base_pstate_accesses": [
+      {
+        "bytes": "c6826d030000ff",
+        "mnemonic": "mov",
+        "operands": "BYTE PTR [edx+0x36d],0xff",
+        "rva": 7540
+      },
+      {
+        "bytes": "8a826d030000",
+        "mnemonic": "mov",
+        "operands": "al,BYTE PTR [edx+0x36d]",
+        "rva": 42977
+      }
+    ],
+    "df_help": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+    "memory_pstate_question": {
+      "callback": false,
+      "conditions": [],
+      "flags": "0x10",
+      "label": "Memory P-state",
+      "options": [
+        {
+          "default": true,
+          "label": "Auto",
+          "value": 255
+        },
+        {
+          "default": false,
+          "label": "Enabled",
+          "value": 1
+        },
+        {
+          "default": false,
+          "label": "Disabled",
+          "value": 0
+        }
+      ],
+      "qid": "0x25e"
+    },
+    "rom": {
+      "amdsetup_body": "0x4cf",
+      "memory_pstate_absolute": "0x83c",
+      "memory_pstate_raw": "0xff",
+      "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "size": 16777216
+    },
+    "setup_df_control_accesses": [
+      {
+        "bytes": "c68103070000ff",
+        "mnemonic": "mov",
+        "operands": "BYTE PTR [rcx+0x703],0xff",
+        "rva": 18241
+      },
+      {
+        "bytes": "4138b803070000",
+        "mnemonic": "cmp",
+        "operands": "BYTE PTR [r8+0x703],dil",
+        "rva": 35287
+      },
+      {
+        "bytes": "418a8003070000",
+        "mnemonic": "mov",
+        "operands": "al,BYTE PTR [r8+0x703]",
+        "rva": 42592
+      }
+    ],
+    "setup_df_value_accesses": [
+      {
+        "bytes": "66898104070000",
+        "mnemonic": "mov",
+        "operands": "WORD PTR [rcx+0x704],ax",
+        "rva": 18253
+      },
+      {
+        "bytes": "410fb78004070000",
+        "mnemonic": "movzx",
+        "operands": "eax,WORD PTR [r8+0x704]",
+        "rva": 42624
+      }
+    ],
+    "setup_pstate_accesses": [
+      {
+        "bytes": "c6816d030000ff",
+        "mnemonic": "mov",
+        "operands": "BYTE PTR [rcx+0x36d],0xff",
+        "rva": 16041
+      },
+      {
+        "bytes": "4138b86d030000",
+        "mnemonic": "cmp",
+        "operands": "BYTE PTR [r8+0x36d],dil",
+        "rva": 28766
+      },
+      {
+        "bytes": "418a806d030000",
+        "mnemonic": "mov",
+        "operands": "al,BYTE PTR [r8+0x36d]",
+        "rva": 37715
+      }
+    ]
+  },
+  "question": "Does exact code resolve MemoryPstate Auto (0xff) to Disabled (0x00) before DF override?",
+  "scope": "exact-clv CbsSetupDxe callback/default + CbsBasePei byte-backed dataflow",
+  "status": "PASS"
+}

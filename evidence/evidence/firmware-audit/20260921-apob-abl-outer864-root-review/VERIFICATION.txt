@@ -1,0 +1,103 @@
+TARGET / ACTIVE OBJECT
+- Target offline ROM: /home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin
+- ROM SHA-256: ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8
+- Active corrected guide: /home/OWNER/orca/projects/bc250/docs/guides/bc250-clv-111-evidence-draft-corrected.md
+
+FOUR ROLE ARTIFACTS (all reopened)
+1. MODIFIED_FILE: /home/OWNER/orca/projects/bc250/docs/guides/bc250-clv-111-evidence-draft-corrected.md
+   SHA-256: 0aa1b5e5580d8d136c41be2d03c092dcf88aa2c1b1df1cf09141ec88c537847d
+2. DIFF_FILE: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/DIFF_FILE.patch
+   SHA-256: 7bbb043ddb63010e7560a929935c1eb88297d0552286a2c137eb834516819f10
+3. VERIFICATION.txt: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/VERIFICATION.txt
+   SHA-256: recorded in the final root action log and current role manifest (not embedded self-referentially)
+4. ROLLBACK.sh: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/ROLLBACK.sh
+   SHA-256: 9ae05df1cf810d110b9fd57a38b34066863c2aefc654c6ff72f08ca58246b75b; executable=True
+Supplemental BASELINE: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/BASELINE.md
+BASELINE SHA-256: 334d6b879156bb2ba773c2d2d766ddc54cbacd37e33e3eab3bab949d2fe8e065
+Supplemental report: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-apob-abl-outer864-root-verification.md
+REPORT SHA-256: 13f9575b8ffcd6cb275cf19e87d714334d81ca749327fe3b4988aafbbb2821d2
+
+CHANGED SYMBOL/BEHAVIOR
+- Guide section changed from the old HEAP source-copy interpretation to `HEAP claim status: WITHDRAWN`.
+- `0x6B78` is recorded as a repeated `STRB R1,[R0],#1` loop; in the inspected `0x6238` path R1 is zero, R2 is node length, R0 is node+0x10, and R10 is passed only in R3.
+- Provider-frame `[SP+0xA4]` is distinct from constructor-frame `[SP+0xA4]`; FCLK stack words are zero.
+
+BASELINE behavior
+- Command: `python3 -B /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/heap_claim_predicate.py /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/BASELINE.md asserted`
+- Literal stdout: {"heap_claim_status": "asserted", "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/BASELINE.md"}
+- Literal stderr: ''
+- Exit: 0
+
+MODIFIED behavior
+- Command: `python3 -B /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/heap_claim_predicate.py /home/OWNER/orca/projects/bc250/docs/guides/bc250-clv-111-evidence-draft-corrected.md withdrawn`
+- Literal stdout: {"heap_claim_status": "withdrawn", "path": "/home/OWNER/orca/projects/bc250/docs/guides/bc250-clv-111-evidence-draft-corrected.md"}
+- Literal stderr: ''
+- Exit: 0
+
+ROLLBACK behavior
+- Command: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/ROLLBACK.sh /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/rollback-test.md`
+- Script literal stdout: ''
+- Script literal stderr: ''
+- Script exit: 0
+- Restored copy SHA-256: 334d6b879156bb2ba773c2d2d766ddc54cbacd37e33e3eab3bab949d2fe8e065
+- Baseline SHA-256: 334d6b879156bb2ba773c2d2d766ddc54cbacd37e33e3eab3bab949d2fe8e065
+- `cmp` observed exit: 0
+- Predicate literal stdout: {"heap_claim_status": "asserted", "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/rollback-test.md"}
+- Predicate literal stderr: ''
+- Predicate exit: 0
+
+REAPPLY behavior
+- Command: `python3 -B /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/heap_claim_predicate.py /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/reapply-check.md withdrawn`
+- Literal stdout: {"heap_claim_status": "withdrawn", "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/reapply-check.md"}
+- Literal stderr: ''
+- Exit: 0
+
+DIFF reconstruction
+- Command: `(cd /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/reconstruct-v2 && patch -p0 --binary < ../DIFF_FILE.patch)`
+- Exit: 0
+- Reconstructed hash: 0aa1b5e5580d8d136c41be2d03c092dcf88aa2c1b1df1cf09141ec88c537847d  evidence/firmware-audit/20260921-apob-abl-outer864-root-review/reconstruct-v2/BASELINE.md
+- MODIFIED_FILE hash: 0aa1b5e5580d8d136c41be2d03c092dcf88aa2c1b1df1cf09141ec88c537847d
+- `cmp` observed exit: 0
+
+INPUT/EVIDENCE HASHES
+- ABL1 payload: af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a
+- ABL1 object: 54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135
+- Old 34-check manifest: `sha256sum -c` exit 0, 7/7 OK as file-integrity only. This is not independent semantic confirmation; old verifier not rerun.
+
+UNRUN / LIMITS
+- UNRUN: ABL1 execution, runtime load-base resolution, APOB/`$INV 0x11ED` join, SMU actuation, physical clocks, training, voltage, synchronization, hardware acceptance.
+- The guide remains DRAFT / NOT READY; no candidate or firmware write was made.
+
+
+SUPPLEMENT — item-17 post-callback value edge (root direct check; conditional static)
+- Disposable CWD: `/tmp/bc250-item17-5e68-chain-g0V8cz`.
+- Wrapper SHA-256 in source/disposable copy: `adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6`; `cmp` exit 0.
+- Payload SHA-256 in source/disposable copy: `af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a`; `cmp` exit 0.
+- Parent-requested commands, LLVM 22.1.8:
+  - `llvm-objdump -D --section=.data --triple=thumbv7m-none-eabi --start-address=0x7e3e --stop-address=0x7e7a ABL1-clv-full-thumb.elf.o`; exit 0, stderr empty. Literal lines: `7e40: f8d0 62bc ldr.w r6,[r0,#0x2bc]`; `7e6e: 4632 mov r2,r6`; `7e70: 4629 mov r1,r5`; `7e72: 4620 mov r0,r4`; `7e74: f7fd fff8 bl 0x5e68`.
+  - `llvm-objdump -D --section=.data --triple=thumbv7m-none-eabi --start-address=0x5e68 --stop-address=0x5fc2 ABL1-clv-full-thumb.elf.o`; exit 0, stderr empty. Literal lines: `5e68: e92d 47ff push.w ...`; `5e70: 4605 mov r5,r0`; `5e74: 4614 mov r4,r2`; `5f9a: 6868 ldr r0,[r5,#0x4]`; `5f9c: f8b0 0790 ldrh.w r0,[r0,#0x790]`; `5fa0: 2806 cmp r0,#0x6`; `5fa2: d041 beq 0x6028`; `5fae: f7fe fb45 bl 0x463c`; `5fb2: 9b01 ldr r3,[sp,#0x4]`; `5fba: f8a5 3078 strh.w r3,[r5,#0x78]`.
+- GNU `od` raw outputs (all exit 0, stderr empty): `0x7e40 = d0 f8 bc 62`; `0x7e6e = 32 46 29 46 20 46 fd f7`; `0x5e68 = 2d e9 ff 47 4f f4 80 17 05 46 88 46 14 46 00 21`; `0x5fba = a5 f8 78 30`.
+- Finding: the caller loads context field `+0x2BC`, passes it as R2 through direct BL `0x7E74 -> 0x5E68`; callee saves caller R0/context in R5 and R2 input in R4. On the path where nested halfword `*[context+4]+0x790 != 6`, it calls selector-`0x0F` helper `0x463C` and writes its local halfword result to `context+0x78`. If the comparison is equal, `BEQ 0x6028` bypasses the shown `0x5FBA` store. This establishes a conditional static field flow, not an assigned frequency/unit or applied clock.
+- Identity qualification: all four exact wrapper locations share identical bytes/hash. The table-based callback edge that reaches this code still uses conditional candidate base `0x57100`; no ABL1 loader/runtime base is established. The later `0x8428` current-R4 object identity remains conditional and was not promoted by this check.
+- Preserved captures and individual SHA-256s: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/item17-post-callback-*`; aggregate capture manifest `item17-post-callback-SHA256SUMS.final` is separate from the guide-role `DIFF_FILE.patch`.
+- Hardware, runtime, units, PLL, training, synchronization, voltage and board behavior remain unrun/unresolved.
+
+
+SUPPLEMENT — repeated guide-role transaction checks after item-17 output trace
+- Check ID: parent-requested direct static chain `0x7E40 -> 0x7E74 -> 0x5E68 -> conditional 0x5FBA`; capture manifest `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/item17-post-callback-SHA256SUMS.final` SHA-256 `a80fc5342c3417da64fd82946c250dd9e6daa6406d956fa1334da7464da54657`; its listed files verify separately.
+- BASELINE command reused the same predicate/input: `python3 -B /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/heap_claim_predicate.py /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/BASELINE.md asserted`; stdout `{"heap_claim_status": "asserted", "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/BASELINE.md"}`; stderr empty; exit `0`.
+- MODIFIED command reused the same predicate/input: `python3 -B /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/heap_claim_predicate.py /home/OWNER/orca/projects/bc250/docs/guides/bc250-clv-111-evidence-draft-corrected.md withdrawn`; stdout `{"heap_claim_status": "withdrawn", "path": "/home/OWNER/orca/projects/bc250/docs/guides/bc250-clv-111-evidence-draft-corrected.md"}`; stderr empty; exit `0`.
+- ROLLBACK command reused executable role on a separate copy: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/ROLLBACK.sh /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/followup-20260921/rollback-test.md`; script stdout/stderr empty; script exit `0`; restored SHA-256 `334d6b879156bb2ba773c2d2d766ddc54cbacd37e33e3eab3bab949d2fe8e065` equals BASELINE SHA-256 `334d6b879156bb2ba773c2d2d766ddc54cbacd37e33e3eab3bab949d2fe8e065`; `cmp` exit `0`. Predicate output `{"heap_claim_status": "asserted", "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/followup-20260921/rollback-test.md"}`, stderr empty, exit `0`.
+- REAPPLY predicate on a separate restored/reapplied copy: stdout `{"heap_claim_status": "withdrawn", "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/followup-20260921/reapply-check.md"}`, stderr empty, exit `0`.
+- This supplement adds no base, object-alias, clock-unit, training, or hardware assertion. The item-17 edge is conditional static dataflow only; candidate ABL1 base `0x57100` remains unproven as the runtime loader base.
+
+
+SUPPLEMENT — AF58/item17 evidence-table integration
+- Active MODIFIED_FILE: `/home/OWNER/orca/projects/bc250/docs/guides/bc250-clv-111-evidence-draft-corrected.md`; SHA-256 `0aa1b5e5580d8d136c41be2d03c092dcf88aa2c1b1df1cf09141ec88c537847d`.
+- DIFF_FILE: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/DIFF_FILE.patch`; SHA-256 `7bbb043ddb63010e7560a929935c1eb88297d0552286a2c137eb834516819f10`. Reconstructive labels remain `BASELINE.md`/`MODIFIED.md`; `diff` exit `1` is expected for differing files.
+- Updated matrix rows: AF58 helper contract (`0x5CBE` writes `[2,1]`, returns `1`; `0xFE60` returns `1`; no direct `0x7378`/`0xAF90` or clock-register operation); conditional item-`0x17`/`0x95FC` output edge; explicit hardware acceptance gate. Retracted HEAP claim and NOT READY status retained.
+- Evidence predicate command: `PYTHONDONTWRITEBYTECODE=1 python3 -B /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/table-integration-20260921/guide_evidence_check.py`; literal stdout `{"checks": {"failed": 0, "passed": 17, "total": 17}, "result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/table-integration-20260921/guide-evidence-result.json", "status": "PASS"}`; stderr empty; exit `0`.
+- Predicate evidence manifest: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-outer864-root-review/table-integration-20260921/SHA256SUMS.final` SHA-256 `ab4829045a322f482988c2e40aaf5a3f350596ea21a14e01f25f4b20bc995ce9`; manifest verification exit `0` with all entries `OK`.
+- AF58 corrected machine result: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl7378-indirect-entry/run-20260921T200924+0500/helper-contract-result-corrected.json`; SHA-256 `7fa682acc22fb4fe186e529d3c63992e45bda83acdf4159d0d87e81a607267f2`; status `PASS`, `22/22`.
+- Conditional item-`0x17` report: `docs/research/2026-09-21-abl-item17-reachable-output.md`; no frequency/clock unit assigned; no hardware action/result. Runtime loader/base, alias/clobber and downstream object identity remain unresolved.
+- UNRUN: physical clocks, training, voltage, hardware acceptance, runtime callback execution, profile application.

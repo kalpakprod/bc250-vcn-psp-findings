@@ -1,0 +1,27 @@
+{
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "ConnectTimeout=5",
+    "-o",
+    "ConnectionAttempts=1",
+    "-o",
+    "StrictHostKeyChecking=yes",
+    "-o",
+    "UpdateHostKeys=no",
+    "-o",
+    "ControlMaster=no",
+    "-o",
+    "ControlPath=none",
+    "steammachine",
+    "timeout --signal=TERM --kill-after=2s 15s python3 - --mode metadata"
+  ],
+  "started_utc": "2026-09-23T07:31:54.067545+00:00",
+  "stdin_source_sha256": "b52649a98a85d3e95fb13b77a7b00cb9cbc66a7a0c6b06776e477141d0e848a8",
+  "scope": "authorizedStage1 metadata only, no telemetry or settings",
+  "exit_status": 0,
+  "stdout": "{\n  \"mode\": \"metadata\",\n  \"expected_pci_id\": \"1002:13fe\",\n  \"status\": \"METADATA_ONLY\",\n  \"cards\": [\n    {\n      \"card\": \"card1\",\n      \"pci_id\": \"1002:13fe\",\n      \"files\": {},\n      \"unavailable\": []\n    }\n  ],\n  \"forbidden\": [\n    \"PCI config\",\n    \"SMN\",\n    \"SMU mailbox\",\n    \"/dev/mem\",\n    \"settings writes\",\n    \"hostname\",\n    \"cmdline\"\n  ],\n  \"independent_clock_proof\": false,\n  \"soc_voltage_verified\": false,\n  \"kernel\": \"7.2.6-1.206-cachyos-bc250\",\n  \"bios_version\": \"P3.00\\n\",\n  \"bios_date\": \"12/09/2021\\n\"\n}\n",
+  "stderr": ""
+}

@@ -1,0 +1,105 @@
+{
+  "agent_reach": {
+    "authenticated_backend_used": false,
+    "doctor_command": "agent-reach doctor --json",
+    "doctor_summary": {
+      "exa_search": {
+        "active_backend": null,
+        "reason": "not configured",
+        "status": "off"
+      },
+      "github": {
+        "active_backend": null,
+        "reason": "gh CLI detected but live status not run; no gh CLI/auth command was executed",
+        "status": "warn"
+      },
+      "web": {
+        "active_backend": "Jina Reader",
+        "status": "ok"
+      }
+    }
+  },
+  "bounded_conclusion": "No retrieved public source maps 0x0116D150/0x0116D174 or raw 0x6D150/0x6D174 to MCLK/UCLK/FCLK, a clock-generator register, divider, or synchronous-crossing selector. The search is bounded and does not establish that no source exists.",
+  "bounded_search_attempts": [
+    {
+      "observation": "HTTP 429 Vercel Security Checkpoint",
+      "url": "https://grep.app/api/search?q=116D150",
+      "via": "Jina Reader"
+    },
+    {
+      "observation": "No results found",
+      "url": "https://html.duckduckgo.com/html/?q=%220x116D150%22+AMD+SMN",
+      "via": "Jina Reader"
+    },
+    {
+      "observation": "No results found",
+      "url": "https://html.duckduckgo.com/html/?q=%226D150%22+%22SMN%22+AMD+clock",
+      "via": "Jina Reader"
+    },
+    {
+      "observation": "GitHub code search page requires sign-in; no login attempted",
+      "url": "https://github.com/search?q=0x116D150&type=code",
+      "via": "Jina Reader"
+    }
+  ],
+  "failed_path_record": {
+    "observation": "HTTP 404; not treated as a source or a no-match result",
+    "url": "https://raw.githubusercontent.com/torvalds/linux/v6.8/drivers/gpu/drm/amd/include/asic_reg/df/df_4_3_0_offset.h",
+    "via": "Jina Reader"
+  },
+  "latest_completed_domain18_result": {
+    "dynamic_domain_id": "0x18",
+    "path": "evidence/firmware-audit/20260921-smu-domain18-identity/domain18-identity-result.json",
+    "physical_clock_identity": "unresolved",
+    "poll_smn_address": "0x0116D174",
+    "program_smn_address": "0x0116D150",
+    "sha256": "f4a005400dba428ff8ba8f782d67bfa608c9e5fc714c5771075c48d6467e5cbe"
+  },
+  "public_sources": [
+    {
+      "address_literal_match_count": 0,
+      "clock_domain_identity": "not present in this header",
+      "family": "coreboot/coreboot",
+      "jina_response_bytes": 2847,
+      "jina_response_sha256": "fdf8b9a6a6b45e75fd4dd8b2031708ad8baffdec96005f9885c923d830afc460",
+      "license": "SPDX GPL-2.0-only",
+      "local_copy": "import/from-windows/Users/kukuruza/AppData/Local/Temp/bc250-phase10-public/coreboot/src/soc/amd/cezanne/include/soc/data_fabric.h",
+      "local_copy_sha256": "bd438484a85441daf8eb4bfd1a89b102c3638e16317e766dd826384f46689af3",
+      "normalized_body_matches_local_copy": true,
+      "normalized_body_sha256": "5d4600e473e5c6007df06b239925a2c9856f82e3d41f9ac3a15415ef59e7430a",
+      "relevant_fields_seen": [
+        "DF_PCI_CFG_MAP0",
+        "DF_IO_BASE0",
+        "DF_MMIO_BASE0",
+        "DF_FICAA_BIOS",
+        "DF_FICAD_LO",
+        "DF_FICAD_HI"
+      ],
+      "revision": "b7931d1afacdc6666b4812305a14ed3deb431201",
+      "url": "https://raw.githubusercontent.com/coreboot/coreboot/b7931d1afacdc6666b4812305a14ed3deb431201/src/soc/amd/cezanne/include/soc/data_fabric.h"
+    },
+    {
+      "address_literal_match_count": 0,
+      "family": "torvalds/linux",
+      "jina_response_bytes": 1198521,
+      "jina_response_sha256": "0834a1a258b52935e37d56fea479fa62ce2c845c7a76a93c8efad5c3b886e8d2",
+      "license": "AMD permissive license header present in source",
+      "normalized_body_matches_local_import": false,
+      "normalized_body_sha256": "59b5ae6dad3f457ef7492ae8d9d773ca72db7b940149ae35ecad4f2e114b0593",
+      "revision": "v6.8",
+      "scope_note": "GC MMIO offset header; it does not name the PMFW-derived SMN program/poll address pair",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.8/drivers/gpu/drm/amd/include/asic_reg/gc/gc_10_1_0_offset.h"
+    },
+    {
+      "address_literal_match_count": 0,
+      "family": "torvalds/linux",
+      "jina_response_bytes": 438169,
+      "jina_response_sha256": "4bd9bb4a4738817158d0a907d304bd9ac955a6631b54746a0b93d3ec904c42fb",
+      "license": "AMD permissive license header present in source",
+      "revision": "v6.8",
+      "scope_note": "exact SMN target literals only; no other clock/telemetry semantics from this source are re-analysed here",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.8/drivers/gpu/drm/amd/amdgpu/gfx_v10_0.c"
+    }
+  ],
+  "retrieval_date": "2026-09-21"
+}

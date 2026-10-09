@@ -1,0 +1,362 @@
+{
+  "checks": {
+    "failed": 3,
+    "passed": 51,
+    "total": 54
+  },
+  "checks_detail": [
+    {
+      "actual": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "name": "ROM_SHA256",
+      "status": "PASS"
+    },
+    {
+      "actual": 16777216,
+      "expected": 16777216,
+      "name": "ROM_size",
+      "status": "PASS"
+    },
+    {
+      "actual": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "ABL1_payload_SHA256",
+      "status": "PASS"
+    },
+    {
+      "actual": 94624,
+      "expected": 94624,
+      "name": "ABL1_payload_size",
+      "status": "PASS"
+    },
+    {
+      "actual": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135",
+      "expected": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135",
+      "name": "exact_object_SHA256",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "caller_stderr_empty",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "initializer_stderr_empty",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "getter14_stderr_empty",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "getter0c_stderr_empty",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "returner_stderr_empty",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "channel_stderr_empty",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "caller:0x962a",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "caller:0x962c",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "caller:0x963e",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "caller:0x9644",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "caller:0x9646",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "caller:0x9648",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "caller:0x964e",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "caller:0x9650",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "initializer:0x6c22",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "initializer:0x6c2a",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "initializer:0x6c2e",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "initializer:0x6c36",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "initializer:0x6c3a",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "initializer:0x6c3c",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "initializer:0x6c40",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "initializer:0x6c42",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "initializer:0x6c44",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "initializer:0x6c46",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "initializer:0x6c54",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "initializer:0x6c56",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "initializer:0x6c4a",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "returner:0x6d1e",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "returner:0x6d20",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "getter14:0x6cae",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "getter0c:0x6ce6",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "channel:0x109c0",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "channel:0x109c4",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "channel:0x109d6",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "channel:0x109d8",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "channel:0x109e0",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "channel:0x109e2",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "channel:0x109e6",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "channel:0x109f0",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "channel:0x109f2",
+      "status": "PASS"
+    },
+    {
+      "actual": false,
+      "expected": true,
+      "name": "channel:0x109f8",
+      "status": "FAIL"
+    },
+    {
+      "actual": false,
+      "expected": true,
+      "name": "channel:0x109fc",
+      "status": "FAIL"
+    },
+    {
+      "actual": false,
+      "expected": true,
+      "name": "channel:0x10a00",
+      "status": "FAIL"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "channel:0x10a04",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "channel:0x10a28",
+      "status": "PASS"
+    },
+    {
+      "actual": 36,
+      "expected": 36,
+      "name": "baseline_MemoryClockSpeed_1800_label_byte",
+      "status": "PASS"
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "name": "baseline_UclkDiv1M0",
+      "status": "PASS"
+    },
+    {
+      "actual": 255,
+      "expected": 255,
+      "name": "baseline_MemoryPstate",
+      "status": "PASS"
+    },
+    {
+      "actual": 15,
+      "expected": 15,
+      "name": "baseline_FclkDpm",
+      "status": "PASS"
+    }
+  ],
+  "exact_inputs": {
+    "object": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o",
+    "object_sha256": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135",
+    "payload": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-abl-memory/ABL1-clv-decompressed.bin",
+    "payload_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+  },
+  "limits": [
+    "0x6D4C/0x6C5C outputs, 0x6C20 caller context, and 0x109BC callback gate/object source remain unresolved.",
+    "No direct join from these ABL1 local fields to AmdSetup+0x36D or +0x6A3; do not label them MemoryPstate/FclkDpm.",
+    "No loader/runtime invocation, units, training, physical clocks, 1800 application, 1:1:1, or hardware result."
+  ],
+  "new_edges": {
+    "channel_pointer": {
+      "consumer": "0x95FC uses [context+0x0C]+0x20 at 0x9672/0x9758/0x983C",
+      "formula": "context+0x0C = *(context+0x8+0x70) + (23*normalized_index << 4) = *(context+0x8+0x70) + 0x170*index",
+      "producer": "0x109BC reads/normalizes index, writes context+0x49 and derives context+0x0C at 0x109F0..0x10A04"
+    },
+    "stack_164": {
+      "consequence": "if this direct call returns, [SP+0x164] == 1, so BLS at 0x9646 is taken; multi-channel branch is not entered on this local helper path",
+      "producer": "0x95FC caller allocates SP+0x160 at 0x962A; BL 0x6C20 at 0x962C; 0x6C20 stores return of 0x6D10 at block+0x4 (0x6C2A/0x6C2E); 0x6D10 returns constant 1 at 0x6D1E/0x6D20"
+    },
+    "stack_174": {
+      "consequence": "[SP+0x174] is locally prepared as 1, but the first [SP+0x164] gate prevents reaching its consumer on this direct path",
+      "producer": "0x6C20 stores helper 0x6CA0 output at block+0x10 (0x6C3C/0x6C40); 0x6CA0 returns 0 (0x6CAE); with block+0xC from 0x6CD8 also 0 (0x6C36/0x6C3A, 0x6CE6), CBZ at 0x6C46 reaches 0x6C54 and stores 1 at block+0x14 (0x6C54..0x6C4A)"
+    }
+  },
+  "status": "FAIL"
+}

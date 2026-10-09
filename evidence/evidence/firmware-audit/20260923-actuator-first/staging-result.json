@@ -1,0 +1,280 @@
+{
+  "status": "PASS_INSTRUMENTED_WRITE_STAGING",
+  "original_sha256": "3e1f753a627922d16e5a638a527e39f4dd26242144edae25b0ac849db6421e34",
+  "cases": [
+    {
+      "label": "baseline",
+      "input": 291,
+      "trace": [
+        [
+          101,
+          192
+        ],
+        [
+          102,
+          33
+        ],
+        [
+          112,
+          35
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          99,
+          3
+        ],
+        [
+          96,
+          192
+        ]
+      ],
+      "runs": [
+        {
+          "command": [
+            "as",
+            "--32",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/baseline/test.s",
+            "-o",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/baseline/test.o"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "ld",
+            "-m",
+            "elf_i386",
+            "--section-start=.instrumented=0x09ed2c74",
+            "-o",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/baseline/test.elf",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/baseline/test.o"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "objcopy",
+            "--dump-section",
+            ".instrumented=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/baseline/instrumented.bin",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/baseline/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "timeout",
+            "3",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/baseline/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "65000000c0000000660000002100000070000000230000007100000001000000630000000300000060000000c0000000",
+          "stderr": ""
+        }
+      ],
+      "instrumentation_only": [
+        [
+          "0x565",
+          5
+        ],
+        [
+          "0x733",
+          5
+        ]
+      ]
+    },
+    {
+      "label": "modified",
+      "input": 1110,
+      "trace": [
+        [
+          101,
+          192
+        ],
+        [
+          102,
+          33
+        ],
+        [
+          112,
+          86
+        ],
+        [
+          113,
+          4
+        ],
+        [
+          99,
+          3
+        ],
+        [
+          96,
+          192
+        ]
+      ],
+      "runs": [
+        {
+          "command": [
+            "as",
+            "--32",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/modified/test.s",
+            "-o",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/modified/test.o"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "ld",
+            "-m",
+            "elf_i386",
+            "--section-start=.instrumented=0x09ed2c74",
+            "-o",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/modified/test.elf",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/modified/test.o"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "objcopy",
+            "--dump-section",
+            ".instrumented=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/modified/instrumented.bin",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/modified/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "timeout",
+            "3",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/modified/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "65000000c0000000660000002100000070000000560000007100000004000000630000000300000060000000c0000000",
+          "stderr": ""
+        }
+      ],
+      "instrumentation_only": [
+        [
+          "0x565",
+          5
+        ],
+        [
+          "0x733",
+          5
+        ]
+      ]
+    },
+    {
+      "label": "restored",
+      "input": 291,
+      "trace": [
+        [
+          101,
+          192
+        ],
+        [
+          102,
+          33
+        ],
+        [
+          112,
+          35
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          99,
+          3
+        ],
+        [
+          96,
+          192
+        ]
+      ],
+      "runs": [
+        {
+          "command": [
+            "as",
+            "--32",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/restored/test.s",
+            "-o",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/restored/test.o"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "ld",
+            "-m",
+            "elf_i386",
+            "--section-start=.instrumented=0x09ed2c74",
+            "-o",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/restored/test.elf",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/restored/test.o"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "objcopy",
+            "--dump-section",
+            ".instrumented=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/restored/instrumented.bin",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/restored/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "timeout",
+            "3",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-actuator-first/restored/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "65000000c0000000660000002100000070000000230000007100000001000000630000000300000060000000c0000000",
+          "stderr": ""
+        }
+      ],
+      "instrumentation_only": [
+        [
+          "0x565",
+          5
+        ],
+        [
+          "0x733",
+          5
+        ]
+      ]
+    }
+  ],
+  "limits": [
+    "565 transport replaced by trace stub",
+    "733 replaced by stop before delay/status read",
+    "No actual hardware write or voltage measurement",
+    "6ED called directly, not complete PEI dispatch",
+    "Value encoding into mailbox proven, rail identity/voltage transfer function not proven"
+  ]
+}

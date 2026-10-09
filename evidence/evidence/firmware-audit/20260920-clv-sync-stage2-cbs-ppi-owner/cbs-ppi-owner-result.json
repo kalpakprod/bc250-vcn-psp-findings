@@ -1,0 +1,222 @@
+{
+  "status": "PASS",
+  "checks": 13,
+  "route": "CbsBasePei InstallPpi ownership -> GUID/interface pointer -> target-specific census caller lifecycle",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "cbs_descriptor": {
+    "entry_push_rva": "0x614",
+    "descriptor_va": "0x9ecdf60",
+    "descriptor_rva": "0x13ed4",
+    "descriptor_body_off": "0x13d44",
+    "flags": "0x80000010",
+    "guid_va": "0x9ecde2c",
+    "guid_rva": "0x13da0",
+    "ppi_va": "0x9ecdf4c",
+    "ppi_rva": "0x13ec0",
+    "ppi_bytes": "dca2eb090275993a7a64824c998e52ef9486a247100000802cdeec094cdfec09",
+    "guid": "04126c85-5c4e-458f-abc1-29f1f7da365e"
+  },
+  "target_census_modules": [
+    {
+      "module": "AmdFabricAriPei",
+      "stem": "AmdFabricAriPei-c5b99650a442",
+      "sha256": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "guid_hits": [
+        {
+          "body_off": "0x16a78",
+          "rva": "0x16c10"
+        }
+      ],
+      "guid_pointer_hits": [],
+      "ppi_pointer_hits": []
+    },
+    {
+      "module": "AmdNbioGfxARIPei",
+      "stem": "AmdNbioGfxARIPei-63413be2ac29",
+      "sha256": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+      "guid_hits": [
+        {
+          "body_off": "0x14ec8",
+          "rva": "0x15060"
+        }
+      ],
+      "guid_pointer_hits": [],
+      "ppi_pointer_hits": []
+    },
+    {
+      "module": "AmdNbioBaseARIPei",
+      "stem": "AmdNbioBaseARIPei-51d96c1e5a5e",
+      "sha256": "51d96c1e5a5e2c39f04fb962b0b5be686dea0a05eecbde829a4595fe3356884f",
+      "guid_hits": [
+        {
+          "body_off": "0x17910",
+          "rva": "0x17aa0"
+        }
+      ],
+      "guid_pointer_hits": [],
+      "ppi_pointer_hits": []
+    },
+    {
+      "module": "AmdNbioPcieARIPei",
+      "stem": "AmdNbioPcieARIPei-62b1398c4ba9",
+      "sha256": "62b1398c4ba9b5a03ea533306cd8200257fac323c8fa688caa057667a5871312",
+      "guid_hits": [
+        {
+          "body_off": "0x18668",
+          "rva": "0x18800"
+        }
+      ],
+      "guid_pointer_hits": [],
+      "ppi_pointer_hits": []
+    },
+    {
+      "module": "AmdNbioSmuV10Pei",
+      "stem": "AmdNbioSmuV10Pei-905b8be68afd",
+      "sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "guid_hits": [
+        {
+          "body_off": "0x158c0",
+          "rva": "0x15a50"
+        }
+      ],
+      "guid_pointer_hits": [],
+      "ppi_pointer_hits": []
+    },
+    {
+      "module": "AmdSocBl5AriPei",
+      "stem": "AmdSocBl5AriPei-79e13211d5ae",
+      "sha256": "79e13211d5ae6b416311d67f735e68d946ea4045708d8463f7b92c495dff80b0",
+      "guid_hits": [
+        {
+          "body_off": "0x15498",
+          "rva": "0x15630"
+        }
+      ],
+      "guid_pointer_hits": [],
+      "ppi_pointer_hits": []
+    },
+    {
+      "module": "CbsBasePei",
+      "stem": "CbsBasePei-6ff112922ad8",
+      "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "guid_hits": [
+        {
+          "body_off": "0x13c10",
+          "rva": "0x13da0"
+        }
+      ],
+      "guid_pointer_hits": [
+        {
+          "body_off": "0x13d48",
+          "rva": "0x13ed8"
+        }
+      ],
+      "ppi_pointer_hits": [
+        {
+          "body_off": "0x13d4c",
+          "rva": "0x13edc"
+        }
+      ]
+    }
+  ],
+  "direct_operand_refs": [
+    {
+      "module": "CbsBasePei",
+      "refs": []
+    },
+    {
+      "module": "AmdNbioSmuV10Pei",
+      "refs": []
+    }
+  ],
+  "prior_locateppi_result": {
+    "status": "PASS",
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-locateppi/locateppi-result.json"
+  },
+  "fresh_result": "CbsBasePei entry RVA 0x614 pushes a concrete descriptor, whose exact flags, GUID 04126c85-5c4e-458f-abc1-29f1f7da365e and PPI interface pointer were decoded; RVA 0x622 calls PEI InstallPpi slot +0x18. Target-specific 233-body census ownership and direct operand references were checked, while prior six LocatePpi evidence confirms no CBS-GUID argument join. The executable consumer of this interface remains unresolved at the checked direct/data-pointer boundary; no outside-census claim is made.",
+  "limits": "Target-specific GUID/interface/pointer coverage over retained exact-clv executable bodies; no runtime PPI database, computed/indirect call resolution beyond recorded operands, firmware execution, hardware or shared-state changes.",
+  "checks_detail": [
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ROM size",
+      "passed": true,
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "check": "Cbs hash",
+      "passed": true,
+      "got": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    {
+      "check": "SMU hash",
+      "passed": true,
+      "got": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "expected": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+    },
+    {
+      "check": "Cbs entry InstallPpi descriptor push",
+      "passed": true,
+      "got": "6860dfec09",
+      "expected": "6860dfec09"
+    },
+    {
+      "check": "Cbs entry InstallPpi slot call",
+      "passed": true,
+      "got": "8b4218ffd0",
+      "expected": "8b4218ffd0"
+    },
+    {
+      "check": "entry descriptor maps within Cbs body",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "descriptor flags",
+      "passed": true,
+      "got": 2147483664,
+      "expected": 2147483664
+    },
+    {
+      "check": "descriptor GUID",
+      "passed": true,
+      "got": "04126c85-5c4e-458f-abc1-29f1f7da365e",
+      "expected": "04126c85-5c4e-458f-abc1-29f1f7da365e"
+    },
+    {
+      "check": "descriptor PPI pointer maps within Cbs body",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "Cbs GUID raw duplicate",
+      "passed": true,
+      "got": "856c12044e5c8f45abc129f1f7da365e",
+      "expected": "856c12044e5c8f45abc129f1f7da365e"
+    },
+    {
+      "check": "prior six-call result status",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "prior six-call CBS hits",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    }
+  ]
+}

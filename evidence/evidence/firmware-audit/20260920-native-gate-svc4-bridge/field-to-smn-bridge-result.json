@@ -1,0 +1,311 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 42,
+    "total": 42
+  },
+  "checks_detail": [
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:BC250_5.00_clv.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:ABL1-clv-decompressed.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:abl1-full-thumb-llvm.txt",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:CbsBasePei-6ff112922ad8.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:AmdFabricAriPei-c5b99650a442.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:AmdFabricAriPei-c5b99650a442.instructions.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "name": "hash:BC250_5.00_clv.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "hash:ABL1-clv-decompressed.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "name": "hash:abl1-full-thumb-llvm.txt",
+      "status": "PASS"
+    },
+    {
+      "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "got": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "name": "hash:CbsBasePei-6ff112922ad8.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "got": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "name": "hash:AmdFabricAriPei-c5b99650a442.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": 16777216,
+      "got": 16777216,
+      "name": "pinned ROM size",
+      "status": "PASS"
+    },
+    {
+      "expected": 94624,
+      "got": 94624,
+      "name": "ABL payload size",
+      "status": "PASS"
+    },
+    {
+      "expected": "ba04120000",
+      "got": "ba04120000",
+      "name": "CbsBasePei header token 0x1204",
+      "status": "PASS"
+    },
+    {
+      "expected": "8a8230030000",
+      "got": "8a8230030000",
+      "name": "CbsBasePei loads AmdSetup+0x330",
+      "status": "PASS"
+    },
+    {
+      "expected": "884103",
+      "got": "884103",
+      "name": "CbsBasePei stores value byte into record",
+      "status": "PASS"
+    },
+    {
+      "expected": "40f21e61",
+      "got": "40f21e61",
+      "name": "ABL1 caller immediate token 0x61E",
+      "status": "PASS"
+    },
+    {
+      "expected": "2046",
+      "got": "2046",
+      "name": "ABL1 passes context object before callback dispatch",
+      "status": "PASS"
+    },
+    {
+      "expected": "00f09af8",
+      "got": "00f09af8",
+      "name": "ABL1 calls dispatcher",
+      "status": "PASS"
+    },
+    {
+      "expected": "d0f86046",
+      "got": "d0f86046",
+      "name": "dispatcher loads callback from current object +0x660",
+      "status": "PASS"
+    },
+    {
+      "expected": "1346",
+      "got": "1346",
+      "name": "dispatcher forwards selected value",
+      "status": "PASS"
+    },
+    {
+      "expected": "0a46",
+      "got": "0a46",
+      "name": "dispatcher forwards token index",
+      "status": "PASS"
+    },
+    {
+      "expected": "0121",
+      "got": "0121",
+      "name": "dispatcher normalizes arg R1=1",
+      "status": "PASS"
+    },
+    {
+      "expected": "6047",
+      "got": "6047",
+      "name": "dispatcher branches through loaded callback",
+      "status": "PASS"
+    },
+    {
+      "expected": "c2f30b00",
+      "got": "c2f30b00",
+      "name": "candidate extracts token low 12 bits",
+      "status": "PASS"
+    },
+    {
+      "expected": "686c",
+      "got": "686c",
+      "name": "candidate loads runtime table pointer from context +0x44",
+      "status": "PASS"
+    },
+    {
+      "expected": "50f82160",
+      "got": "50f82160",
+      "name": "candidate loads descriptor table[token] dynamically",
+      "status": "PASS"
+    },
+    {
+      "expected": "c6f30b31",
+      "got": "c6f30b31",
+      "name": "candidate extracts nested descriptor index",
+      "status": "PASS"
+    },
+    {
+      "expected": "50f82160",
+      "got": "50f82160",
+      "name": "candidate loads nested descriptor dynamically",
+      "status": "PASS"
+    },
+    {
+      "expected": "fdf7bbf8",
+      "got": "fdf7bbf8",
+      "name": "candidate calls mapped read helper 0x6DA4",
+      "status": "PASS"
+    },
+    {
+      "expected": "fdf76bf8",
+      "got": "fdf76bf8",
+      "name": "candidate calls write helper 0x6E70",
+      "status": "PASS"
+    },
+    {
+      "expected": "2948",
+      "got": "2948",
+      "name": "initializer loads callback pointer literal",
+      "status": "PASS"
+    },
+    {
+      "expected": "c4f86006",
+      "got": "c4f86006",
+      "name": "initializer stores callback into initializer object +0x660",
+      "status": "PASS"
+    },
+    {
+      "expected": "d90b0600",
+      "got": "d90b0600",
+      "name": "literal points to conditional local Thumb callback 0x9AD8 under base 0x57100",
+      "status": "PASS"
+    },
+    {
+      "expected": 2,
+      "got": 2,
+      "name": "number of direct generic-reader calls",
+      "status": "PASS"
+    },
+    {
+      "expected": "e87afeffff",
+      "got": "e87afeffff",
+      "name": "reader call 0x1ebd",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x10ff",
+      "got": "0x10ff",
+      "name": "reader request token before 0x1ebd",
+      "status": "PASS"
+    },
+    {
+      "expected": "e8a3fdffff",
+      "got": "e8a3fdffff",
+      "name": "reader call 0x1f94",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x1104",
+      "got": "0x1104",
+      "name": "reader request token before 0x1f94",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "no direct generic-reader token 0x1204",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "ABL1 token index differs from native INV 0x1204",
+      "status": "PASS"
+    },
+    {
+      "expected": "mov",
+      "got": "mov",
+      "name": "descriptor value loaded from runtime table rather than immediate literal",
+      "status": "PASS"
+    }
+  ],
+  "decision": "HOLD_ROM_CANDIDATE_UNTIL_FIELD_TO_MAPPED_ACTUATOR_JOIN",
+  "direct_observation": {
+    "ABL1_path": "caller passes token/index 0x61E; dispatcher reads callback at current-object +0x660; callback indexes current-context +0x44 table twice and loads descriptor values dynamically; helpers route through SVC#4 map caller contract.",
+    "consumer_path": "AmdFabricAriPei exact direct generic-reader callers request 0x10FF and 0x1104, not 0x1204.",
+    "join": "No byte-backed join currently connects native INV 0x1204 to ABL1 token 0x61E or to an active context descriptor.",
+    "native_path": "CbsBasePei loads Setup+0x330 and serializes it under INV token 0x1204 (raw instruction assertions passed)."
+  },
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin": {
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "size": 16777216
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdFabricAriPei-c5b99650a442.bin": {
+      "sha256": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "size": 96680
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdFabricAriPei-c5b99650a442.instructions.json": {
+      "sha256": "77b1d4be4393fbbf920847398ae5667c42b3841066d40c2aaace1b49036c81e1",
+      "size": 2200287
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin": {
+      "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "size": 81520
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin": {
+      "sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "size": 94624
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt": {
+      "sha256": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "size": 2586986
+    }
+  },
+  "limitations": [
+    "No ROM candidate, firmware execution, hardware, NVRAM, physical mapping, or clock behavior was tested.",
+    "SVC#4 caller shape does not establish the on-die handler or mapped window.",
+    "No 1:1:1 claim follows."
+  ],
+  "single_prebuild_gate": {
+    "acceptance": "For the candidate field (starting with Setup+0x330 / INV 0x1204), byte-backedly join its record to the actually active consumer/callback, recover the runtime +0x44 table entry and encoded descriptor, and decode the target register/field effect sufficiently to predict the candidate result.",
+    "can_close_offline": "PARTIAL_ONLY_FROM_CURRENT_BIOS. The caller/serializer bytes are local and a static producer/table trace could identify the encoded SMN address; however current exact callback table entries and active object binding are runtime dataflow gaps, and the on-die SVC#4 handler/translation table is absent from this BIOS image. The encoded descriptor target may be closable offline if its exact producer and active registration are recovered, but the physical mapped window is not closable from this BIOS corpus alone.",
+    "id": "G-ACT",
+    "name": "native field -> active consumer -> runtime descriptor -> encoded SMN target (mapped actuator identity)",
+    "why_now": "SVC#4 is a mapped-register service, so a callback descriptor can address SMN/MMIO rather than only local context; unknown descriptor therefore hides the actual write target."
+  },
+  "status": "BLOCKED"
+}

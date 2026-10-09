@@ -1,0 +1,200 @@
+{
+  "experiment": "probe4l6-vcn-ctl-live",
+  "ts": "2026-09-24T01:27:40+0500",
+  "lib": "/home/OWNER/vcn_unlock/bc250-smu-unlock",
+  "alive_before": true,
+  "secure_before": true,
+  "reads": {
+    "sanity_5a870": {
+      "addr": "0x0005a870",
+      "status": "0x1",
+      "value": "0x000000ff"
+    },
+    "dclk_prog_6d100": {
+      "addr": "0x0116d100",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "dclk_ack_6d114": {
+      "addr": "0x0116d114",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "dclk_ack_6d124": {
+      "addr": "0x0116d124",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "vclk_prog_6d128": {
+      "addr": "0x0116d128",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "vclk_ack_6d13c": {
+      "addr": "0x0116d13c",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "vclk_ack_6d14c": {
+      "addr": "0x0116d14c",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "sel_prog_6d150": {
+      "addr": "0x0116d150",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "sel_ack_6d164": {
+      "addr": "0x0116d164",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "sel_poll_6d174": {
+      "addr": "0x0116d174",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "vcn_200": {
+      "addr": "0x0115f800",
+      "status": "0x1",
+      "value": "0x0000000e"
+    },
+    "vcn_208_en": {
+      "addr": "0x0115f808",
+      "status": "0x1",
+      "value": "0x00000002"
+    },
+    "vcn_210": {
+      "addr": "0x0115f810",
+      "status": "0x1",
+      "value": "0x013c000d"
+    },
+    "vcn_214": {
+      "addr": "0x0115f814",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "vcn_218": {
+      "addr": "0x0115f818",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "vcn_250_t0": {
+      "addr": "0x0115f850",
+      "status": "0x1",
+      "value": "0x3e000000"
+    },
+    "vcn_254_c0": {
+      "addr": "0x0115f854",
+      "status": "0x1",
+      "value": "0x68000000"
+    },
+    "vcn_258_t1": {
+      "addr": "0x0115f858",
+      "status": "0x1",
+      "value": "0x55000000"
+    },
+    "vcn_25c_c1": {
+      "addr": "0x0115f85c",
+      "status": "0x1",
+      "value": "0x68000000"
+    },
+    "vcn_260_t2": {
+      "addr": "0x0115f860",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "vcn_264_c2": {
+      "addr": "0x0115f864",
+      "status": "0x1",
+      "value": "0x0000000a"
+    },
+    "vcn_268_t3": {
+      "addr": "0x0115f868",
+      "status": "0x1",
+      "value": "0x0000000f"
+    },
+    "vcn_26c_c3": {
+      "addr": "0x0115f86c",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "vcn_2b4_nib": {
+      "addr": "0x0115f8b4",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "vcn_35c": {
+      "addr": "0x0115f95c",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "vcn_358": {
+      "addr": "0x0115f958",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "vcn_364_poll": {
+      "addr": "0x0115f964",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "vcn_374": {
+      "addr": "0x0115f974",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "pstep19_5f8fc": {
+      "addr": "0x0115f8fc",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "pstep19_ack14": {
+      "addr": "0x0115f910",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "pstep19_ack24": {
+      "addr": "0x0115f920",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "pstep1a_5f924": {
+      "addr": "0x0115f924",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "pstep1a_ack14": {
+      "addr": "0x0115f938",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "pstep1a_ack24": {
+      "addr": "0x0115f948",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "idef_224": {
+      "addr": "0x01159c24",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "idef_244": {
+      "addr": "0x01159c44",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "idef_324": {
+      "addr": "0x01159d24",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "idef_344": {
+      "addr": "0x01159d44",
+      "status": "0x1",
+      "value": "0x00000000"
+    }
+  },
+  "alive_after": true
+}

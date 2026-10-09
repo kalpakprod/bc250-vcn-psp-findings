@@ -1,0 +1,238 @@
+{
+  "status": "PASS",
+  "checks": 22,
+  "route": "AmdCcxVhAriDxe INV reader 0x5AC4 -> parent token requests 0x1000/0x1001 -> CPU MSR handoff",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "module_sha256": "d9bc6337e3d039922016e95ed8be1fda5d7fb3e0250e43a6058d9c0d305997f0",
+  "reader": {
+    "rva": "0x5ac4",
+    "token_input": "CX->R12D",
+    "header_gate": "0x5bbe",
+    "token_compare": "0x5c32"
+  },
+  "parents": [
+    {
+      "token": "0x1000",
+      "function_start": "0x5c68",
+      "call_rva": "0x5ca5",
+      "return_rva": "0x5da4",
+      "post_call": [
+        "05CAA 3bc3 cmp eax,ebx",
+        "05CAC 7539 jne 0x5ce7",
+        "05CAE 4c8b442458 mov r8,QWORD PTR [rsp+0x58]",
+        "05CB3 4981f8ff000000 cmp r8,0xff",
+        "05CBA 742b je 0x5ce7",
+        "05CBC b9291001c0 mov ecx,0xc0011029",
+        "05CC1 0f32 rdmsr ",
+        "05CC3 49c1e00e shl r8,0xe",
+        "05CC7 48c1e220 shl rdx,0x20",
+        "05CCB 480bc2 or rax,rdx",
+        "05CCE 4c33c0 xor r8,rax",
+        "05CD1 4181e000400000 and r8d,0x4000",
+        "05CD8 4c33c0 xor r8,rax",
+        "05CDB 498bd0 mov rdx,r8",
+        "05CDE 418bc0 mov eax,r8d",
+        "05CE1 48c1ea20 shr rdx,0x20",
+        "05CE5 0f30 wrmsr ",
+        "05CE7 488d542458 lea rdx,[rsp+0x58]",
+        "05CEC b901100000 mov ecx,0x1001",
+        "05CF1 e8cefdffff call 0x5ac4",
+        "05CF6 3bc3 cmp eax,ebx",
+        "05CF8 753c jne 0x5d36",
+        "05CFA 4c8b442458 mov r8,QWORD PTR [rsp+0x58]",
+        "05CFF 4983f803 cmp r8,0x3",
+        "05D03 7431 je 0x5d36",
+        "05D05 b9231001c0 mov ecx,0xc0011023",
+        "05D0A 0f32 rdmsr ",
+        "05D0C 48c1e220 shl rdx,0x20"
+      ],
+      "wrmsr": [
+        "05CE5 0f30 wrmsr ",
+        "05D34 0f30 wrmsr "
+      ]
+    },
+    {
+      "token": "0x1001",
+      "function_start": "0x5c68",
+      "call_rva": "0x5cf1",
+      "return_rva": "0x5da4",
+      "post_call": [
+        "05CF6 3bc3 cmp eax,ebx",
+        "05CF8 753c jne 0x5d36",
+        "05CFA 4c8b442458 mov r8,QWORD PTR [rsp+0x58]",
+        "05CFF 4983f803 cmp r8,0x3",
+        "05D03 7431 je 0x5d36",
+        "05D05 b9231001c0 mov ecx,0xc0011023",
+        "05D0A 0f32 rdmsr ",
+        "05D0C 48c1e220 shl rdx,0x20",
+        "05D10 49c1e02d shl r8,0x2d",
+        "05D14 480bc2 or rax,rdx",
+        "05D17 48ba0000000000200000 movabs rdx,0x200000000000",
+        "05D21 4c33c0 xor r8,rax",
+        "05D24 4c23c2 and r8,rdx",
+        "05D27 4c33c0 xor r8,rax",
+        "05D2A 498bd0 mov rdx,r8",
+        "05D2D 418bc0 mov eax,r8d",
+        "05D30 48c1ea20 shr rdx,0x20",
+        "05D34 0f30 wrmsr ",
+        "05D36 488d0553390000 lea rax,[rip+0x3953]        # 0x9690",
+        "05D3D 4533c9 xor r9d,r9d",
+        "05D40 4c8d0561000000 lea r8,[rip+0x61]        # 0x5da8",
+        "05D47 4889442428 mov QWORD PTR [rsp+0x28],rax",
+        "05D4C 488b05a5380000 mov rax,QWORD PTR [rip+0x38a5]        # 0x95f8",
+        "05D53 418d5110 lea edx,[r9+0x10]",
+        "05D57 b900020000 mov ecx,0x200",
+        "05D5C 48895c2420 mov QWORD PTR [rsp+0x20],rbx",
+        "05D61 ff9070010000 call QWORD PTR [rax+0x170]",
+        "05D67 488b1522390000 mov rdx,QWORD PTR [rip+0x3922]        # 0x9690"
+      ],
+      "wrmsr": [
+        "05D34 0f30 wrmsr "
+      ]
+    }
+  ],
+  "register_windows": {
+    "msr_0": "b9291001c00f3249c1e00e48c1e220480bc24c33c04181e0004000004c33c0498bd0418bc048c1ea200f30488d",
+    "msr_1": "b9231001c00f3248c1e22049c1e02d480bc248ba00000000002000004c33c04c23c24c33c0498bd0418bc048c1"
+  },
+  "fresh_result": "The concrete CCX reader parses INV records and its only two parent requests are 0x1000/0x1001; post-reader code reaches WRMSR-side CPU control paths with exact MSR constants C0011029 and C0011023. This is a non-FCLK/UCLK/MemoryPstate consumer, so it closes the CCX branch as a CPU handoff and leaves the corrected clock-token requester at the Fabric/AGESA boundary. No absence outside checked reader owners is claimed.",
+  "limits": "One reader implementation and two complete parent slices; no runtime invocation, firmware execution, hardware, arbitrary indirect requester, or clock-actuator claim.",
+  "checks_detail": [
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ROM size",
+      "passed": true,
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "check": "CCX hash",
+      "passed": true,
+      "got": "d9bc6337e3d039922016e95ed8be1fda5d7fb3e0250e43a6058d9c0d305997f0",
+      "expected": "d9bc6337e3d039922016e95ed8be1fda5d7fb3e0250e43a6058d9c0d305997f0"
+    },
+    {
+      "check": "reader entry",
+      "passed": true,
+      "got": "488bc4",
+      "expected": "488bc4"
+    },
+    {
+      "check": "reader token input",
+      "passed": true,
+      "got": "440fb7e1",
+      "expected": "440fb7e1"
+    },
+    {
+      "check": "reader NVTB handle",
+      "passed": true,
+      "got": "be4e565442",
+      "expected": "be4e565442"
+    },
+    {
+      "check": "reader INV header gate",
+      "passed": true,
+      "got": "813b24494e56",
+      "expected": "813b24494e56"
+    },
+    {
+      "check": "reader token compare",
+      "passed": true,
+      "got": "66443923",
+      "expected": "66443923"
+    },
+    {
+      "check": "reader typed flag switch",
+      "passed": true,
+      "got": "0fb64b0283e1033bcf",
+      "expected": "0fb64b0283e1033bcf"
+    },
+    {
+      "check": "parent 0x1000 token load bytes",
+      "passed": true,
+      "got": "b900100000",
+      "expected": "b900100000"
+    },
+    {
+      "check": "parent 0x1000 reader call bytes",
+      "passed": true,
+      "got": "e81afeffff",
+      "expected": "e81afeffff"
+    },
+    {
+      "check": "parent 0x1000 has post-reader use",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "parent 0x1001 token load bytes",
+      "passed": true,
+      "got": "b901100000",
+      "expected": "b901100000"
+    },
+    {
+      "check": "parent 0x1001 reader call bytes",
+      "passed": true,
+      "got": "e8cefdffff",
+      "expected": "e8cefdffff"
+    },
+    {
+      "check": "parent 0x1001 has post-reader use",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CCX MSR write site C0011029",
+      "passed": true,
+      "got": "b900100000e81afeffff3bc375394c8b4424584981f8ff000000742bb9291001c00f3249c1e00e48c1e220480bc24c33c04181e0004000004c33c0498bd0418bc048c1ea20",
+      "expected": "b900100000e81afeffff3bc375394c8b4424584981f8ff000000742bb9291001c00f3249c1e00e48c1e220480bc24c33c04181e0004000004c33c0498bd0418bc048c1ea20"
+    },
+    {
+      "check": "CCX MSR write site C0011023",
+      "passed": true,
+      "got": "b901100000e8cefdffff3bc3753c4c8b4424584983f8037431b9231001c00f3248c1e22049c1e02d480bc248ba00000000002000004c33c04c23c24c33c0498bd0418bc048",
+      "expected": "b901100000e8cefdffff3bc3753c4c8b4424584983f8037431b9231001c00f3248c1e22049c1e02d480bc248ba00000000002000004c33c04c23c24c33c0498bd0418bc048"
+    },
+    {
+      "check": "CCX MSR constant C0011029",
+      "passed": true,
+      "got": 3221295145,
+      "expected": 3221295145
+    },
+    {
+      "check": "CCX MSR constant C0011023",
+      "passed": true,
+      "got": 3221295139,
+      "expected": 3221295139
+    },
+    {
+      "check": "CCX parent IDs exclude FCLK 0x1331",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CCX parent IDs exclude UCLK 0x1204",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CCX parent IDs exclude MemoryPstate 0x123c",
+      "passed": true,
+      "got": true,
+      "expected": true
+    }
+  ]
+}

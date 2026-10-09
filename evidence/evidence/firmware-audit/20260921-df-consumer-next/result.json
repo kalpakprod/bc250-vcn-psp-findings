@@ -1,0 +1,389 @@
+{
+  "status": "PASS",
+  "timestamp": "2026-09-23T00:20:57.285390+05:00",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "scope": "Pinned offline CLV DF field/token and exact ABL1 FCLK request boundary; no hardware/runtime action.",
+  "inputs": {
+    "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin": {
+      "size": 16777216,
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected_size": 16777216,
+      "expected_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin": {
+      "size": 81520,
+      "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "expected_size": 81520,
+      "expected_sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdNbioSmuV10Pei-905b8be68afd.bin": {
+      "size": 90672,
+      "sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "expected_size": 90672,
+      "expected_sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdFabricAriPei-c5b99650a442.bin": {
+      "size": 96680,
+      "sha256": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "expected_size": 96680,
+      "expected_sha256": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78"
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin": {
+      "size": 94624,
+      "sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected_size": 94624,
+      "expected_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o": {
+      "size": 95312,
+      "sha256": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135",
+      "expected_size": 95312,
+      "expected_sha256": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135"
+    }
+  },
+  "menu_result": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-df-init-route/menu-result.json",
+    "sha256": "6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a"
+  },
+  "tool_versions": {
+    "objdump": "GNU objdump (GNU Binutils) 2.47",
+    "llvm-objdump": "LLVM (http://llvm.org/):"
+  },
+  "baseline": {
+    "AmdSetup_body_offset": "0x4CF",
+    "MemoryClockSpeed_plus_0x316": {
+      "absolute_ROM_offset": "0x7E5",
+      "raw": "0x24",
+      "enum_label": "1800MHz"
+    },
+    "DfClockOverrideControl_plus_0x703": {
+      "absolute_ROM_offset": "0xBD2",
+      "raw": "0x01",
+      "label": "Manual"
+    },
+    "DfClockOvrd_plus_0x704": {
+      "absolute_ROM_offsets": [
+        "0xBD3",
+        "0xBD4"
+      ],
+      "raw_le": "8c05",
+      "u16_le": 1420
+    }
+  },
+  "positive_edges": {
+    "Setup_plus_0x703_to_INV_0x1373": "CbsBasePei RVA 0xE726 reads byte [Setup+0x703] after emitting ID 0x1373 at RVA 0xE706; byte copied to record+3 and record cursor advances 4 (type bits 0). AmdNbioSmuV10Pei mirrors this at 0x10786/0x107A6.",
+    "Setup_plus_0x704_to_INV_0x1374": "CbsBasePei RVA 0xE738 emits ID 0x1374, sets type bits 1, loads WORD [Setup+0x704] at 0xE75B, copies two bytes to record+3 at 0xE762 and advances 5. AmdNbioSmuV10Pei mirrors this at 0x107B8/0x107DB; AmdFabricAriPei independently emits token 0x1374 at 0x11C98/0x11CBB.",
+    "separate_ABL1_FCLK_request": "At payload 0x463C, only when R1==0x0F does the branch query descriptor halfwords 0x015F/0x0160 via generic reader 0x1FB4; its returned halfword is loaded from SP+8 and written through caller R5 at 0x4682. The adjacent string at payload 0x469C is `\\n\\tOverride Fclk: %d\\n`. This is a real static ABL1 FCLK-named request/data path, but no byte-backed join to $INV token 0x1373/0x1374 was found in this bounded trace.",
+    "HII_help_and_range": {
+      "QID_0x37D": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+      "QID_0x37E": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+      "QID_0x37E_bounds": [
+        0,
+        2000,
+        0
+      ],
+      "interpretation": "Static HII help/range metadata only; neither proves a code-enforced FCLK>UCLK relation or a common unit."
+    }
+  },
+  "bounded_code_enforcement_result": {
+    "result": "NOT_OBSERVED_IN_CHECKED_PATHS; GLOBAL_ENFORCEMENT_UNRESOLVED",
+    "facts": [
+      "The DF serializer windows copy bytes/word to typed $INV/NVTB records without arithmetic conversion or an FCLK/UCLK comparison.",
+      "ABL1 FCLK branch compares R1 to 0x0F (selector) and R0 to saved R4 (caller-state integrity); it does not compare FCLK and UCLK or read the Memory P-state field in this bounded branch.",
+      "The exact help sentence is an HII string associated with QIDs 0x37D/0x37E; no action callback is set on those questions.",
+      "HII NUMERIC bounds [0,2000] are UI metadata, not a proven physical clock limit."
+    ],
+    "ABL1_context_branch": "The separate payload+0x107E4 consumer reads context+0x78 and compares raw immediates 0x03E8 and 0x04B0 to select a callback code; source linkage from the FCLK request to this field, units, conversion, and callback target remain unresolved."
+  },
+  "limits_and_first_unresolved_boundary": {
+    "unit_conversion": "No conversion from Setup+0x704 raw u16 (baseline 1420) to ABL1 FCLK descriptors 0x015F/0x0160 or a PMFW row/divider value is proven.",
+    "actuator": "The previously mapped PMFW DF coefficient/register path at 0x1E170/0x1E1D0/0x1E260/0x1EF18 is static and not joined to the Setup tokens in this check.",
+    "first_unresolved_instruction_boundary": "Post-serializer $INV record receiver/consumer: no selected receiver/provider instruction has been proven to consume tokens 0x1373/0x1374 as the separate ABL1 FCLK query keys 0x015F/0x0160. In the independent ABL1 route, payload+0x1FB4 calls helper 0x4800; provider/base provenance for the request value remains the next unresolved boundary.",
+    "status": "No runtime consumer, frequency unit/physical limit, divider relation, or hardware application proved."
+  },
+  "checks": [
+    {
+      "name": "input_BC250_5.00_clv.bin",
+      "status": "PASS",
+      "detail": "size=16777216; sha256=ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "name": "input_CbsBasePei-6ff112922ad8.bin",
+      "status": "PASS",
+      "detail": "size=81520; sha256=6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    {
+      "name": "input_AmdNbioSmuV10Pei-905b8be68afd.bin",
+      "status": "PASS",
+      "detail": "size=90672; sha256=905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+    },
+    {
+      "name": "input_AmdFabricAriPei-c5b99650a442.bin",
+      "status": "PASS",
+      "detail": "size=96680; sha256=c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78"
+    },
+    {
+      "name": "input_ABL1-clv-decompressed.bin",
+      "status": "PASS",
+      "detail": "size=94624; sha256=af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "name": "input_ABL1-exact.o",
+      "status": "PASS",
+      "detail": "size=95312; sha256=54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135"
+    },
+    {
+      "name": "menu_result_parses",
+      "status": "PASS",
+      "detail": "menu JSON SHA-256=6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a"
+    },
+    {
+      "name": "original_memory_request_retained",
+      "status": "PASS",
+      "detail": "ROM+0x7e5=0x24; MemoryClockSpeed enum 0x24 (menu label 1800MHz)"
+    },
+    {
+      "name": "original_df_request_bytes",
+      "status": "PASS",
+      "detail": "ROM+0xbd2=0x01; +0x704 bytes=8c05 LE=1420"
+    },
+    {
+      "name": "exact_hii_df_questions",
+      "status": "PASS",
+      "detail": "QID 0x37D +0x703 / QID 0x37E +0x704; help string exact; both CALLBACK=false; menu-result SHA-256=6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a"
+    },
+    {
+      "name": "hii_numeric_bounds_are_metadata",
+      "status": "PASS",
+      "detail": "IFR numeric bounds=[0, 2000, 0]; bounds are UI metadata, not a found clock actuator/range"
+    },
+    {
+      "name": "cbs_raw_serializer_anchors",
+      "status": "PASS",
+      "detail": "RVA 0xe706 raw=0xe576=ba73130000; RVA 0xe726 raw=0xe596=8a8203070000; RVA 0xe738 raw=0xe5a8=ba74130000; RVA 0xe75b raw=0xe5cb=668b8204070000; RVA 0xe762 raw=0xe5d2=66894103"
+    },
+    {
+      "name": "smu_raw_serializer_anchors",
+      "status": "PASS",
+      "detail": "RVA 0x10786 raw=0x105f6=ba73130000; RVA 0x107a6 raw=0x10616=8a8203070000; RVA 0x107b8 raw=0x10628=ba74130000; RVA 0x107db raw=0x1064b=668b8204070000; RVA 0x107e2 raw=0x10652=66894103"
+    },
+    {
+      "name": "fabric_raw_serializer_anchors",
+      "status": "PASS",
+      "detail": "RVA 0x11c98 raw=0x11b00=ba74130000; RVA 0x11cbb raw=0x11b23=668b8204070000; RVA 0x11cc2 raw=0x11b2a=66894103"
+    },
+    {
+      "name": "cbs_1373_1374_exit_and_stderr",
+      "status": "PASS",
+      "detail": "exit=0; stderr_bytes=0"
+    },
+    {
+      "name": "cbs_1373_1374_every_decoded_instruction_matches_input",
+      "status": "PASS",
+      "detail": "31 decoded instructions checked; mapping=RVA-minus-TE-delta 0x190"
+    },
+    {
+      "name": "cbs_1373_1374_literal_instruction_chain",
+      "status": "PASS",
+      "detail": "checked direct listing for 5 address/mnemonic anchors"
+    },
+    {
+      "name": "smu_1373_1374_exit_and_stderr",
+      "status": "PASS",
+      "detail": "exit=0; stderr_bytes=0"
+    },
+    {
+      "name": "smu_1373_1374_every_decoded_instruction_matches_input",
+      "status": "PASS",
+      "detail": "28 decoded instructions checked; mapping=RVA-minus-TE-delta 0x190"
+    },
+    {
+      "name": "smu_1373_1374_literal_instruction_chain",
+      "status": "PASS",
+      "detail": "checked direct listing for 5 address/mnemonic anchors"
+    },
+    {
+      "name": "fabric_1374_exit_and_stderr",
+      "status": "PASS",
+      "detail": "exit=0; stderr_bytes=0"
+    },
+    {
+      "name": "fabric_1374_every_decoded_instruction_matches_input",
+      "status": "PASS",
+      "detail": "16 decoded instructions checked; mapping=RVA-minus-TE-delta 0x198"
+    },
+    {
+      "name": "fabric_1374_literal_instruction_chain",
+      "status": "PASS",
+      "detail": "checked direct listing for 3 address/mnemonic anchors"
+    },
+    {
+      "name": "exact_abl1_fclk_logger_string",
+      "status": "PASS",
+      "detail": "payload+0x469C=b'\\n\\tOverride Fclk: %d\\n\\x00'"
+    },
+    {
+      "name": "abl1_fclk_request_463c_exit_and_stderr",
+      "status": "PASS",
+      "detail": "exit=0; stderr_bytes=0"
+    },
+    {
+      "name": "abl1_fclk_request_463c_every_decoded_instruction_matches_input",
+      "status": "PASS",
+      "detail": "35 decoded instructions checked; mapping=payload-relative"
+    },
+    {
+      "name": "abl1_fclk_request_463c_static_window_anchors",
+      "status": "PASS",
+      "detail": "checked exact ABL1 instruction/string anchors; 35 decoded instructions byte-matched"
+    },
+    {
+      "name": "abl1_generic_reader_1fb4_exit_and_stderr",
+      "status": "PASS",
+      "detail": "exit=0; stderr_bytes=0"
+    },
+    {
+      "name": "abl1_generic_reader_1fb4_every_decoded_instruction_matches_input",
+      "status": "PASS",
+      "detail": "59 decoded instructions checked; mapping=payload-relative"
+    },
+    {
+      "name": "abl1_generic_reader_1fb4_static_window_anchors",
+      "status": "PASS",
+      "detail": "checked exact ABL1 instruction/string anchors; 59 decoded instructions byte-matched"
+    },
+    {
+      "name": "abl1_context_selector_107e4_exit_and_stderr",
+      "status": "PASS",
+      "detail": "exit=0; stderr_bytes=0"
+    },
+    {
+      "name": "abl1_context_selector_107e4_every_decoded_instruction_matches_input",
+      "status": "PASS",
+      "detail": "24 decoded instructions checked; mapping=payload-relative"
+    },
+    {
+      "name": "abl1_context_selector_107e4_static_window_anchors",
+      "status": "PASS",
+      "detail": "checked exact ABL1 instruction/string anchors; 24 decoded instructions byte-matched"
+    },
+    {
+      "name": "fclk_branch_has_no_fclk_uclk_order_compare",
+      "status": "PASS",
+      "detail": "only CMPs in bounded FCLK branch: [{'address': '0x4648', 'instruction': 'cmp\\tr1, #0xf'}, {'address': '0x4686', 'instruction': 'cmp\\tr0, r4'}]; first is selector r1=0xF, second caller-state check r0=r4"
+    }
+  ],
+  "commands": [
+    {
+      "name": "cbs_1373_1374",
+      "argv": [
+        "objdump",
+        "-D",
+        "-z",
+        "--insn-width=16",
+        "-b",
+        "binary",
+        "-m",
+        "i386",
+        "-M",
+        "intel",
+        "--adjust-vma=0x190",
+        "--start-address=0xe706",
+        "--stop-address=0xe76f",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin"
+      ],
+      "exit_status": 0,
+      "stdout_file": "cbs_1373_1374.stdout",
+      "stderr_file": "cbs_1373_1374.stderr"
+    },
+    {
+      "name": "smu_1373_1374",
+      "argv": [
+        "objdump",
+        "-D",
+        "-z",
+        "--insn-width=16",
+        "-b",
+        "binary",
+        "-m",
+        "i386",
+        "-M",
+        "intel",
+        "--adjust-vma=0x190",
+        "--start-address=0x10786",
+        "--stop-address=0x107e5",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdNbioSmuV10Pei-905b8be68afd.bin"
+      ],
+      "exit_status": 0,
+      "stdout_file": "smu_1373_1374.stdout",
+      "stderr_file": "smu_1373_1374.stderr"
+    },
+    {
+      "name": "fabric_1374",
+      "argv": [
+        "objdump",
+        "-D",
+        "-z",
+        "--insn-width=16",
+        "-b",
+        "binary",
+        "-m",
+        "i386",
+        "-M",
+        "intel",
+        "--adjust-vma=0x198",
+        "--start-address=0x11c98",
+        "--stop-address=0x11ccf",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdFabricAriPei-c5b99650a442.bin"
+      ],
+      "exit_status": 0,
+      "stdout_file": "fabric_1374.stdout",
+      "stderr_file": "fabric_1374.stderr"
+    },
+    {
+      "name": "abl1_fclk_request_463c",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x463c",
+        "--stop-address=0x4696",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout_file": "abl1_fclk_request_463c.stdout",
+      "stderr_file": "abl1_fclk_request_463c.stderr"
+    },
+    {
+      "name": "abl1_generic_reader_1fb4",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x1fb4",
+        "--stop-address=0x2050",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout_file": "abl1_generic_reader_1fb4.stdout",
+      "stderr_file": "abl1_generic_reader_1fb4.stderr"
+    },
+    {
+      "name": "abl1_context_selector_107e4",
+      "argv": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x107e4",
+        "--stop-address=0x10824",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout_file": "abl1_context_selector_107e4.stdout",
+      "stderr_file": "abl1_context_selector_107e4.stderr"
+    }
+  ]
+}

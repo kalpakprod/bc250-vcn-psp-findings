@@ -1,0 +1,845 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 128,
+    "total": 128
+  },
+  "checks_detail": [
+    {
+      "actual": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "name": "ROM_sha256",
+      "status": "PASS"
+    },
+    {
+      "actual": 16777216,
+      "expected": 16777216,
+      "name": "ROM_size",
+      "status": "PASS"
+    },
+    {
+      "actual": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "ABL1_payload_sha256",
+      "status": "PASS"
+    },
+    {
+      "actual": 94624,
+      "expected": 94624,
+      "name": "ABL1_payload_size",
+      "status": "PASS"
+    },
+    {
+      "actual": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135",
+      "expected": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135",
+      "name": "exact_object_sha256",
+      "status": "PASS"
+    },
+    {
+      "actual": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "name": "full_listing_sha256",
+      "status": "PASS"
+    },
+    {
+      "actual": "PASS",
+      "expected": "PASS",
+      "name": "conditional_base_review_status",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "failed": 0,
+        "passed": 28,
+        "total": 28
+      },
+      "expected": {
+        "failed": 0,
+        "passed": 28,
+        "total": 28
+      },
+      "name": "conditional_base_review_checks",
+      "status": "PASS"
+    },
+    {
+      "actual": "0x57100",
+      "expected": "0x57100",
+      "name": "candidate_base",
+      "status": "PASS"
+    },
+    {
+      "actual": "PASS",
+      "expected": "PASS",
+      "name": "prior_local_gate_status",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "failed": 0,
+        "passed": 54,
+        "total": 54
+      },
+      "expected": {
+        "failed": 0,
+        "passed": 54,
+        "total": 54
+      },
+      "name": "prior_local_gate_checks",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:caller-root-7544-7560",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:caller-root-7544-7560",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:caller-selector-7e30-7e40",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:caller-selector-7e30-7e40",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:dd4-0dd4-0e18",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:dd4-0dd4-0e18",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:dispatch-0c60-0d10",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:dispatch-0c60-0d10",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:dispatch-loop-0e50-0ed0",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:dispatch-loop-0e50-0ed0",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:dispatch-table-pointer-0f10-0f18",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:dispatch-table-pointer-0f10-0f18",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:dispatcher-fallback-0fd8-1038",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:dispatcher-fallback-0fd8-1038",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:fb8-0fb8-0fd8",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:fb8-0fb8-0fd8",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:fill-helper-6b78-6b84",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:fill-helper-6b78-6b84",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:gate-962a-9652",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:gate-962a-9652",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:helper-10c0-118c",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:helper-10c0-118c",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:helper-118c-12ac",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:helper-118c-12ac",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:helper-6c20-6d22",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:helper-6c20-6d22",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:svc6-12ac-12c8",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:svc6-12ac-12c8",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:target-17124-17158",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:target-17124-17158",
+      "status": "PASS"
+    },
+    {
+      "actual": "0",
+      "expected": "0",
+      "name": "objdump_exit:target-95fc-98b0",
+      "status": "PASS"
+    },
+    {
+      "actual": "",
+      "expected": "",
+      "name": "objdump_stderr:target-95fc-98b0",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "caller-selector-7e30-7e40:0x7e34",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "caller-selector-7e30-7e40:0x7e36",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "caller-selector-7e30-7e40:0x7e38",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "caller-selector-7e30-7e40:0x7e3a",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-0c60-0d10:0xc6c",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-0c60-0d10:0xc70",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-0c60-0d10:0xc72",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-0c60-0d10:0xc74",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-0c60-0d10:0xc80",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-0c60-0d10:0xc8e",
+      "status": "PASS"
+    },
+    {
+      "actual": 451108,
+      "expected": 451108,
+      "name": "table_literal_0xf10",
+      "status": "PASS"
+    },
+    {
+      "actual": 94500,
+      "expected": 94500,
+      "name": "conditional_table_offset",
+      "status": "PASS"
+    },
+    {
+      "actual": 11,
+      "expected": 11,
+      "name": "8-byte_callback_table_rows",
+      "status": "PASS"
+    },
+    {
+      "actual": [
+        94516,
+        395005,
+        23
+      ],
+      "expected": [
+        94516,
+        395005,
+        23
+      ],
+      "name": "item17_row",
+      "status": "PASS"
+    },
+    {
+      "actual": "0000000000000000",
+      "expected": "0000000000000000",
+      "name": "table_terminator",
+      "status": "PASS"
+    },
+    {
+      "actual": 38397,
+      "expected": 38397,
+      "name": "candidate_thumb_pointer",
+      "status": "PASS"
+    },
+    {
+      "actual": 38396,
+      "expected": 38396,
+      "name": "candidate_entry",
+      "status": "PASS"
+    },
+    {
+      "actual": "2de9f04f",
+      "expected": "2de9f04f",
+      "name": "target_prologue",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xe5a",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xe5c",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xe64",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xe66",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xe6e",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xe76",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xe8c",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xe94",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xe98",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xe9a",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xe9c",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xe9e",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xea2",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xea4",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xea6",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xea8",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xeb0",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xeb4",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xeb6",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xe84",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatch-loop-0e50-0ed0:0xe88",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "fb8-0fb8-0fd8:0xfba",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "fb8-0fb8-0fd8:0xfd2",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "fb8-0fb8-0fd8:0xfd4",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-6c20-6d22:0x6c2a",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-6c20-6d22:0x6c2e",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-6c20-6d22:0x6c36",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-6c20-6d22:0x6c3a",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-6c20-6d22:0x6c3c",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-6c20-6d22:0x6c40",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-6c20-6d22:0x6c46",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-6c20-6d22:0x6c54",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-6c20-6d22:0x6c4a",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-6c20-6d22:0x6d1e",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-6c20-6d22:0x6d20",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "gate-962a-9652:0x962c",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "gate-962a-9652:0x963e",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "gate-962a-9652:0x9644",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "gate-962a-9652:0x9646",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "target-95fc-98b0:0x9744",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "target-95fc-98b0:0x9780",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "target-95fc-98b0:0x9848",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "target-95fc-98b0:0x984a",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "target-95fc-98b0:0x986e",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "target-95fc-98b0:0x989a",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "target-95fc-98b0:0x98aa",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dd4-0dd4-0e18:0xdde",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dd4-0dd4-0e18:0xde2",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dd4-0dd4-0e18:0xde4",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dd4-0dd4-0e18:0xde6",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dd4-0dd4-0e18:0xdfc",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dd4-0dd4-0e18:0xe14",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dd4-0dd4-0e18:0xe16",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-10c0-118c:0x10d2",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-10c0-118c:0x10d6",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-10c0-118c:0x10d8",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-10c0-118c:0x10e6",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-10c0-118c:0x1104",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-118c-12ac:0x119e",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-118c-12ac:0x11a2",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-118c-12ac:0x11a4",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-118c-12ac:0x11b2",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "helper-118c-12ac:0x11e8",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "svc6-12ac-12c8:0x12c0",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "dispatcher-fallback-0fd8-1038:0x102c",
+      "status": "PASS"
+    },
+    {
+      "actual": [
+        4140,
+        4356,
+        4584
+      ],
+      "expected": [
+        4140,
+        4356,
+        4584
+      ],
+      "name": "direct_12ac_call_sites",
+      "status": "PASS"
+    },
+    {
+      "actual": [
+        "    102c: f000 f93e    \tbl\t0x12ac <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x12ac> @ imm = #0x27c",
+        "    1104: f000 f8d2    \tbl\t0x12ac <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x12ac> @ imm = #0x1a4",
+        "    11e8: f000 f860    \tbl\t0x12ac <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x12ac> @ imm = #0xc0"
+      ],
+      "expected": [
+        "    102c: f000 f93e    \tbl\t0x12ac <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x12ac> @ imm = #0x27c",
+        "    1104: f000 f8d2    \tbl\t0x12ac <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x12ac> @ imm = #0x1a4",
+        "    11e8: f000 f860    \tbl\t0x12ac <_binary__home_kukuruza_orca_projects_bc250_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x12ac> @ imm = #0xc0"
+      ],
+      "name": "direct_12ac_callers_stdout_matches",
+      "status": "PASS"
+    }
+  ],
+  "conditional_base": "0x57100",
+  "direct_12ac_call_sites": [
+    "0x102c",
+    "0x1104",
+    "0x11e8"
+  ],
+  "limits": [
+    "0x57100 is conditional static coherence, not loader/runtime-base proof.",
+    "No runtime dispatcher execution, SVC6 handler/recipient, units, clock effect, training, physical or hardware claim."
+  ],
+  "reachability": {
+    "conditional_dispatch": "Accepted as a static edge only: selector 0x17 reaches the keyed row and BLX 0x95FC under candidate base 0x57100; the loader/runtime base and active object are unproven.",
+    "dd4": "Conditional/unresolved alias boundary: 0x6D10 initially writes 1 at SP+0x164; then 0x95FC calls memset-like 0x6B78 on dynamic R4+0x278 for 0x40 bytes. No address/value read proves that target is disjoint from the SP status block. If disjoint, BLS 0x9744 -> 0x984E skips DD4; if overlapping, DD4 could be entered. DD4 itself calls 0x6C20, sees +4=1, and BLS-returns 0 before its 0x0FB8 call.",
+    "dispatcher": "The 0x0C60 local helper returns +4=1 and takes BLS to 0x0E50, not 0x0FD8; E50 setup helper 0x0FB8 returns 0 and table scan proceeds. After callback return 0, the matched row pointer is nonzero so E50 exits at 0x0E84 with status 0.",
+    "outgoing_value": "On the non-aliased path, 0x984E reads a U16 from a runtime table at 0x986E, stores it to context+0x2BC at 0x989A, and returns callback status R0=0; E50 checks that zero at 0x0EA8. The numeric table value is not established by this static window.",
+    "svc6": "Rejected on the known direct item17 edges: 0x0C60 does not select fallback 0x0FD8 (callsite 0x102C); 0x95FC skips direct alternate calls 0x118C/0x10C0 on the non-aliased path, and those helpers independently gate their 0x12AC calls on block+0x14==0. SVC #6 at 0x12C0 is not shown reachable from this row. Global SVC6 reachability is not claimed."
+  },
+  "status": "PASS",
+  "table": {
+    "entry": "0x95FC",
+    "item_key": "0x17",
+    "literal": "0x0006E224",
+    "literal_file_offset": "0xF10",
+    "mapped_thumb": "0x95FD",
+    "payload_table": "0x17124",
+    "row_file_offset": "0x17134",
+    "row_pointer": "0x000606FD"
+  }
+}

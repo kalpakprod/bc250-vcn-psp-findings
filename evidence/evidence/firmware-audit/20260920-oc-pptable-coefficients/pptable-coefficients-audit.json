@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "identities": {
+    "ROM": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "SMU": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+    "DXE": "b158f039f48db05e352b965a62c8e983a395a4858791c93c73f727285c9ac8d8",
+    "PEI": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+  },
+  "dxe_template_pstates": [
+    {
+      "fid": 128,
+      "did": 8,
+      "ratio_ghz": 3.1999999999999997,
+      "freq_mhz": 3200.0
+    },
+    {
+      "fid": 102,
+      "did": 8,
+      "ratio_ghz": 2.55,
+      "freq_mhz": 2550.0
+    },
+    {
+      "fid": 93,
+      "did": 8,
+      "ratio_ghz": 2.3249999999999997,
+      "freq_mhz": 2325.0
+    },
+    {
+      "fid": 98,
+      "did": 10,
+      "ratio_ghz": 1.96,
+      "freq_mhz": 1960.0
+    },
+    {
+      "fid": 91,
+      "did": 10,
+      "ratio_ghz": 1.8199999999999998,
+      "freq_mhz": 1820.0
+    },
+    {
+      "fid": 96,
+      "did": 12,
+      "ratio_ghz": 1.5999999999999999,
+      "freq_mhz": 1600.0
+    },
+    {
+      "fid": 89,
+      "did": 14,
+      "ratio_ghz": 1.271428,
+      "freq_mhz": 1271.4285714285713
+    },
+    {
+      "fid": 96,
+      "did": 24,
+      "ratio_ghz": 0.7999999999999999,
+      "freq_mhz": 800.0
+    }
+  ],
+  "consumer_chain": {
+    "dxe_template_rva": "0x5D20",
+    "dxe_builder_rva": "0x17DC",
+    "dxe_pstate_log_rva": "0x1CE5",
+    "smu_callback": "0x1BC80",
+    "smu_validator": "0x1BD20",
+    "smu_copier": "0x1CC7C",
+    "smu_consumer": "0x21E8C",
+    "smu_ratio_calc": "0x1CBFC",
+    "smn_registers": [
+      "0x0115A820..0x0115A85C",
+      "0x01004220",
+      "0x0115A864",
+      "aperture+0x10BC"
+    ]
+  }
+}

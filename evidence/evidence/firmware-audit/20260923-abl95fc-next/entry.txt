@@ -1,0 +1,70 @@
+
+evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o:	file format elf32-littlearm
+
+Disassembly of section .data:
+
+00000000 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start>:
+    95fc: e92d 4ff0    	push.w	{r4, r5, r6, r7, r8, r9, r10, r11, lr}
+    9600: 6804         	ldr	r4, [r0]
+    9602: b0df         	sub	sp, #0x17c
+    9604: 2600         	movs	r6, #0x0
+    9606: 4605         	mov	r5, r0
+    9608: af50         	add	r7, sp, #0x140
+    960a: 4623         	mov	r3, r4
+    960c: 2220         	movs	r2, #0x20
+    960e: 4631         	mov	r1, r6
+    9610: 4638         	mov	r0, r7
+    9612: f7fd fab1    	bl	0x6b78 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x6b78> @ imm = #-0x2a9e
+    9616: 2004         	movs	r0, #0x4
+    9618: 2100         	movs	r1, #0x0
+    961a: a2a4         	adr	r2, #656 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x96c2>
+    961c: f7f7 fe76    	bl	0x130c <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x130c> @ imm = #-0x8314
+    9620: 2004         	movs	r0, #0x4
+    9622: 2100         	movs	r1, #0x0
+    9624: a2ac         	adr	r2, #688 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x96d4>
+    9626: f7f7 fe71    	bl	0x130c <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x130c> @ imm = #-0x831e
+    962a: a858         	add	r0, sp, #0x160
+    962c: f7fd faf8    	bl	0x6c20 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x6c20> @ imm = #-0x2a10
+    9630: 2240         	movs	r2, #0x40
+    9632: 4623         	mov	r3, r4
+    9634: 21ff         	movs	r1, #0xff
+    9636: f504 701e    	add.w	r0, r4, #0x278
+    963a: f7fd fa9d    	bl	0x6b78 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x6b78> @ imm = #-0x2ac6
+    963e: 9859         	ldr	r0, [sp, #0x164]
+    9640: f04f 0a01    	mov.w	r10, #0x1
+    9644: 2801         	cmp	r0, #0x1
+    9646: d97d         	bls	0x9744 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x9744> @ imm = #0xfa
+    9648: 985d         	ldr	r0, [sp, #0x174]
+    964a: f04f 7b80    	mov.w	r11, #0x1000000
+    964e: 2800         	cmp	r0, #0x0
+    9650: d079         	beq	0x9746 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x9746> @ imm = #0xf2
+    9652: 2004         	movs	r0, #0x4
+    9654: 2100         	movs	r1, #0x0
+    9656: a2af         	adr	r2, #700 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x9709>
+    9658: f7f7 fe58    	bl	0x130c <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x130c> @ imm = #-0x8350
+    965c: e013         	b	0x9686 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x9686> @ imm = #0x26
+    965e: f8d5 252c    	ldr.w	r2, [r5, #0x52c]
+    9662: 4631         	mov	r1, r6
+    9664: 4628         	mov	r0, r5
+    9666: 4790         	blx	r2
+    9668: 68e8         	ldr	r0, [r5, #0xc]
+    966a: eb04 0186    	add.w	r1, r4, r6, lsl #2
+    966e: a2b8         	adr	r2, #736 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x972a>
+    9670: 4633         	mov	r3, r6
+    9672: 8c00         	ldrh	r0, [r0, #0x20]
+    9674: f8c1 0278    	str.w	r0, [r1, #0x278]
+    9678: 2100         	movs	r1, #0x0
+    967a: 9000         	str	r0, [sp]
+    967c: 2004         	movs	r0, #0x4
+    967e: f7f7 fe45    	bl	0x130c <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x130c> @ imm = #-0x8376
+    9682: 1c76         	adds	r6, r6, #0x1
+    9684: b2f6         	uxtb	r6, r6
+    9686: f895 004b    	ldrb.w	r0, [r5, #0x4b]
+    968a: 42b0         	cmp	r0, r6
+    968c: d8e7         	bhi	0x965e <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0x965e> @ imm = #-0x32
+    968e: a902         	add	r1, sp, #0x8
+    9690: 4620         	mov	r0, r4
+    9692: f7f7 fc5d    	bl	0xf50 <_binary_evidence_firmware_audit_20260920_clv_abl_memory_review_ABL1_clv_decompressed_bin_start+0xf50> @ imm = #-0x8746
+    9696: 2701         	movs	r7, #0x1
+    9698: f240 79d1    	movw	r9, #0x7d1
+    969c: f50d 78a0    	add.w	r8, sp, #0x140

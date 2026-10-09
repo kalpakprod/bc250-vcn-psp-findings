@@ -1,0 +1,49 @@
+--- BASELINE.md
++++ MODIFIED.md
+@@ -172,21 +172,34 @@
+ |---|---|---|
+ | Preserve base memory speed / 1800 request | **PASS, saved bytes only:** CLV `+0x316=0x24` label `1800MHz`; latest W11 readback also stores `0x24` | Current board NVRAM/readback and physical MCLK |
+ | Physical MCLK:UCLK:FCLK 1:1:1 | **NOT READY / UNPROVEN** | ABL1 caller/input mapping; consumer/actuator; units/conversion; independent clocks/divider/crossing; training repetitions |
++| ABL1 AF58 helper contract | **STATIC / CONDITIONAL:** under candidate base `0x57100`, bounded table `0x6E1C8` has count `2`, row 0 callback `0x62059` → RVA `0xAF58`, row 1 callback zero; AF58's direct helpers `0x5CBE` produce `[2,1]` and return `1`, `0xFE60` returns `1`; neither helper contains a direct `0x7378`/`0xAF90` link or clock-register operation | Runtime loader/base and callback invocation; opaque caller-level meaning of AF58 cleanup offsets `0x739/0x75F/0x760` |
++| Item `0x17` callback/output edge | **STATIC / CONDITIONAL:** `0x7E3A → 0x0C60` selects item `0x17`; bounded row maps to `0x95FC` only under candidate base; `0x7E40` loads context `+0x2BC`, `0x7E74 → 0x5E68`, and conditional branch stores a derived halfword at context `+0x78` (`0x5FBA`) | Runtime dispatch/base, `0x6B78` alias/clobber condition, later object identity/indirect target; no frequency/unit/clock meaning established |
+ | UclkDiv1M0 semantics | **STATIC UI only:** `Enabled=1`; no ratio arithmetic | Downstream consumer and divider meaning |
+ | Memory P-state/training | **STATIC UI/serializer only:** `Auto=0xFF` | Consumer, precedence, training and fallback evidence |
+ | FCLK_DPM / DF override | **STATIC stored requests only:** Auto / Manual+1420 | Actual reader/actuator, units, precedence and training relation |
+ | SoC 1.15 V | **NOT SET / NOT SAFE CLAIM** | Revision-matched rail mapping, controller semantics, PEI dispatch, independent electrical measurement |
+ | Core/GFX separation | **STATIC boundary:** PUA1/ISL69247 evidence is separate from PUS1/RT8237E CAD lead | Physical board/revision and net/page mapping |
+ | Latency/bandwidth improvement | **UNRUN:** historical screenshots are uncontrolled and voltage-confounded | B1800/SYNCCAND controlled 3×5 trials, raw data, environment/error/thermal records |
++| Hardware acceptance gate | **UNRUN / EXPLICIT GATE:** no board execution, firmware acceptance, physical clock/training, voltage, stability or performance result | Verified recovery/readback, controlled cold/warm runs, independent clock/divider/training observations, error/thermal screening, and rollback evidence |
+ | Rollback | **Procedure defined, not executed in this draft** | Future exact candidate approval, readback and recovery transaction |
+ 
+-## Additional ABL1 heap-populator evidence — static only (independent verifier)
++## G7 correction: ABL1 HEAP source/copy interpretation withdrawn (static only)
+ 
+-The selected ABL1 heap-populator verifier was independently executed in a disposable copy; status: `PASS`, check summary: `{"status": "PASS", "checks": {"passed": 34, "failed": 0, "total": 34}}`. Evidence was persisted at `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-heap-populator-independent-verify-155804-3347325` (manifest `SHA256SUMS.final`).
++HEAP claim status: WITHDRAWN
+ 
+-The verifier checks the ABL1 heap miss/population flow: selector case key 0xA04E, descriptor miss to 0x6238, node-key write and payload copy via 0x6B78, source pointer outer_object_R1+0x864, and constructor initialization of outer+0x864 to 0x006CD4D0. Those 34 checks cover the static provider-source pointer/heap copy bytes only; they do not establish what the pointed-to data contains, whether the outer object is populated from APOB or $INV 0x11ED, ABL1 runtime execution, an SMU actuator, physical clocks, training, or applied frequency.
++The prior draft cited a 34/34 independent replay and described `0x6B78` as copying a payload from `R10` / `outer+0x864`. That historical result is preserved at `evidence/firmware-audit/20260921-heap-populator-independent-verify-155804-3347325/` and the earlier interpretation at `docs/research/2026-09-21-apob-abl-heap-populator.md`; neither was rewritten or rerun. The 34 checks established the specific literal-byte assertions they tested, not the semantic copy/source chain.
+ 
+-Missing join: identify the producer/meaning of the outer ABL1 object R1 entering 0xB84/0xBD2, and prove whether outer+0x864/0x006CD4D0 is sourced from APOB service 0x9E3B14C (message 0x61, argument 0xFF), native $INV 0x11ED, or another runtime source. Do not follow the concurrent apob_abl_handoff, memory-clock item-0x17, or SMU-selector traces here.
++Fresh aligned Thumb disassembly and separate raw-byte readback of the exact ABL1 payload contradict that copy/source interpretation on the bounded FCLK / selector-`0x0F` path:
++
++- At `0x463C`, `R2` is set to zero, then stored at caller stack offsets `SP+0` and `SP+4` (`0x4664/0x4666`) before calling reader `0x1FB4`.
++- `0x1FB4` saves 12 registers (48 bytes), loads the two caller stack words at its entry `SP+48/+52` into `R7/R9`, then forwards `R9` at `SP+0` when calling `0x4800`. Thus the forwarded word is zero.
++- `0x4800` saves six registers (24 bytes); its load from `[SP+0x18]` recovers that zero. On the selector-`0x0F` provider branch, it stores `R3` and that `R1` as two outgoing stack words before calling `0x49CC`; the second provider stack word is zero.
++- `0x49CC` saves 13 registers (52 bytes), then reserves `0x6C` (108) bytes. Its load at `0x4B54` from `[SP+0xA4]` resolves to provider entry `SP+4`, i.e. the second stacked argument, which is zero for this path. It passes this as `R1` to `0x6238` at `0x4B5C`.
++- `0x6238` then sets `R1=0`, uses `R0=node+0x10`, `R2=node length`, and passes `R10` in `R3` before calling `0x6B78`. The helper's loop is `STRB R1,[R0],#1`, decrements `R2`, and repeats. It writes the fill byte; it does not load source bytes from `R3`. This invocation zero-fills the newly allocated node payload, not copies it from `R10`.
++
++The constructor's own frame uses the same numeric offset for a different purpose: it computes `outer+0x864`, saves that computed address in its constructor-local `[SP+0xA4]`, and separately stores literal `0x006CD4D0` to `[outer+0x864]`. That constructor frame-local slot is not the provider frame's second stacked argument. The exact `$PS1` `load_address` bytes are zero and do not identify the actual runtime load base; the pointed-to region therefore remains unknown. Do not join `outer+0x864` to the provider input or to the node payload on this evidence.
++
++This correction is limited to the inspected FCLK call path. Other direct `0x6238` callers are not assigned a universal second-argument type; later population/content, ABL1 execution, APOB/`$INV 0x11ED` dataflow, SMU actuation, physical clocks, training, voltage, synchronization and hardware acceptance remain unresolved/unrun. Supporting direct captures and the worker's bounded correction report are `evidence/firmware-audit/20260921-apob-abl-outer864-root-review/` and `docs/research/2026-09-21-apob-abl-outer864-origin.md`. No `1:1:1` or safe voltage profile is implied.
+ 
+ This evidence does not change the `NOT READY` profile, assign units, or establish physical MCLK/UCLK/FCLK, training, voltage, or a performance improvement.
+ 
+@@ -195,6 +208,6 @@
+ - **Proven:** plain CLV source identity; static HII paths/QIDs/offsets/options; saved CLV request bytes; static serializer ownership; bounded ABL1 branch behavior.
+ - **Historical only:** W11 board snapshot, P5.00 screenshots, 131.4 ns/141.7 ns AIDA64 values, manual feedback/“1.2-something” report.
+ - **Not ready:** any final equal-1800 profile, physical 1:1:1 claim, SoC 1.15 V setting/safety claim, performance improvement, or hardware acceptance.
+-- **Next offline action:** bind ABL1 `0x95FC` caller/input construction and classify producers of `[SP+0x164]`/`[SP+0x174]`; do not build a candidate until the semantic/migration gates close.
++- **Next offline action:** establish whether any ABL1/provider input reaches the memory-speed callback from the native `1800` request, then resolve downstream units/divider/training semantics; the HEAP source-copy path is withdrawn. Do not build a candidate until the semantic/migration gates close.
+ 
+ This document is a practical evidence draft, not completion of the user's requested guide and not permission to flash or apply voltage.

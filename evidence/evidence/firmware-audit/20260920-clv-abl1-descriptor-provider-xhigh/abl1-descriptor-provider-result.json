@@ -1,0 +1,507 @@
+{
+  "status": "PASS",
+  "checks": 71,
+  "route": "independent exact-byte decode of ABL1 descriptor arrays and 0x4800 selector/provider edge",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "abl1": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "reviewed_full_disassembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+    "conditional_base_review": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-producer-base-review/abl1-producer-base-review-result.json",
+    "prior_reader_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-apcb-reader-boundary-resume/abl1-apcb-reader-boundary-result.json"
+  },
+  "hashes": {
+    "rom": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "abl1": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "reviewed_full_disassembly": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+    "conditional_base_review": "ecb7953571d3b008e76798718d216362bf819a4b0ffcb3dc52da58e23e2c483b",
+    "prior_reader_result": "537f987266057865bd7f278939304f2f40dcc5db4e57c6048ca0905ce2dac128"
+  },
+  "descriptor_decode": {
+    "format": "ordered u16 token candidate array terminated by zero; reader queries each token in order, advances only when helper returns false, and returns on the first type-valid success",
+    "uclk": "0x20 is candidate[0]; candidate[1] varies by M0..M3 as 0x21, 0x22, 0x23, or 0x24; zero terminates each two-token array",
+    "fclk": "candidate[0]=0x015f, candidate[1]=0x0160, candidate[2]=0; caller branch has a literal selector compare 0x0f and logger text labels output Fclk",
+    "not_prefix_key_pair": true
+  },
+  "provider_edge": {
+    "reader": "0x1fb4 passes the current halfword token to helper 0x4800; the exact loop treats later halfwords as alternate candidates",
+    "helper": "0x4800 accepts token IDs 1..0x161, sets internal selector 0x0f, preserves the token/context/output/type argument shape, and branches directly to 0x49cc",
+    "provider_49cc": "exact selector 0x0f enters its dedicated TBB case, prepares raw selector 0x0f and literal 0x1707, and reaches exact helpers 0x6374 and 0x6238",
+    "conditional_pointer": "literal 0x6a2d4 maps arithmetically to payload+0x131d4 only under candidate base 0x57100; 4 validated static anchors support address coherence, not loader/runtime-base proof",
+    "conditional_table": "with that conditional base, copied 18-u16 table entry index 0x0f is 4; meaning of the entry remains unknown",
+    "selector_label": "0x0f is demonstrably a dispatch selector and reused as a raw provider field; the inspected route does not name it group, priority, or source index, so those interpretations remain unsupported",
+    "first_consumer": "typed value store at 0x1fb4; no frequency/divider/PLL consumer established"
+  },
+  "fresh_result": "The caller descriptors are token-candidate lists, not prefix/key pairs: UclkDiv1 uses [0x20, one of 0x21..0x24, 0], Fclk uses [0x015f,0x0160,0]. The reader tests each token through 0x4800 until a token succeeds or the zero terminator is reached. Helper 0x4800 forwards each valid ID through selector 0x0f to 0x49cc. The literal 0x0f is an internal dispatch selector (and raw provider field), but its semantic identity as group/priority/source index is not established. Fclk naming alone does not prove units, physical frequency, divider/PLL action, runtime behavior, or hardware clocks.",
+  "commands": {
+    "objcopy": [
+      "llvm-objcopy",
+      "-I",
+      "binary",
+      "-O",
+      "elf32-littlearm",
+      "-B",
+      "arm",
+      "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+      "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-descriptor-provider-xhigh/ABL1-owned-exact.o"
+    ],
+    "helper_disassembly": {
+      "command": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7",
+        "--start-address=0x4800",
+        "--stop-address=0x4830",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-descriptor-provider-xhigh/ABL1-owned-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "helper-4800-thumb-llvm.stdout",
+      "stderr": "helper-4800-thumb-llvm.stderr"
+    },
+    "provider_disassembly": {
+      "command": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7",
+        "--start-address=0x49cc",
+        "--stop-address=0x4b90",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-descriptor-provider-xhigh/ABL1-owned-exact.o"
+      ],
+      "exit_status": 0,
+      "stdout": "provider-49cc-thumb-llvm.stdout",
+      "stderr": "provider-49cc-thumb-llvm.stderr"
+    }
+  },
+  "limits": "Static exact-payload evidence only. Candidate base 0x57100 remains conditional; no source names, runtime execution, hardware behavior, or frequency semantics inferred.",
+  "checks_detail": [
+    {
+      "check": "ROM exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "exact ABL1 exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "exact ABL1 sha256",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "reviewed full disassembly exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "reviewed full disassembly sha256",
+      "passed": true,
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    {
+      "check": "conditional-base result exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "conditional-base result sha256",
+      "passed": true,
+      "got": "ecb7953571d3b008e76798718d216362bf819a4b0ffcb3dc52da58e23e2c483b",
+      "expected": "ecb7953571d3b008e76798718d216362bf819a4b0ffcb3dc52da58e23e2c483b"
+    },
+    {
+      "check": "prior reader result exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "prior reader result sha256",
+      "passed": true,
+      "got": "537f987266057865bd7f278939304f2f40dcc5db4e57c6048ca0905ce2dac128",
+      "expected": "537f987266057865bd7f278939304f2f40dcc5db4e57c6048ca0905ce2dac128"
+    },
+    {
+      "check": "base hypothesis literal",
+      "passed": true,
+      "got": "0x57100",
+      "expected": "0x57100"
+    },
+    {
+      "check": "base hypothesis has four independent code anchors",
+      "passed": true,
+      "got": 4,
+      "expected": 4
+    },
+    {
+      "check": "prior reader result status",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "prior reader result checks",
+      "passed": true,
+      "got": 42,
+      "expected": 42
+    },
+    {
+      "check": "Uclk selector initializes first candidate 0x20",
+      "passed": true,
+      "got": "hex:2020",
+      "expected": "hex:2020"
+    },
+    {
+      "check": "Uclk stores first candidate in descriptor[0]",
+      "passed": true,
+      "got": "hex:adf84400",
+      "expected": "hex:adf84400"
+    },
+    {
+      "check": "Uclk M0 sets alternative token immediate 0x21",
+      "passed": true,
+      "got": "hex:2120",
+      "expected": "hex:2120"
+    },
+    {
+      "check": "Uclk M0 stores alternative token in descriptor[1]",
+      "passed": true,
+      "got": "hex:adf84600",
+      "expected": "hex:adf84600"
+    },
+    {
+      "check": "Uclk M0 passes same descriptor list to 0x1fb4",
+      "passed": true,
+      "got": "hex:11a8fff752f9",
+      "expected": "hex:11a8fff752f9"
+    },
+    {
+      "check": "Uclk M1 sets alternative token immediate 0x22",
+      "passed": true,
+      "got": "hex:2220",
+      "expected": "hex:2220"
+    },
+    {
+      "check": "Uclk M1 stores alternative token in descriptor[1]",
+      "passed": true,
+      "got": "hex:adf84600",
+      "expected": "hex:adf84600"
+    },
+    {
+      "check": "Uclk M1 passes same descriptor list to 0x1fb4",
+      "passed": true,
+      "got": "hex:11a8fff73ef9",
+      "expected": "hex:11a8fff73ef9"
+    },
+    {
+      "check": "Uclk M2 sets alternative token immediate 0x23",
+      "passed": true,
+      "got": "hex:2320",
+      "expected": "hex:2320"
+    },
+    {
+      "check": "Uclk M2 stores alternative token in descriptor[1]",
+      "passed": true,
+      "got": "hex:adf84600",
+      "expected": "hex:adf84600"
+    },
+    {
+      "check": "Uclk M2 passes same descriptor list to 0x1fb4",
+      "passed": true,
+      "got": "hex:11a8fff72af9",
+      "expected": "hex:11a8fff72af9"
+    },
+    {
+      "check": "Uclk M3 sets alternative token immediate 0x24",
+      "passed": true,
+      "got": "hex:2420",
+      "expected": "hex:2420"
+    },
+    {
+      "check": "Uclk M3 stores alternative token in descriptor[1]",
+      "passed": true,
+      "got": "hex:adf84600",
+      "expected": "hex:adf84600"
+    },
+    {
+      "check": "Uclk M3 passes same descriptor list to 0x1fb4",
+      "passed": true,
+      "got": "hex:11a8fff716f9",
+      "expected": "hex:11a8fff716f9"
+    },
+    {
+      "check": "Uclk list terminator is zero after two IDs",
+      "passed": true,
+      "got": "hex:adf84880",
+      "expected": "hex:adf84880"
+    },
+    {
+      "check": "Fclk branch gates on literal selector 0x0f",
+      "passed": true,
+      "got": "hex:0f291bd1",
+      "expected": "hex:0f291bd1"
+    },
+    {
+      "check": "Fclk first candidate immediate is 0x015f",
+      "passed": true,
+      "got": "hex:40f25f10",
+      "expected": "hex:40f25f10"
+    },
+    {
+      "check": "Fclk stores candidate[0]",
+      "passed": true,
+      "got": "hex:adf81000",
+      "expected": "hex:adf81000"
+    },
+    {
+      "check": "Fclk increments to second candidate 0x0160",
+      "passed": true,
+      "got": "hex:401c",
+      "expected": "hex:401c"
+    },
+    {
+      "check": "Fclk zero terminator is at descriptor[2]",
+      "passed": true,
+      "got": "hex:adf81420",
+      "expected": "hex:adf81420"
+    },
+    {
+      "check": "Fclk stores second candidate",
+      "passed": true,
+      "got": "hex:03abadf81200",
+      "expected": "hex:03abadf81200"
+    },
+    {
+      "check": "Fclk passes descriptor array to common reader 0x1fb4",
+      "passed": true,
+      "got": "hex:04a80092019202aafdf7a3fc",
+      "expected": "hex:04a80092019202aafdf7a3fc"
+    },
+    {
+      "check": "reader initializes list index at zero",
+      "passed": true,
+      "got": "hex:0024",
+      "expected": "hex:0024"
+    },
+    {
+      "check": "reader loads current descriptor halfword",
+      "passed": true,
+      "got": "hex:35f81400",
+      "expected": "hex:35f81400"
+    },
+    {
+      "check": "reader calls helper at 0x4800",
+      "passed": true,
+      "got": "hex:02f00efc",
+      "expected": "hex:02f00efc"
+    },
+    {
+      "check": "reader helper-failure branch advances index",
+      "passed": true,
+      "got": "hex:641ce4b2",
+      "expected": "hex:641ce4b2"
+    },
+    {
+      "check": "reader loads next descriptor and checks zero terminator",
+      "passed": true,
+      "got": "hex:05eb440040880028",
+      "expected": "hex:05eb440040880028"
+    },
+    {
+      "check": "reader continues on nonzero next token",
+      "passed": true,
+      "got": "hex:dad1",
+      "expected": "hex:dad1"
+    },
+    {
+      "check": "reader helper success proceeds to caller type dispatch",
+      "passed": true,
+      "got": "hex:68b10298c0b2",
+      "expected": "hex:68b10298c0b2"
+    },
+    {
+      "check": "0x4800 subtracts one from token",
+      "passed": true,
+      "got": "hex:401e",
+      "expected": "hex:401e"
+    },
+    {
+      "check": "0x4800 compares token-1 to inclusive upper bound 0x160",
+      "passed": true,
+      "got": "hex:b0f5b07f",
+      "expected": "hex:b0f5b07f"
+    },
+    {
+      "check": "0x4800 rejects token-1 above 0x160",
+      "passed": true,
+      "got": "hex:08d8",
+      "expected": "hex:08d8"
+    },
+    {
+      "check": "0x4800 sets internal dispatch selector to literal 0x0f",
+      "passed": true,
+      "got": "hex:0f20",
+      "expected": "hex:0f20"
+    },
+    {
+      "check": "0x4800 forwards type and stack arguments",
+      "passed": true,
+      "got": "hex:cde90031",
+      "expected": "hex:cde90031"
+    },
+    {
+      "check": "0x4800 forwards output/context/token registers",
+      "passed": true,
+      "got": "hex:13462a462146",
+      "expected": "hex:13462a462146"
+    },
+    {
+      "check": "0x4800 BL resolves to provider 0x49cc",
+      "passed": true,
+      "got": "hex:00f0d6f8",
+      "expected": "hex:00f0d6f8"
+    },
+    {
+      "check": "all caller token candidates pass range 1..0x161",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "0x49cc begins at exact raw push",
+      "passed": true,
+      "got": "hex:2de9ff4f",
+      "expected": "hex:2de9ff4f"
+    },
+    {
+      "check": "0x49cc selector-specific table-copy byte count is 0x24",
+      "passed": true,
+      "got": "hex:2422",
+      "expected": "hex:2422"
+    },
+    {
+      "check": "0x49cc code literal names absolute table pointer 0x6a2d4",
+      "passed": true,
+      "got": 434900,
+      "expected": 434900
+    },
+    {
+      "check": "0x6a2d4 maps conditionally to candidate payload offset 0x131d4",
+      "passed": true,
+      "got": 78292,
+      "expected": 78292
+    },
+    {
+      "check": "candidate table fits in exact ABL1 payload",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "conditional table has 18 halfwords",
+      "passed": true,
+      "got": 18,
+      "expected": 18
+    },
+    {
+      "check": "internal selector 0x0f table entry equals literal 4",
+      "passed": true,
+      "got": 4,
+      "expected": 4
+    },
+    {
+      "check": "0x49cc checks selector table index against 0x10",
+      "passed": true,
+      "got": "hex:1b981028",
+      "expected": "hex:1b981028"
+    },
+    {
+      "check": "0x49cc case 0x0f starts with literal selector 0x0f",
+      "passed": true,
+      "got": "hex:0f22",
+      "expected": "hex:0f22"
+    },
+    {
+      "check": "case 0x0f prepares literal type-id 0x1707 in r1 before TBB",
+      "passed": true,
+      "got": "hex:41f6fe7041f20771",
+      "expected": "hex:41f6fe7041f20771"
+    },
+    {
+      "check": "case 0x0f saves selector and type-id pair for downstream path",
+      "passed": true,
+      "got": "hex:4af24e06cde90121",
+      "expected": "hex:4af24e06cde90121"
+    },
+    {
+      "check": "owned llvm-objcopy exit",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "helper-4800-thumb-llvm llvm-objdump exit",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "helper-4800-thumb-llvm llvm-objdump output nonempty",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "provider-49cc-thumb-llvm llvm-objdump exit",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "provider-49cc-thumb-llvm llvm-objdump output nonempty",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "targeted listing confirms helper call target 0x49cc",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "targeted listing confirms provider class 0x0f block",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "targeted provider listing contains helper 0x6374 edge",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "targeted provider listing contains helper 0x6238 edge",
+      "passed": true,
+      "got": true,
+      "expected": true
+    }
+  ]
+}

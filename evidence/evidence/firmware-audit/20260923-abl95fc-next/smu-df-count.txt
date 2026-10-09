@@ -1,0 +1,64 @@
+PASS: entire loaded program memory equals clv-matching robin-5 body, bytes=262400
+===== 0001e650 FUN_0001e650 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001e650(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (*(byte *)(_DAT_000171ec + 0xf7) <= uVar1) {
+    func_0x00000fe4(param_1,uVar1);
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x00002268(_DAT_000173e0);
+  memw();
+  memw();
+  *(uint *)(_DAT_000171a0 + 0x104) = *(uint *)(_DAT_000171a0 + 0x104) & 0xffffffbf;
+  func_0x0001ef90();
+  func_0x0001e448(uVar1 & 0xff);
+  func_0x0000231c(_DAT_000173e0);
+  func_0x00000fe4(param_1,uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+
+0001e650 364100 entry a1,0x20
+0001e653 ad02 mov.n a10,a2
+0001e655 659ae2 call8 0x00000ffc
+0001e658 81e5e2 l32r a8,0x000171ec
+0001e65b 8208f7 l8ui a8,a8,0xf7
+0001e65e 3d0a mov.n a3,a10
+0001e660 873a10 bltu a10,a8,0x0001e674
+0001e663 ad02 mov.n a10,a2
+0001e665 bd03 mov.n a11,a3
+0001e667 e597e2 call8 0x00000fe4
+0001e66a ad02 mov.n a10,a2
+0001e66c b2a0ff movi a11,0xff
+0001e66f a593e2 call8 0x00000fa8
+0001e672 1df0 retw.n
+0001e674 a15be3 l32r a10,0x000173e0
+0001e677 25bfe3 call8 0x00002268
+0001e67a a1c9e2 l32r a10,0x000171a0
+0001e67d b2afbf movi a11,-0x41
+0001e680 c02000 memw
+0001e683 922a41 l32i a9,a10,0x104
+0001e686 b09910 and a9,a9,a11
+0001e689 c02000 memw
+0001e68c 926a41 s32i a9,a10,0x104
+0001e68f 259000 call8 0x0001ef90
+0001e692 30a074 extui a10,a3,0x0,0x8
+0001e695 25dbff call8 0x0001e448
+0001e698 a152e3 l32r a10,0x000173e0
+0001e69b 25c8e3 call8 0x0000231c
+0001e69e bd03 mov.n a11,a3
+0001e6a0 ad02 mov.n a10,a2
+0001e6a2 2594e2 call8 0x00000fe4
+0001e6a5 ad02 mov.n a10,a2
+0001e6a7 0c1b movi.n a11,0x1
+0001e6a9 e58fe2 call8 0x00000fa8
+0001e6ac 1df0 retw.n

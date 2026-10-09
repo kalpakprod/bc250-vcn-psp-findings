@@ -1,0 +1,49 @@
+{
+  "artifact": "vcn-replay-write-list v1",
+  "generated": "2026-09-24",
+  "sources": [
+    "evidence/firmware-audit/20260923-smu-chain/emu-phase2-report.txt (FUN_0002A184 emu trace, 8865 steps, completed)",
+    "evidence/firmware-audit/20260924-plan-consumers/ (decompiles: FUN_0002a184/24594/23a64/23890/235c8/23d78/2a2f4/2a344)",
+    "evidence/runtime/20260924-012740-probe4l6-vcnctl.json (live controller state)",
+    "evidence/runtime/20260924-013438-probe4l7-slotwin.json (live slot windows)"
+  ],
+  "policy_word_0xccb8_image_initial": "0x00000000 (bit 6 = 0: the SMU never runs the 0x2b0f4 tail on this board; route B is the only route)",
+  "live_state_notes": {
+    "0x0115F800": "0x0000000E (boot config, KEEP)",
+    "0x0115F808": "0x00000002 (bit0 clear = PLL not enabled; RMW |= 1 -> 3)",
+    "0x0115F810": "0x013C000D ([6:0]=0x0D builder divider, [31:16]=0x013C boot field, KEEP)",
+    "0x0115F850..0x0115F86C": "boot PLL table 0x3E000000/0x68000000/0x55000000/0x68000000/0/0x0A/0x0F/0 (KEEP)",
+    "0x0115F8FC/0x0115F924": "0 (power steps never ran)",
+    "0x0115F964": "0 (ready poll never passed)"
+  },
+  "replay_sequence": [
+    {"step": 1, "op": "rmw_or", "addr": "0x0220FE00+0x200", "write": "read & ~4", "emu": "0x02210000 = 0", "note": "gate release 1; live value unknown, blind write 0 forbidden (needs read; 0x0221 read safety unproven) - SKIPPED in v1 if read unsafe"},
+    {"step": 2, "op": "rmw_and", "addr": "0x0115A320", "write": "read & ~2", "emu": "0x0115A320 = 0", "note": "gate release 2"},
+    {"step": 3, "op": "rmw_or", "addr": "0x0115A334", "write": "read | 0x30", "emu": "0x0115A334 = 0x30"},
+    {"step": 4, "op": "rmw", "addr": "0x0115A330", "write": "(read & ~0xE) | 1", "emu": "0x0115A330 = 1"},
+    {"step": 5, "op": "delay", "addr": null, "write": "10 timer units (FUN_00002b2c(10))"},
+    {"step": 6, "op": "rmw", "addr": "0x0115A32C", "write": "(read & ~7) | 0x17", "emu": "0x0115A32C = 0x17"},
+    {"step": 7, "op": "or_write", "addr": "0x01D80814", "write": "2", "emu": "0x01D80814 = 2", "note": "RISK: 0x01D8 region; reads banned (SMU-killer); v1 SKIPS (R3 measured second-gate already open)"},
+    {"step": 8, "op": "write", "addr": "0x0115F808", "write": "read | 1 (RMW: live 0x2 -> 0x3)", "emu": "0x0115F808 = 0 (builder zero-write - DO NOT replay the builder's zero; RMW instead)", "note": "builder-tail ENABLE bit; the ONLY builder-tail write before the poll"},
+    {"step": 9, "op": "write", "addr": "0x0115F818", "write": "1", "emu": "0x0115F818 = 1", "note": "builder-tail trigger"},
+    {"step": 10, "op": "poll", "addr": "0x0115F964", "write": "expect (val & 0x100) != 0", "note": "PLL ready; live 0 today; timeout -> abort, do not hang (O6 guard class)"},
+    {"step": 11, "op": "write", "addr": "0x0115F958", "write": "0x00010000", "emu": "0x0115F958 = 0x10000", "note": "builder tail (+0x358 = PTR_DAT_00017560)"},
+    {"step": 12, "op": "rmw_or", "addr": "0x0115F95C", "write": "read | 0x0004C000", "emu": "0x0115F95C = 0x4C000"},
+    {"step": 13, "op": "write", "addr": "0x0115F974", "write": "0", "emu": "0x0115F974 = 0"},
+    {"step": 14, "op": "write", "addr": "0x0115F8FC", "write": "0x3F", "emu": "0x0115F8FC = 0x3F", "note": "power step idx 25 code (emu value with static state; the emu-proven first-light code)"},
+    {"step": 15, "op": "poll", "addr": "0x0115F920", "write": "expect (val & 0x10000) != 0", "note": "power-step ack"},
+    {"step": 16, "op": "write", "addr": "0x0115F924", "write": "0x3F", "emu": "(not reached in trace cap; same class as idx 25)", "note": "power step idx 26"},
+    {"step": 17, "op": "poll", "addr": "0x0115F948", "write": "expect (val & 0x10000) != 0"},
+    {"step": 18, "op": "write", "addr": "0x0100B004", "write": "1", "emu": "0x0100B004 = 1"},
+    {"step": 19, "op": "write", "addr": "0x0100B008", "write": "1", "emu": "0x0100B008 = 1"},
+    {"step": 20, "op": "write", "addr": "0x0100B2E0", "write": "0xF", "emu": "0x0100B2E0 = 0xF"},
+    {"step": 21, "op": "write", "addr": "0x0100B00C", "write": "0x75767570", "emu": "0x0100B00C = 0x75767570", "note": "packed pair from PTR_DAT_00017fac/0x17fb0"},
+    {"step": 22, "op": "rmw_or", "addr": "0x0100B034", "write": "read | 1, then poll bit 2", "emu": "0x0100B034 = 3 (handshake completed in emu)", "note": "enable-block handshake (FUN_0002a2f4)"},
+    {"step": 23, "op": "rmw_or", "addr": "0x0115A338", "write": "read | 1", "emu": "0x0115A338 = 1"},
+    {"step": 24, "op": "optional_pump", "addr": "0x01130600/0x01109A00/0x01C1CE00-class", "write": "FUN_0002a344 table pump (~60 writes, ids 0x10..0x37)", "emu": "all zero writes from the zero state struct", "note": "subsystem identity unestablished; v1 SKIPS (one variable per flash; add in v2 if the wake is incomplete)"}
+  ],
+  "transport": "q3 mailbox 0x28/0x29 arbitrary-SMN-write pair (emu phase-1 validated 2026-09-23); poll reads via the same pair",
+  "builder_call": "NEVER call or replay FUN_00024594 (empty plan -> zeroes the boot config +0x200/+0x210/+0x250s and hangs the poll)",
+  "v1_skips": ["step 1 if 0x0221 reads unsafe (blind-write forbidden)", "step 7 (0x01D8 write; gates measured open)", "step 24 (pump; identity unknown)"],
+  "v1_abort_guards": ["SMU alive check before/after each write", "poll timeout -> abort + report (never hang)", "readback-verify each RMW"]
+}

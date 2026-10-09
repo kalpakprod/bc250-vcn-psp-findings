@@ -1,0 +1,67 @@
+{
+  "verdict": "NO-GO",
+  "gates": {
+    "G1_diff_confinement": {
+      "pass": true,
+      "changed_bytes": 1331305,
+      "window": [
+        "0xae0088",
+        "0xc2654b"
+      ],
+      "allowed_window": [
+        "0xae0088",
+        "0xc2654b"
+      ]
+    },
+    "G8_boot_regions_untouched": {
+      "pass": true,
+      "psp_dir_0x8E0000": "identical",
+      "apcb_0xAB1000": "identical",
+      "everything_outside_capsule": "identical"
+    },
+    "G2_outer_fv_headers": {
+      "pass": true
+    },
+    "G3_inner_inventory": {
+      "pass": false,
+      "base_files": 193,
+      "cand_files": 193,
+      "new": [],
+      "gone": [],
+      "content_changed": [],
+      "shape_changed": []
+    },
+    "G4_new_ffs": {
+      "pass": false,
+      "found": null
+    },
+    "G5_new_driver_pe": {
+      "pass": false
+    },
+    "G6_inner_fv_checksum": {
+      "pass": true,
+      "base_fv_len": 4399104,
+      "cand_fv_len": 4415488,
+      "note": "asserted inside walk_ffs for both images"
+    },
+    "G7_capsule_free_tail": {
+      "pass": false,
+      "base_free": "0x2a0",
+      "cand_free": "0x42a0"
+    }
+  },
+  "base_sha256": "606a7a7f9ef8fb1c445d8ccfa9640de0339bfec5ab52969135a9e87d62028182",
+  "cand_sha256": "3a7fcf8507c6ea1a366bc8f8c584f7613e0cfac4ce9fcef47c031ed80f853f4d",
+  "capsule_meta_base": {
+    "capsule_off": 11403384,
+    "capsule_size": 1336532,
+    "raw_len": 12,
+    "inner_fv_len": 4399104
+  },
+  "capsule_meta_cand": {
+    "capsule_off": 11403384,
+    "capsule_size": 1334640,
+    "raw_len": 12,
+    "inner_fv_len": 4415488
+  }
+}

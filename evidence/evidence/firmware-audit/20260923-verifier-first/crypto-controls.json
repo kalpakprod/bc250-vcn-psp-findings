@@ -1,0 +1,59 @@
+{
+  "input": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "classification": "HOST CRYPTOGRAPHIC VERIFICATION, NOT native PSP verifier",
+  "records": [
+    {
+      "type": "0x1",
+      "offset": "0x8e0400",
+      "size": 46592,
+      "sha256": "0bfbd84a89fc07ecd6fbfadde9e49f0af58aa42a87212b84e252313716efd851",
+      "entropy": 7.99617699245143,
+      "ps1_header": false,
+      "native_isa": "unresolved opaque bytes, no blind disassembly"
+    },
+    {
+      "type": "0x2",
+      "offset": "0x8eba00",
+      "size": 78672,
+      "sha256": "cbc99cc0d1b25d97258d5db81959531ce791f0bec6b358be683ae0a6f2017527",
+      "host_crypto_tests": [
+        {
+          "input": "original",
+          "result": "ACCEPT"
+        },
+        {
+          "input": "body_one_bit",
+          "result": "REJECT"
+        },
+        {
+          "input": "signature_one_bit",
+          "result": "REJECT"
+        }
+      ],
+      "code_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-verifier-first/clv-t02-signed-body.bin",
+      "code_sha256": "259a31d52ec847df23596ae1c7e736212ff6bab7793af741b83fa62e439ade68"
+    },
+    {
+      "type": "0x28",
+      "offset": "0x984f00",
+      "size": 108400,
+      "sha256": "5b6828bff3f10f1b120b279932af156438e1bdd724508e44b7630fce9716251f",
+      "host_crypto_tests": [
+        {
+          "input": "original",
+          "result": "ACCEPT"
+        },
+        {
+          "input": "body_one_bit",
+          "result": "REJECT"
+        },
+        {
+          "input": "signature_one_bit",
+          "result": "REJECT"
+        }
+      ]
+    }
+  ],
+  "original_unchanged": true
+}

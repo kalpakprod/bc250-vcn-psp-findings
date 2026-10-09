@@ -1,0 +1,24 @@
+{
+  "source_class": "primary AMD Linux source, retrieved2026-09-23, snapshots hashed not revision-pinned",
+  "counter": "CLK4_CLK2_CURRENT_CNT",
+  "consumer": "dprefclk_khz",
+  "counter_mmio_byte_offset": "0x6c9fc",
+  "pll_mmio_byte_offset": "0x6c838",
+  "conversion_khz": "raw*100; raw0 falls back600000",
+  "not_sync_proof": true,
+  "limits": [
+    "MMIO offsets not independently mapped to SMN physicalwindow",
+    "No counter read performed",
+    "DPREFCLK is not memory/fabric clock",
+    "publicstruct dcn3 fclk comment does not identify CyanCLK4 physical fabric"
+  ],
+  "sources": {
+    "dcn201_clk_mgr.c": "c5b7e5eb1de784725923d0659e26de14709b62b0c5acfda3354b31992f471ebd",
+    "dcn201_clk_mgr.h": "8172705655e6e9062e3599cbde90b52170c9274e97309700c0360c07be98626c",
+    "clk_mgr_internal.h": "c8517206329e37ad3a3b047b2f33edc09373836bcca66021b79ffa6123c9e13b",
+    "cyan_skillfish_ip_offset.h": "4e3e383d212924b1378a2225edaee8c42046ebf4b19475a128985941720492d3",
+    "clk_11_0_1_offset.h": "0a2cc8227652cfdf06b84e8fa898c1dc8a2bea39b996ed23a6f59f93186e37e5",
+    "clk_mgr.h": "5cab85aa4bcc90e922e4dd509ba574ed4d94dd952610fbbdcff7e3761bd0bbbb",
+    "rn_clk_mgr.c": "c1bdae65a98e3bb7ec64254e4fbca00419a878cca46801a459f09aea628007f7"
+  }
+}

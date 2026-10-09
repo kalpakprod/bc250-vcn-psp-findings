@@ -1,0 +1,9 @@
+Disposable CWD: /tmp/bc250-item17-5e68-chain-g0V8cz
+Inputs copied to that CWD from evidence/firmware-audit/20260921-abl-item17-reachable-output/ABL1-clv-full-thumb.elf.o (SHA-256 adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6) and evidence/firmware-audit/20260921-abl-item17-consumer/ABL1-clv-decompressed.bin (SHA-256 af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a).
+llvm-objdump -D --section=.data --triple=thumbv7m-none-eabi --start-address=0x7e3e --stop-address=0x7e7a ABL1-clv-full-thumb.elf.o
+llvm-objdump -D --section=.data --triple=thumbv7m-none-eabi --start-address=0x5e68 --stop-address=0x5fc2 ABL1-clv-full-thumb.elf.o
+od -An -tx1 -v -j 0x7e40 -N 4 ABL1-clv-decompressed.bin
+od -An -tx1 -v -j 0x7e6e -N 8 ABL1-clv-decompressed.bin
+od -An -tx1 -v -j 0x5e68 -N 16 ABL1-clv-decompressed.bin
+od -An -tx1 -v -j 0x5fba -N 4 ABL1-clv-decompressed.bin
+All disassembly/raw commands exited 0; all captured stderr files are empty.

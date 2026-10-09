@@ -1,0 +1,28 @@
+== c2 runtime unlock blob ==
+token      : 0000000000000000000000000000000000000000000000000000000000000000  (PLACEHOLDER - fill per-boot)
+layout     : entries-direct
+blob size  : 0x190 (header 0x100 + body 0x90)
+header     : $PS1@+0x10, size=0x190@+0x14, ver=1@+0x30, kid=fe7cea96 2a4c9dc5@+0x38
+body[0:40] : memcmp#2 region = token||zeros
+
+== parse via groups_of_runtime ==
+  grp 0x201 count=6
+    0x0900c234 -> 0x00000000
+    0x0900c914 -> 0x00000000
+    0x0900c930 -> 0x00000000
+    0x0900cb80 -> 0x00000000
+    0x0900c234 -> 0x00000001
+    0x0322011c -> 0x000107ff
+  grp 0x210 count=2
+    0x0003e810 -> 0x00000006
+    0x0003e814 -> 0x2544c382
+
+groups match requested set: True
+reference groups_of (flash layout) result: None (expected: count word is part of the memcmp#2 token region on the runtime channel)
+
+known open point: supervisor-side parser of the runtime blob is off-die;
+if it instead expects a count at body[0] (flash layout), token[0:4] must equal
+group count (2) - probe on hw with --layout count-then-entries variant if 0x1033
+yields no effect.
+
+blob written: C:\Users\OWNER\bc250-bios\evidence\fv_extract\c2_runtime_unlock_blob.bin

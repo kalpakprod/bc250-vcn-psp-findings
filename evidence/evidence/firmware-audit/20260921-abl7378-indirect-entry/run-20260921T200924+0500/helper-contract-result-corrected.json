@@ -1,0 +1,169 @@
+{
+  "status": "PASS",
+  "checks": {
+    "passed": 22,
+    "failed": 0,
+    "total": 22
+  },
+  "helper_5cbe": {
+    "input": "AF58 passes R0=SP; R1 ignored",
+    "writes": [
+      "u16 [R0]=2",
+      "u16 [R0+2]=1"
+    ],
+    "return": 1
+  },
+  "helper_fe60": {
+    "input": "R0=SP",
+    "condition": "original bit1 of first halfword and bit0 of second halfword set by LSL #30/#31",
+    "on_5cbe_output": 1,
+    "return_paths": {
+      "success": 1,
+      "failure": 0
+    }
+  },
+  "direct_clock_literals": false,
+  "limits": [
+    "No semantic identity for AF58 offsets +0x739/+0x75F/+0x760; no runtime/hardware proof."
+  ],
+  "checks_detail": [
+    {
+      "name": "raw_sha256",
+      "passed": true,
+      "observed": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "name": "elf_sha256",
+      "passed": true,
+      "observed": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+      "expected": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6"
+    },
+    {
+      "name": "helper-5cbe-exact_exit",
+      "passed": true,
+      "observed": "0",
+      "expected": "0"
+    },
+    {
+      "name": "helper-5cbe-exact_stderr_empty",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "helper-fe60-exact_exit",
+      "passed": true,
+      "observed": "0",
+      "expected": "0"
+    },
+    {
+      "name": "helper-fe60-exact_stderr_empty",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "5cbe_writes_2",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "5cbe_store0",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "5cbe_store1",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "5cbe_returns_one",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "5cbe_bx_lr",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "fe60_read0",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "fe60_shift30",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "fe60_read1",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "fe60_shift31",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "fe60_success_one",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "fe60_failure_zero",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "fe60_return",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "5cbe_no_direct_clock_literal",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "fe60_no_direct_clock_literal",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "host_model_5cbe_stack",
+      "passed": true,
+      "observed": [
+        2,
+        1
+      ],
+      "expected": [
+        2,
+        1
+      ]
+    },
+    {
+      "name": "host_model_fe60_output",
+      "passed": true,
+      "observed": 1,
+      "expected": 1
+    }
+  ]
+}

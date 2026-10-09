@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "evidence_class": ["observed-bytes", "static-analysis"],
+  "target": {
+    "rom": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "smu_sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+    "smu_rom_offset": "0x8FEF00",
+    "AmdSetup_plus_0x316": "0x24 at ROM 0x7E5"
+  },
+  "ghidra": {
+    "version": "12.1.3",
+    "exit": 0,
+    "byte_matched_instruction_count": 301,
+    "listing_sha256": "6c6816365ce7b9febf374a092908f3b88033cb3c7a4b2111490c3d458b62af52"
+  },
+  "selector": {
+    "mailbox": "Queue ID 3 message 0x1D",
+    "max_index": 20,
+    "zero_rejected": true,
+    "rejected_domain_ids": ["0x13", "0x14"],
+    "accepted_example": {
+      "selector_index": 11,
+      "loop_index": 10,
+      "target_slot": "0x140B0",
+      "domain_id": "0x18",
+      "internal_group": 6,
+      "descriptor_base": "0xFA48",
+      "program_pointer_cell": "0xFA5C",
+      "raw_program_offset": "0x6D150",
+      "smu_window_program": "0x0116D150",
+      "smu_window_poll": "0x0116D174"
+    },
+    "neighbors": {
+      "12": {"domain_id": "0x13", "raw_program_offset": "0x6C900", "status": "rejected"},
+      "13": {"domain_id": "0x14", "raw_program_offset": "0x6C928", "status": "rejected"},
+      "14": {"domain_id": "0x15", "raw_program_offset": "0x6C950", "status": "visible_filters_pass"}
+    }
+  },
+  "scale": {
+    "low16": "ufloat.s immediate 0; numeric magnitude preserved",
+    "target_scale_literal": "0x16F50 = 0.001f",
+    "U9_16_fraction_literal": "0x17460 = 2^-16",
+    "group_factors": ["0.1f", "256.0f"],
+    "divider_helper": "0x3ACF8 software float divide; 0x23ECC internal divider code",
+    "unit": "unresolved; no MHz identity"
+  },
+  "physical_name_search": {
+    "exact_address_header_hits": 0,
+    "prior_slot_map": {"slot": 24, "domain_index": 6, "programming_address": "0x6D150", "semantic_name": null},
+    "result": "internal Group6/SMN offsets proven; physical MCLK/UCLK/FCLK/VCN name not recovered"
+  },
+  "first_unresolved": "physical meaning and runtime Group6 base coefficient; caller/provider join to AmdSetup/ABL1/APOB; external unit and clock identity"
+}

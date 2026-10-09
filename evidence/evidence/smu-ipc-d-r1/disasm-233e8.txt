@@ -1,0 +1,27 @@
+0x233e8: entry      a1, 0x20
+0x233eb: movi.n     a10, 0x4
+0x233ed: call8      0x29cd4
+0x233f0: l32r       a11, 0x40001711c
+0x233f3: mov.n      a8, a10
+0x233f5: l32r       a10, 0x400017148
+0x233f8: beqz.n     a8, 0x23407
+0x233fa: and        a9, a2, a11
+0x233fd: add.n      a9, a9, a10
+0x233ff: memw       
+0x23402: s32i       a3, a9, 0x200
+0x23405: retw.n     
+0x23407: l32r       a12, 0x400017890
+0x2340a: and        a14, a2, a11
+0x2340d: add.n      a14, a14, a10
+0x2340f: bgeu       a12, a2, 0x23421
+0x23412: l32r       a13, 0x400017894
+0x23415: bltu       a13, a2, 0x23421
+0x23418: mov.n      a10, a2
+0x2341a: mov.n      a11, a3
+0x2341c: call8      0x1b514
+0x2341f: retw.n     
+0x23421: memw       
+0x23424: s32i       a3, a14, 0x200
+0x23427: retw.n     
+0x23429: ill        
+0x2342c: entry      a1, 0x30

@@ -1,0 +1,1221 @@
+{
+  "generated_at": "2026-09-11T04:48:57.737743+00:00",
+  "current_control": {
+    "path": "dump/2.bin",
+    "sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+    "amdsetup_body_sha256": "6f266c3c78a544d73eae5cea465756dd73e343fe16e2725d2300d08ba176d055",
+    "amdsetup_body_length": 2229,
+    "fields": {
+      "MemoryClockSpeed": {
+        "offset": "0x316",
+        "type": "u8",
+        "value": 255,
+        "raw_hex": "ff"
+      },
+      "Tcl": {
+        "offset": "0x317",
+        "type": "u8",
+        "value": 255,
+        "raw_hex": "ff"
+      },
+      "TrefControl": {
+        "offset": "0x324",
+        "type": "u8",
+        "value": 0,
+        "raw_hex": "00"
+      },
+      "TrfcPb": {
+        "offset": "0x327",
+        "type": "u8",
+        "value": 1,
+        "raw_hex": "01"
+      },
+      "UclkDiv1M0": {
+        "offset": "0x330",
+        "type": "u8",
+        "value": 255,
+        "raw_hex": "ff"
+      },
+      "DramTimingControl": {
+        "offset": "0x32F",
+        "type": "u8",
+        "value": 255,
+        "raw_hex": "ff"
+      },
+      "BankGroupSwap": {
+        "offset": "0x32D",
+        "type": "u8",
+        "value": 255,
+        "raw_hex": "ff"
+      },
+      "PhyPowerSaving": {
+        "offset": "0x368",
+        "type": "u8",
+        "value": 255,
+        "raw_hex": "ff"
+      },
+      "MemoryPstate": {
+        "offset": "0x36D",
+        "type": "u8",
+        "value": 255,
+        "raw_hex": "ff"
+      },
+      "FclkDpm": {
+        "offset": "0x6A3",
+        "type": "u8",
+        "value": 15,
+        "raw_hex": "0f"
+      },
+      "VddcrVddOffsetControl": {
+        "offset": "0x6E5",
+        "type": "u8",
+        "value": 0,
+        "raw_hex": "00"
+      },
+      "VddcrVddOffset": {
+        "offset": "0x6E6",
+        "type": "u32",
+        "value": 0,
+        "raw_hex": "00000000"
+      },
+      "VddcrGfxOffsetControl": {
+        "offset": "0x6EA",
+        "type": "u8",
+        "value": 0,
+        "raw_hex": "00"
+      },
+      "VddcrGfxOffset": {
+        "offset": "0x6EB",
+        "type": "u32",
+        "value": 0,
+        "raw_hex": "00000000"
+      },
+      "ForceCpuFreq": {
+        "offset": "0x701",
+        "type": "u16",
+        "value": 3600,
+        "raw_hex": "100e"
+      },
+      "DfClockOverrideControl": {
+        "offset": "0x703",
+        "type": "u8",
+        "value": 255,
+        "raw_hex": "ff"
+      },
+      "DfClockOvrd": {
+        "offset": "0x704",
+        "type": "u16",
+        "value": 1000,
+        "raw_hex": "e803"
+      },
+      "FastPpt": {
+        "offset": "0x70C",
+        "type": "u32",
+        "value": 88000,
+        "raw_hex": "c0570100"
+      },
+      "SlowPpt": {
+        "offset": "0x710",
+        "type": "u32",
+        "value": 65000,
+        "raw_hex": "e8fd0000"
+      },
+      "SlowPptTime": {
+        "offset": "0x714",
+        "type": "u32",
+        "value": 5,
+        "raw_hex": "05000000"
+      },
+      "VrmCurrent": {
+        "offset": "0x718",
+        "type": "u32",
+        "value": 65000,
+        "raw_hex": "e8fd0000"
+      },
+      "VrmMaximum": {
+        "offset": "0x71C",
+        "type": "u32",
+        "value": 95000,
+        "raw_hex": "18730100"
+      },
+      "TpdControl": {
+        "offset": "0x343",
+        "type": "u8",
+        "value": 255,
+        "raw_hex": "ff"
+      },
+      "Tpd": {
+        "offset": "0x344",
+        "type": "u8",
+        "value": 1,
+        "raw_hex": "01"
+      },
+      "Cmd2T": {
+        "offset": "0x346",
+        "type": "u8",
+        "value": 255,
+        "raw_hex": "ff"
+      },
+      "GearDown": {
+        "offset": "0x34C",
+        "type": "u8",
+        "value": 255,
+        "raw_hex": "ff"
+      }
+    },
+    "field_source": "AmdSetup NVAR body at flash 0x4CF in dump/2.bin; values are observed bytes, semantic units rely on IFR/source mapping."
+  },
+  "profiles": [
+    {
+      "name": "01_BC250_SYNC_FclkUclk_1to1_Mclk1750_StockCPU.bin",
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/oc_profiles/01_BC250_SYNC_FclkUclk_1to1_Mclk1750_StockCPU.bin",
+      "sha256": "83f3ee5b5bad1659191e984f6bb50abf7e7aa008aac53f01b5c79fddf7f03ada",
+      "md5": "5588a63fa0ec2175e99433fe85234a7a",
+      "size": 16777216,
+      "psp": {
+        "count": 19,
+        "checksum_match": true,
+        "offset": 9306112
+      },
+      "bhd": {
+        "count": 4,
+        "checksum_match": true,
+        "offset": 11206656
+      },
+      "apcb": {
+        "offset": 11210752,
+        "size": 2972,
+        "checksum_match": true,
+        "stored_checksum_byte": "0xC0",
+        "calculated_checksum_byte": "0xC0",
+        "group_count": 6,
+        "dfg_words": {
+          "0x130": "0x001FFF00",
+          "0x16C": "0x001FFF00"
+        }
+      },
+      "uefi_executable_body_count": 233,
+      "amdsetup": {
+        "record_body_sha256": "a6808a7f891ec1103fe24151e95642b213a5632add970f0e96c9a2b31d82ff88",
+        "body_diff_byte_count_vs_current_dump": 16,
+        "body_diff_ranges": [
+          {
+            "start": "0x316",
+            "end": "0x316"
+          },
+          {
+            "start": "0x32d",
+            "end": "0x32d"
+          },
+          {
+            "start": "0x330",
+            "end": "0x330"
+          },
+          {
+            "start": "0x6a3",
+            "end": "0x6a3"
+          },
+          {
+            "start": "0x703",
+            "end": "0x704"
+          },
+          {
+            "start": "0x70c",
+            "end": "0x70d"
+          },
+          {
+            "start": "0x710",
+            "end": "0x712"
+          },
+          {
+            "start": "0x718",
+            "end": "0x71a"
+          },
+          {
+            "start": "0x71c",
+            "end": "0x71d"
+          }
+        ],
+        "fields": {
+          "MemoryClockSpeed": {
+            "offset": "0x316",
+            "type": "u8",
+            "value": 35,
+            "raw_hex": "23",
+            "changed_vs_current_dump": true
+          },
+          "Tcl": {
+            "offset": "0x317",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "TrefControl": {
+            "offset": "0x324",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": false
+          },
+          "TrfcPb": {
+            "offset": "0x327",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": false
+          },
+          "UclkDiv1M0": {
+            "offset": "0x330",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": true
+          },
+          "DramTimingControl": {
+            "offset": "0x32F",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "BankGroupSwap": {
+            "offset": "0x32D",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": true
+          },
+          "PhyPowerSaving": {
+            "offset": "0x368",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "MemoryPstate": {
+            "offset": "0x36D",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "FclkDpm": {
+            "offset": "0x6A3",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": true
+          },
+          "VddcrVddOffsetControl": {
+            "offset": "0x6E5",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": false
+          },
+          "VddcrVddOffset": {
+            "offset": "0x6E6",
+            "type": "u32",
+            "value": 0,
+            "raw_hex": "00000000",
+            "changed_vs_current_dump": false
+          },
+          "VddcrGfxOffsetControl": {
+            "offset": "0x6EA",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": false
+          },
+          "VddcrGfxOffset": {
+            "offset": "0x6EB",
+            "type": "u32",
+            "value": 0,
+            "raw_hex": "00000000",
+            "changed_vs_current_dump": false
+          },
+          "ForceCpuFreq": {
+            "offset": "0x701",
+            "type": "u16",
+            "value": 3600,
+            "raw_hex": "100e",
+            "changed_vs_current_dump": false
+          },
+          "DfClockOverrideControl": {
+            "offset": "0x703",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": true
+          },
+          "DfClockOvrd": {
+            "offset": "0x704",
+            "type": "u16",
+            "value": 875,
+            "raw_hex": "6b03",
+            "changed_vs_current_dump": true
+          },
+          "FastPpt": {
+            "offset": "0x70C",
+            "type": "u32",
+            "value": 105000,
+            "raw_hex": "289a0100",
+            "changed_vs_current_dump": true
+          },
+          "SlowPpt": {
+            "offset": "0x710",
+            "type": "u32",
+            "value": 85000,
+            "raw_hex": "084c0100",
+            "changed_vs_current_dump": true
+          },
+          "SlowPptTime": {
+            "offset": "0x714",
+            "type": "u32",
+            "value": 5,
+            "raw_hex": "05000000",
+            "changed_vs_current_dump": false
+          },
+          "VrmCurrent": {
+            "offset": "0x718",
+            "type": "u32",
+            "value": 75000,
+            "raw_hex": "f8240100",
+            "changed_vs_current_dump": true
+          },
+          "VrmMaximum": {
+            "offset": "0x71C",
+            "type": "u32",
+            "value": 100000,
+            "raw_hex": "a0860100",
+            "changed_vs_current_dump": true
+          },
+          "TpdControl": {
+            "offset": "0x343",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "Tpd": {
+            "offset": "0x344",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": false
+          },
+          "Cmd2T": {
+            "offset": "0x346",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "GearDown": {
+            "offset": "0x34C",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          }
+        }
+      }
+    },
+    {
+      "name": "02_BC250_SYNC_Full_1to1to1_1333MHz_StockCPU.bin",
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/oc_profiles/02_BC250_SYNC_Full_1to1to1_1333MHz_StockCPU.bin",
+      "sha256": "12c260bc1500f71edd2a5fe249fe43f76601cbaa9ac48d78d40e261c6684e47f",
+      "md5": "0b2dc3e2b1ab6819ff4428faaddd1c75",
+      "size": 16777216,
+      "psp": {
+        "count": 19,
+        "checksum_match": true,
+        "offset": 9306112
+      },
+      "bhd": {
+        "count": 4,
+        "checksum_match": true,
+        "offset": 11206656
+      },
+      "apcb": {
+        "offset": 11210752,
+        "size": 2972,
+        "checksum_match": true,
+        "stored_checksum_byte": "0xC0",
+        "calculated_checksum_byte": "0xC0",
+        "group_count": 6,
+        "dfg_words": {
+          "0x130": "0x001FFF00",
+          "0x16C": "0x001FFF00"
+        }
+      },
+      "uefi_executable_body_count": 233,
+      "amdsetup": {
+        "record_body_sha256": "ead82d341f5f241bd4f3ed3ed107990d9da8184ff77dd5fdc463e7501d5b371b",
+        "body_diff_byte_count_vs_current_dump": 18,
+        "body_diff_ranges": [
+          {
+            "start": "0x316",
+            "end": "0x316"
+          },
+          {
+            "start": "0x32d",
+            "end": "0x32d"
+          },
+          {
+            "start": "0x330",
+            "end": "0x330"
+          },
+          {
+            "start": "0x6a3",
+            "end": "0x6a3"
+          },
+          {
+            "start": "0x6e5",
+            "end": "0x6e6"
+          },
+          {
+            "start": "0x703",
+            "end": "0x705"
+          },
+          {
+            "start": "0x70d",
+            "end": "0x70d"
+          },
+          {
+            "start": "0x710",
+            "end": "0x712"
+          },
+          {
+            "start": "0x718",
+            "end": "0x71a"
+          },
+          {
+            "start": "0x71c",
+            "end": "0x71d"
+          }
+        ],
+        "fields": {
+          "MemoryClockSpeed": {
+            "offset": "0x316",
+            "type": "u8",
+            "value": 26,
+            "raw_hex": "1a",
+            "changed_vs_current_dump": true
+          },
+          "Tcl": {
+            "offset": "0x317",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "TrefControl": {
+            "offset": "0x324",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": false
+          },
+          "TrfcPb": {
+            "offset": "0x327",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": false
+          },
+          "UclkDiv1M0": {
+            "offset": "0x330",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": true
+          },
+          "DramTimingControl": {
+            "offset": "0x32F",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "BankGroupSwap": {
+            "offset": "0x32D",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": true
+          },
+          "PhyPowerSaving": {
+            "offset": "0x368",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "MemoryPstate": {
+            "offset": "0x36D",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "FclkDpm": {
+            "offset": "0x6A3",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": true
+          },
+          "VddcrVddOffsetControl": {
+            "offset": "0x6E5",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": true
+          },
+          "VddcrVddOffset": {
+            "offset": "0x6E6",
+            "type": "u32",
+            "value": 35,
+            "raw_hex": "23000000",
+            "changed_vs_current_dump": true
+          },
+          "VddcrGfxOffsetControl": {
+            "offset": "0x6EA",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": false
+          },
+          "VddcrGfxOffset": {
+            "offset": "0x6EB",
+            "type": "u32",
+            "value": 0,
+            "raw_hex": "00000000",
+            "changed_vs_current_dump": false
+          },
+          "ForceCpuFreq": {
+            "offset": "0x701",
+            "type": "u16",
+            "value": 3600,
+            "raw_hex": "100e",
+            "changed_vs_current_dump": false
+          },
+          "DfClockOverrideControl": {
+            "offset": "0x703",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": true
+          },
+          "DfClockOvrd": {
+            "offset": "0x704",
+            "type": "u16",
+            "value": 1333,
+            "raw_hex": "3505",
+            "changed_vs_current_dump": true
+          },
+          "FastPpt": {
+            "offset": "0x70C",
+            "type": "u32",
+            "value": 120000,
+            "raw_hex": "c0d40100",
+            "changed_vs_current_dump": true
+          },
+          "SlowPpt": {
+            "offset": "0x710",
+            "type": "u32",
+            "value": 95000,
+            "raw_hex": "18730100",
+            "changed_vs_current_dump": true
+          },
+          "SlowPptTime": {
+            "offset": "0x714",
+            "type": "u32",
+            "value": 5,
+            "raw_hex": "05000000",
+            "changed_vs_current_dump": false
+          },
+          "VrmCurrent": {
+            "offset": "0x718",
+            "type": "u32",
+            "value": 80000,
+            "raw_hex": "80380100",
+            "changed_vs_current_dump": true
+          },
+          "VrmMaximum": {
+            "offset": "0x71C",
+            "type": "u32",
+            "value": 110000,
+            "raw_hex": "b0ad0100",
+            "changed_vs_current_dump": true
+          },
+          "TpdControl": {
+            "offset": "0x343",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "Tpd": {
+            "offset": "0x344",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": false
+          },
+          "Cmd2T": {
+            "offset": "0x346",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "GearDown": {
+            "offset": "0x34C",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          }
+        }
+      }
+    },
+    {
+      "name": "03_BC250_SYNC_Full_1to1to1_1750MHz_StockCPU.bin",
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/oc_profiles/03_BC250_SYNC_Full_1to1to1_1750MHz_StockCPU.bin",
+      "sha256": "9ddd793337d0a6a9732bf985b0596e2d5e7a40bd92f55d612d7753dc65801b58",
+      "md5": "e7641dfa433a4d97d12f952b1cc677be",
+      "size": 16777216,
+      "psp": {
+        "count": 19,
+        "checksum_match": true,
+        "offset": 9306112
+      },
+      "bhd": {
+        "count": 4,
+        "checksum_match": true,
+        "offset": 11206656
+      },
+      "apcb": {
+        "offset": 11210752,
+        "size": 2972,
+        "checksum_match": true,
+        "stored_checksum_byte": "0xC0",
+        "calculated_checksum_byte": "0xC0",
+        "group_count": 6,
+        "dfg_words": {
+          "0x130": "0x001FFF00",
+          "0x16C": "0x001FFF00"
+        }
+      },
+      "uefi_executable_body_count": 233,
+      "amdsetup": {
+        "record_body_sha256": "d1b8c82a26cf1d44d47aba766dc66853e05b7e39702e1e4f504a7ad43e4e6940",
+        "body_diff_byte_count_vs_current_dump": 19,
+        "body_diff_ranges": [
+          {
+            "start": "0x316",
+            "end": "0x316"
+          },
+          {
+            "start": "0x32d",
+            "end": "0x32d"
+          },
+          {
+            "start": "0x330",
+            "end": "0x330"
+          },
+          {
+            "start": "0x6a3",
+            "end": "0x6a3"
+          },
+          {
+            "start": "0x6e5",
+            "end": "0x6e6"
+          },
+          {
+            "start": "0x703",
+            "end": "0x705"
+          },
+          {
+            "start": "0x70c",
+            "end": "0x70d"
+          },
+          {
+            "start": "0x710",
+            "end": "0x712"
+          },
+          {
+            "start": "0x718",
+            "end": "0x71a"
+          },
+          {
+            "start": "0x71c",
+            "end": "0x71d"
+          }
+        ],
+        "fields": {
+          "MemoryClockSpeed": {
+            "offset": "0x316",
+            "type": "u8",
+            "value": 35,
+            "raw_hex": "23",
+            "changed_vs_current_dump": true
+          },
+          "Tcl": {
+            "offset": "0x317",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "TrefControl": {
+            "offset": "0x324",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": false
+          },
+          "TrfcPb": {
+            "offset": "0x327",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": false
+          },
+          "UclkDiv1M0": {
+            "offset": "0x330",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": true
+          },
+          "DramTimingControl": {
+            "offset": "0x32F",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "BankGroupSwap": {
+            "offset": "0x32D",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": true
+          },
+          "PhyPowerSaving": {
+            "offset": "0x368",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "MemoryPstate": {
+            "offset": "0x36D",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "FclkDpm": {
+            "offset": "0x6A3",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": true
+          },
+          "VddcrVddOffsetControl": {
+            "offset": "0x6E5",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": true
+          },
+          "VddcrVddOffset": {
+            "offset": "0x6E6",
+            "type": "u32",
+            "value": 80,
+            "raw_hex": "50000000",
+            "changed_vs_current_dump": true
+          },
+          "VddcrGfxOffsetControl": {
+            "offset": "0x6EA",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": false
+          },
+          "VddcrGfxOffset": {
+            "offset": "0x6EB",
+            "type": "u32",
+            "value": 0,
+            "raw_hex": "00000000",
+            "changed_vs_current_dump": false
+          },
+          "ForceCpuFreq": {
+            "offset": "0x701",
+            "type": "u16",
+            "value": 3600,
+            "raw_hex": "100e",
+            "changed_vs_current_dump": false
+          },
+          "DfClockOverrideControl": {
+            "offset": "0x703",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": true
+          },
+          "DfClockOvrd": {
+            "offset": "0x704",
+            "type": "u16",
+            "value": 1750,
+            "raw_hex": "d606",
+            "changed_vs_current_dump": true
+          },
+          "FastPpt": {
+            "offset": "0x70C",
+            "type": "u32",
+            "value": 130000,
+            "raw_hex": "d0fb0100",
+            "changed_vs_current_dump": true
+          },
+          "SlowPpt": {
+            "offset": "0x710",
+            "type": "u32",
+            "value": 105000,
+            "raw_hex": "289a0100",
+            "changed_vs_current_dump": true
+          },
+          "SlowPptTime": {
+            "offset": "0x714",
+            "type": "u32",
+            "value": 5,
+            "raw_hex": "05000000",
+            "changed_vs_current_dump": false
+          },
+          "VrmCurrent": {
+            "offset": "0x718",
+            "type": "u32",
+            "value": 90000,
+            "raw_hex": "905f0100",
+            "changed_vs_current_dump": true
+          },
+          "VrmMaximum": {
+            "offset": "0x71C",
+            "type": "u32",
+            "value": 120000,
+            "raw_hex": "c0d40100",
+            "changed_vs_current_dump": true
+          },
+          "TpdControl": {
+            "offset": "0x343",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "Tpd": {
+            "offset": "0x344",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": false
+          },
+          "Cmd2T": {
+            "offset": "0x346",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "GearDown": {
+            "offset": "0x34C",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          }
+        }
+      }
+    },
+    {
+      "name": "03_BC250_ULTIMATE_LOW_LATENCY_StockCPU.bin",
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/oc_profiles/03_BC250_ULTIMATE_LOW_LATENCY_StockCPU.bin",
+      "sha256": "578113a9c9c02f0ab98fa896cf61356664e1429f7054de3c308810bcd4770896",
+      "md5": "78a4201a9335456cf23692736e879ece",
+      "size": 16777216,
+      "psp": {
+        "count": 19,
+        "checksum_match": true,
+        "offset": 9306112
+      },
+      "bhd": {
+        "count": 4,
+        "checksum_match": true,
+        "offset": 11206656
+      },
+      "apcb": {
+        "offset": 11210752,
+        "size": 2972,
+        "checksum_match": true,
+        "stored_checksum_byte": "0xC0",
+        "calculated_checksum_byte": "0xC0",
+        "group_count": 6,
+        "dfg_words": {
+          "0x130": "0x001FFF00",
+          "0x16C": "0x001FFF00"
+        }
+      },
+      "uefi_executable_body_count": 233,
+      "amdsetup": {
+        "record_body_sha256": "58e51d6c8972d86a3d0b6d6602cb98a802faa7958c50226ba0482d772bef18e8",
+        "body_diff_byte_count_vs_current_dump": 21,
+        "body_diff_ranges": [
+          {
+            "start": "0x316",
+            "end": "0x316"
+          },
+          {
+            "start": "0x32d",
+            "end": "0x32d"
+          },
+          {
+            "start": "0x330",
+            "end": "0x330"
+          },
+          {
+            "start": "0x368",
+            "end": "0x368"
+          },
+          {
+            "start": "0x36d",
+            "end": "0x36d"
+          },
+          {
+            "start": "0x6a3",
+            "end": "0x6a3"
+          },
+          {
+            "start": "0x6e5",
+            "end": "0x6e6"
+          },
+          {
+            "start": "0x703",
+            "end": "0x705"
+          },
+          {
+            "start": "0x70c",
+            "end": "0x70d"
+          },
+          {
+            "start": "0x710",
+            "end": "0x712"
+          },
+          {
+            "start": "0x718",
+            "end": "0x71a"
+          },
+          {
+            "start": "0x71c",
+            "end": "0x71d"
+          }
+        ],
+        "fields": {
+          "MemoryClockSpeed": {
+            "offset": "0x316",
+            "type": "u8",
+            "value": 35,
+            "raw_hex": "23",
+            "changed_vs_current_dump": true
+          },
+          "Tcl": {
+            "offset": "0x317",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "TrefControl": {
+            "offset": "0x324",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": false
+          },
+          "TrfcPb": {
+            "offset": "0x327",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": false
+          },
+          "UclkDiv1M0": {
+            "offset": "0x330",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": true
+          },
+          "DramTimingControl": {
+            "offset": "0x32F",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "BankGroupSwap": {
+            "offset": "0x32D",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": true
+          },
+          "PhyPowerSaving": {
+            "offset": "0x368",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": true
+          },
+          "MemoryPstate": {
+            "offset": "0x36D",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": true
+          },
+          "FclkDpm": {
+            "offset": "0x6A3",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": true
+          },
+          "VddcrVddOffsetControl": {
+            "offset": "0x6E5",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": true
+          },
+          "VddcrVddOffset": {
+            "offset": "0x6E6",
+            "type": "u32",
+            "value": 100,
+            "raw_hex": "64000000",
+            "changed_vs_current_dump": true
+          },
+          "VddcrGfxOffsetControl": {
+            "offset": "0x6EA",
+            "type": "u8",
+            "value": 0,
+            "raw_hex": "00",
+            "changed_vs_current_dump": false
+          },
+          "VddcrGfxOffset": {
+            "offset": "0x6EB",
+            "type": "u32",
+            "value": 0,
+            "raw_hex": "00000000",
+            "changed_vs_current_dump": false
+          },
+          "ForceCpuFreq": {
+            "offset": "0x701",
+            "type": "u16",
+            "value": 3600,
+            "raw_hex": "100e",
+            "changed_vs_current_dump": false
+          },
+          "DfClockOverrideControl": {
+            "offset": "0x703",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": true
+          },
+          "DfClockOvrd": {
+            "offset": "0x704",
+            "type": "u16",
+            "value": 1400,
+            "raw_hex": "7805",
+            "changed_vs_current_dump": true
+          },
+          "FastPpt": {
+            "offset": "0x70C",
+            "type": "u32",
+            "value": 130000,
+            "raw_hex": "d0fb0100",
+            "changed_vs_current_dump": true
+          },
+          "SlowPpt": {
+            "offset": "0x710",
+            "type": "u32",
+            "value": 105000,
+            "raw_hex": "289a0100",
+            "changed_vs_current_dump": true
+          },
+          "SlowPptTime": {
+            "offset": "0x714",
+            "type": "u32",
+            "value": 5,
+            "raw_hex": "05000000",
+            "changed_vs_current_dump": false
+          },
+          "VrmCurrent": {
+            "offset": "0x718",
+            "type": "u32",
+            "value": 95000,
+            "raw_hex": "18730100",
+            "changed_vs_current_dump": true
+          },
+          "VrmMaximum": {
+            "offset": "0x71C",
+            "type": "u32",
+            "value": 120000,
+            "raw_hex": "c0d40100",
+            "changed_vs_current_dump": true
+          },
+          "TpdControl": {
+            "offset": "0x343",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "Tpd": {
+            "offset": "0x344",
+            "type": "u8",
+            "value": 1,
+            "raw_hex": "01",
+            "changed_vs_current_dump": false
+          },
+          "Cmd2T": {
+            "offset": "0x346",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          },
+          "GearDown": {
+            "offset": "0x34C",
+            "type": "u8",
+            "value": 255,
+            "raw_hex": "ff",
+            "changed_vs_current_dump": false
+          }
+        }
+      }
+    }
+  ],
+  "conclusions": [
+    "These are historical imported profile images, not fresh current reads and not approved flash candidates.",
+    "All four parse structurally with PSP/BHD/APCB checksums matching, but their APCB size/PSP body hashes and full-image provenance differ from the current dump; a clean parser result does not prove PSP acceptance or bootability.",
+    "The profiles modify the AmdSetup NVAR body at documented offsets, including memory/FCLK/UCLK/SoC-voltage-related fields. Their values are static bytes only; no live-clock, voltage, training, stability, or hardware result is established.",
+    "A new candidate must be derived from two matching fresh reads of the actual target, with one variable per test and separate VCN/memory artifacts."
+  ],
+  "evidence_class": "observed-bytes/static-analysis"
+}

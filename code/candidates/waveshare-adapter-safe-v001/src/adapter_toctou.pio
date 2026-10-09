@@ -1,0 +1,31 @@
+; PIO building blocks for the Waveshare BC250 TOCTOU adapter.
+; Host code owns trigger/window/order and must disarm all SMs before rollback.
+.program toctou_cs_repeater
+.side_set 2 opt
+.wrap_target
+wait_cs:
+    jmp pin, wait_cs side 0
+    nop side 1
+.wrap
+.program toctou_spi_sniffer
+.wrap_target
+    wait 0 pin 0
+bitloop:
+    wait 1 pin 1
+    in pins, 1
+    wait 0 pin 1
+    jmp x--, bitloop
+    push block
+    wait 1 pin 0
+.wrap
+.program toctou_cs_switcher
+.wrap_target
+switch_wait:
+    pull block
+    mov x, osr
+    jmp x != y, switch_wait
+    set pindirs, 1
+window:
+    jmp y--, window
+    set pindirs, 0
+.wrap

@@ -1,0 +1,90 @@
+{
+  "task": "reuse existing programmer stack rather than invent host protocol",
+  "sources": [
+    {
+      "repo": "stacksmashing/pico-serprog",
+      "url": "https://github.com/stacksmashing/pico-serprog",
+      "commit": "7f4c4b7c948ee774bdb7e5b2040d67154c8916f8",
+      "license": "GPL-3.0",
+      "files_sha256": {
+        "README.md": "4c64994cc0913834e47cb95e7b2abe15c9dfa8e269fbb5bade048bd1cacdfe4a",
+        "CMakeLists.txt": "3b728219c68b6c6992be02b3812325d2fc0194018349b076eb233e77a945e849",
+        "main.c": "5848e0404d5b5566630bbcb434c57151c4494a091c8f484499ccf1b87da523ae",
+        "spi.h": "32cdf4e4fd73c57e8036fab5b4b6fb49d2e63788150e9b4d1ffd6b27280d1a78"
+      },
+      "state": "ADAPT_PROTOCOL_AFTER_REVIEW",
+      "observed": [
+        "standard serprog supported by existing flashrom",
+        "blocking I/O loops unsuitable for concurrent audio/network",
+        "master outputs enabled on startup",
+        "RP2350/Waveshare/composite CDC compatibility not proven"
+      ],
+      "adoption_performed": false
+    },
+    {
+      "repo": "opensensor/pico-serprog",
+      "url": "https://github.com/opensensor/pico-serprog",
+      "commit": "3e05d27d5b2c008cf83a0ce84fc53dcdd7f11e38",
+      "license": "GPL-3.0",
+      "files_sha256": {
+        "CMakeLists.txt": "eeba05803c5d862dff4762f4de9faf94a2453baf32ac52e555c3171e7fbdade2",
+        "main.c": "bb62a471563b79c54512ef8236bb879d9928f94483a9889b8a4cf5159e9de5ae"
+      },
+      "state": "ADAPT_PROTOCOL_AFTER_REVIEW",
+      "observed": [
+        "standard serprog supported by existing flashrom",
+        "blocking I/O loops unsuitable for concurrent audio/network",
+        "master outputs enabled on startup",
+        "RP2350/Waveshare/composite CDC compatibility not proven"
+      ],
+      "adoption_performed": false
+    },
+    {
+      "repo": "kukrimate/pico-serprog",
+      "url": "https://github.com/kukrimate/pico-serprog",
+      "commit": "5e8af1ba7dcf629fbf8bbcb44cd44d35d3d5bda6",
+      "license": "GPL-3.0",
+      "files_sha256": {
+        "CMakeLists.txt": "eeba05803c5d862dff4762f4de9faf94a2453baf32ac52e555c3171e7fbdade2",
+        "main.c": "a7ccb59f3de1d31660b9f26cfc03bc3f468f6f2542d5df330e64cf2a28b5b458"
+      },
+      "state": "ADAPT_PROTOCOL_AFTER_REVIEW",
+      "observed": [
+        "standard serprog supported by existing flashrom",
+        "blocking I/O loops unsuitable for concurrent audio/network",
+        "master outputs enabled on startup",
+        "RP2350/Waveshare/composite CDC compatibility not proven"
+      ],
+      "adoption_performed": false
+    }
+  ],
+  "existing_local_flashrom": "v1.8.0",
+  "physical_operation": false,
+  "decision": "Use standard flashrom/serprog as preferred host interoperability; do not flash unmodified standalone programmer or remove image/isolation guards. Investigate bounded diagnostic-only integration before adopting.",
+  "next_check": "inspect pinned PIO/TinyUSB implementations, licenses and coexistence; prove adapter compatibility with mocked standard protocol before any hardware writes",
+  "compatibility_trial": {
+    "repo": "stacksmashing/pico-serprog",
+    "commit": "7f4c4b7c948ee774bdb7e5b2040d67154c8916f8",
+    "board": "pico2",
+    "MCU": "RP2350 ARM-S",
+    "sdk_path": "/home/OWNER/pico-bc250/lib/pico-sdk",
+    "configure_exit": 0,
+    "build_exit": 0,
+    "UF2_sha256": "a240be2bf292ba61f78ee724da5f7a3087441813f845417d913ba60551d01515",
+    "UF2_size": 66560,
+    "flashed": false,
+    "Waveshare_composite_coexistence_verified": false,
+    "outputs_enabled_at_startup": true,
+    "usable_in_current_adapter_without_changes": false
+  },
+  "protocol_mapping": {
+    "existing_upstream": "serprog S_CMD_O_SPIOP + Q_CMDMAP + S_SPI_FREQ",
+    "current_adapter": "fixed VERSION/STATUS/FLASH_* CDC framing with CRC approval/sector frames",
+    "decision": "do not pretend current CDC is serprog; next adapter should expose bounded diagnostic subset or host proxy while preserving authority gates",
+    "not_implemented": [
+      "serprog binary dispatcher",
+      "flashrom live transport",
+      "hardware isolation/readback"
+    ]
+  }
+}

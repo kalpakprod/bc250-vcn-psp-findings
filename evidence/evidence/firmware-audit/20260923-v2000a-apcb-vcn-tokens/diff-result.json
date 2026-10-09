@@ -1,0 +1,92 @@
+{
+  "scope": "v2000a vs BC250: VCN-relevant APCB/config tokens, static read-only analysis",
+  "images": {
+    "v2000a_M": "import/from-windows/Users/kukuruza/tmp_bc250/recon/v2000a/V2000A_M.fd (786432 B)",
+    "v2000a_S": "import/from-windows/Users/kukuruza/tmp_bc250/recon/v2000a/V2000A_S.fd (589824 B)",
+    "BC250_clv": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin (16777216 B, sha256 ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8)"
+  },
+  "v2000a_apcb": {
+    "found": false,
+    "searched": [
+      "ASCII 'APCB'",
+      "ASCII '$APCB'",
+      "UTF-16LE 'APCB'",
+      "APOB (present, 18/10 hits M/S)"
+    ],
+    "hits": 0,
+    "note": "V2000A_M/S.fd are PSP-only recon dumps (576-768 KB); APCB is not in the corpus"
+  },
+  "v2000a_vcn_config_path": {
+    "delivery": "signed PSP policy carrier",
+    "carrier": "import/from-windows/Users/kukuruza/tmp_bc250/recon/v2000a/security_policy_RN_FP6_AM4_PspBl.sbin (11952 B)",
+    "hw_ip_config": {
+      "file": "import/from-windows/Users/kukuruza/tmp_bc250/recon/v2000a/HwIpCfg_RN_A0.body (1380 B)",
+      "signature": "0x28211407",
+      "vcn": {
+        "hw_id": 12,
+        "instance": 0,
+        "version": "2.2.0",
+        "harvest": 0,
+        "base_addresses": [
+          "0x00007800",
+          "0x00007e00",
+          "0x02403000"
+        ]
+      }
+    },
+    "gasket_bank": "import/from-windows/Users/kukuruza/tmp_bc250/recon/v2000a/vcn_gasket_bank.txt (56 writes 0x201/0x280 to MMIO 0x0900c2xx-0x0900cbxx)"
+  },
+  "bc250_apcb": {
+    "offset": "0xAB1000",
+    "header_bytes": "41504342200020009c0b0000051c0000c0000000000000000000000000000000",
+    "declared_size": 2972,
+    "groups_found": {
+      "DFG ": 0,
+      "MEMG": 0,
+      "PSPG": 0,
+      "FCHG": 0,
+      "CBSG": 0,
+      "note": "only a false 'UNKN' at 0xab1020 (gid 2823, size 1); parser may not match this APCB group encoding"
+    },
+    "vcn_ascii_markers": {
+      "VCN": 0,
+      "UVD": 0,
+      "VCE": 0,
+      "JPEG": 0,
+      "scope": "entire 16 MB image"
+    }
+  },
+  "bc250_hw_ip_config": {
+    "offset": "0x981a00",
+    "container": "PSP entry type 0x20 @ 0x981900 size 0x650 (blob at +0x100)",
+    "sha256_first_1380B": "bb6eddca78b571e1a1b9904a2fa462634ab1dd694f83c0caa2fd34ed426da579",
+    "signature": "0x28211407",
+    "ip_count": 38,
+    "vcn": {
+      "hw_id": 12,
+      "instance": 0,
+      "version": "2.0.3",
+      "harvest": 0,
+      "base_addresses": [
+        "0x00007800",
+        "0x00007e00",
+        "0x02403000"
+      ]
+    }
+  },
+  "diff_summary": [
+    "v2000a VCN 2.2.0 vs BC250 VCN 2.0.3, identical base addresses, harvest=0 on both",
+    "no VCN/UVD/VCE/JPEG ASCII tokens in either image",
+    "v2000a VCN config arrives via signed carrier + gasket bank, not via APCB",
+    "BC250 config already advertises VCN as present (harvest=0); nothing to enable in data"
+  ],
+  "verdict": {
+    "apcb_only_patch_viable": false,
+    "reason": "BC250 config data already reports VCN present; disablement is delivered via signed PSP carriers (0x24/0x45-class) and SMU, not via missing APCB tokens; BC250 APCB contains no VCN-relevant token to flip",
+    "uncertainty": [
+      "full v2000a BIOS with real APCB not in corpus; claim about v2000a APCB is based on the local PSP-only dumps",
+      "static analysis only; hardware validation of the type-0x20 carrier containing HwIpCfg not performed",
+      "BC250 APCB group encoding unconfirmed (no DFG/MEMG groups matched by the donor-script method)"
+    ]
+  }
+}

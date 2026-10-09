@@ -1,0 +1,71 @@
+{
+  "source": "/home/OWNER/orca/projects/bc250/evidence/hardware/ASRock AMD BC-250_ISL_X5R r1.00.cad",
+  "sha256": "decef01f78b7416bb1e51ffc7c9ea03a556a3b7e2443b98fd441ed92959c65d8",
+  "observed_nets": {
+    "U_TX": [
+      [
+        "J5",
+        "3"
+      ],
+      [
+        "R9557",
+        "1"
+      ]
+    ],
+    "RXD1": [
+      [
+        "R9557",
+        "2"
+      ],
+      [
+        "UIO1",
+        "33"
+      ]
+    ],
+    "U_RX": [
+      [
+        "J5",
+        "4"
+      ],
+      [
+        "R9558",
+        "1"
+      ]
+    ],
+    "TXD1": [
+      [
+        "R9558",
+        "2"
+      ],
+      [
+        "UIO1",
+        "34"
+      ]
+    ]
+  },
+  "finding": "Confirmed: AMD transmit is J5.4 U_RX via zero-ohm R9558 to NCT6686D pin34 SOUTA; J5.3 U_TX via R9557 to pin33 SINA is input. Header labels are external-adapter viewpoint.",
+  "datasheet_pin_direction_verified": true,
+  "electrical_acceptance": false,
+  "wiring_authorized": false,
+  "board_uart_transmit_pin": 4,
+  "board_uart_receive_pin": 3,
+  "datasheet": {
+    "url": "https://www.nuvoton.com/resource-files/NCT6686D_HW_Datasheet_V0_5.pdf",
+    "sha256": "792f2edb294e6376d88a32e59ecc3615ee97f5a0e7a6455567632198459557f2",
+    "revision": "0.5, 2017-04-21",
+    "section": "4.4 Serial Port Interface",
+    "output": "pin34 SOUTA O12p3 UART A Serial Output",
+    "input": "pin33 SINA INtp5 Serial Input",
+    "voltage_class": "O12p3 defined 3.3V in I/O type legend; electrical table inconsistently labels O12p3 as 5V, preserved as source discrepancy"
+  },
+  "design_voltage_evidence": {
+    "cad_supplies": {
+      "UIO1.1": "SIO+3V",
+      "UIO1.46": " +3VSB_A",
+      "UIO1.85": "+3VSB_A"
+    },
+    "vendor_output_type": "SOUTA pin34 O12p3, defined 3.3V output in section4 legend",
+    "conclusion": "3.3V UART output is documented at design level; isolated contradictory 5V table heading remains source inconsistency, not a measured 5V signal",
+    "specimen_measured": false
+  }
+}

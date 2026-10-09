@@ -1,0 +1,232 @@
+{
+  "status": "PASS",
+  "source": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "scope": "four voltage producer fields only, NOT actuator verification",
+  "fields": [
+    {
+      "token": "0x1363",
+      "amdsetup_offset": "0x6e5",
+      "width": 1,
+      "sites": [
+        {
+          "rom_offset": "0xe2d4a4",
+          "bytes": "ba631300008b45f86689108b4df88a510280e2fc8b45f88850028b4df88b55fc8a82e50600008841038b4df883c104894df8",
+          "decode_stdout": "\n/tmp/tmp_zavgzc_:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 63 13 00 00       \tmov    edx,0x1363\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  17:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1a:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  1d:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  20:\t8a 82 e5 06 00 00    \tmov    al,BYTE PTR [edx+0x6e5]\n  26:\t88 41 03             \tmov    BYTE PTR [ecx+0x3],al\n  29:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2c:\t83 c1 04             \tadd    ecx,0x4\n  2f:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe4c728",
+          "bytes": "ba631300008b45f86689108b4df88a510280e2fc8b45f88850028b4df88b55fc8a82e50600008841038b4df883c104894df8",
+          "decode_stdout": "\n/tmp/tmpgkormuf5:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 63 13 00 00       \tmov    edx,0x1363\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  17:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1a:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  1d:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  20:\t8a 82 e5 06 00 00    \tmov    al,BYTE PTR [edx+0x6e5]\n  26:\t88 41 03             \tmov    BYTE PTR [ecx+0x3],al\n  29:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2c:\t83 c1 04             \tadd    ecx,0x4\n  2f:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe6718c",
+          "bytes": "ba631300008b45f86689108b4df88a510280e2fc8b45f88850028b4df88b55fc8a82e50600008841038b4df883c104894df8",
+          "decode_stdout": "\n/tmp/tmp7izj92no:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 63 13 00 00       \tmov    edx,0x1363\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  17:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1a:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  1d:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  20:\t8a 82 e5 06 00 00    \tmov    al,BYTE PTR [edx+0x6e5]\n  26:\t88 41 03             \tmov    BYTE PTR [ecx+0x3],al\n  29:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2c:\t83 c1 04             \tadd    ecx,0x4\n  2f:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe81878",
+          "bytes": "ba631300008b45f86689108b4df88a510280e2fc8b45f88850028b4df88b55fc8a82e50600008841038b4df883c104894df8",
+          "decode_stdout": "\n/tmp/tmpuj021iag:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 63 13 00 00       \tmov    edx,0x1363\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  17:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1a:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  1d:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  20:\t8a 82 e5 06 00 00    \tmov    al,BYTE PTR [edx+0x6e5]\n  26:\t88 41 03             \tmov    BYTE PTR [ecx+0x3],al\n  29:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2c:\t83 c1 04             \tadd    ecx,0x4\n  2f:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe99420",
+          "bytes": "ba631300008b45f86689108b4df88a510280e2fc8b45f88850028b4df88b55fc8a82e50600008841038b4df883c104894df8",
+          "decode_stdout": "\n/tmp/tmp2sxtdn09:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 63 13 00 00       \tmov    edx,0x1363\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  17:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1a:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  1d:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  20:\t8a 82 e5 06 00 00    \tmov    al,BYTE PTR [edx+0x6e5]\n  26:\t88 41 03             \tmov    BYTE PTR [ecx+0x3],al\n  29:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2c:\t83 c1 04             \tadd    ecx,0x4\n  2f:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xeb2078",
+          "bytes": "ba631300008b45f86689108b4df88a510280e2fc8b45f88850028b4df88b55fc8a82e50600008841038b4df883c104894df8",
+          "decode_stdout": "\n/tmp/tmp6svshx9m:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 63 13 00 00       \tmov    edx,0x1363\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  17:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1a:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  1d:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  20:\t8a 82 e5 06 00 00    \tmov    al,BYTE PTR [edx+0x6e5]\n  26:\t88 41 03             \tmov    BYTE PTR [ecx+0x3],al\n  29:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2c:\t83 c1 04             \tadd    ecx,0x4\n  2f:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xec8450",
+          "bytes": "ba631300008b45f86689108b4df88a510280e2fc8b45f88850028b4df88b55fc8a82e50600008841038b4df883c104894df8",
+          "decode_stdout": "\n/tmp/tmphoyu03pi:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 63 13 00 00       \tmov    edx,0x1363\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  17:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1a:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  1d:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  20:\t8a 82 e5 06 00 00    \tmov    al,BYTE PTR [edx+0x6e5]\n  26:\t88 41 03             \tmov    BYTE PTR [ecx+0x3],al\n  29:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2c:\t83 c1 04             \tadd    ecx,0x4\n  2f:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        }
+      ]
+    },
+    {
+      "token": "0x1364",
+      "amdsetup_offset": "0x6e6",
+      "width": 4,
+      "sites": [
+        {
+          "rom_offset": "0xe2d4d6",
+          "bytes": "ba641300008b45f86689108b4df88a510280e2fc80ca028b45f88850028b4df88b55fc8b82e60600008941038b4df883c107894df8",
+          "decode_stdout": "\n/tmp/tmpgbzegq4_:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 64 13 00 00       \tmov    edx,0x1364\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t80 ca 02             \tor     dl,0x2\n  17:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  1a:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1d:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  20:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  23:\t8b 82 e6 06 00 00    \tmov    eax,DWORD PTR [edx+0x6e6]\n  29:\t89 41 03             \tmov    DWORD PTR [ecx+0x3],eax\n  2c:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2f:\t83 c1 07             \tadd    ecx,0x7\n  32:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe4c75a",
+          "bytes": "ba641300008b45f86689108b4df88a510280e2fc80ca028b45f88850028b4df88b55fc8b82e60600008941038b4df883c107894df8",
+          "decode_stdout": "\n/tmp/tmpy5fmb9co:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 64 13 00 00       \tmov    edx,0x1364\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t80 ca 02             \tor     dl,0x2\n  17:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  1a:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1d:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  20:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  23:\t8b 82 e6 06 00 00    \tmov    eax,DWORD PTR [edx+0x6e6]\n  29:\t89 41 03             \tmov    DWORD PTR [ecx+0x3],eax\n  2c:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2f:\t83 c1 07             \tadd    ecx,0x7\n  32:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe671be",
+          "bytes": "ba641300008b45f86689108b4df88a510280e2fc80ca028b45f88850028b4df88b55fc8b82e60600008941038b4df883c107894df8",
+          "decode_stdout": "\n/tmp/tmpgk7t0ceh:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 64 13 00 00       \tmov    edx,0x1364\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t80 ca 02             \tor     dl,0x2\n  17:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  1a:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1d:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  20:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  23:\t8b 82 e6 06 00 00    \tmov    eax,DWORD PTR [edx+0x6e6]\n  29:\t89 41 03             \tmov    DWORD PTR [ecx+0x3],eax\n  2c:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2f:\t83 c1 07             \tadd    ecx,0x7\n  32:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe818aa",
+          "bytes": "ba641300008b45f86689108b4df88a510280e2fc80ca028b45f88850028b4df88b55fc8b82e60600008941038b4df883c107894df8",
+          "decode_stdout": "\n/tmp/tmp43fxlooz:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 64 13 00 00       \tmov    edx,0x1364\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t80 ca 02             \tor     dl,0x2\n  17:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  1a:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1d:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  20:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  23:\t8b 82 e6 06 00 00    \tmov    eax,DWORD PTR [edx+0x6e6]\n  29:\t89 41 03             \tmov    DWORD PTR [ecx+0x3],eax\n  2c:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2f:\t83 c1 07             \tadd    ecx,0x7\n  32:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe99452",
+          "bytes": "ba641300008b45f86689108b4df88a510280e2fc80ca028b45f88850028b4df88b55fc8b82e60600008941038b4df883c107894df8",
+          "decode_stdout": "\n/tmp/tmpdjf6jk_m:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 64 13 00 00       \tmov    edx,0x1364\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t80 ca 02             \tor     dl,0x2\n  17:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  1a:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1d:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  20:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  23:\t8b 82 e6 06 00 00    \tmov    eax,DWORD PTR [edx+0x6e6]\n  29:\t89 41 03             \tmov    DWORD PTR [ecx+0x3],eax\n  2c:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2f:\t83 c1 07             \tadd    ecx,0x7\n  32:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xeb20aa",
+          "bytes": "ba641300008b45f86689108b4df88a510280e2fc80ca028b45f88850028b4df88b55fc8b82e60600008941038b4df883c107894df8",
+          "decode_stdout": "\n/tmp/tmp9me6960z:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 64 13 00 00       \tmov    edx,0x1364\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t80 ca 02             \tor     dl,0x2\n  17:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  1a:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1d:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  20:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  23:\t8b 82 e6 06 00 00    \tmov    eax,DWORD PTR [edx+0x6e6]\n  29:\t89 41 03             \tmov    DWORD PTR [ecx+0x3],eax\n  2c:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2f:\t83 c1 07             \tadd    ecx,0x7\n  32:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xec8482",
+          "bytes": "ba641300008b45f86689108b4df88a510280e2fc80ca028b45f88850028b4df88b55fc8b82e60600008941038b4df883c107894df8",
+          "decode_stdout": "\n/tmp/tmp3kifb2ar:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 64 13 00 00       \tmov    edx,0x1364\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t80 ca 02             \tor     dl,0x2\n  17:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  1a:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1d:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  20:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  23:\t8b 82 e6 06 00 00    \tmov    eax,DWORD PTR [edx+0x6e6]\n  29:\t89 41 03             \tmov    DWORD PTR [ecx+0x3],eax\n  2c:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2f:\t83 c1 07             \tadd    ecx,0x7\n  32:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        }
+      ]
+    },
+    {
+      "token": "0x1365",
+      "amdsetup_offset": "0x6ea",
+      "width": 1,
+      "sites": [
+        {
+          "rom_offset": "0xe2d50b",
+          "bytes": "ba651300008b45f86689108b4df88a510280e2fc8b45f88850028b4df88b55fc8a82ea0600008841038b4df883c104894df8",
+          "decode_stdout": "\n/tmp/tmp9odz7rll:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 65 13 00 00       \tmov    edx,0x1365\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  17:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1a:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  1d:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  20:\t8a 82 ea 06 00 00    \tmov    al,BYTE PTR [edx+0x6ea]\n  26:\t88 41 03             \tmov    BYTE PTR [ecx+0x3],al\n  29:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2c:\t83 c1 04             \tadd    ecx,0x4\n  2f:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe4c78f",
+          "bytes": "ba651300008b45f86689108b4df88a510280e2fc8b45f88850028b4df88b55fc8a82ea0600008841038b4df883c104894df8",
+          "decode_stdout": "\n/tmp/tmp7yj4t5fh:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 65 13 00 00       \tmov    edx,0x1365\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  17:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1a:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  1d:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  20:\t8a 82 ea 06 00 00    \tmov    al,BYTE PTR [edx+0x6ea]\n  26:\t88 41 03             \tmov    BYTE PTR [ecx+0x3],al\n  29:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2c:\t83 c1 04             \tadd    ecx,0x4\n  2f:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe671f3",
+          "bytes": "ba651300008b45f86689108b4df88a510280e2fc8b45f88850028b4df88b55fc8a82ea0600008841038b4df883c104894df8",
+          "decode_stdout": "\n/tmp/tmpr5nci0s7:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 65 13 00 00       \tmov    edx,0x1365\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  17:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1a:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  1d:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  20:\t8a 82 ea 06 00 00    \tmov    al,BYTE PTR [edx+0x6ea]\n  26:\t88 41 03             \tmov    BYTE PTR [ecx+0x3],al\n  29:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2c:\t83 c1 04             \tadd    ecx,0x4\n  2f:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe818df",
+          "bytes": "ba651300008b45f86689108b4df88a510280e2fc8b45f88850028b4df88b55fc8a82ea0600008841038b4df883c104894df8",
+          "decode_stdout": "\n/tmp/tmpn6poce38:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 65 13 00 00       \tmov    edx,0x1365\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  17:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1a:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  1d:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  20:\t8a 82 ea 06 00 00    \tmov    al,BYTE PTR [edx+0x6ea]\n  26:\t88 41 03             \tmov    BYTE PTR [ecx+0x3],al\n  29:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2c:\t83 c1 04             \tadd    ecx,0x4\n  2f:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe99487",
+          "bytes": "ba651300008b45f86689108b4df88a510280e2fc8b45f88850028b4df88b55fc8a82ea0600008841038b4df883c104894df8",
+          "decode_stdout": "\n/tmp/tmptzodhj_y:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 65 13 00 00       \tmov    edx,0x1365\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  17:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1a:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  1d:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  20:\t8a 82 ea 06 00 00    \tmov    al,BYTE PTR [edx+0x6ea]\n  26:\t88 41 03             \tmov    BYTE PTR [ecx+0x3],al\n  29:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2c:\t83 c1 04             \tadd    ecx,0x4\n  2f:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xeb20df",
+          "bytes": "ba651300008b45f86689108b4df88a510280e2fc8b45f88850028b4df88b55fc8a82ea0600008841038b4df883c104894df8",
+          "decode_stdout": "\n/tmp/tmpif9tw778:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 65 13 00 00       \tmov    edx,0x1365\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  17:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1a:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  1d:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  20:\t8a 82 ea 06 00 00    \tmov    al,BYTE PTR [edx+0x6ea]\n  26:\t88 41 03             \tmov    BYTE PTR [ecx+0x3],al\n  29:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2c:\t83 c1 04             \tadd    ecx,0x4\n  2f:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xec84b7",
+          "bytes": "ba651300008b45f86689108b4df88a510280e2fc8b45f88850028b4df88b55fc8a82ea0600008841038b4df883c104894df8",
+          "decode_stdout": "\n/tmp/tmp1e2gd775:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 65 13 00 00       \tmov    edx,0x1365\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  17:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1a:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  1d:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  20:\t8a 82 ea 06 00 00    \tmov    al,BYTE PTR [edx+0x6ea]\n  26:\t88 41 03             \tmov    BYTE PTR [ecx+0x3],al\n  29:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2c:\t83 c1 04             \tadd    ecx,0x4\n  2f:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        }
+      ]
+    },
+    {
+      "token": "0x1366",
+      "amdsetup_offset": "0x6eb",
+      "width": 4,
+      "sites": [
+        {
+          "rom_offset": "0xe2d53d",
+          "bytes": "ba661300008b45f86689108b4df88a510280e2fc80ca028b45f88850028b4df88b55fc8b82eb0600008941038b4df883c107894df8",
+          "decode_stdout": "\n/tmp/tmpzo4itro4:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 66 13 00 00       \tmov    edx,0x1366\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t80 ca 02             \tor     dl,0x2\n  17:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  1a:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1d:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  20:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  23:\t8b 82 eb 06 00 00    \tmov    eax,DWORD PTR [edx+0x6eb]\n  29:\t89 41 03             \tmov    DWORD PTR [ecx+0x3],eax\n  2c:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2f:\t83 c1 07             \tadd    ecx,0x7\n  32:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe4c7c1",
+          "bytes": "ba661300008b45f86689108b4df88a510280e2fc80ca028b45f88850028b4df88b55fc8b82eb0600008941038b4df883c107894df8",
+          "decode_stdout": "\n/tmp/tmpz3cposs2:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 66 13 00 00       \tmov    edx,0x1366\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t80 ca 02             \tor     dl,0x2\n  17:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  1a:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1d:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  20:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  23:\t8b 82 eb 06 00 00    \tmov    eax,DWORD PTR [edx+0x6eb]\n  29:\t89 41 03             \tmov    DWORD PTR [ecx+0x3],eax\n  2c:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2f:\t83 c1 07             \tadd    ecx,0x7\n  32:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe67225",
+          "bytes": "ba661300008b45f86689108b4df88a510280e2fc80ca028b45f88850028b4df88b55fc8b82eb0600008941038b4df883c107894df8",
+          "decode_stdout": "\n/tmp/tmptp3hw4zw:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 66 13 00 00       \tmov    edx,0x1366\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t80 ca 02             \tor     dl,0x2\n  17:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  1a:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1d:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  20:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  23:\t8b 82 eb 06 00 00    \tmov    eax,DWORD PTR [edx+0x6eb]\n  29:\t89 41 03             \tmov    DWORD PTR [ecx+0x3],eax\n  2c:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2f:\t83 c1 07             \tadd    ecx,0x7\n  32:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe81911",
+          "bytes": "ba661300008b45f86689108b4df88a510280e2fc80ca028b45f88850028b4df88b55fc8b82eb0600008941038b4df883c107894df8",
+          "decode_stdout": "\n/tmp/tmprnkjj5pg:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 66 13 00 00       \tmov    edx,0x1366\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t80 ca 02             \tor     dl,0x2\n  17:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  1a:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1d:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  20:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  23:\t8b 82 eb 06 00 00    \tmov    eax,DWORD PTR [edx+0x6eb]\n  29:\t89 41 03             \tmov    DWORD PTR [ecx+0x3],eax\n  2c:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2f:\t83 c1 07             \tadd    ecx,0x7\n  32:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xe994b9",
+          "bytes": "ba661300008b45f86689108b4df88a510280e2fc80ca028b45f88850028b4df88b55fc8b82eb0600008941038b4df883c107894df8",
+          "decode_stdout": "\n/tmp/tmp406m9fyz:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 66 13 00 00       \tmov    edx,0x1366\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t80 ca 02             \tor     dl,0x2\n  17:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  1a:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1d:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  20:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  23:\t8b 82 eb 06 00 00    \tmov    eax,DWORD PTR [edx+0x6eb]\n  29:\t89 41 03             \tmov    DWORD PTR [ecx+0x3],eax\n  2c:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2f:\t83 c1 07             \tadd    ecx,0x7\n  32:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xeb2111",
+          "bytes": "ba661300008b45f86689108b4df88a510280e2fc80ca028b45f88850028b4df88b55fc8b82eb0600008941038b4df883c107894df8",
+          "decode_stdout": "\n/tmp/tmpnpa80rfq:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 66 13 00 00       \tmov    edx,0x1366\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t80 ca 02             \tor     dl,0x2\n  17:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  1a:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1d:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  20:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  23:\t8b 82 eb 06 00 00    \tmov    eax,DWORD PTR [edx+0x6eb]\n  29:\t89 41 03             \tmov    DWORD PTR [ecx+0x3],eax\n  2c:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2f:\t83 c1 07             \tadd    ecx,0x7\n  32:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        },
+        {
+          "rom_offset": "0xec84e9",
+          "bytes": "ba661300008b45f86689108b4df88a510280e2fc80ca028b45f88850028b4df88b55fc8b82eb0600008941038b4df883c107894df8",
+          "decode_stdout": "\n/tmp/tmp77fdyydq:     file format binary\n\n\nDisassembly of section .data:\n\n00000000 <.data>:\n   0:\tba 66 13 00 00       \tmov    edx,0x1366\n   5:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n   8:\t66 89 10             \tmov    WORD PTR [eax],dx\n   b:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n   e:\t8a 51 02             \tmov    dl,BYTE PTR [ecx+0x2]\n  11:\t80 e2 fc             \tand    dl,0xfc\n  14:\t80 ca 02             \tor     dl,0x2\n  17:\t8b 45 f8             \tmov    eax,DWORD PTR [ebp-0x8]\n  1a:\t88 50 02             \tmov    BYTE PTR [eax+0x2],dl\n  1d:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  20:\t8b 55 fc             \tmov    edx,DWORD PTR [ebp-0x4]\n  23:\t8b 82 eb 06 00 00    \tmov    eax,DWORD PTR [edx+0x6eb]\n  29:\t89 41 03             \tmov    DWORD PTR [ecx+0x3],eax\n  2c:\t8b 4d f8             \tmov    ecx,DWORD PTR [ebp-0x8]\n  2f:\t83 c1 07             \tadd    ecx,0x7\n  32:\t89 4d f8             \tmov    DWORD PTR [ebp-0x8],ecx\n",
+          "decode_stderr": "",
+          "decode_exit": 0
+        }
+      ]
+    }
+  ]
+}

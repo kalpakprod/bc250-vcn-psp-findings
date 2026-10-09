@@ -1,0 +1,932 @@
+{
+  "callback_default_action": {
+    "action_0x1000": "EFI_BROWSER_ACTION_DEFAULT_STANDARD",
+    "action_2": "EFI_BROWSER_ACTION_RETRIEVE -> callback path 0xA1D (not helper 0x2FE4)",
+    "branch_target": "0x2fe4",
+    "callback_rva": "0x950",
+    "execution_status": "STATIC_ONLY_CALLBACK_NOT_EXECUTED",
+    "numeric_0x704": 1000,
+    "question_gates": {
+      "0x316": {
+        "callback": false,
+        "qid": "0x20f"
+      },
+      "0x330": {
+        "callback": false,
+        "qid": "0x229"
+      },
+      "0x6A3": {
+        "callback": true,
+        "qid": "0x7045"
+      },
+      "0x703": {
+        "callback": false,
+        "qid": "0x37d"
+      },
+      "0x704": {
+        "callback": false,
+        "qid": "0x37e"
+      }
+    },
+    "registration": "EFI_HII_CONFIG_ACCESS_PROTOCOL interface+0x48"
+  },
+  "checks": {
+    "failed": 0,
+    "passed": 72,
+    "total": 72
+  },
+  "checks_detail": [
+    {
+      "details": null,
+      "label": "exists:/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+      },
+      "label": "sha256:/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "exists:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsSetupDxe-7ff717d51c9a.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8",
+        "observed": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8"
+      },
+      "label": "sha256:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsSetupDxe-7ff717d51c9a.bin",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "exists:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+        "observed": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+      },
+      "label": "sha256:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin",
+      "status": "PASS"
+    },
+    {
+      "details": 16777216,
+      "label": "clv-size-16MiB",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "absolute": "0x7e5",
+        "raw": "24",
+        "value": 36
+      },
+      "label": "existing-nvar:0x316",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "absolute": "0x7ff",
+        "raw": "01",
+        "value": 1
+      },
+      "label": "existing-nvar:0x330",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "absolute": "0xb72",
+        "raw": "0f",
+        "value": 15
+      },
+      "label": "existing-nvar:0x6A3",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "absolute": "0xbd2",
+        "raw": "01",
+        "value": 1
+      },
+      "label": "existing-nvar:0x703",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "absolute": "0xbd3",
+        "raw": "8c05",
+        "value": 1420
+      },
+      "label": "existing-nvar:0x704",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "EDK2-action-retrieve-2",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "EDK2-action-default-standard-0x1000",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "EDK2-browser-gate-metadata-hash",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "EDK2-SetupBrowser-Setup-snippet-hash",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "EDK2-SetupBrowser-Presentation-snippet-hash",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "EDK2-SetupBrowser-Setup-source-hash",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "EDK2-SetupBrowser-Presentation-source-hash",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c68116030000ff",
+        "observed": {
+          "bytes": "c68116030000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [rcx+0x316],0xff",
+          "rva": 15488
+        }
+      },
+      "label": "CbsSetupDxe-default-byte:0x3c80",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c68130030000ff",
+        "observed": {
+          "bytes": "c68130030000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [rcx+0x330],0xff",
+          "rva": 15650
+        }
+      },
+      "label": "CbsSetupDxe-default-byte:0x3d22",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c681a30600000f",
+        "observed": {
+          "bytes": "c681a30600000f",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [rcx+0x6a3],0xf",
+          "rva": 17761
+        }
+      },
+      "label": "CbsSetupDxe-default-byte:0x4561",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c68103070000ff",
+        "observed": {
+          "bytes": "c68103070000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [rcx+0x703],0xff",
+          "rva": 18241
+        }
+      },
+      "label": "CbsSetupDxe-default-byte:0x4741",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "b8e8030000",
+        "observed": {
+          "bytes": "b8e8030000",
+          "mnemonic": "mov",
+          "operands": "eax,0x3e8",
+          "rva": 18248
+        }
+      },
+      "label": "CbsSetupDxe-default-byte:0x4748",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "66898104070000",
+        "observed": {
+          "bytes": "66898104070000",
+          "mnemonic": "mov",
+          "operands": "WORD PTR [rcx+0x704],ax",
+          "rva": 18253
+        }
+      },
+      "label": "CbsSetupDxe-default-byte:0x474d",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "instruction": {
+          "bytes": "e88c290000",
+          "mnemonic": "call",
+          "operands": "0x2fe4",
+          "rva": 1619
+        },
+        "observed_target": "0x2fe4"
+      },
+      "label": "CbsSetupDxe-default-call:0x653->0x2fe4",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "instruction": {
+          "bytes": "e8ce250000",
+          "mnemonic": "call",
+          "operands": "0x2fe4",
+          "rva": 2577
+        },
+        "observed_target": "0x2fe4"
+      },
+      "label": "CbsSetupDxe-default-call:0xa11->0x2fe4",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "instruction": {
+          "bytes": "e859240000",
+          "mnemonic": "call",
+          "operands": "0x2fe4",
+          "rva": 2950
+        },
+        "observed_target": "0x2fe4"
+      },
+      "label": "CbsSetupDxe-default-call:0xb86->0x2fe4",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "488d0553feffff",
+        "observed": {
+          "bytes": "488d0553feffff",
+          "mnemonic": "lea",
+          "operands": "rax,[rip+0xfffffffffffffe53]        # 0x950",
+          "rva": 2806
+        }
+      },
+      "label": "CbsSetupDxe-callback-registration:0xaf6",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "48894748",
+        "observed": {
+          "bytes": "48894748",
+          "mnemonic": "mov",
+          "operands": "QWORD PTR [rdi+0x48],rax",
+          "rva": 2819
+        }
+      },
+      "label": "CbsSetupDxe-callback-registration:0xb03",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "4883fa03",
+        "observed": {
+          "bytes": "4883fa03",
+          "mnemonic": "cmp",
+          "operands": "rdx,0x3",
+          "rva": 2425
+        }
+      },
+      "label": "CbsSetupDxe-callback-default-branch:0x979",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "4883fa04",
+        "observed": {
+          "bytes": "4883fa04",
+          "mnemonic": "cmp",
+          "operands": "rdx,0x4",
+          "rva": 2435
+        }
+      },
+      "label": "CbsSetupDxe-callback-default-branch:0x983",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba02000000",
+        "observed": {
+          "bytes": "ba02000000",
+          "mnemonic": "mov",
+          "operands": "edx,0x2",
+          "rva": 2555
+        }
+      },
+      "label": "CbsSetupDxe-callback-default-branch:0x9fb",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "483bda",
+        "observed": {
+          "bytes": "483bda",
+          "mnemonic": "cmp",
+          "operands": "rbx,rdx",
+          "rva": 2563
+        }
+      },
+      "label": "CbsSetupDxe-callback-default-branch:0xa03",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "7415",
+        "observed": {
+          "bytes": "7415",
+          "mnemonic": "je",
+          "operands": "0xa1d",
+          "rva": 2566
+        }
+      },
+      "label": "CbsSetupDxe-callback-default-branch:0xa06",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "4881fb00100000",
+        "observed": {
+          "bytes": "4881fb00100000",
+          "mnemonic": "cmp",
+          "operands": "rbx,0x1000",
+          "rva": 2568
+        }
+      },
+      "label": "CbsSetupDxe-callback-default-branch:0xa08",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "7537",
+        "observed": {
+          "bytes": "7537",
+          "mnemonic": "jne",
+          "operands": "0xa48",
+          "rva": 2575
+        }
+      },
+      "label": "CbsSetupDxe-callback-default-branch:0xa0f",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "e8ce250000",
+        "observed": {
+          "bytes": "e8ce250000",
+          "mnemonic": "call",
+          "operands": "0x2fe4",
+          "rva": 2577
+        }
+      },
+      "label": "CbsSetupDxe-callback-default-branch:0xa11",
+      "status": "PASS"
+    },
+    {
+      "details": "0x2fe4",
+      "label": "CbsSetupDxe-callback-default-target-0x2fe4",
+      "status": "PASS"
+    },
+    {
+      "details": [],
+      "label": "CbsSetupDxe-standard-default-no-QID-use",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ff5048",
+        "observed": {
+          "bytes": "ff5048",
+          "mnemonic": "call",
+          "operands": "QWORD PTR [rax+0x48]",
+          "rva": 1534
+        }
+      },
+      "label": "CbsSetupDxe-GetVariable-gate:0x5fe",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "48b90500000000000080",
+        "observed": {
+          "bytes": "48b90500000000000080",
+          "mnemonic": "movabs",
+          "operands": "rcx,0x8000000000000005",
+          "rva": 1537
+        }
+      },
+      "label": "CbsSetupDxe-GetVariable-gate:0x601",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "4881bc2480000000b5080000",
+        "observed": {
+          "bytes": "4881bc2480000000b5080000",
+          "mnemonic": "cmp",
+          "operands": "QWORD PTR [rsp+0x80],0x8b5",
+          "rva": 1552
+        }
+      },
+      "label": "CbsSetupDxe-GetVariable-gate:0x610",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ff5048",
+        "observed": {
+          "bytes": "ff5048",
+          "mnemonic": "call",
+          "operands": "QWORD PTR [rax+0x48]",
+          "rva": 1607
+        }
+      },
+      "label": "CbsSetupDxe-GetVariable-gate:0x647",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "483bc3",
+        "observed": {
+          "bytes": "483bc3",
+          "mnemonic": "cmp",
+          "operands": "rax,rbx",
+          "rva": 1610
+        }
+      },
+      "label": "CbsSetupDxe-GetVariable-gate:0x64a",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "7d09",
+        "observed": {
+          "bytes": "7d09",
+          "mnemonic": "jge",
+          "operands": "0x658",
+          "rva": 1613
+        }
+      },
+      "label": "CbsSetupDxe-GetVariable-gate:0x64d",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "instruction": {
+          "bytes": "e818030000",
+          "mnemonic": "call",
+          "operands": "0x650",
+          "rva": 819
+        },
+        "observed_target": "0x650"
+      },
+      "label": "CbsBasePei-missing-variable-fallback:0x333->0x650",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "instruction": {
+          "bytes": "e807030000",
+          "mnemonic": "call",
+          "operands": "0x650",
+          "rva": 836
+        },
+        "observed_target": "0x650"
+      },
+      "label": "CbsBasePei-missing-variable-fallback:0x344->0x650",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "instruction": {
+          "bytes": "e8f6020000",
+          "mnemonic": "call",
+          "operands": "0x650",
+          "rva": 853
+        },
+        "observed_target": "0x650"
+      },
+      "label": "CbsBasePei-missing-variable-fallback:0x355->0x650",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "instruction": {
+          "bytes": "e897000000",
+          "mnemonic": "call",
+          "operands": "0x650",
+          "rva": 1460
+        },
+        "observed_target": "0x650"
+      },
+      "label": "CbsBasePei-missing-variable-fallback:0x5b4->0x650",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "instruction": {
+          "bytes": "e886000000",
+          "mnemonic": "call",
+          "operands": "0x650",
+          "rva": 1477
+        },
+        "observed_target": "0x650"
+      },
+      "label": "CbsBasePei-missing-variable-fallback:0x5c5->0x650",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "instruction": {
+          "bytes": "e875000000",
+          "mnemonic": "call",
+          "operands": "0x650",
+          "rva": 1494
+        },
+        "observed_target": "0x650"
+      },
+      "label": "CbsBasePei-missing-variable-fallback:0x5d6->0x650",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c68216030000ff",
+        "observed": {
+          "bytes": "c68216030000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [edx+0x316],0xff",
+          "rva": 6731
+        }
+      },
+      "label": "CbsBasePei-default-byte:0x1a4b",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c68130030000ff",
+        "observed": {
+          "bytes": "c68130030000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [ecx+0x330],0xff",
+          "rva": 6973
+        }
+      },
+      "label": "CbsBasePei-default-byte:0x1b3d",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c682a30600000f",
+        "observed": {
+          "bytes": "c682a30600000f",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [edx+0x6a3],0xf",
+          "rva": 10571
+        }
+      },
+      "label": "CbsBasePei-default-byte:0x294b",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c68203070000ff",
+        "observed": {
+          "bytes": "c68203070000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [edx+0x703],0xff",
+          "rva": 11279
+        }
+      },
+      "label": "CbsBasePei-default-byte:0x2c0f",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "66898104070000",
+        "observed": {
+          "bytes": "66898104070000",
+          "mnemonic": "mov",
+          "operands": "WORD PTR [ecx+0x704],ax",
+          "rva": 11294
+        }
+      },
+      "label": "CbsBasePei-default-byte:0x2c1e",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "IFR-question-present:0x316",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": {
+          "callback": false,
+          "qid": "0x20f"
+        },
+        "observed": {
+          "callback": false,
+          "qid": "0x20f"
+        }
+      },
+      "label": "IFR-callback-gate:0x316",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "default": [
+          255
+        ],
+        "expected": 255
+      },
+      "label": "IFR-default:0x316",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "IFR-question-present:0x330",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": {
+          "callback": false,
+          "qid": "0x229"
+        },
+        "observed": {
+          "callback": false,
+          "qid": "0x229"
+        }
+      },
+      "label": "IFR-callback-gate:0x330",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "default": [
+          255
+        ],
+        "expected": 255
+      },
+      "label": "IFR-default:0x330",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "IFR-question-present:0x6A3",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": {
+          "callback": true,
+          "qid": "0x7045"
+        },
+        "observed": {
+          "callback": true,
+          "qid": "0x7045"
+        }
+      },
+      "label": "IFR-callback-gate:0x6A3",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "default": [
+          15
+        ],
+        "expected": 15
+      },
+      "label": "IFR-default:0x6A3",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "IFR-question-present:0x703",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": {
+          "callback": false,
+          "qid": "0x37d"
+        },
+        "observed": {
+          "callback": false,
+          "qid": "0x37d"
+        }
+      },
+      "label": "IFR-callback-gate:0x703",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "default": [
+          255
+        ],
+        "expected": 255
+      },
+      "label": "IFR-default:0x703",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "IFR-question-present:0x704",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": {
+          "callback": false,
+          "qid": "0x37e"
+        },
+        "observed": {
+          "callback": false,
+          "qid": "0x37e"
+        }
+      },
+      "label": "IFR-callback-gate:0x704",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bounds": [
+          0,
+          2000,
+          0
+        ],
+        "options": []
+      },
+      "label": "IFR-no-default-only-numeric:0x704",
+      "status": "PASS"
+    }
+  ],
+  "default_sources": {
+    "CbsBasePei_helper_rva": "0x4c0 (Rizin) / 0x650 (instruction RVA)",
+    "CbsSetupDxe_helper_rva": "0x2fe4",
+    "efi_buffer_too_small": "0x80000005",
+    "get_variable_method_offset": "0x48",
+    "required_size": "0x8b5"
+  },
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis",
+    "emulated-or-host-tested"
+  ],
+  "fields": {
+    "0x316": {
+      "existing": 36,
+      "fallback": 255,
+      "init_bytes": "c68116030000ff",
+      "init_rva": "0x3c80",
+      "name": "MemoryClockSpeed",
+      "width": 1
+    },
+    "0x330": {
+      "existing": 1,
+      "fallback": 255,
+      "init_bytes": "c68130030000ff",
+      "init_rva": "0x3d22",
+      "name": "UclkDiv1M0",
+      "width": 1
+    },
+    "0x6A3": {
+      "existing": 15,
+      "fallback": 15,
+      "init_bytes": "c681a30600000f",
+      "init_rva": "0x4561",
+      "name": "FclkDpm",
+      "width": 1
+    },
+    "0x703": {
+      "existing": 1,
+      "fallback": 255,
+      "init_bytes": "c68103070000ff",
+      "init_rva": "0x4741",
+      "name": "DfClockOverrideControl",
+      "width": 1
+    },
+    "0x704": {
+      "existing": 1420,
+      "fallback": 1000,
+      "init_bytes": "66898104070000",
+      "init_rva": "0x474d",
+      "name": "DfClockOvrd",
+      "width": 2
+    }
+  },
+  "limitations": [
+    "No firmware code executed; GetVariable branch behavior is static control-flow evidence.",
+    "No live NVRAM reset or Load Optimized Defaults action was run.",
+    "The numeric +0x704 question has no IFR default option and no CALLBACK flag; the standard-default callback is browser-gated by callback questions and is statically traced to 1000 as a side effect of the selected callback path. Live browser/reset persistence is unrun.",
+    "A same-session hardware clock/training result is not established."
+  ],
+  "modules": {
+    "CbsBasePei": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin",
+      "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    "CbsSetupDxe": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsSetupDxe-7ff717d51c9a.bin",
+      "sha256": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8"
+    }
+  },
+  "precedence_model": {
+    "existing_variable_success": {
+      "0x316": 36,
+      "0x330": 1,
+      "0x6A3": 15,
+      "0x703": 1,
+      "0x704": 1420
+    },
+    "load_defaults_ifr_observed": {
+      "0x316": {
+        "status": "STATIC_DEFAULT_PRESENT",
+        "value": 255
+      },
+      "0x330": {
+        "status": "STATIC_DEFAULT_PRESENT",
+        "value": 255
+      },
+      "0x6A3": {
+        "status": "STATIC_DEFAULT_PRESENT",
+        "value": 15
+      },
+      "0x703": {
+        "status": "STATIC_DEFAULT_PRESENT",
+        "value": 255
+      },
+      "0x704": {
+        "status": "NO_IFR_DEFAULT_OPCODE_OBSERVED",
+        "value": null
+      }
+    },
+    "missing_variable_fallback": {
+      "0x316": 255,
+      "0x330": 255,
+      "0x6A3": 15,
+      "0x703": 255,
+      "0x704": 1000
+    },
+    "no_hardware_execution": true
+  },
+  "rom": {
+    "amdsetup_body_base": "0x4cf",
+    "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "raw_fields": {
+      "0x316": {
+        "absolute": "0x7e5",
+        "raw": "24",
+        "value": 36
+      },
+      "0x330": {
+        "absolute": "0x7ff",
+        "raw": "01",
+        "value": 1
+      },
+      "0x6A3": {
+        "absolute": "0xb72",
+        "raw": "0f",
+        "value": 15
+      },
+      "0x703": {
+        "absolute": "0xbd2",
+        "raw": "01",
+        "value": 1
+      },
+      "0x704": {
+        "absolute": "0xbd3",
+        "raw": "8c05",
+        "value": 1420
+      }
+    },
+    "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "size": 16777216
+  },
+  "status": "PASS"
+}

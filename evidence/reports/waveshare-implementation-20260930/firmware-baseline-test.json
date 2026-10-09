@@ -1,0 +1,18 @@
+{
+  "command": [
+    "g++",
+    "-std=c++20",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-I",
+    "/home/OWNER/orca/projects/bc250/candidates/waveshare-adapter-safe-v001/src/bridge",
+    "/home/OWNER/orca/projects/bc250/reports/waveshare-implementation-20260930/host-tests/usb_identity_test.cpp",
+    "-o",
+    "/home/OWNER/orca/projects/bc250/reports/waveshare-implementation-20260930/host-tests/usb_identity_test"
+  ],
+  "stdout": "",
+  "stderr": "/home/OWNER/orca/projects/bc250/reports/waveshare-implementation-20260930/host-tests/usb_identity_test.cpp:1:10: fatal error: usb_identity_gate.h: No such file or directory\n    1 | #include \"usb_identity_gate.h\"\n      |          ^~~~~~~~~~~~~~~~~~~~~\ncompilation terminated.\n",
+  "exit_status": 1,
+  "evidence_class": "offline missing readiness guard, not hardware behavior"
+}

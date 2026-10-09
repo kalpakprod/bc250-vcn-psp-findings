@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-09-14T16:43:00+05:00",
+  "board": "BC250-01",
+  "host": "cachyos",
+  "boot_id": "1bb84c62-17f7-4e08-af55-0b61ec8c8c37",
+  "kernel": "7.2.0-1.92-cachyos-vcn-bc250",
+  "cmdline_mode": "amdgpu.bc250_vcn_mode=1",
+  "collection": "read-only SSH/SCP; no retrieved code executed",
+  "files": [
+    {"remote_path": "/lib/modules/7.2.0-1.92-cachyos-vcn-bc250/kernel/drivers/gpu/drm/amd/amdgpu/amdgpu.ko.zst", "local_path": "evidence/runtime/20260914-board-retrieval/amdgpu-7.2.0-1.92.ko.zst", "size": 5862198, "sha256": "7424913c4864079865e8f792a54edc9c3d6a1bb1997ca0a916072e988d7dea40"},
+    {"remote_path": "/home/OWNER/vcn_unlock/stage2b_writefirst.py", "local_path": "evidence/runtime/20260914-board-retrieval/stage2b_writefirst.py", "size": 7408, "sha256": "bb19e0725a8470a38215dc435c63637351539526b3f0afb67f1579608de252c2"},
+    {"remote_path": "/home/OWNER/vcn_unlock/stage4_arbiter.py", "local_path": "evidence/runtime/20260914-board-retrieval/stage4_arbiter.py", "size": 2327, "sha256": "821635e2c0f80a34f03a2a82902d1f3b65c5ec451110ec602c01b1da0d883227"},
+    {"remote_path": "/home/OWNER/vcn_unlock/stage5_full_dataplane.py", "local_path": "evidence/runtime/20260914-board-retrieval/stage5_full_dataplane.py", "size": 6620, "sha256": "511184b1747101e7626738d65783571f27d0e7cac786057077f2c1d053d90d80"},
+    {"remote_path": "/home/OWNER/vcn_unlock/stage2b_writefirst_20260912_052757.json", "local_path": "evidence/runtime/20260914-board-retrieval/stage2b_writefirst_20260912_052757.json", "size": 5095, "sha256": "f4eedfb5d287576b75941f4cd6215b54f669a778ea9f50a8174a48c028056553"},
+    {"remote_path": "/home/OWNER/vcn_unlock/stage4_arbiter_20260912_052802.txt", "local_path": "evidence/runtime/20260914-board-retrieval/stage4_arbiter_20260912_052802.txt", "size": 408, "sha256": "f799803590b0616055eb01474124a4ca3115fcac18720a2c6585daf83fecc2f2"},
+    {"remote_path": "/home/OWNER/vcn_unlock/stage2b_writefirst_20260912_064724.json", "local_path": "evidence/runtime/20260914-board-retrieval/stage2b_writefirst_20260912_064724.json", "size": 5095, "sha256": "73a956053168c58bebbcc7d472a621d4426e97ed2d4b22f005e9d80e425f7c38"},
+    {"remote_path": "/home/OWNER/vcn_unlock/stage5_full_dataplane_20260912_064729.json", "local_path": "evidence/runtime/20260914-board-retrieval/stage5_full_dataplane_20260912_064729.json", "size": 2221, "sha256": "d6c3de5782c6aa00ac8065462b5c9527e67084f4d4992ff43641a7dc318155fb"}
+  ],
+  "module_analysis": {
+    "decompressed_size": 37056520,
+    "decompressed_sha256": "7d6606ba80be79e49bb703f29b79a22fcc4b96d8c51b7799bf694f4d417d1ebf",
+    "build_id": "ca6bb73e0c93d32f1c80552e5093e7a766a3c924",
+    "vermagic": "7.2.0-1.92-cachyos-vcn-bc250 SMP preempt mod_unload",
+    "observed_custom_modes": "bc250_vcn_mode 0=off, 1=probe-only, 2=hardware",
+    "observed_firmware_names": ["amdgpu/green_sardine_vcn.bin", "amdgpu/renoir_vcn.bin"]
+  },
+  "secrets_scan": "no sensitive-name pattern match in seven requested source/output files",
+  "hardware_mutation": false
+}

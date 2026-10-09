@@ -1,0 +1,250 @@
+{
+  "status": "PASS",
+  "checks": {
+    "passed": 33,
+    "failed": 0,
+    "total": 33
+  },
+  "inputs": {
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "elf_sha256": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+    "prior_item17_result_sha256": "4330bdf964f5ebd3fc7211af953e38d4062a0a1d64276a43cac398b2fc916cd3"
+  },
+  "abi_observations": {
+    "callers_before_wrapper": {
+      "selector_0x0b": {
+        "r1": "0x0B",
+        "r2": "SP",
+        "entry": "0x1104"
+      },
+      "selector_0x0c": {
+        "r1": "0x0C",
+        "r2": "SP",
+        "entry": "0x11E8"
+      }
+    },
+    "wrapper": {
+      "saves": "r4/r5/LR",
+      "preserves_r2_as_r4": true,
+      "calls_helper": "0x6C20 with r0=SP",
+      "loads_r0_literal": "0x0006A41C",
+      "writes": "byte 0 to [caller-buffer+0x40]",
+      "svc": "#6",
+      "returns": "r0=0 after trap"
+    },
+    "service_abi_limit": "r1-r3 after helper 0x6C20 are not proven by the extracted wrapper; the caller selectors 0x0B/0x0C are not established as SVC input arguments."
+  },
+  "write_classification": {
+    "direct_known_clock_register_write_in_inspected_ABL_wrapper_callers": "NOT_OBSERVED",
+    "visible_store_target": "caller-provided stack buffer +0x40 (both inspected callers reserve 0x60 bytes and pass SP)",
+    "SVC_handler": "outside extracted ABL1; downstream register effects unresolved"
+  },
+  "item17_gate": "Prior exact result reports local helper 0x6D10=1 and path 0x9646 -> 0x9744 -> 0x984E, which bypasses the two SVC-reaching alternatives; conditional static path only.",
+  "limits": [
+    "No SVC #6 handler/recipient semantics recovered.",
+    "No PLL/clock selector or known physical clock register write observed in the bounded ABL caller/wrapper.",
+    "No claim that SVC cannot cause downstream writes.",
+    "No runtime, SVC, hardware, clock, training, performance, or synchronization result."
+  ],
+  "checks_detail": [
+    {
+      "name": "pinned ROM hash",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "name": "pinned ABL1 hash",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "name": "fresh ELF wrapper hash",
+      "passed": true,
+      "got": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+      "expected": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6"
+    },
+    {
+      "name": "ABL1 size",
+      "passed": true,
+      "got": 94624,
+      "expected": 94624
+    },
+    {
+      "name": "SVC wrapper entry/push",
+      "passed": true,
+      "got": "30b5",
+      "expected": "30b5"
+    },
+    {
+      "name": "wrapper saves r2 buffer pointer as r4",
+      "passed": true,
+      "got": "1446",
+      "expected": "1446"
+    },
+    {
+      "name": "wrapper passes local stack to metadata helper",
+      "passed": true,
+      "got": "6846",
+      "expected": "6846"
+    },
+    {
+      "name": "wrapper metadata-helper BL",
+      "passed": true,
+      "got": "05f0b4fc",
+      "expected": "05f0b4fc"
+    },
+    {
+      "name": "wrapper sets r5=0 after helper",
+      "passed": true,
+      "got": "0025",
+      "expected": "0025"
+    },
+    {
+      "name": "wrapper loads literal via PC",
+      "passed": true,
+      "got": "0348",
+      "expected": "0348"
+    },
+    {
+      "name": "wrapper local buffer field store",
+      "passed": true,
+      "got": "84f84050",
+      "expected": "84f84050"
+    },
+    {
+      "name": "SVC instruction #6",
+      "passed": true,
+      "got": "06df",
+      "expected": "06df"
+    },
+    {
+      "name": "wrapper return value from zeroed r5",
+      "passed": true,
+      "got": "2846",
+      "expected": "2846"
+    },
+    {
+      "name": "SVC literal word",
+      "passed": true,
+      "got": "0x6a41c",
+      "expected": "0x6a41c"
+    },
+    {
+      "name": "caller 0x10C0 frame allocation",
+      "passed": true,
+      "got": "98b0",
+      "expected": "98b0"
+    },
+    {
+      "name": "caller 0x10FA selector 0x0B",
+      "passed": true,
+      "got": "0b21",
+      "expected": "0b21"
+    },
+    {
+      "name": "caller 0x1100 r2=SP",
+      "passed": true,
+      "got": "6a46",
+      "expected": "6a46"
+    },
+    {
+      "name": "caller 0x1102 r0=context",
+      "passed": true,
+      "got": "4046",
+      "expected": "4046"
+    },
+    {
+      "name": "caller 0x1104 BL SVC wrapper",
+      "passed": true,
+      "got": "00f0d2f8",
+      "expected": "00f0d2f8"
+    },
+    {
+      "name": "other caller 0x118C frame allocation",
+      "passed": true,
+      "got": "98b0",
+      "expected": "98b0"
+    },
+    {
+      "name": "other caller 0x11C6 r1=SP",
+      "passed": true,
+      "got": "6946",
+      "expected": "6946"
+    },
+    {
+      "name": "other caller 0x11E2 r2=r1",
+      "passed": true,
+      "got": "0a46",
+      "expected": "0a46"
+    },
+    {
+      "name": "other caller 0x11E6 selector 0x0C",
+      "passed": true,
+      "got": "0c21",
+      "expected": "0c21"
+    },
+    {
+      "name": "other caller 0x11E8 BL SVC wrapper",
+      "passed": true,
+      "got": "00f060f8",
+      "expected": "00f060f8"
+    },
+    {
+      "name": "0x40 lies within 0x60 caller frame",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "name": "wrapper push mask preserves r4/r5/lr only",
+      "passed": true,
+      "got": "0xb530",
+      "expected": "0xb530"
+    },
+    {
+      "name": "wrapper has no saved r1-r3 in prologue mask",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "name": "metadata helper writes into caller stack record",
+      "passed": true,
+      "got": "0446",
+      "expected": "0446"
+    },
+    {
+      "name": "metadata helper stores first gathered field at record+0",
+      "passed": true,
+      "got": "2060",
+      "expected": "2060"
+    },
+    {
+      "name": "metadata helper stores second gathered field at record+4",
+      "passed": true,
+      "got": "6060",
+      "expected": "6060"
+    },
+    {
+      "name": "metadata helper static probe call exists",
+      "passed": true,
+      "got": "00f092f8",
+      "expected": "00f092f8"
+    },
+    {
+      "name": "prior item17 state remains PASS",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "name": "prior item17 local checks remain 136",
+      "passed": true,
+      "got": 136,
+      "expected": 136
+    }
+  ]
+}

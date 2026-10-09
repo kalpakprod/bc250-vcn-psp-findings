@@ -1,0 +1,79 @@
+{
+  "checks": {
+    "raw_fields_passed": 7,
+    "raw_fields_status": "PASS",
+    "raw_fields_total": 7,
+    "thumb_disassembly_exit": 0,
+    "thumb_disassembly_stderr_empty": true
+  },
+  "control_flow": {
+    "dynamic_handler_followed": false,
+    "initial_branch": "0x18b6 -> 0x18ea skips index increment at 0x18e6",
+    "initial_index": 0,
+    "nonzero_callback_return": "reload same row+4 as a nonzero guard, then BLX r1 at 0x18da through [[r6+0x1c]+0x48]",
+    "zero_callback_return": "increment index; row1+4 zero terminates"
+  },
+  "inputs": {
+    "elf_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o",
+    "elf_sha256": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+    "raw_abl1_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "raw_abl1_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "raw_abl1_size": 94624
+  },
+  "limits": [
+    "base 0x57100 and runtime relocation/execution remain unproven",
+    "R6 source object is not joined to active consumer R0+0x660",
+    "callback return semantics and the object-relative handler are not followed"
+  ],
+  "reader": {
+    "bounded_code_range": "0x18a4..0x1920",
+    "callback_arguments": {
+      "r0": "r6",
+      "r1": "r4",
+      "r2": "record+0xc",
+      "r3": "sp+8",
+      "stack_arg0": "r10"
+    },
+    "callback_field_load": {
+      "destination": "r7",
+      "operand": "[record+0x4]",
+      "rva": "0x18f2"
+    },
+    "indirect_call": {
+      "instruction": "BLX r7",
+      "rva": "0x18c4"
+    },
+    "record_members_not_loaded_by_this_loop": [
+      "+0x0",
+      "+0x8",
+      "+0x10",
+      "+0x14",
+      "+0x18"
+    ],
+    "second_field_load": {
+      "destination": "r2",
+      "operand": "[record+0xc]",
+      "rva": "0x18be"
+    },
+    "stride": "0x1c",
+    "stride_formula": "((8*i)-i)*4"
+  },
+  "scope": "one identified record+4 reader/call path only; no runtime inference",
+  "status": "PASS_BOUNDED_STATIC",
+  "table": {
+    "conditional_thumb_entry_rva": "0x7378",
+    "conditional_thumb_pointer_rva": "0x7379",
+    "row0_plus0c": "0x6e154",
+    "row0_plus4": "0x5e479",
+    "row0_plus8_not_used_by_this_reader": "0x62059",
+    "row1_plus4": "0x0",
+    "sentinel": "row1+4 == 0"
+  },
+  "xref": {
+    "candidate_base": "0x57100 (unproven)",
+    "conditional_table_rva": "0x170c8",
+    "instruction_rva": "0x18a8",
+    "literal_value": "0x6e1c8",
+    "pc_literal_slot_rva": "0x1b1c"
+  }
+}

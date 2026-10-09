@@ -1,0 +1,5539 @@
+INFO  Using log config file: jar:file:/home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: /home/OWNER/.config/ghidra/ghidra_12.1.3_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: /home/OWNER/.config/ghidra/ghidra_12.1.3_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (774 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (1760 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 60 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Extensions/GhidrAssistMCP/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-r2-svi-census
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/8051/ghidra_scripts
+    /home/OWNER/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-smu-domain-selector/ghidra-project/OCConsumer (HeadlessAnalyzer)  
+INFO  Opening project: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-smu-domain-selector/ghidra-project/OCConsumer (HeadlessProject)  
+INFO  REPORT: Processing project file: /smu_fw_robin_5 (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: HandlerSweep.java  (HeadlessAnalyzer)  
+INFO  SCRIPT: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-r2-svi-census/HandlerSweep.java (HeadlessAnalyzer)  
+INFO  HandlerSweep.java> HANDLERS TO SWEEP: 173 (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1b3a8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0001b3a8(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = func_0x00000ffc(param_1);
+  func_0x00000fe4(param_1,iVar1 + 1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1b3c0 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0001b3c0(undefined4 param_1)
+
+{
+  func_0x00000fe4(param_1,*puRam000170d0);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1b940 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0001b940(undefined4 param_1)
+
+{
+  func_0x00000fe4(param_1,8);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1b9d0 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001b9d0(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  iVar2 = 1;
+  if ((*(byte *)(_DAT_00017104 + 0x1b) & 2) != 0) {
+    iVar2 = func_0x0001cf8c(uVar1,*(undefined4 *)(_DAT_00017104 + 0x14),0x74);
+  }
+  if (iVar2 != 0) {
+    uVar1 = func_0x00000ffc(param_1);
+    FUN_00039c14(_DAT_00017108,uVar1);
+  }
+  uVar1 = 0xff;
+  if (iVar2 != 0) {
+    uVar1 = 1;
+  }
+  func_0x00000fa8(param_1,uVar1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1ba10 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001ba10(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  iVar2 = 1;
+  if ((*(byte *)(_DAT_00017104 + 0x1b) & 1) != 0) {
+    iVar2 = func_0x0001cf8c(*(undefined4 *)(_DAT_00017104 + 0x10),uVar1,0x74);
+  }
+  if (iVar2 != 0) {
+    uVar1 = func_0x00000ffc(param_1);
+    FUN_00039c28(_DAT_00017108,uVar1);
+  }
+  uVar1 = 0xff;
+  if (iVar2 != 0) {
+    uVar1 = 1;
+  }
+  func_0x00000fa8(param_1,uVar1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1bb1c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001bb1c(int param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  code *pcVar5;
+  
+  iVar1 = func_0x00000ffc(param_1);
+  if (((iVar1 != 6) && (iVar1 != 0)) && (iVar1 != 3)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  iVar4 = _DAT_00017108 + -0x10;
+  iVar3 = _DAT_00017108;
+  if ((param_1 != 0) || ((iVar1 != 2 && (iVar1 != 6)))) {
+    if ((param_1 == 3) || (param_1 == 4)) {
+      if (((iVar1 != 2) && (iVar1 != 6)) && (iVar3 = iVar1 * 0x24 + iVar4 + 0x58, iVar1 != 3)) {
+        iVar3 = 0;
+      }
+    }
+    else if ((param_1 != 2) || (iVar3 = iVar4, iVar1 != 0)) {
+      func_0x00000fa8(param_1,0xff);
+      return;
+    }
+  }
+  if ((iVar3 != 0) && (iVar2 = FUN_00039c3c(iVar3), iVar2 != 0)) {
+    iVar4 = iVar1 * 0x24 + iVar4;
+    pcVar5 = *(code **)(iVar4 + 0x48);
+    if ((*(uint *)(iVar4 + 0x54) & 1 << ((byte)param_1 & 0x1f)) == 0) {
+      func_0x00000fa8(param_1,0xff);
+      return;
+    }
+    if (pcVar5 == (code *)0x0) {
+      func_0x00000fa8(param_1,0xff);
+      return;
+    }
+    (*pcVar5)(iVar3);
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1bbc0 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001bbc0(int param_1)
+
+{
+  int iVar1;
+  uint uVar2;
+  int iVar3;
+  int iVar4;
+  uint uVar5;
+  int iVar6;
+  code *pcVar7;
+  undefined1 uVar8;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  uVar5 = uVar2 & 0xf;
+  if ((uVar5 != 2) && (uVar5 != 0)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  iVar6 = _DAT_00017108 + -0x10;
+  iVar4 = _DAT_00017108;
+  if ((((param_1 != 0) || (uVar5 != 2)) && ((param_1 != 3 || (uVar5 != 2)))) &&
+     ((param_1 != 2 || (iVar4 = iVar6, uVar5 != 0)))) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  if ((iVar4 == 0) || (iVar3 = FUN_00039c3c(iVar4), iVar1 = _DAT_00017060, iVar3 == 0)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  iVar6 = uVar5 * 0x24 + iVar6;
+  if ((*(uint *)(iVar6 + 0x54) & 1 << ((byte)param_1 & 0x1f)) == 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  if (((uVar5 == 0) && (*(char *)(_DAT_00017060 + 0x70) == '\x01')) &&
+     (*(char *)(_DAT_00017060 + 0x71) == '\x01')) {
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  pcVar7 = *(code **)(iVar6 + 0x44);
+  if (pcVar7 == (code *)0x0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  iVar4 = (*pcVar7)(iVar4);
+  if (iVar4 != 0) {
+    if (uVar5 == 0) {
+      uVar8 = *(undefined1 *)(iVar1 + 0x71);
+      *(undefined1 *)(iVar1 + 0x70) = 1;
+      if ((int)uVar2 < 0) {
+        uVar8 = 1;
+      }
+      *(undefined1 *)(iVar1 + 0x71) = uVar8;
+    }
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x22bbc ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00022c41) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00022bbc(undefined4 param_1)
+
+{
+  short sVar1;
+  int iVar2;
+  int iVar3;
+  uint uVar4;
+  int iVar5;
+  uint uVar6;
+  int iVar7;
+  uint uVar8;
+  int iVar9;
+  int iVar10;
+  uint uVar11;
+  undefined4 uVar12;
+  int iVar13;
+  
+  uVar4 = func_0x00000ffc(param_1);
+  uVar6 = uVar4 >> 0x10 & 0xf;
+  if ((7 < uVar6) || (iVar5 = func_0x0001dd34(0), iVar5 == 0)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  if ((*(char *)(iRam000175ec + 0x7f) != '\x01') && (*(int *)(_DAT_000170b0 + 8) != 1)) {
+    func_0x00002268(_DAT_00017094);
+    iVar3 = iRam00017780;
+    iVar2 = iRam000175f8;
+    iVar10 = _DAT_000171b4;
+    iVar5 = _DAT_00017060;
+    if (*(char *)(_DAT_0001714c + 3) != '\0') {
+      func_0x0000231c(_DAT_00017094);
+      func_0x00000fa8(param_1,0xff);
+      return;
+    }
+    iVar7 = 0;
+    *(undefined1 *)(iRam000175ec + 0x7f) = 1;
+    uVar8 = 0;
+    do {
+      sVar1 = *(short *)(iVar5 + 0x50);
+      iVar5 = iVar5 + 2;
+      uVar11 = uVar8 + 4;
+      iVar13 = 3;
+      iVar9 = iVar10;
+      while( true ) {
+        if ((sVar1 != 0) && (((int)(uVar4 & 0xff) >> (uVar8 & 0x1f) & 1U) != 0)) {
+          *(char *)(iVar9 + 7) = (char)uVar6;
+          uVar12 = *(undefined4 *)(uVar6 * 4 + iVar3 + 0x1fc);
+          *(undefined4 *)(iVar9 + 0x84) = uVar12;
+          *(undefined4 *)(iVar9 + 0xe0) = uVar12;
+        }
+        uVar8 = uVar8 + 1;
+        iVar9 = iVar9 + 0x3c4;
+        if (iVar13 == 0) break;
+        iVar13 = iVar13 + -1;
+      }
+      iVar7 = iVar7 + 1;
+      iVar10 = iVar10 + iVar2;
+      uVar8 = uVar11;
+    } while (iVar7 != 2);
+    func_0x0000231c(_DAT_00017094);
+    func_0x0000257c(4,0,0);
+    *(undefined1 *)(iRam000175ec + 0x7f) = 0;
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x22c94 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00022c94(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (7 < (uVar1 & 0xff)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x00000fe4(param_1,*(undefined1 *)(_DAT_000171b4 + (uVar1 & 0xff) * 0x3c4 + 7));
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b400 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002b400(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  int iVar3;
+  uint uVar4;
+  int iVar5;
+  float fVar6;
+  
+  uVar4 = func_0x00000ffc(param_1);
+  if (((uVar4 != 0) && (uVar4 <= uRam00018084)) &&
+     (iVar5 = func_0x0001dd34(6), iVar3 = iRam00018088, iVar5 != 0)) {
+    if (*(char *)(iRam00018088 + 0xf4) == '\0') {
+      if ((*(char *)(iRam00018088 + 0xc) == '\x01') || (*(int *)(_DAT_000170b0 + 8) == 1)) {
+        func_0x00000fa8(param_1,0xff);
+        return;
+      }
+      iVar5 = func_0x0002e4c4();
+      if ((iVar5 != 1) && (iVar5 != 2)) {
+        if (*(int *)(iRam00017320 + 4) == 1) {
+          func_0x00000fa8(param_1,0xff);
+          return;
+        }
+        func_0x00002268(uRam0001705c);
+        iVar5 = func_0x0002aa00();
+        if (iVar5 != 0) {
+          func_0x0000231c(uRam0001705c);
+          func_0x00000fa8(param_1,0xff);
+          return;
+        }
+        fVar6 = ((float)uVar4 / 1.0) * _DAT_000170ac;
+        *(undefined1 *)(iVar3 + 0xc) = 1;
+        func_0x0002b2f4(fVar6);
+        func_0x0000231c(uRam0001705c);
+        func_0x0000257c(5,0,0);
+        fVar6 = *(float *)(iRam00017e90 + 0x3a0) * fRam0001729c;
+        *(undefined1 *)(iVar3 + 0xc) = 0;
+        uVar1 = (ulonglong)(fVar6 * 1.0);
+        bVar2 = uVar1 >> 0x10 != 0;
+        func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 -
+                                (uint)(NAN(fVar6) || bVar2)) +
+                                (uint)((!NAN(fVar6) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1
+                       );
+        func_0x00000fa8(param_1,1);
+        return;
+      }
+      func_0x00000fa8(param_1,0xff);
+      return;
+    }
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b4d4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b4d4(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  float fVar3;
+  
+  fVar3 = *(float *)(iRam00017e90 + 0x3a0) * fRam0001729c;
+  uVar1 = (ulonglong)(fVar3 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar3) || bVar2))
+                          + (uint)((!NAN(fVar3) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2ea74 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002ea74(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  int iVar4;
+  float fVar5;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  uVar3 = uVar3 >> 0x10;
+  if (0x13 < uVar3) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  iVar4 = *(int *)(uVar3 * 4 + _DAT_00018234 + 8);
+  if ((iVar4 != 0x13) && (iVar4 != 0x14)) {
+    fVar5 = *(float *)(uVar3 * 0xc + _DAT_00018234 + 0x5c);
+    uVar1 = (ulonglong)(fVar5 * 1.0);
+    bVar2 = uVar1 >> 0x10 != 0;
+    func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar5) || bVar2)
+                            ) + (uint)((!NAN(fVar5) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1
+                   );
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fe4(param_1,0xffffffff);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1e988 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001e988(undefined4 param_1)
+
+{
+  func_0x00000fe4(param_1,((uint)*(byte *)(_DAT_000171ec + 0xf7) -
+                          (uint)*(byte *)(_DAT_000171ec + 0xd)) + -1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x25188 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00025188(undefined4 param_1)
+
+{
+  uint *puVar1;
+  int iVar2;
+  uint uVar3;
+  
+  iVar2 = func_0x00000ffc(param_1);
+  puVar1 = puRam00017a64;
+  if (iVar2 != 0) {
+    *puRam00017a64 = 0;
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  uVar3 = *puRam00017a64;
+  puRam00017a64[1] = 0;
+  *puVar1 = uVar3 | 1;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x251b8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_000251b8(undefined4 param_1)
+
+{
+  uint *puVar1;
+  uint uVar2;
+  uint uVar3;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  puVar1 = puRam00017a64;
+  if (((int)uVar2 < 0) && (uVar2 <= uRam00017a68)) {
+    uVar3 = *puRam00017a64;
+    puRam00017a64[2] = uVar2;
+    *puVar1 = uVar3 | 2;
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  *puRam00017a64 = 0;
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b510 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b510(undefined4 param_1)
+
+{
+  int iVar1;
+  uint uVar2;
+  
+  iVar1 = func_0x0001dd34(6);
+  if (iVar1 == 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  uVar2 = func_0x00000ffc(param_1);
+  if (0x12 < uVar2) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x0002b564(uVar2 & 0xff);
+  if (uVar2 == *(byte *)(iRam0001806c + 0x7f)) {
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fe4(param_1);
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b5f4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002b5f4(undefined4 param_1)
+
+{
+  uint uVar1;
+  float fVar2;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (uVar1 == 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar2 = ((float)uVar1 / 1.0) * _DAT_000170ac;
+  func_0x00024164(0x19,fVar2);
+  func_0x00024164(0x1a,fVar2);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b634 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b634(undefined4 param_1)
+
+{
+  char *pcVar1;
+  uint uVar2;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  if ((uVar2 != 0) && (uVar2 < 7)) {
+    pcVar1 = (char *)(iRam00018070 + 0x7c);
+    *(char *)(iRam00018070 + 0x7d) = (char)uVar2;
+    if (*pcVar1 != '\0') {
+      func_0x0002c404(0x16,uVar2 - 1 | 8,0,0);
+    }
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x270dc ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_000270dc(undefined4 param_1)
+
+{
+  char cVar1;
+  ushort uVar2;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  if (uVar2 == 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  cVar1 = *(char *)(iRam00017dd4 + 0x80);
+  *(float *)(iRam00017dd8 + 0x1fc) = ((float)uVar2 / 1.0) * _DAT_00017460;
+  if (cVar1 == '\0') {
+    func_0x0002704c();
+  }
+  func_0x0001b1e4(0x1c,uRam00017ddc);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27124 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00027139) */
+
+void FUN_00027124(undefined4 param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  
+  func_0x0001b1f4(0x1c);
+  func_0x00027098();
+  iVar2 = 1;
+  iVar1 = iRam00017de0;
+  while( true ) {
+    *(undefined4 *)(iVar1 + 0x1f8) = 0;
+    *(undefined4 *)(iVar1 + 0x1fc) = 0;
+    *(undefined4 *)(iVar1 + 0x200) = 0;
+    iVar1 = iVar1 + 0x48;
+    if (iVar2 == 0) break;
+    iVar2 = iVar2 + -1;
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27154 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00027165) */
+
+void FUN_00027154(undefined4 param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  
+  iVar1 = iRam00017de4;
+  iVar3 = 1;
+  iVar2 = iRam00017de4;
+  while( true ) {
+    *(undefined4 *)(iVar2 + 0x1f8) = 0;
+    *(undefined4 *)(iVar2 + 0x1fc) = 0;
+    *(undefined4 *)(iVar2 + 0x200) = 0;
+    *(undefined4 *)(iVar2 + 0x204) = 0;
+    iVar2 = iVar2 + 0x48;
+    if (iVar3 == 0) break;
+    iVar3 = iVar3 + -1;
+  }
+  *(undefined4 *)(iVar1 + 0x280) = 0;
+  *(undefined4 *)(iVar1 + 0x284) = 0;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b690 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b690(undefined4 param_1)
+
+{
+  func_0x00000fe4(param_1,*(undefined1 *)(iRam0001806c + 0x7f));
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x30124 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00030124(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  *(uint *)(iRam00017aa8 + 0x34) = uVar1 & 0xff;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2cf54 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x0002cfe5) */
+
+void FUN_0002cf54(undefined4 param_1)
+
+{
+  uint uVar1;
+  int iVar2;
+  uint uVar3;
+  int iVar4;
+  int iVar5;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  iVar5 = iRam00018174;
+  uVar3 = uVar1 >> 0x10;
+  *(uint *)(iRam00018174 + 0x1b8) = uVar1;
+  if ((uVar3 < 5) && ((uVar1 & 0xffff) < 0x40)) {
+    iVar2 = iVar5 + -0x3c;
+    if (uVar3 == 0) {
+      func_0x00000fe4(param_1,*(undefined4 *)((uVar1 & 0xffff) * 0xc + iVar2 + 0x200));
+      uVar3 = (uint)*(ushort *)(iVar5 + 0x1ba);
+    }
+    iVar4 = iRam00018178;
+    if (uVar3 == 1) {
+      func_0x00000fe4(param_1,*(undefined4 *)
+                               ((uint)*(ushort *)(iRam00018178 + 0x8c) * 0xc + iVar2 + 0x1fc));
+      uVar3 = (uint)*(ushort *)(iVar5 + 0x1ba);
+    }
+    if (uVar3 == 2) {
+      memw();
+      *(undefined4 *)((uint)*(ushort *)(iVar4 + 0x8c) * 0xc + iVar2 + 0x1fc) =
+           *(undefined4 *)(iRam00017df4 + 0x44);
+      func_0x0002cef4(0);
+      uVar3 = (uint)*(ushort *)(iVar5 + 0x1ba);
+    }
+    if (uVar3 == 3) {
+      iVar4 = (uint)*(ushort *)(iVar4 + 0x8c) * 0xc + iVar2;
+      *(undefined4 *)(iVar4 + 0x1fc) = *(undefined4 *)(iVar4 + 0x200);
+      func_0x0002cef4(0);
+      uVar3 = (uint)*(ushort *)(iVar5 + 0x1ba);
+    }
+    if (uVar3 == 4) {
+      iVar5 = 0x3f;
+      while( true ) {
+        *(undefined4 *)(iVar2 + 0x1fc) = *(undefined4 *)(iVar2 + 0x200);
+        iVar2 = iVar2 + 0xc;
+        if (iVar5 == 0) break;
+        iVar5 = iVar5 + -1;
+      }
+      func_0x0002cef4(0);
+    }
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2d008 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x0002d08e) */
+
+void FUN_0002d008(undefined4 param_1)
+
+{
+  uint uVar1;
+  int iVar2;
+  uint uVar3;
+  int iVar4;
+  int iVar5;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  iVar5 = iRam0001817c;
+  uVar3 = uVar1 >> 0x10;
+  *(uint *)(iRam0001817c + 0xfc) = uVar1;
+  iVar2 = iRam00018168;
+  if ((uVar3 < 5) && ((uVar1 & 0xffff) < 0x50)) {
+    if (uVar3 == 0) {
+      func_0x00000fe4(param_1,*(undefined4 *)((uVar1 & 0xffff) * 4 + iRam00018168 + 0x3e4));
+      uVar3 = (uint)*(ushort *)(iVar5 + 0xfe);
+    }
+    iVar4 = iRam00018178;
+    if (uVar3 == 1) {
+      func_0x00000fe4(param_1,*(undefined4 *)
+                               ((uint)*(ushort *)(iRam00018178 + 0x80) * 4 + iVar2 + 0x2a4));
+      uVar3 = (uint)*(ushort *)(iVar5 + 0xfe);
+    }
+    if (uVar3 == 2) {
+      *(undefined4 *)((uint)*(ushort *)(iVar4 + 0x80) * 4 + iVar2 + 0x2a4) =
+           *(undefined4 *)(iRam00017df4 + 0x44);
+      func_0x0002cdc8();
+      func_0x0002ce00();
+      uVar3 = (uint)*(ushort *)(iVar5 + 0xfe);
+    }
+    if (uVar3 == 3) {
+      iVar4 = (uint)*(ushort *)(iVar4 + 0x80) * 4 + iVar2;
+      *(undefined4 *)(iVar4 + 0x2a4) = *(undefined4 *)(iVar4 + 0x3e4);
+      func_0x0002cdc8();
+      func_0x0002ce00();
+      uVar3 = (uint)*(ushort *)(iVar5 + 0xfe);
+    }
+    if (uVar3 == 4) {
+      iVar5 = 0x4f;
+      while( true ) {
+        *(undefined4 *)(iVar2 + 0x2a4) = *(undefined4 *)(iVar2 + 0x3e4);
+        iVar2 = iVar2 + 4;
+        if (iVar5 == 0) break;
+        iVar5 = iVar5 + -1;
+      }
+      func_0x0002cdc8();
+      func_0x0002ce00();
+    }
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2d0b4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002d0b4(undefined4 param_1)
+
+{
+  float fVar1;
+  undefined4 uVar2;
+  float fVar3;
+  
+  fVar1 = (float)func_0x00000ffc(param_1);
+  fVar3 = fRam0001814c;
+  if (fVar1 < fRam0001814c) {
+    fVar3 = fVar1;
+  }
+  uVar2 = func_0x0002cd70(fVar3);
+  func_0x00000fe4(param_1,uVar2);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1bd9c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001bd9c(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (0xf < uVar1) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  *(char *)(_DAT_00017104 + 0x1c) = (char)uVar1;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x234cc ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00023517) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_000234cc(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  uint uVar4;
+  float fVar5;
+  
+  if (*(char *)(iRam00017884 + 0x80) != '\0') {
+    func_0x00002268(_DAT_00017094);
+    uVar3 = func_0x00000ffc(param_1);
+    uVar4 = uVar3 >> 0x14 & 0xff;
+    fVar5 = ((float)(uVar3 & 0xffff) / 1.0) * _DAT_000170ac;
+    if (uVar4 < 8) {
+      pfRam00017878[(short)uVar4 * 0xf1] = fVar5;
+    }
+    else {
+      *pfRam00017878 = fVar5;
+    }
+    fVar5 = fVar5 * fRam0001729c;
+    uVar1 = (ulonglong)(fVar5 * 1.0);
+    bVar2 = uVar1 >> 0x10 != 0;
+    func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar5) || bVar2)
+                            ) + (uint)((!NAN(fVar5) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1
+                   );
+    func_0x00000fa8(param_1,1);
+    func_0x0000231c(_DAT_00017094);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x23548 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00023595) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00023548(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  uint uVar4;
+  float fVar5;
+  
+  if (*(char *)(iRam00017884 + 0x80) != '\0') {
+    func_0x00002268(_DAT_00017094);
+    uVar3 = func_0x00000ffc(param_1);
+    uVar4 = uVar3 >> 0x14 & 0xff;
+    fVar5 = ((float)(uVar3 & 0xffff) / 1.0) * _DAT_000170ac;
+    if (uVar4 < 8) {
+      pfRam000178b4[(short)uVar4 * 0xf1] = fVar5;
+    }
+    else {
+      *pfRam000178b4 = fVar5;
+    }
+    fVar5 = fVar5 * fRam0001729c;
+    uVar1 = (ulonglong)(fVar5 * 1.0);
+    bVar2 = uVar1 >> 0x10 != 0;
+    func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar5) || bVar2)
+                            ) + (uint)((!NAN(fVar5) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1
+                   );
+    func_0x00000fa8(param_1,1);
+    func_0x0000231c(_DAT_00017094);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b504 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b504(undefined4 param_1)
+
+{
+  FUN_0002b4d4(param_1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2c340 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002c340(undefined4 param_1)
+
+{
+  func_0x00000fe4(param_1,*(undefined1 *)(_DAT_00017124 + 0x24));
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b8d4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002b8d4(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  func_0x0002b2cc(((float)uVar1 / 1.0) * _DAT_000170ac);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b8f8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b8f8(undefined4 param_1)
+
+{
+  func_0x0002b2e0();
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2c358 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002c358(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  func_0x00000ffc(param_1);
+  func_0x0002bda4();
+  iVar1 = _DAT_00017124;
+  func_0x00000fe4(param_1,*(undefined1 *)(_DAT_00017124 + 0x65));
+  if (*(char *)(iVar1 + 0x26) == '\x01') {
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2c388 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002c388(undefined4 param_1)
+
+{
+  func_0x0002bddc();
+  if (*(char *)(_DAT_00017124 + 0x26) == '\0') {
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1dcf4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0001dcf4(undefined4 param_1)
+
+{
+  undefined4 *puVar1;
+  
+  puVar1 = (undefined4 *)func_0x00001014(param_1);
+  memw();
+  *puVar1 = *(undefined4 *)(iRam0001739c + 8);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2c5f8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002c5f8(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  if (*(int *)(_DAT_000170b0 + 8) != 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  iVar1 = func_0x0002e4c4();
+  if ((iVar1 != 2) && (iVar1 = func_0x0002e4c4(), iVar1 != 1)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x00000fa8(param_1,1);
+  func_0x0002b308(0);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2c44c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002c44c(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  int iVar3;
+  int iVar4;
+  ushort uVar5;
+  int iVar6;
+  int iVar7;
+  undefined4 uVar8;
+  uint uVar9;
+  int iVar10;
+  int iVar11;
+  float fVar12;
+  
+  iVar6 = func_0x0002e4c4();
+  func_0x0002c710(1);
+  func_0x00000fa8(param_1,1);
+  iVar4 = iRam00018108;
+  iVar3 = _DAT_00017120;
+  iVar11 = _DAT_0001711c;
+  if (*(char *)(_DAT_00017120 + 0x4c) == '\0') {
+    func_0x00002268(uRam0001705c);
+    func_0x0002b4f8(1);
+    func_0x0002b564(*(undefined1 *)(iVar11 + iVar6 * 100 + 0x41));
+    func_0x0000231c(uRam0001705c);
+  }
+  else {
+    iVar7 = func_0x0001dd34(0x1d);
+    if (iVar7 != 0) {
+      func_0x0002cac0();
+    }
+    iVar7 = iRam00017bc4;
+    if (*(char *)(iVar3 + 0x4d) == '\0') {
+      memw();
+      memw();
+      *(uint *)(iRam00017bc4 + 0x234) = *(uint *)(iRam00017bc4 + 0x234) & uRam0001810c;
+      memw();
+      memw();
+      *(uint *)(iVar7 + 0x234) = *(uint *)(iVar7 + 0x234) | 4;
+    }
+    else {
+      memw();
+      memw();
+      *(uint *)(iRam00017bc4 + 0x244) = *(uint *)(iRam00017bc4 + 0x244) & 0xffffffe0 | 0xf;
+      memw();
+      memw();
+      *(uint *)(iVar7 + 0x234) = *(uint *)(iVar7 + 0x234) & 0xfffffff7;
+      memw();
+      memw();
+      *(uint *)(iVar7 + 0x234) = *(uint *)(iVar7 + 0x234) | uRam00017818;
+      memw();
+      memw();
+      *(uint *)(iVar7 + 0x234) = *(uint *)(iVar7 + 0x234) & 0xfffffffb;
+    }
+    func_0x00002268(uRam0001705c);
+    iVar7 = _DAT_00017124;
+    uVar5 = func_0x0002cc50(*(undefined4 *)(_DAT_00017124 + 0x20));
+    uVar8 = func_0x0002cca4(*(undefined4 *)(iVar7 + 0x20));
+    *(short *)(iVar4 + 0x68) = (short)uVar8;
+    *(ushort *)(iVar4 + 0x66) = uVar5;
+    iVar7 = func_0x0001dd34(6);
+    if (iVar7 == 0) {
+      iVar7 = *(int *)(iVar11 + iVar6 * 100 + 0x44);
+    }
+    else {
+      fVar12 = *(float *)(iRam00017e90 + 0x3a0) * fRam0001729c;
+      uVar1 = (ulonglong)(fVar12 * 1.0);
+      bVar2 = uVar1 >> 0x10 != 0;
+      iVar7 = (uint)((!NAN(fVar12) && !bVar2) && -1 < (longlong)uVar1) * (int)uVar1 -
+              (uint)(NAN(fVar12) || bVar2);
+    }
+    uVar9 = (uint)(iVar7 * 0x14) / 100 | (uint)uVar5 << 0x10 | uRam00018110;
+    iVar10 = func_0x0002c404(0x11,uVar9,uVar8,0);
+    iVar7 = iRam00018114;
+    if (iVar10 == 0) {
+      *(uint *)(iRam00018114 + 0x10) = uVar9;
+      *(undefined4 *)(iVar7 + 0x14) = uVar8;
+      func_0x0002c814(1);
+      func_0x0002b564(*(undefined1 *)(iVar11 + iVar6 * 100 + 0x41));
+      func_0x0002c728(*(undefined4 *)(iVar11 + 0x3d0));
+      func_0x0002c750();
+      iVar11 = func_0x0001dd34(1);
+      if (iVar11 != 0) {
+        func_0x0002b6b0();
+      }
+      func_0x0002b670();
+      func_0x0002492c();
+      iVar11 = iRam00017320;
+      *(undefined4 *)(iRam00017320 + 0x14) = 0;
+      *(undefined4 *)(iVar11 + 0x1c) = 0;
+      *(undefined1 *)(iVar11 + 0x24) = 0;
+      *(undefined1 *)(iVar11 + 0x27) = 0;
+      func_0x0002b4f8();
+    }
+    else {
+      func_0x0002c710(0);
+    }
+    func_0x0000231c(uRam0001705c);
+  }
+  if ((*(char *)(iVar3 + 0x4c) != '\0') && (iVar11 = func_0x0002c5e4(), iVar11 != 0)) {
+    *(undefined1 *)(iVar4 + 100) = 1;
+  }
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1b92c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0001b92c(undefined4 param_1)
+
+{
+  func_0x00000fe4(param_1,0x17);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1c814 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0001c814(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (0xb < uVar1) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x00000fe4(param_1,*(undefined4 *)(uVar1 * 4 + iRam00017224));
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1dc58 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x0001dc71) */
+/* WARNING: Removing unreachable block (ram,0x0001dc8d) */
+
+void FUN_0001dc58(undefined4 param_1)
+
+{
+  uint *puVar1;
+  uint *puVar2;
+  uint *puVar3;
+  uint *puVar4;
+  uint uVar5;
+  int iVar6;
+  uint auStack_30 [12];
+  
+  puVar3 = auStack_30;
+  auStack_30[1] = 0;
+  auStack_30[0] = 0;
+  puVar1 = (uint *)func_0x00001014(param_1);
+  iVar6 = 1;
+  puVar2 = puVar1;
+  puVar4 = puRam0001739c;
+  while( true ) {
+    memw();
+    uVar5 = *puVar2;
+    puVar2 = puVar2 + 1;
+    *puVar4 = *puVar4 | uVar5;
+    puVar4 = puVar4 + 1;
+    if (iVar6 == 0) break;
+    iVar6 = iVar6 + -1;
+  }
+  func_0x0001db20(auStack_30);
+  iVar6 = 1;
+  while( true ) {
+    memw();
+    *puVar1 = *puVar3;
+    puVar3 = puVar3 + 1;
+    puVar1 = puVar1 + 1;
+    if (iVar6 == 0) break;
+    iVar6 = iVar6 + -1;
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1dca4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x0001dcbd) */
+/* WARNING: Removing unreachable block (ram,0x0001dcdd) */
+
+void FUN_0001dca4(undefined4 param_1)
+
+{
+  uint *puVar1;
+  uint *puVar2;
+  uint *puVar3;
+  uint *puVar4;
+  uint uVar5;
+  int iVar6;
+  uint auStack_30 [12];
+  
+  puVar3 = auStack_30;
+  auStack_30[1] = 0;
+  auStack_30[0] = 0;
+  puVar1 = (uint *)func_0x00001014(param_1);
+  iVar6 = 1;
+  puVar2 = puVar1;
+  puVar4 = puRam0001739c;
+  while( true ) {
+    memw();
+    uVar5 = *puVar2;
+    puVar2 = puVar2 + 1;
+    *puVar4 = *puVar4 & (uVar5 ^ 0xffffffff);
+    puVar4 = puVar4 + 1;
+    if (iVar6 == 0) break;
+    iVar6 = iVar6 + -1;
+  }
+  func_0x0001db20(auStack_30);
+  iVar6 = 1;
+  while( true ) {
+    memw();
+    *puVar1 = *puVar3;
+    puVar3 = puVar3 + 1;
+    puVar1 = puVar1 + 1;
+    if (iVar6 == 0) break;
+    iVar6 = iVar6 + -1;
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x28984 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00028984(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  iVar2 = 1;
+  if ((*(byte *)(iRam00017e9c + 0x13) & 2) != 0) {
+    iVar2 = func_0x0001cf8c(uVar1,*(undefined4 *)(iRam00017e9c + 0xc),
+                            *(undefined4 *)(iRam00017e9c + 0x18));
+  }
+  if (iVar2 != 0) {
+    uVar1 = func_0x00000ffc(param_1);
+    FUN_00039c14(uRam00017ec4,uVar1);
+  }
+  uVar1 = 0xff;
+  if (iVar2 != 0) {
+    uVar1 = 1;
+  }
+  func_0x00000fa8(param_1,uVar1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x289c4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_000289c4(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  iVar2 = 1;
+  if ((*(byte *)(iRam00017e9c + 0x13) & 1) != 0) {
+    iVar2 = func_0x0001cf8c(*(undefined4 *)(iRam00017e9c + 8),uVar1,
+                            *(undefined4 *)(iRam00017e9c + 0x18));
+  }
+  if (iVar2 != 0) {
+    uVar1 = func_0x00000ffc(param_1);
+    FUN_00039c28(uRam00017ec4,uVar1);
+  }
+  uVar1 = 0xff;
+  if (iVar2 != 0) {
+    uVar1 = 1;
+  }
+  func_0x00000fa8(param_1,uVar1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x28a04 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00028a04(undefined4 param_1)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  int iVar3;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  iVar3 = FUN_00039c3c(uRam00017ec4);
+  iVar1 = iRam00017e9c;
+  if (iVar3 == 0) {
+    iVar3 = 1;
+  }
+  else {
+    iVar3 = func_0x0001cf8c(*(undefined4 *)(iRam00017e9c + 8),*(undefined4 *)(iRam00017e9c + 0xc),
+                            uVar2);
+  }
+  if (iVar3 != 0) {
+    uVar2 = func_0x00000ffc(param_1);
+    *(undefined4 *)(iVar1 + 0x18) = uVar2;
+  }
+  uVar2 = 0xff;
+  if (iVar3 != 0) {
+    uVar2 = 1;
+  }
+  func_0x00000fa8(param_1,uVar2);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x25414 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00025414(int param_1)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  uint auStack_40 [16];
+  
+  iVar1 = func_0x0002a018(9);
+  if (iVar1 == 0) {
+    if (param_1 == 2) {
+      uVar2 = func_0x00001014(2);
+      FUN_0001cc7c(uVar2,auStack_40,0x18);
+    }
+    else {
+      auStack_40[0] = func_0x00000ffc(param_1);
+    }
+    func_0x00002268(uRam00017580);
+    if ((auStack_40[0] >> 8 & 3) == 1) {
+      func_0x00000fa8(param_1,1);
+      func_0x00036428(auStack_40);
+    }
+    else {
+      uVar2 = func_0x00036428(auStack_40);
+      func_0x00000fe4(param_1,uVar2);
+      func_0x00000fa8(param_1,1);
+    }
+    func_0x0000231c(uRam00017580);
+    return;
+  }
+  func_0x00000fe4(param_1,0);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2ce78 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002ce78(undefined4 param_1)
+
+{
+  uint uVar1;
+  uint uVar2;
+  int *piVar3;
+  int iVar4;
+  int iVar5;
+  uint uVar6;
+  uint uVar7;
+  int iVar8;
+  int iVar9;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  piVar3 = (int *)func_0x00001014(param_1);
+  if (0x14 < uVar2) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  iVar8 = 0;
+  iVar9 = 0;
+  uVar7 = 0;
+  uVar6 = uVar2 * 8 + 4;
+  iVar5 = uVar2 * 0x20 + iRam00018168;
+  do {
+    if (0xa7 < uVar6) {
+      func_0x00000fa8(param_1,0xff);
+      return;
+    }
+    iVar4 = func_0x0002cd70(*(undefined4 *)(iVar5 + 4));
+    iVar8 = iVar8 + (iVar4 << 0x20 - (0x20 - (uVar7 & 0x1f)));
+    iVar4 = func_0x0002cd70(*(undefined4 *)(iVar5 + 0x14));
+    iVar5 = iVar5 + 4;
+    uVar1 = uVar7 & 0x1f;
+    uVar6 = uVar6 + 1;
+    uVar7 = uVar7 + 8;
+    iVar9 = iVar9 + (iVar4 << 0x20 - (0x20 - uVar1));
+  } while (uVar6 != uVar2 * 8 + 8);
+  *piVar3 = iVar8;
+  piVar3[1] = iVar9;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2512c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002512c(undefined4 param_1)
+
+{
+  uint uVar1;
+  uint uVar2;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  uVar2 = uVar1 & 0xffff;
+  if (((uVar2 != 3) && (uVar2 != 4)) && (uVar2 != 5)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  uVar1 = uVar1 >> 0x10;
+  if (((uVar1 != 0x11) && (uVar1 != 0x22)) && (uVar1 != 0)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  if (uVar2 == 3) {
+    func_0x00025054();
+  }
+  else if (uVar2 == 4) {
+    func_0x000250fc();
+  }
+  else {
+    if (uVar2 != 5) {
+      func_0x00000fa8(param_1,0xff);
+      return;
+    }
+    func_0x00025114();
+  }
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1b954 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001b954(undefined4 param_1)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  int iVar3;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  iVar1 = _DAT_00017104;
+  iVar3 = 1;
+  if ((*(byte *)(_DAT_00017104 + 0xb) & 2) != 0) {
+    iVar3 = func_0x0001cf8c(uVar2,*(undefined4 *)(_DAT_00017104 + 4),0x49c);
+  }
+  if (iVar3 != 0) {
+    FUN_00039c14(iVar1,uVar2);
+  }
+  uVar2 = 0xff;
+  if (iVar3 != 0) {
+    uVar2 = 1;
+  }
+  func_0x00000fa8(param_1,uVar2);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1b990 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001b990(undefined4 param_1)
+
+{
+  undefined4 *puVar1;
+  undefined4 uVar2;
+  int iVar3;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  puVar1 = _DAT_00017104;
+  iVar3 = 1;
+  if ((*(byte *)((int)_DAT_00017104 + 0xb) & 1) != 0) {
+    iVar3 = func_0x0001cf8c(*_DAT_00017104,uVar2,0x49c);
+  }
+  if (iVar3 != 0) {
+    uVar2 = func_0x00000ffc(param_1);
+    FUN_00039c28(puVar1,uVar2);
+  }
+  uVar2 = 0xff;
+  if (iVar3 != 0) {
+    uVar2 = 1;
+  }
+  func_0x00000fa8(param_1,uVar2);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1ba6c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001ba6c(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  iVar2 = 1;
+  if ((*(byte *)(_DAT_00017104 + 0x2b) & 2) != 0) {
+    iVar2 = func_0x0001cf8c(uVar1,*(undefined4 *)(_DAT_00017104 + 0x24),_DAT_00017114);
+  }
+  if (iVar2 != 0) {
+    FUN_00039c14(uRam0001710c,uVar1);
+    func_0x0001ba50();
+  }
+  uVar1 = 0xff;
+  if (iVar2 != 0) {
+    uVar1 = 1;
+  }
+  func_0x00000fa8(param_1,uVar1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1baac ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001baac(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  iVar2 = 1;
+  if ((*(byte *)(_DAT_00017104 + 0x2b) & 1) != 0) {
+    iVar2 = func_0x0001cf8c(*(undefined4 *)(_DAT_00017104 + 0x20),uVar1,_DAT_00017114);
+  }
+  if (iVar2 != 0) {
+    FUN_00039c28(uRam0001710c,uVar1);
+    func_0x0001ba50();
+  }
+  uVar1 = 0xff;
+  if (iVar2 != 0) {
+    uVar1 = 1;
+  }
+  func_0x00000fa8(param_1,uVar1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x24c3c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00024c3c(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = func_0x00000ffc(param_1);
+  if (iVar1 == 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x00024bac();
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2d444 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002d444(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if ((uVar1 & 3) == 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  if ((uVar1 & 1) != 0) {
+    func_0x0002d270();
+  }
+  if ((uVar1 & 2) != 0) {
+    func_0x0002d2bc();
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2d474 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002d474(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if ((uVar1 & 3) == 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  if ((uVar1 & 1) != 0) {
+    func_0x0002d308(0);
+  }
+  if ((uVar1 & 2) != 0) {
+    func_0x0002d35c(0);
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x20264 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00020264(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = func_0x00000ffc(param_1);
+  if (iVar1 == 0) {
+    func_0x0001f814();
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  if (iVar1 == 1) {
+    func_0x0001faf0();
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2d7a0 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x0002d87a) */
+/* WARNING: Removing unreachable block (ram,0x0002da61) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002d7a0(undefined4 param_1)
+
+{
+  byte bVar1;
+  bool bVar2;
+  float *pfVar3;
+  uint uVar4;
+  int iVar5;
+  float fVar6;
+  int iVar7;
+  int iVar8;
+  uint *puVar9;
+  undefined4 *puVar10;
+  undefined4 *puVar11;
+  undefined4 *puVar12;
+  float *pfVar13;
+  float *pfVar14;
+  float *pfVar15;
+  float fVar16;
+  float fVar17;
+  undefined4 uVar18;
+  int iVar19;
+  undefined4 auStack_b0 [8];
+  uint auStack_90 [8];
+  int iStack_70;
+  float *pfStack_6c;
+  int iStack_68;
+  int iStack_64;
+  int iStack_60;
+  float *pfStack_5c;
+  int iStack_58;
+  float *pfStack_54;
+  int iStack_50;
+  float fStack_4c;
+  float fStack_48;
+  float fStack_44;
+  int iStack_40;
+  float *pfStack_3c;
+  float *pfStack_38;
+  float *pfStack_34;
+  int iStack_30;
+  
+  puVar10 = auStack_b0;
+  puVar11 = auStack_b0;
+  uVar4 = func_0x00000ffc(param_1);
+  iVar5 = func_0x0002e4c4();
+  pfVar3 = _DAT_000180cc;
+  fVar6 = _DAT_000170ac;
+  if (iVar5 == 7) {
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  if ((((*(float *)(_DAT_000171b4 + 0x160) == 0.0) || (*(float *)(_DAT_000171b4 + 0x220) == 0.0)) ||
+      (*(float *)(_DAT_000171b4 + 0x1e0) == 0.0)) || (*(float *)(_DAT_000171b4 + 0x2a0) == 0.0)) {
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  fVar16 = (float)(uVar4 & 0xffff) / 1.0;
+  if ((fVar16 <= _DAT_000181b4) || (_DAT_000181b8 <= fVar16)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar17 = (float)(uVar4 >> 0x10) / 1.0;
+  *_DAT_000180cc = fVar16 * _DAT_000170ac;
+  pfVar15 = _DAT_00017124;
+  uVar18 = _DAT_00017094;
+  if ((0.0 <= fVar17) && (fVar17 <= _DAT_00018118)) {
+    fVar16 = pfVar3[0x19];
+    *(undefined1 *)((int)pfVar3 + 0x5e) = 0;
+    *(undefined1 *)((int)pfVar3 + 0x5d) = 0;
+    *(undefined1 *)(pfVar3 + 0x17) = 1;
+    pfVar15[3] = fVar16;
+    pfVar15[4] = fVar16;
+    pfVar3[0x18] = fVar17 * fVar6;
+    func_0x00002268(uVar18);
+    iVar7 = _DAT_000178a4;
+    iVar5 = _DAT_000171bc;
+    puVar9 = auStack_90;
+    iVar19 = 7;
+    puVar12 = _DAT_00017e64;
+    while( true ) {
+      uVar18 = *puVar12;
+      *puVar9 = (uint)*(byte *)(puVar12 + 1);
+      *(undefined1 *)(puVar12 + 1) = 1;
+      bVar1 = *(byte *)(iVar5 + 0xc);
+      *puVar10 = uVar18;
+      puVar10 = puVar10 + 1;
+      puVar9 = puVar9 + 1;
+      puVar12 = puVar12 + 0xf1;
+      *puVar12 = *(undefined4 *)((uint)bVar1 * 4 + iVar7 + 0x1fc);
+      if (iVar19 == 0) break;
+      iVar19 = iVar19 + -1;
+    }
+    func_0x0000231c(_DAT_00017094);
+    func_0x0000246c(3);
+    func_0x0001cb30(*pfVar3);
+    func_0x0002bd80();
+    func_0x0000246c(3);
+    fStack_48 = _DAT_00017e18;
+    fVar6 = _DAT_00017abc;
+    iVar8 = _DAT_0001767c;
+    pfVar15 = _DAT_000172c8;
+    iVar19 = _DAT_000171c8;
+    iVar7 = _DAT_00017060;
+    bVar2 = false;
+    iStack_58 = 2;
+    iStack_50 = _DAT_00017060;
+    fVar16 = *_DAT_00017124 - _DAT_00017124[2] * *(float *)(_DAT_00017ed0 + 0x11c);
+    fStack_44 = fVar16 - *(float *)(_DAT_00017ed0 + 0x118);
+    pfVar3[2] = *(float *)(_DAT_00017ed0 + 0x118);
+    pfVar3[1] = fVar16;
+    pfVar13 = pfVar3;
+    pfVar14 = pfVar3;
+    iVar5 = iVar7;
+    do {
+      iVar5 = iVar5 + 4;
+      if ((*(char *)(iVar7 + 0x24) == '\0') && (!bVar2)) {
+        iStack_60 = iStack_50;
+        iStack_70 = iVar5;
+        pfStack_6c = pfVar15;
+        iStack_68 = iVar19;
+        iStack_64 = iVar8;
+        pfStack_5c = pfVar13;
+        pfStack_54 = pfVar14;
+        do {
+          if ((*(char *)(iStack_60 + 0x1c) == '\0') && (!bVar2)) {
+            fVar16 = *pfStack_6c;
+            pfStack_54[3] = fVar16;
+            memw();
+            uVar4 = *(uint *)(iStack_68 + 0x21c) >> 0xe & 0x3fff;
+            *(short *)(pfStack_5c + 0x13) = (short)uVar4;
+            if ((0x1e0 < uVar4) || (uVar4 < 0x78)) {
+              bVar2 = true;
+              *(undefined1 *)((int)pfVar3 + 0x5e) = 1;
+              uVar4 = (uint)*(ushort *)(pfStack_5c + 0x13);
+            }
+            fStack_4c = fVar6;
+            iStack_40 = iVar5;
+            pfStack_3c = pfVar15;
+            pfStack_38 = pfVar14;
+            pfStack_34 = pfVar13;
+            iStack_30 = iVar19;
+            fVar6 = (float)func_0x0001d304(iStack_64,fVar16,(float)uVar4 / 1.0);
+            pfStack_54[0xb] = fVar6;
+            fStack_4c = (float)func_0x0001caa8(fVar6,fStack_4c);
+            fStack_48 = (float)func_0x0001cabc(pfStack_54[0xb],fStack_48);
+            iVar19 = iStack_30;
+            pfVar13 = pfStack_34;
+            pfVar14 = pfStack_38;
+            pfVar15 = pfStack_3c;
+            iVar5 = iStack_40;
+            fVar6 = fStack_4c;
+          }
+          iStack_64 = iStack_64 + 0x3c4;
+          iStack_68 = iStack_68 + _DAT_000171cc;
+          pfStack_5c = (float *)((int)pfStack_5c + 2);
+          iStack_60 = iStack_60 + 1;
+          pfStack_54 = pfStack_54 + 1;
+          pfStack_6c = pfStack_6c + 0x5e;
+        } while (iStack_60 != iStack_70);
+      }
+      pfVar13 = pfVar13 + 2;
+      pfVar14 = pfVar14 + 4;
+      iVar7 = iVar7 + 1;
+      iVar8 = iVar8 + 0xf10;
+      pfVar15 = pfVar15 + 0x178;
+      iVar19 = iVar19 + _DAT_000171c0;
+      iStack_58 = iStack_58 + -1;
+      iStack_50 = iStack_50 + 4;
+    } while (iStack_58 != 0);
+    if (_DAT_00017dfc < fVar6 - fStack_48) {
+      bVar2 = true;
+      *(undefined1 *)((int)pfVar3 + 0x5d) = 1;
+    }
+    func_0x0002bdcc();
+    puVar10 = _DAT_00017e64;
+    func_0x00002268(_DAT_00017094);
+    puVar9 = auStack_90;
+    iVar5 = 7;
+    while( true ) {
+      puVar11 = puVar11 + 1;
+      uVar18 = *puVar11;
+      *(char *)(puVar10 + 1) = (char)*puVar9;
+      puVar9 = puVar9 + 1;
+      puVar10 = puVar10 + 0xf1;
+      *puVar10 = uVar18;
+      if (iVar5 == 0) break;
+      iVar5 = iVar5 + -1;
+    }
+    func_0x0000231c(_DAT_00017094);
+    if (!bVar2) {
+      uVar18 = func_0x0001cabc(fStack_44,(pfVar3[1] - fStack_48) - pfVar3[0x18]);
+      uVar18 = func_0x0001cabc(uVar18,_DAT_00018148);
+      fVar6 = (float)func_0x0001caa8(uVar18,_DAT_000181bc);
+      puVar11 = _DAT_000181c0;
+      pfVar3[0x1c] = fVar6;
+      uVar18 = func_0x0001caa8(*puVar11,fVar6);
+      fVar16 = (float)func_0x0001cabc(uVar18,pfVar3[0x19]);
+      fVar6 = _DAT_000181c4;
+      pfVar3 = _DAT_00017124;
+      _DAT_00017124[3] = fVar16;
+      pfVar3[4] = fVar6;
+      func_0x00000fa8(param_1,1);
+      return;
+    }
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2db90 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002db90(undefined4 param_1)
+
+{
+  undefined1 uVar1;
+  ulonglong uVar2;
+  bool bVar3;
+  int iVar4;
+  undefined4 *puVar5;
+  uint uVar6;
+  int iVar7;
+  int iVar8;
+  float fVar9;
+  undefined4 uVar10;
+  float fVar11;
+  float fVar12;
+  float fVar13;
+  
+  uVar6 = func_0x00000ffc(param_1);
+  iVar7 = func_0x0002e4c4();
+  if (iVar7 == 7) {
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  iVar8 = func_0x0002c5e4();
+  fVar13 = _DAT_00018118;
+  iVar4 = _DAT_000180cc;
+  iVar7 = iRam00017320;
+  fVar9 = _DAT_000170ac;
+  if (iVar8 != 0) {
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  if ((*(float *)(iRam00017320 + 0x100) == 0.0) || (*(float *)(iRam00017320 + 0x110) == 0.0)) {
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  fVar11 = (float)(uVar6 & 0xffff) / 1.0;
+  if ((_DAT_000181b4 < fVar11) && (fVar11 < _DAT_000181b8)) {
+    fVar12 = (float)(uVar6 >> 0x10) / 1.0;
+    *(float *)(_DAT_000180cc + 0x74) = fVar11 * _DAT_000170ac;
+    if ((0.0 <= fVar12) && (fVar12 <= fVar13)) {
+      *(float *)(iVar4 + 0x90) = fVar12 * fVar9;
+      func_0x0001d7e4();
+      func_0x0001d908();
+      iVar8 = _DAT_00017124;
+      uVar10 = *(undefined4 *)(iVar7 + 0x15c);
+      *(undefined1 *)(iVar4 + 0x8e) = 0;
+      *(undefined1 *)(iVar4 + 0x8c) = 1;
+      *(undefined4 *)(iVar8 + 0x2c) = *(undefined4 *)(iVar4 + 0x94);
+      func_0x0002b2cc(uVar10);
+      func_0x0002b094();
+      func_0x0001cb30(*(undefined4 *)(iVar4 + 0x74));
+      func_0x0002bda4();
+      func_0x0000246c(3);
+      fVar9 = (float)func_0x00001828(*(undefined1 *)(iVar8 + 0x24));
+      fVar13 = *(float *)(iVar8 + 0x28);
+      fVar11 = *(float *)(_DAT_00017ed0 + 0x130);
+      uVar1 = *(undefined1 *)(iVar8 + 0x24);
+      *(undefined4 *)(iVar4 + 0x7c) = *(undefined4 *)(_DAT_00017ed0 + 300);
+      *(float *)(iVar4 + 0x78) = fVar9 - fVar13 * fVar11;
+      fVar9 = (float)func_0x00001828(uVar1);
+      fVar11 = *(float *)(iVar4 + 0x7c);
+      *(undefined4 *)(iVar4 + 0x80) = *(undefined4 *)(iRam00017e90 + 0x3c4);
+      uVar6 = func_0x0002d788();
+      fVar13 = (float)FUN_0003acf8(*(float *)(iVar7 + 0x15c) * fRam0001729c,uRam000181cc);
+      uVar10 = uRam00017fe4;
+      fVar13 = ((float)uVar6 / 1.0) * fVar13;
+      uVar2 = (ulonglong)(fVar13 * 1.0);
+      bVar3 = uVar2 >> 0x10 != 0;
+      uVar6 = ((uint)((longlong)uVar2 < 0) * -0x80000000 - (uint)(NAN(fVar13) || bVar3)) +
+              (uint)((!NAN(fVar13) && !bVar3) && (longlong)uVar2 >= 0) * (int)uVar2;
+      *(uint *)(iVar4 + 0x88) = uVar6;
+      uVar10 = func_0x0001d594(uVar10,*(undefined4 *)(iVar4 + 0x80),(float)uVar6 / 1.0);
+      uVar6 = uRam000181d0;
+      *(undefined4 *)(iVar4 + 0x84) = uVar10;
+      if ((uVar6 < *(uint *)(iVar4 + 0x88)) || (*(uint *)(iVar4 + 0x88) < 0x4b0)) {
+        *(undefined1 *)(iVar4 + 0x8e) = 1;
+      }
+      func_0x0002bddc();
+      func_0x0002b2e0();
+      uVar10 = _DAT_00018148;
+      if (*(char *)(iVar4 + 0x8e) == '\x01') {
+        func_0x00000fa8(param_1,0xff);
+      }
+      else {
+        if (*(char *)(iRam00017be0 + 0x15) == '\0') {
+          uVar10 = func_0x0001cabc(fVar9 - fVar11,
+                                   (*(float *)(iVar4 + 0x78) - *(float *)(iVar4 + 0x84)) -
+                                   *(float *)(iVar4 + 0x90));
+          uVar10 = func_0x0001cabc(uVar10,*puRam000181d4);
+          uVar10 = func_0x0001caa8(uVar10,_DAT_000181bc);
+          puVar5 = _DAT_000181c0;
+          *(undefined4 *)(iVar4 + 0xa0) = uVar10;
+          uVar10 = func_0x0001caa8(*puVar5,uVar10);
+          uVar10 = func_0x0001cabc(uVar10,*(undefined4 *)(iVar4 + 0x94));
+          puVar5 = puRam000181d4;
+          *(undefined4 *)(iVar8 + 0x2c) = uVar10;
+          uVar10 = func_0x0001cabc(uVar10,*puVar5);
+          puVar5 = _DAT_000181c0;
+          *(undefined4 *)(iVar8 + 0x2c) = uVar10;
+          uVar10 = func_0x0001caa8(uVar10,*puVar5);
+          *(undefined4 *)(iVar8 + 0x2c) = uVar10;
+        }
+        else {
+          fVar9 = *(float *)(iVar7 + 0x1b4) + *(float *)(iVar4 + 0x74) * *(float *)(iVar7 + 0x1b0);
+          *(float *)(iVar8 + 0x2c) = fVar9;
+          uVar10 = func_0x0001cabc(fVar9,uVar10);
+          puVar5 = _DAT_000181c0;
+          *(undefined4 *)(iVar8 + 0x2c) = uVar10;
+          uVar10 = func_0x0001caa8(uVar10,*puVar5);
+          *(undefined4 *)(iVar8 + 0x2c) = uVar10;
+        }
+        func_0x00000fa8(param_1,1);
+      }
+      func_0x00000fa8(param_1,1);
+      return;
+    }
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2557c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002557c(undefined4 param_1)
+
+{
+  uint uVar1;
+  int *piVar2;
+  uint uVar3;
+  int iVar4;
+  uint uVar5;
+  uint uVar6;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  iVar4 = func_0x0002a018(9);
+  piVar2 = piRam00017a90;
+  uVar1 = uRam00017a8c;
+  if (iVar4 != 0) {
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  if (3 < uVar3) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  if ((uVar3 == 3) && (*piRam00017a90 == 0)) {
+    iVar4 = func_0x00025528(2);
+    if (iVar4 == 3) {
+      uVar6 = 0;
+      *piVar2 = 1;
+      do {
+        uVar5 = func_0x000029f8(0,uRam00017a94,1);
+        uVar6 = uVar6 + 1;
+        if ((uVar5 & 0xf) == 3) break;
+      } while (uVar6 < uVar1);
+    }
+    else {
+      func_0x00000fa8(param_1,0xff);
+    }
+  }
+  iVar4 = func_0x00025528(uVar3);
+  if (iVar4 != 3) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  uVar6 = 0;
+  do {
+    uVar5 = func_0x000029f8(0,uRam00017a94,1);
+    uVar6 = uVar6 + 1;
+    if (uVar3 + 1 == (uVar5 & 0xf)) break;
+  } while (uVar6 < uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x20294 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00020294(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if ((uVar1 & 3) == 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  if ((uVar1 & 1) != 0) {
+    func_0x0001f814();
+  }
+  if ((uVar1 & 2) != 0) {
+    func_0x0001faf0();
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2d4a8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002d4a8(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if ((uVar1 & 3) == 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  if ((uVar1 & 1) != 0) {
+    func_0x000205ac();
+    func_0x0002d308(1);
+  }
+  if ((uVar1 & 2) != 0) {
+    func_0x0002d35c(1);
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2d5c0 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002d5c0(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if ((uVar1 & 3) == 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  if ((uVar1 & 1) != 0) {
+    memw();
+    memw();
+    *(uint *)(iRam000174cc + 0x220) = *(uint *)(iRam000174cc + 0x220) | 1;
+    func_0x0000246c(0);
+  }
+  if ((uVar1 & 2) != 0) {
+    memw();
+    memw();
+    *(uint *)(iRam000174d4 + 0x220) = *(uint *)(iRam000174d4 + 0x220) | 1;
+    func_0x0000246c(0);
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2d620 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002d620(undefined4 param_1)
+
+{
+  uint uVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  uint uVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  int iVar8;
+  uint uVar9;
+  int iVar10;
+  
+  uVar1 = func_0x00000f78(param_1,0);
+  uVar2 = func_0x00000f78(param_1,1);
+  uVar3 = func_0x00000f78(param_1,2);
+  uVar4 = func_0x00000f78(param_1,3);
+  if (uVar4 >> 0x18 != 1) {
+    if (uVar4 >> 0x18 == 0xc0) {
+      uVar1 = uVar4 & 0xffff;
+      if (uVar1 == 1) {
+        uVar1 = uVar4 >> 0x14 & 0xf;
+        if ((uVar1 != 0) && (uVar1 != 1)) {
+          func_0x00000fa8(param_1,0xff);
+          return;
+        }
+        *(undefined1 *)(iRam000181a4 + (short)uVar1 * 0x794 + 0x7c) = 1;
+        func_0x00000fa8(param_1,1);
+        return;
+      }
+      if (uVar1 == 0x20) {
+        if ((uVar4 >> 0x14 & 0xf) == 0) {
+          *(undefined1 *)(iRam000181a4 + 0x7d) = 1;
+          func_0x00000fa8(param_1,1);
+          return;
+        }
+        func_0x00000fa8(param_1,0xff);
+        return;
+      }
+      if (uVar1 == 0x21) {
+        if ((uVar4 >> 0x14 & 0xf) == 0) {
+          *(undefined1 *)(iRam000181a4 + 0x7e) = 1;
+          func_0x00000fa8(param_1,1);
+          return;
+        }
+        func_0x00000fa8(param_1,0xff);
+        return;
+      }
+    }
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  uVar9 = uVar4 >> 0x14 & 0xf;
+  if ((uVar9 != 0) && (uVar9 != 1)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  uVar4 = uVar4 & 0xf;
+  if ((((uVar4 != 1) && (uVar4 != 2)) && (uVar4 != 3)) && (uVar4 != 4)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  if (uVar9 == 0) {
+    iVar7 = iRam000181ac;
+    if (uRam00017c5c < uVar1) {
+      func_0x00000fa8(param_1,0xff);
+      return;
+    }
+  }
+  else {
+    iVar7 = iRam000181a8;
+    if (uRam00017c5c < uVar1) {
+      func_0x00000fa8(param_1,0xff);
+      return;
+    }
+  }
+  iVar6 = (short)uVar9 * 0x794 + iRam000181b0;
+  uVar4 = uVar4 - 1 & 0xff;
+  iVar10 = uVar4 * 4 + iVar6;
+  iVar8 = (short)uVar4 * 0x1e;
+  uVar4 = *(uint *)(iVar10 + 0x780) & 0xff;
+  iVar5 = iVar6 + (uVar4 + iVar8) * 0x10;
+  *(uint *)(iVar6 + (iVar8 + uVar4) * 0x10) = uVar1 + iVar7;
+  *(undefined4 *)(iVar5 + 4) = uVar3;
+  *(undefined4 *)(iVar5 + 8) = uVar2;
+  *(undefined4 *)(iVar5 + 0xc) = 1;
+  *(int *)(iVar10 + 0x780) = *(int *)(iVar10 + 0x780) + 1;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1f218 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001f218(undefined4 param_1)
+
+{
+  uint uVar1;
+  uint uVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  int iVar6;
+  float *pfVar7;
+  int iVar8;
+  float fVar9;
+  
+  pfVar7 = _DAT_000171ec;
+  if (*(char *)((int)_DAT_000171ec + 0xf6) == -1) {
+    func_0x00000fa8(param_1);
+    return;
+  }
+  uVar1 = func_0x00000ffc(param_1);
+  if (uVar1 == 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  uVar2 = func_0x00023ab0(0xe);
+  iVar3 = func_0x00023ac4(0xe);
+  fVar9 = ((float)uVar1 / 1.0) * _DAT_000170ac;
+  iVar4 = func_0x00023cb8(fVar9);
+  uVar1 = FUN_00023c78(iVar4,fVar9);
+  func_0x00002268(uRam00017480);
+  if (*(char *)(_DAT_0001714c + 4) == '\0') {
+    iVar8 = _DAT_00017060 + 4;
+    iVar5 = _DAT_00017060;
+    iVar6 = iRam00017484;
+    do {
+      if (*(short *)(iVar5 + 0x50) != 0) {
+        func_0x0002ec94(iVar6,fVar9);
+      }
+      iVar6 = iVar6 + 0x108;
+      iVar5 = iVar5 + 2;
+    } while (iVar5 != iVar8);
+    func_0x000231a8(fVar9);
+    pfVar7 = _DAT_000171ec;
+  }
+  func_0x0000231c(uRam00017480);
+  if (uVar2 < uVar1) {
+    FUN_00023890(0xe,uVar1 & 0xff);
+  }
+  if (iVar3 != iVar4) {
+    func_0x0002379c(2,0xe,iVar4);
+  }
+  if (uVar1 < uVar2) {
+    FUN_00023890(0xe,uVar1 & 0xff);
+  }
+  *pfVar7 = fVar9;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1f2f0 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001f2f0(undefined4 param_1)
+
+{
+  undefined1 uVar1;
+  uint uVar2;
+  int iVar3;
+  uint uVar4;
+  int iVar5;
+  undefined4 uVar6;
+  uint uVar7;
+  float fVar8;
+  
+  if (*(char *)(_DAT_000171ec + 0xf6) == -1) {
+    func_0x00000fa8(param_1);
+    return;
+  }
+  uVar2 = func_0x00000ffc(param_1);
+  if (uVar2 == 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar8 = ((float)uVar2 / 1.0) * _DAT_000170ac;
+  iVar3 = func_0x00023cb8(fVar8);
+  uVar2 = FUN_00023c78(iVar3,fVar8);
+  uVar4 = func_0x00023ab0(0xf);
+  iVar5 = func_0x00023ac4(0xf);
+  uVar7 = uVar2 & 0xff;
+  if (uVar4 < uVar2) {
+    FUN_00023890(0xf,uVar7);
+    FUN_00023890(0x11,uVar7);
+  }
+  if (iVar3 != iVar5) {
+    func_0x0002379c(3,0xf,iVar3);
+    func_0x0002379c(4,0x11,iVar3);
+  }
+  if (uVar2 < uVar4) {
+    FUN_00023890(0xf,uVar7);
+    FUN_00023890(0x11,uVar7);
+  }
+  uVar6 = func_0x00023c40(3,iVar3,uVar7);
+  uVar2 = 0;
+  while( true ) {
+    fVar8 = (float)FUN_0003acf8(uVar6,(float)(1 << 0x20 - (0x20 - (uVar2 & 0x1f))) / 1.0);
+    uVar2 = uVar2 + 1 & 0xff;
+    if ((*pfRam00017488 <= fVar8) && (fVar8 <= pfRam00017488[1])) break;
+    if (uVar2 == 4) {
+      uVar1 = 0x60;
+code_r0x0001f3cc:
+      FUN_00023890(0x10,uVar1);
+      FUN_00023890(0x12,uVar1);
+      func_0x00000fa8(param_1,1);
+      return;
+    }
+  }
+  uVar1 = FUN_00023c78(iVar3,fVar8);
+  goto code_r0x0001f3cc;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x205dc ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_000205dc(undefined4 param_1)
+
+{
+  memw();
+  if (4 < (*(uint *)(_DAT_00017148 + 0x26c) >> 4 & 0xf)) {
+    func_0x00020604();
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x276f8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_000276f8(undefined4 param_1)
+
+{
+  int iVar1;
+  uint uVar2;
+  float fVar3;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  iVar1 = iRam00017e1c;
+  fVar3 = (float)uVar2 / 1.0;
+  if (fRam00017464 < fVar3) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  *(float *)(iRam00017e1c + 0x58) = fVar3;
+  func_0x0002750c(iVar1,fVar3);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27730 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00027730(undefined4 param_1)
+
+{
+  int iVar1;
+  uint uVar2;
+  float fVar3;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  iVar1 = iRam00017e1c;
+  fVar3 = (float)uVar2 / 1.0;
+  if (fRam00017464 < fVar3) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  *(float *)(iRam00017e1c + 0x5c) = fVar3;
+  func_0x0002750c(iVar1 + 0x2c,fVar3);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x3247c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0003247c(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  func_0x0003245c(((float)uVar1 / 1.0) * _DAT_000170ac);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x324a0 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_000324a0(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  float fVar3;
+  
+  fVar3 = *(float *)(iRam000184ac + 4) * fRam0001729c;
+  uVar1 = (ulonglong)(fVar3 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar3) || bVar2))
+                          + (uint)((!NAN(fVar3) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x324c4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_000324c4(undefined4 param_1)
+
+{
+  uint uVar1;
+  int iVar2;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (*(char *)(iRam000184ac + 0x48) != '\0') {
+    iVar2 = iRam000184ac + 4;
+    func_0x00032358(iVar2,(float)uVar1 / 1.0);
+    func_0x000322fc(iVar2,(float)uVar1 / 1.0);
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x324f8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_000324f8(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  float fVar3;
+  
+  fVar3 = *(float *)(iRam000184ac + 0x14);
+  uVar1 = (ulonglong)(fVar3 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar3) || bVar2))
+                          + (uint)((!NAN(fVar3) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1bdc4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001bdc4(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  undefined4 *puVar2;
+  int iVar3;
+  undefined4 uVar4;
+  undefined4 uVar5;
+  undefined4 uVar6;
+  
+  puVar2 = (undefined4 *)func_0x00001014(param_1);
+  memw();
+  uVar6 = *puVar2;
+  memw();
+  uVar5 = puVar2[1];
+  memw();
+  uVar4 = puVar2[2];
+  iVar3 = func_0x0001cf8c(uVar6,uVar5,uVar4);
+  uVar1 = _DAT_00017128;
+  if (iVar3 != 0) {
+    FUN_00039c14(_DAT_00017128,uVar6);
+    FUN_00039c28(uVar1,uVar5);
+    *(undefined4 *)(_DAT_00017104 + 0x40) = uVar4;
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1e604 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001e604(undefined4 param_1)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  func_0x00002268(uRam000173e0);
+  iVar1 = _DAT_000171ec;
+  **(undefined1 **)(_DAT_000171ec + 0x1c) = (char)uVar2;
+  *(char *)(*(int *)(iVar1 + 0x1c) + 1) = (char)((uint)uVar2 >> 8);
+  *(char *)(*(int *)(iVar1 + 0x1c) + 2) = (char)((uint)uVar2 >> 0x10);
+  *(char *)(*(int *)(iVar1 + 0x1c) + 3) = (char)((uint)uVar2 >> 0x18);
+  func_0x0001ef90();
+  func_0x0001e448(0);
+  func_0x0001efb4();
+  func_0x0000231c(uRam000173e0);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1baec ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001baec(undefined4 param_1)
+
+{
+  func_0x00000fe4(param_1,*(undefined4 *)(_DAT_00017104 + 0x20));
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1bb04 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001bb04(undefined4 param_1)
+
+{
+  func_0x00000fe4(param_1,*(undefined4 *)(_DAT_00017104 + 0x24));
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27ac4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00027ac4(undefined4 param_1)
+
+{
+  func_0x00000fe4(param_1,uRam00017e54);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27e04 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00027e04(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (_DAT_000172d0 < (uVar1 & 0xffff)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x00002268(_DAT_00017094);
+  if (uVar1 >> 0x10 < 8) {
+    *(short *)(iRam00017614 + ((uVar1 >> 0x12) * 4 + (uVar1 >> 0x10 & 3)) * 0x3c4 + 0xfc) =
+         (short)uVar1;
+  }
+  func_0x0000231c(_DAT_00017094);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27e54 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00027e54(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  func_0x00002268(_DAT_00017094);
+  if (uVar1 >> 0x10 < 8) {
+    *(undefined2 *)(iRam00017614 + ((uVar1 >> 0x12) * 4 + (uVar1 >> 0x10 & 3)) * 0x3c4 + 0xfc) = 0;
+  }
+  func_0x0000231c(_DAT_00017094);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27d18 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00027d18(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  float fVar4;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  if (0x1a < uVar3) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar4 = (float)func_0x00023a9c();
+  fVar4 = fVar4 * fRam0001729c;
+  uVar1 = (ulonglong)(fVar4 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar4) || bVar2))
+                          + (uint)((!NAN(fVar4) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x286c8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_000286c8(undefined4 param_1)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  
+  func_0x000288d8();
+  uVar2 = uRam00017ec8;
+  iVar1 = iRam00017e9c;
+  *(undefined4 *)(iRam00017e9c + 0xb0) = 0;
+  *(undefined4 *)(iVar1 + 0x24) = 0;
+  *(undefined4 *)(iVar1 + 0x2c) = 0;
+  *(undefined2 *)(iVar1 + 0xac) = 0x328;
+  func_0x0001b1e4(0x1d,uVar2);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x286f4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_000286f4(undefined4 param_1)
+
+{
+  func_0x0001b1f4(0x1d);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2889c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002889c(undefined4 param_1)
+
+{
+  func_0x0001b1e4(0x1d,uRam00017ee8);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x288b0 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_000288b0(undefined4 param_1)
+
+{
+  func_0x0001b1f4(0x1d);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2a968 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002a968(undefined4 param_1)
+
+{
+  func_0x0002a044();
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2a958 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002a958(undefined4 param_1)
+
+{
+  func_0x0002a184();
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2ea08 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002ea08(undefined4 param_1)
+
+{
+  uint uVar1;
+  undefined4 uVar2;
+  uint uVar3;
+  int iVar4;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  uVar2 = _DAT_00017094;
+  uVar1 = uVar3 >> 0x10;
+  if ((0x14 < uVar1) || (uVar1 == 0)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  iVar4 = *(int *)(uVar1 * 4 + _DAT_00018234 + 4);
+  if ((iVar4 != 0x13) && (iVar4 != 0x14)) {
+    *(float *)(uVar1 * 0xc + _DAT_00018234 + 0x140) = (float)(uVar3 & 0xffff) / 1.0;
+    func_0x00002268(uVar2);
+    FUN_0002e788();
+    func_0x0000231c(_DAT_00017094);
+    func_0x00000fe4(param_1,uVar3);
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fe4(param_1,0xffffffff);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1e944 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001e944(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if ((uVar1 < *(byte *)(_DAT_000171ec + 0xf7)) && (*(char *)(_DAT_000171ec + 0x13) != '\0')) {
+    func_0x00002268(uRam000173e0);
+    func_0x0001e930(uVar1 & 0xff);
+    func_0x0000231c(uRam000173e0);
+    func_0x00000fe4(param_1,uVar1);
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x276b4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_000276b4(undefined4 param_1)
+
+{
+  int iVar1;
+  uint uVar2;
+  float fVar3;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  iVar1 = iRam00017e1c;
+  fVar3 = (float)uVar2 / 1.0;
+  if (fRam00017464 < fVar3) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  *(float *)(iRam00017e1c + 0x58) = fVar3;
+  *(float *)(iVar1 + 0x5c) = fVar3;
+  func_0x0002750c(iVar1,fVar3);
+  func_0x0002750c(uRam00017e24,*(undefined4 *)(iVar1 + 0x5c));
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1c400 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0001c400(undefined4 param_1)
+
+{
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27d50 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00027d7a) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00027d50(undefined4 param_1)
+
+{
+  uint uVar1;
+  float *pfVar2;
+  uint uVar3;
+  float fVar4;
+  int iVar5;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  uVar3 = uVar1 >> 0x10 & 0xff;
+  if (uVar3 == 0xff) {
+    fVar4 = ((float)(uVar1 & 0xffff) / 1.0) * _DAT_000170ac;
+    iVar5 = 7;
+    pfVar2 = _DAT_00017e64;
+    while( true ) {
+      *(undefined1 *)(pfVar2 + 1) = 1;
+      pfVar2 = pfVar2 + 0xf1;
+      *pfVar2 = fVar4;
+      if (iVar5 == 0) break;
+      iVar5 = iVar5 + -1;
+    }
+  }
+  else {
+    if (7 < uVar3) {
+      func_0x00000fa8(param_1);
+      return;
+    }
+    fVar4 = ((float)(uVar1 & 0xffff) / 1.0) * _DAT_000170ac;
+    iVar5 = _DAT_000171b4 + uVar3 * 0x3c4;
+    *(undefined1 *)(iVar5 + 0xf0) = 1;
+    *(float *)(iVar5 + 0xec) = fVar4;
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27db4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00027dd2) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00027db4(undefined4 param_1)
+
+{
+  uint uVar1;
+  undefined4 *puVar2;
+  int iVar3;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  uVar1 = uVar1 >> 0x10 & 0xff;
+  if (uVar1 == 0xff) {
+    iVar3 = 7;
+    puVar2 = _DAT_00017e64;
+    while( true ) {
+      *(undefined1 *)(puVar2 + 1) = 0;
+      puVar2 = puVar2 + 0xf1;
+      *puVar2 = 0;
+      if (iVar3 == 0) break;
+      iVar3 = iVar3 + -1;
+    }
+  }
+  else {
+    if (7 < uVar1) {
+      func_0x00000fa8(param_1);
+      return;
+    }
+    iVar3 = _DAT_000171b4 + uVar1 * 0x3c4;
+    *(undefined1 *)(iVar3 + 0xf0) = 0;
+    *(undefined4 *)(iVar3 + 0xec) = 0;
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27ef4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00027ef4(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  undefined4 auStack_30 [12];
+  
+  uVar1 = func_0x00000ffc(param_1);
+  iVar2 = func_0x00039fd4(uVar1,auStack_30);
+  if (iVar2 == 1) {
+    func_0x00000fe4(param_1,auStack_30[0]);
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27f20 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00027f20(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  *puRam00017e68 = uVar1;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27f38 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00027f38(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  memw();
+  *(undefined4 *)*puRam00017e68 = uVar1;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27f58 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00027f58(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  uVar1 = func_0x000029f8(0,uVar1,2);
+  func_0x00000fe4(param_1,uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27f7c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00027f7c(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  *(undefined4 *)(iRam00017e68 + 4) = uVar1;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27f94 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00027f94(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  func_0x00002a74(0,*(undefined4 *)(iRam00017e68 + 4),uVar1,2);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27fb4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00027fb4(undefined4 param_1)
+
+{
+  uint uVar1;
+  undefined4 uVar2;
+  uint uVar3;
+  undefined4 uVar4;
+  uint uVar5;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  uVar5 = uVar1 >> 0x14 & 0xf;
+  if ((1 < uVar5) || (uVar3 = uVar1 >> 0x18 & 0xf, 4 < uVar3)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x00002268(0x400);
+  uVar4 = uRam00017e70;
+  if (*(char *)(_DAT_0001714c + 4) == '\0') {
+    if (uVar3 == 4) {
+      memw();
+      uVar4 = *(undefined4 *)((uVar1 & uRam000177c4) + (uVar5 * 4 + 4) * 0x100000 + iRam00017e6c);
+    }
+    else {
+      if (*(char *)(uVar5 * 4 + uVar3 + _DAT_00017060 + 0x1c) != '\0') {
+        uVar2 = 0xff;
+        goto code_r0x00028000;
+      }
+      memw();
+      uVar4 = *(undefined4 *)
+               ((uVar1 & uRam000177c4) + uVar3 * 0x20000 + (uVar5 * 4 + 4) * 0x100000 + iRam00017168
+               );
+    }
+    uVar2 = 1;
+  }
+  else {
+    uVar2 = 0xff;
+  }
+code_r0x00028000:
+  func_0x0000231c(0x400);
+  func_0x00000fe4(param_1,uVar4);
+  func_0x00000fa8(param_1,uVar2);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x28054 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00028054(undefined4 param_1)
+
+{
+  int iVar1;
+  uint uVar2;
+  uint uVar3;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  iVar1 = iRam00017e68;
+  uVar3 = uVar2 & _DAT_00017134;
+  *(uint *)(iRam00017e68 + 0xc) = uVar2 >> 0x14 & 0xff;
+  *(uint *)(iVar1 + 8) = uVar3;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x28078 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00028078(undefined4 param_1)
+
+{
+  uint uVar1;
+  int iVar2;
+  undefined4 uVar3;
+  uint uVar4;
+  uint uVar5;
+  int iVar6;
+  
+  iVar2 = iRam00017e68;
+  uVar5 = *(uint *)(iRam00017e68 + 0xc) & 0xf;
+  uVar4 = *(uint *)(iRam00017e68 + 0xc) >> 4 & 0xf;
+  func_0x00002268(0x400);
+  uVar1 = uRam000177c4;
+  if (*(char *)(_DAT_0001714c + 4) == '\0') {
+    iVar6 = uVar5 * 4;
+    if (*(uint *)(iVar2 + 0xc) >> 4 == 0x1a) {
+      uVar3 = func_0x00000ffc(param_1);
+      memw();
+      *(undefined4 *)((*(uint *)(iVar2 + 8) & uVar1) + (iVar6 + 4) * 0x100000 + iRam00017e6c) =
+           uVar3;
+    }
+    else {
+      if (*(char *)(uVar5 * 4 + uVar4 + _DAT_00017060 + 0x1c) != '\0') {
+        uVar3 = 0xff;
+        goto code_r0x000280c7;
+      }
+      uVar3 = func_0x00000ffc(param_1);
+      memw();
+      *(undefined4 *)
+       ((*(uint *)(iVar2 + 8) & uVar1) + uVar4 * 0x20000 + (iVar6 + 4) * 0x100000 + iRam00017168) =
+           uVar3;
+    }
+    uVar3 = 1;
+  }
+  else {
+    uVar3 = 0xff;
+  }
+code_r0x000280c7:
+  func_0x0000231c(0x400);
+  func_0x00000fa8(param_1,uVar3);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1bd08 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0001bd08(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = func_0x0002e4c4();
+  func_0x00000fe4(param_1,uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2c0c8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002c0c8(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  float fVar3;
+  
+  fVar3 = *_DAT_00017124 * fRam0001729c;
+  uVar1 = (ulonglong)(fVar3 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar3) || bVar2))
+                          + (uint)((!NAN(fVar3) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2c0ec ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002c0ec(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  float fVar3;
+  
+  fVar3 = *(float *)(_DAT_00017124 + 0x20) * fRam0001729c;
+  uVar1 = (ulonglong)(fVar3 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar3) || bVar2))
+                          + (uint)((!NAN(fVar3) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1e80c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001e80c(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  float fVar4;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  if (*(byte *)(_DAT_000171ec + 0xf7) <= uVar3) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar4 = *(float *)(*(int *)((*(byte *)(_DAT_000171ec + 0xf7) - uVar3) * 4 + _DAT_000171ec + 0x18)
+                    + 4);
+  uVar1 = (ulonglong)(fVar4 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar4) || bVar2))
+                          + (uint)((!NAN(fVar4) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1e844 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001e844(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  float fVar4;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  if (*(byte *)(_DAT_000171ec + 0xf7) <= uVar3) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar4 = *(float *)(*(int *)((*(byte *)(_DAT_000171ec + 0xf7) - uVar3) * 4 + _DAT_000171ec + 0x18)
+                    + 0x10);
+  uVar1 = (ulonglong)(fVar4 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar4) || bVar2))
+                          + (uint)((!NAN(fVar4) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1e87c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001e87c(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  float fVar4;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  if (*(byte *)(_DAT_000171ec + 0xf7) <= uVar3) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar4 = *(float *)(*(int *)((*(byte *)(_DAT_000171ec + 0xf7) - uVar3) * 4 + _DAT_000171ec + 0x18)
+                    + 0x14);
+  uVar1 = (ulonglong)(fVar4 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar4) || bVar2))
+                          + (uint)((!NAN(fVar4) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x22ce8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00022ce8(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  float fVar4;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  if (7 < uVar3) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar4 = *(float *)(uVar3 * 4 + iRam00017780 + 0x1fc) * fRam0001729c;
+  uVar1 = (ulonglong)(fVar4 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar4) || bVar2))
+                          + (uint)((!NAN(fVar4) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2776c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002776c(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  float fVar3;
+  
+  fVar3 = *pfRam00017e1c;
+  uVar1 = (ulonglong)(fVar3 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar3) || bVar2))
+                          + (uint)((!NAN(fVar3) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1f098 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001f098(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  ushort uVar3;
+  float fVar4;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  if (uVar3 == 0) {
+    fVar4 = *(float *)(*(int *)((uint)*(byte *)(_DAT_000171ec + 0xd) * 4 + _DAT_000171ec + 0x1c) + 4
+                      );
+  }
+  else if ((uVar3 < 3) && (uVar3 != 0)) {
+    fVar4 = *(float *)(*(int *)((uint)*(byte *)(_DAT_000171ec + 0xd) * 4 + _DAT_000171ec + 0x1c) +
+                      0x10);
+  }
+  else if ((uVar3 < 5) && (2 < uVar3)) {
+    fVar4 = *(float *)(*(int *)((uint)*(byte *)(_DAT_000171ec + 0xd) * 4 + _DAT_000171ec + 0x1c) +
+                      0x14);
+  }
+  else {
+    fVar4 = 0.0;
+  }
+  if (fVar4 == 0.0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  uVar1 = (ulonglong)(fVar4 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar4) || bVar2))
+                          + (uint)((!NAN(fVar4) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2eb14 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002eb14(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  float fVar4;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  if (uVar3 >> 0x10 < 0x14) {
+    fVar4 = *(float *)((uVar3 >> 0x10) * 0xc + _DAT_00018234 + 0x5c);
+    uVar1 = (ulonglong)(fVar4 * 1.0);
+    bVar2 = uVar1 >> 0x10 != 0;
+    func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar4) || bVar2)
+                            ) + (uint)((!NAN(fVar4) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1
+                   );
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x22d20 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00022d20(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  float fVar4;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  if ((uVar3 & 0xffff) < 8) {
+    fVar4 = *(float *)(iRam00017604 + ((uVar3 >> 2 & 0x3fff) * 4 + (uVar3 & 3)) * 0x178 + 0x140) *
+            fRam0001729c;
+    uVar1 = (ulonglong)(fVar4 * 1.0);
+    bVar2 = uVar1 >> 0x10 != 0;
+    func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar4) || bVar2)
+                            ) + (uint)((!NAN(fVar4) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1
+                   );
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x22cc8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00022cc8(undefined4 param_1)
+
+{
+  func_0x00000fa8(param_1,0xfe);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x22cd8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00022cd8(undefined4 param_1)
+
+{
+  func_0x00000fa8(param_1,0xfe);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2810c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002810c(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (_DAT_000172d0 < (short)uVar1) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  *(int *)(_DAT_000171b4 + ((uVar1 >> 0x12 & 3) * 4 + (uVar1 >> 0x10 & 3)) * 0x3c4 + 0x3b8) =
+       (int)(short)uVar1;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2814c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00028171) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002814c(undefined4 param_1)
+
+{
+  short sVar1;
+  int iVar2;
+  int iVar3;
+  
+  sVar1 = func_0x00000ffc(param_1);
+  if (_DAT_000172d0 < sVar1) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  iVar3 = 7;
+  iVar2 = _DAT_000171b4;
+  while( true ) {
+    *(int *)(iVar2 + 0x3b8) = (int)sVar1;
+    iVar2 = iVar2 + 0x3c4;
+    if (iVar3 == 0) break;
+    iVar3 = iVar3 + -1;
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x22e78 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00022eaa) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00022e78(undefined4 param_1)
+
+{
+  uint uVar1;
+  float *pfVar2;
+  float fVar3;
+  int iVar4;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (fRam0001729c < (float)uVar1 / 1.0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar3 = ((float)uVar1 / 1.0) * _DAT_000170ac;
+  iVar4 = 7;
+  pfVar2 = pfRam00017888;
+  while( true ) {
+    pfVar2 = pfVar2 + 0xf1;
+    *pfVar2 = fVar3;
+    if (iVar4 == 0) break;
+    iVar4 = iVar4 + -1;
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x22ebc ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00022eee) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00022ebc(undefined4 param_1)
+
+{
+  uint uVar1;
+  float *pfVar2;
+  float fVar3;
+  int iVar4;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (fRam0001729c < (float)uVar1 / 1.0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar3 = ((float)uVar1 / 1.0) * _DAT_000170ac;
+  iVar4 = 7;
+  pfVar2 = pfRam0001788c;
+  while( true ) {
+    pfVar2 = pfVar2 + 0xf1;
+    *pfVar2 = fVar3;
+    if (iVar4 == 0) break;
+    iVar4 = iVar4 + -1;
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x22f00 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00022f32) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00022f00(undefined4 param_1)
+
+{
+  uint uVar1;
+  float *pfVar2;
+  float fVar3;
+  int iVar4;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (fRam0001729c < (float)uVar1 / 1.0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar3 = ((float)uVar1 / 1.0) * _DAT_000170ac;
+  iVar4 = 1;
+  pfVar2 = pfRam00017890;
+  while( true ) {
+    pfVar2 = pfVar2 + 0x42;
+    *pfVar2 = fVar3;
+    if (iVar4 == 0) break;
+    iVar4 = iVar4 + -1;
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b850 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b850(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = func_0x00000ffc(param_1);
+  if ((-0x21 < iVar1) && (iVar1 < 0x21)) {
+    *(int *)(iRam00017320 + 0x17c) = iVar1;
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b880 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b880(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = func_0x00000ffc(param_1);
+  if (0x20 < iVar1) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  *(int *)(iRam00017320 + 0x180) = iVar1;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b8a8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b8a8(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = func_0x00000ffc(param_1);
+  if (iVar1 < -0x50) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  *(int *)(iRam00017320 + 0x184) = iVar1;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b908 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b908(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  func_0x00000ffc(param_1);
+  func_0x0002bda4();
+  iVar1 = iRam00017e90;
+  *(undefined1 *)(iRam00018060 + 0x7d) = 0;
+  func_0x0002c630(*(undefined4 *)(iVar1 + 0x3a0));
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b930 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b930(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  float fVar3;
+  
+  fVar3 = *(float *)(iRam00017e90 + 0x3a8) * fRam0001729c;
+  uVar1 = (ulonglong)(fVar3 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar3) || bVar2))
+                          + (uint)((!NAN(fVar3) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b954 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b954(undefined4 param_1)
+
+{
+  int iVar1;
+  float fVar2;
+  
+  fVar2 = *(float *)(iRam00017e90 + 0x3b8);
+  if (NAN(fVar2 * 1.0)) {
+    iVar1 = -0x80000000;
+    if (0.0 <= fVar2) {
+      iVar1 = 0x7fffffff;
+    }
+  }
+  else {
+    iVar1 = (int)(fVar2 * 1.4013e-45);
+  }
+  func_0x00000fe4(param_1,iVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1b398 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0001b398(undefined4 param_1)
+
+{
+  func_0x0001c6dc();
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27cb8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00027cce) */
+/* WARNING: Removing unreachable block (ram,0x00027ce5) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00027cb8(undefined4 param_1)
+
+{
+  char *pcVar1;
+  ulonglong uVar2;
+  bool bVar3;
+  uint uVar4;
+  float *pfVar5;
+  int iVar6;
+  float fVar7;
+  float fVar8;
+  int iVar9;
+  int iVar10;
+  
+  uVar4 = func_0x00000ffc(param_1);
+  iVar9 = 7;
+  pfVar5 = _DAT_000172c8;
+  while( true ) {
+    pfVar5 = pfVar5 + 0x5e;
+    *pfVar5 = (float)(uVar4 >> 0x10 & 0xff) / 1.0;
+    if (iVar9 == 0) break;
+    iVar9 = iVar9 + -1;
+  }
+  func_0x0001d060();
+  iVar10 = 7;
+  iVar9 = _DAT_00017060;
+  iVar6 = _DAT_000171b4;
+  fVar7 = 0.0;
+  while( true ) {
+    pcVar1 = (char *)(iVar9 + 0x28);
+    iVar9 = iVar9 + 1;
+    fVar8 = fVar7;
+    if ((*pcVar1 != '\0') && (fVar8 = *(float *)(iVar6 + 0x3c0), *(float *)(iVar6 + 0x3c0) <= fVar7)
+       ) {
+      fVar8 = fVar7;
+    }
+    iVar6 = iVar6 + 0x3c4;
+    if (iVar10 == 0) break;
+    iVar10 = iVar10 + -1;
+    fVar7 = fVar8;
+  }
+  fVar8 = fVar8 * fRam0001729c;
+  uVar2 = (ulonglong)(fVar8 * 1.0);
+  bVar3 = uVar2 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar2 < 0) * -0x80000000 - (uint)(NAN(fVar8) || bVar3))
+                          + (uint)((!NAN(fVar8) && !bVar3) && (longlong)uVar2 >= 0) * (int)uVar2);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27c68 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00027c68(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  float fVar4;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  func_0x0001d60c();
+  func_0x0002ab38();
+  func_0x0001d4e4((float)(uVar3 >> 0x10) / 1.0,((float)(uVar3 & 0xffff) / 1.0) * _DAT_000170ac);
+  fVar4 = *(float *)(iRam00017320 + 0x158) * fRam0001729c;
+  uVar1 = (ulonglong)(fVar4 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar4) || bVar2))
+                          + (uint)((!NAN(fVar4) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2e428 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002e428(int param_1)
+
+{
+  int *piVar1;
+  int iVar2;
+  
+  piVar1 = _DAT_000170b0;
+  if ((_DAT_000170b0[2] != 0) || (*(char *)(iRam00017f2c + 0xbf) != '\0')) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  if (*(char *)(iRam00017bc0 + 0xe0) != '\0') {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  iVar2 = func_0x00000ffc(param_1);
+  if (iVar2 != 0) {
+    func_0x00000fa8(param_1,0xfb);
+    return;
+  }
+  if (*piVar1 != 0) {
+    iVar2 = func_0x0002e4f0();
+    if (iVar2 != 0) {
+      func_0x00002268(1);
+      piVar1[2] = 1;
+      func_0x0002e4d0(0);
+      func_0x0000231c(1);
+      func_0x0000257c(3,0,0);
+      piVar1[2] = 0;
+      func_0x00000fa8(param_1,1);
+      return;
+    }
+    piVar1[2] = 0;
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  if (param_1 == 5) {
+    *piVar1 = 1;
+    piVar1[1] = 0;
+    func_0x00000fa8(5,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b970 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b970(undefined4 param_1)
+
+{
+  undefined2 uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  *(undefined2 *)(iRam00017320 + 0x1fc) = uVar1;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b988 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b988(undefined4 param_1)
+
+{
+  *(undefined2 *)(iRam00017320 + 0x1fc) = 0;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b99c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002b99c(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = func_0x0002c80c();
+  func_0x00000fe4(param_1,uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x230c8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_000230c8(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  float fVar4;
+  uint uVar5;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  if (((uVar3 >> 0x1c < 2) && (uVar5 = uVar3 >> 0x18 & 0xf, uVar5 < 4)) &&
+     ((uVar3 & 0xffff) <= uRam000178a0)) {
+    fVar4 = (float)func_0x0001d258(_DAT_000171b4 + ((uVar3 >> 0x1c) * 4 + uVar5) * 0x3c4 + 0xfc,
+                                   (float)(uVar3 >> 0x10 & 0xff) / 1.0,(float)(uVar3 & 0xffff) / 1.0
+                                  );
+    fVar4 = fVar4 * fRam0001729c;
+    uVar1 = (ulonglong)(fVar4 * 1.0);
+    bVar2 = uVar1 >> 0x10 != 0;
+    func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar4) || bVar2)
+                            ) + (uint)((!NAN(fVar4) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1
+                   );
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2b9b4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002b9b4(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  float fVar4;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  if (_DAT_000172d0 < (uVar3 & 0xffff)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar4 = (float)func_0x0001d594(uRam00017fe4,(float)(uVar3 >> 0x10 & 0xff) / 1.0,
+                                 (float)(uVar3 & 0xffff) / 1.0);
+  fVar4 = fVar4 * fRam0001729c;
+  uVar1 = (ulonglong)(fVar4 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar4) || bVar2))
+                          + (uint)((!NAN(fVar4) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x28224 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00028224(undefined4 param_1)
+
+{
+  int iVar1;
+  undefined4 *puVar2;
+  uint uVar3;
+  undefined4 uVar4;
+  undefined4 uVar5;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  iVar1 = iRam00017e1c;
+  uVar4 = FUN_0003acf8((float)(uVar3 & 0xffff) / 1.0,uRam000172a0);
+  puVar2 = puRam00017e80;
+  *(undefined4 *)(iVar1 + 0x14) = uVar4;
+  uVar5 = FUN_0003acf8((float)(uVar3 >> 0x10) / 1.0,*puVar2);
+  *(undefined4 *)(iVar1 + 0x40) = uVar4;
+  *(undefined4 *)(iVar1 + 0x18) = uVar5;
+  *(undefined4 *)(iVar1 + 0x44) = uVar5;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x22f44 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00022f59) */
+/* WARNING: Removing unreachable block (ram,0x00022f6d) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00022f44(undefined4 param_1)
+
+{
+  float fVar1;
+  int iVar2;
+  uint uVar3;
+  undefined4 *puVar4;
+  float fVar5;
+  float fVar6;
+  int iVar7;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  iVar7 = 7;
+  puVar4 = puRam0001788c;
+  while( true ) {
+    puVar4 = puVar4 + 0xf1;
+    *puVar4 = 0x3f800000;
+    fVar6 = _DAT_000170ac;
+    if (iVar7 == 0) break;
+    iVar7 = iVar7 + -1;
+  }
+  iVar7 = 1;
+  puVar4 = puRam00017890;
+  while( true ) {
+    puVar4 = puVar4 + 0x42;
+    *puVar4 = 0x3f800000;
+    iVar2 = iRam000175ec;
+    fVar1 = _DAT_00017278;
+    if (iVar7 == 0) break;
+    iVar7 = iVar7 + -1;
+  }
+  fVar5 = ((float)(uVar3 & 0xffff) / 1.0) * fVar6;
+  if ((0.0 < fVar5) && (fVar5 <= _DAT_00017278)) {
+    fVar6 = ((float)(uVar3 >> 0x10) / 1.0) * fVar6;
+    *(float *)(iRam000175ec + 0x9c) = fVar5;
+    if ((0.0 < fVar6) && (fVar6 <= fVar1)) {
+      *(float *)(iVar2 + 0xa0) = fVar6;
+      *(undefined1 *)(iVar2 + 0x7d) = 1;
+      func_0x00000fa8(param_1);
+      return;
+    }
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x23018 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00023018(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  uint uVar4;
+  uint uVar5;
+  int iVar6;
+  float fVar7;
+  float fVar8;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  uVar5 = uVar3 >> 0x1a & 1;
+  iVar6 = _DAT_000171b4 + (uVar5 * 4 + (uVar3 >> 0x18 & 3)) * 0x3c4;
+  uVar4 = uVar3 >> 0x10 & 0xff;
+  if (*(float *)(iVar6 + 0x98) != 0.0) {
+    fVar7 = (float)(uVar3 & 0xffff) / 1.0;
+    if (uVar4 == 0) {
+      fVar7 = (float)FUN_0003acf8(fVar7 - *(float *)(iVar6 + 0x8c),*(undefined4 *)(iVar6 + 0x88));
+    }
+    else if (uVar4 == 1) {
+      fVar7 = (float)FUN_0003acf8(fVar7 - *(float *)(iVar6 + 0x9c),*(float *)(iVar6 + 0x98));
+    }
+    else {
+      iVar6 = iRam0001789c + uVar5 * 0x108;
+      fVar7 = (float)FUN_0003acf8(fVar7 - *(float *)(iVar6 + 0x200),*(undefined4 *)(iVar6 + 0x1fc));
+    }
+    fVar8 = 0.0;
+    if (0.0 < fVar7) {
+      fVar8 = fVar7;
+    }
+    fVar8 = fVar8 * fRam0001729c;
+    uVar1 = (ulonglong)(fVar8 * 1.0);
+    bVar2 = uVar1 >> 0x10 != 0;
+    func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar8) || bVar2)
+                            ) + (uint)((!NAN(fVar8) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1
+                   );
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x287b8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_000287b8(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  func_0x000288d8();
+  iVar1 = iRam00017e9c;
+  *(undefined4 *)(iRam00017e9c + 0xb0) = 0;
+  *(undefined4 *)(iVar1 + 0x24) = 0;
+  *(undefined2 *)(iVar1 + 0xac) = 0x1d0;
+  func_0x0002cef4(1);
+  if (*(char *)(iRam00017edc + 0xe8) == '\0') {
+    func_0x0002704c();
+  }
+  func_0x0001b1e4(0x1c,uRam00017ddc);
+  func_0x0001b1e4(0x1d,uRam00017ee0);
+  func_0x00000fa8(param_1,1);
+  *(undefined2 *)(iRam00017e94 + 0x82) = 1;
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x28800 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00028800(undefined4 param_1)
+
+{
+  func_0x0001b1f4(0x1d);
+  func_0x0002cef4(0);
+  func_0x00000fa8(param_1,1);
+  *(undefined2 *)(iRam00017e94 + 0x82) = 0;
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x284b4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_000284b4(undefined4 param_1)
+
+{
+  func_0x0002585c();
+  func_0x00025c50();
+  memw();
+  *(undefined4 *)(iRam00017e9c + 0x28) = *(undefined4 *)(_DAT_000170a4 + 0x3f0);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x284d4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x0002863d) */
+/* WARNING: Removing unreachable block (ram,0x00028596) */
+/* WARNING: Removing unreachable block (ram,0x0002852d) */
+/* WARNING: Removing unreachable block (ram,0x00028621) */
+/* WARNING: Removing unreachable block (ram,0x0002868d) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_000284d4(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  float fVar3;
+  uint uVar4;
+  float *pfVar5;
+  float *pfVar6;
+  int iVar7;
+  float *pfVar8;
+  float *pfVar9;
+  float *pfVar10;
+  int iVar11;
+  float fVar12;
+  undefined4 uVar13;
+  float fVar14;
+  float fVar15;
+  float fVar16;
+  code *UNRECOVERED_JUMPTABLE_00;
+  int iVar17;
+  undefined1 auStack_40 [12];
+  undefined1 uStack_34;
+  int iStack_30;
+  undefined4 uStack_2c;
+  float *pfStack_28;
+  
+  uStack_2c = param_1;
+  func_0x0002585c();
+  func_0x00025c50();
+  pfVar6 = pfRam00017ea0;
+  memw();
+  fVar3 = (float)FUN_0003acf8(uRam00017ba4,
+                              (float)(uint)(*(int *)(_DAT_000170a4 + 0x3f0) -
+                                           *(int *)(iRam00017e9c + 0x28)) / 1.0);
+  pfVar9 = pfRam00017ea8;
+  uVar4 = *(uint *)(iRam00017e9c + 0x2c);
+  iStack_30 = uVar4 * 4;
+  fVar14 = pfVar6[uVar4 + 0xb2];
+  fVar12 = pfVar6[uVar4 + 0xba];
+  fVar15 = pfVar6[uVar4 + 0xc2];
+  iVar11 = iRam00017eac;
+  pfVar5 = pfRam00017ea4;
+  do {
+    pfVar5 = pfVar5 + 0x37;
+    fVar16 = *pfVar5;
+    iVar17 = 3;
+    iVar7 = iVar11;
+    while( true ) {
+      fVar14 = fVar14 + *(float *)(iVar7 + 0x1fc) * fVar3;
+      fVar12 = fVar12 + *(float *)(iVar7 + 0x200) * fVar3;
+      iVar7 = iVar7 + 8;
+      pfVar6[uVar4 + 0xb2] = fVar14;
+      pfVar6[uVar4 + 0xba] = fVar12;
+      if (iVar17 == 0) break;
+      iVar17 = iVar17 + -1;
+    }
+    fVar15 = fVar15 + fVar16 * fVar3;
+    iVar11 = iVar11 + 0xdc;
+    pfVar6[uVar4 + 0xc2] = fVar15;
+  } while (pfVar5 != pfVar9);
+  iVar7 = 0;
+  pfStack_28 = pfRam00017eb0 + uVar4;
+  pfVar5 = pfRam00017adc;
+  iVar11 = iRam00017604;
+  do {
+    pfVar6 = pfStack_28;
+    fVar3 = (float)FUN_0003acf8(*puRam00017eb4,(float)*(uint *)(iVar11 + 0x160) / 1.0);
+    iVar7 = iVar7 + 1;
+    iVar11 = iVar11 + 0x178;
+    pfVar9 = pfVar5 + 0x5e;
+    iVar17 = 0x14;
+    UNRECOVERED_JUMPTABLE_00 = (code *)0x28599;
+    while( true ) {
+      pfVar5 = pfVar5 + 1;
+      *pfVar6 = *pfVar6 + *pfVar5 * fVar3;
+      iVar2 = iRam00017eb8;
+      pfVar6 = pfVar6 + 8;
+      if (iVar17 == 0) break;
+      iVar17 = iVar17 + -1;
+    }
+    pfVar5 = pfVar9;
+  } while (iVar7 != 8);
+  iVar11 = 0;
+  if (uVar4 < 0x50) {
+    iVar7 = (int)(0x57 - uVar4) >> 3;
+    iVar11 = iVar7 + -1;
+    UNRECOVERED_JUMPTABLE_00 = (code *)0x285c5;
+    if (iVar7 != 0) {
+      *(undefined4 *)(iStack_30 + iRam00017eb8) = 0;
+    }
+  }
+  iVar7 = iRam00017e9c;
+                    /* WARNING: Could not recover jumptable at 0x000285c8. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  if (iVar11 == 0) {
+    uVar13 = 0x3f800000;
+    uVar4 = uVar4 + 1;
+    *(uint *)(iRam00017e9c + 0x2c) = uVar4;
+    uVar1 = uRam00017818;
+    if (uVar4 < 8) {
+      iVar11 = 0;
+    }
+    else {
+      *(undefined4 *)(iVar7 + 0x2c) = 0;
+      func_0x00002268(uVar1);
+      pfVar5 = pfRam00017ea0;
+      fVar3 = (float)FUN_0003acf8(*puRam00017ebc,(float)*(uint *)(iRam00017e9c + 0x24) / 1.0);
+      pfVar6 = pfRam00017eb0;
+      *(undefined4 *)(iRam00017e9c + 0x24) = 0;
+      pfVar10 = pfVar6 + -2;
+      pfVar9 = pfVar5;
+      do {
+        *pfVar10 = *pfVar10 * fVar3;
+        iVar11 = 3;
+        pfVar8 = pfVar9;
+        while( true ) {
+          *pfVar8 = *pfVar8 * fVar3;
+          pfVar8 = pfVar8 + 1;
+          if (iVar11 == 0) break;
+          iVar11 = iVar11 + -1;
+        }
+        pfVar9 = pfVar9 + 4;
+        pfVar10 = pfVar10 + 1;
+      } while (pfVar10 != pfVar6);
+      iVar11 = 0xc9;
+      pfVar6 = pfRam00017ec0;
+      while( true ) {
+        pfVar5 = pfVar5 + 1;
+        *pfVar6 = *pfVar5;
+        pfVar6 = pfVar6 + 1;
+        if (iVar11 == 0) break;
+        iVar11 = iVar11 + -1;
+      }
+      if ((uint)*(ushort *)(iRam00017e9c + 0xac) * (*(int *)(iRam00017e9c + 0xb0) + 1) <=
+          *(uint *)(iRam00017e9c + 0x18)) {
+        func_0x00039c50(uRam00017ec4,auStack_40,
+                        *(int *)(iRam00017e9c + 0xb0) * (uint)*(ushort *)(iRam00017e9c + 0xac));
+        uStack_34 = *(undefined1 *)(iRam00017e9c + 0x14);
+        func_0x0003ab90(auStack_40,pfRam00017ea0,0x328);
+        *(int *)(iRam00017e9c + 0xb0) = *(int *)(iRam00017e9c + 0xb0) + 1;
+      }
+      func_0x00028958();
+      iVar11 = 0xc9;
+      UNRECOVERED_JUMPTABLE_00 = (code *)0x28690;
+      pfVar5 = pfRam00017ea0;
+      while( true ) {
+        *pfVar5 = 0.0;
+        pfVar5 = pfVar5 + 1;
+        if (iVar11 == 0) break;
+        iVar11 = iVar11 + -1;
+      }
+      func_0x0000231c(uRam00017818);
+      uVar13 = *puRam00017ebc;
+      uVar4 = *(uint *)(iRam00017e9c + 0x2c);
+    }
+    if (uVar4 < 0x50) {
+      iVar7 = (int)(0x57 - uVar4) >> 3;
+      iVar11 = iVar7 + -1;
+      UNRECOVERED_JUMPTABLE_00 = (code *)0x286b4;
+      if (iVar7 != 0) {
+        *(undefined4 *)(uVar4 * 4 + iVar2) = uVar13;
+      }
+    }
+                    /* WARNING: Could not recover jumptable at 0x000286b7. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    if (iVar11 != 0) {
+      (*UNRECOVERED_JUMPTABLE_00)();
+      return;
+    }
+    func_0x0002cdc8();
+    func_0x0002ce00();
+    func_0x00000fa8(uStack_2c,1);
+    return;
+  }
+  (*UNRECOVERED_JUMPTABLE_00)();
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x28940 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00028940(undefined4 param_1)
+
+{
+  func_0x000288d8();
+  *(undefined1 *)(iRam00017194 + 0x29) = 1;
+  func_0x00000fa8(param_1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x28d2c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00028d2c(undefined4 param_1)
+
+{
+  func_0x00002268(uRam00017818);
+  func_0x00028a44();
+  func_0x0001b1e4(0x20,uRam00017f00);
+  func_0x0000231c(uRam00017818);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x28d50 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00028ded) */
+
+void FUN_00028d50(undefined4 param_1)
+
+{
+  ushort uVar1;
+  ushort uVar2;
+  ushort uVar3;
+  int iVar4;
+  undefined4 uVar5;
+  float fVar6;
+  float *pfVar7;
+  int iVar8;
+  
+  iVar8 = iRam00017efc;
+  if (*(uint *)(iRam00017efc + 0x40) == 0) {
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  fVar6 = (float)FUN_0003acf8(uRam000172a8,(float)*(uint *)(iRam00017efc + 0x40) / 1.0);
+  func_0x00002268(uRam00017818);
+  pfVar7 = pfRam00017f04;
+  iVar4 = iRam00017320;
+  uVar1 = *(ushort *)(iRam00017320 + 0x19e);
+  uVar2 = *(ushort *)(iRam00017320 + 0x19c);
+  uVar3 = *(ushort *)(iRam00017320 + 0x19a);
+  *(uint *)(iVar8 + 0x94) = (uint)*(ushort *)(iRam00017320 + 0x198);
+  *(uint *)(iVar8 + 0x98) = (uint)uVar3;
+  *(uint *)(iVar8 + 0x9c) = (uint)uVar2;
+  *(uint *)(iVar8 + 0xa0) = (uint)uVar1;
+  *(float *)(iVar8 + 0x4c) = fVar6 * *(float *)(iVar8 + 0x4c);
+  *(float *)(iVar8 + 0x58) = fVar6 * *(float *)(iVar8 + 0x58);
+  *(float *)(iVar8 + 100) = fVar6 * *(float *)(iVar8 + 100);
+  *(float *)(iVar8 + 0x70) = fVar6 * *(float *)(iVar8 + 0x70);
+  *(float *)(iVar8 + 0x7c) = fVar6 * *(float *)(iVar8 + 0x7c);
+  *(float *)(iVar8 + 0x80) = fVar6 * *(float *)(iVar8 + 0x80);
+  *(float *)(iVar8 + 0x90) = fVar6 * *(float *)(iVar8 + 0x90);
+  *(float *)(iVar8 + 0xac) = fVar6 * *(float *)(iVar8 + 0xac);
+  *(uint *)(iVar8 + 0x84) = (uint)*(ushort *)(iVar4 + 0x166);
+  iVar8 = 0x1f;
+  while( true ) {
+    *pfVar7 = *pfVar7 * fVar6;
+    pfVar7 = pfVar7 + 1;
+    if (iVar8 == 0) break;
+    iVar8 = iVar8 + -1;
+  }
+  func_0x0001b1f4(0x20);
+  uVar5 = uRam00017ec4;
+  iVar8 = FUN_00039c3c(uRam00017ec4);
+  if ((iVar8 != 0) && (0x1eb < *(uint *)(iRam00017e9c + 0x18))) {
+    func_0x0003ab90(uVar5,uRam00017f08,0x1ec);
+  }
+  func_0x0000231c(uRam00017818);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x28e30 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00028e30(undefined4 param_1)
+
+{
+  uint uVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if ((uVar1 < 0x1b) || (0x7a < uVar1)) {
+    if (uVar1 < 0x11) {
+      if (uVar1 < 8) {
+        if (uVar1 < 4) {
+          if (uVar1 < 2) {
+            if (uVar1 == 0) {
+              uVar3 = *(undefined4 *)(iRam00017ef4 + 0x40);
+            }
+            else {
+              if (1 < uVar1) goto code_r0x00028e88;
+              uVar3 = *(undefined4 *)(iRam00017ef4 + 0x44);
+            }
+          }
+          else if (uVar1 < 3) {
+            uVar3 = *(undefined4 *)(iRam00017ef4 + 0x48);
+          }
+          else {
+            if (uVar1 != 3) goto code_r0x00028e88;
+            uVar3 = *(undefined4 *)(iRam00017ef4 + 0x4c);
+          }
+        }
+        else if (uVar1 < 5) {
+          uVar3 = *(undefined4 *)(iRam00017ef4 + 0x50);
+        }
+        else if (uVar1 < 6) {
+          if (uVar1 != 5) goto code_r0x00028e88;
+          uVar3 = *(undefined4 *)(iRam00017ef4 + 0x54);
+        }
+        else if (uVar1 < 7) {
+          uVar3 = *(undefined4 *)(iRam00017ef4 + 0x5c);
+        }
+        else {
+          if (uVar1 != 7) goto code_r0x00028e88;
+          uVar3 = *(undefined4 *)(iRam00017ef4 + 0x58);
+        }
+      }
+      else if (uVar1 < 9) {
+        uVar3 = *(undefined4 *)(iRam00017ef4 + 0x60);
+      }
+      else if (uVar1 < 0xd) {
+        if (uVar1 < 0xb) {
+          if (uVar1 < 10) {
+            if (uVar1 != 9) goto code_r0x00028e88;
+            uVar3 = *(undefined4 *)(iRam00017ef4 + 100);
+          }
+          else {
+            if (10 < uVar1) goto code_r0x00028e88;
+            uVar3 = *(undefined4 *)(iRam00017ef4 + 0x68);
+          }
+        }
+        else if (uVar1 < 0xc) {
+          uVar3 = *(undefined4 *)(iRam00017ef4 + 0x6c);
+        }
+        else {
+          if (uVar1 != 0xc) goto code_r0x00028e88;
+          uVar3 = *(undefined4 *)(iRam00017ef4 + 0x70);
+        }
+      }
+      else if (uVar1 < 0xe) {
+        uVar3 = *(undefined4 *)(iRam00017ef4 + 0x74);
+      }
+      else if (uVar1 < 0xf) {
+        if (uVar1 != 0xe) goto code_r0x00028e88;
+        uVar3 = *(undefined4 *)(iRam00017ef4 + 0x78);
+      }
+      else if (uVar1 < 0x10) {
+        uVar3 = *(undefined4 *)(iRam00017ef4 + 0x80);
+      }
+      else {
+        if (uVar1 != 0x10) goto code_r0x00028e88;
+        uVar3 = *(undefined4 *)(iRam00017ef4 + 0x7c);
+      }
+    }
+    else if (uVar1 < 0x12) {
+      uVar3 = *(undefined4 *)(iRam00017ef4 + 0x84);
+    }
+    else if (uVar1 < 0x1a) {
+      if (uVar1 < 0x16) {
+        if (uVar1 < 0x14) {
+          if (uVar1 < 0x13) {
+            if (uVar1 != 0x12) {
+code_r0x00028e88:
+              uVar2 = 0xff;
+              uVar3 = 0;
+              goto code_r0x00028e8d;
+            }
+            uVar3 = *(undefined4 *)(iRam00017ef4 + 0x88);
+          }
+          else {
+            if (0x13 < uVar1) goto code_r0x00028e88;
+            uVar3 = *(undefined4 *)(iRam00017ef4 + 0x8c);
+          }
+        }
+        else if (uVar1 < 0x15) {
+          uVar3 = *(undefined4 *)(iRam00017ef4 + 0x90);
+        }
+        else {
+          if (uVar1 != 0x15) goto code_r0x00028e88;
+          uVar3 = *(undefined4 *)(iRam00017ef4 + 0x94);
+        }
+      }
+      else if (uVar1 < 0x17) {
+        uVar3 = *(undefined4 *)(iRam00017ef4 + 0x98);
+      }
+      else if (uVar1 < 0x18) {
+        if (uVar1 != 0x17) goto code_r0x00028e88;
+        uVar3 = *(undefined4 *)(iRam00017ef4 + 0x9c);
+      }
+      else if (uVar1 < 0x19) {
+        uVar3 = *(undefined4 *)(iRam00017ef4 + 0xa0);
+      }
+      else {
+        if (uVar1 != 0x19) goto code_r0x00028e88;
+        uVar3 = *(undefined4 *)(iRam00017ef4 + 0xa4);
+      }
+    }
+    else if (uVar1 < 0x1b) {
+      uVar3 = *(undefined4 *)(iRam00017ef4 + 0xa8);
+    }
+    else if (uVar1 < 0x7f) {
+      if (uVar1 < 0x7d) {
+        if (uVar1 < 0x7c) {
+          if (uVar1 != 0x7b) goto code_r0x00028e88;
+          uVar3 = *(undefined4 *)(iRam00017320 + 0x1d8);
+        }
+        else {
+          if (0x7c < uVar1) goto code_r0x00028e88;
+          uVar3 = *(undefined4 *)(iRam00017320 + 0x1e0);
+        }
+      }
+      else if (uVar1 < 0x7e) {
+        uVar3 = *(undefined4 *)(iRam00017320 + 0x1dc);
+      }
+      else {
+        if (uVar1 != 0x7e) goto code_r0x00028e88;
+        uVar3 = *(undefined4 *)(iRam00017320 + 0x1e4);
+      }
+    }
+    else if (uVar1 < 0x80) {
+      uVar3 = *(undefined4 *)(iRam00017320 + 0x1e8);
+    }
+    else if (uVar1 < 0x81) {
+      if (uVar1 != 0x80) goto code_r0x00028e88;
+      uVar3 = *(undefined4 *)(iRam00017320 + 0x1f0);
+    }
+    else if (uVar1 < 0x82) {
+      uVar3 = *(undefined4 *)(iRam00017320 + 0x1ec);
+    }
+    else {
+      if (uVar1 != 0x82) goto code_r0x00028e88;
+      uVar3 = *(undefined4 *)(iRam00017320 + 500);
+    }
+  }
+  else {
+    uVar3 = *(undefined4 *)(uVar1 * 4 + iRam00017eec + 4);
+  }
+  uVar2 = 1;
+code_r0x00028e8d:
+  func_0x00000fe4(param_1,uVar3);
+  func_0x00000fa8(param_1,uVar2);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2f5e8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002f5e8(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (uVar1 == 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x0002750c(uRam0001828c,((float)uVar1 / 1.0) * _DAT_000170ac);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1f624 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001f624(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  float fVar3;
+  
+  fVar3 = *(float *)(_DAT_000171ec + 0x140);
+  uVar1 = (ulonglong)(fVar3 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar3) || bVar2))
+                          + (uint)((!NAN(fVar3) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1f640 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001f640(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  float fVar3;
+  
+  fVar3 = *(float *)(_DAT_000171ec + 0x144);
+  uVar1 = (ulonglong)(fVar3 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar3) || bVar2))
+                          + (uint)((!NAN(fVar3) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2925c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002925c(undefined4 param_1)
+
+{
+  func_0x00002268(uRam00017818);
+  func_0x000290e4();
+  func_0x0001b1e4(0x21,uRam00017f14);
+  func_0x0000231c(uRam00017818);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x29280 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x000292b9) */
+/* WARNING: Removing unreachable block (ram,0x0002931e) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00029280(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  float fVar2;
+  int iVar3;
+  float *pfVar4;
+  int iVar5;
+  int iVar6;
+  uint uVar7;
+  float fVar8;
+  int iVar9;
+  
+  iVar5 = iRam00017f18;
+  if (*(int *)(iRam00017f18 + 0x1fc) == 0) {
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00002268(uRam00017818);
+  iVar3 = _DAT_00017060;
+  fVar2 = (float)FUN_0003acf8(uRam000172a8,(float)*(uint *)(iVar5 + 0x1fc) / 1.0);
+  iVar9 = 7;
+  iVar5 = iVar3;
+  iVar6 = iRam00017f0c;
+  while( true ) {
+    if (*(char *)(iVar3 + 0x28) != '\0') {
+      memw();
+      uVar7 = *(uint *)(*(int *)(iVar5 + 0x30) + 0x1030);
+      *(float *)(iVar6 + 0x44) = (float)(uVar7 >> 2 & 0x3fff) / 1.0;
+      *(float *)(iVar6 + 4) = (float)(uVar7 >> 0x10 & 0x3fff) / 1.0;
+    }
+    iVar5 = iVar5 + 4;
+    iVar3 = iVar3 + 1;
+    *(float *)(iVar6 + 0x24) = *(float *)(iVar6 + 0x24) * fVar2;
+    *(float *)(iVar6 + 0x168) = *(float *)(iVar6 + 0x168) * fVar2;
+    *(float *)(iVar6 + 100) = *(float *)(iVar6 + 100) * fVar2;
+    *(float *)(iVar6 + 0xc4) = *(float *)(iVar6 + 0xc4) * fVar2;
+    *(float *)(iVar6 + 0x13c) = *(float *)(iVar6 + 0x13c) * fVar2;
+    *(float *)(iVar6 + 0x188) = *(float *)(iVar6 + 0x188) * fVar2;
+    if (iVar9 == 0) break;
+    iVar9 = iVar9 + -1;
+    iVar6 = iVar6 + 4;
+  }
+  iVar5 = 1;
+  pfVar4 = pfRam00017f1c;
+  while( true ) {
+    *pfVar4 = *pfVar4 * fVar2;
+    iVar3 = iRam00017f20;
+    pfVar4 = pfVar4 + 1;
+    if (iVar5 == 0) break;
+    iVar5 = iVar5 + -1;
+  }
+  fVar8 = *(float *)(iRam00017f20 + 0xe8);
+  pfVar4 = (float *)(iRam00017f20 + 0xe4);
+  *(float *)(iRam00017f20 + 0xe0) = fVar2 * *(float *)(iRam00017f20 + 0xe0);
+  *(float *)(iVar3 + 0xe4) = fVar2 * *pfVar4;
+  *(float *)(iVar3 + 0xe8) = fVar2 * fVar8;
+  func_0x0001b1f4(0x21);
+  uVar1 = uRam00017ec4;
+  iVar5 = FUN_00039c3c(uRam00017ec4);
+  if ((iVar5 != 0) && (0x1a3 < *(uint *)(iRam00017e9c + 0x18))) {
+    func_0x0003ab90(uVar1,uRam00017f24,0x1a4);
+  }
+  func_0x0000231c(uRam00017818);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2937c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002937c(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (uVar1 >> 4 < 0x12) {
+                    /* WARNING: Could not recover jumptable at 0x0002939d. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)((uVar1 >> 4) * 3 + iRam00017f28))();
+    return;
+  }
+  func_0x00000fe4(param_1,0);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1f65c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001f65c(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  float fVar3;
+  
+  fVar3 = *(float *)(_DAT_000171ec + 0x14c);
+  uVar1 = (ulonglong)(fVar3 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar3) || bVar2))
+                          + (uint)((!NAN(fVar3) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2f698 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002f698(uint param_1)
+
+{
+  *(float *)(iRam00017aa8 + 0x70) = ((float)param_1 / 1.0) * _DAT_000170ac;
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2344c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x000234b5) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002344c(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  float fVar2;
+  uint uVar3;
+  undefined4 uVar4;
+  float *pfVar5;
+  float *pfVar6;
+  int iVar7;
+  float *pfVar8;
+  float fVar9;
+  int iVar10;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  iVar10 = iRam00017768;
+  fVar2 = fRam00017760;
+  uVar1 = uRam000172a8;
+  uVar4 = uRam0001707c;
+  fVar9 = ((float)uVar3 / 1.0) * _DAT_000170ac;
+  *(undefined4 *)(iRam00017768 + 0x200) = uRam0001707c;
+  *(undefined4 *)(iVar10 + 0x27c) = uVar4;
+  *(float *)(iVar10 + 0x1f8) = fVar9;
+  *(float *)(iVar10 + 0x278) = fVar9;
+  *(float *)(iVar10 + 500) = fVar9 + fVar2;
+  uVar4 = FUN_0003acf8(uVar1,fVar9);
+  iVar7 = 0;
+  *(undefined4 *)(iVar10 + 0x1fc) = uVar4;
+  *(float *)(iVar10 + 0x17c) = fVar9;
+  pfVar5 = pfRam000175f4;
+  *(float *)(iVar10 + 0x180) = fVar9;
+  *(float *)(iVar10 + 0x184) = fVar9;
+  pfVar8 = pfVar5 + 0xd;
+  do {
+    pfVar8 = pfVar8 + 0xf1;
+    iVar7 = iVar7 + 1;
+    pfVar6 = pfVar5 + 0xf1;
+    iVar10 = 0xc;
+    while( true ) {
+      *pfVar5 = fVar9;
+      pfVar5 = pfVar5 + 1;
+      if (iVar10 == 0) break;
+      iVar10 = iVar10 + -1;
+    }
+    pfVar5 = pfVar6;
+  } while (iVar7 != 8);
+  func_0x00000fa8(param_1,1,pfVar8);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x28278 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x000282b5) */
+
+void FUN_00028278(undefined4 param_1)
+
+{
+  uint uVar1;
+  float *pfVar2;
+  float *pfVar3;
+  float *pfVar4;
+  float *pfVar5;
+  float fVar6;
+  int iVar7;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  fVar6 = (float)uVar1 / 1.0;
+  if (((*(float *)(iRam00017604 + 0x38) != fVar6) && (uVar1 != 0)) && (uVar1 < 0x78)) {
+    iVar7 = 5;
+    pfVar2 = (float *)(iRam00017e84 + 400);
+    pfVar3 = (float *)(iRam00017e88 + 0x84);
+    pfVar4 = (float *)(iRam00017e8c + 0x84);
+    pfVar5 = (float *)(iRam00017604 + 0x38);
+    while( true ) {
+      *pfVar5 = fVar6;
+      pfVar5[0x5e] = fVar6;
+      *pfVar4 = fVar6;
+      pfVar4[0x5e] = fVar6;
+      pfVar4[0xbc] = fVar6;
+      *pfVar3 = fVar6;
+      pfVar3[0x5e] = fVar6;
+      pfVar3[0xbc] = fVar6;
+      *pfVar2 = fVar6;
+      pfVar2[0x37] = fVar6;
+      if (iVar7 == 0) break;
+      iVar7 = iVar7 + -1;
+      pfVar2 = pfVar2 + 5;
+      pfVar3 = pfVar3 + 7;
+      pfVar4 = pfVar4 + 7;
+      pfVar5 = pfVar5 + 7;
+    }
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x282ec ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_000282ec(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (((*(float *)(iRam00017e90 + 0x3dc) != (float)uVar1 / 1.0) && (uVar1 != 0)) && (uVar1 < 0x78))
+  {
+    *(float *)(iRam00017e90 + 0x3dc) = (float)uVar1 / 1.0;
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x28324 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00028324(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = func_0x00000ffc(param_1);
+  *(bool *)(iRam00017e94 + 0x6a) = iVar1 == 0;
+  func_0x00000fa8(param_1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x28380 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00028380(undefined4 param_1)
+
+{
+  undefined2 uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  func_0x00002268(_DAT_00017094);
+  *(undefined2 *)(_DAT_0001711c + 4) = uVar1;
+  FUN_00021e8c();
+  func_0x0000231c(_DAT_00017094);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2725c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002725c(undefined4 param_1)
+
+{
+  uint uVar1;
+  undefined4 *puVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  float *pfVar6;
+  undefined4 uVar7;
+  uint uVar8;
+  float fVar9;
+  int iVar10;
+  int iVar11;
+  uint uVar12;
+  undefined4 uVar13;
+  undefined4 uVar14;
+  undefined4 uVar15;
+  undefined4 uVar16;
+  undefined4 uVar17;
+  undefined4 uVar18;
+  undefined4 uVar19;
+  undefined4 uVar20;
+  undefined4 uVar21;
+  float fVar22;
+  float fVar23;
+  undefined4 uVar24;
+  undefined4 uStack_40;
+  float fStack_3c;
+  float fStack_38;
+  float fStack_34;
+  float fStack_30;
+  
+  uVar8 = func_0x00000ffc(param_1);
+  iVar3 = iRam00017aa0;
+  if ((uVar8 < 2) && (iVar10 = 1, *(byte *)(iRam00017aa0 + 0x7d) != uVar8)) {
+    *(char *)(iRam00017aa0 + 0x7d) = (char)uVar8;
+  }
+  else {
+    iVar10 = 0xff;
+  }
+  func_0x00000fa8(param_1,iVar10);
+  iVar4 = iRam00017e00;
+  if (iVar10 == 1) {
+    if (*(char *)(iVar3 + 0x7d) == '\0') {
+      fStack_34 = _DAT_00017924;
+      fStack_3c = fRam00017c90;
+      fStack_30 = fRam00017df8;
+      fStack_38 = _DAT_00017dfc;
+      uStack_40 = uRam00017464;
+    }
+    else {
+      fStack_30 = _DAT_00017924;
+      fStack_38 = fRam00017c90;
+      fStack_34 = fRam00017df8;
+      fStack_3c = _DAT_00017dfc;
+      uStack_40 = uRam00017dc8;
+    }
+    fVar9 = (float)FUN_0003acf8(*(undefined4 *)(iRam00017e00 + 0x204),fStack_30);
+    *(float *)(iVar4 + 0x204) = fStack_34 * fVar9;
+    fVar9 = (float)FUN_0003acf8(*(undefined4 *)(iVar4 + 0x370),fStack_38);
+    iVar10 = iRam00017e04;
+    uVar8 = 0;
+    *(float *)(iVar4 + 0x370) = fStack_3c * fVar9;
+    do {
+      iVar11 = uVar8 * 0x14 + iVar10;
+      fVar9 = (float)FUN_0003acf8(*(undefined4 *)(iVar11 + 0x140),fStack_30);
+      *(float *)(iVar11 + 0x140) = fStack_34 * fVar9;
+      fVar9 = (float)FUN_0003acf8(*(undefined4 *)(iVar11 + 0x2ac),fStack_38);
+      *(undefined4 *)(iVar11 + 0x14c) = uStack_40;
+      *(undefined4 *)(iVar11 + 0x2b8) = uStack_40;
+      uVar8 = uVar8 + 1 & 0xff;
+      *(float *)(iVar11 + 0x2ac) = fStack_3c * fVar9;
+      uVar7 = uRam00017e10;
+      pfVar6 = pfRam00017e0c;
+      iVar5 = iRam00017e08;
+      uVar19 = uRam00017d68;
+      uVar18 = uRam00017d64;
+      uVar17 = uRam00017d5c;
+      uVar16 = uRam00017d58;
+      uVar15 = uRam00017d54;
+      uVar14 = uRam00017d50;
+      uVar13 = uRam00017d44;
+      iVar11 = iRam00017c7c;
+    } while (uVar8 != 6);
+    if (*(int *)(iRam00017224 + 0x30) == iRam000172d8) {
+code_r0x0002739c:
+      if (*(char *)(iVar3 + 0x7d) != '\0') {
+        uVar13 = *(undefined4 *)(iRam00017e08 + 0x3a4);
+        uVar14 = *(undefined4 *)(iRam00017e08 + 0x40);
+        uVar15 = *(undefined4 *)(iRam00017e08 + 0x3c);
+        uVar24 = *(undefined4 *)(iRam00017e08 + 0x3bc);
+        puVar2 = (undefined4 *)(iRam00017e08 + 0x3ec);
+        fVar22 = *(float *)(iRam00017c7c + 0x174);
+        uVar16 = *(undefined4 *)(iRam00017c7c + 0x2dc);
+        uVar17 = *(undefined4 *)(iRam00017c7c + 0x390);
+        uVar18 = *(undefined4 *)(iRam00017c7c + 0x38c);
+        uVar19 = *(undefined4 *)(iRam00017c7c + 0x17c);
+        uVar20 = *(undefined4 *)(iRam00017c7c + 0x178);
+        uVar21 = *(undefined4 *)(iRam00017c7c + 0x170);
+        *(undefined4 *)(iRam00017e08 + 0x374) = *(undefined4 *)(iRam00017e08 + 0x3d4);
+        *(undefined4 *)(iVar5 + 0x38c) = *puVar2;
+        *(undefined4 *)(iVar4 + 0x6c) = uVar7;
+        *(undefined4 *)(iVar5 + 0x35c) = uVar24;
+        *(undefined4 *)(iVar5 + 0xc) = uVar15;
+        *(undefined4 *)(iVar5 + 0x10) = uVar14;
+        *(undefined4 *)(iVar5 + 0x344) = uVar13;
+        *(undefined4 *)(iVar11 + 0xf8) = uVar21;
+        *(undefined4 *)(iVar11 + 0x100) = uVar20;
+        *(undefined4 *)(iVar11 + 0x104) = uVar19;
+        *(undefined4 *)(iVar11 + 0x35c) = uVar18;
+        *(undefined4 *)(iVar11 + 0x360) = uVar17;
+        *(undefined4 *)(iVar11 + 0x264) = uVar16;
+        fVar9 = pfVar6[1];
+        fVar23 = *pfVar6;
+        *(undefined4 *)(iVar11 + 0x26c) = *(undefined4 *)(iVar11 + 0x2e4);
+        *(undefined4 *)(iVar11 + 0x270) = *(undefined4 *)(iVar11 + 0x2e8);
+        *(float *)(iVar11 + 0xfc) = fVar22 * fVar23;
+        *(float *)(iVar11 + 0x268) = *(float *)(iVar11 + 0x2e0) * fVar9;
+        return;
+      }
+      *(undefined4 *)(iVar4 + 0x6c) = 0;
+      *(undefined4 *)(iVar4 + 0x214) = 0;
+      *(undefined4 *)(iVar5 + 0x35c) = 0;
+      *(undefined4 *)(iVar4 + 0x380) = 0;
+      *(undefined4 *)(iVar5 + 0x374) = uVar16;
+      *(undefined4 *)(iVar5 + 0x178) = uVar18;
+      *(undefined4 *)(iVar5 + 0x17c) = uVar19;
+      *(undefined4 *)(iVar5 + 0x344) = uVar14;
+      *(undefined4 *)(iVar4 + 0x30c) = uVar13;
+      *(undefined4 *)(iVar4 + 900) = uRam00017d6c;
+      *(undefined4 *)(iVar4 + 0x21c) = uVar17;
+      *(undefined4 *)(iVar4 + 0x388) = uVar17;
+      *(undefined4 *)(iVar4 + 0x220) = uVar15;
+      *(undefined4 *)(iVar4 + 0x38c) = uVar15;
+      uVar13 = uRam00017d4c;
+      *(undefined4 *)(iVar4 + 0x310) = uRam00017d48;
+      *(undefined4 *)(iVar4 + 0x218) = uVar13;
+      return;
+    }
+    if (*(int *)(iRam00017224 + 0x30) == iRam000172d4) {
+      uVar8 = *(uint *)(iRam00017224 + 0x1c);
+      uVar12 = uVar8 >> 0x10 & 0xff;
+      if (((uVar12 == 0x31) &&
+          ((((uVar1 = uVar8 >> 0x18, uVar1 == 0x33 || (uVar1 == 0x31)) || (uVar1 == 0x32)) ||
+           (uVar1 == 0x35)))) ||
+         ((uVar12 == 0x30 && ((uVar8 >> 0x18 == 0x39 || (uVar8 >> 0x18 == 0x37))))))
+      goto code_r0x0002739c;
+    }
+  }
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x27478 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_00027478(undefined4 param_1)
+
+{
+  func_0x00000fe4(param_1,*(undefined1 *)(iRam00017aa0 + 0x7d));
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x283a8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x000283c5) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_000283a8(undefined4 param_1)
+
+{
+  uint uVar1;
+  int iVar2;
+  undefined2 uVar3;
+  uint uVar4;
+  int iVar5;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  uVar4 = uVar1 >> 0x10 & 0xff;
+  uVar3 = (undefined2)uVar1;
+  if (uVar4 == 0xff) {
+    iVar5 = 7;
+    iVar2 = _DAT_000171b4;
+    while( true ) {
+      *(undefined2 *)(iVar2 + 0xf8) = uVar3;
+      *(undefined2 *)(iVar2 + 0xfa) = uVar3;
+      *(undefined1 *)(iVar2 + 0xf2) = 1;
+      iVar2 = iVar2 + 0x3c4;
+      if (iVar5 == 0) break;
+      iVar5 = iVar5 + -1;
+    }
+  }
+  else {
+    if (7 < uVar4) {
+      func_0x00000fa8(param_1);
+      return;
+    }
+    iVar2 = _DAT_000171b4 + uVar4 * 0x3c4;
+    *(undefined2 *)(iVar2 + 0xf8) = uVar3;
+    *(undefined2 *)(iVar2 + 0xfa) = uVar3;
+    *(undefined1 *)(iVar2 + 0xf2) = 1;
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x283fc ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x00028419) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_000283fc(undefined4 param_1)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  uVar1 = uVar1 >> 0x10 & 0xff;
+  if (uVar1 == 0xff) {
+    iVar3 = 7;
+    iVar2 = _DAT_000171b4;
+    while( true ) {
+      *(undefined2 *)(iVar2 + 0xf8) = 0;
+      *(undefined2 *)(iVar2 + 0xfa) = 0;
+      *(undefined1 *)(iVar2 + 0xf2) = 0;
+      iVar2 = iVar2 + 0x3c4;
+      if (iVar3 == 0) break;
+      iVar3 = iVar3 + -1;
+    }
+  }
+  else {
+    if (7 < uVar1) {
+      func_0x00000fa8(param_1);
+      return;
+    }
+    iVar2 = _DAT_000171b4 + uVar1 * 0x3c4;
+    *(undefined2 *)(iVar2 + 0xf8) = 0;
+    *(undefined2 *)(iVar2 + 0xfa) = 0;
+    *(undefined1 *)(iVar2 + 0xf2) = 0;
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1b3f4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001b3f4(undefined4 param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  int *piVar3;
+  uint uVar4;
+  int iVar5;
+  
+  uVar4 = func_0x00000ffc(param_1);
+  iVar2 = _DAT_00017060;
+  *(uint *)(_DAT_00017060 + 8) = uVar4 << 0x10;
+  *(undefined1 *)(iVar2 + 0xc) = 1;
+  *(uint *)(iVar2 + 4) = uVar4 >> 0x10;
+  *(undefined1 *)(iVar2 + 0xd) = 0;
+  iVar5 = func_0x00039b74(8,iVar2 + 4);
+  piVar3 = piRam000170d4;
+  iVar1 = iRam0001705c;
+  *(int *)(iVar2 + 0x14) = iVar5;
+  *piVar3 = iVar5 + iVar1;
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2548c ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002548c(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = func_0x0002a018(9);
+  if (iVar1 == 0) {
+    func_0x00002268(uRam00017580);
+    func_0x00000fa8(param_1,1);
+    func_0x000348d8(0);
+    func_0x0000231c(uRam00017580);
+    return;
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1e6b0 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001e6b0(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = _DAT_000171ec;
+  if (*(byte *)(_DAT_000171ec + 0xf7) <= *(byte *)(_DAT_000171ec + 0xf6)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x00002268(uRam000173e0);
+  memw();
+  memw();
+  *(uint *)(iRam000171a0 + 0x104) = *(uint *)(iRam000171a0 + 0x104) & 0xffffffbf;
+  func_0x0001ef90();
+  func_0x0001e448(*(undefined1 *)(iVar1 + 0xf6));
+  if ((int)(uint)*(byte *)(iVar1 + 0xf6) < (int)(*(byte *)(iVar1 + 0xf7) - 1)) {
+    *(byte *)(iVar1 + 0xf6) = *(byte *)(iVar1 + 0xf6) + 1;
+    func_0x00000fe4(param_1,0);
+  }
+  else {
+    func_0x00000fe4(param_1,1);
+  }
+  func_0x0000231c(uRam000173e0);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1e720 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001e720(undefined4 param_1)
+
+{
+  int iVar1;
+  uint uVar2;
+  int iVar3;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  iVar1 = _DAT_000171ec;
+  if (((uVar2 & 0x100) != 0) && ((uint)*(byte *)(_DAT_000171ec + 0xf7) <= (uVar2 & 0xff))) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x00002268(uRam000173e0);
+  func_0x0001ef90();
+  *(undefined1 *)(iVar1 + 0xf6) = 0xff;
+  if ((uVar2 >> 8 & 0xff) == 1) {
+    *(char *)(iVar1 + 0x16) = (char)uVar2;
+    if ((uint)*(byte *)(iVar1 + 0xf7) <= (uVar2 & 0xff)) {
+      func_0x0000231c(uRam000173e0);
+      func_0x00000fa8(param_1,0xff);
+      return;
+    }
+  }
+  memw();
+  memw();
+  *(uint *)(iRam000171a0 + 0x104) = *(uint *)(iRam000171a0 + 0x104) & 0xffffffbf;
+  func_0x0001e448(*(undefined1 *)(iVar1 + 0x16));
+  iVar3 = *piRam000173a0;
+  *(char *)(iVar1 + 0xd) = *(char *)(iVar1 + 0x16);
+  *(byte *)(iVar3 + 2) = *(byte *)(iVar3 + 2) & 0xf | *(char *)(iVar1 + 0x16) << 4;
+  func_0x0001efb4();
+  func_0x0000231c(uRam000173e0);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1e7c0 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001e7c0(undefined4 param_1)
+
+{
+  func_0x00000fe4(param_1,*(undefined1 *)(_DAT_000171ec + 0xf7));
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1c3b0 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0001c3b0(undefined4 param_1)
+
+{
+  uint uVar1;
+  int iVar2;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  iVar2 = iRam00017194;
+  *(byte *)(iRam00017194 + 0x2a) = (byte)(uVar1 >> 0x10) & 1;
+  *(byte *)(iVar2 + 0x2b) = (byte)(uVar1 >> 0x11) & 1;
+  func_0x0001e038(uVar1 >> 0x18,uVar1 & 0xff);
+  func_0x00030df4();
+  iVar2 = func_0x0002e4c4();
+  if (iVar2 != 7) {
+    func_0x0002cef4(0);
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1e7d8 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001e7d8(undefined4 param_1)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  float fVar4;
+  
+  uVar3 = func_0x00000ffc(param_1);
+  if (*(byte *)(_DAT_000171ec + 0xf7) <= uVar3) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar4 = *(float *)(*(int *)(uVar3 * 4 + _DAT_000171ec + 0x1c) + 0x18);
+  uVar1 = (ulonglong)(fVar4 * 1.0);
+  bVar2 = uVar1 >> 0x10 != 0;
+  func_0x00000fe4(param_1,((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar4) || bVar2))
+                          + (uint)((!NAN(fVar4) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2a938 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002a938(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = func_0x00000ffc(param_1);
+  if ((iVar1 != 1) && (iVar1 != 0)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x0002a978(iVar1,param_1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x1e650 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001e650(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (*(byte *)(_DAT_000171ec + 0xf7) <= uVar1) {
+    func_0x00000fe4(param_1,uVar1);
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x00002268(uRam000173e0);
+  memw();
+  memw();
+  *(uint *)(iRam000171a0 + 0x104) = *(uint *)(iRam000171a0 + 0x104) & 0xffffffbf;
+  func_0x0001ef90();
+  func_0x0001e448(uVar1 & 0xff);
+  func_0x0000231c(uRam000173e0);
+  func_0x00000fe4(param_1,uVar1);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x300b4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+/* WARNING: Removing unreachable block (ram,0x000300c9) */
+/* WARNING: Removing unreachable block (ram,0x000300d7) */
+
+void FUN_000300b4(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  iVar3 = 7;
+  iVar2 = iRam000182d0;
+  while( true ) {
+    *(char *)(iVar2 + 0x80) = (char)uVar1;
+    iVar2 = iVar2 + 1;
+    if (iVar3 == 0) break;
+    iVar3 = iVar3 + -1;
+  }
+  iVar4 = 1;
+  iVar2 = iRam00017aa8;
+  iVar3 = iRam000182a0;
+  while( true ) {
+    *(char *)(iVar3 + 0x7e) = (char)((uint)uVar1 >> 8);
+    *(short *)(iVar2 + 0x110) = (short)((uint)uVar1 >> 0x10);
+    iVar3 = iVar3 + 1;
+    iVar2 = iVar2 + 2;
+    if (iVar4 == 0) break;
+    iVar4 = iVar4 + -1;
+  }
+  *(undefined1 *)(iRam000182f0 + 0x50) = 1;
+  func_0x00000fa8(param_1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> ---- FUNC @ 0x2f6c4 ---- (GhidraScript)  
+INFO  HandlerSweep.java> 
+void FUN_0002f6c4(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (uVar1 < 4) {
+    func_0x00000fe4(param_1,*(undefined4 *)(uVar1 * 4 + iRam00017aa8 + 0x78));
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  HandlerSweep.java> SWEEP DONE (GhidraScript)  
+INFO  REPORT: Save succeeded for processed file: /smu_fw_robin_5 (HeadlessAnalyzer)  

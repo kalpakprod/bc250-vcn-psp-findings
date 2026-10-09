@@ -1,0 +1,35 @@
+{
+  "base": "evidence/programmer/reads/20260911/read-a.bin",
+  "base_sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+  "out": "candidates/BC250_P3.00_NO_GASKET_v001.bin",
+  "out_sha256": "d66ddcbae8940af0d4380a7b69c86cf0bd026b71ccc3d83ccd7b985e431f3d6d",
+  "removed_entries": {
+    "0x24": {
+      "index": 7,
+      "was_size": 11856,
+      "was_location": "0xff982000"
+    },
+    "0x45": {
+      "index": 15,
+      "was_size": 1760,
+      "was_location": "0xff9ca400"
+    }
+  },
+  "fletcher": {
+    "was": "0x63fffcc8",
+    "now": "0x3d1e03f9",
+    "span": [
+      "0x8e0008",
+      "0x8e0140"
+    ]
+  },
+  "checks": {
+    "lock_types_absent": true,
+    "remaining_entry_count": 17,
+    "fletcher_ok": true,
+    "diff_confinement": true,
+    "changed_bytes": 34
+  },
+  "gate": "PASS",
+  "claim_boundary": "static candidate only; PSP boot behavior UNRUN; no flash"
+}

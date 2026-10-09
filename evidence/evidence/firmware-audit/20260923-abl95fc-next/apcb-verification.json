@@ -1,0 +1,9 @@
+{
+  "command": [
+    "tools/abl-emulator-venv/bin/python",
+    "evidence/firmware-audit/20260923-abl95fc-next/emulate_pll_apcb.py"
+  ],
+  "exit": 0,
+  "stdout": "baseline input 1800 -> [(14, 1420), (15, 900)] instructions 44909\nmodified_apcb input 1800 -> [(14, 1430), (15, 900)] instructions 44909\nrestored_apcb input 1800 -> [(14, 1420), (15, 900)] instructions 44909\ngate_off input 1800 -> [(14, 1200), (15, 900)] instructions 44709\nmodified_mem input 1750 -> [(14, 1420), (15, 875)] instructions 44828\nPASS5 real APCB-source-to-PLL cases, unchanged code, only declared external-effect hooks\n",
+  "stderr": ""
+}

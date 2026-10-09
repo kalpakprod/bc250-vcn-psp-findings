@@ -1,0 +1,51 @@
+{
+  "consistent_mode_reply": true,
+  "evidence_class": "actual_device_query",
+  "hardware_acceptance": false,
+  "replies": {
+    "STATUS": {
+      "acknowledged": true,
+      "mode": "controller",
+      "state": "recognized"
+    },
+    "VERSION": {
+      "acknowledged": true,
+      "build_utc": "2026-09-28T21:32:39Z",
+      "mode": "controller",
+      "revision": "c1e7627",
+      "state": "recognized"
+    }
+  },
+  "serial": {
+    "replies": {
+      "STATUS": {
+        "acknowledged": true,
+        "mode": "controller",
+        "state": "recognized"
+      },
+      "VERSION": {
+        "acknowledged": true,
+        "build_utc": "2026-09-28T21:32:39Z",
+        "mode": "controller",
+        "revision": "c1e7627",
+        "state": "recognized"
+      }
+    },
+    "state": "queried"
+  },
+  "usb": {
+    "gamepad_events": [],
+    "identity_note": "USB IDs do not prove board identity; input nodes do not prove button delivery",
+    "interface_classes": [
+      "01",
+      "01",
+      "01",
+      "02",
+      "03",
+      "0a"
+    ],
+    "pid": "0ce6",
+    "state": "usb_ancestor_found",
+    "vid": "054c"
+  }
+}

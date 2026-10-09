@@ -1,0 +1,418 @@
+{
+  "status": "PASS",
+  "checks": 64,
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "abl1": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "object": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o",
+    "full_listing": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+    "helper_explicit_window": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-reader-4800-boundary-review/target-disassembly.stdout",
+    "provider_explicit_window": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-reader-type-provider-review/provider-49cc-window.stdout",
+    "provider_prior_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-apcb-consumer-resume/abl1-apcb-consumer-result.json",
+    "fallback_type_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-reader-fallback-status-xhigh/abl1-reader-fallback-status-result.json"
+  },
+  "hashes": {
+    "abl1": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "object": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135",
+    "full_listing": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+    "helper_explicit_window": "4ee44cf611486ff2cf04f1a67f94ac2aab5fb6d6748ccf013d1748d8cb031c65",
+    "provider_prior_result": "3950e5136254db2aa9c96c91caba4d48da4a11c369b38a36703c9f54cef45ee9",
+    "fallback_type_result": "5e63a7cf2121a8ea39631cbd357a3a958a8f691668e26df98900a2fdbb7aa19a"
+  },
+  "stack_result": {
+    "fclk_caller": "R3=SP+0x0C at 0x465C; SP and SP+4 words are zero at 0x4664/0x4666.",
+    "reader_to_helper": "Reader R3=R10 is preserved as type pointer; R9 is loaded from the second caller stack word and stored to reader [SP] at 0x1FD2. Helper 0x4800 reads it at [SP+0x18], then STRD R3,R1,[SP] forwards type pointer as outgoing arg1 and R9 as arg2.",
+    "provider_frame": "The explicit 0x49CC entry pushes 0x34 bytes (R0..R11,LR) and subtracts 0x6C, so incoming stack arg1 appears at current SP+0xA0 and arg2 at +0xA4. Its 0x4BF0/0x4BFA path loads/writes through arg1 [SP+0xA0], which is the FCLK type pointer.",
+    "conclusion": "Within the exact FCLK -> reader -> 0x4800 -> 0x49CC edge, the caller type pointer is forwarded as provider arg1 and the provider 0x4BF0/0x4BFA path writes its returned byte length through provider arg1 at SP+0xA0. Correct 0x34-byte push accounting joins SP+0xA0 to the FCLK SP+0x0C type pointer. Thus provider success can initialize the type byte before reader dispatch; actual type-2 execution still depends on provider success and returned length, but the prior uninitialized-local claim is superseded."
+  },
+  "claim_boundary": "Static argument/stack trace only; no runtime, clock unit, hardware or MCLK=UCLK=FCLK result.",
+  "checks_detail": [
+    {
+      "check": "ABL1 exists",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "ABL1 SHA-256",
+      "status": "PASS",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "exact ELF object exists",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "exact ELF object SHA-256",
+      "status": "PASS",
+      "got": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135",
+      "expected": "54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135"
+    },
+    {
+      "check": "full listing exists",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "full listing SHA-256",
+      "status": "PASS",
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    {
+      "check": "0x4800 explicit-target listing exists",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "0x4800 explicit-target listing SHA-256",
+      "status": "PASS",
+      "got": "4ee44cf611486ff2cf04f1a67f94ac2aab5fb6d6748ccf013d1748d8cb031c65",
+      "expected": "4ee44cf611486ff2cf04f1a67f94ac2aab5fb6d6748ccf013d1748d8cb031c65"
+    },
+    {
+      "check": "existing provider result exists",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "existing provider result SHA-256",
+      "status": "PASS",
+      "got": "3950e5136254db2aa9c96c91caba4d48da4a11c369b38a36703c9f54cef45ee9",
+      "expected": "3950e5136254db2aa9c96c91caba4d48da4a11c369b38a36703c9f54cef45ee9"
+    },
+    {
+      "check": "fallback/type report result PASS",
+      "status": "PASS",
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "provider result PASS",
+      "status": "PASS",
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "reader BL target from raw bytes",
+      "status": "PASS",
+      "got": 18432,
+      "expected": 18432
+    },
+    {
+      "check": "helper BL target from raw bytes",
+      "status": "PASS",
+      "got": 18892,
+      "expected": 18892
+    },
+    {
+      "check": "raw bytes match source 0x4800",
+      "status": "PASS",
+      "got": "7cb5",
+      "expected": "7cb5"
+    },
+    {
+      "check": "disassembly 0x4800",
+      "status": "PASS",
+      "got": "push {r2, r3, r4, r5, r6, lr}",
+      "expected": "push {r2, r3, r4, r5, r6, lr}"
+    },
+    {
+      "check": "raw bytes match source 0x4808",
+      "status": "PASS",
+      "got": "0699",
+      "expected": "0699"
+    },
+    {
+      "check": "disassembly 0x4808",
+      "status": "PASS",
+      "got": "ldr r1, [sp, #0x18]",
+      "expected": "ldr r1, [sp, #0x18]"
+    },
+    {
+      "check": "raw bytes match source 0x4812",
+      "status": "PASS",
+      "got": "cde90031",
+      "expected": "cde90031"
+    },
+    {
+      "check": "disassembly 0x4812",
+      "status": "PASS",
+      "got": "strd r3, r1, [sp]",
+      "expected": "strd r3, r1, [sp]"
+    },
+    {
+      "check": "raw bytes match source 0x481c",
+      "status": "PASS",
+      "got": "00f0d6f8",
+      "expected": "00f0d6f8"
+    },
+    {
+      "check": "disassembly 0x481c",
+      "status": "PASS",
+      "got": "bl 0x49cc",
+      "expected": "bl 0x49cc"
+    },
+    {
+      "check": "raw bytes match source 0x465c",
+      "status": "PASS",
+      "got": "03ab",
+      "expected": "03ab"
+    },
+    {
+      "check": "disassembly 0x465c",
+      "status": "PASS",
+      "got": "add r3, sp, #0xc",
+      "expected": "add r3, sp, #0xc"
+    },
+    {
+      "check": "raw bytes match source 0x4664",
+      "status": "PASS",
+      "got": "0092",
+      "expected": "0092"
+    },
+    {
+      "check": "disassembly 0x4664",
+      "status": "PASS",
+      "got": "str r2, [sp]",
+      "expected": "str r2, [sp]"
+    },
+    {
+      "check": "raw bytes match source 0x4666",
+      "status": "PASS",
+      "got": "0192",
+      "expected": "0192"
+    },
+    {
+      "check": "disassembly 0x4666",
+      "status": "PASS",
+      "got": "str r2, [sp, #0x4]",
+      "expected": "str r2, [sp, #0x4]"
+    },
+    {
+      "check": "raw bytes match source 0x466a",
+      "status": "PASS",
+      "got": "fdf7a3fc",
+      "expected": "fdf7a3fc"
+    },
+    {
+      "check": "disassembly 0x466a",
+      "status": "PASS",
+      "got": "bl 0x1fb4",
+      "expected": "bl 0x1fb4"
+    },
+    {
+      "check": "raw bytes match source 0x1fc0",
+      "status": "PASS",
+      "got": "dde90c79",
+      "expected": "dde90c79"
+    },
+    {
+      "check": "disassembly 0x1fc0",
+      "status": "PASS",
+      "got": "ldrd r7, r9, [sp, #48]",
+      "expected": "ldrd r7, r9, [sp, #48]"
+    },
+    {
+      "check": "raw bytes match source 0x1fd2",
+      "status": "PASS",
+      "got": "cdf80090",
+      "expected": "cdf80090"
+    },
+    {
+      "check": "disassembly 0x1fd2",
+      "status": "PASS",
+      "got": "str.w r9, [sp]",
+      "expected": "str.w r9, [sp]"
+    },
+    {
+      "check": "raw bytes match source 0x1fdc",
+      "status": "PASS",
+      "got": "5346",
+      "expected": "5346"
+    },
+    {
+      "check": "disassembly 0x1fdc",
+      "status": "PASS",
+      "got": "mov r3, r10",
+      "expected": "mov r3, r10"
+    },
+    {
+      "check": "raw bytes match source 0x1fe0",
+      "status": "PASS",
+      "got": "02f00efc",
+      "expected": "02f00efc"
+    },
+    {
+      "check": "disassembly 0x1fe0",
+      "status": "PASS",
+      "got": "bl 0x4800",
+      "expected": "bl 0x4800"
+    },
+    {
+      "check": "FCLK explicit local [SP+0x0C] writes before reader",
+      "status": "PASS",
+      "got": [],
+      "expected": []
+    },
+    {
+      "check": "provider explicit-target disassembly exit",
+      "status": "PASS",
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "raw bytes match source 0x49cc",
+      "status": "PASS",
+      "got": "2de9ff4f",
+      "expected": "2de9ff4f"
+    },
+    {
+      "check": "disassembly 0x49cc",
+      "status": "PASS",
+      "got": "push.w {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}",
+      "expected": "push.w {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}"
+    },
+    {
+      "check": "raw bytes match source 0x49d2",
+      "status": "PASS",
+      "got": "9bb0",
+      "expected": "9bb0"
+    },
+    {
+      "check": "disassembly 0x49d2",
+      "status": "PASS",
+      "got": "sub sp, #0x6c",
+      "expected": "sub sp, #0x6c"
+    },
+    {
+      "check": "raw bytes match source 0x4a0c",
+      "status": "PASS",
+      "got": "2898",
+      "expected": "2898"
+    },
+    {
+      "check": "disassembly 0x4a0c",
+      "status": "PASS",
+      "got": "ldr r0, [sp, #0xa0]",
+      "expected": "ldr r0, [sp, #0xa0]"
+    },
+    {
+      "check": "raw bytes match source 0x4b36",
+      "status": "PASS",
+      "got": "2999",
+      "expected": "2999"
+    },
+    {
+      "check": "disassembly 0x4b36",
+      "status": "PASS",
+      "got": "ldr r1, [sp, #0xa4]",
+      "expected": "ldr r1, [sp, #0xa4]"
+    },
+    {
+      "check": "raw bytes match source 0x4bf0",
+      "status": "PASS",
+      "got": "289a",
+      "expected": "289a"
+    },
+    {
+      "check": "disassembly 0x4bf0",
+      "status": "PASS",
+      "got": "ldr r2, [sp, #0xa0]",
+      "expected": "ldr r2, [sp, #0xa0]"
+    },
+    {
+      "check": "raw bytes match source 0x4bfa",
+      "status": "PASS",
+      "got": "1170",
+      "expected": "1170"
+    },
+    {
+      "check": "disassembly 0x4bfa",
+      "status": "PASS",
+      "got": "strb r1, [r2]",
+      "expected": "strb r1, [r2]"
+    },
+    {
+      "check": "raw bytes match source 0x4c14",
+      "status": "PASS",
+      "got": "1e9a",
+      "expected": "1e9a"
+    },
+    {
+      "check": "disassembly 0x4c14",
+      "status": "PASS",
+      "got": "ldr r2, [sp, #0x78]",
+      "expected": "ldr r2, [sp, #0x78]"
+    },
+    {
+      "check": "raw bytes match source 0x4c18",
+      "status": "PASS",
+      "got": "1354",
+      "expected": "1354"
+    },
+    {
+      "check": "disassembly 0x4c18",
+      "status": "PASS",
+      "got": "strb r3, [r2, r0]",
+      "expected": "strb r3, [r2, r0]"
+    },
+    {
+      "check": "helper push frame size",
+      "status": "PASS",
+      "got": 24,
+      "expected": 24
+    },
+    {
+      "check": "provider frame size",
+      "status": "PASS",
+      "got": 160,
+      "expected": 160
+    },
+    {
+      "check": "provider first stack arg current-SP offset",
+      "status": "PASS",
+      "got": 160,
+      "expected": 160
+    },
+    {
+      "check": "provider second stack arg current-SP offset",
+      "status": "PASS",
+      "got": 164,
+      "expected": 164
+    },
+    {
+      "check": "provider explicit SP+0xA0 access includes 0x4BF0",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "provider byte store consumes second stack arg",
+      "status": "PASS",
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "FCLK first reader stack word is zero",
+      "status": "PASS",
+      "got": "0092",
+      "expected": "0092"
+    },
+    {
+      "check": "FCLK second reader stack word is zero",
+      "status": "PASS",
+      "got": "0192",
+      "expected": "0192"
+    }
+  ]
+}

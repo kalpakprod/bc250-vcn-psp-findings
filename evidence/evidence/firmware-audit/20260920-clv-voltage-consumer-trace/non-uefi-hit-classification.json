@@ -1,0 +1,1015 @@
+{
+ "tool": "verify_non_uefi_hits.py",
+ "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+ "scan_json_sha256": "4d1f4da3f13839236189a3d58a0ec404b3cba7f97f613aaddbfb85ac2823aec1",
+ "input_scan": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-voltage-consumer-trace/non-uefi-inv-scan.json",
+ "checks": {
+  "C0_marker_and_adjacency": {
+   "marker_counts": {
+    "$INV": 8,
+    "NVTB": 1
+   },
+   "marker_carriers": {
+    "non-PSP": 9
+   },
+   "markers_inside_psp_entries": 0,
+   "id_counts": {
+    "0x1363": 46,
+    "0x1364": 39
+   },
+   "min_marker_distance_bytes": 39025,
+   "ids_within_64B_of_marker": 0,
+   "chance_expectation_per_u16": 256.0
+  },
+  "C1_abl3_site": {
+   "container_meta": {
+    "ps1": true,
+    "signed": 41120,
+    "compressed": 1
+   },
+   "body_size": 85200,
+   "body_sha256": "3f5890b3a830725a11e169861fcfa208fa3f5fab37a38fc7f994a221a1f213be",
+   "id_word_offset_in_body": "0x5b23",
+   "disasm_anchors": {
+    "0x5b20": [
+     "    5b20: 6384         \tstr\tr4, [r0, #0x38]",
+     "    5b22: 63c4         \tstr\tr4, [r0, #0x3c]",
+     "    5b24: e013         \tb\t0x5b4e <.text+0x2e>     @ imm = #0x26",
+     "    5b26: eb08 1086    \tadd.w\tr0, r8, r6, lsl #6",
+     "    5b2a: eb00 1085    \tadd.w\tr0, r0, r5, lsl #6",
+     "    5b2e: 6284         \tstr\tr4, [r0, #0x28]",
+     "    5b30: 62c4         \tstr\tr4, [r0, #0x2c]",
+     "    5b32: e00c         \tb\t0x5b4e <.text+0x2e>     @ imm = #0x18",
+     "    5b34: eb08 1086    \tadd.w\tr0, r8, r6, lsl #6",
+     "    5b38: eb00 1085    \tadd.w\tr0, r0, r5, lsl #6"
+    ],
+    "0x5b00": [
+     "    5b00: eb00 1085    \tadd.w\tr0, r0, r5, lsl #6",
+     "    5b04: 6104         \tstr\tr4, [r0, #0x10]",
+     "    5b06: 6144         \tstr\tr4, [r0, #0x14]",
+     "    5b08: e021         \tb\t0x5b4e <.text+0x4e>     @ imm = #0x42",
+     "    5b0a: eb08 1086    \tadd.w\tr0, r8, r6, lsl #6",
+     "    5b0e: eb00 1085    \tadd.w\tr0, r0, r5, lsl #6",
+     "    5b12: 6004         \tstr\tr4, [r0]",
+     "    5b14: 6044         \tstr\tr4, [r0, #0x4]",
+     "    5b16: e01a         \tb\t0x5b4e <.text+0x4e>     @ imm = #0x34",
+     "    5b18: eb08 1086    \tadd.w\tr0, r8, r6, lsl #6"
+    ]
+   },
+   "instruction_boundaries_at_site": {
+    "5b22": "5b22: 63c4         \tstr\tr4, [r0, #0x3c]",
+    "5b24": "5b24: e013         \tb\t0x5b4e <.text+0x4e>     @ imm = #0x26"
+   },
+   "anchor_agreement": true,
+   "verdict": "both even anchors decode the same halfword boundaries: the u16 is the high byte of one Thumb-2 instruction plus the low byte of the next -> byte-pair coincidence, not a record"
+  },
+  "C1b_smu_motif": {
+   "container_meta": {
+    "ps1": true,
+    "signed": 262144,
+    "compressed": 0
+   },
+   "body_size": 262144,
+   "body_sha256": "5adafea1bac7d7447bd9e87d50b4c300a549eefbebad59e30ef306cb9aee89d0",
+   "motif_03_22_63_count": 17,
+   "motif_offsets": [
+    "0x2bfe",
+    "0x2c04",
+    "0x2c0a",
+    "0x2c10",
+    "0x2c16",
+    "0x2c1c",
+    "0x2c22",
+    "0x2c28",
+    "0x2c6f",
+    "0x2c75",
+    "0x2e28",
+    "0x2e2e",
+    "0x2e34",
+    "0x2e3a",
+    "0x2e40",
+    "0x2e87",
+    "0x2e8d"
+   ],
+   "counter_bytes_after_63": [
+    16,
+    17,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    43,
+    44,
+    19,
+    22,
+    23,
+    24,
+    20,
+    43,
+    44
+   ],
+   "strides": [
+    6,
+    71,
+    435
+   ],
+   "body_header16": "01 07 58 00 01 07 58 00 00 00 00 00 00 00 00 00",
+   "verdict": "6-byte-stride motif whose byte after the constant 0x63 increments (0x10,0x11,0x13,...) -> counter/data region; the scanner's 0x1363 match is the byte pair 63 13 read across that motif, not a record id"
+  },
+  "C2_producer_serializer": {
+   "modules": {
+    "AmdFabricAriPei-c5b99650a442": [
+     {
+      "rva": "0x11924",
+      "token": "0x1363",
+      "source": "al,BYTE PTR [edx+0x6e5]"
+     },
+     {
+      "rva": "0x11956",
+      "token": "0x1364",
+      "source": "eax,DWORD PTR [edx+0x6e6]"
+     }
+    ],
+    "AmdNbioBaseARIPei-51d96c1e5a5e": [
+     {
+      "rva": "0x12734",
+      "token": "0x1363",
+      "source": "al,BYTE PTR [edx+0x6e5]"
+     },
+     {
+      "rva": "0x12766",
+      "token": "0x1364",
+      "source": "eax,DWORD PTR [edx+0x6e6]"
+     }
+    ],
+    "AmdNbioGfxARIPei-63413be2ac29": [
+     {
+      "rva": "0xfaf4",
+      "token": "0x1363",
+      "source": "al,BYTE PTR [edx+0x6e5]"
+     },
+     {
+      "rva": "0xfb26",
+      "token": "0x1364",
+      "source": "eax,DWORD PTR [edx+0x6e6]"
+     }
+    ],
+    "AmdNbioPcieARIPei-62b1398c4ba9": [
+     {
+      "rva": "0x13244",
+      "token": "0x1363",
+      "source": "al,BYTE PTR [edx+0x6e5]"
+     },
+     {
+      "rva": "0x13276",
+      "token": "0x1364",
+      "source": "eax,DWORD PTR [edx+0x6e6]"
+     }
+    ],
+    "AmdNbioSmuV10Pei-905b8be68afd": [
+     {
+      "rva": "0x10444",
+      "token": "0x1363",
+      "source": "al,BYTE PTR [edx+0x6e5]"
+     },
+     {
+      "rva": "0x10476",
+      "token": "0x1364",
+      "source": "eax,DWORD PTR [edx+0x6e6]"
+     }
+    ],
+    "AmdSocBl5AriPei-79e13211d5ae": [
+     {
+      "rva": "0x10184",
+      "token": "0x1363",
+      "source": "al,BYTE PTR [edx+0x6e5]"
+     },
+     {
+      "rva": "0x101b6",
+      "token": "0x1364",
+      "source": "eax,DWORD PTR [edx+0x6e6]"
+     }
+    ],
+    "CbsBasePei-6ff112922ad8": [
+     {
+      "rva": "0xe3c4",
+      "token": "0x1363",
+      "source": "al,BYTE PTR [edx+0x6e5]"
+     },
+     {
+      "rva": "0xe3f6",
+      "token": "0x1364",
+      "source": "eax,DWORD PTR [edx+0x6e6]"
+     }
+    ]
+   },
+   "verdict": "0x1363 reads AmdSetup+0x6E5 as a byte; 0x1364 reads AmdSetup+0x6E6 as a dword (disp32 0x6E6 in 8b 82 e6 06 00 00) -> the sibling report's 0x1364 -> +0x6EA/+0x6EB mapping is refuted by the writer bytes"
+  }
+ },
+ "per_hit_classification": [
+  {
+   "id": "0x1363",
+   "rom_offset": "0x8233DB",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.59 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x826B0D",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.61 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x8E27DB",
+   "carrier": "PSP:PSP_BOOTLOADER",
+   "class": "high-entropy",
+   "note": "local entropy 6.59 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x8E5F0D",
+   "carrier": "PSP:PSP_BOOTLOADER",
+   "class": "high-entropy",
+   "note": "local entropy 6.61 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x8FF051",
+   "carrier": "PSP:SMU_OFFCHIP_FW",
+   "class": "counter-motif",
+   "note": "inside 03 22 63 XX 20 YY stride-6 motif",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x901B0C",
+   "carrier": "PSP:SMU_OFFCHIP_FW",
+   "class": "counter-motif",
+   "note": "inside 03 22 63 XX 20 YY stride-6 motif",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x901D2A",
+   "carrier": "PSP:SMU_OFFCHIP_FW",
+   "class": "counter-motif",
+   "note": "inside 03 22 63 XX 20 YY stride-6 motif",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x996ABB",
+   "carrier": "PSP:DRIVER_ENTRIES",
+   "class": "high-entropy",
+   "note": "local entropy 5.57 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x9A2A6F",
+   "carrier": "PSP:ABL1",
+   "class": "compressed-residue",
+   "note": "absent from the decompressed body",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x9AF3DA",
+   "carrier": "PSP:ABL2",
+   "class": "compressed-residue",
+   "note": "absent from the decompressed body",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x9B2861",
+   "carrier": "PSP:ABL3",
+   "class": "instruction-pair",
+   "note": "spans two Thumb-2 instructions",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x9BE18B",
+   "carrier": "PSP:ABL4",
+   "class": "compressed-residue",
+   "note": "absent from the decompressed body",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xAFAE7C",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.54 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xAFBBFD",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.55 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xAFBE2B",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.6 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB083ED",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.58 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB111DA",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.6 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB22DEB",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.4 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB316A3",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.46 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB46294",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.53 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB53787",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.63 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB6358F",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.54 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB66CE0",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.61 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB6F71B",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.49 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB70C80",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.52 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB7BCDD",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.66 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB7CCB6",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.5 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB8C192",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.35 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB9C167",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.56 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBA1892",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.57 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBA52B2",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.41 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBB130E",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.5 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBB9CFD",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.43 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBC63C3",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.55 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBE46E2",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.6 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBE85AC",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.68 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBEF091",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.6 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBF4F70",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.53 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xE1405D",
+   "carrier": "non-PSP",
+   "class": "module-code",
+   "note": "x86 code/displacement bytes",
+   "attributed_modules": [
+    "SbPei-ac72a3b20e49.bin"
+   ]
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xE2D4A5",
+   "carrier": "non-PSP",
+   "class": "producer-stub",
+   "note": "mov edx,imm32 tag store (writer stub)",
+   "attributed_modules": [
+    "AmdFabricAriPei-c5b99650a442.bin",
+    "AmdNbioBaseARIPei-51d96c1e5a5e.bin",
+    "AmdNbioGfxARIPei-63413be2ac29.bin",
+    "AmdNbioPcieARIPei-62b1398c4ba9.bin",
+    "AmdNbioSmuV10Pei-905b8be68afd.bin",
+    "AmdSocBl5AriPei-79e13211d5ae.bin",
+    "CbsBasePei-6ff112922ad8.bin"
+   ]
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xE4C729",
+   "carrier": "non-PSP",
+   "class": "producer-stub",
+   "note": "mov edx,imm32 tag store (writer stub)",
+   "attributed_modules": [
+    "AmdFabricAriPei-c5b99650a442.bin",
+    "AmdNbioBaseARIPei-51d96c1e5a5e.bin",
+    "AmdNbioGfxARIPei-63413be2ac29.bin",
+    "AmdNbioPcieARIPei-62b1398c4ba9.bin",
+    "AmdNbioSmuV10Pei-905b8be68afd.bin",
+    "AmdSocBl5AriPei-79e13211d5ae.bin",
+    "CbsBasePei-6ff112922ad8.bin"
+   ]
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xE6718D",
+   "carrier": "non-PSP",
+   "class": "producer-stub",
+   "note": "mov edx,imm32 tag store (writer stub)",
+   "attributed_modules": [
+    "AmdFabricAriPei-c5b99650a442.bin",
+    "AmdNbioBaseARIPei-51d96c1e5a5e.bin",
+    "AmdNbioGfxARIPei-63413be2ac29.bin",
+    "AmdNbioPcieARIPei-62b1398c4ba9.bin",
+    "AmdNbioSmuV10Pei-905b8be68afd.bin",
+    "AmdSocBl5AriPei-79e13211d5ae.bin",
+    "CbsBasePei-6ff112922ad8.bin"
+   ]
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xE81879",
+   "carrier": "non-PSP",
+   "class": "producer-stub",
+   "note": "mov edx,imm32 tag store (writer stub)",
+   "attributed_modules": [
+    "AmdFabricAriPei-c5b99650a442.bin",
+    "AmdNbioBaseARIPei-51d96c1e5a5e.bin",
+    "AmdNbioGfxARIPei-63413be2ac29.bin",
+    "AmdNbioPcieARIPei-62b1398c4ba9.bin",
+    "AmdNbioSmuV10Pei-905b8be68afd.bin",
+    "AmdSocBl5AriPei-79e13211d5ae.bin",
+    "CbsBasePei-6ff112922ad8.bin"
+   ]
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xE99421",
+   "carrier": "non-PSP",
+   "class": "producer-stub",
+   "note": "mov edx,imm32 tag store (writer stub)",
+   "attributed_modules": [
+    "AmdFabricAriPei-c5b99650a442.bin",
+    "AmdNbioBaseARIPei-51d96c1e5a5e.bin",
+    "AmdNbioGfxARIPei-63413be2ac29.bin",
+    "AmdNbioPcieARIPei-62b1398c4ba9.bin",
+    "AmdNbioSmuV10Pei-905b8be68afd.bin",
+    "AmdSocBl5AriPei-79e13211d5ae.bin",
+    "CbsBasePei-6ff112922ad8.bin"
+   ]
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xEB2079",
+   "carrier": "non-PSP",
+   "class": "producer-stub",
+   "note": "mov edx,imm32 tag store (writer stub)",
+   "attributed_modules": [
+    "AmdFabricAriPei-c5b99650a442.bin",
+    "AmdNbioBaseARIPei-51d96c1e5a5e.bin",
+    "AmdNbioGfxARIPei-63413be2ac29.bin",
+    "AmdNbioPcieARIPei-62b1398c4ba9.bin",
+    "AmdNbioSmuV10Pei-905b8be68afd.bin",
+    "AmdSocBl5AriPei-79e13211d5ae.bin",
+    "CbsBasePei-6ff112922ad8.bin"
+   ]
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xEC8451",
+   "carrier": "non-PSP",
+   "class": "producer-stub",
+   "note": "mov edx,imm32 tag store (writer stub)",
+   "attributed_modules": [
+    "AmdFabricAriPei-c5b99650a442.bin",
+    "AmdNbioBaseARIPei-51d96c1e5a5e.bin",
+    "AmdNbioGfxARIPei-63413be2ac29.bin",
+    "AmdNbioPcieARIPei-62b1398c4ba9.bin",
+    "AmdNbioSmuV10Pei-905b8be68afd.bin",
+    "AmdSocBl5AriPei-79e13211d5ae.bin",
+    "CbsBasePei-6ff112922ad8.bin"
+   ]
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0x821BF4",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.46 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0x8E0FF4",
+   "carrier": "PSP:PSP_BOOTLOADER",
+   "class": "high-entropy",
+   "note": "local entropy 6.46 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0x900EFF",
+   "carrier": "PSP:SMU_OFFCHIP_FW",
+   "class": "counter-motif",
+   "note": "inside 03 22 63 XX 20 YY stride-6 motif",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0x91A6D9",
+   "carrier": "PSP:SMU_OFFCHIP_FW",
+   "class": "counter-motif",
+   "note": "inside 03 22 63 XX 20 YY stride-6 motif",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0x928949",
+   "carrier": "PSP:SMU_OFFCHIP_FW",
+   "class": "counter-motif",
+   "note": "inside 03 22 63 XX 20 YY stride-6 motif",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0x99C907",
+   "carrier": "PSP:DRIVER_ENTRIES",
+   "class": "high-entropy",
+   "note": "local entropy 6.11 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0x9B220B",
+   "carrier": "PSP:ABL3",
+   "class": "instruction-pair",
+   "note": "spans two Thumb-2 instructions",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xAEB2A0",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.5 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xAF83FB",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.45 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB07276",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.55 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB0A9A1",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.57 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB0B407",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.6 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB14987",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.48 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB15F64",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.43 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB46C81",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.58 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB4DD45",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.4 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB534B6",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.65 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB61116",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.46 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB82B24",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.55 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB99B23",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.53 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBA0522",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.58 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBBEB56",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.49 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBC0A43",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.6 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBCA254",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.49 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBD529B",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.52 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBDC656",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.68 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBEFF0A",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.59 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBF01AA",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.56 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xC1ED1D",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.66 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xC237C0",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.59 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xE2D4D7",
+   "carrier": "non-PSP",
+   "class": "producer-stub",
+   "note": "mov edx,imm32 tag store (writer stub)",
+   "attributed_modules": [
+    "AmdFabricAriPei-c5b99650a442.bin",
+    "AmdNbioBaseARIPei-51d96c1e5a5e.bin",
+    "AmdNbioGfxARIPei-63413be2ac29.bin",
+    "AmdNbioPcieARIPei-62b1398c4ba9.bin",
+    "AmdNbioSmuV10Pei-905b8be68afd.bin",
+    "AmdSocBl5AriPei-79e13211d5ae.bin",
+    "CbsBasePei-6ff112922ad8.bin"
+   ]
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xE4C75B",
+   "carrier": "non-PSP",
+   "class": "producer-stub",
+   "note": "mov edx,imm32 tag store (writer stub)",
+   "attributed_modules": [
+    "AmdFabricAriPei-c5b99650a442.bin",
+    "AmdNbioBaseARIPei-51d96c1e5a5e.bin",
+    "AmdNbioGfxARIPei-63413be2ac29.bin",
+    "AmdNbioPcieARIPei-62b1398c4ba9.bin",
+    "AmdNbioSmuV10Pei-905b8be68afd.bin",
+    "AmdSocBl5AriPei-79e13211d5ae.bin",
+    "CbsBasePei-6ff112922ad8.bin"
+   ]
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xE671BF",
+   "carrier": "non-PSP",
+   "class": "producer-stub",
+   "note": "mov edx,imm32 tag store (writer stub)",
+   "attributed_modules": [
+    "AmdFabricAriPei-c5b99650a442.bin",
+    "AmdNbioBaseARIPei-51d96c1e5a5e.bin",
+    "AmdNbioGfxARIPei-63413be2ac29.bin",
+    "AmdNbioPcieARIPei-62b1398c4ba9.bin",
+    "AmdNbioSmuV10Pei-905b8be68afd.bin",
+    "AmdSocBl5AriPei-79e13211d5ae.bin",
+    "CbsBasePei-6ff112922ad8.bin"
+   ]
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xE818AB",
+   "carrier": "non-PSP",
+   "class": "producer-stub",
+   "note": "mov edx,imm32 tag store (writer stub)",
+   "attributed_modules": [
+    "AmdFabricAriPei-c5b99650a442.bin",
+    "AmdNbioBaseARIPei-51d96c1e5a5e.bin",
+    "AmdNbioGfxARIPei-63413be2ac29.bin",
+    "AmdNbioPcieARIPei-62b1398c4ba9.bin",
+    "AmdNbioSmuV10Pei-905b8be68afd.bin",
+    "AmdSocBl5AriPei-79e13211d5ae.bin",
+    "CbsBasePei-6ff112922ad8.bin"
+   ]
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xE99453",
+   "carrier": "non-PSP",
+   "class": "producer-stub",
+   "note": "mov edx,imm32 tag store (writer stub)",
+   "attributed_modules": [
+    "AmdFabricAriPei-c5b99650a442.bin",
+    "AmdNbioBaseARIPei-51d96c1e5a5e.bin",
+    "AmdNbioGfxARIPei-63413be2ac29.bin",
+    "AmdNbioPcieARIPei-62b1398c4ba9.bin",
+    "AmdNbioSmuV10Pei-905b8be68afd.bin",
+    "AmdSocBl5AriPei-79e13211d5ae.bin",
+    "CbsBasePei-6ff112922ad8.bin"
+   ]
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xEB20AB",
+   "carrier": "non-PSP",
+   "class": "producer-stub",
+   "note": "mov edx,imm32 tag store (writer stub)",
+   "attributed_modules": [
+    "AmdFabricAriPei-c5b99650a442.bin",
+    "AmdNbioBaseARIPei-51d96c1e5a5e.bin",
+    "AmdNbioGfxARIPei-63413be2ac29.bin",
+    "AmdNbioPcieARIPei-62b1398c4ba9.bin",
+    "AmdNbioSmuV10Pei-905b8be68afd.bin",
+    "AmdSocBl5AriPei-79e13211d5ae.bin",
+    "CbsBasePei-6ff112922ad8.bin"
+   ]
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xEC8483",
+   "carrier": "non-PSP",
+   "class": "producer-stub",
+   "note": "mov edx,imm32 tag store (writer stub)",
+   "attributed_modules": [
+    "AmdFabricAriPei-c5b99650a442.bin",
+    "AmdNbioBaseARIPei-51d96c1e5a5e.bin",
+    "AmdNbioGfxARIPei-63413be2ac29.bin",
+    "AmdNbioPcieARIPei-62b1398c4ba9.bin",
+    "AmdNbioSmuV10Pei-905b8be68afd.bin",
+    "AmdSocBl5AriPei-79e13211d5ae.bin",
+    "CbsBasePei-6ff112922ad8.bin"
+   ]
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xEEB7C9",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.64 b/B",
+   "attributed_modules": []
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xEEC6A8",
+   "carrier": "non-PSP",
+   "class": "high-entropy",
+   "note": "local entropy 6.73 b/B",
+   "attributed_modules": []
+  }
+ ],
+ "class_counts": {
+  "high-entropy": 59,
+  "counter-motif": 6,
+  "compressed-residue": 3,
+  "instruction-pair": 2,
+  "module-code": 1,
+  "producer-stub": 14
+ }
+}

@@ -1,0 +1,201 @@
+{
+  "generated_at": "2026-09-11T04:00:00.896770+00:00",
+  "base_url": "http://127.0.0.1:8000",
+  "fixture": "/usr/bin/true",
+  "health": {
+    "status": 200,
+    "body": "{\n    \"current_address\": \"0x2560\",\n    \"status\": \"ok\"\n}\n"
+  },
+  "calls": [
+    {
+      "id": 100,
+      "method": "initialize",
+      "params": {
+        "protocolVersion": "2024-11-05",
+        "capabilities": {},
+        "clientInfo": {
+          "name": "bc250-root",
+          "version": "1.0"
+        }
+      },
+      "status": 200,
+      "response_path": "evidence/firmware-audit/mcp/fixture-true-20260910/100-initialize.json",
+      "response_sha256": "d22da9b20ec80bb662b02e328c5b49e3253fa9d3d3ac7633c3f62795d456208d",
+      "response_size": 276,
+      "jsonrpc": "2.0",
+      "is_error": false
+    },
+    {
+      "id": 101,
+      "method": "tools/list",
+      "params": {},
+      "status": 200,
+      "response_path": "evidence/firmware-audit/mcp/fixture-true-20260910/101-tools_list.json",
+      "response_sha256": "1ba20cd93252b1e03fd6f931ea214c5559bd8a83a40c8beb67f914b1956650bf",
+      "response_size": 13468,
+      "jsonrpc": "2.0",
+      "is_error": false
+    },
+    {
+      "id": 102,
+      "method": "tools/call",
+      "params": {
+        "name": "cutter_list_segments",
+        "arguments": {
+          "limit": 10,
+          "offset": 0
+        }
+      },
+      "status": 200,
+      "response_path": "evidence/firmware-audit/mcp/fixture-true-20260910/102-tools_call.json",
+      "response_sha256": "7c6e83edc94a543dc09f0f01c5bd8a5aab796edc9733ae79c72aa032478f28c0",
+      "response_size": 1228,
+      "jsonrpc": "2.0",
+      "is_error": false,
+      "inner_preview": "{\"items\":[{\"name\":\".note.gnu.build-id\",\"paddr\":\"0x388\",\"perm\":\"-r--\",\"size\":36,\"vaddr\":\"0x388\"},{\"name\":\".interp\",\"paddr\":\"0x3ac\",\"perm\":\"-r--\",\"size\":28,\"vaddr\":\"0x3ac\"},{\"name\":\".gnu.hash\",\"paddr\":\"0x3c8\",\"perm\":\"-r--\",\"size\":132,\"vaddr\":\"0x3c8\"},{\"name\":\".dynsym\",\"paddr\":\"0x450\",\"perm\":\"-r--\",\"si",
+      "inner_json_keys": [
+        "items",
+        "limit",
+        "offset",
+        "total"
+      ]
+    },
+    {
+      "id": 103,
+      "method": "tools/call",
+      "params": {
+        "name": "cutter_list_functions",
+        "arguments": {
+          "limit": 10,
+          "offset": 0
+        }
+      },
+      "status": 200,
+      "response_path": "evidence/firmware-audit/mcp/fixture-true-20260910/103-tools_call.json",
+      "response_sha256": "4acd27ef2f9a4dcac397185c9de0ee6a499515e33f54d81593f2b347af63faea",
+      "response_size": 1260,
+      "jsonrpc": "2.0",
+      "is_error": false,
+      "inner_preview": "{\"items\":[{\"addr\":\"0x2040\",\"demangled\":\"fcn.00002040\",\"n_bb\":5,\"name\":\"fcn.00002040\",\"size\":125},{\"addr\":\"0x2135\",\"demangled\":\"fcn.00002135\",\"n_bb\":3,\"name\":\"fcn.00002135\",\"size\":42},{\"addr\":\"0x215f\",\"demangled\":\"fcn.0000215f\",\"n_bb\":4,\"name\":\"fcn.0000215f\",\"size\":107},{\"addr\":\"0x21ca\",\"demangled\":\"",
+      "inner_json_keys": [
+        "items",
+        "limit",
+        "offset",
+        "total"
+      ]
+    },
+    {
+      "id": 104,
+      "method": "tools/call",
+      "params": {
+        "name": "cutter_list_strings",
+        "arguments": {
+          "min_length": 4,
+          "limit": 10,
+          "offset": 0
+        }
+      },
+      "status": 200,
+      "response_path": "evidence/firmware-audit/mcp/fixture-true-20260910/104-tools_call.json",
+      "response_sha256": "5de8b68d2de3c05236d2e5a205bd650f41a13316cfcbd7bb0e65c6f1728e748f",
+      "response_size": 1098,
+      "jsonrpc": "2.0",
+      "is_error": false,
+      "inner_preview": "{\"items\":[{\"addr\":\"0xa09\",\"length\":11,\"string\":\"nl_langinfo\",\"type\":\"ascii\"},{\"addr\":\"0xa15\",\"length\":19,\"string\":\"error_message_count\",\"type\":\"ascii\"},{\"addr\":\"0xa29\",\"length\":29,\"string\":\"program_invocation_short_name\",\"type\":\"ascii\"},{\"addr\":\"0xa47\",\"length\":14,\"string\":\"fputc_unlocked\",\"type\":\"a",
+      "inner_json_keys": [
+        "items",
+        "limit",
+        "offset",
+        "total"
+      ]
+    },
+    {
+      "id": 105,
+      "method": "tools/call",
+      "params": {
+        "name": "cutter_read_bytes",
+        "arguments": {
+          "addr": "0x2560",
+          "size": 16
+        }
+      },
+      "status": 200,
+      "response_path": "evidence/firmware-audit/mcp/fixture-true-20260910/105-tools_call.json",
+      "response_sha256": "3f69952ca34f68c59f1974cb41e56d4b45002355cd00be7adaa304fec366c013",
+      "response_size": 309,
+      "jsonrpc": "2.0",
+      "is_error": false,
+      "inner_preview": "{\"addr\":\"0x2560\",\"bytes\":[243,15,30,250,49,237,73,137,209,94,72,137,226,72,131,228],\"size\":16}",
+      "inner_json_keys": [
+        "addr",
+        "bytes",
+        "size"
+      ]
+    },
+    {
+      "id": 106,
+      "method": "tools/call",
+      "params": {
+        "name": "cutter_disasm",
+        "arguments": {
+          "addr": "0x2560",
+          "fmt": "json"
+        }
+      },
+      "status": 200,
+      "response_path": "evidence/firmware-audit/mcp/fixture-true-20260910/106-tools_call.json",
+      "response_sha256": "18dad76b75fa25d7b3e209ac876c339621c61ffa83729f0ed1b048f3e5ca80e8",
+      "response_size": 4055,
+      "jsonrpc": "2.0",
+      "is_error": false,
+      "inner_preview": "{\"addr\":\"0x2560\",\"ops\":[{\"bytes\":\"f30f1efa\",\"disasm\":\"endbr64\",\"esil\":\"rcx,!,?{,BREAK,},,rcx,--=,rcx,?{,5,GOTO,}\",\"family\":\"cpu\",\"fcn_addr\":9568,\"fcn_last\":9601,\"flags\":[\"entry0\"],\"offset\":9568,\"opcode\":\"endbr64\",\"refptr\":false,\"reloc\":false,\"size\":4,\"type\":\"null\",\"type2_num\":0,\"type_num\":0},{\"bytes",
+      "inner_json_keys": [
+        "addr",
+        "ops"
+      ]
+    },
+    {
+      "id": 107,
+      "method": "tools/call",
+      "params": {
+        "name": "cutter_function_detail",
+        "arguments": {
+          "addr": "0x2560"
+        }
+      },
+      "status": 200,
+      "response_path": "evidence/firmware-audit/mcp/fixture-true-20260910/107-tools_call.json",
+      "response_sha256": "3335c300961036f25581881cdd37ddd951e013b169fe5080cfa8c4d56ec03a42",
+      "response_size": 890,
+      "jsonrpc": "2.0",
+      "is_error": false,
+      "inner_preview": "{\"info\":{\"bits\":64,\"callrefs\":[{\"from\":9599,\"to\":40584,\"type\":\"CALL\"}],\"calltype\":\"amd64\",\"cc\":1,\"cost\":15,\"datarefs\":[{\"from\":9592,\"to\":9344,\"type\":\"DATA\"}],\"demangled\":\"entry0\",\"ebbs\":1,\"edges\":0,\"indegree\":0,\"is-pure\":false,\"loops\":0,\"maxbound\":9605,\"minbound\":9568,\"name\":\"entry0\",\"nargs\":1,\"nbbs",
+      "inner_json_keys": [
+        "info",
+        "xrefs_in"
+      ]
+    },
+    {
+      "id": 108,
+      "method": "tools/call",
+      "params": {
+        "name": "cutter_decompile",
+        "arguments": {
+          "addr": "0x2560"
+        }
+      },
+      "status": 200,
+      "response_path": "evidence/firmware-audit/mcp/fixture-true-20260910/108-tools_call.json",
+      "response_sha256": "bbdccbcb6bf7bc075bc9ef7a5f1eb334347770b0b4c0a1983113143ebb1a373a",
+      "response_size": 592,
+      "jsonrpc": "2.0",
+      "is_error": false,
+      "inner_preview": "{\"addr\":\"0x2560\",\"pseudo\":\"\\nvoid entry0(undefined8 placeholder_0, undefined8 placeholder_1, void *rtld_fini)\\n{\\n    undefined8 unaff_retaddr;\\n    undefined auStack_8 [8];\\n    \\n    (*___libc_start_main)(main, unaff_retaddr, &stack0x00000008, 0, 0, rtld_fini, auStack_8);\\n    do {\\n    // WARNING",
+      "inner_json_keys": [
+        "addr",
+        "pseudo"
+      ]
+    }
+  ],
+  "evidence_class": "emulated-or-host-tested"
+}

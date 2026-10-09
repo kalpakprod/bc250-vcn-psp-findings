@@ -1,0 +1,35 @@
+{
+  "tool": "inline V2b tail-swap builder",
+  "generated_at": "2026-09-23",
+  "intent": "Offline discriminator: mutate ONLY unsigned t44 tail code; signed table+sig intact",
+  "base_image": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "base_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "output": "candidates/t44-tail-swap-v001/BC250_5.00_clv_t44_tailswap_v001.bin",
+  "output_sha256": "11f1184e50610830b3a0c26bbf80211e6ad1306085501187c064b1a346aa7633",
+  "container_spi": "0x9c4400",
+  "signed_extent_end": "0x9c4610",
+  "signed_sha256_stock": "305c09095dbdd6ab4ad3cfa2d50c10af028903f2a62297c58a0513521ce1dc7f",
+  "signed_sha256_cand": "305c09095dbdd6ab4ad3cfa2d50c10af028903f2a62297c58a0513521ce1dc7f",
+  "signed_identical": true,
+  "patch": {
+    "what": "blob1 code[0:0x100] replaced with blob2 code[0:0x100]",
+    "blob1_header_spi": "0x9c4620",
+    "blob1_code_spi": "0x9c4710",
+    "blob2_code_spi": "0x9c7910",
+    "old_sha256": "2c8d0adf753186bdc6dd5cd06667ebdc526d5ee876da4a12acf3ca2a70476e77",
+    "new_sha256": "6e474b78bdf62dbdc571a6a53951a7c79390ac1814b5c0b02b27356b1117a0d3",
+    "bytes_changed": 256,
+    "signed_table_still_points": {
+      "0x101D": "body+0x210 -> SPI 0x9C4710",
+      "0x101E": "body+0x3410 -> SPI 0x9C7910"
+    }
+  },
+  "full_image_diff_bytes": 221,
+  "flash_status": "NOT FLASHED \u2014 offline candidate only; excluded from first flash pair per psp-breach plan",
+  "interpretation": {
+    "boot_ok_workload_101D_changes": "TRUSTS-TAIL confirmed: consumer loads code via signed offsets without re-hashing tail",
+    "boot_ok_no_behavior_change": "tail not consumed on this path OR workload not observable",
+    "boot_fail_or_psp_error": "SOMETHING validates tail (not the visible RSA sig) OR code integrity checked by other means"
+  },
+  "evidence_class": "static build only \u2014 no hardware result"
+}

@@ -1,0 +1,86 @@
+BC-250 board voltage sources — verification record
+Date: 2026-09-20 (Asia/Almaty). Evidence class: static-analysis over observed-bytes.
+No ROM, NVRAM, register, candidate, board or network action occurred.
+
+INPUTS (hashes re-read during this verification)
+  evidence/donor/retroweb-20260916/BC250_5.00_clv.bin
+    size 16777216  sha256 ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8
+  evidence/firmware-audit/20260919-inv-token-consumers/census.json
+    sha256 506b8eefd0ef3847782dddd88a458b95e32082f473346d7d645703dce6b60d39  modules 233
+
+ARTIFACTS
+  scan_vr_mailbox_writers.py          63ae081c8588f7a4bfdf1ebabe9c912238b347689781b4b66ff3e850f8a037d8
+  vr-mailbox-writers-result.json      852ffd0d000eb33ef8e8a759a18f1512a8182723d467958d9d686e9193608381
+  verify_board_voltage_sources.py     3a207facf42178b101c56650a913c2a48761b51778e11668fdaa5ff27e6d83fa
+  independent-verify.stdout           c93a206cc743c5394626cf48cd00f25a06258cc3c2d92953901ec46c7ccde509
+  independent-verify.stderr           e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 (0 bytes)
+  worker-scanner.stdout               b4ef703bcad6729dce6d66f4e43dd04642cc2cb842c989767ec0a2e79226a8e0
+  worker-scanner.stderr               e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 (0 bytes)
+
+1. BUILT-IN SCANNER — RE-RUN (determinism of the returned artifact)
+  $ PYTHONDONTWRITEBYTECODE=1 python3 -B scan_vr_mailbox_writers.py > worker-scanner.stdout 2> worker-scanner.stderr
+  exit 0
+  stdout (literal):
+    checks=31 failed=0 status=PASS
+    writers=['ISL69247-3e1f753a6279', 'ISL95712-c0cc17d2d54f']
+    ec_window_only=28 modules
+    result=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-bc250-board-voltage-sources/vr-mailbox-writers-result.json
+  stderr: 0 bytes
+  The regenerated vr-mailbox-writers-result.json is byte-identical to the file captured
+  before the re-run (sha256 852ffd0d... both before and after; `diff -q` reported equality).
+
+2. INDEPENDENT VERIFIER
+  $ PYTHONDONTWRITEBYTECODE=1 python3 -B verify_board_voltage_sources.py > independent-verify.stdout 2> independent-verify.stderr
+  exit 0
+  status PASS  checks 604  failed 0  stderr 0 bytes
+  Independent path (different from the scanner):
+    - match set re-derived from the pinned objdump text `<stem>-0.asm` with a
+      verifier-owned 3-group anchor conjunction (0xA20 window base, config port 0x2E,
+      mailbox staging registers 0x65/0x66/0x60) over all 233 modules;
+    - every writer image re-located inside the immutable ROM by whole-image content
+      search (no census offset arithmetic): ISL69247 TE image at ROM 0xed2c74,
+      ISL95712 TE image at ROM 0xed3d8c, each occurring exactly once, each inside the
+      FFS file reported by the scanner (ffs_offset 0xed2c30 / 0xed3d48);
+    - corpus-wide anchor module census recomputed over all 233 module images and
+      compared with `anchor_hit_table` (14/14 anchors equal);
+    - 200 recorded anchor offsets re-read as raw bytes at the reported blob offset, and
+      cross-checked against the objdump decode where the offset lies in the code section.
+
+3. ANCHOR-ALIGNMENT AUDIT (verifier, informational)
+  aligned (pattern sits at an instruction boundary): 181
+  cross-instruction (literal pattern spans two instructions): 2
+    push_mbox_66 HiiDatabase-489fc01869bd@0xf76b
+      holder: `movzx eax,WORD PTR [rsp+0x6a]` at rva 0xf767
+    push_mbox_66 A0327FE0-1FDA-4E5B-905D-B510C45A61D0-a014267d5e97@0x4e13
+      holder: `mov BYTE PTR [rbp+0x6a],al` at rva 0x4e11
+  outside the disassembled code section: 17
+  decode-gap: 0
+  Both cross-instruction hits are in the weak bucket, not in a writer; they are
+  documented false positives of a literal-byte anchor and do not affect the verdict.
+
+4. WEAK-BUCKET SCOPE DIFFERENCE (documented, not a failure)
+  scanner `ec_window_only_modules`: 28 modules under its 10-anchor set.
+  verifier 3-group set: 33 modules.
+  scanner-only: AmdCcxVhAriPei-973624f3cf5c, DxeCore-2f1d8056b0da, Ip6Dxe-563d7af58418,
+    NTFS-116a75548877, Nvme-67a94f675aa8, NvramSmm-5e0d8f9526b3, SioDxeInit-13ba455c441c,
+    SmmGenericSio-207198666177, StatusCodeDxe-53b3a4d92529
+  verifier-only: AMITSE-9cc06fc7f734, AmdCpmInitPeim-25b14a638a17, AmdPspPeiV2-1158720bbf95,
+    Bds-f7cd209b8afb, CARSystemHubPei-ee71967713cb, CbsBaseDxe-d2e9ba4e9da7,
+    FchPei-08493ca078e7, IdeRecovery-a6fa8f4b8566, Mtftp4Dxe-2bb759be09f8,
+    SbPei-ac72a3b20e49, Udp6Dxe-2b859e744af7, Uhcd-11b620c52cea, UsbRtDxe-301513b93e04,
+    UsbRtSmm-6011e29ef191
+  Both buckets are supersets of "not a writer"; the writer verdict is identical.
+
+5. REPOSITORY SUITE
+  $ /home/OWNER/.local/bin/pytest -q tests/   -> 30 passed
+
+CONCLUSION (static only)
+  Exactly two of the 233 pinned CLV 5.00 modules implement the Super-I/O/EC VR mailbox
+  writer: ISL69247 (6E6D2018-28D0-4AD3-BEB3-B48E4981707D) and ISL95712
+  (02544BE0-2CB9-4B75-8111-CD8CDC07B837). No third module in this corpus carries the
+  complete transport. PEI dispatch, mailbox chip identity, PMBus semantics, physical rail
+  identity and any applied voltage remain unverified; no voltage value is recommended.
+
+ROLLBACK
+  ./ROLLBACK.sh            removes this task's evidence directory and report.
+  ./ROLLBACK.sh --purge-log  also removes the append-only action log for this task.

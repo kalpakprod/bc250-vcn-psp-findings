@@ -1,0 +1,44 @@
+{
+  "option": "O3",
+  "description": "Monolithic candidate: PSP entry absence (0x24/0x45) + autonomous Bc250VcnUnlockDxe",
+  "base_image": "evidence/donor/fd-v22-20260923/BC250_3.00_MeiMeiDXEv3",
+  "base_sha256": "606a7a7f9ef8fb1c445d8ccfa9640de0339bfec5ab52969135a9e87d62028182",
+  "blob": "candidates/vcn-unlock-driver-v000-DRAFT/bin/Bc250VcnUnlockDxe.ffs",
+  "blob_sha256": "da2f70ccc9de2df5fe530a61197b0f3154ba853b9711e68fe31c7ef76caa9fbe",
+  "output_image": "candidates/BC250_3.00_MeiMeiDXEv3_vcn_v004.bin",
+  "output_sha256": "2981b2525c4a101af745d3f22d4b78815566ee5445131a1aa0f5578ae97c5638",
+  "psp_entries_removed": {
+    "0x24": {
+      "index": 7,
+      "was_size": 11856,
+      "was_location": "0xff982000"
+    },
+    "0x45": {
+      "index": 15,
+      "was_size": 1760,
+      "was_location": "0xff9ca400"
+    }
+  },
+  "psp_fletcher32": {
+    "was": "0x63fffcc8",
+    "now": "0x3d1e03f9",
+    "span": [
+      "0x8e0008",
+      "0x8e0140"
+    ]
+  },
+  "dxe_injection": {
+    "guid": "B6250780-7E00-4203-900C-23443B1413FE",
+    "name": "Bc250VcnUnlockDxe",
+    "fv_offset": "0x432000",
+    "inner_modules_before": 193,
+    "inner_modules_after": 194,
+    "inner_fv_length": "0x436000",
+    "capsule_size": "0x145b49"
+  },
+  "diff_byte_count": 1331335,
+  "diff_ranges": [
+    "[0x8E0000, 0x8E0140)",
+    "[0xae0000, 0xe00000)"
+  ]
+}

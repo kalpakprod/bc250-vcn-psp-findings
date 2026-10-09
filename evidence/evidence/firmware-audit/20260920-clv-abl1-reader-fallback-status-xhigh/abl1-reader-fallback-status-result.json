@@ -1,0 +1,418 @@
+{
+  "status": "PASS",
+  "checks": 64,
+  "route": "minimal exact ABL1 reader fallback-status versus sentinel check",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "abl1": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "prior_reader_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-apcb-reader-boundary-resume/abl1-apcb-reader-boundary-result.json",
+    "output_context_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-reader-output-context-xhigh/abl1-reader-output-context-result.json"
+  },
+  "hashes": {
+    "abl1": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "prior_reader_result": "537f987266057865bd7f278939304f2f40dcc5db4e57c6048ca0905ce2dac128",
+    "output_context_result": "6abae87817c9aa5baf8565524b071f5fae6d19ad5e478d140e22fdea0da42c21"
+  },
+  "semantics": {
+    "fallback_flag": "helper return R0 status only",
+    "first_stage": "status=0 enters 0x2002 then advances index at 0x200E; status=1 requires returned byte==1 to advance; returned byte!=1 returns failure at 0x209A",
+    "final_stage": "status=0 returns failure at 0x2094; status=1 enters typed guards; sentinel/Auto value fails typed guard and returns 0 at 0x209A without trying another descriptor",
+    "type2": "returned 0xFFFF with r7=0 is rejected by ~value/UXTH/ORR guard before STRH; no fallback branch exists in this slice",
+    "precedence": "ordered chain is not combined-key fallback on arbitrary values: earlier elements are boolean gate/status stages, and the final element is the typed value stage",
+    "callsite_sentinel_mask": "both Uclk and Fclk call sites pass first stack argument zero, which the reader loads into r7 and uses in sentinel guards",
+    "fclk_type_selector": "Fclk passes SP+0x0c as the type-byte pointer but no explicit write to that local occurs in the bounded Fclk body before the reader call; actual type-2 branch execution for this caller is therefore not established",
+    "fclk_context": "Fclk handler writes a typed reader result only on reader success; its caller seeds local 0x4b0 before the call and unconditionally stores the resulting halfword to context+0x78; a later static path loads that field and compares against 0x3e8/0x4b0",
+    "numeric_qualification": "candidate token IDs 0x15f/0x160 are identifiers; downstream constants 0x3e8/0x4b0 are observed comparison thresholds. The path does not prove a unit conversion or that tokens equal thresholds"
+  },
+  "fresh_result": "Before the final descriptor, helper status R0=0 advances to the next item; helper status R0!=0 advances only if the returned byte equals 1. Any other first-stage byte is terminal failure at 0x209A. On the final descriptor, helper status R0=0 returns failure at 0x2094; helper success with an Auto/sentinel value also fails terminally at 0x209A without another descriptor attempt. Fallback is therefore status/gate driven, while final sentinel handling is terminal value validation. A separate exact static Fclk caller seeds local 0x4b0, calls the halfword reader, and then stores the local to context+0x78; a later context path loads it and compares to 0x3e8/0x4b0. These are threshold constants, not proven equivalents of token IDs 0x15f/0x160.",
+  "limits": "Exact static bytes only; no runtime/APCB value observation, loader-base proof, frequency units, clock application, training, or hardware result.",
+  "checks_detail": [
+    {
+      "check": "exact ABL1 exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "exact ABL1 sha256",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "prior reader result exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "prior reader result sha256",
+      "passed": true,
+      "got": "537f987266057865bd7f278939304f2f40dcc5db4e57c6048ca0905ce2dac128",
+      "expected": "537f987266057865bd7f278939304f2f40dcc5db4e57c6048ca0905ce2dac128"
+    },
+    {
+      "check": "output/context result exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "output/context result sha256",
+      "passed": true,
+      "got": "6abae87817c9aa5baf8565524b071f5fae6d19ad5e478d140e22fdea0da42c21",
+      "expected": "6abae87817c9aa5baf8565524b071f5fae6d19ad5e478d140e22fdea0da42c21"
+    },
+    {
+      "check": "reviewed full Thumb listing exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "reviewed full Thumb listing sha256",
+      "passed": true,
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    {
+      "check": "prior reader PASS",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "prior reader address",
+      "passed": true,
+      "got": "0x1fb4",
+      "expected": "0x1fb4"
+    },
+    {
+      "check": "output/context PASS",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "output/context retains final field-store edge",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "first helper status branch is CBZ R0 -> 0x2002",
+      "passed": true,
+      "got": "hex:02f00efc",
+      "expected": "hex:02f00efc"
+    },
+    {
+      "check": "first helper status zero branch lands at 0x2002",
+      "passed": true,
+      "got": "hex:68b1",
+      "expected": "hex:68b1"
+    },
+    {
+      "check": "first-stage output is loaded as byte",
+      "passed": true,
+      "got": "hex:0298c0b2",
+      "expected": "hex:0298c0b2"
+    },
+    {
+      "check": "first-stage gate compares returned byte with literal 1",
+      "passed": true,
+      "got": "hex:0128",
+      "expected": "hex:0128"
+    },
+    {
+      "check": "first-stage value==1 advances to next descriptor",
+      "passed": true,
+      "got": "hex:0fd0",
+      "expected": "hex:0fd0"
+    },
+    {
+      "check": "first-stage value!=1 enters diagnostic path, not fallback",
+      "passed": true,
+      "got": "hex:cdf800802ca235f8143000200146fff786f94be0",
+      "expected": "hex:cdf800802ca235f8143000200146fff786f94be0"
+    },
+    {
+      "check": "fallback increments descriptor index",
+      "passed": true,
+      "got": "hex:641ce4b2",
+      "expected": "hex:641ce4b2"
+    },
+    {
+      "check": "fallback tests next descriptor for zero terminator",
+      "passed": true,
+      "got": "hex:05eb440040880028dad1",
+      "expected": "hex:05eb440040880028dad1"
+    },
+    {
+      "check": "final helper call exact status branch",
+      "passed": true,
+      "got": "hex:02f0e1fb002828d0",
+      "expected": "hex:02f0e1fb002828d0"
+    },
+    {
+      "check": "final helper status zero returns failure, no descriptor increment",
+      "passed": true,
+      "got": "hex:002828d0",
+      "expected": "hex:002828d0"
+    },
+    {
+      "check": "final stage loads caller type after status success",
+      "passed": true,
+      "got": "hex:9af800000128",
+      "expected": "hex:9af800000128"
+    },
+    {
+      "check": "type-1 sentinel guard computes ~value byte and ORs r7",
+      "passed": true,
+      "got": "hex:0298c143c9b23943",
+      "expected": "hex:0298c143c9b23943"
+    },
+    {
+      "check": "type-1 sentinel guard returns failure",
+      "passed": true,
+      "got": "hex:1bd0",
+      "expected": "hex:1bd0"
+    },
+    {
+      "check": "type-1 non-sentinel stores byte",
+      "passed": true,
+      "got": "hex:3070",
+      "expected": "hex:3070"
+    },
+    {
+      "check": "type-1 sentinel path has no fallback increment",
+      "passed": true,
+      "got": -1,
+      "expected": -1
+    },
+    {
+      "check": "type-2 sentinel guard computes ~value halfword and ORs r7",
+      "passed": true,
+      "got": "hex:0298c14389b23943",
+      "expected": "hex:0298c14389b23943"
+    },
+    {
+      "check": "type-2 sentinel guard returns failure",
+      "passed": true,
+      "got": "hex:14d0",
+      "expected": "hex:14d0"
+    },
+    {
+      "check": "type-2 non-sentinel stores halfword",
+      "passed": true,
+      "got": "hex:3080",
+      "expected": "hex:3080"
+    },
+    {
+      "check": "type-2 sentinel path has no fallback increment",
+      "passed": true,
+      "got": -1,
+      "expected": -1
+    },
+    {
+      "check": "type-4 zero guard ORs r7 with returned word",
+      "passed": true,
+      "got": "hex:029877ea0001",
+      "expected": "hex:029877ea0001"
+    },
+    {
+      "check": "type-4 zero guard returns failure",
+      "passed": true,
+      "got": "hex:0ed0",
+      "expected": "hex:0ed0"
+    },
+    {
+      "check": "type-4 nonzero stores word",
+      "passed": true,
+      "got": "hex:3060",
+      "expected": "hex:3060"
+    },
+    {
+      "check": "type-8 zero guard tests both returned words",
+      "passed": true,
+      "got": "hex:dde90210ca4372ea000200d1",
+      "expected": "hex:dde90210ca4372ea000200d1"
+    },
+    {
+      "check": "type-8 zero guard returns failure when r7 is zero",
+      "passed": true,
+      "got": "hex:2fb1",
+      "expected": "hex:2fb1"
+    },
+    {
+      "check": "type-8 nonzero stores doubleword",
+      "passed": true,
+      "got": "hex:c6e90010",
+      "expected": "hex:c6e90010"
+    },
+    {
+      "check": "reader success returns 1 only after typed store",
+      "passed": true,
+      "got": "hex:012004b0bde8f087",
+      "expected": "hex:012004b0bde8f087"
+    },
+    {
+      "check": "reader failure returns 0 and loops to epilogue",
+      "passed": true,
+      "got": "hex:0020fae7",
+      "expected": "hex:0020fae7"
+    },
+    {
+      "check": "reader loads r7/r9 from first/second caller stack arguments",
+      "passed": true,
+      "got": "hex:dde90c79",
+      "expected": "hex:dde90c79"
+    },
+    {
+      "check": "Uclk call site initializes r8 to zero",
+      "passed": true,
+      "got": "hex:4ff00008",
+      "expected": "hex:4ff00008"
+    },
+    {
+      "check": "Uclk call site passes r8=0 as first stack argument",
+      "passed": true,
+      "got": "hex:cde90080",
+      "expected": "hex:cde90080"
+    },
+    {
+      "check": "Fclk call site sets r2=0",
+      "passed": true,
+      "got": "hex:0022",
+      "expected": "hex:0022"
+    },
+    {
+      "check": "Fclk call site passes r2=0 as first stack argument",
+      "passed": true,
+      "got": "hex:00920192",
+      "expected": "hex:00920192"
+    },
+    {
+      "check": "output/context result retains Fclk context store edge",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "Fclk branch passes output slot SP+8 to reader",
+      "passed": true,
+      "got": "hex:02aa",
+      "expected": "hex:02aa"
+    },
+    {
+      "check": "Fclk branch calls reader 0x1fb4",
+      "passed": true,
+      "got": "hex:fdf7a3fc",
+      "expected": "hex:fdf7a3fc"
+    },
+    {
+      "check": "Fclk branch returns without storing through R5 on reader failure",
+      "passed": true,
+      "got": "hex:48b1",
+      "expected": "hex:48b1"
+    },
+    {
+      "check": "Fclk branch stores a returned halfword to caller pointer on success",
+      "passed": true,
+      "got": "hex:bdf808002860",
+      "expected": "hex:bdf808002860"
+    },
+    {
+      "check": "outer Fclk caller seeds local default 0x4b0",
+      "passed": true,
+      "got": "hex:40f2b0400190",
+      "expected": "hex:40f2b0400190"
+    },
+    {
+      "check": "outer Fclk caller passes SP+4 then calls accessor",
+      "passed": true,
+      "got": "hex:01a8fef745fb",
+      "expected": "hex:01a8fef745fb"
+    },
+    {
+      "check": "outer Fclk caller reloads local default/result after accessor",
+      "passed": true,
+      "got": "hex:019b",
+      "expected": "hex:019b"
+    },
+    {
+      "check": "outer Fclk caller stores halfword in context+0x78",
+      "passed": true,
+      "got": "hex:a5f87830",
+      "expected": "hex:a5f87830"
+    },
+    {
+      "check": "outer function passes same context base to Fclk accessor",
+      "passed": true,
+      "got": "hex:2046fdf7f8ff",
+      "expected": "hex:2046fdf7f8ff"
+    },
+    {
+      "check": "outer function passes same context base to context reader",
+      "passed": true,
+      "got": "hex:204607f0eafe",
+      "expected": "hex:204607f0eafe"
+    },
+    {
+      "check": "context reader copies its input pointer R0 to R4",
+      "passed": true,
+      "got": "hex:0446",
+      "expected": "hex:0446"
+    },
+    {
+      "check": "context reader branch 0x104b2 targets 0x10592",
+      "passed": true,
+      "got": 66962,
+      "expected": 66962
+    },
+    {
+      "check": "context reader branch 0x10592 targets 0x107da",
+      "passed": true,
+      "got": 67546,
+      "expected": 67546
+    },
+    {
+      "check": "first identified context read is halfword [R4+0x78]",
+      "passed": true,
+      "got": "hex:b4f87800",
+      "expected": "hex:b4f87800"
+    },
+    {
+      "check": "first threshold compare literal is 0x3e8",
+      "passed": true,
+      "got": "hex:b0f57a7f",
+      "expected": "hex:b0f57a7f"
+    },
+    {
+      "check": "second threshold compare literal is 0x4b0",
+      "passed": true,
+      "got": "hex:b0f5966f",
+      "expected": "hex:b0f5966f"
+    },
+    {
+      "check": "descriptor token IDs are numerically distinct from the thresholds",
+      "passed": true,
+      "got": false,
+      "expected": false
+    },
+    {
+      "check": "Fclk type-pointer local is not explicitly written before reader call",
+      "passed": true,
+      "got": [],
+      "expected": []
+    },
+    {
+      "check": "Fclk passes SP+0x0c as generic reader type pointer",
+      "passed": true,
+      "got": "hex:03ab",
+      "expected": "hex:03ab"
+    }
+  ]
+}

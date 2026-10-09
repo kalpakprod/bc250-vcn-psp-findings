@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-09-11T20:34:38+05:00",
+  "board_id": "BC250-01",
+  "operation": "policy-only VCN candidate SPI write and independent full-chip readback",
+  "programmer": {
+    "backend": "ch347_spi",
+    "spi_speed": "1.875M",
+    "flashrom_version": "v1.8.0 (git:v1.8.0)",
+    "flashrom_binary_sha256": "5ee0b2e4ea215a81ec08997dad99c469bd9f2335d5237d623388dee29875573c",
+    "chip": "Winbond W25Q128.V",
+    "capacity_bytes": 16777216
+  },
+  "prewrite": {
+    "path": "evidence/programmer/reads/20260911/read-e-prewrite-policy-only.bin",
+    "sha256": "439e248141ef6a9c1313bc7815696d570be8fed5471262596186f3da8914747d",
+    "matches_prior_d3b2_readback": true,
+    "note": "byte-identical to verified D3-B2 candidate/readback; no unexplained chip state"
+  },
+  "candidate": {
+    "path": "candidates/BC250_VCN_policy_only_v001_from_read-a.bin",
+    "sha256": "8cd9d19912ad80d2d6a8c5a1ca1a25379054f80f4c62ff528643e0a8193921b1",
+    "size": 16777216,
+    "changed_bytes_from_stock": 13733,
+    "changed_ranges_from_stock": 329,
+    "delta_from_d3b2": [
+      "0xAB1010",
+      "0xAB1132",
+      "0xAB116E"
+    ],
+    "independent_review": {
+      "path": "evidence/candidates/BC250_VCN_policy_only_v001/independent-review-claude-opus.md",
+      "sha256": "07de7fda571bfb8d2d4e3cd4e406cf41a080bd97eaf0171b36c52944467d21af",
+      "recommendation": "APPROVE_FOR_HARDWARE_TRIAL"
+    }
+  },
+  "write": {
+    "flashrom_exit": 0,
+    "flashrom_builtin_verify": "VERIFIED",
+    "log": "evidence/programmer/reads/20260911/write-policy-only-v001.flashrom.log",
+    "log_sha256": "17248ec2e3454a4a8a85ce9821251a26bda1fea9208becd5cd9ca32e5b6474ed"
+  },
+  "postwrite_readback": {
+    "path": "evidence/programmer/reads/20260911/postwrite-policy-only-v001.bin",
+    "sha256": "8cd9d19912ad80d2d6a8c5a1ca1a25379054f80f4c62ff528643e0a8193921b1",
+    "size": 16777216,
+    "byte_identical_to_candidate": true,
+    "firmware_parser_pass": true,
+    "firmware_audit_report": "evidence/programmer/reads/20260911/postwrite-policy-only-v001-firmware-audit.json",
+    "firmware_audit_report_sha256": "68ca6f52ffb032ea317a9b609982a03adefda426d83cd1ae6f9f91fc92ce19be",
+    "apcb_parser_pass": true,
+    "apcb_detail_report": "evidence/programmer/reads/20260911/postwrite-policy-only-v001-apcb-detail.json",
+    "apcb_detail_report_sha256": "2c6221c1054157c6c43021e186af45f48d80ae58ad28531800e68700ddbcc270",
+    "structural_checks": "26/26 PASS",
+    "structural_report": "evidence/programmer/reads/20260911/postwrite-policy-only-v001-verification.json",
+    "structural_report_sha256": "26a52645c6fe746ae9cbdafacada234ea05ac000cfaaa1403d37ee0e542c2810",
+    "read_log": "evidence/programmer/reads/20260911/postwrite-policy-only-v001.flashrom.log",
+    "read_log_sha256": "bc00e08f69e24c06546757db93932d401622ed6ad558e246b502c6c4a5ae8175",
+    "psp_checksum_match": true,
+    "bhd_checksum_match": true,
+    "apcb_checksum_match": true,
+    "apcb_dfg_words": [
+      "0x001FFF00",
+      "0x001FFF00"
+    ],
+    "firmware_volume_count": 4
+  },
+  "signature_acceptance": "unverified; modified policy payloads retain historical signature material",
+  "evidence_class": "hardware-verified at programmer write/readback layer",
+  "unrun_checks": [
+    "PSP acceptance",
+    "cold boot and video output",
+    "VCN power and MMIO",
+    "Linux VCN ring completion",
+    "codec decode and encode",
+    "stability"
+  ],
+  "rollback": {
+    "available": true,
+    "stock_path": "evidence/programmer/reads/20260911/read-a.bin",
+    "stock_sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+    "not_triggered": true
+  }
+}

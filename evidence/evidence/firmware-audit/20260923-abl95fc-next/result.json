@@ -1,0 +1,89 @@
+{
+  "status": "PASS_STATIC_SERVICE_BOUNDARY",
+  "payload_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+  "commands": [
+    {
+      "command": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x5e68",
+        "--stop-address=0x602c",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "stdout_file": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-abl95fc-next/pll-body.txt"
+    },
+    {
+      "command": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x463c",
+        "--stop-address=0x4698",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "stdout_file": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-abl95fc-next/fclk-override.txt"
+    },
+    {
+      "command": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x7e30",
+        "--stop-address=0x7e7c",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "stdout_file": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-abl95fc-next/pll-caller.txt"
+    },
+    {
+      "command": [
+        "llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x6c20",
+        "--stop-address=0x6c5c",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "stdout_file": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-abl95fc-next/topology-builder.txt"
+    }
+  ],
+  "checked_instructions": 30,
+  "strings": {
+    "0x5fb6": {
+      "target": "0x60c0",
+      "text": "Send PSPSMC_MSG_SetupFclkPll 0x%x\n"
+    },
+    "0x5fec": {
+      "target": "0x60e4",
+      "text": "Send PSPSMC_MSG_SetupUclkPll  0x%x\n"
+    },
+    "0x961a": {
+      "target": "0x98ac",
+      "text": "\nAGESA MEM - Multi-Die - DRAM Speed Sync\n"
+    }
+  },
+  "edges": {
+    "FCLK": "post-463C [SP+4] -> STRH context+78 -> SVC28 R0=0E,R1=[SP+4],R2=SP+8",
+    "UCLK": "entry R2 saved in R4;5F30 R8=R4 logical_shift_right1; SVC28 R0=0F,R1=R8,R2=SP+8 (callee-preserved register convention assumed)"
+  },
+  "default_before_override": {
+    "nested_context_plus790_equals6": 250,
+    "other": 1200
+  },
+  "override": "463C selector0F asks provider1FB4 using descriptor015F/0160; nonzero provider return replaces output with u16; zero return leaves default",
+  "limits": [
+    "Static code, no execution or physical clock/voltage proof",
+    "SVC28 handler and message ID translation not resolved",
+    "Do not treat SVC selector0E/0F as public SMU mailbox IDs",
+    "Logging callbacks and external services remain unexecuted",
+    "Override source is not yet joined to AmdSetup DF field"
+  ]
+}

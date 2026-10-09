@@ -1,0 +1,62 @@
+=== --help ===
+usage: enable_vcn.py [-h] [--no-fire] [--verify] [--force]
+                     [--fw-offset VRAM_OFF] [--direct-load [PATH]]
+                     [--keep-vcn] [--no-enable-engage] [--smn-vcn-probe]
+                     [--smn-vcn-addr SMN_VCN_ADDR] [--vcn-power-regs]
+                     [--vcn-power-regs-w] [--manual-powerup] [--thunk-writes]
+                     [--config-writes] [--force-thunk-writes] [--thunk-probe]
+                     [--inline-store-probe] [--dom6-dump] [--msg-table]
+                     [--probe-fn ADDR] [--probe-reg SMN]
+                     [--probe-value PROBE_VALUE] [--bdf BDF]
+
+options:
+  -h, --help            show this help message and exit
+  --no-fire             unlock + prechecks + install the sequence, but do not
+                        trigger
+  --verify              read-only: dump dom6/slot state, install nothing
+  --force               proceed even if the dom6 state byte is 0x00 (wrapper
+                        would auto-power dom6 first -- known wedge)
+  --fw-offset VRAM_OFF  with --direct-load: pin the VRAM staging offset
+                        (default: auto-walk zero spans at 8MB..24MB)
+  --direct-load [PATH]  after the Discord fire, stage the navi10 VCN fw in
+                        VRAM from USERSPACE and bring VCN up the driver's
+                        DIRECT way (no PSP/TEE) -- then run the driver's own
+                        ring test as proof. Needs amdgpu LOADED (raw MMIO/VRAM
+                        transport only)
+  --keep-vcn            with --direct-load: leave VCN running after the proof
+                        (default parks it again -- vcn_v2_0_stop register-
+                        level)
+  --no-enable-engage    skip the post-fire step that engages the three dom6
+                        per-slot clock ENABLE (+0x08)=1 bits (the safe bounded
+                        window write from README 2.4) and reads the dom6 power
+                        sequencer. Default: engage + read out.
+  --smn-vcn-probe       after the main stages, ONE SMN read THROUGH the SMU
+                        (Q3 msg 0x2A, the mem64 window) at --smn-vcn-addr.
+                        CORRECTED 2026-08-24: the fw MASKS the arg to 20 bits
+                        (base 0x01100000) -- the window reaches the NBIO frame
+                        ONLY and can never express a 0x024xxxxx fabric address
+                        (a fabric arg silently aliases into NBIO). WARNING: a
+                        dead NBIO offset stalls the SMN bus -- SMU wedge,
+                        self-recovers ~10s or cold cycle
+  --smn-vcn-addr SMN_VCN_ADDR
+                        SMN address --smn-vcn-probe reads, as passed to the
+                        mem64 window (default 0x01103010 -- the NBIO-frame-
+                        hypothesis spelling of the 2026-08-24 'fast 0' masked
+                        alias of the 0x02403010 arg; under the low-frame
+                        hypothesis the same read hit 0x00003010 -- the frame
+                        question is what route P step 0 discriminates). The
+                        sanity read uses the PROVEN 0x5A870 window offset
+                        (core mask). The 0x1F8xx family is refused (dead
+                        responder under either frame hypothesis -- the
+                        documented hard wedge)
+  --vcn-power-regs      standalone: FABRIC-SLICE PROBE -- dump VCN's
+                        0x024xxxxx slice (0x02403000 + 0x00..0x3C) plus THM/GC
+                        live-IP slice anchors through the PCI-config SMN
+                        window (root 00:00.0 config 0xB8/0xBC, the library
+                        transport; full 32-bit SMN addresses -- the ONE CPU-
+                        side transport not measured to hang). TRANSPORT FIX
+                        2026-08-24 evening: the old route P mmap'd BAR0
+                        (VRAM!) -- its reads were VRAM artifacts; the BAR5
+                        PCIE_INDEX2 window is the measured board-hang path.
+                        Step 0 also runs the FRAME DISCRIMINATOR: core mask at
+=== subcommands list ===

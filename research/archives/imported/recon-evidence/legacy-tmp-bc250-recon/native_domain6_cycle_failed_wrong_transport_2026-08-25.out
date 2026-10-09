@@ -1,0 +1,30 @@
+off_thunk=3641002586e41df0
+on_thunk=3641000c6a0c1be5c0e31c6a6583e31c7a2583e31c8ae582e31df0
+cleanup=skipped_smu_unreachable
+Traceback (most recent call last):
+  File "/home/OWNER/vcn_unlock/native_domain6_cycle.py", line 187, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/OWNER/vcn_unlock/native_domain6_cycle.py", line 143, in main
+    before = snapshot(smu, "before")
+  File "/home/OWNER/vcn_unlock/native_domain6_cycle.py", line 88, in snapshot
+    "ctrl": read_word(smu, DOMAIN6_CTRL),
+            ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/OWNER/vcn_unlock/native_domain6_cycle.py", line 68, in read_word
+    return struct.unpack("<I", smu.smu_read(address, 1))[0]
+                               ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/OWNER/vcn_unlock/bc250-smu-unlock/bc250_smu/primitives.py", line 61, in smu_read
+    self.transfer_engine_sram_load(addr, n)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/OWNER/vcn_unlock/bc250-smu-unlock/bc250_smu/api_q2.py", line 81, in transfer_engine_sram_load
+    return self.send_message(2, 0x0A, [0x1F, 0, src, words])
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/OWNER/vcn_unlock/bc250-smu-unlock/bc250_smu/api.py", line 35, in send_message
+    st, ret = self._get_queue(queue_id).send(msg_id, args)
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/OWNER/vcn_unlock/bc250-smu-unlock/bc250_smu/mailbox.py", line 35, in send
+    return self._wait_done(msg_id)
+           ~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/OWNER/vcn_unlock/bc250-smu-unlock/bc250_smu/mailbox.py", line 52, in _wait_done
+    raise SmuTimeout(self._queue, msg_id)
+bc250_smu.errors.SmuTimeout: queue 2 msg 0x0A timed out - SMU wedged, cold cycle

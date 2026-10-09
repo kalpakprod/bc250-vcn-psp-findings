@@ -1,0 +1,39 @@
+{
+  "variant": "v008-secure-append",
+  "what": "booted pre-dump + secure-reads VCN driver APPENDED at FV end; all 193 base files at identical offsets; explicit LZMA",
+  "base": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/programmer/reads/20260924-v003c/pre-v003c-read-a.bin",
+    "sha256": "64973ba364ae4417de10bd905d2cf8bad165af3b544d175b3cc315f0e28d621a"
+  },
+  "blob": {
+    "path": "/home/OWNER/orca/projects/bc250/candidates/vcn-unlock-driver-v000-DRAFT/bin/Bc250VcnUnlockDxe-secure.ffs",
+    "sha256": "90a9cb88a0f3ddc0eecd49d0adba68a2e8223b4d7cd5919f18380f3c3e73e91e",
+    "pe_sha256": "2a20cc1e5dad7acf756b8224401ac3b9781d8774bbff3ba414b524a91054497c"
+  },
+  "output_sha256": "c935e3ec4c0faee88fbe0600f003b4d0d16ac13f587ab8fb6943382e28025c6f",
+  "inner_fv": {
+    "old_len": "0x43d000",
+    "new_len": "0x440000",
+    "old_files": 193,
+    "new_files": 194
+  },
+  "appended": {
+    "guid": "B6250780-7E00-4203-900C-23443B1413FE",
+    "fv_off": "0x43c018",
+    "size": "0x3022"
+  },
+  "diff_window": {
+    "first": "0xae0088",
+    "last": "0xc30a6b",
+    "ndiff": 1373262
+  },
+  "capsule": {
+    "old_csz": "0x1509f4",
+    "new_csz": "0x150282"
+  },
+  "hardware_written": false,
+  "plain_name": "BC250_vcn-driver-FULL_safe-reads-only_appended-at-end.bin",
+  "builder": "scripts/build_FULL_safe_reads_appended_at_end.py",
+  "alias": "v008-secure",
+  "question": "does DXE complete when the driver reads only via the secure mailbox?"
+}

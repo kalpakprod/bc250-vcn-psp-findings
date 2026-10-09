@@ -1,0 +1,1823 @@
+{
+  "generated_at": "2026-09-11T06:56:57.431719+00:00",
+  "title": "AMD BC-250 memory and SoC-voltage evidence map",
+  "scope": "Current matching SPI read baseline and immutable extracted firmware; no value is treated as a voltage recommendation.",
+  "baseline": {
+    "image_sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+    "size": 16777216,
+    "fresh_reads": "read-a.bin/read-b.bin byte-identical and match dump/2.bin",
+    "evidence_class": "hardware-verified (readback) + observed-bytes"
+  },
+  "artifacts": {
+    "fresh_read_manifest": {
+      "path": "evidence/programmer/reads/20260911/manifest.json",
+      "sha256": "80b34cb2be1706abeac499d95cc4ae1d0c55b05183add75b015ad85780cccb60"
+    },
+    "fresh_nvar_report": {
+      "path": "evidence/programmer/reads/20260911/firmware-audit/read-a-nvar-primary.json",
+      "sha256": "d3e769533368d0fcbfad476e6c2b75f510d1b4f80d356c4b8ff72bdfd3673b65"
+    },
+    "dump_nvar_report": {
+      "path": "evidence/firmware-audit/dump-2-nvar-primary.json",
+      "sha256": "23877f639955c2c15fa040c880065bca69f9c5fdf04d3013916a973d08bdb7ad"
+    },
+    "ifr_map": {
+      "path": "evidence/firmware-audit/amdsetup-ifr-field-map.json",
+      "sha256": "ff657447e9070b18773d149bca6e82bbd7c36295172561e5e2a425a6fecab2b7"
+    },
+    "apcb_detail": {
+      "path": "evidence/firmware-audit/apcb-detail.json",
+      "sha256": "d77ed671b723100c25ccf1e3265362ade799b00904bed621dc9bca9bf0336666"
+    },
+    "apcb_scan": {
+      "path": "evidence/firmware-audit/rizin/vcn-apcb-static-constant-scan.json",
+      "sha256": "066bf18889edef6df8f8daad91721101b62e0f92da863e2168f0ee8868c1fef9"
+    },
+    "rizin_triage": {
+      "path": "evidence/firmware-audit/rizin/module-triage.json",
+      "sha256": "6b43307c93b02b7bfd35b69a31900bda16e941088a2e0481a924a906824ac120"
+    },
+    "oc_comparison": {
+      "path": "evidence/firmware-audit/oc-profiles/comparison.json",
+      "sha256": "8c3c392b7e1e33b38a4051568a76e5d3e68775f2b764d370ab1cda9b4f676fe5"
+    },
+    "oc_builder_reference": {
+      "path": "import/from-windows/Users/kukuruza/bc250-bios/tools/patch-build/build_oc_profiles.py",
+      "sha256": "af5f59a283a5a0c450cbe2e2f0610f8e30bce8b12811ec5d8de7de9d16997ccd"
+    },
+    "fresh_inventory": {
+      "path": "evidence/programmer/reads/20260911/firmware-audit/inventory.json",
+      "sha256": "e982f755981cac0231c52074872f6478005f9e4826e6063512c6664a963c76b4"
+    },
+    "fresh_ip_report": {
+      "path": "evidence/firmware-audit/ip-discovery/read-a-hardware-ip-config.json",
+      "sha256": "c327fb0ae3dbe276329e76a8b296c05c59449338361afef8e6491ac4fa516ecc"
+    },
+    "candidate_manifest": {
+      "path": "evidence/candidates/BC250_MemoryClock_1750_only_v001/build-manifest.json",
+      "sha256": "ec3e7772d6271c8eff70b4931ae2b7bd759e24282e16af4ba3021c46bfc12759"
+    },
+    "smu_host_source": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/cyan_skillfish_ppt.c",
+      "sha256": "9259ad3ff6f660fe97ca7ea68f9b7e5f5d185982f0d3341180bd880442f030f1",
+      "role": "imported AMD host-source context"
+    },
+    "pmfw_header_source": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/smu_v11_8_pmfw.h",
+      "sha256": "8893329478e28c2f36b0298b2aeb0fc4b5902a77e76e82db57e2884fe0a82966",
+      "role": "imported PMFW feature definitions"
+    },
+    "historical_vcn_mode1": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/vcn-probe-mode1_2026-08-26.out",
+      "sha256": "920d82c67ddd3b937fba8f5fabc04ec532f0be10e42a9647baac3cca48fc970a",
+      "role": "historical hardware telemetry/log"
+    },
+    "historical_vcn_readonly": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/a1_vcn_readonly.out",
+      "sha256": "8b19714f00000ceb12f3f240165944160f3462c84d95dd2e4c909b2cb4f0e062",
+      "role": "historical host read-only log"
+    },
+    "feature_callbacks_source": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/feature_callbacks_2026-08-25.txt",
+      "sha256": "fab4157a57a1d73ae35402d1d35c06adc7bf64a509c108a2eb32f63cc5e499d4",
+      "role": "historical PMFW callback map"
+    },
+    "root_soc_voltage_review": {
+      "path": "evidence/firmware-audit/soc-voltage-static-review-root.md",
+      "sha256": "fa6a69fb287901d56d5ec27ed7c553b03f2d61f59d58c519734041e885733281",
+      "role": "root-verified static semantics review"
+    },
+    "smu_api_q3": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/bc250_smu/bc250_smu/api_q3.py",
+      "sha256": "30464310e6c4f6146322dd0136255e7f6069c2c397509296e92519e0f0cd8c90",
+      "role": "imported runtime SMU API source; write-capable, not executed"
+    },
+    "smu_api_q2": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/bc250_smu/bc250_smu/api_q2.py",
+      "sha256": "a5da57c58230e4be02204efb8791ff49082fe7d4b78890d838c47439c0ee8f8d",
+      "role": "imported runtime SMU API source; write-capable, not executed"
+    },
+    "smu_api_q0": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/bc250_smu/bc250_smu/api_q0.py",
+      "sha256": "066950069900efe18bab7fdc41165be006fc8b57136ba90bcdd034a777e6e12d",
+      "role": "imported runtime SMU API source; write-capable, not executed"
+    },
+    "smu_codec": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/bc250_smu/bc250_smu/codec.py",
+      "sha256": "bb747622598b92ff43f10583ef93803bda4d6ae59b2480e74fc2abf6751db116",
+      "role": "imported VID/mV conversion source"
+    },
+    "soc_voltage_encoding_comparison": {
+      "path": "evidence/firmware-audit/soc-voltage-encoding-comparison.json",
+      "sha256": "3576ead3e78ab343cd93727046f2de44e135fb4a4d67024228fee114061823c5",
+      "role": "host-side encoding ambiguity demonstration"
+    },
+    "smu_api_core": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/bc250_smu/bc250_smu/api.py",
+      "sha256": "584b135de0796e2b1e5d593b316457f18b5e5120bb3f8b5307acb551c2721185",
+      "role": "imported runtime SMU API; hardware-write-capable"
+    },
+    "smu_transport": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/bc250_smu/bc250_smu/transport.py",
+      "sha256": "4ec3ba8cc13ff4af8ab2e2e525edd145bb23ffe3c59098231ada36f45b6685a6",
+      "role": "imported PCI transport; O_RDWR and index/mailbox writes"
+    },
+    "smu_dxe_mailbox_context": {
+      "path": "evidence/firmware-audit/rizin/AmdNbioSmuV10Dxe.mailbox-context.txt",
+      "sha256": "c81b065ee241d336efa5354b38aa44668f3041d3162254152e2563eaf8a4e76c",
+      "role": "direct bundled Rizin mailbox-context static report"
+    },
+    "gfx_pei_df_context": {
+      "path": "evidence/firmware-audit/rizin/AmdNbioGfxARIPei.df-window-context.txt",
+      "sha256": "95ce1c7917dd12789e6af168dbbdfa046d0003ec653116e3f276da6ea74b8c68",
+      "role": "direct TE Rizin DF read/write context"
+    },
+    "cbs_base_setup_context": {
+      "path": "evidence/firmware-audit/rizin/CbsBasePei-setup-defaults-context.txt",
+      "sha256": "04f27d70a345d06a66dfae3f0af07185f5c742dd1049acd4057d167b9f53db2e",
+      "role": "direct forced-little-endian TE Rizin Setup-default initialization context"
+    }
+  },
+  "nvar": {
+    "store": "bounded NVAR store at flash 0x0 length 0x10000",
+    "record_count": 683,
+    "warnings": [
+      "unterminated NVAR name at relative 0x1B94",
+      "unterminated NVAR name at relative 0x1BA2",
+      "unterminated NVAR name at relative 0x279A"
+    ],
+    "amdsetup": {
+      "record_relative_offset": "0x4BB",
+      "body_length": "0x8B5",
+      "body_sha256": "6f266c3c78a544d73eae5cea465756dd73e343fe16e2725d2300d08ba176d055",
+      "source": "fresh read-a direct parse"
+    },
+    "selected_fields": [
+      {
+        "name": "MemoryClockSpeed",
+        "offset": "0x316",
+        "type": "u8",
+        "current_value": 255,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "Memory Clock Speed",
+        "ifr_excerpt": [
+          "  ONE_OF @form='I Accept' qid=0x20f var=AmdSetup+0x316 flags=0x10 'Memory Clock Speed'",
+          "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)",
+          "     OPTION '125MHz' = 0x2 (type=0x0 flags=0x0)",
+          "     OPTION '225MHz' = 0x4 (type=0x0 flags=0x0)",
+          "     OPTION '250MHz' = 0x5 (type=0x0 flags=0x0)",
+          "     OPTION '400MHz' = 0x8 (type=0x0 flags=0x0)",
+          "     OPTION '450MHz' = 0x9 (type=0x0 flags=0x0)",
+          "     OPTION '500MHz' = 0xa (type=0x0 flags=0x0)"
+        ],
+        "meaning": "IFR enumerated memory clock speed; values label MHz",
+        "confidence": "static-analysis"
+      },
+      {
+        "name": "Tcl",
+        "offset": "0x317",
+        "type": "u8",
+        "current_value": 255,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "Tcl",
+        "ifr_excerpt": [
+          "  ONE_OF @form='I Accept' qid=0x210 var=AmdSetup+0x317 flags=0x10 'Tcl'",
+          "     OPTION '8 Clk' = 0x8 (type=0x0 flags=0x0)",
+          "     OPTION '9 Clk' = 0x9 (type=0x0 flags=0x0)",
+          "     OPTION '0Ah Clk' = 0xa (type=0x0 flags=0x0)",
+          "     OPTION '0Bh Clk' = 0xb (type=0x0 flags=0x0)",
+          "     OPTION '0Ch Clk' = 0xc (type=0x0 flags=0x0)",
+          "     OPTION '0Dh Clk' = 0xd (type=0x0 flags=0x0)",
+          "     OPTION '0Eh Clk' = 0xe (type=0x0 flags=0x0)"
+        ],
+        "meaning": "IFR DRAM timing value; Auto or clock count options",
+        "confidence": "static-analysis"
+      },
+      {
+        "name": "UclkDiv1M0",
+        "offset": "0x330",
+        "type": "u8",
+        "current_value": 255,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "UclkDiv1M0",
+        "ifr_excerpt": [
+          "  HIDDEN ONE_OF @form='GDDR6 DRAM Timing Configuration' qid=0x229 var=AmdSetup+0x330 flags=0x10 'UclkDiv1M0'",
+          "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)",
+          "     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)"
+        ],
+        "meaning": "IFR Auto/Enabled divider control; 1:1 relationship is inferred from historical profile notes, not proven runtime",
+        "confidence": "static-analysis/inferred"
+      },
+      {
+        "name": "DramTimingControl",
+        "offset": "0x32F",
+        "type": "u8",
+        "current_value": 255,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "DRAM Timing User Controls",
+        "ifr_excerpt": [
+          "  ONE_OF @form='GDDR6 DRAM Timing Configuration' qid=0x228 var=AmdSetup+0x32f flags=0x10 'DRAM Timing User Controls'",
+          "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)",
+          "     OPTION 'Manual' = 0x1 (type=0x0 flags=0x0)"
+        ],
+        "meaning": "IFR Auto/Manual DRAM timing control",
+        "confidence": "static-analysis"
+      },
+      {
+        "name": "BankGroupSwap",
+        "offset": "0x32D",
+        "type": "u8",
+        "current_value": 255,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "BankGroupSwap",
+        "ifr_excerpt": [
+          "  ONE_OF @form='DRAM Memory Mapping' qid=0x222 var=AmdSetup+0x32d flags=0x10 'BankGroupSwap'",
+          "     OPTION 'CPU Mode' = 0x1 (type=0x0 flags=0x0)",
+          "     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)",
+          "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)",
+          "     OPTION 'APU Mode' = 0x2 (type=0x0 flags=0x0)"
+        ],
+        "meaning": "IFR memory mapping option CPU/Disabled/Auto/APU",
+        "confidence": "static-analysis"
+      },
+      {
+        "name": "PhyPowerSaving",
+        "offset": "0x368",
+        "type": "u8",
+        "current_value": 255,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "Phy Power Saving",
+        "ifr_excerpt": [
+          "  ONE_OF @form='DRAM Power Options' qid=0x259 var=AmdSetup+0x368 flags=0x10 'Phy Power Saving'",
+          "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)",
+          "     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)",
+          "     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)"
+        ],
+        "meaning": "IFR DRAM power option Auto/Enabled/Disabled",
+        "confidence": "static-analysis"
+      },
+      {
+        "name": "MemoryPstate",
+        "offset": "0x36D",
+        "type": "u8",
+        "current_value": 255,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "Memory P-state",
+        "ifr_excerpt": [
+          "  ONE_OF @form='DRAM Power Options' qid=0x25e var=AmdSetup+0x36d flags=0x10 'Memory P-state'",
+          "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)",
+          "     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)",
+          "     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)"
+        ],
+        "meaning": "IFR DRAM power option Auto/Enabled/Disabled",
+        "confidence": "static-analysis"
+      },
+      {
+        "name": "FclkDpm",
+        "offset": "0x6A3",
+        "type": "u8",
+        "current_value": 15,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "FCLK_DPM",
+        "ifr_excerpt": [
+          "  ONE_OF @form='SMU Features' qid=0x7045 var=AmdSetup+0x6a3 flags=0x14 'FCLK_DPM'",
+          "     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)",
+          "     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)",
+          "     OPTION 'Auto' = 0xf (type=0x0 flags=0x10)"
+        ],
+        "meaning": "IFR SMU Features switch Disabled/Enabled/Auto; does not itself encode a frequency",
+        "confidence": "static-analysis"
+      },
+      {
+        "name": "VddcrVddOffsetControl",
+        "offset": "0x6E5",
+        "type": "u8",
+        "current_value": 0,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "VDDCR_VDD Voltage Offset Control",
+        "ifr_excerpt": [
+          "  ONE_OF @form='SMU Debug' qid=0x36b var=AmdSetup+0x6e5 flags=0x10 'VDDCR_VDD Voltage Offset Control'",
+          "     OPTION 'Manual' = 0x1 (type=0x0 flags=0x0)",
+          "     OPTION 'Auto' = 0x0 (type=0x0 flags=0x10)"
+        ],
+        "meaning": "separate Auto/Manual control for VDDCR_VDD offset",
+        "confidence": "static-analysis"
+      },
+      {
+        "name": "VddcrVddOffset",
+        "offset": "0x6E6",
+        "type": "u32",
+        "current_value": 0,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "VDDCR_VDD Voltage Offset",
+        "ifr_excerpt": [
+          "  HIDDEN NUMERIC @form='SMU Debug' qid=0x36c var=AmdSetup+0x6e6 flags=0x10 'VDDCR_VDD Voltage Offset'",
+          "     NUMERIC min=0 max=4294967295 step=0",
+          "     DEFAULT id=0x0 type=0x2 value=00000000"
+        ],
+        "meaning": "u32 numeric VDDCR_VDD offset; IFR gives 0..0xffffffff but no physical unit",
+        "confidence": "static-analysis",
+        "safety_note": "Do not choose a value; control/value and physical units are unresolved."
+      },
+      {
+        "name": "VddcrGfxOffsetControl",
+        "offset": "0x6EA",
+        "type": "u8",
+        "current_value": 0,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "VDDCR_GFX Voltage Offset Control",
+        "ifr_excerpt": [
+          "  ONE_OF @form='SMU Debug' qid=0x36d var=AmdSetup+0x6ea flags=0x10 'VDDCR_GFX Voltage Offset Control'",
+          "     OPTION 'Manual' = 0x1 (type=0x0 flags=0x0)",
+          "     OPTION 'Auto' = 0x0 (type=0x0 flags=0x10)"
+        ],
+        "meaning": "separate Auto/Manual control for VDDCR_GFX offset",
+        "confidence": "static-analysis"
+      },
+      {
+        "name": "VddcrGfxOffset",
+        "offset": "0x6EB",
+        "type": "u32",
+        "current_value": 0,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "VDDCR_GFX Voltage Offset",
+        "ifr_excerpt": [
+          "  HIDDEN NUMERIC @form='SMU Debug' qid=0x36e var=AmdSetup+0x6eb flags=0x10 'VDDCR_GFX Voltage Offset'",
+          "     NUMERIC min=0 max=4294967295 step=0",
+          "     DEFAULT id=0x0 type=0x2 value=00000000"
+        ],
+        "meaning": "u32 numeric VDDCR_GFX offset; IFR gives 0..0xffffffff but no physical unit",
+        "confidence": "static-analysis",
+        "safety_note": "Do not choose a value; control/value and physical units are unresolved."
+      },
+      {
+        "name": "DfClockOverrideControl",
+        "offset": "0x703",
+        "type": "u8",
+        "current_value": 255,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "DF Clock Override Control",
+        "ifr_excerpt": [
+          "  ONE_OF @form='SMU Debug' qid=0x37d var=AmdSetup+0x703 flags=0x10 'DF Clock Override Control'",
+          "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)",
+          "     OPTION 'Manual' = 0x1 (type=0x0 flags=0x0)"
+        ],
+        "meaning": "separate Auto/Manual control for DF clock override",
+        "confidence": "static-analysis"
+      },
+      {
+        "name": "DfClockOvrd",
+        "offset": "0x704",
+        "type": "u16",
+        "current_value": 1000,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": null,
+        "ifr_excerpt": [],
+        "meaning": "u16 numeric DF clock override with IFR range 0..2000; unit/consumer still requires corroboration",
+        "confidence": "static-analysis/inferred"
+      },
+      {
+        "name": "ForceCpuFreq",
+        "offset": "0x701",
+        "type": "u16",
+        "current_value": 3600,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "Force CPU Frequency",
+        "ifr_excerpt": [
+          "  HIDDEN NUMERIC @form='SMU Debug' qid=0x37c var=AmdSetup+0x701 flags=0x10 'Force CPU Frequency'",
+          "     NUMERIC min=0 max=4000 step=0",
+          "     DEFAULT id=0x0 type=0x1 value=100e"
+        ],
+        "meaning": "u16 numeric force CPU frequency, IFR range 0..4000",
+        "confidence": "static-analysis"
+      },
+      {
+        "name": "FastPpt",
+        "offset": "0x70C",
+        "type": "u32",
+        "current_value": 88000,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "FAST_PPT_LIMIT",
+        "ifr_excerpt": [
+          "  NUMERIC @form='SMU Debug' qid=0x385 var=AmdSetup+0x70c flags=0x10 'FAST_PPT_LIMIT'",
+          "     NUMERIC min=0 max=4294967295 step=0",
+          "     DEFAULT id=0x0 type=0x2 value=c0570100"
+        ],
+        "meaning": "u32 SMU Debug field; physical unit/consumer not independently established",
+        "confidence": "static-analysis"
+      },
+      {
+        "name": "SlowPpt",
+        "offset": "0x710",
+        "type": "u32",
+        "current_value": 65000,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "SLOW_PPT_LIMIT",
+        "ifr_excerpt": [
+          "  NUMERIC @form='SMU Debug' qid=0x386 var=AmdSetup+0x710 flags=0x10 'SLOW_PPT_LIMIT'",
+          "     NUMERIC min=0 max=4294967295 step=0",
+          "     DEFAULT id=0x0 type=0x2 value=e8fd0000"
+        ],
+        "meaning": "u32 SMU Debug field; physical unit/consumer not independently established",
+        "confidence": "static-analysis"
+      },
+      {
+        "name": "VrmCurrent",
+        "offset": "0x718",
+        "type": "u32",
+        "current_value": 65000,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "VRM_CURRENT_LIMIT",
+        "ifr_excerpt": [
+          "  NUMERIC @form='SMU Debug' qid=0x388 var=AmdSetup+0x718 flags=0x10 'VRM_CURRENT_LIMIT'",
+          "     NUMERIC min=0 max=4294967295 step=0",
+          "     DEFAULT id=0x0 type=0x2 value=e8fd0000"
+        ],
+        "meaning": "u32 SMU Debug field; physical unit/consumer not independently established",
+        "confidence": "static-analysis"
+      },
+      {
+        "name": "VrmMaximum",
+        "offset": "0x71C",
+        "type": "u32",
+        "current_value": 95000,
+        "current_raw_observation": "from fresh read NVAR",
+        "ifr_label": "VRM_MAXIMUM_CURRENT_LIMIT",
+        "ifr_excerpt": [
+          "  NUMERIC @form='SMU Debug' qid=0x389 var=AmdSetup+0x71c flags=0x10 'VRM_MAXIMUM_CURRENT_LIMIT'",
+          "     NUMERIC min=0 max=4294967295 step=0",
+          "     DEFAULT id=0x0 type=0x2 value=18730100"
+        ],
+        "meaning": "u32 SMU Debug field; physical unit/consumer not independently established",
+        "confidence": "static-analysis"
+      }
+    ],
+    "evidence_class": "observed-bytes + static-analysis"
+  },
+  "apcb_memory_groups": {
+    "apcb_offset": "0xAB1000",
+    "size": "0xB70",
+    "checksum": "F2 (current baseline)",
+    "groups": [
+      {
+        "signature": "DFG ",
+        "gid": "0x1703",
+        "instance": 1,
+        "relative_offset": "0xF4",
+        "absolute_offset": "0xAB10F4",
+        "size": 136,
+        "body_sha256": "a7d28e7398b23f779042a63388025be350030cb643e6da293b8612f4f4a5cff6",
+        "subgroups": [
+          {
+            "instance": 5,
+            "size": 60,
+            "body_sha256": "3c22416cc362e2df5ff5f3de6e80413a53495db81a5d8218969ed7d5ee84e6fb"
+          },
+          {
+            "instance": 6,
+            "size": 60,
+            "body_sha256": "3c22416cc362e2df5ff5f3de6e80413a53495db81a5d8218969ed7d5ee84e6fb"
+          }
+        ]
+      },
+      {
+        "signature": "MEMG",
+        "gid": "0x1704",
+        "instance": 1,
+        "relative_offset": "0x17C",
+        "absolute_offset": "0xAB117C",
+        "size": 616,
+        "body_sha256": "3ab23b244744b466c6b979aee76a2109e9da715e63e0aab624e2af216c827297",
+        "subgroups": [
+          {
+            "instance": 7,
+            "size": 172,
+            "body_sha256": "d9a0537025c8974d7b5e82baa2f2a8c9a9811d5b0c3cf9e5d0e42d0a21a1118b"
+          },
+          {
+            "instance": 8,
+            "size": 172,
+            "body_sha256": "d9a0537025c8974d7b5e82baa2f2a8c9a9811d5b0c3cf9e5d0e42d0a21a1118b"
+          },
+          {
+            "instance": 49,
+            "size": 48,
+            "body_sha256": "4a4bf86497ec755b186545dce870b9b727e88acd43537b2f29b3987272dd9539"
+          },
+          {
+            "instance": 80,
+            "size": 36,
+            "body_sha256": "55582f7a28800462a667b220bfa3e69ce2a7fbf426f66fa57eb5a95cc7e04cb4"
+          },
+          {
+            "instance": 82,
+            "size": 124,
+            "body_sha256": "79937f9d8df56c9c8250f46e56135816abf21904551cd6c81cd3af8c0bf6cd51"
+          },
+          {
+            "instance": 83,
+            "size": 48,
+            "body_sha256": "b99f3aaf8d16405f8663c7303d304e987206149babcb3bb25614ba12b526c983"
+          }
+        ]
+      }
+    ],
+    "interpretation": "MEMG group and subgroups are observed, but token semantics/field-to-training mapping are not established; DFG policy is a separate VCN candidate track.",
+    "evidence_class": "observed-bytes + static-analysis"
+  },
+  "ipds_memory_context": {
+    "source": "fresh_ip_report",
+    "umc_records": [
+      {
+        "hw_id": 150,
+        "name": "UMC",
+        "instance": 0,
+        "version": "8.1.1",
+        "harvest": 0,
+        "reserved": 0,
+        "base_addresses": [
+          "0x00014000",
+          "0x02425800"
+        ]
+      },
+      {
+        "hw_id": 150,
+        "name": "UMC",
+        "instance": 1,
+        "version": "8.1.1",
+        "harvest": 0,
+        "reserved": 0,
+        "base_addresses": [
+          "0x00054000",
+          "0x02425c00"
+        ]
+      }
+    ],
+    "interpretation": "IPDS exposes two UMC instances; descriptor does not show memory training result, timing, or live clock/rail state."
+  },
+  "modules": [
+    {
+      "module": "AmdMemAm4Pei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0191_AmdMemAm4Pei_te.bin",
+      "sha256": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8",
+      "size": 5192,
+      "image_type": "TE",
+      "ui": "AmdMemAm4Pei"
+    },
+    {
+      "module": "AmdMemoryHobInfoPeim",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0201_AmdMemoryHobInfoPeim_te.bin",
+      "sha256": "aad3f828ccef4cf8878cad8c9ee1e47743748f652a1ef54af04de759983b4619",
+      "size": 6472,
+      "image_type": "TE",
+      "ui": "AmdMemoryHobInfoPeim"
+    },
+    {
+      "module": "PlatformMemoryConfigurationPei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0206_PlatformMemoryConfigurationPei_te.bin",
+      "sha256": "6a1ab7fe72ad3ee0e8f9238e2ba2d166c97e44812761e6d16a725525e1817085",
+      "size": 128,
+      "image_type": "TE",
+      "ui": "PlatformMemoryConfigurationPei"
+    },
+    {
+      "module": "AmdNbioBaseARIPei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0196_AmdNbioBaseARIPei_te.bin",
+      "sha256": "51d96c1e5a5e2c39f04fb962b0b5be686dea0a05eecbde829a4595fe3356884f",
+      "size": 105264,
+      "image_type": "TE",
+      "ui": "AmdNbioBaseARIPei"
+    },
+    {
+      "module": "AmdNbioSmuV10Pei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0198_AmdNbioSmuV10Pei_te.bin",
+      "sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "size": 90672,
+      "image_type": "TE",
+      "ui": "AmdNbioSmuV10Pei"
+    },
+    {
+      "module": "CbsBasePei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0204_CbsBasePei_te.bin",
+      "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "size": 81520,
+      "image_type": "TE",
+      "ui": "CbsBasePei"
+    },
+    {
+      "module": "CbsSetupDxe",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0040_CbsSetupDxe_pe32.bin",
+      "sha256": "9fae1341693fe1b89e6f070f8740c94228f5161cca701ac31425bc5d438533b3",
+      "size": 264160,
+      "image_type": "PE32",
+      "ui": "CbsSetupDxe"
+    },
+    {
+      "module": "AmdApcbObrDxe",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0033_AmdApcbObrDxe_pe32.bin",
+      "sha256": "e0bc6cb786469818ac6af66d7c2d06ffd5d9026ad550b651911e45334746604c",
+      "size": 19328,
+      "image_type": "PE32",
+      "ui": "AmdApcbObrDxe"
+    },
+    {
+      "module": "AmiApcbLibInterface",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0039_AmiApcbLibInterface_pe32.bin",
+      "sha256": "4d65e6dc2ca83c8d7bed8812275b78e9821fd126cba413f94ba9390e91a56336",
+      "size": 9408,
+      "image_type": "PE32",
+      "ui": "AmiApcbLibInterface"
+    },
+    {
+      "module": "AmdNbioGfxARIPei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0193_AmdNbioGfxARIPei_te.bin",
+      "sha256": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+      "size": 87048,
+      "image_type": "TE",
+      "ui": "AmdNbioGfxARIPei"
+    },
+    {
+      "module": "AmdNbioPcieARIPei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0197_AmdNbioPcieARIPei_te.bin",
+      "sha256": "62b1398c4ba9b5a03ea533306cd8200257fac323c8fa688caa057667a5871312",
+      "size": 108776,
+      "image_type": "TE",
+      "ui": "AmdNbioPcieARIPei"
+    }
+  ],
+  "static_literal_scan": [
+    {
+      "module": "AmdNbioGfxARIPei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0193_AmdNbioGfxARIPei_te.bin",
+      "sha256": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+      "size": 87048,
+      "function_count": 78,
+      "literal_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x14AF",
+            "0x14BA",
+            "0x14C3",
+            "0x14EC",
+            "0x14F7",
+            "0x1502",
+            "0x150C",
+            "0x1513",
+            "0x151A",
+            "0x14B06",
+            "0x14BC5",
+            "0x14BF1",
+            "0x14C04",
+            "0x15039"
+          ]
+        },
+        "DF_target_control": {
+          "value": "0x0000405C",
+          "offsets": [
+            "0x14AFB",
+            "0x14BE8"
+          ]
+        },
+        "DF_target_window": {
+          "value": "0x00004098",
+          "offsets": [
+            "0x14B10",
+            "0x14BFE"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x4212"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x18DE",
+            "0x2FF5",
+            "0xADF1"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0x3EF5",
+            "0xEF9A"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x410D",
+            "0xF9B3"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x41C9",
+            "0xFCF6"
+          ]
+        }
+      },
+      "evidence_class": "static-analysis",
+      "caveat": "literal constants do not prove field read/write direction or consumer semantics; TE files have endian metadata caveat"
+    },
+    {
+      "module": "AmdNbioPcieARIPei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0197_AmdNbioPcieARIPei_te.bin",
+      "sha256": "62b1398c4ba9b5a03ea533306cd8200257fac323c8fa688caa057667a5871312",
+      "size": 108776,
+      "function_count": 121,
+      "literal_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x55",
+            "0x6C9",
+            "0x1D62",
+            "0x1D6D",
+            "0x1D76",
+            "0x1D9F",
+            "0x1DAA",
+            "0x1DB5",
+            "0x1DBF",
+            "0x1DC6",
+            "0x1DCD",
+            "0x43E7",
+            "0x4440",
+            "0x444F",
+            "0x447E",
+            "0x4A32",
+            "0x4A41",
+            "0x4B80",
+            "0x18256",
+            "0x18315",
+            "0x18341",
+            "0x18354"
+          ]
+        },
+        "DF_target_control": {
+          "value": "0x0000405C",
+          "offsets": [
+            "0x1824B",
+            "0x18338"
+          ]
+        },
+        "DF_target_window": {
+          "value": "0x00004098",
+          "offsets": [
+            "0x18260",
+            "0x1834E"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x7952"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x501E",
+            "0x6735",
+            "0xE541"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0x7635",
+            "0x126EA"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x784D",
+            "0x13103"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x7909",
+            "0x13446"
+          ]
+        }
+      },
+      "evidence_class": "static-analysis",
+      "caveat": "literal constants do not prove field read/write direction or consumer semantics; TE files have endian metadata caveat"
+    },
+    {
+      "module": "AmdNbioBaseARIPei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0196_AmdNbioBaseARIPei_te.bin",
+      "sha256": "51d96c1e5a5e2c39f04fb962b0b5be686dea0a05eecbde829a4595fe3356884f",
+      "size": 105264,
+      "function_count": 117,
+      "literal_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x1449",
+            "0x1455",
+            "0x145F",
+            "0x148B",
+            "0x1496",
+            "0x14A1",
+            "0x14AB",
+            "0x14B2",
+            "0x14B9",
+            "0x22B0",
+            "0x2339",
+            "0x2435",
+            "0x3CD8",
+            "0x3D98",
+            "0x3DC1",
+            "0x3DD4",
+            "0x179B1",
+            "0x185C4",
+            "0x18800",
+            "0x18B1C",
+            "0x18B20"
+          ]
+        },
+        "DF_target_control": {
+          "value": "0x0000405C",
+          "offsets": [
+            "0x3CCD",
+            "0x3DB8"
+          ]
+        },
+        "DF_target_window": {
+          "value": "0x00004098",
+          "offsets": [
+            "0x3CE2",
+            "0x3DCE"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x6E5A"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x4526",
+            "0x5C3D",
+            "0xDA39"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0xE23",
+            "0x6B3D",
+            "0x11BE2"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x6D55",
+            "0x125FB"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x6E11",
+            "0x1293E"
+          ]
+        }
+      },
+      "evidence_class": "static-analysis",
+      "caveat": "literal constants do not prove field read/write direction or consumer semantics; TE files have endian metadata caveat"
+    },
+    {
+      "module": "CbsBasePei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0204_CbsBasePei_te.bin",
+      "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "size": 81520,
+      "function_count": 39,
+      "literal_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x1333F",
+            "0x13346",
+            "0x1334D",
+            "0x135CC",
+            "0x1368B",
+            "0x136B7",
+            "0x136CA"
+          ]
+        },
+        "DF_target_control": {
+          "value": "0x0000405C",
+          "offsets": [
+            "0x135C1",
+            "0x136AE"
+          ]
+        },
+        "DF_target_window": {
+          "value": "0x00004098",
+          "offsets": [
+            "0x135D6",
+            "0x136C4"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x2ADA"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x18BD",
+            "0x96C9"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0x27BD",
+            "0xD872"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x29D5",
+            "0xE28B"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x2A91",
+            "0xE5CE"
+          ]
+        }
+      },
+      "evidence_class": "static-analysis",
+      "caveat": "literal constants do not prove field read/write direction or consumer semantics; TE files have endian metadata caveat"
+    },
+    {
+      "module": "CbsSetupDxe",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0040_CbsSetupDxe_pe32.bin",
+      "sha256": "9fae1341693fe1b89e6f070f8740c94228f5161cca701ac31425bc5d438533b3",
+      "size": 264160,
+      "function_count": 63,
+      "literal_hits": {
+        "DFG_wildcard": {
+          "value": "0x001FFF00",
+          "offsets": [
+            "0x5FD9",
+            "0x8A23"
+          ]
+        },
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x10D",
+            "0x3F6BD",
+            "0x3F7AD"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x4784",
+            "0x16763"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x3C82",
+            "0x5CC1",
+            "0x60B3"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0x4563"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x46D7"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x4750",
+            "0xA684"
+          ]
+        }
+      },
+      "evidence_class": "static-analysis",
+      "caveat": "literal constants do not prove field read/write direction or consumer semantics; TE files have endian metadata caveat"
+    },
+    {
+      "module": "AmdApcbObrDxe",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0033_AmdApcbObrDxe_pe32.bin",
+      "sha256": "e0bc6cb786469818ac6af66d7c2d06ffd5d9026ad550b651911e45334746604c",
+      "size": 19328,
+      "function_count": 50,
+      "literal_hits": {
+        "APCB_PSPG_gid": {
+          "value": "0x00001701",
+          "offsets": [
+            "0x1B0E"
+          ]
+        },
+        "APCB_DFG_gid": {
+          "value": "0x00001703",
+          "offsets": [
+            "0x1AE4"
+          ]
+        },
+        "APCB_MEMG_gid": {
+          "value": "0x00001704",
+          "offsets": [
+            "0x1ACB"
+          ]
+        },
+        "APCB_FCHG_gid": {
+          "value": "0x00001706",
+          "offsets": [
+            "0x1B7A"
+          ]
+        },
+        "APCB_CBSG_gid": {
+          "value": "0x00001707",
+          "offsets": [
+            "0x5ED",
+            "0x1B55",
+            "0x1B65"
+          ]
+        },
+        "DFG_wildcard": {
+          "value": "0x001FFF00",
+          "offsets": [
+            "0x1BD2",
+            "0x1C12",
+            "0x202D"
+          ]
+        },
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x4B45"
+          ]
+        }
+      },
+      "evidence_class": "static-analysis",
+      "caveat": "literal constants do not prove field read/write direction or consumer semantics; TE files have endian metadata caveat"
+    },
+    {
+      "module": "AmiApcbLibInterface",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0039_AmiApcbLibInterface_pe32.bin",
+      "sha256": "4d65e6dc2ca83c8d7bed8812275b78e9821fd126cba413f94ba9390e91a56336",
+      "size": 9408,
+      "function_count": 31,
+      "literal_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x1D79"
+          ]
+        }
+      },
+      "evidence_class": "static-analysis",
+      "caveat": "literal constants do not prove field read/write direction or consumer semantics; TE files have endian metadata caveat"
+    }
+  ],
+  "historical_oc_profiles": [
+    {
+      "name": "01_BC250_SYNC_FclkUclk_1to1_Mclk1750_StockCPU.bin",
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/oc_profiles/01_BC250_SYNC_FclkUclk_1to1_Mclk1750_StockCPU.bin",
+      "sha256": "83f3ee5b5bad1659191e984f6bb50abf7e7aa008aac53f01b5c79fddf7f03ada",
+      "size": 16777216,
+      "amdsetup_body_diff_byte_count": 16,
+      "changed_fields": {
+        "MemoryClockSpeed": {
+          "value": 35,
+          "raw_hex": "23"
+        },
+        "UclkDiv1M0": {
+          "value": 0,
+          "raw_hex": "00"
+        },
+        "BankGroupSwap": {
+          "value": 0,
+          "raw_hex": "00"
+        },
+        "FclkDpm": {
+          "value": 0,
+          "raw_hex": "00"
+        },
+        "DfClockOverrideControl": {
+          "value": 1,
+          "raw_hex": "01"
+        },
+        "DfClockOvrd": {
+          "value": 875,
+          "raw_hex": "6b03"
+        },
+        "FastPpt": {
+          "value": 105000,
+          "raw_hex": "289a0100"
+        },
+        "SlowPpt": {
+          "value": 85000,
+          "raw_hex": "084c0100"
+        },
+        "VrmCurrent": {
+          "value": 75000,
+          "raw_hex": "f8240100"
+        },
+        "VrmMaximum": {
+          "value": 100000,
+          "raw_hex": "a0860100"
+        }
+      },
+      "status": "historical/static reference; rejected as current flash source"
+    },
+    {
+      "name": "02_BC250_SYNC_Full_1to1to1_1333MHz_StockCPU.bin",
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/oc_profiles/02_BC250_SYNC_Full_1to1to1_1333MHz_StockCPU.bin",
+      "sha256": "12c260bc1500f71edd2a5fe249fe43f76601cbaa9ac48d78d40e261c6684e47f",
+      "size": 16777216,
+      "amdsetup_body_diff_byte_count": 18,
+      "changed_fields": {
+        "MemoryClockSpeed": {
+          "value": 26,
+          "raw_hex": "1a"
+        },
+        "UclkDiv1M0": {
+          "value": 1,
+          "raw_hex": "01"
+        },
+        "BankGroupSwap": {
+          "value": 0,
+          "raw_hex": "00"
+        },
+        "FclkDpm": {
+          "value": 0,
+          "raw_hex": "00"
+        },
+        "VddcrVddOffsetControl": {
+          "value": 1,
+          "raw_hex": "01"
+        },
+        "VddcrVddOffset": {
+          "value": 35,
+          "raw_hex": "23000000"
+        },
+        "DfClockOverrideControl": {
+          "value": 1,
+          "raw_hex": "01"
+        },
+        "DfClockOvrd": {
+          "value": 1333,
+          "raw_hex": "3505"
+        },
+        "FastPpt": {
+          "value": 120000,
+          "raw_hex": "c0d40100"
+        },
+        "SlowPpt": {
+          "value": 95000,
+          "raw_hex": "18730100"
+        },
+        "VrmCurrent": {
+          "value": 80000,
+          "raw_hex": "80380100"
+        },
+        "VrmMaximum": {
+          "value": 110000,
+          "raw_hex": "b0ad0100"
+        }
+      },
+      "status": "historical/static reference; rejected as current flash source"
+    },
+    {
+      "name": "03_BC250_SYNC_Full_1to1to1_1750MHz_StockCPU.bin",
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/oc_profiles/03_BC250_SYNC_Full_1to1to1_1750MHz_StockCPU.bin",
+      "sha256": "9ddd793337d0a6a9732bf985b0596e2d5e7a40bd92f55d612d7753dc65801b58",
+      "size": 16777216,
+      "amdsetup_body_diff_byte_count": 19,
+      "changed_fields": {
+        "MemoryClockSpeed": {
+          "value": 35,
+          "raw_hex": "23"
+        },
+        "UclkDiv1M0": {
+          "value": 1,
+          "raw_hex": "01"
+        },
+        "BankGroupSwap": {
+          "value": 0,
+          "raw_hex": "00"
+        },
+        "FclkDpm": {
+          "value": 0,
+          "raw_hex": "00"
+        },
+        "VddcrVddOffsetControl": {
+          "value": 1,
+          "raw_hex": "01"
+        },
+        "VddcrVddOffset": {
+          "value": 80,
+          "raw_hex": "50000000"
+        },
+        "DfClockOverrideControl": {
+          "value": 1,
+          "raw_hex": "01"
+        },
+        "DfClockOvrd": {
+          "value": 1750,
+          "raw_hex": "d606"
+        },
+        "FastPpt": {
+          "value": 130000,
+          "raw_hex": "d0fb0100"
+        },
+        "SlowPpt": {
+          "value": 105000,
+          "raw_hex": "289a0100"
+        },
+        "VrmCurrent": {
+          "value": 90000,
+          "raw_hex": "905f0100"
+        },
+        "VrmMaximum": {
+          "value": 120000,
+          "raw_hex": "c0d40100"
+        }
+      },
+      "status": "historical/static reference; rejected as current flash source"
+    },
+    {
+      "name": "03_BC250_ULTIMATE_LOW_LATENCY_StockCPU.bin",
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/oc_profiles/03_BC250_ULTIMATE_LOW_LATENCY_StockCPU.bin",
+      "sha256": "578113a9c9c02f0ab98fa896cf61356664e1429f7054de3c308810bcd4770896",
+      "size": 16777216,
+      "amdsetup_body_diff_byte_count": 21,
+      "changed_fields": {
+        "MemoryClockSpeed": {
+          "value": 35,
+          "raw_hex": "23"
+        },
+        "UclkDiv1M0": {
+          "value": 0,
+          "raw_hex": "00"
+        },
+        "BankGroupSwap": {
+          "value": 0,
+          "raw_hex": "00"
+        },
+        "PhyPowerSaving": {
+          "value": 0,
+          "raw_hex": "00"
+        },
+        "MemoryPstate": {
+          "value": 0,
+          "raw_hex": "00"
+        },
+        "FclkDpm": {
+          "value": 0,
+          "raw_hex": "00"
+        },
+        "VddcrVddOffsetControl": {
+          "value": 1,
+          "raw_hex": "01"
+        },
+        "VddcrVddOffset": {
+          "value": 100,
+          "raw_hex": "64000000"
+        },
+        "DfClockOverrideControl": {
+          "value": 1,
+          "raw_hex": "01"
+        },
+        "DfClockOvrd": {
+          "value": 1400,
+          "raw_hex": "7805"
+        },
+        "FastPpt": {
+          "value": 130000,
+          "raw_hex": "d0fb0100"
+        },
+        "SlowPpt": {
+          "value": 105000,
+          "raw_hex": "289a0100"
+        },
+        "VrmCurrent": {
+          "value": 95000,
+          "raw_hex": "18730100"
+        },
+        "VrmMaximum": {
+          "value": 120000,
+          "raw_hex": "c0d40100"
+        }
+      },
+      "status": "historical/static reference; rejected as current flash source"
+    }
+  ],
+  "candidate_tracks": [
+    {
+      "id": "MEM-H1",
+      "track": "memory clock/synchronization",
+      "status": "statically-verified-offline-candidate",
+      "observed_controls": [
+        "AmdSetup+0x316 MemoryClockSpeed",
+        "+0x330 UclkDiv1M0",
+        "+0x6A3 FclkDpm",
+        "+0x703/+0x704 DF Clock Override"
+      ],
+      "historical_values_available": true,
+      "blocker": "consumer path, training behavior, current board limits, and live clocks are not proven",
+      "next_test": "static caller context via MCP/Rizin, then stock-boot read-only telemetry; choose one field/one variable only",
+      "candidate_path": "candidates/BC250_MemoryClock_1750_only_v001_from_read-a.bin",
+      "candidate_sha256": "63cd074197ce26bafe7d2f943eeceb69b331cdba94f12662820de710fc193fee",
+      "changed_offsets": [
+        "0x7E5"
+      ],
+      "changed_byte_count": 1,
+      "validation_manifest": "evidence/candidates/BC250_MemoryClock_1750_only_v001/build-manifest.json",
+      "independent_review": {
+        "path": "evidence/candidates/BC250_MemoryClock_1750_only_v001/independent-review-gemini.md",
+        "sha256": "47a9b6a7be4628861ac04031e959a6ea76b1b67bfe7f724c8ba0b66b330123fb",
+        "status": "PASS root recheck"
+      }
+    },
+    {
+      "id": "SOC-H1",
+      "track": "SoC/VDDCR_VDD offset",
+      "status": "candidate not built",
+      "observed_controls": [
+        "AmdSetup+0x6E5 control",
+        "AmdSetup+0x6E6 u32 value"
+      ],
+      "current": "control=0 (Auto), value=0",
+      "blocker": "physical unit, sign/encoding, SMU consumer, allowed range, rail response, and training dependency unresolved Runtime SMU APIs show multiple distinct VID/float-offset protocols, increasing rather than removing encoding ambiguity. Direct Q2 mailbox context is now mapped, but no data flow from AmdSetup+0x6E6 to the helper is proven.",
+      "next_test": "trace consumers and units; correlate a known stock/historical setting with live read-only telemetry; no guessed value",
+      "historical_values_rejected": [
+        "+35",
+        "+80",
+        "+100"
+      ],
+      "review": {
+        "path": "evidence/firmware-audit/soc-voltage-static-review-root.md",
+        "sha256": "fa6a69fb287901d56d5ec27ed7c553b03f2d61f59d58c519734041e885733281",
+        "status": "NO-GO: no value selected"
+      },
+      "encoding_artifact": "evidence/firmware-audit/soc-voltage-encoding-comparison.json"
+    },
+    {
+      "id": "GFX-H1",
+      "track": "VDDCR_GFX offset",
+      "status": "not in requested memory/SoC candidate",
+      "observed_controls": [
+        "AmdSetup+0x6EA control",
+        "AmdSetup+0x6EB u32 value"
+      ],
+      "current": "control=0 (Auto), value=0",
+      "blocker": "same unit/consumer uncertainty; keep separate from SoC/memory"
+    }
+  ],
+  "conclusions": {
+    "proven": "Current AmdSetup fields and APCB MEMG/DFG structures are reproducibly located and parsed from two matching reads; IFR supplies option labels and exact types for the listed fields.",
+    "inferred": "Historical profile notes associate 0x316/0x330/0x704 with clock relationships and 0x6E5/0x6E6 with a voltage-offset control/value pair; the physical effects are not proven. Historical host source maps SMU metrics fields to current UCLK/FCLK/SOCCLK/voltage values, but its exact BC-250 driver/source revision and runtime relationship are not established.",
+    "not_proven": "Memory synchronization, training success, SMU application, actual SoC/GFX rail voltage, stability, or bootability of any changed value.",
+    "candidate_status": "APCB-only VCN and one-field MemoryClock candidates exist; no SoC-voltage candidate has been built.",
+    "historical_claims": "Imported OC/SoC documents provide useful field leads but their voltage-unit/safety and post-profile behavior claims are not current proof and conflict with the corrected u32 IFR interpretation; they are retained as historical references only.",
+    "soc_review": "Root static review confirms field location/type/control but leaves physical unit/sign/encoding and exact consumer inconclusive; no SoC-voltage candidate is permitted.",
+    "cbs_defaults": "CbsBasePei direct context corroborates the current default field bytes and widths but does not establish downstream application."
+  },
+  "gaps": [
+    "Native MCP function-context results for pending memory/SMU/CBS modules are incomplete; current MCP transcript covers CoreUnlock only.",
+    "No exact closed SMU consumer mapping for AmdSetup VDD fields.",
+    "No live stock telemetry in this powered-off programmer session.",
+    "No independent review for a memory/voltage candidate because no such candidate exists.",
+    "MemoryClock candidate has no independent reviewer yet; no boot/training/clock test.",
+    "Historical telemetry includes contradictory/limited clock fields; current stock-boot baseline is required before promoting any unit or applied-setting claim.",
+    "A truly read-only SMU/SMN transport is not available; imported bc250_smu helper is write-capable."
+  ],
+  "historical_runtime_context": {
+    "mode1": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/vcn-probe-mode1_2026-08-26.out",
+      "sha256": "920d82c67ddd3b937fba8f5fabc04ec532f0be10e42a9647baac3cca48fc970a",
+      "observation": "VCN driver/ring path timed out; historical log includes UCLK/FCLK telemetry but no current candidate setting correlation."
+    },
+    "readonly": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/a1_vcn_readonly.out",
+      "sha256": "8b19714f00000ceb12f3f240165944160f3462c84d95dd2e4c909b2cb4f0e062",
+      "observation": "Several IP/firmware sysfs files were missing; historical limitation."
+    },
+    "evidence_class": "historical hardware observation; not current board proof"
+  },
+  "source_traces": [
+    {
+      "id": "SMU-S1",
+      "source": "cyan_skillfish_ppt.c",
+      "sha256": "9259ad3ff6f660fe97ca7ea68f9b7e5f5d185982f0d3341180bd880442f030f1",
+      "lines": [
+        "132-180",
+        "385-437"
+      ],
+      "observation": "Host metric API exposes current SOC/GFX voltage and current clock fields; UCLK and FCLK are assigned from the same MemclkFrequency member in this imported source.",
+      "class": "static-analysis",
+      "limit": "does not decode AmdSetup NVRAM fields or prove running revision"
+    },
+    {
+      "id": "SMU-S2",
+      "source": "smu_v11_8_pmfw.h",
+      "sha256": "8893329478e28c2f36b0298b2aeb0fc4b5902a77e76e82db57e2884fe0a82966",
+      "lines": [
+        "30-75",
+        "100-110"
+      ],
+      "observation": "PMFW feature bit definitions include FCLK_DPM=5, SOC_DPM=13, UMC_THROTTLE=23, DF_THROTTLE=24.",
+      "class": "static-analysis",
+      "limit": "feature bit definitions do not prove field consumer or current feature state"
+    },
+    {
+      "id": "SMU-S3",
+      "source": "bc250_smu/api_q3.py",
+      "sha256": "30464310e6c4f6146322dd0136255e7f6069c2c397509296e92519e0f0cd8c90",
+      "lines": [
+        "20-25",
+        "60-75",
+        "110-140",
+        "155-185"
+      ],
+      "observation": "Runtime API source separates direct VID/mV methods, current voltage queries, clock methods, and float VID offset methods; e.g. q3 0x36/0x37 return current voltage in mV by source comments, q3 0x4D/0x4E pack float offsets, and q3 0x42 returns a SoC DPM clock value.",
+      "class": "static-analysis (imported source)",
+      "limit": "The API contains write-capable methods and does not map AmdSetup+0x6E6 to an exact runtime command; it was not executed."
+    },
+    {
+      "id": "SMU-S4",
+      "source": "bc250_smu/codec.py",
+      "sha256": "bb747622598b92ff43f10583ef93803bda4d6ae59b2480e74fc2abf6751db116",
+      "lines": [
+        "4-23"
+      ],
+      "observation": "Imported host codec converts mV to/from a VID code and packs large offsets as IEEE float; this is a separate runtime protocol context.",
+      "class": "static-analysis (imported source)",
+      "limit": "Conversion formulas do not establish BIOS NVRAM field encoding or platform acceptance."
+    },
+    {
+      "id": "SMU-S5",
+      "source": "bc250_smu/api_q2.py",
+      "sha256": "a5da57c58230e4be02204efb8791ff49082fe7d4b78890d838c47439c0ee8f8d",
+      "lines": [
+        "10-18",
+        "35-45"
+      ],
+      "observation": "Queue-2 source exposes feature-mask and droop-calibration methods with mV comments; these are write-capable runtime operations.",
+      "class": "static-analysis (imported source)",
+      "limit": "Never execute without separate per-call approval; no AmdSetup field mapping."
+    },
+    {
+      "id": "SMU-S6",
+      "source": "bc250_smu/api.py + transport.py",
+      "sha256": {
+        "api.py": "584b135de0796e2b1e5d593b316457f18b5e5120bb3f8b5307acb551c2721185",
+        "transport.py": "4ec3ba8cc13ff4af8ab2e2e525edd145bb23ffe3c59098231ada36f45b6685a6"
+      },
+      "lines": [
+        "api.py:16-24",
+        "api.py:42-62",
+        "transport.py:13-52"
+      ],
+      "observation": "The helper opens PCI config O_RDWR; read_smu_reg writes the selector at 0xB8 before reading 0xBC, and send_message writes mailbox state. Query method names do not make the hardware operation read-only.",
+      "class": "static-analysis",
+      "limit": "Do not execute this helper under a read-only gate; no hardware operation was performed."
+    },
+    {
+      "id": "SMU-S7",
+      "source": "AmdNbioSmuV10Dxe.mailbox-context.txt",
+      "sha256": "c81b065ee241d336efa5354b38aa44668f3041d3162254152e2563eaf8a4e76c",
+      "lines": [
+        "0x13005-0x130B4",
+        "fcn.00012f34",
+        "fcn.00015090"
+      ],
+      "observation": "Direct disassembly shows Q2 response/argument/command addresses passed through the SMU service helper; the path is write-capable at hardware level and no AmdSetup+0x6E6 data flow is established.",
+      "class": "static-analysis",
+      "limit": "Rizin decompilation has no symbols and this report does not prove runtime execution or voltage-field consumption."
+    },
+    {
+      "id": "SMU-S8",
+      "source": "AmdNbioGfxARIPei.df-window-context.txt",
+      "sha256": "95ce1c7917dd12789e6af168dbbdfa046d0003ec653116e3f276da6ea74b8c68",
+      "lines": [
+        "0x14A35-0x14B1E",
+        "0x14B1F-0x14C0B"
+      ],
+      "observation": "NBIO PEI generic DF helper has direct read, write, and read-modify-write operations through 0x405C/0x4098.",
+      "class": "static-analysis",
+      "limit": "No AmdSetup VDD field data flow or VCN-specific consumer is proven; no hardware operation."
+    },
+    {
+      "id": "SMU-S9",
+      "source": "CbsBasePei-setup-defaults-context.txt",
+      "sha256": "04f27d70a345d06a66dfae3f0af07185f5c742dd1049acd4057d167b9f53db2e",
+      "lines": [
+        "0x18B8-0x19B7",
+        "0x29BC-0x2AD4"
+      ],
+      "observation": "CbsBasePei fcn.000004C0 writes default structure fields: MemoryClockSpeed/UclkDiv1M0=0xFF, FclkDpm=0x0F, VDDCR_VDD control=0/value=0, DF control=0xFF/value=0x3E8, and default power/current values.",
+      "class": "static-analysis",
+      "limit": "This is a default-structure initializer; it does not prove the user NVAR is read, the SMU consumes each field, or memory training applies them."
+    }
+  ],
+  "historical_claim_reconciliation": [
+    {
+      "source": "import/from-windows/Users/kukuruza/bc250-bios/docs/CPU_MEMORY_OVERCLOCK_ANALYSIS.md",
+      "sha256": "050041933ac0efe95399f2e81555b75b275fb3687b8a044772ec9effd4b755ea",
+      "claims": [
+        "VDDCR_VDD offset values are mV and +35/+80/+100 are safe/required",
+        "DF/UCLK/MCLK relationships and post-profile latency results",
+        "AmdMemAm4Pei/training behavior"
+      ],
+      "status": "historical/unverified or contradicted",
+      "correction": "Current IFR map identifies VDDCR_VDD offset as u32 with separate control; no current source proves mV encoding, safe range, or applied setting. Historical runtime logs show UCLK/FCLK 450 in one context and ring failures; no current candidate boot/training proof."
+    },
+    {
+      "source": "import/from-windows/Users/kukuruza/bc250-bios/docs/06-overclock-timings.md",
+      "sha256": "8822293583da761369b50094c77a2c8683478c532ca478bf60991707c82a4940",
+      "claims": [
+        "AmdSetup offsets and runtime SMU feature mapping"
+      ],
+      "status": "historical/static lead",
+      "correction": "Offsets/options corroborate IFR and NVAR bytes, but runtime application and physical units remain unresolved."
+    },
+    {
+      "source": "import/from-windows/Users/kukuruza/bc250-bios/tools/patch-build/build_oc_profiles.py",
+      "sha256": "af5f59a283a5a0c450cbe2e2f0610f8e30bce8b12811ec5d8de7de9d16997ccd",
+      "claims": [
+        "profile values including voltage comments"
+      ],
+      "status": "historical builder reference; rejected as current flash source",
+      "correction": "Its profiles are not used as current baseline or voltage recommendation."
+    },
+    {
+      "source": "import/from-windows/Users/kukuruza/tmp_bc250/recon/cyan_skillfish_ppt.c",
+      "sha256": "9259ad3ff6f660fe97ca7ea68f9b7e5f5d185982f0d3341180bd880442f030f1",
+      "claims": [
+        "host metrics expose voltage/clocks"
+      ],
+      "status": "static source context",
+      "correction": "It supports metric field names/units, but does not prove AmdSetup offset encoding; it maps UCLK and FCLK to MemclkFrequency in this source."
+    }
+  ],
+  "rizin_entry_call_graph": [
+    {
+      "module": "AmdMemAm4Pei",
+      "entry_offset": "0xa8",
+      "entry_size": 14,
+      "function_count": 34,
+      "entry_callrefs": [
+        {
+          "from": "0xa8",
+          "to": "0x6de",
+          "type": "CALL"
+        },
+        {
+          "from": "0xb1",
+          "to": "0x15e",
+          "type": "CODE"
+        }
+      ],
+      "evidence_class": "static-analysis",
+      "caveat": "entry call graph is not a field consumer proof"
+    },
+    {
+      "module": "AmdNbioSmuV10Pei",
+      "entry_offset": "0xb0",
+      "entry_size": 14,
+      "function_count": 90,
+      "entry_callrefs": [
+        {
+          "from": "0xb0",
+          "to": "0x15d0",
+          "type": "CALL"
+        },
+        {
+          "from": "0xb9",
+          "to": "0x15e",
+          "type": "CODE"
+        }
+      ],
+      "evidence_class": "static-analysis",
+      "caveat": "entry call graph is not a field consumer proof"
+    },
+    {
+      "module": "AmdNbioBaseARIPei",
+      "entry_offset": "0xb0",
+      "entry_size": 22,
+      "function_count": 117,
+      "entry_callrefs": [
+        {
+          "from": "0xb1",
+          "to": "0x2bb0",
+          "type": "CALL"
+        },
+        {
+          "from": "0xb6",
+          "to": "0x362f",
+          "type": "CALL"
+        },
+        {
+          "from": "0xbf",
+          "to": "0xcc5",
+          "type": "CALL"
+        }
+      ],
+      "evidence_class": "static-analysis",
+      "caveat": "entry call graph is not a field consumer proof"
+    },
+    {
+      "module": "CbsBasePei",
+      "entry_offset": "0xb0",
+      "entry_size": 11,
+      "function_count": 39,
+      "entry_callrefs": [
+        {
+          "from": "0xb4",
+          "to": "0x480",
+          "type": "CALL"
+        }
+      ],
+      "evidence_class": "static-analysis",
+      "caveat": "entry call graph is not a field consumer proof"
+    },
+    {
+      "module": "AmdNbioGfxARIPei",
+      "entry_offset": "0xa8",
+      "entry_size": 14,
+      "function_count": 78,
+      "entry_callrefs": [
+        {
+          "from": "0xa8",
+          "to": "0xa48",
+          "type": "CALL"
+        },
+        {
+          "from": "0xb1",
+          "to": "0xb6",
+          "type": "CODE"
+        }
+      ],
+      "evidence_class": "static-analysis",
+      "caveat": "entry call graph is not a field consumer proof"
+    },
+    {
+      "module": "AmdNbioPcieARIPei",
+      "entry_offset": "0xa8",
+      "entry_size": 107,
+      "function_count": 121,
+      "entry_callrefs": [
+        {
+          "from": "0xb0",
+          "to": "0x21e8",
+          "type": "CALL"
+        },
+        {
+          "from": "0xba",
+          "to": "0x1a93",
+          "type": "CALL"
+        },
+        {
+          "from": "0xcc",
+          "to": "0x2000",
+          "type": "CALL"
+        },
+        {
+          "from": "0xd6",
+          "to": "0x321",
+          "type": "CALL"
+        },
+        {
+          "from": "0xf9",
+          "to": "0x2000",
+          "type": "CALL"
+        },
+        {
+          "from": "0x106",
+          "to": "0x1a93",
+          "type": "CALL"
+        }
+      ],
+      "evidence_class": "static-analysis",
+      "caveat": "entry call graph is not a field consumer proof"
+    },
+    {
+      "module": "AmdNbioSmuV10Dxe",
+      "entry_offset": "0x102a0",
+      "entry_size": 75,
+      "function_count": 86,
+      "entry_callrefs": [
+        {
+          "from": "0x102b5",
+          "to": "0x102ec",
+          "type": "CALL"
+        },
+        {
+          "from": "0x102c0",
+          "to": "0x1165c",
+          "type": "CALL"
+        },
+        {
+          "from": "0x102d3",
+          "to": "0x10460",
+          "type": "CALL"
+        }
+      ],
+      "evidence_class": "static-analysis",
+      "caveat": "entry call graph is not a field consumer proof"
+    },
+    {
+      "module": "CbsSetupDxe",
+      "entry_offset": "0x102a0",
+      "entry_size": 75,
+      "function_count": 63,
+      "entry_callrefs": [
+        {
+          "from": "0x102b5",
+          "to": "0x102ec",
+          "type": "CALL"
+        },
+        {
+          "from": "0x102c0",
+          "to": "0x10a9c",
+          "type": "CALL"
+        },
+        {
+          "from": "0x102d3",
+          "to": "0x10534",
+          "type": "CALL"
+        }
+      ],
+      "evidence_class": "static-analysis",
+      "caveat": "entry call graph is not a field consumer proof"
+    },
+    {
+      "module": "AmdApcbObrDxe",
+      "entry_offset": "0x102a0",
+      "entry_size": 134,
+      "function_count": 50,
+      "entry_callrefs": [
+        {
+          "from": "0x102a6",
+          "to": "0x10328",
+          "type": "CALL"
+        },
+        {
+          "from": "0x102b2",
+          "to": "0x109e4",
+          "type": "CALL"
+        },
+        {
+          "from": "0x102c6",
+          "to": "0x10b10",
+          "type": "CALL"
+        },
+        {
+          "from": "0x102fe",
+          "to": "0x10a3c",
+          "type": "CALL"
+        },
+        {
+          "from": "0x1030d",
+          "to": "0x10b10",
+          "type": "CALL"
+        },
+        {
+          "from": "0x10319",
+          "to": "0x109e4",
+          "type": "CALL"
+        }
+      ],
+      "evidence_class": "static-analysis",
+      "caveat": "entry call graph is not a field consumer proof"
+    }
+  ]
+}

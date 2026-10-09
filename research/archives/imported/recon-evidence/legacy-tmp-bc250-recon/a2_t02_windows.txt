@@ -1,0 +1,1296 @@
+
+===== prior-session 'verifier @0x12644' region [0x125c0..0x12840) =====
+0x0125c0  strb     r1, [r0]
+0x0125c2  ldr      r1, [sp, #0x18]
+0x0125c4  str      r1, [r0, #8]
+0x0125c6  ldr      r1, [sp, #0x14]
+0x0125c8  str      r7, [r0, #0x10]
+0x0125ca  adds     r1, #0x14
+0x0125cc  str      r1, [r0, #4]
+0x0125ce  ldr      r0, [r5, #0x18]
+0x0125d0  movw     r1, #0x992c
+0x0125d4  movs     r3, #0
+0x0125d6  add      r0, r1
+0x0125d8  bic      r1, r0, #7
+0x0125dc  ldr      r0, [pc, #0x1c]
+0x0125de  svc      #0x51  ; PSP service
+0x0125e0  movs     r1, #1
+0x0125e2  mov      r0, r4
+0x0125e4  svc      #0x63  ; PSP service
+0x0125e6  add      sp, #0x24
+0x0125e8  pop      {r4, r5, r6, r7, pc}
+0x0125ea  movs     r0, r0
+0x0125ec  str      r0, [r5, #4]
+0x0125ee  movs     r0, r4
+0x0125f0  add      sp, #0
+0x0125f2  lsls     r3, r6, #1
+0x0125f4  str      r4, [r4, r0]
+0x0125f6  adds     r1, #0x53
+0x0125f8  str      r0, [r6, #0x48]
+0x0125fa  movs     r0, r4
+0x0125fc  ldr      r3, [pc, #0x384]
+0x0125fe  movs     r0, r4
+0x012600  push.w   {r4, r5, r6, r7, r8, sb, sl, fp, lr}
+0x012604  mov      r4, r1
+0x012606  ldr      r1, [pc, #0x18c]
+0x012608  sub      sp, #0x3c
+0x01260a  ldr.w    lr, [pc, #0x18c]
+0x01260e  mov      r8, r0
+0x012610  mov      r5, r3
+0x012612  movs     r0, #0x41
+0x012614  mov.w    sl, #0
+0x012618  ldr.w    fp, [sp, #0x60]
+0x01261c  cmp      r2, #1
+0x01261e  ldr.w    ip, [r1]
+0x012622  beq      #0x1264a
+0x012624  ldr      r0, [r5, #0x1c]
+0x012626  movw     r1, #0x117
+0x01262a  cmp      r0, #0x40
+0x01262c  bhs      #0x12642
+0x01262e  add.w    r0, ip, r0, lsl #5
+0x012632  add.w    r7, r0, lr
+0x012636  ldrb     r0, [r7]
+0x012638  cmp      r0, #0x20
+0x01263a  bhs      #0x12642
+0x01263c  ldr      r2, [r7, #0x1c]
+0x01263e  cmp      r2, fp
+0x012640  beq      #0x12688
+0x012642  mov      r0, r1
+0x012644  add      sp, #0x3c
+0x012646  pop.w    {r4, r5, r6, r7, r8, sb, sl, fp, pc}
+0x01264a  ldrd     r1, r2, [r4, #0x18]
+0x01264e  ldr.w    sb, [pc, #0x148]
+0x012652  adds.w   r7, sl, r1
+0x012656  movs     r1, #0
+0x012658  adc      r2, r2, #0
+0x01265c  add.w    sb, sb, #0x10
+0x012660  add.w    r3, ip, r1, lsl #5
+0x012664  ldrb.w   r6, [r3, lr]
+0x012668  cmp      r6, #0xff
+0x01266a  beq      #0x12680
+0x01266c  add.w    r6, r3, sb
+0x012670  ldrd     r3, r6, [r6]
+0x012674  eors     r3, r7
+0x012676  eors     r6, r2
+0x012678  orrs     r3, r6
+0x01267a  bne      #0x12680
+0x01267c  mov      r0, r1
+0x01267e  b        #0x12626
+0x012680  adds     r1, r1, #1
+0x012682  cmp      r1, #0x40
+0x012684  blo      #0x12660
+0x012686  b        #0x12626
+0x012688  ldr.w    sb, [pc, #0x110]
+0x01268c  ldr.w    r0, [sb]
+0x012690  svc      #0x5e  ; PSP service
+0x012692  movs     r6, #0
+0x012694  mov      r0, r6
+0x012696  add.w    r1, r8, r0, lsl #5
+0x01269a  ldrb.w   r1, [r1, #0x30]
+0x01269e  cmp      r1, #0xff
+0x0126a0  beq      #0x126c0
+0x0126a2  adds     r0, r0, #1
+0x0126a4  cmp      r0, #0x40
+0x0126a6  blo      #0x12696
+0x0126a8  ldr      r0, [pc, #0xf0]
+0x0126aa  ldr      r0, [r0]
+0x0126ac  svc      #0x5f  ; PSP service
+0x0126ae  cbz      r6, #0x126f0
+0x0126b0  ldr      r0, [r7, #4]
+0x0126b2  cbz      r0, #0x126f6
+0x0126b4  str      r0, [sp, #0x14]
+0x0126b6  mov.w    sb, #7
+0x0126ba  ldr      r0, [r7, #8]
+0x0126bc  str      r0, [sp, #0x18]
+0x0126be  b        #0x126fa
+0x0126c0  add.w    r6, r8, r0, lsl #5
+0x0126c4  ldrb     r0, [r7]
+0x0126c6  adds     r6, #0x14
+0x0126c8  strb     r0, [r6, #0x1c]
+0x0126ca  ldr      r0, [r4]
+0x0126cc  str      r0, [r6]
+0x0126ce  ldr      r0, [r4, #4]
+0x0126d0  str      r0, [r6, #4]
+0x0126d2  ldr      r0, [r4, #0xc]
+0x0126d4  str      r0, [r6, #8]
+0x0126d6  ldr      r0, [r4, #0x10]
+0x0126d8  str      r0, [r6, #0xc]
+0x0126da  ldr      r0, [r4, #0x14]
+0x0126dc  str      r0, [r6, #0x10]
+0x0126de  ldrb.w   r0, [r4, #0x20]
+0x0126e2  strd     r0, sl, [r6, #0x14]
+0x0126e6  strb.w   sl, [r6, #0x1e]
+0x0126ea  movs     r0, #0xff
+0x0126ec  strb     r0, [r6, #0x1d]
+0x0126ee  b        #0x126a8
+0x0126f0  movw     r8, #0x119
+0x0126f4  b        #0x12790
+0x0126f6  mov.w    sb, #0
+0x0126fa  ldr      r0, [r5, #0x24]
+0x0126fc  cbz      r0, #0x1274e
+0x0126fe  ldrb.w   r3, [r4, #0x20]
+0x012702  mov      r2, fp
+0x012704  add.w    r0, r5, #0x24
+0x012708  add.w    r1, r6, #0x1d
+0x01270c  bfi      r2, r3, #0x10, #0x10
+0x012710  mov.w    r3, #-1
+0x012714  svc      #0x8b  ; PSP service
+0x012716  movs.w   r8, r0
+0x01271a  bne      #0x12782
+0x01271c  movs     r2, #0
+0x01271e  ldrb     r0, [r6, #0x1d]
+0x012720  add      r1, sp, #0x38
+0x012722  mov      r3, r2
+0x012724  svc      #0x6d  ; PSP service
+0x012726  movs.w   r8, r0
+0x01272a  bne      #0x12782
+0x01272c  movs     r1, #0
+0x01272e  ldr      r2, [r5, #0x24]
+0x012730  mov      r0, r1
+0x012732  b        #0x12742
+0x012734  add.w    r3, r0, r0, lsl #1
+0x012738  adds     r0, r0, #1
+0x01273a  add.w    r3, r5, r3, lsl #2
+0x01273e  ldr      r3, [r3, #0x34]
+0x012740  add      r1, r3
+0x012742  cmp      r2, r0
+0x012744  bhi      #0x12734
+0x012746  ldr      r2, [sp, #0x38]
+0x012748  movs     r0, #7
+0x01274a  strd     r2, r1, [sp, #0x1c]
+0x01274e  ldrb.w   r1, [r4, #0x20]
+0x012752  orr.w    r0, sb, r0, lsl #4
+0x012756  ldr      r2, [pc, #0x48]
+0x012758  orr      r0, r0, #0x100
+0x01275c  str      r1, [sp, #0x24]
+0x01275e  str      r0, [sp, #0x10]
+0x012760  ldr      r1, [r7, #0xc]
+0x012762  ldrb     r2, [r2]
+0x012764  str      r2, [sp]
+0x012766  movs     r2, #5
+0x012768  strd     sl, r1, [sp, #4]
+0x01276c  str.w    sl, [sp, #0xc]
+0x012770  add      r1, sp, #0x10
+0x012772  ldrb     r0, [r7]
+0x012774  ldr      r3, [r5, #0x20]
+0x012776  bl       #0xe728  ; -> 0xe728 (callers: ['0x108dc', '0x109da', '0x121aa', '0x12776', '0x12d74'])
+0x01277a  movs.w   r8, r0
+0x01277e  beq      #0x12790
+0x012780  cbz      r6, #0x12790
+0x012782  ldr      r4, [pc, #0x18]
+0x012784  ldr      r0, [r4]
+0x012786  svc      #0x5e  ; PSP service
+0x012788  movs     r0, #0xff
+0x01278a  strb     r0, [r6, #0x1c]
+0x01278c  ldr      r0, [r4]
+0x01278e  svc      #0x5f  ; PSP service
+0x012790  mov      r0, r8
+0x012792  b        #0x12644
+0x012794  str      r0, [r0, #8]
+0x012796  movs     r0, r4
+0x012798  stm      r7!, {r6, r7}
+0x01279a  movs     r1, r0
+0x01279c  str      r0, [r5, #0x10]
+0x01279e  movs     r0, r4
+0x0127a0  str      r0, [r5, #4]
+0x0127a2  movs     r0, r4
+0x0127a4  push     {r4, r5, lr}
+0x0127a6  ldr      r3, [pc, #0x50]
+0x0127a8  movs     r4, r0
+0x0127aa  mov.w    r0, #8
+0x0127ae  add.w    r5, r3, #4
+0x0127b2  beq      #0x127d6
+0x0127b4  cmp      r4, #2
+0x0127b6  beq      #0x127d6
+0x0127b8  cmp      r4, #1
+0x0127ba  beq      #0x127c0
+0x0127bc  cmp      r4, #4
+0x0127be  bne      #0x127d4
+0x0127c0  movs     r1, #0
+0x0127c2  mov      r0, r3
+0x0127c4  movs     r2, #4
+0x0127c6  svc      #0x7c  ; PSP service
+0x0127c8  cmp      r0, #0
+0x0127ca  bne      #0x127d4
+0x0127cc  movs     r1, #0
+0x0127ce  movs     r2, #4
+0x0127d0  mov      r0, r5
+0x0127d2  svc      #0xa6  ; PSP service
+0x0127d4  pop      {r4, r5, pc}
+0x0127d6  movs     r1, #3
+0x0127d8  mov      r0, r3
+0x0127da  movs     r2, #4
+0x0127dc  svc      #0x7c  ; PSP service
+0x0127de  cmp      r4, #0
+0x0127e0  bne      #0x127d4
+0x0127e2  cmp      r0, #0
+0x0127e4  bne      #0x127d4
+0x0127e6  ldr      r1, [pc, #0x14]
+0x0127e8  ldrb     r1, [r1]
+0x0127ea  cmp      r1, #0x14
+0x0127ec  beq      #0x127d4
+0x0127ee  cmp      r1, #0x23
+0x0127f0  beq      #0x127d4
+0x0127f2  movs     r1, #4
+0x0127f4  movs     r2, #0
+0x0127f6  b        #0x127d0
+0x0127f8  stm      r7!, {r2, r5}
+0x0127fa  movs     r1, r0
+0x0127fc  str      r2, [r6, #4]
+0x0127fe  movs     r0, r4
+0x012800  b.w      #0x117f8
+0x012804  ldr      r0, [pc, #0x10]
+0x012806  push     {r4, lr}
+0x012808  ldr      r4, [r0]
+0x01280a  bl       #0x11938  ; -> 0x11938 (callers: ['0x118fc', '0x1280a'])
+0x01280e  mov.w    r0, #-0x80000000
+0x012812  str.w    r0, [r4, #0x544]
+0x012816  pop      {r4, pc}
+0x012818  str      r0, [r4, #0xc]
+0x01281a  movs     r0, r4
+0x01281c  ldr      r0, [pc, #0x1fc]
+0x01281e  push.w   {r3, r4, r5, r6, r7, r8, sb, lr}
+0x012822  ldr      r7, [r0]
+0x012824  movs     r5, #0
+0x012826  add.w    r6, r7, #0x718
+0x01282a  add.w    r4, r7, #0x700
+0x01282e  adds     r7, r4, #4
+0x012830  ldr      r0, [r6]
+0x012832  mov.w    r8, #-0x80000000
+0x012836  ubfx     r0, r0, #0x10, #8
+0x01283a  cmp      r0, #0x15
+0x01283c  beq      #0x12898
+0x01283e  bgt      #0x1285e
+
+===== svc 0xF2 cluster head [0xee00..0xf020) =====
+0x00ee00  ldrd     r7, r0, [r0, #0xc]
+0x00ee04  movs     r4, #0
+0x00ee06  mov      r6, r1
+0x00ee08  mov      r8, r0
+0x00ee0a  ldr      r0, [r6, #0x1c]
+0x00ee0c  lsls     r1, r4, #2
+0x00ee0e  lsrs     r0, r1
+0x00ee10  and      r0, r0, #0xf
+0x00ee14  cmp      r0, #5
+0x00ee16  beq      #0xee20
+0x00ee18  cmp      r0, #6
+0x00ee1a  beq      #0xee20
+0x00ee1c  cmp      r0, #7
+0x00ee1e  bne      #0xee46
+0x00ee20  add.w    r0, r6, r4, lsl #3
+0x00ee24  ldrd     r5, r2, [r0, #0x2c]
+0x00ee28  cmp.w    r5, #0x400
+0x00ee2c  bhs      #0xee46
+0x00ee2e  adds     r1, r6, r5
+0x00ee30  adds     r0, r7, r5
+0x00ee32  adds     r1, #0x4c
+0x00ee34  adds     r0, #0x34
+0x00ee36  blx      #0xe0dc
+0x00ee3a  add.w    r1, r7, r4, lsl #3
+0x00ee3e  add.w    r0, r8, r5
+0x00ee42  adds     r0, #0x34
+0x00ee44  str      r0, [r1, #0x10]
+0x00ee46  adds     r4, r4, #1
+0x00ee48  cmp      r4, #4
+0x00ee4a  blo      #0xee0a
+0x00ee4c  ldr      r0, [r6, #0x18]
+0x00ee4e  str      r0, [r7, #8]
+0x00ee50  pop.w    {r4, r5, r6, r7, r8, pc}
+0x00ee54  movs     r0, #0
+0x00ee56  bx       lr
+0x00ee58  movs     r0, #0
+0x00ee5a  bx       lr
+0x00ee5c  push     {r4, r5, lr}
+0x00ee5e  sub      sp, #0x44
+0x00ee60  mov      r4, r0
+0x00ee62  add      r0, sp, #8
+0x00ee64  mov      r5, r1
+0x00ee66  movs     r1, #0x20
+0x00ee68  bl       #0xe28c  ; -> 0xe28c (callers: ['0xe7ac', '0xe84e', '0xee68', '0xee90', '0xeeb6'])
+0x00ee6c  movs     r0, #1
+0x00ee6e  str      r0, [sp, #4]
+0x00ee70  str      r0, [sp]
+0x00ee72  movs     r0, #6
+0x00ee74  mov      r1, sp
+0x00ee76  svc      #0xf2  ; PSP service
+0x00ee78  cmp      r0, #0
+0x00ee7a  bne      #0xee84
+0x00ee7c  ldr      r1, [sp, #0x38]
+0x00ee7e  str      r1, [r4]
+0x00ee80  ldr      r1, [sp, #0x3c]
+0x00ee82  str      r1, [r5]
+0x00ee84  add      sp, #0x44
+0x00ee86  pop      {r4, r5, pc}
+0x00ee88  push     {lr}
+0x00ee8a  sub      sp, #0x7c
+0x00ee8c  movs     r1, #0x20
+0x00ee8e  add      r0, sp, #8
+0x00ee90  bl       #0xe28c  ; -> 0xe28c (callers: ['0xe7ac', '0xe84e', '0xee68', '0xee90', '0xeeb6'])
+0x00ee94  movs     r0, #2
+0x00ee96  str      r0, [sp, #4]
+0x00ee98  movw     r0, #0x105b
+0x00ee9c  str      r0, [sp]
+0x00ee9e  movs     r0, #1
+0x00eea0  mov      r1, sp
+0x00eea2  svc      #0xf2  ; PSP service
+0x00eea4  add      sp, #0x7c
+0x00eea6  pop      {pc}
+0x00eea8  push     {r4, r5, r6, lr}
+0x00eeaa  sub      sp, #0x78
+0x00eeac  mov      r4, r0
+0x00eeae  add      r0, sp, #8
+0x00eeb0  mov      r5, r1
+0x00eeb2  movs     r1, #0x20
+0x00eeb4  mov      r6, r2
+0x00eeb6  bl       #0xe28c  ; -> 0xe28c (callers: ['0xe7ac', '0xe84e', '0xee68', '0xee90', '0xeeb6'])
+0x00eeba  movs     r0, #2
+0x00eebc  str      r0, [sp, #4]
+0x00eebe  movw     r0, #0x1047
+0x00eec2  str      r0, [sp]
+0x00eec4  movs     r0, #1
+0x00eec6  mov      r1, sp
+0x00eec8  strd     r5, r6, [sp, #8]
+0x00eecc  str      r4, [sp, #0x38]
+0x00eece  svc      #0xf2  ; PSP service
+0x00eed0  add      sp, #0x78
+0x00eed2  pop      {r4, r5, r6, pc}
+0x00eed4  push     {r4, lr}
+0x00eed6  sub      sp, #0x78
+0x00eed8  mov      r4, r0
+0x00eeda  movs     r1, #0x20
+0x00eedc  add      r0, sp, #8
+0x00eede  bl       #0xe28c  ; -> 0xe28c (callers: ['0xe7ac', '0xe84e', '0xee68', '0xee90', '0xeeb6'])
+0x00eee2  movs     r0, #2
+0x00eee4  str      r0, [sp, #4]
+0x00eee6  movw     r0, #0x105a
+0x00eeea  str      r0, [sp]
+0x00eeec  movs     r0, #1
+0x00eeee  mov      r1, sp
+0x00eef0  str      r4, [sp, #0x38]
+0x00eef2  svc      #0xf2  ; PSP service
+0x00eef4  add      sp, #0x78
+0x00eef6  pop      {r4, pc}
+0x00eef8  push     {lr}
+0x00eefa  sub      sp, #0x7c
+0x00eefc  movs     r1, #0x20
+0x00eefe  add      r0, sp, #8
+0x00ef00  bl       #0xe28c  ; -> 0xe28c (callers: ['0xe7ac', '0xe84e', '0xee68', '0xee90', '0xeeb6'])
+0x00ef04  movs     r0, #2
+0x00ef06  str      r0, [sp, #4]
+0x00ef08  movw     r0, #0x1032
+0x00ef0c  str      r0, [sp]
+0x00ef0e  movs     r0, #1
+0x00ef10  mov      r1, sp
+0x00ef12  svc      #0xf2  ; PSP service
+0x00ef14  add      sp, #0x7c
+0x00ef16  pop      {pc}
+0x00ef18  push     {lr}
+0x00ef1a  sub      sp, #0x7c
+0x00ef1c  movs     r1, #0x20
+0x00ef1e  add      r0, sp, #8
+0x00ef20  bl       #0xe28c  ; -> 0xe28c (callers: ['0xe7ac', '0xe84e', '0xee68', '0xee90', '0xeeb6'])
+0x00ef24  movs     r0, #2
+0x00ef26  str      r0, [sp, #4]
+0x00ef28  movw     r0, #0x312b
+0x00ef2c  str      r0, [sp]
+0x00ef2e  movs     r0, #1
+0x00ef30  mov      r1, sp
+0x00ef32  svc      #0xf2  ; PSP service
+0x00ef34  add      sp, #0x7c
+0x00ef36  pop      {pc}
+0x00ef38  push     {r4, r5, r6, lr}
+0x00ef3a  sub      sp, #0x78
+0x00ef3c  mov      r4, r0
+0x00ef3e  add      r0, sp, #8
+0x00ef40  mov      r5, r1
+0x00ef42  movs     r1, #0x20
+0x00ef44  mov      r6, r2
+0x00ef46  bl       #0xe28c  ; -> 0xe28c (callers: ['0xe7ac', '0xe84e', '0xee68', '0xee90', '0xeeb6'])
+0x00ef4a  movs     r0, #2
+0x00ef4c  str      r0, [sp, #4]
+0x00ef4e  add      r2, sp, #0x38
+0x00ef50  movw     r0, #0x1059
+0x00ef54  str      r0, [sp]
+0x00ef56  movs     r0, #1
+0x00ef58  mov      r1, sp
+0x00ef5a  stm      r2!, {r4, r5, r6}
+0x00ef5c  svc      #0xf2  ; PSP service
+0x00ef5e  add      sp, #0x78
+0x00ef60  pop      {r4, r5, r6, pc}
+0x00ef62  push     {r4, r5, lr}
+0x00ef64  sub      sp, #0x7c
+0x00ef66  mov      r4, r0
+0x00ef68  add      r0, sp, #8
+0x00ef6a  mov      r5, r1
+0x00ef6c  movs     r1, #0x20
+0x00ef6e  bl       #0xe28c  ; -> 0xe28c (callers: ['0xe7ac', '0xe84e', '0xee68', '0xee90', '0xeeb6'])
+0x00ef72  movs     r0, #2
+0x00ef74  str      r0, [sp, #4]
+0x00ef76  movw     r0, #0x106a
+0x00ef7a  str      r0, [sp]
+0x00ef7c  movw     r0, #0x400
+0x00ef80  mov      r1, sp
+0x00ef82  strd     r4, r0, [sp, #8]
+0x00ef86  strd     r5, r0, [sp, #0x10]
+0x00ef8a  movs     r0, #1
+0x00ef8c  svc      #0xf2  ; PSP service
+0x00ef8e  add      sp, #0x7c
+0x00ef90  pop      {r4, r5, pc}
+0x00ef92  push     {r4, r5, lr}
+0x00ef94  sub      sp, #0x7c
+0x00ef96  mov      r4, r0
+0x00ef98  add      r0, sp, #8
+0x00ef9a  mov      r5, r1
+0x00ef9c  movs     r1, #0x20
+0x00ef9e  bl       #0xe28c  ; -> 0xe28c (callers: ['0xe7ac', '0xe84e', '0xee68', '0xee90', '0xeeb6'])
+0x00efa2  movs     r0, #2
+0x00efa4  str      r0, [sp, #4]
+0x00efa6  movw     r0, #0x100a
+0x00efaa  str      r0, [sp]
+0x00efac  bl       #0x1002c  ; -> 0x1002c (callers: ['0xefac', '0xf006', '0xf12a', '0xf1a8', '0xf1f2'])
+0x00efb0  cmp      r0, #1
+0x00efb2  beq      #0xefc2
+0x00efb4  strd     r4, r5, [sp, #8]
+0x00efb8  movs     r0, #1
+0x00efba  mov      r1, sp
+0x00efbc  svc      #0xf2  ; PSP service
+0x00efbe  add      sp, #0x7c
+0x00efc0  pop      {r4, r5, pc}
+0x00efc2  strd     r4, r5, [sp, #0x38]
+0x00efc6  b        #0xefb8
+0x00efc8  push     {r4, lr}
+0x00efca  sub      sp, #0x78
+0x00efcc  mov      r4, r0
+0x00efce  movs     r1, #0x20
+0x00efd0  add      r0, sp, #8
+0x00efd2  bl       #0xe28c  ; -> 0xe28c (callers: ['0xe7ac', '0xe84e', '0xee68', '0xee90', '0xeeb6'])
+0x00efd6  movs     r0, #2
+0x00efd8  str      r0, [sp, #4]
+0x00efda  movw     r0, #0x3114
+0x00efde  str      r0, [sp]
+0x00efe0  movs     r0, #1
+0x00efe2  mov      r1, sp
+0x00efe4  str      r4, [sp, #0x38]
+0x00efe6  svc      #0xf2  ; PSP service
+0x00efe8  add      sp, #0x78
+0x00efea  pop      {r4, pc}
+0x00efec  push     {r4, r5, lr}
+0x00efee  sub      sp, #0x7c
+0x00eff0  mov      r4, r0
+0x00eff2  add      r0, sp, #8
+0x00eff4  mov      r5, r1
+0x00eff6  movs     r1, #0x20
+0x00eff8  bl       #0xe28c  ; -> 0xe28c (callers: ['0xe7ac', '0xe84e', '0xee68', '0xee90', '0xeeb6'])
+0x00effc  movs     r0, #2
+0x00effe  str      r0, [sp, #4]
+0x00f000  movw     r0, #0x100d
+0x00f004  str      r0, [sp]
+0x00f006  bl       #0x1002c  ; -> 0x1002c (callers: ['0xefac', '0xf006', '0xf12a', '0xf1a8', '0xf1f2'])
+0x00f00a  cmp      r0, #1
+0x00f00c  beq      #0xf01c
+0x00f00e  strd     r4, r5, [sp, #8]
+0x00f012  movs     r0, #1
+0x00f014  mov      r1, sp
+0x00f016  svc      #0xf2  ; PSP service
+0x00f018  add      sp, #0x7c
+0x00f01a  pop      {r4, r5, pc}
+0x00f01c  strd     r4, r5, [sp, #0x38]
+
+===== SMN bridge fns (pool 0x03200400/0x03220050) [0x4040..0x4340) =====
+0x004040  ldr.w    r1, [r2, #0x164]
+0x004044  orrs     r1, r0
+0x004046  str.w    r1, [r2, #0x164]
+0x00404a  pop      {r4, pc}
+0x00404c  ldr.w    r1, [r2, #0x210]
+0x004050  orrs     r1, r0
+0x004052  str.w    r1, [r2, #0x210]
+0x004056  b        #0x4040
+0x004058  bics     r1, r0
+0x00405a  b        #0x403c
+0x00405c  ldr      r1, [pc, #0x28]
+0x00405e  mov.w    r2, #0x10000
+0x004062  str      r2, [r1]
+0x004064  add.w    r2, r0, r0, lsl #3
+0x004068  add.w    r0, r2, r0, lsl #4
+0x00406c  ldr      r2, [pc, #0x18]
+0x00406e  adds     r2, #0x10
+0x004070  str      r0, [r2]
+0x004072  adds     r2, r1, #4
+0x004074  movw     r0, #0x100
+0x004078  str      r0, [r2]
+0x00407a  ldr      r0, [pc, #0x10]
+0x00407c  str      r0, [r1]
+0x00407e  mov.w    r0, #0x10001
+0x004082  str      r0, [r1]
+0x004084  bx       lr
+0x004086  movs     r0, r0
+0x004088  lsls     r0, r0, #0x10
+0x00408a  lsls     r0, r4, #0xc
+0x00408c  lsls     r0, r0, #4
+0x00408e  movs     r1, r0
+0x004090  push.w   {r4, r5, r6, r7, r8, lr}
+0x004094  adds     r1, r0, #1
+0x004096  mov.w    r8, #0
+0x00409a  beq      #0x40b0
+0x00409c  cmp      r0, #0x80
+0x00409e  bhs      #0x40b0
+0x0040a0  ldr      r1, [pc, #0x7c]
+0x0040a2  add.w    r0, r0, r0, lsl #1
+0x0040a6  add.w    r4, r1, r0, lsl #2
+0x0040aa  ldrb     r0, [r4, #2]
+0x0040ac  lsls     r0, r0, #0x1d
+0x0040ae  bpl      #0x40b6
+0x0040b0  movs     r0, #0x21
+0x0040b2  pop.w    {r4, r5, r6, r7, r8, pc}
+0x0040b6  movs     r2, #0xff
+0x0040b8  movs     r1, #8
+0x0040ba  adds     r0, r4, #4
+0x0040bc  bl       #0x668  ; -> 0x668 (callers: ['0x12ce', '0x133e', '0x25fc', '0x2606', '0x40bc'])
+0x0040c0  ldrb     r0, [r4, #3]
+0x0040c2  cmp      r0, #0x86
+0x0040c4  beq      #0x40ca
+0x0040c6  bl       #0x30f8  ; -> 0x30f8 (callers: ['0x395c', '0x40c6'])
+0x0040ca  ldrh     r0, [r4]
+0x0040cc  cmp      r0, #0xff
+0x0040ce  beq      #0x411c
+0x0040d0  ldr      r7, [pc, #0x50]
+0x0040d2  movs     r6, #1
+0x0040d4  uxtb     r5, r0
+0x0040d6  and      r2, r5, #0x1f
+0x0040da  lsrs     r0, r5, #5
+0x0040dc  lsl.w    r1, r6, r2
+0x0040e0  ldrb     r2, [r4, #2]
+0x0040e2  and      r2, r2, #3
+0x0040e6  cmp      r2, #2
+0x0040e8  bne      #0x40f4
+0x0040ea  add.w    r0, r4, r0, lsl #2
+0x0040ee  ldr      r2, [r0, #4]
+0x0040f0  bics     r2, r1
+0x0040f2  str      r2, [r0, #4]
+0x0040f4  mov      r0, r5
+0x0040f6  bl       #0x38f4  ; -> 0x38f4 (callers: ['0x1644', '0x38d0', '0x3d3c', '0x40f6', '0x419c'])
+0x0040fa  add.w    r0, r5, r5, lsl #4
+0x0040fe  add.w    r0, r7, r0, lsl #3
+0x004102  ldrd     r1, r0, [r0, #0x50]
+0x004106  orrs     r1, r0
+0x004108  beq      #0x4110
+0x00410a  mov      r0, r5
+0x00410c  bl       #0x3a00  ; -> 0x3a00 (callers: ['0x164a', '0x3d42', '0x410c', '0x4152', '0x5268'])
+0x004110  mov      r0, r5
+0x004112  bl       #0xb68  ; -> 0xb68 (callers: ['0x1650', '0x2868', '0x38d6', '0x4112', '0x41a2'])
+0x004116  ldrh     r0, [r4]
+0x004118  cmp      r0, #0xff
+0x00411a  bne      #0x40d4
+0x00411c  mov      r0, r8
+0x00411e  b        #0x40b2
+0x004120  str      r0, [r5, #0x20]
+0x004122  movs     r0, r0
+0x004124  ldr      r0, [r6, #0x28]
+0x004126  movs     r0, r0
+0x004128  push.w   {r4, r5, r6, r7, r8, lr}
+0x00412c  mov.w    r8, #0
+0x004130  mov      r4, r0
+0x004132  cmp      r0, #0x30
+0x004134  mov      r6, r8
+0x004136  blo      #0x413e
+0x004138  movs     r0, #0x24
+0x00413a  pop.w    {r4, r5, r6, r7, r8, pc}
+0x00413e  ldr      r7, [pc, #0x68]
+0x004140  add.w    r0, r4, r4, lsl #4
+0x004144  add.w    r5, r7, r0, lsl #3
+0x004148  ldrd     r0, r1, [r5, #0x50]
+0x00414c  orrs     r0, r1
+0x00414e  mov      r0, r4
+0x004150  beq      #0x4158
+0x004152  bl       #0x3a00  ; -> 0x3a00 (callers: ['0x164a', '0x3d42', '0x410c', '0x4152', '0x5268'])
+0x004156  b        #0x41a0
+0x004158  bl       #0x257c  ; -> 0x257c (callers: ['0x4158', '0x526e'])
+0x00415c  movs     r2, #1
+0x00415e  cbz      r0, #0x4192
+0x004160  movs     r3, #0xe
+0x004162  mov      r1, r4
+0x004164  b        #0x4180
+0x004166  cmp.w    r3, r0, lsr #12
+0x00416a  uxtb     r1, r0
+0x00416c  bne      #0x4180
+0x00416e  add.w    r0, r1, r1, lsl #1
+0x004172  ldr      r1, [pc, #0x38]
+0x004174  add.w    r0, r1, r0, lsl #2
+0x004178  ldrb     r0, [r0, #2]
+0x00417a  lsls     r0, r0, #0x1d
+0x00417c  bmi      #0x4192
+0x00417e  b        #0x4190
+0x004180  add.w    r0, r1, r1, lsl #4
+0x004184  add.w    r0, r7, r0, lsl #3
+0x004188  ldrh.w   r0, [r0, #0x7a]
+0x00418c  cmp      r0, #0xff
+0x00418e  bne      #0x4166
+0x004190  cbz      r6, #0x419a
+0x004192  strb.w   r2, [r5, #0x4d]
+0x004196  mov      r0, r8
+0x004198  b        #0x413a
+0x00419a  mov      r0, r4
+0x00419c  bl       #0x38f4  ; -> 0x38f4 (callers: ['0x1644', '0x38d0', '0x3d3c', '0x40f6', '0x419c'])
+0x0041a0  mov      r0, r4
+0x0041a2  bl       #0xb68  ; -> 0xb68 (callers: ['0x1650', '0x2868', '0x38d6', '0x4112', '0x41a2'])
+0x0041a6  b        #0x4196
+0x0041a8  ldr      r0, [r6, #0x28]
+0x0041aa  movs     r0, r0
+0x0041ac  str      r0, [r5, #0x20]
+0x0041ae  movs     r0, r0
+0x0041b0  push     {r4, lr}
+0x0041b2  ldr      r4, [pc, #0x40]
+0x0041b4  movs     r3, #0xa
+0x0041b6  cmp      r0, r4
+0x0041b8  blo      #0x41cc
+0x0041ba  ldr      r4, [pc, #0x38]
+0x0041bc  adds     r4, #0x44
+0x0041be  cmp      r0, r4
+0x0041c0  bhi      #0x41cc
+0x0041c2  movs     r3, #0
+0x0041c4  cbz      r2, #0x41ec
+0x0041c6  ldr      r0, [r0]
+0x0041c8  str      r0, [r1]
+0x0041ca  b        #0x41ee
+0x0041cc  ldr      r4, [pc, #0x28]
+0x0041ce  cmp      r0, r4
+0x0041d0  blo      #0x41da
+0x0041d2  ldr      r4, [pc, #0x24]
+0x0041d4  adds     r4, #0xc4
+0x0041d6  cmp      r0, r4
+0x0041d8  bls      #0x41c2
+0x0041da  ldr      r4, [pc, #0x1c]
+0x0041dc  adds     r4, #0x10
+0x0041de  cmp      r0, r4
+0x0041e0  blo      #0x41ee
+0x0041e2  ldr      r4, [pc, #0x14]
+0x0041e4  adds     r4, #0xac
+0x0041e6  cmp      r0, r4
+0x0041e8  bls      #0x41c2
+0x0041ea  b        #0x41ee
+0x0041ec  str      r1, [r0]
+0x0041ee  mov      r0, r3
+0x0041f0  pop      {r4, pc}
+0x0041f2  movs     r0, r0
+0x0041f4  lsls     r0, r1, #0x11
+0x0041f6  lsls     r0, r4, #0xc
+0x0041f8  lsls     r0, r0, #8
+0x0041fa  lsls     r0, r4, #0xc
+0x0041fc  push     {r4, r5, r6, lr}
+0x0041fe  ldr      r3, [pc, #0x44]
+0x004200  mov      r4, r0
+0x004202  movs     r0, #1
+0x004204  add.w    r2, r3, r0, lsl #2
+0x004208  ldrh     r5, [r2, #2]
+0x00420a  cbnz     r5, #0x4218
+0x00420c  cmp      r1, #1
+0x00420e  bls      #0x4224
+0x004210  cmp      r0, #0x1f
+0x004212  beq      #0x421e
+0x004214  ldrh     r5, [r2, #6]
+0x004216  cbz      r5, #0x4224
+0x004218  adds     r0, r0, #1
+0x00421a  cmp      r0, #0x20
+0x00421c  blt      #0x4204
+0x00421e  mov.w    r0, #-1
+0x004222  pop      {r4, r5, r6, pc}
+0x004224  add.w    r6, r3, r0, lsl #2
+0x004228  movs     r5, #1
+0x00422a  strh     r5, [r6, #2]
+0x00422c  lsrs     r6, r4, #0x10
+0x00422e  cmp      r1, #1
+0x004230  strh.w   r6, [r3, r0, lsl #2]
+0x004234  bls      #0x4222
+0x004236  add.w    r4, r4, #0x100000
+0x00423a  strh     r5, [r2, #6]
+0x00423c  lsrs     r1, r4, #0x10
+0x00423e  strh     r1, [r2, #4]
+0x004240  pop      {r4, r5, r6, pc}
+0x004242  movs     r0, r0
+0x004244  strh     r0, [r6, #0x34]
+0x004246  movs     r0, r0
+0x004248  push     {r4, r5, r6, r7, lr}
+0x00424a  mov      r5, r0
+0x00424c  ldr      r4, [pc, #0x38]
+0x00424e  movs     r0, #1
+0x004250  subs     r7, r0, #2
+0x004252  add.w    r6, r5, #0x100000
+0x004256  add.w    r2, r4, r0, lsl #2
+0x00425a  ldrh     r3, [r2, #2]
+0x00425c  cbz      r3, #0x427c
+0x00425e  ldrh.w   r3, [r4, r0, lsl #2]
+0x004262  cmp.w    r3, r5, lsr #16
+0x004266  bne      #0x427c
+0x004268  cmp      r1, #1
+0x00426a  bls      #0x4284
+0x00426c  cmp      r0, #0x1f
+0x00426e  beq      #0x4282
+0x004270  ldrh     r3, [r2, #6]
+0x004272  cbz      r3, #0x427c
+0x004274  ldrh     r2, [r2, #4]
+0x004276  cmp.w    r2, r6, lsr #16
+0x00427a  beq      #0x4284
+0x00427c  adds     r0, r0, #1
+0x00427e  cmp      r0, #0x20
+0x004280  blt      #0x4256
+0x004282  mov      r0, r7
+0x004284  pop      {r4, r5, r6, r7, pc}
+0x004286  movs     r0, r0
+0x004288  strh     r0, [r6, #0x34]
+0x00428a  movs     r0, r0
+0x00428c  ldr      r0, [pc, #4]
+0x00428e  movs     r1, #0x80
+0x004290  b.w      #0x678
+0x004294  strh     r0, [r6, #0x34]
+0x004296  movs     r0, r0
+0x004298  cmp      r0, #0x20
+0x00429a  bhs      #0x42ac
+0x00429c  ldr      r1, [pc, #0x10]
+0x00429e  add.w    r1, r1, r0, lsl #2
+0x0042a2  ldrh     r0, [r1, #2]
+0x0042a4  cmp      r0, #0
+0x0042a6  beq      #0x42ac
+0x0042a8  subs     r0, r0, #1
+0x0042aa  strh     r0, [r1, #2]
+0x0042ac  bx       lr
+0x0042ae  movs     r0, r0
+0x0042b0  strh     r0, [r6, #0x34]
+0x0042b2  movs     r0, r0
+0x0042b4  push     {r4, r5, lr}
+0x0042b6  ldr      r5, [pc, #0x1c]
+0x0042b8  movs     r4, #0
+0x0042ba  add.w    r0, r5, r4, lsl #2
+0x0042be  ldrh     r0, [r0, #2]
+0x0042c0  cbz      r0, #0x42cc
+0x0042c2  movs     r2, #0
+0x0042c4  mov      r0, r4
+0x0042c6  mov      r1, r2
+0x0042c8  bl       #0x42d8  ; -> 0x42d8 (callers: ['0x2f98', '0x2fa6', '0x3010', '0x42c8'])
+0x0042cc  adds     r4, r4, #1
+0x0042ce  cmp      r4, #0x20
+0x0042d0  blo      #0x42ba
+0x0042d2  pop      {r4, r5, pc}
+0x0042d4  strh     r0, [r6, #0x34]
+0x0042d6  movs     r0, r0
+0x0042d8  cbz      r1, #0x42e2
+0x0042da  and      r1, r1, #0x3f
+0x0042de  orr      r1, r1, #0xc0
+0x0042e2  ldr      r2, [pc, #0x44]
+0x0042e4  str.w    r1, [r2, r0, lsl #2]
+0x0042e8  ldr      r2, [pc, #0x40]
+0x0042ea  add.w    r1, r2, r0, lsl #2
+0x0042ee  ldrh     r1, [r1, #2]
+0x0042f0  cbnz     r1, #0x42f8
+0x0042f2  movs     r1, #0
+0x0042f4  strh.w   r1, [r2, r0, lsl #2]
+0x0042f8  ldr      r3, [pc, #0x2c]
+0x0042fa  lsrs     r1, r0, #1
+0x0042fc  ldrh.w   r2, [r2, r0, lsl #2]
+0x004300  subs     r3, #0x50
+0x004302  add.w    r1, r3, r1, lsl #2
+0x004306  ldr      r3, [pc, #0x28]
+0x004308  and.w    r2, r3, r2, lsl #16
+0x00430c  lsrs     r2, r2, #4
+0x00430e  lsls     r0, r0, #0x1f
+0x004310  ldr      r0, [r1]
+0x004312  beq      #0x431a
+0x004314  uxtah    r0, r2, r0
+0x004318  b        #0x4322
+0x00431a  bfc      r0, #0, #0x10
+0x00431e  add.w    r0, r0, r2, lsr #16
+0x004322  str      r0, [r1]
+0x004324  bx       lr
+0x004326  movs     r0, r0
+0x004328  lsls     r0, r2, #1
+0x00432a  lsls     r2, r4, #0xc
+0x00432c  strh     r0, [r6, #0x34]
+0x00432e  movs     r0, r0
+0x004330  movs     r0, r0
+0x004332  vsli.32  d27, d24, #0x10
+0x004336  movs     r4, #1
+0x004338  mov      r3, r1
+0x00433a  mov      r2, r0
+0x00433c  mov      r1, sp
+0x00433e  movs     r0, #0
+
+===== pool 0x032001f0 @0x57c8 [0x5700..0x5840) =====
+0x005702  add      r0, r1
+0x005704  lsrs     r2, r2, #0x1a
+0x005706  lsrs     r3, r0, #0x1a
+0x005708  mov      r0, r2
+0x00570a  push     {r4, lr}
+0x00570c  movs     r4, #0
+0x00570e  bl       #0x5114  ; -> 0x5114 (callers: ['0x570e', '0x5718'])
+0x005712  cmp      r3, r2
+0x005714  beq      #0x571c
+0x005716  mov      r0, r3
+0x005718  bl       #0x5114  ; -> 0x5114 (callers: ['0x570e', '0x5718'])
+0x00571c  mov      r0, r4
+0x00571e  pop      {r4, pc}
+0x005720  sub.w    r2, r0, #0x4000000
+0x005724  push     {r4, lr}
+0x005726  movs     r4, #0
+0x005728  lsrs     r2, r2, #0x1a
+0x00572a  cmp      r2, #0x1f
+0x00572c  bge      #0x5736
+0x00572e  pop.w    {r4, lr}
+0x005732  b.w      #0x56f8
+0x005736  add      r0, r1
+0x005738  mvn      r1, #0x4000000
+0x00573c  add      r0, r1
+0x00573e  subs     r2, #0x1f
+0x005740  lsrs     r3, r0, #0x1a
+0x005742  mov      r0, r2
+0x005744  subs     r3, #0x1f
+0x005746  bl       #0x3228  ; -> 0x3228 (callers: ['0x5746', '0x5750'])
+0x00574a  cmp      r3, r2
+0x00574c  beq      #0x5754
+0x00574e  mov      r0, r3
+0x005750  bl       #0x3228  ; -> 0x3228 (callers: ['0x5746', '0x5750'])
+0x005754  mov      r0, r4
+0x005756  pop      {r4, pc}
+0x005758  cmp      r0, #0x81
+0x00575a  mov.w    r2, #0x3200000
+0x00575e  beq      #0x5770
+0x005760  cmp      r0, #0x82
+0x005762  beq      #0x5770
+0x005764  cmp      r0, #0x83
+0x005766  beq      #0x5770
+0x005768  cmp      r0, #0x84
+0x00576a  beq      #0x5770
+0x00576c  cmp      r0, #0x85
+0x00576e  bne      #0x5772
+0x005770  movs     r0, #0x15
+0x005772  movs     r1, #1
+0x005774  and      r3, r0, #0x1f
+0x005778  lsls     r1, r3
+0x00577a  lsrs     r0, r0, #5
+0x00577c  add.w    r0, r2, r0, lsl #2
+0x005780  ldr.w    r2, [r0, #0x200]
+0x005784  orrs     r2, r1
+0x005786  str.w    r2, [r0, #0x200]
+0x00578a  bx       lr
+0x00578c  push     {r4, lr}
+0x00578e  mov      r4, r0
+0x005790  bl       #0x2284  ; -> 0x2284 (callers: ['0x4406', '0x5790'])
+0x005794  ldr      r2, [pc, #0x24]
+0x005796  cmp      r4, #2
+0x005798  beq      #0x57aa
+0x00579a  ldr      r1, [r2]
+0x00579c  subs     r0, r0, r1
+0x00579e  ldr      r1, [pc, #0x20]
+0x0057a0  ldr      r2, [r1]
+0x0057a2  adds     r0, r0, r2
+0x0057a4  str      r0, [r1]
+0x0057a6  beq      #0x57b0
+0x0057a8  b        #0x57b4
+0x0057aa  strd     r0, r1, [r2]
+0x0057ae  pop      {r4, pc}
+0x0057b0  movs     r0, #1
+0x0057b2  str      r0, [r1]
+0x0057b4  ldr      r1, [pc, #0xc]
+0x0057b6  str      r0, [r1]
+0x0057b8  pop      {r4, pc}
+0x0057ba  movs     r0, r0
+0x0057bc  str      r0, [r5, #4]
+0x0057be  movs     r0, r0
+0x0057c0  str      r0, [r6, #4]
+0x0057c2  movs     r0, r0
+0x0057c4  lsrs     r4, r0, #9
+0x0057c6  lsls     r1, r0, #0xc
+0x0057c8  ldr      r1, [pc, #0x38]
+0x0057ca  push     {r4, r5, lr}
+0x0057cc  ldr      r0, [r1]
+0x0057ce  ldr      r2, [r1, #4]
+0x0057d0  mov.w    r1, #0
+0x0057d4  adds     r0, r1, r0
+0x0057d6  adcs     r2, r1
+0x0057d8  movs     r1, #0xa8
+0x0057da  movs     r4, #0
+0x0057dc  umull    r3, r5, r0, r1
+0x0057e0  mla      r1, r2, r1, r5
+0x0057e4  mla      r0, r0, r4, r1
+0x0057e8  lsrs     r2, r3, #0x16
+0x0057ea  lsrs     r1, r0, #0x16
+0x0057ec  orr.w    r2, r2, r0, lsl #10
+0x0057f0  ldr      r0, [pc, #0x14]
+0x0057f2  ldrd     r3, r0, [r0]
+0x0057f6  adds     r2, r2, r3
+0x0057f8  adcs     r1, r0
+0x0057fa  ldr      r0, [pc, #0x10]
+0x0057fc  strd     r2, r1, [r0]
+0x005800  pop      {r4, r5, pc}
+0x005802  movs     r0, r0
+0x005804  lsls     r0, r6, #7
+0x005806  lsls     r0, r4, #0xc
+0x005808  str      r0, [r1, #4]
+0x00580a  movs     r0, r0
+0x00580c  str      r0, [r4, #8]
+0x00580e  movs     r0, r0
+0x005810  push     {r4, r5, r6, r7, lr}
+0x005812  adds     r5, r0, r2
+0x005814  adc      r4, r1, #0
+0x005818  subs     r2, r5, r0
+0x00581a  sbcs.w   r2, r4, r1
+0x00581e  blo      #0x5850
+0x005820  lsls     r2, r3, #0x1c
+0x005822  bpl      #0x5848
+0x005824  ldr      r6, [pc, #0x30]
+0x005826  ldrd     r3, r2, [r6, #8]
+0x00582a  orrs.w   r7, r3, r2
+0x00582e  beq      #0x5848
+0x005830  subs     r5, r3, r5
+0x005832  sbcs.w   r4, r2, r4
+0x005836  bhs      #0x5848
+0x005838  ldr      r4, [r6]
+0x00583a  adds     r3, r3, r4
+0x00583c  adc      r2, r2, #0
+
+===== pool 0x032001f0 @0x2284 [0x2200..0x2320) =====
+0x002200  mov      r7, r8
+0x002202  add.w    r4, r0, r6, lsl #4
+0x002206  ldr.w    r0, [r8]
+0x00220a  add.w    r2, r0, r4, lsl #2
+0x00220e  ldrb     r1, [r2, #3]
+0x002210  ldr      r0, [r2, #8]
+0x002212  cmp      r1, #8
+0x002214  bhs      #0x2220
+0x002216  adds     r1, r1, #1
+0x002218  uxtb     r1, r1
+0x00221a  strb     r1, [r2, #3]
+0x00221c  bl       #0x28b0  ; -> 0x28b0 (callers: ['0x221c', '0x3c68'])
+0x002220  ldr      r0, [r7]
+0x002222  ldr      r2, [r5, #0xc]
+0x002224  add.w    r0, r0, r4, lsl #2
+0x002228  lsrs     r3, r2, #0xc
+0x00222a  ldrb     r1, [r0, #3]
+0x00222c  ldr      r0, [r0, #0x58]
+0x00222e  subs     r4, r1, #1
+0x002230  rsb      r1, r2, r1, lsl #20
+0x002234  ldr      r2, [pc, #0x48]
+0x002236  add.w    r0, r0, r4, lsl #10
+0x00223a  adds     r4, r1, r2
+0x00223c  movs     r1, #0x73
+0x00223e  str      r1, [sp]
+0x002240  ubfx     r1, r4, #0, #0x14
+0x002244  ldr      r2, [r5, #8]
+0x002246  bl       #0x294c  ; -> 0x294c (callers: ['0x2246', '0x29fe', '0x2be6', '0x2c22', '0x35be'])
+0x00224a  mov      r7, r0
+0x00224c  bl       #0x24e0  ; -> 0x24e0 (callers: ['0x21f8', '0x224c', '0x2426', '0x2714', '0x272c'])
+0x002250  cbz      r7, #0x2262
+0x002252  b        #0x2270
+0x002254  b        #0x2258
+0x002256  b        #0x225e
+0x002258  add.w    r5, r7, r4, lsl #5
+0x00225c  b        #0x21f6
+0x00225e  movs     r0, #8
+0x002260  b        #0x21d2
+0x002262  strb     r6, [r5]
+0x002264  str      r4, [r5, #4]
+0x002266  str.w    r4, [sl]
+0x00226a  ldr      r1, [r5, #0xc]
+0x00226c  str.w    r1, [sb]
+0x002270  mov      r0, r7
+0x002272  b        #0x21d2
+0x002274  str      r0, [r2]
+0x002276  movs     r0, r0
+0x002278  str      r0, [r7, #4]
+0x00227a  movs     r0, r0
+0x00227c  str      r4, [r2, #4]
+0x00227e  movs     r0, r0
+0x002280  and      r0, r0, #0x3f
+0x002284  ldr      r1, [pc, #0x24]
+0x002286  push     {r4, r5, lr}
+0x002288  ldr      r0, [r1]
+0x00228a  ldr      r2, [r1, #4]
+0x00228c  mov.w    r3, #0
+0x002290  adds     r0, r3, r0
+0x002292  movs     r1, #0xa4
+0x002294  adcs     r2, r3
+0x002296  umull    r4, r5, r0, r1
+0x00229a  mla      r1, r2, r1, r5
+0x00229e  mla      r1, r0, r3, r1
+0x0022a2  lsrs     r0, r4, #0xc
+0x0022a4  orr.w    r0, r0, r1, lsl #20
+0x0022a8  lsrs     r1, r1, #0xc
+0x0022aa  pop      {r4, r5, pc}
+0x0022ac  lsls     r0, r6, #7
+0x0022ae  lsls     r0, r4, #0xc
+0x0022b0  ldr      r0, [pc, #4]
+0x0022b2  ldr      r0, [r0, #4]
+0x0022b4  ldr      r0, [r0, #0xc]
+0x0022b6  bx       lr
+0x0022b8  str      r0, [r0, #0x10]
+0x0022ba  movs     r0, r0
+0x0022bc  mov      r3, r1
+0x0022be  mov      r2, r0
+0x0022c0  push     {r4, lr}
+0x0022c2  bl       #0x1724  ; -> 0x1724 (callers: ['0xcbe', '0x18b0', '0x19a6', '0x20d4', '0x22c2'])
+0x0022c6  movs     r4, r0
+0x0022c8  bne      #0x22e6
+0x0022ca  ldr      r1, [pc, #0x1c]
+0x0022cc  rsb      r0, r2, r2, lsl #3
+0x0022d0  add.w    r0, r0, r2, lsl #4
+0x0022d4  movs     r2, #0x10
+0x0022d6  ldr      r1, [r1]
+0x0022d8  add.w    r1, r1, r0, lsl #2
+0x0022dc  mov      r0, r3
+0x0022de  adds     r1, #0x48
+0x0022e0  blx      #0x470
+0x0022e4  mov      r0, r4
+0x0022e6  pop      {r4, pc}
+0x0022e8  str      r4, [r2, #4]
+0x0022ea  movs     r0, r0
+0x0022ec  mov      r1, r0
+0x0022ee  movs     r0, #0
+0x0022f0  lsls     r2, r1, #0x1f
+0x0022f2  beq      #0x22f6
+0x0022f4  movs     r0, #2
+0x0022f6  lsls     r2, r1, #0x1c
+0x0022f8  bpl      #0x22fe
+0x0022fa  orr      r0, r0, #0x2000000
+0x0022fe  lsls     r2, r1, #0x1b
+0x002300  bpl      #0x2306
+0x002302  orr      r0, r0, #8
+0x002306  lsls     r1, r1, #0x1a
+0x002308  bpl      #0x230e
+0x00230a  orr      r0, r0, #0x10
+0x00230e  bx       lr
+0x002310  bx       lr
+0x002312  movs     r0, r0
+0x002314  ldr      r2, [pc, #0x18]
+0x002316  cbz      r0, #0x2326
+0x002318  movs     r0, #1
+0x00231a  strb     r0, [r2]
+0x00231c  movw     r0, #0x3e8
+
+===== pool 0x03230000 @0x50b0 [0x4fc0..0x51e0) =====
+0x004fc0  push.w   {r4, r5, r6, r7, r8, lr}
+0x004fc4  mov      r6, r0
+0x004fc6  ldr      r0, [pc, #0x44]
+0x004fc8  movs     r4, #1
+0x004fca  mov      r7, r1
+0x004fcc  mov      r8, r2
+0x004fce  add.w    r5, r0, r4, lsl #4
+0x004fd2  ldr      r1, [r5]
+0x004fd4  cbnz     r1, #0x4fe2
+0x004fd6  cmp      r7, r6
+0x004fd8  beq      #0x4ff0
+0x004fda  cmp      r4, #0x1e
+0x004fdc  beq      #0x4fe8
+0x004fde  ldr      r1, [r5, #0x10]
+0x004fe0  cbz      r1, #0x4ff0
+0x004fe2  adds     r4, r4, #1
+0x004fe4  cmp      r4, #0x1f
+0x004fe6  blt      #0x4fce
+0x004fe8  mov.w    r0, #-1
+0x004fec  pop.w    {r4, r5, r6, r7, r8, pc}
+0x004ff0  mov      r1, r6
+0x004ff2  mov      r0, r5
+0x004ff4  bl       #0x5010  ; -> 0x5010 (callers: ['0x4ff4', '0x5004'])
+0x004ff8  cmp      r7, r6
+0x004ffa  beq      #0x5008
+0x004ffc  add.w    r0, r5, #0x10
+0x005000  mov      r2, r8
+0x005002  mov      r1, r7
+0x005004  bl       #0x5010  ; -> 0x5010 (callers: ['0x4ff4', '0x5004'])
+0x005008  mov      r0, r4
+0x00500a  b        #0x4fec
+0x00500c  strh     r0, [r6, #0x38]
+0x00500e  movs     r0, r0
+0x005010  movs     r3, #1
+0x005012  strd     r3, r1, [r0]
+0x005016  ldr      r1, [pc, #8]
+0x005018  strd     r1, r2, [r0, #8]
+0x00501c  bx       lr
+0x00501e  movs     r0, r0
+0x005020  movs     r3, r0
+0x005022  stm      r0!, {r7}
+0x005024  sub.w    r2, r0, #0x4000000
+0x005028  push     {r4, lr}
+0x00502a  lsrs     r2, r2, #0x1a
+0x00502c  cmp      r2, #0x1f
+0x00502e  bhs      #0x5058
+0x005030  ldr      r3, [pc, #0x28]
+0x005032  add.w    r2, r3, r2, lsl #4
+0x005036  ldr      r3, [r2]
+0x005038  cbz      r3, #0x5058
+0x00503a  ldr      r2, [r2, #4]
+0x00503c  movs     r3, #0
+0x00503e  bic      r0, r0, #0xfc000000
+0x005042  lsls     r3, r3, #0x1a
+0x005044  orr.w    r3, r3, r2, lsr #6
+0x005048  lsls     r2, r2, #0x1a
+0x00504a  adds     r0, r2, r0
+0x00504c  adc      r3, r3, #0
+0x005050  strd     r0, r3, [r1]
+0x005054  movs     r0, #0
+0x005056  pop      {r4, pc}
+0x005058  movs     r0, #0xa
+0x00505a  pop      {r4, pc}
+0x00505c  strh     r0, [r6, #0x38]
+0x00505e  movs     r0, r0
+0x005060  push     {r4, r5, r6, lr}
+0x005062  ldr      r5, [pc, #0x40]
+0x005064  mov      r4, r0
+0x005066  movs     r0, #1
+0x005068  add.w    r3, r5, r0, lsl #4
+0x00506c  ldr      r6, [r3]
+0x00506e  cbz      r6, #0x5096
+0x005070  ldr      r6, [r3, #4]
+0x005072  cmp      r6, r4
+0x005074  bne      #0x5096
+0x005076  ldr      r6, [r3, #0xc]
+0x005078  cmp      r6, r2
+0x00507a  bne      #0x5096
+0x00507c  cmp      r1, r4
+0x00507e  beq      #0x50a0
+0x005080  adds     r6, r0, #1
+0x005082  cmp      r6, #0x1f
+0x005084  bge      #0x509c
+0x005086  ldr      r6, [r3, #0x10]
+0x005088  cbz      r6, #0x5096
+0x00508a  ldr      r6, [r3, #0x14]
+0x00508c  cmp      r6, r1
+0x00508e  bne      #0x5096
+0x005090  ldr      r3, [r3, #0x1c]
+0x005092  cmp      r3, r2
+0x005094  beq      #0x50a0
+0x005096  adds     r0, r0, #1
+0x005098  cmp      r0, #0x1f
+0x00509a  blt      #0x5068
+0x00509c  mov.w    r0, #-1
+0x0050a0  pop      {r4, r5, r6, pc}
+0x0050a2  movs     r0, r0
+0x0050a4  strh     r0, [r6, #0x38]
+0x0050a6  movs     r0, r0
+0x0050a8  push     {r4, r5, r6, lr}
+0x0050aa  ldr      r4, [pc, #0x54]
+0x0050ac  movw     r1, #0x1f0
+0x0050b0  ldr      r5, [pc, #0x48]
+0x0050b2  mov      r0, r4
+0x0050b4  bl       #0x6bc  ; -> 0x6bc (callers: ['0xd28', '0xd34', '0x18dc', '0x19ee', '0x241e'])
+0x0050b8  ldr      r0, [pc, #0x48]
+0x0050ba  movs     r1, #1
+0x0050bc  ldr      r2, [pc, #0x4c]
+0x0050be  ldr      r0, [r0]
+0x0050c0  ldr.w    r0, [r0, #0x23c]
+0x0050c4  str      r1, [r4]
+0x0050c6  ldr      r1, [r5]
+0x0050c8  bic      r0, r0, #0xfc000000
+0x0050cc  str      r1, [r4, #4]
+0x0050ce  movs     r1, #4
+0x0050d0  str      r1, [r4, #0xc]
+0x0050d2  ldr      r1, [pc, #0x34]
+0x0050d4  str      r1, [r4, #8]
+0x0050d6  str.w    r1, [r5, #0x26c]
+0x0050da  add.w    r1, r0, #0x4000000
+0x0050de  str      r1, [r2]
+0x0050e0  movs     r2, #0
+0x0050e2  ldr      r1, [r4, #4]
+0x0050e4  lsls     r2, r2, #0x1a
+0x0050e6  lsls     r3, r1, #0x1a
+0x0050e8  adds     r3, r3, r0
+0x0050ea  ldr      r0, [pc, #0x24]
+0x0050ec  orr.w    r2, r2, r1, lsr #6
+0x0050f0  adc      r2, r2, #0
+0x0050f4  strd     r3, r2, [r0, #0x10]
+0x0050f8  pop      {r4, r5, r6, pc}
+0x0050fa  movs     r0, r0
+0x0050fc  movs     r0, r0
+0x0050fe  lsls     r3, r4, #0xc
+0x005100  strh     r0, [r6, #0x38]
+0x005102  movs     r0, r0
+0x005104  str      r0, [r6]
+0x005106  movs     r0, r0
+0x005108  strh     r0, [r0]
+0x00510a  stm      r0!, {r7}
+0x00510c  str      r4, [r3]
+0x00510e  movs     r0, r0
+0x005110  str      r0, [r5, #0xc]
+0x005112  movs     r0, r0
+0x005114  subs     r1, r0, #1
+0x005116  cmp      r1, #0x1e
+0x005118  bhs      #0x512a
+0x00511a  ldr      r1, [pc, #0x10]
+0x00511c  add.w    r1, r1, r0, lsl #4
+0x005120  ldr      r0, [r1]
+0x005122  cmp      r0, #0
+0x005124  beq      #0x512a
+0x005126  subs     r0, r0, #1
+0x005128  str      r0, [r1]
+0x00512a  bx       lr
+0x00512c  strh     r0, [r6, #0x38]
+0x00512e  movs     r0, r0
+0x005130  push     {r4, r5, lr}
+0x005132  ldr      r0, [pc, #0x20]
+0x005134  movs     r1, #0
+0x005136  bl       #0x5158  ; -> 0x5158 (callers: ['0x30c8', '0x30d6', '0x5136', '0x5148'])
+0x00513a  ldr      r5, [pc, #0x18]
+0x00513c  movs     r4, #1
+0x00513e  add.w    r0, r5, r4, lsl #4
+0x005142  ldr      r1, [r0]
+0x005144  cbz      r1, #0x514c
+0x005146  mov      r1, r4
+0x005148  bl       #0x5158  ; -> 0x5158 (callers: ['0x30c8', '0x30d6', '0x5136', '0x5148'])
+0x00514c  adds     r4, r4, #1
+0x00514e  cmp      r4, #0x1f
+0x005150  blo      #0x513e
+0x005152  pop      {r4, r5, pc}
+0x005154  strh     r0, [r6, #0x38]
+0x005156  movs     r0, r0
+0x005158  ldr      r3, [pc, #0x3c]
+0x00515a  push     {r4, lr}
+0x00515c  ldr      r4, [r0]
+0x00515e  add.w    r2, r3, r1, lsl #4
+0x005162  add.w    r1, r3, r1, lsl #2
+0x005166  cbz      r4, #0x5188
+0x005168  ldr      r3, [r0, #4]
+0x00516a  str      r3, [r2]
+0x00516c  movs     r3, #0x12
+0x00516e  str      r3, [r2, #4]
+0x005170  mov.w    r3, #-1
+0x005174  str.w    r3, [r1, #0x1f0]
+0x005178  ldr      r3, [r0, #8]
+0x00517a  str.w    r3, [r1, #0x26c]
+0x00517e  ldr      r1, [r0, #0xc]
+0x005180  str      r1, [r2, #8]
+0x005182  ldr      r0, [r0, #0xc]
+0x005184  str      r0, [r2, #0xc]
+0x005186  pop      {r4, pc}
+0x005188  movs     r0, #0
+0x00518a  str      r0, [r2]
+0x00518c  str      r0, [r2, #4]
+0x00518e  str.w    r0, [r1, #0x1f0]
+0x005192  str.w    r0, [r1, #0x26c]
+0x005196  pop      {r4, pc}
+0x005198  movs     r0, r0
+0x00519a  lsls     r3, r4, #0xc
+0x00519c  ldr      r1, [pc, #0x38]
+0x00519e  mov      r2, r0
+0x0051a0  push     {r4, r5, r6, lr}
+0x0051a2  ldr      r5, [pc, #0x38]
+0x0051a4  movs     r0, #0
+0x0051a6  ldr      r1, [r1]
+0x0051a8  ldrb.w   r1, [r1, #0x4b]
+0x0051ac  rsb      r3, r1, r1, lsl #3
+0x0051b0  add.w    r4, r3, r1, lsl #4
+0x0051b4  ldr      r1, [r5]
+0x0051b6  add.w    r1, r1, r4, lsl #2
+0x0051ba  str      r2, [r1, #0x14]
+0x0051bc  movs     r2, #1
+0x0051be  strb     r2, [r1, #1]
+0x0051c0  ldr      r1, [r1, #0xc]
+0x0051c2  cmp      r1, #0xff
+0x0051c4  beq      #0x51d6
+0x0051c6  uxtb     r0, r1
+0x0051c8  bl       #0x4128  ; -> 0x4128 (callers: ['0x4880', '0x51c8'])
+0x0051cc  ldr      r2, [r5]
+0x0051ce  movs     r1, #0xff
+0x0051d0  add.w    r2, r2, r4, lsl #2
+0x0051d4  str      r1, [r2, #0xc]
+0x0051d6  pop      {r4, r5, r6, pc}
+0x0051d8  str      r0, [r2]
+0x0051da  movs     r0, r0
+0x0051dc  str      r4, [r2, #4]
+0x0051de  movs     r0, r0

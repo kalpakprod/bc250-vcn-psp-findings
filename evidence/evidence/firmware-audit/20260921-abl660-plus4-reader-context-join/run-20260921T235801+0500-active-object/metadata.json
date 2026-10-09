@@ -1,0 +1,33 @@
+{
+  "active_object": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl660-object-identity/ABL1-clv-full-thumb.elf.o",
+  "base_conditional": "0x57100",
+  "acceptance_event": "llvm-objdump bounded disassembly on the active object; verify caller and wrapper data flow; no hardware claim",
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x7544",
+        "--stop-address=0x7590",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl660-object-identity/ABL1-clv-full-thumb.elf.o"
+      ],
+      "stdout": "evidence/firmware-audit/20260921-abl660-plus4-reader-context-join/run-20260921T235801+0500-active-object/caller-7544.stdout",
+      "stderr": "evidence/firmware-audit/20260921-abl660-plus4-reader-context-join/run-20260921T235801+0500-active-object/caller-7544.stderr",
+      "exit": 0
+    },
+    {
+      "argv": [
+        "/usr/bin/llvm-objdump",
+        "-D",
+        "--triple=thumbv7m-none-eabi",
+        "--start-address=0x75cc",
+        "--stop-address=0x7f20",
+        "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl660-object-identity/ABL1-clv-full-thumb.elf.o"
+      ],
+      "stdout": "evidence/firmware-audit/20260921-abl660-plus4-reader-context-join/run-20260921T235801+0500-active-object/wrapper-75CC.stdout",
+      "stderr": "evidence/firmware-audit/20260921-abl660-plus4-reader-context-join/run-20260921T235801+0500-active-object/wrapper-75CC.stderr",
+      "exit": 0
+    }
+  ]
+}

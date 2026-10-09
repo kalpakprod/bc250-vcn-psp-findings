@@ -1,0 +1,261 @@
+{
+  "checks": {
+    "failed": 4,
+    "passed": 23,
+    "total": 27
+  },
+  "checks_detail": [
+    {
+      "details": {
+        "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+        "observed": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+        "observed": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdFabricAriPei-c5b99650a442.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b",
+        "observed": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/lorek123_psp/ABL1_decompiled.c",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c27bf19fb46415703c1e761641d3ac08102dda775b9152ea1b6a557c47741170",
+        "observed": "c27bf19fb46415703c1e761641d3ac08102dda775b9152ea1b6a557c47741170"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/lorek123_psp/ABL1_strings.txt",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "41906789451feb97fbc323ad84be9589e5fd521ae73feeb663f26ca02a835803",
+        "observed": "41906789451feb97fbc323ad84be9589e5fd521ae73feeb663f26ca02a835803"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-uclk-semantics/ABL1-memory-sync-snippet.c",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "d17596e7681d383ba273ae4981c3e1d320822a726e05d4f97c9f78890ca1d87a",
+        "observed": "d17596e7681d383ba273ae4981c3e1d320822a726e05d4f97c9f78890ca1d87a"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-uclk-semantics/ABL1-memory-sync-strings.txt",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba04120000",
+        "observed": {
+          "bytes": "ba04120000",
+          "mnemonic": "mov",
+          "operands": "edx,0x1204",
+          "rva": 40132
+        }
+      },
+      "label": "CbsBase-byte:0x9cc4",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a8230030000",
+        "observed": {
+          "bytes": "8a8230030000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x330]",
+          "rva": 40164
+        }
+      },
+      "label": "CbsBase-byte:0x9ce4",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "884103",
+        "observed": {
+          "bytes": "884103",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [ecx+0x3],al",
+          "rva": 40170
+        }
+      },
+      "label": "CbsBase-byte:0x9cea",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a826d030000",
+        "observed": {
+          "bytes": "8a826d030000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x36d]",
+          "rva": 42977
+        }
+      },
+      "label": "CbsBase-byte:0xa7e1",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "884103",
+        "observed": {
+          "bytes": "884103",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [ecx+0x3],al",
+          "rva": 42983
+        }
+      },
+      "label": "CbsBase-byte:0xa7e7",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba3d120000",
+        "observed": {
+          "bytes": "ba3d120000",
+          "mnemonic": "mov",
+          "operands": "edx,0x123d",
+          "rva": 42995
+        }
+      },
+      "label": "CbsBase-byte:0xa7f3",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "serializer-windows-no-ratio-arithmetic",
+      "status": "FAIL"
+    },
+    {
+      "details": [
+        {
+          "bytes": "ba04120000",
+          "mnemonic": "mov",
+          "operands": "edx,0x1204",
+          "rva": 53796
+        }
+      ],
+      "label": "AmdFabric-no-direct-literal:0x1204",
+      "status": "FAIL"
+    },
+    {
+      "details": [
+        {
+          "bytes": "ba3d120000",
+          "mnemonic": "mov",
+          "operands": "edx,0x123d",
+          "rva": 56659
+        }
+      ],
+      "label": "AmdFabric-no-direct-literal:0x123d",
+      "status": "FAIL"
+    },
+    {
+      "details": [
+        {
+          "bytes": "ba3d120000",
+          "mnemonic": "mov",
+          "operands": "edx,0x123d",
+          "rva": 56659
+        }
+      ],
+      "label": "AmdFabric-no-direct-literal:0x123D",
+      "status": "FAIL"
+    },
+    {
+      "details": [
+        7856,
+        40703
+      ],
+      "label": "AmdFabric-confirmed-literal:0x10ff",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        8075,
+        40953
+      ],
+      "label": "AmdFabric-confirmed-literal:0x1104",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "generic-ABL-snippet:Synchronize_Mem_Speed_for_each_c",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "generic-ABL-snippet:param_1[3] + 0x20",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "generic-ABL-snippet:local_60[0]",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "generic-ABL-snippet:Sending_Synchronized_Speed_back",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "generic-ABL-string:Memory P-state Enabled.",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "generic-ABL-string:Memory P-state Disabled.",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "generic-ABL-string:NumOfMemPstates",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "generic-ABL-string:Current Memory P-state",
+      "status": "PASS"
+    }
+  ],
+  "conclusion": "No exact-clv downstream code in this bounded path assigns UclkDiv1M0 a ratio relative to FCLK. The native path preserves a typed byte as INV record 0x1204, while MemoryPstate is a separate typed byte/record 0x123D. A generic ABL memory-training routine handles memory-speed synchronization and P-state structures, but is not connected here to either exact clv record.",
+  "exact_clv": {
+    "memory_pstate_field": "+0x36D -> INV record 0x123D",
+    "uclk_field": "+0x330 -> INV record 0x1204"
+  },
+  "limitations": [
+    "Final INV consumer/actuator remains unresolved within bounded census.",
+    "No hardware/training execution or frequency/ratio claim."
+  ],
+  "new_discriminant": {
+    "AmdFabric_direct_reader_literals": {
+      "0x10FF": true,
+      "0x1104": true,
+      "0x1204": false,
+      "0x123D": false
+    },
+    "generic_abl_training_source": "Synchronize memory speed across channels / select memory-speed structures; provenance is historical generic ABL, not exact clv consumer",
+    "immediate_serializer_preserves_bytes": true,
+    "ratio_arithmetic_in_serializer": false
+  },
+  "status": "FAIL"
+}

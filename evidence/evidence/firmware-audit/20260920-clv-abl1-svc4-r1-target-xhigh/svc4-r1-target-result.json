@@ -1,0 +1,323 @@
+{
+  "checks": 58,
+  "checks_detail": [
+    {
+      "detail": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "payload_hash",
+      "ok": true
+    },
+    {
+      "detail": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "name": "listing_hash",
+      "ok": true
+    },
+    {
+      "detail": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b",
+      "name": "source_hash",
+      "ok": true
+    },
+    {
+      "detail": "offset=0x1081E expected=204600f09af8012240f20521204600f094f8002240f2f711204600f08ef818 got=204600f09af8012240f20521204600f094f8002240f2f711204600f08ef818",
+      "name": "fclk_dispatch_first_call_bytes",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x1081E operation 'mov\\tr0, r4'",
+      "name": "fclk_dispatch_R0_context",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x10820 operation 'bl\\t0x10958'",
+      "name": "fclk_dispatch_call_10958",
+      "ok": true
+    },
+    {
+      "detail": "offset=0x10958 expected=30b4d0f8604613460a46a44630bc01216047 got=30b4d0f8604613460a46a44630bc01216047",
+      "name": "dispatcher_exact_bytes",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x1095A operation 'ldr.w\\tr4, [r0, #0x660]'",
+      "name": "dispatcher_loads_callback_slot",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x1095E operation 'mov\\tr3, r2'",
+      "name": "dispatcher_value_to_R3",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x10960 operation 'mov\\tr2, r1'",
+      "name": "dispatcher_token_to_R2",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x10966 operation 'movs\\tr1, #0x1'",
+      "name": "dispatcher_sets_R1_1",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x10968 operation 'bx\\tr12'",
+      "name": "dispatcher_indirect_callback",
+      "ok": true
+    },
+    {
+      "detail": "offset=0x9AE8 expected=c2f30b00b0f51b6f0f9002d3df48fcf7e7fc95f8200318b10020cde9080004e000210220cde9080101200021cde90601686c0f9950f82160002e7dd040f25262 got=c2f30b00b0f51b6f0f9002d3df48fcf7e7fc95f8200318b10020cde9080004e000210220cde9080101200021cde90601686c0f9950f82160002e7dd040f25262",
+      "name": "callback_index_and_table_prefix",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9AE8 operation 'ubfx\\tr0, r2, #0x0, #0xc'",
+      "name": "callback_R2_low12_index",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9B18 operation 'ldr\\tr0, [r5, #0x44]'",
+      "name": "callback_table_pointer",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9B1C operation 'ldr.w\\tr6, [r0, r1, lsl #2]'",
+      "name": "callback_table_slot_R6",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9B24 operation 'movw\\tr2, #0x652'",
+      "name": "callback_table_limit",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9B2C operation 'ubfx\\tr1, r6, #0xc, #0xc'",
+      "name": "descriptor_nested_index",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9B54 operation 'ldr.w\\tr6, [r0, r1, lsl #2]'",
+      "name": "nested_descriptor_load",
+      "ok": true
+    },
+    {
+      "detail": "raw search for movw r1,#0x61E in FCLK context slice",
+      "name": "fclk_token_constant",
+      "ok": true
+    },
+    {
+      "detail": "R1 target is table[0x61E], then table[(table[0x61E]>>12)&0xFFF]; runtime slot value is not in the bounded static bytes",
+      "name": "fclk_descriptor_target",
+      "ok": true
+    },
+    {
+      "detail": "offset=0x9C22 expected=2b68032005aa2146fdf7bbf8 got=2b68032005aa2146fdf7bbf8",
+      "name": "mapped_read_callsite_bytes",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9C22 operation 'ldr\\tr3, [r5]'",
+      "name": "mapped_read_root_load",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9C24 operation 'movs\\tr0, #0x3'",
+      "name": "mapped_read_width_word",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9C28 operation 'mov\\tr1, r4'",
+      "name": "mapped_read_R1_R4",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9C2A operation 'bl\\t0x6da4'",
+      "name": "mapped_read_helper_call",
+      "ok": true
+    },
+    {
+      "detail": "offset=0x9D8A expected=002000902b68032005aa2146fdf76bf858e095f8 got=002000902b68032005aa2146fdf76bf858e095f8",
+      "name": "mapped_write_callsite_bytes",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9D90 operation 'movs\\tr0, #0x3'",
+      "name": "mapped_write_width_word",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9D94 operation 'mov\\tr1, r4'",
+      "name": "mapped_write_R1_R4",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9D96 operation 'bl\\t0x6e70'",
+      "name": "mapped_write_helper_call",
+      "ok": true
+    },
+    {
+      "detail": "offset=0x9C00 expected=c6f3c2600090012823d002283ed0032854d004285bd0 got=c6f3c2600090012823d002283ed0032854d004285bd0",
+      "name": "read_descriptor_kind_dispatch",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9C00 operation 'ubfx\\tr0, r6, #0x1b, #0x3'",
+      "name": "descriptor_kind_bits",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9C56 operation 'orr\\tr0, r4, #0x50000'",
+      "name": "read_kind1_base",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9C8C operation 'ldrb.w\\tr1, [r5, #0x49]'",
+      "name": "read_kind2_context_byte",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9CC0 operation 'orr\\tr0, r4, #0x53000'",
+      "name": "read_kind3_base",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9CCE operation 'orr\\tr4, r4, #0x1c000'",
+      "name": "read_kind4_base",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9C78 operation 'ldr.w\\tr1, [r5, #0x2b0]'",
+      "name": "read_kind1_optional_offset",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9CAE operation 'ldr.w\\tr0, [r5, #0x2b0]'",
+      "name": "read_kind2_optional_offset",
+      "ok": true
+    },
+    {
+      "detail": "offset=0x9D70 expected=c260012812d002282bd0032842d0042848d06048 got=c260012812d002282bd0032842d0042848d06048",
+      "name": "write_descriptor_kind_dispatch",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9D9C operation 'ldrb.w\\tr1, [r5, #0x49]'",
+      "name": "write_kind1_context_byte",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9DD2 operation 'ldrb.w\\tr1, [r5, #0x49]'",
+      "name": "write_kind2_context_byte",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9E04 operation 'ldrb.w\\tr1, [r5, #0x49]'",
+      "name": "write_kind3_context_byte",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x9E14 operation 'orr\\tr4, r4, #0x1c000'",
+      "name": "write_kind4_base",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x6DCC operation 'lsrs\\tr0, r6, #0xc'",
+      "name": "read_wrapper_high_split",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x6DCE operation 'ubfx\\tr4, r6, #0x0, #0xc'",
+      "name": "read_wrapper_low12_split",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x6DD2 operation 'lsls\\tr0, r0, #0xc'",
+      "name": "read_wrapper_page_align",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x6DD4 operation 'svc\\t#0x4'",
+      "name": "read_wrapper_svc4",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x6DD8 operation 'mov\\tr6, r0'",
+      "name": "read_wrapper_returned_base",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x6E1A operation 'ldr\\tr3, [r6, r4]'",
+      "name": "read_wrapper_mapped_access",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x6DFC operation 'svc\\t#0x5'",
+      "name": "read_wrapper_svc5",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x6EA6 operation 'lsrs\\tr0, r5, #0xc'",
+      "name": "write_wrapper_high_split",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x6EA8 operation 'ubfx\\tr6, r5, #0x0, #0xc'",
+      "name": "write_wrapper_low12_split",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x6EAC operation 'lsls\\tr0, r0, #0xc'",
+      "name": "write_wrapper_page_align",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x6EAE operation 'svc\\t#0x4'",
+      "name": "write_wrapper_svc4",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x6EB2 operation 'mov\\tr5, r0'",
+      "name": "write_wrapper_returned_base",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x6EE8 operation 'str\\tr0, [r5, r6]'",
+      "name": "write_wrapper_mapped_access",
+      "ok": true
+    },
+    {
+      "detail": "listing address 0x6ED6 operation 'svc\\t#0x5'",
+      "name": "write_wrapper_svc5",
+      "ok": true
+    },
+    {
+      "detail": "historical table/SVC structural cross-check",
+      "name": "source_structural_table",
+      "ok": true
+    }
+  ],
+  "fclk_dispatch": {
+    "callback_arg_R1": "1",
+    "callback_arg_R2": "0x61E",
+    "callback_arg_R3": "branch-selected value",
+    "context_field": "context+0x78",
+    "dispatcher": "0x10958",
+    "incoming_token": "0x61E"
+  },
+  "hardware_boundary": "SVC#4 handler/translation, runtime table contents, loader base, physical SMN/MMIO destination, clock/PLL effect, and hardware execution remain unknown/unrun.",
+  "inputs": {
+    "listing": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+    "listing_sha256": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+    "payload": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "payload_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "source": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/lorek123_psp/ABL1_decompiled.c",
+    "source_sha256": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b"
+  },
+  "passed": 58,
+  "r1_target": {
+    "constructed_R1": "R4 built from descriptor low bits plus context+0x49 and optional context+0x2B0 according to kind bits27..29",
+    "descriptor_bits": "start=bits0..5,end=bits6..11,nested=bits12..23,wide=bit30",
+    "first_slot": "*( *(uint32_t**)(context+0x44) + 0x61E )",
+    "nested_slot": "*( *(uint32_t**)(context+0x44) + ((first_slot >> 12) & 0xFFF) )",
+    "numeric_value": "not recovered: exact table slot contents/runtime context are unavailable in this bounded static slice",
+    "read_call": "R1=R4 at 0x9C28; BL 0x6DA4 at 0x9C2A",
+    "write_call": "R1=R4 at 0x9D94; BL 0x6E70 at 0x9D96"
+  },
+  "status": "PASS"
+}

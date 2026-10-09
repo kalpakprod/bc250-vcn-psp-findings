@@ -1,0 +1,157 @@
+{
+  "anchors": {
+    "known_strings": {
+      "0x81d4": "Determine DRAM Target MEMCLK\n",
+      "0x820c": "Synchronize MEMCLK Across Channels and Set Limits\n",
+      "0x8271": "Memory P-state Enabled.\n",
+      "0x828d": "Memory P-state Disabled.\n"
+    },
+    "pc_0x751e_to_literal_0x7540": "0x6db04",
+    "pc_0x8188_to_known_string_0x820c": "Synchronize MEMCLK Across Channels and Set Limits\n",
+    "pc_0xb1f6_to_literal_0xb218": "0x67abd"
+  },
+  "candidate_base_0x60000": {
+    "callback_bytes": "6c6f636b20537065656420202020203a",
+    "callback_interpretation": "ASCII data, not a locally callable code prologue; universal base 0x60000 is falsified by callback coherence",
+    "callback_pointer_offset": "0x7abd",
+    "table_halfwords": [
+      "0x1ac",
+      "0x1800",
+      "0x7c0",
+      "0x75",
+      "0x17c0",
+      "0x75",
+      "0x1b4",
+      "0x1800"
+    ],
+    "table_pointer_offset": "0xdb04"
+  },
+  "checks": {
+    "failed": 0,
+    "passed": 15,
+    "total": 15
+  },
+  "checks_detail": [
+    {
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "label": "rom-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "label": "payload-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x0",
+      "got": "0x0",
+      "label": "header-load-address-zero",
+      "status": "PASS"
+    },
+    {
+      "expected": 94624,
+      "got": 94624,
+      "label": "header-uncompressed-length",
+      "status": "PASS"
+    },
+    {
+      "expected": "084b",
+      "got": "084b",
+      "label": "classifier-PC-literal-load",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x6db04",
+      "got": "0x6db04",
+      "label": "classifier-table-literal",
+      "status": "PASS"
+    },
+    {
+      "expected": "2049",
+      "got": "2049",
+      "label": "known-string-PC-literal-load",
+      "status": "PASS"
+    },
+    {
+      "expected": "Synchronize MEMCLK...",
+      "got": "b'Synchronize MEMCLK Across Channels and Set Limi'",
+      "label": "known-string-820c",
+      "status": "PASS"
+    },
+    {
+      "expected": "0849",
+      "got": "0849",
+      "label": "callback-pointer-PC-literal-load",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x67abd",
+      "got": "0x67abd",
+      "label": "callback-pointer-literal",
+      "status": "PASS"
+    },
+    {
+      "expected": "c0f82c15",
+      "got": "c0f82c15",
+      "label": "callback-slot-store",
+      "status": "PASS"
+    },
+    {
+      "expected": "<0x171a0",
+      "got": "0xdb04",
+      "label": "base60000-table-in-payload",
+      "status": "PASS"
+    },
+    {
+      "expected": "<0x171a0",
+      "got": "0x7abd",
+      "label": "base60000-callback-in-payload",
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        "0x1ac",
+        "0x1800",
+        "0x7c0",
+        "0x75",
+        "0x17c0",
+        "0x75",
+        "0x1b4",
+        "0x1800"
+      ],
+      "got": [
+        "0x1ac",
+        "0x1800",
+        "0x7c0",
+        "0x75",
+        "0x17c0",
+        "0x75",
+        "0x1b4",
+        "0x1800"
+      ],
+      "label": "base60000-table-8-halfwords",
+      "status": "PASS"
+    },
+    {
+      "expected": "starts 'lock Speed'",
+      "got": "b'lock Speed     :'",
+      "label": "base60000-callback-not-code",
+      "status": "PASS"
+    }
+  ],
+  "conclusion": "Candidate base 0x60000 makes the classifier table pointer 0x6DB04 land on an 8-halfword structured array at payload 0xDB04, but maps callback pointer 0x67ABD (stored in callable slot +0x52C) to payload 0x7ABD, whose bytes are ASCII \"lock Speed...\" rather than code. Thus 0x60000 is not a coherent universal runtime base. Payload-relative offsets remain valid; actual loader relocation/runtime base remains unresolved.",
+  "header": {
+    "entry_literal": "0x5E02D",
+    "entry_literal_in_payload": false,
+    "load_address": "0x0 observed field, no physical base claim",
+    "uncompressed_length": 94624
+  },
+  "limitations": [
+    "PC-relative string 0x820C is an internal payload anchor; strings 0x81D4/0x8271/0x828D are exact data offsets but no direct xref is promoted from mixed code/data disassembly.",
+    "No loader relocation table or runtime trace.",
+    "No units, clock, training, or hardware inference."
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,10 @@
+# Offline BIOS control route
+
+## Intent — 2026-09-20T01:41:32+05:00
+
+Root confirmed project root. User correction: live telemetry is NOT a prerequisite for offline BIOS development; board acceptance is a later separate gate. Root owns scope, integration and verification; delegate one bounded independent control-route investigation, because previous literal searches and partial indirect inventories did not resolve actual actuation.
+Worker: Gemini family, omniroute/agy/gemini-3.1-pro-high, high effort encoded by selected model (dispatch has no independent effort option; effective routing must be reported). Permissions: local read/analysis, new evidence and English research report only, no hardware/network/firmware edits or secrets. Inputs: memory/oc-recheck.md, docs/research/oc-fabric-domain-identification.md, oc-df-table-population.md, exact clv/Robin-5 and existing Ghidra outputs. Acceptance: resolve whether host-settable clock-domain command can reach DF domains 0x0E..0x12, including index mapping, restrictions, and first actual register-writing callee. Return artifact docs/research/2026-09-20-oc-host-domain-route.md plus bounded reproducible evidence. Do not re-investigate literal token serialization or request live telemetry. If viable, specify exact offline BIOS integration site without building speculative patch. Root will verify decisive bytes before relying on results. Rollback: new research artifacts can be removed; original firmware must remain unchanged.
+
+## Result
+
+Worker returned refusal, no technical evidence/artifact; independent review incomplete. Root performed selected byte/map analysis instead, preserving originals. Verification: `python3 evidence/firmware-audit/20260920-host-domain-route/verify.py > evidence/firmware-audit/20260920-host-domain-route/result.json` PASS; `python3 -m unittest discover -s tests -q` 16 PASS. Report, verifier and result hashes preserved in manifest.json. Found missing DF descriptors in static host map and state-word gate; bounds of negative finding retained. Memory correction appended. No hardware or ROM changes. Requested final BIOS remains incomplete.

@@ -1,0 +1,21 @@
+--- memory/oc-recheck.md (baseline)
++++ memory/oc-recheck.md (modified)
+@@ -431,3 +431,18 @@
+ The separate output/context trace was reopened and independently spot-checked. Fclk handler output is routed through caller-local `SP+4`, initialized to `0x4B0`; on successful getter return it can be overwritten, after which the caller stores the local halfword to `[context+0x78]` at `0x5FBA`. A later path loads `[R4+0x78]` at `0x107E4` and compares against `0x3E8` and `0x4B0`. Those compare constants have no established unit/value relation to token IDs `0x015F/0x0160`. The Fclk type-byte pointer is `SP+0x0C`; no explicit write to that local is observed in the bounded handler before its call to `0x1FB4`, so actual type-2 branch execution for that caller is not proven. Runtime invocation, stack provenance, units, divider/PLL, training, physical clocks, and synchronization remain unresolved. Phase 2 remains **PARTIAL**.
+ 
+ Open question retained: do downstream ABL1 comparisons `0x3E8/0x4B0` on `context+0x78` use the same value space as the configuration value returned after token queries `0x015F/0x0160`, or does an untraced conversion/override intervene? Current exact bytes prove the static field load and constants only; token IDs and thresholds are not equated and no units are assigned.
++
++
++## CLV ABL1 context/HEAP integration review — remains PARTIAL (2026-09-20)
++
++Independent integration report: docs/research/20260920-clv-abl1-integration-review.md; machine result: evidence/firmware-audit/20260920-clv-abl1-integration-review/review-result.json; action log: docs/action-logs/2026-09-20-clv-abl1-integration-review.md; manifest: evidence/firmware-audit/20260920-clv-abl1-integration-review/SHA256SUMS.final.
++
++The existing 89-check context branch result is static evidence only. At ABL1 payload 0x107E4, LDRH reads context+0x78; branch-selected R2 values {0,0x260,0x264,0x464} reach helper 0x10958, which loads a callback pointer from context+0x660 and BXs through it. Callback target/effect remains unbound. Stores following the dispatch load a pointer from context+0x2C4 and write child offsets +0x06/+0x44/+0x46/+0x4C. That pointer's address space is unknown: MMIO remains possible, but no MMIO/register mapping is proved, and the bytes do not positively establish non-MMIO.
++
++Reader precedence correction: for an earlier ordered descriptor, helper status R0=0 advances to the next candidate. If the helper returns nonzero, the earlier gate byte must be exactly 1 to advance; any other byte fails terminally. The final typed query's helper failure returns failure; a successful typed sentinel also fails terminally without another candidate. The FCLK call passes SP+0x0C as the type-byte pointer, with no explicit local initialization in the bounded caller; actual type-2 execution therefore remains unproven.
++
++The exact ABL1 key consumer places immediate 0xA04E in the descriptor at SP+0x24 and calls 0x6374. Bounded independent raw/listing verification passed 64/64. The lookup reads node key +0, size +4, metadata byte +9, and next link +0xC; on match it returns body pointer node+0x10+metadata and length size-minus-metadata into descriptor +8/+4. The 0x63F8 routine, called at 0x6F78, initializes a HEAP-tagged arena header at 0x73000. This verifies header/sentinel initialization, not production of a populated node keyed 0xA04E; no producer absence is inferred. The exact clv APCB parse reports CBSG group 0x1707, but no CBSG/APCB schema link to this runtime HEAP key is established.
++
++The prior raw-ROM scan tested exact contiguous four-byte little-endian scalar encodings only. Its no-hit does not mean no ROM representation: decompressed ABL1 itself contains the 0xA04E MOVW immediate and 0x73000 table-base literals. Raw CBSG remains schema-unmapped. The author 0x660 callback-target result is still pending and unjoined; no further research is authorized here.
++
++No clock mode, MHz, voltage, 1:1 or MCLK=UCLK=FCLK result follows. Phase 2 remains PARTIAL; no plan gate is promoted.

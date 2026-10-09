@@ -1,0 +1,21 @@
+{
+  "target": "Waveshare RP2350B-Plus-W",
+  "image": "Waveshare-RP2350B-Plus-W-DualSense-WiFi-MQTT-LinuxMetrics-TEST.uf2",
+  "image_sha256": "6c5b4a321b2c79a63b9b0af8cf76c307405364db00a112486e5b454c18705b2a",
+  "preflash": {
+    "bus": 1,
+    "bootsel_address": 33,
+    "info": "RP2350 ARM Secure unified dev",
+    "backup1_sha256": "d3dec91fadd5a86982f6a6d80090cc431dcf539fdeebe220de1b83de503b8379",
+    "backup2_sha256": "d3dec91fadd5a86982f6a6d80090cc431dcf539fdeebe220de1b83de503b8379",
+    "backup_size": 16777216
+  },
+  "load_exit": 0,
+  "load_output": "picotool load -v completed and Verify Flash 100% OK",
+  "reboot_exit": 0,
+  "reboot_output": "The device was rebooted into application mode.",
+  "postflash_usb": "RP2350 BOOTSEL disappeared; no ttyACM/application USB appeared in immediate check",
+  "postflash_version": "not_observed",
+  "hardware_acceptance": false,
+  "readback_after_flash": false
+}

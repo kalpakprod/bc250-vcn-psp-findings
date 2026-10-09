@@ -1,0 +1,269 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 19,
+    "total": 19
+  },
+  "checks_detail": [
+    {
+      "details": {
+        "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+      },
+      "label": "hash:clv",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "578113a9c9c02f0ab98fa896cf61356664e1429f7054de3c308810bcd4770896",
+        "observed": "578113a9c9c02f0ab98fa896cf61356664e1429f7054de3c308810bcd4770896"
+      },
+      "label": "hash:ultimate",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+        "observed": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+      },
+      "label": "hash:cbsbase",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "f71c97ed6041a0c9a4260f651c093bd7873cc33222b124830b0728107cfb6084",
+        "observed": "f71c97ed6041a0c9a4260f651c093bd7873cc33222b124830b0728107cfb6084"
+      },
+      "label": "hash:menu",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "absolute_clv": "0x837",
+        "body_offset": "0x368",
+        "clv": 255,
+        "ultimate": 0
+      },
+      "label": "profile-byte-pair:PhyPowerSaving",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "absolute_clv": "0x83c",
+        "body_offset": "0x36d",
+        "clv": 255,
+        "ultimate": 0
+      },
+      "label": "profile-byte-pair:MemoryPstate",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "absolute_clv": "0xb72",
+        "body_offset": "0x6a3",
+        "clv": 15,
+        "ultimate": 0
+      },
+      "label": "profile-byte-pair:FclkDpm",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        "ONE_OF @form='DRAM Power Options' qid=0x259 var=AmdSetup+0x368 flags=0x10 'Phy Power Saving'",
+        "OPTION 'Auto' = 0xff",
+        "OPTION 'Enabled' = 0x1",
+        "OPTION 'Disabled' = 0x0"
+      ],
+      "label": "IFR-label-enum:PhyPowerSaving",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        "ONE_OF @form='DRAM Power Options' qid=0x25e var=AmdSetup+0x36d flags=0x10 'Memory P-state'",
+        "OPTION 'Auto' = 0xff",
+        "OPTION 'Enabled' = 0x1",
+        "OPTION 'Disabled' = 0x0"
+      ],
+      "label": "IFR-label-enum:MemoryPstate",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        "ONE_OF @form='SMU Features' qid=0x7045 var=AmdSetup+0x6a3 flags=0x14 'FCLK_DPM'",
+        "OPTION 'Disabled' = 0x0",
+        "OPTION 'Enabled' = 0x1",
+        "OPTION 'Auto' = 0xf"
+      ],
+      "label": "IFR-label-enum:FclkDpm",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c68068030000ff",
+        "observed": {
+          "bytes": "c68068030000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [eax+0x368],0xff",
+          "rva": 7490
+        }
+      },
+      "label": "CbsBase-byte:0x1d42",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c6826d030000ff",
+        "observed": {
+          "bytes": "c6826d030000ff",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [edx+0x36d],0xff",
+          "rva": 7540
+        }
+      },
+      "label": "CbsBase-byte:0x1d74",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "c682a30600000f",
+        "observed": {
+          "bytes": "c682a30600000f",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [edx+0x6a3],0xf",
+          "rva": 10571
+        }
+      },
+      "label": "CbsBase-byte:0x294b",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a8268030000",
+        "observed": {
+          "bytes": "8a8268030000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x368]",
+          "rva": 42727
+        }
+      },
+      "label": "CbsBase-byte:0xa6e7",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba38120000",
+        "observed": {
+          "bytes": "ba38120000",
+          "mnemonic": "mov",
+          "operands": "edx,0x1238",
+          "rva": 42745
+        }
+      },
+      "label": "CbsBase-byte:0xa6f9",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a826d030000",
+        "observed": {
+          "bytes": "8a826d030000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x36d]",
+          "rva": 42977
+        }
+      },
+      "label": "CbsBase-byte:0xa7e1",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba3d120000",
+        "observed": {
+          "bytes": "ba3d120000",
+          "mnemonic": "mov",
+          "operands": "edx,0x123d",
+          "rva": 42995
+        }
+      },
+      "label": "CbsBase-byte:0xa7f3",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a82a3060000",
+        "observed": {
+          "bytes": "8a82a3060000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x6a3]",
+          "rva": 55808
+        }
+      },
+      "label": "CbsBase-byte:0xda00",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba32130000",
+        "observed": {
+          "bytes": "ba32130000",
+          "mnemonic": "mov",
+          "operands": "edx,0x1332",
+          "rva": 55826
+        }
+      },
+      "label": "CbsBase-byte:0xda12",
+      "status": "PASS"
+    }
+  ],
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "ifr_mapping": {
+    "FclkDpm": {
+      "flags": "0x14",
+      "offset": "0x6a3",
+      "qid": "0x7045",
+      "record": "0x1332"
+    },
+    "MemoryPstate": {
+      "flags": "0x10",
+      "offset": "0x36d",
+      "qid": "0x25e",
+      "record": "0x123d"
+    },
+    "PhyPowerSaving": {
+      "flags": "0x10",
+      "offset": "0x368",
+      "qid": "0x259",
+      "record": "0x1238"
+    }
+  },
+  "interpretation": [
+    "Memory P-state +0x36D is distinct from Phy Power Saving +0x368 and FCLK_DPM +0x6A3.",
+    "Historical ULTIMATE sets all three bytes to 0; filename does not identify which control satisfies DF help.",
+    "Record IDs are serializer handoff identifiers; downstream hardware/training application is unknown.",
+    "UI help is guidance, not a hardware constraint."
+  ],
+  "profiles": {
+    "FclkDpm": {
+      "absolute_clv": "0xb72",
+      "body_offset": "0x6a3",
+      "clv": 15,
+      "ultimate": 0
+    },
+    "MemoryPstate": {
+      "absolute_clv": "0x83c",
+      "body_offset": "0x36d",
+      "clv": 255,
+      "ultimate": 0
+    },
+    "PhyPowerSaving": {
+      "absolute_clv": "0x837",
+      "body_offset": "0x368",
+      "clv": 255,
+      "ultimate": 0
+    }
+  },
+  "status": "PASS"
+}

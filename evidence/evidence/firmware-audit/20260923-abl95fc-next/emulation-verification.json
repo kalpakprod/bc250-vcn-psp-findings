@@ -1,0 +1,10 @@
+{
+  "command": [
+    "tools/abl-emulator-venv/bin/python",
+    "evidence/firmware-audit/20260923-abl95fc-next/emulate_pll_tokens.py"
+  ],
+  "exit": 0,
+  "stdout": "baseline input 1800 -> [(14, 1200), (15, 900)] instructions 221\nmodified_input input 1750 -> [(14, 1200), (15, 875)] instructions 140\nrestored_input input 1800 -> [(14, 1200), (15, 900)] instructions 221\nchip6 input 1800 -> [(14, 250), (15, 900)] instructions 222\nprovider_override input 1800 -> [(14, 1420), (15, 900)] instructions 242\nprovider_zero input 1800 -> [(14, 0), (15, 900)] instructions 242\nprovider_max_u16 input 1800 -> [(14, 1200), (15, 900)] instructions 233\ngate_off input 1800 -> [(14, 1200), (15, 900)] instructions 210\ngate_missing input 1800 -> [(14, 1200), (15, 900)] instructions 207\nPASS9 native Thumb cases, unchanged code, only declared external-effect hooks\n",
+  "stderr": "",
+  "script_sha256": "d7338f53d6aa171cf3dba3e31d32e4f2121fe4699be55a3e3669acb49b8a1c4c"
+}

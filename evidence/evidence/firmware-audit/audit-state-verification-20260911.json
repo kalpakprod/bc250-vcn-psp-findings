@@ -1,0 +1,82 @@
+{
+  "generated_at": "2026-09-11T12:09:03.114389+00:00",
+  "tool": "scripts/verify_bc250_audit_state.py",
+  "checks": {
+    "baseline_hash": {
+      "pass": true,
+      "expected": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+      "paths": [
+        "/home/OWNER/orca/projects/bc250/evidence/programmer/reads/20260911/read-a.bin",
+        "/home/OWNER/orca/projects/bc250/evidence/programmer/reads/20260911/read-b.bin",
+        "/home/OWNER/orca/projects/bc250/dump/2.bin"
+      ]
+    },
+    "reads_byte_identical": {
+      "pass": true
+    },
+    "apcb_exact_diff": {
+      "pass": true,
+      "offsets": [
+        "0xab1010",
+        "0xab1132",
+        "0xab116e"
+      ]
+    },
+    "memory_exact_diff": {
+      "pass": true,
+      "offsets": [
+        "0x7e5"
+      ]
+    },
+    "candidate_hashes": {
+      "pass": true,
+      "apcb": "6b1fe8ef504142d5d5273a85b6c9febdf0b1fb8fc08ebab2593281c320cb9d70",
+      "memory": "63cd074197ce26bafe7d2f943eeceb69b331cdba94f12662820de710fc193fee"
+    },
+    "fresh_inventory": {
+      "pass": true,
+      "images": 2
+    },
+    "fresh_extraction": {
+      "pass": true,
+      "module_count": 234,
+      "unique": 234
+    },
+    "fresh_nvar": {
+      "pass": true,
+      "warnings": 3
+    },
+    "apcb_parser": {
+      "pass": true
+    },
+    "apcb_firmware_parser": {
+      "pass": true
+    },
+    "memory_parser": {
+      "pass": true
+    },
+    "review_hashes": {
+      "pass": true
+    },
+    "map_references": {
+      "pass": true,
+      "vcn_errors": [],
+      "memory_errors": []
+    },
+    "completion_matrix_current": {
+      "pass": true,
+      "status": "ACTIVE_INCOMPLETE"
+    }
+  },
+  "passed_checks": 14,
+  "total_checks": 14,
+  "all_exercised_checks_pass": true,
+  "hardware_mutation": false,
+  "open_gates": [
+    "fresh stock boot/runtime telemetry",
+    "SoC-voltage units/consumer/training",
+    "full pending-module MCP context or explicit bounded limitation",
+    "JTAG only if needed",
+    "no exact candidate write approval requested"
+  ]
+}

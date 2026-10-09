@@ -1,0 +1,8 @@
+BC250_vcn-driver-FULL_lzma-FIXED_appended-at-end.bin
+Old technical name (alias): v007-active
+SHA-256: 9d2493975b870810fd31481cf3ded36cc964aa201181ad0ea4949f3cf5afad17
+Built by: scripts/build_FULL_and_STUB_appended_at_end.py (active)
+What is inside: booted pre-dump + VCN driver (active) APPENDED at FV end; all 193 base files at identical offsets; explicit LZMA
+Question it answers: does DXE complete when the full driver is appended at the FV end?
+Verdict: FLASHED 2026-09-24: hangs after 1 blink, no LAN/video (pre-dispatch signature, same class as the LZMA bug — but LZMA is explicit and the FV is statically valid).
+Вердикт: Прошит 2026-09-24: встаёт после 1 моргания, без LAN/видео (сигнатура до-диспетча; том статически валиден).

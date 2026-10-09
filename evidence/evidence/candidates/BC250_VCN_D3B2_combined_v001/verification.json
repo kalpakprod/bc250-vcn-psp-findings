@@ -1,0 +1,127 @@
+{
+  "generated_at": "2026-09-11T13:19:54.005326+00:00",
+  "tool": "scripts/verify_vcn_d3b2_candidate.py",
+  "source": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/programmer/reads/20260911/read-a.bin",
+    "sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0"
+  },
+  "candidate": {
+    "path": "/home/OWNER/orca/projects/bc250/candidates/BC250_VCN_D3B2_combined_v001_from_read-a.bin",
+    "sha256": "439e248141ef6a9c1313bc7815696d570be8fed5471262596186f3da8914747d"
+  },
+  "checks": {
+    "sizes": {
+      "pass": true,
+      "source_size": 16777216,
+      "candidate_size": 16777216
+    },
+    "psp_directory_fletcher32": {
+      "pass": true,
+      "count": 19
+    },
+    "bhd_fletcher32": {
+      "pass": true,
+      "count": 4
+    },
+    "directory_type_24": {
+      "pass": true,
+      "actual": [
+        7,
+        12304,
+        4288544768
+      ]
+    },
+    "directory_type_45": {
+      "pass": true,
+      "actual": [
+        15,
+        1800,
+        4288561152
+      ]
+    },
+    "gasket_header": {
+      "pass": true,
+      "sizes": [
+        11792,
+        11792,
+        12304
+      ]
+    },
+    "gasket_groups": {
+      "pass": true
+    },
+    "gasket_targets": {
+      "pass": true
+    },
+    "gasket_vcn_bank": {
+      "pass": true,
+      "count": 56
+    },
+    "old_gasket_unchanged": {
+      "pass": true
+    },
+    "policy_header": {
+      "pass": true,
+      "sizes": [
+        1288,
+        1288,
+        1800
+      ]
+    },
+    "policy_groups": {
+      "pass": true
+    },
+    "policy_targets": {
+      "pass": true
+    },
+    "policy_vcn_tail": {
+      "pass": true,
+      "actual": [
+        [
+          "0x900c234",
+          "0x0"
+        ],
+        [
+          "0x900c914",
+          "0x0"
+        ],
+        [
+          "0x900c930",
+          "0x0"
+        ],
+        [
+          "0x900cb80",
+          "0x0"
+        ],
+        [
+          "0x900c234",
+          "0x1"
+        ]
+      ]
+    },
+    "old_policy_unchanged": {
+      "pass": true
+    },
+    "apcb_checksum": {
+      "pass": true,
+      "stored": 50,
+      "calculated": 50
+    },
+    "apcb_dfg_words": {
+      "pass": true
+    },
+    "diff_confinement": {
+      "pass": true,
+      "changed_bytes": 13736,
+      "outside": []
+    },
+    "post_blob_erased_region": {
+      "pass": true
+    }
+  },
+  "passed_checks": 19,
+  "total_checks": 19,
+  "all_checks_pass": true,
+  "signature_acceptance": "unverified; modified signed-payload bytes retain historical signature tails",
+  "hardware_status": "unrun"
+}

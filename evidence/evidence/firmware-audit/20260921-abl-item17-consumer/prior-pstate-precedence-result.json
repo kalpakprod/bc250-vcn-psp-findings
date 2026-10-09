@@ -1,0 +1,359 @@
+{
+  "baseline_setup_raw": {
+    "DfClockOverrideControl": {
+      "body_offset": 1795,
+      "expected": 1,
+      "value": 1
+    },
+    "DfClockOvrd": {
+      "body_offset": 1796,
+      "expected": 1420,
+      "raw_le": "8c05",
+      "value_le": 1420
+    },
+    "FclkDpm": {
+      "body_offset": 1699,
+      "expected": 15,
+      "value": 15
+    },
+    "MemoryClockSpeed": {
+      "body_offset": 790,
+      "expected": 36,
+      "value": 36
+    },
+    "MemoryPstate": {
+      "body_offset": 877,
+      "expected": 255,
+      "value": 255
+    },
+    "UclkDiv1M0": {
+      "body_offset": 816,
+      "expected": 1,
+      "value": 1
+    }
+  },
+  "branch_precedence": {
+    "slot_164_gt_1_and_slot_174_eq_0": "0x964E/0x9650 branches to 0x9746/0x9794; it gathers channel+0x20 values, calls helpers 0x118C and 0x10C0, then writes the output slot to context+0x2BC (0x981E) and each channel+0x20 (0x983C). Helper selection semantics are opaque.",
+    "slot_164_gt_1_and_slot_174_ne_0": "Collects per-channel+0x20 values at 0x9672/0x9674; zero slave-table entries substitute 0x7D1 at 0x96E4..0x96E8; a 0x7D1-initialized current value is lowered on smaller candidates at 0x971E..0x9722; selected value is stored to context+0x2BC at 0x973E and each channel+0x20 at 0x9758.",
+    "slot_164_le_1": "0x9644/0x9646 branches to 0x9744 then 0x984E system-master/table retrieval; the selected table value is stored to context+0x2BC at 0x989A. The bounded single-state window does not store a value to channel+0x20."
+  },
+  "checks": {
+    "failed": 0,
+    "passed": 47,
+    "total": 47
+  },
+  "checks_detail": [
+    {
+      "actual": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "name": "donor_sha256",
+      "status": "PASS"
+    },
+    {
+      "actual": 16777216,
+      "expected": 16777216,
+      "name": "donor_size",
+      "status": "PASS"
+    },
+    {
+      "actual": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "abl1_payload_sha256",
+      "status": "PASS"
+    },
+    {
+      "actual": 94624,
+      "expected": 94624,
+      "name": "abl1_payload_size",
+      "status": "PASS"
+    },
+    {
+      "actual": "c4420d815773d9ee38a00923f5c8ab0b33095bdd714b4df41cb879193c581b6e",
+      "expected": "c4420d815773d9ee38a00923f5c8ab0b33095bdd714b4df41cb879193c581b6e",
+      "name": "fresh_objcopy_output_sha256",
+      "status": "PASS"
+    },
+    {
+      "actual": "af1c864b86e4fdd07801f55197e4a2c0157b3033a4913bb88739a8c4c752be81",
+      "expected": "af1c864b86e4fdd07801f55197e4a2c0157b3033a4913bb88739a8c4c752be81",
+      "name": "fresh_narrow_disassembly_sha256",
+      "status": "PASS"
+    },
+    {
+      "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "objdump_stderr_empty",
+      "status": "PASS"
+    },
+    {
+      "actual": "0x31",
+      "expected": "0x31",
+      "name": "PSP_type",
+      "status": "PASS"
+    },
+    {
+      "actual": "0x99FD00",
+      "expected": "0x99FD00",
+      "name": "PSP_SPI_offset",
+      "status": "PASS"
+    },
+    {
+      "actual": "$PS1",
+      "expected": "$PS1",
+      "name": "PS1_magic",
+      "status": "PASS"
+    },
+    {
+      "actual": 49184,
+      "expected": 49184,
+      "name": "ABL1_container_size",
+      "status": "PASS"
+    },
+    {
+      "actual": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "ABL1_decompressed_sha256",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "guard_slot164_le_1",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "slot164_le_1_bypasses_to_master_path",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "status_field_loaded",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "status_zero_test",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "status_zero_bypasses_to_fallback_path",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "nonzero_path_starts_after_both_guards",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "per_channel_speed_read",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "per_channel_speed_staged",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "zero_entry_test",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "zero_entry_substitutes_r9",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "normalized_entry_store",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "min_seed_2001",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "min_candidate_load",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "min_candidate_compare",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "larger_candidate_skips_update",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "smaller_candidate_updates_u16_min",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "minimum_to_context_aggregate",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "multi_state_channel_writeback",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "status_zero_path",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "fallback_calls_policy_helper",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "fallback_calls_selector_helper",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "fallback_helper_status_check",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "fallback_output_to_context",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "fallback_state_byte_write",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "fallback_output_to_channels",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "single_state_path_label_target",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "single_state_reads_table_entry",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "single_state_updates_aggregate",
+      "status": "PASS"
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "name": "single_state_window_has_no_channel_speed_store",
+      "status": "PASS"
+    },
+    {
+      "actual": 36,
+      "expected": 36,
+      "name": "baseline_MemoryClockSpeed",
+      "status": "PASS"
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "name": "baseline_UclkDiv1M0",
+      "status": "PASS"
+    },
+    {
+      "actual": 255,
+      "expected": 255,
+      "name": "baseline_MemoryPstate",
+      "status": "PASS"
+    },
+    {
+      "actual": 15,
+      "expected": 15,
+      "name": "baseline_FclkDpm",
+      "status": "PASS"
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "name": "baseline_DfClockOverrideControl",
+      "status": "PASS"
+    },
+    {
+      "actual": 1420,
+      "expected": 1420,
+      "name": "baseline_DfClockOvrd",
+      "status": "PASS"
+    }
+  ],
+  "exact_inputs": {
+    "abl1": {
+      "container_size": 49184,
+      "magic": "$PS1",
+      "payload_path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-abl-memory/ABL1-clv-decompressed.bin",
+      "payload_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "payload_size": 94624,
+      "psp_type": "0x31",
+      "spi_offset": "0x99FD00"
+    },
+    "disassembly": {
+      "command": "llvm-objdump -D --triple=thumbv7 --start-address=0x95fc --stop-address=0x989e evidence/firmware-audit/20260921-pstate-precedence-next/ABL1-exact.o",
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-pstate-precedence-next/abl1-policy-95fc-989e.txt",
+      "sha256": "af1c864b86e4fdd07801f55197e4a2c0157b3033a4913bb88739a8c4c752be81",
+      "tool": "llvm-objdump 22.1.8"
+    },
+    "donor": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "size": 16777216
+    }
+  },
+  "limits": [
+    "The branch selects/synchronizes runtime channel-policy values, but no exact join from native AmdSetup+0x316/0x330/0x36D/0x6A3/0x703/0x704 into the ABL1 context is shown.",
+    "The slot_164/slot_174 fields and callbacks are not runtime captured; the exact invocation of function 0x95FC is not established by this disassembly.",
+    "The 0x7D1 sentinel is only an integer constant; no MHz/rate conversion is assigned.",
+    "No UCLK ratio, FCLK_DPM effect, Memory-P-state training rule, PLL/register target, 1800 physical rate, 1:1:1 behavior, or hardware acceptance is proven.",
+    "No ROM, NVRAM, register, hardware, candidate, or firmware bytes were written."
+  ],
+  "status": "PASS"
+}

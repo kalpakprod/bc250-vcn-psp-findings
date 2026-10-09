@@ -1,0 +1,1271 @@
+  FORM_SET guid=7B59104A-C00D-4158-87FF-F04D6396A915 title='Setup' help='Setup'
+  VARSTORE id=0x1 name=Setup guid=EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9 size=0x1d3
+  VARSTORE id=0x2 name=PlatformLang guid=8BE4DF61-93CA-11D2-AA0D-00E098032B8C size=0x2
+  VARSTORE id=0x3 name=PlatformLangCodes guid=8BE4DF61-93CA-11D2-AA0D-00E098032B8C size=0x2
+  VARSTORE id=0x4 name=SystemAccess guid=E770BB69-BCB4-4D04-9E97-23FF9456FEAC size=0x1
+  VARSTORE id=0x5 name=AMICallback guid=9CF0F18E-7C7D-49DE-B5AA-BBBAD6B21007 size=0x2
+  VARSTORE id=0x6 name=AMITSESetup guid=C811FA38-42C8-4579-A9BB-60E94EDDFB34 size=0x51
+  VARSTORE id=0x7 name=BootManager guid=B4909CF3-7B93-4751-9BD8-5BA8220B9BB2 size=0x2
+  VARSTORE id=0x8 name=Timeout guid=8BE4DF61-93CA-11D2-AA0D-00E098032B8C size=0x2
+  VARSTORE id=0x9 name=BootOrder guid=8BE4DF61-93CA-11D2-AA0D-00E098032B8C size=0x2
+  VARSTORE id=0xa name=AddBootOption guid=19D96D3F-6A6A-47D2-B195-7B2432DA3BE2 size=0x11c
+  VARSTORE id=0xb name=DelBootOption guid=F6C73719-F34C-479C-B32F-277FCBBCFE4F size=0x2
+  VARSTORE id=0xc name=LegacyDev guid=A56074DB-65FE-45F7-BD21-2D2BDD8E9652 size=0x2
+  VARSTORE id=0xd name=LegacyGroup guid=A56074DB-65FE-45F7-BD21-2D2BDD8E9652 size=0x2
+  VARSTORE id=0xe name=LegacyDevOrder guid=A56074DB-65FE-45F7-BD21-2D2BDD8E9652 size=0x2
+  VARSTORE id=0xf name=BootNowCount guid=052E6EB0-F240-42C5-8309-45874545C6B4 size=0x2
+  VARSTORE id=0x10 name=Shell guid=C57AD6B7-0515-40A8-9D21-551652854E37 size=0x2
+  VARSTORE id=0x11 name=DynamicPageCount guid=B63BF800-F267-4F55-9217-E97FB3B69846 size=0x2
+  VARSTORE id=0x12 name=DriverHlthEnable guid=0885F288-418C-4BE1-A6AF-8BAD61DA08FE size=0x2
+  VARSTORE id=0x13 name=DriverHealthCount guid=7459A7D4-6533-4480-BBA7-79E25A4443C9 size=0x2
+  VARSTORE id=0x14 name=DrvHealthCtrlCnt guid=58279C2D-FB19-466E-B42E-CD437016DC25 size=0x2
+  VARSTORE id=0x15 name=SetupCpuFeatures guid=EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9 size=0x7
+  VARSTORE id=0x16 name=DriverManager guid=C0B4FB05-15E5-4588-9FE9-B3D39C067715 size=0x2
+  VARSTORE id=0x17 name=DriverOrder guid=8BE4DF61-93CA-11D2-AA0D-00E098032B8C size=0x2
+  VARSTORE id=0x18 name=NewOptionPolicy guid=69ECC1BE-A981-446D-8EB6-AF0E53D06CE8 size=0x1
+  VARSTORE id=0x19 name=NetworkStackVar guid=D1405D16-7AFC-4695-BB12-41459D3695A2 size=0x9
+  VARSTORE id=0x1a name=UsbMassDevNum guid=EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9 size=0x2
+  VARSTORE id=0x1b name=UsbMassDevValid guid=EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9 size=0x10
+  VARSTORE id=0x1c name=UsbControllerNum guid=EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9 size=0x4
+  VARSTORE id=0x1d name=UsbSupport guid=EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9 size=0x21
+  VARSTORE id=0x1e name=SbNvramVar guid=393C4833-402F-4BD5-BF5A-1F5CD8681444 size=0x1
+  FORM id=0x2710 title='Setup'
+  REF @form=0x2711 'Main'
+  REF @form=0x2712 'Advanced'
+  SUPPRESS_IF [+0x4a6] expr=
+  HIDDEN REF @form=0x2713 'Chipset'
+  REF @form=0x2714 'Security'
+  REF @form=0x2715 'Boot'
+  REF @form=0x28e9 'Save & Exit'
+  FORM id=0x2711 title='Main'
+  TEXT 'BIOS Vendor'
+  TEXT 'Core Version'
+  TEXT 'Compliancy'
+  TEXT 'Project Version'
+  TEXT 'Build Date and Time'
+  SUPPRESS_IF [+0x521] expr=
+  HIDDEN TEXT 'Access Level'
+  SUPPRESS_IF [+0x533] expr=
+  HIDDEN TEXT 'Access Level'
+  TEXT 'Total Memory'
+  SUPPRESS_IF [+0x568] expr=
+  HIDDEN ONE_OF @form='Main' qid=0x7 var=PlatformLang+0x0 flags=0x0 'System Language'
+     OPTION '' = 0x0 (type=0x1 flags=0x1)
+     OPTION '' = 0x1 (type=0x1 flags=0x1)
+     DEFAULT id=0x0 type=0x1 value=0000
+     DEFAULT id=0x1 type=0x1 value=0000
+  REF @form=0x28e8 'Main'
+     DEFAULT id=0x0 type=0x6 value=de070101
+     DEFAULT id=0x0 type=0x5 value=000000
+  FORM id=0x28e8 title='Main'
+  TEXT 'BIOS Version'
+  TEXT 'Build Date'
+  TEXT 'Processor Type'
+  TEXT 'Total Memory'
+     DEFAULT id=0x0 type=0x6 value=d5070101
+     DEFAULT id=0x0 type=0x5 value=000000
+  SUPPRESS_IF [+0x65a] expr=
+  HIDDEN ONE_OF @form='Main' qid=0xd var=PlatformLang+0x0 flags=0x0 'System Language'
+     OPTION '' = 0x0 (type=0x1 flags=0x11)
+     OPTION '' = 0x1 (type=0x1 flags=0x1)
+  FORM id=0x2712 title='Advanced'
+  REF @form=0x2717 'AMD Firmware Version'
+  SUPPRESS_IF [+0x6a1] expr=
+  HIDDEN REF @form=0x2712 ''
+  SUPPRESS_IF [+0x6bc] expr=
+  HIDDEN REF @form=0x2718 'Driver Health'
+  SUPPRESS_IF [+0x6d7] expr=
+  HIDDEN REF @form=0x271c 'PSP Firmware Version'
+  REF @form=0x271d 'ACPI Settings'
+  SUPPRESS_IF [+0x6fb] expr=
+  HIDDEN REF @form=0x271e 'Demo Board'
+  REF @form=0x2856 'Hardware Monitor'
+  SUPPRESS_IF [+0x71f] expr=
+  HIDDEN REF @form=0x2858 'CPU Configuration'
+  REF @form=0x285a 'CPU Configuration'
+  SUPPRESS_IF [+0x743] expr=
+  HIDDEN REF @form=0x1 'SIO Configuration'
+  HIDDEN REF @form=0x2860 'PCI Subsystem Settings'
+  HIDDEN REF @form=0x2865 'Network Stack Configuration'
+  REF @form=0x1 'NVMe Configuration'
+  REF @form=0x286a 'USB Configuration'
+  SUPPRESS_IF [+0x7b8] expr=
+  HIDDEN REF @form=0x28db 'Advanced CPU Settings'
+  HIDDEN REF @form=0x28dc 'USB Configuration'
+  HIDDEN REF @form=0x28dd 'SATA Configuration'
+  HIDDEN REF @form=0x28ea 'Voltage Configuration'
+  FORM id=0x2717 title='AMD Firmware Version'
+  TEXT 'AGESA Version'
+  TEXT 'PSP BootLoader Version'
+  TEXT 'ABL Version'
+  TEXT 'APCB Version'
+  TEXT 'APOB Version'
+  TEXT 'Ucode Patch Version'
+  TEXT 'SMU FW Version'
+  FORM id=0x2718 title='Driver Health'
+  SUPPRESS_IF [+0x878] expr=
+  HIDDEN REF @form=0x2719 ''
+  FORM id=0x2719 title='Driver Health'
+  SUPPRESS_IF [+0x89b] expr=
+  HIDDEN REF @form=0x2719 ''
+  FORM id=0x271c title='PSP Firmware Version'
+  TEXT 'PSP Firmware Version'
+  SUPPRESS_IF [+0x8cf] expr=
+  HIDDEN TEXT 'SMU FW Version'
+  HIDDEN TEXT 'ABL Version'
+  HIDDEN TEXT 'PSP BootLoader Version'
+  HIDDEN TEXT 'APCB Version'
+  HIDDEN TEXT 'APOB Version'
+  HIDDEN TEXT 'APPB Version'
+  SUPPRESS_IF [+0x919] expr=
+  HIDDEN TEXT 'PSP BootLoader Version'
+  HIDDEN TEXT 'PSP Secure OS Version'
+  HIDDEN TEXT 'SMU FW Version'
+  HIDDEN TEXT 'ABL Version'
+  HIDDEN TEXT 'APCB Version'
+  HIDDEN TEXT 'APOB Version'
+  HIDDEN TEXT 'APPB Version'
+  SUPPRESS_IF [+0x96a] expr=
+  HIDDEN TEXT 'PSP BootLoader Version'
+  HIDDEN TEXT 'PSP Secure OS Version'
+  HIDDEN TEXT 'SMU FW Version'
+  FORM id=0x271d title='ACPI Settings'
+  GRAY_OUT_IF [+0x9a6] expr=
+  GRAY CHECKBOX @form='ACPI Settings' qid=0x22 var=Setup+0x8 flags=0x0 'Enable ACPI Auto Configuration'
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  SUPPRESS_IF [+0x9d5] expr=
+  SUPPRESS_IF [+0x9dd] expr=
+  HIDDEN CHECKBOX @form='ACPI Settings' qid=0x23 var=Setup+0xc flags=0x0 'Enable Hibernation'
+     DEFAULT id=0x0 type=0x0 value=01
+     DEFAULT id=0x1 type=0x0 value=01
+  HIDDEN CHECKBOX @form='ACPI Settings' qid=0x24 var=Setup+0xb flags=0x10 'Lock Legacy Resources'
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  FORM id=0x271e title='Demo Board'
+  ONE_OF @form='Demo Board' qid=0x25 var=Setup+0xf flags=0x10 'Onboard PCIE LAN PXE ROM'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  ONE_OF @form='Demo Board' qid=0x26 var=Setup+0x12 flags=0x10 'AMD CRB EHCI Debug port switch'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  FORM id=0x2856 title='Hardware Monitor'
+  TEXT 'CPU Temperature'
+  SUPPRESS_IF [+0xa96] expr=
+  SUPPRESS_IF [+0xa9a] expr=
+  TEXT 'MB Temperature'
+  TEXT 'Fan 1 Speed'
+  TEXT 'Fan 2 Speed'
+  TEXT 'Fan 3 Speed'
+  TEXT 'Fan 4 Speed'
+  TEXT 'Fan 5 Speed'
+  TEXT 'CPU Vcore Voltage'
+  TEXT '+ 5.00V'
+  TEXT '+ 12.00V'
+  TEXT 'VMEMIO'
+  TEXT 'VDDC_GFX'
+  TEXT 'VDDC_SOC'
+  GRAY_OUT_IF [+0xb32] expr=
+  GRAY ONE_OF @form='Hardware Monitor' qid=0x2774 var=Setup+0x13 flags=0x14 'Fan Setting'
+     OPTION 'Customize' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Standard Mode' = 0x2 (type=0x0 flags=0x30)
+     OPTION 'Full Speed' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0xb64] expr=
+  GRAY_OUT_IF [+0xb70] expr=
+  HIDDEN GRAY NUMERIC @form='Hardware Monitor' qid=0x2723 var=Setup+0x15 flags=0x14 '  Temperature 1'
+     NUMERIC min=20 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=3c
+  HIDDEN GRAY NUMERIC @form='Hardware Monitor' qid=0x2728 var=Setup+0x1a flags=0x14 '  Fan Speed for Temperature 1'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=46
+  HIDDEN GRAY NUMERIC @form='Hardware Monitor' qid=0x2724 var=Setup+0x16 flags=0x14 '  Temperature 2'
+     NUMERIC min=20 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=46
+  HIDDEN GRAY NUMERIC @form='Hardware Monitor' qid=0x2729 var=Setup+0x1b flags=0x14 '  Fan Speed for Temperature 2'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=50
+  HIDDEN GRAY NUMERIC @form='Hardware Monitor' qid=0x2725 var=Setup+0x17 flags=0x14 '  Temperature 3'
+     NUMERIC min=20 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=50
+  HIDDEN GRAY NUMERIC @form='Hardware Monitor' qid=0x272a var=Setup+0x1c flags=0x14 '  Fan Speed for Temperature 3'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=5a
+  HIDDEN GRAY NUMERIC @form='Hardware Monitor' qid=0x2726 var=Setup+0x18 flags=0x14 '  Temperature 4'
+     NUMERIC min=20 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=50
+  HIDDEN GRAY NUMERIC @form='Hardware Monitor' qid=0x272b var=Setup+0x1d flags=0x14 '  Fan Speed for Temperature 4'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=5a
+  HIDDEN GRAY NUMERIC @form='Hardware Monitor' qid=0x2727 var=Setup+0x19 flags=0x14 '  Critical Temperature'
+     NUMERIC min=60 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=55
+  FORM id=0x2858 title='CPU Configuration'
+  ONE_OF @form='CPU Configuration' qid=0x27 var=Setup+0xac flags=0x10 'PSS Support'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0xcbc] expr=
+  HIDDEN ONE_OF @form='CPU Configuration' qid=0x28 var=Setup+0xad flags=0x10 'PSTATE Adjustment'
+     OPTION 'PState 0' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'PState 1' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'PState 2' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'PState 3' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'PState 4' = 0x4 (type=0x0 flags=0x0)
+     OPTION 'PState 5' = 0x5 (type=0x0 flags=0x0)
+     OPTION 'PState 6' = 0x6 (type=0x0 flags=0x0)
+     OPTION 'PState 7' = 0x7 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0xd11] expr=
+  HIDDEN ONE_OF @form='CPU Configuration' qid=0x29 var=Setup+0xaf flags=0x10 'PPC Adjustment'
+     OPTION 'PState 0' = 0x0 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0xd41] expr=
+  HIDDEN ONE_OF @form='CPU Configuration' qid=0x2a var=Setup+0xaf flags=0x10 'PPC Adjustment'
+     OPTION 'PState 0' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'PState 1' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0xd78] expr=
+  HIDDEN ONE_OF @form='CPU Configuration' qid=0x2b var=Setup+0xaf flags=0x10 'PPC Adjustment'
+     OPTION 'PState 0' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'PState 1' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'PState 2' = 0x2 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0xdb6] expr=
+  HIDDEN ONE_OF @form='CPU Configuration' qid=0x2c var=Setup+0xaf flags=0x10 'PPC Adjustment'
+     OPTION 'PState 0' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'PState 1' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'PState 2' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'PState 3' = 0x3 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0xdfb] expr=
+  HIDDEN ONE_OF @form='CPU Configuration' qid=0x2d var=Setup+0xaf flags=0x10 'PPC Adjustment'
+     OPTION 'PState 0' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'PState 1' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'PState 2' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'PState 3' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'PState 4' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0xe47] expr=
+  HIDDEN ONE_OF @form='CPU Configuration' qid=0x2e var=Setup+0xaf flags=0x10 'PPC Adjustment'
+     OPTION 'PState 0' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'PState 1' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'PState 2' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'PState 3' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'PState 4' = 0x4 (type=0x0 flags=0x0)
+     OPTION 'PState 5' = 0x5 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0xe9a] expr=
+  HIDDEN ONE_OF @form='CPU Configuration' qid=0x2f var=Setup+0xaf flags=0x10 'PPC Adjustment'
+     OPTION 'PState 0' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'PState 1' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'PState 2' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'PState 3' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'PState 4' = 0x4 (type=0x0 flags=0x0)
+     OPTION 'PState 5' = 0x5 (type=0x0 flags=0x0)
+     OPTION 'PState 6' = 0x6 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0xef4] expr=
+  HIDDEN ONE_OF @form='CPU Configuration' qid=0x30 var=Setup+0xaf flags=0x10 'PPC Adjustment'
+     OPTION 'PState 0' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'PState 1' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'PState 2' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'PState 3' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'PState 4' = 0x4 (type=0x0 flags=0x0)
+     OPTION 'PState 5' = 0x5 (type=0x0 flags=0x0)
+     OPTION 'PState 6' = 0x6 (type=0x0 flags=0x0)
+     OPTION 'PState 7' = 0x7 (type=0x0 flags=0x0)
+  ONE_OF @form='CPU Configuration' qid=0x31 var=Setup+0xb1 flags=0x10 'NX Mode'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  ONE_OF @form='CPU Configuration' qid=0x32 var=Setup+0xb0 flags=0x10 'SVM Mode'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0xf97] expr=
+  HIDDEN ONE_OF @form='CPU Configuration' qid=0x33 var=Setup+0xb3 flags=0x10 'CPB Mode'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0xfc2] expr=
+  HIDDEN ONE_OF @form='CPU Configuration' qid=0x34 var=Setup+0xb2 flags=0x10 'C6 Mode'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  REF @form=0x2859 'Node 0 Information'
+  FORM id=0x2859 title='Node 0 Information'
+  FORM id=0x285a title='CPU Configuration'
+  GRAY_OUT_IF [+0x109c] expr=
+  GRAY ONE_OF @form='CPU Configuration' qid=0x36 var=Setup+0xb0 flags=0x10 'SVM Mode'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  GRAY_OUT_IF [+0x10c7] expr=
+  GRAY ONE_OF @form='CPU Configuration' qid=0x37 var=Setup+0xd2 flags=0x10 'IOMMU'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  FORM id=0x2860 title='PCI Subsystem Settings'
+  TEXT 'PCI Bus Driver Version'
+  SUPPRESS_IF [+0x1114] expr=
+  GRAY_OUT_IF [+0x112e] expr=
+  HIDDEN GRAY ONE_OF @form='PCI Subsystem Settings' qid=0x38 var=Setup+0xdc flags=0x10 'PCI Latency Timer'
+     OPTION '32 PCI Bus Clocks' = 0x20 (type=0x0 flags=0x30)
+     OPTION '64 PCI Bus Clocks' = 0x40 (type=0x0 flags=0x0)
+     OPTION '96 PCI Bus Clocks' = 0x60 (type=0x0 flags=0x0)
+     OPTION '128 PCI Bus Clocks' = 0x80 (type=0x0 flags=0x0)
+     OPTION '160 PCI Bus Clocks' = 0xa0 (type=0x0 flags=0x0)
+     OPTION '192 PCI Bus Clocks' = 0xc0 (type=0x0 flags=0x0)
+     OPTION '224 PCI Bus Clocks' = 0xe0 (type=0x0 flags=0x0)
+     OPTION '248 PCI Bus Clocks' = 0xf8 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1185] expr=
+  GRAY_OUT_IF [+0x119f] expr=
+  HIDDEN GRAY ONE_OF @form='PCI Subsystem Settings' qid=0x39 var=Setup+0xe0 flags=0x10 'PCI-X Latency Timer'
+     OPTION '32 PCI Bus Clocks' = 0x20 (type=0x0 flags=0x0)
+     OPTION '64 PCI Bus Clocks' = 0x40 (type=0x0 flags=0x30)
+     OPTION '96 PCI Bus Clocks' = 0x60 (type=0x0 flags=0x0)
+     OPTION '128 PCI Bus Clocks' = 0x80 (type=0x0 flags=0x0)
+     OPTION '160 PCI Bus Clocks' = 0xa0 (type=0x0 flags=0x0)
+     OPTION '192 PCI Bus Clocks' = 0xc0 (type=0x0 flags=0x0)
+     OPTION '224 PCI Bus Clocks' = 0xe0 (type=0x0 flags=0x0)
+     OPTION '248 PCI Bus Clocks' = 0xf8 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x11f6] expr=
+  GRAY_OUT_IF [+0x1210] expr=
+  HIDDEN GRAY ONE_OF @form='PCI Subsystem Settings' qid=0x3a var=Setup+0xdd flags=0x10 'VGA Palette Snoop'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x123d] expr=
+  GRAY_OUT_IF [+0x1257] expr=
+  HIDDEN GRAY ONE_OF @form='PCI Subsystem Settings' qid=0x3b var=Setup+0xde flags=0x10 'PERR# Generation'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1284] expr=
+  GRAY_OUT_IF [+0x129e] expr=
+  HIDDEN GRAY ONE_OF @form='PCI Subsystem Settings' qid=0x3c var=Setup+0xdf flags=0x10 'SERR# Generation'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x12cb] expr=
+  GRAY_OUT_IF [+0x12e5] expr=
+  HIDDEN GRAY ONE_OF @form='PCI Subsystem Settings' qid=0x3d var=Setup+0xda flags=0x10 'Above 4G Decoding'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  SUPPRESS_IF [+0x131e] expr=
+  GRAY_OUT_IF [+0x1338] expr=
+  HIDDEN GRAY ONE_OF @form='PCI Subsystem Settings' qid=0x3e var=Setup+0xdb flags=0x10 'SR-IOV Support'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  SUPPRESS_IF [+0x1371] expr=
+  GRAY_OUT_IF [+0x138b] expr=
+  HIDDEN GRAY ONE_OF @form='PCI Subsystem Settings' qid=0x3f var=Setup+0xed flags=0x10 'Don't Reset VC-TC Mapping'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x13c1] expr=
+  GRAY_OUT_IF [+0x13db] expr=
+  HIDDEN REF @form=0x2861 'PCI Express Settings'
+  FORM id=0x2861 title='PCI Express Settings'
+  GRAY_OUT_IF [+0x1407] expr=
+  GRAY ONE_OF @form='PCI Express Settings' qid=0x41 var=Setup+0xe1 flags=0x10 'Relaxed Ordering'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  GRAY_OUT_IF [+0x1432] expr=
+  GRAY ONE_OF @form='PCI Express Settings' qid=0x42 var=Setup+0xe2 flags=0x10 'Extended Tag'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  GRAY_OUT_IF [+0x145d] expr=
+  GRAY ONE_OF @form='PCI Express Settings' qid=0x43 var=Setup+0xe3 flags=0x10 'No Snoop'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  GRAY_OUT_IF [+0x1488] expr=
+  GRAY ONE_OF @form='PCI Express Settings' qid=0x44 var=Setup+0xe4 flags=0x10 'Maximum Payload'
+     OPTION 'Auto' = 0x37 (type=0x0 flags=0x30)
+     OPTION '128 Bytes' = 0x0 (type=0x0 flags=0x0)
+     OPTION '256 Bytes' = 0x1 (type=0x0 flags=0x0)
+     OPTION '512 Bytes' = 0x2 (type=0x0 flags=0x0)
+     OPTION '1024 Bytes' = 0x3 (type=0x0 flags=0x0)
+     OPTION '2048 Bytes' = 0x4 (type=0x0 flags=0x0)
+     OPTION '4096 Bytes' = 0x5 (type=0x0 flags=0x0)
+  GRAY_OUT_IF [+0x14d6] expr=
+  GRAY ONE_OF @form='PCI Express Settings' qid=0x45 var=Setup+0xe5 flags=0x10 'Maximum Read Request'
+     OPTION 'Auto' = 0x37 (type=0x0 flags=0x30)
+     OPTION '128 Bytes' = 0x0 (type=0x0 flags=0x0)
+     OPTION '256 Bytes' = 0x1 (type=0x0 flags=0x0)
+     OPTION '512 Bytes' = 0x2 (type=0x0 flags=0x0)
+     OPTION '1024 Bytes' = 0x3 (type=0x0 flags=0x0)
+     OPTION '2048 Bytes' = 0x4 (type=0x0 flags=0x0)
+     OPTION '4096 Bytes' = 0x5 (type=0x0 flags=0x0)
+  GRAY_OUT_IF [+0x1536] expr=
+  GRAY ONE_OF @form='PCI Express Settings' qid=0x46 var=Setup+0xe6 flags=0x10 'ASPM Support'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Auto' = 0x37 (type=0x0 flags=0x0)
+     OPTION 'Force L0s' = 0x1 (type=0x0 flags=0x0)
+  GRAY_OUT_IF [+0x157a] expr=
+  GRAY ONE_OF @form='PCI Express Settings' qid=0x47 var=Setup+0xe7 flags=0x10 'Extended Synch'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  GRAY_OUT_IF [+0x15ae] expr=
+  GRAY ONE_OF @form='PCI Express Settings' qid=0x48 var=Setup+0xe8 flags=0x10 'Link Training Retry'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION '2' = 0x2 (type=0x0 flags=0x0)
+     OPTION '3' = 0x3 (type=0x0 flags=0x0)
+     OPTION '5' = 0x5 (type=0x0 flags=0x30)
+  GRAY_OUT_IF [+0x15e7] expr=
+  GRAY NUMERIC @form='PCI Express Settings' qid=0x49 var=Setup+0xe9 flags=0x10 'Link Training Timeout (uS)'
+     NUMERIC min=10 max=10000 step=10
+     DEFAULT id=0x0 type=0x1 value=e803
+     DEFAULT id=0x1 type=0x1 value=e803
+  GRAY_OUT_IF [+0x1615] expr=
+  GRAY ONE_OF @form='PCI Express Settings' qid=0x4a var=Setup+0xeb flags=0x10 'Unpopulated Links'
+     OPTION 'Keep Link ON' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Disabled' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1640] expr=
+  GRAY_OUT_IF [+0x165a] expr=
+  HIDDEN GRAY ONE_OF @form='PCI Express Settings' qid=0x4b var=Setup+0xec flags=0x10 'Restore PCIE Registers'
+     OPTION 'Enabled' = 0xff (type=0x0 flags=0x0)
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+  FORM id=0x2865 title='Network Stack Configuration'
+  GRAY_OUT_IF [+0x168f] expr=
+  GRAY ONE_OF @form='Network Stack Configuration' qid=0x4c var=NetworkStackVar+0x0 flags=0x10 'Network Stack'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+     DEFAULT id=0x0 type=0x0 value=01
+     DEFAULT id=0x1 type=0x0 value=01
+  SUPPRESS_IF [+0x16c6] expr=
+  GRAY_OUT_IF [+0x16ce] expr=
+  HIDDEN GRAY ONE_OF @form='Network Stack Configuration' qid=0x4d var=NetworkStackVar+0x1 flags=0x10 'Ipv4 PXE Support'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN GRAY ONE_OF @form='Network Stack Configuration' qid=0x4e var=NetworkStackVar+0x6 flags=0x10 'Ipv4 HTTP Support'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  SUPPRESS_IF [+0x1734] expr=
+  GRAY_OUT_IF [+0x173c] expr=
+  HIDDEN GRAY ONE_OF @form='Network Stack Configuration' qid=0x4f var=NetworkStackVar+0x2 flags=0x10 'Ipv6 PXE Support'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN GRAY ONE_OF @form='Network Stack Configuration' qid=0x50 var=NetworkStackVar+0x7 flags=0x10 'Ipv6 HTTP Support'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN GRAY ONE_OF @form='Network Stack Configuration' qid=0x51 var=NetworkStackVar+0x8 flags=0x10 'IP6 Configuration Policy'
+     OPTION 'Automatic' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Manual' = 0x0 (type=0x0 flags=0x0)
+     DEFAULT id=0x0 type=0x0 value=01
+     DEFAULT id=0x1 type=0x0 value=01
+  SUPPRESS_IF [+0x17cf] expr=
+  GRAY_OUT_IF [+0x17d7] expr=
+  HIDDEN GRAY NUMERIC @form='Network Stack Configuration' qid=0x52 var=NetworkStackVar+0x4 flags=0x10 'PXE boot wait time'
+     NUMERIC min=0 max=5 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  SUPPRESS_IF [+0x1802] expr=
+  GRAY_OUT_IF [+0x180a] expr=
+  HIDDEN GRAY NUMERIC @form='Network Stack Configuration' qid=0x53 var=NetworkStackVar+0x5 flags=0x10 'Media detect count'
+     NUMERIC min=1 max=50 step=1
+     DEFAULT id=0x0 type=0x0 value=01
+     DEFAULT id=0x1 type=0x0 value=01
+  FORM id=0x286a title='USB Configuration'
+  TEXT 'USB Module Version'
+  TEXT 'USB Controllers:'
+  TEXT 'USB Devices:'
+  SUPPRESS_IF [+0x188b] expr=
+  GRAY_OUT_IF [+0x1893] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x54 var=UsbSupport+0x0 flags=0x10 'USB Support'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x18c0] expr=
+  GRAY_OUT_IF [+0x18c8] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x55 var=UsbSupport+0x1 flags=0x10 'Legacy USB Support'
+     OPTION 'Enabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Disabled' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Auto' = 0x2 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x18fc] expr=
+  GRAY_OUT_IF [+0x1900] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x56 var=UsbSupport+0x1e flags=0x10 'USB 2.0 Controller Mode'
+     OPTION 'HiSpeed' = 0x1 (type=0x0 flags=0x30)
+     OPTION 'FullSpeed' = 0x0 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x192d] expr=
+  GRAY_OUT_IF [+0x1931] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x57 var=UsbSupport+0x1a flags=0x10 'XHCI Legacy Support'
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x195e] expr=
+  GRAY_OUT_IF [+0x1970] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x58 var=UsbSupport+0x1b flags=0x10 'XHCI Hand-off'
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     DEFAULT id=0x0 type=0x0 value=01
+     DEFAULT id=0x1 type=0x0 value=01
+  SUPPRESS_IF [+0x19a9] expr=
+  GRAY_OUT_IF [+0x19bb] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x59 var=UsbSupport+0x2 flags=0x10 'EHCI Hand-off'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x19e8] expr=
+  GRAY_OUT_IF [+0x19f0] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x5a var=UsbSupport+0x1f flags=0x10 'USB Mass Storage Driver Support'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  TEXT 'USB hardware delays and time-outs:'
+  SUPPRESS_IF [+0x1a50] expr=
+  GRAY_OUT_IF [+0x1a58] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x5b var=UsbSupport+0x9 flags=0x10 'USB transfer time-out'
+     OPTION '1 sec' = 0x1 (type=0x0 flags=0x0)
+     OPTION '5 sec' = 0x5 (type=0x0 flags=0x0)
+     OPTION '10 sec' = 0xa (type=0x0 flags=0x0)
+     OPTION '20 sec' = 0x14 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x1ab5] expr=
+  GRAY_OUT_IF [+0x1abd] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x5c var=UsbSupport+0x8 flags=0x10 'Device reset time-out'
+     OPTION '10 sec' = 0x0 (type=0x0 flags=0x0)
+     OPTION '20 sec' = 0x1 (type=0x0 flags=0x30)
+     OPTION '30 sec' = 0x2 (type=0x0 flags=0x0)
+     OPTION '40 sec' = 0x3 (type=0x0 flags=0x0)
+  GRAY_OUT_IF [+0x1b1a] expr=
+  GRAY ONE_OF @form='USB Configuration' qid=0x5d var=UsbSupport+0x1c flags=0x10 'Device power-up delay'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Manual' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1b67] expr=
+  GRAY_OUT_IF [+0x1b6f] expr=
+  HIDDEN GRAY NUMERIC @form='USB Configuration' qid=0x5e var=UsbSupport+0x1d flags=0x10 'Device power-up delay in seconds'
+     NUMERIC min=1 max=40 step=1
+     DEFAULT id=0x0 type=0x0 value=05
+     DEFAULT id=0x1 type=0x0 value=05
+  SUPPRESS_IF [+0x1bc5] expr=
+  HIDDEN TEXT 'Mass Storage Devices:'
+  SUPPRESS_IF [+0x1be1] expr=
+  GRAY_OUT_IF [+0x1bf3] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x5f var=UsbSupport+0xa flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1c3f] expr=
+  GRAY_OUT_IF [+0x1c51] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x60 var=UsbSupport+0xb flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1c9d] expr=
+  GRAY_OUT_IF [+0x1caf] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x61 var=UsbSupport+0xc flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1cfb] expr=
+  GRAY_OUT_IF [+0x1d0d] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x62 var=UsbSupport+0xd flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1d59] expr=
+  GRAY_OUT_IF [+0x1d6b] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x63 var=UsbSupport+0xe flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1db7] expr=
+  GRAY_OUT_IF [+0x1dc9] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x64 var=UsbSupport+0xf flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1e15] expr=
+  GRAY_OUT_IF [+0x1e27] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x65 var=UsbSupport+0x10 flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1e73] expr=
+  GRAY_OUT_IF [+0x1e85] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x66 var=UsbSupport+0x11 flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1ed1] expr=
+  GRAY_OUT_IF [+0x1ee3] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x67 var=UsbSupport+0x12 flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1f2f] expr=
+  GRAY_OUT_IF [+0x1f41] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x68 var=UsbSupport+0x13 flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1f8d] expr=
+  GRAY_OUT_IF [+0x1f9f] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x69 var=UsbSupport+0x14 flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x1feb] expr=
+  GRAY_OUT_IF [+0x1ffd] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x6a var=UsbSupport+0x15 flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x2049] expr=
+  GRAY_OUT_IF [+0x205b] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x6b var=UsbSupport+0x16 flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x20a7] expr=
+  GRAY_OUT_IF [+0x20b9] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x6c var=UsbSupport+0x17 flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x2105] expr=
+  GRAY_OUT_IF [+0x2117] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x6d var=UsbSupport+0x18 flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x2163] expr=
+  GRAY_OUT_IF [+0x2175] expr=
+  HIDDEN GRAY ONE_OF @form='USB Configuration' qid=0x6e var=UsbSupport+0x19 flags=0x10 'N/A'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Floppy' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Forced FDD' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Hard Disk' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'CD-ROM' = 0x4 (type=0x0 flags=0x0)
+  TEXT ''
+  SUPPRESS_IF [+0x21c9] expr=
+  SUPPRESS_IF [+0x21cd] expr=
+  FORM id=0x28db title='Advanced CPU Settings'
+  ONE_OF @form='Advanced CPU Settings' qid=0x6f var=Setup+0x1c4 flags=0x10 'Cooler and Quieter operation'
+     OPTION 'Disabled' = 0x57c0 (type=0x2 flags=0x2)
+     OPTION 'Enabled' = 0x1940 (type=0x2 flags=0x32)
+  ONE_OF @form='Advanced CPU Settings' qid=0x70 var=Setup+0xb0 flags=0x10 'SVM Mode'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  ONE_OF @form='Advanced CPU Settings' qid=0x71 var=Setup+0xd2 flags=0x10 'IOMMU'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  FORM id=0x28dc title='USB Configuration'
+  ONE_OF @form='USB Configuration' qid=0x72 var=Setup+0x1c8 flags=0x10 'USB mode'
+     OPTION 'GEN1' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Auto' = 0x1 (type=0x0 flags=0x30)
+  FORM id=0x28dd title='SATA Configuration'
+  TEXT 'SATA Port0'
+  SUPPRESS_IF [+0x22af] expr=
+  HIDDEN TEXT 'SATA Port1'
+  HIDDEN TEXT 'SATA Port2'
+  HIDDEN TEXT 'SATA Port3'
+  SUPPRESS_IF [+0x22d3] expr=
+  HIDDEN TEXT 'SATA Port4'
+  HIDDEN TEXT 'SATA Port5'
+  FORM id=0x28ea title='Voltage Configuration'
+  GRAY_OUT_IF [+0x2321] expr=
+  GRAY ONE_OF @form='Voltage Configuration' qid=0x73 var=Setup+0x1c9 flags=0x10 'VCORE Fix Voltage'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x234a] expr=
+  HIDDEN GRAY NUMERIC @form='Voltage Configuration' qid=0x74 var=Setup+0x1ca flags=0x14 '  Voltage(mV)'
+     NUMERIC min=700 max=1250 step=1
+     DEFAULT id=0x0 type=0x1 value=8403
+  GRAY ONE_OF @form='Voltage Configuration' qid=0x75 var=Setup+0x1cc flags=0x10 'VCORE Loadline'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION '0.2 Ohm' = 0x1 (type=0x0 flags=0x0)
+     OPTION '0.3 Ohm' = 0x2 (type=0x0 flags=0x30)
+     OPTION '0.4 Ohm' = 0x3 (type=0x0 flags=0x0)
+     OPTION '0.5 Ohm' = 0x4 (type=0x0 flags=0x0)
+     OPTION '0.6 Ohm' = 0x5 (type=0x0 flags=0x0)
+  GRAY ONE_OF @form='Voltage Configuration' qid=0x76 var=Setup+0x1cd flags=0x10 'GFX Fix Voltage'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x23cf] expr=
+  HIDDEN GRAY NUMERIC @form='Voltage Configuration' qid=0x77 var=Setup+0x1ce flags=0x14 '  Voltage(mV)'
+     NUMERIC min=700 max=1250 step=1
+     DEFAULT id=0x0 type=0x1 value=8403
+  GRAY ONE_OF @form='Voltage Configuration' qid=0x78 var=Setup+0x1d0 flags=0x10 'GFX Loadline'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION '0.2 Ohm' = 0x1 (type=0x0 flags=0x0)
+     OPTION '0.3 Ohm' = 0x2 (type=0x0 flags=0x30)
+     OPTION '0.4 Ohm' = 0x3 (type=0x0 flags=0x0)
+     OPTION '0.5 Ohm' = 0x4 (type=0x0 flags=0x0)
+     OPTION '0.6 Ohm' = 0x5 (type=0x0 flags=0x0)
+  GRAY ONE_OF @form='Voltage Configuration' qid=0x79 var=Setup+0x1d1 flags=0x10 'MEMIO Fix Voltage'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x2454] expr=
+  HIDDEN GRAY ONE_OF @form='Voltage Configuration' qid=0x7a var=Setup+0x1d2 flags=0x10 '  Voltage'
+     OPTION '1.20 V' = 0x8 (type=0x0 flags=0x0)
+     OPTION '1.25 V' = 0xe (type=0x0 flags=0x0)
+     OPTION '1.30 V' = 0x13 (type=0x0 flags=0x0)
+     OPTION '1.35 V' = 0x1e (type=0x0 flags=0x30)
+     OPTION '1.40 V' = 0x24 (type=0x0 flags=0x0)
+     OPTION '1.45 V' = 0x29 (type=0x0 flags=0x0)
+  FORM id=0x2713 title='Chipset'
+  REF @form=0x285b 'GFX Configuration'
+  REF @form=0x285c 'North Bridge'
+  FORM id=0x285b title='GFX Configuration'
+  FORM id=0x285c title='North Bridge'
+  SUPPRESS_IF [+0x252d] expr=
+  HIDDEN REF @form=0x285e 'Memory Configuration'
+  FORM id=0x285e title='Memory Configuration'
+  ONE_OF @form='Memory Configuration' qid=0x7e var=Setup+0xd7 flags=0x10 'Memory Clock'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION '1333MHz' = 0x1 (type=0x0 flags=0x0)
+     OPTION '1600MHz' = 0x2 (type=0x0 flags=0x0)
+     OPTION '1866MHz' = 0x3 (type=0x0 flags=0x0)
+     OPTION '2133MHz' = 0x4 (type=0x0 flags=0x0)
+     OPTION '2400MHz' = 0x5 (type=0x0 flags=0x0)
+  ONE_OF @form='Memory Configuration' qid=0x7f var=Setup+0xd5 flags=0x10 'Bank Interleaving'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  ONE_OF @form='Memory Configuration' qid=0x80 var=Setup+0xd6 flags=0x10 'Channel Interleaving'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  ONE_OF @form='Memory Configuration' qid=0x81 var=Setup+0xd8 flags=0x10 'Memory Clear'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  FORM id=0x28c2 title='South Bridge'
+  TEXT 'AMD Reference code Version :'
+  REF @form=0x28c4 'SB USB Configuration'
+  SUPPRESS_IF [+0x2631] expr=
+  HIDDEN REF @form=0x28c6 'SB GPP Port Configuration'
+  FORM id=0x28c3 title='SB SATA Configuration'
+  GRAY_OUT_IF [+0x2652] expr=
+  GRAY ONE_OF @form='SB SATA Configuration' qid=0x84 var=Setup+0x118 flags=0x10 'OnChip SATA Channel'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x267d] expr=
+  GRAY_OUT_IF [+0x2685] expr=
+  HIDDEN GRAY ONE_OF @form='SB SATA Configuration' qid=0x85 var=Setup+0x119 flags=0x10 'OnChip SATA Type'
+     OPTION 'Native IDE' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'RAID' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'AHCI' = 0x2 (type=0x0 flags=0x30)
+     OPTION 'Legacy IDE' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'IDE->AHCI' = 0x4 (type=0x0 flags=0x0)
+     OPTION 'AHCI as ID 7804' = 0x5 (type=0x0 flags=0x0)
+     OPTION 'IDE->AHCI as ID 7804' = 0x6 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x26d5] expr=
+  GRAY_OUT_IF [+0x270f] expr=
+  HIDDEN GRAY ONE_OF @form='SB SATA Configuration' qid=0x86 var=Setup+0x11a flags=0x10 'RAID Type'
+     OPTION 'RAID' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'RAID5' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x273c] expr=
+  GRAY_OUT_IF [+0x2744] expr=
+  HIDDEN GRAY ONE_OF @form='SB SATA Configuration' qid=0x87 var=Setup+0x11b flags=0x10 'OnChip IDE mode'
+     OPTION 'Legacy mode' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Native mode' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x2771] expr=
+  GRAY_OUT_IF [+0x278b] expr=
+  HIDDEN GRAY ONE_OF @form='SB SATA Configuration' qid=0x88 var=Setup+0x11c flags=0x10 'SATA IDE Combined Mode'
+     OPTION 'Enabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Disabled' = 0x1 (type=0x0 flags=0x0)
+  FORM id=0x28c4 title='SB USB Configuration'
+  GRAY_OUT_IF [+0x27c0] expr=
+  GRAY ONE_OF @form='SB USB Configuration' qid=0x89 var=Setup+0x11d flags=0x10 'XHCI Controller 0'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x27eb] expr=
+  GRAY_OUT_IF [+0x27f3] expr=
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x8a var=Setup+0x135 flags=0x10 'XHCI0 PORT 1 '
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x2820] expr=
+  GRAY_OUT_IF [+0x2828] expr=
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x8b var=Setup+0x11e flags=0x10 'XHCI Controller 1'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x2855] expr=
+  GRAY_OUT_IF [+0x2867] expr=
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x8c var=Setup+0x136 flags=0x10 'XHCI1 PORT 0 '
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x8d var=Setup+0x137 flags=0x10 'XHCI1 PORT 1 '
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  GRAY_OUT_IF [+0x28be] expr=
+  GRAY ONE_OF @form='SB USB Configuration' qid=0x8e var=Setup+0x11f flags=0x10 'OHCI HC(Bus 0 Dev 18 Fn 0)'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x28e9] expr=
+  GRAY_OUT_IF [+0x28f1] expr=
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x8f var=Setup+0x120 flags=0x10 'EHCI HC(Bus 0 Dev 18 Fn 2)'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x291e] expr=
+  GRAY_OUT_IF [+0x2926] expr=
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x90 var=Setup+0x126 flags=0x10 'USB PORT 0 '
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x91 var=Setup+0x127 flags=0x10 'USB PORT 1 '
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x92 var=Setup+0x128 flags=0x10 'USB PORT 2 '
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x93 var=Setup+0x129 flags=0x10 'USB PORT 3 '
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x94 var=Setup+0x12a flags=0x10 'USB PORT 4 '
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x29e0] expr=
+  GRAY_OUT_IF [+0x29e8] expr=
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x95 var=Setup+0x123 flags=0x10 'OHCI HC(Bus 0 Dev 22 Fn 0)'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x2a15] expr=
+  GRAY_OUT_IF [+0x2a27] expr=
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x96 var=Setup+0x124 flags=0x10 'EHCI HC(Bus 0 Dev 22 Fn 2)'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x2a54] expr=
+  GRAY_OUT_IF [+0x2a6e] expr=
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x97 var=Setup+0x131 flags=0x10 'USB PORT 11 '
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x98 var=Setup+0x132 flags=0x10 'USB PORT 12 '
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  HIDDEN GRAY ONE_OF @form='SB USB Configuration' qid=0x99 var=Setup+0x133 flags=0x10 'USB PORT 13 '
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  FORM id=0x28c6 title='SB GPP Port Configuration'
+  GRAY_OUT_IF [+0x2aee] expr=
+  GRAY ONE_OF @form='SB GPP Port Configuration' qid=0x9a var=Setup+0x13e flags=0x10 'SB GPP Function'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x2b19] expr=
+  GRAY_OUT_IF [+0x2b21] expr=
+  HIDDEN GRAY ONE_OF @form='SB GPP Port Configuration' qid=0x9b var=Setup+0x13f flags=0x10 'GPP Port Link Configuration'
+     OPTION 'x4 mode' = 0x0 (type=0x0 flags=0x0)
+     OPTION '2:2 mode' = 0x2 (type=0x0 flags=0x0)
+     OPTION '2:1:1 mode' = 0x3 (type=0x0 flags=0x30)
+     OPTION '1:1:1:1 mode' = 0x4 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x2b5c] expr=
+  GRAY_OUT_IF [+0x2b64] expr=
+  HIDDEN GRAY ONE_OF @form='SB GPP Port Configuration' qid=0x9c var=Setup+0x141 flags=0x10 'GPP Link ASPM'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'L0s' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'L1' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'L0s+L1' = 0x3 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x2b9f] expr=
+  GRAY_OUT_IF [+0x2ba7] expr=
+  HIDDEN GRAY ONE_OF @form='SB GPP Port Configuration' qid=0x9d var=Setup+0x142 flags=0x10 'GPP Gen2'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x2bd4] expr=
+  GRAY_OUT_IF [+0x2bdc] expr=
+  HIDDEN GRAY ONE_OF @form='SB GPP Port Configuration' qid=0x9e var=Setup+0x143 flags=0x10 'UMI Gen2'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  GRAY_OUT_IF [+0x2c09] expr=
+  GRAY ONE_OF @form='SB GPP Port Configuration' qid=0x9f var=Setup+0x144 flags=0x10 'GPP HW Compliance Mode'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Port A' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Port B' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'Port C' = 0x3 (type=0x0 flags=0x0)
+     OPTION 'Port D' = 0x4 (type=0x0 flags=0x0)
+  GRAY_OUT_IF [+0x2c49] expr=
+  GRAY ONE_OF @form='SB GPP Port Configuration' qid=0xa0 var=Setup+0x145 flags=0x10 'SB GPP LANE REVERSAL'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  GRAY_OUT_IF [+0x2c74] expr=
+  GRAY ONE_OF @form='SB GPP Port Configuration' qid=0xa1 var=Setup+0x146 flags=0x10 'UMI PHY PLL Power Down'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  GRAY_OUT_IF [+0x2c9f] expr=
+  GRAY ONE_OF @form='SB GPP Port Configuration' qid=0xa2 var=Setup+0x147 flags=0x10 'SB GPP PHY PLL Power Down'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x30)
+  FORM id=0x28c7 title='SB IR Configuration'
+  GRAY_OUT_IF [+0x2cdb] expr=
+  GRAY ONE_OF @form='SB IR Configuration' qid=0xa3 var=Setup+0x148 flags=0x10 'IR Config'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'RX & TX0 Only' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'RX & TX1 Only' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'RX, TX0, and TX1' = 0x3 (type=0x0 flags=0x30)
+  FORM id=0x28c8 title='SB SD Configuration'
+  GRAY_OUT_IF [+0x2d1c] expr=
+  GRAY ONE_OF @form='SB SD Configuration' qid=0xa4 var=Setup+0x149 flags=0x10 'SD MODE'
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'ADMA' = 0x1 (type=0x0 flags=0x30)
+     OPTION 'DMA' = 0x2 (type=0x0 flags=0x0)
+     OPTION 'PIO' = 0x3 (type=0x0 flags=0x0)
+  GRAY_OUT_IF [+0x2d55] expr=
+  GRAY ONE_OF @form='SB SD Configuration' qid=0xa5 var=Setup+0x14a flags=0x10 'SD Trace Length'
+     OPTION 'Less 6' = 0x4 (type=0x0 flags=0x30)
+     OPTION 'Between 6 and 11' = 0x6 (type=0x0 flags=0x0)
+     OPTION 'Greater 11' = 0x7 (type=0x0 flags=0x0)
+  GRAY_OUT_IF [+0x2d87] expr=
+  GRAY ONE_OF @form='SB SD Configuration' qid=0xa6 var=Setup+0x14b flags=0x10 'SD SPEED'
+     OPTION 'Low' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'High' = 0x1 (type=0x0 flags=0x30)
+  GRAY_OUT_IF [+0x2db2] expr=
+  GRAY ONE_OF @form='SB SD Configuration' qid=0xa7 var=Setup+0x14c flags=0x10 'SD BitWidth'
+     OPTION '32Bit' = 0x0 (type=0x0 flags=0x0)
+     OPTION '64Bit' = 0x1 (type=0x0 flags=0x30)
+  FORM id=0x28c9 title='SB HD Azalia Configuration'
+  GRAY_OUT_IF [+0x2de5] expr=
+  GRAY ONE_OF @form='SB HD Azalia Configuration' qid=0xa8 var=Setup+0x14e flags=0x10 'HD Audio Azalia Device'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Disabled' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x2 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x2e17] expr=
+  GRAY_OUT_IF [+0x2e1f] expr=
+  HIDDEN GRAY CHECKBOX @form='SB HD Azalia Configuration' qid=0xa9 var=Setup+0x14f flags=0x10 'HD Onboard PIN Config'
+  SUPPRESS_IF [+0x2e3b] expr=
+  GRAY_OUT_IF [+0x2e4d] expr=
+  HIDDEN GRAY ONE_OF @form='SB HD Azalia Configuration' qid=0xaa var=Setup+0x150 flags=0x10 'Azalia Front Panel'
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Disabled' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x2 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x2e81] expr=
+  GRAY_OUT_IF [+0x2e89] expr=
+  HIDDEN GRAY ONE_OF @form='SB HD Azalia Configuration' qid=0xab var=Setup+0x151 flags=0x10 'SDIN0 Pin Config'
+     OPTION 'GPIO' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Azalia' = 0x2 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x2eb6] expr=
+  GRAY_OUT_IF [+0x2ebe] expr=
+  HIDDEN GRAY ONE_OF @form='SB HD Azalia Configuration' qid=0xac var=Setup+0x152 flags=0x10 'SDIN1 Pin Config'
+     OPTION 'GPIO' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Azalia' = 0x2 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x2eeb] expr=
+  GRAY_OUT_IF [+0x2ef3] expr=
+  HIDDEN GRAY ONE_OF @form='SB HD Azalia Configuration' qid=0xad var=Setup+0x153 flags=0x10 'SDIN2 Pin Config'
+     OPTION 'GPIO' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Azalia' = 0x2 (type=0x0 flags=0x30)
+  SUPPRESS_IF [+0x2f20] expr=
+  GRAY_OUT_IF [+0x2f28] expr=
+  HIDDEN GRAY ONE_OF @form='SB HD Azalia Configuration' qid=0xae var=Setup+0x154 flags=0x10 'SDIN3 Pin Config'
+     OPTION 'GPIO' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Azalia' = 0x2 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x2f55] expr=
+  GRAY_OUT_IF [+0x2f5d] expr=
+  HIDDEN GRAY CHECKBOX @form='SB HD Azalia Configuration' qid=0xaf var=Setup+0x155 flags=0x10 'Azalia Snoop'
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  FORM id=0x28da title='IMC Fan Control'
+  ONE_OF @form='IMC Fan Control' qid=0xb0 var=Setup+0x1ad flags=0x10 'IMC Fan Control'
+     OPTION 'By Jumper' = 0x0 (type=0x0 flags=0x30)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Disabled' = 0x2 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x2fc7] expr=
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xb1 var=Setup+0x1ae flags=0x0 'CPU Thermal Zone 1'
+     NUMERIC min=0 max=255 step=1
+     DEFAULT id=0x0 type=0x0 value=35
+     DEFAULT id=0x1 type=0x0 value=35
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xb2 var=Setup+0x1af flags=0x0 'CPU Thermal Zone 2'
+     NUMERIC min=0 max=255 step=1
+     DEFAULT id=0x0 type=0x0 value=0e
+     DEFAULT id=0x1 type=0x0 value=0e
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xb3 var=Setup+0x1b0 flags=0x0 'CPU Hysteresis'
+     NUMERIC min=0 max=255 step=1
+     DEFAULT id=0x0 type=0x0 value=54
+     DEFAULT id=0x1 type=0x0 value=54
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xb4 var=Setup+0x1b1 flags=0x0 'CPU Fan PWM Stepping %'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=01
+     DEFAULT id=0x1 type=0x0 value=01
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xb5 var=Setup+0x1b2 flags=0x0 'CPU Fan PWM Ramping Rate'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xb6 var=Setup+0x1b3 flags=0x0 'CPU _AC0'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=46
+     DEFAULT id=0x1 type=0x0 value=46
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xb7 var=Setup+0x1b4 flags=0x0 'CPU _AC1'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=3c
+     DEFAULT id=0x1 type=0x0 value=3c
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xb8 var=Setup+0x1b5 flags=0x0 'CPU _AC2'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xb9 var=Setup+0x1b6 flags=0x0 'CPU _AC3'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xba var=Setup+0x1b7 flags=0x0 'CPU _AC4'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xbb var=Setup+0x1b8 flags=0x0 'CPU _AC5'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xbc var=Setup+0x1b9 flags=0x0 'CPU _AC6'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xbd var=Setup+0x1ba flags=0x0 'CPU _AC7'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xbe var=Setup+0x1bb flags=0x0 'CPU _CRT'
+     NUMERIC min=0 max=255 step=1
+     DEFAULT id=0x0 type=0x0 value=69
+     DEFAULT id=0x1 type=0x0 value=69
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xbf var=Setup+0x1bc flags=0x0 'CPU _AL0'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=64
+     DEFAULT id=0x1 type=0x0 value=64
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xc0 var=Setup+0x1bd flags=0x0 'CPU _AL1'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xc1 var=Setup+0x1be flags=0x0 'CPU _AL2'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xc2 var=Setup+0x1bf flags=0x0 'CPU _AL3'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xc3 var=Setup+0x1c0 flags=0x0 'CPU _AL4'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xc4 var=Setup+0x1c1 flags=0x0 'CPU _AL5'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xc5 var=Setup+0x1c2 flags=0x0 'CPU _AL6'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  HIDDEN NUMERIC @form='IMC Fan Control' qid=0xc6 var=Setup+0x1c3 flags=0x0 'CPU _AL7'
+     NUMERIC min=0 max=100 step=1
+     DEFAULT id=0x0 type=0x0 value=00
+     DEFAULT id=0x1 type=0x0 value=00
+  FORM id=0x2714 title='Security'
+  TEXT 'Minimum length'
+  TEXT 'Maximum length'
+  GRAY_OUT_IF [+0x3311] expr=
+  GRAY PASSWORD @form='Security' qid=0xc7 var=AMITSESetup+0x28 flags=0x0 'Administrator Password'
+  PASSWORD @form='Security' qid=0xc8 var=AMITSESetup+0x0 flags=0x0 'User Password'
+  FORM id=0x2715 title='Boot'
+  GRAY_OUT_IF [+0x3352] expr=
+  GRAY NUMERIC @form='Boot' qid=0xc9 var=Timeout+0x0 flags=0x0 'Setup Prompt Timeout'
+     NUMERIC min=0 max=65535 step=1
+     DEFAULT id=0x0 type=0x1 value=0100
+     DEFAULT id=0x1 type=0x1 value=0100
+  GRAY_OUT_IF [+0x3380] expr=
+  GRAY ONE_OF @form='Boot' qid=0xca var=Setup+0x0 flags=0x10 'Bootup NumLock State'
+     OPTION 'On' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Off' = 0x0 (type=0x0 flags=0x0)
+     DEFAULT id=0x0 type=0x0 value=01
+     DEFAULT id=0x1 type=0x0 value=01
+  GRAY_OUT_IF [+0x33b7] expr=
+  GRAY CHECKBOX @form='Boot' qid=0xcb var=AMITSESetup+0x50 flags=0x0 'Quiet Boot'
+     DEFAULT id=0x0 type=0x0 value=01
+     DEFAULT id=0x1 type=0x0 value=01
+  SUPPRESS_IF [+0x33ef] expr=
+  HIDDEN ONE_OF @form='Boot' qid=0xcc var=BootOrder+0x0 flags=0x0 'Boot Option #%d'
+     OPTION '' = 0x0 (type=0x1 flags=0x1)
+     OPTION '' = 0x1 (type=0x1 flags=0x1)
+     DEFAULT id=0x0 type=0x1 value=0000
+     DEFAULT id=0x1 type=0x1 value=0000
+  SUPPRESS_IF [+0x342f] expr=
+  HIDDEN ONE_OF @form='Boot' qid=0xcd var=Setup+0x1 flags=0x10 'Fast Boot'
+     DEFAULT id=0x0 type=0x0 value=00
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x20)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x345c] expr=
+  GRAY_OUT_IF [+0x3464] expr=
+  HIDDEN GRAY ONE_OF @form='Boot' qid=0xce var=Setup+0x2 flags=0x10 ' SATA Support'
+     DEFAULT id=0x0 type=0x0 value=00
+     OPTION 'Last Boot HDD Only' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'All Sata Devices' = 0x1 (type=0x0 flags=0x20)
+  SUPPRESS_IF [+0x3497] expr=
+  GRAY_OUT_IF [+0x349f] expr=
+  HIDDEN GRAY ONE_OF @form='Boot' qid=0xcf var=Setup+0x3 flags=0x10 ' VGA Support'
+     DEFAULT id=0x0 type=0x0 value=01
+     OPTION 'Auto' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'EFI Driver' = 0x1 (type=0x0 flags=0x20)
+  SUPPRESS_IF [+0x34d2] expr=
+  GRAY_OUT_IF [+0x34da] expr=
+  HIDDEN GRAY ONE_OF @form='Boot' qid=0xd0 var=Setup+0x4 flags=0x10 ' USB Support'
+     DEFAULT id=0x0 type=0x0 value=01
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Full Initial' = 0x1 (type=0x0 flags=0x20)
+     OPTION 'Partial Initial' = 0x2 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x3514] expr=
+  GRAY_OUT_IF [+0x351c] expr=
+  HIDDEN GRAY ONE_OF @form='Boot' qid=0xd1 var=Setup+0x5 flags=0x10 ' PS2 Devices Support'
+     DEFAULT id=0x0 type=0x0 value=01
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x20)
+  SUPPRESS_IF [+0x354f] expr=
+  GRAY_OUT_IF [+0x3557] expr=
+  HIDDEN GRAY ONE_OF @form='Boot' qid=0xd2 var=Setup+0x7 flags=0x10 ' NetWork Stack Driver Support'
+     DEFAULT id=0x0 type=0x0 value=00
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x20)
+  SUPPRESS_IF [+0x358a] expr=
+  HIDDEN ONE_OF @form='Boot' qid=0xd3 var=Setup+0x6 flags=0x10 'Redirection Support'
+     DEFAULT id=0x0 type=0x0 value=00
+     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x20)
+     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x35c4] expr=
+  SUPPRESS_IF [+0x35d9] expr=
+  HIDDEN ONE_OF @form='Boot' qid=0xd4 var=DriverOrder+0x0 flags=0x0 'Driver Option #%d'
+     OPTION '' = 0x0 (type=0x1 flags=0x31)
+     OPTION '' = 0x1 (type=0x1 flags=0x1)
+  SUPPRESS_IF [+0x360b] expr=
+  HIDDEN ONE_OF @form='Boot' qid=0xd5 var=NewOptionPolicy+0x0 flags=0x10 'New Boot Option Policy'
+     DEFAULT id=0x0 type=0x0 value=01
+     OPTION 'Default' = 0x0 (type=0x0 flags=0x0)
+     OPTION 'Place First' = 0x1 (type=0x0 flags=0x0)
+     OPTION 'Place Last' = 0x2 (type=0x0 flags=0x0)
+  SUPPRESS_IF [+0x3648] expr=
+  HIDDEN REF @form=0x271a ''
+  FORM id=0x271a title='Boot'
+  SUPPRESS_IF [+0x366b] expr=
+  HIDDEN ONE_OF @form='Boot' qid=0xd7 var=LegacyDevOrder+0x0 flags=0x0 'Boot Option #%d'
+     OPTION '' = 0x0 (type=0x1 flags=0x1)
+     OPTION '' = 0x1 (type=0x1 flags=0x1)
+     DEFAULT id=0x0 type=0x1 value=0000
+     DEFAULT id=0x1 type=0x1 value=0000
+  FORM id=0x2716 title='Save & Exit'
+  SUPPRESS_IF [+0x36bc] expr=
+  HIDDEN REF @form=0x2716 'Save Changes and Exit'
+  SUPPRESS_IF [+0x36d5] expr=
+  HIDDEN REF @form=0x2716 'Discard Changes and Exit'
+  SUPPRESS_IF [+0x36f7] expr=
+  HIDDEN REF @form=0x2716 'Save Changes and Reset'
+  SUPPRESS_IF [+0x3710] expr=
+  HIDDEN REF @form=0x2716 'Discard Changes and Reset'
+  SUPPRESS_IF [+0x3732] expr=
+  HIDDEN REF @form=0x2716 'Save Changes'
+  SUPPRESS_IF [+0x374b] expr=
+  HIDDEN REF @form=0x2716 'Discard Changes'
+  SUPPRESS_IF [+0x3776] expr=
+  HIDDEN REF @form=0x2716 'Restore Defaults'
+  SUPPRESS_IF [+0x378f] expr=
+  HIDDEN REF @form=0x2716 'Save as User Defaults'
+  SUPPRESS_IF [+0x37a8] expr=
+  HIDDEN REF @form=0x2716 'Restore User Defaults'
+  SUPPRESS_IF [+0x37d3] expr=
+  HIDDEN REF @form=0x2716 ''
+  SUPPRESS_IF [+0x37ee] expr=
+  HIDDEN REF @form=0x2716 'Launch EFI Shell from filesystem device'
+  REF @form=0x28e9 'Save & Exit'
+  FORM id=0x28e9 title='Save & Exit'
+  SUPPRESS_IF [+0x3820] expr=
+  HIDDEN REF @form=0x28e9 'Save Changes and Exit'
+  SUPPRESS_IF [+0x3839] expr=
+  HIDDEN REF @form=0x28e9 'Discard Changes and Exit'
+  SUPPRESS_IF [+0x3852] expr=
+  HIDDEN REF @form=0x28e9 'Discard Changes'
+  SUPPRESS_IF [+0x386b] expr=
+  GRAY_OUT_IF [+0x3873] expr=
+  HIDDEN REF @form=0x28e9 'Restore Defaults'
+  SUPPRESS_IF [+0x38a0] expr=
+  GRAY_OUT_IF [+0x38a8] expr=
+  HIDDEN REF @form=0x2716 'Save as User Defaults'
+  SUPPRESS_IF [+0x38c3] expr=
+  GRAY_OUT_IF [+0x38cb] expr=
+  HIDDEN REF @form=0x2716 'Restore User Defaults'
+  GRAY_OUT_IF [+0x38f8] expr=
+  SUPPRESS_IF [+0x3900] expr=
+  HIDDEN REF @form=0x28e9 ''
+  SUPPRESS_IF [+0x3926] expr=
+  GRAY_OUT_IF [+0x3930] expr=
+  HIDDEN REF @form=0x28e9 'Launch EFI Shell from filesystem device'
+  SUPPRESS_IF [+0x394b] expr=
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xec var=SystemAccess+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xed var=Shell+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=65535 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xee var=BootManager+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=65535 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xef var=AMICallback+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=65535 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xf0 var=LegacyGroup+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=65535 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xf1 var=LegacyDev+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=65535 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xf2 var=DriverManager+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=65535 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xf3 var=Setup+0x1ac flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xf4 var=Setup+0xb4 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xf5 var=UsbMassDevValid+0xf flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xf6 var=UsbMassDevValid+0xe flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xf7 var=UsbMassDevValid+0xd flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xf8 var=UsbMassDevValid+0xc flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xf9 var=UsbMassDevValid+0xb flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xfa var=UsbMassDevValid+0xa flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xfb var=UsbMassDevValid+0x9 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xfc var=UsbMassDevValid+0x8 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xfd var=UsbMassDevValid+0x7 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xfe var=UsbMassDevValid+0x6 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0xff var=UsbMassDevValid+0x5 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x100 var=UsbMassDevValid+0x4 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x101 var=UsbMassDevValid+0x3 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x102 var=UsbMassDevValid+0x2 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x103 var=UsbMassDevValid+0x1 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x104 var=UsbMassDevValid+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x105 var=UsbMassDevNum+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x106 var=UsbControllerNum+0x3 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x107 var=UsbControllerNum+0x2 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x108 var=UsbControllerNum+0x1 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x109 var=UsbControllerNum+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x10a var=Setup+0xae flags=0x0 '#0'
+     NUMERIC min=0 max=255 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x10b var=DrvHealthCtrlCnt+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=65535 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x10c var=DriverHealthCount+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=65535 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x10d var=DriverHlthEnable+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=65535 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x10e var=DynamicPageCount+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=65535 step=0
+  HIDDEN NUMERIC @form='Save & Exit' qid=0x10f var=PlatformLangCodes+0x0 flags=0x0 '#0'
+     NUMERIC min=0 max=65535 step=0

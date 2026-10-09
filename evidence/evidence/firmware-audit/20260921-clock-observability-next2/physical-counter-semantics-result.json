@@ -1,0 +1,171 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 16,
+    "total": 16
+  },
+  "checks_detail": [
+    {
+      "expected": 16777216,
+      "name": "clv-size",
+      "observed": 16777216,
+      "status": "PASS"
+    },
+    {
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "name": "clv-sha256",
+      "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "label": "1800MHz-request",
+        "offset": "0x7E5",
+        "value": "0x24"
+      },
+      "name": "clv-memory-request-preserved",
+      "observed": {
+        "offset": "0x7E5",
+        "value": "0x24"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": "d08eceff9418bd1fc99ab9024b7e2e7827629a093e0754a0ecb7e92c84a09ae0",
+      "name": "gfx-source-sha256",
+      "observed": "d08eceff9418bd1fc99ab9024b7e2e7827629a093e0754a0ecb7e92c84a09ae0",
+      "status": "PASS"
+    },
+    {
+      "expected": "2a3c6653038867f7d66764d78fa0058278d0f151fe17750c7f0daa2522e3fe90",
+      "name": "amdgpu-header-sha256",
+      "observed": "2a3c6653038867f7d66764d78fa0058278d0f151fe17750c7f0daa2522e3fe90",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "name": "ip10.3.6-counter-address-upper",
+      "observed": true,
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "name": "ip10.3.6-counter-address-lower",
+      "observed": true,
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "lower": 1,
+        "upper": 1
+      },
+      "name": "ip10.3.6-counter-base-index",
+      "observed": {
+        "lower_base_idx_1": true,
+        "upper_base_idx_1": true
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "name": "target-branch-selects-gc10.3.6",
+      "observed": {
+        "branch": true,
+        "lower": true,
+        "upper": true
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "lower_reads": 2,
+        "upper_reads": 2
+      },
+      "name": "triple-read-hi-lo-hi",
+      "observed": {
+        "lower_reads": 2,
+        "upper_reads": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "name": "tear-safe-hi-retry",
+      "observed": {
+        "recombine": true,
+        "retry": true
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": ">=1",
+      "name": "source-documents-100mhz-timebase",
+      "observed": 4,
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "name": "callback-registered",
+      "observed": true,
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "name": "public-macro-dispatches-callback",
+      "observed": {
+        "callback": true,
+        "macro": true
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": [],
+      "name": "counter-is-not-mclk-uclk-fclk",
+      "observed": {
+        "domain_terms": []
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "name": "discovery-identifies-ip10.3.6-family",
+      "observed": {
+        "family": true,
+        "ip_branch": true
+      },
+      "status": "PASS"
+    }
+  ],
+  "demonstrated_path": {
+    "callback": "amdgpu_asic_get_gpu_clock_counter -> adev->asic_funcs->get_gpu_clock_counter -> gfx_v10_0_get_gpu_clock_counter",
+    "read_algorithm": "RREG32 upper, lower, upper; retry lower/high if upper changed; combine 64-bit counter",
+    "source_semantics": "driver comment identifies SMUIO TSC frequency as 100MHz; this is an independent timebase counter, not a memory/fabric/GDDR6 clock counter",
+    "target_ip_branch": "IP_VERSION(10, 3, 6) selects SMUIO GC_10_3_6 Golden TSC upper 0x002D and lower 0x002E (DWORD register indices, BASE_IDX=1)"
+  },
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "future_hardware_acceptance_procedure": null,
+  "inputs": {
+    "amdgpu_header": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/vcn-source-context/drivers/gpu/drm/amd/amdgpu/amdgpu.h",
+    "amdgpu_header_sha256": "2a3c6653038867f7d66764d78fa0058278d0f151fe17750c7f0daa2522e3fe90",
+    "discovery_source": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/vcn-source-context/drivers/gpu/drm/amd/amdgpu/amdgpu_discovery.c",
+    "discovery_source_sha256": "18920f314d4e273d32400ef1295179264999b4aa400f402fefa149212380a940",
+    "gfx_source": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/linux-kiq-diff/gfx_v10_0-final.c",
+    "gfx_source_sha256": "d08eceff9418bd1fc99ab9024b7e2e7827629a093e0754a0ecb7e92c84a09ae0",
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+  },
+  "missing_hardware_inputs": "Need an exact installed-driver/firmware mapping for UMC/MCLK, UCLK divider/ratio, and DF/FCLK PLL/counter/status registers, plus a safe read-only transport and common-reference calibration. The SMUIO TSC alone cannot establish MCLK:UCLK:FCLK=1:1:1.",
+  "not_demonstrated": [
+    "exact installed BC-250 kernel/module identity or source-revision equivalence",
+    "MCLK/UMC physical counter or PLL/divider readback",
+    "UCLK divider/ratio and crossing/synchronous status",
+    "FCLK/DF physical counter or PLL/divider readback",
+    "common reference calibration converting any domain counter to MHz/GDDR6 rate",
+    "hardware readback and acceptance on BC250-01"
+  ],
+  "scope": "offline only; no board/sysfs/network/register/firmware/NVRAM action and no clock probe invocation",
+  "status": "PASS"
+}

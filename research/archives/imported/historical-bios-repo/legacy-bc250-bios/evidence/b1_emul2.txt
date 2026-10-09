@@ -1,0 +1,235 @@
+== dispatcher fn@0xBA98: cmd([r4]) -> action; emulate from 0xBB04 ==
+   sl literal @0xBD28 = 0xffff000f (then sl-5); donor literal @0xBD2C = 0xfffef005
+
+== cmd ranges -> action address ==
+  cmd 0x0..0xfff         -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x1000             -> 0x00bf6a  ldr r1, [sp, #0x20]                      ; action: bl 0x946c
+  cmd 0x1001             -> 0x00bf74  ldr r0, [r4, #0x38]                      ; action: bl 0x7ba4
+  cmd 0x1002             -> 0x00bf82  ldr r0, [r5]                             ; action: ?
+  cmd 0x1003             -> 0x00bffa  ldr r0, [r5]                             ; action: bl 0xe938
+  cmd 0x1004             -> 0x00c00e  ldm r0, {r0, r1, r2, r3}                 ; action: bl 0x8fd4
+  cmd 0x1005             -> 0x00c022  ldr r0, [r5]                             ; action: bl 0xd1fc
+  cmd 0x1006             -> 0x00c03a  ldr r0, [r5]                             ; action: bl 0xe6cc
+  cmd 0x1007             -> 0x00c07c  ldr r0, [r5]                             ; action: bl 0xd8dc
+  cmd 0x1008             -> 0x00c216  ldrb.w r0, [r4, #0x48]                   ; action: bl 0x13260
+  cmd 0x1009             -> 0x00c772  str r7, [sp]                             ; action: bl 0xcb74
+  cmd 0x100a             -> 0x00c0ae  ldr r0, [r5], #8                         ; action: bl 0x7ae0
+  cmd 0x100b             -> 0x00c0c4  ldr r0, [sp, #0x20]                      ; action: bl 0x3528
+  cmd 0x100c             -> 0x00c0d0  ldr r0, [r5]                             ; action: bl 0x13468
+  cmd 0x100d             -> 0x00c0e0  ldr r0, [r4, #0x38]                      ; action: bl 0x13680
+  cmd 0x100e             -> 0x00c1c2  ldr r0, [sp, #0x20]                      ; action: bl 0x5eb8
+  cmd 0x100f             -> 0x00c1e2  ldr r1, [r5, #8]                         ; action: bl 0xdd84
+  cmd 0x1010             -> 0x00c1ee  ldr r3, [r4, #0x38]                      ; action: bl 0xde1c
+  cmd 0x1011             -> 0x00c0e8  ldr r1, [r5]                             ; action: ?
+  cmd 0x1012..0x1013     -> 0x00c0f8  ldr r1, [r5]                             ; action: ?
+  cmd 0x1014             -> 0x00c116  ldr r1, [r5]                             ; action: ?
+  cmd 0x1015             -> 0x00c128  ldr r0, [r5]                             ; action: bl 0x9f88
+  cmd 0x1016             -> 0x00c206  ldr r0, [r5, #8]                         ; action: bl 0x12ac0
+  cmd 0x1017             -> 0x00c216  ldrb.w r0, [r4, #0x48]                   ; action: bl 0x13260
+  cmd 0x1018             -> 0x00c22a  ldrb.w r1, [r4, #0x4c]                   ; action: bl 0x1332c
+  cmd 0x1019             -> 0x00c240  ldrb.w r1, [r4, #0x4c]                   ; action: bl 0x13408
+  cmd 0x101a             -> 0x00c256  ldrb.w r3, [r4, #0x44]                   ; action: bl 0x1322c
+  cmd 0x101b             -> 0x00c5e6  bl #0xf3f0                               ; action: bl 0xf3f0
+  cmd 0x101c             -> 0x00c152  ldr r0, [r5]                             ; action: bl 0x16ff4
+  cmd 0x101d             -> 0x00c16c  ldr r0, [r5]                             ; action: bl 0x16700
+  cmd 0x101e             -> 0x00c050  bl #0xcc44                               ; action: bl 0xcc44
+  cmd 0x101f             -> 0x00c266  ldr r3, [sp, #0x20]                      ; action: bl 0xea6c
+  cmd 0x1020             -> 0x00c28a  bl #0xeb74                               ; action: bl 0xeb74
+  cmd 0x1021             -> 0x00c290  ldrd r0, r1, [r4, #0x38]                 ; action: bl 0x5b28
+  cmd 0x1022             -> 0x00c29c  bl #0xcdb8                               ; action: bl 0xcdb8
+  cmd 0x1023             -> 0x00c64c  ldm r0, {r0, r1, r2}                     ; action: bl 0x44b0
+  cmd 0x1024             -> 0x00c096  ldr r0, [r5]                             ; action: bl 0xce90
+  cmd 0x1025             -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x1026             -> 0x00c2b0  bl #0x20d0                               ; action: bl 0x20d0
+  cmd 0x1027             -> 0x00c2cc  bl #0xe0c8                               ; action: bl 0xe0c8
+  cmd 0x1028             -> 0x00c2d4  bl #0xe188                               ; action: bl 0xe188
+  cmd 0x1029             -> 0x00c2da  bl #0xd6c8                               ; action: bl 0xd6c8
+  cmd 0x102a             -> 0x00c2e2  bl #0xe228                               ; action: bl 0xe228
+  cmd 0x102b             -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x102c             -> 0x00c2f8  ldr r0, [r5]                             ; action: bl 0xd750
+  cmd 0x102d             -> 0x00c31e  ldr r2, [sp, #0x20]                      ; action: bl 0x15634
+  cmd 0x102e             -> 0x00c33e  bl #0xe1bc                               ; action: bl 0xe1bc
+  cmd 0x102f             -> 0x00c32c  ldr r0, [r5]                             ; action: bl 0xe15c
+  cmd 0x1030             -> 0x00c2ea  bl #0xe5a8                               ; action: bl 0xe5a8
+  cmd 0x1031             -> 0x00c182  ldr r0, [r5]                             ; action: bl 0x167b8
+  cmd 0x1032             -> 0x00c772  str r7, [sp]                             ; action: bl 0xcb74
+  cmd 0x1033             -> 0x00c344  bl #0x20d4                               ; action: bl 0x20d4
+  cmd 0x1034             -> 0x00c270  ldr r1, [r5]                             ; action: bl 0xdd60
+  cmd 0x1035             -> 0x00c27a  ldr r0, [r4, #0x38]                      ; action: bl 0xd79c
+  cmd 0x1036             -> 0x00c640  ldm r4!, {r0, r1, r2}                    ; action: bl 0xcd20
+  cmd 0x1037             -> 0x00c68c  bl #0x8b4e                               ; action: bl 0x8b4e
+  cmd 0x1038             -> 0x00c360  ldm r0, {r0, r1, r3}                     ; action: bl 0x1170c
+  cmd 0x1039             -> 0x00c30e  ldr r0, [r5]                             ; action: bl 0xcc38
+  cmd 0x103a             -> 0x00c368  ldr r0, [r4, #0x38]                      ; action: bl 0xdf4c
+  cmd 0x103b             -> 0x00c374  bl #0xdebc                               ; action: bl 0xdebc
+  cmd 0x103c..0x103d     -> 0x00c3d2  str r0, [r4, #0x38]                      ; action: b 0xc7aa (tail)
+  cmd 0x103e             -> 0x00c37a  ldr r0, [r4, #0x48]                      ; action: bl 0xf5f4
+  cmd 0x103f             -> 0x00c39a  str r0, [sp]                             ; action: bl 0x171a4
+  cmd 0x1040             -> 0x00c3b4  svc #0x9e                                ; action: svc #0x9e
+  cmd 0x1041             -> 0x00c182  ldr r0, [r5]                             ; action: bl 0x167b8
+  cmd 0x1042             -> 0x00c3b8  ldrd r0, r1, [r5]                        ; action: bl 0xd520
+  cmd 0x1043             -> 0x00c3ce  bl #0x8908                               ; action: bl 0x8908
+  cmd 0x1044             -> 0x00bd0a  asrs r5, r0, #0x20                       ; action: bl 0xff9012fe
+  cmd 0x1045             -> 0x00c3dc  bl #0xd5d0                               ; action: bl 0xd5d0
+  cmd 0x1046             -> 0x00c060  ldr r0, [r5]                             ; action: bl 0xe930
+  cmd 0x1047             -> 0x00c06e  bl #0xcd18                               ; action: bl 0xcd18
+  cmd 0x1048             -> 0x00c39e  str.w sb, [sp]                           ; action: bl 0x171a4
+  cmd 0x1049             -> 0x00c3ee  bl #0x173bc                              ; action: bl 0x173bc
+  cmd 0x104a             -> 0x00c3e2  bl #0x6698                               ; action: bl 0x6698
+  cmd 0x104b             -> 0x00c3fe  bl #0x173fc                              ; action: bl 0x173fc
+  cmd 0x104c             -> 0x00c67c  ldr r0, [r5]                             ; action: bl 0x173f0
+  cmd 0x104d             -> 0x00c418  ldrd r0, r1, [r5, #0x14]                 ; action: bl 0xc7c4
+  cmd 0x104e             -> 0x00c42a  ldr r0, [r5, #4]                         ; action: bl 0x15d48
+  cmd 0x104f             -> 0x00c43e  bl #0xaed0                               ; action: bl 0xaed0
+  cmd 0x1050             -> 0x00c3c2  ldrd r0, r1, [r5]                        ; action: bl 0xd578
+  cmd 0x1051             -> 0x00c66e  bl #0xd510                               ; action: bl 0xd510
+  cmd 0x1052             -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x1053             -> 0x00c40a  bl #0x173f4                              ; action: bl 0x173f4
+  cmd 0x1054             -> 0x00c412  bl #0x17400                              ; action: bl 0x17400
+  cmd 0x1055             -> 0x00c198  ldr r0, [sp, #0x20]                      ; action: bl 0x170c8
+  cmd 0x1056             -> 0x00c1a6  ldr.w r1, [r0, #0x3ec]                   ; action: b 0xc7aa (tail)
+  cmd 0x1057             -> 0x00c3f6  bl #0x173c0                              ; action: bl 0x173c0
+  cmd 0x1058             -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x1059             -> 0x00c444  ldr r0, [r4, #0x38]                      ; action: bl 0xdb7c
+  cmd 0x105a             -> 0x00c34a  ldr r0, [r4, #0x38]                      ; action: bl 0x1f60
+  cmd 0x105b             -> 0x00c59c  ldr r1, [r4, #0x38]                      ; action: bl 0x122f0
+  cmd 0x105c             -> 0x00c352  bl #0x1938                               ; action: bl 0x1938
+  cmd 0x105d             -> 0x00c4e4  bl #0xe7a8                               ; action: bl 0xe7a8
+  cmd 0x105e             -> 0x00bd0a  asrs r5, r0, #0x20                       ; action: bl 0xff9012fe
+  cmd 0x105f             -> 0x00c4ec  ldrd r0, r1, [r4, #0x38]                 ; action: bl 0xe244
+  cmd 0x1060             -> 0x00c0a6  ldr r0, [r5]                             ; action: bl 0xebd8
+  cmd 0x1061             -> 0x00c676  bl #0xd508                               ; action: bl 0xd508
+  cmd 0x1062             -> 0x00c4f6  ldr r0, [r5]                             ; action: bl 0x8548
+  cmd 0x1063..0x1064     -> 0x00c40a  bl #0x173f4                              ; action: bl 0x173f4
+  cmd 0x1065             -> 0x00c4d2  ldrb.w r0, [r4, #0x38]                   ; action: bl 0xe56c
+  cmd 0x1066             -> 0x00c206  ldr r0, [r5, #8]                         ; action: bl 0x12ac0
+  cmd 0x1067             -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x1068             -> 0x00c2a2  ldr r0, [r4, #0x48]                      ; action: bl 0xa618
+  cmd 0x1069             -> 0x00c4c6  ldr r2, [r4, #0x40]                      ; action: bl 0x1e60
+  cmd 0x106a             -> 0x00c34a  ldr r0, [r4, #0x38]                      ; action: bl 0x1f60
+  cmd 0x106b             -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x106c             -> 0x00c40a  bl #0x173f4                              ; action: bl 0x173f4
+  cmd 0x106d             -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x106e             -> 0x00c5b4  bl #0xd4dc                               ; action: bl 0xd4dc
+  cmd 0x106f             -> 0x00be4c  str r7, [r6, #0x2c]                      ; action: ?
+  cmd 0x1070             -> 0x00c772  str r7, [sp]                             ; action: bl 0xcb74
+  cmd 0x1071             -> 0x00c564  ldr r0, [sp, #0x20]                      ; action: bl 0x128b4
+  cmd 0x1072             -> 0x00c772  str r7, [sp]                             ; action: bl 0xcb74
+  cmd 0x1073             -> 0x00c574  str r0, [sp]                             ; action: bl 0x127b4
+  cmd 0x1074             -> 0x00c58c  str r0, [sp]                             ; action: bl 0x12518
+  cmd 0x1075             -> 0x00c59c  ldr r1, [r4, #0x38]                      ; action: bl 0x122f0
+  cmd 0x1076             -> 0x00c65e  bl #0xd660                               ; action: bl 0xd660
+  cmd 0x1077             -> 0x00c694  bl #0x8418                               ; action: bl 0x8418
+  cmd 0x1078             -> 0x00c40a  bl #0x173f4                              ; action: bl 0x173f4
+  cmd 0x1079             -> 0x00c08c  ldr r1, [r4, #0x3c]                      ; action: bl 0xe0b4
+  cmd 0x107a             -> 0x00c6aa  ldr r0, [r4, #0x38]                      ; action: bl 0x122ec
+  cmd 0x107b             -> 0x00c6b4  bl #0xd6b0                               ; action: bl 0xd6b0
+  cmd 0x107c             -> 0x00c6ec  bl #0x116bc                              ; action: bl 0x116bc
+  cmd 0x107d             -> 0x00c6e4  bl #0x6284                               ; action: bl 0x6284
+  cmd 0x107e..0x1080     -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x1081             -> 0x00c772  str r7, [sp]                             ; action: bl 0xcb74
+  cmd 0x1082             -> 0x00c7a4  ldr r0, [r0, #4]                         ; action: ?
+  cmd 0x1083..0x10ff     -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x1100             -> 0x00c2b6  ldrd r0, r1, [r5]                        ; action: bl 0xe3f4
+  cmd 0x1101             -> 0x00c2c2  ldr r0, [r4, #0x38]                      ; action: bl 0xea60
+  cmd 0x1102..0x2000     -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x2001             -> 0x00bf10  bl #0x6698                               ; action: bl 0x6698
+  cmd 0x2002             -> 0x00bf22  ldrd r0, r2, [r4, #0x48]                 ; action: bl 0x6800
+  cmd 0x2003             -> 0x00bf10  bl #0x6698                               ; action: bl 0x6698
+  cmd 0x2004             -> 0x00bf62  ldr r0, [r4, #0x38]                      ; action: svc #0x6c
+  cmd 0x2005             -> 0x00bee8  str.w sb, [sp]                           ; action: bl 0x6732
+  cmd 0x2006             -> 0x00bf4e  ldrd r0, r1, [r4, #0x38]                 ; action: bl 0x6894
+  cmd 0x2007             -> 0x00bf5a  ldrd r0, r1, [r4, #0x38]                 ; action: svc #0x7e
+  cmd 0x2008..0x3000     -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x3001             -> 0x00c46a  bl #0xd6c0                               ; action: bl 0xd6c0
+  cmd 0x3002             -> 0x00bf4e  ldrd r0, r1, [r4, #0x38]                 ; action: bl 0x6894
+  cmd 0x3003             -> 0x00c772  str r7, [sp]                             ; action: bl 0xcb74
+  cmd 0x3004             -> 0x00bf02  str.w sb, [sp]                           ; action: bl 0x66d6
+  cmd 0x3005             -> 0x00c3d2  str r0, [r4, #0x38]                      ; action: b 0xc7aa (tail)
+  cmd 0x3006             -> 0x00c480  bl #0xd6b8                               ; action: bl 0xd6b8
+  cmd 0x3007             -> 0x00c48e  ldrd r0, r1, [r4, #0x38]                 ; action: bl 0xdd04
+  cmd 0x3008             -> 0x00c49e  bl #0xe178                               ; action: bl 0xe178
+  cmd 0x3009             -> 0x00c462  bl #0xe57c                               ; action: bl 0xe57c
+  cmd 0x300a             -> 0x00c47a  bl #0xd438                               ; action: bl 0xd438
+  cmd 0x300b             -> 0x00c4b0  ldr r0, [r4, #0x38]                      ; action: bl 0xcb5c
+  cmd 0x300c             -> 0x00c4aa  bl #0xe154                               ; action: bl 0xe154
+  cmd 0x300d             -> 0x00c4ba  ldr r0, [r4, #0x38]                      ; action: bl 0xca70
+  cmd 0x300e             -> 0x00c6a4  bl #0xd67c                               ; action: bl 0xd67c
+  cmd 0x300f             -> 0x00c4a4  bl #0xcb64                               ; action: bl 0xcb64
+  cmd 0x3010             -> 0x00c488  bl #0xcb6c                               ; action: bl 0xcb6c
+  cmd 0x3011..0x3100     -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x3101             -> 0x00c500  bl #0x98ac                               ; action: bl 0x98ac
+  cmd 0x3102             -> 0x00c506  ldrd r0, r1, [r5]                        ; action: bl 0x8684
+  cmd 0x3103             -> 0x00c510  ldrd r0, r1, [r5]                        ; action: bl 0xaf04
+  cmd 0x3104             -> 0x00c1fe  ldm r4!, {r0, r1, r2}                    ; action: bl 0xcaf8
+  cmd 0x3105             -> 0x00c2a2  ldr r0, [r4, #0x48]                      ; action: bl 0xa618
+  cmd 0x3106             -> 0x00c524  ldm r4!, {r0, r1, r2, r3}                ; action: bl 0x13450
+  cmd 0x3107             -> 0x00c5ba  ldrb.w r2, [r4, #0x4c]                   ; action: bl 0x16c4c
+  cmd 0x3108             -> 0x00c5c8  ldr r0, [r4, #0x38]                      ; action: bl 0x80fc
+  cmd 0x3109             -> 0x00c5ec  ldr r1, [r4, #0x38]                      ; action: bl 0x100c8
+  cmd 0x310a             -> 0x00c5fa  bl #0x101a8                              ; action: bl 0x101a8
+  cmd 0x310b             -> 0x00c600  ldr r2, [r4, #0x40]                      ; action: bl 0x10120
+  cmd 0x310c             -> 0x00c52c  ldrd r0, r1, [r4, #0x38]                 ; action: bl 0x13460
+  cmd 0x310d             -> 0x00c77e  bl #0xdc2c                               ; action: bl 0xdc2c
+  cmd 0x310e             -> 0x00c5ac  bl #0x1642c                              ; action: bl 0x1642c
+  cmd 0x310f             -> 0x00c630  ldm r4!, {r0, r1, r2}                    ; action: bl 0xca78
+  cmd 0x3110             -> 0x00c638  bl #0xcaa4                               ; action: bl 0xcaa4
+  cmd 0x3111             -> 0x00c44e  bl #0xe634                               ; action: bl 0xe634
+  cmd 0x3112             -> 0x00c77e  bl #0xdc2c                               ; action: bl 0xdc2c
+  cmd 0x3113             -> 0x00c1ce  ldrb.w r1, [r4, #0x38]                   ; action: bl 0x121c0
+  cmd 0x3114             -> 0x00c69c  bl #0xe6ac                               ; action: bl 0xe6ac
+  cmd 0x3115             -> 0x00c074  ldr r0, [r4, #0x38]                      ; action: bl 0xe1f4
+  cmd 0x3116             -> 0x00c61e  ldr r0, [r5, #4]                         ; action: bl 0xce88
+  cmd 0x3117             -> 0x00c618  bl #0xd6a8                               ; action: bl 0xd6a8
+  cmd 0x3118             -> 0x00c60c  bl #0xe564                               ; action: bl 0xe564
+  cmd 0x3119             -> 0x00c712  bl #0xe3a0                               ; action: bl 0xe3a0
+  cmd 0x311a             -> 0x00c77e  bl #0xdc2c                               ; action: bl 0xdc2c
+  cmd 0x311b             -> 0x00c54e  ldr r0, [r4, #0x38]                      ; action: bl 0x13448
+  cmd 0x311c             -> 0x00c6d6  bl #0x16ebc                              ; action: bl 0x16ebc
+  cmd 0x311d             -> 0x00c6f2  ldrb.w r1, [r4, #0x3c]                   ; action: bl 0x10044
+  cmd 0x311e             -> 0x00c77e  bl #0xdc2c                               ; action: bl 0xdc2c
+  cmd 0x311f             -> 0x00c6fe  ldr r0, [r4, #0x4c]                      ; action: bl 0xffa4
+  cmd 0x3120             -> 0x00c5d0  ldrd r0, r1, [r4, #8]                    ; action: bl 0xf3c8
+  cmd 0x3121             -> 0x00c046  ldr r0, [r4, #0x38]                      ; action: bl 0x86dc
+  cmd 0x3122..0x3125     -> 0x00c77e  bl #0xdc2c                               ; action: bl 0xdc2c
+  cmd 0x3126             -> 0x00c6dc  bl #0x8654                               ; action: bl 0x8654
+  cmd 0x3127             -> 0x00c282  ldr r0, [r4, #0x38]                      ; action: bl 0xe3c4
+  cmd 0x3128             -> 0x00c53c  bl #0xf3c4                               ; action: bl 0xf3c4
+  cmd 0x3129             -> 0x00c732  bl #0xe1ec                               ; action: bl 0xe1ec
+  cmd 0x312a             -> 0x00c77e  bl #0xdc2c                               ; action: bl 0xdc2c
+  cmd 0x312b             -> 0x00c766  bl #0xce80                               ; action: bl 0xce80
+  cmd 0x312c             -> 0x00c76c  bl #0xeb8c                               ; action: bl 0xeb8c
+  cmd 0x312d             -> 0x00c544  ldrd r0, r1, [r4, #0x38]                 ; action: bl 0x16958
+  cmd 0x312e             -> 0x00c792  ldr r0, [r4, #0x38]                      ; action: bl 0x11ddc
+  cmd 0x312f             -> 0x00c558  ldm r4!, {r0, r1, r2}                    ; action: bl 0x1345a
+  cmd 0x3130             -> 0x00c77e  bl #0xdc2c                               ; action: bl 0xdc2c
+  cmd 0x3131             -> 0x00c78c  ldr r0, [r4, #0x38]                      ; action: b 0xc7aa (tail)
+  cmd 0x3132             -> 0x00c784  bl #0x8afc                               ; action: bl 0x8afc
+  cmd 0x3133             -> 0x00c79c  ldr r1, [r4, #0x38]                      ; action: b 0xc7aa (tail)
+  cmd 0x3134..0x4002     -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x4003             -> 0x00c060  ldr r0, [r5]                             ; action: bl 0xe930
+  cmd 0x4004             -> 0x00c77e  bl #0xdc2c                               ; action: bl 0xdc2c
+  cmd 0x4005             -> 0x00c694  bl #0x8418                               ; action: bl 0x8418
+  cmd 0x4006             -> 0x00c68c  bl #0x8b4e                               ; action: bl 0x8b4e
+  cmd 0x4007             -> 0x00c3d2  str r0, [r4, #0x38]                      ; action: b 0xc7aa (tail)
+  cmd 0x4008..0x6000     -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x6001             -> 0x00c6ba  ldrd r0, r1, [r5]                        ; action: bl 0x8410
+  cmd 0x6002             -> 0x00c6c4  ldrd r0, r1, [r5]                        ; action: bl 0x1711c
+  cmd 0x6003             -> 0x00c6d0  bl #0x1a68                               ; action: bl 0x1a68
+  cmd 0x6004..0x7000     -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x7001..0x7002     -> 0x00c722  bl #0xf5ec                               ; action: bl 0xf5ec
+  cmd 0x7003..0x8000     -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0x8001             -> 0x00c73a  bl #0xd6ec                               ; action: bl 0xd6ec
+  cmd 0x8002             -> 0x00c740  bl #0xe398                               ; action: bl 0xe398
+  cmd 0x8003             -> 0x00c748  bl #0xe1dc                               ; action: bl 0xe1dc
+  cmd 0x8004             -> 0x00c750  bl #0xdd0c                               ; action: bl 0xdd0c
+  cmd 0x8005             -> 0x00c756  ldrd r2, r3, [r4, #0x38]                 ; action: bl 0xe1e4
+  cmd 0x8006..0xf853c480 -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0xffff0000         -> 0x00c1b4  ldr r1, [sp, #0x20]                      ; action: bl 0x14044
+  cmd 0xffff0001         -> 0x00c1bc  bl #0xfe04                               ; action: bl 0xfe04
+  cmd 0xffff0002..0xffff0003 -> 0x00c7aa  add sp, #0x24                            ; action: ?
+  cmd 0xffff0004         -> 0x00c1b4  ldr r1, [sp, #0x20]                      ; action: bl 0x14044
+  cmd 0xffff0005         -> 0x00c1bc  bl #0xfe04                               ; action: bl 0xfe04
+  cmd 0xffff0006..0xffff000f -> 0x00c7aa  add sp, #0x24                            ; action: ?
+
+== special word-derived cmds ==

@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "question": "Does dynamic SMU domain ID 0x18 have a proven physical clock identity?",
+  "verdict": "INTERNAL_GROUP6_ONLY; PHYSICAL_CLOCK_IDENTITY_UNRESOLVED",
+  "target": {
+    "clv_rom": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "size_bytes": 16777216,
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    "robin5_smu": {
+      "path": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5",
+      "size_bytes": 262400,
+      "rom_offset": "0x8FEF00",
+      "sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37"
+    },
+    "preserved_setup_request": {
+      "rom_offset": "0x7E5",
+      "value": "0x24",
+      "label": "1800MHz (IFR label only)"
+    }
+  },
+  "confirmed_exact_robin5_static_path": {
+    "queue_id": 3,
+    "message": "0x1D",
+    "selector_index": 11,
+    "dynamic_domain_id": "0x18",
+    "internal_group": 6,
+    "descriptor": "0xFA48",
+    "program_pointer_cell": "0xFA5C",
+    "raw_program_offset": "0x6D150",
+    "smn_program_address": "0x0116D150",
+    "smn_poll_address": "0x0116D174",
+    "evidence_class": ["observed-bytes", "static-analysis"]
+  },
+  "focused_robin5_slice": {
+    "ghidra_version": "12.1.3",
+    "headless_exit_status": 0,
+    "program_memory_check": "PASS: entire loaded program memory equals exact CLV-matching Robin-5 body, 262400 bytes",
+    "functions_decoded": ["0x2387C", "0x2375C", "0x29E34", "0x23CB8"],
+    "generic_metadata_only": {
+      "0x2387C": "walks 0x1C-stride records, compares one metadata byte, and dispatches to 0x23F18; no physical clock symbol",
+      "0x2375C": "updates generic state and calls 0x235C8 through three loaded address values; no physical clock symbol",
+      "0x23CB8": "converts a float argument through multiply/divide arithmetic and returns a value; no domain name or physical clock symbol"
+    },
+    "metrics_exporter": {
+      "function": "0x29E34",
+      "static_source_addresses": ["0xF904", "0xFA00", "0xFA1C"],
+      "metric_field_offsets": ["0x48", "0x4C", "0x4A"],
+      "relation_to_0x0116D150": "no direct edge in the bounded listing; it does not read the target program/poll address",
+      "interpretation": "sibling metric-export fields do not assign a physical name to dynamic domain ID 0x18"
+    },
+    "0x23CB4": "NO EXISTING FUNCTION at that exact address in copied Ghidra project; no claim is made from that requested entry"
+  },
+  "bounded_local_name_evidence": {
+    "register_header_report": "/home/OWNER/orca/projects/bc250/docs/research/2026-09-21-smn-clock-register-corroboration.md",
+    "register_header_verdict": "NO_DIRECT_HEADER_MATCH; 4/4 bounded checks passed; zero literal address matches in five named headers",
+    "old_robin3_slot_map": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260914-smu-address-trace/slot-domain-map.json",
+      "relationship": "slot index 24 / domain index 6 / raw 0x6D150",
+      "semantic_name": null,
+      "qualification": "different Robin-3 body; cross-version corroboration only"
+    },
+    "search_cautions": [
+      "legacy text `slot 0x18` is a slot-table ordinal spelling (0x18 = 24), not a physical clock name and not a semantic synonym for the dynamic domain identifier",
+      "local tick-handler table hit `slot 24: feature_stapm_tick_0` is a different slot namespace",
+      "historical live-output labels such as `dom=6` or `gate@0x6d150` are not a current physical clock-name dictionary"
+    ]
+  },
+  "missing_source": "An exact Robin-5 / BC-250-applicable AMD/AGESA/SMN register or clock-domain dictionary, or an exact-board code path, that names 0x0116D150/0x0116D174 and ties the Group-6 descriptor to a physical clock tree with read/program field semantics.",
+  "limitations": [
+    "No hardware, mailbox, register, network, ROM/NVRAM, or firmware action occurred.",
+    "No MCLK/UCLK/FCLK/VCN mapping or unit conversion is established by these bytes.",
+    "The existing Robin-3 slot map is not exact Robin-5 authority.",
+    "Independent physical frequency measurement, PLL/divider readback, and hardware acceptance remain unrun."
+  ]
+}

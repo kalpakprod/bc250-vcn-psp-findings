@@ -1,0 +1,725 @@
+{
+ "tool": "verify_non_uefi_inv_boundary.py",
+ "rom": {
+  "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "size": 16777216,
+  "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+ },
+ "adjacency_window_bytes": 64,
+ "markers": {
+  "$INV": {
+   "count": 8,
+   "offsets": [
+    "0xE1D97E",
+    "0xE2280A",
+    "0xE41A8E",
+    "0xE5C4F2",
+    "0xE76BDE",
+    "0xE8E786",
+    "0xEA73DE",
+    "0xEBD7B6"
+   ]
+  },
+  "NVTB": {
+   "count": 1,
+   "offsets": [
+    "0xE1D8CE"
+   ]
+  }
+ },
+ "marker_carriers": {
+  "$INV": [
+   "UEFI_FV_REGION_0xE00000_0x1000000"
+  ],
+  "NVTB": [
+   "UEFI_FV_REGION_0xE00000_0x1000000"
+  ]
+ },
+ "id_hits": [
+  {
+   "id": "0x1363",
+   "rom_offset": "0x8233DB",
+   "carrier": "PRE_PSP_BLOCK_0x820000_0x8E0000",
+   "mod4": 3,
+   "nearest_marker_bytes": 6268147
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x826B0D",
+   "carrier": "PRE_PSP_BLOCK_0x820000_0x8E0000",
+   "mod4": 1,
+   "nearest_marker_bytes": 6254017
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x8E27DB",
+   "carrier": "PSP:PSP_BOOTLOADER",
+   "mod4": 3,
+   "nearest_marker_bytes": 5484787
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x8E5F0D",
+   "carrier": "PSP:PSP_BOOTLOADER",
+   "mod4": 1,
+   "nearest_marker_bytes": 5470657
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x8FF051",
+   "carrier": "PSP:SMU_OFFCHIP_FW",
+   "mod4": 1,
+   "nearest_marker_bytes": 5367933
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x901B0C",
+   "carrier": "PSP:SMU_OFFCHIP_FW",
+   "mod4": 0,
+   "nearest_marker_bytes": 5356994
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x901D2A",
+   "carrier": "PSP:SMU_OFFCHIP_FW",
+   "mod4": 2,
+   "nearest_marker_bytes": 5356452
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x996ABB",
+   "carrier": "PSP:DRIVER_ENTRIES",
+   "mod4": 3,
+   "nearest_marker_bytes": 4746771
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x9A2A6F",
+   "carrier": "PSP:ABL1",
+   "mod4": 3,
+   "nearest_marker_bytes": 4697695
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x9AF3DA",
+   "carrier": "PSP:ABL2",
+   "mod4": 2,
+   "nearest_marker_bytes": 4646132
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x9B2861",
+   "carrier": "PSP:ABL3",
+   "mod4": 1,
+   "nearest_marker_bytes": 4632685
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0x9BE18B",
+   "carrier": "PSP:ABL4",
+   "mod4": 3,
+   "nearest_marker_bytes": 4585283
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xAFAE7C",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 0,
+   "nearest_marker_bytes": 3287634
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xAFBBFD",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 1,
+   "nearest_marker_bytes": 3284177
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xAFBE2B",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 3,
+   "nearest_marker_bytes": 3283619
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB083ED",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 1,
+   "nearest_marker_bytes": 3232993
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB111DA",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 3196660
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB22DEB",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 3,
+   "nearest_marker_bytes": 3123939
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB316A3",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 3,
+   "nearest_marker_bytes": 3064363
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB46294",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 0,
+   "nearest_marker_bytes": 2979386
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB53787",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 3,
+   "nearest_marker_bytes": 2924871
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB6358F",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 3,
+   "nearest_marker_bytes": 2859839
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB66CE0",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 0,
+   "nearest_marker_bytes": 2845678
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB6F71B",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 3,
+   "nearest_marker_bytes": 2810291
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB70C80",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 0,
+   "nearest_marker_bytes": 2804814
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB7BCDD",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 1,
+   "nearest_marker_bytes": 2759665
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB7CCB6",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 2755608
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB8C192",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 2692924
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xB9C167",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 3,
+   "nearest_marker_bytes": 2627431
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBA1892",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 2605116
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBA52B2",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 2590236
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBB130E",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 2540992
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBB9CFD",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 1,
+   "nearest_marker_bytes": 2505681
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBC63C3",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 3,
+   "nearest_marker_bytes": 2454795
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBE46E2",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 2331116
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBE85AC",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 0,
+   "nearest_marker_bytes": 2315042
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBEF091",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 1,
+   "nearest_marker_bytes": 2287677
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xBF4F70",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 0,
+   "nearest_marker_bytes": 2263390
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xE1405D",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 1,
+   "nearest_marker_bytes": 39025
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xE2D4A5",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 1,
+   "nearest_marker_bytes": 44187
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xE4C729",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 1,
+   "nearest_marker_bytes": 44187
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xE6718D",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 1,
+   "nearest_marker_bytes": 44187
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xE81879",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 1,
+   "nearest_marker_bytes": 44187
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xE99421",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 1,
+   "nearest_marker_bytes": 44187
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xEB2079",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 1,
+   "nearest_marker_bytes": 44187
+  },
+  {
+   "id": "0x1363",
+   "rom_offset": "0xEC8451",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 1,
+   "nearest_marker_bytes": 44187
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0x821BF4",
+   "carrier": "PRE_PSP_BLOCK_0x820000_0x8E0000",
+   "mod4": 0,
+   "nearest_marker_bytes": 6274266
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0x8E0FF4",
+   "carrier": "PSP:PSP_BOOTLOADER",
+   "mod4": 0,
+   "nearest_marker_bytes": 5490906
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0x900EFF",
+   "carrier": "PSP:SMU_OFFCHIP_FW",
+   "mod4": 3,
+   "nearest_marker_bytes": 5360079
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0x91A6D9",
+   "carrier": "PSP:SMU_OFFCHIP_FW",
+   "mod4": 1,
+   "nearest_marker_bytes": 5255669
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0x928949",
+   "carrier": "PSP:SMU_OFFCHIP_FW",
+   "mod4": 1,
+   "nearest_marker_bytes": 5197701
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0x99C907",
+   "carrier": "PSP:DRIVER_ENTRIES",
+   "mod4": 3,
+   "nearest_marker_bytes": 4722631
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0x9B220B",
+   "carrier": "PSP:ABL3",
+   "mod4": 3,
+   "nearest_marker_bytes": 4634307
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xAEB2A0",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 0,
+   "nearest_marker_bytes": 3352110
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xAF83FB",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 3,
+   "nearest_marker_bytes": 3298515
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB07276",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 3237464
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB0A9A1",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 1,
+   "nearest_marker_bytes": 3223341
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB0B407",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 3,
+   "nearest_marker_bytes": 3220679
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB14987",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 3,
+   "nearest_marker_bytes": 3182407
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB15F64",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 0,
+   "nearest_marker_bytes": 3176810
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB46C81",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 1,
+   "nearest_marker_bytes": 2976845
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB4DD45",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 1,
+   "nearest_marker_bytes": 2947977
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB534B6",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 2925592
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB61116",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 2869176
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB82B24",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 0,
+   "nearest_marker_bytes": 2731434
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xB99B23",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 3,
+   "nearest_marker_bytes": 2637227
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBA0522",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 2610092
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBBEB56",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 2485624
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBC0A43",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 3,
+   "nearest_marker_bytes": 2477707
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBCA254",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 0,
+   "nearest_marker_bytes": 2438778
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBD529B",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 3,
+   "nearest_marker_bytes": 2393651
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBDC656",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 2364024
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBEFF0A",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 2283972
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xBF01AA",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 2,
+   "nearest_marker_bytes": 2283300
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xC1ED1D",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 1,
+   "nearest_marker_bytes": 2091953
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xC237C0",
+   "carrier": "FIRMWARE_REGION_0xAE0000_0xE00000",
+   "mod4": 0,
+   "nearest_marker_bytes": 2072846
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xE2D4D7",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 3,
+   "nearest_marker_bytes": 44237
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xE4C75B",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 3,
+   "nearest_marker_bytes": 44237
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xE671BF",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 3,
+   "nearest_marker_bytes": 44237
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xE818AB",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 3,
+   "nearest_marker_bytes": 44237
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xE99453",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 3,
+   "nearest_marker_bytes": 44237
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xEB20AB",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 3,
+   "nearest_marker_bytes": 44237
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xEC8483",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 3,
+   "nearest_marker_bytes": 44237
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xEEB7C9",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 1,
+   "nearest_marker_bytes": 188435
+  },
+  {
+   "id": "0x1364",
+   "rom_offset": "0xEEC6A8",
+   "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+   "mod4": 0,
+   "nearest_marker_bytes": 192242
+  }
+ ],
+ "id_per_carrier": {
+  "PRE_PSP_BLOCK_0x820000_0x8E0000": 3,
+  "PSP:PSP_BOOTLOADER": 3,
+  "PSP:SMU_OFFCHIP_FW": 6,
+  "PSP:DRIVER_ENTRIES": 2,
+  "PSP:ABL1": 1,
+  "PSP:ABL2": 1,
+  "PSP:ABL3": 2,
+  "PSP:ABL4": 1,
+  "FIRMWARE_REGION_0xAE0000_0xE00000": 49,
+  "UEFI_FV_REGION_0xE00000_0x1000000": 17
+ },
+ "min_marker_distance_bytes": 39025,
+ "adjacency_violations": [],
+ "positive_control": {
+  "synthetic_marker_distance_bytes": 6,
+  "fires": true
+ },
+ "marker_context": {
+  "$INV": [
+   {
+    "rom_offset": "0xE1D97E",
+    "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+    "bytes_after_marker": "24 49 4e 56 74 0b 68 28 02 80 20 e8 3f ed ff ff"
+   },
+   {
+    "rom_offset": "0xE2280A",
+    "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+    "bytes_after_marker": "24 49 4e 56 8b 45 f4 c7 40 04 01 00 00 00 8b 4d"
+   },
+   {
+    "rom_offset": "0xE41A8E",
+    "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+    "bytes_after_marker": "24 49 4e 56 8b 45 f4 c7 40 04 01 00 00 00 8b 4d"
+   },
+   {
+    "rom_offset": "0xE5C4F2",
+    "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+    "bytes_after_marker": "24 49 4e 56 8b 45 f4 c7 40 04 01 00 00 00 8b 4d"
+   },
+   {
+    "rom_offset": "0xE76BDE",
+    "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+    "bytes_after_marker": "24 49 4e 56 8b 45 f4 c7 40 04 01 00 00 00 8b 4d"
+   },
+   {
+    "rom_offset": "0xE8E786",
+    "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+    "bytes_after_marker": "24 49 4e 56 8b 45 f4 c7 40 04 01 00 00 00 8b 4d"
+   },
+   {
+    "rom_offset": "0xEA73DE",
+    "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+    "bytes_after_marker": "24 49 4e 56 8b 45 f4 c7 40 04 01 00 00 00 8b 4d"
+   },
+   {
+    "rom_offset": "0xEBD7B6",
+    "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+    "bytes_after_marker": "24 49 4e 56 8b 45 f4 c7 40 04 01 00 00 00 8b 4d"
+   }
+  ],
+  "NVTB": [
+   {
+    "rom_offset": "0xE1D8CE",
+    "carrier": "UEFI_FV_REGION_0xE00000_0x1000000",
+    "bytes_after_marker": "4e 56 54 42 50 89 5d f0 e8 85 16 00 00 8b 75 f8"
+   }
+  ]
+ },
+ "verdict": "NO_STRUCTURAL_INV_RECORD_OUTSIDE_UEFI_FV",
+ "cross_check": {
+  "scan_markers": {
+   "$INV": 8,
+   "NVTB": 1
+  },
+  "verifier_markers": {
+   "$INV": 8,
+   "NVTB": 1
+  },
+  "scan_ids": {
+   "0x1363": 46,
+   "0x1364": 39
+  },
+  "verifier_ids": {
+   "0x1363": 46,
+   "0x1364": 39
+  },
+  "markers_agree": true,
+  "ids_agree": true
+ }
+}

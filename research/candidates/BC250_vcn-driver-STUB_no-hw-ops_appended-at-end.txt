@@ -1,0 +1,8 @@
+BC250_vcn-driver-STUB_no-hw-ops_appended-at-end.bin
+Old technical name (alias): v007r-noop
+SHA-256: 0133a34b3f6744b3517f7d01abfc2c2b78d0784cd6fcb8e09e3817a670e36ae3
+Built by: scripts/build_FULL_and_STUB_appended_at_end.py (noop)
+What is inside: booted pre-dump + VCN driver (noop) APPENDED at FV end; all 193 base files at identical offsets; explicit LZMA
+Question it answers: does DXE complete with a passive driver appended at the FV end?
+Verdict: BOOTS to Linux (2026-09-24). H19 WINS: append structure is fine; FULL code wedges only against initialized SMU.
+Вердикт: ЗАГРУЖАЕТСЯ в Linux (2026-09-24). Структура дописки в порядке; полный код клинит только поздно.

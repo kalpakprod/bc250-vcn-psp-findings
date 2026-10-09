@@ -1,0 +1,19 @@
+Waveshare RP2350B-Plus-W / BC250 recorder-watchdog integration
+STATE: INCOMPLETE_NOT_FOR_FLASH. Не финальная прошивка и не предложение аппаратной записи.
+SHA256: 42b12ab85d4ce1c65c641fd2e9f7098a133d499362f93e36a96d71dfe3aaa999
+
+Добавлена программная интеграция существующего recorder/watchdog. HOST_ALIVE пишет lost/recovered; до первого heartbeat состояние unknown. Потеря heartbeat сама по себе не вызывает reboot. Свой watchdog RP включается после startup и контролирует завершение проходов USB/recorder и доступных controller/network. До завершения startup watchdog не включён.
+
+CDC: RECORDER_STATUS; RECORDER_READ 0, далее next_cursor из ответа.
+HTTP (существующая Bearer-авторизация): GET /api/recorder; GET /api/recorder?cursor=0, затем next_cursor.
+Чтение не очищает события. Ответ содержит до четырёх событий и oldest_sequence для обнаружения переполнения кольца. Типы: 1 heartbeat_lost, 2 heartbeat_recovered, 3 power_drop, 4 adapter_reboot, 5 watchdog_reset. Наличие типа power_drop не означает подключённый датчик. Unknown value=null.
+
+Кольцо хранит 16 событий в RAM. Это не непрерывная запись напряжений и не долговременное сохранение инцидента через выключение RP. USB/сеть API на реальной плате не приняты. Нет выбранного/подключённого физического измерителя. Независимое питание/кабели не подтверждены.
+
+Проверки: firmware build + RAM relocation + UF2 structure прошли. Native recorder/watchdog behavior прошёл; изолированное отключение детекции heartbeat_lost отвергнуто тестом. Waveshare suite: 90 из 91, один старый текстовый SPI-test не соответствует существующему monitor mode. Общий contract gate не прошёл из-за отсутствующей карты в AGENTS.md. Procoder не прошёл: форматирование, неполный SDK контекст линтера и pytest collection. Эти проверки не ослаблялись.
+
+Полная цель геймпад/звук/сеть/программатор/UART/LPC/SMBus/PSP/TOCTOU не принята. В этом этапе аппаратных действий не было.
+Rollback: waveshare-recorder-integration-before-20261007.zip. Восстанавливать в отдельный каталог и откатывать только изменения задачи, не чужие последующие правки.
+Подробности и исходные хеши: manifest.json, логи в этом каталоге.
+
+Updated 2026-10-07: two independent clean builds are byte-identical; Waveshare suite 91/91 and project make test pass. Procoder gate remains not passed; hardware acceptance and different-family review remain open. Artifact remains INCOMPLETE_NOT_FOR_FLASH.

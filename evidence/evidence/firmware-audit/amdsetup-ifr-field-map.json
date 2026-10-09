@@ -1,0 +1,437 @@
+{
+  "generated_at": "2026-09-11T05:25:52.377152+00:00",
+  "ifr_source": "import/from-windows/Users/kukuruza/bc250-bios/evidence/e1_setup_ifr.txt",
+  "ifr_source_sha256": "3fbf02bd18c5ed9bb355274bddd133c92b64bb0bd838563ea54e47d235d6e786",
+  "nvar_source": "evidence/firmware-audit/dump-2-nvar-primary.json",
+  "nvar_source_sha256": "23877f639955c2c15fa040c880065bca69f9c5fdf04d3013916a973d08bdb7ad",
+  "fields": {
+    "MemoryClockSpeed": {
+      "matches": 4,
+      "first_line": 2231,
+      "excerpt": [
+        "  ONE_OF @form='I Accept' qid=0x20f var=AmdSetup+0x316 flags=0x10 'Memory Clock Speed'",
+        "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)",
+        "     OPTION '125MHz' = 0x2 (type=0x0 flags=0x0)",
+        "     OPTION '225MHz' = 0x4 (type=0x0 flags=0x0)",
+        "     OPTION '250MHz' = 0x5 (type=0x0 flags=0x0)",
+        "     OPTION '400MHz' = 0x8 (type=0x0 flags=0x0)",
+        "     OPTION '450MHz' = 0x9 (type=0x0 flags=0x0)",
+        "     OPTION '500MHz' = 0xa (type=0x0 flags=0x0)",
+        "     OPTION '750MHz' = 0xf (type=0x0 flags=0x0)",
+        "     OPTION '850MHz' = 0x11 (type=0x0 flags=0x0)",
+        "     OPTION '1000MHz' = 0x14 (type=0x0 flags=0x0)",
+        "     OPTION '1250MHz' = 0x19 (type=0x0 flags=0x0)",
+        "     OPTION '1330MHz' = 0x1a (type=0x0 flags=0x0)",
+        "     OPTION '1375MHz' = 0x1b (type=0x0 flags=0x0)",
+        "     OPTION '1500MHz' = 0x1e (type=0x0 flags=0x0)",
+        "     OPTION '1600MHz' = 0x20 (type=0x0 flags=0x0)",
+        "     OPTION '1650MHz' = 0x21 (type=0x0 flags=0x0)",
+        "     OPTION '1700MHz' = 0x22 (type=0x0 flags=0x0)",
+        "     OPTION '1750MHz' = 0x23 (type=0x0 flags=0x0)",
+        "     OPTION '1800MHz' = 0x24 (type=0x0 flags=0x0)",
+        "     OPTION '1850MHz' = 0x25 (type=0x0 flags=0x0)",
+        "     OPTION '1900MHz' = 0x26 (type=0x0 flags=0x0)",
+        "     OPTION '1950MHz' = 0x27 (type=0x0 flags=0x0)",
+        "     OPTION '2000MHz' = 0x28 (type=0x0 flags=0x0)"
+      ],
+      "label": "Memory Clock Speed",
+      "offset": "0x316",
+      "type": "u8",
+      "current_observed": 255,
+      "current_offset_match": {
+        "offset": "0x316",
+        "type": "u8",
+        "value": 255
+      }
+    },
+    "Tcl": {
+      "matches": 4,
+      "first_line": 2255,
+      "excerpt": [
+        "  ONE_OF @form='I Accept' qid=0x210 var=AmdSetup+0x317 flags=0x10 'Tcl'",
+        "     OPTION '8 Clk' = 0x8 (type=0x0 flags=0x0)",
+        "     OPTION '9 Clk' = 0x9 (type=0x0 flags=0x0)",
+        "     OPTION '0Ah Clk' = 0xa (type=0x0 flags=0x0)",
+        "     OPTION '0Bh Clk' = 0xb (type=0x0 flags=0x0)",
+        "     OPTION '0Ch Clk' = 0xc (type=0x0 flags=0x0)",
+        "     OPTION '0Dh Clk' = 0xd (type=0x0 flags=0x0)",
+        "     OPTION '0Eh Clk' = 0xe (type=0x0 flags=0x0)",
+        "     OPTION '0Fh Clk' = 0xf (type=0x0 flags=0x0)",
+        "     OPTION '10h Clk' = 0x10 (type=0x0 flags=0x0)",
+        "     OPTION '11h Clk' = 0x11 (type=0x0 flags=0x0)",
+        "     OPTION '12h Clk' = 0x12 (type=0x0 flags=0x0)",
+        "     OPTION '13h Clk' = 0x13 (type=0x0 flags=0x0)",
+        "     OPTION '14h Clk' = 0x14 (type=0x0 flags=0x0)",
+        "     OPTION '15h Clk' = 0x15 (type=0x0 flags=0x0)",
+        "     OPTION '16h Clk' = 0x16 (type=0x0 flags=0x0)",
+        "     OPTION '17h Clk' = 0x17 (type=0x0 flags=0x0)",
+        "     OPTION '18h Clk' = 0x18 (type=0x0 flags=0x0)",
+        "     OPTION '19h Clk' = 0x19 (type=0x0 flags=0x0)",
+        "     OPTION '1Ah Clk' = 0x1a (type=0x0 flags=0x0)",
+        "     OPTION '1Bh Clk' = 0x1b (type=0x0 flags=0x0)",
+        "     OPTION '1Ch Clk' = 0x1c (type=0x0 flags=0x0)",
+        "     OPTION '1Dh Clk' = 0x1d (type=0x0 flags=0x0)",
+        "     OPTION '1Eh Clk' = 0x1e (type=0x0 flags=0x0)",
+        "     OPTION '1Fh Clk' = 0x1f (type=0x0 flags=0x0)",
+        "     OPTION '20h Clk' = 0x20 (type=0x0 flags=0x0)",
+        "     OPTION '21h Clk' = 0x21 (type=0x0 flags=0x0)",
+        "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)"
+      ],
+      "label": "Tcl",
+      "offset": "0x317",
+      "type": "u8",
+      "current_observed": 255,
+      "current_offset_match": {
+        "offset": "0x317",
+        "type": "u8",
+        "value": 255
+      }
+    },
+    "TrfcPb": {
+      "matches": 4,
+      "first_line": 2553,
+      "excerpt": [
+        "  HIDDEN NUMERIC @form='I Accept' qid=0x21f var=AmdSetup+0x327 flags=0x10 'TrfcPb'",
+        "     NUMERIC min=1 max=2047 step=0",
+        "     DEFAULT id=0x0 type=0x1 value=0100"
+      ],
+      "label": "TrfcPb",
+      "offset": "0x327",
+      "type": "u8",
+      "current_observed": 1,
+      "current_offset_match": {
+        "offset": "0x327",
+        "type": "u8",
+        "value": 1
+      }
+    },
+    "UclkDiv1M0": {
+      "matches": 4,
+      "first_line": 2589,
+      "excerpt": [
+        "  HIDDEN ONE_OF @form='GDDR6 DRAM Timing Configuration' qid=0x229 var=AmdSetup+0x330 flags=0x10 'UclkDiv1M0'",
+        "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)",
+        "     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)"
+      ],
+      "label": "UclkDiv1M0",
+      "offset": "0x330",
+      "type": "u8",
+      "current_observed": 255,
+      "current_offset_match": {
+        "offset": "0x330",
+        "type": "u8",
+        "value": 255
+      }
+    },
+    "DramTimingControl": {
+      "matches": 4,
+      "first_line": 2585,
+      "excerpt": [
+        "  ONE_OF @form='GDDR6 DRAM Timing Configuration' qid=0x228 var=AmdSetup+0x32f flags=0x10 'DRAM Timing User Controls'",
+        "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)",
+        "     OPTION 'Manual' = 0x1 (type=0x0 flags=0x0)"
+      ],
+      "label": "DRAM Timing User Controls",
+      "offset": "0x32F",
+      "type": "u8",
+      "current_observed": 255,
+      "current_offset_match": {
+        "offset": "0x32F",
+        "type": "u8",
+        "value": 255
+      }
+    },
+    "BankGroupSwap": {
+      "matches": 4,
+      "first_line": 2569,
+      "excerpt": [
+        "  ONE_OF @form='DRAM Memory Mapping' qid=0x222 var=AmdSetup+0x32d flags=0x10 'BankGroupSwap'",
+        "     OPTION 'CPU Mode' = 0x1 (type=0x0 flags=0x0)",
+        "     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)",
+        "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)",
+        "     OPTION 'APU Mode' = 0x2 (type=0x0 flags=0x0)"
+      ],
+      "label": "BankGroupSwap",
+      "offset": "0x32D",
+      "type": "u8",
+      "current_observed": 255,
+      "current_offset_match": {
+        "offset": "0x32D",
+        "type": "u8",
+        "value": 255
+      }
+    },
+    "PhyPowerSaving": {
+      "matches": 4,
+      "first_line": 2948,
+      "excerpt": [
+        "  ONE_OF @form='DRAM Power Options' qid=0x259 var=AmdSetup+0x368 flags=0x10 'Phy Power Saving'",
+        "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)",
+        "     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)",
+        "     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)"
+      ],
+      "label": "Phy Power Saving",
+      "offset": "0x368",
+      "type": "u8",
+      "current_observed": 255,
+      "current_offset_match": {
+        "offset": "0x368",
+        "type": "u8",
+        "value": 255
+      }
+    },
+    "MemoryPstate": {
+      "matches": 4,
+      "first_line": 2968,
+      "excerpt": [
+        "  ONE_OF @form='DRAM Power Options' qid=0x25e var=AmdSetup+0x36d flags=0x10 'Memory P-state'",
+        "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)",
+        "     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)",
+        "     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)"
+      ],
+      "label": "Memory P-state",
+      "offset": "0x36D",
+      "type": "u8",
+      "current_observed": 255,
+      "current_offset_match": {
+        "offset": "0x36D",
+        "type": "u8",
+        "value": 255
+      }
+    },
+    "FclkDpm": {
+      "matches": 4,
+      "first_line": 4008,
+      "excerpt": [
+        "  ONE_OF @form='SMU Features' qid=0x7045 var=AmdSetup+0x6a3 flags=0x14 'FCLK_DPM'",
+        "     OPTION 'Disabled' = 0x0 (type=0x0 flags=0x0)",
+        "     OPTION 'Enabled' = 0x1 (type=0x0 flags=0x0)",
+        "     OPTION 'Auto' = 0xf (type=0x0 flags=0x10)"
+      ],
+      "label": "FCLK_DPM",
+      "offset": "0x6A3",
+      "type": "u8",
+      "current_observed": 15,
+      "current_offset_match": {
+        "offset": "0x6A3",
+        "type": "u8",
+        "value": 15
+      }
+    },
+    "VddcrVddOffsetControl": {
+      "matches": 4,
+      "first_line": 4215,
+      "excerpt": [
+        "  ONE_OF @form='SMU Debug' qid=0x36b var=AmdSetup+0x6e5 flags=0x10 'VDDCR_VDD Voltage Offset Control'",
+        "     OPTION 'Manual' = 0x1 (type=0x0 flags=0x0)",
+        "     OPTION 'Auto' = 0x0 (type=0x0 flags=0x10)"
+      ],
+      "label": "VDDCR_VDD Voltage Offset Control",
+      "offset": "0x6E5",
+      "type": "u8",
+      "current_observed": 0,
+      "current_offset_match": {
+        "offset": "0x6E5",
+        "type": "u8",
+        "value": 0
+      },
+      "control_value_warning": "Value field must not be interpreted without its separate control byte."
+    },
+    "VddcrVddOffset": {
+      "matches": 4,
+      "first_line": 4219,
+      "excerpt": [
+        "  HIDDEN NUMERIC @form='SMU Debug' qid=0x36c var=AmdSetup+0x6e6 flags=0x10 'VDDCR_VDD Voltage Offset'",
+        "     NUMERIC min=0 max=4294967295 step=0",
+        "     DEFAULT id=0x0 type=0x2 value=00000000"
+      ],
+      "label": "VDDCR_VDD Voltage Offset",
+      "offset": "0x6E6",
+      "type": "u32",
+      "current_observed": 0,
+      "current_offset_match": {
+        "offset": "0x6E6",
+        "type": "u32",
+        "value": 0
+      },
+      "semantic_warning": "IFR numeric type is 0x2/u32; do not model as u8 merely because small historical candidate values fit in one byte."
+    },
+    "VddcrGfxOffsetControl": {
+      "matches": 4,
+      "first_line": 4222,
+      "excerpt": [
+        "  ONE_OF @form='SMU Debug' qid=0x36d var=AmdSetup+0x6ea flags=0x10 'VDDCR_GFX Voltage Offset Control'",
+        "     OPTION 'Manual' = 0x1 (type=0x0 flags=0x0)",
+        "     OPTION 'Auto' = 0x0 (type=0x0 flags=0x10)"
+      ],
+      "label": "VDDCR_GFX Voltage Offset Control",
+      "offset": "0x6EA",
+      "type": "u8",
+      "current_observed": 0,
+      "current_offset_match": {
+        "offset": "0x6EA",
+        "type": "u8",
+        "value": 0
+      },
+      "control_value_warning": "Value field must not be interpreted without its separate control byte."
+    },
+    "VddcrGfxOffset": {
+      "matches": 4,
+      "first_line": 4226,
+      "excerpt": [
+        "  HIDDEN NUMERIC @form='SMU Debug' qid=0x36e var=AmdSetup+0x6eb flags=0x10 'VDDCR_GFX Voltage Offset'",
+        "     NUMERIC min=0 max=4294967295 step=0",
+        "     DEFAULT id=0x0 type=0x2 value=00000000"
+      ],
+      "label": "VDDCR_GFX Voltage Offset",
+      "offset": "0x6EB",
+      "type": "u32",
+      "current_observed": 0,
+      "current_offset_match": {
+        "offset": "0x6EB",
+        "type": "u32",
+        "value": 0
+      },
+      "semantic_warning": "IFR numeric type is 0x2/u32."
+    },
+    "ForceCpuFreq": {
+      "matches": 4,
+      "first_line": 4274,
+      "excerpt": [
+        "  HIDDEN NUMERIC @form='SMU Debug' qid=0x37c var=AmdSetup+0x701 flags=0x10 'Force CPU Frequency'",
+        "     NUMERIC min=0 max=4000 step=0",
+        "     DEFAULT id=0x0 type=0x1 value=100e"
+      ],
+      "label": "Force CPU Frequency",
+      "offset": "0x701",
+      "type": "u16",
+      "current_observed": 3600,
+      "current_offset_match": {
+        "offset": "0x701",
+        "type": "u16",
+        "value": 3600
+      }
+    },
+    "DfClockOverrideControl": {
+      "matches": 4,
+      "first_line": 4277,
+      "excerpt": [
+        "  ONE_OF @form='SMU Debug' qid=0x37d var=AmdSetup+0x703 flags=0x10 'DF Clock Override Control'",
+        "     OPTION 'Auto' = 0xff (type=0x0 flags=0x10)",
+        "     OPTION 'Manual' = 0x1 (type=0x0 flags=0x0)"
+      ],
+      "label": "DF Clock Override Control",
+      "offset": "0x703",
+      "type": "u8",
+      "current_observed": 255,
+      "current_offset_match": {
+        "offset": "0x703",
+        "type": "u8",
+        "value": 255
+      }
+    },
+    "DfClockOverride": {
+      "matches": 4,
+      "first_line": 4281,
+      "excerpt": [
+        "  HIDDEN NUMERIC @form='SMU Debug' qid=0x37e var=AmdSetup+0x704 flags=0x10 'DF Clock Override'",
+        "     NUMERIC min=0 max=2000 step=0",
+        "     DEFAULT id=0x0 type=0x1 value=e803"
+      ],
+      "label": "DF Clock Override",
+      "offset": "0x704",
+      "type": "u16",
+      "current_observed": null,
+      "current_offset_match": null
+    },
+    "FastPpt": {
+      "matches": 4,
+      "first_line": 4308,
+      "excerpt": [
+        "  NUMERIC @form='SMU Debug' qid=0x385 var=AmdSetup+0x70c flags=0x10 'FAST_PPT_LIMIT'",
+        "     NUMERIC min=0 max=4294967295 step=0",
+        "     DEFAULT id=0x0 type=0x2 value=c0570100"
+      ],
+      "label": "FAST_PPT_LIMIT",
+      "offset": "0x70C",
+      "type": "u32",
+      "current_observed": 88000,
+      "current_offset_match": {
+        "offset": "0x70C",
+        "type": "u32",
+        "value": 88000
+      }
+    },
+    "SlowPpt": {
+      "matches": 4,
+      "first_line": 4311,
+      "excerpt": [
+        "  NUMERIC @form='SMU Debug' qid=0x386 var=AmdSetup+0x710 flags=0x10 'SLOW_PPT_LIMIT'",
+        "     NUMERIC min=0 max=4294967295 step=0",
+        "     DEFAULT id=0x0 type=0x2 value=e8fd0000"
+      ],
+      "label": "SLOW_PPT_LIMIT",
+      "offset": "0x710",
+      "type": "u32",
+      "current_observed": 65000,
+      "current_offset_match": {
+        "offset": "0x710",
+        "type": "u32",
+        "value": 65000
+      }
+    },
+    "VrmCurrent": {
+      "matches": 4,
+      "first_line": 4317,
+      "excerpt": [
+        "  NUMERIC @form='SMU Debug' qid=0x388 var=AmdSetup+0x718 flags=0x10 'VRM_CURRENT_LIMIT'",
+        "     NUMERIC min=0 max=4294967295 step=0",
+        "     DEFAULT id=0x0 type=0x2 value=e8fd0000"
+      ],
+      "label": "VRM_CURRENT_LIMIT",
+      "offset": "0x718",
+      "type": "u32",
+      "current_observed": 65000,
+      "current_offset_match": {
+        "offset": "0x718",
+        "type": "u32",
+        "value": 65000
+      }
+    },
+    "VrmMaximum": {
+      "matches": 4,
+      "first_line": 4320,
+      "excerpt": [
+        "  NUMERIC @form='SMU Debug' qid=0x389 var=AmdSetup+0x71c flags=0x10 'VRM_MAXIMUM_CURRENT_LIMIT'",
+        "     NUMERIC min=0 max=4294967295 step=0",
+        "     DEFAULT id=0x0 type=0x2 value=18730100"
+      ],
+      "label": "VRM_MAXIMUM_CURRENT_LIMIT",
+      "offset": "0x71C",
+      "type": "u32",
+      "current_observed": 95000,
+      "current_offset_match": {
+        "offset": "0x71C",
+        "type": "u32",
+        "value": 95000
+      }
+    }
+  },
+  "conclusions": [
+    "The historical IFR extraction identifies exact AmdSetup offsets/options for clock, divider, timing, power-saving, FCLK, and voltage controls.",
+    "Current raw AmdSetup values are observed bytes; IFR semantics are historical/static because the current Setup executable body differs from historical Setup.",
+    "Voltage offsets are IFR type 0x2/u32 with separate control bytes; a nonzero offset requires explicit manual control and still does not prove a live rail voltage.",
+    "Raw current Setup PE32 bytes correct the historical IFR formatter truncation for Setup+0x1C4 options (0x00011940/0x000157C0)."
+  ],
+  "evidence_class": "observed-bytes/static-analysis",
+  "raw_setup_module": {
+    "path": "evidence/firmware-audit/dump-2-extract/modules/0045_Setup_pe32.bin",
+    "sha256": "e3ff0b804acbc5c308f4e9c7a13e8ba4c69b66653b5091423e78d97d76117f6f",
+    "observed_hii_option_bytes_window": "0x11D30..0x11DA0",
+    "full_u32_option_values_for_Setup_plus_0x1C4": [
+      "0x00011940",
+      "0x000157C0"
+    ],
+    "note": "The imported textual IFR formatter reports low 16-bit values for these u32 options; direct PE32 bytes retain the high 0x10000 bit."
+  }
+}

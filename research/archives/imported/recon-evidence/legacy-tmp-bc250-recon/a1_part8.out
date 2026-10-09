@@ -1,0 +1,901 @@
+=== PART8 ts=2026-08-25T18:48:26+05:00 ===
+--- concurrent SMU consumers (status only) ---
+active
+active
+active
+active
+ActiveState=active
+SubState=running
+NRestarts=214
+ExecMainStatus=0
+root         720  0.0  0.0  11188  4532 ?        S<s  17:07   0:01 bash /usr/local/bin/bc250-fan.sh
+root        1315 14.9  0.0  11172  4612 ?        D<s  17:07  15:03 bash /usr/local/libexec/bc250-gpu-watchdog.sh
+root        1316  0.0  0.0  11188  4744 ?        S<s  17:07   0:02 bash /usr/local/libexec/bc250-telemetry.sh
+root        1768  0.1  0.0  11056  4532 ?        S<s  17:08   0:08 bash /usr/local/libexec/bc250-dpwatch.sh
+root        1772  0.0  0.0  11056  4476 ?        S<s  17:08   0:02 bash /usr/local/libexec/bc250-pwrwatch.sh
+root        1774  0.0  0.0  11056  4632 ?        S<s  17:08   0:00 bash /usr/local/libexec/bc250-userlog.sh
+root        1796  0.0  0.0  11180  2428 ?        S<   17:08   0:02 bash /usr/local/libexec/bc250-userlog.sh
+root      104347  0.0  0.0  11056  1908 ?        S<   18:48   0:00 bash /usr/local/libexec/bc250-dpwatch.sh
+root      104410  0.0  0.0  11056  1848 ?        S<   18:48   0:00 bash /usr/local/libexec/bc250-pwrwatch.sh
+root      104499  0.4  0.1  21020 10652 ?        D<s  18:48   0:00 python3 /usr/local/libexec/bc250-metrics.py 1.0
+root      104504  0.0  0.0  11188  2168 ?        S<   18:48   0:00 bash /usr/local/bin/bc250-fan.sh
+root      104505  0.0  0.0  11188  1976 ?        S<   18:48   0:00 bash /usr/local/bin/bc250-fan.sh
+root      104519  0.0  0.0  11188  1948 ?        S<   18:48   0:00 bash /usr/local/libexec/bc250-telemetry.sh
+
+--- prior successful probe snapshots (local /tmp) ---
+#### /tmp/probe_vcn3.out ####
+=== card1 firmware_info (raw) ===
+=== card1 ip_blocks (raw) ===
+=== card1 gpu_metrics (hexdump head) ===
+00000000  80 00 02 02 00 19 3e 17  ff ff ff ff ff ff ff ff  |......>.........|
+00000010  e0 15 c7 15 ff ff ff ff  a8 16 8f 16 39 01 ff ff  |............9...|
+00000020  85 ed ae cc b3 00 00 00  fe ff 3f 1b ff ff df bd  |..........?.....|
+00000030  ff ff 47 01 38 01 2c 0b  3b 08 03 00 0d 01 03 00  |..G.8.,.;.......|
+00000040  b2 03 e6 04 c2 01 c2 01  00 00 57 04 d0 07 e6 04  |..........W.....|
+00000050  c2 01 c2 01 00 00 57 04  a0 0f a0 0f a0 0f a0 0f  |......W.........|
+00000060  a0 0f f1 06 a0 0f f1 06  a0 0f a0 0f 00 00 00 00  |................|
+00000070  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
+00000080
+=== dmesg vcn/psp/power/skillfish (sudo) ===
+=== smu queries (sudo) ===
+test_message OK
+smu_version(0,0x02) = 0x580600
+enabled_features(0,0x3D) = 0xdd602c7d
+active_wgp(0,0x1E) = 0xc
+core_pstate0(0,0x0C) = 0x5
+q3_0x98 ERR: RuntimeError smu returned status 0x00 for queue 3 msg 0x98
+q3_0x27_secure ERR: RuntimeError smu returned status 0x00 for queue 3 msg 0x27
+q3_0x2a_secure ERR: RuntimeError smu returned status 0x00 for queue 3 msg 0x2A
+q3_0x2b_dat00008b0c ERR: RuntimeError smu returned status 0x00 for queue 3 msg 0x2B
+=== END ===
+
+#### /tmp/probe_vcn2.out ####
+=== find GPU card (device 0x13fe) ===
+/sys/class/drm/card1 dev= vid=0x1002
+/sys/class/drm/card1-DP-1 dev= vid=
+/sys/class/drm/card1-DP-2 dev= vid=
+=== card0 firmware_info (raw) ===
+=== card0 ip_blocks (raw) ===
+NO FILE
+=== dmesg vcn/psp/power/skillfish ===
+=== smu version / features / wgp ===
+Traceback (most recent call last):
+  File "<stdin>", line 4, in <module>
+  File "/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py", line 33, in __init__
+    self._transport.open()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/transport.py", line 15, in open
+    self._fd = os.open(self._config_path, os.O_RDWR | os.O_CLOEXEC)
+               ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/sys/bus/pci/devices/0000:00:00.0/config'
+=== END ===
+
+#### /tmp/probe_vcn.out ####
+############ dmesg (full amdgpu/vcn/psp/smu) ############
+--- dmesg raw count ---
+0
+
+############ find cyan_skillfish2_vcn anywhere ############
+(end find)
+
+############ SMU enabled features + core mask (bc250_smu API) ############
+IMPORT/INIT err: ImportError("cannot import name 'Bc250Smu' from 'bc250_smu.api_q0' (/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py)")
+
+############ api_q0.py (full) ############
+from .codec import decode_u32, mv_to_vid, pack_u32, vid_to_mv
+
+
+class Queue0Mixin:
+    def _get_smu_version(self) -> int:
+        return self.send_message(0, 0x02, decode=decode_u32)
+
+    def _get_driver_if_version(self) -> int:
+        return self.send_message(0, 0x03, decode=decode_u32)
+
+    def _set_driver_table_dram_addr_high(self, value: int) -> None:
+        self.send_message(0, 0x04, arg=value, pack=pack_u32)
+
+    def _set_driver_table_dram_addr_low(self, value: int) -> None:
+        self.send_message(0, 0x05, arg=value, pack=pack_u32)
+
+    def _transfer_table_smu2dram(self) -> None:
+        self.send_message(0, 0x06)
+
+    def _transfer_table_dram2smu(self) -> None:
+        self.send_message(0, 0x07)
+
+    def request_core_pstate(self, pstate: int, core_mask: int) -> None:
+        """Request a CPU P-state for cores specified in the mask."""
+        param = ((pstate & 0xF) << 16) | (core_mask & 0xFF)
+        self.send_message(0, 0x0B, arg=param, pack=pack_u32)
+
+    def query_core_pstate(self, core_id: int) -> int:
+        """Return the current core P-state (status 0xFF if core_id > 7)."""
+        return self.send_message(
+            0,
+            0x0C,
+            arg=core_id,
+            pack=pack_u32,
+            decode=decode_u32,
+            check_status=False,
+        )
+
+    def _request_gfxclk(self) -> None:
+        self.send_message(0, 0x0E)
+
+    def query_gfxclk(self) -> int:
+        """Return the current GFX frequency in MHz."""
+        return self.send_message(0, 0x0F, decode=decode_u32)
+
+    def query_vddcr_soc_clock(self, index: int) -> int:
+        """Return the SoC clock for the given DPM index (upper 16 bits)."""
+        param = (index & 0xFFFF) << 16
+        return self.send_message(0, 0x11, arg=param, pack=pack_u32, decode=decode_u32)
+
+    def _query_df_pstate(self) -> int:
+        return self.send_message(0, 0x13, decode=decode_u32)
+
+    def _configure_s3_pwroff_register_addr_high(self, value: int) -> None:
+        self.send_message(0, 0x16, arg=value, pack=pack_u32)
+
+    def _configure_s3_pwroff_register_addr_low(self, value: int) -> None:
+        self.send_message(0, 0x17, arg=value, pack=pack_u32)
+
+    def _request_active_wgp(self) -> None:
+        self.send_message(0, 0x18)
+
+    def _set_min_deep_sleep_gfxclk_freq(self, value: int) -> None:
+        self.send_message(0, 0x19, arg=value, pack=pack_u32)
+
+    def _set_max_deep_sleep_dfll_gfx_div(self, value: int) -> None:
+        self.send_message(0, 0x1A, arg=value, pack=pack_u32)
+
+    def _start_telemetry_reporting(self, value: int = 0) -> None:
+        self.send_message(0, 0x1B, arg=value, pack=pack_u32)
+
+    def _stop_telemetry_reporting(self) -> None:
+        self.send_message(0, 0x1C)
+
+    def _clear_telemetry_max(self) -> None:
+        self.send_message(0, 0x1D)
+
+    def query_active_wgp(self) -> int:
+        """Return the active workgroup processor count."""
+        return self.send_message(0, 0x1E, decode=decode_u32)
+
+    def get_gfx_frequency(self) -> int:
+        """Return the current GFX frequency in MHz (alias of query_gfxclk)."""
+        return self.send_message(0, 0x37, decode=decode_u32)
+
+    def get_gfx_vid(self) -> int:
+        """Return the current GFX VID in mV."""
+        vid = self.send_message(0, 0x38, decode=decode_u32)
+        return vid_to_mv(vid)
+
+    def force_gfx_freq(self, freq_mhz: int) -> None:
+        """Force GFX frequency; firmware interprets the argument as MHz."""
+        self.send_message(0, 0x39, arg=freq_mhz, pack=pack_u32)
+
+    def unforce_gfx_freq(self) -> None:
+        """Clear any forced GFX frequency settings."""
+        self.send_message(0, 0x3A)
+
+    def force_gfx_vid(self, mv: int) -> None:
+        """Force GFX VID using millivolts input."""
+        vid = mv_to_vid(mv)
+        self.send_message(0, 0x3B, arg=vid, pack=pack_u32)
+
+    def unforce_gfx_vid(self) -> None:
+        """Clear any forced GFX VID settings."""
+        self.send_message(0, 0x3C, check_status=False)
+
+    def get_enabled_smu_features(self) -> int:
+        """Return the enabled SMU feature bitmask."""
+        return self.send_message(0, 0x3D, decode=decode_u32)
+
+    def set_core_enable_mask(self, mask: int) -> None:
+        """Set the CPU core enable mask (lower 8 bits)."""
+        self.send_message(0, 0x2C, arg=mask & 0xFF, pack=pack_u32)
+
+    def _gfx_cac_weight_operation(self, value: int) -> None:
+        """For CAC Weights we don't really know what it does, only related thing we found was
+        described in one of AMD Patent, with just mention of it's existing
+        if someone from AMD reads this and wants to explain it, please help."""
+        self.send_message(0, 0x2F, arg=value, pack=pack_u32)
+
+    def _l3_cac_weight_operation(self, value: int) -> None:
+        """For CAC Weights we don't really know what it does, only related thing we found was
+        described in one of AMD Patents, with just mention of it's existing
+        if someone from AMD reads this and wants to explain it, please help."""
+        self.send_message(0, 0x30, arg=value, pack=pack_u32)
+
+    def _pack_core_cac_weight(self, value: int) -> None:
+        """For CAC Weights we don't really know what it does, only related thing we found was
+        described in one of AMD Patents, with just mention of it's existing
+        if someone from AMD reads this and wants to explain it, please help."""
+        self.send_message(0, 0x31, arg=value, pack=pack_u32)
+
+    def _set_driver_table_vmid(self, value: int) -> None:
+        self.send_message(0, 0x34, arg=value, pack=pack_u32)
+
+    def set_soft_min_cclk(self, core_id: int, freq_mhz: int) -> int:
+        """Set soft min CCLK for a core; returns the clamped frequency in MHz."""
+        param = ((core_id & 0xFF) << 20) | (freq_mhz & 0xFFFF)
+        return self.send_message(0, 0x35, arg=param, pack=pack_u32, decode=decode_u32)
+
+    def set_soft_max_cclk(self, core_id: int, freq_mhz: int) -> int:
+        """Set soft max CCLK for a core; returns the clamped frequency in MHz."""
+        param = ((core_id & 0xFF) << 20) | (freq_mhz & 0xFFFF)
+        return self.send_message(0, 0x36, arg=param, pack=pack_u32, decode=decode_u32)
+
+############ api.py (head 120) ############
+from typing import Callable, Dict, Optional, Tuple
+
+from .api_q0 import Queue0Mixin
+from .api_q1 import Queue1Mixin
+from .api_q2 import Queue2Mixin
+from .api_q3 import Queue3Mixin
+from .api_q4 import Queue4Mixin
+from .codec import decode_u32, pack_u32
+from .mailbox import Bc250Mailbox
+from .transport import Bc250PciTransport
+
+
+DEFAULT_QUEUE_ADDRS: Dict[int, Tuple[int, int, int]] = {
+    0: (0x03B10A08, 0x03B10A68, 0x03B10A48),
+    1: (0x03B10A00, 0x03B10A60, 0x03B10A40),
+    2: (0x03B10528, 0x03B10564, 0x03B10998),
+    3: (0x03B10A20, 0x03B10A80, 0x03B10A88),
+    4: (0x03B10A24, 0x03B10A84, 0x03B10A8C),
+}
+
+
+class Bc250Smu(Queue0Mixin, Queue1Mixin, Queue2Mixin, Queue3Mixin, Queue4Mixin):
+    def __init__(
+        self,
+        bdf: str = "0000:00:00.0",
+        allow_queue0: bool = False,
+        use_flock: bool = False,
+        queue_addrs: Optional[Dict[int, Tuple[int, int, int]]] = None,
+        timeout: int = 100,
+    ) -> None:
+        self._allow_queue0 = allow_queue0
+        self._transport = Bc250PciTransport(bdf=bdf, use_flock=use_flock)
+        self._transport.open()
+        addrs = dict(DEFAULT_QUEUE_ADDRS)
+        if queue_addrs:
+            addrs.update(queue_addrs)
+        self._queues: Dict[int, Bc250Mailbox] = {
+            queue: Bc250Mailbox(self._transport, cmd, rsp, arg, timeout=timeout)
+            for queue, (cmd, rsp, arg) in addrs.items()
+        }
+
+    def close(self) -> None:
+        self._transport.close()
+
+    def raw_send(self, queue: int, msg_id: int, arg: int = 0, arg_high: Optional[int] = None) -> int:
+        self._guard_queue(queue)
+        return self._get_queue(queue).send(msg_id, arg=arg, arg_high=arg_high)
+
+    def raw_read(self, queue: int) -> int:
+        self._guard_queue(queue)
+        return self._get_queue(queue).read_arg()
+
+    def raw_read_high(self, queue: int) -> int:
+        self._guard_queue(queue)
+        return self._get_queue(queue).read_arg_high()
+
+    def send_message(
+        self,
+        queue_id: int,
+        msg_id: int,
+        arg: int = 0,
+        arg_high: Optional[int] = None,
+        pack: Optional[Callable[[int], int]] = None,
+        decode: Optional[Callable[[int], int]] = None,
+        check_status: bool = True,
+    ) -> int:
+        packed = pack(arg) if pack is not None else pack_u32(arg)
+        status = self.raw_send(queue_id, msg_id, arg=packed, arg_high=arg_high)
+        if check_status and status != Bc250Mailbox.SMU_RETURN_OK:
+            raise RuntimeError(f"smu returned status 0x{status:02X} for queue {queue_id} msg 0x{msg_id:02X}")
+        if decode is None:
+            return status
+        return decode(self.raw_read(queue_id))
+
+    def test_message(self, value: int) -> bool:
+        """Send test message and verify the response increments the value."""
+        response = self.send_message(
+            3,
+            0x01,
+            arg=value,
+            pack=pack_u32,
+            decode=decode_u32,
+        )
+        if response != value + 1:
+            raise RuntimeError(f"unexpected test response {response}, expected {value + 1}")
+        return True
+
+    def check_test_message(self) -> bool:
+        return self.test_message(123)
+
+    def _get_queue(self, queue: int) -> Bc250Mailbox:
+        if queue not in self._queues:
+            raise KeyError(f"queue {queue} not configured")
+        return self._queues[queue]
+
+    def _guard_queue(self, queue: int) -> None:
+        if queue == 0 and not self._allow_queue0:
+            raise PermissionError("queue 0 access disabled; pass allow_queue0=True to enable")
+
+############ done ############
+
+#### /tmp/smu_probe.out ####
+Traceback (most recent call last):
+  File "/tmp/smu_probe.py", line 5, in <module>
+    s = Bc250Smu(allow_queue0=True)
+  File "/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py", line 33, in __init__
+    self._transport.open()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/transport.py", line 15, in open
+    self._fd = os.open(self._config_path, os.O_RDWR | os.O_CLOEXEC)
+               ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/sys/bus/pci/devices/0000:00:00.0/config'
+
+#### /tmp/smu_probe_root.out ####
+=== exact bc250_detect sequence (with delays) ===
+test_message ERR: smu returned status 0x00 for queue 3 msg 0x01
+q3 0x02 ERR: smu returned status 0x00 for queue 3 msg 0x02
+active_wgp ERR: smu returned status 0x00 for queue 0 msg 0x1E
+get_enabled_smu_features ERR: smu returned status 0x00 for queue 0 msg 0x3D
+set_core_enable_mask ERR: smu returned status 0x00 for queue 0 msg 0x2C
+DONE
+
+
+--- SMU read-only with flock + retries (NO service stop) ---
+check_test_message try=0 ERR smu returned status 0x00 for queue 3 msg 0x01
+check_test_message try=1 ERR smu returned status 0x00 for queue 3 msg 0x01
+check_test_message try=2 ERR smu returned status 0x00 for queue 3 msg 0x01
+check_test_message try=3 ERR smu returned status 0x00 for queue 3 msg 0x01
+check_test_message try=4 ERR smu returned status 0x00 for queue 3 msg 0x01
+_get_smu_version try=0 ERR smu returned status 0x00 for queue 0 msg 0x02
+_get_smu_version try=1 ERR smu returned status 0x00 for queue 0 msg 0x02
+_get_smu_version try=2 ERR smu returned status 0x00 for queue 0 msg 0x02
+_get_smu_version try=3 ERR smu returned status 0x00 for queue 0 msg 0x02
+_get_smu_version try=4 ERR smu returned status 0x00 for queue 0 msg 0x02
+get_enabled_smu_features try=0 ERR smu returned status 0x00 for queue 0 msg 0x3D
+get_enabled_smu_features try=1 ERR smu returned status 0x00 for queue 0 msg 0x3D
+get_enabled_smu_features try=2 ERR smu returned status 0x00 for queue 0 msg 0x3D
+get_enabled_smu_features try=3 ERR smu returned status 0x00 for queue 0 msg 0x3D
+get_enabled_smu_features try=4 ERR smu returned status 0x00 for queue 0 msg 0x3D
+query_active_wgp try=0 ERR smu returned status 0x00 for queue 0 msg 0x1E
+query_active_wgp try=1 ERR smu returned status 0x00 for queue 0 msg 0x1E
+query_active_wgp try=2 ERR smu returned status 0x00 for queue 0 msg 0x1E
+query_active_wgp try=3 ERR smu returned status 0x00 for queue 0 msg 0x1E
+query_active_wgp try=4 ERR smu returned status 0x00 for queue 0 msg 0x1E
+query_gfxclk try=0 ERR smu returned status 0x00 for queue 0 msg 0x0F
+query_gfxclk try=1 ERR smu returned status 0x00 for queue 0 msg 0x0F
+query_gfxclk try=2 ERR smu returned status 0x00 for queue 0 msg 0x0F
+query_gfxclk try=3 ERR smu returned status 0x00 for queue 0 msg 0x0F
+query_gfxclk try=4 ERR smu returned status 0x00 for queue 0 msg 0x0F
+get_gfx_frequency try=0 ERR smu returned status 0x00 for queue 0 msg 0x37
+get_gfx_frequency try=1 ERR smu returned status 0x00 for queue 0 msg 0x37
+get_gfx_frequency try=2 ERR smu returned status 0x00 for queue 0 msg 0x37
+get_gfx_frequency try=3 ERR smu returned status 0x00 for queue 0 msg 0x37
+get_gfx_frequency try=4 ERR smu returned status 0x00 for queue 0 msg 0x37
+get_gfx_vid try=0 ERR smu returned status 0x00 for queue 0 msg 0x38
+get_gfx_vid try=1 ERR smu returned status 0x00 for queue 0 msg 0x38
+get_gfx_vid try=2 ERR smu returned status 0x00 for queue 0 msg 0x38
+get_gfx_vid try=3 ERR smu returned status 0x00 for queue 0 msg 0x38
+get_gfx_vid try=4 ERR smu returned status 0x00 for queue 0 msg 0x38
+HAS_raw_send True
+HAS_raw_read True
+HAS_send_message True
+SIG check_test_message() -> bool
+SIG force_gfx_freq(freq_mhz: int) -> None
+SIG force_gfx_vid(mv: int) -> None
+SIG get_enabled_smu_features() -> int
+SIG get_gfx_frequency() -> int
+SIG get_gfx_vid() -> int
+SIG q2_0x05_enable_smu_features(mask_low: int, mask_high: int = 0) -> None
+SIG q2_0x06_disable_smu_features(mask_low: int, mask_high: int = 0) -> None
+SIG q3_0x4a_set_gfx_vid_offset1(offset: int) -> None
+SIG q3_0x4c_gfx_droop_calibration(test_voltage_mv: int, margin_mv: int) -> None
+SIG query_active_wgp() -> int
+SIG query_gfxclk() -> int
+SIG raw_read(queue: int) -> int
+SIG raw_read_high(queue: int) -> int
+SIG raw_send(queue: int, msg_id: int, arg: int = 0, arg_high: int | None = None) -> int
+SIG send_message(queue_id: int, msg_id: int, arg: int = 0, arg_high: int | None = None, pack: Callable[[int], int] | None = None, decode: Callable[[int], int] | None = None, check_status: bool = True) -> int
+SIG test_message(value: int) -> bool
+SIG unforce_gfx_freq() -> None
+SIG unforce_gfx_vid() -> None
+SMU_CLOSE_OK
+
+--- package: all public method names + msg ids (grep send_message) ---
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:45:    def raw_send(self, queue: int, msg_id: int, arg: int = 0, arg_high: Optional[int] = None) -> int:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:57:    def send_message(
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:68:        status = self.raw_send(queue_id, msg_id, arg=packed, arg_high=arg_high)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:77:        response = self.send_message(
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:6:        return self.send_message(0, 0x02, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:9:        return self.send_message(0, 0x03, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:12:        self.send_message(0, 0x04, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:15:        self.send_message(0, 0x05, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:18:        self.send_message(0, 0x06)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:21:        self.send_message(0, 0x07)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:26:        self.send_message(0, 0x0B, arg=param, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:30:        return self.send_message(
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:40:        self.send_message(0, 0x0E)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:44:        return self.send_message(0, 0x0F, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:49:        return self.send_message(0, 0x11, arg=param, pack=pack_u32, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:52:        return self.send_message(0, 0x13, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:55:        self.send_message(0, 0x16, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:58:        self.send_message(0, 0x17, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:61:        self.send_message(0, 0x18)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:64:        self.send_message(0, 0x19, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:67:        self.send_message(0, 0x1A, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:70:        self.send_message(0, 0x1B, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:73:        self.send_message(0, 0x1C)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:76:        self.send_message(0, 0x1D)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:80:        return self.send_message(0, 0x1E, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:84:        return self.send_message(0, 0x37, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:88:        vid = self.send_message(0, 0x38, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:93:        self.send_message(0, 0x39, arg=freq_mhz, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:97:        self.send_message(0, 0x3A)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:102:        self.send_message(0, 0x3B, arg=vid, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:106:        self.send_message(0, 0x3C, check_status=False)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:110:        return self.send_message(0, 0x3D, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:114:        self.send_message(0, 0x2C, arg=mask & 0xFF, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:120:        self.send_message(0, 0x2F, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:126:        self.send_message(0, 0x30, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:132:        self.send_message(0, 0x31, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:135:        self.send_message(0, 0x34, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:140:        return self.send_message(0, 0x35, arg=param, pack=pack_u32, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:145:        return self.send_message(0, 0x36, arg=param, pack=pack_u32, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q1.py:2:    def _q1_0x08(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q1.py:3:        return self.send_message(1, 0x08)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q1.py:5:    def _q1_0x10(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q1.py:6:        return self.send_message(1, 0x10)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:5:    def q2_0x03(self) -> int:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:7:        return self.send_message(2, 0x03, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:9:    def q2_0x04_get_device_name(self, index: int) -> int:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:11:        return self.send_message(2, 0x04, arg=index, pack=pack_u32, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:13:    def q2_0x05_enable_smu_features(self, mask_low: int, mask_high: int = 0) -> None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:15:        self.send_message(2, 0x05, arg=mask_low, arg_high=mask_high, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:17:    def q2_0x06_disable_smu_features(self, mask_low: int, mask_high: int = 0) -> None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:19:        self.send_message(2, 0x06, arg=mask_low, arg_high=mask_high, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:21:    def _q2_0x07(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:22:        return self.send_message(2, 0x07)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:24:    def _q2_0x08(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:25:        return self.send_message(2, 0x08)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:27:    def _q2_0x09(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:28:        return self.send_message(2, 0x09)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:30:    def _q2_0x0a(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:31:        return self.send_message(2, 0x0A)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:33:    def _q2_0x0b(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:34:        return self.send_message(2, 0x0B)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:36:    def _q2_0x0c(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:37:        return self.send_message(2, 0x0C)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:40:        return self.send_message(2, 0x0D, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:43:        return self.send_message(2, 0x0E, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:45:    def _q2_0x3e(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:46:        return self.send_message(2, 0x0F)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:48:    def _q2_0x3f(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:49:        return self.send_message(2, 0x10)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:51:    def _q2_0x13(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:52:        return self.send_message(2, 0x13)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:54:    def _q2_0x14(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:55:        return self.send_message(2, 0x14)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:57:    def _q2_0x15(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:58:        return self.send_message(2, 0x15)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:60:    def _q2_0x16(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:61:        return self.send_message(2, 0x16)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:63:    def q2_0x17_cpu_droop_calibration(self, test_voltage_mv: int, margin_mv: int) -> None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:66:        self.send_message(2, 0x17, arg=param, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:68:    def _q2_0x1a(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:69:        return self.send_message(2, 0x1A)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:71:    def _q2_0x20(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:72:        return self.send_message(2, 0x20)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:74:    def _q2_0x21(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:75:        return self.send_message(2, 0x21)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:77:    def _q2_0x22(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:78:        return self.send_message(2, 0x22)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:80:    def _q2_0x23(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:81:        return self.send_message(2, 0x23)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:83:    def _q2_0x29(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:84:        return self.send_message(2, 0x29)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:86:    def _q2_0x2c_probably_power_limit_settings(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:87:        return self.send_message(2, 0x2C)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:89:    def _q2_0x2d_sibling_of_0x2c_but_returns_v(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:90:        return self.send_message(2, 0x2D)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:92:    def _q2_0x2e(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:93:        return self.send_message(2, 0x2E)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:95:    def _q2_0x2f(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:96:        return self.send_message(2, 0x2F)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:98:    def _q2_0x30(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py:99:        return self.send_message(2, 0x30)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:6:    def _q3_0x04(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:7:        return self.send_message(3, 0x04)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:9:    def _q3_0x0a(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:10:        return self.send_message(3, 0x0A)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:12:    def _q3_0x0b(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:13:        return self.send_message(3, 0x0B)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:15:    def _q3_0x0c(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:16:        return self.send_message(3, 0x0C)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:18:    def _q3_0x0d(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:19:        return self.send_message(3, 0x0D)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:21:    def _q3_0x0e(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:22:        return self.send_message(3, 0x0E)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:24:    def q3_0x0f_set_cpu_gpu_vid(self, kind: int, mv: int) -> None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:28:        self.send_message(3, 0x0F, arg=param, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:30:    def q3_0x10_unforce_cpu_gpu_vid(self, kind: int) -> None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:33:        self.send_message(3, 0x10, arg=param, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:35:    def _q3_0x11(self) -> int | None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:36:        return self.send_message(3, 0x11)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py:38:    def _q3_0x14(self) -> int | None:
+
+--- package: any VCN/vclk/dclk/domain string ---
+
+--- telemetry / metrics userspace (read configs + recent logs, no start/stop) ---
+UNIT bc250-metrics path=/etc/systemd/system/bc250-metrics.service
+[Unit]
+Description=BC-250 SMU metrics sampler (CPU/GPU power split, throttle status)
+After=bc250-netconsole.service
+Wants=bc250-netconsole.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/libexec/bc250-metrics.py 1.0
+Restart=always
+RestartSec=2
+Nice=-5
+
+[Install]
+WantedBy=multi-user.target
+---
+UNIT bc250-pwrwatch path=/etc/systemd/system/bc250-pwrwatch.service
+[Unit]
+Description=BC-250 200 ms power peak sampler
+After=network-online.target bc250-netconsole.service
+Wants=bc250-netconsole.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/libexec/bc250-pwrwatch.sh
+Restart=always
+RestartSec=2
+Nice=-5
+
+[Install]
+WantedBy=multi-user.target
+---
+UNIT bc250-gpu-fixed path=/etc/systemd/system/bc250-gpu-fixed.service
+[Unit]
+Description=BC-250 fixed GPU frequency and voltage
+Wants=bc250-fan.service
+After=bc250-smu-oc.service systemd-modules-load.service
+Conflicts=cyan-skillfish-governor-smu.service
+Before=graphical.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/libexec/bc250-gpu-fixed.sh apply
+ExecStop=/usr/local/libexec/bc250-gpu-fixed.sh fallback
+RemainAfterExit=yes
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+---
+UNIT bc250-cu-layout path=/etc/systemd/system/bc250-cu-layout.service
+[Unit]
+Description=BC-250 stable 38-CU dispatch layout
+After=systemd-modules-load.service
+Before=bc250-gpu-fixed.service display-manager.service graphical.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/libexec/bc250-cu-layout.sh 38
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+---
+UNIT bc250-netconsole path=/etc/systemd/system/bc250-netconsole.service
+[Unit]
+Description=BC-250 netconsole target (kernel log -> UDP off-box)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/libexec/bc250-netconsole.sh
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
+---
+--- find metrics scripts ---
+/home/OWNER/.config/mozilla/firefox/xpqebth5.default-release/saved-telemetry-pings
+/home/OWNER/.local/share/Steam/package/steam_client_metrics.bin
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.1/0001-bc250-8core-telemetry-gpu-activity.patch
+/home/OWNER/linux-cachyos-bc250/patches/kernel-7.2/0001-bc250-8core-telemetry-gpu-activity.patch
+/home/OWNER/bc250-backups/fixed-profile-pre-20260821T082839Z/bc250-gpu-fixed.conf
+/home/OWNER/bc250-backups/fixed-profile-pre-20260821T082839Z/bc250-gpu-fixed.sh
+/home/OWNER/bc250-backups/fixed-profile-pre-20260821T082839Z/bc250-gpu-fixed.service
+/home/OWNER/bc250-backups/fixed-profile-pre-20260821T083243Z/bc250-gpu-fixed.conf
+/home/OWNER/bc250-backups/fixed-profile-pre-20260821T083243Z/bc250-gpu-fixed.sh
+/home/OWNER/bc250-backups/fixed-profile-pre-20260821T083243Z/bc250-gpu-fixed.service
+/home/OWNER/bc250-backups/fixed-profile-pre-20260821T084732Z/bc250-gpu-fixed.conf
+/home/OWNER/bc250-backups/fixed-profile-pre-20260821T084732Z/bc250-gpu-fixed.sh
+/home/OWNER/bc250-backups/fixed-profile-pre-20260821T084732Z/bc250-gpu-fixed.service
+/home/OWNER/bc250-backups/fixed-profile-pre-20260821T085005Z/bc250-gpu-fixed.conf
+/home/OWNER/bc250-backups/fixed-profile-pre-20260821T085005Z/bc250-gpu-fixed.sh
+/home/OWNER/bc250-backups/fixed-profile-pre-20260821T085005Z/bc250-gpu-fixed.service
+/home/OWNER/bc250-backups/voltage-bump-pre-20260824T074919Z/bc250-gpu-fixed.conf
+/home/OWNER/bc250-oc-results/20260821T052127Z-stage-2050-2050MHz/telemetry.log
+/home/OWNER/bc250-oc-results/20260821T052904Z-stage-2100-2100MHz/telemetry.log
+/home/OWNER/bc250-oc-results/20260821T053614Z-stage-2150-2150MHz/telemetry.log
+/home/OWNER/bc250-oc-results/20260821T054325Z-stage-2200-2200MHz/telemetry.log
+/home/OWNER/bc250-oc-results/20260821T055043Z-final-2200-2200MHz/telemetry.log
+/home/OWNER/bc250-oc-results/20260821T060621Z-rpcs3-BCES00129-2200MHz/telemetry.log
+/home/OWNER/bc250-oc-results/20260821T083321Z-rpcs3-BCES00129-2150MHz/telemetry.log
+/home/OWNER/bc250-oc-results/20260821T083409Z-rpcs3-BCES00129-2150MHz/telemetry.log
+/home/OWNER/bc250-oc-results/20260821T083554Z-rpcs3-BCES00129-2200MHz/telemetry.log
+/usr/local/libexec/bc250-gpu-fixed.sh
+/usr/local/libexec/bc250-telemetry.sh.bak
+/usr/local/libexec/bc250-telemetry.sh.bak2
+/usr/local/libexec/bc250-pwrwatch.sh
+/usr/local/libexec/bc250-telemetry.sh.bak.1787576585
+/usr/local/libexec/bc250-metrics.py
+/usr/local/libexec/bc250-telemetry.sh
+/etc/systemd/system/multi-user.target.wants/bc250-gpu-fixed.service
+/etc/systemd/system/multi-user.target.wants/bc250-telemetry.service
+/etc/systemd/system/multi-user.target.wants/bc250-pwrwatch.service
+/etc/systemd/system/multi-user.target.wants/bc250-metrics.service
+/etc/systemd/system/bc250-gpu-fixed.service
+/etc/systemd/system/bc250-telemetry.service
+/etc/systemd/system/bc250-pwrwatch.service
+/etc/systemd/system/bc250-metrics.service
+/etc/bc250-gpu-fixed.conf.pre-2200-1085
+/etc/bc250-gpu-fixed.conf
+--- journal metrics last lines ---
+Там 25 18:47:31 cachyos bc250-metrics.py[103600]:     sys.exit(main())
+Там 25 18:47:31 cachyos bc250-metrics.py[103600]:              ~~~~^^
+Там 25 18:47:31 cachyos bc250-metrics.py[103600]:   File "/usr/local/libexec/bc250-metrics.py", line 48, in main
+Там 25 18:47:31 cachyos bc250-metrics.py[103600]:     first = read()
+Там 25 18:47:31 cachyos bc250-metrics.py[103600]:   File "/usr/local/libexec/bc250-metrics.py", line 39, in read
+Там 25 18:47:31 cachyos bc250-metrics.py[103600]:     raw = f.read()
+Там 25 18:47:31 cachyos bc250-metrics.py[103600]: OSError: [Errno 62] Timer expired
+Там 25 18:47:31 cachyos systemd[1]: bc250-metrics.service: Main process exited, code=exited, status=1/FAILURE
+Там 25 18:47:31 cachyos systemd[1]: bc250-metrics.service: Failed with result 'exit-code'.
+Там 25 18:47:31 cachyos systemd[1]: bc250-metrics.service: Consumed 4.607s CPU time over 25.401s wall clock time, 6.7M memory peak.
+Там 25 18:47:33 cachyos systemd[1]: bc250-metrics.service: Scheduled restart job, restart counter is at 212.
+Там 25 18:47:33 cachyos systemd[1]: Started BC-250 SMU metrics sampler (CPU/GPU power split, throttle status).
+Там 25 18:47:56 cachyos bc250-metrics.py[103727]: Traceback (most recent call last):
+Там 25 18:47:56 cachyos bc250-metrics.py[103727]:   File "/usr/local/libexec/bc250-metrics.py", line 92, in <module>
+Там 25 18:47:56 cachyos bc250-metrics.py[103727]:     sys.exit(main())
+Там 25 18:47:56 cachyos bc250-metrics.py[103727]:              ~~~~^^
+Там 25 18:47:56 cachyos bc250-metrics.py[103727]:   File "/usr/local/libexec/bc250-metrics.py", line 48, in main
+Там 25 18:47:56 cachyos bc250-metrics.py[103727]:     first = read()
+Там 25 18:47:56 cachyos bc250-metrics.py[103727]:   File "/usr/local/libexec/bc250-metrics.py", line 39, in read
+Там 25 18:47:56 cachyos bc250-metrics.py[103727]:     raw = f.read()
+Там 25 18:47:56 cachyos bc250-metrics.py[103727]: OSError: [Errno 62] Timer expired
+Там 25 18:47:56 cachyos systemd[1]: bc250-metrics.service: Main process exited, code=exited, status=1/FAILURE
+Там 25 18:47:56 cachyos systemd[1]: bc250-metrics.service: Failed with result 'exit-code'.
+Там 25 18:47:56 cachyos systemd[1]: bc250-metrics.service: Consumed 4.198s CPU time over 25.387s wall clock time, 7M memory peak.
+Там 25 18:47:59 cachyos systemd[1]: bc250-metrics.service: Scheduled restart job, restart counter is at 213.
+Там 25 18:47:59 cachyos systemd[1]: Started BC-250 SMU metrics sampler (CPU/GPU power split, throttle status).
+Там 25 18:48:17 cachyos bc250-metrics.py[104227]: Traceback (most recent call last):
+Там 25 18:48:17 cachyos bc250-metrics.py[104227]:   File "/usr/local/libexec/bc250-metrics.py", line 92, in <module>
+Там 25 18:48:17 cachyos bc250-metrics.py[104227]:     sys.exit(main())
+Там 25 18:48:17 cachyos bc250-metrics.py[104227]:              ~~~~^^
+Там 25 18:48:17 cachyos bc250-metrics.py[104227]:   File "/usr/local/libexec/bc250-metrics.py", line 48, in main
+Там 25 18:48:17 cachyos bc250-metrics.py[104227]:     first = read()
+Там 25 18:48:17 cachyos bc250-metrics.py[104227]:   File "/usr/local/libexec/bc250-metrics.py", line 39, in read
+Там 25 18:48:17 cachyos bc250-metrics.py[104227]:     raw = f.read()
+Там 25 18:48:17 cachyos bc250-metrics.py[104227]: OSError: [Errno 62] Timer expired
+Там 25 18:48:17 cachyos systemd[1]: bc250-metrics.service: Main process exited, code=exited, status=1/FAILURE
+Там 25 18:48:17 cachyos systemd[1]: bc250-metrics.service: Failed with result 'exit-code'.
+Там 25 18:48:17 cachyos systemd[1]: bc250-metrics.service: Consumed 4.363s CPU time over 20.836s wall clock time, 6.8M memory peak.
+Там 25 18:48:19 cachyos systemd[1]: bc250-metrics.service: Scheduled restart job, restart counter is at 214.
+Там 25 18:48:19 cachyos systemd[1]: Started BC-250 SMU metrics sampler (CPU/GPU power split, throttle status).
+--- look for vclk/dclk in home logs / agent-reach ---
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:622:firmware:       amdgpu/raven_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:623:firmware:       amdgpu/picasso_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:624:firmware:       amdgpu/raven2_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:625:firmware:       amdgpu/arcturus_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:626:firmware:       amdgpu/renoir_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:627:firmware:       amdgpu/green_sardine_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:628:firmware:       amdgpu/aldebaran_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:629:firmware:       amdgpu/navi10_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:630:firmware:       amdgpu/navi14_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:631:firmware:       amdgpu/navi12_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:632:firmware:       amdgpu/sienna_cichlid_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:633:firmware:       amdgpu/navy_flounder_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:634:firmware:       amdgpu/vangogh_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:635:firmware:       amdgpu/dimgrey_cavefish_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:636:firmware:       amdgpu/beige_goby_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:637:firmware:       amdgpu/yellow_carp_vcn.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:638:firmware:       amdgpu/vcn_3_1_2.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:639:firmware:       amdgpu/vcn_4_0_0.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:640:firmware:       amdgpu/vcn_4_0_2.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:641:firmware:       amdgpu/vcn_4_0_3.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:642:firmware:       amdgpu/vcn_4_0_4.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:643:firmware:       amdgpu/vcn_4_0_5.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:644:firmware:       amdgpu/vcn_4_0_6.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:645:firmware:       amdgpu/vcn_4_0_6_1.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:646:firmware:       amdgpu/vcn_5_0_0.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:647:firmware:       amdgpu/vcn_5_0_1.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:648:firmware:       amdgpu/vcn_5_0_2.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:649:firmware:       amdgpu/vcn_5_3_0.bin
+/home/OWNER/bc250-backups/20260821T050259Z/new-amdgpu-modinfo.txt:1079:parm:           vcnfw_log:Enable vcnfw log(0 = disable (default value), 1 = enable) (int)
+/home/OWNER/bc250-backups/20260821T050329Z/new-amdgpu-modinfo.txt:622:firmware:       amdgpu/raven_vcn.bin
+/home/OWNER/bc250-backups/20260821T050329Z/new-amdgpu-modinfo.txt:623:firmware:       amdgpu/picasso_vcn.bin
+/home/OWNER/bc250-backups/20260821T050329Z/new-amdgpu-modinfo.txt:624:firmware:       amdgpu/raven2_vcn.bin
+/home/OWNER/bc250-backups/20260821T050329Z/new-amdgpu-modinfo.txt:625:firmware:       amdgpu/arcturus_vcn.bin
+/home/OWNER/bc250-backups/20260821T050329Z/new-amdgpu-modinfo.txt:626:firmware:       amdgpu/renoir_vcn.bin
+/home/OWNER/bc250-backups/20260821T050329Z/new-amdgpu-modinfo.txt:627:firmware:       amdgpu/green_sardine_vcn.bin
+/home/OWNER/bc250-backups/20260821T050329Z/new-amdgpu-modinfo.txt:628:firmware:       amdgpu/aldebaran_vcn.bin
+/home/OWNER/bc250-backups/20260821T050329Z/new-amdgpu-modinfo.txt:629:firmware:       amdgpu/navi10_vcn.bin
+/home/OWNER/bc250-backups/20260821T050329Z/new-amdgpu-modinfo.txt:630:firmware:       amdgpu/navi14_vcn.bin
+/home/OWNER/bc250-backups/20260821T050329Z/new-amdgpu-modinfo.txt:631:firmware:       amdgpu/navi12_vcn.bin
+/home/OWNER/bc250-backups/20260821T050329Z/new-amdgpu-modinfo.txt:632:firmware:       amdgpu/sienna_cichlid_vcn.bin
+-rw-r--r-- 1 root root   21044 Там 24 22:38 /var/log/bc250-cpuval2.log
+-rw-r--r-- 1 root root   12494 Там 24 22:34 /var/log/bc250-cpuval.log
+-rw-r--r-- 1 root root    2838 Там 24 23:02 /var/log/bc250-gpuval-2100b.log
+-rw-r--r-- 1 root root    1028 Там 24 23:04 /var/log/bc250-gpuval-2100c.log
+-rw-r--r-- 1 root root    5184 Там 24 23:00 /var/log/bc250-gpuval-2100.log
+-rw-r--r-- 1 root root     991 Там 24 22:40 /var/log/bc250-gpuval.log
+-rw-r--r-- 1 root root     991 Там 24 22:51 /var/log/bc250-gpuval-maxsafe.log
+-rw-r--r-- 1 root root 5063813 Там 25 18:46 /var/log/bc250-telemetry.log
+
+--- cyan_skillfish ppt metrics fields from packaging patch (vclk/dclk emit) ---
+32:+	uint16_t VclkFrequency;			/* 0x4a */
+33:+	uint16_t DclkFrequency;			/* 0x4c */
+268:-		*value = metrics->Current.GfxclkFrequency;
+270:+			smu, value, metrics->Current.GfxclkFrequency);
+273: 		*value = metrics->Current.SocclkFrequency;
+363:+					      metrics->Current.CoreFrequency[i],
+364:+					      metrics->Current.CorePower[i] / 1000,
+365:+					      metrics->Current.CoreTemperature[i] / 100,
+366:+					      metrics->Current.C0Residency[i]);
+372:+					      i, metrics->Current.L3Frequency[i],
+373:+					      metrics->Current.L3Temperature[i] / 100);
+383:+		smu, &gfxclk, metrics->Current.GfxclkFrequency);
+386:+				      metrics->Current.GfxTemperature / 100);
+389:+				      gfxclk, metrics->Current.GfxTemperature / 100);
+392:+			      metrics->Current.SocclkFrequency,
+393:+			      metrics->Current.SocTemperature / 100);
+394:+	size += sysfs_emit_at(buf, size, "vclk:  %5uMHz\n",
+395:+			      metrics->Current.VclkFrequency);
+396:+	size += sysfs_emit_at(buf, size, "dclk:  %5uMHz\n",
+397:+			      metrics->Current.DclkFrequency);
+399:+			      metrics->Current.MemclkFrequency);
+401:+			      metrics->Current.EdgeTemperature / 100);
+407:+				      metrics->Current.Voltage[i],
+408:+				      metrics->Current.Current[i] / 1000,
+409:+				      metrics->Current.Power[i] / 1000);
+411:+			      metrics->Current.CurrentSocketPower / 1000);
+414:+			      metrics->Current.ThrottlerStatus);
+478:+		smu, &gfxclk, metrics.Current.GfxclkFrequency);
+484: 	gpu_metrics->temperature_gfx = metrics.Current.GfxTemperature;
+485: 	gpu_metrics->temperature_soc = metrics.Current.SocTemperature;
+487:-	gpu_metrics->average_socket_power = metrics.Current.CurrentSocketPower;
+488:-	gpu_metrics->average_soc_power = metrics.Current.Power[0];
+489:-	gpu_metrics->average_gfx_power = metrics.Current.Power[1];
+498:+		cyan_skillfish_gpu_metrics_power(metrics.Current.CurrentSocketPower);
+500:+		cyan_skillfish_gpu_metrics_power(metrics.Current.Power[0]);
+502:+		cyan_skillfish_gpu_metrics_power(metrics.Current.Power[1]);
+504: 	gpu_metrics->average_gfxclk_frequency = metrics.Average.GfxclkFrequency;
+505: 	gpu_metrics->average_socclk_frequency = metrics.Average.SocclkFrequency;
+507: 	gpu_metrics->average_vclk_frequency = metrics.Average.VclkFrequency;
+508: 	gpu_metrics->average_dclk_frequency = metrics.Average.DclkFrequency;
+510:-	gpu_metrics->current_gfxclk = metrics.Current.GfxclkFrequency;
+517: 	gpu_metrics->current_socclk = metrics.Current.SocclkFrequency;
+518: 	gpu_metrics->current_uclk = metrics.Current.MemclkFrequency;
+519: 	gpu_metrics->current_fclk = metrics.Current.MemclkFrequency;
+520: 	gpu_metrics->current_vclk = metrics.Current.VclkFrequency;
+521: 	gpu_metrics->current_dclk = metrics.Current.DclkFrequency;
+524:-		gpu_metrics->temperature_core[i] = metrics.Current.CoreTemperature[i];
+525:-		gpu_metrics->average_core_power[i] = metrics.Average.CorePower[i];
+526:-		gpu_metrics->current_coreclk[i] = metrics.Current.CoreFrequency[i];
+550:+				metrics.Current.CoreTemperature[i];
+
+--- debugfs dri listing only (no hangy reads) ---
+no_debugfs
+
+--- amdgpu module params (read) ---
+abmlevel
+agp
+aspm
+async_gfx_ring
+audio
+backlight
+bad_page_threshold
+bapm
+bc250_cc_write_mode
+bc250_flush_by_runlist
+cg_mask
+cik_support
+compute_multipipe
+cs_activity_cache_ms
+cs_eight_core_map
+cs_full_telemetry
+cs_gfxclk_cache_ms
+cs_metrics_cache_ms
+cwsr_enable
+damageclips
+dc
+dcdebugmask
+dcfeaturemask
+debug_evictions
+debug_mask
+deep_color
+disable_cu
+discovery
+disp_priority
+dpm
+emu_mode
+enforce_isolation
+exp_hw_support
+force_asic_type
+forcelongtraining
+freesync_video
+fw_load_type
+gartsize
+gpu_recovery
+gttsize
+halt_if_hws_hang
+hdmi_hpd_debounce_delay_ms
+hw_i2c
+hws_gws_support
+hws_max_conc_proc
+ignore_min_pcap
+ip_block_mask
+lbpw
+lockup_timeout
+max_num_of_queues_per_device
+mcbp
+mes_log_enable
+modeset
+moverate
+msi
+mtype_local
+no_queue_eviction_on_vm_fault
+noretry
+no_system_mem_limit
+num_kcq
+pcie_gen2
+pcie_gen_cap
+pcie_lane_cap
+pcie_p2p
+pg_mask
+ppfeaturemask
+ptl
+queue_preemption_timeout_ms
+ras_enable
+ras_mask
+rebar
+reset_method
+runpm
+sched_hw_submission
+sched_jobs
+sched_policy
+sdma_phase_quantum
+seamless
+send_sigterm
+sg_display
+ip_block_mask=4294967295
+
+runpm=-1
+
+aspm=-1
+
+modeset=-1
+
+
+--- firmware load path hints from dmesg ring if any ---
+=== PART8 DONE ===

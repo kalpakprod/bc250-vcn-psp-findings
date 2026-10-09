@@ -1,0 +1,181 @@
+{
+  "scope": "serve-map for Pico 2 TOCTOU rig; stock vs glitch-signed candidate",
+  "stock_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "candidate_sha256": "91de01eb7cb8e97014294adc8692eb8be66c3f95ce8481c234805544c0ddd517",
+  "changed_ranges": [
+    [
+      "0x8e0004",
+      "0x8e0008"
+    ],
+    [
+      "0x8e0084",
+      "0x8e008b"
+    ],
+    [
+      "0x8e0104",
+      "0x8e010b"
+    ],
+    [
+      "0x9db560",
+      "0x9db6a0"
+    ],
+    [
+      "0x9e0000",
+      "0x9e3010"
+    ],
+    [
+      "0x9e4000",
+      "0x9e4708"
+    ]
+  ],
+  "changed_total_bytes": 14442,
+  "psp_entries": [
+    {
+      "type": "0x1",
+      "spi": "0x8e0400",
+      "size": 46592,
+      "identical": true,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x2",
+      "spi": "0x8eba00",
+      "size": 78672,
+      "identical": true,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x8",
+      "spi": "0x8fee00",
+      "size": 262656,
+      "identical": true,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x9",
+      "spi": "0x93f000",
+      "size": 1088,
+      "identical": true,
+      "anchor_sensitive": true
+    },
+    {
+      "type": "0x12",
+      "spi": "0x93f500",
+      "size": 262656,
+      "identical": true,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x13",
+      "spi": "0x97f700",
+      "size": 8512,
+      "identical": true,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x20",
+      "spi": "0x981900",
+      "size": 1616,
+      "identical": true,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x24",
+      "spi": "0x982000",
+      "size": 11856,
+      "identical": false,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x28",
+      "spi": "0x984f00",
+      "size": 108400,
+      "identical": true,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x30",
+      "spi": "0x99f700",
+      "size": 1312,
+      "identical": true,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x31",
+      "spi": "0x99fd00",
+      "size": 49184,
+      "identical": true,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x32",
+      "spi": "0x9abe00",
+      "size": 16576,
+      "identical": true,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x33",
+      "spi": "0x9aff00",
+      "size": 41632,
+      "identical": true,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x34",
+      "spi": "0x9ba200",
+      "size": 41424,
+      "identical": true,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x44",
+      "spi": "0x9c4400",
+      "size": 26128,
+      "identical": true,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x45",
+      "spi": "0x9cab00",
+      "size": 1760,
+      "identical": false,
+      "anchor_sensitive": false
+    },
+    {
+      "type": "0x4f",
+      "spi": "0x9cb200",
+      "size": 66048,
+      "identical": true,
+      "anchor_sensitive": true
+    },
+    {
+      "type": "0x50",
+      "spi": "0x9db400",
+      "size": 3536,
+      "identical": false,
+      "anchor_sensitive": true
+    },
+    {
+      "type": "0x51",
+      "spi": "0x9dc200",
+      "size": 1856,
+      "identical": true,
+      "anchor_sensitive": true
+    }
+  ],
+  "anchor_check_serve_original_ranges": [
+    [
+      "0x9db560",
+      "0x9db6a0"
+    ]
+  ],
+  "rig_semantics": [
+    "default serve: PATCHED candidate",
+    "serve ORIGINAL for reads inside 1 anchor ranges (key-carrying entries; exact window/order tuned at session time \u2014 the PT article found 'patched first' on their dump; our rig keeps both orders configurable)",
+    "all other reads: either image (identical bytes)"
+  ],
+  "sources": [
+    "docs/research/2026-09-23-habr-pamdora-toctou.md"
+  ]
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "command": [
+      "python3",
+      "/home/OWNER/orca/projects/bc250/scripts/firmware_audit.py",
+      "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "--output",
+      "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-acceptance-review/BASELINE.json"
+    ],
+    "label": "BASELINE",
+    "exit": 0,
+    "stdout": "{\"output\": \"/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-acceptance-review/BASELINE.json\", \"images\": 1, \"extracted\": 0}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "/home/OWNER/orca/projects/bc250/scripts/firmware_audit.py",
+      "/home/OWNER/orca/projects/bc250/candidates/clv-native-menu-bridge-v001/integration/BC250_5.00_clv_MAIN_NATIVE_BASE.bin",
+      "--output",
+      "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-acceptance-review/MODIFIED.json"
+    ],
+    "label": "MODIFIED",
+    "exit": 0,
+    "stdout": "{\"output\": \"/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-acceptance-review/MODIFIED.json\", \"images\": 1, \"extracted\": 0}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "/home/OWNER/orca/projects/bc250/scripts/firmware_audit.py",
+      "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-main-native-base/modified.bin",
+      "--output",
+      "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-acceptance-review/ROLLBACK.json"
+    ],
+    "label": "ROLLBACK",
+    "exit": 0,
+    "stdout": "{\"output\": \"/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-acceptance-review/ROLLBACK.json\", \"images\": 1, \"extracted\": 0}\n",
+    "stderr": ""
+  }
+]

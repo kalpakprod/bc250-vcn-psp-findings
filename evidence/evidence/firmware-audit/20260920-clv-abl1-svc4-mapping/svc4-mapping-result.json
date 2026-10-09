@@ -1,0 +1,432 @@
+{
+  "boundary": {
+    "proven": [
+      "exact current SVC#4/#5 sites and map/access sequence",
+      "source-aligned SMN read/write naming",
+      "mapped-base plus 12-bit offset behavior"
+    ],
+    "unproven": [
+      "on-die SVC#4 handler/service table",
+      "physical map/window destination",
+      "runtime R4 descriptor value and active callback binding",
+      "specific MMIO/PLL/register identity",
+      "units or MCLK/UCLK/FCLK 1:1 behavior",
+      "hardware behavior"
+    ]
+  },
+  "checks": 59,
+  "checks_detail": [
+    {
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "SHA-256 ABL1-clv-decompressed.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "name": "SHA-256 abl1-full-thumb-llvm.txt",
+      "status": "PASS"
+    },
+    {
+      "expected": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b",
+      "got": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b",
+      "name": "SHA-256 ABL1_decompiled.c",
+      "status": "PASS"
+    },
+    {
+      "expected": "c27bf19fb46415703c1e761641d3ac08102dda775b9152ea1b6a557c47741170",
+      "got": "c27bf19fb46415703c1e761641d3ac08102dda775b9152ea1b6a557c47741170",
+      "name": "SHA-256 ABL1_strings.txt",
+      "status": "PASS"
+    },
+    {
+      "expected": "bafe168f7718e7729061ee2469a4871e3a237c9e22746175a920d3c60a75850b",
+      "got": "bafe168f7718e7729061ee2469a4871e3a237c9e22746175a920d3c60a75850b",
+      "name": "SHA-256 TOS_SECURITY_POLICY~0x45_B.51.1.16.body",
+      "status": "PASS"
+    },
+    {
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "name": "SHA-256 BC250_5.00_clv.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": 94624,
+      "got": 94624,
+      "name": "exact ABL payload size",
+      "status": "PASS"
+    },
+    {
+      "expected": 1504,
+      "got": 1504,
+      "name": "exact TOS policy body size",
+      "status": "PASS"
+    },
+    {
+      "expected": 10267648,
+      "got": 10267648,
+      "name": "TOS policy body exact occurrence in CLV ROM",
+      "status": "PASS"
+    },
+    {
+      "expected": 0,
+      "got": 0,
+      "name": "prior exact ABL review status",
+      "status": "PASS"
+    },
+    {
+      "expected": "Thumb-2 payload-relative; $PS1 load_address=0",
+      "got": "Thumb-2 payload-relative; $PS1 load_address=0",
+      "name": "ISA/base declaration",
+      "status": "PASS"
+    },
+    {
+      "expected": "300b",
+      "got": "300b",
+      "name": "ABL raw 0x6DCC",
+      "status": "PASS"
+    },
+    {
+      "expected": "c6f30b04",
+      "got": "c6f30b04",
+      "name": "ABL raw 0x6DCE",
+      "status": "PASS"
+    },
+    {
+      "expected": "0003",
+      "got": "0003",
+      "name": "ABL raw 0x6DD2",
+      "status": "PASS"
+    },
+    {
+      "expected": "04df",
+      "got": "04df",
+      "name": "ABL raw 0x6DD4",
+      "status": "PASS"
+    },
+    {
+      "expected": "0646",
+      "got": "0646",
+      "name": "ABL raw 0x6DD8",
+      "status": "PASS"
+    },
+    {
+      "expected": "3359",
+      "got": "3359",
+      "name": "ABL raw 0x6E1A",
+      "status": "PASS"
+    },
+    {
+      "expected": "2b60",
+      "got": "2b60",
+      "name": "ABL raw 0x6E1E",
+      "status": "PASS"
+    },
+    {
+      "expected": "05df",
+      "got": "05df",
+      "name": "ABL raw 0x6DFC",
+      "status": "PASS"
+    },
+    {
+      "expected": "280b",
+      "got": "280b",
+      "name": "ABL raw 0x6EA6",
+      "status": "PASS"
+    },
+    {
+      "expected": "c5f30b06",
+      "got": "c5f30b06",
+      "name": "ABL raw 0x6EA8",
+      "status": "PASS"
+    },
+    {
+      "expected": "0003",
+      "got": "0003",
+      "name": "ABL raw 0x6EAC",
+      "status": "PASS"
+    },
+    {
+      "expected": "04df",
+      "got": "04df",
+      "name": "ABL raw 0x6EAE",
+      "status": "PASS"
+    },
+    {
+      "expected": "0546",
+      "got": "0546",
+      "name": "ABL raw 0x6EB2",
+      "status": "PASS"
+    },
+    {
+      "expected": "2068",
+      "got": "2068",
+      "name": "ABL raw 0x6EE6",
+      "status": "PASS"
+    },
+    {
+      "expected": "a851",
+      "got": "a851",
+      "name": "ABL raw 0x6EE8",
+      "status": "PASS"
+    },
+    {
+      "expected": "05df",
+      "got": "05df",
+      "name": "ABL raw 0x6ED6",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "listing op 0x6DD4",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "listing op 0x6DD8",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "listing op 0x6E1A",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "listing op 0x6E1E",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "listing op 0x6DFC",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "listing op 0x6EAE",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "listing op 0x6EB2",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "listing op 0x6EE6",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "listing op 0x6EE8",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "listing op 0x6ED6",
+      "status": "PASS"
+    },
+    {
+      "expected": 28198,
+      "got": 28198,
+      "name": "current ~SMN R",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "current ~SMN R present",
+      "status": "PASS"
+    },
+    {
+      "expected": 28226,
+      "got": 28226,
+      "name": "current 8-bit log",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "current 8-bit log present",
+      "status": "PASS"
+    },
+    {
+      "expected": 28242,
+      "got": 28242,
+      "name": "current 16-bit log",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "current 16-bit log present",
+      "status": "PASS"
+    },
+    {
+      "expected": 28258,
+      "got": 28258,
+      "name": "current 32-bit log",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "current 32-bit log present",
+      "status": "PASS"
+    },
+    {
+      "expected": 28402,
+      "got": 28402,
+      "name": "current ~SMN BW",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "current ~SMN BW present",
+      "status": "PASS"
+    },
+    {
+      "expected": 28430,
+      "got": 28430,
+      "name": "current ~SMN W",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "current ~SMN W present",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "historical source FUN_00006ea4 present",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "historical source FUN_00006f70 present",
+      "status": "PASS"
+    },
+    {
+      "expected": 2,
+      "got": 2,
+      "name": "historical source SVC4 calls",
+      "status": "PASS"
+    },
+    {
+      "expected": 2,
+      "got": 2,
+      "name": "historical source SVC5 calls",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "historical source SMN R label",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "historical source SMN W label",
+      "status": "PASS"
+    },
+    {
+      "expected": -256,
+      "got": -256,
+      "name": "source/current code offset delta",
+      "status": "PASS"
+    },
+    {
+      "expected": -254,
+      "got": -254,
+      "name": "source/current read-string offset delta",
+      "status": "PASS"
+    },
+    {
+      "expected": -254,
+      "got": -254,
+      "name": "source/current write-string offset delta",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "TOS type-45 has no SVC#4 byte",
+      "status": "PASS"
+    }
+  ],
+  "current_string_evidence": [
+    "~SMN R [0x%0x]",
+    "~SMN BW [0x%0x] = 0x%0x",
+    "~SMN W [0x%0x] = 0x%0x"
+  ],
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "exact_operations": {
+    "read_helper_0x6DA4": {
+      "cleanup": "SVC #5 receives mapped base in R0 after access",
+      "input_shape": "R0=width/type; R1=encoded address; R2=output pointer",
+      "map_request": "R0=(R1 >> 12) << 12; R4=R1 & 0xFFF; SVC #4",
+      "post_svc": "SVC #4 return R0 is copied to R6 and used as mapped base",
+      "word_path": "LDR R3,[R6,R4]; STR R3,[R5] for type R0=3"
+    },
+    "write_helper_0x6E70": {
+      "cleanup": "SVC #5 receives mapped base in R0 after access",
+      "input_shape": "R0=width/type; R1=encoded address; R2=value pointer",
+      "map_request": "R0=(R1 >> 12) << 12; R6=R1 & 0xFFF; SVC #4",
+      "post_svc": "SVC #4 return R0 is copied to R5 and used as mapped base",
+      "word_path": "LDR R0,[R4]; STR R0,[R5,R6] for type R0=3"
+    }
+  },
+  "inputs": {
+    "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin": {
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "size": 16777216
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin": {
+      "sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "size": 94624
+    },
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt": {
+      "sha256": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "size": 2586986
+    },
+    "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/lorek123_psp/ABL1_decompiled.c": {
+      "sha256": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b",
+      "size": 149324
+    },
+    "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/lorek123_psp/ABL1_strings.txt": {
+      "sha256": "c27bf19fb46415703c1e761641d3ac08102dda775b9152ea1b6a557c47741170",
+      "size": 15582
+    },
+    "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin5_psp_bodies/TOS_SECURITY_POLICY~0x45_B.51.1.16.body": {
+      "sha256": "bafe168f7718e7729061ee2469a4871e3a237c9e22746175a920d3c60a75850b",
+      "size": 1504
+    }
+  },
+  "isa_and_base": "ARM Thumb-2 little-endian; ABL1 offsets are payload-relative under $PS1 load_address=0; no physical load base inferred",
+  "service_mapping": {
+    "address_space_effect": "The subsequent LDR/STR are through a returned mapped base plus the original low-12-bit offset. This is an SMN/MMIO-window access contract, not merely a stack/object-field RMW. Which physical register/page the encoded address selects remains unresolved without the SVC#4 handler and runtime descriptor value.",
+    "svc4": "Static caller contract: map the 4-KiB-aligned high part of an SMN address into a PSP-accessible window and return the mapped base. The exact on-die handler body/translation table is not present in the BIOS image, so the destination physical window and handler implementation are unavailable locally.",
+    "svc5": "Paired release/cleanup is strongly indicated because both wrappers pass the SVC#4-returned mapped base to SVC#5 after the access; exact handler semantics remain unavailable."
+  },
+  "status": "PASS"
+}

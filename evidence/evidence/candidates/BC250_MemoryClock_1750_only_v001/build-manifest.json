@@ -1,0 +1,78 @@
+{
+  "candidate_id": "BC250_MemoryClock_1750_only_v001",
+  "generated_at": "2026-09-11T07:14:24.228729+00:00",
+  "state": "statically-verified-offline-candidate",
+  "source": {
+    "path": "evidence/programmer/reads/20260911/read-a.bin",
+    "sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+    "size": 16777216,
+    "matching_baselines": [
+      "evidence/programmer/reads/20260911/read-b.bin",
+      "dump/2.bin"
+    ]
+  },
+  "output": {
+    "path": "candidates/BC250_MemoryClock_1750_only_v001_from_read-a.bin",
+    "sha256": "63cd074197ce26bafe7d2f943eeceb69b331cdba94f12662820de710fc193fee",
+    "size": 16777216
+  },
+  "builder": {
+    "path": "scripts/build_amdsetup_memory_candidate.py",
+    "sha256": "3d015676c4e2d8bc5fbee235aaea18802fb93332d1b4bab0610ab4f20dd0ea36",
+    "corrected_nvar_name_offset": "record +0x0B",
+    "command": "python3 scripts/build_amdsetup_memory_candidate.py /home/OWNER/orca/projects/bc250/evidence/programmer/reads/20260911/read-a.bin /home/OWNER/orca/projects/bc250/candidates/BC250_MemoryClock_1750_only_v001_from_read-a.bin"
+  },
+  "transform": {
+    "nvar_record_offset": "0x4BB",
+    "amdsetup_body_offset": "0x4CF",
+    "field": "MemoryClockSpeed",
+    "relative_offset": "0x316",
+    "absolute_offset": "0x7E5",
+    "old_value": "0xFF",
+    "new_value": "0x23",
+    "new_value_label": "1750MHz (IFR option)",
+    "changed_offsets": [
+      "0x7E5"
+    ],
+    "changed_byte_count": 1,
+    "uclk_fclk_voltage_timing_apcb_psp_ps1_bhd_fv_changed": false
+  },
+  "validation": {
+    "independent_byte_diff": "PASS: exactly one expected offset",
+    "nvar_report": "evidence/candidates/BC250_MemoryClock_1750_only_v001/nvar-primary.json",
+    "nvar_report_sha256": "06710664aa71770881221401da74c1fa1ce224e8eaf1e5940176490a69a927f5",
+    "firmware_audit_report": "evidence/candidates/BC250_MemoryClock_1750_only_v001/firmware-audit.json",
+    "firmware_audit_report_sha256": "83b82cd738bc7d668ac90f568066ef451ffc2075af36d2b2fde5bc4e951dcae8",
+    "selected_field_diff": "PASS: only MemoryClockSpeed changed",
+    "psp_checksum": "PASS",
+    "bhd_checksum": "PASS",
+    "apcb_checksum": "PASS",
+    "firmware_volume_count": 4,
+    "nvar_warning_count": 3
+  },
+  "hardware": {
+    "programmer_written": false,
+    "board_tested": false,
+    "boot_tested": false,
+    "memory_training": "UNRUN",
+    "live_mclk": "UNRUN",
+    "live_uclk": "UNRUN",
+    "live_fclk": "UNRUN",
+    "voltage_rails": "UNRUN"
+  },
+  "review": {
+    "independent_review": "PASS: Gemini bounded read-only review; root rechecked artifact",
+    "review_path": "evidence/candidates/BC250_MemoryClock_1750_only_v001/independent-review-gemini.md",
+    "review_sha256": "47a9b6a7be4628861ac04031e959a6ea76b1b67bfe7f724c8ba0b66b330123fb",
+    "exact-image-per-board-approval": "NOT_REQUESTED"
+  },
+  "risk": "Pins an IFR enumerated memory clock option but does not prove the setting is applied or training-stable on this board; it intentionally does not change voltage or synchronization fields.",
+  "builder_safety_tests": [
+    {
+      "test": "baseline MemoryClockSpeed already non-Auto",
+      "result": "PASS: builder rejected before output",
+      "internal_rc": 1,
+      "output_created": false
+    }
+  ]
+}

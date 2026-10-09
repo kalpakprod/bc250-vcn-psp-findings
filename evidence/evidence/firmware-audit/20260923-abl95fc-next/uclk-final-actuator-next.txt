@@ -1,0 +1,163 @@
+PASS: entire loaded program memory equals clv-matching robin-5 body, bytes=262400
+===== 0001f2f0 FUN_0001f2f0 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001f2f0(undefined4 param_1)
+
+{
+  undefined1 uVar1;
+  uint uVar2;
+  int iVar3;
+  uint uVar4;
+  int iVar5;
+  undefined4 uVar6;
+  uint uVar7;
+  float fVar8;
+  
+  if (*(char *)(_DAT_000171ec + 0xf6) == -1) {
+    func_0x00000fa8(param_1);
+    return;
+  }
+  uVar2 = func_0x00000ffc(param_1);
+  if (uVar2 == 0) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar8 = ((float)uVar2 / 1.0) * _DAT_000170ac;
+  iVar3 = func_0x00023cb8(fVar8);
+  uVar2 = func_0x00023c78(iVar3,fVar8);
+  uVar4 = func_0x00023ab0(0xf);
+  iVar5 = func_0x00023ac4(0xf);
+  uVar7 = uVar2 & 0xff;
+  if (uVar4 < uVar2) {
+    func_0x00023890(0xf,uVar7);
+    func_0x00023890(0x11,uVar7);
+  }
+  if (iVar3 != iVar5) {
+    func_0x0002379c(3,0xf,iVar3);
+    func_0x0002379c(4,0x11,iVar3);
+  }
+  if (uVar2 < uVar4) {
+    func_0x00023890(0xf,uVar7);
+    func_0x00023890(0x11,uVar7);
+  }
+  uVar6 = func_0x00023c40(3,iVar3,uVar7);
+  uVar2 = 0;
+  while( true ) {
+    fVar8 = (float)func_0x0003acf8(uVar6,(float)(1 << 0x20 - (0x20 - (uVar2 & 0x1f))) / 1.0);
+    uVar2 = uVar2 + 1 & 0xff;
+    if ((*_DAT_00017488 <= fVar8) && (fVar8 <= _DAT_00017488[1])) break;
+    if (uVar2 == 4) {
+      uVar1 = 0x60;
+LAB_0001f3cc:
+      func_0x00023890(0x10,uVar1);
+      func_0x00023890(0x12,uVar1);
+      func_0x00000fa8(param_1,1);
+      return;
+    }
+  }
+  uVar1 = func_0x00023c78(iVar3,fVar8);
+  goto LAB_0001f3cc;
+}
+
+
+0001f2f0 366100 entry a1,0x30
+0001f2f3 81bedf l32r a8,0x000171ec
+0001f2f6 8208f6 l8ui a8,a8,0xf6
+0001f2f9 b2a0ff movi a11,0xff
+0001f2fc b79806 bne a8,a11,0x0001f306
+0001f2ff ad02 mov.n a10,a2
+0001f301 65cae1 call8 0x00000fa8
+0001f304 1df0 retw.n
+0001f306 ad02 mov.n a10,a2
+0001f308 25cfe1 call8 0x00000ffc
+0001f30b cc8a bnez.n a10,0x0001f317
+0001f30d ad02 mov.n a10,a2
+0001f30f b2a0ff movi a11,0xff
+0001f312 65c9e1 call8 0x00000fa8
+0001f315 1df0 retw.n
+0001f317 9165df l32r a9,0x000170ac
+0001f31a 001ada ufloat.s f1,a10,0x0
+0001f31d 5029fa wfr f2,a9
+0001f320 20012a mul.s f0,f1,f2
+0001f323 40a0fa rfr a10,f0
+0001f326 034100 ssi f0,a1,0x0
+0001f329 e59804 call8 0x00023cb8
+0001f32c 3d0a mov.n a3,a10
+0001f32e 330100 lsi f3,a1,0x0
+0001f331 40b3fa rfr a11,f3
+0001f334 259404 call8 0x00023c78
+0001f337 5d0a mov.n a5,a10
+0001f339 0cfa movi.n a10,0xf
+0001f33b 657704 call8 0x00023ab0
+0001f33e 6d0a mov.n a6,a10
+0001f340 0cfa movi.n a10,0xf
+0001f342 257804 call8 0x00023ac4
+0001f345 7d0a mov.n a7,a10
+0001f347 504074 extui a4,a5,0x0,0x8
+0001f34a 57b60d bgeu a6,a5,0x0001f35b
+0001f34d 0cfa movi.n a10,0xf
+0001f34f bd04 mov.n a11,a4
+0001f351 e55304 call8 0x00023890
+0001f354 1c1a movi.n a10,0x11
+0001f356 bd04 mov.n a11,a4
+0001f358 655304 call8 0x00023890
+0001f35b 771311 beq a3,a7,0x0001f370
+0001f35e 0c3a movi.n a10,0x3
+0001f360 0cfb movi.n a11,0xf
+0001f362 cd03 mov.n a12,a3
+0001f364 654304 call8 0x0002379c
+0001f367 0c4a movi.n a10,0x4
+0001f369 1c1b movi.n a11,0x11
+0001f36b cd03 mov.n a12,a3
+0001f36d e54204 call8 0x0002379c
+0001f370 67b50d bgeu a5,a6,0x0001f381
+0001f373 0cfa movi.n a10,0xf
+0001f375 bd04 mov.n a11,a4
+0001f377 a55104 call8 0x00023890
+0001f37a 1c1a movi.n a10,0x11
+0001f37c bd04 mov.n a11,a4
+0001f37e 255104 call8 0x00023890
+0001f381 cd04 mov.n a12,a4
+0001f383 0c3a movi.n a10,0x3
+0001f385 bd03 mov.n a11,a3
+0001f387 a58b04 call8 0x00023c40
+0001f38a 0c04 movi.n a4,0x0
+0001f38c 0c15 movi.n a5,0x1
+0001f38e 506afa wfr f6,a10
+0001f391 634101 ssi f6,a1,0x4
+0001f394 830101 lsi f8,a1,0x4
+0001f397 001440 ssl a4
+0001f39a 00c5a1 sll a12,a5
+0001f39d 007cca float.s f7,a12,0x0
+0001f3a0 40a8fa rfr a10,f8
+0001f3a3 40b7fa rfr a11,f7
+0001f3a6 25951b call8 0x0003acf8
+0001f3a9 d137e0 l32r a13,0x00017488
+0001f3ac 1b44 addi.n a4,a4,0x1
+0001f3ae 501afa wfr f1,a10
+0001f3b1 030d00 lsi f0,a13,0x0
+0001f3b4 10006b ole.s b0,f0,f1
+0001f3b7 404074 extui a4,a4,0x0,0x8
+0001f3ba 930d01 lsi f9,a13,0x4
+0001f3bd 760005 bf b0,0x0001f3c6
+0001f3c0 90116b ole.s b1,f1,f9
+0001f3c3 76111f bt b1,0x0001f3e6
+0001f3c6 6644ca bnei a4,0x4,0x0001f394
+0001f3c9 a2a060 movi a10,0x60
+0001f3cc a03074 extui a3,a10,0x0,0x8
+0001f3cf 1c0a movi.n a10,0x10
+0001f3d1 bd03 mov.n a11,a3
+0001f3d3 e54b04 call8 0x00023890
+0001f3d6 bd03 mov.n a11,a3
+0001f3d8 1c2a movi.n a10,0x12
+0001f3da 654b04 call8 0x00023890
+0001f3dd ad02 mov.n a10,a2
+0001f3df 0c1b movi.n a11,0x1
+0001f3e1 65bce1 call8 0x00000fa8
+0001f3e4 1df0 retw.n
+0001f3e6 ad03 mov.n a10,a3
+0001f3e8 40b1fa rfr a11,f1
+0001f3eb e58804 call8 0x00023c78
+0001f3ee 86f6ff j 0x0001f3cc

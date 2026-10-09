@@ -1,0 +1,309 @@
+{
+  "status": "PASS",
+  "checks": 30,
+  "route": "complete containing functions for AMD PEI token-0x1204 builders; post-builder caller boundary",
+  "modules": {
+    "AmdNbioGfxARIPei": {
+      "stem": "AmdNbioGfxARIPei-63413be2ac29",
+      "body_sha256": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+      "builder": {
+        "entry": "0x4e20",
+        "ret": "0x12fa3",
+        "target": "0xb3f4",
+        "direct_calls_before_ret": [
+          [
+            "0x4e26",
+            "0x12fb0"
+          ],
+          [
+            "0x4e35",
+            "0x12fb0"
+          ]
+        ],
+        "direct_calls_after_token": []
+      },
+      "wrapper": {
+        "entry": "0x4df0",
+        "builder_call": "0x4e0e",
+        "argument_window": "8b450c8b4804894dfc8b55fc8b4204508b4dfc8b11528b451050e80d000000",
+        "direct_calls": [
+          [
+            "0x4e0e",
+            "0x4e20"
+          ]
+        ]
+      }
+    },
+    "AmdNbioSmuV10Pei": {
+      "stem": "AmdNbioSmuV10Pei-905b8be68afd",
+      "body_sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "builder": {
+        "entry": "0x5770",
+        "ret": "0x138f3",
+        "target": "0xbd44",
+        "direct_calls_before_ret": [
+          [
+            "0x5776",
+            "0x13900"
+          ],
+          [
+            "0x5785",
+            "0x13900"
+          ]
+        ],
+        "direct_calls_after_token": []
+      },
+      "wrapper": {
+        "entry": "0x5740",
+        "builder_call": "0x575e",
+        "argument_window": "8b450c8b4804894dfc8b55fc8b4204508b4dfc8b11528b451050e80d000000",
+        "direct_calls": [
+          [
+            "0x575e",
+            "0x5770"
+          ]
+        ]
+      }
+    }
+  },
+  "fresh_result": "The complete containing functions for both AMD PEI 0x1204 serializers run from 0x4E20..0x12FA3 and 0x5770..0x138F3. Each has exactly one direct call before the record body (size helper) and zero direct calls after the token site before its sentinel/return. The wrapper calls the builder with its three constructed arguments and returns immediately; no post-builder init-structure call is present at this boundary. This is a concrete adapter boundary, not proof that no indirect or later consumer exists.",
+  "limits": "Byte-backed static evidence only; no firmware execution, broad scan, indirect/computed call resolution, HOB/DMA tracing, hardware or shared-state changes.",
+  "checks_detail": [
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ROM size",
+      "passed": true,
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "check": "AmdNbioGfxARIPei body sha256",
+      "passed": true,
+      "got": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+      "expected": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8"
+    },
+    {
+      "check": "AmdNbioGfxARIPei target bytes",
+      "passed": true,
+      "got": "ba04120000",
+      "expected": "ba04120000"
+    },
+    {
+      "check": "AmdNbioGfxARIPei containing prologue",
+      "passed": true,
+      "got": 20000,
+      "expected": 20000
+    },
+    {
+      "check": "AmdNbioGfxARIPei containing ret",
+      "passed": true,
+      "got": 77731,
+      "expected": 77731
+    },
+    {
+      "check": "AmdNbioGfxARIPei builder direct-call count",
+      "passed": true,
+      "got": 2,
+      "expected": 2
+    },
+    {
+      "check": "AmdNbioGfxARIPei no direct call after token builder",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "AmdNbioGfxARIPei size-helper calls",
+      "passed": true,
+      "got": [
+        [
+          20006,
+          "0x12fb0"
+        ],
+        [
+          20021,
+          "0x12fb0"
+        ]
+      ],
+      "expected": [
+        [
+          20006,
+          "0x12fb0"
+        ],
+        [
+          20021,
+          "0x12fb0"
+        ]
+      ]
+    },
+    {
+      "check": "AmdNbioGfxARIPei sentinel bytes",
+      "passed": true,
+      "got": "baffff00008b45f8668910",
+      "expected": "baffff00008b45f8668910"
+    },
+    {
+      "check": "AmdNbioGfxARIPei success return/ret bytes",
+      "passed": true,
+      "got": "b0018be55dc3",
+      "expected": "b0018be55dc3"
+    },
+    {
+      "check": "AmdNbioGfxARIPei wrapper prologue",
+      "passed": true,
+      "got": "558bec",
+      "expected": "558bec"
+    },
+    {
+      "check": "AmdNbioGfxARIPei wrapper builder call",
+      "passed": true,
+      "got": "e80d000000",
+      "expected": "e80d000000"
+    },
+    {
+      "check": "AmdNbioGfxARIPei wrapper direct-call sequence",
+      "passed": true,
+      "got": [
+        [
+          19982,
+          "0x4e20"
+        ]
+      ],
+      "expected": [
+        [
+          19982,
+          "0x4e20"
+        ]
+      ]
+    },
+    {
+      "check": "AmdNbioGfxARIPei wrapper argument setup",
+      "passed": true,
+      "got": "8b450c8b4804894dfc8b55fc8b4204508b4dfc8b11528b451050e80d000000",
+      "expected": "8b450c8b4804894dfc8b55fc8b4204508b4dfc8b11528b451050e80d000000"
+    },
+    {
+      "check": "AmdNbioGfxARIPei wrapper return bytes",
+      "passed": true,
+      "got": "8be55dc3",
+      "expected": "8be55dc3"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei body sha256",
+      "passed": true,
+      "got": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "expected": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei target bytes",
+      "passed": true,
+      "got": "ba04120000",
+      "expected": "ba04120000"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei containing prologue",
+      "passed": true,
+      "got": 22384,
+      "expected": 22384
+    },
+    {
+      "check": "AmdNbioSmuV10Pei containing ret",
+      "passed": true,
+      "got": 80115,
+      "expected": 80115
+    },
+    {
+      "check": "AmdNbioSmuV10Pei builder direct-call count",
+      "passed": true,
+      "got": 2,
+      "expected": 2
+    },
+    {
+      "check": "AmdNbioSmuV10Pei no direct call after token builder",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "AmdNbioSmuV10Pei size-helper calls",
+      "passed": true,
+      "got": [
+        [
+          22390,
+          "0x13900"
+        ],
+        [
+          22405,
+          "0x13900"
+        ]
+      ],
+      "expected": [
+        [
+          22390,
+          "0x13900"
+        ],
+        [
+          22405,
+          "0x13900"
+        ]
+      ]
+    },
+    {
+      "check": "AmdNbioSmuV10Pei sentinel bytes",
+      "passed": true,
+      "got": "baffff00008b45f8668910",
+      "expected": "baffff00008b45f8668910"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei success return/ret bytes",
+      "passed": true,
+      "got": "b0018be55dc3",
+      "expected": "b0018be55dc3"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei wrapper prologue",
+      "passed": true,
+      "got": "558bec",
+      "expected": "558bec"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei wrapper builder call",
+      "passed": true,
+      "got": "e80d000000",
+      "expected": "e80d000000"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei wrapper direct-call sequence",
+      "passed": true,
+      "got": [
+        [
+          22366,
+          "0x5770"
+        ]
+      ],
+      "expected": [
+        [
+          22366,
+          "0x5770"
+        ]
+      ]
+    },
+    {
+      "check": "AmdNbioSmuV10Pei wrapper argument setup",
+      "passed": true,
+      "got": "8b450c8b4804894dfc8b55fc8b4204508b4dfc8b11528b451050e80d000000",
+      "expected": "8b450c8b4804894dfc8b55fc8b4204508b4dfc8b11528b451050e80d000000"
+    },
+    {
+      "check": "AmdNbioSmuV10Pei wrapper return bytes",
+      "passed": true,
+      "got": "8be55dc3",
+      "expected": "8be55dc3"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "base": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "base_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "out": "candidates/BC250_5.00_clv_VcnUnlock_GlitchSigned_v001.bin",
+  "out_sha256": "91de01eb7cb8e97014294adc8692eb8be66c3f95ce8481c234805544c0ddd517",
+  "out_size": 16777216,
+  "our_kid": "b36ad5af630d9ad42edb551c2581d63c",
+  "our_key_entry_sha256": "0f6ea86c99f25ac211a6bed98d506ccdf6f5db49d9ab210abde031c9e9c6b04e",
+  "our_key_bits": 2048,
+  "our_key_e": 65537,
+  "private_key_path_not_in_repo": "/tmp/bc250_glitch_key.pem",
+  "kdb_t50_slot0": {
+    "was": "39bfc1922fa14ef285d9ae87e696d2b2",
+    "now": "b36ad5af630d9ad42edb551c2581d63c"
+  },
+  "gasket": {
+    "stock_body": 11344,
+    "new_body": 11792,
+    "container": 12304
+  },
+  "tos": {
+    "groups_before": 4,
+    "set_pairs_hits": {
+      "0x3a2011c": 1,
+      "0x3a20124": 0,
+      "0x3e810": 1,
+      "0x3e814": 12
+    },
+    "vcn_tail_appended_to_0x280": true,
+    "new_body": 1288,
+    "container": 1800
+  },
+  "changed_bytes": 14009,
+  "changed_range": [
+    "0x8e0004",
+    "0x9e4707"
+  ],
+  "scheme": "RSA-PSS/MGF1-SHA256/salt32 over header(0x100)||body; kid at header+0x38"
+}

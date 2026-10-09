@@ -1,0 +1,28 @@
+--- FAILED_ORIGINAL/outer864_origin_verify.py
++++ MODIFIED/outer864_origin_verify.py
+@@ -10,7 +10,7 @@
+ import hashlib, json, re, struct, subprocess, zlib
+ from pathlib import Path
+ ROOT=Path('/home/OWNER/orca/projects/bc250')
+-OUT=ROOT/'evidence/firmware-audit/20260921-apob-abl-outer864-origin'
++OUT=ROOT/'evidence/firmware-audit/20260921-apob-abl-outer864-origin-isolated'
+ ROM=ROOT/'evidence/donor/retroweb-20260916/BC250_5.00_clv.bin'
+ ABL=ROOT/'evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin'
+ OBJ=ROOT/'evidence/firmware-audit/20260920-clv-abl1-downstream/ABL1-exact.o'
+@@ -21,6 +21,7 @@
+ OLD_REPORT=ROOT/'docs/research/2026-09-21-apob-abl-heap-populator.md'
+ EXPECTED={'rom':'ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8','abl':'af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a','obj':'54abef3a390abb0ff745685de2eed4e0e8db5e9ba27bba1a0f245573b47ff135','listing':'b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65'}
+ checks=[]; commands=[]
++toolver=subprocess.run(['llvm-objdump','--version'],cwd=ROOT,capture_output=True,text=True,check=False)
+ 
+ def sha_bytes(b): return hashlib.sha256(b).hexdigest()
+ def sha(p): return sha_bytes(p.read_bytes())
+@@ -201,7 +202,7 @@
+       'checks':checks,'commands':commands,'tool_version':toolver.stdout.strip()
+     }
+     result['checks_total']=len(checks)
+-    (OUT/'outer864-origin-result.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
++    (OUT/'outer864-origin-result.json').write_text(json.dumps(result,indent=2,ensure_ascii=False,default=lambda o: o.hex() if isinstance(o,(bytes,bytearray)) else str(o))+'\n')
+     stdout={'status':'PASS','checks_passed':len(checks),'checks_failed':0,'pointer':'0x006CD4D0 not mapped into ABL1 by exact header or conditional 0x57100 base; runtime map unresolved','fclk_provider_aux':'zero','fill_semantics':'0x6B78 repeats R1 byte; FCLK call sets R1=0; not memcpy','first_unresolved':'upstream/runtime map of outer object and any bridge to APOB/INV'}
+     print(json.dumps(stdout,separators=(',',':')))
+     (OUT/'VERIFICATION.txt').write_text('''COMMANDS\n'''+ ' '.join(['PYTHONDONTWRITEBYTECODE=1','python3','-B',str(Path(__file__).resolve())])+'\n\nEXIT STATUS: 0\nSTDERR: empty\n\nRESULT\n'+json.dumps(stdout,indent=2)+'\n')

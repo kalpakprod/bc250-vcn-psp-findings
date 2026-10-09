@@ -1,0 +1,129 @@
+0x00d1fc  push.w   {r0, r1, r2, r4, r5, r6, r7, r8, sb, sl, fp, lr}
+0x00d200  mov      r6, r0                                  
+0x00d202  ldr      r0, [pc, #0x200]                           ; lit@0xd404 = 0x00e01a1c
+0x00d204  sub.w    sp, sp, #0x690                          
+0x00d208  ldr      r0, [r0]                                
+0x00d20a  str.w    r0, [sp, #0x688]                        
+0x00d20e  mov      fp, r0                                  
+0x00d210  movw     r7, #0x100                              
+0x00d214  movs     r0, #0                                  
+0x00d216  str      r0, [sp, #0x1c]                         
+0x00d218  str      r0, [sp, #0x20]                         
+0x00d21a  add      r4, sp, #0x48                           
+0x00d21c  str      r0, [sp, #0x24]                         
+0x00d21e  lsls     r1, r7, #2                              
+0x00d220  strd     r7, r0, [sp, #0xc]                      
+0x00d224  str      r0, [sp, #0x14]                         
+0x00d226  str      r0, [sp, #0x18]                         
+0x00d228  mov      r0, r4                                  
+0x00d22a  ldr      r2, [r6]                                
+0x00d22c  bl       #0x51fc                                 
+0x00d230  movs     r5, r0                                  
+0x00d232  bne      #0xd24a                                 
+0x00d234  svc      #0x87                                   
+0x00d236  cbnz     r0, #0xd23c                             
+0x00d238  ldr      r0, [sp, #0x78]                         
+0x00d23a  cbz      r0, #0xd24c                             
+0x00d23c  ldr.w    r0, [sp, #0x694]                        
+0x00d240  cbz      r0, #0xd25e                             
+0x00d242  ldr      r0, [sp, #0x60]                         
+0x00d244  cmp      r0, #1                                  
+0x00d246  beq      #0xd25e                                 
+0x00d248  ldr      r5, [pc, #0x1bc]                           ; lit@0xd408 = 0x80000312
+0x00d24a  b        #0xd3ec                                 
+0x00d24c  ldr      r1, [r6, #0xc]                          
+0x00d24e  cmp      r1, #0x20                               
+0x00d250  bls      #0xd256                                 
+0x00d252  ldr      r5, [pc, #0x1b8]                           ; lit@0xd40c = 0xffff0006
+0x00d254  b        #0xd3ec                                 
+0x00d256  ldr      r0, [r6, #8]                            
+0x00d258  bl       #0x15e4                                 
+0x00d25c  b        #0xd3ec                                 
+0x00d25e  ldr      r0, [sp, #0xc0]                         
+0x00d260  tst.w    r0, #5                                  
+0x00d264  bne      #0xd296                                 
+0x00d266  add      r1, sp, #0xc                            
+0x00d268  mov.w    r2, #-1                                 
+0x00d26c  add      r0, sp, #0x24                           
+0x00d26e  stm.w    sp, {r0, r1, r2}                        
+0x00d272  add      r3, sp, #0x1c                           
+0x00d274  mov      r0, r4                                  
+0x00d276  add      r2, sp, #0x20                           
+0x00d278  add      r1, sp, #0x18                           
+0x00d27a  bl       #0x9fe8                                 
+0x00d27e  movs     r5, r0                                  
+0x00d280  bne      #0xd2d4                                 
+0x00d282  ldr      r0, [sp, #0x18]                         
+0x00d284  add      r1, sp, #0x10                           
+0x00d286  add.w    r4, r4, r0, lsl #8                      
+0x00d28a  add.w    r0, r4, #0x38                           
+0x00d28e  bl       #0x8b5c                                 
+0x00d292  movs     r5, r0                                  
+0x00d294  bne      #0xd2d4                                 
+0x00d296  ldr      r0, [r4, #0x34]                         
+0x00d298  cbz      r0, #0xd2b4                             
+0x00d29a  ldr.w    sb, [pc, #0x174]                           ; lit@0xd410 = 0x50000005
+0x00d29e  movs     r0, #0x30                               
+0x00d2a0  movw     r7, #0x200                              
+0x00d2a4  mov      sl, r0                                  
+0x00d2a6  ldr      r0, [r4, #0x48]                         
+0x00d2a8  cbz      r0, #0xd2c0                             
+0x00d2aa  ldr      r0, [r4, #0x54]                         
+0x00d2ac  adds     r0, #0xf                                
+0x00d2ae  bic      r0, r0, #0xf                            
+0x00d2b2  b        #0xd2c2                                 
+0x00d2b4  ldr.w    sb, [pc, #0x158]                           ; lit@0xd410 = 0x50000005
+0x00d2b8  movs     r0, #0x20                               
+0x00d2ba  sub.w    sb, sb, #1                              
+0x00d2be  b        #0xd2a4                                 
+0x00d2c0  ldr      r0, [r4, #0x14]                         
+0x00d2c2  ldr      r1, [r6, #4]                            
+0x00d2c4  cmp      r1, r0                                  
+0x00d2c6  blo      #0xd2d2                                 
+0x00d2c8  adds     r2, r0, r7                              
+0x00d2ca  add.w    r2, r2, #0x100                          
+0x00d2ce  cmp      r2, r1                                  
+0x00d2d0  bls      #0xd2d6                                 
+0x00d2d2  ldr      r5, [pc, #0x140]                           ; lit@0xd414 = 0x80000103
+0x00d2d4  b        #0xd3ec                                 
+0x00d2d6  ldr      r1, [r6]                                
+0x00d2d8  add.w    r0, r0, #0x100                          
+0x00d2dc  add      r2, sp, #0x14                           
+0x00d2de  str      r0, [sp, #0x28]                         
+0x00d2e0  adds     r5, r1, r0                              
+0x00d2e2  movw     r1, #0x2000                             
+0x00d2e6  mov      r0, r5                                  
+0x00d2e8  bl       #0x669e                                 
+0x00d2ec  movs.w   r8, r0                                  
+0x00d2f0  beq      #0xd30c                                 
+0x00d2f2  ldr.w    r0, [sp, #0x694]                        
+0x00d2f6  cbz      r0, #0xd312                             
+0x00d2f8  ldr      r1, [pc, #0x11c]                           ; lit@0xd418 = 0x00e18420
+0x00d2fa  movs     r2, #0x10                               
+0x00d2fc  add.w    r0, r4, #0x38                           
+0x00d300  bl       #0x1450                                 
+0x00d304  cbz      r0, #0xd336                             
+0x00d306  ldr      r5, [pc, #0x100]                           ; lit@0xd408 = 0x80000312
+0x00d308  subs     r5, #8                                  
+0x00d30a  b        #0xd3e6                                 
+0x00d30c  ldr      r5, [pc, #0xfc]                            ; lit@0xd40c = 0xffff0006
+0x00d30e  adds     r5, r5, #6                              
+0x00d310  b        #0xd3ec                                 
+0x00d312  ldr      r0, [r4, #0x78]                         
+0x00d314  tst.w    r0, #5                                  
+0x00d318  beq      #0xd336                                 
+0x00d31a  add      r2, sp, #0x10                           
+0x00d31c  add      r1, sp, #0xc                            
+0x00d31e  add      r0, sp, #0x24                           
+0x00d320  stm.w    sp, {r0, r1, r2}                        
+0x00d324  adds     r0, r5, r7                              
+0x00d326  add.w    r1, r8, r7                              
+0x00d32a  add      r3, sp, #0x1c                           
+0x00d32c  add      r2, sp, #0x20                           
+0x00d32e  bl       #0x16adc                                
+0x00d332  movs     r5, r0                                  
+0x00d334  bne      #0xd3e6                                 
+0x00d336  ldr      r1, [sp, #0x18]                         
+0x00d338  ldr      r0, [r6]                                
+0x00d33a  add.w    r0, r0, r1, lsl #8                      
+0x00d33e  str      r0, [sp, #0x30]                         

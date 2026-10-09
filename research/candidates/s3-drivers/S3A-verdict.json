@@ -1,0 +1,98 @@
+{
+  "replay_go": true,
+  "inputs": [
+    {
+      "driver": "MeiMeiDXEv3_SMU_Unlock",
+      "guid": "A3F8B2D5-7C4E-4F0A-B1D2-9E6F3C8A5B71",
+      "source_path": "import/from-windows/Users/kukuruza/tmp_bc250/ext/fd_repo/extracted/BC250_3.00_MeiMeiDXEv3",
+      "sha256": "66b353ac0d5134c7477c4f6429acf84fc4dc3fed159cbc6629fda5d14e726376",
+      "donor_fv_off": "0x2b8",
+      "size": "0x3066",
+      "type": "0x07",
+      "placement": {
+        "fv_off": "0x41c000",
+        "size": "0x3066"
+      }
+    },
+    {
+      "driver": "MeiMeiDXEv3_SMU_Core_Unlock",
+      "guid": "7A8B9C0D-1E2F-3A4B-5C6D-7E8F9A0B1C2D",
+      "source_path": "import/from-windows/Users/kukuruza/tmp_bc250/ext/fd_repo/extracted/BC250_3.00_MeiMeiDXEv3",
+      "sha256": "a84f82df6453b380fa5d6cef519faa58ea41e8a988e7f3c7a226582cf5e44593",
+      "donor_fv_off": "0x3320",
+      "size": "0x3080",
+      "type": "0x07",
+      "placement": {
+        "fv_off": "0x41f068",
+        "size": "0x3080"
+      }
+    },
+    {
+      "driver": "MeiMeiDXEv3_Menu_Driver",
+      "guid": "0DDDE9E4-4A0C-4679-BEDC-90A37610AB85",
+      "source_path": "import/from-windows/Users/kukuruza/tmp_bc250/ext/fd_repo/extracted/BC250_3.00_MeiMeiDXEv3",
+      "sha256": "7b968074c9a179037e3dfc61eafd37353ee8206ceee42ea48ee70de445cf7799",
+      "donor_fv_off": "0x134b28",
+      "size": "0x708c",
+      "type": "0x07",
+      "placement": {
+        "fv_off": "0x4220e8",
+        "size": "0x708c"
+      }
+    },
+    {
+      "driver": "MeiMeiDXEv3_ACPI_AutoInject",
+      "guid": "A9981D14-6329-4698-AD20-173C4363DD30",
+      "source_path": "import/from-windows/Users/kukuruza/tmp_bc250/ext/fd_repo/extracted/BC250_3.00_MeiMeiDXEv3",
+      "sha256": "22c1f0fb1b8c265aa4ab3c2648966d906a9d03327efd54b234bb7f1e192200e9",
+      "donor_fv_off": "0x13bbb8",
+      "size": "0x5094",
+      "type": "0x07",
+      "placement": {
+        "fv_off": "0x429178",
+        "size": "0x5094"
+      }
+    },
+    {
+      "driver": "MeiMeiDXEv3_SMU_Patch",
+      "guid": "9D4E5E12-3C7A-4F88-A2B7-0D8D6B7F2E41",
+      "source_path": "import/from-windows/Users/kukuruza/tmp_bc250/ext/fd_repo/extracted/BC250_3.00_MeiMeiDXEv3",
+      "sha256": "a8a946eefd5a4042d156fc92c3d31d4f01a33aeecfc1b0d68fcbc57c34ea9b0c",
+      "donor_fv_off": "0x140c50",
+      "size": "0x3074",
+      "type": "0x07",
+      "placement": {
+        "fv_off": "0x42e210",
+        "size": "0x3074"
+      }
+    },
+    {
+      "driver": "MeiMeiDXEv3_ColdBoot",
+      "guid": "6C98E4F3-9D8B-4E5A-B2E7-31A45B9C5D81",
+      "source_path": "import/from-windows/Users/kukuruza/tmp_bc250/ext/fd_repo/extracted/BC250_3.00_MeiMeiDXEv3",
+      "sha256": "921b06ce4a2806e7012c7f72b9d17a1070ba2fcd9534278e928720d46e013f48",
+      "donor_fv_off": "0x42ccf8",
+      "size": "0x5062",
+      "type": "0x07",
+      "placement": {
+        "fv_off": "0x431288",
+        "size": "0x5062"
+      }
+    }
+  ],
+  "fv_identical": true,
+  "free_space_ok": true,
+  "depex": "64 distinct FD DEPEX PUSH GUIDs; 63 present in CLV/S2 FV bytes; 1 intra-set A7C3D5E1-94B2-4C6D-8F1A-3B5D7E9C2F68 (LE e1d5c3a7) produced by SMU_Unlock PE32@0x201c, consumed by Core_Unlock+SMU_Patch",
+  "citations": [
+    "scripts/build_fd_drivers_clv.py",
+    "docs/action-logs/2026-09-20-fd-v22-to-clv-port.md",
+    "docs/research/2026-09-17-clv-meimeidxe-build-report.json",
+    "candidates/BC250_5.00_clv_MeiMeiDXEv3-drivers-only_v001.build.json",
+    "candidates/s2-ocv/BC250_5.00_clv_S2-OCV_v001.bin",
+    "candidates/s1-h1330/BC250_5.00_clv_S1-H1330_v001.bin",
+    "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "import/from-windows/Users/kukuruza/tmp_bc250/ext/fd_repo/extracted/BC250_3.00_MeiMeiDXEv3",
+    "specs/2026-09-22-clv500-8core-unified.md",
+    "docs/action-logs/2026-09-22-goal-s1.md"
+  ]
+}

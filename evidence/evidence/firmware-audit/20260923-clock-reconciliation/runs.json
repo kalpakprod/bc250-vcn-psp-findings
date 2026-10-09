@@ -1,0 +1,35 @@
+[
+  {
+    "name": "df",
+    "command": [
+      "python3",
+      "-B",
+      "evidence/firmware-audit/20260921-df-consumer-next/verify_df_consumer_trace.py"
+    ],
+    "exit": 0,
+    "stdout": "evidence/firmware-audit/20260923-clock-reconciliation/df.stdout",
+    "stderr": "evidence/firmware-audit/20260923-clock-reconciliation/df.stderr"
+  },
+  {
+    "name": "units",
+    "command": [
+      "python3",
+      "-B",
+      "evidence/firmware-audit/20260921-memory-clock-units-next/memory_clock_units_next_verify.py"
+    ],
+    "exit": 0,
+    "stdout": "evidence/firmware-audit/20260923-clock-reconciliation/units.stdout",
+    "stderr": "evidence/firmware-audit/20260923-clock-reconciliation/units.stderr"
+  },
+  {
+    "name": "provider",
+    "command": [
+      "python3",
+      "-B",
+      "evidence/firmware-audit/20260920-clv-abl1-descriptor-provider-xhigh/abl1_descriptor_provider_verify.py"
+    ],
+    "exit": 0,
+    "stdout": "evidence/firmware-audit/20260923-clock-reconciliation/provider.stdout",
+    "stderr": "evidence/firmware-audit/20260923-clock-reconciliation/provider.stderr"
+  }
+]

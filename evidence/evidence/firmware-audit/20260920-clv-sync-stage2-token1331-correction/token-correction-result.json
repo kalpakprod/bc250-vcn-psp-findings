@@ -1,0 +1,133 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 13,
+    "total": 13
+  },
+  "checks_detail": [
+    {
+      "details": {
+        "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+        "observed": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+        "observed": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdNbioSmuV10Pei-905b8be68afd.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "33fc15ec83a877a5f0e73b2411467b8a619e479b2d4c44ea18ebfbd4a6436802",
+        "observed": "33fc15ec83a877a5f0e73b2411467b8a619e479b2d4c44ea18ebfbd4a6436802"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/memory/oc-recheck.md",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "0x6a2": "0xf",
+        "0x6a3": "0xf"
+      },
+      "label": "clv-adjacent-body-bytes",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a82a2060000",
+        "observed": "8a82a2060000",
+        "raw_offset": "0xd83e"
+      },
+      "label": "CbsBasePei-raw-rva-0xd9ce",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba31130000",
+        "observed": "ba31130000",
+        "raw_offset": "0xd850"
+      },
+      "label": "CbsBasePei-raw-rva-0xd9e0",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a82a3060000",
+        "observed": "8a82a3060000",
+        "raw_offset": "0xd870"
+      },
+      "label": "CbsBasePei-raw-rva-0xda00",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba32130000",
+        "observed": "ba32130000",
+        "raw_offset": "0xd882"
+      },
+      "label": "CbsBasePei-raw-rva-0xda12",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a82a2060000",
+        "observed": "8a82a2060000",
+        "raw_offset": "0xf8be"
+      },
+      "label": "AmdNbioSmuV10Pei-raw-rva-0xfa4e",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba31130000",
+        "observed": "ba31130000",
+        "raw_offset": "0xf8d0"
+      },
+      "label": "AmdNbioSmuV10Pei-raw-rva-0xfa60",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a82a3060000",
+        "observed": "8a82a3060000",
+        "raw_offset": "0xf8f0"
+      },
+      "label": "AmdNbioSmuV10Pei-raw-rva-0xfa80",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba32130000",
+        "observed": "ba32130000",
+        "raw_offset": "0xf902"
+      },
+      "label": "AmdNbioSmuV10Pei-raw-rva-0xfa92",
+      "status": "PASS"
+    }
+  ],
+  "correction": {
+    "corrected_mapping": "Setup+0x6A2 -> token 0x1331; Setup+0x6A3 -> token 0x1332",
+    "sources": [
+      "CbsBasePei",
+      "AmdNbioSmuV10Pei"
+    ],
+    "superseded_claim": "Setup+0x6A3 -> token 0x1331"
+  },
+  "limitations": [
+    "Serializer record IDs are handoff identifiers; no downstream consumer or hardware behavior proven."
+  ],
+  "status": "PASS"
+}

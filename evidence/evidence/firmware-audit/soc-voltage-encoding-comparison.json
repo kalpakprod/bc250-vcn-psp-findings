@@ -1,0 +1,87 @@
+{
+  "generated_at": "2026-09-11T10:45:42.015553+00:00",
+  "purpose": "Host-side encoding ambiguity demonstration; not a voltage recommendation or hardware test.",
+  "sources": [
+    {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/bc250_smu/bc250_smu/codec.py",
+      "sha256": "bb747622598b92ff43f10583ef93803bda4d6ae59b2480e74fc2abf6751db116",
+      "observed_formulas": [
+        "vid_to_mv",
+        "mv_to_vid",
+        "pack_vid_offset"
+      ]
+    },
+    {
+      "path": "evidence/firmware-audit/amdsetup-ifr-field-map.json",
+      "sha256": "ff657447e9070b18773d149bca6e82bbd7c36295172561e5e2a425a6fecab2b7",
+      "observed": "AmdSetup+0x6E6 is IFR numeric u32 with separate control +0x6E5"
+    },
+    {
+      "path": "import/from-windows/Users/kukuruza/bc250-bios/docs/CPU_MEMORY_OVERCLOCK_ANALYSIS.md",
+      "sha256": "050041933ac0efe95399f2e81555b75b275fb3687b8a044772ec9effd4b755ea",
+      "status": "historical unverified mV comments"
+    }
+  ],
+  "raw_values": [
+    {
+      "raw_u32": "0x23",
+      "raw_integer": 35,
+      "historical_comment_interpretation": "+35 mV offset",
+      "as_vid_code": {
+        "vid": 35,
+        "absolute_mv": 1331
+      },
+      "as_ieee_float_bits": 4.90454462513686e-44,
+      "absolute_mv_to_vid_examples": {
+        "+35mV_over_1000mV": 82,
+        "+80mV_over_1000mV": 75,
+        "+100mV_over_1000mV": 72
+      }
+    },
+    {
+      "raw_u32": "0x50",
+      "raw_integer": 80,
+      "historical_comment_interpretation": "+80 mV offset",
+      "as_vid_code": {
+        "vid": 80,
+        "absolute_mv": 1050
+      },
+      "as_ieee_float_bits": 1.1210387714598537e-43,
+      "absolute_mv_to_vid_examples": {
+        "+80mV_over_1000mV": 75
+      }
+    },
+    {
+      "raw_u32": "0x64",
+      "raw_integer": 100,
+      "historical_comment_interpretation": "+100 mV offset",
+      "as_vid_code": {
+        "vid": 100,
+        "absolute_mv": 925
+      },
+      "as_ieee_float_bits": 1.401298464324817e-43,
+      "absolute_mv_to_vid_examples": {
+        "+100mV_over_1000mV": 72
+      }
+    }
+  ],
+  "formula_examples": {
+    "absolute_millivolts_to_vid": {
+      "1035": 82,
+      "1080": 75,
+      "1100": 72
+    },
+    "vid_codes_to_millivolts": {
+      "35": 1331,
+      "80": 1050,
+      "100": 925
+    }
+  },
+  "conclusion": {
+    "observed": "The NVRAM field is a u32 value with no proven physical encoding in the current closed consumer path.",
+    "inference": "The same raw bytes yield materially different results under offset-mV, VID-code, or float-bit interpretations.",
+    "decision": "Do not choose or recommend a SoC-voltage value; trace the consumer and units first.",
+    "evidence_class": "emulated-or-host-tested (formula reproduction) + static-analysis"
+  },
+  "hardware_access": false
+}

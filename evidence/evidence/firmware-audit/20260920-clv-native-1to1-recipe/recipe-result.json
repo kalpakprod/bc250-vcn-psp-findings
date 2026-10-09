@@ -1,0 +1,80 @@
+{
+  "status": "STATIC_EXPERIMENTAL_MENU_HYPOTHESIS",
+  "test_point": "H1330-native-help",
+  "recommendation_basis": "current operator recipe recommends the deterministic 1330 MHz first attempt",
+  "hardware_run": "none - static menu hypothesis only; no hardware acceptance, no physical 1:1:1 claim",
+  "historical_reference": {
+    "file": "recipe-result-H1750-historical.json",
+    "relation": "superseded first-attempt profile, preserved verbatim for provenance",
+    "note": "the historical H1750 record is not validation of the current H1330 recommendation"
+  },
+  "physical_1to1_justified": false,
+  "settings": [
+    {
+      "name": "Memory Clock Speed",
+      "qid": "0x20F",
+      "offset": "0x316",
+      "value": "0x1A / 1330MHz label",
+      "path": "0x7007 -> 0x7028 -> 0x702A -> 0x702C"
+    },
+    {
+      "name": "UclkDiv1M0",
+      "qid": "0x229",
+      "offset": "0x330",
+      "value": "0x01 Enabled",
+      "path": "0x7000 -> 0x7008 -> 0x702E -> 0x702F"
+    },
+    {
+      "name": "Memory P-state",
+      "qid": "0x25E",
+      "offset": "0x36D",
+      "value": "0x00 Disabled (native-help hypothesis)",
+      "path": "0x7000 -> 0x7008 -> 0x702E -> 0x7030 -> 0x7032"
+    },
+    {
+      "name": "FCLK_DPM",
+      "qid": "0x7045",
+      "offset": "0x6A3",
+      "value": "0x00 Disabled",
+      "path": "0x7009 -> 0x703E"
+    },
+    {
+      "name": "DF Clock Override Control",
+      "qid": "0x37D",
+      "offset": "0x703",
+      "value": "0x01 Manual",
+      "path": "0x7009 -> 0x703F"
+    },
+    {
+      "name": "DF Clock Override",
+      "qid": "0x37E",
+      "offset": "0x704",
+      "value": "1330 / bytes 32 05 LE",
+      "path": "0x7009 -> 0x703F"
+    }
+  ],
+  "contradiction": "DF help requires FCLK > UCLK while the selected 1330 target is an equal-target 1:1:1 hypothesis; UclkDiv1M0 Enabled is not a decoded ratio.",
+  "fresh_verifier": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 -B evidence/firmware-audit/20260920-df-init-route/menu-verify.py",
+    "exit_status": 0,
+    "status": "PASS",
+    "stderr": "empty",
+    "menu_result_sha256_before": "6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a",
+    "menu_result_sha256_after": "6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a"
+  },
+  "validation_required": [
+    "live values persist after reset",
+    "three cold boots/training",
+    "independent domain-mapped MCLK/UCLK/FCLK measurements",
+    "GDDR6 conversion",
+    "synchronous-crossing/divider status",
+    "rollback readback"
+  ],
+  "no_voltage": true,
+  "artifacts": {
+    "report": "/home/OWNER/orca/projects/bc250/docs/research/2026-09-20-clv-native-operator-recipe.md",
+    "result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-native-1to1-recipe/recipe-result.json",
+    "historical_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-native-1to1-recipe/recipe-result-H1750-historical.json",
+    "action_log": "/home/OWNER/orca/projects/bc250/docs/action-logs/2026-09-20-clv-native-recipe-coherence-correction.md"
+  }
+}

@@ -1,0 +1,2091 @@
+[    6.571711] amdgpu 0000:01:00.0: vm size is 262144 GB, 4 levels, block size is 9-bit, fragment size is 9-bit
+[    6.571726] amdgpu 0000:01:00.0: VRAM: 8192M 0x000000F400000000 - 0x000000F5FFFFFFFF (8192M used)
+[    6.571729] amdgpu 0000:01:00.0: GART: 512M 0x0000000000000000 - 0x000000001FFFFFFF
+[    6.571737] amdgpu 0000:01:00.0: [drm] Detected VRAM RAM=8192M, BAR=8192M
+[    6.571744] amdgpu 0000:01:00.0: [drm] RAM width 1024bits UNKNOWN
+[    6.572519] amdgpu 0000:01:00.0:  8192M of VRAM memory ready
+[    6.572525] amdgpu 0000:01:00.0:  3827M of GTT memory ready.
+[    6.572557] amdgpu 0000:01:00.0: [drm] GART: num cpu pages 131072, num gpu pages 131072
+[    6.572626] amdgpu 0000:01:00.0: GFX1013/BC-250: using MMIO PASID TLB flushes
+[    6.572629] amdgpu 0000:01:00.0: GFX1013/BC-250: PASID-only CPU type-0 invalidation
+[    6.572748] amdgpu 0000:01:00.0: [drm] PCIE GART of 512M enabled (table at 0x000000F5FFE00000).
+[    6.573891] amdgpu 0000:01:00.0: [VCN instance 0] Found VCN firmware Version ENC: 1.24 DEC: 8 VEP: 0 Revision: 9
+[    6.595087] amdgpu 0000:01:00.0: reserve 0x400000 from 0xf5ff800000 for PSP TMR
+[    6.631955] amdgpu 0000:01:00.0: smu driver if version = 0x00000008, smu fw if version = 0x00000008, smu fw program = 0, smu fw version = 0x00580701 (88.7.1)
+[    6.632029] amdgpu 0000:01:00.0: SMU is initialized successfully!
+[    6.632787] amdgpu 0000:01:00.0: [drm] Display Core v3.2.384 initialized on DCN 2.0.1
+[    6.658293] workqueue: name exceeds WQ_NAME_LEN. Truncating to: hdmi_frl_status_polling_workque
+[    6.697572] amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 3
+[    6.697600] ------------[ cut here ]------------
+[    6.697602] !(0)
+[    6.697604] WARNING: drivers/gpu/drm/amd/amdgpu/../display/dc/irq/irq_service.c:169 at dal_irq_service_ack+0xeb/0x100 [amdgpu], CPU#4: (udev-worker)/242
+[    6.698728] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    6.698755] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Not tainted 7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    6.698760] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    6.698762] RIP: 0010:dal_irq_service_ack+0xeb/0x100 [amdgpu]
+[    6.699398] Code: 49 89 fe 48 8b 40 10 48 8b 00 48 85 c0 75 04 31 ff eb 04 48 8b 78 08 48 c7 c6 08 d4 8a c1 48 c7 c2 2f b9 90 c1 e8 15 d8 42 c0 <0f> 0b 48 8b 43 28 4c 89 f7 4c 8b 58 08 e9 42 ff ff ff cc cc cc 90
+[    6.699401] RSP: 0018:ffffc926c0d23050 EFLAGS: 00010246
+[    6.699405] RAX: c1f35a8f3d2a2100 RBX: ffffffffc1a3ca80 RCX: c1f35a8f3d2a2100
+[    6.699407] RDX: 0000000000000027 RSI: ffff889e63758000 RDI: ffff889de7f1d308
+[    6.699409] RBP: 0000000000000003 R08: ffffffff847d3478 R09: ffffffff83a5d7c0
+[    6.699411] R10: 0000000000002ffd R11: 3fffffffffffefff R12: ffff889c900c9a00
+[    6.699413] R13: ffff889c92800000 R14: ffff889c80d0b0e0 R15: 0000000000000000
+[    6.699416] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    6.699418] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    6.699421] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    6.699423] Call Trace:
+[    6.699428]  <TASK>
+[    6.699434]  dal_irq_service_set+0x3e/0x140 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.700050]  amdgpu_dm_hpd_init+0x7d/0x650 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.700656]  dm_hw_init.llvm.9010742086856577308+0x2aff/0x2dc0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.701230]  ? __pfx_enable_assr+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.701789]  ? __pfx_update_config+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.702344]  amdgpu_device_ip_init+0x3c3/0x590 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.702892]  amdgpu_device_init+0x1f12/0x22b0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.703439]  ? srso_return_thunk+0x5/0x5f
+[    6.703445]  ? do_pci_enable_device+0xf0/0x170
+[    6.703451]  amdgpu_driver_load_kms+0x1a/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.703999]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.704539]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    6.704546]  really_probe+0x1bc/0x4b0
+[    6.704552]  __driver_probe_device+0xa2/0x140
+[    6.704556]  driver_probe_device+0x1e/0x110
+[    6.704560]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    6.704563]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    6.704567]  bus_for_each_dev+0x117/0x160
+[    6.704572]  bus_add_driver+0x16a/0x2c0
+[    6.704576]  driver_register+0x69/0x110
+[    6.704579]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.705127]  do_one_initcall+0x135/0x330
+[    6.705133]  ? srso_return_thunk+0x5/0x5f
+[    6.705136]  ? security_kernfs_init_security+0x52/0x180
+[    6.705140]  ? srso_return_thunk+0x5/0x5f
+[    6.705143]  ? __kernfs_new_node+0x1d6/0x2a0
+[    6.705147]  ? srso_return_thunk+0x5/0x5f
+[    6.705149]  ? security_kernfs_init_security+0x52/0x180
+[    6.705152]  ? srso_return_thunk+0x5/0x5f
+[    6.705155]  ? __kernfs_new_node+0x1d6/0x2a0
+[    6.705158]  ? srso_return_thunk+0x5/0x5f
+[    6.705161]  ? srso_return_thunk+0x5/0x5f
+[    6.705163]  ? clockevents_program_event+0xf2/0x1a0
+[    6.705166]  ? kernfs_activate+0x4e/0x140
+[    6.705169]  ? srso_return_thunk+0x5/0x5f
+[    6.705173]  ? srso_return_thunk+0x5/0x5f
+[    6.705175]  ? __free_one_page+0x63/0x6d0
+[    6.705182]  ? srso_return_thunk+0x5/0x5f
+[    6.705184]  ? free_pcppages_bulk+0x182/0x220
+[    6.705188]  ? srso_return_thunk+0x5/0x5f
+[    6.705194]  ? __free_one_page+0x50f/0x6d0
+[    6.705198]  ? srso_return_thunk+0x5/0x5f
+[    6.705201]  ? free_one_page+0x161/0x250
+[    6.705205]  ? srso_return_thunk+0x5/0x5f
+[    6.705208]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    6.705211]  ? do_init_module+0x24/0x340
+[    6.705216]  do_init_module+0x62/0x340
+[    6.705219]  __se_sys_finit_module+0x270/0x3e0
+[    6.705230]  do_syscall_64+0x147/0x3c0
+[    6.705239]  ? srso_return_thunk+0x5/0x5f
+[    6.705241]  ? vfs_read+0x14c/0x2f0
+[    6.705250]  ? srso_return_thunk+0x5/0x5f
+[    6.705252]  ? __x64_sys_pread64+0x70/0xc0
+[    6.705257]  ? srso_return_thunk+0x5/0x5f
+[    6.705261]  ? do_syscall_64+0x182/0x3c0
+[    6.705264]  ? srso_return_thunk+0x5/0x5f
+[    6.705266]  ? do_syscall_64+0x182/0x3c0
+[    6.705268]  ? srso_return_thunk+0x5/0x5f
+[    6.705270]  ? __x64_sys_openat+0x80/0xa0
+[    6.705273]  ? srso_return_thunk+0x5/0x5f
+[    6.705279]  ? __seccomp_filter+0x23b/0xa10
+[    6.705282]  ? srso_return_thunk+0x5/0x5f
+[    6.705284]  ? do_syscall_64+0x182/0x3c0
+[    6.705288]  ? srso_return_thunk+0x5/0x5f
+[    6.705291]  ? __x64_sys_openat+0x80/0xa0
+[    6.705293]  ? srso_return_thunk+0x5/0x5f
+[    6.705295]  ? do_syscall_64+0x182/0x3c0
+[    6.705300]  ? srso_return_thunk+0x5/0x5f
+[    6.705304]  ? do_syscall_64+0x106/0x3c0
+[    6.705308]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    6.705312] RIP: 0033:0x7fde6872a86d
+[    6.705316] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    6.705318] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    6.705323] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    6.705325] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    6.705326] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    6.705330] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    6.705331] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    6.705337]  </TASK>
+[    6.705339] ---[ end trace 0000000000000000 ]---
+[    6.705342] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.705347] amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 3, st: 0
+[    6.705373] ------------[ cut here ]------------
+[    6.705376] !(0)
+[    6.705377] WARNING: drivers/gpu/drm/amd/amdgpu/../display/dc/irq/irq_service.c:129 at dal_irq_service_set+0x121/0x140 [amdgpu], CPU#4: (udev-worker)/242
+[    6.705944] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    6.705966] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    6.705971] Tainted: [W]=WARN
+[    6.705972] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    6.705977] RIP: 0010:dal_irq_service_set+0x121/0x140 [amdgpu]
+[    6.706514] Code: 08 89 d0 48 85 c9 75 04 31 ff eb 04 48 8b 79 08 89 e9 48 c7 c6 aa 83 8f c1 48 c7 c2 2b 86 8d c1 41 89 c0 89 c5 e8 2f d9 42 c0 <0f> 0b 49 8b 46 28 89 ea 4c 8b 18 e9 2f ff ff ff cc cc cc cc cc cc
+[    6.706517] RSP: 0018:ffffc926c0d23070 EFLAGS: 00010246
+[    6.706520] RAX: c1f35a8f3d2a2100 RBX: ffff889c80d0b0e0 RCX: c1f35a8f3d2a2100
+[    6.706522] RDX: ffffffffffffefff RSI: 0000000000000002 RDI: ffff889de7f1d308
+[    6.706523] RBP: 0000000000000000 R08: 0000000000000fff R09: ffffffff83a5d7c0
+[    6.706525] R10: 0000000000002ffd R11: 3fffffffffffefff R12: ffff889c900c9a00
+[    6.706527] R13: ffff889c92800000 R14: ffffffffc1a3ca80 R15: 0000000000000000
+[    6.706529] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    6.706531] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    6.706533] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    6.706535] Call Trace:
+[    6.706538]  <TASK>
+[    6.706541]  amdgpu_dm_hpd_init+0x7d/0x650 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.707094]  dm_hw_init.llvm.9010742086856577308+0x2aff/0x2dc0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.707644]  ? __pfx_enable_assr+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.708182]  ? __pfx_update_config+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.708745]  amdgpu_device_ip_init+0x3c3/0x590 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.709286]  amdgpu_device_init+0x1f12/0x22b0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.709836]  ? srso_return_thunk+0x5/0x5f
+[    6.709840]  ? do_pci_enable_device+0xf0/0x170
+[    6.709844]  amdgpu_driver_load_kms+0x1a/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.710383]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.710933]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    6.710940]  really_probe+0x1bc/0x4b0
+[    6.710944]  __driver_probe_device+0xa2/0x140
+[    6.710948]  driver_probe_device+0x1e/0x110
+[    6.710952]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    6.710956]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    6.710959]  bus_for_each_dev+0x117/0x160
+[    6.710964]  bus_add_driver+0x16a/0x2c0
+[    6.710967]  driver_register+0x69/0x110
+[    6.710970]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.711508]  do_one_initcall+0x135/0x330
+[    6.711514]  ? srso_return_thunk+0x5/0x5f
+[    6.711517]  ? security_kernfs_init_security+0x52/0x180
+[    6.711520]  ? srso_return_thunk+0x5/0x5f
+[    6.711522]  ? __kernfs_new_node+0x1d6/0x2a0
+[    6.711526]  ? srso_return_thunk+0x5/0x5f
+[    6.711529]  ? security_kernfs_init_security+0x52/0x180
+[    6.711531]  ? srso_return_thunk+0x5/0x5f
+[    6.711534]  ? __kernfs_new_node+0x1d6/0x2a0
+[    6.711537]  ? srso_return_thunk+0x5/0x5f
+[    6.711540]  ? srso_return_thunk+0x5/0x5f
+[    6.711543]  ? clockevents_program_event+0xf2/0x1a0
+[    6.711546]  ? kernfs_activate+0x4e/0x140
+[    6.711549]  ? srso_return_thunk+0x5/0x5f
+[    6.711552]  ? srso_return_thunk+0x5/0x5f
+[    6.711554]  ? __free_one_page+0x63/0x6d0
+[    6.711559]  ? srso_return_thunk+0x5/0x5f
+[    6.711562]  ? free_pcppages_bulk+0x182/0x220
+[    6.711566]  ? srso_return_thunk+0x5/0x5f
+[    6.711568]  ? __free_one_page+0x50f/0x6d0
+[    6.711573]  ? srso_return_thunk+0x5/0x5f
+[    6.711576]  ? free_one_page+0x161/0x250
+[    6.711581]  ? srso_return_thunk+0x5/0x5f
+[    6.711583]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    6.711586]  ? do_init_module+0x24/0x340
+[    6.711591]  do_init_module+0x62/0x340
+[    6.711594]  __se_sys_finit_module+0x270/0x3e0
+[    6.711604]  do_syscall_64+0x147/0x3c0
+[    6.711613]  ? srso_return_thunk+0x5/0x5f
+[    6.711615]  ? vfs_read+0x14c/0x2f0
+[    6.711621]  ? srso_return_thunk+0x5/0x5f
+[    6.711624]  ? __x64_sys_pread64+0x70/0xc0
+[    6.711627]  ? srso_return_thunk+0x5/0x5f
+[    6.711630]  ? do_syscall_64+0x182/0x3c0
+[    6.711640]  ? srso_return_thunk+0x5/0x5f
+[    6.711643]  ? do_syscall_64+0x182/0x3c0
+[    6.711646]  ? srso_return_thunk+0x5/0x5f
+[    6.711648]  ? __x64_sys_openat+0x80/0xa0
+[    6.711650]  ? srso_return_thunk+0x5/0x5f
+[    6.711652]  ? __seccomp_filter+0x23b/0xa10
+[    6.711654]  ? srso_return_thunk+0x5/0x5f
+[    6.711657]  ? do_syscall_64+0x182/0x3c0
+[    6.711660]  ? srso_return_thunk+0x5/0x5f
+[    6.711663]  ? __x64_sys_openat+0x80/0xa0
+[    6.711668]  ? srso_return_thunk+0x5/0x5f
+[    6.711670]  ? do_syscall_64+0x182/0x3c0
+[    6.711675]  ? srso_return_thunk+0x5/0x5f
+[    6.711677]  ? do_syscall_64+0x106/0x3c0
+[    6.711681]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    6.711683] RIP: 0033:0x7fde6872a86d
+[    6.711687] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    6.711692] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    6.711694] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    6.711695] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    6.711696] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    6.711698] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    6.711699] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    6.711707]  </TASK>
+[    6.711708] ---[ end trace 0000000000000000 ]---
+[    6.711711] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711715] amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=3 on init
+[    6.711717] amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 4
+[    6.711736] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711741] amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 4, st: 0
+[    6.711753] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711755] amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=4 on init
+[    6.711757] amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 5
+[    6.711771] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711773] amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 5, st: 0
+[    6.711785] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711787] amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=5 on init
+[    6.711788] amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 6
+[    6.711800] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711804] amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 6, st: 0
+[    6.711816] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711819] amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=6 on init
+[    6.711826] amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 9
+[    6.711838] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711842] amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 9, st: 0
+[    6.711854] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711858] amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=9 on init
+[    6.711860] amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 10
+[    6.711873] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711875] amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 10, st: 0
+[    6.711887] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711889] amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=10 on init
+[    6.711891] amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 11
+[    6.711903] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711906] amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 11, st: 0
+[    6.711918] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711921] amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=11 on init
+[    6.711922] amdgpu 0000:01:00.0: [drm] dal_irq_service_ack: src: 12
+[    6.711934] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_ack: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711939] amdgpu 0000:01:00.0: [drm] dal_irq_service_set: src: 12, st: 0
+[    6.711950] amdgpu 0000:01:00.0: [drm] *ERROR* dal_irq_service_dummy_set: called for non-implemented irq source, src_id=0, ext_id=0
+[    6.711953] amdgpu 0000:01:00.0: [drm] *ERROR* Failed to clear hpd(rx) source=12 on init
+[    6.711999] amdgpu 0000:01:00.0: bc250-40cu-enable: mode=3 se=0 sh=0 CC=0xfff80000->0xffe00000 SPI=0x00000007->0x0000001f
+[    6.712005] amdgpu 0000:01:00.0: bc250-40cu-enable: mode=3 se=0 sh=1 CC=0xfff80000->0xffe00000 SPI=0x00000007->0x0000001f
+[    6.712012] amdgpu 0000:01:00.0: bc250-40cu-enable: mode=3 se=1 sh=0 CC=0xfff80000->0xffe00000 SPI=0x00000007->0x0000001f
+[    6.712017] amdgpu 0000:01:00.0: bc250-40cu-enable: mode=3 se=1 sh=1 CC=0xfff80000->0xffe00000 SPI=0x00000007->0x0000001f
+[    6.712338] amdgpu 0000:01:00.0: kiq ring mec 2 pipe 1 q 0
+[    6.907212] amdgpu 0000:01:00.0: Register(0) [mmUVD_PGFSM_STATUS] failed to reach value 0x00000000 != 0x000fffffn
+[    6.907261] ------------[ cut here ]------------
+[    6.907262] ring->wptr % 2 || count % 2
+[    6.907264] WARNING: drivers/gpu/drm/amd/amdgpu/vcn_v2_0.c:1532 at vcn_v2_0_dec_ring_insert_nop+0xcd/0xe0 [amdgpu], CPU#4: (udev-worker)/242
+[    6.907941] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    6.907963] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    6.907968] Tainted: [W]=WARN
+[    6.907969] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    6.907972] RIP: 0010:vcn_v2_0_dec_ring_insert_nop+0xcd/0xe0 [amdgpu]
+[    6.908510] Code: 00 48 8b 8f e0 01 00 00 48 23 8f 08 02 00 00 48 89 8f e0 01 00 00 ff 8f f8 01 00 00 ff ce 0f 85 79 ff ff ff e9 24 71 b0 c1 cc <0f> 0b d1 ee 0f 85 57 ff ff ff eb ee cc cc cc cc cc cc cc 90 90 90
+[    6.908513] RSP: 0018:ffffc926c0d23310 EFLAGS: 00010202
+[    6.908516] RAX: ffff889c92800000 RBX: ffff889c928311f8 RCX: 000000000000000f
+[    6.908518] RDX: 0000000000000003 RSI: 000000000000000d RDI: ffff889c928311f8
+[    6.908519] RBP: ffff889c92811310 R08: 000000000000000b R09: ffffffff83a5d7c0
+[    6.908521] R10: 0000000000002ffd R11: ffffffffc0c41030 R12: ffff889c92811330
+[    6.908523] R13: ffff889c92811308 R14: ffff889c928311f8 R15: ffff889c928311c8
+[    6.908525] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    6.908527] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    6.908529] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    6.908531] Call Trace:
+[    6.908535]  <TASK>
+[    6.908537]  amdgpu_ring_commit+0x3e/0xa0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.909083]  vcn_v2_0_dec_ring_test_ring+0x177/0x1f0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.909622]  amdgpu_ring_test_helper+0x21/0x80 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.910169]  vcn_v2_0_hw_init.llvm.11559579962639146459+0x881/0x8f0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.910717]  amdgpu_device_ip_init+0x3c3/0x590 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.911253]  amdgpu_device_init+0x1f12/0x22b0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.911800]  ? srso_return_thunk+0x5/0x5f
+[    6.911804]  ? do_pci_enable_device+0xf0/0x170
+[    6.911809]  amdgpu_driver_load_kms+0x1a/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.912347]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.912889]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    6.912896]  really_probe+0x1bc/0x4b0
+[    6.912900]  __driver_probe_device+0xa2/0x140
+[    6.912904]  driver_probe_device+0x1e/0x110
+[    6.912908]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    6.912911]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    6.912915]  bus_for_each_dev+0x117/0x160
+[    6.912919]  bus_add_driver+0x16a/0x2c0
+[    6.912922]  driver_register+0x69/0x110
+[    6.912925]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    6.913461]  do_one_initcall+0x135/0x330
+[    6.913467]  ? srso_return_thunk+0x5/0x5f
+[    6.913470]  ? security_kernfs_init_security+0x52/0x180
+[    6.913473]  ? srso_return_thunk+0x5/0x5f
+[    6.913475]  ? __kernfs_new_node+0x1d6/0x2a0
+[    6.913480]  ? srso_return_thunk+0x5/0x5f
+[    6.913482]  ? security_kernfs_init_security+0x52/0x180
+[    6.913485]  ? srso_return_thunk+0x5/0x5f
+[    6.913487]  ? __kernfs_new_node+0x1d6/0x2a0
+[    6.913491]  ? srso_return_thunk+0x5/0x5f
+[    6.913494]  ? srso_return_thunk+0x5/0x5f
+[    6.913496]  ? clockevents_program_event+0xf2/0x1a0
+[    6.913500]  ? kernfs_activate+0x4e/0x140
+[    6.913503]  ? srso_return_thunk+0x5/0x5f
+[    6.913506]  ? srso_return_thunk+0x5/0x5f
+[    6.913508]  ? __free_one_page+0x63/0x6d0
+[    6.913514]  ? srso_return_thunk+0x5/0x5f
+[    6.913516]  ? free_pcppages_bulk+0x182/0x220
+[    6.913520]  ? srso_return_thunk+0x5/0x5f
+[    6.913523]  ? __free_one_page+0x50f/0x6d0
+[    6.913528]  ? srso_return_thunk+0x5/0x5f
+[    6.913530]  ? free_one_page+0x161/0x250
+[    6.913535]  ? srso_return_thunk+0x5/0x5f
+[    6.913538]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    6.913541]  ? do_init_module+0x24/0x340
+[    6.913546]  do_init_module+0x62/0x340
+[    6.913549]  __se_sys_finit_module+0x270/0x3e0
+[    6.913560]  do_syscall_64+0x147/0x3c0
+[    6.913568]  ? srso_return_thunk+0x5/0x5f
+[    6.913571]  ? vfs_read+0x14c/0x2f0
+[    6.913577]  ? srso_return_thunk+0x5/0x5f
+[    6.913579]  ? __x64_sys_pread64+0x70/0xc0
+[    6.913583]  ? srso_return_thunk+0x5/0x5f
+[    6.913585]  ? do_syscall_64+0x182/0x3c0
+[    6.913588]  ? srso_return_thunk+0x5/0x5f
+[    6.913590]  ? do_syscall_64+0x182/0x3c0
+[    6.913594]  ? srso_return_thunk+0x5/0x5f
+[    6.913596]  ? __x64_sys_openat+0x80/0xa0
+[    6.913599]  ? srso_return_thunk+0x5/0x5f
+[    6.913601]  ? __seccomp_filter+0x23b/0xa10
+[    6.913604]  ? srso_return_thunk+0x5/0x5f
+[    6.913607]  ? do_syscall_64+0x182/0x3c0
+[    6.913611]  ? srso_return_thunk+0x5/0x5f
+[    6.913613]  ? __x64_sys_openat+0x80/0xa0
+[    6.913616]  ? srso_return_thunk+0x5/0x5f
+[    6.913618]  ? do_syscall_64+0x182/0x3c0
+[    6.913623]  ? srso_return_thunk+0x5/0x5f
+[    6.913626]  ? do_syscall_64+0x106/0x3c0
+[    6.913630]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    6.913640] RIP: 0033:0x7fde6872a86d
+[    6.913643] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    6.913645] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    6.913647] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    6.913648] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    6.913649] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    6.913650] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    6.913652] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    6.913661]  </TASK>
+[    6.913662] ---[ end trace 0000000000000000 ]---
+[    7.108432] amdgpu 0000:01:00.0: [drm:amdgpu_ring_test_helper [amdgpu]] *ERROR* ring vcn_dec test failed (-110)
+[    7.108998] amdgpu 0000:01:00.0: hw_init of IP block <vcn_v2_0> failed -110
+[    7.109002] amdgpu 0000:01:00.0: amdgpu_device_ip_init failed
+[    7.109004] amdgpu 0000:01:00.0: Fatal error during GPU init
+[    7.109008] amdgpu 0000:01:00.0: finishing device.
+[    7.109167] ------------[ cut here ]------------
+[    7.109168] !amdgpu_irq_enabled(adev, src, type)
+[    7.109170] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.109738] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.109760] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.109764] Tainted: [W]=WARN
+[    7.109766] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.109768] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.110309] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.110312] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.110315] RAX: 00000000ffffffea RBX: 0000000000000000 RCX: ffff889c8b522ac0
+[    7.110317] RDX: ffffffffc198cf18 RSI: ffff889c92827248 RDI: ffff889c92800000
+[    7.110319] RBP: 0000000000000000 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.110320] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c9281a1e8
+[    7.110321] R13: 0000000000002302 R14: ffff889c92827248 R15: ffff889c92800000
+[    7.110323] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.110324] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.110326] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.110329] Call Trace:
+[    7.110340]  <TASK>
+[    7.110344]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.110893]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.111431]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.111985]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.112525]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.112533]  really_probe+0x1bc/0x4b0
+[    7.112538]  __driver_probe_device+0xa2/0x140
+[    7.112542]  driver_probe_device+0x1e/0x110
+[    7.112546]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.112549]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.112553]  bus_for_each_dev+0x117/0x160
+[    7.112558]  bus_add_driver+0x16a/0x2c0
+[    7.112562]  driver_register+0x69/0x110
+[    7.112566]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.113110]  do_one_initcall+0x135/0x330
+[    7.113117]  ? srso_return_thunk+0x5/0x5f
+[    7.113120]  ? security_kernfs_init_security+0x52/0x180
+[    7.113122]  ? srso_return_thunk+0x5/0x5f
+[    7.113125]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.113129]  ? srso_return_thunk+0x5/0x5f
+[    7.113131]  ? security_kernfs_init_security+0x52/0x180
+[    7.113133]  ? srso_return_thunk+0x5/0x5f
+[    7.113135]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.113138]  ? srso_return_thunk+0x5/0x5f
+[    7.113140]  ? srso_return_thunk+0x5/0x5f
+[    7.113142]  ? clockevents_program_event+0xf2/0x1a0
+[    7.113145]  ? kernfs_activate+0x4e/0x140
+[    7.113148]  ? srso_return_thunk+0x5/0x5f
+[    7.113150]  ? srso_return_thunk+0x5/0x5f
+[    7.113153]  ? __free_one_page+0x63/0x6d0
+[    7.113158]  ? srso_return_thunk+0x5/0x5f
+[    7.113161]  ? free_pcppages_bulk+0x182/0x220
+[    7.113166]  ? srso_return_thunk+0x5/0x5f
+[    7.113168]  ? __free_one_page+0x50f/0x6d0
+[    7.113173]  ? srso_return_thunk+0x5/0x5f
+[    7.113176]  ? free_one_page+0x161/0x250
+[    7.113181]  ? srso_return_thunk+0x5/0x5f
+[    7.113184]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.113187]  ? do_init_module+0x24/0x340
+[    7.113192]  do_init_module+0x62/0x340
+[    7.113194]  __se_sys_finit_module+0x270/0x3e0
+[    7.113204]  do_syscall_64+0x147/0x3c0
+[    7.113213]  ? srso_return_thunk+0x5/0x5f
+[    7.113215]  ? vfs_read+0x14c/0x2f0
+[    7.113222]  ? srso_return_thunk+0x5/0x5f
+[    7.113225]  ? __x64_sys_pread64+0x70/0xc0
+[    7.113228]  ? srso_return_thunk+0x5/0x5f
+[    7.113235]  ? do_syscall_64+0x182/0x3c0
+[    7.113238]  ? srso_return_thunk+0x5/0x5f
+[    7.113240]  ? do_syscall_64+0x182/0x3c0
+[    7.113243]  ? srso_return_thunk+0x5/0x5f
+[    7.113245]  ? __x64_sys_openat+0x80/0xa0
+[    7.113247]  ? srso_return_thunk+0x5/0x5f
+[    7.113249]  ? __seccomp_filter+0x23b/0xa10
+[    7.113253]  ? srso_return_thunk+0x5/0x5f
+[    7.113259]  ? do_syscall_64+0x182/0x3c0
+[    7.113263]  ? srso_return_thunk+0x5/0x5f
+[    7.113265]  ? __x64_sys_openat+0x80/0xa0
+[    7.113268]  ? srso_return_thunk+0x5/0x5f
+[    7.113271]  ? do_syscall_64+0x182/0x3c0
+[    7.113276]  ? srso_return_thunk+0x5/0x5f
+[    7.113278]  ? do_syscall_64+0x106/0x3c0
+[    7.113283]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.113286] RIP: 0033:0x7fde6872a86d
+[    7.113293] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.113295] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.113297] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.113299] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.113301] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.113307] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.113308] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.113314]  </TASK>
+[    7.113315] ---[ end trace 0000000000000000 ]---
+[    7.113332] ------------[ cut here ]------------
+[    7.113335] !amdgpu_irq_enabled(adev, src, type)
+[    7.113336] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.113882] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.113903] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.113907] Tainted: [W]=WARN
+[    7.113910] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.113912] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.114450] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.114452] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.114456] RAX: 00000000ffffffea RBX: 0000000000000002 RCX: ffff889c8b522ac0
+[    7.114458] RDX: ffffffffc198cf18 RSI: ffff889c92827248 RDI: ffff889c92800000
+[    7.114459] RBP: 0000000000000002 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.114460] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c9281a840
+[    7.114465] R13: 0000000000002303 R14: ffff889c92827248 R15: ffff889c92800000
+[    7.114466] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.114469] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.114471] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.114473] Call Trace:
+[    7.114476]  <TASK>
+[    7.114479]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.115025]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.115562]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.116111]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.116661]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.116668]  really_probe+0x1bc/0x4b0
+[    7.116676]  __driver_probe_device+0xa2/0x140
+[    7.116679]  driver_probe_device+0x1e/0x110
+[    7.116684]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.116687]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.116690]  bus_for_each_dev+0x117/0x160
+[    7.116694]  bus_add_driver+0x16a/0x2c0
+[    7.116698]  driver_register+0x69/0x110
+[    7.116700]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.117239]  do_one_initcall+0x135/0x330
+[    7.117245]  ? srso_return_thunk+0x5/0x5f
+[    7.117248]  ? security_kernfs_init_security+0x52/0x180
+[    7.117251]  ? srso_return_thunk+0x5/0x5f
+[    7.117254]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.117258]  ? srso_return_thunk+0x5/0x5f
+[    7.117260]  ? security_kernfs_init_security+0x52/0x180
+[    7.117263]  ? srso_return_thunk+0x5/0x5f
+[    7.117265]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.117269]  ? srso_return_thunk+0x5/0x5f
+[    7.117272]  ? srso_return_thunk+0x5/0x5f
+[    7.117274]  ? clockevents_program_event+0xf2/0x1a0
+[    7.117278]  ? kernfs_activate+0x4e/0x140
+[    7.117281]  ? srso_return_thunk+0x5/0x5f
+[    7.117283]  ? srso_return_thunk+0x5/0x5f
+[    7.117286]  ? __free_one_page+0x63/0x6d0
+[    7.117291]  ? srso_return_thunk+0x5/0x5f
+[    7.117293]  ? free_pcppages_bulk+0x182/0x220
+[    7.117298]  ? srso_return_thunk+0x5/0x5f
+[    7.117300]  ? __free_one_page+0x50f/0x6d0
+[    7.117305]  ? srso_return_thunk+0x5/0x5f
+[    7.117308]  ? free_one_page+0x161/0x250
+[    7.117313]  ? srso_return_thunk+0x5/0x5f
+[    7.117315]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.117318]  ? do_init_module+0x24/0x340
+[    7.117323]  do_init_module+0x62/0x340
+[    7.117326]  __se_sys_finit_module+0x270/0x3e0
+[    7.117336]  do_syscall_64+0x147/0x3c0
+[    7.117345]  ? srso_return_thunk+0x5/0x5f
+[    7.117347]  ? vfs_read+0x14c/0x2f0
+[    7.117353]  ? srso_return_thunk+0x5/0x5f
+[    7.117356]  ? __x64_sys_pread64+0x70/0xc0
+[    7.117359]  ? srso_return_thunk+0x5/0x5f
+[    7.117362]  ? do_syscall_64+0x182/0x3c0
+[    7.117365]  ? srso_return_thunk+0x5/0x5f
+[    7.117367]  ? do_syscall_64+0x182/0x3c0
+[    7.117370]  ? srso_return_thunk+0x5/0x5f
+[    7.117373]  ? __x64_sys_openat+0x80/0xa0
+[    7.117376]  ? srso_return_thunk+0x5/0x5f
+[    7.117378]  ? __seccomp_filter+0x23b/0xa10
+[    7.117381]  ? srso_return_thunk+0x5/0x5f
+[    7.117384]  ? do_syscall_64+0x182/0x3c0
+[    7.117387]  ? srso_return_thunk+0x5/0x5f
+[    7.117390]  ? __x64_sys_openat+0x80/0xa0
+[    7.117392]  ? srso_return_thunk+0x5/0x5f
+[    7.117395]  ? do_syscall_64+0x182/0x3c0
+[    7.117400]  ? srso_return_thunk+0x5/0x5f
+[    7.117402]  ? do_syscall_64+0x106/0x3c0
+[    7.117406]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.117409] RIP: 0033:0x7fde6872a86d
+[    7.117412] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.117414] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.117417] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.117418] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.117420] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.117422] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.117423] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.117430]  </TASK>
+[    7.117431] ---[ end trace 0000000000000000 ]---
+[    7.117445] ------------[ cut here ]------------
+[    7.117446] !amdgpu_irq_enabled(adev, src, type)
+[    7.117447] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.117994] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.118013] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.118017] Tainted: [W]=WARN
+[    7.118018] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.118020] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.118556] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.118558] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.118559] RAX: 00000000ffffffea RBX: 0000000000000003 RCX: ffff889c8b522ac0
+[    7.118561] RDX: ffffffffc198cf18 RSI: ffff889c92827248 RDI: ffff889c92800000
+[    7.118562] RBP: 0000000000000003 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.118564] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c9281ab68
+[    7.118569] R13: 0000000000002304 R14: ffff889c92827248 R15: ffff889c92800000
+[    7.118571] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.118572] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.118574] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.118575] Call Trace:
+[    7.118577]  <TASK>
+[    7.118580]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.119122]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.119666]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.120204]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.120750]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.120757]  really_probe+0x1bc/0x4b0
+[    7.120761]  __driver_probe_device+0xa2/0x140
+[    7.120765]  driver_probe_device+0x1e/0x110
+[    7.120769]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.120772]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.120776]  bus_for_each_dev+0x117/0x160
+[    7.120780]  bus_add_driver+0x16a/0x2c0
+[    7.120784]  driver_register+0x69/0x110
+[    7.120787]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.121326]  do_one_initcall+0x135/0x330
+[    7.121332]  ? srso_return_thunk+0x5/0x5f
+[    7.121335]  ? security_kernfs_init_security+0x52/0x180
+[    7.121338]  ? srso_return_thunk+0x5/0x5f
+[    7.121341]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.121344]  ? srso_return_thunk+0x5/0x5f
+[    7.121347]  ? security_kernfs_init_security+0x52/0x180
+[    7.121350]  ? srso_return_thunk+0x5/0x5f
+[    7.121352]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.121356]  ? srso_return_thunk+0x5/0x5f
+[    7.121359]  ? srso_return_thunk+0x5/0x5f
+[    7.121361]  ? clockevents_program_event+0xf2/0x1a0
+[    7.121365]  ? kernfs_activate+0x4e/0x140
+[    7.121368]  ? srso_return_thunk+0x5/0x5f
+[    7.121370]  ? srso_return_thunk+0x5/0x5f
+[    7.121373]  ? __free_one_page+0x63/0x6d0
+[    7.121378]  ? srso_return_thunk+0x5/0x5f
+[    7.121380]  ? free_pcppages_bulk+0x182/0x220
+[    7.121384]  ? srso_return_thunk+0x5/0x5f
+[    7.121387]  ? __free_one_page+0x50f/0x6d0
+[    7.121392]  ? srso_return_thunk+0x5/0x5f
+[    7.121394]  ? free_one_page+0x161/0x250
+[    7.121399]  ? srso_return_thunk+0x5/0x5f
+[    7.121402]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.121405]  ? do_init_module+0x24/0x340
+[    7.121409]  do_init_module+0x62/0x340
+[    7.121412]  __se_sys_finit_module+0x270/0x3e0
+[    7.121423]  do_syscall_64+0x147/0x3c0
+[    7.121431]  ? srso_return_thunk+0x5/0x5f
+[    7.121433]  ? vfs_read+0x14c/0x2f0
+[    7.121439]  ? srso_return_thunk+0x5/0x5f
+[    7.121441]  ? __x64_sys_pread64+0x70/0xc0
+[    7.121445]  ? srso_return_thunk+0x5/0x5f
+[    7.121447]  ? do_syscall_64+0x182/0x3c0
+[    7.121450]  ? srso_return_thunk+0x5/0x5f
+[    7.121452]  ? do_syscall_64+0x182/0x3c0
+[    7.121455]  ? srso_return_thunk+0x5/0x5f
+[    7.121458]  ? __x64_sys_openat+0x80/0xa0
+[    7.121461]  ? srso_return_thunk+0x5/0x5f
+[    7.121463]  ? __seccomp_filter+0x23b/0xa10
+[    7.121466]  ? srso_return_thunk+0x5/0x5f
+[    7.121469]  ? do_syscall_64+0x182/0x3c0
+[    7.121472]  ? srso_return_thunk+0x5/0x5f
+[    7.121475]  ? __x64_sys_openat+0x80/0xa0
+[    7.121477]  ? srso_return_thunk+0x5/0x5f
+[    7.121480]  ? do_syscall_64+0x182/0x3c0
+[    7.121485]  ? srso_return_thunk+0x5/0x5f
+[    7.121487]  ? do_syscall_64+0x106/0x3c0
+[    7.121491]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.121494] RIP: 0033:0x7fde6872a86d
+[    7.121496] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.121498] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.121501] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.121503] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.121505] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.121506] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.121508] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.121514]  </TASK>
+[    7.121516] ---[ end trace 0000000000000000 ]---
+[    7.121530] ------------[ cut here ]------------
+[    7.121531] !amdgpu_irq_enabled(adev, src, type)
+[    7.121533] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.122077] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.122097] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.122100] Tainted: [W]=WARN
+[    7.122102] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.122103] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.122644] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.122646] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.122649] RAX: 00000000ffffffea RBX: 0000000000000004 RCX: ffff889c8b522ac0
+[    7.122651] RDX: ffffffffc198cf18 RSI: ffff889c92827248 RDI: ffff889c92800000
+[    7.122652] RBP: 0000000000000004 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.122653] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c9281ae90
+[    7.122655] R13: 0000000000002305 R14: ffff889c92827248 R15: ffff889c92800000
+[    7.122660] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.122662] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.122663] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.122665] Call Trace:
+[    7.122667]  <TASK>
+[    7.122670]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.123212]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.123762]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.124301]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.124846]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.124853]  really_probe+0x1bc/0x4b0
+[    7.124857]  __driver_probe_device+0xa2/0x140
+[    7.124861]  driver_probe_device+0x1e/0x110
+[    7.124865]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.124868]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.124872]  bus_for_each_dev+0x117/0x160
+[    7.124879]  bus_add_driver+0x16a/0x2c0
+[    7.124883]  driver_register+0x69/0x110
+[    7.124885]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.125421]  do_one_initcall+0x135/0x330
+[    7.125427]  ? srso_return_thunk+0x5/0x5f
+[    7.125430]  ? security_kernfs_init_security+0x52/0x180
+[    7.125433]  ? srso_return_thunk+0x5/0x5f
+[    7.125435]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.125439]  ? srso_return_thunk+0x5/0x5f
+[    7.125442]  ? security_kernfs_init_security+0x52/0x180
+[    7.125445]  ? srso_return_thunk+0x5/0x5f
+[    7.125447]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.125451]  ? srso_return_thunk+0x5/0x5f
+[    7.125453]  ? srso_return_thunk+0x5/0x5f
+[    7.125456]  ? clockevents_program_event+0xf2/0x1a0
+[    7.125459]  ? kernfs_activate+0x4e/0x140
+[    7.125463]  ? srso_return_thunk+0x5/0x5f
+[    7.125465]  ? srso_return_thunk+0x5/0x5f
+[    7.125468]  ? __free_one_page+0x63/0x6d0
+[    7.125472]  ? srso_return_thunk+0x5/0x5f
+[    7.125475]  ? free_pcppages_bulk+0x182/0x220
+[    7.125479]  ? srso_return_thunk+0x5/0x5f
+[    7.125481]  ? __free_one_page+0x50f/0x6d0
+[    7.125486]  ? srso_return_thunk+0x5/0x5f
+[    7.125489]  ? free_one_page+0x161/0x250
+[    7.125494]  ? srso_return_thunk+0x5/0x5f
+[    7.125496]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.125499]  ? do_init_module+0x24/0x340
+[    7.125504]  do_init_module+0x62/0x340
+[    7.125507]  __se_sys_finit_module+0x270/0x3e0
+[    7.125517]  do_syscall_64+0x147/0x3c0
+[    7.125525]  ? srso_return_thunk+0x5/0x5f
+[    7.125527]  ? vfs_read+0x14c/0x2f0
+[    7.125533]  ? srso_return_thunk+0x5/0x5f
+[    7.125536]  ? __x64_sys_pread64+0x70/0xc0
+[    7.125539]  ? srso_return_thunk+0x5/0x5f
+[    7.125542]  ? do_syscall_64+0x182/0x3c0
+[    7.125544]  ? srso_return_thunk+0x5/0x5f
+[    7.125547]  ? do_syscall_64+0x182/0x3c0
+[    7.125550]  ? srso_return_thunk+0x5/0x5f
+[    7.125552]  ? __x64_sys_openat+0x80/0xa0
+[    7.125555]  ? srso_return_thunk+0x5/0x5f
+[    7.125558]  ? __seccomp_filter+0x23b/0xa10
+[    7.125561]  ? srso_return_thunk+0x5/0x5f
+[    7.125563]  ? do_syscall_64+0x182/0x3c0
+[    7.125567]  ? srso_return_thunk+0x5/0x5f
+[    7.125569]  ? __x64_sys_openat+0x80/0xa0
+[    7.125572]  ? srso_return_thunk+0x5/0x5f
+[    7.125574]  ? do_syscall_64+0x182/0x3c0
+[    7.125579]  ? srso_return_thunk+0x5/0x5f
+[    7.125582]  ? do_syscall_64+0x106/0x3c0
+[    7.125586]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.125588] RIP: 0033:0x7fde6872a86d
+[    7.125591] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.125593] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.125596] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.125597] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.125599] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.125601] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.125602] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.125609]  </TASK>
+[    7.125610] ---[ end trace 0000000000000000 ]---
+[    7.125624] ------------[ cut here ]------------
+[    7.125625] !amdgpu_irq_enabled(adev, src, type)
+[    7.125626] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.126172] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.126192] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.126195] Tainted: [W]=WARN
+[    7.126197] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.126199] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.126740] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.126742] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.126744] RAX: 00000000ffffffea RBX: 0000000000000005 RCX: ffff889c8b522ac0
+[    7.126745] RDX: ffffffffc198cf18 RSI: ffff889c92827248 RDI: ffff889c92800000
+[    7.126750] RBP: 0000000000000005 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.126752] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c9281b1b8
+[    7.126753] R13: 0000000000002306 R14: ffff889c92827248 R15: ffff889c92800000
+[    7.126754] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.126756] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.126758] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.126760] Call Trace:
+[    7.126764]  <TASK>
+[    7.126766]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.127308]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.127858]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.128397]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.128941]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.128948]  really_probe+0x1bc/0x4b0
+[    7.128952]  __driver_probe_device+0xa2/0x140
+[    7.128956]  driver_probe_device+0x1e/0x110
+[    7.128960]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.128963]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.128967]  bus_for_each_dev+0x117/0x160
+[    7.128971]  bus_add_driver+0x16a/0x2c0
+[    7.128975]  driver_register+0x69/0x110
+[    7.128977]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.129513]  do_one_initcall+0x135/0x330
+[    7.129519]  ? srso_return_thunk+0x5/0x5f
+[    7.129522]  ? security_kernfs_init_security+0x52/0x180
+[    7.129525]  ? srso_return_thunk+0x5/0x5f
+[    7.129527]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.129531]  ? srso_return_thunk+0x5/0x5f
+[    7.129534]  ? security_kernfs_init_security+0x52/0x180
+[    7.129536]  ? srso_return_thunk+0x5/0x5f
+[    7.129539]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.129542]  ? srso_return_thunk+0x5/0x5f
+[    7.129545]  ? srso_return_thunk+0x5/0x5f
+[    7.129547]  ? clockevents_program_event+0xf2/0x1a0
+[    7.129551]  ? kernfs_activate+0x4e/0x140
+[    7.129554]  ? srso_return_thunk+0x5/0x5f
+[    7.129557]  ? srso_return_thunk+0x5/0x5f
+[    7.129559]  ? __free_one_page+0x63/0x6d0
+[    7.129564]  ? srso_return_thunk+0x5/0x5f
+[    7.129567]  ? free_pcppages_bulk+0x182/0x220
+[    7.129571]  ? srso_return_thunk+0x5/0x5f
+[    7.129573]  ? __free_one_page+0x50f/0x6d0
+[    7.129578]  ? srso_return_thunk+0x5/0x5f
+[    7.129581]  ? free_one_page+0x161/0x250
+[    7.129586]  ? srso_return_thunk+0x5/0x5f
+[    7.129588]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.129591]  ? do_init_module+0x24/0x340
+[    7.129596]  do_init_module+0x62/0x340
+[    7.129599]  __se_sys_finit_module+0x270/0x3e0
+[    7.129609]  do_syscall_64+0x147/0x3c0
+[    7.129617]  ? srso_return_thunk+0x5/0x5f
+[    7.129620]  ? vfs_read+0x14c/0x2f0
+[    7.129625]  ? srso_return_thunk+0x5/0x5f
+[    7.129628]  ? __x64_sys_pread64+0x70/0xc0
+[    7.129631]  ? srso_return_thunk+0x5/0x5f
+[    7.129639]  ? do_syscall_64+0x182/0x3c0
+[    7.129642]  ? srso_return_thunk+0x5/0x5f
+[    7.129644]  ? do_syscall_64+0x182/0x3c0
+[    7.129647]  ? srso_return_thunk+0x5/0x5f
+[    7.129649]  ? __x64_sys_openat+0x80/0xa0
+[    7.129651]  ? srso_return_thunk+0x5/0x5f
+[    7.129654]  ? __seccomp_filter+0x23b/0xa10
+[    7.129656]  ? srso_return_thunk+0x5/0x5f
+[    7.129658]  ? do_syscall_64+0x182/0x3c0
+[    7.129662]  ? srso_return_thunk+0x5/0x5f
+[    7.129665]  ? __x64_sys_openat+0x80/0xa0
+[    7.129667]  ? srso_return_thunk+0x5/0x5f
+[    7.129669]  ? do_syscall_64+0x182/0x3c0
+[    7.129674]  ? srso_return_thunk+0x5/0x5f
+[    7.129676]  ? do_syscall_64+0x106/0x3c0
+[    7.129681]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.129683] RIP: 0033:0x7fde6872a86d
+[    7.129685] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.129687] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.129693] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.129694] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.129695] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.129697] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.129698] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.129704]  </TASK>
+[    7.129707] ---[ end trace 0000000000000000 ]---
+[    7.129721] ------------[ cut here ]------------
+[    7.129722] !amdgpu_irq_enabled(adev, src, type)
+[    7.129724] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.130266] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.130284] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.130290] Tainted: [W]=WARN
+[    7.130291] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.130292] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.130834] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.130836] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.130838] RAX: 00000000ffffffea RBX: 0000000000000002 RCX: ffff889c8b522ac0
+[    7.130839] RDX: ffffffffc198cf18 RSI: ffff889c92827248 RDI: ffff889c92800000
+[    7.130844] RBP: 0000000000000002 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.130845] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c9281b4e0
+[    7.130846] R13: 0000000000002307 R14: ffff889c92827248 R15: ffff889c92800000
+[    7.130848] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.130850] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.130854] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.130855] Call Trace:
+[    7.130857]  <TASK>
+[    7.130859]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.131396]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.131940]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.132478]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.133024]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.133030]  really_probe+0x1bc/0x4b0
+[    7.133034]  __driver_probe_device+0xa2/0x140
+[    7.133038]  driver_probe_device+0x1e/0x110
+[    7.133042]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.133045]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.133049]  bus_for_each_dev+0x117/0x160
+[    7.133053]  bus_add_driver+0x16a/0x2c0
+[    7.133057]  driver_register+0x69/0x110
+[    7.133059]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.133594]  do_one_initcall+0x135/0x330
+[    7.133600]  ? srso_return_thunk+0x5/0x5f
+[    7.133603]  ? security_kernfs_init_security+0x52/0x180
+[    7.133605]  ? srso_return_thunk+0x5/0x5f
+[    7.133608]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.133612]  ? srso_return_thunk+0x5/0x5f
+[    7.133614]  ? security_kernfs_init_security+0x52/0x180
+[    7.133617]  ? srso_return_thunk+0x5/0x5f
+[    7.133620]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.133623]  ? srso_return_thunk+0x5/0x5f
+[    7.133626]  ? srso_return_thunk+0x5/0x5f
+[    7.133628]  ? clockevents_program_event+0xf2/0x1a0
+[    7.133632]  ? kernfs_activate+0x4e/0x140
+[    7.133641]  ? srso_return_thunk+0x5/0x5f
+[    7.133643]  ? srso_return_thunk+0x5/0x5f
+[    7.133646]  ? __free_one_page+0x63/0x6d0
+[    7.133651]  ? srso_return_thunk+0x5/0x5f
+[    7.133653]  ? free_pcppages_bulk+0x182/0x220
+[    7.133656]  ? srso_return_thunk+0x5/0x5f
+[    7.133659]  ? __free_one_page+0x50f/0x6d0
+[    7.133667]  ? srso_return_thunk+0x5/0x5f
+[    7.133669]  ? free_one_page+0x161/0x250
+[    7.133673]  ? srso_return_thunk+0x5/0x5f
+[    7.133676]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.133679]  ? do_init_module+0x24/0x340
+[    7.133683]  do_init_module+0x62/0x340
+[    7.133688]  __se_sys_finit_module+0x270/0x3e0
+[    7.133698]  do_syscall_64+0x147/0x3c0
+[    7.133706]  ? srso_return_thunk+0x5/0x5f
+[    7.133709]  ? vfs_read+0x14c/0x2f0
+[    7.133717]  ? srso_return_thunk+0x5/0x5f
+[    7.133719]  ? __x64_sys_pread64+0x70/0xc0
+[    7.133722]  ? srso_return_thunk+0x5/0x5f
+[    7.133725]  ? do_syscall_64+0x182/0x3c0
+[    7.133730]  ? srso_return_thunk+0x5/0x5f
+[    7.133732]  ? do_syscall_64+0x182/0x3c0
+[    7.133737]  ? srso_return_thunk+0x5/0x5f
+[    7.133740]  ? __x64_sys_openat+0x80/0xa0
+[    7.133742]  ? srso_return_thunk+0x5/0x5f
+[    7.133745]  ? __seccomp_filter+0x23b/0xa10
+[    7.133747]  ? srso_return_thunk+0x5/0x5f
+[    7.133750]  ? do_syscall_64+0x182/0x3c0
+[    7.133753]  ? srso_return_thunk+0x5/0x5f
+[    7.133755]  ? __x64_sys_openat+0x80/0xa0
+[    7.133757]  ? srso_return_thunk+0x5/0x5f
+[    7.133760]  ? do_syscall_64+0x182/0x3c0
+[    7.133765]  ? srso_return_thunk+0x5/0x5f
+[    7.133767]  ? do_syscall_64+0x106/0x3c0
+[    7.133771]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.133773] RIP: 0033:0x7fde6872a86d
+[    7.133778] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.133779] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.133782] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.133784] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.133786] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.133790] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.133791] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.133797]  </TASK>
+[    7.133798] ---[ end trace 0000000000000000 ]---
+[    7.133812] ------------[ cut here ]------------
+[    7.133813] !amdgpu_irq_enabled(adev, src, type)
+[    7.133814] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.134353] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.134372] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.134375] Tainted: [W]=WARN
+[    7.134379] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.134380] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.134921] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.134924] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.134926] RAX: 00000000ffffffea RBX: 0000000000000003 RCX: ffff889c8b522ac0
+[    7.134928] RDX: ffffffffc198cf18 RSI: ffff889c92827248 RDI: ffff889c92800000
+[    7.134929] RBP: 0000000000000003 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.134930] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c9281b808
+[    7.134931] R13: 0000000000002308 R14: ffff889c92827248 R15: ffff889c92800000
+[    7.134933] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.134935] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.134936] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.134940] Call Trace:
+[    7.134942]  <TASK>
+[    7.134945]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.135490]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.136036]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.136574]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.137119]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.137125]  really_probe+0x1bc/0x4b0
+[    7.137129]  __driver_probe_device+0xa2/0x140
+[    7.137133]  driver_probe_device+0x1e/0x110
+[    7.137137]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.137140]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.137144]  bus_for_each_dev+0x117/0x160
+[    7.137148]  bus_add_driver+0x16a/0x2c0
+[    7.137152]  driver_register+0x69/0x110
+[    7.137155]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.137696]  do_one_initcall+0x135/0x330
+[    7.137701]  ? srso_return_thunk+0x5/0x5f
+[    7.137704]  ? security_kernfs_init_security+0x52/0x180
+[    7.137706]  ? srso_return_thunk+0x5/0x5f
+[    7.137708]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.137712]  ? srso_return_thunk+0x5/0x5f
+[    7.137714]  ? security_kernfs_init_security+0x52/0x180
+[    7.137716]  ? srso_return_thunk+0x5/0x5f
+[    7.137721]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.137725]  ? srso_return_thunk+0x5/0x5f
+[    7.137728]  ? srso_return_thunk+0x5/0x5f
+[    7.137732]  ? clockevents_program_event+0xf2/0x1a0
+[    7.137734]  ? kernfs_activate+0x4e/0x140
+[    7.137737]  ? srso_return_thunk+0x5/0x5f
+[    7.137739]  ? srso_return_thunk+0x5/0x5f
+[    7.137744]  ? __free_one_page+0x63/0x6d0
+[    7.137749]  ? srso_return_thunk+0x5/0x5f
+[    7.137751]  ? free_pcppages_bulk+0x182/0x220
+[    7.137756]  ? srso_return_thunk+0x5/0x5f
+[    7.137758]  ? __free_one_page+0x50f/0x6d0
+[    7.137762]  ? srso_return_thunk+0x5/0x5f
+[    7.137766]  ? free_one_page+0x161/0x250
+[    7.137771]  ? srso_return_thunk+0x5/0x5f
+[    7.137774]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.137777]  ? do_init_module+0x24/0x340
+[    7.137781]  do_init_module+0x62/0x340
+[    7.137787]  __se_sys_finit_module+0x270/0x3e0
+[    7.137797]  do_syscall_64+0x147/0x3c0
+[    7.137807]  ? srso_return_thunk+0x5/0x5f
+[    7.137810]  ? vfs_read+0x14c/0x2f0
+[    7.137817]  ? srso_return_thunk+0x5/0x5f
+[    7.137820]  ? __x64_sys_pread64+0x70/0xc0
+[    7.137824]  ? srso_return_thunk+0x5/0x5f
+[    7.137826]  ? do_syscall_64+0x182/0x3c0
+[    7.137828]  ? srso_return_thunk+0x5/0x5f
+[    7.137831]  ? do_syscall_64+0x182/0x3c0
+[    7.137836]  ? srso_return_thunk+0x5/0x5f
+[    7.137838]  ? __x64_sys_openat+0x80/0xa0
+[    7.137843]  ? srso_return_thunk+0x5/0x5f
+[    7.137846]  ? __seccomp_filter+0x23b/0xa10
+[    7.137848]  ? srso_return_thunk+0x5/0x5f
+[    7.137851]  ? do_syscall_64+0x182/0x3c0
+[    7.137857]  ? srso_return_thunk+0x5/0x5f
+[    7.137859]  ? __x64_sys_openat+0x80/0xa0
+[    7.137861]  ? srso_return_thunk+0x5/0x5f
+[    7.137866]  ? do_syscall_64+0x182/0x3c0
+[    7.137871]  ? srso_return_thunk+0x5/0x5f
+[    7.137873]  ? do_syscall_64+0x106/0x3c0
+[    7.137877]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.137879] RIP: 0033:0x7fde6872a86d
+[    7.137881] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.137883] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.137885] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.137887] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.137888] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.137890] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.137892] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.137900]  </TASK>
+[    7.137902] ---[ end trace 0000000000000000 ]---
+[    7.137915] ------------[ cut here ]------------
+[    7.137917] !amdgpu_irq_enabled(adev, src, type)
+[    7.137920] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.138459] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.138479] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.138483] Tainted: [W]=WARN
+[    7.138485] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.138486] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.139031] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.139033] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.139036] RAX: 00000000ffffffea RBX: 0000000000000004 RCX: ffff889c8b522ac0
+[    7.139037] RDX: ffffffffc198cf18 RSI: ffff889c92827248 RDI: ffff889c92800000
+[    7.139038] RBP: 0000000000000004 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.139040] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c9281bb30
+[    7.139041] R13: 0000000000002309 R14: ffff889c92827248 R15: ffff889c92800000
+[    7.139042] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.139045] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.139046] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.139048] Call Trace:
+[    7.139050]  <TASK>
+[    7.139053]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.139591]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.140135]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.140676]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.141212]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.141219]  really_probe+0x1bc/0x4b0
+[    7.141223]  __driver_probe_device+0xa2/0x140
+[    7.141227]  driver_probe_device+0x1e/0x110
+[    7.141231]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.141234]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.141238]  bus_for_each_dev+0x117/0x160
+[    7.141242]  bus_add_driver+0x16a/0x2c0
+[    7.141246]  driver_register+0x69/0x110
+[    7.141249]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.141790]  do_one_initcall+0x135/0x330
+[    7.141795]  ? srso_return_thunk+0x5/0x5f
+[    7.141798]  ? security_kernfs_init_security+0x52/0x180
+[    7.141801]  ? srso_return_thunk+0x5/0x5f
+[    7.141804]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.141807]  ? srso_return_thunk+0x5/0x5f
+[    7.141810]  ? security_kernfs_init_security+0x52/0x180
+[    7.141813]  ? srso_return_thunk+0x5/0x5f
+[    7.141815]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.141819]  ? srso_return_thunk+0x5/0x5f
+[    7.141821]  ? srso_return_thunk+0x5/0x5f
+[    7.141824]  ? clockevents_program_event+0xf2/0x1a0
+[    7.141827]  ? kernfs_activate+0x4e/0x140
+[    7.141830]  ? srso_return_thunk+0x5/0x5f
+[    7.141833]  ? srso_return_thunk+0x5/0x5f
+[    7.141835]  ? __free_one_page+0x63/0x6d0
+[    7.141840]  ? srso_return_thunk+0x5/0x5f
+[    7.141843]  ? free_pcppages_bulk+0x182/0x220
+[    7.141847]  ? srso_return_thunk+0x5/0x5f
+[    7.141850]  ? __free_one_page+0x50f/0x6d0
+[    7.141855]  ? srso_return_thunk+0x5/0x5f
+[    7.141857]  ? free_one_page+0x161/0x250
+[    7.141869]  ? srso_return_thunk+0x5/0x5f
+[    7.141871]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.141874]  ? do_init_module+0x24/0x340
+[    7.141879]  do_init_module+0x62/0x340
+[    7.141886]  __se_sys_finit_module+0x270/0x3e0
+[    7.141896]  do_syscall_64+0x147/0x3c0
+[    7.141903]  ? srso_return_thunk+0x5/0x5f
+[    7.141906]  ? vfs_read+0x14c/0x2f0
+[    7.141911]  ? srso_return_thunk+0x5/0x5f
+[    7.141913]  ? __x64_sys_pread64+0x70/0xc0
+[    7.141917]  ? srso_return_thunk+0x5/0x5f
+[    7.141919]  ? do_syscall_64+0x182/0x3c0
+[    7.141921]  ? srso_return_thunk+0x5/0x5f
+[    7.141924]  ? do_syscall_64+0x182/0x3c0
+[    7.141928]  ? srso_return_thunk+0x5/0x5f
+[    7.141934]  ? __x64_sys_openat+0x80/0xa0
+[    7.141937]  ? srso_return_thunk+0x5/0x5f
+[    7.141939]  ? __seccomp_filter+0x23b/0xa10
+[    7.141942]  ? srso_return_thunk+0x5/0x5f
+[    7.141944]  ? do_syscall_64+0x182/0x3c0
+[    7.141947]  ? srso_return_thunk+0x5/0x5f
+[    7.141949]  ? __x64_sys_openat+0x80/0xa0
+[    7.141952]  ? srso_return_thunk+0x5/0x5f
+[    7.141958]  ? do_syscall_64+0x182/0x3c0
+[    7.141963]  ? srso_return_thunk+0x5/0x5f
+[    7.141965]  ? do_syscall_64+0x106/0x3c0
+[    7.141969]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.141972] RIP: 0033:0x7fde6872a86d
+[    7.141975] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.141977] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.141980] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.141982] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.141984] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.141986] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.141988] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.141994]  </TASK>
+[    7.141995] ---[ end trace 0000000000000000 ]---
+[    7.142008] ------------[ cut here ]------------
+[    7.142009] !amdgpu_irq_enabled(adev, src, type)
+[    7.142010] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.142553] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.142573] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.142578] Tainted: [W]=WARN
+[    7.142579] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.142580] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.143123] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.143125] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.143130] RAX: 00000000ffffffea RBX: 0000000000000005 RCX: ffff889c8b522ac0
+[    7.143132] RDX: ffffffffc198cf18 RSI: ffff889c92827248 RDI: ffff889c92800000
+[    7.143133] RBP: 0000000000000005 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.143134] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c9281be58
+[    7.143138] R13: 000000000000230a R14: ffff889c92827248 R15: ffff889c92800000
+[    7.143139] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.143143] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.143145] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.143149] Call Trace:
+[    7.143151]  <TASK>
+[    7.143153]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.143695]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.144233]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.144783]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.145322]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.145329]  really_probe+0x1bc/0x4b0
+[    7.145333]  __driver_probe_device+0xa2/0x140
+[    7.145337]  driver_probe_device+0x1e/0x110
+[    7.145341]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.145345]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.145348]  bus_for_each_dev+0x117/0x160
+[    7.145352]  bus_add_driver+0x16a/0x2c0
+[    7.145356]  driver_register+0x69/0x110
+[    7.145359]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.145903]  do_one_initcall+0x135/0x330
+[    7.145909]  ? srso_return_thunk+0x5/0x5f
+[    7.145912]  ? security_kernfs_init_security+0x52/0x180
+[    7.145915]  ? srso_return_thunk+0x5/0x5f
+[    7.145917]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.145921]  ? srso_return_thunk+0x5/0x5f
+[    7.145923]  ? security_kernfs_init_security+0x52/0x180
+[    7.145925]  ? srso_return_thunk+0x5/0x5f
+[    7.145927]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.145930]  ? srso_return_thunk+0x5/0x5f
+[    7.145932]  ? srso_return_thunk+0x5/0x5f
+[    7.145934]  ? clockevents_program_event+0xf2/0x1a0
+[    7.145937]  ? kernfs_activate+0x4e/0x140
+[    7.145940]  ? srso_return_thunk+0x5/0x5f
+[    7.145942]  ? srso_return_thunk+0x5/0x5f
+[    7.145944]  ? __free_one_page+0x63/0x6d0
+[    7.145950]  ? srso_return_thunk+0x5/0x5f
+[    7.145952]  ? free_pcppages_bulk+0x182/0x220
+[    7.145956]  ? srso_return_thunk+0x5/0x5f
+[    7.145958]  ? __free_one_page+0x50f/0x6d0
+[    7.145963]  ? srso_return_thunk+0x5/0x5f
+[    7.145966]  ? free_one_page+0x161/0x250
+[    7.145972]  ? srso_return_thunk+0x5/0x5f
+[    7.145974]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.145977]  ? do_init_module+0x24/0x340
+[    7.145981]  do_init_module+0x62/0x340
+[    7.145984]  __se_sys_finit_module+0x270/0x3e0
+[    7.145994]  do_syscall_64+0x147/0x3c0
+[    7.146002]  ? srso_return_thunk+0x5/0x5f
+[    7.146005]  ? vfs_read+0x14c/0x2f0
+[    7.146014]  ? srso_return_thunk+0x5/0x5f
+[    7.146017]  ? __x64_sys_pread64+0x70/0xc0
+[    7.146021]  ? srso_return_thunk+0x5/0x5f
+[    7.146023]  ? do_syscall_64+0x182/0x3c0
+[    7.146025]  ? srso_return_thunk+0x5/0x5f
+[    7.146027]  ? do_syscall_64+0x182/0x3c0
+[    7.146030]  ? srso_return_thunk+0x5/0x5f
+[    7.146033]  ? __x64_sys_openat+0x80/0xa0
+[    7.146036]  ? srso_return_thunk+0x5/0x5f
+[    7.146039]  ? __seccomp_filter+0x23b/0xa10
+[    7.146041]  ? srso_return_thunk+0x5/0x5f
+[    7.146048]  ? do_syscall_64+0x182/0x3c0
+[    7.146051]  ? srso_return_thunk+0x5/0x5f
+[    7.146054]  ? __x64_sys_openat+0x80/0xa0
+[    7.146057]  ? srso_return_thunk+0x5/0x5f
+[    7.146060]  ? do_syscall_64+0x182/0x3c0
+[    7.146067]  ? srso_return_thunk+0x5/0x5f
+[    7.146070]  ? do_syscall_64+0x106/0x3c0
+[    7.146074]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.146076] RIP: 0033:0x7fde6872a86d
+[    7.146078] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.146080] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.146082] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.146084] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.146085] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.146091] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.146092] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.146098]  </TASK>
+[    7.146100] ---[ end trace 0000000000000000 ]---
+[    7.146118] ------------[ cut here ]------------
+[    7.146119] !amdgpu_irq_enabled(adev, src, type)
+[    7.146121] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.146666] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.146685] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.146689] Tainted: [W]=WARN
+[    7.146692] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.146693] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.147229] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.147231] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.147234] RAX: 00000000ffffffea RBX: 0000000000000000 RCX: ffff889c80c439b0
+[    7.147235] RDX: ffffffffc198cf28 RSI: ffff889c92818920 RDI: ffff889c92800000
+[    7.147236] RBP: 0000000000000000 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.147238] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c928185f8
+[    7.147239] R13: 000000000000230b R14: ffff889c92818920 R15: ffff889c92800000
+[    7.147240] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.147242] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.147244] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.147248] Call Trace:
+[    7.147249]  <TASK>
+[    7.147252]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.147795]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.148333]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.148882]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.149419]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.149426]  really_probe+0x1bc/0x4b0
+[    7.149430]  __driver_probe_device+0xa2/0x140
+[    7.149434]  driver_probe_device+0x1e/0x110
+[    7.149438]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.149441]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.149445]  bus_for_each_dev+0x117/0x160
+[    7.149450]  bus_add_driver+0x16a/0x2c0
+[    7.149453]  driver_register+0x69/0x110
+[    7.149456]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.150002]  do_one_initcall+0x135/0x330
+[    7.150008]  ? srso_return_thunk+0x5/0x5f
+[    7.150011]  ? security_kernfs_init_security+0x52/0x180
+[    7.150013]  ? srso_return_thunk+0x5/0x5f
+[    7.150016]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.150020]  ? srso_return_thunk+0x5/0x5f
+[    7.150022]  ? security_kernfs_init_security+0x52/0x180
+[    7.150025]  ? srso_return_thunk+0x5/0x5f
+[    7.150027]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.150031]  ? srso_return_thunk+0x5/0x5f
+[    7.150033]  ? srso_return_thunk+0x5/0x5f
+[    7.150036]  ? clockevents_program_event+0xf2/0x1a0
+[    7.150039]  ? kernfs_activate+0x4e/0x140
+[    7.150043]  ? srso_return_thunk+0x5/0x5f
+[    7.150045]  ? srso_return_thunk+0x5/0x5f
+[    7.150048]  ? __free_one_page+0x63/0x6d0
+[    7.150053]  ? srso_return_thunk+0x5/0x5f
+[    7.150055]  ? free_pcppages_bulk+0x182/0x220
+[    7.150060]  ? srso_return_thunk+0x5/0x5f
+[    7.150062]  ? __free_one_page+0x50f/0x6d0
+[    7.150067]  ? srso_return_thunk+0x5/0x5f
+[    7.150070]  ? free_one_page+0x161/0x250
+[    7.150074]  ? srso_return_thunk+0x5/0x5f
+[    7.150077]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.150080]  ? do_init_module+0x24/0x340
+[    7.150084]  do_init_module+0x62/0x340
+[    7.150087]  __se_sys_finit_module+0x270/0x3e0
+[    7.150097]  do_syscall_64+0x147/0x3c0
+[    7.150104]  ? srso_return_thunk+0x5/0x5f
+[    7.150106]  ? vfs_read+0x14c/0x2f0
+[    7.150112]  ? srso_return_thunk+0x5/0x5f
+[    7.150115]  ? __x64_sys_pread64+0x70/0xc0
+[    7.150119]  ? srso_return_thunk+0x5/0x5f
+[    7.150121]  ? do_syscall_64+0x182/0x3c0
+[    7.150123]  ? srso_return_thunk+0x5/0x5f
+[    7.150126]  ? do_syscall_64+0x182/0x3c0
+[    7.150129]  ? srso_return_thunk+0x5/0x5f
+[    7.150132]  ? __x64_sys_openat+0x80/0xa0
+[    7.150135]  ? srso_return_thunk+0x5/0x5f
+[    7.150138]  ? __seccomp_filter+0x23b/0xa10
+[    7.150141]  ? srso_return_thunk+0x5/0x5f
+[    7.150144]  ? do_syscall_64+0x182/0x3c0
+[    7.150147]  ? srso_return_thunk+0x5/0x5f
+[    7.150149]  ? __x64_sys_openat+0x80/0xa0
+[    7.150151]  ? srso_return_thunk+0x5/0x5f
+[    7.150153]  ? do_syscall_64+0x182/0x3c0
+[    7.150158]  ? srso_return_thunk+0x5/0x5f
+[    7.150160]  ? do_syscall_64+0x106/0x3c0
+[    7.150164]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.150174] RIP: 0033:0x7fde6872a86d
+[    7.150176] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.150178] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.150180] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.150183] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.150189] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.150190] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.150192] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.150198]  </TASK>
+[    7.150199] ---[ end trace 0000000000000000 ]---
+[    7.150213] ------------[ cut here ]------------
+[    7.150218] !amdgpu_irq_enabled(adev, src, type)
+[    7.150219] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.150764] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.150782] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.150786] Tainted: [W]=WARN
+[    7.150788] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.150792] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.151328] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.151330] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.151332] RAX: 00000000ffffffea RBX: 0000000000000000 RCX: ffff889c80c433b8
+[    7.151333] RDX: ffffffffc199c9d8 RSI: ffff889c9282ece0 RDI: ffff889c92800000
+[    7.151334] RBP: 0000000000000000 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.151338] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c92828270
+[    7.151339] R13: 000000000000230c R14: ffff889c9282ece0 R15: ffff889c92800000
+[    7.151341] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.151345] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.151347] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.151348] Call Trace:
+[    7.151350]  <TASK>
+[    7.151353]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.151904]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.152442]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.152989]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.153528]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.153535]  really_probe+0x1bc/0x4b0
+[    7.153540]  __driver_probe_device+0xa2/0x140
+[    7.153543]  driver_probe_device+0x1e/0x110
+[    7.153548]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.153551]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.153555]  bus_for_each_dev+0x117/0x160
+[    7.153559]  bus_add_driver+0x16a/0x2c0
+[    7.153563]  driver_register+0x69/0x110
+[    7.153566]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.154109]  do_one_initcall+0x135/0x330
+[    7.154114]  ? srso_return_thunk+0x5/0x5f
+[    7.154117]  ? security_kernfs_init_security+0x52/0x180
+[    7.154120]  ? srso_return_thunk+0x5/0x5f
+[    7.154123]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.154126]  ? srso_return_thunk+0x5/0x5f
+[    7.154129]  ? security_kernfs_init_security+0x52/0x180
+[    7.154131]  ? srso_return_thunk+0x5/0x5f
+[    7.154134]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.154138]  ? srso_return_thunk+0x5/0x5f
+[    7.154140]  ? srso_return_thunk+0x5/0x5f
+[    7.154143]  ? clockevents_program_event+0xf2/0x1a0
+[    7.154146]  ? kernfs_activate+0x4e/0x140
+[    7.154149]  ? srso_return_thunk+0x5/0x5f
+[    7.154151]  ? srso_return_thunk+0x5/0x5f
+[    7.154154]  ? __free_one_page+0x63/0x6d0
+[    7.154159]  ? srso_return_thunk+0x5/0x5f
+[    7.154162]  ? free_pcppages_bulk+0x182/0x220
+[    7.154166]  ? srso_return_thunk+0x5/0x5f
+[    7.154169]  ? __free_one_page+0x50f/0x6d0
+[    7.154174]  ? srso_return_thunk+0x5/0x5f
+[    7.154176]  ? free_one_page+0x161/0x250
+[    7.154188]  ? srso_return_thunk+0x5/0x5f
+[    7.154190]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.154193]  ? do_init_module+0x24/0x340
+[    7.154198]  do_init_module+0x62/0x340
+[    7.154201]  __se_sys_finit_module+0x270/0x3e0
+[    7.154211]  do_syscall_64+0x147/0x3c0
+[    7.154219]  ? srso_return_thunk+0x5/0x5f
+[    7.154221]  ? vfs_read+0x14c/0x2f0
+[    7.154226]  ? srso_return_thunk+0x5/0x5f
+[    7.154230]  ? __x64_sys_pread64+0x70/0xc0
+[    7.154234]  ? srso_return_thunk+0x5/0x5f
+[    7.154241]  ? do_syscall_64+0x182/0x3c0
+[    7.154243]  ? srso_return_thunk+0x5/0x5f
+[    7.154245]  ? do_syscall_64+0x182/0x3c0
+[    7.154248]  ? srso_return_thunk+0x5/0x5f
+[    7.154251]  ? __x64_sys_openat+0x80/0xa0
+[    7.154253]  ? srso_return_thunk+0x5/0x5f
+[    7.154257]  ? __seccomp_filter+0x23b/0xa10
+[    7.154260]  ? srso_return_thunk+0x5/0x5f
+[    7.154262]  ? do_syscall_64+0x182/0x3c0
+[    7.154266]  ? srso_return_thunk+0x5/0x5f
+[    7.154269]  ? __x64_sys_openat+0x80/0xa0
+[    7.154272]  ? srso_return_thunk+0x5/0x5f
+[    7.154274]  ? do_syscall_64+0x182/0x3c0
+[    7.154278]  ? srso_return_thunk+0x5/0x5f
+[    7.154281]  ? do_syscall_64+0x106/0x3c0
+[    7.154284]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.154286] RIP: 0033:0x7fde6872a86d
+[    7.154289] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.154291] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.154298] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.154300] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.154301] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.154303] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.154304] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.154310]  </TASK>
+[    7.154311] ---[ end trace 0000000000000000 ]---
+[    7.154327] ------------[ cut here ]------------
+[    7.154329] !amdgpu_irq_enabled(adev, src, type)
+[    7.154330] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.154875] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.154897] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.154901] Tainted: [W]=WARN
+[    7.154903] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.154905] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.155441] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.155445] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.155447] RAX: 00000000ffffffea RBX: 0000000000000001 RCX: ffff889c80c433b8
+[    7.155449] RDX: ffffffffc199c9d8 RSI: ffff889c9282ece0 RDI: ffff889c92800000
+[    7.155450] RBP: 0000000000000001 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.155452] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c92828918
+[    7.155454] R13: 000000000000230d R14: ffff889c9282ece0 R15: ffff889c92800000
+[    7.155457] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.155462] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.155463] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.155466] Call Trace:
+[    7.155468]  <TASK>
+[    7.155471]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.156016]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.156560]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.157102]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.157647]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.157654]  really_probe+0x1bc/0x4b0
+[    7.157658]  __driver_probe_device+0xa2/0x140
+[    7.157667]  driver_probe_device+0x1e/0x110
+[    7.157670]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.157673]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.157676]  bus_for_each_dev+0x117/0x160
+[    7.157680]  bus_add_driver+0x16a/0x2c0
+[    7.157684]  driver_register+0x69/0x110
+[    7.157686]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.158225]  do_one_initcall+0x135/0x330
+[    7.158231]  ? srso_return_thunk+0x5/0x5f
+[    7.158235]  ? security_kernfs_init_security+0x52/0x180
+[    7.158237]  ? srso_return_thunk+0x5/0x5f
+[    7.158240]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.158244]  ? srso_return_thunk+0x5/0x5f
+[    7.158247]  ? security_kernfs_init_security+0x52/0x180
+[    7.158250]  ? srso_return_thunk+0x5/0x5f
+[    7.158252]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.158256]  ? srso_return_thunk+0x5/0x5f
+[    7.158259]  ? srso_return_thunk+0x5/0x5f
+[    7.158261]  ? clockevents_program_event+0xf2/0x1a0
+[    7.158265]  ? kernfs_activate+0x4e/0x140
+[    7.158268]  ? srso_return_thunk+0x5/0x5f
+[    7.158271]  ? srso_return_thunk+0x5/0x5f
+[    7.158273]  ? __free_one_page+0x63/0x6d0
+[    7.158278]  ? srso_return_thunk+0x5/0x5f
+[    7.158281]  ? free_pcppages_bulk+0x182/0x220
+[    7.158285]  ? srso_return_thunk+0x5/0x5f
+[    7.158288]  ? __free_one_page+0x50f/0x6d0
+[    7.158293]  ? srso_return_thunk+0x5/0x5f
+[    7.158295]  ? free_one_page+0x161/0x250
+[    7.158300]  ? srso_return_thunk+0x5/0x5f
+[    7.158303]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.158306]  ? do_init_module+0x24/0x340
+[    7.158310]  do_init_module+0x62/0x340
+[    7.158313]  __se_sys_finit_module+0x270/0x3e0
+[    7.158323]  do_syscall_64+0x147/0x3c0
+[    7.158331]  ? srso_return_thunk+0x5/0x5f
+[    7.158334]  ? vfs_read+0x14c/0x2f0
+[    7.158340]  ? srso_return_thunk+0x5/0x5f
+[    7.158342]  ? __x64_sys_pread64+0x70/0xc0
+[    7.158346]  ? srso_return_thunk+0x5/0x5f
+[    7.158348]  ? do_syscall_64+0x182/0x3c0
+[    7.158351]  ? srso_return_thunk+0x5/0x5f
+[    7.158353]  ? do_syscall_64+0x182/0x3c0
+[    7.158356]  ? srso_return_thunk+0x5/0x5f
+[    7.158359]  ? __x64_sys_openat+0x80/0xa0
+[    7.158362]  ? srso_return_thunk+0x5/0x5f
+[    7.158364]  ? __seccomp_filter+0x23b/0xa10
+[    7.158367]  ? srso_return_thunk+0x5/0x5f
+[    7.158370]  ? do_syscall_64+0x182/0x3c0
+[    7.158373]  ? srso_return_thunk+0x5/0x5f
+[    7.158376]  ? __x64_sys_openat+0x80/0xa0
+[    7.158378]  ? srso_return_thunk+0x5/0x5f
+[    7.158381]  ? do_syscall_64+0x182/0x3c0
+[    7.158386]  ? srso_return_thunk+0x5/0x5f
+[    7.158388]  ? do_syscall_64+0x106/0x3c0
+[    7.158392]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.158395] RIP: 0033:0x7fde6872a86d
+[    7.158397] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.158399] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.158402] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.158404] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.158406] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.158407] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.158409] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.158415]  </TASK>
+[    7.158416] ---[ end trace 0000000000000000 ]---
+[    7.158431] ------------[ cut here ]------------
+[    7.158432] !amdgpu_irq_enabled(adev, src, type)
+[    7.158433] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.158979] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.158998] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.159002] Tainted: [W]=WARN
+[    7.159003] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.159005] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.159541] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.159547] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.159549] RAX: 00000000ffffffea RBX: 0000000000000000 RCX: ffff889c8a4fe220
+[    7.159550] RDX: ffffffffc19a3a88 RSI: ffff889c92831ea0 RDI: ffff889c92800000
+[    7.159552] RBP: 0000000000000000 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.159553] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c928311f8
+[    7.159554] R13: 000000000000230e R14: ffff889c92831ea0 R15: ffff889c92800000
+[    7.159556] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.159560] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.159562] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.159564] Call Trace:
+[    7.159565]  <TASK>
+[    7.159568]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.160109]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.160651]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.161186]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.161733]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.161740]  really_probe+0x1bc/0x4b0
+[    7.161744]  __driver_probe_device+0xa2/0x140
+[    7.161747]  driver_probe_device+0x1e/0x110
+[    7.161751]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.161755]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.161758]  bus_for_each_dev+0x117/0x160
+[    7.161769]  bus_add_driver+0x16a/0x2c0
+[    7.161773]  driver_register+0x69/0x110
+[    7.161775]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.162311]  do_one_initcall+0x135/0x330
+[    7.162318]  ? srso_return_thunk+0x5/0x5f
+[    7.162320]  ? security_kernfs_init_security+0x52/0x180
+[    7.162323]  ? srso_return_thunk+0x5/0x5f
+[    7.162326]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.162330]  ? srso_return_thunk+0x5/0x5f
+[    7.162333]  ? security_kernfs_init_security+0x52/0x180
+[    7.162335]  ? srso_return_thunk+0x5/0x5f
+[    7.162338]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.162342]  ? srso_return_thunk+0x5/0x5f
+[    7.162344]  ? srso_return_thunk+0x5/0x5f
+[    7.162347]  ? clockevents_program_event+0xf2/0x1a0
+[    7.162350]  ? kernfs_activate+0x4e/0x140
+[    7.162353]  ? srso_return_thunk+0x5/0x5f
+[    7.162356]  ? srso_return_thunk+0x5/0x5f
+[    7.162358]  ? __free_one_page+0x63/0x6d0
+[    7.162363]  ? srso_return_thunk+0x5/0x5f
+[    7.162366]  ? free_pcppages_bulk+0x182/0x220
+[    7.162370]  ? srso_return_thunk+0x5/0x5f
+[    7.162373]  ? __free_one_page+0x50f/0x6d0
+[    7.162377]  ? srso_return_thunk+0x5/0x5f
+[    7.162380]  ? free_one_page+0x161/0x250
+[    7.162385]  ? srso_return_thunk+0x5/0x5f
+[    7.162387]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.162391]  ? do_init_module+0x24/0x340
+[    7.162395]  do_init_module+0x62/0x340
+[    7.162398]  __se_sys_finit_module+0x270/0x3e0
+[    7.162408]  do_syscall_64+0x147/0x3c0
+[    7.162416]  ? srso_return_thunk+0x5/0x5f
+[    7.162419]  ? vfs_read+0x14c/0x2f0
+[    7.162424]  ? srso_return_thunk+0x5/0x5f
+[    7.162427]  ? __x64_sys_pread64+0x70/0xc0
+[    7.162431]  ? srso_return_thunk+0x5/0x5f
+[    7.162433]  ? do_syscall_64+0x182/0x3c0
+[    7.162436]  ? srso_return_thunk+0x5/0x5f
+[    7.162438]  ? do_syscall_64+0x182/0x3c0
+[    7.162441]  ? srso_return_thunk+0x5/0x5f
+[    7.162444]  ? __x64_sys_openat+0x80/0xa0
+[    7.162446]  ? srso_return_thunk+0x5/0x5f
+[    7.162449]  ? __seccomp_filter+0x23b/0xa10
+[    7.162452]  ? srso_return_thunk+0x5/0x5f
+[    7.162455]  ? do_syscall_64+0x182/0x3c0
+[    7.162460]  ? srso_return_thunk+0x5/0x5f
+[    7.162463]  ? __x64_sys_openat+0x80/0xa0
+[    7.162466]  ? srso_return_thunk+0x5/0x5f
+[    7.162469]  ? do_syscall_64+0x182/0x3c0
+[    7.162475]  ? srso_return_thunk+0x5/0x5f
+[    7.162478]  ? do_syscall_64+0x106/0x3c0
+[    7.162483]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.162485] RIP: 0033:0x7fde6872a86d
+[    7.162488] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.162490] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.162492] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.162494] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.162496] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.162498] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.162499] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.162506]  </TASK>
+[    7.162507] ---[ end trace 0000000000000000 ]---
+[    7.162521] ------------[ cut here ]------------
+[    7.162522] !amdgpu_irq_enabled(adev, src, type)
+[    7.162523] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.163069] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.163087] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.163090] Tainted: [W]=WARN
+[    7.163091] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.163093] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.163628] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.163631] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.163637] RAX: 00000000ffffffea RBX: 0000000000000000 RCX: ffff889c8a4fe220
+[    7.163639] RDX: ffffffffc19a3a88 RSI: ffff889c92831ea0 RDI: ffff889c92800000
+[    7.163641] RBP: 0000000000000000 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.163643] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c92831520
+[    7.163645] R13: 000000000000230f R14: ffff889c92831ea0 R15: ffff889c92800000
+[    7.163646] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.163651] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.163652] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.163654] Call Trace:
+[    7.163655]  <TASK>
+[    7.163660]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.164199]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.164743]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.165281]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.165826]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.165833]  really_probe+0x1bc/0x4b0
+[    7.165837]  __driver_probe_device+0xa2/0x140
+[    7.165841]  driver_probe_device+0x1e/0x110
+[    7.165845]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.165848]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.165852]  bus_for_each_dev+0x117/0x160
+[    7.165856]  bus_add_driver+0x16a/0x2c0
+[    7.165860]  driver_register+0x69/0x110
+[    7.165862]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.166397]  do_one_initcall+0x135/0x330
+[    7.166404]  ? srso_return_thunk+0x5/0x5f
+[    7.166407]  ? security_kernfs_init_security+0x52/0x180
+[    7.166410]  ? srso_return_thunk+0x5/0x5f
+[    7.166412]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.166416]  ? srso_return_thunk+0x5/0x5f
+[    7.166419]  ? security_kernfs_init_security+0x52/0x180
+[    7.166421]  ? srso_return_thunk+0x5/0x5f
+[    7.166424]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.166428]  ? srso_return_thunk+0x5/0x5f
+[    7.166430]  ? srso_return_thunk+0x5/0x5f
+[    7.166433]  ? clockevents_program_event+0xf2/0x1a0
+[    7.166436]  ? kernfs_activate+0x4e/0x140
+[    7.166439]  ? srso_return_thunk+0x5/0x5f
+[    7.166442]  ? srso_return_thunk+0x5/0x5f
+[    7.166444]  ? __free_one_page+0x63/0x6d0
+[    7.166450]  ? srso_return_thunk+0x5/0x5f
+[    7.166452]  ? free_pcppages_bulk+0x182/0x220
+[    7.166456]  ? srso_return_thunk+0x5/0x5f
+[    7.166459]  ? __free_one_page+0x50f/0x6d0
+[    7.166464]  ? srso_return_thunk+0x5/0x5f
+[    7.166466]  ? free_one_page+0x161/0x250
+[    7.166471]  ? srso_return_thunk+0x5/0x5f
+[    7.166473]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.166477]  ? do_init_module+0x24/0x340
+[    7.166481]  do_init_module+0x62/0x340
+[    7.166484]  __se_sys_finit_module+0x270/0x3e0
+[    7.166494]  do_syscall_64+0x147/0x3c0
+[    7.166502]  ? srso_return_thunk+0x5/0x5f
+[    7.166505]  ? vfs_read+0x14c/0x2f0
+[    7.166511]  ? srso_return_thunk+0x5/0x5f
+[    7.166513]  ? __x64_sys_pread64+0x70/0xc0
+[    7.166517]  ? srso_return_thunk+0x5/0x5f
+[    7.166519]  ? do_syscall_64+0x182/0x3c0
+[    7.166522]  ? srso_return_thunk+0x5/0x5f
+[    7.166524]  ? do_syscall_64+0x182/0x3c0
+[    7.166527]  ? srso_return_thunk+0x5/0x5f
+[    7.166530]  ? __x64_sys_openat+0x80/0xa0
+[    7.166533]  ? srso_return_thunk+0x5/0x5f
+[    7.166535]  ? __seccomp_filter+0x23b/0xa10
+[    7.166538]  ? srso_return_thunk+0x5/0x5f
+[    7.166541]  ? do_syscall_64+0x182/0x3c0
+[    7.166544]  ? srso_return_thunk+0x5/0x5f
+[    7.166547]  ? __x64_sys_openat+0x80/0xa0
+[    7.166549]  ? srso_return_thunk+0x5/0x5f
+[    7.166552]  ? do_syscall_64+0x182/0x3c0
+[    7.166557]  ? srso_return_thunk+0x5/0x5f
+[    7.166559]  ? do_syscall_64+0x106/0x3c0
+[    7.166564]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.166566] RIP: 0033:0x7fde6872a86d
+[    7.166569] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.166571] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.166574] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.166575] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.166577] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.166579] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.166580] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.166587]  </TASK>
+[    7.166588] ---[ end trace 0000000000000000 ]---
+[    7.166602] ------------[ cut here ]------------
+[    7.166603] !amdgpu_irq_enabled(adev, src, type)
+[    7.166604] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.167148] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.167167] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.167171] Tainted: [W]=WARN
+[    7.167173] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.167174] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.167720] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.167722] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.167725] RAX: 00000000ffffffea RBX: 0000000000000000 RCX: ffff889c8a4fe220
+[    7.167727] RDX: ffffffffc19a3a88 RSI: ffff889c92831ea0 RDI: ffff889c92800000
+[    7.167729] RBP: 0000000000000000 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.167730] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c92831848
+[    7.167731] R13: 0000000000002310 R14: ffff889c92831ea0 R15: ffff889c92800000
+[    7.167733] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.167737] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.167739] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.167741] Call Trace:
+[    7.167742]  <TASK>
+[    7.167744]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.168287]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.168838]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.169375]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.169923]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.169930]  really_probe+0x1bc/0x4b0
+[    7.169934]  __driver_probe_device+0xa2/0x140
+[    7.169938]  driver_probe_device+0x1e/0x110
+[    7.169942]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.169945]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.169949]  bus_for_each_dev+0x117/0x160
+[    7.169954]  bus_add_driver+0x16a/0x2c0
+[    7.169957]  driver_register+0x69/0x110
+[    7.169959]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.170493]  do_one_initcall+0x135/0x330
+[    7.170499]  ? srso_return_thunk+0x5/0x5f
+[    7.170502]  ? security_kernfs_init_security+0x52/0x180
+[    7.170505]  ? srso_return_thunk+0x5/0x5f
+[    7.170508]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.170511]  ? srso_return_thunk+0x5/0x5f
+[    7.170514]  ? security_kernfs_init_security+0x52/0x180
+[    7.170517]  ? srso_return_thunk+0x5/0x5f
+[    7.170519]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.170523]  ? srso_return_thunk+0x5/0x5f
+[    7.170526]  ? srso_return_thunk+0x5/0x5f
+[    7.170528]  ? clockevents_program_event+0xf2/0x1a0
+[    7.170531]  ? kernfs_activate+0x4e/0x140
+[    7.170534]  ? srso_return_thunk+0x5/0x5f
+[    7.170537]  ? srso_return_thunk+0x5/0x5f
+[    7.170539]  ? __free_one_page+0x63/0x6d0
+[    7.170545]  ? srso_return_thunk+0x5/0x5f
+[    7.170547]  ? free_pcppages_bulk+0x182/0x220
+[    7.170551]  ? srso_return_thunk+0x5/0x5f
+[    7.170554]  ? __free_one_page+0x50f/0x6d0
+[    7.170558]  ? srso_return_thunk+0x5/0x5f
+[    7.170561]  ? free_one_page+0x161/0x250
+[    7.170566]  ? srso_return_thunk+0x5/0x5f
+[    7.170568]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.170571]  ? do_init_module+0x24/0x340
+[    7.170576]  do_init_module+0x62/0x340
+[    7.170579]  __se_sys_finit_module+0x270/0x3e0
+[    7.170589]  do_syscall_64+0x147/0x3c0
+[    7.170597]  ? srso_return_thunk+0x5/0x5f
+[    7.170600]  ? vfs_read+0x14c/0x2f0
+[    7.170605]  ? srso_return_thunk+0x5/0x5f
+[    7.170608]  ? __x64_sys_pread64+0x70/0xc0
+[    7.170611]  ? srso_return_thunk+0x5/0x5f
+[    7.170614]  ? do_syscall_64+0x182/0x3c0
+[    7.170616]  ? srso_return_thunk+0x5/0x5f
+[    7.170619]  ? do_syscall_64+0x182/0x3c0
+[    7.170622]  ? srso_return_thunk+0x5/0x5f
+[    7.170624]  ? __x64_sys_openat+0x80/0xa0
+[    7.170627]  ? srso_return_thunk+0x5/0x5f
+[    7.170630]  ? __seccomp_filter+0x23b/0xa10
+[    7.170638]  ? srso_return_thunk+0x5/0x5f
+[    7.170641]  ? do_syscall_64+0x182/0x3c0
+[    7.170647]  ? srso_return_thunk+0x5/0x5f
+[    7.170649]  ? __x64_sys_openat+0x80/0xa0
+[    7.170651]  ? srso_return_thunk+0x5/0x5f
+[    7.170653]  ? do_syscall_64+0x182/0x3c0
+[    7.170658]  ? srso_return_thunk+0x5/0x5f
+[    7.170660]  ? do_syscall_64+0x106/0x3c0
+[    7.170664]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.170666] RIP: 0033:0x7fde6872a86d
+[    7.170671] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.170673] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.170675] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.170678] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.170680] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.170683] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.170684] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.170690]  </TASK>
+[    7.170691] ---[ end trace 0000000000000000 ]---
+[    7.170706] ------------[ cut here ]------------
+[    7.170707] !amdgpu_irq_enabled(adev, src, type)
+[    7.170708] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.171247] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.171267] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.171272] Tainted: [W]=WARN
+[    7.171275] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.171276] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.171817] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.171820] RSP: 0018:ffffc926c0d23498 EFLAGS: 00010246
+[    7.171822] RAX: 00000000ffffffea RBX: 0000000000000000 RCX: ffff889c80c43428
+[    7.171824] RDX: ffffffffc19a7480 RSI: ffff889c92836c48 RDI: ffff889c92800000
+[    7.171825] RBP: 0000000000000000 R08: ffffffff847e0100 R09: ffffffff82164b07
+[    7.171826] R10: 00000001fffe8000 R11: 0000000000000000 R12: ffff889c92834cb8
+[    7.171827] R13: 0000000000002311 R14: ffff889c92836c48 R15: ffff889c92800000
+[    7.171829] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.171834] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.171835] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.171837] Call Trace:
+[    7.171839]  <TASK>
+[    7.171843]  amdgpu_fence_driver_hw_fini+0x4a/0x160 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.172381]  amdgpu_device_fini_hw+0x248/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.172927]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.173465]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.174007]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.174014]  really_probe+0x1bc/0x4b0
+[    7.174018]  __driver_probe_device+0xa2/0x140
+[    7.174022]  driver_probe_device+0x1e/0x110
+[    7.174026]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.174029]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.174032]  bus_for_each_dev+0x117/0x160
+[    7.174037]  bus_add_driver+0x16a/0x2c0
+[    7.174041]  driver_register+0x69/0x110
+[    7.174043]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.174581]  do_one_initcall+0x135/0x330
+[    7.174587]  ? srso_return_thunk+0x5/0x5f
+[    7.174589]  ? security_kernfs_init_security+0x52/0x180
+[    7.174592]  ? srso_return_thunk+0x5/0x5f
+[    7.174595]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.174599]  ? srso_return_thunk+0x5/0x5f
+[    7.174601]  ? security_kernfs_init_security+0x52/0x180
+[    7.174604]  ? srso_return_thunk+0x5/0x5f
+[    7.174606]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.174610]  ? srso_return_thunk+0x5/0x5f
+[    7.174613]  ? srso_return_thunk+0x5/0x5f
+[    7.174615]  ? clockevents_program_event+0xf2/0x1a0
+[    7.174618]  ? kernfs_activate+0x4e/0x140
+[    7.174622]  ? srso_return_thunk+0x5/0x5f
+[    7.174624]  ? srso_return_thunk+0x5/0x5f
+[    7.174627]  ? __free_one_page+0x63/0x6d0
+[    7.174633]  ? srso_return_thunk+0x5/0x5f
+[    7.174635]  ? free_pcppages_bulk+0x182/0x220
+[    7.174639]  ? srso_return_thunk+0x5/0x5f
+[    7.174642]  ? __free_one_page+0x50f/0x6d0
+[    7.174652]  ? srso_return_thunk+0x5/0x5f
+[    7.174655]  ? free_one_page+0x161/0x250
+[    7.174660]  ? srso_return_thunk+0x5/0x5f
+[    7.174662]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.174665]  ? do_init_module+0x24/0x340
+[    7.174669]  do_init_module+0x62/0x340
+[    7.174675]  __se_sys_finit_module+0x270/0x3e0
+[    7.174685]  do_syscall_64+0x147/0x3c0
+[    7.174693]  ? srso_return_thunk+0x5/0x5f
+[    7.174696]  ? vfs_read+0x14c/0x2f0
+[    7.174701]  ? srso_return_thunk+0x5/0x5f
+[    7.174703]  ? __x64_sys_pread64+0x70/0xc0
+[    7.174707]  ? srso_return_thunk+0x5/0x5f
+[    7.174709]  ? do_syscall_64+0x182/0x3c0
+[    7.174712]  ? srso_return_thunk+0x5/0x5f
+[    7.174714]  ? do_syscall_64+0x182/0x3c0
+[    7.174717]  ? srso_return_thunk+0x5/0x5f
+[    7.174719]  ? __x64_sys_openat+0x80/0xa0
+[    7.174721]  ? srso_return_thunk+0x5/0x5f
+[    7.174724]  ? __seccomp_filter+0x23b/0xa10
+[    7.174726]  ? srso_return_thunk+0x5/0x5f
+[    7.174729]  ? do_syscall_64+0x182/0x3c0
+[    7.174733]  ? srso_return_thunk+0x5/0x5f
+[    7.174735]  ? __x64_sys_openat+0x80/0xa0
+[    7.174737]  ? srso_return_thunk+0x5/0x5f
+[    7.174739]  ? do_syscall_64+0x182/0x3c0
+[    7.174746]  ? srso_return_thunk+0x5/0x5f
+[    7.174748]  ? do_syscall_64+0x106/0x3c0
+[    7.174754]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.174757] RIP: 0033:0x7fde6872a86d
+[    7.174760] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.174762] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.174764] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.174765] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.174769] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.174770] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.174771] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.174778]  </TASK>
+[    7.174780] ---[ end trace 0000000000000000 ]---
+[    7.199754] ------------[ cut here ]------------
+[    7.199762] !amdgpu_irq_enabled(adev, src, type)
+[    7.199768] WARNING: drivers/gpu/drm/amd/amdgpu/amdgpu_irq.c:670 at amdgpu_irq_put+0x120/0x130 [amdgpu], CPU#4: (udev-worker)/242
+[    7.204283] Modules linked in: amdgpu(+) drm_panel_backlight_quirks drm_buddy drm_suballoc_helper i2c_algo_bit drm_exec gpu_sched amdxcp drm_ttm_helper ttm uas drm_display_helper video serio_raw usb_storage wmi cec
+[    7.204386] CPU: 4 UID: 0 PID: 242 Comm: (udev-worker) Tainted: G        W           7.2.0-1.92-cachyos-vcn-bc250 #1 PREEMPT(full)  2e81254eea659e5a822438292bec1aed986ea77b
+[    7.204403] Tainted: [W]=WARN
+[    7.204422] Hardware name: Default string AMD BC-250/AMD BC-250, BIOS P5.00 05/03/2022
+[    7.204428] RIP: 0010:amdgpu_irq_put+0x120/0x130 [amdgpu]
+[    7.208491] Code: 89 da 4c 8b 18 2e e8 3f d7 c1 c1 4c 89 e7 4c 89 ee 89 c3 e8 62 bd c1 c1 89 d8 5b 41 5c 41 5d 41 5e 41 5f 5d e9 61 e0 c1 c1 cc <0f> 0b eb ec cc cc cc cc cc cc cc cc cc cc cc cc 90 90 90 90 90 90
+[    7.208500] RSP: 0018:ffffc926c0d234d0 EFLAGS: 00010246
+[    7.208511] RAX: 00000000ffffffea RBX: 0000000000000000 RCX: ffff889c80c43760
+[    7.208519] RDX: ffffffffc1962c80 RSI: ffff889c92800c78 RDI: ffff889c92800000
+[    7.208527] RBP: 0000000000000000 R08: ffffffff847e0160 R09: ffffffffc0a28172
+[    7.208535] R10: 00000000001e4000 R11: ffffffffc0af39a0 R12: ffff889c92800000
+[    7.208543] R13: 0000000000002b00 R14: ffff889c92800c78 R15: ffff889c92800000
+[    7.208551] FS:  00007fde685dccc0(0000) GS:ffff889e63758000(0000) knlGS:0000000000000000
+[    7.208561] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    7.208569] CR2: 00007fd78b701000 CR3: 000000010cec5000 CR4: 0000000000350ef0
+[    7.208577] Call Trace:
+[    7.208585]  <TASK>
+[    7.208596]  gmc_v10_0_hw_fini.llvm.6418044521389402172+0x59/0xa0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.211699]  amdgpu_device_fini_hw+0x4a3/0x620 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.214164]  amdgpu_driver_load_kms+0x69/0xb0 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.216262]  amdgpu_pci_probe+0x277/0x750 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.218253]  pci_device_probe.llvm.415911452765820183+0x1fa/0x310
+[    7.218267]  really_probe+0x1bc/0x4b0
+[    7.218276]  __driver_probe_device+0xa2/0x140
+[    7.218284]  driver_probe_device+0x1e/0x110
+[    7.218292]  __driver_attach.llvm.6347469015065510235+0xac/0x220
+[    7.218304]  ? __pfx___driver_attach.llvm.6347469015065510235+0x10/0x10
+[    7.218312]  bus_for_each_dev+0x117/0x160
+[    7.218320]  bus_add_driver+0x16a/0x2c0
+[    7.218327]  driver_register+0x69/0x110
+[    7.218333]  ? __pfx_init_module+0x10/0x10 [amdgpu ca6bb73e0c93d32f1c80552e5093e7a766a3c924]
+[    7.220324]  do_one_initcall+0x135/0x330
+[    7.220337]  ? srso_return_thunk+0x5/0x5f
+[    7.220344]  ? security_kernfs_init_security+0x52/0x180
+[    7.220351]  ? srso_return_thunk+0x5/0x5f
+[    7.220357]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.220366]  ? srso_return_thunk+0x5/0x5f
+[    7.220378]  ? security_kernfs_init_security+0x52/0x180
+[    7.220383]  ? srso_return_thunk+0x5/0x5f
+[    7.220388]  ? __kernfs_new_node+0x1d6/0x2a0
+[    7.220395]  ? srso_return_thunk+0x5/0x5f
+[    7.220400]  ? srso_return_thunk+0x5/0x5f
+[    7.220405]  ? clockevents_program_event+0xf2/0x1a0
+[    7.220412]  ? kernfs_activate+0x4e/0x140
+[    7.220419]  ? srso_return_thunk+0x5/0x5f
+[    7.220424]  ? srso_return_thunk+0x5/0x5f
+[    7.220430]  ? __free_one_page+0x63/0x6d0
+[    7.220443]  ? srso_return_thunk+0x5/0x5f
+[    7.220448]  ? free_pcppages_bulk+0x182/0x220
+[    7.220456]  ? srso_return_thunk+0x5/0x5f
+[    7.220461]  ? __free_one_page+0x50f/0x6d0
+[    7.220469]  ? srso_return_thunk+0x5/0x5f
+[    7.220476]  ? free_one_page+0x161/0x250
+[    7.220486]  ? srso_return_thunk+0x5/0x5f
+[    7.220491]  ? __kmalloc_cache_noprof+0x1bb/0x450
+[    7.220504]  ? do_init_module+0x24/0x340
+[    7.220512]  do_init_module+0x62/0x340
+[    7.220518]  __se_sys_finit_module+0x270/0x3e0
+[    7.220537]  do_syscall_64+0x147/0x3c0
+[    7.220552]  ? srso_return_thunk+0x5/0x5f
+[    7.220557]  ? vfs_read+0x14c/0x2f0
+[    7.220567]  ? srso_return_thunk+0x5/0x5f
+[    7.220572]  ? __x64_sys_pread64+0x70/0xc0
+[    7.220586]  ? srso_return_thunk+0x5/0x5f
+[    7.220591]  ? do_syscall_64+0x182/0x3c0
+[    7.220597]  ? srso_return_thunk+0x5/0x5f
+[    7.220609]  ? do_syscall_64+0x182/0x3c0
+[    7.220615]  ? srso_return_thunk+0x5/0x5f
+[    7.220627]  ? __x64_sys_openat+0x80/0xa0
+[    7.220638]  ? srso_return_thunk+0x5/0x5f
+[    7.220643]  ? __seccomp_filter+0x23b/0xa10
+[    7.220649]  ? srso_return_thunk+0x5/0x5f
+[    7.220654]  ? do_syscall_64+0x182/0x3c0
+[    7.220662]  ? srso_return_thunk+0x5/0x5f
+[    7.220667]  ? __x64_sys_openat+0x80/0xa0
+[    7.220674]  ? srso_return_thunk+0x5/0x5f
+[    7.220681]  ? do_syscall_64+0x182/0x3c0
+[    7.220692]  ? srso_return_thunk+0x5/0x5f
+[    7.220706]  ? do_syscall_64+0x106/0x3c0
+[    7.220713]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
+[    7.220718] RIP: 0033:0x7fde6872a86d
+[    7.220723] Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 6b 34 10 00 f7 d8 64 89 01 48
+[    7.220727] RSP: 002b:00007ffdfc580b88 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+[    7.220732] RAX: ffffffffffffffda RBX: 000055aabef94bb0 RCX: 00007fde6872a86d
+[    7.220735] RDX: 0000000000000004 RSI: 000055aabef6a180 RDI: 0000000000000072
+[    7.220738] RBP: 00007ffdfc580c20 R08: 0000000000000000 R09: 000055aabef962b0
+[    7.220742] R10: 0000000000000000 R11: 0000000000000246 R12: 000055aabef6a180
+[    7.220745] R13: 0000000000020000 R14: 000055aabeeee310 R15: 000055aabef94bb0
+[    7.220756]  </TASK>
+[    7.220757] ---[ end trace 0000000000000000 ]---
+[    7.220765] amdgpu 0000:01:00.0: MODE1 reset
+[    7.220769] amdgpu 0000:01:00.0: GPU mode1 reset
+[    7.220831] amdgpu 0000:01:00.0: GPU psp mode1 reset
+[    7.221489] amdgpu 0000:01:00.0: probe with driver amdgpu failed with error -110
+[    7.227912] amdgpu 0000:01:00.0:  ttm finalized
+[    7.375939] systemd-journald[178]: Received SIGTERM from PID 1 (systemd).
+[    7.741897] systemd[1]: System time advanced to built-in epoch: Thu 2026-09-10 20:40:52 UTC
+[    7.965696] pci 0000:01:00.0: (-95) failed to disable video power profile mode
+[    8.433810] systemd[1]: systemd 261.3-1-arch running in system mode (+PAM +AUDIT -SELINUX +APPARMOR -IMA +IPE +SMACK +SECCOMP +GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 +PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK +BTF +XKBCOMMON +UTMP +LIBARCHIVE)
+[    8.433840] systemd[1]: Detected architecture x86-64.
+[    8.516182] systemd[1]: Hostname set to <bc250-debug>.
+[    9.213447] systemd[1]: bpf-restrict-fs: LSM BPF program attached
+[   10.681977] systemd[1]: initrd-switch-root.service: Deactivated successfully.
+[   10.683112] systemd[1]: Stopped Switch Root.
+[   10.687012] systemd[1]: systemd-journald.service: Scheduled restart job, restart counter is at 1.
+[   10.689690] systemd[1]: Created slice Slice /system/dirmngr.
+[   10.691778] systemd[1]: Created slice Slice /system/getty.
+[   10.694151] systemd[1]: Created slice Slice /system/gpg-agent.
+[   10.696241] systemd[1]: Created slice Slice /system/gpg-agent-browser.
+[   10.698307] systemd[1]: Created slice Slice /system/gpg-agent-extra.
+[   10.700368] systemd[1]: Created slice Slice /system/gpg-agent-ssh.
+[   10.702578] systemd[1]: Created slice Slice /system/keyboxd.
+[   10.704716] systemd[1]: Created slice Slice /system/modprobe.
+[   10.706116] systemd[1]: Created slice User and Session Slice.
+[   10.706228] systemd[1]: systemd-ask-password-plymouth.path: Deactivated successfully.
+[   10.706248] systemd[1]: Stopped systemd-ask-password-plymouth.path.
+[   10.706524] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[   10.707234] systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+[   10.707360] systemd[1]: Expecting device /dev/disk/by-uuid/2548-693E...
+[   10.707546] systemd[1]: Reached target Image Downloads.
+[   10.707702] systemd[1]: Stopped target Switch Root.
+[   10.707824] systemd[1]: Stopped target Initrd File Systems.
+[   10.707920] systemd[1]: Stopped target Initrd Root File System.
+[   10.708040] systemd[1]: Reached target Local Integrity Protected Volumes.
+[   10.708244] systemd[1]: Reached target Remote File Systems.
+[   10.708363] systemd[1]: Reached target Slice Units.
+[   10.708553] systemd[1]: Reached target Swaps.
+[   10.708766] systemd[1]: Reached target Local Verity Protected Volumes.
+[   10.709299] systemd[1]: Listening on Device-mapper event daemon FIFOs.
+[   10.718076] systemd[1]: Listening on Query the User Interactively for a Password.
+[   10.726364] systemd[1]: Listening on Process Core Dump Socket.
+[   10.731891] systemd[1]: Listening on Credential Encryption/Decryption.
+[   10.739882] systemd[1]: Listening on Factory Reset Management.
+[   10.740242] systemd[1]: Listening on Hostname Service Socket.
+[   10.748975] systemd[1]: Listening on Console Output Muting Service Socket.
+[   10.749968] systemd[1]: Listening on Network Management Metrics Varlink Socket.
+[   10.750956] systemd[1]: Listening on Network Management Varlink Socket.
+[   10.751809] systemd[1]: Listening on Network Management Netlink Socket.
+[   10.752105] systemd[1]: TPM PCR Measurements skipped, unmet condition check ConditionSecurity=measured-os
+[   10.752194] systemd[1]: Make TPM PCR Policy skipped, unmet condition check ConditionSecurity=measured-uki
+[   10.758218] systemd[1]: Listening on Disk Repartitioning Service Socket.
+[   10.758671] systemd[1]: Listening on Resolve Monitor Varlink Socket.
+[   10.759022] systemd[1]: Listening on Resolve Service Varlink Socket.
+[   10.766909] systemd[1]: Listening on Simple Block Device Backed Storage Provider.
+[   10.774954] systemd[1]: Listening on Simple File System Backed Storage Provider.
+[   10.775324] systemd[1]: Listening on udev Control Socket.
+[   10.775782] systemd[1]: Listening on udev Varlink Socket.
+[   10.776223] systemd[1]: Listening on User Database Manager Socket.
+[   10.780872] systemd[1]: Mounting Huge Pages File System...
+[   10.784159] systemd[1]: Mounting POSIX Message Queue File System...
+[   10.787736] systemd[1]: Mounting Kernel Debug File System...
+[   10.791181] systemd[1]: Mounting Kernel Trace File System...
+[   10.796308] systemd[1]: Mounting Temporary Directory /tmp...
+[   10.814370] systemd[1]: Starting Create List of Static Device Nodes...
+[   10.814666] systemd[1]: Load Kernel Module configfs skipped, unmet condition check ConditionKernelModuleLoaded=!configfs
+[   10.818047] systemd[1]: Mounting Kernel Configuration File System...
+[   10.818242] systemd[1]: Load Kernel Module drm skipped, unmet condition check ConditionKernelModuleLoaded=!drm
+[   10.818394] systemd[1]: Load Kernel Module fuse skipped, unmet condition check ConditionKernelModuleLoaded=!fuse
+[   10.821836] systemd[1]: Mounting FUSE Control File System...
+[   10.822249] systemd[1]: Stopping plymouth-start.service...
+[   10.822365] systemd[1]: plymouth-switch-root.service: Deactivated successfully.
+[   10.822467] systemd[1]: Stopped plymouth-switch-root.service.
+[   10.822986] systemd[1]: File System Check on Root Device skipped, unmet condition check ConditionPathIsReadWrite=!/
+[   10.823121] systemd[1]: Clear Stale Hibernate Storage Info skipped, unmet condition check ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-8cf2644b-4b0b-428f-9387-6d876050dc67
+[   10.833840] systemd[1]: Starting Journal Service...
+[   10.840602] systemd[1]: Load Kernel Modules skipped, no trigger condition checks were met.
+[   10.844398] systemd[1]: Starting Generate Network Units from Kernel Command Line...
+[   10.844827] systemd[1]: TPM PCR Machine ID Measurement skipped, unmet condition check ConditionSecurity=measured-os
+[   10.845004] systemd[1]: TPM PCR OS Separator skipped, unmet condition check ConditionSecurity=measured-os
+[   10.848712] systemd[1]: Starting Remount Root and Kernel File Systems...
+[   10.852543] systemd[1]: Starting Apply Kernel Variables...
+[   10.852959] systemd[1]: Early TPM SRK Setup skipped, unmet condition check ConditionSecurity=measured-os
+[   10.853107] systemd[1]: TPM PCR NvPCR Initialization Separator skipped, unmet condition check ConditionPathExists=/etc/initrd-release
+[   10.853251] systemd[1]: TPM NvPCR Product ID Measurement skipped, unmet condition check ConditionSecurity=measured-os
+[   10.857342] systemd[1]: Starting Load udev Rules from Credentials...
+[   10.861292] systemd[1]: Starting Coldplug All udev Devices...
+[   10.861585] systemd[1]: systemd-vconsole-setup.service: Deactivated successfully.
+[   10.861765] systemd[1]: Stopped Virtual Console Setup.
+[   10.874550] systemd[1]: plymouth-start.service: Deactivated successfully.
+[   10.875653] systemd[1]: Stopped plymouth-start.service.
+[   10.876320] systemd[1]: Received SIGRTMIN+21 from PID 232 (n/a).
+[   10.876847] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[   10.876948] systemd[1]: Reached target Local Encrypted Volumes.
+[   10.877026] systemd[1]: Reached target Path Units.
+[   10.913216] systemd[1]: Mounted Kernel Trace File System.
+[   10.913902] systemd[1]: Mounted Huge Pages File System.
+[   10.914320] systemd[1]: Mounted Temporary Directory /tmp.
+[   10.914754] systemd[1]: Mounted Kernel Configuration File System.
+[   10.915168] systemd[1]: Mounted FUSE Control File System.
+[   10.925625] systemd[1]: Finished Generate Network Units from Kernel Command Line.
+[   10.928546] systemd[1]: Mounted Kernel Debug File System.
+[   10.929159] systemd[1]: Mounted POSIX Message Queue File System.
+[   10.929581] systemd[1]: Reached target Preparation for Network.
+[   10.930001] EXT4-fs (sda2): re-mounted 0fa7e9f0-a100-4462-9f9b-830cd40c1015.
+[   10.930554] systemd[1]: Listening on Network Management Resolve Hook Socket.
+[   10.933972] systemd[1]: Finished Remount Root and Kernel File Systems.
+[   10.936670] systemd[1]: Rebuild Hardware Database skipped, unmet condition check ConditionNeedsUpdate=/etc
+[   10.940625] systemd[1]: Starting Load/Save OS Random Seed...
+[   10.940748] systemd[1]: TPM SRK Setup skipped, unmet condition check ConditionSecurity=measured-os
+[   10.942109] systemd[1]: Finished Create List of Static Device Nodes.
+[   10.945905] systemd[1]: Starting Create Static Device Nodes in /dev gracefully...
+[   10.964692] systemd[1]: Finished Apply Kernel Variables.
+[   10.966478] systemd[1]: Finished Load udev Rules from Credentials.
+[   10.987967] systemd-journald[349]: Collecting audit messages is disabled.
+[   11.007511] systemd[1]: Started Journal Service.
+[   11.096669] systemd-journald[349]: Received client request to flush runtime journal.
+[   11.154671] systemd-journald[349]: /var/log/journal/49125d4ad22b41dba8e92f649f3d6f9a/system.journal: Realtime clock jumped backwards relative to last journal entry, rotating.
+[   11.154745] systemd-journald[349]: Rotating system journal.
+[   14.116386] input: PC Speaker as /devices/platform/pcspkr/input/input4
+[   14.116592] RAPL PMU: API unit is 2^-32 Joules, 0 fixed counters, 10737418240 ms ovfl timer
+[   14.119910] acpi_cpufreq: overriding BIOS provided _PSD data
+[   14.119944] acpi_cpufreq: P-state transition latency capped at 20 uS
+[   14.129687] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[   14.151631] Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[   14.152894] Loaded X.509 cert 'wens: 61c038651aabdcf94bd0ac7ff06c7248db18c600'
+[   14.160084] faux_driver regulatory: Direct firmware load for regulatory.db failed with error -2
+[   14.160158] cfg80211: failed to load regulatory.db
+[   14.193706] piix4_smbus 0000:00:14.0: SMBus Host Controller at 0xb00, revision 0
+[   14.193753] piix4_smbus 0000:00:14.0: Using register 0x2e for SMBus port selection
+[   14.194296] piix4_smbus 0000:00:14.0: Auxiliary SMBus Host Controller at 0xb20
+[   14.289099] sp5100_tco: SP5100/SB800 TCO WatchDog Timer Driver
+[   14.289438] sp5100-tco sp5100-tco: Using 0xfed80b00 for watchdog MMIO address
+[   14.289937] sp5100-tco sp5100-tco: initialized. heartbeat=60 sec (nowayout=0)
+[   14.425357] r8169 0000:04:00.0 eth0: RTL8168h/8111h, 00:00:00:00:00:00, XID 541, IRQ 37
+[   14.425423] r8169 0000:04:00.0 eth0: jumbo features [frames: 9194 bytes, tx checksumming: ko]
+[   14.475289] r8169 0000:04:00.0 enp4s0: renamed from eth0
+[   14.483575] FAT-fs (sda1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+[   14.519500] r8169 0000:04:00.0: Unable to load firmware rtl_nic/rtl8168h-2.fw (-2)
+[   14.540737] Generic FE-GE Realtek PHY r8169-0-400:00: attached PHY driver (mii_bus:phy_addr=r8169-0-400:00, irq=MAC)
+[   14.558363] amd_atl: AMD Address Translation Library initialized
+[   14.641788] r8169 0000:04:00.0 enp4s0: Link is Down
+[   14.706132] snd_hda_intel 0000:01:00.1: enabling device (0000 -> 0002)
+[   14.814664] input: HD-Audio Generic HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:08.1/0000:01:00.1/sound/card0/input5
+[   14.815993] input: HD-Audio Generic HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:08.1/0000:01:00.1/sound/card0/input6
+[   18.200125] r8169 0000:04:00.0 enp4s0: Link is Up - 1Gbps/Full - flow control rx/tx

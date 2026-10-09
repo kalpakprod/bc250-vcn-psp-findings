@@ -1,0 +1,52 @@
+Verified transaction: new wrapper-only static review; pristine baseline is zero bytes.
+
+Four role paths (absolute; all reopened)
+- MODIFIED_FILE: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-field660-wrapper-review.md
+- DIFF_FILE: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-field660-wrapper-review.diff
+- VERIFICATION.txt: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-field660-wrapper-review-VERIFICATION.txt
+- executable ROLLBACK.sh: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-field660-wrapper-review-ROLLBACK.sh
+- baseline copy: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-field660-wrapper-review-pristine.md
+- rollback-test copy: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/field660-wrapper-rollback-test.md
+- reconstructed copy: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/field660-wrapper-reconstruction/reconstructed-field660-wrapper-review.md
+
+Bound objective/state
+- Objective attachment read first: /home/OWNER/orca/projects/bc250/docs/research/20260920-clv-abl1-context660-target-semantics.md
+- Latest active field660 result: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-context660-target-semantics/abl1-context660-semantics-result.json; status PASS, checks 96, SHA-256 b625689c4e58c5949469dc2b0cb241b94a22c3ba0edaf18fd138a14d7b3906c3.
+- No matching machine checkpoint was found by scoped name; no initializer/callback-target analysis was repeated.
+
+Exact inputs
+- CLV ROM: /home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin; size 16777216; SHA-256 ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8.
+- ABL1 raw: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin; size 94624; SHA-256 af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a.
+- ABL1 ELF object: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o; SHA-256 adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6.
+- ELF `.data` dump: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T195201+0500-10958-wrapper-byte-check.data.bin; SHA-256 af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a; byte-identical to the ABL1 raw input.
+
+Commands and literal results
+- First attempt: `llvm-objdump -d --triple=thumbv7m-none-eabi --start-address=0x10958 --stop-address=0x109A0 /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o`; exit 0; stdout `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T194314+0500-10958-wrapper.objdump` contains only the ELF header; stderr `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T194314+0500-10958-wrapper.stderr` empty. This was corrected because `.data` is non-executable.
+- Correct disassembly: `llvm-objdump -D -j .data --triple=thumbv7m-none-eabi --start-address=0x10958 --stop-address=0x109A0 /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o`; tool `LLVM (http://llvm.org/):`; exit 0; stdout `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T194546+0500-10958-wrapper-disassemble-all.objdump`; stderr `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T194546+0500-10958-wrapper-disassemble-all.stderr` empty.
+- Data extraction: `llvm-objcopy --dump-section .data=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T195201+0500-10958-wrapper-byte-check.data.bin /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o`; tool `llvm-objcopy, compatible with GNU objcopy`; exit 0; stdout `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T195201+0500-10958-wrapper-byte-check.objcopy.stdout` empty; stderr `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T195201+0500-10958-wrapper-byte-check.objcopy.stderr` empty.
+- Exact wrapper verifier command: `/usr/bin/python3 -B /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T195521+0500-10958-wrapper-verification.py /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T195201+0500-10958-wrapper-byte-check.data.bin /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T194546+0500-10958-wrapper-disassemble-all.objdump /home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o`; exit `0`; stdout `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T195521+0500-10958-wrapper-verification.stdout`; stderr `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T195521+0500-10958-wrapper-verification.stderr` empty; result `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/run-20260921T195521+0500-10958-wrapper-verification.json`.
+- Literal verifier summary: `{"status":"PASS","checks":{"passed":12,"failed":0,"total":12},"accepted_claim":"Within bytes 0x10958..0x1096A, the wrapper preserves incoming R0 for the indirect callback and does not write through that pointer.","rejected_claim":"The wrapper itself mutates the pointee addressed by incoming R0."}`.
+- Verifier stdout SHA-256: e30ca1b2ee66e5395893659baf22632c84e545cdfee465cd67edaa4fdf3ca5d7; stderr SHA-256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855; verifier source SHA-256: 8a3e6d674ab5975219309c9352aca306d20e85c7f8780f0bdf83e6650b999297; machine result SHA-256: e30ca1b2ee66e5395893659baf22632c84e545cdfee465cd67edaa4fdf3ca5d7.
+
+Observed wrapper sequence and accepted/rejected semantic claim
+- Range: `0x10958..0x1096A`; bytes `30b4d0f8604613460a46a44630bc01216047`.
+- Instructions: `push {r4,r5}; ldr.w r4,[r0,#0x660]; mov r3,r2; mov r2,r1; mov r12,r4; pop {r4,r5}; movs r1,#1; bx r12`.
+- Accepted: incoming pointer-like R0 is preserved into callback R0; callback target is read from `[R0+0x660]`; callback R1=1, R2=entry R1, R3=entry R2; LR is retained for a tail call.
+- Rejected within wrapper: mutation of the pointee addressed by entry R0. No STR/STM through R0 exists in the bounded wrapper. Callback body may still mutate the object.
+- Checks: 12/12 PASS (ROM/ABL/object identity; section equality; exact bytes/listing; R0 unchanged; no R0 store; balanced save/restore; BX R12). Static-analysis/observed-bytes only.
+
+BASELINE / MODIFIED / ROLLBACK behavior — same predicate/input form
+- Predicate: `python3 -B -c 'import pathlib,sys; s=pathlib.Path(sys.argv[1]).read_text(); ok="wrapper_semantic_claim=PASS_R0_PRESERVED_NO_POINTEE_WRITE" in s; print("field660_wrapper="+("PASS_POINTER_PRESERVED" if ok else "ABSENT")); sys.exit(0 if ok else 1)' FILE`.
+- BASELINE `/home/OWNER/orca/projects/bc250/docs/research/2026-09-21-field660-wrapper-review-pristine.md` SHA-256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`: stdout `field660_wrapper=ABSENT`; stderr empty; exit 1.
+- MODIFIED_FILE `/home/OWNER/orca/projects/bc250/docs/research/2026-09-21-field660-wrapper-review.md` SHA-256 `ee48fc72ab202a943d83d6e30c26fe03e319d168fc3e5cd73d4d0256ff73398d`: stdout `field660_wrapper=PASS_POINTER_PRESERVED`; stderr empty; exit 0.
+- ROLLBACK `/home/OWNER/orca/projects/bc250/docs/research/2026-09-21-field660-wrapper-review-ROLLBACK.sh /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-field660-wrapper-review/field660-wrapper-rollback-test.md`: stdout `''`; stderr `''`; exit 0; restored SHA-256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` equals zero-byte baseline.
+- Same predicate on restored copy: stdout `field660_wrapper=ABSENT`; stderr empty; exit 1.
+- Reapply GOAL to MODIFIED_FILE after rollback test from saved bytes: stdout `field660_wrapper=PASS_POINTER_PRESERVED`; stderr empty; exit 0; final hash `ee48fc72ab202a943d83d6e30c26fe03e319d168fc3e5cd73d4d0256ff73398d`.
+
+DIFF reconstruction
+- `diff -u --label field660-wrapper-review-pristine.md --label field660-wrapper-review-pristine.md BASELINE MODIFIED_FILE > DIFF_FILE`: exit 1 (1 expected), stderr empty.
+- `patch -p0 -i DIFF_FILE`: exit 0; stdout `patching file field660-wrapper-review-pristine.md`; stderr ``.
+- Reconstructed SHA-256 `ee48fc72ab202a943d83d6e30c26fe03e319d168fc3e5cd73d4d0256ff73398d` equals MODIFIED_FILE; byte comparison passed.
+
+Limits
+- Callback implementation/side effects, field initializer semantics, runtime, SVC, MMIO/PLL, physical clocks, hardware and safety remain untested/unproven. No network or firmware/ROM writes.

@@ -1,0 +1,160 @@
+===== 00000f90 in FUN_00000f90 =====
+
+undefined4 FUN_00000f90(int param_1)
+
+{
+  memw();
+  return **(undefined4 **)(PTR_DAT_00000ba0 + param_1 * 0xc + 0x14);
+}
+
+
+===== 00000fc0 in FUN_00000fc0 =====
+
+void FUN_00000fc0(undefined4 param_1,undefined4 param_2)
+
+{
+  undefined *puVar1;
+  
+  puVar1 = PTR_DAT_00000ba0;
+  *(undefined4 *)(PTR_DAT_00000ba0 + 4) = param_1;
+  *(undefined4 *)puVar1 = param_2;
+  return;
+}
+
+
+===== 000026b4 in FUN_000026b4 =====
+
+undefined4
+FUN_000026b4(undefined4 param_1,byte param_2,undefined4 param_3,undefined2 param_4,int param_5,
+            byte param_6)
+
+{
+  byte bVar1;
+  byte bVar2;
+  bool bVar3;
+  undefined *puVar4;
+  undefined *puVar5;
+  undefined4 unaff_retaddr;
+  int iVar6;
+  undefined4 *puVar7;
+  char cVar8;
+  int iVar9;
+  uint uVar10;
+  undefined4 uVar11;
+  undefined4 uVar12;
+  code *UNRECOVERED_JUMPTABLE;
+  int in_LCOUNT;
+  undefined1 in_MISC1;
+  
+  puVar5 = PTR_DAT_00000d28;
+  uVar10 = (uint)param_2;
+  bVar3 = false;
+  uVar12 = 0;
+  uVar11 = rsil(2);
+  if ((param_5 == 0) && (0xe < (byte)PTR_DAT_00000d28[0xbc])) {
+    wsr(0,uVar11);
+    return 2;
+  }
+  if (PTR_DAT_00000d28[0xbc] == 0x14) {
+    memw();
+                    /* WARNING: Subroutine does not return */
+    FUN_00001b78(1,9,0,*(undefined4 *)(DAT_00000b68 + 0x228));
+  }
+  bVar1 = PTR_DAT_00000d28[0xbe];
+  puVar7 = (undefined4 *)(PTR_DAT_00000cb0 + (uint)bVar1 * 0xc);
+  PTR_DAT_00000d28[0xbe] = *(undefined1 *)((int)puVar7 + 10);
+  *(undefined2 *)(puVar7 + 2) = param_4;
+  puVar7[1] = param_3;
+  *puVar7 = param_1;
+  *(byte *)((int)puVar7 + 0xb) = *(byte *)((int)puVar7 + 0xb) & 0xf0 | param_2 & 0xf;
+  *(byte *)((int)puVar7 + 0xb) = *(byte *)((int)puVar7 + 0xb) & 0xef | (param_6 & 1) << 4;
+  puVar4 = PTR_DAT_00000cb0;
+  if (puVar5[0xbc] != '\0') {
+    if (PTR_DAT_00000cb0[uVar10 + 0xf0] != '\0') {
+      *(undefined *)((int)puVar7 + 10) =
+           PTR_DAT_00000cb0[(uint)(byte)PTR_DAT_00000cb0[uVar10 + 0xf8] * 0xc + 10];
+      bVar2 = puVar4[uVar10 + 0xf8];
+LAB_00002752:
+      puVar4[(uint)bVar2 * 0xc + 10] = bVar1;
+      goto LAB_00002758;
+    }
+    if (uVar10 == 0) {
+      *(undefined *)((int)puVar7 + 10) = puVar5[0xbd];
+    }
+    else {
+      cVar8 = (char)(uVar10 - 1);
+      iVar6 = (int)cVar8;
+      if ((uVar10 - 1 & 0x80) == 0) {
+        iVar9 = (uint)(uVar10 == 0) + (uVar10 != 0) * uVar10;
+        in_LCOUNT = iVar9 + -1;
+        UNRECOVERED_JUMPTABLE = (code *)0x27c9;
+        if (iVar9 != 0) {
+          if (PTR_DAT_00000cb0[iVar6 + 0xf0] == '\0') {
+            iVar6 = (int)(char)(cVar8 + -1);
+          }
+          else {
+            bVar3 = true;
+          }
+        }
+      }
+                    /* WARNING: Could not recover jumptable at 0x000027d5. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      if (in_LCOUNT != 0) {
+        uVar11 = (*UNRECOVERED_JUMPTABLE)();
+        return uVar11;
+      }
+      if (bVar3) {
+        *(undefined *)((int)puVar7 + 10) =
+             PTR_DAT_00000cb0[(uint)(byte)PTR_DAT_00000cb0[iVar6 + 0xf8] * 0xc + 10];
+        bVar2 = puVar4[iVar6 + 0xf8];
+        goto LAB_00002752;
+      }
+      *(undefined *)((int)puVar7 + 10) = puVar5[0xbd];
+    }
+  }
+  puVar5[0xbd] = bVar1;
+LAB_00002758:
+  puVar4[uVar10 + 0xf0] = puVar4[uVar10 + 0xf0] + '\x01';
+  puVar5[0xbc] = puVar5[0xbc] + '\x01';
+  puVar4[uVar10 + 0xf8] = bVar1;
+  bVar1 = puVar5[0xbc];
+  if ((0xe < bVar1) && (param_5 == 1)) {
+    uVar12 = 1;
+  }
+  bVar2 = puVar5[0xc0];
+  puVar5[0xc0] = (bVar2 < bVar1) * bVar1 + (bVar2 >= bVar1) * bVar2;
+  if ((*(int *)(puVar5 + 0xf0) == 0) && (uVar10 < *(byte *)(*(int *)(puVar5 + 0xec) + 0x29))) {
+    wsr(0,uVar11);
+    wsr(in_MISC1,unaff_retaddr);
+    FUN_00002de8();
+  }
+  else {
+    wsr(0,uVar11);
+  }
+  return uVar12;
+}
+
+
+===== 00007898 in thunk_FUN_0000789c =====
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void thunk_FUN_0000789c(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+===== 000079b8 in FUN_000079b8 =====
+
+void FUN_000079b8(void)
+
+{
+  do {
+    ill();
+  } while( true );
+}
+
+

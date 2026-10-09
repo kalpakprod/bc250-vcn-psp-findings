@@ -1,0 +1,7 @@
+ghidra=/home/OWNER/tools/ghidra_12.1.3_PUBLIC
+ghidra_source_script=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass/OcConsumerRead.java
+ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8  /home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin
+cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37  /home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5
+e2cbf970afc422d31ee6651035a1f67132a5c4842801290fc3d60d5db408dd3b  /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass/OcConsumerRead.java
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass/project/OCConsumer.gpr
+command=/home/OWNER/tools/ghidra_12.1.3_PUBLIC/support/analyzeHeadless /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-smu-domain-selector/ghidra-project OCConsumer -process smu_fw_robin_5 -noanalysis -scriptPath /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass -postScript OcConsumerRead.java /home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5 /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-smu-domain-selector/q3-aligned-ghidra.txt 0x2ea08 0x2e788 0x23890 0x235c8 0x23c78 0x23ecc 0x3acf8

@@ -1,0 +1,630 @@
+{
+  "status": "PASS",
+  "checks": 96,
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "abl": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "dis": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+    "prior": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-context660-callback-xhigh/abl1-context660-callback-result.json"
+  },
+  "hashes": {
+    "abl": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "dis": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+    "prior": "cf16bf73c370bac1c4426f7c79e64890898a11da7743304528ddeccfe3cd7ecb"
+  },
+  "conditional_pointer_map": {
+    "base": "0x57100",
+    "literal": "0x00060BD9",
+    "thumb_target": "0x9AD9",
+    "entry": "0x9AD8"
+  },
+  "verified_operations": {
+    "read_helper_0x6DA4": "SVC #4 maps descriptor>>12, masks descriptor to offset, then type-3 LDR [mapped+offset] and STR to supplied output pointer",
+    "write_helper_0x6E70": "SVC #4 maps descriptor>>12, masks descriptor to offset, then type-3 LDR from supplied value pointer and STR to mapped+offset",
+    "no_op_helper": "0x6C1C/0x6C1E = BX LR"
+  },
+  "semantics": {
+    "entry_arguments": {
+      "incoming_R0": "context object",
+      "incoming_R1": "dispatcher-normalized constant 1 (saved at [SP+0x38])",
+      "incoming_R2": "dispatcher token; low 12 bits index context table [R0+0x44], so 0x61E -> table[0x61E]",
+      "incoming_R3": "dispatcher-selected value; copied to R11 and inserted into the selected field"
+    },
+    "descriptor_shape": {
+      "outer_entry": "table[token_index] at [context+0x44]",
+      "nested_index": "outer descriptor bits 12..23",
+      "field_start": "outer descriptor bits 0..5",
+      "field_end": "outer descriptor bits 6..11",
+      "wide_flag": "outer descriptor bit 30",
+      "nested_entry": "table[nested_index]"
+    },
+    "possible_target_semantics": {
+      "normal_field_path": "For a non-wide descriptor with nested index below 0x671, 0x6DA4 maps descriptor>>12 via SVC #4, reads byte/halfword/word (target supplies type 3), and stores the read word to [SP+0x14]; 0x9D20..0x9D28 merges R3-selected bits into that local word.",
+      "wide_or_high_index_path": "For wide/high-index descriptors, the callback can seed [SP+0x14] from R3 and call 0x6E70; 0x6E70 maps descriptor>>12 via SVC #4 and writes the local word to the mapped address (target supplies type 3).",
+      "stub_callee": "0x6C1C and 0x6C1E are BX LR stubs at exact aligned entries."
+    },
+    "classification": "generic descriptor-indexed register field read/modify/write helper; not proven to be the active Fclk callback",
+    "active_binding": "unproven: this result does not recover the live context table/descriptor bytes or dataflow-identify the current dispatcher R4 object with the initializer R5 object"
+  },
+  "checks_detail": [
+    {
+      "check": "ABL SHA-256",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "Thumb listing SHA-256",
+      "passed": true,
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    {
+      "check": "prior pointer result status",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "prior conditional candidate base",
+      "passed": true,
+      "got": "0x57100 (conditional static mapping, not loader proof)",
+      "expected": "0x57100 (conditional static mapping, not loader proof)"
+    },
+    {
+      "check": "pointer arithmetic",
+      "passed": true,
+      "got": 39641,
+      "expected": 39641
+    },
+    {
+      "check": "Thumb entry",
+      "passed": true,
+      "got": 39640,
+      "expected": 39640
+    },
+    {
+      "check": "raw bytes 0x107E8",
+      "passed": true,
+      "got": "40f21e61",
+      "expected": "40f21e61"
+    },
+    {
+      "check": "raw bytes 0x1081E",
+      "passed": true,
+      "got": "2046",
+      "expected": "2046"
+    },
+    {
+      "check": "raw bytes 0x10820",
+      "passed": true,
+      "got": "00f09af8",
+      "expected": "00f09af8"
+    },
+    {
+      "check": "raw bytes 0x10958",
+      "passed": true,
+      "got": "30b4",
+      "expected": "30b4"
+    },
+    {
+      "check": "raw bytes 0x1095A",
+      "passed": true,
+      "got": "d0f86046",
+      "expected": "d0f86046"
+    },
+    {
+      "check": "raw bytes 0x1095E",
+      "passed": true,
+      "got": "1346",
+      "expected": "1346"
+    },
+    {
+      "check": "raw bytes 0x10960",
+      "passed": true,
+      "got": "0a46",
+      "expected": "0a46"
+    },
+    {
+      "check": "raw bytes 0x10966",
+      "passed": true,
+      "got": "0121",
+      "expected": "0121"
+    },
+    {
+      "check": "raw bytes 0x10968",
+      "passed": true,
+      "got": "6047",
+      "expected": "6047"
+    },
+    {
+      "check": "raw bytes 0x9AD8",
+      "passed": true,
+      "got": "2de9ff4f",
+      "expected": "2de9ff4f"
+    },
+    {
+      "check": "raw bytes 0x9ADE",
+      "passed": true,
+      "got": "0546",
+      "expected": "0546"
+    },
+    {
+      "check": "raw bytes 0x9AE2",
+      "passed": true,
+      "got": "9b46",
+      "expected": "9b46"
+    },
+    {
+      "check": "raw bytes 0x9AE8",
+      "passed": true,
+      "got": "c2f30b00",
+      "expected": "c2f30b00"
+    },
+    {
+      "check": "raw bytes 0x9AF0",
+      "passed": true,
+      "got": "0f90",
+      "expected": "0f90"
+    },
+    {
+      "check": "raw bytes 0x9B18",
+      "passed": true,
+      "got": "686c",
+      "expected": "686c"
+    },
+    {
+      "check": "raw bytes 0x9B1C",
+      "passed": true,
+      "got": "50f82160",
+      "expected": "50f82160"
+    },
+    {
+      "check": "raw bytes 0x9B2C",
+      "passed": true,
+      "got": "c6f30b31",
+      "expected": "c6f30b31"
+    },
+    {
+      "check": "raw bytes 0x9B32",
+      "passed": true,
+      "got": "c6f38518",
+      "expected": "c6f38518"
+    },
+    {
+      "check": "raw bytes 0x9B36",
+      "passed": true,
+      "got": "c6f30507",
+      "expected": "c6f30507"
+    },
+    {
+      "check": "raw bytes 0x9B40",
+      "passed": true,
+      "got": "c6f3807a",
+      "expected": "c6f3807a"
+    },
+    {
+      "check": "raw bytes 0x9B54",
+      "passed": true,
+      "got": "50f82160",
+      "expected": "50f82160"
+    },
+    {
+      "check": "raw bytes 0x9BFA",
+      "passed": true,
+      "got": "cdf814b0",
+      "expected": "cdf814b0"
+    },
+    {
+      "check": "raw bytes 0x9BB8",
+      "passed": true,
+      "got": "2b68",
+      "expected": "2b68"
+    },
+    {
+      "check": "raw bytes 0x9BBA",
+      "passed": true,
+      "got": "0320",
+      "expected": "0320"
+    },
+    {
+      "check": "raw bytes 0x9BBC",
+      "passed": true,
+      "got": "05aa",
+      "expected": "05aa"
+    },
+    {
+      "check": "raw bytes 0x9BBE",
+      "passed": true,
+      "got": "3146",
+      "expected": "3146"
+    },
+    {
+      "check": "raw bytes 0x9BC0",
+      "passed": true,
+      "got": "fdf72cf8",
+      "expected": "fdf72cf8"
+    },
+    {
+      "check": "raw bytes 0x9C22",
+      "passed": true,
+      "got": "2b68",
+      "expected": "2b68"
+    },
+    {
+      "check": "raw bytes 0x9C24",
+      "passed": true,
+      "got": "0320",
+      "expected": "0320"
+    },
+    {
+      "check": "raw bytes 0x9C26",
+      "passed": true,
+      "got": "05aa",
+      "expected": "05aa"
+    },
+    {
+      "check": "raw bytes 0x9C28",
+      "passed": true,
+      "got": "2146",
+      "expected": "2146"
+    },
+    {
+      "check": "raw bytes 0x9C2A",
+      "passed": true,
+      "got": "fdf7bbf8",
+      "expected": "fdf7bbf8"
+    },
+    {
+      "check": "raw bytes 0x9D20",
+      "passed": true,
+      "got": "0bea0002",
+      "expected": "0bea0002"
+    },
+    {
+      "check": "raw bytes 0x9D24",
+      "passed": true,
+      "got": "ba40",
+      "expected": "ba40"
+    },
+    {
+      "check": "raw bytes 0x9D26",
+      "passed": true,
+      "got": "0a43",
+      "expected": "0a43"
+    },
+    {
+      "check": "raw bytes 0x9D28",
+      "passed": true,
+      "got": "0592",
+      "expected": "0592"
+    },
+    {
+      "check": "raw bytes 0x9D38",
+      "passed": true,
+      "got": "fcf771ff",
+      "expected": "fcf771ff"
+    },
+    {
+      "check": "raw bytes 0x9D8E",
+      "passed": true,
+      "got": "2b68",
+      "expected": "2b68"
+    },
+    {
+      "check": "raw bytes 0x9D90",
+      "passed": true,
+      "got": "0320",
+      "expected": "0320"
+    },
+    {
+      "check": "raw bytes 0x9D92",
+      "passed": true,
+      "got": "05aa",
+      "expected": "05aa"
+    },
+    {
+      "check": "raw bytes 0x9D94",
+      "passed": true,
+      "got": "2146",
+      "expected": "2146"
+    },
+    {
+      "check": "raw bytes 0x9D96",
+      "passed": true,
+      "got": "fdf76bf8",
+      "expected": "fdf76bf8"
+    },
+    {
+      "check": "raw bytes 0x6C1C",
+      "passed": true,
+      "got": "7047",
+      "expected": "7047"
+    },
+    {
+      "check": "raw bytes 0x6C1E",
+      "passed": true,
+      "got": "7047",
+      "expected": "7047"
+    },
+    {
+      "check": "raw bytes 0x6DA4",
+      "passed": true,
+      "got": "2de9f041",
+      "expected": "2de9f041"
+    },
+    {
+      "check": "raw bytes 0x6DCC",
+      "passed": true,
+      "got": "300b",
+      "expected": "300b"
+    },
+    {
+      "check": "raw bytes 0x6DCE",
+      "passed": true,
+      "got": "c6f30b04",
+      "expected": "c6f30b04"
+    },
+    {
+      "check": "raw bytes 0x6DD2",
+      "passed": true,
+      "got": "0003",
+      "expected": "0003"
+    },
+    {
+      "check": "raw bytes 0x6DD4",
+      "passed": true,
+      "got": "04df",
+      "expected": "04df"
+    },
+    {
+      "check": "raw bytes 0x6E02",
+      "passed": true,
+      "got": "335d",
+      "expected": "335d"
+    },
+    {
+      "check": "raw bytes 0x6E06",
+      "passed": true,
+      "got": "2b70",
+      "expected": "2b70"
+    },
+    {
+      "check": "raw bytes 0x6E0A",
+      "passed": true,
+      "got": "335b",
+      "expected": "335b"
+    },
+    {
+      "check": "raw bytes 0x6E0E",
+      "passed": true,
+      "got": "2b80",
+      "expected": "2b80"
+    },
+    {
+      "check": "raw bytes 0x6E1A",
+      "passed": true,
+      "got": "3359",
+      "expected": "3359"
+    },
+    {
+      "check": "raw bytes 0x6E1E",
+      "passed": true,
+      "got": "2b60",
+      "expected": "2b60"
+    },
+    {
+      "check": "raw bytes 0x6E70",
+      "passed": true,
+      "got": "f8b5",
+      "expected": "f8b5"
+    },
+    {
+      "check": "raw bytes 0x6EA6",
+      "passed": true,
+      "got": "280b",
+      "expected": "280b"
+    },
+    {
+      "check": "raw bytes 0x6EA8",
+      "passed": true,
+      "got": "c5f30b06",
+      "expected": "c5f30b06"
+    },
+    {
+      "check": "raw bytes 0x6EAC",
+      "passed": true,
+      "got": "0003",
+      "expected": "0003"
+    },
+    {
+      "check": "raw bytes 0x6EAE",
+      "passed": true,
+      "got": "04df",
+      "expected": "04df"
+    },
+    {
+      "check": "raw bytes 0x6EE6",
+      "passed": true,
+      "got": "2068",
+      "expected": "2068"
+    },
+    {
+      "check": "raw bytes 0x6EE8",
+      "passed": true,
+      "got": "a851",
+      "expected": "a851"
+    },
+    {
+      "check": "listing operation 0x107E8",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x1081E",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x10820",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x1095A",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x1095E",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x10960",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x10966",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x10968",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x9AD8",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x9ADE",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x9AE2",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x9AE8",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x9B18",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x9B1C",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x9B2C",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x9B32",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x9B36",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x9B40",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x9B54",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x9BFA",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x9D20",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x9D28",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x6DD4",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x6E1A",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x6E1E",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x6EAE",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x6EE6",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "listing operation 0x6EE8",
+      "passed": true,
+      "got": true,
+      "expected": true
+    }
+  ]
+}

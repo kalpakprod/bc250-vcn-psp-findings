@@ -1,0 +1,550 @@
+{
+  "status": "PASS",
+  "route": "CbsBasePei Setup+0x330 -> token 0x1204 -> CBS INV serializer -> AmdFabricAriPei NVTB/HOB -> generic reader 0x1D3C/0x1E16",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis",
+    "emulated-or-host-tested"
+  ],
+  "input": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "modules": {
+    "CbsBasePei": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin",
+      "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    "AmdFabricAriPei": {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdFabricAriPei-c5b99650a442.bin",
+      "sha256": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78"
+    }
+  },
+  "field_matrix": [
+    {
+      "setup": 790,
+      "token": 4589,
+      "token_rva": 38967,
+      "flag_rva": 38981,
+      "source_rva": 38996,
+      "store_rva": 39005,
+      "flag": 0,
+      "source_width": 1
+    },
+    {
+      "setup": 816,
+      "token": 4612,
+      "token_rva": 40132,
+      "flag_rva": 40146,
+      "source_rva": 40161,
+      "store_rva": 40170,
+      "flag": 0,
+      "source_width": 1
+    },
+    {
+      "setup": 1699,
+      "token": 4913,
+      "token_rva": 55776,
+      "flag_rva": 55790,
+      "source_rva": 55805,
+      "store_rva": 55814,
+      "flag": 0,
+      "source_width": 1
+    },
+    {
+      "setup": 1795,
+      "token": 4979,
+      "token_rva": 59142,
+      "flag_rva": 59156,
+      "source_rva": 59171,
+      "store_rva": 59180,
+      "flag": 0,
+      "source_width": 1
+    },
+    {
+      "setup": 1796,
+      "token": 4980,
+      "token_rva": 59192,
+      "flag_rva": 59206,
+      "source_rva": 59224,
+      "store_rva": 59234,
+      "flag": 1,
+      "source_width": 2
+    }
+  ],
+  "gating": {
+    "event": "0xFFFFFFFE with wildcard CPU descriptors; callback pointer to CbsBasePei+0x36C0",
+    "size": "required 0x1605; insufficient buffer returns required size without header, sufficient buffer emits $INV",
+    "heap": "AmdFabricAriPei cache lookup uses HEAP/NVTB and GUID-HOB path; cache hit jumps to reader, miss serializes then reads",
+    "record": "$INV header required; FFFF token terminates; caller token equality gates returned value"
+  },
+  "override_divider": {
+    "override": "bounded reader is first-match; duplicate-token host control returns first record; no priority/override transform is observed in this path",
+    "divider": "Setup+0x330 is copied as a one-byte token 0x1204 value; no divide, frequency conversion, or clock-domain assignment occurs before the unresolved reader boundary",
+    "df_override_width": "Setup+0x703 -> 0x1373 is one byte; Setup+0x704 -> 0x1374 is a flag-1 two-byte value; width is record encoding, not proof of DF semantics"
+  },
+  "direct_reader_calls": [
+    {
+      "call_rva": "0x1ebd",
+      "token": 4351,
+      "call_bytes": "e87afeffff"
+    },
+    {
+      "call_rva": "0x1f94",
+      "token": 4356,
+      "call_bytes": "e8a3fdffff"
+    }
+  ],
+  "fresh_result": "The serializer has a concrete PEI consumer boundary: the NVTB/GUID-HOB cache and generic reader. Its only decoded direct request callsites in AmdFabricAriPei request 0x10FF and 0x1104; neither requests 0x1204. Thus UclkDiv1M0 is serialized and can be parsed by this generic reader, but no final clock/divider actuator or 0x1204 requester is statically established here.",
+  "bounded_uncertainty": "This does not exclude computed/indirect/GUID-driven/DMA consumers, runtime code, later phase migration, or hardware application. CbsBasePei omission from the prior matrix is not used as negative evidence.",
+  "checks": [
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ROM size",
+      "passed": true,
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "check": "CbsBasePei census stem",
+      "passed": true,
+      "got": "CbsBasePei-6ff112922ad8",
+      "expected": "CbsBasePei-6ff112922ad8"
+    },
+    {
+      "check": "CbsBasePei body sha256",
+      "passed": true,
+      "got": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+    },
+    {
+      "check": "CbsBasePei body size",
+      "passed": true,
+      "got": 81520,
+      "expected": 81520
+    },
+    {
+      "check": "AmdFabricAriPei census stem",
+      "passed": true,
+      "got": "AmdFabricAriPei-c5b99650a442",
+      "expected": "AmdFabricAriPei-c5b99650a442"
+    },
+    {
+      "check": "AmdFabricAriPei body sha256",
+      "passed": true,
+      "got": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "expected": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78"
+    },
+    {
+      "check": "AmdFabricAriPei body size",
+      "passed": true,
+      "got": 96680,
+      "expected": 96680
+    },
+    {
+      "check": "record token 0x11ed at 0x9837",
+      "passed": true,
+      "got": "baed110000",
+      "expected": "baed110000"
+    },
+    {
+      "check": "source Setup+0x316 load",
+      "passed": true,
+      "got": "8b55fc8a8216030000",
+      "expected": "8b55fc8a8216030000"
+    },
+    {
+      "check": "payload store width 0x11ed",
+      "passed": true,
+      "got": "884103",
+      "expected": "884103"
+    },
+    {
+      "check": "INV flag selection 0x11ed",
+      "passed": true,
+      "got": "8a510280e2fc8b45f8",
+      "expected": "8a510280e2fc8b45f8"
+    },
+    {
+      "check": "record token 0x1204 at 0x9cc4",
+      "passed": true,
+      "got": "ba04120000",
+      "expected": "ba04120000"
+    },
+    {
+      "check": "source Setup+0x330 load",
+      "passed": true,
+      "got": "8b55fc8a8230030000",
+      "expected": "8b55fc8a8230030000"
+    },
+    {
+      "check": "payload store width 0x1204",
+      "passed": true,
+      "got": "884103",
+      "expected": "884103"
+    },
+    {
+      "check": "INV flag selection 0x1204",
+      "passed": true,
+      "got": "8a510280e2fc8b45f8",
+      "expected": "8a510280e2fc8b45f8"
+    },
+    {
+      "check": "record token 0x1331 at 0xd9e0",
+      "passed": true,
+      "got": "ba31130000",
+      "expected": "ba31130000"
+    },
+    {
+      "check": "source Setup+0x6a3 load",
+      "passed": true,
+      "got": "8b55fc8a82a3060000",
+      "expected": "8b55fc8a82a3060000"
+    },
+    {
+      "check": "payload store width 0x1331",
+      "passed": true,
+      "got": "884103",
+      "expected": "884103"
+    },
+    {
+      "check": "INV flag selection 0x1331",
+      "passed": true,
+      "got": "8a510280e2fc8b45f8",
+      "expected": "8a510280e2fc8b45f8"
+    },
+    {
+      "check": "record token 0x1373 at 0xe706",
+      "passed": true,
+      "got": "ba73130000",
+      "expected": "ba73130000"
+    },
+    {
+      "check": "source Setup+0x703 load",
+      "passed": true,
+      "got": "8b55fc8a8203070000",
+      "expected": "8b55fc8a8203070000"
+    },
+    {
+      "check": "payload store width 0x1373",
+      "passed": true,
+      "got": "884103",
+      "expected": "884103"
+    },
+    {
+      "check": "INV flag selection 0x1373",
+      "passed": true,
+      "got": "8a510280e2fc8b45f8",
+      "expected": "8a510280e2fc8b45f8"
+    },
+    {
+      "check": "record token 0x1374 at 0xe738",
+      "passed": true,
+      "got": "ba74130000",
+      "expected": "ba74130000"
+    },
+    {
+      "check": "source Setup+0x704 load",
+      "passed": true,
+      "got": "8b55fc668b8204070000",
+      "expected": "8b55fc668b8204070000"
+    },
+    {
+      "check": "payload store width 0x1374",
+      "passed": true,
+      "got": "66894103",
+      "expected": "66894103"
+    },
+    {
+      "check": "INV flag selection 0x1374",
+      "passed": true,
+      "got": "8a510280e2fc80ca01",
+      "expected": "8a510280e2fc80ca01"
+    },
+    {
+      "check": "CBS wildcard event descriptor",
+      "passed": true,
+      "got": [
+        4294967295,
+        0,
+        166451020,
+        4294967294
+      ],
+      "expected": [
+        4294967295,
+        0,
+        166451020,
+        4294967294
+      ]
+    },
+    {
+      "check": "CBS nested wildcard CPU",
+      "passed": true,
+      "got": [
+        4294967295,
+        0
+      ],
+      "expected": [
+        4294967295,
+        0
+      ]
+    },
+    {
+      "check": "CBS nested descriptor pointer nonzero",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CBS PPI GUID",
+      "passed": true,
+      "got": "856c12044e5c8f45abc129f1f7da365e",
+      "expected": "856c12044e5c8f45abc129f1f7da365e"
+    },
+    {
+      "check": "CBS provider pointer",
+      "passed": true,
+      "got": 81344,
+      "expected": 81344
+    },
+    {
+      "check": "CBS callback pointer",
+      "passed": true,
+      "got": 14016,
+      "expected": 14016
+    },
+    {
+      "check": "CBS callback to serializer",
+      "passed": true,
+      "got": "e80d000000",
+      "expected": "e80d000000"
+    },
+    {
+      "check": "CBS serializer INV header",
+      "passed": true,
+      "got": "c70224494e56",
+      "expected": "c70224494e56"
+    },
+    {
+      "check": "CBS size gate",
+      "passed": true,
+      "got": "39017314e876e100",
+      "expected": "39017314e876e100"
+    },
+    {
+      "check": "CBS required size constant",
+      "passed": true,
+      "got": "b8e5150000",
+      "expected": "b8e5150000"
+    },
+    {
+      "check": "host size-gate discriminator",
+      "passed": true,
+      "got": {
+        "required": 5637,
+        "too_small": {
+          "input_size": 5636,
+          "emits_header": false,
+          "returned_size": 5637
+        },
+        "sufficient": {
+          "input_size": 5637,
+          "emits_header": true,
+          "returned_size": 5637
+        }
+      },
+      "expected": {
+        "required": 5637,
+        "too_small": {
+          "input_size": 5636,
+          "emits_header": false,
+          "returned_size": 5637
+        },
+        "sufficient": {
+          "input_size": 5637,
+          "emits_header": true,
+          "returned_size": 5637
+        }
+      }
+    },
+    {
+      "check": "Fabric reader entry",
+      "passed": true,
+      "got": "558bec83ec24",
+      "expected": "558bec83ec24"
+    },
+    {
+      "check": "Fabric NVTB handle",
+      "passed": true,
+      "got": "bb4e565442",
+      "expected": "bb4e565442"
+    },
+    {
+      "check": "Fabric cache branch",
+      "passed": true,
+      "got": "85c00f8494000000",
+      "expected": "85c00f8494000000"
+    },
+    {
+      "check": "Fabric miss size request",
+      "passed": true,
+      "got": "e899190000",
+      "expected": "e899190000"
+    },
+    {
+      "check": "Fabric serialize call",
+      "passed": true,
+      "got": "e83f190000",
+      "expected": "e83f190000"
+    },
+    {
+      "check": "Fabric INV header gate",
+      "passed": true,
+      "got": "813e24494e56740b",
+      "expected": "813e24494e56740b"
+    },
+    {
+      "check": "Fabric heap GUID",
+      "passed": true,
+      "got": "1a167dd9cd16da4ab9f6aec3f9fccc2c",
+      "expected": "1a167dd9cd16da4ab9f6aec3f9fccc2c"
+    },
+    {
+      "check": "Fabric IDS header",
+      "passed": true,
+      "got": "2449445301000000",
+      "expected": "2449445301000000"
+    },
+    {
+      "check": "Fabric record flag switch",
+      "passed": true,
+      "got": "0fb6460283e00383e800743848742d48",
+      "expected": "0fb6460283e00383e800743848742d48"
+    },
+    {
+      "check": "Fabric flag2 u32 read/advance",
+      "passed": true,
+      "got": "8b4603836704006a07",
+      "expected": "8b4603836704006a07"
+    },
+    {
+      "check": "Fabric token compare",
+      "passed": true,
+      "got": "668b06663b4508740c03f3",
+      "expected": "668b06663b4508740c03f3"
+    },
+    {
+      "check": "Fabric FFFF terminator",
+      "passed": true,
+      "got": "b8ffff0000663906759ab8ffff0000",
+      "expected": "b8ffff0000663906759ab8ffff0000"
+    },
+    {
+      "check": "Fabric CreateHob call",
+      "passed": true,
+      "got": "ff5134",
+      "expected": "ff5134"
+    },
+    {
+      "check": "direct Fabric reader callsites",
+      "passed": true,
+      "got": [
+        [
+          "0x1ebd",
+          4351
+        ],
+        [
+          "0x1f94",
+          4356
+        ]
+      ],
+      "expected": [
+        [
+          "0x1ebd",
+          4351
+        ],
+        [
+          "0x1f94",
+          4356
+        ]
+      ]
+    },
+    {
+      "check": "no direct 0x1204 reader request",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "host typed lookup values",
+      "passed": true,
+      "got": {
+        "4612": 0,
+        "4979": 1,
+        "4980": 1400,
+        "4589": 35,
+        "4913": 1
+      },
+      "expected": {
+        "4612": 0,
+        "4979": 1,
+        "4980": 1400,
+        "4589": 35,
+        "4913": 1
+      }
+    },
+    {
+      "check": "host absent callsite tokens",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "host missing token",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "host width semantics",
+      "passed": true,
+      "got": {
+        "0x1204": 0,
+        "0x1373": 0,
+        "0x1374": 1
+      },
+      "expected": {
+        "0x1204": 0,
+        "0x1373": 0,
+        "0x1374": 1
+      }
+    },
+    {
+      "check": "host first-match override order",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "host raw divider preservation",
+      "passed": true,
+      "got": {
+        "0": 0,
+        "1": 1,
+        "127": 127
+      },
+      "expected": {
+        "0": 0,
+        "1": 1,
+        "127": 127
+      }
+    }
+  ],
+  "source_reports": [
+    "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/verification.json",
+    "/home/OWNER/orca/projects/bc250/docs/research/20260919-inv-buffer-lifetime.md"
+  ]
+}

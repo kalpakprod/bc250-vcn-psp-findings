@@ -1,0 +1,67 @@
+{
+  "generated_at": "2026-09-11T10:35:21.133435+00:00",
+  "evidence_class": "observed CAD wiring + host inventory; no hardware verification",
+  "boardview": {
+    "path": "evidence/boardview/bc250-connector-map.json",
+    "sha256": "fe6314c8098e146d2139da71dbb6dca75222f7bc639326f94061049929fc2379",
+    "physical_verification": false
+  },
+  "candidate_header": {
+    "name": "J2",
+    "type": "CON_2X10_SAMTEC_FTSH",
+    "signals": {
+      "TCK": "pin2",
+      "TMS": "pin4",
+      "TDO": "pin8",
+      "TDI": "pin6 -> N22562912 -> R19 -> CPU_TDI",
+      "TRST#": "pin9 -> N22563682 -> R120 -> CPU_TRST#",
+      "power": [
+        "pin1 +1.8V",
+        "pin19 +1.8V"
+      ],
+      "ground": [
+        "pin3",
+        "pin5",
+        "pin7",
+        "pin17"
+      ]
+    }
+  },
+  "host_tools": {
+    "openocd": false,
+    "jtag": false,
+    "urjtag": false,
+    "pyocd": false,
+    "probe-rs": false,
+    "JLinkExe": false,
+    "blackmagic": false,
+    "gdb-multiarch": false
+  },
+  "adapter_candidate": {
+    "usb_identity": "1a86:55db CH347T-compatible",
+    "chip_family_jtag_support": "vendor-documented TMS/TCK/TDI/TDO/TRST",
+    "vendor_source_revision": "WCHSoftGroup/ch347@4625b40a5e55e0f6ceff7ca528706a4f19906d1f",
+    "specific_breakout_jtag_pins": "UNVERIFIED",
+    "specific_breakout_vccio": "UNVERIFIED",
+    "amd_hdt_protocol_support": "UNVERIFIED"
+  },
+  "preconditions": {
+    "physical_population": "UNRUN",
+    "pin1_orientation": "UNRUN",
+    "live_voltage_1v8": "UNRUN",
+    "adapter_voltage": "UNRUN",
+    "reset_behavior": "UNRUN",
+    "debug_security_state": "UNRUN",
+    "protocol_identification": "UNRUN",
+    "read_only_attach_procedure": "UNRUN"
+  },
+  "operations": {
+    "jtag_attach": false,
+    "target_register_read": false,
+    "target_memory_read": false,
+    "target_register_write": false,
+    "target_memory_write": false
+  },
+  "next_discriminating_step": "Identify an authorized adapter/protocol and verify J2 population, +1.8V, reset/debug state on the powered stock board before any read-only attach.",
+  "restrictions": "CAD does not prove connector population, orientation, voltage, or debug enablement. No JTAG operation is authorized by this record."
+}

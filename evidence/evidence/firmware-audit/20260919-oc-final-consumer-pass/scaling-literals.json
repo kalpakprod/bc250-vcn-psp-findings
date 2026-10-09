@@ -1,0 +1,177 @@
+{
+  "identities": [
+    {
+      "path": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "size": 16777216,
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5",
+      "size": 262400,
+      "sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37"
+    },
+    {
+      "path": "evidence/firmware-audit/20260919-clock-trace/modules/0000_AmdNbioSmuV10Dxe_pe32.bin",
+      "size": 33632,
+      "sha256": "b158f039f48db05e352b965a62c8e983a395a4858791c93c73f727285c9ac8d8"
+    }
+  ],
+  "rom_body_offset": "0x8fef00",
+  "literals": [
+    {
+      "address": "0x170ac",
+      "bytes": "6f12833a",
+      "u32": "0x3a83126f",
+      "f32": 0.0010000000474974513
+    },
+    {
+      "address": "0x17118",
+      "bytes": "f87f0000",
+      "u32": "0x7ff8",
+      "f32": 4.5906537691281007e-41
+    },
+    {
+      "address": "0x1711c",
+      "bytes": "5c7b0000",
+      "u32": "0x7b5c",
+      "f32": 4.4253005503377723e-41
+    },
+    {
+      "address": "0x17120",
+      "bytes": "dc7e0000",
+      "u32": "0x7edc",
+      "f32": 4.550856892741276e-41
+    },
+    {
+      "address": "0x17124",
+      "bytes": "74340100",
+      "u32": "0x13474",
+      "f32": 1.1065213193694486e-40
+    },
+    {
+      "address": "0x17104",
+      "bytes": "28ca0000",
+      "u32": "0xca28",
+      "f32": 7.251999812573793e-41
+    },
+    {
+      "address": "0x17108",
+      "bytes": "38ca0000",
+      "u32": "0xca38",
+      "f32": 7.254241890116713e-41
+    },
+    {
+      "address": "0x17798",
+      "bytes": "ec6d0100",
+      "u32": "0x16dec",
+      "f32": 1.3126803494409156e-40
+    },
+    {
+      "address": "0x177bc",
+      "bytes": "d4f00000",
+      "u32": "0xf0d4",
+      "f32": 8.639285292255362e-41
+    }
+  ],
+  "relative_aliases": {
+    "0x80": "0x400",
+    "0x84": "0x404"
+  },
+  "output_addresses": [
+    "0x13488",
+    "0x134a4"
+  ],
+  "dxe_template": [
+    {
+      "pptable_offset": "0x400",
+      "source_rva": "0x6120",
+      "file_offset": "0x6120",
+      "bytes": "00000000",
+      "u32": 0,
+      "debug_label": "VddcrVddVoltageMargin = 0x%x\n"
+    },
+    {
+      "pptable_offset": "0x404",
+      "source_rva": "0x6124",
+      "file_offset": "0x6124",
+      "bytes": "00000000",
+      "u32": 0,
+      "debug_label": "VddcrGfxVoltageMargin = 0x%x\n"
+    }
+  ],
+  "l32r_leads": [
+    {
+      "pc": "0x1bcb1",
+      "literal": "0x17124",
+      "value": "0x13474",
+      "entry_candidate": "0x1bc80"
+    },
+    {
+      "pc": "0x1c594",
+      "literal": "0x17124",
+      "value": "0x13474",
+      "entry_candidate": "0x1c410"
+    },
+    {
+      "pc": "0x20a96",
+      "literal": "0x17124",
+      "value": "0x13474",
+      "entry_candidate": "0x20790"
+    },
+    {
+      "pc": "0x21a24",
+      "literal": "0x17124",
+      "value": "0x13474",
+      "entry_candidate": "0x21a08"
+    },
+    {
+      "pc": "0x256b2",
+      "literal": "0x17124",
+      "value": "0x13474",
+      "entry_candidate": "0x25660"
+    },
+    {
+      "pc": "0x26031",
+      "literal": "0x17124",
+      "value": "0x13474",
+      "entry_candidate": "0x25f2c"
+    },
+    {
+      "pc": "0x2634a",
+      "literal": "0x17124",
+      "value": "0x13474",
+      "entry_candidate": "0x26304"
+    },
+    {
+      "pc": "0x281b9",
+      "literal": "0x17124",
+      "value": "0x13474",
+      "entry_candidate": "0x28184"
+    },
+    {
+      "pc": "0x28209",
+      "literal": "0x17124",
+      "value": "0x13474",
+      "entry_candidate": "0x281d4"
+    },
+    {
+      "pc": "0x29228",
+      "literal": "0x17124",
+      "value": "0x13474",
+      "entry_candidate": "0x29134"
+    },
+    {
+      "pc": "0x29685",
+      "literal": "0x17124",
+      "value": "0x13474",
+      "entry_candidate": "0x294e4"
+    },
+    {
+      "pc": "0x2a1c9",
+      "literal": "0x17124",
+      "value": "0x13474",
+      "entry_candidate": "0x2a184"
+    }
+  ],
+  "coverage": "literal pool [0x17000,0x18000); raw l32r candidates [0x1b000,0x2b000), not exhaustive xrefs"
+}

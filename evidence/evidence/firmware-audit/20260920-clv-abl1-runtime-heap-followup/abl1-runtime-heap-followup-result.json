@@ -1,0 +1,590 @@
+{
+  "status": "PASS",
+  "checks": 90,
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "abl1": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "full_thumb_listing": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+    "focused_disassembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-runtime-heap-followup/abl1-window-disasm.stdout",
+    "heap_init_disassembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-runtime-heap-followup/abl1-init-window-disasm.stdout",
+    "heap_init_call_disassembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-runtime-heap-followup/abl1-init-call-disasm.stdout",
+    "pointer_tail_disassembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-runtime-heap-followup/abl1-pointer-tail-disasm.stdout",
+    "lookup_disassembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-runtime-heap-followup/abl1-lookup-window-disasm.stdout",
+    "prior_heap_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-runtime-heap-boundary/abl1-runtime-heap-boundary-result.json",
+    "prior_provider_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-apcb-consumer-resume/abl1-apcb-consumer-result.json",
+    "fresh_apcb_parse": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-runtime-heap-followup/apcb-detail.json"
+  },
+  "hashes": {
+    "rom": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "abl1": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "full_thumb_listing": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+    "focused_disassembly": "0c70c7e2f2c88e517b809454b061fe95618ee6a491c6a157ac1bad1a0ea8c8cf",
+    "heap_init_disassembly": "05ad01491e3f552aa7d9967968e5061d220c172214f944a20b222c8341be35eb",
+    "heap_init_call_disassembly": "29c6d8294305a04e71897f8fd231003f097310ee56e337c7ffd62068dcd61a24",
+    "pointer_tail_disassembly": "d03ea1d5dc38d5fbe47d568d870c9b0810637976d9007df5aaff5a393d3dd8c6",
+    "lookup_disassembly": "e5d44f8a04c9a1a99f15eb5fea330441a8a8d8f8dd11f1565020a4e80d37ef58",
+    "prior_heap_result": "46a126825991b945716fe6cf52b4b68df5054304a16feac086067451a2dc5ce5",
+    "prior_provider_result": "3950e5136254db2aa9c96c91caba4d48da4a11c369b38a36703c9f54cef45ee9",
+    "fresh_apcb_parse": "503e4f525f4372903b23ea9320c77f7b0b39250f310d80a1b7565eb98b39f394"
+  },
+  "bridge": {
+    "lookup_input": "Provider selector 0x0f places key 0xA04E in descriptor SP+0x24 and calls 0x6374 (0x4B1A-0x4B3A).",
+    "runtime_table": "0x6374 reads the table base literal 0x73000, checks sentinel HEAP, and compares requested key with node+0. On hit it stores a payload pointer to descriptor+8 (node+0x10+metadata byte) and a remaining payload length to descriptor+4 (node size less metadata byte).",
+    "initializer": "Exact ABL1 routine 0x63F8 writes a HEAP-tagged arena header at 0x73000 and is called at 0x6F78. This proves header initialization only, not a populated node keyed 0xA04E.",
+    "consumer": "After hit, provider 0x4B40-0x4B5C submits a second request (computed size 0x42B, key 0xA04E, type 4) to 0x6238. The first result body pointer at SP+0x2C is then read as an entry-vector base at 0x4BAE; selected entry bytes are copied to an indirect destination buffer addressed by `[SP+0x78]` at 0x4C14-0x4C18. The separate 0x6238 output pointer is kept at SP+0x30 and receives per-entry pointers at 0x4C6A.",
+    "scope": "Static bridge from the 0xA04E runtime lookup body into a frame-indirect byte destination and a heap-backed pointer table is proven. The destination identity behind SP+0x78 is unresolved; no byte path names a clock descriptor or a frequency domain."
+  },
+  "closed_boundary": "The runtime HEAP header initializer is internal to ABL1, but the source/population of the linked node whose key is 0xA04E is not recovered in the checked chain. The pinned ROM has no aligned 0xA04E or 0x73000 scalar. Existing APCB parsing confirms valid APCB/CBSG structure only; no schema-backed APCB/CBSG-to-HEAP conversion is established.",
+  "limitations": [
+    "No ABL1/AGESA firmware execution, runtime HEAP snapshot, or hardware behavior was performed.",
+    "No identity is assigned to the indirect SP+0x78 output pointer.",
+    "No token/value is assigned MHz, voltage, frequency, or 1:1 semantics.",
+    "The CBSG raw row schema and runtime AP(C)B-to-HEAP producer remain unresolved."
+  ],
+  "checks_detail": [
+    {
+      "check": "ROM exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ABL1 exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "ABL1 sha256",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "full Thumb listing exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "full Thumb listing sha256",
+      "passed": true,
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    {
+      "check": "prior heap result exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "prior heap result sha256",
+      "passed": true,
+      "got": "46a126825991b945716fe6cf52b4b68df5054304a16feac086067451a2dc5ce5",
+      "expected": "46a126825991b945716fe6cf52b4b68df5054304a16feac086067451a2dc5ce5"
+    },
+    {
+      "check": "prior provider result exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "prior provider result sha256",
+      "passed": true,
+      "got": "3950e5136254db2aa9c96c91caba4d48da4a11c369b38a36703c9f54cef45ee9",
+      "expected": "3950e5136254db2aa9c96c91caba4d48da4a11c369b38a36703c9f54cef45ee9"
+    },
+    {
+      "check": "fresh APCB parse exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "focused Thumb disassembly exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "heap-init Thumb disassembly exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "heap-init caller disassembly exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "prior heap result PASS",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "prior heap check count",
+      "passed": true,
+      "got": 32,
+      "expected": 32
+    },
+    {
+      "check": "prior provider PASS",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "prior provider check count",
+      "passed": true,
+      "got": 36,
+      "expected": 36
+    },
+    {
+      "check": "parser tool",
+      "passed": true,
+      "got": "scripts/apcb_detail.py",
+      "expected": "scripts/apcb_detail.py"
+    },
+    {
+      "check": "parser one image",
+      "passed": true,
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "check": "parser input hash",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "APCB offset",
+      "passed": true,
+      "got": "0xAB1000",
+      "expected": "0xAB1000"
+    },
+    {
+      "check": "APCB size",
+      "passed": true,
+      "got": 2972,
+      "expected": 2972
+    },
+    {
+      "check": "APCB checksum match",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "CBSG group present",
+      "passed": true,
+      "got": 1,
+      "expected": 1
+    },
+    {
+      "check": "CBSG subgroup count",
+      "passed": true,
+      "got": 2,
+      "expected": 2
+    },
+    {
+      "check": "0x4b10 instruction",
+      "passed": true,
+      "got": "movw r10, #0x162",
+      "expected": "movw r10, #0x162"
+    },
+    {
+      "check": "0x4b18 instruction",
+      "passed": true,
+      "got": "movs r5, #0x1",
+      "expected": "movs r5, #0x1"
+    },
+    {
+      "check": "0x4b1a instruction",
+      "passed": true,
+      "got": "movw r6, #0xa04e",
+      "expected": "movw r6, #0xa04e"
+    },
+    {
+      "check": "0x4b34 instruction",
+      "passed": true,
+      "got": "add r0, sp, #0x24",
+      "expected": "add r0, sp, #0x24"
+    },
+    {
+      "check": "0x4b36 instruction",
+      "passed": true,
+      "got": "ldr r1, [sp, #0xa4]",
+      "expected": "ldr r1, [sp, #0xa4]"
+    },
+    {
+      "check": "0x4b38 instruction",
+      "passed": true,
+      "got": "str r6, [sp, #0x24]",
+      "expected": "str r6, [sp, #0x24]"
+    },
+    {
+      "check": "0x4b3a instruction",
+      "passed": true,
+      "got": "bl 0x6374",
+      "expected": "bl 0x6374"
+    },
+    {
+      "check": "0x4b3e instruction",
+      "passed": true,
+      "got": "cbz r0, 0x4ba6",
+      "expected": "cbz r0, 0x4ba6"
+    },
+    {
+      "check": "0x4b40 instruction",
+      "passed": true,
+      "got": "sub.w r0, r10, r5",
+      "expected": "sub.w r0, r10, r5"
+    },
+    {
+      "check": "0x4b44 instruction",
+      "passed": true,
+      "got": "movs r1, #0x8",
+      "expected": "movs r1, #0x8"
+    },
+    {
+      "check": "0x4b46 instruction",
+      "passed": true,
+      "got": "add.w r0, r0, r0, lsl #1",
+      "expected": "add.w r0, r0, r0, lsl #1"
+    },
+    {
+      "check": "0x4b4a instruction",
+      "passed": true,
+      "got": "add.w r0, r1, r0, lsl #1",
+      "expected": "add.w r0, r1, r0, lsl #1"
+    },
+    {
+      "check": "0x4b4e instruction",
+      "passed": true,
+      "got": "strd r0, r6, [sp, #20]",
+      "expected": "strd r0, r6, [sp, #20]"
+    },
+    {
+      "check": "0x4b52 instruction",
+      "passed": true,
+      "got": "movs r0, #0x4",
+      "expected": "movs r0, #0x4"
+    },
+    {
+      "check": "0x4b56 instruction",
+      "passed": true,
+      "got": "strb.w r0, [sp, #0x1c]",
+      "expected": "strb.w r0, [sp, #0x1c]"
+    },
+    {
+      "check": "0x4b5a instruction",
+      "passed": true,
+      "got": "add r0, sp, #0x14",
+      "expected": "add r0, sp, #0x14"
+    },
+    {
+      "check": "0x4b5c instruction",
+      "passed": true,
+      "got": "bl 0x6238",
+      "expected": "bl 0x6238"
+    },
+    {
+      "check": "0x4b68 instruction",
+      "passed": true,
+      "got": "ldr r6, [sp, #0x20]",
+      "expected": "ldr r6, [sp, #0x20]"
+    },
+    {
+      "check": "0x4b6a instruction",
+      "passed": true,
+      "got": "str r6, [sp, #0x30]",
+      "expected": "str r6, [sp, #0x30]"
+    },
+    {
+      "check": "0x4bae instruction",
+      "passed": true,
+      "got": "ldr r0, [sp, #0x2c]",
+      "expected": "ldr r0, [sp, #0x2c]"
+    },
+    {
+      "check": "0x4bb0 instruction",
+      "passed": true,
+      "got": "ldr.w r1, [r0, r4, lsl #2]",
+      "expected": "ldr.w r1, [r0, r4, lsl #2]"
+    },
+    {
+      "check": "0x4c0a instruction",
+      "passed": true,
+      "got": "ldr.w r0, [r0, r4, lsl #2]",
+      "expected": "ldr.w r0, [r0, r4, lsl #2]"
+    },
+    {
+      "check": "0x4c0e instruction",
+      "passed": true,
+      "got": "adds r1, r0, r2",
+      "expected": "adds r1, r0, r2"
+    },
+    {
+      "check": "0x4c14 instruction",
+      "passed": true,
+      "got": "ldr r2, [sp, #0x78]",
+      "expected": "ldr r2, [sp, #0x78]"
+    },
+    {
+      "check": "0x4c16 instruction",
+      "passed": true,
+      "got": "ldrb r3, [r1, r0]",
+      "expected": "ldrb r3, [r1, r0]"
+    },
+    {
+      "check": "0x4c18 instruction",
+      "passed": true,
+      "got": "strb r3, [r2, r0]",
+      "expected": "strb r3, [r2, r0]"
+    },
+    {
+      "check": "0x4c5e instruction",
+      "passed": true,
+      "got": "ldr r2, [sp, #0x30]",
+      "expected": "ldr r2, [sp, #0x30]"
+    },
+    {
+      "check": "0x4c6a instruction",
+      "passed": true,
+      "got": "str.w r0, [r2, r7, lsl #2]",
+      "expected": "str.w r0, [r2, r7, lsl #2]"
+    },
+    {
+      "check": "0x6374 lookup instruction",
+      "passed": true,
+      "got": "ldr r2, [pc, #0x70]",
+      "expected": "ldr r2, [pc, #0x70]"
+    },
+    {
+      "check": "0x6376 lookup instruction",
+      "passed": true,
+      "got": "push {r3, r4, r5, r6, r7, lr}",
+      "expected": "push {r3, r4, r5, r6, r7, lr}"
+    },
+    {
+      "check": "0x6378 lookup instruction",
+      "passed": true,
+      "got": "ldr r7, [pc, #0x70]",
+      "expected": "ldr r7, [pc, #0x70]"
+    },
+    {
+      "check": "0x637c lookup instruction",
+      "passed": true,
+      "got": "ldr r3, [r2]",
+      "expected": "ldr r3, [r2]"
+    },
+    {
+      "check": "0x637e lookup instruction",
+      "passed": true,
+      "got": "cmp r3, r7",
+      "expected": "cmp r3, r7"
+    },
+    {
+      "check": "0x638c lookup instruction",
+      "passed": true,
+      "got": "ldr r4, [r2, #0x8]",
+      "expected": "ldr r4, [r2, #0x8]"
+    },
+    {
+      "check": "0x6394 lookup instruction",
+      "passed": true,
+      "got": "ldr r5, [r0]",
+      "expected": "ldr r5, [r0]"
+    },
+    {
+      "check": "0x6396 lookup instruction",
+      "passed": true,
+      "got": "ldr r4, [r3]",
+      "expected": "ldr r4, [r3]"
+    },
+    {
+      "check": "0x6398 lookup instruction",
+      "passed": true,
+      "got": "cmp r4, r5",
+      "expected": "cmp r4, r5"
+    },
+    {
+      "check": "0x639c lookup instruction",
+      "passed": true,
+      "got": "ldr r3, [r3, #0xc]",
+      "expected": "ldr r3, [r3, #0xc]"
+    },
+    {
+      "check": "0x63a6 lookup instruction",
+      "passed": true,
+      "got": "cbz r6, 0x63ba",
+      "expected": "cbz r6, 0x63ba"
+    },
+    {
+      "check": "0x63a8 lookup instruction",
+      "passed": true,
+      "got": "ldrb r1, [r3, #0x9]",
+      "expected": "ldrb r1, [r3, #0x9]"
+    },
+    {
+      "check": "0x63aa lookup instruction",
+      "passed": true,
+      "got": "adds r2, r3, r1",
+      "expected": "adds r2, r3, r1"
+    },
+    {
+      "check": "0x63ac lookup instruction",
+      "passed": true,
+      "got": "adds r2, #0x10",
+      "expected": "adds r2, #0x10"
+    },
+    {
+      "check": "0x63ae lookup instruction",
+      "passed": true,
+      "got": "str r2, [r0, #0x8]",
+      "expected": "str r2, [r0, #0x8]"
+    },
+    {
+      "check": "0x63b0 lookup instruction",
+      "passed": true,
+      "got": "ldr r2, [r3, #0x4]",
+      "expected": "ldr r2, [r3, #0x4]"
+    },
+    {
+      "check": "0x63b2 lookup instruction",
+      "passed": true,
+      "got": "subs r1, r2, r1",
+      "expected": "subs r1, r2, r1"
+    },
+    {
+      "check": "0x63b4 lookup instruction",
+      "passed": true,
+      "got": "str r1, [r0, #0x4]",
+      "expected": "str r1, [r0, #0x4]"
+    },
+    {
+      "check": "0x63b6 lookup instruction",
+      "passed": true,
+      "got": "movs r0, #0x0",
+      "expected": "movs r0, #0x0"
+    },
+    {
+      "check": "0x6374 pointer literal raw bytes",
+      "passed": true,
+      "got": "00300700",
+      "expected": "00300700"
+    },
+    {
+      "check": "0x6374 sentinel bytes",
+      "passed": true,
+      "got": "hex:48454150",
+      "expected": "hex:48454150"
+    },
+    {
+      "check": "0x63fa heap-header instruction",
+      "passed": true,
+      "got": "ldr r1, [pc, #0x24]",
+      "expected": "ldr r1, [pc, #0x24]"
+    },
+    {
+      "check": "0x63fe heap-header instruction",
+      "passed": true,
+      "got": "strd r1, r2, [r0, #24]",
+      "expected": "strd r1, r2, [r0, #24]"
+    },
+    {
+      "check": "0x6404 heap-header instruction",
+      "passed": true,
+      "got": "strd r3, r2, [r1, #4]",
+      "expected": "strd r3, r2, [r1, #4]"
+    },
+    {
+      "check": "0x6408 heap-header instruction",
+      "passed": true,
+      "got": "str r3, [r1, #0xc]",
+      "expected": "str r3, [r1, #0xc]"
+    },
+    {
+      "check": "0x640c heap-header instruction",
+      "passed": true,
+      "got": "str r3, [r1]",
+      "expected": "str r3, [r1]"
+    },
+    {
+      "check": "0x6412 heap-header instruction",
+      "passed": true,
+      "got": "str r3, [r1, #0x14]",
+      "expected": "str r3, [r1, #0x14]"
+    },
+    {
+      "check": "0x6414 heap-header instruction",
+      "passed": true,
+      "got": "str r2, [r1, #0x1c]",
+      "expected": "str r2, [r1, #0x1c]"
+    },
+    {
+      "check": "0x6418 heap-header instruction",
+      "passed": true,
+      "got": "strb r1, [r0, #0x10]",
+      "expected": "strb r1, [r0, #0x10]"
+    },
+    {
+      "check": "heap init table base literal",
+      "passed": true,
+      "got": "00300700",
+      "expected": "00300700"
+    },
+    {
+      "check": "heap init magic",
+      "passed": true,
+      "got": "hex:48454150",
+      "expected": "hex:48454150"
+    },
+    {
+      "check": "heap initializer called from exact ABL1 routine",
+      "passed": true,
+      "got": "bl",
+      "expected": "bl"
+    },
+    {
+      "check": "heap initializer call target",
+      "passed": true,
+      "got": "0x63f8",
+      "expected": "0x63f8"
+    },
+    {
+      "check": "request-size formula",
+      "passed": true,
+      "got": 1067,
+      "expected": 1067
+    },
+    {
+      "check": "aligned ROM A04E key absent",
+      "passed": true,
+      "got": -1,
+      "expected": -1
+    },
+    {
+      "check": "aligned ROM runtime base 0x73000 absent",
+      "passed": true,
+      "got": -1,
+      "expected": -1
+    }
+  ]
+}

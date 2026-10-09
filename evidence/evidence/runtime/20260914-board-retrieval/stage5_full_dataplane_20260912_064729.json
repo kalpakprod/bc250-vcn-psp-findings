@@ -1,0 +1,139 @@
+{
+ "stage": "s2a-5-full-dataplane",
+ "started": "2026-09-12 06:47:29",
+ "smu_alive_before": true,
+ "unlock": "already-open",
+ "writes": [
+  {
+   "n": 1,
+   "a": "0x0001c760",
+   "v": "0xff400000"
+  },
+  {
+   "n": 2,
+   "a": "0x0001c764",
+   "v": "0xff400000"
+  },
+  {
+   "n": 3,
+   "a": "0x0001c780",
+   "v": "0x00000000"
+  },
+  {
+   "n": 4,
+   "a": "0x0001c784",
+   "v": "0x00000000"
+  },
+  {
+   "n": 5,
+   "a": "0x0001c788",
+   "v": "0x000000ff"
+  },
+  {
+   "n": 6,
+   "a": "0x0001c78c",
+   "v": "0x00000107"
+  },
+  {
+   "n": 7,
+   "a": "0x0001f820",
+   "v": "0x00185103"
+  },
+  {
+   "n": 8,
+   "a": "0x0001f8a4",
+   "v": "0x0000000b"
+  },
+  {
+   "n": 9,
+   "a": "0x0001f8a4",
+   "v": "0x00000000"
+  },
+  {
+   "n": 10,
+   "a": "0x0322011c",
+   "v": "0x00010000"
+  },
+  {
+   "n": 11,
+   "a": "0x03220124",
+   "v": "0x00010707"
+  },
+  {
+   "n": 12,
+   "a": "0x0322012c",
+   "v": "0x000101ff"
+  },
+  {
+   "n": 13,
+   "a": "0x03d2011c",
+   "v": "0x000107ff"
+  },
+  {
+   "n": 14,
+   "a": "0x03d20124",
+   "v": "0x00010fff"
+  },
+  {
+   "n": 15,
+   "a": "0x0003e814",
+   "v": "0x2544c382"
+  }
+ ],
+ "write_count": 15,
+ "readback_0900c234": "0x00000001",
+ "capture": [
+  {
+   "label": "config_reg_0x6a140",
+   "addr": "0x06a140",
+   "value": "0x00008000"
+  },
+  {
+   "label": "config_reg_0x6a144",
+   "addr": "0x06a144",
+   "value": "0x0000ffff"
+  },
+  {
+   "label": "config_reg_0x6a148_rmw",
+   "addr": "0x06a148",
+   "value": "0x00800000"
+  },
+  {
+   "label": "config_reg_0x6a14c_rmw",
+   "addr": "0x06a14c",
+   "value": "0x00000008"
+  },
+  {
+   "label": "config_reg_0x6a150_rmw",
+   "addr": "0x06a150",
+   "value": "0x80000000"
+  },
+  {
+   "label": "config_reg_0x6a154_rmw",
+   "addr": "0x06a154",
+   "value": "0x80000001"
+  },
+  {
+   "label": "config_reg_0x6a15c",
+   "addr": "0x06a15c",
+   "value": "0x000002f0"
+  },
+  {
+   "label": "config_reg_0x6a17c",
+   "addr": "0x06a17c",
+   "value": "0x00000002"
+  },
+  {
+   "label": "config_reg_0x6a1b4",
+   "addr": "0x06a1b4",
+   "value": "0x0000f57f"
+  },
+  {
+   "label": "config_reg_0x33e0_rmw",
+   "addr": "0x0033e0",
+   "value": "0x00003820"
+  }
+ ],
+ "verdict": "FULL-DATAPLANE-APPLIED (15 writes, commit=0x00000001); next: stage4_arbiter",
+ "finished": "2026-09-12 06:47:29"
+}

@@ -1,0 +1,67 @@
+--- baseline.md
++++ baseline.md
+@@ -1,5 +1,7 @@
+ Current: this v2 copy adds the newly verified memory-clock/APOB/ABL boundary. It supersedes only the earlier recommendation to trace a presumed `$INV 0x11ED -> ABL1/APOB` chain: the three observed paths below are distinct and no join is proven. The original `2026-09-21-clock-independent-review.md` is preserved unchanged.
+ 
++Current: this further addendum decodes only a conditional ABL1 `r1==0x0F` stack path and separates a byte-fill loop from an adjacent copy loop; it does not identify a frequency ratio or physical clock.
++
+ # Independent clock evidence review
+ 
+ ## Decision
+@@ -139,3 +141,56 @@
+ `UNRUN`: PPI/APOB/ABL1/SMU execution, physical clock/readback, training, performance, hardware acceptance and rollback.
+ 
+ Evidence hashes reopened for this correction: memory report `4e318813e16035216aa48303d292422ca43d113ee91807fc97b8a61ee0ced33b`; APOB report `f8c8d1610ae89a933b3060b3917ec57a2b1f69d7c6fd4f3620baec2de6f991db`; APOB machine result `36abcbcb636b330457c00ab59e74a17b8ae5976c774b80f9c29f3912918da2a6`; exact service-pointer source module `1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8`; exact ROM `ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8`.
++
++
++## Follow-up: conditional ABL1 stack argument and fill/copy distinction
++
++### Accepted static correction
++
++A fresh `llvm-objdump` decode and direct raw-byte checks on exact ABL1 `af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a` establish this **conditional** call chain:
++
++1. In the routine beginning at `0x463C`, only the branch where input `r1 == 0x0F` proceeds past `0x4648/0x464A`. That branch writes `r2=0` to caller stack slots `[SP]` (`0x4664`) and `[SP+4]` (`0x4666`) before calling `0x1FB4` (`0x466A`). This is a selector-gated static path; the semantic identity of selector `0x0F` is not assigned here.
++2. `0x1FB4` saves 12 registers (`push.w` mask `0x47FF`, stack delta `0x30`). Its `LDRD R7,R9,[SP,#0x30]` at `0x1FC0` therefore reads the caller's stack arguments at entry `SP+0` and `SP+4`; on the selected path both are zero, so `R9=0`. `STR R9,[SP]` at `0x1FD2` forwards that zero as the first stack argument to wrapper `0x4800` (`BL` at `0x1FE0`).
++3. `0x4800` saves six registers (`0x18` bytes), then `LDR R1,[SP,#0x18]` at `0x4808` loads its entry `SP+0` stack argument, again zero. `STRD R3,R1,[SP]` at `0x4812` passes a zero second stack argument to `0x49CC` (`BL` at `0x481C`).
++4. `0x49CC` pushes 13 registers (`0x34` bytes) and subtracts `0x6C`, total frame delta `0xA0`. Thus `[SP,#0xA4]` at `0x4B54` is exactly callee-entry `SP+4`, the second stack argument, and is zero on the selected path. The caller then sets `R0=SP+0x14` and calls helper `0x6238` at `0x4B5C` with `R1=0`.
++5. Helper `0x6238` saves ten registers (`0x28`), copies `R0` to `R4` and `R1` to `R10`; those are register-level observations, **not a fully recovered semantic C prototype**. On the allocation path shown, it explicitly sets `R1=0` at `0x6316` and calls `0x6B78` at `0x6320`.
++6. The routine at `0x6B78` is a byte-fill loop: `STRB R1,[R0],#1` at `0x6B7A`, decrement `R2` at `0x6B7E`, loop at `0x6B80`. The adjacent routine beginning `0x6B68` is a distinct byte-copy loop because it loads `R3` from `[R1],#1` at `0x6B6A` before storing it at `0x6B6E`. Therefore `0x6B78` is not the copy routine; this call path zero-fills when its caller sets `R1=0`.
++
++Static state token for the predicate check: `selected-0x0F-path-entrySPplus4-zero`. It names only the static stack value on this selected branch, not a frequency or field source.
++
++### Keep the other `0x6238` caller separate
++
++The separate caller at `0x0862` constructs a local descriptor containing constants `0x218`, `0xA045`, and type byte `2`, passes `R0=SP` and `R1=R4`, then calls `0x6238`. It is a different call site and different argument construction from `0x4B5C` (`R0=SP+0x14`, `R1=0`). A shared callee address does not join that outer descriptor/heap path to the zero stack argument at `0x4B54`; any such “outer `0x864` heap-chain source” attribution is not supported for this path.
++
++### Do not promote this result
++
++This static sequence does not identify selector `0x0F` with FCLK_DPM, MCLK, UCLK, `$INV 0x11ED`, APOB, or a physical clock domain. It does not show that the branch executes at boot, that service item `0x17` loads this helper output, or that the zero-fill result is a rate. It is not a ratio, loader, training, PLL, or hardware-application result. The ABL1 item-`0x17` conditional map remains a separate unresolved path until its callback/provider source is byte-backed; do not use a generic reduction routine as proof of applied 1800 MHz.
++
++### Evidence for this addendum
++
++- Exact input: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin`, size 94,624 bytes, SHA-256 `af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a`.
++- Reused listing: `evidence/firmware-audit/20260921-memory-clock-units-next/abl1-full-thumb-llvm.txt`, SHA-256 `b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65`.
++- Fresh unique object: `evidence/firmware-audit/20260921-apob-abl-stack-independent-review/ABL1-exact.o`, SHA-256 `adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6`.
++- Fresh local LLVM 22.1.8 Thumb windows and verifier: `evidence/firmware-audit/20260921-apob-abl-stack-independent-review/`; byte verifier `verify_stack_path.py` reports `43/43 PASS` after preserving two attempt-specific Thumb-byte transcription errors.
++- Evidence class: observed bytes + static analysis only. Firmware/runtime/emulator/hardware behavior remains unrun.
++
++## Cross-review: outer-`0x864` correction accepted
++
++The newly reopened `docs/research/2026-09-21-apob-abl-outer864-origin.md` is consistent with the independent `43/43 PASS` stack check above. Its correction is accepted:
++
++- Constructor `0xC00`'s `[SP+0xA4]` is a constructor-frame local containing the `outer+0x864`-derived pointer; provider `0x49CC`'s `[SP+0xA4]` is a different provider-frame slot equal to provider entry `SP+4`. Same numeric stack offset does not join the frames.
++- The exact provider path's second stack argument is zero on the conditional `r1==0x0F` branch. `0x6238` subsequently sets `R1=0` before calling `0x6B78`, and `0x6B78` executes `STRB R1,[R0],#1`; the adjacent `0x6B6A`/`0x6B6E` routine is the byte-copy loop. Therefore the inspected path establishes zero-fill, not payload copy from `R10` or `outer+0x864`.
++- `$PS1 load_address=0` and the out-of-payload `0x006CD4D0` literal mapping under conditional base `0x57100` do not establish a runtime load base. No loader or physical pointer claim follows.
++
++**Accepted:** conditional static stack/frame and fill-vs-copy correction; original `1:1:1`/applied-1800 rejection remains. **Disallowed:** calling this helper path an ABL1 memory-rate loader, ratio/training actuator, or proof that the APOB/NVAR path reaches it. The outer-`0x864` source remains unjoined and runtime execution is unrun.
++
++
++## Follow-up: item-17 conditional local reachability boundary (2026-09-21)
++
++The existing byte-backed reachability result was checked against its local LLVM listing windows with the corrected verifier. `item17-reachability-verifier: PASS (83/83)`. The checked ROM SHA-256 is `ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8`; exact ABL1 SHA-256 is `af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a`; fresh ELF wrapper SHA-256 is `adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6`. The earlier conditional item-17 base `0x57100` and table mapping are reused, not rechecked here.
++
++For the selected `0x6D10==1` branch, `0x95FC` reads `[SP+0x164]`, then `0x9646 -> 0x9744 -> 0x984E`. The enumerated direct alternatives `0x9780 -> 0x0DD4`, `0x97E4 -> 0x118C`, and `0x9800 -> 0x10C0` are bypassed on this branch. The selected single-state path reaches `0x130C` with `r0=4, r1=0`, then `0x1354 -> 0x1332` and a data-dependent `BLX R0` callback-table edge; `0x130C` is also called at `0x988A`.
++
++The dispatch code is byte-backed, but table-pointer/object initialization and callback targets remain unresolved. Therefore the local result does **not** prove global SVC #6 unreachability, does not show that SVC #6 is the item-17 actuator, and does not identify the external handler/recipient. The wrapper/caller analysis still does not demonstrate a clock-register write. This is static CLV evidence only; physical clocks, training, hardware behavior, and application of 1800 MHz remain unrun/unproven.
++
++The next local boundary is the initializer/provider and populated entries for the indirect callback table. Stop at that boundary if the target is outside the extracted ABL1; do not repeat the earlier item-17 table mapping.

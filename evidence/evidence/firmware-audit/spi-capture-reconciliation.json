@@ -1,0 +1,283 @@
+{
+  "generated_at": "2026-09-10T19:36:41.398243+00:00",
+  "archive": {
+    "path": "import/from-windows/Users/kukuruza/tmp_bc250/flash_archive_FULL_20260901-140856.tar",
+    "size": 863815680,
+    "sha256": "3b6c5455433285f086899eabd2e35a108b4253525e95faec6484e19b31fc51a5"
+  },
+  "captures": [
+    {
+      "capture_id": "20260831-072905-0000c4090e400e6b",
+      "member": "./BC250-TMP/20260831-072905-0000c4090e400e6b/spi.bin",
+      "size": 16777216,
+      "sha256": "b0b51651f2ff09537be5ff3ce8b1baa658f0656c1351a6c8001b31bd7b160608",
+      "manifest_sha256": "b0b51651f2ff09537be5ff3ce8b1baa658f0656c1351a6c8001b31bd7b160608",
+      "hash_match": true
+    },
+    {
+      "capture_id": "20260831-195151-0001457ed7b97c20",
+      "member": "./BC250-TMP/20260831-195151-0001457ed7b97c20/spi.bin",
+      "size": 16777216,
+      "sha256": "4d438de0461651258b07cfd01702c7c71edb452eae8775e75abf8f092913f428",
+      "manifest_sha256": "4d438de0461651258b07cfd01702c7c71edb452eae8775e75abf8f092913f428",
+      "hash_match": true
+    },
+    {
+      "capture_id": "20260901-000457-0001719b1b5b47a0",
+      "member": "./BC250-TMP/20260901-000457-0001719b1b5b47a0/spi.bin",
+      "size": 16777216,
+      "sha256": "e57dd53266db9b6d4f30addcdedb9e5770ab2e9975fceee71f96fb8da0971417",
+      "manifest_sha256": "e57dd53266db9b6d4f30addcdedb9e5770ab2e9975fceee71f96fb8da0971417",
+      "hash_match": true
+    },
+    {
+      "capture_id": "20260901-071822-0001bd25e9dba945",
+      "member": "./BC250-TMP/20260901-071822-0001bd25e9dba945/spi.bin",
+      "size": 16777216,
+      "sha256": "1468862b1175643c9766131852a6d30e31698ce323b0d749849d7809f7b85625",
+      "manifest_sha256": "1468862b1175643c9766131852a6d30e31698ce323b0d749849d7809f7b85625",
+      "hash_match": true
+    }
+  ],
+  "pairwise": [
+    {
+      "a": "20260831-072905-0000c4090e400e6b",
+      "b": "20260831-195151-0001457ed7b97c20",
+      "changed_bytes": 227,
+      "ranges": 10,
+      "first_ranges": [
+        [
+          39229,
+          39232
+        ],
+        [
+          40597,
+          40600
+        ],
+        [
+          40646,
+          40647
+        ],
+        [
+          40676,
+          40677
+        ]
+      ],
+      "regions": {
+        "nvram_0x0_0x20000": 227,
+        "psp": 0,
+        "apcb": 0,
+        "uefi": 0
+      }
+    },
+    {
+      "a": "20260831-072905-0000c4090e400e6b",
+      "b": "20260901-000457-0001719b1b5b47a0",
+      "changed_bytes": 310,
+      "ranges": 13,
+      "first_ranges": [
+        [
+          39229,
+          39232
+        ],
+        [
+          40597,
+          40600
+        ],
+        [
+          40646,
+          40647
+        ],
+        [
+          40676,
+          40677
+        ]
+      ],
+      "regions": {
+        "nvram_0x0_0x20000": 310,
+        "psp": 0,
+        "apcb": 0,
+        "uefi": 0
+      }
+    },
+    {
+      "a": "20260831-072905-0000c4090e400e6b",
+      "b": "20260901-071822-0001bd25e9dba945",
+      "changed_bytes": 421,
+      "ranges": 16,
+      "first_ranges": [
+        [
+          39229,
+          39232
+        ],
+        [
+          40597,
+          40600
+        ],
+        [
+          40646,
+          40647
+        ],
+        [
+          40676,
+          40677
+        ]
+      ],
+      "regions": {
+        "nvram_0x0_0x20000": 421,
+        "psp": 0,
+        "apcb": 0,
+        "uefi": 0
+      }
+    },
+    {
+      "a": "20260831-195151-0001457ed7b97c20",
+      "b": "20260901-000457-0001719b1b5b47a0",
+      "changed_bytes": 85,
+      "ranges": 6,
+      "first_ranges": [
+        [
+          40880,
+          40881
+        ],
+        [
+          40910,
+          40911
+        ],
+        [
+          40931,
+          40937
+        ],
+        [
+          40940,
+          40969
+        ]
+      ],
+      "regions": {
+        "nvram_0x0_0x20000": 85,
+        "psp": 0,
+        "apcb": 0,
+        "uefi": 0
+      }
+    },
+    {
+      "a": "20260831-195151-0001457ed7b97c20",
+      "b": "20260901-071822-0001bd25e9dba945",
+      "changed_bytes": 196,
+      "ranges": 11,
+      "first_ranges": [
+        [
+          40831,
+          40834
+        ],
+        [
+          40880,
+          40881
+        ],
+        [
+          40910,
+          40911
+        ],
+        [
+          40931,
+          40937
+        ]
+      ],
+      "regions": {
+        "nvram_0x0_0x20000": 196,
+        "psp": 0,
+        "apcb": 0,
+        "uefi": 0
+      }
+    },
+    {
+      "a": "20260901-000457-0001719b1b5b47a0",
+      "b": "20260901-071822-0001bd25e9dba945",
+      "changed_bytes": 113,
+      "ranges": 8,
+      "first_ranges": [
+        [
+          40831,
+          40834
+        ],
+        [
+          40972,
+          40973
+        ],
+        [
+          41002,
+          41003
+        ],
+        [
+          41023,
+          41043
+        ]
+      ],
+      "regions": {
+        "nvram_0x0_0x20000": 113,
+        "psp": 0,
+        "apcb": 0,
+        "uefi": 0
+      }
+    }
+  ],
+  "operator_dump": {
+    "path": "dump/2.bin",
+    "size": 16777216,
+    "sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+    "vs_first_capture": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/flash/BC250-TMP/20260831-072905-0000c4090e400e6b/spi.bin",
+      "sha256": "b0b51651f2ff09537be5ff3ce8b1baa658f0656c1351a6c8001b31bd7b160608",
+      "changed_bytes": 3071,
+      "ranges": 46,
+      "first_ranges": [
+        [
+          10158,
+          10161
+        ],
+        [
+          10980,
+          10983
+        ],
+        [
+          29728,
+          29731
+        ],
+        [
+          37519,
+          37522
+        ],
+        [
+          38047,
+          38050
+        ],
+        [
+          39229,
+          39232
+        ],
+        [
+          39979,
+          39982
+        ],
+        [
+          39997,
+          40000
+        ],
+        [
+          40255,
+          40258
+        ],
+        [
+          40597,
+          40600
+        ]
+      ],
+      "region_counts": {
+        "psp": 0,
+        "apcb": 0,
+        "bios_uefi": 0
+      }
+    }
+  },
+  "interpretation": "Four archived capture sets each report two matching complete reads; independent archive member hashes match their manifests. Pairwise differences and operator-dump comparison are confined to the first 0x20000-byte NVRAM region; PSP/BHD/APCB and 0xAE0000..0xE00000 firmware regions are byte-identical. This supports firmware consistency but does not replace fresh operator reads or establish chip identity."
+}

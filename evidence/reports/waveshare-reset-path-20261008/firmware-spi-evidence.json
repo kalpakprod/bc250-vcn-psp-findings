@@ -1,0 +1,502 @@
+{
+  "task": "BC250-76",
+  "evidence_class": "observed-bytes + static-analysis + timing model; no hardware",
+  "modules": {
+    "evidence_class": "observed-bytes/static-analysis",
+    "input": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "input_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "modules": [
+      {
+        "name": "FchPei",
+        "source": "evidence/firmware-audit/20260920-clv-uefitool-native-run/BC250_5.00_clv.bin.dump/3 61C0F511-A691-4F54-974F-B9A42172CE53/1 147923CE-D0E9-4C4F-9B7B-AC02F8BD2763/1 Volume image section/0 61C0F511-A691-4F54-974F-B9A42172CE53/18 FchPei/1 TE image section/body.bin",
+        "sha256": "08493ca078e74b050ffa85c9b80c50fb67b6f5fae6c467f9cb581af072f5fa08",
+        "size": 26568,
+        "sections": [
+          {
+            "name": ".text",
+            "rva": 576,
+            "file_offset": 168,
+            "size": 24617,
+            "flags": 1744830496,
+            "sha256": "e95891ff76a16c73b4fae6348f1fe3c67fb020d5680216331362610f0bb8638a",
+            "disassembly_command": [
+              "objdump",
+              "-D",
+              "-b",
+              "binary",
+              "-m",
+              "i386",
+              "-Mintel",
+              "--adjust-vma=0x240",
+              "/home/OWNER/.cache/bc250-spi-firmware-20261008/FchPei.text.bin"
+            ]
+          },
+          {
+            "name": ".data",
+            "rva": 25216,
+            "file_offset": 24808,
+            "size": 1440,
+            "flags": 3355443264,
+            "sha256": "b494facac48fc431b5bfcd99636bd6b59a05c737826cb3e4fa259a0573d8c13c"
+          },
+          {
+            "name": ".reloc",
+            "rva": 26656,
+            "file_offset": 26248,
+            "size": 308,
+            "flags": 1107296320,
+            "sha256": "35c9d2a3229fd6125857ae56c6610a7e87588b43e30f2427a12282dd74984f4f"
+          }
+        ],
+        "format": "TE",
+        "machine": 332,
+        "entry_rva": 576,
+        "header_image_base": 165885384,
+        "stripped_size": 448
+      },
+      {
+        "name": "FchDxeAux",
+        "source": "evidence/firmware-audit/20260920-clv-uefitool-native-run/BC250_5.00_clv.bin.dump/2 4F1C52D3-D824-4D2A-A2F0-EC40C23C5916/0 9E21FD93-9C72-4C15-8C4B-E77F1DB2D792/0 EE4E5898-3914-4259-9D6E-DC7BD79403CF/1 Volume image section/0 5C60F367-A505-419A-859E-2A4FF6CA6FE5/25 FchDxeAux/1 PE32 image section/body.bin",
+        "sha256": "8b8a7aa7c303af273021fa4c7991a39fd495bf5838f6b87cb6b5d068a69e454b",
+        "size": 3040,
+        "sections": [
+          {
+            "name": ".text",
+            "rva": 608,
+            "file_offset": 608,
+            "size": 2045,
+            "flags": 1744830496,
+            "sha256": "f1784239138c267502361c0b17848d5c358e17f58d9f807d3da629e0a3213b03",
+            "disassembly_command": [
+              "objdump",
+              "-D",
+              "-b",
+              "binary",
+              "-m",
+              "i386:x86-64",
+              "-Mintel",
+              "--adjust-vma=0x260",
+              "/home/OWNER/.cache/bc250-spi-firmware-20261008/FchDxeAux.text.bin"
+            ]
+          },
+          {
+            "name": ".data",
+            "rva": 2656,
+            "file_offset": 2656,
+            "size": 80,
+            "flags": 3355443264,
+            "sha256": "bbf0ad366e6b9bc5bc7f86290b56f16c40421ecb79e782397d27d2ca3f8d3243"
+          },
+          {
+            "name": "",
+            "rva": 2752,
+            "file_offset": 2752,
+            "size": 144,
+            "flags": 1107296320,
+            "sha256": "81c611f35bff79491538b2f7cf201c7597a661a5c549633541c62bdc8af1613f"
+          },
+          {
+            "name": ".xdata",
+            "rva": 2912,
+            "file_offset": 2912,
+            "size": 124,
+            "flags": 1107296320,
+            "sha256": "7b8ec8dd836b564f0c85ad088fc744de820345204e154bc1503e04e9d6fdd9f1"
+          }
+        ],
+        "format": "PE",
+        "machine": 34404,
+        "entry_rva": 608
+      },
+      {
+        "name": "FchDxe",
+        "source": "evidence/firmware-audit/20260920-clv-uefitool-native-run/BC250_5.00_clv.bin.dump/2 4F1C52D3-D824-4D2A-A2F0-EC40C23C5916/0 9E21FD93-9C72-4C15-8C4B-E77F1DB2D792/0 EE4E5898-3914-4259-9D6E-DC7BD79403CF/1 Volume image section/0 5C60F367-A505-419A-859E-2A4FF6CA6FE5/24 FchDxe/1 PE32 image section/body.bin",
+        "sha256": "9adfd93323dfee12f87b7f6740a5ba5b51b000495155e181a86aa827f815ffe1",
+        "size": 49024,
+        "sections": [
+          {
+            "name": ".text",
+            "rva": 672,
+            "file_offset": 672,
+            "size": 41184,
+            "flags": 1744830496,
+            "sha256": "f6a1358dbd83d5d7838f9814af2113a986b3e109d4d8646313b119101a31f259",
+            "disassembly_command": [
+              "objdump",
+              "-D",
+              "-b",
+              "binary",
+              "-m",
+              "i386:x86-64",
+              "-Mintel",
+              "--adjust-vma=0x2a0",
+              "/home/OWNER/.cache/bc250-spi-firmware-20261008/FchDxe.text.bin"
+            ]
+          },
+          {
+            "name": ".data",
+            "rva": 41856,
+            "file_offset": 41856,
+            "size": 3808,
+            "flags": 3355443264,
+            "sha256": "6b0817d78464606942040fee54d63ee0e7846acb7a5a24171e47680fdaab4b54"
+          },
+          {
+            "name": "",
+            "rva": 45664,
+            "file_offset": 45664,
+            "size": 2196,
+            "flags": 1107296320,
+            "sha256": "47585db1c41fc8970c838bf60827198974f8bed7ae1958e222b6debe66d5e0c1"
+          },
+          {
+            "name": ".xdata",
+            "rva": 47872,
+            "file_offset": 47872,
+            "size": 972,
+            "flags": 1107296320,
+            "sha256": "96c5023576733f88726277165f7fa44936426956bcbcca126d7f1169216e1a4b"
+          },
+          {
+            "name": ".reloc",
+            "rva": 48864,
+            "file_offset": 48864,
+            "size": 132,
+            "flags": 1107296320,
+            "sha256": "ef2df840cc812dbeb8dbb845f64461ca7d3b9505099d62c7b496de228779b3e6"
+          }
+        ],
+        "format": "PE",
+        "machine": 34404,
+        "entry_rva": 672
+      }
+    ]
+  },
+  "reset_template": {
+    "rva": "0x6350",
+    "file_offset": "0x61b8",
+    "length": 128,
+    "copy_rva": "0x13e1",
+    "sha256": "1d473ce08b9a12dc3d838f7e2189bae5691ae9e8add2d94292764bb2430639f0",
+    "fields": {
+      "mode_offset_0c": 6,
+      "fastspeed_offset_0a": 0,
+      "normspeed_offset_17": 2,
+      "qe_check_bypass_offset_76": 0
+    }
+  },
+  "reset_task_table": {
+    "table_pointer": "0x9e39998",
+    "table_rva": "0x63d0",
+    "file_offset": "0x6238",
+    "records": [
+      {
+        "index": 0,
+        "pointer_va": "0x9e377b1",
+        "target_rva": "0x41e9",
+        "pointer_file_offset": "0x6238"
+      },
+      {
+        "index": 1,
+        "pointer_va": "0x9e38358",
+        "target_rva": "0x4d90",
+        "pointer_file_offset": "0x623c"
+      },
+      {
+        "index": 2,
+        "pointer_va": "0x9e38221",
+        "target_rva": "0x4c59",
+        "pointer_file_offset": "0x6240"
+      },
+      {
+        "index": 3,
+        "pointer_va": "0x9e377e3",
+        "target_rva": "0x421b",
+        "pointer_file_offset": "0x6244"
+      },
+      {
+        "index": 4,
+        "pointer_va": "0x9e377ac",
+        "target_rva": "0x41e4",
+        "pointer_file_offset": "0x6248"
+      },
+      {
+        "index": 5,
+        "pointer_va": "0x9e377a7",
+        "target_rva": "0x41df",
+        "pointer_file_offset": "0x624c"
+      },
+      {
+        "index": 6,
+        "pointer_va": "0x9e37793",
+        "target_rva": "0x41cb",
+        "pointer_file_offset": "0x6250"
+      },
+      {
+        "index": 7,
+        "pointer_va": "0x9e37764",
+        "target_rva": "0x419c",
+        "pointer_file_offset": "0x6254"
+      },
+      {
+        "index": 8,
+        "pointer_va": "0x9e37765",
+        "target_rva": "0x419d",
+        "pointer_file_offset": "0x6258"
+      },
+      {
+        "index": 9,
+        "pointer_va": "0x9e37764",
+        "target_rva": "0x419c",
+        "pointer_file_offset": "0x625c"
+      },
+      {
+        "index": 10,
+        "pointer_va": "0x9e37764",
+        "target_rva": "0x419c",
+        "pointer_file_offset": "0x6260"
+      },
+      {
+        "index": 11,
+        "pointer_va": "0x9e37764",
+        "target_rva": "0x419c",
+        "pointer_file_offset": "0x6264"
+      },
+      {
+        "index": 12,
+        "pointer_va": "0x9e3775f",
+        "target_rva": "0x4197",
+        "pointer_file_offset": "0x6268"
+      },
+      {
+        "index": 13,
+        "pointer_va": "0x9e376dc",
+        "target_rva": "0x4114",
+        "pointer_file_offset": "0x626c"
+      }
+    ]
+  },
+  "qe_table": [
+    {
+      "index": 0,
+      "table_rva": 25680,
+      "file_offset": 25272,
+      "jedec_fifo_u32": "0x1524c2",
+      "jedec_wire_bytes": "c2 24 15",
+      "read_qe_opcode": "0x5",
+      "write_qe_opcode": "0x1",
+      "status_bytes": 1,
+      "qe_mask_u16": "0x40"
+    },
+    {
+      "index": 1,
+      "table_rva": 25705,
+      "file_offset": 25297,
+      "jedec_fifo_u32": "0x1525c2",
+      "jedec_wire_bytes": "c2 25 15",
+      "read_qe_opcode": "0x5",
+      "write_qe_opcode": "0x1",
+      "status_bytes": 1,
+      "qe_mask_u16": "0x40"
+    },
+    {
+      "index": 2,
+      "table_rva": 25730,
+      "file_offset": 25322,
+      "jedec_fifo_u32": "0x165ec2",
+      "jedec_wire_bytes": "c2 5e 16",
+      "read_qe_opcode": "0x5",
+      "write_qe_opcode": "0x1",
+      "status_bytes": 1,
+      "qe_mask_u16": "0x40"
+    },
+    {
+      "index": 3,
+      "table_rva": 25755,
+      "file_offset": 25347,
+      "jedec_fifo_u32": "0x1720c2",
+      "jedec_wire_bytes": "c2 20 17",
+      "read_qe_opcode": "0x5",
+      "write_qe_opcode": "0x1",
+      "status_bytes": 1,
+      "qe_mask_u16": "0x40"
+    },
+    {
+      "index": 4,
+      "table_rva": 25780,
+      "file_offset": 25372,
+      "jedec_fifo_u32": "0x46159d",
+      "jedec_wire_bytes": "9d 15 46",
+      "read_qe_opcode": "0x5",
+      "write_qe_opcode": "0x1",
+      "status_bytes": 1,
+      "qe_mask_u16": "0x40"
+    },
+    {
+      "index": 5,
+      "table_rva": 25805,
+      "file_offset": 25397,
+      "jedec_fifo_u32": "0x1540ef",
+      "jedec_wire_bytes": "ef 40 15",
+      "read_qe_opcode": "0x35",
+      "write_qe_opcode": "0x1",
+      "status_bytes": 2,
+      "qe_mask_u16": "0x200"
+    },
+    {
+      "index": 6,
+      "table_rva": 25830,
+      "file_offset": 25422,
+      "jedec_fifo_u32": "0x1640ef",
+      "jedec_wire_bytes": "ef 40 16",
+      "read_qe_opcode": "0x35",
+      "write_qe_opcode": "0x1",
+      "status_bytes": 2,
+      "qe_mask_u16": "0x200"
+    },
+    {
+      "index": 7,
+      "table_rva": 25855,
+      "file_offset": 25447,
+      "jedec_fifo_u32": "0x1740ef",
+      "jedec_wire_bytes": "ef 40 17",
+      "read_qe_opcode": "0x35",
+      "write_qe_opcode": "0x1",
+      "status_bytes": 2,
+      "qe_mask_u16": "0x200"
+    },
+    {
+      "index": 8,
+      "table_rva": 25880,
+      "file_offset": 25472,
+      "jedec_fifo_u32": "0x1640c8",
+      "jedec_wire_bytes": "c8 40 16",
+      "read_qe_opcode": "0x35",
+      "write_qe_opcode": "0x1",
+      "status_bytes": 2,
+      "qe_mask_u16": "0x200"
+    },
+    {
+      "index": 9,
+      "table_rva": 25905,
+      "file_offset": 25497,
+      "jedec_fifo_u32": "0x164001",
+      "jedec_wire_bytes": "01 40 16",
+      "read_qe_opcode": "0x35",
+      "write_qe_opcode": "0x1",
+      "status_bytes": 2,
+      "qe_mask_u16": "0x200"
+    },
+    {
+      "index": 10,
+      "table_rva": 25930,
+      "file_offset": 25522,
+      "jedec_fifo_u32": "0x174001",
+      "jedec_wire_bytes": "01 40 17",
+      "read_qe_opcode": "0x35",
+      "write_qe_opcode": "0x1",
+      "status_bytes": 2,
+      "qe_mask_u16": "0x200"
+    },
+    {
+      "index": 11,
+      "table_rva": 25955,
+      "file_offset": 25547,
+      "jedec_fifo_u32": "0x164037",
+      "jedec_wire_bytes": "37 40 16",
+      "read_qe_opcode": "0x35",
+      "write_qe_opcode": "0x1",
+      "status_bytes": 2,
+      "qe_mask_u16": "0x200"
+    }
+  ],
+  "timing_33mhz": {
+    "evidence_class": "static model, not hardware timing",
+    "pio_source": "candidates/waveshare-adapter-safe-v001/src/rig/spi_toctou.pio",
+    "pio_source_sha256": "99f4a41417b0e39f5c5707d77fcbfad557d776e95c1ae832dc63aa4b16dc7b6d",
+    "model": "candidates/single-flash-emulator-v001/rig_timing.py",
+    "model_sha256": "c2f8916c841def29745b82e820a8df29df34fde5ae7e957d4e636631551401de",
+    "pio_hz_scenario": 400000000,
+    "spi_hz_firmware_template_scenario": 33000000,
+    "path": [
+      "wait 0 pin 2 side 1",
+      "jmp y-- capture side 1",
+      "mov y, isr side 1",
+      "jmp x!=y no_match side 1",
+      "irq nowait 0 side 1",
+      "mov y, osr side 1",
+      "pull block side 1",
+      "nop side 0",
+      "set pindirs, 1 side 0",
+      "wait 0 pin 2 side 0",
+      "out pins, 1 side 0"
+    ],
+    "cycles_after_final_header_falling": 10,
+    "margin_pio_cycles_fraction": "-130/33",
+    "optimistic_response_ns": 25.0,
+    "first_sample_deadline_ns": 15.151515151515152
+  },
+  "disassembly_output": {
+    "path": "reports/waveshare-reset-path-20261008/firmware-spi-disassembly.txt",
+    "sha256": "d07536f423efc998653395b66d2ee64ed85ef6e49294dc9825be8c32158e40bc",
+    "gnu_objdump_version": "GNU Binutils 2.47",
+    "selected_rva_ranges": {
+      "FchPei": [
+        [
+          576,
+          596
+        ],
+        [
+          5070,
+          5245
+        ],
+        [
+          5544,
+          5719
+        ],
+        [
+          14933,
+          14996
+        ],
+        [
+          18137,
+          19922
+        ],
+        [
+          23398,
+          23657
+        ]
+      ],
+      "FchDxe": [
+        [
+          3676,
+          3820
+        ],
+        [
+          10924,
+          11312
+        ]
+      ]
+    }
+  },
+  "early_boot_coverage": {
+    "image_is_live_readback": false,
+    "on_die_rom_coverage": false,
+    "type1_offset": "0x8e0400",
+    "type1_size": 46592,
+    "type1_sha256": "0bfbd84a89fc07ecd6fbfadde9e49f0af58aa42a87212b84e252313716efd851",
+    "type1_matches_PS1_magic_at_10": false,
+    "generic_header_rom_size_in_bounds": false,
+    "type1_executable_decoded": false,
+    "note": "Generic $PS1/HeaderFile bounds do not identify this type1 layout. Do not classify it as decrypted executable or infer its commands/encryption from raw-byte matches."
+  },
+  "scope": {
+    "firmware_modified": false,
+    "gates_modified": false,
+    "hardware_executed": false,
+    "clock_changed": false,
+    "dependencies_installed": false,
+    "Cutter_MCP_used": false,
+    "reason_for_cli": "Bounded section disassembly with installed GNU/LLVM tools; no GUI/server lifecycle or renaming needed."
+  }
+}

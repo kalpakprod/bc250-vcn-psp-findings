@@ -1,0 +1,898 @@
+[
+  {
+    "file": "ABL1~0x31_21.11.26.0",
+    "size": 48592,
+    "literals": {
+      "VCN_SEG0_DW": [
+        "0xb65f"
+      ]
+    },
+    "strings": [
+      {
+        "offset": "0x5d34",
+        "text": "Send PSPSMC_MSG_QueryMemFreqOfDfPstate 0x%x"
+      },
+      {
+        "offset": "0x5de4",
+        "text": "Send PSPSMC_MSG_QueryNumberOfDfPstates 0x%x"
+      },
+      {
+        "offset": "0x6034",
+        "text": "Send PSPSMC_MSG_ConfigSocRail 0x%x"
+      },
+      {
+        "offset": "0x6073",
+        "text": "?Send PSPSMC_MSG_SetupFclkPll 0x%x"
+      },
+      {
+        "offset": "0x6098",
+        "text": "Send PSPSMC_MSG_SetupUclkPll  0x%x"
+      },
+      {
+        "offset": "0x6128",
+        "text": "Send PSPSMC_MSG_ChangeGfxMode 0x%x"
+      },
+      {
+        "offset": "0x61bc",
+        "text": "Send PSPSMC_MSG_RequestModeSwitch 0x%x"
+      },
+      {
+        "offset": "0x6bf4",
+        "text": "PspBootRomServices:DiesPerSocket DieNum: %d"
+      },
+      {
+        "offset": "0x6c38",
+        "text": "PspBootRomServices:PhysDieId: %d"
+      },
+      {
+        "offset": "0x6c70",
+        "text": "PspBootRomServices:SocketId: %d"
+      },
+      {
+        "offset": "0x6ca8",
+        "text": "PspBootRomServices:SystemDieCount: %d"
+      },
+      {
+        "offset": "0x6ce4",
+        "text": "PspBootRomServices:SystemSocketCount: %d"
+      },
+      {
+        "offset": "0x6daa",
+        "text": "~SMN R [0x%0x]"
+      },
+      {
+        "offset": "0x6e76",
+        "text": "~SMN BW [0x%0x] = 0x%0x"
+      },
+      {
+        "offset": "0x6e92",
+        "text": "~SMN W [0x%0x] = 0x%0x"
+      },
+      {
+        "offset": "0x9ddc",
+        "text": "~R SMN_UMC%d_CH%d % 6x [%d:%d] = %x"
+      },
+      {
+        "offset": "0x9e04",
+        "text": "~R SMN_UMC%d_CTRL%d % 6x [%d:%d] = %x"
+      }
+    ]
+  },
+  {
+    "file": "ABL2~0x32_21.11.26.0",
+    "size": 15984,
+    "literals": {},
+    "strings": [
+      {
+        "offset": "0x3118",
+        "text": "PspBootRomServices:DiesPerSocket DieNum: %d"
+      },
+      {
+        "offset": "0x315c",
+        "text": "PspBootRomServices:PhysDieId: %d"
+      },
+      {
+        "offset": "0x3194",
+        "text": "PspBootRomServices:SocketId: %d"
+      },
+      {
+        "offset": "0x31cc",
+        "text": "PspBootRomServices:SystemDieCount: %d"
+      },
+      {
+        "offset": "0x3208",
+        "text": "PspBootRomServices:SystemSocketCount: %d"
+      },
+      {
+        "offset": "0x32b6",
+        "text": "~SMN R [0x%0x]"
+      },
+      {
+        "offset": "0x3382",
+        "text": "~SMN BW [0x%0x] = 0x%0x"
+      },
+      {
+        "offset": "0x339e",
+        "text": "~SMN W [0x%0x] = 0x%0x"
+      }
+    ]
+  },
+  {
+    "file": "ABL3~0x33_21.11.26.0",
+    "size": 41056,
+    "literals": {},
+    "strings": [
+      {
+        "offset": "0x10a5",
+        "text": "Master: Pass unified APOB to PSP BL"
+      },
+      {
+        "offset": "0x6728",
+        "text": "Hybrid Secure"
+      },
+      {
+        "offset": "0x7304",
+        "text": "MagicAddrCfg[%d].DstFabricID:     %d"
+      },
+      {
+        "offset": "0x78a4",
+        "text": "DramMap[%d].MapLimit.DstFabricID:     %d"
+      },
+      {
+        "offset": "0x935c",
+        "text": "PspBootRomServices:DiesPerSocket DieNum: %d"
+      },
+      {
+        "offset": "0x93a4",
+        "text": "PspBootRomServices:EnabledCoreCountOnDie: %d"
+      },
+      {
+        "offset": "0x94ac",
+        "text": "PspBootRomServices:PhysicalCoreComplexCount: %d"
+      },
+      {
+        "offset": "0x94e4",
+        "text": "PspBootRomServices:PhysicalCoreCount: %d"
+      },
+      {
+        "offset": "0x9510",
+        "text": "PspBootRomServices:PhysComplex: %d"
+      },
+      {
+        "offset": "0x9534",
+        "text": "PspBootRomServices:PhysCore: %d"
+      },
+      {
+        "offset": "0x95ac",
+        "text": "PspBootRomServices:LogicalCoresPerPhysicalComplex[%d]: %d"
+      },
+      {
+        "offset": "0x95e8",
+        "text": "PspBootRomServices:PhysCcxEnableMap: 0x%0x"
+      },
+      {
+        "offset": "0x9690",
+        "text": "PspBootRomServices:Logical2PhysicalCoreMapping"
+      },
+      {
+        "offset": "0x96c0",
+        "text": "PspBootRomServices:[%d].CoreComplex: %d"
+      },
+      {
+        "offset": "0x96ec",
+        "text": "PspBootRomServices:[%d].Core: %d"
+      },
+      {
+        "offset": "0x9710",
+        "text": "PspBootRomServices:PhysCoreEnableMap: 0x%0x"
+      },
+      {
+        "offset": "0x9754",
+        "text": "PspBootRomServices:PhysDieId: %d"
+      },
+      {
+        "offset": "0x978c",
+        "text": "PspBootRomServices:SocketId: %d"
+      },
+      {
+        "offset": "0x97c8",
+        "text": "PspBootRomServices:SystemDieCount: %d"
+      },
+      {
+        "offset": "0x9804",
+        "text": "PspBootRomServices:SystemSocketCount: %d"
+      },
+      {
+        "offset": "0x9868",
+        "text": "PspBootRomServices:IsSecure: %s  (SecurityState: %d)"
+      },
+      {
+        "offset": "0x993d",
+        "text": "~SMN RI F%xx%x_x[%x]"
+      },
+      {
+        "offset": "0x9959",
+        "text": "~SMN RI Data32: 0x%08x"
+      },
+      {
+        "offset": "0x9975",
+        "text": "~SMN RI Data32Hi: 0x%08x"
+      },
+      {
+        "offset": "0x9a2e",
+        "text": "~SMN WI F%xx%x_x[%x] = 0x%0x"
+      },
+      {
+        "offset": "0x9a4d",
+        "text": "~SMN WI Data32: 0x%08x"
+      },
+      {
+        "offset": "0x9a6d",
+        "text": "~SMN WI Data32Hi: 0x%08x"
+      },
+      {
+        "offset": "0x9b0a",
+        "text": "~SMN R [0x%0x]"
+      },
+      {
+        "offset": "0x9bd6",
+        "text": "~SMN BW [0x%0x] = 0x%0x"
+      },
+      {
+        "offset": "0x9bf2",
+        "text": "~SMN W [0x%0x] = 0x%0x"
+      }
+    ]
+  },
+  {
+    "file": "ABL4~0x34_21.11.26.0",
+    "size": 40672,
+    "literals": {},
+    "strings": [
+      {
+        "offset": "0x7c5",
+        "text": "Master: Pass APOB to PSP BL for <= 1 die"
+      },
+      {
+        "offset": "0x18e1",
+        "text": "Master: Pass unified APOB to PSP BL"
+      },
+      {
+        "offset": "0x2176",
+        "text": "Encryption Flags, AddrTweakEn passed to PSP BL: %x, %x"
+      },
+      {
+        "offset": "0x85f0",
+        "text": "Begin DF security widget init"
+      },
+      {
+        "offset": "0x8614",
+        "text": "DF security widget init complete"
+      },
+      {
+        "offset": "0x9568",
+        "text": "Send PSPSMC_MSG_SwitchToStartupDfPstate 0x%x"
+      },
+      {
+        "offset": "0x9610",
+        "text": "Send PSPSMC_MSG_RequestMemoryTraining 0x%x"
+      },
+      {
+        "offset": "0x9e48",
+        "text": "PspBootRomServices:DiesPerSocket DieNum: %d"
+      },
+      {
+        "offset": "0x9e90",
+        "text": "PspBootRomServices:EnabledCoreCountOnDie: %d"
+      }
+    ]
+  },
+  {
+    "file": "APCB~0x60",
+    "size": 8192,
+    "literals": {},
+    "strings": [
+      {
+        "offset": "0x9c",
+        "text": "PSPG"
+      }
+    ]
+  },
+  {
+    "file": "BIOS",
+    "size": 2088960,
+    "literals": {
+      "FABRIC_FRAME": [
+        "0x166",
+        "0x18e",
+        "0x196",
+        "0xfae",
+        "0xfd6",
+        "0xfde",
+        "0x608e",
+        "0x60b6",
+        "0x60be",
+        "0x78e2",
+        "0x790a",
+        "0x7912",
+        "0xad46",
+        "0xad6e",
+        "0xad76",
+        "0xb47e",
+        "0xb4a6",
+        "0xb4ae",
+        "0xdf1e",
+        "0xdf46",
+        "0xdf4e",
+        "0xeb36",
+        "0xeb5e",
+        "0xeb66",
+        "0xf40e",
+        "0xf436",
+        "0xf43e",
+        "0xf782",
+        "0xf7aa",
+        "0xf7b2",
+        "0xfd42",
+        "0xfd6a",
+        "0xfd72",
+        "0x110c6",
+        "0x110ee",
+        "0x110f6",
+        "0x127c2",
+        "0x127ea",
+        "0x127f2",
+        "0x12b5e",
+        "0x12b86",
+        "0x12b8e",
+        "0x17526",
+        "0x1754e",
+        "0x17556",
+        "0x19696",
+        "0x196be",
+        "0x196c6",
+        "0x19d22",
+        "0x3176a",
+        "0x31792",
+        "0x3179a",
+        "0x37fc2",
+        "0x37fea",
+        "0x37ff2",
+        "0x3add6",
+        "0x50272",
+        "0x5029a",
+        "0x502a2",
+        "0x520ba",
+        "0x520e2",
+        "0x520ea",
+        "0x52bf2",
+        "0x6c7d6",
+        "0x87176",
+        "0x9d426",
+        "0x9d44e",
+        "0x9d456",
+        "0xa0096",
+        "0xb5e56",
+        "0xb5e7e",
+        "0xb5e86",
+        "0xb7816",
+        "0xb783e",
+        "0xb7846",
+        "0xb7a4a",
+        "0xb7a72",
+        "0xb7a7a",
+        "0xb8226",
+        "0xcc12a",
+        "0xcc152",
+        "0xcc15a",
+        "0xcd29e",
+        "0xcd2c6",
+        "0xcd2ce",
+        "0xcea26",
+        "0xcea4e",
+        "0xcea56",
+        "0xd0086",
+        "0xd00ae",
+        "0xd00b6",
+        "0xd0c7e",
+        "0xd0ca6",
+        "0xd0cae",
+        "0xd1d96",
+        "0xd1dbe",
+        "0xd1dc6",
+        "0xd2c1e",
+        "0xd2c46",
+        "0xd2c4e"
+      ],
+      "VCN_SEG0_DW": [
+        "0x5f4f",
+        "0x1280f",
+        "0x1742b",
+        "0x3163f",
+        "0x344a5"
+      ],
+      "VCN_SEG1_DW": [
+        "0x10a1b",
+        "0x120d7",
+        "0xcf987",
+        "0xd062f",
+        "0xd1737",
+        "0xd25cf",
+        "0xd7517",
+        "0xf121f"
+      ],
+      "UVD_PGFSM_MMIO": [
+        "0xcd1a3"
+      ],
+      "UVD_REGFILE_MMIO": [
+        "0xcd197",
+        "0xcd1bf",
+        "0xcd1c7"
+      ],
+      "BC250_DID": [
+        "0x2d47c",
+        "0x4c700",
+        "0x67164",
+        "0x81850",
+        "0x993f8",
+        "0xb2050",
+        "0xc8428"
+      ]
+    },
+    "strings": [
+      {
+        "offset": "0xd4ed",
+        "text": "EFI_SECURITY_VIOLATION"
+      },
+      {
+        "offset": "0xf0d5",
+        "text": "EFI_SECURITY_VIOLATION"
+      },
+      {
+        "offset": "0x1572f",
+        "text": ">$PSP"
+      },
+      {
+        "offset": "0x16d88",
+        "text": "AmdPspGetApobEntry %x %x"
+      },
+      {
+        "offset": "0x16de4",
+        "text": "AmdPspGetApobEntryInstance %x %x %x"
+      },
+      {
+        "offset": "0x16f4c",
+        "text": "Security Violation"
+      },
+      {
+        "offset": "0x191ac",
+        "text": "Security Violation"
+      },
+      {
+        "offset": "0x1d0eb",
+        "text": ">$PSP"
+      },
+      {
+        "offset": "0x30a10",
+        "text": "  AmdFabricAriPeiInit Entry"
+      },
+      {
+        "offset": "0x30ab0",
+        "text": "  AmdFabricAriPeiInit End"
+      },
+      {
+        "offset": "0x30d58",
+        "text": "FabricScrubInit Entry"
+      },
+      {
+        "offset": "0x30da0",
+        "text": "FabricScrubInit Exit"
+      },
+      {
+        "offset": "0x30de8",
+        "text": "FabricAriPeiSyncFlood Option"
+      },
+      {
+        "offset": "0x30e08",
+        "text": "FabricAriFreezeModuleQueuesOnError Option"
+      },
+      {
+        "offset": "0x30ef4",
+        "text": "AmdPspGetApobEntry %x %x"
+      },
+      {
+        "offset": "0x30f50",
+        "text": "AmdPspGetApobEntryInstance %x %x %x"
+      },
+      {
+        "offset": "0x310b8",
+        "text": "Security Violation"
+      },
+      {
+        "offset": "0x38a94",
+        "text": ">$PSP"
+      },
+      {
+        "offset": "0x390a0",
+        "text": "AmdPspGetApobEntry %x %x"
+      },
+      {
+        "offset": "0x390fc",
+        "text": "AmdPspGetApobEntryInstance %x %x %x"
+      },
+      {
+        "offset": "0x3a359",
+        "text": ">$PSP"
+      },
+      {
+        "offset": "0x3a9bc",
+        "text": "AmdPspGetApobEntry %x %x"
+      },
+      {
+        "offset": "0x3aa18",
+        "text": "AmdPspGetApobEntryInstance %x %x %x"
+      },
+      {
+        "offset": "0x4fe30",
+        "text": "AmdNbioGfxInit Entry"
+      },
+      {
+        "offset": "0x4ff60",
+        "text": "AmdNbioGfxInit Exit"
+      },
+      {
+        "offset": "0x51c28",
+        "text": "AmdNbioIOMMUARIPEIEntry Entry"
+      },
+      {
+        "offset": "0x51c84",
+        "text": "AmdNbioIOMMUARIPEIEntry Exit"
+      },
+      {
+        "offset": "0x51df8",
+        "text": "  AGESA set MMIO pair #%X, 0x%X0000 ~ 0x%XFFFF DstFabricID: 0x%X"
+      },
+      {
+        "offset": "0x56e03",
+        "text": ">$PSP"
+      },
+      {
+        "offset": "0x6baa0",
+        "text": "%a : Begin to allocate bars for SMN low %x high %x"
+      },
+      {
+        "offset": "0x6bba4",
+        "text": "AmdNbioBaseInit Entry"
+      },
+      {
+        "offset": "0x6bbd0",
+        "text": "AmdNbioBaseInit Exit"
+      },
+      {
+        "offset": "0x6bbe8",
+        "text": "NbioTopologyConfigureCallbackPpi Entry"
+      },
+      {
+        "offset": "0x6bc10",
+        "text": "NbioTopologyConfigureCallbackPpi Exit"
+      },
+      {
+        "offset": "0x6bc38",
+        "text": "AmdNbioBaseARIPeiEntry Entry"
+      },
+      {
+        "offset": "0x6bc58",
+        "text": "AmdNbioBaseARIPeiEntry Exit"
+      },
+      {
+        "offset": "0x6bdc8",
+        "text": "NbioNBIFParityCheckWorkaroundARI Enter"
+      },
+      {
+        "offset": "0x6bdf0",
+        "text": "NbioNBIFParityCheckWorkaroundARI Exit"
+      },
+      {
+        "offset": "0x6c030",
+        "text": "  AGESA set MMIO pair #%X, 0x%X0000 ~ 0x%XFFFF DstFabricID: 0x%X"
+      },
+      {
+        "offset": "0x6c2fc",
+        "text": "AmdPspGetApobEntry %x %x"
+      },
+      {
+        "offset": "0x6c358",
+        "text": "AmdPspGetApobEntryInstance %x %x %x"
+      },
+      {
+        "offset": "0x851f0",
+        "text": "AmdNbioPcieARIPeiEntry Entry"
+      },
+      {
+        "offset": "0x85210",
+        "text": "AmdNbioPcieARIPeiEntry Exit"
+      },
+      {
+        "offset": "0x85dcc",
+        "text": "PcdCfgPspccpSsid = %x"
+      },
+      {
+        "offset": "0x85e50",
+        "text": "gAmdNbioSmuServicesPpiGuid is installed"
+      },
+      {
+        "offset": "0x85e7c",
+        "text": "gAmdNbioPcieComplexPpiGuid is installed"
+      },
+      {
+        "offset": "0x863ac",
+        "text": "  PSPP Policy - %a"
+      },
+      {
+        "offset": "0x867e8",
+        "text": "PsppPolicy is %d and looking for %d"
+      },
+      {
+        "offset": "0x86c50",
+        "text": "NbioEnableNbifDevice (DeviceType=%x)"
+      },
+      {
+        "offset": "0x86c78",
+        "text": "NbioDisableNbifDevice (DeviceType=%x)"
+      },
+      {
+        "offset": "0x9cca8",
+        "text": "AmdNbioSmuV10PeiEntry Entry"
+      },
+      {
+        "offset": "0x9ccc8",
+        "text": "About to call  AmdNbioSmuEarlyInit"
+      },
+      {
+        "offset": "0x9ccec",
+        "text": "AmdNbioSmuV10PeiEntry Exit"
+      },
+      {
+        "offset": "0x9cd50",
+        "text": "AmdNbioSmuEarlyInit Entry"
+      },
+      {
+        "offset": "0x9cd6c",
+        "text": "AmdNbioSmuEarlyInit Exit"
+      },
+      {
+        "offset": "0x9cf24",
+        "text": "NbioSmuServiceRequestV10 Enter"
+      },
+      {
+        "offset": "0x9cf44",
+        "text": "NbioSmuServiceRequestV10 INVALID!!"
+      },
+      {
+        "offset": "0x9d070",
+        "text": "NbioSmuServiceRequestV10 Exit"
+      },
+      {
+        "offset": "0x9da6a",
+        "text": ">$PSP"
+      },
+      {
+        "offset": "0x9f91c",
+        "text": "Psp.Drv.AmdPspPeiV2 Enter"
+      },
+      {
+        "offset": "0x9f951",
+        "text": "Install PSP common service PPI"
+      },
+      {
+        "offset": "0x9f989",
+        "text": "Psp BAR init"
+      },
+      {
+        "offset": "0x9f998",
+        "text": "AmdPspPeiV2 Exit"
+      },
+      {
+        "offset": "0x9f9c4",
+        "text": "PSP Dir not existed"
+      },
+      {
+        "offset": "0x9f9dc",
+        "text": "PspBarInitEarlyV2 Allocate MMIO Fail"
+      },
+      {
+        "offset": "0x9fa04",
+        "text": "PspBarInitEarlyV2 Allocate MMIO @0x%lx"
+      },
+      {
+        "offset": "0x9fab0",
+        "text": "Psp.SendC2PCMD [0x%x] Buffer:0x%x"
+      },
+      {
+        "offset": "0x9fae0",
+        "text": "GetPspMboxLocation Error"
+      },
+      {
+        "offset": "0x9fb4d",
+        "text": "Psp.SendC2PCMD Exit"
+      },
+      {
+        "offset": "0x9fb78",
+        "text": "Psp.PspMboxBiosQueryCaps"
+      },
+      {
+        "offset": "0x9fda4",
+        "text": "  AGESA set MMIO pair #%X, 0x%X0000 ~ 0x%XFFFF DstFabricID: 0x%X"
+      },
+      {
+        "offset": "0xb577c",
+        "text": "NbioSmuServiceRequestV10 Enter"
+      },
+      {
+        "offset": "0xb58a0",
+        "text": "NbioSmuServiceRequestV10 Exit"
+      },
+      {
+        "offset": "0xb6f88",
+        "text": ">$PSP"
+      },
+      {
+        "offset": "0xcc8fe",
+        "text": ">$PSP"
+      },
+      {
+        "offset": "0xd49fd",
+        "text": "EFI_SECURITY_VIOLATION"
+      },
+      {
+        "offset": "0xd51d4",
+        "text": "Security Violation"
+      },
+      {
+        "offset": "0xd6ec5",
+        "text": "EFI_SECURITY_VIOLATION"
+      },
+      {
+        "offset": "0xdb06c",
+        "text": "Security Violation"
+      },
+      {
+        "offset": "0x316c4",
+        "text": "AmdFabricAriPei"
+      },
+      {
+        "offset": "0x501d8",
+        "text": "AmdNbioGfxARIPei"
+      },
+      {
+        "offset": "0x5201c",
+        "text": "AmdNbioIOMMUARIPei"
+      },
+      {
+        "offset": "0x6c71c",
+        "text": "AmdNbioBaseARIPei"
+      },
+      {
+        "offset": "0x870b8",
+        "text": "AmdNbioPcieARIPei"
+      },
+      {
+        "offset": "0x9d3a0",
+        "text": "AmdNbioSmuV10Pei"
+      },
+      {
+        "offset": "0xa0020",
+        "text": "AmdPspPeiV2"
+      },
+      {
+        "offset": "0xce9a8",
+        "text": "AmiPspRecovery"
+      }
+    ]
+  },
+  {
+    "file": "DEBUG_UNLOCK~0x13_29.1C.0.1",
+    "size": 7936,
+    "literals": {},
+    "strings": [
+      {
+        "offset": "0x10c5",
+        "text": "DBG_UNLOCK_MODULE::FAIL - SecureUnlock with HdtError = "
+      },
+      {
+        "offset": "0x1101",
+        "text": "DBG_UNLOCK_MODULE::Securely UNLOCKED"
+      }
+    ]
+  },
+  {
+    "file": "DRIVER_ENTRIES~0x28_0.1C.0.2",
+    "size": 108144,
+    "literals": {},
+    "strings": [
+      {
+        "offset": "0x162c4",
+        "text": "dBiF"
+      },
+      {
+        "offset": "0x173bc",
+        "text": "$PSP"
+      },
+      {
+        "offset": "0x17984",
+        "text": "HMAC Signature Key for PSP Data saved in DRAM"
+      }
+    ]
+  },
+  {
+    "file": "HARDWARE_IP_CONFIG~0x20_0.0.0.1",
+    "size": 1360,
+    "literals": {
+      "VCN_FABRIC": [
+        "0x420"
+      ],
+      "GC_FABRIC": [
+        "0x278",
+        "0x37c",
+        "0x390"
+      ],
+      "THM_FABRIC": [
+        "0x3cc"
+      ],
+      "VCN_SEG0_DW": [
+        "0x418"
+      ],
+      "VCN_SEG1_DW": [
+        "0x41c"
+      ],
+      "UVD_REGFILE_MMIO": [
+        "0x42b"
+      ]
+    },
+    "strings": []
+  },
+  {
+    "file": "SMU_OFFCHIP_FW~0x8_0.58.6.0",
+    "size": 262400,
+    "literals": {
+      "VCN_SEG0_DW": [
+        "0xf7e7",
+        "0xf82f",
+        "0x15fbc",
+        "0x1604c"
+      ],
+      "DOM6_BLOCK": [
+        "0xf808"
+      ]
+    },
+    "strings": []
+  },
+  {
+    "file": "UMC_FW~0x4f_81.2.12.0",
+    "size": 65792,
+    "literals": {
+      "VCN_SEG0_DW": [
+        "0x1023",
+        "0x102b"
+      ],
+      "UVD_PGFSM_MMIO": [
+        "0x392a",
+        "0x3c4e",
+        "0xac16",
+        "0xae12",
+        "0xaf7a"
+      ],
+      "UVD_REGFILE_MMIO": [
+        "0x444e",
+        "0x4602",
+        "0x534a",
+        "0x5ade",
+        "0x5f9e",
+        "0x6f66",
+        "0x8d46",
+        "0xc5e2"
+      ]
+    },
+    "strings": []
+  }
+]

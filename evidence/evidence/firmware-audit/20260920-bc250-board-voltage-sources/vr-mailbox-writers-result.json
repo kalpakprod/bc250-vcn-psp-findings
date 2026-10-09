@@ -1,0 +1,1620 @@
+{
+ "status": "PASS",
+ "checks": 31,
+ "failed": 0,
+ "failures": [],
+ "question": "which firmware modules can stage a VR-register write through the Super-I/O/EC mailbox window",
+ "donor": {
+  "path": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+  "size": 16777216,
+  "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+ },
+ "corpus": {
+  "path": "evidence/firmware-audit/20260919-inv-token-consumers",
+  "modules": 233,
+  "census_sha256": "506b8eefd0ef3847782dddd88a458b95e32082f473346d7d645703dce6b60d39",
+  "extractor_sha256": "5ead8605678fc5a13eb0cf49c01b43037560ddc485d8ad2686abf0e9c34d9593"
+ },
+ "anchor_definitions": [
+  {
+   "name": "push_cfg_index_2e",
+   "bytes": "6a2e",
+   "note": "push 0x2e - Super-I/O config index port"
+  },
+  {
+   "name": "push_cfg_data_2f",
+   "bytes": "6a2f",
+   "note": "push 0x2f - Super-I/O config data port"
+  },
+  {
+   "name": "mov_al_87",
+   "bytes": "b087",
+   "note": "mov al,0x87 - config unlock byte"
+  },
+  {
+   "name": "imm_ec_window_a20",
+   "bytes": "200a0000",
+   "note": "little-endian immediate 0x00000a20 - EC data window base"
+  },
+  {
+   "name": "push_mbox_65",
+   "bytes": "6a65",
+   "note": "push 0x65 - mailbox register (command/transaction class)"
+  },
+  {
+   "name": "push_mbox_66",
+   "bytes": "6a66",
+   "note": "push 0x66 - mailbox register (target VR register index)"
+  },
+  {
+   "name": "push_mbox_70",
+   "bytes": "6a70",
+   "note": "push 0x70 - mailbox register (value low byte)"
+  },
+  {
+   "name": "push_mbox_63",
+   "bytes": "6a63",
+   "note": "push 0x63 - mailbox register (transfer count)"
+  },
+  {
+   "name": "push_mbox_60",
+   "bytes": "6a60",
+   "note": "push 0x60 - mailbox register (trigger/commit)"
+  },
+  {
+   "name": "test_al_40",
+   "bytes": "a840",
+   "note": "test al,0x40 - mailbox status-bit poll"
+  },
+  {
+   "name": "out_imm_2e",
+   "bytes": "e62e",
+   "note": "out 0x2e,al - direct config-port write"
+  },
+  {
+   "name": "in_imm_2e",
+   "bytes": "e42e",
+   "note": "in al,0x2e - direct config-port read"
+  },
+  {
+   "name": "mov_dx_2e",
+   "bytes": "ba2e00",
+   "note": "mov dx,0x2e - config index port in dx"
+  },
+  {
+   "name": "mov_dx_2f",
+   "bytes": "ba2f00",
+   "note": "mov dx,0x2f - config data port in dx"
+  }
+ ],
+ "strong_anchor_set": [
+  "push_cfg_index_2e",
+  "push_cfg_data_2f",
+  "mov_al_87",
+  "imm_ec_window_a20",
+  "push_mbox_65",
+  "push_mbox_66",
+  "push_mbox_70",
+  "push_mbox_63",
+  "push_mbox_60",
+  "test_al_40"
+ ],
+ "writers": [
+  {
+   "stem": "ISL69247-3e1f753a6279",
+   "ui": "ISL69247",
+   "type": "TE",
+   "ffs_guid": "6E6D2018-28D0-4AD3-BEB3-B48E4981707D",
+   "ffs_offset": "0xed2c30",
+   "fv_base": "0xe02000",
+   "size": 4264,
+   "sha256": "3e1f753a627922d16e5a638a527e39f4dd26242144edae25b0ac849db6421e34",
+   "anchor_offsets": {
+    "push_cfg_index_2e": [
+     "0x35e",
+     "0x3cd"
+    ],
+    "push_cfg_data_2f": [
+     "0x36a",
+     "0x37c",
+     "0x38e",
+     "0x3a0",
+     "0x3d9",
+     "0x3eb",
+     "0x3fd",
+     "0x40f"
+    ],
+    "mov_al_87": [
+     "0x363",
+     "0x3d2"
+    ],
+    "imm_ec_window_a20": [
+     "0x3ac",
+     "0x41b"
+    ],
+    "push_mbox_65": [
+     "0x443",
+     "0x4c3",
+     "0x55d"
+    ],
+    "push_mbox_66": [
+     "0x44e",
+     "0x4d0",
+     "0x56a"
+    ],
+    "push_mbox_70": [
+     "0x45d",
+     "0x575"
+    ],
+    "push_mbox_63": [
+     "0x466",
+     "0x4dc",
+     "0x58a"
+    ],
+    "push_mbox_60": [
+     "0x46e",
+     "0x4e4",
+     "0x592"
+    ],
+    "test_al_40": [
+     "0x49a",
+     "0x510",
+     "0x5be"
+    ]
+   },
+   "helpers": [
+    {
+     "entry": "0x35d",
+     "owns_ec_window_immediate": [
+      "0x3ac"
+     ],
+     "owns_unlock_byte": [
+      "0x363"
+     ],
+     "full_transport_helper": true
+    },
+    {
+     "entry": "0x3cd",
+     "owns_ec_window_immediate": [
+      "0x41b"
+     ],
+     "owns_unlock_byte": [
+      "0x3d2"
+     ],
+     "full_transport_helper": true
+    }
+   ],
+   "call_sites": [
+    {
+     "call_addr": "0x14b",
+     "helper": "0x3cd",
+     "pushes": [
+      "ebx",
+      "0x61"
+     ],
+     "pushed_register_index": 97,
+     "pushed_register_index_raw": "0x61",
+     "staged_value": null,
+     "staged_value_raw": "ebx",
+     "staged_value_resolution": "register-unresolved"
+    },
+    {
+     "call_addr": "0x154",
+     "helper": "0x3cd",
+     "pushes": [
+      "0x3",
+      "0x62"
+     ],
+     "pushed_register_index": 98,
+     "pushed_register_index_raw": "0x62",
+     "staged_value": 3,
+     "staged_value_raw": "0x3",
+     "staged_value_resolution": "immediate"
+    },
+    {
+     "call_addr": "0x447",
+     "helper": "0x3cd",
+     "pushes": [
+      "ebx",
+      "esi",
+      "esi",
+      "0x65"
+     ],
+     "pushed_register_index": 101,
+     "pushed_register_index_raw": "0x65",
+     "staged_value": 192,
+     "staged_value_raw": "esi",
+     "staged_value_resolution": "register:esi@0x43d"
+    },
+    {
+     "call_addr": "0x450",
+     "helper": "0x3cd",
+     "pushes": [
+      "0x0",
+      "0x66"
+     ],
+     "pushed_register_index": 102,
+     "pushed_register_index_raw": "0x66",
+     "staged_value": 0,
+     "staged_value_raw": "0x0",
+     "staged_value_resolution": "immediate"
+    },
+    {
+     "call_addr": "0x45f",
+     "helper": "0x3cd",
+     "pushes": [
+      "eax",
+      "0x70"
+     ],
+     "pushed_register_index": 112,
+     "pushed_register_index_raw": "0x70",
+     "staged_value": null,
+     "staged_value_raw": "eax",
+     "staged_value_resolution": "register-unresolved"
+    },
+    {
+     "call_addr": "0x468",
+     "helper": "0x3cd",
+     "pushes": [
+      "0x2",
+      "0x63"
+     ],
+     "pushed_register_index": 99,
+     "pushed_register_index_raw": "0x63",
+     "staged_value": 2,
+     "staged_value_raw": "0x2",
+     "staged_value_resolution": "immediate"
+    },
+    {
+     "call_addr": "0x472",
+     "helper": "0x3cd",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x47d",
+     "helper": "0x35d",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x494",
+     "helper": "0x35d",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x4a1",
+     "helper": "0x3cd",
+     "pushes": [
+      "0x8",
+      "esi"
+     ],
+     "pushed_register_index": null,
+     "pushed_register_index_raw": "esi",
+     "staged_value": 8,
+     "staged_value_raw": "0x8",
+     "staged_value_resolution": "immediate"
+    },
+    {
+     "call_addr": "0x4c7",
+     "helper": "0x3cd",
+     "pushes": [
+      "ebx",
+      "esi",
+      "esi",
+      "0x65"
+     ],
+     "pushed_register_index": 101,
+     "pushed_register_index_raw": "0x65",
+     "staged_value": 192,
+     "staged_value_raw": "esi",
+     "staged_value_resolution": "register:esi@0x4bd"
+    },
+    {
+     "call_addr": "0x4d2",
+     "helper": "0x3cd",
+     "pushes": [
+      "DWORD PTR [esp+0x14]",
+      "0x66"
+     ],
+     "pushed_register_index": 102,
+     "pushed_register_index_raw": "0x66",
+     "staged_value": null,
+     "staged_value_raw": "DWORD PTR [esp+0x14]",
+     "staged_value_resolution": "unresolved"
+    },
+    {
+     "call_addr": "0x4de",
+     "helper": "0x3cd",
+     "pushes": [
+      "0x83",
+      "0x63"
+     ],
+     "pushed_register_index": 99,
+     "pushed_register_index_raw": "0x63",
+     "staged_value": 131,
+     "staged_value_raw": "0x83",
+     "staged_value_resolution": "immediate"
+    },
+    {
+     "call_addr": "0x4e8",
+     "helper": "0x3cd",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x4f3",
+     "helper": "0x35d",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x50a",
+     "helper": "0x35d",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x519",
+     "helper": "0x35d",
+     "pushes": [
+      "0xb0"
+     ]
+    },
+    {
+     "call_addr": "0x52a",
+     "helper": "0x35d",
+     "pushes": [
+      "0xb1"
+     ]
+    },
+    {
+     "call_addr": "0x53a",
+     "helper": "0x3cd",
+     "pushes": [
+      "0x8",
+      "esi"
+     ],
+     "pushed_register_index": null,
+     "pushed_register_index_raw": "esi",
+     "staged_value": 8,
+     "staged_value_raw": "0x8",
+     "staged_value_resolution": "immediate"
+    },
+    {
+     "call_addr": "0x561",
+     "helper": "0x3cd",
+     "pushes": [
+      "ebx",
+      "esi",
+      "esi",
+      "0x65"
+     ],
+     "pushed_register_index": 101,
+     "pushed_register_index_raw": "0x65",
+     "staged_value": 192,
+     "staged_value_raw": "esi",
+     "staged_value_resolution": "register:esi@0x557"
+    },
+    {
+     "call_addr": "0x56c",
+     "helper": "0x3cd",
+     "pushes": [
+      "DWORD PTR [esp+0x14]",
+      "0x66"
+     ],
+     "pushed_register_index": 102,
+     "pushed_register_index_raw": "0x66",
+     "staged_value": null,
+     "staged_value_raw": "DWORD PTR [esp+0x14]",
+     "staged_value_resolution": "unresolved"
+    },
+    {
+     "call_addr": "0x577",
+     "helper": "0x3cd",
+     "pushes": [
+      "eax",
+      "0x70"
+     ],
+     "pushed_register_index": 112,
+     "pushed_register_index_raw": "0x70",
+     "staged_value": null,
+     "staged_value_raw": "eax",
+     "staged_value_resolution": "register-unresolved"
+    },
+    {
+     "call_addr": "0x583",
+     "helper": "0x3cd",
+     "pushes": [
+      "eax",
+      "0x71"
+     ],
+     "pushed_register_index": 113,
+     "pushed_register_index_raw": "0x71",
+     "staged_value": null,
+     "staged_value_raw": "eax",
+     "staged_value_resolution": "register-unresolved"
+    },
+    {
+     "call_addr": "0x58c",
+     "helper": "0x3cd",
+     "pushes": [
+      "0x3",
+      "0x63"
+     ],
+     "pushed_register_index": 99,
+     "pushed_register_index_raw": "0x63",
+     "staged_value": 3,
+     "staged_value_raw": "0x3",
+     "staged_value_resolution": "immediate"
+    },
+    {
+     "call_addr": "0x596",
+     "helper": "0x3cd",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x5a1",
+     "helper": "0x35d",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x5b8",
+     "helper": "0x35d",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x5c5",
+     "helper": "0x3cd",
+     "pushes": [
+      "0x8",
+      "esi"
+     ],
+     "pushed_register_index": null,
+     "pushed_register_index_raw": "esi",
+     "staged_value": 8,
+     "staged_value_raw": "0x8",
+     "staged_value_resolution": "immediate"
+    }
+   ],
+   "rom_reextraction": {
+    "rom_offset": "0xed2c74",
+    "sha256": "3e1f753a627922d16e5a638a527e39f4dd26242144edae25b0ac849db6421e34",
+    "matches_corpus_image": true
+   }
+  },
+  {
+   "stem": "ISL95712-c0cc17d2d54f",
+   "ui": "ISL95712",
+   "type": "TE",
+   "ffs_guid": "02544BE0-2CB9-4B75-8111-CD8CDC07B837",
+   "ffs_offset": "0xed3d48",
+   "fv_base": "0xe02000",
+   "size": 3624,
+   "sha256": "c0cc17d2d54f9cde65f471d2971596837b024d4764a28b33286032cfa95d43a9",
+   "anchor_offsets": {
+    "push_cfg_index_2e": [
+     "0x17c",
+     "0x1eb"
+    ],
+    "push_cfg_data_2f": [
+     "0x188",
+     "0x19a",
+     "0x1ac",
+     "0x1be",
+     "0x1f7",
+     "0x209",
+     "0x21b",
+     "0x22d"
+    ],
+    "mov_al_87": [
+     "0x181",
+     "0x1f0"
+    ],
+    "imm_ec_window_a20": [
+     "0x1ca",
+     "0x239"
+    ],
+    "push_mbox_65": [
+     "0x260",
+     "0x2f0"
+    ],
+    "push_mbox_66": [
+     "0x26e",
+     "0x2fd"
+    ],
+    "push_mbox_70": [
+     "0x30c"
+    ],
+    "push_mbox_63": [
+     "0x27a",
+     "0x315"
+    ],
+    "push_mbox_60": [
+     "0x286",
+     "0x321"
+    ],
+    "test_al_40": [
+     "0x2b2",
+     "0x34d"
+    ]
+   },
+   "helpers": [
+    {
+     "entry": "0x17b",
+     "owns_ec_window_immediate": [
+      "0x1ca"
+     ],
+     "owns_unlock_byte": [
+      "0x181"
+     ],
+     "full_transport_helper": true
+    },
+    {
+     "entry": "0x1eb",
+     "owns_ec_window_immediate": [
+      "0x239"
+     ],
+     "owns_unlock_byte": [
+      "0x1f0"
+     ],
+     "full_transport_helper": true
+    }
+   ],
+   "call_sites": [
+    {
+     "call_addr": "0x108",
+     "helper": "0x1eb",
+     "pushes": [
+      "ebx",
+      "0x61"
+     ],
+     "pushed_register_index": 97,
+     "pushed_register_index_raw": "0x61",
+     "staged_value": null,
+     "staged_value_raw": "ebx",
+     "staged_value_resolution": "register-unresolved"
+    },
+    {
+     "call_addr": "0x111",
+     "helper": "0x1eb",
+     "pushes": [
+      "0x3",
+      "0x62"
+     ],
+     "pushed_register_index": 98,
+     "pushed_register_index_raw": "0x62",
+     "staged_value": 3,
+     "staged_value_raw": "0x3",
+     "staged_value_resolution": "immediate"
+    },
+    {
+     "call_addr": "0x264",
+     "helper": "0x1eb",
+     "pushes": [
+      "ebx",
+      "esi",
+      "0x9e",
+      "0x65"
+     ],
+     "pushed_register_index": 101,
+     "pushed_register_index_raw": "0x65",
+     "staged_value": 158,
+     "staged_value_raw": "0x9e",
+     "staged_value_resolution": "immediate"
+    },
+    {
+     "call_addr": "0x270",
+     "helper": "0x1eb",
+     "pushes": [
+      "0xde",
+      "0x66"
+     ],
+     "pushed_register_index": 102,
+     "pushed_register_index_raw": "0x66",
+     "staged_value": 222,
+     "staged_value_raw": "0xde",
+     "staged_value_resolution": "immediate"
+    },
+    {
+     "call_addr": "0x27c",
+     "helper": "0x1eb",
+     "pushes": [
+      "0x82",
+      "0x63"
+     ],
+     "pushed_register_index": 99,
+     "pushed_register_index_raw": "0x63",
+     "staged_value": 130,
+     "staged_value_raw": "0x82",
+     "staged_value_resolution": "immediate"
+    },
+    {
+     "call_addr": "0x28a",
+     "helper": "0x1eb",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x295",
+     "helper": "0x17b",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x2ac",
+     "helper": "0x17b",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x2bb",
+     "helper": "0x17b",
+     "pushes": [
+      "0xb0"
+     ]
+    },
+    {
+     "call_addr": "0x2ce",
+     "helper": "0x1eb",
+     "pushes": [
+      "0x8",
+      "esi"
+     ],
+     "pushed_register_index": null,
+     "pushed_register_index_raw": "esi",
+     "staged_value": 8,
+     "staged_value_raw": "0x8",
+     "staged_value_resolution": "immediate"
+    },
+    {
+     "call_addr": "0x2f4",
+     "helper": "0x1eb",
+     "pushes": [
+      "ebx",
+      "esi",
+      "0x9e",
+      "0x65"
+     ],
+     "pushed_register_index": 101,
+     "pushed_register_index_raw": "0x65",
+     "staged_value": 158,
+     "staged_value_raw": "0x9e",
+     "staged_value_resolution": "immediate"
+    },
+    {
+     "call_addr": "0x2ff",
+     "helper": "0x1eb",
+     "pushes": [
+      "DWORD PTR [esp+0x14]",
+      "0x66"
+     ],
+     "pushed_register_index": 102,
+     "pushed_register_index_raw": "0x66",
+     "staged_value": null,
+     "staged_value_raw": "DWORD PTR [esp+0x14]",
+     "staged_value_resolution": "unresolved"
+    },
+    {
+     "call_addr": "0x30e",
+     "helper": "0x1eb",
+     "pushes": [
+      "eax",
+      "0x70"
+     ],
+     "pushed_register_index": 112,
+     "pushed_register_index_raw": "0x70",
+     "staged_value": null,
+     "staged_value_raw": "eax",
+     "staged_value_resolution": "register-unresolved"
+    },
+    {
+     "call_addr": "0x317",
+     "helper": "0x1eb",
+     "pushes": [
+      "0x2",
+      "0x63"
+     ],
+     "pushed_register_index": 99,
+     "pushed_register_index_raw": "0x63",
+     "staged_value": 2,
+     "staged_value_raw": "0x2",
+     "staged_value_resolution": "immediate"
+    },
+    {
+     "call_addr": "0x325",
+     "helper": "0x1eb",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x330",
+     "helper": "0x17b",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x347",
+     "helper": "0x17b",
+     "pushes": [
+      "esi"
+     ]
+    },
+    {
+     "call_addr": "0x354",
+     "helper": "0x1eb",
+     "pushes": [
+      "0x8",
+      "esi"
+     ],
+     "pushed_register_index": null,
+     "pushed_register_index_raw": "esi",
+     "staged_value": 8,
+     "staged_value_raw": "0x8",
+     "staged_value_resolution": "immediate"
+    }
+   ],
+   "rom_reextraction": {
+    "rom_offset": "0xed3d8c",
+    "sha256": "c0cc17d2d54f9cde65f471d2971596837b024d4764a28b33286032cfa95d43a9",
+    "matches_corpus_image": true
+   }
+  }
+ ],
+ "ec_window_only_modules": [
+  {
+   "stem": "DxeCore-2f1d8056b0da",
+   "ui": "DxeCore",
+   "type": "PE32",
+   "sha256": "2f1d8056b0da07081fc609e96ee669bfc9134d8ba4201ee170baef6ec18cd703",
+   "anchors_present": [
+    "push_cfg_data_2f",
+    "test_al_40"
+   ],
+   "strong_anchors_present": [
+    "push_cfg_data_2f",
+    "test_al_40"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_data_2f": [
+     "0x13f85"
+    ],
+    "test_al_40": [
+     "0x12665"
+    ]
+   }
+  },
+  {
+   "stem": "EbcDxe-f4776f100100",
+   "ui": "EbcDxe",
+   "type": "PE32",
+   "sha256": "f4776f100100ddb23c9b90c52ab2bc15b188d419e7a9a40bba2440693195d174",
+   "anchors_present": [
+    "out_imm_2e"
+   ],
+   "strong_anchors_present": [],
+   "per_anchor_offsets": {
+    "out_imm_2e": [
+     "0x35e"
+    ]
+   }
+  },
+  {
+   "stem": "HiiDatabase-489fc01869bd",
+   "ui": "HiiDatabase",
+   "type": "PE32",
+   "sha256": "489fc01869bd5c9f12221b5cf246e5a90737870b8571f2e0b7dc65f9eae456ea",
+   "anchors_present": [
+    "mov_dx_2e",
+    "push_mbox_66"
+   ],
+   "strong_anchors_present": [
+    "push_mbox_66"
+   ],
+   "per_anchor_offsets": {
+    "push_mbox_66": [
+     "0xf76b"
+    ],
+    "mov_dx_2e": [
+     "0x12f94"
+    ]
+   }
+  },
+  {
+   "stem": "SbDxe-4b9d66aa46b8",
+   "ui": "SbDxe",
+   "type": "PE32",
+   "sha256": "4b9d66aa46b83e627c320df08302721bef0e2e9044b5ad74ee00e59f18828abe",
+   "anchors_present": [
+    "push_cfg_data_2f",
+    "push_cfg_index_2e",
+    "test_al_40"
+   ],
+   "strong_anchors_present": [
+    "push_cfg_data_2f",
+    "push_cfg_index_2e",
+    "test_al_40"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_index_2e": [
+     "0x1a7a"
+    ],
+    "push_cfg_data_2f": [
+     "0x194a"
+    ],
+    "test_al_40": [
+     "0x4c89"
+    ]
+   }
+  },
+  {
+   "stem": "Setup-10cc728ae3f8",
+   "ui": "Setup",
+   "type": "PE32",
+   "sha256": "10cc728ae3f8abec5bdf206b272eb3806ef4b7f90f2bc3f887b33c02c30da152",
+   "anchors_present": [
+    "imm_ec_window_a20",
+    "mov_al_87",
+    "mov_dx_2e",
+    "test_al_40"
+   ],
+   "strong_anchors_present": [
+    "imm_ec_window_a20",
+    "mov_al_87",
+    "test_al_40"
+   ],
+   "per_anchor_offsets": {
+    "mov_al_87": [
+     "0x9fa1",
+     "0x9fbb",
+     "0x9fce",
+     "0x9fe1",
+     "0xa025",
+     "0xa03e",
+     "0xa050",
+     "0xa062",
+     "0xa09e",
+     "0xa0b7",
+     "0xa0c9",
+     "0xa0db"
+    ],
+    "imm_ec_window_a20": [
+     "0x9ff6",
+     "0xa075",
+     "0xa0ee"
+    ],
+    "test_al_40": [
+     "0xa146",
+     "0xfdbd"
+    ],
+    "mov_dx_2e": [
+     "0x9f9c",
+     "0xa020"
+    ]
+   }
+  },
+  {
+   "stem": "SioDxeInit-13ba455c441c",
+   "ui": "SioDxeInit",
+   "type": "PE32",
+   "sha256": "13ba455c441c1ea269000b5060cf03bd6f65e638743d7b8c98b661211867415c",
+   "anchors_present": [
+    "mov_al_87",
+    "mov_dx_2e",
+    "mov_dx_2f"
+   ],
+   "strong_anchors_present": [
+    "mov_al_87"
+   ],
+   "per_anchor_offsets": {
+    "mov_al_87": [
+     "0x5b4"
+    ],
+    "mov_dx_2e": [
+     "0xdf7"
+    ],
+    "mov_dx_2f": [
+     "0x8ca"
+    ]
+   }
+  },
+  {
+   "stem": "SioDynamicSetup-03f359d8a525",
+   "ui": "SioDynamicSetup",
+   "type": "PE32",
+   "sha256": "03f359d8a52521033a21b9231c442af2c33d6b0b2f22def772a609c7703de375",
+   "anchors_present": [
+    "out_imm_2e"
+   ],
+   "strong_anchors_present": [],
+   "per_anchor_offsets": {
+    "out_imm_2e": [
+     "0x2a8e"
+    ]
+   }
+  },
+  {
+   "stem": "PciRootBridge-904653780c70",
+   "ui": "PciRootBridge",
+   "type": "PE32",
+   "sha256": "904653780c70427e0a4e6f33da089be122766f67edb393e428175f6c4acd5125",
+   "anchors_present": [
+    "push_cfg_index_2e"
+   ],
+   "strong_anchors_present": [
+    "push_cfg_index_2e"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_index_2e": [
+     "0x956"
+    ]
+   }
+  },
+  {
+   "stem": "FanTuningDxe-da9c3b869d99",
+   "ui": "FanTuningDxe",
+   "type": "PE32",
+   "sha256": "da9c3b869d99562cd304b733e36fddc4395b25476b8b164b45125c3cf27d98fb",
+   "anchors_present": [
+    "imm_ec_window_a20",
+    "mov_al_87",
+    "mov_dx_2e",
+    "test_al_40"
+   ],
+   "strong_anchors_present": [
+    "imm_ec_window_a20",
+    "mov_al_87",
+    "test_al_40"
+   ],
+   "per_anchor_offsets": {
+    "mov_al_87": [
+     "0x1f21",
+     "0x1f3b",
+     "0x1f4e",
+     "0x1f61",
+     "0x1fa5",
+     "0x1fbf",
+     "0x1fd2",
+     "0x1fe5"
+    ],
+    "imm_ec_window_a20": [
+     "0x1f76",
+     "0x1ffa"
+    ],
+    "test_al_40": [
+     "0x1b83"
+    ],
+    "mov_dx_2e": [
+     "0x1f1c"
+    ]
+   }
+  },
+  {
+   "stem": "NTFS-116a75548877",
+   "ui": "NTFS",
+   "type": "PE32",
+   "sha256": "116a755488773c3aab230dc805d1f5418329e21df1df4060b808068c1b4a4b9a",
+   "anchors_present": [
+    "mov_dx_2e"
+   ],
+   "strong_anchors_present": [],
+   "per_anchor_offsets": {
+    "mov_dx_2e": [
+     "0x2213",
+     "0x22f1",
+     "0x2560",
+     "0x25fe"
+    ]
+   }
+  },
+  {
+   "stem": "Ip6Dxe-563d7af58418",
+   "ui": "Ip6Dxe",
+   "type": "PE32",
+   "sha256": "563d7af58418b9616223241ef014d56162eefbe78018a1cea64211b4469e3598",
+   "anchors_present": [
+    "mov_dx_2e",
+    "test_al_40"
+   ],
+   "strong_anchors_present": [
+    "test_al_40"
+   ],
+   "per_anchor_offsets": {
+    "test_al_40": [
+     "0x3322"
+    ],
+    "mov_dx_2e": [
+     "0xa2c0"
+    ]
+   }
+  },
+  {
+   "stem": "Nvme-67a94f675aa8",
+   "ui": "Nvme",
+   "type": "PE32",
+   "sha256": "67a94f675aa8c19a5802cd72c1fdc4eb9bf2cdd8ae3cc7802e300daa7cc4eeec",
+   "anchors_present": [
+    "mov_dx_2f"
+   ],
+   "strong_anchors_present": [],
+   "per_anchor_offsets": {
+    "mov_dx_2f": [
+     "0x3e72"
+    ]
+   }
+  },
+  {
+   "stem": "NvramSmm-5e0d8f9526b3",
+   "ui": "NvramSmm",
+   "type": "PE32",
+   "sha256": "5e0d8f9526b388e9b7f50e0c38b6c44641e4b45204564a675033ca39b771abf7",
+   "anchors_present": [
+    "push_cfg_data_2f",
+    "test_al_40"
+   ],
+   "strong_anchors_present": [
+    "push_cfg_data_2f",
+    "test_al_40"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_data_2f": [
+     "0x311a"
+    ],
+    "test_al_40": [
+     "0x92fd"
+    ]
+   }
+  },
+  {
+   "stem": "SmmGenericSio-207198666177",
+   "ui": "SmmGenericSio",
+   "type": "PE32",
+   "sha256": "207198666177ffa80a8a553ca88b8cfe0722acf877812faa12597a8ac3763b79",
+   "anchors_present": [
+    "mov_al_87",
+    "mov_dx_2e",
+    "mov_dx_2f"
+   ],
+   "strong_anchors_present": [
+    "mov_al_87"
+   ],
+   "per_anchor_offsets": {
+    "mov_al_87": [
+     "0x1564"
+    ],
+    "mov_dx_2e": [
+     "0x1dbf"
+    ],
+    "mov_dx_2f": [
+     "0x187a"
+    ]
+   }
+  },
+  {
+   "stem": "StatusCodeDxe-53b3a4d92529",
+   "ui": "StatusCodeDxe",
+   "type": "PE32",
+   "sha256": "53b3a4d9252937059e1436a974dfb6409ab0a72ad31e91a64fe46a6c3e7a1a89",
+   "anchors_present": [
+    "push_cfg_data_2f"
+   ],
+   "strong_anchors_present": [
+    "push_cfg_data_2f"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_data_2f": [
+     "0x2a27"
+    ]
+   }
+  },
+  {
+   "stem": "StatusCodeSmm-6e1c49c855c0",
+   "ui": "StatusCodeSmm",
+   "type": "PE32",
+   "sha256": "6e1c49c855c0f1aa45d3496e35337af9caac1f92a5c550c6a6c3cabe2dc2bec7",
+   "anchors_present": [
+    "out_imm_2e"
+   ],
+   "strong_anchors_present": [],
+   "per_anchor_offsets": {
+    "out_imm_2e": [
+     "0x57e"
+    ]
+   }
+  },
+  {
+   "stem": "RealtekUefiDriver-e8c6cf703a77",
+   "ui": "RealtekUefiDriver",
+   "type": "PE32",
+   "sha256": "e8c6cf703a77ff1a2384ad0ae9e3fd44ba45ee0896b3a94fea78c9a46db3869f",
+   "anchors_present": [
+    "mov_al_87",
+    "push_cfg_index_2e",
+    "push_mbox_70",
+    "test_al_40"
+   ],
+   "strong_anchors_present": [
+    "mov_al_87",
+    "push_cfg_index_2e",
+    "push_mbox_70",
+    "test_al_40"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_index_2e": [
+     "0x37d2",
+     "0x7dc1",
+     "0x85b3",
+     "0x18eb8"
+    ],
+    "mov_al_87": [
+     "0x244ea"
+    ],
+    "push_mbox_70": [
+     "0x1ae6e"
+    ],
+    "test_al_40": [
+     "0x11cf0",
+     "0x23593"
+    ]
+   }
+  },
+  {
+   "stem": "A0327FE0-1FDA-4E5B-905D-B510C45A61D0-a014267d5e97",
+   "ui": "A0327FE0-1FDA-4E5B-905D-B510C45A61D0-a014267d5e97",
+   "type": "PE32",
+   "sha256": "a014267d5e97a81f018e82afbf324c46ec72a6fff997cd8af36b6c497c8acad9",
+   "anchors_present": [
+    "in_imm_2e",
+    "mov_dx_2e",
+    "push_mbox_66",
+    "test_al_40"
+   ],
+   "strong_anchors_present": [
+    "push_mbox_66",
+    "test_al_40"
+   ],
+   "per_anchor_offsets": {
+    "push_mbox_66": [
+     "0x4e13"
+    ],
+    "test_al_40": [
+     "0x6fb7"
+    ],
+    "in_imm_2e": [
+     "0x49b"
+    ],
+    "mov_dx_2e": [
+     "0xbca7",
+     "0xbceb",
+     "0xbd10"
+    ]
+   }
+  },
+  {
+   "stem": "AmdCcxVhAriPei-973624f3cf5c",
+   "ui": "AmdCcxVhAriPei",
+   "type": "TE",
+   "sha256": "973624f3cf5cae03f3ef42b9d8934f65b0586ec2bc9f4a3a387b84f7cea68942",
+   "anchors_present": [
+    "push_cfg_data_2f",
+    "push_mbox_63",
+    "push_mbox_70"
+   ],
+   "strong_anchors_present": [
+    "push_cfg_data_2f",
+    "push_mbox_63",
+    "push_mbox_70"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_data_2f": [
+     "0x3a5"
+    ],
+    "push_mbox_70": [
+     "0x2c82"
+    ],
+    "push_mbox_63": [
+     "0x1818"
+    ]
+   }
+  },
+  {
+   "stem": "AmdFabricAriPei-c5b99650a442",
+   "ui": "AmdFabricAriPei",
+   "type": "TE",
+   "sha256": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+   "anchors_present": [
+    "push_cfg_data_2f",
+    "push_mbox_60",
+    "push_mbox_63",
+    "push_mbox_70"
+   ],
+   "strong_anchors_present": [
+    "push_cfg_data_2f",
+    "push_mbox_60",
+    "push_mbox_63",
+    "push_mbox_70"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_data_2f": [
+     "0x1659f"
+    ],
+    "push_mbox_70": [
+     "0x347a",
+     "0x161db"
+    ],
+    "push_mbox_63": [
+     "0x1ebe",
+     "0x16675"
+    ],
+    "push_mbox_60": [
+     "0x16711"
+    ]
+   }
+  },
+  {
+   "stem": "AmdNbioGfxARIPei-63413be2ac29",
+   "ui": "AmdNbioGfxARIPei",
+   "type": "TE",
+   "sha256": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+   "anchors_present": [
+    "imm_ec_window_a20",
+    "push_cfg_data_2f",
+    "push_mbox_60",
+    "push_mbox_63",
+    "push_mbox_70"
+   ],
+   "strong_anchors_present": [
+    "imm_ec_window_a20",
+    "push_cfg_data_2f",
+    "push_mbox_60",
+    "push_mbox_63",
+    "push_mbox_70"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_data_2f": [
+     "0x1476f"
+    ],
+    "imm_ec_window_a20": [
+     "0x1512a",
+     "0x1516b",
+     "0x1518f",
+     "0x1523c"
+    ],
+    "push_mbox_70": [
+     "0x143ab"
+    ],
+    "push_mbox_63": [
+     "0x14845"
+    ],
+    "push_mbox_60": [
+     "0x148e1"
+    ]
+   }
+  },
+  {
+   "stem": "AmdNbioBaseARIPei-51d96c1e5a5e",
+   "ui": "AmdNbioBaseARIPei",
+   "type": "TE",
+   "sha256": "51d96c1e5a5e2c39f04fb962b0b5be686dea0a05eecbde829a4595fe3356884f",
+   "anchors_present": [
+    "imm_ec_window_a20",
+    "push_cfg_data_2f",
+    "push_mbox_60",
+    "push_mbox_63",
+    "push_mbox_65",
+    "push_mbox_70"
+   ],
+   "strong_anchors_present": [
+    "imm_ec_window_a20",
+    "push_cfg_data_2f",
+    "push_mbox_60",
+    "push_mbox_63",
+    "push_mbox_65",
+    "push_mbox_70"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_data_2f": [
+     "0x173b7"
+    ],
+    "imm_ec_window_a20": [
+     "0x19278"
+    ],
+    "push_mbox_65": [
+     "0x317"
+    ],
+    "push_mbox_70": [
+     "0xb8f",
+     "0x42c2",
+     "0x16ff3"
+    ],
+    "push_mbox_63": [
+     "0x1e0",
+     "0x342a",
+     "0x1748d"
+    ],
+    "push_mbox_60": [
+     "0x17529"
+    ]
+   }
+  },
+  {
+   "stem": "AmdNbioPcieARIPei-62b1398c4ba9",
+   "ui": "AmdNbioPcieARIPei",
+   "type": "TE",
+   "sha256": "62b1398c4ba9b5a03ea533306cd8200257fac323c8fa688caa057667a5871312",
+   "anchors_present": [
+    "imm_ec_window_a20",
+    "push_cfg_data_2f",
+    "push_mbox_60",
+    "push_mbox_63",
+    "push_mbox_70"
+   ],
+   "strong_anchors_present": [
+    "imm_ec_window_a20",
+    "push_cfg_data_2f",
+    "push_mbox_60",
+    "push_mbox_63",
+    "push_mbox_70"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_data_2f": [
+     "0xf38",
+     "0x17ebf"
+    ],
+    "imm_ec_window_a20": [
+     "0x19788",
+     "0x1a0f0",
+     "0x1a110",
+     "0x1a26c"
+    ],
+    "push_mbox_70": [
+     "0x17afb"
+    ],
+    "push_mbox_63": [
+     "0x17f95"
+    ],
+    "push_mbox_60": [
+     "0x18031"
+    ]
+   }
+  },
+  {
+   "stem": "AmdNbioSmuV10Pei-905b8be68afd",
+   "ui": "AmdNbioSmuV10Pei",
+   "type": "TE",
+   "sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+   "anchors_present": [
+    "imm_ec_window_a20",
+    "push_cfg_data_2f",
+    "push_mbox_60",
+    "push_mbox_63",
+    "push_mbox_70"
+   ],
+   "strong_anchors_present": [
+    "imm_ec_window_a20",
+    "push_cfg_data_2f",
+    "push_mbox_60",
+    "push_mbox_63",
+    "push_mbox_70"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_data_2f": [
+     "0x150c7"
+    ],
+    "imm_ec_window_a20": [
+     "0x15fd0"
+    ],
+    "push_mbox_70": [
+     "0x14d03"
+    ],
+    "push_mbox_63": [
+     "0x1519d"
+    ],
+    "push_mbox_60": [
+     "0x15239"
+    ]
+   }
+  },
+  {
+   "stem": "AmdSocBl5AriPei-79e13211d5ae",
+   "ui": "AmdSocBl5AriPei",
+   "type": "TE",
+   "sha256": "79e13211d5ae6b416311d67f735e68d946ea4045708d8463f7b92c495dff80b0",
+   "anchors_present": [
+    "imm_ec_window_a20",
+    "push_cfg_data_2f",
+    "push_mbox_60",
+    "push_mbox_63",
+    "push_mbox_70"
+   ],
+   "strong_anchors_present": [
+    "imm_ec_window_a20",
+    "push_cfg_data_2f",
+    "push_mbox_60",
+    "push_mbox_63",
+    "push_mbox_70"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_data_2f": [
+     "0x14ecf"
+    ],
+    "imm_ec_window_a20": [
+     "0x15b0c"
+    ],
+    "push_mbox_70": [
+     "0x14b0b"
+    ],
+    "push_mbox_63": [
+     "0x14fa5"
+    ],
+    "push_mbox_60": [
+     "0x15041"
+    ]
+   }
+  },
+  {
+   "stem": "CbsBasePei-6ff112922ad8",
+   "ui": "CbsBasePei",
+   "type": "TE",
+   "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+   "anchors_present": [
+    "push_cfg_data_2f",
+    "push_mbox_60",
+    "push_mbox_63",
+    "push_mbox_70"
+   ],
+   "strong_anchors_present": [
+    "push_cfg_data_2f",
+    "push_mbox_60",
+    "push_mbox_63",
+    "push_mbox_70"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_data_2f": [
+     "0x13077"
+    ],
+    "push_mbox_70": [
+     "0x12cb3"
+    ],
+    "push_mbox_63": [
+     "0x1314d"
+    ],
+    "push_mbox_60": [
+     "0x131e9"
+    ]
+   }
+  },
+  {
+   "stem": "FanTuningPei-7b4c4ccd8b47",
+   "ui": "FanTuningPei",
+   "type": "TE",
+   "sha256": "7b4c4ccd8b47c1de849a700e2a0dee27df175f3368f793fc1d62f9f3fc772db3",
+   "anchors_present": [
+    "imm_ec_window_a20",
+    "mov_al_87",
+    "push_cfg_data_2f",
+    "push_cfg_index_2e",
+    "test_al_40"
+   ],
+   "strong_anchors_present": [
+    "imm_ec_window_a20",
+    "mov_al_87",
+    "push_cfg_data_2f",
+    "push_cfg_index_2e",
+    "test_al_40"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_index_2e": [
+     "0x2c9",
+     "0x33a"
+    ],
+    "push_cfg_data_2f": [
+     "0x2d5",
+     "0x2e7",
+     "0x2f9",
+     "0x30b",
+     "0x346",
+     "0x358",
+     "0x36a",
+     "0x37c"
+    ],
+    "mov_al_87": [
+     "0x2ce",
+     "0x33f"
+    ],
+    "imm_ec_window_a20": [
+     "0x317",
+     "0x388"
+    ],
+    "test_al_40": [
+     "0x3e3"
+    ]
+   }
+  },
+  {
+   "stem": "OEMBOARDPei-c0e1480ca2ae",
+   "ui": "OEMBOARDPei",
+   "type": "TE",
+   "sha256": "c0e1480ca2ae074110a95560811545615a991ac9d09d72ab44b29704f98c5ac6",
+   "anchors_present": [
+    "imm_ec_window_a20",
+    "mov_al_87",
+    "push_cfg_data_2f",
+    "push_cfg_index_2e"
+   ],
+   "strong_anchors_present": [
+    "imm_ec_window_a20",
+    "mov_al_87",
+    "push_cfg_data_2f",
+    "push_cfg_index_2e"
+   ],
+   "per_anchor_offsets": {
+    "push_cfg_index_2e": [
+     "0xc4"
+    ],
+    "push_cfg_data_2f": [
+     "0xd0",
+     "0xe2",
+     "0xf4",
+     "0x106"
+    ],
+    "mov_al_87": [
+     "0xc9"
+    ],
+    "imm_ec_window_a20": [
+     "0x112"
+    ]
+   }
+  }
+ ],
+ "anchor_hit_table": {
+  "push_cfg_index_2e": 7,
+  "push_cfg_data_2f": 16,
+  "mov_al_87": 9,
+  "imm_ec_window_a20": 44,
+  "push_mbox_65": 3,
+  "push_mbox_66": 12,
+  "push_mbox_70": 25,
+  "push_mbox_63": 16,
+  "push_mbox_60": 15,
+  "test_al_40": 36,
+  "out_imm_2e": 3,
+  "in_imm_2e": 1,
+  "mov_dx_2e": 8,
+  "mov_dx_2f": 3
+ },
+ "prior_result_crosscheck": {
+  "prior_path": "evidence/firmware-audit/20260920-clv-fixed-voltage-consumer/fixed-voltage-consumer-result.json",
+  "prior_writer_stems": [
+   "ISL69247-3e1f753a6279",
+   "ISL95712-c0cc17d2d54f"
+  ],
+  "prior_non_writer_stem": "CpuDxe-4fe9d6dc6dfe",
+  "agree": true
+ },
+ "conclusion": "Exactly two of the 233 pinned modules implement the EC-window VR mailbox writer; they are the same two modules that consume the Setup fixed-voltage fields. No third firmware module in this corpus can stage a VR register write through that window. The scanner finds the transport bytes only; it does not prove PEI dispatch, mailbox chip identity, PMBus semantics, rail identity or any applied voltage.",
+ "limitations": [
+  "static-analysis over observed bytes only; no dispatch, emulation or hardware evidence",
+  "anchor set is calibrated on two known positives and is literal-byte based; a module implementing the same protocol with different instruction encodings would be missed",
+  "register indices are inferred from the pushed arguments of the transport helper",
+  "ROM re-extraction uses the FFS-relative 'VZ' TE signature scan; modules inside compressed firmware volumes are not covered by that path"
+ ]
+}

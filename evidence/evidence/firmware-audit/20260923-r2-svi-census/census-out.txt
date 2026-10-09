@@ -1,0 +1,716 @@
+INFO  Using log config file: jar:file:/home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: /home/OWNER/.config/ghidra/ghidra_12.1.3_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: /home/OWNER/.config/ghidra/ghidra_12.1.3_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (922 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (2501 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 60 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Extensions/GhidrAssistMCP/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-r2-svi-census
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/8051/ghidra_scripts
+    /home/OWNER/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-smu-domain-selector/ghidra-project/OCConsumer (HeadlessAnalyzer)  
+INFO  Opening project: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-smu-domain-selector/ghidra-project/OCConsumer (HeadlessProject)  
+INFO  REPORT: Processing project file: /smu_fw_robin_5 (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: SviCensus.java  (HeadlessAnalyzer)  
+INFO  SCRIPT: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-r2-svi-census/SviCensus.java (HeadlessAnalyzer)  
+INFO  SviCensus.java>  (GhidraScript)  
+INFO  SviCensus.java> =================================================================== (GhidraScript)  
+INFO  SviCensus.java> SLOT 0x171a4 content=0x01159e00 (GhidraScript)  
+INFO  SviCensus.java> =================================================================== (GhidraScript)  
+INFO  SviCensus.java>   ref 0x0002be01 type=READ     in NONE (GhidraScript)  
+INFO  SviCensus.java>  (GhidraScript)  
+INFO  SviCensus.java> =================================================================== (GhidraScript)  
+INFO  SviCensus.java> SLOT 0x17124 content=0x00013474 (GhidraScript)  
+INFO  SviCensus.java> =================================================================== (GhidraScript)  
+INFO  SviCensus.java>   ref 0x0002d846 type=READ     in FUN_0002d7a0@0x2d7a0 (GhidraScript)  
+INFO  SviCensus.java>   ref 0x0002d8c2 type=READ     in FUN_0002d7a0@0x2d7a0 (GhidraScript)  
+INFO  SviCensus.java>   ref 0x0002dabe type=READ     in FUN_0002d7a0@0x2d7a0 (GhidraScript)  
+INFO  SviCensus.java>   ref 0x0002bd89 type=READ     in NONE (GhidraScript)  
+INFO  SviCensus.java>   ref 0x0002bdcf type=READ     in NONE (GhidraScript)  
+INFO  SviCensus.java>   ref 0x0002be83 type=READ     in NONE (GhidraScript)  
+INFO  SviCensus.java>   ref 0x0001bcb1 type=READ     in FUN_0001bc80@0x1bc80 (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_0002d7a0 @ 0x2d7a0 ---- (GhidraScript)  
+INFO  SviCensus.java> 
+/* WARNING: Removing unreachable block (ram,0x0002d87a) */
+/* WARNING: Removing unreachable block (ram,0x0002da61) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002d7a0(undefined4 param_1)
+
+{
+  byte bVar1;
+  bool bVar2;
+  float *pfVar3;
+  uint uVar4;
+  int iVar5;
+  float fVar6;
+  int iVar7;
+  int iVar8;
+  uint *puVar9;
+  undefined4 *puVar10;
+  undefined4 *puVar11;
+  undefined4 *puVar12;
+  float *pfVar13;
+  float *pfVar14;
+  float *pfVar15;
+  float fVar16;
+  float fVar17;
+  undefined4 uVar18;
+  int iVar19;
+  undefined4 auStack_b0 [8];
+  uint auStack_90 [8];
+  int iStack_70;
+  float *pfStack_6c;
+  int iStack_68;
+  int iStack_64;
+  int iStack_60;
+  float *pfStack_5c;
+  int iStack_58;
+  float *pfStack_54;
+  int iStack_50;
+  float fStack_4c;
+  float fStack_48;
+  float fStack_44;
+  int iStack_40;
+  float *pfStack_3c;
+  float *pfStack_38;
+  float *pfStack_34;
+  int iStack_30;
+  
+  puVar10 = auStack_b0;
+  puVar11 = auStack_b0;
+  uVar4 = func_0x00000ffc(param_1);
+  iVar5 = func_0x0002e4c4();
+  pfVar3 = _DAT_000180cc;
+  fVar6 = _DAT_000170ac;
+  if (iVar5 == 7) {
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  if ((((*(float *)(_DAT_000171b4 + 0x160) == 0.0) || (*(float *)(_DAT_000171b4 + 0x220) == 0.0)) ||
+      (*(float *)(_DAT_000171b4 + 0x1e0) == 0.0)) || (*(float *)(_DAT_000171b4 + 0x2a0) == 0.0)) {
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  fVar16 = (float)(uVar4 & 0xffff) / 1.0;
+  if ((fVar16 <= _DAT_000181b4) || (_DAT_000181b8 <= fVar16)) {
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  fVar17 = (float)(uVar4 >> 0x10) / 1.0;
+  *_DAT_000180cc = fVar16 * _DAT_000170ac;
+  pfVar15 = _DAT_00017124;
+  uVar18 = _DAT_00017094;
+  if ((0.0 <= fVar17) && (fVar17 <= _DAT_00018118)) {
+    fVar16 = pfVar3[0x19];
+    *(undefined1 *)((int)pfVar3 + 0x5e) = 0;
+    *(undefined1 *)((int)pfVar3 + 0x5d) = 0;
+    *(undefined1 *)(pfVar3 + 0x17) = 1;
+    pfVar15[3] = fVar16;
+    pfVar15[4] = fVar16;
+    pfVar3[0x18] = fVar17 * fVar6;
+    func_0x00002268(uVar18);
+    iVar7 = _DAT_000178a4;
+    iVar5 = _DAT_000171bc;
+    puVar9 = auStack_90;
+    iVar19 = 7;
+    puVar12 = _DAT_00017e64;
+    while( true ) {
+      uVar18 = *puVar12;
+      *puVar9 = (uint)*(byte *)(puVar12 + 1);
+      *(undefined1 *)(puVar12 + 1) = 1;
+      bVar1 = *(byte *)(iVar5 + 0xc);
+      *puVar10 = uVar18;
+      puVar10 = puVar10 + 1;
+      puVar9 = puVar9 + 1;
+      puVar12 = puVar12 + 0xf1;
+      *puVar12 = *(undefined4 *)((uint)bVar1 * 4 + iVar7 + 0x1fc);
+      if (iVar19 == 0) break;
+      iVar19 = iVar19 + -1;
+    }
+    func_0x0000231c(_DAT_00017094);
+    func_0x0000246c(3);
+    func_0x0001cb30(*pfVar3);
+    func_0x0002bd80();
+    func_0x0000246c(3);
+    fStack_48 = _DAT_00017e18;
+    fVar6 = _DAT_00017abc;
+    iVar8 = _DAT_0001767c;
+    pfVar15 = _DAT_000172c8;
+    iVar19 = _DAT_000171c8;
+    iVar7 = _DAT_00017060;
+    bVar2 = false;
+    iStack_58 = 2;
+    iStack_50 = _DAT_00017060;
+    fVar16 = *_DAT_00017124 - _DAT_00017124[2] * *(float *)(_DAT_00017ed0 + 0x11c);
+    fStack_44 = fVar16 - *(float *)(_DAT_00017ed0 + 0x118);
+    pfVar3[2] = *(float *)(_DAT_00017ed0 + 0x118);
+    pfVar3[1] = fVar16;
+    pfVar13 = pfVar3;
+    pfVar14 = pfVar3;
+    iVar5 = iVar7;
+    do {
+      iVar5 = iVar5 + 4;
+      if ((*(char *)(iVar7 + 0x24) == '\0') && (!bVar2)) {
+        iStack_60 = iStack_50;
+        iStack_70 = iVar5;
+        pfStack_6c = pfVar15;
+        iStack_68 = iVar19;
+        iStack_64 = iVar8;
+        pfStack_5c = pfVar13;
+        pfStack_54 = pfVar14;
+        do {
+          if ((*(char *)(iStack_60 + 0x1c) == '\0') && (!bVar2)) {
+            fVar16 = *pfStack_6c;
+            pfStack_54[3] = fVar16;
+            memw();
+            uVar4 = *(uint *)(iStack_68 + 0x21c) >> 0xe & 0x3fff;
+            *(short *)(pfStack_5c + 0x13) = (short)uVar4;
+            if ((0x1e0 < uVar4) || (uVar4 < 0x78)) {
+              bVar2 = true;
+              *(undefined1 *)((int)pfVar3 + 0x5e) = 1;
+              uVar4 = (uint)*(ushort *)(pfStack_5c + 0x13);
+            }
+            fStack_4c = fVar6;
+            iStack_40 = iVar5;
+            pfStack_3c = pfVar15;
+            pfStack_38 = pfVar14;
+            pfStack_34 = pfVar13;
+            iStack_30 = iVar19;
+            fVar6 = (float)func_0x0001d304(iStack_64,fVar16,(float)uVar4 / 1.0);
+            pfStack_54[0xb] = fVar6;
+            fStack_4c = (float)func_0x0001caa8(fVar6,fStack_4c);
+            fStack_48 = (float)func_0x0001cabc(pfStack_54[0xb],fStack_48);
+            iVar19 = iStack_30;
+            pfVar13 = pfStack_34;
+            pfVar14 = pfStack_38;
+            pfVar15 = pfStack_3c;
+            iVar5 = iStack_40;
+            fVar6 = fStack_4c;
+          }
+          iStack_64 = iStack_64 + 0x3c4;
+          iStack_68 = iStack_68 + _DAT_000171cc;
+          pfStack_5c = (float *)((int)pfStack_5c + 2);
+          iStack_60 = iStack_60 + 1;
+          pfStack_54 = pfStack_54 + 1;
+          pfStack_6c = pfStack_6c + 0x5e;
+        } while (iStack_60 != iStack_70);
+      }
+      pfVar13 = pfVar13 + 2;
+      pfVar14 = pfVar14 + 4;
+      iVar7 = iVar7 + 1;
+      iVar8 = iVar8 + 0xf10;
+      pfVar15 = pfVar15 + 0x178;
+      iVar19 = iVar19 + _DAT_000171c0;
+      iStack_58 = iStack_58 + -1;
+      iStack_50 = iStack_50 + 4;
+    } while (iStack_58 != 0);
+    if (_DAT_00017dfc < fVar6 - fStack_48) {
+      bVar2 = true;
+      *(undefined1 *)((int)pfVar3 + 0x5d) = 1;
+    }
+    func_0x0002bdcc();
+    puVar10 = _DAT_00017e64;
+    func_0x00002268(_DAT_00017094);
+    puVar9 = auStack_90;
+    iVar5 = 7;
+    while( true ) {
+      puVar11 = puVar11 + 1;
+      uVar18 = *puVar11;
+      *(char *)(puVar10 + 1) = (char)*puVar9;
+      puVar9 = puVar9 + 1;
+      puVar10 = puVar10 + 0xf1;
+      *puVar10 = uVar18;
+      if (iVar5 == 0) break;
+      iVar5 = iVar5 + -1;
+    }
+    func_0x0000231c(_DAT_00017094);
+    if (!bVar2) {
+      uVar18 = func_0x0001cabc(fStack_44,(pfVar3[1] - fStack_48) - pfVar3[0x18]);
+      uVar18 = func_0x0001cabc(uVar18,_DAT_00018148);
+      fVar6 = (float)func_0x0001caa8(uVar18,_DAT_000181bc);
+      puVar11 = _DAT_000181c0;
+      pfVar3[0x1c] = fVar6;
+      uVar18 = func_0x0001caa8(*puVar11,fVar6);
+      fVar16 = (float)func_0x0001cabc(uVar18,pfVar3[0x19]);
+      fVar6 = _DAT_000181c4;
+      pfVar3 = _DAT_00017124;
+      _DAT_00017124[3] = fVar16;
+      pfVar3[4] = fVar6;
+      func_0x00000fa8(param_1,1);
+      return;
+    }
+    func_0x00000fa8(param_1,0xff);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_0001bc80 @ 0x1bc80 ---- (GhidraScript)  
+INFO  SviCensus.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 FUN_0001bc80(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  int iVar3;
+  float fVar4;
+  
+  iVar3 = func_0x0002a018(8);
+  uVar1 = _DAT_00017118;
+  if (iVar3 == 0) {
+    FUN_0003abdc(param_1,_DAT_00017118,0x49c);
+    iVar3 = FUN_0001bd20(uVar1);
+    if (iVar3 == 0) {
+      return 0;
+    }
+    FUN_0001cc7c(uVar1,_DAT_0001711c,0x49c);
+    iVar2 = _DAT_00017124;
+    iVar3 = _DAT_00017120;
+    fVar4 = ((float)*(int *)(_DAT_00017120 + 0x84) / 1.0) * _DAT_000170ac;
+    *(float *)(_DAT_00017124 + 0x14) = ((float)*(int *)(_DAT_00017120 + 0x80) / 1.0) * _DAT_000170ac
+    ;
+    *(float *)(iVar2 + 0x30) = fVar4;
+    FUN_00021e8c();
+    if (*(char *)(iVar3 + 0x7e) != '\0') {
+      FUN_0001e010();
+    }
+  }
+  return 1;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java>  (GhidraScript)  
+INFO  SviCensus.java> =================================================================== (GhidraScript)  
+INFO  SviCensus.java> SLOT 0x15394 content=0x00013474 (GhidraScript)  
+INFO  SviCensus.java> =================================================================== (GhidraScript)  
+INFO  SviCensus.java>  (GhidraScript)  
+INFO  SviCensus.java> =================================================================== (GhidraScript)  
+INFO  SviCensus.java> SLOT 0x1714c content=0x00008b18 (GhidraScript)  
+INFO  SviCensus.java> =================================================================== (GhidraScript)  
+INFO  SviCensus.java>   ref 0x0001c029 type=READ     in NONE (GhidraScript)  
+INFO  SviCensus.java>  (GhidraScript)  
+INFO  SviCensus.java> =================================================================== (GhidraScript)  
+INFO  SviCensus.java> EXPLICIT HANDLER DECOMPILES (GhidraScript)  
+INFO  SviCensus.java> =================================================================== (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_00027e94 @ 0x27e94 ---- (GhidraScript)  
+INFO  SviCensus.java> 
+void FUN_00027e94(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (uVar1 >> 0x10 == 0) {
+    func_0x0002bd80(uVar1 & 0xffff);
+  }
+  else {
+    if (uVar1 >> 0x10 != 1) {
+      func_0x00000fa8(param_1,0xff);
+      return;
+    }
+    func_0x0002bda4(uVar1 & 0xffff);
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_00027ec8 @ 0x27ec8 ---- (GhidraScript)  
+INFO  SviCensus.java> 
+void FUN_00027ec8(undefined4 param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  if (uVar1 >> 0x10 == 0) {
+    func_0x0002bdcc();
+  }
+  else {
+    if (uVar1 >> 0x10 != 1) {
+      func_0x00000fa8(param_1,0xff);
+      return;
+    }
+    func_0x0002bddc();
+  }
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_0002dafc @ 0x2dafc ---- (GhidraScript)  
+INFO  SviCensus.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002dafc(undefined4 param_1)
+
+{
+  int iVar1;
+  uint uVar2;
+  float fVar3;
+  
+  iVar1 = func_0x00000ffc(param_1);
+  fVar3 = 0.0;
+  if (iVar1 == 0) {
+    iVar1 = 0xfe;
+    if ((*(char *)(_DAT_000180cc + 0x5e) == '\0') && (*(char *)(_DAT_000180cc + 0x5d) == '\0')) {
+      if (*(char *)(_DAT_000180cc + 0x5c) == '\0') {
+        iVar1 = 0xfd;
+      }
+      else {
+        iVar1 = 0xff;
+        fVar3 = *(float *)(_DAT_00017124 + 0xc);
+      }
+    }
+  }
+  else if (iVar1 == 1) {
+    if (*(char *)(_DAT_000180cc + 0x8e) == '\0') {
+      if (*(char *)(_DAT_000180cc + 0x8c) == '\0') {
+        iVar1 = 0xfd;
+      }
+      else {
+        iVar1 = 0xff;
+        if (*(char *)(iRam00017be0 + 0x15) == '\x01') {
+          fVar3 = *(float *)(_DAT_00017124 + 0x2c);
+        }
+      }
+    }
+    else {
+      iVar1 = 0xfe;
+    }
+  }
+  else {
+    iVar1 = 0xfd;
+  }
+  fVar3 = fVar3 * fRam0001729c;
+  if (NAN(fVar3 * 1.0)) {
+    uVar2 = 0x80000000;
+    if (0.0 <= fVar3) {
+      uVar2 = 0x7fffffff;
+    }
+  }
+  else {
+    uVar2 = (uint)(fVar3 * 1.4013e-45);
+  }
+  func_0x00000fe4(param_1,(uVar2 & uRam000181c8) + iVar1 * 0x1000000);
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_0002dde4 @ 0x2dde4 ---- (GhidraScript)  
+INFO  SviCensus.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002dde4(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = func_0x00000ffc(param_1);
+  if ((-5 < iVar1) && (iVar1 < 5)) {
+    *(int *)(_DAT_000180cc + 0x6c) = iVar1;
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_0002de10 @ 0x2de10 ---- (GhidraScript)  
+INFO  SviCensus.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002de10(undefined4 param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = func_0x00000ffc(param_1);
+  if ((-5 < iVar1) && (iVar1 < 5)) {
+    *(int *)(_DAT_000180cc + 0x9c) = iVar1;
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_00028184 @ 0x28184 ---- (GhidraScript)  
+INFO  SviCensus.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00028184(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  undefined4 uVar3;
+  undefined8 uVar4;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  uVar4 = func_0x0003a978(uVar1);
+  uVar3 = (undefined4)((ulonglong)uVar4 >> 0x20);
+  iVar2 = func_0x0003a7b8((int)uVar4,uVar3,uRam00017e78,uRam00017e74);
+  if ((-1 < iVar2) &&
+     (iVar2 = func_0x0003a754((int)uVar4,uVar3,uRam00017e78,uRam00017e7c), iVar2 < 1)) {
+    *(undefined4 *)(_DAT_00017124 + 0x14) = uVar1;
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_000281d4 @ 0x281d4 ---- (GhidraScript)  
+INFO  SviCensus.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_000281d4(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  undefined4 uVar3;
+  undefined8 uVar4;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  uVar4 = func_0x0003a978(uVar1);
+  uVar3 = (undefined4)((ulonglong)uVar4 >> 0x20);
+  iVar2 = func_0x0003a7b8((int)uVar4,uVar3,uRam00017e78,uRam00017e74);
+  if ((-1 < iVar2) &&
+     (iVar2 = func_0x0003a754((int)uVar4,uVar3,uRam00017e78,uRam00017e7c), iVar2 < 1)) {
+    *(undefined4 *)(_DAT_00017124 + 0x30) = uVar1;
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_0002f6b0 @ 0x2f6b0 ---- (GhidraScript)  
+INFO  SviCensus.java> 
+void FUN_0002f6b0(undefined4 param_1)
+
+{
+  func_0x00000ffc(param_1);
+  func_0x0002f698();
+  func_0x00000fa8(param_1,1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_0002c310 @ 0x2c310 ---- (GhidraScript)  
+INFO  SviCensus.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002c310(undefined4 param_1)
+
+{
+  int iVar1;
+  uint uVar2;
+  
+  uVar2 = func_0x00000ffc(param_1);
+  iVar1 = _DAT_00017124;
+  *(bool *)(_DAT_00017124 + 0x66) = (uVar2 & 1) == 1;
+  *(bool *)(iVar1 + 0x67) = (uVar2 >> 0x10 & 1) == 1;
+  func_0x00000fa8(param_1);
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_0002bdec @ 0x2bdec ---- (GhidraScript)  
+INFO  SviCensus.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002bdec(int param_1)
+
+{
+  int iVar1;
+  undefined4 uStack_30;
+  
+  iVar1 = _DAT_000171a4;
+  param_1 = *(int *)(_DAT_000180cc + 0x6c) + param_1;
+  uStack_30 = (uint)(byte)((-1 < param_1) * (char)param_1) << 0x10;
+  memw();
+  *(int *)(_DAT_000171a4 + 0x230) = uStack_30;
+  do {
+    memw();
+  } while ((*(uint *)(iVar1 + 0x200) & 0x80000000) != 0);
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_0002be40 @ 0x2be40 ---- (GhidraScript)  
+INFO  SviCensus.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002be40(char param_1)
+
+{
+  int iVar1;
+  undefined4 uStack_30;
+  
+  iVar1 = _DAT_000171a4;
+  uStack_30 = (uint)(byte)(((char)*(undefined4 *)(iRam000180d0 + 0x28) + param_1) -
+                          (char)*(undefined4 *)(_DAT_00017124 + 0x50)) << 0x10;
+  memw();
+  *(uint *)(_DAT_000171a4 + 0x230) = uStack_30 | 1;
+  do {
+    memw();
+  } while ((*(uint *)(iVar1 + 0x200) & 0x80000000) != 0);
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_0002be18 @ 0x2be18 ---- (GhidraScript)  
+INFO  SviCensus.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002be18(void)
+
+{
+  int iVar1;
+  undefined4 uStack_30;
+  
+  iVar1 = _DAT_000171a4;
+  uStack_30 = (uint)CONCAT12(*(undefined1 *)(_DAT_0001714c + 1),0x20);
+  memw();
+  *(uint *)(_DAT_000171a4 + 0x230) = uStack_30;
+  do {
+    memw();
+  } while ((*(uint *)(iVar1 + 0x200) & 0x80000000) != 0);
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_0002be7c @ 0x2be7c ---- (GhidraScript)  
+INFO  SviCensus.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002be7c(uint param_1,int param_2)
+
+{
+  float *pfVar1;
+  float *pfVar2;
+  float *pfVar3;
+  int iVar4;
+  uint uVar5;
+  uint uVar6;
+  uint uVar7;
+  float fVar8;
+  
+  pfVar1 = _DAT_00017124;
+  uVar5 = (uint)*(byte *)(_DAT_00017124 + 1);
+  uVar7 = (uint)*(byte *)(_DAT_00017124 + 0x1c);
+  if (*(char *)((int)_DAT_00017124 + 6) == '\0') {
+    if (param_1 < uVar5) {
+      if (uVar7 != 0) {
+        iVar4 = 0;
+        pfVar2 = _DAT_00017124;
+        pfVar3 = _DAT_00017124;
+        do {
+          uVar6 = (uint)*(byte *)((int)pfVar2 + 0x71);
+          if ((uVar6 <= uVar5) && (param_1 <= uVar6)) {
+            FUN_0002bdec();
+            if (param_2 != 1) {
+              (*(code *)pfVar3[0x1d])(0);
+            }
+            uVar7 = (uint)*(byte *)(pfVar1 + 0x1c);
+            uVar5 = uVar6;
+          }
+          pfVar3 = pfVar3 + 1;
+          pfVar2 = (float *)((int)pfVar2 + 1);
+          iVar4 = iVar4 + 1;
+        } while (iVar4 < (int)uVar7);
+      }
+    }
+    else {
+      iVar4 = uVar7 - 1;
+      if (-1 < iVar4) {
+        pfVar2 = _DAT_00017124 + iVar4;
+        iVar4 = iVar4 + (int)_DAT_00017124;
+        do {
+          uVar7 = (uint)*(byte *)(iVar4 + 0x71);
+          if (((uVar5 <= uVar7) && (uVar7 <= param_1)) &&
+             (FUN_0002bdec(uVar7), uVar5 = uVar7, param_2 != 1)) {
+            (*(code *)pfVar2[0x1d])(1);
+          }
+          pfVar2 = pfVar2 + -1;
+          iVar4 = iVar4 + -1;
+        } while ((int)pfVar1 <= iVar4);
+      }
+    }
+    FUN_0002bdec(param_1);
+    fVar8 = ((float)param_1 / 1.0) * _DAT_00017338 + _DAT_00017278;
+    *(char *)(pfVar1 + 1) = (char)param_1;
+    *pfVar1 = fVar8;
+  }
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java> ---- FUNC FUN_0002bf1c @ 0x2bf1c ---- (GhidraScript)  
+INFO  SviCensus.java> 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002bf1c(uint param_1)
+
+{
+  int iVar1;
+  float fVar2;
+  
+  iVar1 = _DAT_00017124;
+  if ((*(char *)(_DAT_00017124 + 100) != '\0') || (*(char *)(_DAT_00017124 + 0x26) == '\0')) {
+    if (*(char *)(_DAT_00017124 + 0x26) != '\0') {
+      param_1 = (uint)*(byte *)(_DAT_00017124 + 0x65);
+    }
+    FUN_0002be40(param_1);
+    fVar2 = ((float)param_1 / 1.0) * _DAT_00017338 + _DAT_00017278;
+    *(char *)(iVar1 + 0x24) = (char)param_1;
+    *(float *)(iVar1 + 0x20) = fVar2;
+  }
+  return;
+}
+
+ (GhidraScript)  
+INFO  SviCensus.java>  (GhidraScript)  
+INFO  SviCensus.java> CENSUS DONE (GhidraScript)  
+INFO  REPORT: Save succeeded for processed file: /smu_fw_robin_5 (HeadlessAnalyzer)  

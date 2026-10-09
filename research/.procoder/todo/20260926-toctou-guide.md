@@ -1,0 +1,30 @@
+# TOCTOU guide
+
+Status: in progress. Local tracking, Plane MCP unavailable in this session.
+Request: docs/toctou-rig-v001-guide.md, seven plain-language sections, ASCII wiring, source-backed startup/logs/troubleshooting.
+Scope: documentation only. No hardware operation or changes to input sources.
+Checks: source references, seven sections, readback, procoder check scoped to document and procoder test.
+Earlier tasks remain unchanged.
+
+## Operator constraint — 2026-09-27
+User asks what the TOCTOU project is and explicitly rejects cutting PCB traces. Do not propose or execute track cutting. Pin lifting or desoldering is NOT implicitly approved. Existing guide describes an invasive MISO/CS proxy, not a validated clip-only setup. Explain this distinction before any hardware work. Earlier open tasks remain open.
+
+## Operator clarification — 2026-09-27
+Operator explicitly rejects lifting flash pins. Treat the hardware constraint as no track cuts, no pin lifting, and no soldering on BC-250. Current v001 wiring is incompatible with this constraint and must not be used as the proposed hookup. A second flash is not by itself a validated solderless solution. Earlier open tasks remain unchanged.
+
+## Solderless feasibility check — 2026-09-27
+Completed local source review: no validated connector-only TOCTOU wiring found. Existing CS proxy still requires isolated flash CS. J4004 photo correction leaves pins 7/8 unknown, so old PROGRAM# pin 8 claim is not an approved hookup. Additional discrepancy: spihack.c loads spi_inject, not miso_proxy; generating miso_proxy header in CMake does not establish a working MISO passthrough. Hardware untested, no wiring or power-on authorized. Pending: verified board isolation mechanism/schematic before any solderless injection proposal.
+
+## CAD net audit — 2026-09-27
+Source: archives/imported/recon-evidence/legacy-tmp-bc250-recon/boardview-parse.json, SHA256 cf11baa257b81ae26b6288162b49f436d50fe0f4ad1a59c2c9703b4527fa8caf (matches connector-map provenance). PROGRAM# connects J4004.8, R678 pullup, D606 to RESETCON#, not a demonstrated independent flash-CS isolation switch. Flash CS and J4004.3 share SB_RSPI_CS# with SU1.T6, with SR424 pullup. BIOS_S_A1 shares flash nets, not an independently selected second bank. HOLD# includes SU1.Y6, not exposed on mapped J4004. Do not drive it based on this netlist. Physical correspondence remains unverified: CAD describes SU1 as BOLTON-D2H/A68H and flash as MXIC, while rig guide assumes Winbond. These discrepancies require board identification before using CAD for hookup. Result: no validated solderless injection route found; not proof of universal impossibility. Next evidence needed: actual flash marking and photo showing soldered vs socketed package and nearby jumpers. No hardware action.
+
+## Local boardview correction — 2026-09-27
+User pointed to boardview in current repository. Read evidence/hardware/ASRock AMD BC-250_ISL_X5R r1.00.cad directly. SHA256 decef01f78b7416bb1e51ffc7c9ea03a556a3b7e2443b98fd441ed92959c65d8 equals prior source CAD hash. Raw lines 65425-65428 identify BIOS_A1 flash and BIOS_S_A1 socket; 72752-72757 confirm shared CS. CAD socket entry establishes design footprint, not actual population. Do not classify socket as unpopulated without physical evidence. No new boardview request needed.
+
+## Operator consultation — 2026-09-27: Waveshare, J4004/clip, one-time transition
+The operator asks whether the Waveshare RP2350B-Plus-W can be used without track cuts, soldering or lifted flash pins, through the J4004 SPI header (spoken as J004) or a BIOS SOIC-8 clip. The operator also proposes a one-time board-assisted PSP trust transition followed by a modified BIOS that boots independently with the operator's signature/key. This is a distinct persistence question, not merely a runtime-only VCN unlock. Keep no board modification as the current constraint; "might lift" is not approval. Answer from local primary CAD, programmer read logs and PSP plan. Status: header/clip are plausible for passive SPI observation or an unpowered programmer, but no validated clip/header-only TOCTOU injection route; Waveshare programmer function is unverified. The one-time persistent trust transition is unproven; boot ROM checks a rooted key chain again on cold boot, so a RAM-only bypass does not by itself produce a self-booting signed image. Compare with the separate in-image DXE route. No hardware action approved.
+
+## Operator correction — 2026-09-27: J4004 programming is already achieved
+The operator reports that he has successfully flashed the BIOS through J4004. Accept that as first-hand operator evidence of programmer access through the connector, not merely a plausible route; the repository search did not find a J4004-specific flash transcript, so do not call the exact session independently verified. My previous F1 underplayed this established capability. New question: what comes next for the Waveshare and the autonomous BIOS, without cutting, soldering or lifting a pin? Discriminator: successful off-state flashing proves access to the SPI memory, but not live isolation of its output or boot-time TOCTOU substitution. Next safe work is to reconcile exact flash/session evidence and current v001 source, then design only a read-only capture or offline candidate test; no live driving, flash or physical modification without a separately approved plan.
+
+Source audit for the next stage: `candidates/toctou-rig-v001/src/spihack.c` configures GPIO outputs for flash CS and MISO through `spi_inject_program`; `miso_proxy.pio` is generated by CMake but not loaded by that C source. The existing UF2 must not be connected to J4004 as a read-only monitor. Proposed discriminator, subject to operator's priority answer: prepare a separate input-only Waveshare SPI capture, verify its pin directions and voltage on the bench, then ask for approval of a read-only powered-board capture. A capture can verify address/read timing; it cannot itself solve flash-output isolation. In parallel, the already proven J4004 programmer route remains the rollback channel for any later exact-hash image trial.

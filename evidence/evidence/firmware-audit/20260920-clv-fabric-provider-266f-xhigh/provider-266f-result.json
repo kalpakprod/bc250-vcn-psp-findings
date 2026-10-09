@@ -1,0 +1,205 @@
+{
+  "boundary": "Provider object source is IDTR-base-minus-4, not a GUID-backed PPI in this slice. No token-0x1204 path, output field semantics, runtime invocation, hardware or clock claim follows.",
+  "callers": {
+    "0x269E": "arg1=4, arg2=EDI+0x18 output pointer",
+    "0x26DA": "arg1=2, arg2=0x30, arg3=ESI",
+    "token1204": "not passed by either direct caller in this bounded window; 0x266F is generic argument forwarding, so indirect/other callers remain possible"
+  },
+  "checks": 37,
+  "checks_detail": [
+    {
+      "detail": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "name": "rom_hash",
+      "ok": true
+    },
+    {
+      "detail": "c5b99650a442ed9be1cf3a62e7571f7eb163b9f80a60d4fcc7b3e9afe4506f78",
+      "name": "fabric_hash",
+      "ok": true
+    },
+    {
+      "detail": "77b1d4be4393fbbf920847398ae5667c42b3841066d40c2aaace1b49036c81e1",
+      "name": "instruction_hash",
+      "ok": true
+    },
+    {
+      "detail": "742a657c8b662cb7bf8820a0542908f903fc85ffe0d481b2e56a0670a65d9f87",
+      "name": "prior_loop_hash",
+      "ok": true
+    },
+    {
+      "detail": "877d23818cd1a09e7a4ef0b5d74f1bc4a2b55a8c0908700abedecf3017ae6a6c",
+      "name": "prior_buffer_hash",
+      "ok": true
+    },
+    {
+      "detail": "token-loop prior PASS",
+      "name": "prior_loop_pass",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9683, 'bytes': '55', 'mnemonic': 'push', 'operands': 'ebp'}",
+      "name": "provider_entry",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9689, 'bytes': '8d45f4', 'mnemonic': 'lea', 'operands': 'eax,[ebp-0xc]'}",
+      "name": "provider_idtr_local",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9698, 'bytes': '0f0108', 'mnemonic': 'sidtd', 'operands': '[eax]'}",
+      "name": "provider_reads_idtr",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9701, 'bytes': '8b45f6', 'mnemonic': 'mov', 'operands': 'eax,DWORD PTR [ebp-0xa]'}",
+      "name": "provider_idtr_base_load",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9704, 'bytes': '8b40fc', 'mnemonic': 'mov', 'operands': 'eax,DWORD PTR [eax-0x4]'}",
+      "name": "provider_object_from_idtr_base_minus4",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9843, 'bytes': 'e85bffffff', 'mnemonic': 'call', 'operands': '0x25d3'}",
+      "name": "266f_provider_acquire",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9848, 'bytes': '8b08', 'mnemonic': 'mov', 'operands': 'ecx,DWORD PTR [eax]'}",
+      "name": "vtable_load",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9850, 'bytes': '8d55fc', 'mnemonic': 'lea', 'operands': 'edx,[ebp-0x4]'}",
+      "name": "provider_temp_output",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9861, 'bytes': 'ff5134', 'mnemonic': 'call', 'operands': 'DWORD PTR [ecx+0x34]'}",
+      "name": "indirect_interface_method_34",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9867, 'bytes': '85c0', 'mnemonic': 'test', 'operands': 'eax,eax'}",
+      "name": "provider_status_test",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9871, 'bytes': '8365fc00', 'mnemonic': 'and', 'operands': 'DWORD PTR [ebp-0x4],0x0'}",
+      "name": "negative_status_zeroes_output",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9875, 'bytes': '8b45fc', 'mnemonic': 'mov', 'operands': 'eax,DWORD PTR [ebp-0x4]'}",
+      "name": "provider_result_return",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9880, 'bytes': '8d4718', 'mnemonic': 'lea', 'operands': 'eax,[edi+0x18]'}",
+      "name": "caller4_output_pointer",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9883, 'bytes': '50', 'mnemonic': 'push', 'operands': 'eax'}",
+      "name": "caller4_push_output",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9884, 'bytes': '6a04', 'mnemonic': 'push', 'operands': '0x4'}",
+      "name": "caller4_arg_size_or_selector",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9886, 'bytes': 'e8ccffffff', 'mnemonic': 'call', 'operands': '0x266f'}",
+      "name": "caller4_provider_call",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9893, 'bytes': '85c0', 'mnemonic': 'test', 'operands': 'eax,eax'}",
+      "name": "caller4_status_test",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9897, 'bytes': '83c018', 'mnemonic': 'add', 'operands': 'eax,0x18'}",
+      "name": "caller4_return_object_adjust",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9900, 'bytes': '8b0e', 'mnemonic': 'mov', 'operands': 'ecx,DWORD PTR [esi]'}",
+      "name": "caller4_source_word0",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9902, 'bytes': '8948f0', 'mnemonic': 'mov', 'operands': 'DWORD PTR [eax-0x10],ecx'}",
+      "name": "caller4_output_word0",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9905, 'bytes': '8b4e04', 'mnemonic': 'mov', 'operands': 'ecx,DWORD PTR [esi+0x4]'}",
+      "name": "caller4_source_word1",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9908, 'bytes': '8948f4', 'mnemonic': 'mov', 'operands': 'DWORD PTR [eax-0xc],ecx'}",
+      "name": "caller4_output_word1",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9911, 'bytes': '8b4e08', 'mnemonic': 'mov', 'operands': 'ecx,DWORD PTR [esi+0x8]'}",
+      "name": "caller4_source_word2",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9914, 'bytes': '8948f8', 'mnemonic': 'mov', 'operands': 'DWORD PTR [eax-0x8],ecx'}",
+      "name": "caller4_output_word2",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9917, 'bytes': '8b4e0c', 'mnemonic': 'mov', 'operands': 'ecx,DWORD PTR [esi+0xc]'}",
+      "name": "caller4_source_word3",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9920, 'bytes': '8948fc', 'mnemonic': 'mov', 'operands': 'DWORD PTR [eax-0x4],ecx'}",
+      "name": "caller4_output_word3",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9941, 'bytes': '56', 'mnemonic': 'push', 'operands': 'esi'}",
+      "name": "caller2_arg2",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9942, 'bytes': '6a30', 'mnemonic': 'push', 'operands': '0x30'}",
+      "name": "caller2_arg2_size",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9944, 'bytes': '6a02', 'mnemonic': 'push', 'operands': '0x2'}",
+      "name": "caller2_arg1",
+      "ok": true
+    },
+    {
+      "detail": "{'rva': 9946, 'bytes': 'e890ffffff', 'mnemonic': 'call', 'operands': '0x266f'}",
+      "name": "caller2_provider_call",
+      "ok": true
+    },
+    {
+      "detail": "no direct 0x1204 argument in 0x25D3..0x26DA",
+      "name": "no_1204_literal_in_provider_window",
+      "ok": true
+    }
+  ],
+  "consumer": "0x2698 caller uses returned pointer plus 0x18 and copies four source dwords [ESI+0..0xC] to output words [EAX-0x10..EAX-0x4]; this is a concrete output consumer but not a clock/token semantic assignment.",
+  "passed": 37,
+  "provider": {
+    "interface": "object first dword is vtable; indirect method offset +0x34; no GUID/PPI identity is materialized in this bounded provider",
+    "source": "SIDT local at 0x25E2; read IDTR base at [EBP-0xA], then provider object pointer [base-4] at 0x25E8",
+    "status": "method return EAX tested; negative status zeroes temp output, returned temp is EAX"
+  },
+  "route": "AmdFabric 0x266F -> provider 0x25D3 -> object vtable [0]+0x34 -> status/output -> caller output copy",
+  "status": "PASS"
+}

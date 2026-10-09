@@ -1,0 +1,403 @@
+{
+  "status": "PASS",
+  "checks": 53,
+  "route": "exact ABL1 UCLK/FCLK policy branch structural match",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "abl1": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "retained_source_lead": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/lorek123_psp/ABL3_decompiled.c",
+    "retained_strings_lead": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/lorek123_psp/ABL1_strings.txt",
+    "disassembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt"
+  },
+  "hashes": {
+    "rom": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "abl1": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "source": "ecd1bfb8be3fe15257038c4db6fd927ab72ca97a920a4639ad10cece04d3e22f",
+    "strings": "c27bf19fb46415703c1e761641d3ac08102dda775b9152ea1b6a557c47741170",
+    "disassembly": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+  },
+  "exact_uclk_branch": [
+    {
+      "field": "UclkDiv1M0",
+      "descriptor_key": "0x21",
+      "branch_start": "0x2cf0",
+      "reader": "payload+0x1fb4",
+      "output": "returned byte at [sp+0xc] -> logger only",
+      "exact_string": "0x30ac"
+    },
+    {
+      "field": "UclkDiv1M1",
+      "descriptor_key": "0x22",
+      "branch_start": "0x2d20",
+      "reader": "payload+0x1fb4",
+      "output": "returned byte at [sp+0xc] -> logger only",
+      "exact_string": "0x30c8"
+    },
+    {
+      "field": "UclkDiv1M2",
+      "descriptor_key": "0x23",
+      "branch_start": "0x2d48",
+      "reader": "payload+0x1fb4",
+      "output": "returned byte at [sp+0xc] -> logger only",
+      "exact_string": "0x30e4"
+    },
+    {
+      "field": "UclkDiv1M3",
+      "descriptor_key": "0x24",
+      "branch_start": "0x2d70",
+      "reader": "payload+0x1fb4",
+      "output": "returned byte at [sp+0xc] -> logger only",
+      "exact_string": "0x3100"
+    }
+  ],
+  "exact_fclk_branch": {
+    "branch_start": "0x463c",
+    "selector": "r1 == 0x0f",
+    "input": "r0 pointer preserved in r5",
+    "descriptor": [
+      "0x015f",
+      "0x0160"
+    ],
+    "reader": "payload+0x1fb4",
+    "returned_value": "halfword at [sp+0x8]",
+    "output": "str r0,[r5] at payload+0x4682",
+    "logger_string": "payload+0x469c"
+  },
+  "unresolved_edge": "payload+0x1fb4 consumes the UclkDiv1/Fclk descriptors and supplies the returned byte/halfword; its downstream consumer/clock-divider/PLL semantics are not proven by these branches. No MCLK=UCLK=FCLK or physical-clock claim follows.",
+  "fresh_result": "Exact ABL1 contains a concrete UclkDiv1 case-2 read/log branch (descriptor keys 0x21..0x24, reader 0x1fb4, returned byte [sp+0xc]) and a concrete Fclk branch (selector 0x0f, descriptor 0x15f/0x160, reader 0x1fb4, returned halfword stored through caller pointer). These are policy handoff branches, not a proven divider/PLL actuator; the first unresolved mapping edge is common reader 0x1fb4.",
+  "limits": "Retained ABL3 source and ABL1 string offsets are version-aligned leads only; exact source-to-binary identity and loader/runtime base remain unproven. No cross-channel minimum 0x95fc or aggregate classifier 0x751c was used as the deliverable. No firmware/hardware/runtime action was performed.",
+  "checks_detail": [
+    {
+      "check": "ROM exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ABL1 decompressed exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "ABL1 decompressed sha256",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "retained ABL3 source exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained ABL3 source sha256",
+      "passed": true,
+      "got": "ecd1bfb8be3fe15257038c4db6fd927ab72ca97a920a4639ad10cece04d3e22f",
+      "expected": "ecd1bfb8be3fe15257038c4db6fd927ab72ca97a920a4639ad10cece04d3e22f"
+    },
+    {
+      "check": "retained ABL1 strings exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained ABL1 strings sha256",
+      "passed": true,
+      "got": "c27bf19fb46415703c1e761641d3ac08102dda775b9152ea1b6a557c47741170",
+      "expected": "c27bf19fb46415703c1e761641d3ac08102dda775b9152ea1b6a557c47741170"
+    },
+    {
+      "check": "exact ABL1 disassembly exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "exact ABL1 disassembly sha256",
+      "passed": true,
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    {
+      "check": "retained source lead: local_3a = 0x21;",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained source lead: s_Override_UclkDiv1_M0___d_000037bc",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained source lead: local_3a = 0x22;",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained source lead: s_Override_UclkDiv1_M1___d_000037d8",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained source lead: local_3a = 0x23;",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained source lead: s_Override_UclkDiv1_M2___d_000037f4",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained source lead: local_3a = 0x24;",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained source lead: s_Override_UclkDiv1_M3___d_00003810",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained source lead: FUN_00002734(&local_3c",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained Uclk case has no direct func_0x0000c900 writer",
+      "passed": true,
+      "got": false,
+      "expected": false
+    },
+    {
+      "check": "retained string lead present: Override UclkDiv1 M0: %d",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained string lead present: Override UclkDiv1 M1: %d",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained string lead present: Override UclkDiv1 M2: %d",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained string lead present: Override UclkDiv1 M3: %d",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "retained string lead present: Override Fclk: %d",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "exact UCLK string offsets are contiguous 0x1c bytes",
+      "passed": true,
+      "got": [
+        12460,
+        12488,
+        12516,
+        12544
+      ],
+      "expected": [
+        12460,
+        12488,
+        12516,
+        12544
+      ]
+    },
+    {
+      "check": "exact FCLK string offset",
+      "passed": true,
+      "got": 18076,
+      "expected": 18076
+    },
+    {
+      "check": "UCLK M0 key immediate 0x21",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M0 calls common reader 0x1fb4",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M0 reads returned byte [sp+0xc]",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M0 logger ADR binds exact string",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M1 key immediate 0x22",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M1 calls common reader 0x1fb4",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M1 reads returned byte [sp+0xc]",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M1 logger ADR binds exact string",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M2 key immediate 0x23",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M2 calls common reader 0x1fb4",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M2 reads returned byte [sp+0xc]",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M2 logger ADR binds exact string",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M3 key immediate 0x24",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M3 calls common reader 0x1fb4",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M3 reads returned byte [sp+0xc]",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK M3 logger ADR binds exact string",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "FCLK branch begins with selector gate cmp r1,#0xf",
+      "passed": true,
+      "got": "hex:0f29",
+      "expected": "hex:0f29"
+    },
+    {
+      "check": "FCLK branch preserves input pointer r0 in r5",
+      "passed": true,
+      "got": "hex:0546",
+      "expected": "hex:0546"
+    },
+    {
+      "check": "FCLK descriptor first halfword 0x15f",
+      "passed": true,
+      "got": "hex:40f25f10",
+      "expected": "hex:40f25f10"
+    },
+    {
+      "check": "FCLK descriptor second halfword 0x160",
+      "passed": true,
+      "got": "hex:401cadf81420",
+      "expected": "hex:401cadf81420"
+    },
+    {
+      "check": "FCLK branch calls common reader 0x1fb4",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "FCLK branch reads returned halfword [sp+8]",
+      "passed": true,
+      "got": "hex:bdf80800",
+      "expected": "hex:bdf80800"
+    },
+    {
+      "check": "FCLK branch writes returned value through input pointer",
+      "passed": true,
+      "got": "hex:2860",
+      "expected": "hex:2860"
+    },
+    {
+      "check": "FCLK logger ADR binds exact string",
+      "passed": true,
+      "got": 18076,
+      "expected": 18076
+    },
+    {
+      "check": "FCLK caller reaches helper branch",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "UCLK slices contain no direct BL 0x46b4 helper",
+      "passed": true,
+      "got": false,
+      "expected": false
+    }
+  ]
+}

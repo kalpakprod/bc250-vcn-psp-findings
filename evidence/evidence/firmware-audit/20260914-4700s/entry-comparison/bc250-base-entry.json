@@ -1,0 +1,112 @@
+{
+  "generated_at": "2026-09-14T12:03:23.424967+00:00",
+  "tool": "scripts/trace_te_entry.py",
+  "pypcode_version": "4.0.0",
+  "input": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/programmer/reads/20260911/firmware-audit/read-a-extract/modules/0196_AmdNbioBaseARIPei_te.bin",
+    "size": 105264,
+    "sha256": "51d96c1e5a5e2c39f04fb962b0b5be686dea0a05eecbde829a4595fe3356884f"
+  },
+  "te": {
+    "machine": "0x14C",
+    "stripped_size": "0x1B8",
+    "delta": "0x190",
+    "entry_rva": "0x240",
+    "trace_start_rva": "0x240",
+    "sections": [
+      {
+        "name": ".text",
+        "virtual_address": "0x240",
+        "virtual_size": 96174,
+        "raw_size": 96192,
+        "file_offset": "0xB0"
+      },
+      {
+        "name": ".data",
+        "virtual_address": "0x17A00",
+        "virtual_size": 8352,
+        "raw_size": 8352,
+        "file_offset": "0x17870"
+      },
+      {
+        "name": ".reloc",
+        "virtual_address": "0x19AA0",
+        "virtual_size": 536,
+        "raw_size": 544,
+        "file_offset": "0x19910"
+      }
+    ]
+  },
+  "trace": {
+    "instruction_count": 7,
+    "instructions": [
+      {
+        "address": "0x240",
+        "length": 1,
+        "mnemonic": "PUSH",
+        "body": "ESI"
+      },
+      {
+        "address": "0x241",
+        "length": 5,
+        "mnemonic": "CALL",
+        "body": "0x2d40"
+      },
+      {
+        "address": "0x246",
+        "length": 5,
+        "mnemonic": "CALL",
+        "body": "0x37bf"
+      },
+      {
+        "address": "0x24B",
+        "length": 4,
+        "mnemonic": "MOV",
+        "body": "ESI,dword ptr [ESP + 0xc]"
+      },
+      {
+        "address": "0x24F",
+        "length": 5,
+        "mnemonic": "CALL",
+        "body": "0xe55"
+      },
+      {
+        "address": "0x254",
+        "length": 1,
+        "mnemonic": "POP",
+        "body": "ESI"
+      },
+      {
+        "address": "0x255",
+        "length": 1,
+        "mnemonic": "RET",
+        "body": ""
+      }
+    ],
+    "direct_calls": [
+      {
+        "site": "0x241",
+        "target": "0x2D40",
+        "body": "0x2d40"
+      },
+      {
+        "site": "0x246",
+        "target": "0x37BF",
+        "body": "0x37bf"
+      },
+      {
+        "site": "0x24F",
+        "target": "0xE55",
+        "body": "0xe55"
+      }
+    ],
+    "indirect_calls": [],
+    "exits": [
+      {
+        "address": "0x255",
+        "kind": "RET"
+      }
+    ],
+    "errors": []
+  }
+}

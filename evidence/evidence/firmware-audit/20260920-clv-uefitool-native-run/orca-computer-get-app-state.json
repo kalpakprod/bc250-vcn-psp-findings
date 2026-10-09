@@ -1,0 +1,18 @@
+{
+  "id": "46b7a1eb-2537-4db1-849c-f5f3416da282",
+  "ok": false,
+  "error": {
+    "code": "window_not_found",
+    "message": "No top-level AT-SPI window is available for uefitool",
+    "data": {
+      "nextSteps": [
+        "Run `orca computer list-windows --app <app> --json` and target one of the listed windows.",
+        "If the app is listed but no usable window is visible, retry observation once with `--restore-window`.",
+        "If no window is listed, open or focus the app first; `orca computer` does not launch closed desktop apps."
+      ]
+    }
+  },
+  "_meta": {
+    "runtimeId": "6edafef8-79b4-46d0-848c-94835bde5fee"
+  }
+}

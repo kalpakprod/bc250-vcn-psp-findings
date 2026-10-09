@@ -1,0 +1,38 @@
++ SP=/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc
++ echo '=== netconsole full (target) ==='
+=== netconsole full (target) ===
++ systemctl cat bc250-netconsole
+# /etc/systemd/system/bc250-netconsole.service
+[Unit]
+Description=BC-250 netconsole target (kernel log -> UDP off-box)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/libexec/bc250-netconsole.sh
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
++ echo '=== SMU test (sudo, 01:00.0) ==='
+=== SMU test (sudo, 01:00.0) ===
++ sudo /home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/bin/python -
+test_message ERR: RuntimeError('smu returned status 0x00 for queue 3 msg 0x01')
+q3_0x04 ERR: RuntimeError('smu returned status 0x00 for queue 3 msg 0x04')
+q3_0x0a ERR: RuntimeError('smu returned status 0x00 for queue 3 msg 0x0A')
+q3_0x98 ERR: RuntimeError('smu returned status 0x00 for queue 3 msg 0x98')
+q3_0x47 ERR: RuntimeError('smu returned status 0x00 for queue 3 msg 0x47')
+q3_0x48 ERR: RuntimeError('smu returned status 0x00 for queue 3 msg 0x48')
+q2_0x03 ERR: RuntimeError('smu returned status 0x00 for queue 2 msg 0x03')
++ echo '=== gpu_metrics (sudo) ==='
+=== gpu_metrics (sudo) ===
++ sudo cat /sys/kernel/debug/dri0/amdgpu_gpu_metrics
++ head -40
++ echo '=== amdgpu_pm_info (sudo) ==='
+=== amdgpu_pm_info (sudo) ===
++ sudo cat /sys/kernel/debug/dri0/amdgpu_pm_info
++ head -30
++ echo '=== done ==='
+=== done ===

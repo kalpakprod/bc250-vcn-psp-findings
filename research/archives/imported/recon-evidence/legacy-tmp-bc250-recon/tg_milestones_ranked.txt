@@ -1,0 +1,160 @@
+2026-08-13 id=154592 s=4 Blank (@wd2blank) [id=8721651073]
+  blank@fedora:~$ sudo dmesg | grep -iE "ip discovery|VCN|amdgpu.*ip block" | [sudo] пароль до blank:   | [    5.205840] amdgpu 0000:01:00.0: detected ip block number 0 <common_v1_0_0> (nv_common) | [    5.205845] amdgpu 0000:01:00.0: detected ip block number 1 <gmc_v10_0_0> (gmc_v10_0) | [    5.20584
+2026-07-30 id=150936 s=3 pan_Rijovich (@pan_Rijovich) [id=831667472]
+  Также в коде драйвера линукс в vcn2_0.c есть условия что прошивка может быть загружена в режиме direct load, но не известно реально ли это рабочий путь. Я пытался читать регистры vcn, но все они вызывают перманентный hang даже статусные регистры. Из того что я нашел в коде это, то что по дефолту vcn
+2026-07-30 id=150944 s=3 pan_Rijovich (@pan_Rijovich) [id=831667472]
+  Я пытался разобрать команду VcnPowerUp в прошивке smu navi 10, но я ничерта в этом не понимаю где он пишет в свою внутреннюю память, а где пишет именно в регистры
+2026-07-02 id=147414 s=2 M (@mirvsilv) [id=6008917066]
+  #Arch #Ubuntu #Fedora #Text #Фикс |  | Гений николай разобрался с тем, что не работает при обновлении ядра, Алесь проверил, фикс работает | Если у вас чёрный экран после обновления, откатывать ядро больше не нужно. Просто пишем | sudo ln -s /lib/firmware/amdgpu/navi10_gpu_info.bin.zst /lib/firmware/
+2026-07-29 id=150668 s=2 Stas Zubenko🦄 (@dantistnfs) [id=124026478]
+  та в SMU и PSP кучу дыр было которые закрывали
+2026-07-30 id=150928 s=2 Stas Zubenko🦄 (@dantistnfs) [id=124026478]
+  я в эту сторону уже думаю, проблема в том что SMU не может просто взять и написать PSP - не проверяй прошивку плз
+2026-07-30 id=150940 s=2 Stas Zubenko🦄 (@dantistnfs) [id=124026478]
+  Вопрос, а ты включал повер менеджмент VCN в SMU до того как пытался регистры читать?
+2026-08-12 id=154586 s=2 Blank (@wd2blank) [id=8721651073]
+  Та и в системе они есть, сами прошивки vcn bin никто и не прячет но толку то ? Они в зачастую по /lib/firmware/amdgpu/ находяться
+2026-08-17 id=155812 s=2 Daniel Lima (@daniellma) [id=7480370306]
+  Что касается VCN на BC-250: фактически для этой платы нет специальной прошивки VCN. Теоретически можно было бы использовать аналоги, так как там указана версия 2.0.3 (заглушка/placeholder), а чипы на базе любой версии 2.0+ без проблем работают с базовой 2.0.0 — например, с прошивкой VCN от Steam Dec
+2026-08-17 id=155814 s=2 Daniel Lima (@daniellma) [id=7480370306]
+  Я пообщался с Alex Deucher, разработчиком из AMD (amdgpu — драйвер для BC-250 в Linux), и вот что он ответил по поводу VCN:
+2026-08-17 id=155841 s=2 Максим Калитюк (@shereant) [id=5274533872]
+  В PSP і SMU доволі багато багів там точно знайдеться якийсь баг який допоможе в підсовуваню прошивки або і зняття ключу підписа
+2026-08-17 id=155843 s=2 Pavel (@pacha416) [id=1415233590]
+  А есть где-то дампы smu и psp, чтобы гидрой их понасиловать?
+2026-08-25 id=157865 s=2 Алесь [id=422948195]
+  Никто не трогал? https://github.com/daveconde/bc250-vcn-enable
+2026-06-25 id=146788 s=1 Unknown [id=1649349883]
+  все в том же https://github.com/Keshas-dev/AMD-BC-250-PSP-Driver или где
+2026-06-27 id=146997 s=1 Unknown [id=1649349883]
+  та хуй там плавал, прошивку на VCN 2.0.3 я откуда должен взять ?
+2026-06-30 id=147242 s=1 Максим Калитюк (@shereant) [id=5274533872]
+  Все що зрозуміло що psp не дозволяє просто так легко ввімкнути них
+2026-07-01 id=147312 s=1 Unknown [id=1649349883]
+  ну по крайней мере в /usr/lib/firmware/amdgpu/ как раз лежат: | /usr/lib/firmware/amdgpu/cyan_skillfish2_ce.bin.xz | /usr/lib/firmware/amdgpu/cyan_skillfish2_me.bin.xz | /usr/lib/firmware/amdgpu/cyan_skillfish2_mec.bin.xz | /usr/lib/firmware/amdgpu/cyan_skillfish2_mec2.bin.xz | /usr/lib/firmware/amd
+2026-07-09 id=148474 s=1 Кирилл Павлов (@mrK0ks) [id=1254229614]
+  cyan-skillfish-governor-smu вроде так называется
+2026-07-09 id=148487 s=1 Alex (@SadGofLC) [id=298369724]
+  # us | [timing.intervals] | sample = 250 | adjust = 100_000 |  | [gpu-usage] | fix-metrics = true | method = "busy-flag" # "busy-flag" or "process" | flush-every = 10 |  | [gpu] | set-method = "smu"  # "smu" or "kernel" |  | [dbus] | enabled = true |  | # Optional: set initial frequency range limits
+2026-07-22 id=149895 s=1 Nicoló (@nicolodeva) [id=246947979]
+  Thank you very much, for your time and feedback, I'm glad to hear that! If you have experience with coding agents, you can try using native agent or connect it to your favorite (Claude Code, PI ect).
+2026-07-23 id=149951 s=1 Stas Zubenko🦄 (@dantistnfs) [id=124026478]
+  там сумма как минимум с гпу, цпу и еще чего то (скорее всего V_SOC, по коду SMU не понятно, просто третье значение читается с регистра и суммируется) | памп и контроллер памяти оно не включает но, оно около 30-35Вт в простое
+2026-07-25 id=150223 s=1 Stas Zubenko🦄 (@dantistnfs) [id=124026478]
+  скейл по факту это всего лишь константа которая используется SMU для обсчета вольтажа для каждой частоты (но в реальности оно еще компенсирует на просадку напряжения с VRM, поэтому функция всего лишь аппроксимация)
+2026-07-26 id=150397 s=1 Владислав [id=506101285]
+  Ты это сейчас серьезно? И после этого всего что ты насрал в ветку ты спрашиваешь, почему у тебя унифицированная память в разных сценариях использования разными системами soc дает разный показатель psp? Разжалован из душнил.
+2026-07-28 id=150555 s=1 Blank (@wd2blank) [id=8721651073]
+  И да 1000 в простое и 1500Mhz в нагрузке меня устраевают так что мне не на столько прям нужен SMU Governor 👀
+2026-07-28 id=150557 s=1 Blank (@wd2blank) [id=8721651073]
+  Просто работала би логика с вольтажем как в старом Governor цени SMU Governor'у би не билоб
+2026-07-28 id=150558 s=1 Blank (@wd2blank) [id=8721651073]
+  Просто частота би билаб на SMU
+2026-07-28 id=150563 s=1 Blank (@wd2blank) [id=8721651073]
+  ну вообще да но я про то что не через SMU вольтаж а как тут в Governor через драйвер виставлять типа
+2026-07-29 id=150651 s=1 Алесь [id=422948195]
+  sudo systemctl stop cyan-skillfish-governor-smu |  | первой командой
+2026-07-29 id=150663 s=1 Stas Zubenko🦄 (@dantistnfs) [id=124026478]
+  вообще, можно обернуть в flock как и работает cyan-skillfish-smu и bc250_oc
+2026-07-30 id=150767 s=1 Blank (@wd2blank) [id=8721651073]
+  Ну там глянуть если есть доступ к VCN и если там не хватает по большей части реально прошивки, но раньше писали что вот не дает и все его трогать
+2026-07-30 id=150771 s=1 Иннокентий Иванов (@ivanov_innokentii) [id=80573716]
+  ну как бы енкодинг на цпу был затратным, а тут +2 ядра дали.. еще и на вулкане сделали енкодер, а с анлоком юнитов это считай бесплатно вообще.. VCN как будто уже и не нужен.
+2026-07-30 id=150790 s=1 Владислав [id=506101285]
+  И как работает этот энкодер? Последний раз когда я смотрел на реализацию в sunshine он был просто шапкой для дергания всё того же vcn.
+2026-07-30 id=150864 s=1 Stas Zubenko🦄 (@dantistnfs) [id=124026478]
+  VCN остался
+2026-07-30 id=150876 s=1 Laird [id=8718288175]
+  Начиная с ядра Linux 6.11 и графического стека Mesa 25.1, поддержка блока VCN была официально внедрена в открытый драйвер RADV
+2026-07-30 id=150880 s=1 Stas Zubenko🦄 (@dantistnfs) [id=124026478]
+  нужен не общий VCN амд, а конкретно для cyan skillfish | у нас фирмвере есть, но он от ps5 и не подписанный, так что даже загрузить не можем
+2026-07-30 id=150921 s=1 pan_Rijovich (@pan_Rijovich) [id=831667472]
+  А через эту лазейку, через которую пишем регистр ядер, мы не можем сами запихнуть неподписанную прошивку vcn?
+2026-07-30 id=150930 s=1 pan_Rijovich (@pan_Rijovich) [id=831667472]
+  Это понятно, но я имею ввиду что через эту лазейку сделать всё то что делает psp
+2026-07-30 id=150942 s=1 Stas Zubenko🦄 (@dantistnfs) [id=124026478]
+  ну я думал что с SMU не выйдет включить процессор😅
+2026-07-30 id=150997 s=1 REINALDO Rezende [id=5869262145]
+  https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script?fbclid=IwdGRzaATYF1BjbGNrBNgXSWV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHqgTMnU4J_q6EsaEAh1A21SzDt6XVGuXqvQScDCX8znDpX10VURY4Xckx1fD_aem_9KhbahewGL-tcJY1Inlrxg&sfnsn=wiwspwa
+2026-07-30 id=151022 s=1 REINALDO Rezende [id=5869262145]
+  https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script?fbclid=IwdGRzaATYF1BjbGNrBNgXSWV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHqgTMnU4J_q6EsaEAh1A21SzDt6XVGuXqvQScDCX8znDpX10VURY4Xckx1fD_aem_9KhbahewGL-tcJY1Inlrxg&sfnsn=wiwspwa
+2026-07-30 id=151026 s=1 Reynaldo [id=1261464848]
+  sudo systemctl stop cyan-skillfish-governor-smu | sudo chmod +x ./bc250-unlock-cores.py | sudo ./bc250-unlock-cores.py | sudo reboot
+2026-07-30 id=151069 s=1 REINALDO Rezende [id=5869262145]
+  https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script?fbclid=IwdGRzaATYF1BjbGNrBNgXSWV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHqgTMnU4J_q6EsaEAh1A21SzDt6XVGuXqvQScDCX8znDpX10VURY4Xckx1fD_aem_9KhbahewGL-tcJY1Inlrxg&sfnsn=wiwspwa
+2026-07-30 id=151083 s=1 REINALDO Rezende [id=5869262145]
+  https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script?fbclid=IwdGRzaATYF1BjbGNrBNgXSWV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHqgTMnU4J_q6EsaEAh1A21SzDt6XVGuXqvQScDCX8znDpX10VURY4Xckx1fD_aem_9KhbahewGL-tcJY1Inlrxg&sfnsn=wiwspwa
+2026-07-30 id=151094 s=1 Кирилл Павлов (@mrK0ks) [id=1254229614]
+  У меня нет такого выбора, я качал отсюда, верно же? https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script?fbclid=IwdGRzaATYF1BjbGNrBNgXSWV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHqgTMnU4J_q6EsaEAh1A21SzDt6XVGuXqvQScDCX8znDpX10VURY4Xckx1fD_aem_9KhbahewGL-tcJY1Inlrxg
+2026-07-30 id=151124 s=1 Кирилл Павлов (@mrK0ks) [id=1254229614]
+  Ты с гитхаба качал? Отсюда?    https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script?fbclid=IwdGRzaATYF1BjbGNrBNgXSWV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHqgTMnU4J_q6EsaEAh1A21SzDt6XVGuXqvQScDCX8znDpX10VURY4Xckx1fD_aem_9KhbahewGL-tcJY1Inlrxg&sfnsn=wiwspwa
+2026-07-30 id=151157 s=1 Кирилл Павлов (@mrK0ks) [id=1254229614]
+  Там в папке firmware надо из зип файла достать прошивки
+2026-07-31 id=151582 s=1 Blank (@wd2blank) [id=8721651073]
+  ну тут иза SMU момента
+2026-07-31 id=151832 s=1 Reynaldo [id=1261464848]
+  https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script/releases/tag/v0.1.1
+2026-08-02 id=152046 s=1 pan_Rijovich (@pan_Rijovich) [id=831667472]
+  Там проблема в самом smu и его исправить никак не получится, он в массив из 6 элементов пишет 8 элементов и таким образом перезатипает данные что идут следующим, а это частота ГПУ в данном случае
+2026-08-02 id=152047 s=1 pan_Rijovich (@pan_Rijovich) [id=831667472]
+  Есть возможность читать частоту ГПУ из smu отдельной командой, но пока этого никто не сделал, также можно сделать так чтобы governor подменял перезатёртое значение тем что запросил
+2026-08-05 id=152790 s=1 Blank (@wd2blank) [id=8721651073]
+  https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script
+2026-08-06 id=153031 s=1 Blank (@wd2blank) [id=8721651073]
+  Им нужно било чип которий держит частоту по GPU и работал VCN и DCN (в общем почти весь чип хотя и GPU у PS5 обрезан до 36CU)
+2026-08-08 id=153658 s=1 Владислав [id=506101285]
+  Ля какое. Очень похоже, что это и есть наш проебанный psp псп на распределении очередей.
+2026-08-08 id=153668 s=1 pan_Rijovich (@pan_Rijovich) [id=831667472]
+  А причём тут psp?
+2026-08-09 id=153769 s=1 Deshkin (@Deshkin) [id=297489935]
+  Да, и с выключенным остановленным bc-250-smu-oc она тоже виснет. Сон я выключал через gui просто. Типа в питании выкл кран через 5 минут, сон "никогда". И виснет явно не при каких-то условиях типа неактивности. Иногда я успеваю потыкать в cpu-x, иногда успеваю зайти в occt и виснет прям в процессе.
+2026-08-10 id=153973 s=1 Blank (@wd2blank) [id=8721651073]
+  Просто скоро с BC будет исторія бесконечних форков, ну зато тут через Mail Box SMU реализовано читання частоти GPU чтоби не било каши после анлока 8 ядер
+2026-08-12 id=154344 s=1 Pavel (@pacha416) [id=1415233590]
+  Ребята, а кто-то пробовал патчить кернел vcn модулем от похожих чипов? Там стоит 2.0.3 которого нет сорсов нигде, но может можно впихнуть другую версию и заведется
+2026-08-12 id=154377 s=1 pan_Rijovich (@pan_Rijovich) [id=831667472]
+  А включать его должен smu, но у нас это не реализовано
+2026-08-12 id=154409 s=1 Pavel (@pacha416) [id=1415233590]
+  А чем именно шили сам VCN? Где-то есть сорс его прошивки?
+2026-08-12 id=154419 s=1 Максим Калитюк (@shereant) [id=5274533872]
+  Немає драйвера і в smu вимкнено
+2026-08-12 id=154431 s=1 Владислав [id=506101285]
+  Это ты так говоришь пока не нужно на 4к телек/моник выводить ютуб сравнимого качества и битрейта. Ну или картинку с bc-250 куда-то рестримить. Я пока так и не увидел реально работающих вариантов, что не на CPU. Все "шапки" и "надстройки", что якобы должны юзать vulkan на самом деле дергают всё тот ж
+2026-08-12 id=154442 s=1 Максим Калитюк (@shereant) [id=5274533872]
+  В нас він вимкнений в smu потрібно увімкнути і драйвер найти
+2026-08-12 id=154443 s=1 алло, это сервис по ремонту стиральных машин? (@string_null) [id=1046346454]
+  ля, за что говноамд придумали smu..
+2026-08-12 id=154445 s=1 Максим Калитюк (@shereant) [id=5274533872]
+  Smu це по факту частина bios в нас
+2026-08-12 id=154448 s=1 алло, это сервис по ремонту стиральных машин? (@string_null) [id=1046346454]
+  чувак, нет, сОси тут при чем? smu, agesa - все это сделали амудэ
+2026-08-12 id=154450 s=1 Максим Калитюк (@shereant) [id=5274533872]
+  Ти про psp забув)
+2026-08-12 id=154456 s=1 Максим Калитюк (@shereant) [id=5274533872]
+  Ага це гавно дивитися за всім і в його більше прав ніж в smu
+2026-08-12 id=154473 s=1 Владислав [id=506101285]
+  Всё же для полноценного вывода bc-250 в прямые конкуренты стим-коробки нехватает именно vcn. Остальное скорее приятный бонус.
+2026-08-13 id=154589 s=1 Pavel (@pacha416) [id=1415233590]
+  т.е. если сделать патч на дискавери, прописать версию в amdgpu_ip_blocks, то оно пытается включить vcn но упирается в кернел драйвер. У cyan_skillfish2 нет vcn драйвера, я хз можно ли ему скормить левый или самописный без риска окирпичить
+2026-08-13 id=154594 s=1 Blank (@wd2blank) [id=8721651073]
+  окирпичить можна вроде только на етапе SMU, если под сув не сработает то просто черний екран
+2026-08-13 id=154791 s=1 D (@nasonovdanila) [id=295140516]
+  Народ, всем привет, искал тут, но что-то не нашел похожей проблемы (или плохо искал) | Купил плату, поставил водянку, все запитал, радиатор завандалил и середину выпилил. Врм и другие чипы под стоковым считай. |  | Поставил bazzite. | Анлокнул все 40 ядер, установил гавернер cyan..smu. там выставил 
+2026-08-13 id=154795 s=1 D (@nasonovdanila) [id=295140516]
+  У меня такое ощущение что настройки smu не применяются по вольтажу и частоте | Сейчас на 1500 sensors пишет вольтаж 868
+2026-08-13 id=154802 s=1 D (@nasonovdanila) [id=295140516]
+  Интересно, выключил smu, включил tt гавернер, на нем на 2000 частоте стоит 1030 | Без анлока ядер пока что работает нормлаьноч уже минут 15
+2026-08-13 id=154820 s=1 Volodymyr Spyrydonov (@Cpt_Spiridonoff) [id=848151337]
+  cyan-skillfish-smu?
+2026-08-14 id=154932 s=1 Владислав [id=506101285]
+  Initial Setup |   ────────────────────────────────────────────────────────────── |   Run these tasks to configure your BC-250 system. |  |   [ 1]  CachyOS Kernel      Replace Deckify kernel with standard CachyOS |   [ 2]  CPU Governor        bc250-smu-oc CPU overclock service |   [ 3]  GPU Governor 
+2026-08-14 id=154976 s=1 Blank (@wd2blank) [id=8721651073]
+  https://github.com/Forbidden-Darkness/AMD-BC-250-UEFI-v2.2-Firmware-Menu-Script
+2026-08-14 id=155063 s=1 Владислав [id=506101285]
+  А оно не всегда работает одинаково во всех дистрах и версиях ядер и firmware к ним.
+2026-08-15 id=155443 s=1 Artem Artem [id=5333099586]
+  Как раз выше скидывали под твою плату что нужно зделать codex/claude напиши что случилось они сами зальют прошивку подскажут з разпиновкой как подключать и зальют нормально биос под эту плату там все просто
+2026-08-17 id=155816 s=1 Pavel (@pacha416) [id=1415233590]
+  Попроси у него ключ для psp, мы сами напишем и драйвер и модули для ядра 😄
+2026-08-17 id=155817 s=1 Pavel (@pacha416) [id=1415233590]
+  А кто-то копал в сторону https://github.com/PSPReverse/amd-sp-glitch для взлома прошивки?

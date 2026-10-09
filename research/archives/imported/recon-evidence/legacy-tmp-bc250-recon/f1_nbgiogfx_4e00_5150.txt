@@ -1,0 +1,271 @@
+0x4e02: MOV      word ptr [EAX],DX
+0x4e05: MOV      ECX,dword ptr [EBP + -0x8]
+0x4e08: MOV      DL,byte ptr [ECX + 0x2]
+0x4e0b: AND      DL,0xfc
+0x4e0e: MOV      EAX,dword ptr [EBP + -0x8]
+0x4e11: MOV      byte ptr [EAX + 0x2],DL
+0x4e14: MOV      ECX,dword ptr [EBP + -0x8]
+0x4e17: MOV      EDX,dword ptr [EBP + -0x4]
+0x4e1a: MOV      AL,byte ptr [EDX + 0x8]
+0x4e1d: MOV      byte ptr [ECX + 0x3],AL
+0x4e20: MOV      ECX,dword ptr [EBP + -0x8]
+0x4e23: ADD      ECX,0x4
+0x4e26: MOV      dword ptr [EBP + -0x8],ECX
+0x4e29: MOV      EDX,0x1008
+0x4e2e: MOV      EAX,dword ptr [EBP + -0x8]
+0x4e31: MOV      word ptr [EAX],DX
+0x4e34: MOV      ECX,dword ptr [EBP + -0x8]
+0x4e37: MOV      DL,byte ptr [ECX + 0x2]
+0x4e3a: AND      DL,0xfc
+0x4e3d: OR       DL,0x2
+0x4e40: MOV      EAX,dword ptr [EBP + -0x8]
+0x4e43: MOV      byte ptr [EAX + 0x2],DL
+0x4e46: MOV      ECX,dword ptr [EBP + -0x8]
+0x4e49: MOV      EDX,dword ptr [EBP + -0x4]
+0x4e4c: MOV      EAX,dword ptr [EDX + 0x9]
+0x4e4f: MOV      dword ptr [ECX + 0x3],EAX
+0x4e52: MOV      ECX,dword ptr [EBP + -0x8]
+0x4e55: ADD      ECX,0x7
+0x4e58: MOV      dword ptr [EBP + -0x8],ECX
+0x4e5b: MOV      EDX,0x1009
+0x4e60: MOV      EAX,dword ptr [EBP + -0x8]
+0x4e63: MOV      word ptr [EAX],DX
+0x4e66: MOV      ECX,dword ptr [EBP + -0x8]
+0x4e69: MOV      DL,byte ptr [ECX + 0x2]
+0x4e6c: AND      DL,0xfc
+0x4e6f: OR       DL,0x2
+0x4e72: MOV      EAX,dword ptr [EBP + -0x8]
+0x4e75: MOV      byte ptr [EAX + 0x2],DL
+0x4e78: MOV      ECX,dword ptr [EBP + -0x8]
+0x4e7b: MOV      EDX,dword ptr [EBP + -0x4]
+0x4e7e: MOV      EAX,dword ptr [EDX + 0xd]
+0x4e81: MOV      dword ptr [ECX + 0x3],EAX
+0x4e84: MOV      ECX,dword ptr [EBP + -0x8]
+0x4e87: ADD      ECX,0x7
+0x4e8a: MOV      dword ptr [EBP + -0x8],ECX
+0x4e8d: MOV      EDX,0x100a
+0x4e92: MOV      EAX,dword ptr [EBP + -0x8]
+0x4e95: MOV      word ptr [EAX],DX
+0x4e98: MOV      ECX,dword ptr [EBP + -0x8]
+0x4e9b: MOV      DL,byte ptr [ECX + 0x2]
+0x4e9e: AND      DL,0xfc
+0x4ea1: MOV      EAX,dword ptr [EBP + -0x8]
+0x4ea4: MOV      byte ptr [EAX + 0x2],DL
+0x4ea7: MOV      ECX,dword ptr [EBP + -0x8]
+0x4eaa: MOV      EDX,dword ptr [EBP + -0x4]
+0x4ead: MOV      AL,byte ptr [EDX + 0x11]
+0x4eb0: MOV      byte ptr [ECX + 0x3],AL
+0x4eb3: MOV      ECX,dword ptr [EBP + -0x8]
+0x4eb6: ADD      ECX,0x4
+0x4eb9: MOV      dword ptr [EBP + -0x8],ECX
+0x4ebc: MOV      EDX,0x100b
+0x4ec1: MOV      EAX,dword ptr [EBP + -0x8]
+0x4ec4: MOV      word ptr [EAX],DX
+0x4ec7: MOV      ECX,dword ptr [EBP + -0x8]
+0x4eca: MOV      DL,byte ptr [ECX + 0x2]
+0x4ecd: AND      DL,0xfc
+0x4ed0: OR       DL,0x2
+0x4ed3: MOV      EAX,dword ptr [EBP + -0x8]
+0x4ed6: MOV      byte ptr [EAX + 0x2],DL
+0x4ed9: MOV      ECX,dword ptr [EBP + -0x8]
+0x4edc: MOV      EDX,dword ptr [EBP + -0x4]
+0x4edf: MOV      EAX,dword ptr [EDX + 0x12]
+0x4ee2: MOV      dword ptr [ECX + 0x3],EAX
+0x4ee5: MOV      ECX,dword ptr [EBP + -0x8]
+0x4ee8: ADD      ECX,0x7
+0x4eeb: MOV      dword ptr [EBP + -0x8],ECX
+0x4eee: MOV      EDX,0x100c
+0x4ef3: MOV      EAX,dword ptr [EBP + -0x8]
+0x4ef6: MOV      word ptr [EAX],DX
+0x4ef9: MOV      ECX,dword ptr [EBP + -0x8]
+0x4efc: MOV      DL,byte ptr [ECX + 0x2]
+0x4eff: AND      DL,0xfc
+0x4f02: OR       DL,0x2
+0x4f05: MOV      EAX,dword ptr [EBP + -0x8]
+0x4f08: MOV      byte ptr [EAX + 0x2],DL
+0x4f0b: MOV      ECX,dword ptr [EBP + -0x8]
+0x4f0e: MOV      EDX,dword ptr [EBP + -0x4]
+0x4f11: MOV      EAX,dword ptr [EDX + 0x16]
+0x4f14: MOV      dword ptr [ECX + 0x3],EAX
+0x4f17: MOV      ECX,dword ptr [EBP + -0x8]
+0x4f1a: ADD      ECX,0x7
+0x4f1d: MOV      dword ptr [EBP + -0x8],ECX
+0x4f20: MOV      EDX,0x100d
+0x4f25: MOV      EAX,dword ptr [EBP + -0x8]
+0x4f28: MOV      word ptr [EAX],DX
+0x4f2b: MOV      ECX,dword ptr [EBP + -0x8]
+0x4f2e: MOV      DL,byte ptr [ECX + 0x2]
+0x4f31: AND      DL,0xfc
+0x4f34: MOV      EAX,dword ptr [EBP + -0x8]
+0x4f37: MOV      byte ptr [EAX + 0x2],DL
+0x4f3a: MOV      ECX,dword ptr [EBP + -0x8]
+0x4f3d: MOV      EDX,dword ptr [EBP + -0x4]
+0x4f40: MOV      AL,byte ptr [EDX + 0x1a]
+0x4f43: MOV      byte ptr [ECX + 0x3],AL
+0x4f46: MOV      ECX,dword ptr [EBP + -0x8]
+0x4f49: ADD      ECX,0x4
+0x4f4c: MOV      dword ptr [EBP + -0x8],ECX
+0x4f4f: MOV      EDX,0x100e
+0x4f54: MOV      EAX,dword ptr [EBP + -0x8]
+0x4f57: MOV      word ptr [EAX],DX
+0x4f5a: MOV      ECX,dword ptr [EBP + -0x8]
+0x4f5d: MOV      DL,byte ptr [ECX + 0x2]
+0x4f60: AND      DL,0xfc
+0x4f63: OR       DL,0x2
+0x4f66: MOV      EAX,dword ptr [EBP + -0x8]
+0x4f69: MOV      byte ptr [EAX + 0x2],DL
+0x4f6c: MOV      ECX,dword ptr [EBP + -0x8]
+0x4f6f: MOV      EDX,dword ptr [EBP + -0x4]
+0x4f72: MOV      EAX,dword ptr [EDX + 0x1b]
+0x4f75: MOV      dword ptr [ECX + 0x3],EAX
+0x4f78: MOV      ECX,dword ptr [EBP + -0x8]
+0x4f7b: ADD      ECX,0x7
+0x4f7e: MOV      dword ptr [EBP + -0x8],ECX
+0x4f81: MOV      EDX,0x100f
+0x4f86: MOV      EAX,dword ptr [EBP + -0x8]
+0x4f89: MOV      word ptr [EAX],DX
+0x4f8c: MOV      ECX,dword ptr [EBP + -0x8]
+0x4f8f: MOV      DL,byte ptr [ECX + 0x2]
+0x4f92: AND      DL,0xfc
+0x4f95: OR       DL,0x2
+0x4f98: MOV      EAX,dword ptr [EBP + -0x8]
+0x4f9b: MOV      byte ptr [EAX + 0x2],DL
+0x4f9e: MOV      ECX,dword ptr [EBP + -0x8]
+0x4fa1: MOV      EDX,dword ptr [EBP + -0x4]
+0x4fa4: MOV      EAX,dword ptr [EDX + 0x1f]
+0x4fa7: MOV      dword ptr [ECX + 0x3],EAX
+0x4faa: MOV      ECX,dword ptr [EBP + -0x8]
+0x4fad: ADD      ECX,0x7
+0x4fb0: MOV      dword ptr [EBP + -0x8],ECX
+0x4fb3: MOV      EDX,0x1010
+0x4fb8: MOV      EAX,dword ptr [EBP + -0x8]
+0x4fbb: MOV      word ptr [EAX],DX
+0x4fbe: MOV      ECX,dword ptr [EBP + -0x8]
+0x4fc1: MOV      DL,byte ptr [ECX + 0x2]
+0x4fc4: AND      DL,0xfc
+0x4fc7: MOV      EAX,dword ptr [EBP + -0x8]
+0x4fca: MOV      byte ptr [EAX + 0x2],DL
+0x4fcd: MOV      ECX,dword ptr [EBP + -0x8]
+0x4fd0: MOV      EDX,dword ptr [EBP + -0x4]
+0x4fd3: MOV      AL,byte ptr [EDX + 0x23]
+0x4fd6: MOV      byte ptr [ECX + 0x3],AL
+0x4fd9: MOV      ECX,dword ptr [EBP + -0x8]
+0x4fdc: ADD      ECX,0x4
+0x4fdf: MOV      dword ptr [EBP + -0x8],ECX
+0x4fe2: MOV      EDX,0x1011
+0x4fe7: MOV      EAX,dword ptr [EBP + -0x8]
+0x4fea: MOV      word ptr [EAX],DX
+0x4fed: MOV      ECX,dword ptr [EBP + -0x8]
+0x4ff0: MOV      DL,byte ptr [ECX + 0x2]
+0x4ff3: AND      DL,0xfc
+0x4ff6: OR       DL,0x2
+0x4ff9: MOV      EAX,dword ptr [EBP + -0x8]
+0x4ffc: MOV      byte ptr [EAX + 0x2],DL
+0x4fff: MOV      ECX,dword ptr [EBP + -0x8]
+0x5002: MOV      EDX,dword ptr [EBP + -0x4]
+0x5005: MOV      EAX,dword ptr [EDX + 0x24]
+0x5008: MOV      dword ptr [ECX + 0x3],EAX
+0x500b: MOV      ECX,dword ptr [EBP + -0x8]
+0x500e: ADD      ECX,0x7
+0x5011: MOV      dword ptr [EBP + -0x8],ECX
+0x5014: MOV      EDX,0x1012
+0x5019: MOV      EAX,dword ptr [EBP + -0x8]
+0x501c: MOV      word ptr [EAX],DX
+0x501f: MOV      ECX,dword ptr [EBP + -0x8]
+0x5022: MOV      DL,byte ptr [ECX + 0x2]
+0x5025: AND      DL,0xfc
+0x5028: OR       DL,0x2
+0x502b: MOV      EAX,dword ptr [EBP + -0x8]
+0x502e: MOV      byte ptr [EAX + 0x2],DL
+0x5031: MOV      ECX,dword ptr [EBP + -0x8]
+0x5034: MOV      EDX,dword ptr [EBP + -0x4]
+0x5037: MOV      EAX,dword ptr [EDX + 0x28]
+0x503a: MOV      dword ptr [ECX + 0x3],EAX
+0x503d: MOV      ECX,dword ptr [EBP + -0x8]
+0x5040: ADD      ECX,0x7
+0x5043: MOV      dword ptr [EBP + -0x8],ECX
+0x5046: MOV      EDX,0x1013
+0x504b: MOV      EAX,dword ptr [EBP + -0x8]
+0x504e: MOV      word ptr [EAX],DX
+0x5051: MOV      ECX,dword ptr [EBP + -0x8]
+0x5054: MOV      DL,byte ptr [ECX + 0x2]
+0x5057: AND      DL,0xfc
+0x505a: MOV      EAX,dword ptr [EBP + -0x8]
+0x505d: MOV      byte ptr [EAX + 0x2],DL
+0x5060: MOV      ECX,dword ptr [EBP + -0x8]
+0x5063: MOV      EDX,dword ptr [EBP + -0x4]
+0x5066: MOV      AL,byte ptr [EDX + 0x2c]
+0x5069: MOV      byte ptr [ECX + 0x3],AL
+0x506c: MOV      ECX,dword ptr [EBP + -0x8]
+0x506f: ADD      ECX,0x4
+0x5072: MOV      dword ptr [EBP + -0x8],ECX
+0x5075: MOV      EDX,0x1014
+0x507a: MOV      EAX,dword ptr [EBP + -0x8]
+0x507d: MOV      word ptr [EAX],DX
+0x5080: MOV      ECX,dword ptr [EBP + -0x8]
+0x5083: MOV      DL,byte ptr [ECX + 0x2]
+0x5086: AND      DL,0xfc
+0x5089: OR       DL,0x2
+0x508c: MOV      EAX,dword ptr [EBP + -0x8]
+0x508f: MOV      byte ptr [EAX + 0x2],DL
+0x5092: MOV      ECX,dword ptr [EBP + -0x8]
+0x5095: MOV      EDX,dword ptr [EBP + -0x4]
+0x5098: MOV      EAX,dword ptr [EDX + 0x2d]
+0x509b: MOV      dword ptr [ECX + 0x3],EAX
+0x509e: MOV      ECX,dword ptr [EBP + -0x8]
+0x50a1: ADD      ECX,0x7
+0x50a4: MOV      dword ptr [EBP + -0x8],ECX
+0x50a7: MOV      EDX,0x1015
+0x50ac: MOV      EAX,dword ptr [EBP + -0x8]
+0x50af: MOV      word ptr [EAX],DX
+0x50b2: MOV      ECX,dword ptr [EBP + -0x8]
+0x50b5: MOV      DL,byte ptr [ECX + 0x2]
+0x50b8: AND      DL,0xfc
+0x50bb: OR       DL,0x2
+0x50be: MOV      EAX,dword ptr [EBP + -0x8]
+0x50c1: MOV      byte ptr [EAX + 0x2],DL
+0x50c4: MOV      ECX,dword ptr [EBP + -0x8]
+0x50c7: MOV      EDX,dword ptr [EBP + -0x4]
+0x50ca: MOV      EAX,dword ptr [EDX + 0x31]
+0x50cd: MOV      dword ptr [ECX + 0x3],EAX
+0x50d0: MOV      ECX,dword ptr [EBP + -0x8]
+0x50d3: ADD      ECX,0x7
+0x50d6: MOV      dword ptr [EBP + -0x8],ECX
+0x50d9: MOV      EDX,0x1016
+0x50de: MOV      EAX,dword ptr [EBP + -0x8]
+0x50e1: MOV      word ptr [EAX],DX
+0x50e4: MOV      ECX,dword ptr [EBP + -0x8]
+0x50e7: MOV      DL,byte ptr [ECX + 0x2]
+0x50ea: AND      DL,0xfc
+0x50ed: MOV      EAX,dword ptr [EBP + -0x8]
+0x50f0: MOV      byte ptr [EAX + 0x2],DL
+0x50f3: MOV      ECX,dword ptr [EBP + -0x8]
+0x50f6: MOV      EDX,dword ptr [EBP + -0x4]
+0x50f9: MOV      AL,byte ptr [EDX + 0x35]
+0x50fc: MOV      byte ptr [ECX + 0x3],AL
+0x50ff: MOV      ECX,dword ptr [EBP + -0x8]
+0x5102: ADD      ECX,0x4
+0x5105: MOV      dword ptr [EBP + -0x8],ECX
+0x5108: MOV      EDX,0x1017
+0x510d: MOV      EAX,dword ptr [EBP + -0x8]
+0x5110: MOV      word ptr [EAX],DX
+0x5113: MOV      ECX,dword ptr [EBP + -0x8]
+0x5116: MOV      DL,byte ptr [ECX + 0x2]
+0x5119: AND      DL,0xfc
+0x511c: OR       DL,0x2
+0x511f: MOV      EAX,dword ptr [EBP + -0x8]
+0x5122: MOV      byte ptr [EAX + 0x2],DL
+0x5125: MOV      ECX,dword ptr [EBP + -0x8]
+0x5128: MOV      EDX,dword ptr [EBP + -0x4]
+0x512b: MOV      EAX,dword ptr [EDX + 0x36]
+0x512e: MOV      dword ptr [ECX + 0x3],EAX
+0x5131: MOV      ECX,dword ptr [EBP + -0x8]
+0x5134: ADD      ECX,0x7
+0x5137: MOV      dword ptr [EBP + -0x8],ECX
+0x513a: MOV      EDX,0x1018
+0x513f: MOV      EAX,dword ptr [EBP + -0x8]
+0x5142: MOV      word ptr [EAX],DX
+0x5145: MOV      ECX,dword ptr [EBP + -0x8]
+0x5148: MOV      DL,byte ptr [ECX + 0x2]
+0x514b: AND      DL,0xfc
+0x514e: OR       DL,0x2

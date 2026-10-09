@@ -1,0 +1,234 @@
+{
+  "anchor_rows": [
+    {
+      "bytes_at_historical_offset": "5b253034785d0a00094d656d6f7279436f6e74726f6c6c6572496e69",
+      "direct_address_match": false,
+      "exact_payload_match_offset": "0x81d4",
+      "historical_source_address": "0x82d4",
+      "text": "Determine DRAM Target MEMCLK"
+    },
+    {
+      "bytes_at_historical_offset": "00067cf20a5b4552524f525d3a20536c6176653a2041424c2c204572726f722041535345525420696e204d656d53697a65",
+      "direct_address_match": false,
+      "exact_payload_match_offset": "0x820c",
+      "historical_source_address": "0x99d8",
+      "text": "Synchronize MEMCLK Across Channels and Set Limits"
+    },
+    {
+      "bytes_at_historical_offset": "5053746174650a003146204608f01efbe168886ab0b1c5",
+      "direct_address_match": false,
+      "exact_payload_match_offset": "0x8271",
+      "historical_source_address": "0x8370",
+      "text": "Memory P-state Enabled."
+    },
+    {
+      "bytes_at_historical_offset": "451208eb42000f52e1680a8c974200d90a52e168085a3221",
+      "direct_address_match": false,
+      "exact_payload_match_offset": "0x828d",
+      "historical_source_address": "0x838c",
+      "text": "Memory P-state Disabled."
+    },
+    {
+      "bytes_at_historical_offset": "000000000a094f76657272696465204461746120456e63727970",
+      "direct_address_match": false,
+      "exact_payload_match_offset": "0x884d",
+      "historical_source_address": "0x894c",
+      "text": "Current Memory P-state: %d"
+    }
+  ],
+  "checks": {
+    "failed": 0,
+    "passed": 21,
+    "total": 21
+  },
+  "checks_detail": [
+    {
+      "details": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "label": "rom-hash",
+      "status": "PASS"
+    },
+    {
+      "details": 16777216,
+      "label": "rom-size",
+      "status": "PASS"
+    },
+    {
+      "details": "95ae7826a69ea56b8c52ac703b85f181d45bdc309de334c2b7f9f4130376d515",
+      "label": "abl1-container-hash",
+      "status": "PASS"
+    },
+    {
+      "details": "24505331",
+      "label": "ps1-magic",
+      "status": "PASS"
+    },
+    {
+      "details": 48672,
+      "label": "signed-length",
+      "status": "PASS"
+    },
+    {
+      "details": 94624,
+      "label": "decompressed-length",
+      "status": "PASS"
+    },
+    {
+      "details": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "label": "decompressed-hash",
+      "status": "PASS"
+    },
+    {
+      "details": "10402de904209fe532ff2fe11080bde8",
+      "label": "arm-entry",
+      "status": "PASS"
+    },
+    {
+      "details": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b",
+      "label": "source-hash",
+      "status": "PASS"
+    },
+    {
+      "details": "c27bf19fb46415703c1e761641d3ac08102dda775b9152ea1b6a557c47741170",
+      "label": "strings-hash",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes_at_historical_offset": "5b253034785d0a00094d656d6f7279436f6e74726f6c6c6572496e69",
+        "direct_address_match": false,
+        "exact_payload_match_offset": "0x81d4",
+        "historical_source_address": "0x82d4",
+        "text": "Determine DRAM Target MEMCLK"
+      },
+      "label": "exact-string-present:Determine DRAM Target MEMCLK",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes_at_historical_offset": "5b253034785d0a00094d656d6f7279436f6e74726f6c6c6572496e69",
+        "direct_address_match": false,
+        "exact_payload_match_offset": "0x81d4",
+        "historical_source_address": "0x82d4",
+        "text": "Determine DRAM Target MEMCLK"
+      },
+      "label": "source-address-map-disagrees:Determine DRAM Target MEMCLK",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes_at_historical_offset": "00067cf20a5b4552524f525d3a20536c6176653a2041424c2c204572726f722041535345525420696e204d656d53697a65",
+        "direct_address_match": false,
+        "exact_payload_match_offset": "0x820c",
+        "historical_source_address": "0x99d8",
+        "text": "Synchronize MEMCLK Across Channels and Set Limits"
+      },
+      "label": "exact-string-present:Synchronize MEMCLK Across Channels and Set Limits",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes_at_historical_offset": "00067cf20a5b4552524f525d3a20536c6176653a2041424c2c204572726f722041535345525420696e204d656d53697a65",
+        "direct_address_match": false,
+        "exact_payload_match_offset": "0x820c",
+        "historical_source_address": "0x99d8",
+        "text": "Synchronize MEMCLK Across Channels and Set Limits"
+      },
+      "label": "source-address-map-disagrees:Synchronize MEMCLK Across Channels and Set Limits",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes_at_historical_offset": "5053746174650a003146204608f01efbe168886ab0b1c5",
+        "direct_address_match": false,
+        "exact_payload_match_offset": "0x8271",
+        "historical_source_address": "0x8370",
+        "text": "Memory P-state Enabled."
+      },
+      "label": "exact-string-present:Memory P-state Enabled.",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes_at_historical_offset": "5053746174650a003146204608f01efbe168886ab0b1c5",
+        "direct_address_match": false,
+        "exact_payload_match_offset": "0x8271",
+        "historical_source_address": "0x8370",
+        "text": "Memory P-state Enabled."
+      },
+      "label": "source-address-map-disagrees:Memory P-state Enabled.",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes_at_historical_offset": "451208eb42000f52e1680a8c974200d90a52e168085a3221",
+        "direct_address_match": false,
+        "exact_payload_match_offset": "0x828d",
+        "historical_source_address": "0x838c",
+        "text": "Memory P-state Disabled."
+      },
+      "label": "exact-string-present:Memory P-state Disabled.",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes_at_historical_offset": "451208eb42000f52e1680a8c974200d90a52e168085a3221",
+        "direct_address_match": false,
+        "exact_payload_match_offset": "0x828d",
+        "historical_source_address": "0x838c",
+        "text": "Memory P-state Disabled."
+      },
+      "label": "source-address-map-disagrees:Memory P-state Disabled.",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes_at_historical_offset": "000000000a094f76657272696465204461746120456e63727970",
+        "direct_address_match": false,
+        "exact_payload_match_offset": "0x884d",
+        "historical_source_address": "0x894c",
+        "text": "Current Memory P-state: %d"
+      },
+      "label": "exact-string-present:Current Memory P-state: %d",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes_at_historical_offset": "000000000a094f76657272696465204461746120456e63727970",
+        "direct_address_match": false,
+        "exact_payload_match_offset": "0x884d",
+        "historical_source_address": "0x894c",
+        "text": "Current Memory P-state: %d"
+      },
+      "label": "source-address-map-disagrees:Current Memory P-state: %d",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "historical-memory-sync-function-present",
+      "status": "PASS"
+    }
+  ],
+  "conclusion": "BOUNDARY: historical ABL1 source contains a memory-speed/P-state routine lead, but its source address map does not match the exact clv ABL1 decompressed payload string locations. Direct source-to-current-binary applicability is therefore UNPROVEN; do not apply source semantics to clv as if the function were bound. Exact payload hash/provenance is preserved for a future ARM disassembly/dataflow match.",
+  "historical_source": {
+    "decompiled": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/lorek123_psp/ABL1_decompiled.c",
+    "decompiled_sha256": "9501f2ed3abd96ac54cc317c26ae64d068f94a1a0d572d3c886c7877e4bb8f1b",
+    "memory_function_lead": "FUN_000096fc",
+    "strings": "/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/lorek123_psp/ABL1_strings.txt",
+    "strings_sha256": "c27bf19fb46415703c1e761641d3ac08102dda775b9152ea1b6a557c47741170",
+    "version_label": "d00_e09_ABL1~0x31_22.4.6.0"
+  },
+  "input": {
+    "abl1_spi_offset": "0x99FD00",
+    "container_sha256": "95ae7826a69ea56b8c52ac703b85f181d45bdc309de334c2b7f9f4130376d515",
+    "decompressed_length": 94624,
+    "decompressed_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+  },
+  "limitations": [
+    "String-address mismatch falsifies direct address applicability, not all possible source algorithm similarity.",
+    "No ARM disassembly/function match was claimed from this check.",
+    "No firmware execution, hardware, training, clock, voltage, or settings action."
+  ],
+  "status": "PASS"
+}

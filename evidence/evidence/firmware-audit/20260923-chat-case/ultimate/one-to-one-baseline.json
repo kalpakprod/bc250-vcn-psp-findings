@@ -1,0 +1,411 @@
+{
+  "tool": "scripts/firmware_audit.py",
+  "tool_version": "1.0-readonly",
+  "generated_at": "2026-09-22T20:16:07.137167+00:00",
+  "scope": "read-only inventory and UEFI FV/FFS executable extraction; no input writes",
+  "images": [
+    {
+      "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "size": 16777216,
+      "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "psp": {
+        "offset": 9306112,
+        "stored_fletcher32": "0x17AA38B9",
+        "calculated_fletcher32": "0x17AA38B9",
+        "checksum_match": true,
+        "count": 19,
+        "info": "0x000005D0",
+        "entries": [
+          {
+            "index": 0,
+            "type": 1,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 46592,
+            "location": 4287497216,
+            "spi_offset": 9307136,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "0bfbd84a89fc07ecd6fbfadde9e49f0af58aa42a87212b84e252313716efd851"
+          },
+          {
+            "index": 1,
+            "type": 2,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 78672,
+            "location": 4287543808,
+            "spi_offset": 9353728,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "cbc99cc0d1b25d97258d5db81959531ce791f0bec6b358be683ae0a6f2017527"
+          },
+          {
+            "index": 2,
+            "type": 8,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 262656,
+            "location": 4287622656,
+            "spi_offset": 9432576,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "13c93c081333110e725661d8046e67175ee3490ed05e68647b501e71c0fc3a25"
+          },
+          {
+            "index": 3,
+            "type": 9,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 1088,
+            "location": 4287885312,
+            "spi_offset": 9695232,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "347eb437947a9f41c65bb764e331afd0ac4e368738217c3b3bf3c61499723ba0"
+          },
+          {
+            "index": 4,
+            "type": 18,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 262656,
+            "location": 4287886592,
+            "spi_offset": 9696512,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "b9a7b42c1a233f2805d7106f59a05d8a04f1e31458e2c660e6276b7f3121ae21"
+          },
+          {
+            "index": 5,
+            "type": 19,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 8512,
+            "location": 4288149248,
+            "spi_offset": 9959168,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "d21f7eeda1af91c9c350e21767d6379f0e768e2269ce6fa2c3a03abfd67e321a"
+          },
+          {
+            "index": 6,
+            "type": 32,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 1616,
+            "location": 4288157952,
+            "spi_offset": 9967872,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "d64943c125658784fd192607e15544e509616ee050c576bdccb3be2e370267a9"
+          },
+          {
+            "index": 7,
+            "type": 36,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 11856,
+            "location": 4288159744,
+            "spi_offset": 9969664,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "b365d5b135da12b097a4ef5aecc47a284f1ccd49ac3d251b35b2c0a6de8c9e55"
+          },
+          {
+            "index": 8,
+            "type": 40,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 108400,
+            "location": 4288171776,
+            "spi_offset": 9981696,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "5b6828bff3f10f1b120b279932af156438e1bdd724508e44b7630fce9716251f"
+          },
+          {
+            "index": 9,
+            "type": 48,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 1312,
+            "location": 4288280320,
+            "spi_offset": 10090240,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "0859507cd52585ff1139498236d3ec5a73185c90fbc6a6324b50ea60b99824bb"
+          },
+          {
+            "index": 10,
+            "type": 49,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 49184,
+            "location": 4288281856,
+            "spi_offset": 10091776,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "95ae7826a69ea56b8c52ac703b85f181d45bdc309de334c2b7f9f4130376d515"
+          },
+          {
+            "index": 11,
+            "type": 50,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 16576,
+            "location": 4288331264,
+            "spi_offset": 10141184,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "e8e90a60d473291ba35e7349a66b7eb7793092ffb033db282ba42171747af3ed"
+          },
+          {
+            "index": 12,
+            "type": 51,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 41632,
+            "location": 4288347904,
+            "spi_offset": 10157824,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "d22643385895c0482b2fd0cdd3cd14db291443c9416d18588dd15506b88c1f39"
+          },
+          {
+            "index": 13,
+            "type": 52,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 41424,
+            "location": 4288389632,
+            "spi_offset": 10199552,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "3398a5d859967197ceb871a6c8bd0ec8451e6d73650cf38d9cb59d3f9b1b4c82"
+          },
+          {
+            "index": 14,
+            "type": 68,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 26128,
+            "location": 4288431104,
+            "spi_offset": 10241024,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "4d8b8d271acc4bd9bb98992a6dafc823066e8b014cfb86d272281a8212fec9f0"
+          },
+          {
+            "index": 15,
+            "type": 69,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 1760,
+            "location": 4288457472,
+            "spi_offset": 10267392,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "272514c082e604915f1f48bd1ef1ce1c439011cdb1b2240271e9608bbe6f9931"
+          },
+          {
+            "index": 16,
+            "type": 79,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 66048,
+            "location": 4288459264,
+            "spi_offset": 10269184,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "4435c945ce914b29cc45965ea48a59d2e4d8deb584292e316ebc5258fbd4cf57"
+          },
+          {
+            "index": 17,
+            "type": 80,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 3536,
+            "location": 4288525312,
+            "spi_offset": 10335232,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "78c3fe9b99ca6c815715303c440de2a5ece6ef267ee5b50c89f559fe59eb963a"
+          },
+          {
+            "index": 18,
+            "type": 81,
+            "subprogram": 0,
+            "flags": 0,
+            "size": 1856,
+            "location": 4288528896,
+            "spi_offset": 10338816,
+            "reserved": 0,
+            "in_bounds": true,
+            "body_sha256": "1ca4d22f6eb87b0806aeb3061e0e4a31c567ea2c1b21df3d2132a1c4b90c0ede"
+          }
+        ]
+      },
+      "bhd": {
+        "offset": 11206656,
+        "stored_fletcher32": "0xECE7B2E6",
+        "calculated_fletcher32": "0xECE7B2E6",
+        "checksum_match": true,
+        "count": 4,
+        "info": "0x00000420",
+        "entries": [
+          {
+            "index": 0,
+            "type": 96,
+            "region_type": 0,
+            "flags": 0,
+            "size": 8192,
+            "location": 4289400832,
+            "spi_offset": 11210752,
+            "reserved": 0,
+            "destination": 18446744073709551615,
+            "in_bounds": true,
+            "body_sha256": "6447f6c407283baa74c1f5a1e89cfd2f1f0fa26efba5f467ad1ae2b06ee1a6bd"
+          },
+          {
+            "index": 1,
+            "type": 97,
+            "region_type": 0,
+            "flags": 0,
+            "size": 0,
+            "location": 0,
+            "spi_offset": 0,
+            "reserved": 0,
+            "destination": 67108864,
+            "in_bounds": false,
+            "body_sha256": null
+          },
+          {
+            "index": 2,
+            "type": 98,
+            "region_type": 0,
+            "flags": 3,
+            "size": 2088960,
+            "location": 4292878336,
+            "spi_offset": 14688256,
+            "reserved": 0,
+            "destination": 165683200,
+            "in_bounds": true,
+            "body_sha256": "e5f899915995842c5919f601e54e6d2e04a47a93d78f1639b9430940e86e96bb"
+          },
+          {
+            "index": 3,
+            "type": 99,
+            "region_type": 0,
+            "flags": 0,
+            "size": 8192,
+            "location": 4289409024,
+            "spi_offset": 11218944,
+            "reserved": 0,
+            "destination": 18446744073709551615,
+            "in_bounds": true,
+            "body_sha256": "7d2c7ac4888bfd75cd5f56e8d61f69595121183afc81556c876732fd3782c62f"
+          }
+        ]
+      },
+      "apcb": {
+        "offset": 11210752,
+        "size": 2972,
+        "stored_checksum_byte": "0xC0",
+        "calculated_checksum_byte": "0xC0",
+        "checksum_match": true,
+        "group_count": 6,
+        "groups": [
+          {
+            "offset": 11210784,
+            "signature": "UNKN",
+            "gid": 2823,
+            "flags": 16,
+            "instance": 1,
+            "size": 124,
+            "valid": true
+          },
+          {
+            "offset": 11210908,
+            "signature": "PSPG",
+            "gid": 5889,
+            "flags": 16,
+            "instance": 1,
+            "size": 88,
+            "valid": true
+          },
+          {
+            "offset": 11210996,
+            "signature": "DFG ",
+            "gid": 5891,
+            "flags": 16,
+            "instance": 1,
+            "size": 136,
+            "valid": true
+          },
+          {
+            "offset": 11211132,
+            "signature": "MEMG",
+            "gid": 5892,
+            "flags": 16,
+            "instance": 1,
+            "size": 616,
+            "valid": true
+          },
+          {
+            "offset": 11211748,
+            "signature": "FCHG",
+            "gid": 5894,
+            "flags": 16,
+            "instance": 1,
+            "size": 80,
+            "valid": true
+          },
+          {
+            "offset": 11211828,
+            "signature": "CBSG",
+            "gid": 5895,
+            "flags": 16,
+            "instance": 1,
+            "size": 1896,
+            "valid": true
+          }
+        ],
+        "dfg_words": {
+          "0x130": "0x001FFF00",
+          "0x16C": "0x001FFF00"
+        }
+      },
+      "firmware_volumes": [
+        {
+          "base": 0,
+          "length": 131072,
+          "header_length": 72,
+          "attributes": 327423,
+          "filesystem_guid": "8C8CE578-8A3D-4F1C-9935-896185C32DD3"
+        },
+        {
+          "base": 11403264,
+          "length": 3276800,
+          "header_length": 72,
+          "attributes": 327423,
+          "filesystem_guid": "8C8CE578-8A3D-4F1C-9935-896185C32DD3"
+        },
+        {
+          "base": 14680064,
+          "length": 2097152,
+          "header_length": 72,
+          "attributes": 851711,
+          "filesystem_guid": "8C8CE578-8A3D-4F1C-9935-896185C32DD3"
+        },
+        {
+          "base": 14688256,
+          "length": 2088960,
+          "header_length": 72,
+          "attributes": 851711,
+          "filesystem_guid": "8C8CE578-8A3D-4F1C-9935-896185C32DD3"
+        }
+      ]
+    }
+  ]
+}

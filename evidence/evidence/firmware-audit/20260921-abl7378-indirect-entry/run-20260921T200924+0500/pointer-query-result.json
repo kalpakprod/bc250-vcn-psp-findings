@@ -1,0 +1,22 @@
+{
+  "input": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+  "size": 94624,
+  "sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+  "assumed_base": "0x57100 (conditional only)",
+  "target_rva": "0x7378",
+  "needle_values": {
+    "absolute_thumb_under_conditional_base": "0x0005e479",
+    "absolute_even_under_conditional_base": "0x0005e478",
+    "relative_thumb": "0x00007379",
+    "relative_even": "0x00007378"
+  },
+  "hits": {
+    "absolute_thumb_under_conditional_base": [
+      "0x170cc"
+    ],
+    "absolute_even_under_conditional_base": [],
+    "relative_thumb": [],
+    "relative_even": []
+  },
+  "status": "PASS"
+}

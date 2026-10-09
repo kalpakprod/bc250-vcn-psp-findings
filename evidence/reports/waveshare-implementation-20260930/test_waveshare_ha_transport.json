@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_waveshare_ha_transport.py",
+    "-v"
+  ],
+  "stdout": "",
+  "stderr": "test_authorization_never_goes_to_relay (test_waveshare_ha_transport.TestHATransport.test_authorization_never_goes_to_relay) ... ok\ntest_fixed_ha_request_and_private_header (test_waveshare_ha_transport.TestHATransport.test_fixed_ha_request_and_private_header) ... ok\ntest_redirect_and_oversized_reply_rejected (test_waveshare_ha_transport.TestHATransport.test_redirect_and_oversized_reply_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nOK\n",
+  "exit_status": 0,
+  "evidence_class": "controlled_fixture_not_live_runtime"
+}

@@ -1,0 +1,74 @@
+
+evidence/firmware-audit/20260923-abl95fc-next/ABL0.o:	file format elf32-littlearm
+
+Disassembly of section .data:
+
+00000000 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start>:
+      b8: e92d 41f0    	push.w	{r4, r5, r6, r7, r8, lr}
+      bc: 4c16         	ldr	r4, [pc, #0x58]         @ 0x118 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0x118>
+      be: 4817         	ldr	r0, [pc, #0x5c]         @ 0x11c <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0x11c>
+      c0: 4627         	mov	r7, r4
+      c2: 1bc6         	subs	r6, r0, r7
+      c4: a016         	adr	r0, #88 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0xde>
+      c6: 68a5         	ldr	r5, [r4, #0x8]
+      c8: df06         	svc	#0x6
+      ca: 491c         	ldr	r1, [pc, #0x70]         @ 0x13c <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0x13c>
+      cc: 6838         	ldr	r0, [r7]
+      ce: 4288         	cmp	r0, r1
+      d0: d10f         	bne	0xf2 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0xf2> @ imm = #0x1e
+      d2: 88a0         	ldrh	r0, [r4, #0x4]
+      d4: 2820         	cmp	r0, #0x20
+      d6: d10c         	bne	0xf2 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0xf2> @ imm = #0x18
+      d8: 88e0         	ldrh	r0, [r4, #0x6]
+      da: 2820         	cmp	r0, #0x20
+      dc: d109         	bne	0xf2 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0xf2> @ imm = #0x12
+      de: 68a0         	ldr	r0, [r4, #0x8]
+      e0: 42b0         	cmp	r0, r6
+      e2: d806         	bhi	0xf2 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0xf2> @ imm = #0xc
+      e4: 68e0         	ldr	r0, [r4, #0xc]
+      e6: b120         	cbz	r0, 0xf2 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0xf2> @ imm = #0x8
+      e8: 1c40         	adds	r0, r0, #0x1
+      ea: d002         	beq	0xf2 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0xf2> @ imm = #0x4
+      ec: 2100         	movs	r1, #0x0
+      ee: 4608         	mov	r0, r1
+      f0: e006         	b	0x100 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0x100> @ imm = #0xc
+      f2: a013         	adr	r0, #76 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0x109>
+      f4: df06         	svc	#0x6
+      f6: e008         	b	0x10a <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0x10a> @ imm = #0x10
+      f8: 5c22         	ldrb	r2, [r4, r0]
+      fa: 1c40         	adds	r0, r0, #0x1
+      fc: 4411         	add	r1, r2
+      fe: b2c9         	uxtb	r1, r1
+     100: 42a8         	cmp	r0, r5
+     102: d3f9         	blo	0xf8 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0xf8> @ imm = #-0xe
+     104: b121         	cbz	r1, 0x110 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0x110> @ imm = #0x8
+     106: a017         	adr	r0, #92 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0x121>
+     108: df06         	svc	#0x6
+     10a: 2000         	movs	r0, #0x0
+     10c: e8bd 81f0    	pop.w	{r4, r5, r6, r7, r8, pc}
+     110: a01f         	adr	r0, #124 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0x133>
+     112: df06         	svc	#0x6
+     114: 2001         	movs	r0, #0x1
+     116: e7f9         	b	0x10c <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0x10c> @ imm = #-0xe
+     118: b000         	add	sp, #0x0
+     11a: 0007         	movs	r7, r0
+     11c: d000         	beq	0x120 <_binary_evidence_firmware_audit_20260923_abl95fc_next_ABL0_bin_start+0x120> @ imm = #0x0
+     11e: 0007         	movs	r7, r0
+     120: 530a         	strh	r2, [r1, r4]
+     122: 6174         	str	r4, [r6, #0x14]
+     124: 7472         	strb	r2, [r6, #0x11]
+     126: 4120         	asrs	r0, r4
+     128: 6c62         	ldr	r2, [r4, #0x44]
+     12a: 6156         	str	r6, [r2, #0x14]
+     12c: 696c         	ldr	r4, [r5, #0x14]
+     12e: 6164         	str	r4, [r4, #0x14]
+     130: 6574         	str	r4, [r6, #0x54]
+     132: 7041         	strb	r1, [r0, #0x1]
+     134: 6263         	str	r3, [r4, #0x24]
+     136: 0a21         	lsrs	r1, r4, #0x8
+     138: 0000         	movs	r0, r0
+     13a: 0000         	movs	r0, r0
+     13c: 5041         	str	r1, [r0, r1]
+     13e: 4243         	rsbs	r3, r0, #0
+     140: 570a         	ldrsb	r2, [r1, r4]
+     142: 5241         	strh	r1, [r0, r1]

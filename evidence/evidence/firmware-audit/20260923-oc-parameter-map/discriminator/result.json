@@ -1,0 +1,251 @@
+[
+  {
+    "case": "baseline",
+    "input": {
+      "0x6a2": 161,
+      "0x6a3": 178,
+      "0x6a4": 195,
+      "0x36c": 49,
+      "0x36d": 66,
+      "0x36e": 83,
+      "0x316": 36
+    },
+    "commands": [
+      {
+        "command": [
+          "as",
+          "--32",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/baseline/test.s",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/baseline/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ld",
+          "-m",
+          "elf_i386",
+          "--section-start=.nvram=0x09ed7764",
+          "--section-start=.cbs=0x09eba21c",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/baseline/test.elf",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/baseline/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".nvram=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/baseline/nvram",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/baseline/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".cbs=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/baseline/cbs",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/baseline/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "timeout",
+          "3",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/baseline/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "00000000051600000100000024494e560100000000000000a1000000b2000000c300000031000000420000005300000024000000620400007f000000fc150000",
+        "stderr": ""
+      }
+    ],
+    "output": {
+      "0x1330": 161,
+      "0x1331": 178,
+      "0x1332": 195,
+      "0x123b": 49,
+      "0x123c": 66,
+      "0x123d": 83,
+      "0x11ed": 36
+    },
+    "module_sections_exact": true
+  },
+  {
+    "case": "modified",
+    "input": {
+      "0x6a2": 195,
+      "0x6a3": 161,
+      "0x6a4": 178,
+      "0x36c": 83,
+      "0x36d": 49,
+      "0x36e": 66,
+      "0x316": 35
+    },
+    "commands": [
+      {
+        "command": [
+          "as",
+          "--32",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/modified/test.s",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/modified/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ld",
+          "-m",
+          "elf_i386",
+          "--section-start=.nvram=0x09ed7764",
+          "--section-start=.cbs=0x09eba21c",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/modified/test.elf",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/modified/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".nvram=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/modified/nvram",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/modified/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".cbs=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/modified/cbs",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/modified/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "timeout",
+          "3",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/modified/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "00000000051600000100000024494e560100000000000000c3000000a1000000b200000053000000310000004200000023000000620400007f000000fc150000",
+        "stderr": ""
+      }
+    ],
+    "output": {
+      "0x1330": 195,
+      "0x1331": 161,
+      "0x1332": 178,
+      "0x123b": 83,
+      "0x123c": 49,
+      "0x123d": 66,
+      "0x11ed": 35
+    },
+    "module_sections_exact": true
+  },
+  {
+    "case": "restored",
+    "input": {
+      "0x6a2": 161,
+      "0x6a3": 178,
+      "0x6a4": 195,
+      "0x36c": 49,
+      "0x36d": 66,
+      "0x36e": 83,
+      "0x316": 36
+    },
+    "commands": [
+      {
+        "command": [
+          "as",
+          "--32",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/restored/test.s",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/restored/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ld",
+          "-m",
+          "elf_i386",
+          "--section-start=.nvram=0x09ed7764",
+          "--section-start=.cbs=0x09eba21c",
+          "-o",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/restored/test.elf",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/restored/test.o"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".nvram=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/restored/nvram",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/restored/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "objcopy",
+          "--dump-section",
+          ".cbs=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/restored/cbs",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/restored/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "timeout",
+          "3",
+          "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-oc-parameter-map/discriminator/restored/test.elf"
+        ],
+        "exit": 0,
+        "stdout_hex": "00000000051600000100000024494e560100000000000000a1000000b2000000c300000031000000420000005300000024000000620400007f000000fc150000",
+        "stderr": ""
+      }
+    ],
+    "output": {
+      "0x1330": 161,
+      "0x1331": 178,
+      "0x1332": 195,
+      "0x123b": 49,
+      "0x123c": 66,
+      "0x123d": 83,
+      "0x11ed": 36
+    },
+    "module_sections_exact": true
+  }
+]

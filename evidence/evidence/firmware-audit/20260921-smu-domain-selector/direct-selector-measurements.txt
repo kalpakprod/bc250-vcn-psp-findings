@@ -1,0 +1,13 @@
+rom_sha256=ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8 rom_size=16777216
+smu_sha256=cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37 smu_size=262400 embedded_equal=True
+preserve1800: ROM[0x7E5]=0x24 (AmdSetup+0x316)
+selector=11 loop_i=10 write_slot=0x140B0 read_slot=0x140B0 domain_cell=0x13F1C domain_id=0x18
+domain_descriptor=0x0FA48 group_id=6 program_pointer_cell=0x0FA5C raw_program_offset=0x6D150
+SMU_window_base=0x01100000 program=0x0116D150 poll=0x0116D174 IPC_interval=0x5AFFF..0x5B7FF
+neighbor_selector=12 domain_id=0x13 group_id=5 raw_program_offset=0x6C900 handler_filter=denied
+neighbor_selector=13 domain_id=0x14 group_id=5 raw_program_offset=0x6C928 handler_filter=denied
+neighbor_selector=14 domain_id=0x15 group_id=5 raw_program_offset=0x6C950 handler_filter=not-denied
+low16_scale_pointer=0x16F50 scale_float=0.001000000
+group_vco_factors: 0x17924=0.100000001, 0x17928=256.0; U9.16 fraction literal=0x17460 0.000015258789
+static_group6_base_word_at_0x0F718=0x00000000 (runtime population unresolved)
+source-unit-label=not encoded/proven; no MHz assignment

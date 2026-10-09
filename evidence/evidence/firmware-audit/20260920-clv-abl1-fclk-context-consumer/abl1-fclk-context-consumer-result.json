@@ -1,0 +1,422 @@
+{
+  "status": "PASS",
+  "checks": 59,
+  "route": "exact ABL1 FCLK context+0x78 consumer",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "inputs": {
+    "rom": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "abl1": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "disassembly": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt",
+    "prior_branch_result": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-fclk-uclk-branch-xhigh/abl1-fclk-uclk-branch-result.json"
+  },
+  "hashes": {
+    "rom": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "abl1": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "disassembly": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+    "prior_branch_result": "d6d053b5e4a74a5b4fe0526e4d4659d22a500601074baad751977ab21e2ecdfa"
+  },
+  "dataflow": {
+    "reader_call": "payload+0x5fae -> FCLK reader payload+0x463c",
+    "reader_output": "stack+0x4 reload at 0x5fb2 -> halfword store [context+0x78] at 0x5fba",
+    "consumer": "separate context layout consumer payload+0x107e4 loads [context+0x78]",
+    "comparators": [
+      "0x3e8",
+      "0x4b0"
+    ],
+    "selectors": [
+      "0x264",
+      "0x464",
+      "0x260",
+      "0x0"
+    ],
+    "apcb_raw_compare": {
+      "thresholds_present_in_apcb": false,
+      "setup_0x704_raw": "0x58c (1420)",
+      "note": "raw comparison only; no units inferred"
+    },
+    "direct_control_effect": "no direct WRMSR/in/out in selected windows"
+  },
+  "fresh_result": "Exact FCLK reader output flows from stack+0x4 through context halfword +0x78. A separate exact context consumer at 0x107e4 compares that field to 0x3e8 and 0x4b0 and emits selectors 0x264/0x464/0x260/0x0. These are raw control branches; APCB has no aligned raw 0x3e8/0x4b0, while persisted AmdSetup+0x704 is 0x58c (1420). No MHz/unit or clock-synchronization interpretation follows.",
+  "unresolved_edge": "Direct caller linkage from 0x5e68 output producer to 0x107e4 consumer and the semantics of emitted selectors 0x264/0x464/0x260 remain unresolved. No divider/PLL/hardware claim follows.",
+  "checks_detail": [
+    {
+      "check": "ROM exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ABL1 exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "ABL1 sha256",
+      "passed": true,
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "check": "disassembly exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "disassembly sha256",
+      "passed": true,
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65"
+    },
+    {
+      "check": "prior FCLK result exists",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "prior FCLK result sha256",
+      "passed": true,
+      "got": "d6d053b5e4a74a5b4fe0526e4d4659d22a500601074baad751977ab21e2ecdfa",
+      "expected": "d6d053b5e4a74a5b4fe0526e4d4659d22a500601074baad751977ab21e2ecdfa"
+    },
+    {
+      "check": "prior FCLK result PASS",
+      "passed": true,
+      "got": "PASS",
+      "expected": "PASS"
+    },
+    {
+      "check": "prior FCLK result checks",
+      "passed": true,
+      "got": 53,
+      "expected": 53
+    },
+    {
+      "check": "context consumer function saves context r0->r5",
+      "passed": true,
+      "got": "hex:2de9ff474ff4801705468846",
+      "expected": "hex:2de9ff474ff4801705468846"
+    },
+    {
+      "check": "FCLK default threshold immediate 0x4b0",
+      "passed": true,
+      "got": "hex:40f2b040",
+      "expected": "hex:40f2b040"
+    },
+    {
+      "check": "FCLK default stores to stack+4",
+      "passed": true,
+      "got": "hex:0190",
+      "expected": "hex:0190"
+    },
+    {
+      "check": "FCLK reader selector 0x0f",
+      "passed": true,
+      "got": "hex:0f21",
+      "expected": "hex:0f21"
+    },
+    {
+      "check": "FCLK reader arg pointer stack+4",
+      "passed": true,
+      "got": "hex:01a8",
+      "expected": "hex:01a8"
+    },
+    {
+      "check": "FCLK reader call raw BL",
+      "passed": true,
+      "got": "hex:fef745fb",
+      "expected": "hex:fef745fb"
+    },
+    {
+      "check": "FCLK output reloads stack+4",
+      "passed": true,
+      "got": "hex:019b",
+      "expected": "hex:019b"
+    },
+    {
+      "check": "FCLK caller moves context output base",
+      "passed": true,
+      "got": "hex:002142a23046",
+      "expected": "hex:002142a23046"
+    },
+    {
+      "check": "FCLK output stores halfword context+0x78",
+      "passed": true,
+      "got": "hex:a5f87830",
+      "expected": "hex:a5f87830"
+    },
+    {
+      "check": "FCLK post-store logger/callee call",
+      "passed": true,
+      "got": "hex:fbf7a5f9",
+      "expected": "hex:fbf7a5f9"
+    },
+    {
+      "check": "context consumer loads halfword +0x78",
+      "passed": true,
+      "got": "hex:b4f87800",
+      "expected": "hex:b4f87800"
+    },
+    {
+      "check": "context consumer loads selector/log id 0x61e",
+      "passed": true,
+      "got": "hex:40f21e61",
+      "expected": "hex:40f21e61"
+    },
+    {
+      "check": "context consumer compares +0x78 to 0x3e8",
+      "passed": true,
+      "got": "hex:b0f57a7f",
+      "expected": "hex:b0f57a7f"
+    },
+    {
+      "check": "context consumer 0x3e8 equal branch",
+      "passed": true,
+      "got": "hex:03d0",
+      "expected": "hex:03d0"
+    },
+    {
+      "check": "context consumer compares +0x78 to 0x4b0",
+      "passed": true,
+      "got": "hex:b0f5966f",
+      "expected": "hex:b0f5966f"
+    },
+    {
+      "check": "context consumer 0x4b0 equal branch",
+      "passed": true,
+      "got": "hex:0ad0",
+      "expected": "hex:0ad0"
+    },
+    {
+      "check": "context consumer default branch",
+      "passed": true,
+      "got": "hex:10e0",
+      "expected": "hex:10e0"
+    },
+    {
+      "check": "0x3e8 branch compares context selectors",
+      "passed": true,
+      "got": "hex:b54202d1",
+      "expected": "hex:b54202d1"
+    },
+    {
+      "check": "0x3e8 selector path emits 0x264",
+      "passed": true,
+      "got": "hex:40f26422",
+      "expected": "hex:40f26422"
+    },
+    {
+      "check": "0x3e8 second selector compare",
+      "passed": true,
+      "got": "hex:bd4209d1",
+      "expected": "hex:bd4209d1"
+    },
+    {
+      "check": "0x3e8 second selector emits 0x464",
+      "passed": true,
+      "got": "hex:40f26442",
+      "expected": "hex:40f26442"
+    },
+    {
+      "check": "0x4b0 first selector compare",
+      "passed": true,
+      "got": "hex:bd4201d0",
+      "expected": "hex:bd4201d0"
+    },
+    {
+      "check": "0x4b0 second selector compare",
+      "passed": true,
+      "got": "hex:b54202d1",
+      "expected": "hex:b54202d1"
+    },
+    {
+      "check": "0x4b0 selector path emits 0x260",
+      "passed": true,
+      "got": "hex:40f26022",
+      "expected": "hex:40f26022"
+    },
+    {
+      "check": "default path emits zero selector",
+      "passed": true,
+      "got": "hex:00222046",
+      "expected": "hex:00222046"
+    },
+    {
+      "check": "common writer call after selector",
+      "passed": true,
+      "got": "hex:204600f09af8",
+      "expected": "hex:204600f09af8"
+    },
+    {
+      "check": "separate context caller passes r4 to 0x10200",
+      "passed": true,
+      "got": "hex:10b1204607f0eafe",
+      "expected": "hex:10b1204607f0eafe"
+    },
+    {
+      "check": "0x10200 prologue binds r0 context to r4",
+      "passed": true,
+      "got": "hex:2de9f043d9b0fa490446",
+      "expected": "hex:2de9f043d9b0fa490446"
+    },
+    {
+      "check": "0x10200 dispatch loop reads table entries",
+      "passed": true,
+      "got": "hex:56f835004845a0f20b21",
+      "expected": "hex:56f835004845a0f20b21"
+    },
+    {
+      "check": "pinned APCB checksum stored/calculated",
+      "passed": true,
+      "got": [
+        192,
+        81216
+      ],
+      "expected": [
+        192,
+        81216
+      ]
+    },
+    {
+      "check": "APCB aligned raw halfword 0x3e8 absent",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "APCB aligned raw halfword 0x4b0 absent",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "AmdSetup+0x703/+0x704 raw bytes",
+      "passed": true,
+      "got": "hex:018c05",
+      "expected": "hex:018c05"
+    },
+    {
+      "check": "AmdSetup+0x704 observed raw value 0x58c",
+      "passed": true,
+      "got": 1420,
+      "expected": 1420
+    },
+    {
+      "check": "selected window has no direct WRMSR opcode",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "selected window has no direct in opcode",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "selected window has no direct out opcode",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "direct 5e68->107e4 caller relation remains absent",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    },
+    {
+      "check": "thresholds treated as raw constants only",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "no MHz/unit assignment made",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "no synchronization assignment made",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "no hardware behavior assignment made",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "no firmware modification made",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "no settings/shared-state modification made",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "writer and consumer share field offset +0x78",
+      "passed": true,
+      "got": 120,
+      "expected": 120
+    },
+    {
+      "check": "raw threshold set is exactly 0x3e8 and 0x4b0",
+      "passed": true,
+      "got": [
+        1000,
+        1200
+      ],
+      "expected": [
+        1000,
+        1200
+      ]
+    },
+    {
+      "check": "raw emitted selector set is exactly 0x264/0x464/0x260/0x0",
+      "passed": true,
+      "got": [
+        612,
+        1124,
+        608,
+        0
+      ],
+      "expected": [
+        612,
+        1124,
+        608,
+        0
+      ]
+    },
+    {
+      "check": "caller default 0x4b0 equals one consumer threshold",
+      "passed": true,
+      "got": 1200,
+      "expected": 1200
+    },
+    {
+      "check": "APCB comparison scope is pinned APCB span only",
+      "passed": true,
+      "got": 11210752,
+      "expected": 11210752
+    }
+  ]
+}

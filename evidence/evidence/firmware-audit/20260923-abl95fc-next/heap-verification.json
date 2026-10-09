@@ -1,0 +1,9 @@
+{
+  "command": [
+    "tools/abl-emulator-venv/bin/python",
+    "evidence/firmware-audit/20260923-abl95fc-next/emulate_pll_heap.py"
+  ],
+  "exit": 0,
+  "stdout": "baseline input 1800 -> [(14, 1200), (15, 900)] instructions 513\nmodified_input input 1750 -> [(14, 1200), (15, 875)] instructions 432\nrestored_input input 1800 -> [(14, 1200), (15, 900)] instructions 513\nchip6 input 1800 -> [(14, 250), (15, 900)] instructions 514\nprovider_override input 1800 -> [(14, 1420), (15, 900)] instructions 569\nprovider_zero input 1800 -> [(14, 0), (15, 900)] instructions 569\nprovider_max_u16 input 1800 -> [(14, 1200), (15, 900)] instructions 560\ngate_off input 1800 -> [(14, 1200), (15, 900)] instructions 369\ngate_missing input 1800 -> [(14, 1200), (15, 900)] instructions 340\nPASS9 native HEAP-to-PLL cases, unchanged code, only declared external-effect hooks\n",
+  "stderr": ""
+}

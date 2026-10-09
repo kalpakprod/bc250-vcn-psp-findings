@@ -1,0 +1,69 @@
+2026-09-19 18:40:06 INFO  (LoggingInitialization) Using log config file: jar:file:/home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-09-19 18:40:06 INFO  (LoggingInitialization) Using log file: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass/ghidra-own.log  
+2026-09-19 18:40:06 DEBUG (GhidraObjectInputFilter) Including serial input filter: FileSystem/data/client.rmi.serial.filter  
+2026-09-19 18:40:06 INFO  (Preferences) Loading user preferences: /home/OWNER/.config/ghidra/ghidra_12.1.3_PUBLIC/preferences  
+2026-09-19 18:40:06 INFO  (ClassSearcher) Searching for classes...  
+2026-09-19 18:40:06 INFO  (ClassSearcher) Class search complete (721 ms)  
+2026-09-19 18:40:07 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-09-19 18:40:07 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-09-19 18:40:07 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2026-09-19 18:40:07 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2026-09-19 18:40:08 INFO  (AnalyzeHeadless) Headless startup complete (2313 ms)  
+2026-09-19 18:40:08 INFO  (ClassSearcher) Class searcher loaded 94 extension points (47 false positives)  
+2026-09-19 18:40:08 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/OWNER/tools/ghidra_12.1.3_PUBLIC/Ghidra/Processors/8051/ghidra_scripts
+    /home/OWNER/ghidra_scripts  
+2026-09-19 18:40:08 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-09-19 18:40:08 INFO  (HeadlessAnalyzer) Creating project: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass/project/OCConsumer  
+2026-09-19 18:40:08 INFO  (DefaultProject) Creating project: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass/project/OCConsumer  
+2026-09-19 18:40:08 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2026-09-19 18:40:08 INFO  (HeadlessAnalyzer)      project: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass/project/OCConsumer  
+2026-09-19 18:40:08 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5  
+2026-09-19 18:40:08 INFO  (ProgramLoader) Using Loader: Raw Binary  
+2026-09-19 18:40:08 INFO  (ProgramLoader) Using Language/Compiler: Xtensa:LE:32:default:default  
+2026-09-19 18:40:08 INFO  (ProgramLoader) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib64]  
+2026-09-19 18:40:08 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2026-09-19 18:40:08 INFO  (HeadlessAnalyzer) REPORT: Execute script: OcConsumerRead.java '/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5' '/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass/smu-consumers-decoded.txt' '0x1b954' '0x1b990' '0x1bbc0' '0x1e988' '0x2ea74' '0x2d7a0'   
+2026-09-19 18:40:09 INFO  (HeadlessAnalyzer) SCRIPT: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-oc-final-consumer-pass/OcConsumerRead.java  
+2026-09-19 18:40:09 ERROR (HeadlessAnalyzer) REPORT SCRIPT ERROR:  java.lang.NullPointerException: Cannot invoke "ghidra.framework.model.ProjectLocator.getName()" because the return value of "ghidra.framework.model.DomainFile.getProjectLocator()" is null
+	at OcConsumerRead.run(OcConsumerRead.java:26)
+	at ghidra.app.script.GhidraScript.executeNormal(GhidraScript.java:460)
+	at ghidra.app.script.GhidraScript.doExecute(GhidraScript.java:314)
+	at ghidra.app.script.GhidraScript.execute(GhidraScript.java:290)
+	at ghidra.app.util.headless.HeadlessAnalyzer.runScript(HeadlessAnalyzer.java:585)
+	at ghidra.app.util.headless.HeadlessAnalyzer.runScriptsList(HeadlessAnalyzer.java:929)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1085)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1583)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1743)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1684)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1768)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:452)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:199)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+2026-09-19 18:40:09 INFO  (LocalFileSystem) /smu_fw_robin_5: file created (kukuruza)  
+2026-09-19 18:40:09 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /smu_fw_robin_5 (OCConsumer:/smu_fw_robin_5)  
+2026-09-19 18:40:09 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  

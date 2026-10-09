@@ -1,0 +1,85 @@
+; spi_toctou.pio — Experimental HOLD/MISO responder, one state machine.
+; NOT hardware-accepted: HOLD/QE, bus contention, abort and first-bit timing
+; are unresolved. No runtime caller may enable it on BC250 yet.
+;
+; Rig model: we sit on the BC-250 SPI flash bus via a SOIC-8 clip. The
+; PSP drives CS#, CLK and MOSI; the BC-250 flash normally drives DO.
+; We watch every transaction's 32-bit header (0x03 READ command +
+; 24-bit address). If it equals the arm mark, we:
+;   1. Assert /HOLD (side-set 0) so the BC-250 flash tristates its DO.
+;   2. Take over DO as an output and shift out payload bits from our
+;      TX FIFO for COUNT_M1+1 SPI clocks, in SPI mode 0.
+;   3. Tristate DO, then release /HOLD. Stop until explicitly rearmed.
+; Otherwise we stay idle until CS# rises and wait for the next
+; transaction. Both idle branches assume /HOLD side-set = 1 (BC-250
+; flash unaffected) and DO pindir = 0 (Waveshare not driving).
+;
+; Side-set: 1 bit on /HOLD_BC250 (0 = silence BC-250 flash's DO).
+; Set/Out pins: 1 bit on the DO wire (out drives it, set toggles PINDIRS).
+; Jmp_pin: CS#. In_pin base: MOSI, so `pin 1` = CS#, `pin 2` = CLK.
+;
+; Setup contract from the C driver:
+;   - X preloaded with MARK via `pull ... mov x, osr` sequence (done once)
+;   - OSR retains COUNT_M1 after the second setup pull until header match
+;   - Payload words pushed to TX FIFO before each armed transaction
+;     (32 bits per word, MSB-first, one word per 32 SPI clocks of override).
+;
+; PIO memory budget: 32 slots; checked by pioasm.
+
+.program spi_toctou
+.side_set 1
+
+    ; --- One-time setup: latch MARK into X, retain COUNT_M1 in OSR ---
+    pull block            side 1     ; MARK -> OSR
+    mov x, osr            side 1     ; MARK -> X (survives loop)
+    pull block            side 1     ; COUNT_M1 -> OSR
+    nop                   side 1     ; COUNT_M1 stays in OSR, not captured ISR
+
+.wrap_target
+new_transaction:
+    ; Wait for a fresh transaction: CS# high then low.
+    wait 1 pin 1          side 1
+    wait 0 pin 1          side 1
+
+    ; Capture 32-bit header (cmd + addr24) into ISR, MSB-first.
+    ; Using Y as the loop counter because X holds MARK.
+    mov isr, null         side 1
+    set y, 31             side 1
+
+capture:
+    wait 1 pin 2          side 1     ; CLK rising
+    in pins, 1            side 1     ; sample MOSI (in_base+0) into ISR
+    wait 0 pin 2          side 1     ; CLK falling
+    jmp y-- capture       side 1
+
+    ; ISR now holds { cmd[7:0], addr[23:0] }. Autopush is OFF here so it
+    ; stays until we consume it.
+    mov y, isr            side 1     ; Y = captured header
+    jmp x!=y no_match     side 1     ; miss: sit out the rest of the txn
+
+    ; --- Match: retrieve counter and payload, then enable DO output ---
+    irq nowait 0          side 1     ; signal CPU: hit observed (async)
+    mov y, osr            side 1     ; retrieve saved COUNT_M1
+    pull block            side 1     ; obtain payload BEFORE taking the bus
+    nop                   side 0     ; assert HOLD before enabling our DO
+    set pindirs, 1        side 0     ; hardware HOLD-to-high-Z delay unverified
+
+override_loop:
+    ; SPI mode 0: slave changes DO on CLK falling, master samples on CLK rising.
+    ; Autopull refills OSR from TX FIFO whenever it hits 32 bits consumed.
+    wait 0 pin 2          side 0     ; CLK falling — /HOLD LOW silences BC-250
+    out pins, 1           side 0     ; drive next payload bit onto DO
+    wait 1 pin 2          side 0     ; CLK rising — master samples
+    jmp y-- override_loop side 0
+
+    ; Done overriding — release DO first, /HOLD second, then stop.
+    set pindirs, 0        side 0     ; release our DO before releasing HOLD
+    nop                   side 1
+    wait 1 pin 1          side 1
+finished:
+    jmp finished          side 1     ; one-shot: caller must explicitly re-arm
+
+no_match:
+    wait 1 pin 1          side 1     ; wait for CS# high
+    jmp new_transaction   side 1
+.wrap

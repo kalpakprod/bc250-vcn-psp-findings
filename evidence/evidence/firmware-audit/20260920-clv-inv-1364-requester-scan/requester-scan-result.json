@@ -1,0 +1,1553 @@
+{
+  "scope": "exact clv module corpus + pinned clv ROM (read-only)",
+  "tests": {
+    "T1_pinned_inputs": {
+      "manifest_corpus_local_mismatched": [],
+      "manifest_corpus_local_missing": [],
+      "manifest_corpus_local_verified": 951,
+      "manifest_entries": 953,
+      "manifest_external_mismatched": [
+        {
+          "expected": "d531226fb248bf4bdef9ce7392d0a7a8d1a302d577f7a3681733cf60e2ef1289",
+          "got": "5e3e50fb6aa9f72514b2674562c45839874ba9d7c305f110ffeff30dd091d6e4",
+          "path": "docs/research/2026-09-19-inv-token-consumers.md"
+        }
+      ],
+      "manifest_external_missing_on_disk": [],
+      "manifest_external_verified": 1,
+      "module_bin_count": 233,
+      "module_bins_covered_by_manifest": 233,
+      "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "status": "PASS"
+    },
+    "T2_instruction_scan": {
+      "asm_crosscheck": [
+        {
+          "asm_files": [
+            "AmdFabricAriPei-c5b99650a442-0.asm"
+          ],
+          "asm_immediate_tokens": [
+            "0x1363",
+            "0x1364"
+          ],
+          "json_immediate_tokens": [
+            "0x1363",
+            "0x1364"
+          ],
+          "match": true,
+          "module": "AmdFabricAriPei-c5b99650a442"
+        },
+        {
+          "asm_files": [
+            "AmdNbioBaseARIPei-51d96c1e5a5e-0.asm"
+          ],
+          "asm_immediate_tokens": [
+            "0x1363",
+            "0x1364"
+          ],
+          "json_immediate_tokens": [
+            "0x1363",
+            "0x1364"
+          ],
+          "match": true,
+          "module": "AmdNbioBaseARIPei-51d96c1e5a5e"
+        },
+        {
+          "asm_files": [
+            "AmdNbioGfxARIPei-63413be2ac29-0.asm"
+          ],
+          "asm_immediate_tokens": [
+            "0x1363",
+            "0x1364"
+          ],
+          "json_immediate_tokens": [
+            "0x1363",
+            "0x1364"
+          ],
+          "match": true,
+          "module": "AmdNbioGfxARIPei-63413be2ac29"
+        },
+        {
+          "asm_files": [
+            "AmdNbioPcieARIPei-62b1398c4ba9-0.asm"
+          ],
+          "asm_immediate_tokens": [
+            "0x1363",
+            "0x1364"
+          ],
+          "json_immediate_tokens": [
+            "0x1363",
+            "0x1364"
+          ],
+          "match": true,
+          "module": "AmdNbioPcieARIPei-62b1398c4ba9"
+        },
+        {
+          "asm_files": [
+            "AmdNbioSmuV10Pei-905b8be68afd-0.asm"
+          ],
+          "asm_immediate_tokens": [
+            "0x1363",
+            "0x1364"
+          ],
+          "json_immediate_tokens": [
+            "0x1363",
+            "0x1364"
+          ],
+          "match": true,
+          "module": "AmdNbioSmuV10Pei-905b8be68afd"
+        },
+        {
+          "asm_files": [
+            "AmdSocBl5AriPei-79e13211d5ae-0.asm"
+          ],
+          "asm_immediate_tokens": [
+            "0x1363",
+            "0x1364"
+          ],
+          "json_immediate_tokens": [
+            "0x1363",
+            "0x1364"
+          ],
+          "match": true,
+          "module": "AmdSocBl5AriPei-79e13211d5ae"
+        },
+        {
+          "asm_files": [
+            "CbsBasePei-6ff112922ad8-0.asm"
+          ],
+          "asm_immediate_tokens": [
+            "0x1363",
+            "0x1364"
+          ],
+          "json_immediate_tokens": [
+            "0x1363",
+            "0x1364"
+          ],
+          "match": true,
+          "module": "CbsBasePei-6ff112922ad8"
+        }
+      ],
+      "branch_or_call_hits": [
+        {
+          "bytes": "e897ffffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x13c5 push DWORD PTR [ebp+0x8]",
+            "0x13c8 call 0x1364",
+            "0x13cd add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 5064,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e82bffffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x1431 push DWORD PTR [ebp+0x8]",
+            "0x1434 call 0x1364",
+            "0x1439 add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 5172,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8bcfeffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x14a0 push DWORD PTR [ebp+0x8]",
+            "0x14a3 call 0x1364",
+            "0x14a8 add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 5283,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e865feffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x14f7 push DWORD PTR [ebp+0x8]",
+            "0x14fa call 0x1364",
+            "0x14ff add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 5370,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8fafdffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x1562 push DWORD PTR [ebp+0x8]",
+            "0x1565 call 0x1364",
+            "0x156a add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 5477,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e88ffdffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x15cd push DWORD PTR [ebp+0x8]",
+            "0x15d0 call 0x1364",
+            "0x15d5 add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 5584,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e83afdffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x1622 push DWORD PTR [ebp+0x8]",
+            "0x1625 call 0x1364",
+            "0x162a add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 5669,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8cffcffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x168d push DWORD PTR [ebp+0x8]",
+            "0x1690 call 0x1364",
+            "0x1695 add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 5776,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e864fcffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x16f8 push DWORD PTR [ebp+0x8]",
+            "0x16fb call 0x1364",
+            "0x1700 add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 5883,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e80ffcffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x174d push DWORD PTR [ebp+0x8]",
+            "0x1750 call 0x1364",
+            "0x1755 add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 5968,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8a4fbffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x17b8 push DWORD PTR [ebp+0x8]",
+            "0x17bb call 0x1364",
+            "0x17c0 add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 6075,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e839fbffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x1823 push DWORD PTR [ebp+0x8]",
+            "0x1826 call 0x1364",
+            "0x182b add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 6182,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8e4faffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x1878 push DWORD PTR [ebp+0x8]",
+            "0x187b call 0x1364",
+            "0x1880 add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 6267,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e876faffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x18e6 push DWORD PTR [ebp+0x8]",
+            "0x18e9 call 0x1364",
+            "0x18ee add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 6377,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e808faffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x1954 push DWORD PTR [ebp+0x8]",
+            "0x1957 call 0x1364",
+            "0x195c add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 6487,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8f9f8ffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x1a65 push esi",
+            "0x1a66 call 0x1364",
+            "0x1a6b add esp,0xc"
+          ],
+          "mnemonic": "call",
+          "module": "AmdCpmInitPeim-25b14a638a17",
+          "operands": "0x1364",
+          "rva": 6758,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8d2f1ffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x2188 mov QWORD PTR [rsp+0x30],rax",
+            "0x218d call 0x1364",
+            "0x2192 jmp 0x2320"
+          ],
+          "mnemonic": "call",
+          "module": "BootScriptExecutorDxe-c6d31e6e00bf",
+          "operands": "0x1364",
+          "rva": 8589,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8f5070000",
+          "class": "branch-or-call",
+          "context": [
+            "0xb68 mov ecx,esi",
+            "0xb6a call 0x1364",
+            "0xb6f test al,al"
+          ],
+          "mnemonic": "call",
+          "module": "CapsulePei-45091113ac3e",
+          "operands": "0x1364",
+          "rva": 2922,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8e5070000",
+          "class": "branch-or-call",
+          "context": [
+            "0xb78 mov ecx,esi",
+            "0xb7a call 0x1364",
+            "0xb7f test al,al"
+          ],
+          "mnemonic": "call",
+          "module": "CapsulePei-45091113ac3e",
+          "operands": "0x1364",
+          "rva": 2938,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "7417",
+          "class": "branch-or-call",
+          "context": [
+            "0x1345 cmp DWORD PTR [esp+0x8],0x0",
+            "0x134a je 0x1363",
+            "0x134c cmp eax,DWORD PTR [esp+0x4]"
+          ],
+          "mnemonic": "je",
+          "module": "CapsulePei-45091113ac3e",
+          "operands": "0x1363",
+          "rva": 4938,
+          "token": "0x1363"
+        },
+        {
+          "bytes": "7411",
+          "class": "branch-or-call",
+          "context": [
+            "0x134c cmp eax,DWORD PTR [esp+0x4]",
+            "0x1350 je 0x1363",
+            "0x1352 push DWORD PTR [esp+0x8]"
+          ],
+          "mnemonic": "je",
+          "module": "CapsulePei-45091113ac3e",
+          "operands": "0x1363",
+          "rva": 4944,
+          "token": "0x1363"
+        },
+        {
+          "bytes": "7512",
+          "class": "branch-or-call",
+          "context": [
+            "0x134c test bpl,0x8",
+            "0x1350 jne 0x1364",
+            "0x1352 test r12b,r12b"
+          ],
+          "mnemonic": "jne",
+          "module": "EbcDxe-f4776f100100",
+          "operands": "0x1364",
+          "rva": 4944,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "eb24",
+          "class": "branch-or-call",
+          "context": [
+            "0x133a add eax,0x18",
+            "0x133d jmp 0x1363",
+            "0x133f mov eax,DWORD PTR [ebp-0x4]"
+          ],
+          "mnemonic": "jmp",
+          "module": "FchPei-08493ca078e7",
+          "operands": "0x1363",
+          "rva": 4925,
+          "token": "0x1363"
+        },
+        {
+          "bytes": "0f8809010000",
+          "class": "branch-or-call",
+          "context": [
+            "0x1252 test rax,rax",
+            "0x1255 js 0x1364",
+            "0x125b mov rax,QWORD PTR [rip+0x2b66]        # 0x3dc8"
+          ],
+          "mnemonic": "js",
+          "module": "NvmeDynamicSetup-8910d2625b50",
+          "operands": "0x1364",
+          "rva": 4693,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "0f88cd000000",
+          "class": "branch-or-call",
+          "context": [
+            "0x128e test rax,rax",
+            "0x1291 js 0x1364",
+            "0x1297 mov rax,QWORD PTR [rip+0x2b2a]        # 0x3dc8"
+          ],
+          "mnemonic": "js",
+          "module": "NvmeDynamicSetup-8910d2625b50",
+          "operands": "0x1364",
+          "rva": 4753,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "0f88a6000000",
+          "class": "branch-or-call",
+          "context": [
+            "0x12b5 test rax,rax",
+            "0x12b8 js 0x1364",
+            "0x12be mov rax,QWORD PTR [rsp+0x98]"
+          ],
+          "mnemonic": "js",
+          "module": "NvmeDynamicSetup-8910d2625b50",
+          "operands": "0x1364",
+          "rva": 4792,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "7815",
+          "class": "branch-or-call",
+          "context": [
+            "0x134a test rax,rax",
+            "0x134d js 0x1364",
+            "0x134f mov rcx,QWORD PTR [rsp+0x30]"
+          ],
+          "mnemonic": "js",
+          "module": "NvmeDynamicSetup-8910d2625b50",
+          "operands": "0x1364",
+          "rva": 4941,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e88e0f0000",
+          "class": "branch-or-call",
+          "context": [
+            "0x3cc lea rcx,[rsp+0x50]",
+            "0x3d1 call 0x1364",
+            "0x3d6 test rax,rax"
+          ],
+          "mnemonic": "call",
+          "module": "PspDxe-73f374d80f09",
+          "operands": "0x1364",
+          "rva": 977,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e883090000",
+          "class": "branch-or-call",
+          "context": [
+            "0x9d7 lea rcx,[rsp+0x60]",
+            "0x9dc call 0x1364",
+            "0x9e1 mov rdi,rax"
+          ],
+          "mnemonic": "call",
+          "module": "PspDxe-73f374d80f09",
+          "operands": "0x1364",
+          "rva": 2524,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8a5feffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x14b5 mov QWORD PTR [rsp+0x20],rdi",
+            "0x14ba call 0x1364",
+            "0x14bf test rax,rax"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5306,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e860feffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x14fa mov QWORD PTR [rsp+0x20],rdi",
+            "0x14ff call 0x1364",
+            "0x1504 mov r9,QWORD PTR [rbx-0x10]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5375,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e831feffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x152a lea rdx,[rbx+0x18]",
+            "0x152e call 0x1364",
+            "0x1533 lea rdx,[rbx+0x20]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5422,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e826feffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x1537 xor ecx,ecx",
+            "0x1539 call 0x1364",
+            "0x153e lea rdx,[rbx+0x28]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5433,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e81bfeffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x1542 xor ecx,ecx",
+            "0x1544 call 0x1364",
+            "0x1549 lea rdx,[rbx+0x30]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5444,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e810feffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x154d xor ecx,ecx",
+            "0x154f call 0x1364",
+            "0x1554 lea rdx,[rbx+0x68]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5455,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e805feffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x1558 xor ecx,ecx",
+            "0x155a call 0x1364",
+            "0x155f lea rdx,[rbx+0x60]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5466,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8fafdffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x1563 xor ecx,ecx",
+            "0x1565 call 0x1364",
+            "0x156a lea rdx,[rbx+0x48]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5477,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8effdffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x156e xor ecx,ecx",
+            "0x1570 call 0x1364",
+            "0x1575 lea rdx,[rbx+0x58]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5488,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8e4fdffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x1579 xor ecx,ecx",
+            "0x157b call 0x1364",
+            "0x1580 lea rdx,[rbx+0x50]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5499,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8d9fdffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x1584 xor ecx,ecx",
+            "0x1586 call 0x1364",
+            "0x158b lea rdx,[rbx+0x80]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5510,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8cbfdffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x1592 xor ecx,ecx",
+            "0x1594 call 0x1364",
+            "0x1599 lea rdx,[rbx+0x70]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5524,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8c0fdffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x159d xor ecx,ecx",
+            "0x159f call 0x1364",
+            "0x15a4 lea rdx,[rbx+0x78]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5535,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e8b5fdffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x15a8 xor ecx,ecx",
+            "0x15aa call 0x1364",
+            "0x15af mov edx,DWORD PTR [rbx+0xc]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5546,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e883fdffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x15d8 lea rdx,[rbx+0x18]",
+            "0x15dc call 0x1364",
+            "0x15e1 lea rdx,[rbx+0x70]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5596,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e878fdffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x15e5 xor ecx,ecx",
+            "0x15e7 call 0x1364",
+            "0x15ec lea rdx,[rbx+0x58]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5607,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e86dfdffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x15f0 xor ecx,ecx",
+            "0x15f2 call 0x1364",
+            "0x15f7 mov edx,DWORD PTR [rbx+0xc]"
+          ],
+          "mnemonic": "call",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "0x1364",
+          "rva": 5618,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "e81fecffff",
+          "class": "branch-or-call",
+          "context": [
+            "0x273d mov rdx,rsi",
+            "0x2740 call 0x1364",
+            "0x2745 mov rsi,rax"
+          ],
+          "mnemonic": "call",
+          "module": "Udp4Dxe-80593d46a9ae",
+          "operands": "0x1364",
+          "rva": 10048,
+          "token": "0x1364"
+        }
+      ],
+      "external_immediate_requester_modules": [
+        "AmdFabricAriPei-c5b99650a442",
+        "AmdNbioBaseARIPei-51d96c1e5a5e",
+        "AmdNbioGfxARIPei-63413be2ac29",
+        "AmdNbioPcieARIPei-62b1398c4ba9",
+        "AmdNbioSmuV10Pei-905b8be68afd",
+        "AmdSocBl5AriPei-79e13211d5ae"
+      ],
+      "immediate_hits": [
+        {
+          "bytes": "ba63130000",
+          "class": "immediate",
+          "context": [
+            "0x11921 mov DWORD PTR [ebp-0x8],ecx",
+            "0x11924 mov edx,0x1363",
+            "0x11929 mov eax,DWORD PTR [ebp-0x8]"
+          ],
+          "mnemonic": "mov",
+          "module": "AmdFabricAriPei-c5b99650a442",
+          "operands": "edx,0x1363",
+          "rva": 71972,
+          "token": "0x1363"
+        },
+        {
+          "bytes": "ba64130000",
+          "class": "immediate",
+          "context": [
+            "0x11953 mov DWORD PTR [ebp-0x8],ecx",
+            "0x11956 mov edx,0x1364",
+            "0x1195b mov eax,DWORD PTR [ebp-0x8]"
+          ],
+          "mnemonic": "mov",
+          "module": "AmdFabricAriPei-c5b99650a442",
+          "operands": "edx,0x1364",
+          "rva": 72022,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "ba63130000",
+          "class": "immediate",
+          "context": [
+            "0x12731 mov DWORD PTR [ebp-0x8],ecx",
+            "0x12734 mov edx,0x1363",
+            "0x12739 mov eax,DWORD PTR [ebp-0x8]"
+          ],
+          "mnemonic": "mov",
+          "module": "AmdNbioBaseARIPei-51d96c1e5a5e",
+          "operands": "edx,0x1363",
+          "rva": 75572,
+          "token": "0x1363"
+        },
+        {
+          "bytes": "ba64130000",
+          "class": "immediate",
+          "context": [
+            "0x12763 mov DWORD PTR [ebp-0x8],ecx",
+            "0x12766 mov edx,0x1364",
+            "0x1276b mov eax,DWORD PTR [ebp-0x8]"
+          ],
+          "mnemonic": "mov",
+          "module": "AmdNbioBaseARIPei-51d96c1e5a5e",
+          "operands": "edx,0x1364",
+          "rva": 75622,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "ba63130000",
+          "class": "immediate",
+          "context": [
+            "0xfaf1 mov DWORD PTR [ebp-0x8],ecx",
+            "0xfaf4 mov edx,0x1363",
+            "0xfaf9 mov eax,DWORD PTR [ebp-0x8]"
+          ],
+          "mnemonic": "mov",
+          "module": "AmdNbioGfxARIPei-63413be2ac29",
+          "operands": "edx,0x1363",
+          "rva": 64244,
+          "token": "0x1363"
+        },
+        {
+          "bytes": "ba64130000",
+          "class": "immediate",
+          "context": [
+            "0xfb23 mov DWORD PTR [ebp-0x8],ecx",
+            "0xfb26 mov edx,0x1364",
+            "0xfb2b mov eax,DWORD PTR [ebp-0x8]"
+          ],
+          "mnemonic": "mov",
+          "module": "AmdNbioGfxARIPei-63413be2ac29",
+          "operands": "edx,0x1364",
+          "rva": 64294,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "ba63130000",
+          "class": "immediate",
+          "context": [
+            "0x13241 mov DWORD PTR [ebp-0x8],ecx",
+            "0x13244 mov edx,0x1363",
+            "0x13249 mov eax,DWORD PTR [ebp-0x8]"
+          ],
+          "mnemonic": "mov",
+          "module": "AmdNbioPcieARIPei-62b1398c4ba9",
+          "operands": "edx,0x1363",
+          "rva": 78404,
+          "token": "0x1363"
+        },
+        {
+          "bytes": "ba64130000",
+          "class": "immediate",
+          "context": [
+            "0x13273 mov DWORD PTR [ebp-0x8],ecx",
+            "0x13276 mov edx,0x1364",
+            "0x1327b mov eax,DWORD PTR [ebp-0x8]"
+          ],
+          "mnemonic": "mov",
+          "module": "AmdNbioPcieARIPei-62b1398c4ba9",
+          "operands": "edx,0x1364",
+          "rva": 78454,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "ba63130000",
+          "class": "immediate",
+          "context": [
+            "0x10441 mov DWORD PTR [ebp-0x8],ecx",
+            "0x10444 mov edx,0x1363",
+            "0x10449 mov eax,DWORD PTR [ebp-0x8]"
+          ],
+          "mnemonic": "mov",
+          "module": "AmdNbioSmuV10Pei-905b8be68afd",
+          "operands": "edx,0x1363",
+          "rva": 66628,
+          "token": "0x1363"
+        },
+        {
+          "bytes": "ba64130000",
+          "class": "immediate",
+          "context": [
+            "0x10473 mov DWORD PTR [ebp-0x8],ecx",
+            "0x10476 mov edx,0x1364",
+            "0x1047b mov eax,DWORD PTR [ebp-0x8]"
+          ],
+          "mnemonic": "mov",
+          "module": "AmdNbioSmuV10Pei-905b8be68afd",
+          "operands": "edx,0x1364",
+          "rva": 66678,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "ba63130000",
+          "class": "immediate",
+          "context": [
+            "0x10181 mov DWORD PTR [ebp-0x8],ecx",
+            "0x10184 mov edx,0x1363",
+            "0x10189 mov eax,DWORD PTR [ebp-0x8]"
+          ],
+          "mnemonic": "mov",
+          "module": "AmdSocBl5AriPei-79e13211d5ae",
+          "operands": "edx,0x1363",
+          "rva": 65924,
+          "token": "0x1363"
+        },
+        {
+          "bytes": "ba64130000",
+          "class": "immediate",
+          "context": [
+            "0x101b3 mov DWORD PTR [ebp-0x8],ecx",
+            "0x101b6 mov edx,0x1364",
+            "0x101bb mov eax,DWORD PTR [ebp-0x8]"
+          ],
+          "mnemonic": "mov",
+          "module": "AmdSocBl5AriPei-79e13211d5ae",
+          "operands": "edx,0x1364",
+          "rva": 65974,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "ba63130000",
+          "class": "immediate",
+          "context": [
+            "0xe3c1 mov DWORD PTR [ebp-0x8],ecx",
+            "0xe3c4 mov edx,0x1363",
+            "0xe3c9 mov eax,DWORD PTR [ebp-0x8]"
+          ],
+          "mnemonic": "mov",
+          "module": "CbsBasePei-6ff112922ad8",
+          "operands": "edx,0x1363",
+          "rva": 58308,
+          "token": "0x1363"
+        },
+        {
+          "bytes": "ba64130000",
+          "class": "immediate",
+          "context": [
+            "0xe3f3 mov DWORD PTR [ebp-0x8],ecx",
+            "0xe3f6 mov edx,0x1364",
+            "0xe3fb mov eax,DWORD PTR [ebp-0x8]"
+          ],
+          "mnemonic": "mov",
+          "module": "CbsBasePei-6ff112922ad8",
+          "operands": "edx,0x1364",
+          "rva": 58358,
+          "token": "0x1364"
+        }
+      ],
+      "known_serializer_modules_pinned": {
+        "CbsBasePei-6ff112922ad8": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+        "CbsSetupDxe-7ff717d51c9a": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8"
+      },
+      "memory_reference_hits": [
+        {
+          "bytes": "488d0dc9ebffff",
+          "class": "memory-reference",
+          "context": [
+            "0x278d mov QWORD PTR [rax+0x80],rcx",
+            "0x2794 lea rcx,[rip+0xffffffffffffebc9]        # 0x1364",
+            "0x279b mov QWORD PTR [rax+0x88],rcx"
+          ],
+          "mnemonic": "lea",
+          "module": "AmdCpmInitDxe-89a016d6a95b",
+          "operands": "rcx,[rip+0xffffffffffffebc9]        # 0x1364",
+          "rva": 10132,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "488d1564130000",
+          "class": "memory-reference",
+          "context": [
+            "0xcc8 call 0x10c0",
+            "0xccd lea rdx,[rip+0x1364]        # 0x2038",
+            "0xcd4 xor r8d,r8d"
+          ],
+          "mnemonic": "lea",
+          "module": "AmiApcbLibInterface-4d65e6dc2ca8",
+          "operands": "rdx,[rip+0x1364]        # 0x2038",
+          "rva": 3277,
+          "token": "0x1364"
+        },
+        {
+          "bytes": "488b0563130000",
+          "class": "memory-reference",
+          "context": [
+            "0xf11 call 0x10c0",
+            "0xf16 mov rax,QWORD PTR [rip+0x1363]        # 0x2280",
+            "0xf1d mov edx,DWORD PTR [rip+0x1355]        # 0x2278"
+          ],
+          "mnemonic": "mov",
+          "module": "AmiApcbLibInterface-4d65e6dc2ca8",
+          "operands": "rax,QWORD PTR [rip+0x1363]        # 0x2280",
+          "rva": 3862,
+          "token": "0x1363"
+        },
+        {
+          "bytes": "488d0d23000000",
+          "class": "memory-reference",
+          "context": [
+            "0x1336 mov QWORD PTR [rax+0x38],rcx",
+            "0x133a lea rcx,[rip+0x23]        # 0x1364",
+            "0x1341 lea rdx,[rip+0xce8]        # 0x2030"
+          ],
+          "mnemonic": "lea",
+          "module": "RuntimeDxe-0b32fb440716",
+          "operands": "rcx,[rip+0x23]        # 0x1364",
+          "rva": 4922,
+          "token": "0x1364"
+        }
+      ],
+      "modules_scanned": 233,
+      "modules_with_immediate": [
+        "AmdFabricAriPei-c5b99650a442",
+        "AmdNbioBaseARIPei-51d96c1e5a5e",
+        "AmdNbioGfxARIPei-63413be2ac29",
+        "AmdNbioPcieARIPei-62b1398c4ba9",
+        "AmdNbioSmuV10Pei-905b8be68afd",
+        "AmdSocBl5AriPei-79e13211d5ae",
+        "CbsBasePei-6ff112922ad8"
+      ],
+      "status": "PASS"
+    },
+    "T3_adjacent_constants": {
+      "pairings": [
+        {
+          "forward": [
+            {
+              "control_off": 14865573,
+              "delta": 50,
+              "value_off": 14865623
+            },
+            {
+              "control_off": 14993193,
+              "delta": 50,
+              "value_off": 14993243
+            },
+            {
+              "control_off": 15102349,
+              "delta": 50,
+              "value_off": 15102399
+            },
+            {
+              "control_off": 15210617,
+              "delta": 50,
+              "value_off": 15210667
+            },
+            {
+              "control_off": 15307809,
+              "delta": 50,
+              "value_off": 15307859
+            },
+            {
+              "control_off": 15409273,
+              "delta": 50,
+              "value_off": 15409323
+            },
+            {
+              "control_off": 15500369,
+              "delta": 50,
+              "value_off": 15500419
+            }
+          ],
+          "module": "ROM",
+          "reverse": []
+        },
+        {
+          "forward": [
+            {
+              "control_off": 71565,
+              "delta": 50,
+              "value_off": 71615
+            }
+          ],
+          "module": "AmdFabricAriPei-c5b99650a442",
+          "reverse": []
+        },
+        {
+          "forward": [
+            {
+              "control_off": 75173,
+              "delta": 50,
+              "value_off": 75223
+            }
+          ],
+          "module": "AmdNbioBaseARIPei-51d96c1e5a5e",
+          "reverse": []
+        },
+        {
+          "forward": [
+            {
+              "control_off": 63837,
+              "delta": 50,
+              "value_off": 63887
+            }
+          ],
+          "module": "AmdNbioGfxARIPei-63413be2ac29",
+          "reverse": []
+        },
+        {
+          "forward": [
+            {
+              "control_off": 77997,
+              "delta": 50,
+              "value_off": 78047
+            }
+          ],
+          "module": "AmdNbioPcieARIPei-62b1398c4ba9",
+          "reverse": []
+        },
+        {
+          "forward": [
+            {
+              "control_off": 66229,
+              "delta": 50,
+              "value_off": 66279
+            }
+          ],
+          "module": "AmdNbioSmuV10Pei-905b8be68afd",
+          "reverse": []
+        },
+        {
+          "forward": [
+            {
+              "control_off": 65517,
+              "delta": 50,
+              "value_off": 65567
+            }
+          ],
+          "module": "AmdSocBl5AriPei-79e13211d5ae",
+          "reverse": []
+        },
+        {
+          "forward": [
+            {
+              "control_off": 57909,
+              "delta": 50,
+              "value_off": 57959
+            }
+          ],
+          "module": "CbsBasePei-6ff112922ad8",
+          "reverse": []
+        }
+      ],
+      "status": "PASS",
+      "targets_scanned": 234
+    },
+    "T4_config_offset_scan": {
+      "class_counts": {
+        "branch-or-call-target": 13,
+        "config-displacement-read": 14,
+        "config-displacement-write": 18,
+        "rip-relative-address": 2
+      },
+      "config_displacement_hits": [
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "AmdFabricAriPei-c5b99650a442",
+          "operands": "BYTE PTR [edx+0x6e5],0x0",
+          "rva": 24777
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "AmdFabricAriPei-c5b99650a442",
+          "operands": "DWORD PTR [eax+0x6e6],0x0",
+          "rva": 24787
+        },
+        {
+          "class": "config-displacement-read",
+          "mnemonic": "mov",
+          "module": "AmdFabricAriPei-c5b99650a442",
+          "operands": "al,BYTE PTR [edx+0x6e5]",
+          "rva": 72004
+        },
+        {
+          "class": "config-displacement-read",
+          "mnemonic": "mov",
+          "module": "AmdFabricAriPei-c5b99650a442",
+          "operands": "eax,DWORD PTR [edx+0x6e6]",
+          "rva": 72057
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "AmdNbioBaseARIPei-51d96c1e5a5e",
+          "operands": "BYTE PTR [edx+0x6e5],0x0",
+          "rva": 28377
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "AmdNbioBaseARIPei-51d96c1e5a5e",
+          "operands": "DWORD PTR [eax+0x6e6],0x0",
+          "rva": 28387
+        },
+        {
+          "class": "config-displacement-read",
+          "mnemonic": "mov",
+          "module": "AmdNbioBaseARIPei-51d96c1e5a5e",
+          "operands": "al,BYTE PTR [edx+0x6e5]",
+          "rva": 75604
+        },
+        {
+          "class": "config-displacement-read",
+          "mnemonic": "mov",
+          "module": "AmdNbioBaseARIPei-51d96c1e5a5e",
+          "operands": "eax,DWORD PTR [edx+0x6e6]",
+          "rva": 75657
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "AmdNbioGfxARIPei-63413be2ac29",
+          "operands": "BYTE PTR [edx+0x6e5],0x0",
+          "rva": 17049
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "AmdNbioGfxARIPei-63413be2ac29",
+          "operands": "DWORD PTR [eax+0x6e6],0x0",
+          "rva": 17059
+        },
+        {
+          "class": "config-displacement-read",
+          "mnemonic": "mov",
+          "module": "AmdNbioGfxARIPei-63413be2ac29",
+          "operands": "al,BYTE PTR [edx+0x6e5]",
+          "rva": 64276
+        },
+        {
+          "class": "config-displacement-read",
+          "mnemonic": "mov",
+          "module": "AmdNbioGfxARIPei-63413be2ac29",
+          "operands": "eax,DWORD PTR [edx+0x6e6]",
+          "rva": 64329
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "AmdNbioPcieARIPei-62b1398c4ba9",
+          "operands": "BYTE PTR [edx+0x6e5],0x0",
+          "rva": 31193
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "AmdNbioPcieARIPei-62b1398c4ba9",
+          "operands": "DWORD PTR [eax+0x6e6],0x0",
+          "rva": 31203
+        },
+        {
+          "class": "config-displacement-read",
+          "mnemonic": "mov",
+          "module": "AmdNbioPcieARIPei-62b1398c4ba9",
+          "operands": "al,BYTE PTR [edx+0x6e5]",
+          "rva": 78436
+        },
+        {
+          "class": "config-displacement-read",
+          "mnemonic": "mov",
+          "module": "AmdNbioPcieARIPei-62b1398c4ba9",
+          "operands": "eax,DWORD PTR [edx+0x6e6]",
+          "rva": 78489
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "AmdNbioSmuV10Pei-905b8be68afd",
+          "operands": "BYTE PTR [edx+0x6e5],0x0",
+          "rva": 19433
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "AmdNbioSmuV10Pei-905b8be68afd",
+          "operands": "DWORD PTR [eax+0x6e6],0x0",
+          "rva": 19443
+        },
+        {
+          "class": "config-displacement-read",
+          "mnemonic": "mov",
+          "module": "AmdNbioSmuV10Pei-905b8be68afd",
+          "operands": "al,BYTE PTR [edx+0x6e5]",
+          "rva": 66660
+        },
+        {
+          "class": "config-displacement-read",
+          "mnemonic": "mov",
+          "module": "AmdNbioSmuV10Pei-905b8be68afd",
+          "operands": "eax,DWORD PTR [edx+0x6e6]",
+          "rva": 66713
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "AmdSocBl5AriPei-79e13211d5ae",
+          "operands": "BYTE PTR [edx+0x6e5],0x0",
+          "rva": 18713
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "AmdSocBl5AriPei-79e13211d5ae",
+          "operands": "DWORD PTR [eax+0x6e6],0x0",
+          "rva": 18723
+        },
+        {
+          "class": "config-displacement-read",
+          "mnemonic": "mov",
+          "module": "AmdSocBl5AriPei-79e13211d5ae",
+          "operands": "al,BYTE PTR [edx+0x6e5]",
+          "rva": 65956
+        },
+        {
+          "class": "config-displacement-read",
+          "mnemonic": "mov",
+          "module": "AmdSocBl5AriPei-79e13211d5ae",
+          "operands": "eax,DWORD PTR [edx+0x6e6]",
+          "rva": 66009
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "CbsBaseDxe-d2e9ba4e9da7",
+          "operands": "BYTE PTR [rax+0x6e5],0x0",
+          "rva": 17702
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "CbsBaseDxe-d2e9ba4e9da7",
+          "operands": "DWORD PTR [rax+0x6e6],0x0",
+          "rva": 17713
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "CbsBasePei-6ff112922ad8",
+          "operands": "BYTE PTR [edx+0x6e5],0x0",
+          "rva": 11097
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "CbsBasePei-6ff112922ad8",
+          "operands": "DWORD PTR [eax+0x6e6],0x0",
+          "rva": 11107
+        },
+        {
+          "class": "config-displacement-read",
+          "mnemonic": "mov",
+          "module": "CbsBasePei-6ff112922ad8",
+          "operands": "al,BYTE PTR [edx+0x6e5]",
+          "rva": 58340
+        },
+        {
+          "class": "config-displacement-read",
+          "mnemonic": "mov",
+          "module": "CbsBasePei-6ff112922ad8",
+          "operands": "eax,DWORD PTR [edx+0x6e6]",
+          "rva": 58393
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "CbsSetupDxe-7ff717d51c9a",
+          "operands": "BYTE PTR [rcx+0x6e5],r8b",
+          "rva": 18125
+        },
+        {
+          "class": "config-displacement-write",
+          "mnemonic": "mov",
+          "module": "CbsSetupDxe-7ff717d51c9a",
+          "operands": "DWORD PTR [rcx+0x6e6],r8d",
+          "rva": 18132
+        }
+      ],
+      "hit_count": 47,
+      "modules_scanned": 233,
+      "modules_with_config_displacement": [
+        "AmdFabricAriPei-c5b99650a442",
+        "AmdNbioBaseARIPei-51d96c1e5a5e",
+        "AmdNbioGfxARIPei-63413be2ac29",
+        "AmdNbioPcieARIPei-62b1398c4ba9",
+        "AmdNbioSmuV10Pei-905b8be68afd",
+        "AmdSocBl5AriPei-79e13211d5ae",
+        "CbsBaseDxe-d2e9ba4e9da7",
+        "CbsBasePei-6ff112922ad8",
+        "CbsSetupDxe-7ff717d51c9a"
+      ],
+      "non_config_hits": [
+        {
+          "class": "branch-or-call-target",
+          "mnemonic": "js",
+          "module": "AmiBoardInfo2-3f43a97e4452",
+          "operands": "0x6e5",
+          "rva": 1558
+        },
+        {
+          "class": "branch-or-call-target",
+          "mnemonic": "js",
+          "module": "AmiBoardInfo2-3f43a97e4452",
+          "operands": "0x6e5",
+          "rva": 1692
+        },
+        {
+          "class": "branch-or-call-target",
+          "mnemonic": "jne",
+          "module": "CapsulePei-45091113ac3e",
+          "operands": "0x6e6",
+          "rva": 1763
+        },
+        {
+          "class": "branch-or-call-target",
+          "mnemonic": "jne",
+          "module": "CrbSmi-9684e2eb2cb4",
+          "operands": "0x6e6",
+          "rva": 1717
+        },
+        {
+          "class": "branch-or-call-target",
+          "mnemonic": "jmp",
+          "module": "CrbSmi-9684e2eb2cb4",
+          "operands": "0x6e6",
+          "rva": 1754
+        },
+        {
+          "class": "branch-or-call-target",
+          "mnemonic": "jne",
+          "module": "HiiDatabase-489fc01869bd",
+          "operands": "0x6e5",
+          "rva": 1775
+        },
+        {
+          "class": "branch-or-call-target",
+          "mnemonic": "je",
+          "module": "NvmeSmm-fbe94f53c5b6",
+          "operands": "0x6e6",
+          "rva": 1796
+        },
+        {
+          "class": "branch-or-call-target",
+          "mnemonic": "jmp",
+          "module": "Ofbd-dbb20722e4c3",
+          "operands": "0x6e5",
+          "rva": 1744
+        },
+        {
+          "class": "branch-or-call-target",
+          "mnemonic": "jmp",
+          "module": "PartitionDxe-d70f42726da8",
+          "operands": "0x6e6",
+          "rva": 1735
+        },
+        {
+          "class": "branch-or-call-target",
+          "mnemonic": "jmp",
+          "module": "PartitionDxe-d70f42726da8",
+          "operands": "0x6e6",
+          "rva": 1751
+        },
+        {
+          "class": "branch-or-call-target",
+          "mnemonic": "jecxz",
+          "module": "PlatformCustomizePei-5b410845607f",
+          "operands": "0x6e6",
+          "rva": 1762
+        },
+        {
+          "class": "branch-or-call-target",
+          "mnemonic": "jmp",
+          "module": "ReFlash-01a7193d2d87",
+          "operands": "0x6e5",
+          "rva": 1751
+        },
+        {
+          "class": "branch-or-call-target",
+          "mnemonic": "jmp",
+          "module": "ReFlash-01a7193d2d87",
+          "operands": "0x6e5",
+          "rva": 1758
+        },
+        {
+          "class": "rip-relative-address",
+          "mnemonic": "lea",
+          "module": "SmBusDxe-bafbdcaa691d",
+          "operands": "rcx,[rip+0x6e6]        # 0xbcc",
+          "rva": 1247
+        },
+        {
+          "class": "rip-relative-address",
+          "mnemonic": "lea",
+          "module": "SmmS3SaveState-3329a9fbc888",
+          "operands": "rcx,[rip+0x6e6]        # 0x2bf0",
+          "rva": 9475
+        }
+      ],
+      "status": "PASS"
+    }
+  },
+  "tool": "scan_inv_1364_requesters.py",
+  "verdict": "EXTERNAL_IMMEDIATE_REQUESTER_CANDIDATES: AmdFabricAriPei-c5b99650a442, AmdNbioBaseARIPei-51d96c1e5a5e, AmdNbioGfxARIPei-63413be2ac29, AmdNbioPcieARIPei-62b1398c4ba9, AmdNbioSmuV10Pei-905b8be68afd, AmdSocBl5AriPei-79e13211d5ae (requires semantic confirmation; not a consumer proof)"
+}

@@ -1,0 +1,147 @@
+{
+  "schema": 1,
+  "source_files": [
+    ".procoder/plans/2026-09-30-bc250-control-center-integrations.json",
+    ".procoder/plans/2026-09-30-mastag-patch-inventory.json",
+    ".procoder/plans/2026-09-30-bore-full-ux-stack.md"
+  ],
+  "rows": [
+    {
+      "requirement": "BORE scheduler + BC250 kernel patches",
+      "layer": "kernel",
+      "evidence": "MastaG dd840cb + 15 stable patches",
+      "current_state": "baseline7.2.8-1.1 verified; new 0016 telemetry candidate apply-check exit0, not rebuilt",
+      "missing_work": "review candidate and rebuild with 0016 plus remaining accepted integrations; boot/game validation",
+      "default": "default candidate"
+    },
+    {
+      "requirement": "Async compute / GFX1013 RADV",
+      "layer": "userspace Mesa",
+      "evidence": "MastaG patches/mesa-git 0001, 0002..0007",
+      "current_state": "Mesa+lib32 packages built and hashes verified; install/runtime validation pending",
+      "missing_work": "repair dependency snapshot, build mesa+lib32 and validate patches",
+      "default": "async on; DirectMesh opt-in"
+    },
+    {
+      "requirement": "GPU governor control",
+      "layer": "userspace service",
+      "evidence": "catalog cyan_smu, oberon_governor",
+      "current_state": "existing cyan service on console; not kernel-integrated",
+      "missing_work": "keep typed config/service with conflict gate",
+      "default": "existing service; no auto switch"
+    },
+    {
+      "requirement": "CPU SMU tuning",
+      "layer": "runtime firmware",
+      "evidence": "catalog cpu_smu_oc + helper",
+      "current_state": "existing service; no kernel integration",
+      "missing_work": "typed interface only; no arbitrary mailbox API",
+      "default": "support present, off by default"
+    },
+    {
+      "requirement": "CU unlock / 40 CU",
+      "layer": "kernel + runtime hardware",
+      "evidence": "patch 0008 + cu manager catalog",
+      "current_state": "kernel option exists off; manager not integrated",
+      "missing_work": "readback/rollback path and boot gate",
+      "default": "off"
+    },
+    {
+      "requirement": "GDDR6 per-chip temperatures",
+      "layer": "runtime SMU firmware",
+      "evidence": "bc250-memory-temperature b7e6bff",
+      "current_state": "manual volatile patch works; no kernel driver",
+      "missing_work": "do not silently embed SMU payload in kernel; design signed/validated init path",
+      "default": "manual/explicit"
+    },
+    {
+      "requirement": "VRM telemetry",
+      "layer": "hardware I2C",
+      "evidence": "Control Center message + catalog nct6687 is not VRM I2C",
+      "current_state": "not detected without physical mod",
+      "missing_work": "physical wiring/mod and independent readback",
+      "default": "unavailable"
+    },
+    {
+      "requirement": "Fan PWM/curves",
+      "layer": "kernel hwmon + userspace",
+      "evidence": "nct6687 patch + Control Center",
+      "current_state": "driver in candidate; existing service on console",
+      "missing_work": "package/config integration and safety handoff",
+      "default": "existing curve"
+    },
+    {
+      "requirement": "FSR4/Proton/OptiScaler",
+      "layer": "userspace",
+      "evidence": "catalog fsr4_runtime/fsr4_opticlient + MastaG repo",
+      "current_state": "not part of kernel build",
+      "missing_work": "build/install reviewed userspace packages",
+      "default": "per-game/opt-in"
+    },
+    {
+      "requirement": "CEC/audio",
+      "layer": "userspace services",
+      "evidence": "MastaG bc250-cec/bc250-dual-audio",
+      "current_state": "not built",
+      "missing_work": "build and verify packages separately",
+      "default": "on if hardware present"
+    },
+    {
+      "requirement": "ACPI/GFX1013 external fixes",
+      "layer": "kernel/userspace",
+      "evidence": "catalog steamos_amdgpu/gfx1013_direct",
+      "current_state": "not integrated into candidate beyond MastaG patches",
+      "missing_work": "compare patch overlap before applying",
+      "default": "only if non-overlap verified"
+    },
+    {
+      "requirement": "BIOS/SMU/UEFI changes",
+      "layer": "firmware",
+      "evidence": "Control Center and project firmware evidence",
+      "current_state": "never kernel feature; no flash requested",
+      "missing_work": "keep separate with recovery plan",
+      "default": "off"
+    },
+    {
+      "requirement": "VRAM size / zram / swap",
+      "layer": "boot firmware + userspace",
+      "evidence": "bc250_memcfg and Control Center memory module",
+      "current_state": "not integrated",
+      "missing_work": "separate early-boot settings from userspace memory management; no implicit CMOS writes",
+      "default": "preserve existing values"
+    },
+    {
+      "requirement": "VCN video encode/decode",
+      "layer": "firmware/power + kernel",
+      "evidence": "project memory/open-questions.md",
+      "current_state": "research only; boot support is not encode/decode proof",
+      "missing_work": "resolve power/firmware prerequisites and actual codec test; no security bypass",
+      "default": "off"
+    },
+    {
+      "requirement": "Kernel default and fallback cleanup",
+      "layer": "bootloader/package transaction",
+      "evidence": "user objective + console Limine inventory",
+      "current_state": "no install/cleanup performed",
+      "missing_work": "boot+game acceptance first; keep author nonBORE kernel; select BORE default then remove exact redundant packages",
+      "default": "preserve current boot until verified"
+    },
+    {
+      "requirement": "Windows build host",
+      "layer": "build environment",
+      "evidence": "127.0.0.1 live SSH/WSL evidence",
+      "current_state": "confirmed Arch WSL2; kernel built; Mesa candidate active",
+      "missing_work": "keep builds on Windows and collect package provenance",
+      "default": "all CPU authorized"
+    },
+    {
+      "requirement": "Wi-Fi/Bluetooth/device compatibility",
+      "layer": "kernel/modules and packages",
+      "evidence": "old kernel plan D4 + Control Center drivers",
+      "current_state": "upstream modules included; exact adapter coverage unverified",
+      "missing_work": "verify target adapters and driver coverage, out-of-tree drivers separate",
+      "default": "no localmodconfig pruning"
+    }
+  ],
+  "gate": "Do not rebuild unchanged kernel or install baseline until every row has disposition and required implementation evidence."
+}

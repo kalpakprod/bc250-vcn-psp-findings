@@ -1,0 +1,35 @@
+CLV ABL1 integration review verification ledger
+Evidence class: observed-bytes, static-analysis
+No firmware/ROM/hardware or code source input changed; memory and plan received append-only qualifications.
+
+1. Bounded independent edge checker
+Command: python3 -B /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/abl1_heap_node_init_review_verify.py
+Inputs:
+- /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin SHA-256 af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a
+- /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-downstream/abl1-full-thumb-llvm.txt SHA-256 b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65
+Literal stdout:
+{"status":"PASS","checks":64,"key_query":"selector 0x0F materializes immediate 0xA04E at 0x4B1A, stores it to [SP+0x24] at 0x4B38, and calls 0x6374 at 0x4B3A.","lookup_node_layout":{"key":"node+0 (compared with requested key)","size":"u32 node+4","metadata_byte":"u8 node+9","next_link":"pointer node+0xC","payload_start":"node+0x10+metadata_byte","payload_length":"u32(node+4)-metadata_byte","descriptor_outputs":{"payload_pointer":"descriptor+8","payload_length":"descriptor+4"}},"initializer":"0x63F8 is called at 0x6F78. It loads table base literal 0x73000, loads the HEAP tag literal, and stores HEAP at [base+0]. This is arena/header/sentinel initialization only; this bounded routine does not demonstrate production of a linked node keyed 0xA04E. It does not prove that no other producer exists.","rom_scalar_qualification":"The earlier raw-image check tests only exact contiguous little-endian 32-bit scalar byte strings. Those misses do not prove there is no ROM representation. The decompressed ABL1 itself contains the 0xA04E MOVW immediate and the 0x73000 table-base literals."}
+
+Literal stderr: ''
+Exit status: 0
+Checks: 64/64 PASS. Scope: 0x4B1A/0x4B34/0x4B38/0x4B3A selector-to-lookup edge; node fields used by 0x6374; 0x63F8 header initialization and its call at 0x6F78. No producer search or hardware execution.
+
+2. BASELINE / MODIFIED / ROLLBACK — same grep predicate and same scratch target path
+Predicate: grep -Fq 'CLV ABL1 context/HEAP integration review — remains PARTIAL (2026-09-20)' /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/state-under-test.md
+BASELINE event: exit 1; stdout=''; stderr=''; target SHA-256 186009168f9ab552d23652ab1056e16d92ca6d852e62cb264364d1688f3e24d7.
+MODIFIED event: exit 0; stdout=''; stderr=''; target SHA-256 39ea72fca9ded368fc96d3a1d4608626b32b36e08f3befede397b271e5bc89f9.
+ROLLBACK command: ['/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/ROLLBACK.sh', '/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/state-under-test.md']; exit 0; stdout=''; stderr=''.
+ROLLBACK behavior check: same grep predicate exit 1; stdout=''; stderr=''; restored SHA-256 186009168f9ab552d23652ab1056e16d92ca6d852e62cb264364d1688f3e24d7; baseline equality = true.
+After the isolated rollback test, the GOAL was reapplied to MODIFIED_FILE; its SHA-256 equals the appended shared memory file (39ea72fca9ded368fc96d3a1d4608626b32b36e08f3befede397b271e5bc89f9).
+
+3. Existing evidence reopened, not rerun
+- Branch report/result: 89/89 PASS, result SHA-256 269049d9fb13f32dbf8c037f85ebfe695fd5099e37fe354e8b2a939d1c4cf671.
+- Runtime HEAP follow-up report/result: 90/90 PASS, result SHA-256 9c94bf1d3b3a4880b32a36d2e6c95b25e56a7e0292aa495c0ff1400c0492a75f.
+- Reader fallback/type report/result: 64/64 PASS, result SHA-256 5e63a7cf2121a8ea39631cbd357a3a958a8f691668e26df98900a2fdbb7aa19a. Actual FCLK type-2 execution remains unproven because the bounded caller has no explicit SP+0x0C type write.
+- Fresh appended memory SHA-256 39ea72fca9ded368fc96d3a1d4608626b32b36e08f3befede397b271e5bc89f9; appended plan SHA-256 d829ac5331d4c7ee029ab592f93766eb5054409ae119fb45d5138c5dbb2132ca.
+- Machine review result SHA-256 f7487eb93caa99f2d7d9327769be46625011e487297e866891a4df208b1bdaaf.
+
+4. DIFF_FILE reconstruction
+Command: patch --batch --silent -p0 -i /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl1-integration-review/DIFF_FILE.patch (run in a disposable directory containing the pristine memory copy as memory/oc-recheck.md).
+Literal stdout: ''; literal stderr: ''; exit status: 0.
+Reconstructed SHA-256: 39ea72fca9ded368fc96d3a1d4608626b32b36e08f3befede397b271e5bc89f9; MODIFIED_FILE SHA-256: 39ea72fca9ded368fc96d3a1d4608626b32b36e08f3befede397b271e5bc89f9; byte comparison status: 0.

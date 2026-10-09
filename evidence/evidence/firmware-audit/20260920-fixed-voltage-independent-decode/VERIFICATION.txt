@@ -1,0 +1,98 @@
+# CLV fixed-voltage consumer — independent instruction-level decode: verification record
+Task: independent decode of the fixed-voltage Setup consumer path (open review item in
+memory/project-state.md: "Independent review of misleading byte-assertion labels remains incomplete").
+Evidence class: static-analysis over observed-bytes. No ROM/NVRAM/register/candidate/hardware write;
+no network; no board contact; no edit of prior artifacts.
+
+## Inputs (identity checked by this run)
+donor  evidence/donor/retroweb-20260916/BC250_5.00_clv.bin
+       size 16777216  sha256 ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8  (match)
+prior  evidence/firmware-audit/20260920-clv-fixed-voltage-consumer/scan_fixed_voltage_consumer.py
+       sha256 e67ded127c9e00f0532f8aa41431b13ab08468619189252e01bb3fbbfcf72ea3  (recorded in the result JSON)
+census evidence/firmware-audit/20260919-inv-token-consumers/census.json  (cross-check only)
+tool   GNU objdump (GNU Binutils) 2.47
+
+## Commands actually run (cwd = project root)
+1) module selection + decode + claim review (single deterministic scanner, read-only):
+   PYTHONDONTWRITEBYTECODE=1 python3 -B \
+     evidence/firmware-audit/20260920-fixed-voltage-independent-decode/decode_fixed_voltage.py
+   > verifier.stdout 2> verifier.stderr ; printf '%s\n' "$?" > verifier.exit
+   observed: exit 0, stderr 0 bytes, stdout == independent-decode-result.json
+   rerun: byte-identical stdout (sha256 3da15d4a281cbbd3d5c05f97e3ea74cdaea547d6114503af1bbd29c55785fe3f)
+2) module re-extraction straight from the donor (independent of the census):
+   ROM slice [0xED2C74, +4264)  -> extracted/ISL69247.te.bin
+   ROM slice [0xED3D8C, +3624)  -> extracted/ISL95712.te.bin
+3) disassembly listings:
+   objdump -D -b binary -m i386 -M intel --adjust-vma=0x198 extracted/ISL69247.te.bin > ISL69247.disasm.txt
+   objdump -D -b binary -m i386 -M intel --adjust-vma=0x198 extracted/ISL95712.te.bin > ISL95712.disasm.txt
+   (addresses in the listings equal the RVAs used by the prior artifact; RVA = file offset + 0x198)
+
+## Observed results
+- FFS/FV structure of the donor: volumes at 0x0 (0x20000), 0xAE0000 (0x320000), 0xE00000 (0x200000);
+  67 structurally valid outer FFS files; 55 of the 233 pinned census identities reproduced by
+  first-level executable-section hash.
+- ISL69247  GUID 6E6D2018-28D0-4AD3-BEB3-B48E4981707D  file @0xED2C30  TE section data @0xED2C74
+  size 4264  sha256 3e1f753a627922d16e5a638a527e39f4dd26242144edae25b0ac849db6421e34  (== census)
+- ISL95712  GUID 02544BE0-2CB9-4B75-8111-CD8CDC07B837  file @0xED3D48  TE section data @0xED3D8C
+  size 3624  sha256 c0cc17d2d54f9cde65f471d2971596837b024d4764a28b33286032cfa95d43a9  (== census)
+- Setup GUID + UTF-16 "Setup" consumers found by this scan: ISL69247, ISL95712 (2 of 67 files);
+  7 further files carry the Setup GUID without the adjacent name.
+- 28 decoded semantic checks: 26 SUPPORTED, 2 CONTRADICTED (see below). Exit 0.
+
+## CONTRADICTED prior claims (the finding)
+C1  prior label "enable test: cmp Setup+0x1c9 vs 0 selects Setup mV vs default 900" asserted at RVA 0x30A.
+    Decoded 0x30A: `push 0x21` (register index) - not a compare.
+    The enable test decodes at 0x30F: `cmp BYTE PTR [ebp+0x51],bl` (bl==0 from `xor ebx,ebx` @0x27C).
+    The same RVA 0x30A is also labelled "VCORE write targets register index 0x21", which is correct.
+C2  prior label "write helper reads a u16 little-endian value from [edi]" asserted at RVA 0x709.
+    Decoded 0x709: `movzx eax,BYTE PTR [edi]`. The second byte is read at 0x714 (`movzx eax,BYTE PTR [edi+0x1]`)
+    and staged to mailbox register 0x71. Net effect (2-byte little-endian value at 0x70/0x71) is real,
+    the labelled instruction is a byte read.
+
+## Label windows that are not whole instructions (misleading as assertions)
+0x2AC  `c6 45 54`          PREFIX of `mov BYTE PTR [ebp+0x54],0x2`   (immediate 2 not covered; decoded value is 2)
+0x2B3  `c6 45 58`          PREFIX of `mov BYTE PTR [ebp+0x58],0x2`   (same)
+0x270  `c6 45 f2` (ISL95712) PREFIX of `mov BYTE PTR [ebp-0xe],0x1e` (immediate not covered; decoded 0x1e)
+0x566  `2e 59`             STARTS MID-INSTRUCTION at 0x565 `push 0x2e`; the 2-byte window straddles
+                           `push 0x2e` and `pop ecx` at 0x567 (port 0x2E itself is present and correct)
+Also note 0x2E8 (`6a 03`) is the pushed value 3; the register index 0x62 is pushed at 0x2EA.
+
+## Confirmed by independent decode (prior report stands)
+defaults Setup+0x1c9/0x1cd = 0 (bl after `xor ebx,ebx`); +0x1ca/+0x1ce = 0x384 (900) via `mov esi,0x384`;
++0x1cc/+0x1d0 = 2; loadline table {0,20,30,40,50,60} at [ebp+0x60..0x6a] indexed by the Setup byte and
+written to register 0x28; mV written to register 0x21 (disabled path: VCORE reuses esi=0x384, GFX writes
+an explicit 0x384 immediate); register 0x23 <- 0; register 0xF0 read-modify-write of bit 0x30
+(set when Fix Voltage enabled, `and 0xffcf` when disabled) with the read helper 0x653 (0x63<-0x83,
+returns mailbox 0xB0/0xB1); helper 0x4D2 writes 0xC7 <- 0xEA0B/0xEA8B and 0xC5 <- 0x0B/0x08 with the
+caller's argument order (0x0B when loadline==2, else 0x08); write helper 0x6ED stages 0x65<-0xC0,
+0x66<-register, 0x70<-byte0, 0x71<-byte1, 0x63<-3, 0x60<-0xC0, polls status bit 0x40 with <=10 retries
+and writes 0x60<-8; transport ports 0x2E/0x2F with the 0x87,0x87 unlock and mailbox 0xA20 (command),
+0xA21 (index), 0xA22 (value); both modules locate the PEI Read-Only Variable2 PPI GUID
+2AB86EF5-ECB5-4134-B556-3854CA1FE1B4 (bytes verified at the pushed VAs 0x9ED341C / 0x9ED42B4) through a
+5-argument indirect call at [*(PeiServices)+0x20] and then call the returned interface slot +0x00 with the
+0x1D3-byte Setup variable. ISL95712: defaults 0 / 0x1E(1.35 V), enabled path 0xDF<-stored enum then OR bit 0,
+disabled path 0xDF<-0x1E then clear bit 0; both branches also write register 0xDE; follow-up helper stages
+0x65<-0x9E, 0x66<-0xDE, 0x63<-0x82, 0x60<-0xC0.
+
+## Boundaries / unrun
+- "LocatePpi at PEI_SERVICES+0x20" remains an inference from the argument shape: the decoded call is a
+  5-argument indirect call through [*(PeiServices)+0x20] with a PPI GUID; the vendor table layout at that
+  offset is not established by these two modules (edk2 numbering would place LocatePpi at +0x08).
+- This scan enumerates outer FFS files with a first-level PE32/TE section only. Images inside compressed or
+  GUIDed sections and nested FVs (e.g. CpuDxe, a nested GUIDed PE32 at fv_base 0x10) are not enumerated, so
+  the prior "exactly three consumers including CpuDxe" statement is neither re-derived nor contradicted.
+- FFS header checksum fields in these volumes do not validate under the edk2 rule (0xAA placeholders), so
+  file selection used GUID + type + state + exact section-chain fit plus payload-hash equality with the
+  pinned census record.
+- Runtime PEI dispatch, the mailbox chip, PMBus-style register semantics, physical rail identity and any
+  applied voltage remain unverified. No voltage value is recommended and no hardware action occurred.
+
+## Cross-references (outside this directory)
+report docs/research/2026-09-20-fixed-voltage-independent-decode.md sha256 a3b3cb0f90a392cb3be97a305a310ed3b23d5c3405ecfdc99d7cda810f071edd
+log    docs/action-logs/2026-09-20-fixed-voltage-independent-decode.md sha256 06da53d65a515c3996d188d95d81e6f9f8bb935048599cda6ce89fc58857ee67
+
+## Rollback exercise (isolated copy, not in place)
+The artifact set was copied to a disposable tree under /tmp; `ROLLBACK.sh` (dry run) exited `0` and
+`ROLLBACK.sh --apply` exited `0`, removing exactly the three owned paths (evidence directory, report,
+log) and leaving a sentinel file `evidence/firmware-audit/KEEP_ME.txt` in the same tree untouched.
+In-place rollback was not performed because the artifact is the deliverable.

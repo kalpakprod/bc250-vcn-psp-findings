@@ -1,0 +1,97 @@
+BC-250 board voltage sources — independent recheck and minimal correction
+Date: 2026-09-20 (Asia/Almaty). Evidence class: static-analysis over observed-bytes.
+No ROM, NVRAM, register, candidate, board or network action occurred. Read-only inputs.
+
+IMMUTABLE INPUTS (re-hashed at recheck time)
+  ROM    evidence/donor/retroweb-20260916/BC250_5.00_clv.bin
+         16777216 B, sha256 ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8
+  corpus evidence/firmware-audit/20260919-inv-token-consumers/census.json
+         sha256 506b8eefd0ef3847782dddd88a458b95e32082f473346d7d645703dce6b60d39 (233 modules)
+
+SNAPSHOT PROVENANCE (scripts copied verbatim from the sibling task directory)
+  scan_vr_mailbox_writers.py         sha256 63ae081c8588f7a4bfdf1ebabe9c912238b347689781b4b66ff3e850f8a037d8
+  verify_board_voltage_sources.py.orig (BASELINE bytes)
+                                     sha256 a1551700443086d1c097ae44d516eb152c88c9174b277ba0825c982d77b0e5b4
+  objdump/ISL69247-3e1f753a6279.objdump.txt sha256 a81f1e729a0bb204e88e9b76fb99fc279950e5d87e04997a79e779378f2d656b
+  objdump/ISL95712-c0cc17d2d54f.objdump.txt sha256 18c36d55ddbf78e8a20c99848173ba0a79148ce33a5df75970cb2562bc364777
+  The sibling directory was being written by another actor during this recheck; the
+  upstream verify script was revised a1551700... -> 3a207fac... after this snapshot.
+
+A1 SCANNER (fresh run in this directory)
+  $ python3 scan_vr_mailbox_writers.py > captures/scanner.stdout 2> captures/scanner.stderr
+  exit 0 ; stderr 0 bytes ; stdout (literal):
+    checks=31 failed=0 status=PASS
+    writers=['ISL69247-3e1f753a6279', 'ISL95712-c0cc17d2d54f']
+    ec_window_only=28 modules
+  vr-mailbox-writers-result.json sha256 852ffd0d000eb33ef8e8a759a18f1512a8182723d467958d9d686e9193608381
+  Determinism: byte-identical to the result JSON produced in the sibling directory at 23:32.
+
+A2 BASELINE (unmodified snapshot, same directory, same inputs)
+  $ python3 verify_board_voltage_sources.py > captures/verifier.stdout 2> captures/verifier.stderr
+  exit 1 ; status FAIL ; checks 604 ; failed 57 ; stderr 0 bytes
+  Failure classes (captures/verifier.stdout -> .failures):
+    53 x "anchor <name> <stem>@<off> -> rva <rva>"   (imm_ec_window_a20 23, mov_dx_2e 7,
+         push_cfg_index_2e 6, push_cfg_data_2f 4, test_al_40 4, out_imm_2e 3, push_mbox_66 2,
+         in_imm_2e 1, mov_al_87 1, mov_dx_2f 1, push_mbox_70 1)
+     4 x "owned EC window immediate"                  (ISL69247 0x3ac, 0x41b; ISL95712 0x1ca, 0x239)
+  Root cause (measured, not inferred): the scanner reports the offset of the matched pattern
+  bytes, and for operand-encoded anchors that offset is inside the instruction. Verified
+  instance: ISL69247-3e1f753a6279 reports imm_ec_window_a20 at 0x3ac; the module image byte at
+  0x3ac is 0x20, the pattern "200a0000" occupies 0x3ac..0x3af, and the enclosing instruction
+  starts at 0x3ab (image bytes b9 20 0a 00 00 = mov ecx,0xa20). The asm text is keyed by
+  instruction start (asm 0x543 = b9 20 0a 00 00), so the baseline lookup at rva 0x544 misses.
+  A second class: 17 sites lie where the pinned objdump text lists no instruction at all
+  (decode gap), e.g. DxeCore-2f1d8056b0da@0x13f85 = 6a 2f with the nearest listed instruction
+  at 0x13f7f being a single 0x00 byte.
+  The set-level checks of the same run passed: asm-derived writer set == {ISL69247, ISL95712},
+  14/14 anchor census counts, unique whole-ROM occurrence, helper entries, call sites.
+
+A3 MODIFIED (one minimal correction, see changes.patch)
+  New module-level helper site_bytes(): reads the reported pattern at its own offset inside the
+  instruction that covers the address (asm text path), and falls back to the immutable module
+  image when no listed instruction covers the address. Applied at the two offset re-read sites
+  (anchor offsets, owned EC-window immediate) and reported in the verdict key
+  "per_site_readback_sources".
+  $ python3 verify_board_voltage_sources.py > captures/verifier.modified.stdout
+  exit 0 ; status PASS ; checks 604 ; failed 0 ; stderr 0 bytes
+  anchor_offset_entries_verified 200 ; per_site_readback_sources {"asm": 185, "image": 19}
+  (204 = 200 anchor offsets + 4 owned immediates).  Of the 200 anchor offsets: 181 read from
+  the covering instruction in the asm text, 19 from the module image (2 whose pattern crosses an
+  instruction boundary, 17 in decode gaps where the asm text lists no covering instruction).
+
+A4 ROLLBACK (executable, tested on a separate copy)
+  $ ./ROLLBACK.sh <copy>/verify_board_voltage_sources.py
+  restored <copy> ; sha256 a1551700443086d1c097ae44d516eb152c88c9174b277ba0825c982d77b0e5b4 ;
+  pristine hash verified
+  $ python3 verify_board_voltage_sources.py     # the restored copy
+  exit 1 ; status FAIL ; checks 604 ; failed 57 ;
+  first failure: anchor imm_ec_window_a20 ISL69247-3e1f753a6279@0x3ac -> rva 0x544
+  -> restored bytes reproduce the BASELINE behaviour exactly; the working copy was left with
+  the correction applied and re-runs PASS 604/0.
+
+A5 UPSTREAM FINAL VERSION, RELOCATED PATH (independent reproduction of the sibling result)
+  Copied into a separate directory of the same depth and run there:
+  verify_board_voltage_sources.py sha256 3a207facf42178b101c56650a913c2a48761b51778e11668fdaa5ff27e6d83fa
+  scan_vr_mailbox_writers.py      sha256 63ae081c8588f7a4bfdf1ebabe9c912238b347689781b4b66ff3e850f8a037d8
+  vr-mailbox-writers-result.json  sha256 852ffd0d000eb33ef8e8a759a18f1512a8182723d467958d9d686e9193608381
+  exit 0 ; status PASS ; checks 604 ; failed 0 ; anchor_offset_entries_verified 200
+  anchor_offset_alignment {"aligned": 181, "cross-instruction": 2, "decode-gap": 0,
+                           "outside-code-section": 17}
+  Agreement with A3 on the same 200 sites: both classify 181 sites as aligned with the covering
+  instruction; the remaining 19 split as 2 "cross-instruction" (upstream still reads them from the
+  asm text across an instruction boundary; this package reads them from the module image, since
+  its coverage test requires the whole pattern inside one listed instruction) and 17
+  "outside-code-section" (this package's "image" fallback). No site disagrees on the bytes.
+
+CHANGED SITE
+  verify_board_voltage_sources.py: +site_bytes() module-level helper; anchor-offset check and
+  owned-EC-window-immediate check now call it; verdict gains "per_site_readback_sources".
+  No change to the detector, the anchor set, the writer set, the corpus, the ROM or any input.
+
+UNCERTAINTY / UNRUN
+  - static-analysis only; no hardware readback, no register write, no board contact.
+  - For the 17 decode-gap sites the pattern is re-read from the same module image the scanner
+    used; that is a weaker path than the asm text and is labelled per site.
+  - The upstream directory changed during this recheck; every claim here is pinned to the
+    hashes above.
+  - No independent review by a different model family was performed for this recheck.

@@ -1,0 +1,572 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 45,
+    "total": 45
+  },
+  "checks_detail": [
+    {
+      "details": {
+        "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+        "observed": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/CbsBasePei-6ff112922ad8.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+        "observed": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+      },
+      "label": "hash:/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdNbioSmuV10Pei-905b8be68afd.bin",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "cbs": [
+          [
+            38967,
+            "baed110000"
+          ],
+          [
+            38999,
+            "8a8216030000"
+          ]
+        ],
+        "clv_bytes": "24",
+        "clv_value": 36,
+        "name": "MemoryClockSpeed",
+        "offset": "0x316",
+        "record": "0x11ed",
+        "smu": [
+          [
+            47287,
+            "baed110000"
+          ],
+          [
+            47319,
+            "8a8216030000"
+          ]
+        ],
+        "width": "u8"
+      },
+      "label": "clv-byte:0x316",
+      "status": "PASS"
+    },
+    {
+      "details": 36,
+      "label": "clv-value:0x316",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "baed110000",
+        "observed": "baed110000",
+        "raw_offset": "0x96a7"
+      },
+      "label": "CbsBasePei:0x316:rva-0x9837",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a8216030000",
+        "observed": "8a8216030000",
+        "raw_offset": "0x96c7"
+      },
+      "label": "CbsBasePei:0x316:rva-0x9857",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "baed110000",
+        "observed": "baed110000",
+        "raw_offset": "0xb727"
+      },
+      "label": "AmdNbioSmuV10Pei:0x316:rva-0xb8b7",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a8216030000",
+        "observed": "8a8216030000",
+        "raw_offset": "0xb747"
+      },
+      "label": "AmdNbioSmuV10Pei:0x316:rva-0xb8d7",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "cbs": [
+          [
+            40132,
+            "ba04120000"
+          ],
+          [
+            40164,
+            "8a8230030000"
+          ]
+        ],
+        "clv_bytes": "01",
+        "clv_value": 1,
+        "name": "UclkDiv1M0",
+        "offset": "0x330",
+        "record": "0x1204",
+        "smu": [
+          [
+            48452,
+            "ba04120000"
+          ],
+          [
+            48484,
+            "8a8230030000"
+          ]
+        ],
+        "width": "u8"
+      },
+      "label": "clv-byte:0x330",
+      "status": "PASS"
+    },
+    {
+      "details": 1,
+      "label": "clv-value:0x330",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba04120000",
+        "observed": "ba04120000",
+        "raw_offset": "0x9b34"
+      },
+      "label": "CbsBasePei:0x330:rva-0x9cc4",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a8230030000",
+        "observed": "8a8230030000",
+        "raw_offset": "0x9b54"
+      },
+      "label": "CbsBasePei:0x330:rva-0x9ce4",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba04120000",
+        "observed": "ba04120000",
+        "raw_offset": "0xbbb4"
+      },
+      "label": "AmdNbioSmuV10Pei:0x330:rva-0xbd44",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a8230030000",
+        "observed": "8a8230030000",
+        "raw_offset": "0xbbd4"
+      },
+      "label": "AmdNbioSmuV10Pei:0x330:rva-0xbd64",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "cbs": [
+          [
+            55776,
+            "ba31130000"
+          ],
+          [
+            55808,
+            "8a82a3060000"
+          ],
+          [
+            55814,
+            "884103"
+          ],
+          [
+            55826,
+            "ba32130000"
+          ],
+          [
+            55858,
+            "8a82a4060000"
+          ],
+          [
+            55864,
+            "884103"
+          ]
+        ],
+        "clv_bytes": "0f",
+        "clv_value": 15,
+        "name": "FclkDpm",
+        "offset": "0x6a3",
+        "record": "0x1331",
+        "smu": [
+          [
+            64096,
+            "ba31130000"
+          ],
+          [
+            64128,
+            "8a82a3060000"
+          ],
+          [
+            64134,
+            "884103"
+          ],
+          [
+            64146,
+            "ba32130000"
+          ],
+          [
+            64178,
+            "8a82a4060000"
+          ],
+          [
+            64184,
+            "884103"
+          ]
+        ],
+        "width": "u8"
+      },
+      "label": "clv-byte:0x6a3",
+      "status": "PASS"
+    },
+    {
+      "details": 15,
+      "label": "clv-value:0x6a3",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba31130000",
+        "observed": "ba31130000",
+        "raw_offset": "0xd850"
+      },
+      "label": "CbsBasePei:0x6a3:rva-0xd9e0",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a82a3060000",
+        "observed": "8a82a3060000",
+        "raw_offset": "0xd870"
+      },
+      "label": "CbsBasePei:0x6a3:rva-0xda00",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "884103",
+        "observed": "884103",
+        "raw_offset": "0xd876"
+      },
+      "label": "CbsBasePei:0x6a3:rva-0xda06",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba32130000",
+        "observed": "ba32130000",
+        "raw_offset": "0xd882"
+      },
+      "label": "CbsBasePei:0x6a3:rva-0xda12",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a82a4060000",
+        "observed": "8a82a4060000",
+        "raw_offset": "0xd8a2"
+      },
+      "label": "CbsBasePei:0x6a3:rva-0xda32",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "884103",
+        "observed": "884103",
+        "raw_offset": "0xd8a8"
+      },
+      "label": "CbsBasePei:0x6a3:rva-0xda38",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba31130000",
+        "observed": "ba31130000",
+        "raw_offset": "0xf8d0"
+      },
+      "label": "AmdNbioSmuV10Pei:0x6a3:rva-0xfa60",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a82a3060000",
+        "observed": "8a82a3060000",
+        "raw_offset": "0xf8f0"
+      },
+      "label": "AmdNbioSmuV10Pei:0x6a3:rva-0xfa80",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "884103",
+        "observed": "884103",
+        "raw_offset": "0xf8f6"
+      },
+      "label": "AmdNbioSmuV10Pei:0x6a3:rva-0xfa86",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba32130000",
+        "observed": "ba32130000",
+        "raw_offset": "0xf902"
+      },
+      "label": "AmdNbioSmuV10Pei:0x6a3:rva-0xfa92",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a82a4060000",
+        "observed": "8a82a4060000",
+        "raw_offset": "0xf922"
+      },
+      "label": "AmdNbioSmuV10Pei:0x6a3:rva-0xfab2",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "884103",
+        "observed": "884103",
+        "raw_offset": "0xf928"
+      },
+      "label": "AmdNbioSmuV10Pei:0x6a3:rva-0xfab8",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "cbs": [
+          [
+            59142,
+            "ba73130000"
+          ],
+          [
+            59174,
+            "8a8203070000"
+          ]
+        ],
+        "clv_bytes": "01",
+        "clv_value": 1,
+        "name": "DfClockOverrideControl",
+        "offset": "0x703",
+        "record": "0x1373",
+        "smu": [
+          [
+            67462,
+            "ba73130000"
+          ],
+          [
+            67494,
+            "8a8203070000"
+          ]
+        ],
+        "width": "u8"
+      },
+      "label": "clv-byte:0x703",
+      "status": "PASS"
+    },
+    {
+      "details": 1,
+      "label": "clv-value:0x703",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba73130000",
+        "observed": "ba73130000",
+        "raw_offset": "0xe576"
+      },
+      "label": "CbsBasePei:0x703:rva-0xe706",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a8203070000",
+        "observed": "8a8203070000",
+        "raw_offset": "0xe596"
+      },
+      "label": "CbsBasePei:0x703:rva-0xe726",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba73130000",
+        "observed": "ba73130000",
+        "raw_offset": "0x105f6"
+      },
+      "label": "AmdNbioSmuV10Pei:0x703:rva-0x10786",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a8203070000",
+        "observed": "8a8203070000",
+        "raw_offset": "0x10616"
+      },
+      "label": "AmdNbioSmuV10Pei:0x703:rva-0x107a6",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "cbs": [
+          [
+            59192,
+            "ba74130000"
+          ],
+          [
+            59227,
+            "668b8204070000"
+          ]
+        ],
+        "clv_bytes": "8c05",
+        "clv_value": 1420,
+        "name": "DfClockOvrd",
+        "offset": "0x704",
+        "record": "0x1374",
+        "smu": [
+          [
+            67512,
+            "ba74130000"
+          ],
+          [
+            67547,
+            "668b8204070000"
+          ]
+        ],
+        "width": "u16"
+      },
+      "label": "clv-byte:0x704",
+      "status": "PASS"
+    },
+    {
+      "details": 1420,
+      "label": "clv-value:0x704",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba74130000",
+        "observed": "ba74130000",
+        "raw_offset": "0xe5a8"
+      },
+      "label": "CbsBasePei:0x704:rva-0xe738",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "668b8204070000",
+        "observed": "668b8204070000",
+        "raw_offset": "0xe5cb"
+      },
+      "label": "CbsBasePei:0x704:rva-0xe75b",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ba74130000",
+        "observed": "ba74130000",
+        "raw_offset": "0x10628"
+      },
+      "label": "AmdNbioSmuV10Pei:0x704:rva-0x107b8",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "668b8204070000",
+        "observed": "668b8204070000",
+        "raw_offset": "0x1064b"
+      },
+      "label": "AmdNbioSmuV10Pei:0x704:rva-0x107db",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "CbsBasePei:neighbor-6a2-load",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "CbsBasePei:neighbor-token-1330",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "AmdNbioSmuV10Pei:neighbor-6a2-load",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "label": "AmdNbioSmuV10Pei:neighbor-token-1330",
+      "status": "PASS"
+    }
+  ],
+  "limitations": [
+    "Record IDs are serializer handoff identifiers; downstream consumers, units, training, clocks, and hardware acceptance remain unknown."
+  ],
+  "matrix": [
+    {
+      "clv_bytes": "24",
+      "clv_value": 36,
+      "name": "MemoryClockSpeed",
+      "offset": "0x316",
+      "record": "0x11ed",
+      "width": "u8"
+    },
+    {
+      "clv_bytes": "01",
+      "clv_value": 1,
+      "name": "UclkDiv1M0",
+      "offset": "0x330",
+      "record": "0x1204",
+      "width": "u8"
+    },
+    {
+      "clv_bytes": "0f",
+      "clv_value": 15,
+      "name": "FclkDpm",
+      "offset": "0x6a3",
+      "record": "0x1331",
+      "width": "u8"
+    },
+    {
+      "clv_bytes": "01",
+      "clv_value": 1,
+      "name": "DfClockOverrideControl",
+      "offset": "0x703",
+      "record": "0x1373",
+      "width": "u8"
+    },
+    {
+      "clv_bytes": "8c05",
+      "clv_value": 1420,
+      "name": "DfClockOvrd",
+      "offset": "0x704",
+      "record": "0x1374",
+      "width": "u16"
+    }
+  ],
+  "serializer_provenance": {
+    "AmdNbioSmuV10Pei": "raw instruction windows, rva->raw rva-0x190",
+    "CbsBasePei": "raw instruction windows, rva->raw rva-0x190"
+  },
+  "status": "PASS"
+}

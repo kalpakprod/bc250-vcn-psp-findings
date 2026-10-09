@@ -1,0 +1,138 @@
+[*] SMU alive
+[*] secure access open (unlocked SMU debug path active)
+[*] dom6 state word @0xf714 = 0x00010101 (state byte = 0x01)
+[*] per-slot state, BEFORE:
+    slot 0x16  dom=6  table: cur(+130)= 18 remembered(+134)= 18   gate@0x06d100
+        +0x00 clock   = 0x00000012    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x01290050 READY(bit16)
+    slot 0x17  dom=6  table: cur(+130)= 32 remembered(+134)= 32   gate@0x06d128
+        +0x00 clock   = 0x00000020    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x02090050 READY(bit16)
+    slot 0x18  dom=6  table: cur(+130)= 20 remembered(+134)= 20   gate@0x06d150
+        +0x00 clock   = 0x00000014    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x01490050 READY(bit16)
+
+[*] installing the sequence at SMU SRAM 0x3ff00 (20 bytes, via smu_write32 debug path):
+      36 41 00 1c 6a e5 83 e3 1c 7a a5 83 e3 1c 8a 65 83 e3 1d f0
+      entry   a1, 0x20
+      movi.n  a10, 0x16
+      call8   0x23744
+      movi.n  a10, 0x17
+      call8   0x23744
+      movi.n  a10, 0x18
+      call8   0x23744
+      retw.n
+[+] sequence installed and read-back verified
+[*] Q3 msg-0x61 handler slot @0x776c -> 0x3ff00 (read-back ok)
+
+[!] LAST WARNING: this path is documented to hard-wedge the SMU on a headless BC250 (README §2.7).
+    Fire in 3s ...
+[*] fire via the unlock library's mailbox send (Q3 msg 0x61):
+    rsp  @SMN 0x03b10a80 <- 0
+    args @SMN 0x03b10a88 <- 0 x6
+    cmd  @SMN 0x03b10a20 <- 0x61   (msg 0x61 -> thunk @0x3ff00)
+    -> SmuTimeout (EXPECTED: the Discord sequence does not complete
+       the mailbox protocol; the doorbell rang, the sequence was
+       dispatched -- the debug-path liveness check below is the verdict)
+[+] SMU still alive via the debug path -- sequence returned.
+[*] per-slot state, AFTER:
+    slot 0x16  dom=6  table: cur(+130)= 18 remembered(+134)= 18   gate@0x06d100
+        +0x00 clock   = 0x00000012    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x01290050 READY(bit16)
+    slot 0x17  dom=6  table: cur(+130)= 32 remembered(+134)= 32   gate@0x06d128
+        +0x00 clock   = 0x00000020    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x02090050 READY(bit16)
+    slot 0x18  dom=6  table: cur(+130)= 20 remembered(+134)= 20   gate@0x06d150
+        +0x00 clock   = 0x00000014    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x01490050 READY(bit16)
+[*] changes (BEFORE -> AFTER):
+    (nothing changed -- table was already CONVERGED
+     (cur == remembered on every slot): the sequence
+     re-commits remembered values, so a no-op here is BY
+     DESIGN. It does NOT mean the sequence did not run --
+     the fire/liveness path above is the execution proof.)
+[*] engaging dom6 per-slot clock ENABLE (+0x08)=1 (SMU window write):
+    slot 0x16: 0x00000001 -> 0x00000001  LANDED
+    slot 0x17: 0x00000001 -> 0x00000001  LANDED
+    slot 0x18: 0x00000001 -> 0x00000001  LANDED
+[*] per-slot state, ENGAGED:
+    slot 0x16  dom=6  table: cur(+130)= 18 remembered(+134)= 18   gate@0x06d100
+        +0x00 clock   = 0x00000012    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x01290050 READY(bit16)
+    slot 0x17  dom=6  table: cur(+130)= 32 remembered(+134)= 32   gate@0x06d128
+        +0x00 clock   = 0x00000020    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x02090050 READY(bit16)
+    slot 0x18  dom=6  table: cur(+130)= 20 remembered(+134)= 20   gate@0x06d150
+        +0x00 clock   = 0x00000014    +0x08 enable = 0x00000001ON    +0x14 divider = 0x00000005    +0x24 status = 0x01490050 READY(bit16)
+[*] dom6 (VCN) power sequencer (SMU-side power oracle):
+    cmd    @0x06d17c = 0x00000000
+    rail   @0x06d184 = 0x00000000
+    status @0x06d190 = 0x01010101
+    ctrl   @0x06d0f8 = 0x00000000
+    -> status bit8 SET (up-ack residue): dom6 matches the
+       powered dom0-5 baseline (probe 2026-08-20); only the
+       fw-commanded dom7 differs (bit12 down-ack, state 0).
+    -> ctrl = 0x00000000: no gate hold on any dom6 slot
+       (bits 0/1/2 all clear). Boot value on this card was
+       0x02 (slot 0x17's gate, held through every prior run);
+       the 2026-08-25 --manual-powerup released it and the
+       release PERSISTED across processes. A cold boot
+       restores 0x02 -- the release lives only in the SMU
+       session (re-run --manual-powerup after any cold cycle).
+    -> rail = 0: IDLE -- the rail-up bit self-clears when the
+       sequencer takes it, so 0 carries no state by itself
+       (powered dom0-3 also read 0). MEASURED 2026-08-25: the
+       rail-up store landed (the ctrl store in the same run
+       did) yet moved nothing -- favored reading: an already-
+       up rail consumed the one-shot instantly. The SMU-side
+       power question is as settled as this oracle can make
+       it; the VCN register block itself (the --direct-load
+       POWER_STATUS MMIO read) is the arbiter.
+
+[*] USERSPACE direct VCN firmware load (no PSP, no TEE, no kernel VCN code)
+    regs: /sys/kernel/debug/dri/1/amdgpu_regs
+    vram: /sys/kernel/debug/dri/1/amdgpu_vram
+    BC250:  0000:01:00.0   doorbell BAR2 2048KB (dec-ring wptr doorbell @ byte 0xc40)
+    debugfs device 0000:01:00.0 -- BC250 identity confirmed
+    live FB MC range 0x00f400000000..0x00f5ffffffff; PSP ring 0x00f5fffe0000 inside range
+    mmGB_ADDR_CONFIG = 0x00000044 (will be mirrored into UVD_GFX10_ADDR_CONFIG)
+[*] firmware: /home/OWNER/vcn_unlock/navi10_vcn.bin
+    header version: 32.0   ucode_version: 0x0811800900000002
+    ucode: 404288 bytes (AMD header stripped -- exactly what
+           amdgpu_vcn_resume() copies to the bo start in DIRECT mode)
+[*] staging span 1052KB: fw 396KB + stack 128KB + context 512KB + RBs 12KB + fw_shared 4KB
+    candidate 0x00800000: NOT zero (44470 nonzero bytes) -- skipping
+    candidate 0x00a00000: all zero (1077248 bytes verified) -- using it
+[*] writing fw image + fw_shared to VRAM 0x00a00000 (MC 0x00f400a00000) ...
+    written in 0.1s
+    fw_shared present_flag_0 = 0x00000100 (AMDGPU_VCN_MULTI_QUEUE_FLAG, vcn_v2_0_sw_init)
+[+] staged and verified
+
+[*] VCN bring-up (vcn_v2_0.c vcn_v2_0_start, non-DPG branch):
+    [!] first VCN MMIO reads follow -- July measured BOARD HANGs on
+        VCN-segment reads while the island is dead (userspace BAR5,
+        UMR, kernel debugfs); MEASURED 2026-08-25 post-clock-work:
+        all-ones + NO hang, twice. If this hangs: cold power-cycle.
+    UVD_PGFSM_CONFIG       MMIO 0x1f800 -> 0xffffffff  <-- DEAD   (SEG1 power-cluster head (PG FSM))
+    UVD_PGFSM_STATUS       MMIO 0x1f804 -> 0xffffffff  <-- DEAD   (PG FSM state)
+    UVD_POWER_STATUS       MMIO 0x1f810 -> 0xffffffff  <-- DEAD   (static PG state)
+    CC_UVD_HARVESTING      MMIO 0x1f81c -> 0xffffffff  <-- DEAD   (harvest config)
+    UVD_JPEG_POWER_STATUS  MMIO 0x1f828 -> 0xffffffff  <-- DEAD   (JPEG PG state)
+    UVD_MASTINT_EN         MMIO 0x20000 -> 0xffffffff  <-- DEAD   (SEG1 top-level)
+    UVD_STATUS             MMIO 0x201bc -> 0xffffffff  <-- DEAD   (RBC/VCPU status)
+    UVD_VERSION            MMIO 0x20f24 -> 0xffffffff  <-- DEAD   (STATIC VERSION CONSTANT -- liveness key)
+    UVD_NO_OP              MMIO 0x20efc -> 0xffffffff  <-- DEAD   (no-op register)
+    UVD_JPEG_CNTL          MMIO 0x1e200 -> 0xffffffff  <-- DEAD   (SEG0 head (JPEG decode))
+    UVD_JRBC_STATUS        MMIO 0x1e424 -> 0xffffffff  <-- DEAD   (SEG0 JRBC)
+[!] UNIFORM all-ones across BOTH segments (incl. the static
+    UVD_VERSION constant): the whole VCN register file is
+    clamped -- island closed at the root (rail/isolation),
+    not a per-register artifact. GC reads fine through the
+    same route (GB_ADDR_CONFIG above), so the transport is
+    good. CONTRADICTION on the table: the SMU-side oracle
+    (clocks + enables + gates + rail + up-residue status)
+    says dom6 is UP while the island says CLOSED. Remaining
+    suspects: (a) the fw's real power-up has steps the host
+    replica lacks (enumerate the fw's own message handlers:
+    --msg-table; decode FUN_00023b14's full body in the fw
+    image), (b) an ISO/reset held outside the dom6 sequencer
+    (--dom6-dump the whole block), (c) PSP-side isolation.
+    NOTE: renoir -- same silicon family, working VCN -- opens
+    the island via the PMFW message PPSMC_MSG_PowerUpVcn;
+    this PMFW's driver message list (kernel smu_v11_8_ppsmc.h)
+    has NO VCN message -- but its INTERNAL Q3 message space
+    (the one this script speaks) is only partially mapped.
+[*] restored msg-0x61 handler slot -> 0 (read-back 0x0)
+[*] thunk scratch wiped

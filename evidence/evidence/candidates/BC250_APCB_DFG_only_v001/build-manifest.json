@@ -1,0 +1,90 @@
+{
+  "candidate_id": "BC250_APCB_DFG_only_v001",
+  "generated_at": "2026-09-11T06:35:08.542399+00:00",
+  "state": "statically-verified-offline-candidate",
+  "source": {
+    "path": "evidence/programmer/reads/20260911/read-a.bin",
+    "sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+    "size": 16777216,
+    "matching_baselines": [
+      "evidence/programmer/reads/20260911/read-b.bin",
+      "dump/2.bin"
+    ],
+    "matching_sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0"
+  },
+  "output": {
+    "path": "candidates/BC250_APCB_DFG_only_v001_from_read-a.bin",
+    "sha256": "6b1fe8ef504142d5d5273a85b6c9febdf0b1fb8fc08ebab2593281c320cb9d70",
+    "size": 16777216
+  },
+  "builder": {
+    "path": "scripts/build_apcb_dfg_candidate.py",
+    "sha256": "9235d0137abbfa17c49de3323cf82f4d65d5ded9fcbbe1dad246bcad9248ea2f",
+    "command": "python3 scripts/build_apcb_dfg_candidate.py /home/OWNER/orca/projects/bc250/evidence/programmer/reads/20260911/read-a.bin /home/OWNER/orca/projects/bc250/candidates/BC250_APCB_DFG_only_v001_from_read-a.bin"
+  },
+  "transform": {
+    "apcb_absolute_offset": "0xAB1000",
+    "apcb_size": "0xB70",
+    "dfg_relative_offsets": [
+      "0x130",
+      "0x16C"
+    ],
+    "old_dfg": "0x001FFF00",
+    "new_dfg": "0x007FFF00",
+    "checksum_relative_offset": "0x10",
+    "old_checksum": "0xF2",
+    "new_checksum": "0x32",
+    "changed_offsets": [
+      "0xAB1010",
+      "0xAB1132",
+      "0xAB116E"
+    ],
+    "changed_byte_count": 3,
+    "signed_psp_ps1_bhd_fv_regions_modified": false,
+    "byte_semantics": "At each little-endian DFG u32, absolute +0x2 is the third byte; the low byte at +0x0 remains 0x00."
+  },
+  "validation": {
+    "independent_byte_diff": "PASS: exactly 3 expected offsets",
+    "apcb_detail_report": "evidence/candidates/BC250_APCB_DFG_only_v001/apcb-detail.json",
+    "apcb_detail_report_sha256": "01feebf8bb82ea17d6ef12138445573128eae94d171ee8180608ec0cb72abf9e",
+    "firmware_audit_report": "evidence/candidates/BC250_APCB_DFG_only_v001/firmware-audit.json",
+    "firmware_audit_report_sha256": "0b1b273dd233e3e102cc9df333221eee68b593ac80736e9e38bfb5ee4cb26fac",
+    "psp_checksum": "PASS",
+    "bhd_checksum": "PASS",
+    "apcb_checksum": "PASS",
+    "firmware_volume_count": 4
+  },
+  "hardware": {
+    "programmer_written": false,
+    "board_tested": false,
+    "boot_tested": false,
+    "psp_signature_acceptance": "UNRUN",
+    "bootability": "UNRUN",
+    "vcn_runtime": "UNRUN",
+    "memory_training": "UNRUN",
+    "voltage_rails": "UNRUN"
+  },
+  "review": {
+    "independent_review": "PASS: Gemini bounded read-only review; root rechecked artifact",
+    "review_path": "evidence/candidates/BC250_APCB_DFG_only_v001/independent-review-gemini.md",
+    "review_sha256": "90e15006a3093c8ba484fa702d4dab12225d522878892e6bba01d39666db7905",
+    "exact-image-per-board-approval": "NOT_REQUESTED"
+  },
+  "risk": "Candidate changes an APCB DFG wildcard policy field; checksum/parser acceptance is not evidence of PSP acceptance or safe boot.",
+  "static_context": {
+    "report": "evidence/firmware-audit/rizin/AmdApcbObrDxe.dfg-context.txt",
+    "report_sha256": "fcb666f776d700933878024166c39929147cf06210d85fd9ffbeceac72241201",
+    "function": "0x119DC",
+    "wildcard_mask": "0x001FFF00",
+    "candidate_mask_check": "0x007FFF00 & 0x001FFF00 == 0x001FFF00",
+    "interpretation": "candidate preserves the DFG wildcard marker under the consumer mask while extending upper bits; granted masters and runtime effect are unresolved"
+  },
+  "builder_safety_tests": [
+    {
+      "test": "corrupted APCB DFG byte/checksum",
+      "result": "PASS: builder rejected before output",
+      "internal_rc": 1,
+      "output_created": false
+    }
+  ]
+}

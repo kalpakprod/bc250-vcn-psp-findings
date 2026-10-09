@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "status": "not-release",
+  "kernel": {
+    "package": "linux-cachyos-bore-bc250-7.2.8-1.1",
+    "status": "baseline only; 15 upstream patches, no 0016"
+  },
+  "kernel_candidate": {
+    "package_base": "linux-cachyos-bore-bc250-7.2.8-1.2",
+    "patches": 16,
+    "status": "built exit0; hashes and structural config check verified; boot/game/hardware untested",
+    "sha256": {
+      "kernel": "6a0bfe2a51ee268419a8b0572d69bc0b2d3ccbe3cd25cc10eb0ada984d7a8ddf",
+      "headers": "024dbf93bf72b12619924191d21560a0638674692467af74dd49ecb88d247d93"
+    }
+  },
+  "mesa": {
+    "packages": [
+      "mesa-git-26.3.0_devel.230555.cec59b29970-1",
+      "lib32-mesa-git-26.3.0_devel.230555.cec59b29970-1"
+    ],
+    "status": "built and hash verified"
+  },
+  "native_telemetry": {
+    "patch": "0016-bc250-apu-metrics-readonly.patch",
+    "status": "fixture+translation-unit compile pass; apply-check pass; not packaged"
+  },
+  "acpi": {
+    "upstream": "e-tho/bc250-acpi-fix",
+    "revision": "5fafc82bda4230acc423a359bc07b86188160942",
+    "status": "three AML tables and newc archive built; headers/checksums verified; not installed",
+    "artifacts": "Windows WSL /home/OWNER/bc250-ux-build-20260930/acpi-fix"
+  },
+  "runtime_unresolved": [
+    "SMU GDDR6 integration path",
+    "CPU/CU/governor unified package",
+    "FSR4/Proton packaging integration",
+    "VRM I2C hardware",
+    "boot/default/fallback validation",
+    "safe kernel removal"
+  ]
+}

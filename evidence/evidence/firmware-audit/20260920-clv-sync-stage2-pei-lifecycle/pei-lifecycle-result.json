@@ -1,0 +1,848 @@
+{
+  "status": "PASS",
+  "checks": 20,
+  "route": "AmdNbioSmuV10Pei entry/lifecycle: PEI service slots + static PPI descriptor ownership",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "module": {
+    "ui": "AmdNbioSmuV10Pei",
+    "ffs_guid": "7307BD0F-8B7A-4BA5-9AF6-3997D1E32786",
+    "type": "TE",
+    "imagebase": 166236124,
+    "delta": 400,
+    "size": 90672,
+    "sections": [
+      {
+        "rva": 576,
+        "raw": 176,
+        "size": 87936,
+        "virtual_size": 87935,
+        "flags": 1744830496
+      },
+      {
+        "rva": 88512,
+        "raw": 88112,
+        "size": 2112,
+        "virtual_size": 2096,
+        "flags": 3355443264
+      },
+      {
+        "rva": 90624,
+        "raw": 90224,
+        "size": 448,
+        "virtual_size": 420,
+        "flags": 1107296320
+      }
+    ],
+    "entry": 576
+  },
+  "module_sha256": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+  "install_ppi_candidates": [
+    {
+      "call_rva": "0x26b",
+      "call_bytes": "ff5018",
+      "preceding": [
+        {
+          "rva": 576,
+          "bytes": "e81b150000",
+          "mnemonic": "call",
+          "operands": "0x1760"
+        },
+        {
+          "rva": 581,
+          "bytes": "8b442408",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esp+0x8]"
+        },
+        {
+          "rva": 585,
+          "bytes": "e9a0000000",
+          "mnemonic": "jmp",
+          "operands": "0x2ee"
+        },
+        {
+          "rva": 590,
+          "bytes": "51",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "rva": 591,
+          "bytes": "6834ece909",
+          "mnemonic": "push",
+          "operands": "0x9e9ec34"
+        },
+        {
+          "rva": 596,
+          "bytes": "6800000400",
+          "mnemonic": "push",
+          "operands": "0x40000"
+        },
+        {
+          "rva": 601,
+          "bytes": "6a00",
+          "mnemonic": "push",
+          "operands": "0x0"
+        },
+        {
+          "rva": 603,
+          "bytes": "e82a130000",
+          "mnemonic": "call",
+          "operands": "0x158a"
+        },
+        {
+          "rva": 608,
+          "bytes": "8b06",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esi]"
+        },
+        {
+          "rva": 610,
+          "bytes": "83c40c",
+          "mnemonic": "add",
+          "operands": "esp,0xc"
+        },
+        {
+          "rva": 613,
+          "bytes": "68fcebe909",
+          "mnemonic": "push",
+          "operands": "0x9e9ebfc"
+        },
+        {
+          "rva": 618,
+          "bytes": "56",
+          "mnemonic": "push",
+          "operands": "esi"
+        }
+      ]
+    },
+    {
+      "call_rva": "0x28f",
+      "call_bytes": "ff5018",
+      "preceding": [
+        {
+          "rva": 608,
+          "bytes": "8b06",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esi]"
+        },
+        {
+          "rva": 610,
+          "bytes": "83c40c",
+          "mnemonic": "add",
+          "operands": "esp,0xc"
+        },
+        {
+          "rva": 613,
+          "bytes": "68fcebe909",
+          "mnemonic": "push",
+          "operands": "0x9e9ebfc"
+        },
+        {
+          "rva": 618,
+          "bytes": "56",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "rva": 619,
+          "bytes": "ff5018",
+          "mnemonic": "call",
+          "operands": "DWORD PTR [eax+0x18]"
+        },
+        {
+          "rva": 622,
+          "bytes": "59",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "rva": 623,
+          "bytes": "59",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "rva": 624,
+          "bytes": "59",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "rva": 625,
+          "bytes": "c3",
+          "mnemonic": "ret",
+          "operands": ""
+        },
+        {
+          "rva": 626,
+          "bytes": "51",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "rva": 627,
+          "bytes": "6848ece909",
+          "mnemonic": "push",
+          "operands": "0x9e9ec48"
+        },
+        {
+          "rva": 632,
+          "bytes": "6800000400",
+          "mnemonic": "push",
+          "operands": "0x40000"
+        },
+        {
+          "rva": 637,
+          "bytes": "6a00",
+          "mnemonic": "push",
+          "operands": "0x0"
+        },
+        {
+          "rva": 639,
+          "bytes": "e806130000",
+          "mnemonic": "call",
+          "operands": "0x158a"
+        },
+        {
+          "rva": 644,
+          "bytes": "8b06",
+          "mnemonic": "mov",
+          "operands": "eax,DWORD PTR [esi]"
+        },
+        {
+          "rva": 646,
+          "bytes": "83c40c",
+          "mnemonic": "add",
+          "operands": "esp,0xc"
+        },
+        {
+          "rva": 649,
+          "bytes": "6814ece909",
+          "mnemonic": "push",
+          "operands": "0x9e9ec14"
+        },
+        {
+          "rva": 654,
+          "bytes": "56",
+          "mnemonic": "push",
+          "operands": "esi"
+        }
+      ]
+    }
+  ],
+  "locate_ppi_candidates": [
+    {
+      "rva": "0x372",
+      "bytes": "ff5020",
+      "operands": "DWORD PTR [eax+0x20]"
+    },
+    {
+      "rva": "0x410",
+      "bytes": "ff5120",
+      "operands": "DWORD PTR [ecx+0x20]"
+    },
+    {
+      "rva": "0x51c",
+      "bytes": "ff5120",
+      "operands": "DWORD PTR [ecx+0x20]"
+    },
+    {
+      "rva": "0xb26",
+      "bytes": "ff5120",
+      "operands": "DWORD PTR [ecx+0x20]"
+    },
+    {
+      "rva": "0xc22",
+      "bytes": "ff5120",
+      "operands": "DWORD PTR [ecx+0x20]"
+    },
+    {
+      "rva": "0x1583",
+      "bytes": "ff5120",
+      "operands": "DWORD PTR [ecx+0x20]"
+    }
+  ],
+  "ppi_signatures": [
+    {
+      "body_off": "0x159f4",
+      "rva": "0x15b84",
+      "words": [
+        "0x80000010",
+        "0x9e9ea2c",
+        "0x9e9eb4c"
+      ]
+    },
+    {
+      "body_off": "0x15a90",
+      "rva": "0x15c20",
+      "words": [
+        "0x80000010",
+        "0x9e9e9cc",
+        "0x9e9ebb4"
+      ]
+    },
+    {
+      "body_off": "0x15aa8",
+      "rva": "0x15c38",
+      "words": [
+        "0x80000010",
+        "0x9e9e9bc",
+        "0x9e9ebf4"
+      ]
+    }
+  ],
+  "guid_candidates_near_ppi": [
+    {
+      "body_off": "0x15974",
+      "rva": "0x15b04",
+      "bytes": "0000000054f1e909000f840000000000"
+    },
+    {
+      "body_off": "0x15978",
+      "rva": "0x15b08",
+      "bytes": "54f1e909000f84000000000000000000"
+    },
+    {
+      "body_off": "0x15984",
+      "rva": "0x15b14",
+      "bytes": "00000000000000006cf1e909000f8400"
+    },
+    {
+      "body_off": "0x15988",
+      "rva": "0x15b18",
+      "bytes": "000000006cf1e909000f840000000000"
+    },
+    {
+      "body_off": "0x1598c",
+      "rva": "0x15b1c",
+      "bytes": "6cf1e909000f84000000000000000000"
+    },
+    {
+      "body_off": "0x15998",
+      "rva": "0x15b28",
+      "bytes": "00000000000000007ceae909000f8400"
+    },
+    {
+      "body_off": "0x1599c",
+      "rva": "0x15b2c",
+      "bytes": "000000007ceae909000f840000000000"
+    },
+    {
+      "body_off": "0x159a0",
+      "rva": "0x15b30",
+      "bytes": "7ceae909000f84000000000000000000"
+    },
+    {
+      "body_off": "0x159ac",
+      "rva": "0x15b3c",
+      "bytes": "00000000000000009cf1e909000f8400"
+    },
+    {
+      "body_off": "0x159b0",
+      "rva": "0x15b40",
+      "bytes": "000000009cf1e909000f840000000000"
+    },
+    {
+      "body_off": "0x159b4",
+      "rva": "0x15b44",
+      "bytes": "9cf1e909000f84000000000000000000"
+    },
+    {
+      "body_off": "0x159d8",
+      "rva": "0x15b68",
+      "bytes": "00000000000000009cb2e8090275993a"
+    },
+    {
+      "body_off": "0x159dc",
+      "rva": "0x15b6c",
+      "bytes": "000000009cb2e8090275993a7a64824c"
+    },
+    {
+      "body_off": "0x159e0",
+      "rva": "0x15b70",
+      "bytes": "9cb2e8090275993a7a64824c998e52ef"
+    },
+    {
+      "body_off": "0x159e4",
+      "rva": "0x15b74",
+      "bytes": "0275993a7a64824c998e52ef9486a247"
+    },
+    {
+      "body_off": "0x159e8",
+      "rva": "0x15b78",
+      "bytes": "7a64824c998e52ef9486a24710000080"
+    },
+    {
+      "body_off": "0x159ec",
+      "rva": "0x15b7c",
+      "bytes": "998e52ef9486a247100000802ceae909"
+    },
+    {
+      "body_off": "0x159f0",
+      "rva": "0x15b80",
+      "bytes": "9486a247100000802ceae9094cebe909"
+    },
+    {
+      "body_off": "0x159f4",
+      "rva": "0x15b84",
+      "bytes": "100000802ceae9094cebe90940000080"
+    },
+    {
+      "body_off": "0x159f8",
+      "rva": "0x15b88",
+      "bytes": "2ceae9094cebe909400000803ceae909"
+    },
+    {
+      "body_off": "0x159fc",
+      "rva": "0x15b8c",
+      "bytes": "4cebe909400000803ceae9091cb5e809"
+    },
+    {
+      "body_off": "0x15a00",
+      "rva": "0x15b90",
+      "bytes": "400000803ceae9091cb5e809ffffffff"
+    },
+    {
+      "body_off": "0x15a04",
+      "rva": "0x15b94",
+      "bytes": "3ceae9091cb5e809ffffffffffffffff"
+    },
+    {
+      "body_off": "0x15a08",
+      "rva": "0x15b98",
+      "bytes": "1cb5e809ffffffffffffffff24494453"
+    },
+    {
+      "body_off": "0x15a0c",
+      "rva": "0x15b9c",
+      "bytes": "ffffffffffffffff2449445301000000"
+    },
+    {
+      "body_off": "0x15a10",
+      "rva": "0x15ba0",
+      "bytes": "ffffffff244944530100000000000000"
+    },
+    {
+      "body_off": "0x15a14",
+      "rva": "0x15ba4",
+      "bytes": "24494453010000000000000000000000"
+    },
+    {
+      "body_off": "0x15a2c",
+      "rva": "0x15bbc",
+      "bytes": "000000000000000078ebe909e4f0e909"
+    },
+    {
+      "body_off": "0x15a30",
+      "rva": "0x15bc0",
+      "bytes": "0000000078ebe909e4f0e909d4f0e909"
+    },
+    {
+      "body_off": "0x15a34",
+      "rva": "0x15bc4",
+      "bytes": "78ebe909e4f0e909d4f0e909c4f0e909"
+    },
+    {
+      "body_off": "0x15a38",
+      "rva": "0x15bc8",
+      "bytes": "e4f0e909d4f0e909c4f0e90900000000"
+    },
+    {
+      "body_off": "0x15a3c",
+      "rva": "0x15bcc",
+      "bytes": "d4f0e909c4f0e9090000000000000000"
+    },
+    {
+      "body_off": "0x15a40",
+      "rva": "0x15bd0",
+      "bytes": "c4f0e9090000000000000000c69ae809"
+    },
+    {
+      "body_off": "0x15a44",
+      "rva": "0x15bd4",
+      "bytes": "0000000000000000c69ae809c69ae809"
+    },
+    {
+      "body_off": "0x15a48",
+      "rva": "0x15bd8",
+      "bytes": "00000000c69ae809c69ae8096097e809"
+    },
+    {
+      "body_off": "0x15a4c",
+      "rva": "0x15bdc",
+      "bytes": "c69ae809c69ae8096097e8096098e809"
+    },
+    {
+      "body_off": "0x15a50",
+      "rva": "0x15be0",
+      "bytes": "c69ae8096097e8096098e8091499e809"
+    },
+    {
+      "body_off": "0x15a54",
+      "rva": "0x15be4",
+      "bytes": "6097e8096098e8091499e8093b99e809"
+    },
+    {
+      "body_off": "0x15a58",
+      "rva": "0x15be8",
+      "bytes": "6098e8091499e8093b99e8096599e809"
+    },
+    {
+      "body_off": "0x15a5c",
+      "rva": "0x15bec",
+      "bytes": "1499e8093b99e8096599e809c69ae809"
+    },
+    {
+      "body_off": "0x15a60",
+      "rva": "0x15bf0",
+      "bytes": "3b99e8096599e809c69ae809c69ae809"
+    },
+    {
+      "body_off": "0x15a64",
+      "rva": "0x15bf4",
+      "bytes": "6599e809c69ae809c69ae809c69ae809"
+    },
+    {
+      "body_off": "0x15a68",
+      "rva": "0x15bf8",
+      "bytes": "c69ae809c69ae809c69ae809c69ae809"
+    },
+    {
+      "body_off": "0x15a6c",
+      "rva": "0x15bfc",
+      "bytes": "c69ae809c69ae809c69ae809ab99e809"
+    },
+    {
+      "body_off": "0x15a70",
+      "rva": "0x15c00",
+      "bytes": "c69ae809c69ae809ab99e809c69ae809"
+    },
+    {
+      "body_off": "0x15a10",
+      "rva": "0x15ba0",
+      "bytes": "ffffffff244944530100000000000000"
+    },
+    {
+      "body_off": "0x15a14",
+      "rva": "0x15ba4",
+      "bytes": "24494453010000000000000000000000"
+    },
+    {
+      "body_off": "0x15a2c",
+      "rva": "0x15bbc",
+      "bytes": "000000000000000078ebe909e4f0e909"
+    },
+    {
+      "body_off": "0x15a30",
+      "rva": "0x15bc0",
+      "bytes": "0000000078ebe909e4f0e909d4f0e909"
+    },
+    {
+      "body_off": "0x15a34",
+      "rva": "0x15bc4",
+      "bytes": "78ebe909e4f0e909d4f0e909c4f0e909"
+    },
+    {
+      "body_off": "0x15a38",
+      "rva": "0x15bc8",
+      "bytes": "e4f0e909d4f0e909c4f0e90900000000"
+    },
+    {
+      "body_off": "0x15a3c",
+      "rva": "0x15bcc",
+      "bytes": "d4f0e909c4f0e9090000000000000000"
+    },
+    {
+      "body_off": "0x15a40",
+      "rva": "0x15bd0",
+      "bytes": "c4f0e9090000000000000000c69ae809"
+    },
+    {
+      "body_off": "0x15a44",
+      "rva": "0x15bd4",
+      "bytes": "0000000000000000c69ae809c69ae809"
+    },
+    {
+      "body_off": "0x15a48",
+      "rva": "0x15bd8",
+      "bytes": "00000000c69ae809c69ae8096097e809"
+    },
+    {
+      "body_off": "0x15a4c",
+      "rva": "0x15bdc",
+      "bytes": "c69ae809c69ae8096097e8096098e809"
+    },
+    {
+      "body_off": "0x15a50",
+      "rva": "0x15be0",
+      "bytes": "c69ae8096097e8096098e8091499e809"
+    },
+    {
+      "body_off": "0x15a54",
+      "rva": "0x15be4",
+      "bytes": "6097e8096098e8091499e8093b99e809"
+    },
+    {
+      "body_off": "0x15a58",
+      "rva": "0x15be8",
+      "bytes": "6098e8091499e8093b99e8096599e809"
+    },
+    {
+      "body_off": "0x15a5c",
+      "rva": "0x15bec",
+      "bytes": "1499e8093b99e8096599e809c69ae809"
+    },
+    {
+      "body_off": "0x15a60",
+      "rva": "0x15bf0",
+      "bytes": "3b99e8096599e809c69ae809c69ae809"
+    },
+    {
+      "body_off": "0x15a64",
+      "rva": "0x15bf4",
+      "bytes": "6599e809c69ae809c69ae809c69ae809"
+    },
+    {
+      "body_off": "0x15a68",
+      "rva": "0x15bf8",
+      "bytes": "c69ae809c69ae809c69ae809c69ae809"
+    },
+    {
+      "body_off": "0x15a6c",
+      "rva": "0x15bfc",
+      "bytes": "c69ae809c69ae809c69ae809ab99e809"
+    },
+    {
+      "body_off": "0x15a70",
+      "rva": "0x15c00",
+      "bytes": "c69ae809c69ae809ab99e809c69ae809"
+    },
+    {
+      "body_off": "0x15a74",
+      "rva": "0x15c04",
+      "bytes": "c69ae809ab99e809c69ae809cc9ae809"
+    },
+    {
+      "body_off": "0x15a78",
+      "rva": "0x15c08",
+      "bytes": "ab99e809c69ae809cc9ae809c89be809"
+    },
+    {
+      "body_off": "0x15a7c",
+      "rva": "0x15c0c",
+      "bytes": "c69ae809cc9ae809c89be809b693e809"
+    },
+    {
+      "body_off": "0x15a80",
+      "rva": "0x15c10",
+      "bytes": "cc9ae809c89be809b693e809c494e809"
+    },
+    {
+      "body_off": "0x15a84",
+      "rva": "0x15c14",
+      "bytes": "c89be809b693e809c494e80910000080"
+    },
+    {
+      "body_off": "0x15a88",
+      "rva": "0x15c18",
+      "bytes": "b693e809c494e80910000080cce9e909"
+    },
+    {
+      "body_off": "0x15a8c",
+      "rva": "0x15c1c",
+      "bytes": "c494e80910000080cce9e909b4ebe909"
+    },
+    {
+      "body_off": "0x15a90",
+      "rva": "0x15c20",
+      "bytes": "10000080cce9e909b4ebe90920000000"
+    },
+    {
+      "body_off": "0x15a94",
+      "rva": "0x15c24",
+      "bytes": "cce9e909b4ebe90920000000dce9e909"
+    },
+    {
+      "body_off": "0x15a98",
+      "rva": "0x15c28",
+      "bytes": "b4ebe90920000000dce9e9097292e809"
+    },
+    {
+      "body_off": "0x15a9c",
+      "rva": "0x15c2c",
+      "bytes": "20000000dce9e9097292e80910000080"
+    },
+    {
+      "body_off": "0x15aa0",
+      "rva": "0x15c30",
+      "bytes": "dce9e9097292e80910000080bce9e909"
+    },
+    {
+      "body_off": "0x15aa4",
+      "rva": "0x15c34",
+      "bytes": "7292e80910000080bce9e909f4ebe909"
+    },
+    {
+      "body_off": "0x15aa8",
+      "rva": "0x15c38",
+      "bytes": "10000080bce9e909f4ebe90900000000"
+    },
+    {
+      "body_off": "0x15aac",
+      "rva": "0x15c3c",
+      "bytes": "bce9e909f4ebe9090000000080000100"
+    }
+  ],
+  "known_callback_descriptor": {
+    "body_off": "0x158e0",
+    "rva": "0x15a70",
+    "provider_field_body_off": "0x15950",
+    "provider_field_rva": "0x15ae0",
+    "wrapper_rva": "0x5740",
+    "event": "0xfffffffe"
+  },
+  "fresh_result": "AmdNbioSmuV10Pei entry RVA 0x240 contains two concrete InstallPpi-slot calls (0x26B/0x28F) that push static descriptor pointers for GUIDs ea335e48-7275-4d2b-8276-55ba5531d7d7 and 8c61c925-224e-42d7-8978-812ae5612d23. The module also retains the exact CBS PPI GUID 04126c85-5c4e-458f-abc1-29f1f7da365e, byte-identical to CbsBasePei, but this bounded entrypoint path does not directly install that descriptor or join it to the callback descriptor. LocatePpi-slot candidates remain six; installed/invoked callback state is unresolved beyond these concrete PPI registrations.",
+  "limits": "One exact PEI module only; no firmware execution, no runtime PPI database, no cross-module protocol resolution, no arbitrary computed pointer/DMA/HOB migration and no hardware claim.",
+  "checks_detail": [
+    {
+      "check": "ROM sha256",
+      "passed": true,
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+    },
+    {
+      "check": "ROM size",
+      "passed": true,
+      "got": 16777216,
+      "expected": 16777216
+    },
+    {
+      "check": "module sha256",
+      "passed": true,
+      "got": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80",
+      "expected": "905b8be68afd1dce5453acef8273cbf94bdae6d41823c25438ace286348e2c80"
+    },
+    {
+      "check": "module type",
+      "passed": true,
+      "got": "TE",
+      "expected": "TE"
+    },
+    {
+      "check": "module size",
+      "passed": true,
+      "got": 90672,
+      "expected": 90672
+    },
+    {
+      "check": "InstallPpi-slot candidate count",
+      "passed": true,
+      "got": 2,
+      "expected": 2
+    },
+    {
+      "check": "LocatePpi-slot candidate count",
+      "passed": true,
+      "got": 6,
+      "expected": 6
+    },
+    {
+      "check": "static PPI descriptor signature count",
+      "passed": true,
+      "got": true,
+      "expected": true
+    },
+    {
+      "check": "entrypoint RVA",
+      "passed": true,
+      "got": 576,
+      "expected": 576
+    },
+    {
+      "check": "InstallPpi call RVAs",
+      "passed": true,
+      "got": [
+        619,
+        655
+      ],
+      "expected": [
+        619,
+        655
+      ]
+    },
+    {
+      "check": "first InstallPpi descriptor push",
+      "passed": true,
+      "got": "68fcebe90956ff5018",
+      "expected": "68fcebe90956ff5018"
+    },
+    {
+      "check": "second InstallPpi descriptor push",
+      "passed": true,
+      "got": "6814ece90956ff5018",
+      "expected": "6814ece90956ff5018"
+    },
+    {
+      "check": "installed PPI #1 GUID",
+      "passed": true,
+      "got": "ea335e48-7275-4d2b-8276-55ba5531d7d7",
+      "expected": "ea335e48-7275-4d2b-8276-55ba5531d7d7"
+    },
+    {
+      "check": "installed PPI #2 GUID",
+      "passed": true,
+      "got": "8c61c925-224e-42d7-8978-812ae5612d23",
+      "expected": "8c61c925-224e-42d7-8978-812ae5612d23"
+    },
+    {
+      "check": "SMU/CBS PPI GUID equality",
+      "passed": true,
+      "got": "856c12044e5c8f45abc129f1f7da365e",
+      "expected": "856c12044e5c8f45abc129f1f7da365e"
+    },
+    {
+      "check": "SMU/CBS PPI GUID value",
+      "passed": true,
+      "got": "04126c85-5c4e-458f-abc1-29f1f7da365e",
+      "expected": "04126c85-5c4e-458f-abc1-29f1f7da365e"
+    },
+    {
+      "check": "CbsBasePei InstallPpi call bytes",
+      "passed": true,
+      "got": "8b4218ffd0",
+      "expected": "8b4218ffd0"
+    },
+    {
+      "check": "known callback descriptor",
+      "passed": true,
+      "got": [
+        4294967295,
+        0,
+        166258460,
+        4294967294
+      ],
+      "expected": [
+        4294967295,
+        0,
+        166258460,
+        4294967294
+      ]
+    },
+    {
+      "check": "known provider field points descriptor",
+      "passed": true,
+      "got": 166324812,
+      "expected": 166324812
+    },
+    {
+      "check": "InstallPpi static-descriptor immediate join",
+      "passed": true,
+      "got": 0,
+      "expected": 0
+    }
+  ]
+}

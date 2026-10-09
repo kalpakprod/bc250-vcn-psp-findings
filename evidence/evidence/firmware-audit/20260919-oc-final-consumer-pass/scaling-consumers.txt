@@ -1,0 +1,2899 @@
+PASS: entire loaded program memory equals clv-matching robin-5 body, bytes=262400
+===== 0001c410 FUN_0001c410 =====
+
+/* WARNING: Removing unreachable block (ram,0x0001c531) */
+/* WARNING: Removing unreachable block (ram,0x0001c49d) */
+/* WARNING: Removing unreachable block (ram,0x0001c4e5) */
+/* WARNING: Removing unreachable block (ram,0x0001c5f9) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0001c410(void)
+
+{
+  char *pcVar1;
+  short *psVar2;
+  bool bVar3;
+  int iVar4;
+  int iVar5;
+  uint uVar6;
+  int iVar7;
+  int iVar8;
+  undefined4 *puVar9;
+  undefined4 *puVar10;
+  uint uVar11;
+  int iVar12;
+  int iVar13;
+  int iVar14;
+  int iVar15;
+  code *UNRECOVERED_JUMPTABLE;
+  int in_LCOUNT;
+  
+  iVar7 = func_0x0002a018(3);
+  if (iVar7 == 0) {
+    iVar7 = func_0x000022ec(_DAT_00017198);
+    if (iVar7 == 0xfe) {
+      uVar11 = 0;
+      do {
+        func_0x0000246c(1);
+        iVar7 = func_0x000022ec(_DAT_00017198);
+        uVar11 = uVar11 + 1;
+        if (iVar7 == 0) break;
+      } while (uVar11 < 3);
+      bVar3 = true;
+      if (uVar11 < 3) {
+        bVar3 = false;
+      }
+      goto LAB_0001c42e;
+    }
+  }
+  else {
+    func_0x00002268(_DAT_00017198);
+  }
+  bVar3 = false;
+LAB_0001c42e:
+  iVar5 = _DAT_000171a4;
+  iVar8 = _DAT_000171a0;
+  iVar4 = _DAT_0001719c;
+  iVar7 = _DAT_00017060;
+  if (*(char *)(_DAT_0001714c + 3) != '\0') {
+    memw();
+    memw();
+    *(uint *)(_DAT_000171a4 + 0x260) = *(uint *)(_DAT_000171a4 + 0x260) & 0xfffffffe;
+    do {
+      memw();
+    } while ((*(uint *)(iVar5 + 0x200) & 0x80000000) != 0);
+    func_0x0002bf88();
+    memw();
+    memw();
+    *(uint *)(iVar4 + 0x120) = *(uint *)(iVar4 + 0x120) & 0xfffffffe;
+    func_0x000312a0();
+    func_0x000311e8(0);
+    func_0x00031228();
+    func_0x00031360();
+    memw();
+    memw();
+    *(uint *)(iVar8 + 0x134) = *(uint *)(iVar8 + 0x134) & 0xfffffcff;
+    func_0x00031394();
+    iVar5 = _DAT_000171a8;
+    iVar13 = 0;
+    in_LCOUNT = 1;
+    UNRECOVERED_JUMPTABLE = (code *)0x1c4a0;
+    iVar12 = iVar7;
+    while( true ) {
+      psVar2 = (short *)(iVar12 + 0x50);
+      iVar12 = iVar12 + 2;
+      if (*psVar2 != 0) {
+        *(undefined4 *)((iVar13 + 4) * 0x100000 + iVar5 + 0x200) = 0;
+      }
+      iVar13 = iVar13 + 4;
+      if (in_LCOUNT == 0) break;
+      in_LCOUNT = in_LCOUNT + -1;
+    }
+    if (*(char *)(_DAT_000171ac + 7) != '\0') {
+      func_0x0000231c(_DAT_000171b0);
+      func_0x0003263c(0);
+      func_0x00002268(_DAT_000171b0);
+    }
+  }
+  if ((!bVar3) && (iVar12 = func_0x0001dd34(0), iVar5 = _DAT_000171b4, iVar12 != 0)) {
+    in_LCOUNT = 7;
+    UNRECOVERED_JUMPTABLE = (code *)0x1c4e8;
+    iVar12 = iVar7;
+    iVar13 = _DAT_000171b4;
+    while( true ) {
+      pcVar1 = (char *)(iVar12 + 0x28);
+      iVar12 = iVar12 + 1;
+      if (*pcVar1 != '\0') {
+        *(undefined1 *)(iVar13 + 0xf0) = 1;
+        *(undefined4 *)(iVar13 + 0xec) = *(undefined4 *)(iVar5 + 0x20b4);
+      }
+      iVar13 = iVar13 + 0x3c4;
+      if (in_LCOUNT == 0) break;
+      in_LCOUNT = in_LCOUNT + -1;
+    }
+    func_0x0000231c(_DAT_000171b8);
+    func_0x00020790();
+    func_0x00002268(_DAT_000171b8);
+  }
+  iVar12 = _DAT_000171c4;
+  iVar5 = _DAT_000171c0;
+  iVar13 = iVar7;
+  iVar14 = _DAT_000171c8;
+  iVar15 = iVar7;
+  if (*(char *)(_DAT_000171bc + 0x18) == '\0') {
+    do {
+      if (*(char *)(iVar13 + 0x24) == '\0') {
+        in_LCOUNT = 3;
+        UNRECOVERED_JUMPTABLE = (code *)0x1c534;
+        if (*(char *)(iVar15 + 0x1c) == '\0') {
+          memw();
+          *(undefined4 *)(iVar14 + 0x210) = _DAT_000171d0;
+          memw();
+          *(undefined4 *)(iVar14 + 0x220) = _DAT_000171d4;
+          memw();
+          *(undefined4 *)(iVar14 + 0x200) = _DAT_000171d8;
+        }
+      }
+                    /* WARNING: Could not recover jumptable at 0x0001c558. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      if (in_LCOUNT != 0) {
+        (*UNRECOVERED_JUMPTABLE)();
+        return;
+      }
+      iVar13 = iVar13 + 1;
+      iVar14 = iVar14 + iVar5;
+      iVar15 = iVar15 + 4;
+    } while (iVar13 != iVar12);
+    *(undefined1 *)(_DAT_000171bc + 0x18) = 1;
+  }
+  if (*(char *)(_DAT_000171dc + 2) != '\x02') {
+    func_0x0000231c(_DAT_000171e0);
+    *(undefined4 *)(_DAT_000171e4 + 0x1d0) = 1;
+    func_0x0002a184();
+    func_0x00002268(_DAT_000171e0);
+  }
+  func_0x0001c668(1);
+  func_0x0000231c(0x80);
+  func_0x0002bd80(*(undefined1 *)(_DAT_00017124 + 7));
+  func_0x00002268(0x80);
+  func_0x0000173c(4,4,2,0x40);
+  memw();
+  *(undefined4 *)(_DAT_00017148 + 0x218) = 0;
+  func_0x000014fc(4,4,0x40);
+  memw();
+  memw();
+  *(uint *)(iVar8 + 0x160) = *(uint *)(iVar8 + 0x160) | _DAT_000171e8;
+  iVar8 = func_0x0001dd34(5);
+  if ((iVar8 != 0) && (*(char *)(_DAT_000171ec + 0xd) != '\0')) {
+    func_0x0001e448(0);
+  }
+  func_0x00002b2c(0x19);
+  uVar6 = _DAT_000171f8;
+  uVar11 = _DAT_000171f4;
+  iVar12 = 1;
+  iVar8 = _DAT_000171f0;
+  while( true ) {
+    if (*(char *)(iVar7 + 0x24) == '\0') {
+      memw();
+      memw();
+      *(uint *)(iVar8 + 0x224) = *(uint *)(iVar8 + 0x224) & uVar11 | uVar6;
+    }
+    iVar8 = iVar8 + iVar5;
+    iVar7 = iVar7 + 1;
+    if (iVar12 == 0) break;
+    iVar12 = iVar12 + -1;
+  }
+  func_0x00002b2c(0x19);
+  puVar10 = _DAT_000171fc + 0xb;
+  puVar9 = _DAT_000171fc;
+  do {
+    func_0x00002a74(0,*puVar9,1,2);
+    puVar9 = puVar9 + 1;
+  } while (puVar9 != puVar10);
+  memw();
+  *(undefined4 *)(iVar4 + 0x108) = 1;
+  func_0x0000231c(_DAT_00017198);
+  do {
+                    /* WARNING: Do nothing block with infinite loop */
+  } while( true );
+}
+
+
+0001c410 366100 entry a1,0x30
+0001c413 0c3a movi.n a10,0x3
+0001c415 25c00d call8 0x0002a018
+0001c418 165a22 beqz a10,0x0001c641
+0001c41b a15feb l32r a10,0x00017198
+0001c41e a5e4e5 call8 0x00002268
+0001c421 0c02 movi.n a2,0x0
+0001c423 c60100 j 0x0001c42e
+0001c427 0c12 movi.n a2,0x1
+0001c429 f63301 bgeui a3,0x3,0x0001c42e
+0001c42c 0c02 movi.n a2,0x0
+0001c42e 8147eb l32r a8,0x0001714c
+0001c431 415aeb l32r a4,0x0001719c
+0001c434 0c07 movi.n a7,0x0
+0001c436 820803 l8ui a8,a8,0x3
+0001c439 5109eb l32r a5,0x00017060
+0001c43c 3159eb l32r a3,0x000171a0
+0001c43f 169808 beqz a8,0x0001c4cc
+0001c442 9158eb l32r a9,0x000171a4
+0001c445 7ce6 movi.n a6,0xfe
+0001c447 c02000 memw
+0001c44a a22998 l32i a10,a9,0x260
+0001c44d 60aa10 and a10,a10,a6
+0001c450 c02000 memw
+0001c453 a26998 s32i a10,a9,0x260
+0001c456 c02000 memw
+0001c459 b22980 l32i a11,a9,0x200
+0001c45c f7fbf6 bbsi a11,0x1f,0x0001c456
+0001c45f a5b20f call8 0x0002bf88
+0001c462 c02000 memw
+0001c465 c22448 l32i a12,a4,0x120
+0001c468 60cc10 and a12,a12,a6
+0001c46b c02000 memw
+0001c46e c26448 s32i a12,a4,0x120
+0001c471 e5e214 call8 0x000312a0
+0001c474 0c0a movi.n a10,0x0
+0001c476 25d714 call8 0x000311e8
+0001c479 e5da14 call8 0x00031228
+0001c47c 25ee14 call8 0x00031360
+0001c47f e2acff movi a14,-0x301
+0001c482 c02000 memw
+0001c485 d2234d l32i a13,a3,0x134
+0001c488 e0dd10 and a13,a13,a14
+0001c48b c02000 memw
+0001c48e d2634d s32i a13,a3,0x134
+0001c491 25f014 call8 0x00031394
+0001c494 9d05 mov.n a9,a5
+0001c496 0c0a movi.n a10,0x0
+0001c498 b144eb l32r a11,0x000171a8
+0001c49b 0c2f movi.n a15,0x2
+0001c49d 76af12 loopgtz a15,0x0001c4b3
+0001c4a0 821928 l16ui a8,a9,0x50
+0001c4a3 2b99 addi.n a9,a9,0x2
+0001c4a5 8c88 beqz.n a8,0x0001c4b1
+0001c4a7 4bca addi.n a12,a10,0x4
+0001c4a9 c0cc01 slli a12,a12,0x14
+0001c4ac bacc add.n a12,a12,a11
+0001c4ae 726c80 s32i a7,a12,0x200
+0001c4b1 4baa addi.n a10,a10,0x4
+0001c4b3 d13eeb l32r a13,0x000171ac
+0001c4b6 d20d07 l8ui a13,a13,0x7
+0001c4b9 8cfd beqz.n a13,0x0001c4cc
+0001c4bb a13deb l32r a10,0x000171b0
+0001c4be e5e5e5 call8 0x0000231c
+0001c4c1 0c0a movi.n a10,0x0
+0001c4c3 a51716 call8 0x0003263c
+0001c4c6 a13aeb l32r a10,0x000171b0
+0001c4c9 e5d9e5 call8 0x00002268
+0001c4cc 0c16 movi.n a6,0x1
+0001c4ce fc72 bnez.n a2,0x0001c509
+0001c4d0 0c0a movi.n a10,0x0
+0001c4d2 258601 call8 0x0001dd34
+0001c4d5 bc0a beqz.n a10,0x0001c509
+0001c4d7 9d05 mov.n a9,a5
+0001c4d9 a136eb l32r a10,0x000171b4
+0001c4dc b2a3c4 movi a11,0x3c4
+0001c4df e2a008 movi a14,0x8
+0001c4e2 c2da1e addmi a12,a10,0x1e00
+0001c4e5 76ae11 loopgtz a14,0x0001c4fa
+0001c4e8 f20928 l8ui a15,a9,0x28
+0001c4eb 1b99 addi.n a9,a9,0x1
+0001c4ed 8c7f beqz.n a15,0x0001c4f8
+0001c4ef 624af0 s8i a6,a10,0xf0
+0001c4f2 030cad lsi f0,a12,0x2b4
+0001c4f5 034a3b ssi f0,a10,0xec
+0001c4f8 baaa add.n a10,a10,a11
+0001c4fa a12feb l32r a10,0x000171b8
+0001c4fd e5e1e5 call8 0x0000231c
+0001c500 e52804 call8 0x00020790
+0001c503 a12deb l32r a10,0x000171b8
+0001c506 25d6e5 call8 0x00002268
+0001c509 912ceb l32r a9,0x000171bc
+0001c50c 820918 l8ui a8,a9,0x18
+0001c50f 212ceb l32r a2,0x000171c0
+0001c512 a12ceb l32r a10,0x000171c4
+0001c515 562805 bnez a8,0x0001c56b
+0001c518 cd05 mov.n a12,a5
+0001c51a b12beb l32r a11,0x000171c8
+0001c51d e12beb l32r a14,0x000171cc
+0001c520 a901 s32i.n a10,a1,0x0
+0001c522 2bda addi.n a13,a10,0x2
+0001c524 ad05 mov.n a10,a5
+0001c526 f20a24 l8ui a15,a10,0x24
+0001c529 9d0c mov.n a9,a12
+0001c52b 0c48 movi.n a8,0x4
+0001c52d ec7f bnez.n a15,0x0001c558
+0001c52f fd0b mov.n a15,a11
+0001c531 76a823 loopgtz a8,0x0001c558
+0001c534 82091c l8ui a8,a9,0x1c
+0001c537 dc98 bnez.n a8,0x0001c554
+0001c539 c02000 memw
+0001c53c 8125eb l32r a8,0x000171d0
+0001c53f 826f84 s32i a8,a15,0x210
+0001c542 c02000 memw
+0001c545 8123eb l32r a8,0x000171d4
+0001c548 826f88 s32i a8,a15,0x220
+0001c54b c02000 memw
+0001c54e 8122eb l32r a8,0x000171d8
+0001c551 826f80 s32i a8,a15,0x200
+0001c554 eaff add.n a15,a15,a14
+0001c556 1b99 addi.n a9,a9,0x1
+0001c558 2abb add.n a11,a11,a2
+0001c55a 4bdd addi.n a13,a13,0x4
+0001c55c 9801 l32i.n a9,a1,0x0
+0001c55e 4bcc addi.n a12,a12,0x4
+0001c560 1baa addi.n a10,a10,0x1
+0001c562 979ac0 bne a10,a9,0x0001c526
+0001c565 a115eb l32r a10,0x000171bc
+0001c568 624a18 s8i a6,a10,0x18
+0001c56b b11ceb l32r a11,0x000171dc
+0001c56e b20b02 l8ui a11,a11,0x2
+0001c571 262b14 beqi a11,0x2,0x0001c589
+0001c574 a11beb l32r a10,0x000171e0
+0001c577 65dae5 call8 0x0000231c
+0001c57a c11aeb l32r a12,0x000171e4
+0001c57d 626c74 s32i a6,a12,0x1d0
+0001c580 25c00d call8 0x0002a184
+0001c583 a117eb l32r a10,0x000171e0
+0001c586 25cee5 call8 0x00002268
+0001c589 0c1a movi.n a10,0x1
+0001c58b e50d00 call8 0x0001c668
+0001c58e a2a080 movi a10,0x80
+0001c591 a5d8e5 call8 0x0000231c
+0001c594 a1e4ea l32r a10,0x00017124
+0001c597 a20a07 l8ui a10,a10,0x7
+0001c59a 657e0f call8 0x0002bd80
+0001c59d a2a080 movi a10,0x80
+0001c5a0 65cce5 call8 0x00002268
+0001c5a3 0c4a movi.n a10,0x4
+0001c5a5 0c4b movi.n a11,0x4
+0001c5a7 0c2c movi.n a12,0x2
+0001c5a9 4c0d movi.n a13,0x40
+0001c5ab 2519e5 call8 0x0000173c
+0001c5ae b1e6ea l32r a11,0x00017148
+0001c5b1 c02000 memw
+0001c5b4 0c4a movi.n a10,0x4
+0001c5b6 4c0c movi.n a12,0x40
+0001c5b8 726b86 s32i a7,a11,0x218
+0001c5bb 0c4b movi.n a11,0x4
+0001c5bd e5f3e4 call8 0x000014fc
+0001c5c0 c02000 memw
+0001c5c3 d109eb l32r a13,0x000171e8
+0001c5c6 c22358 l32i a12,a3,0x160
+0001c5c9 d0cc20 or a12,a12,a13
+0001c5cc c02000 memw
+0001c5cf c26358 s32i a12,a3,0x160
+0001c5d2 0c5a movi.n a10,0x5
+0001c5d4 e57501 call8 0x0001dd34
+0001c5d7 8cba beqz.n a10,0x0001c5e6
+0001c5d9 e104eb l32r a14,0x000171ec
+0001c5dc e20e0d l8ui a14,a14,0xd
+0001c5df 8c3e beqz.n a14,0x0001c5e6
+0001c5e1 0c0a movi.n a10,0x0
+0001c5e3 65e601 call8 0x0001e448
+0001c5e6 1c9a movi.n a10,0x19
+0001c5e8 2554e6 call8 0x00002b2c
+0001c5eb ad05 mov.n a10,a5
+0001c5ed 9100eb l32r a9,0x000171f0
+0001c5f0 c101eb l32r a12,0x000171f4
+0001c5f3 b101eb l32r a11,0x000171f8
+0001c5f6 f2a002 movi a15,0x2
+0001c5f9 76af1a loopgtz a15,0x0001c617
+0001c5fc 820a24 l8ui a8,a10,0x24
+0001c5ff dc08 bnez.n a8,0x0001c613
+0001c601 c02000 memw
+0001c604 d22989 l32i a13,a9,0x224
+0001c607 c0dd10 and a13,a13,a12
+0001c60a b0dd20 or a13,a13,a11
+0001c60d c02000 memw
+0001c610 d26989 s32i a13,a9,0x224
+0001c613 2a99 add.n a9,a9,a2
+0001c615 1baa addi.n a10,a10,0x1
+0001c617 1c9a movi.n a10,0x19
+0001c619 2551e6 call8 0x00002b2c
+0001c61c 21f8ea l32r a2,0x000171fc
+0001c61f 32c22c addi a3,a2,0x2c
+0001c622 0c0a movi.n a10,0x0
+0001c624 b802 l32i.n a11,a2,0x0
+0001c626 0c1c movi.n a12,0x1
+0001c628 0c2d movi.n a13,0x2
+0001c62a a544e6 call8 0x00002a74
+0001c62d 4b22 addi.n a2,a2,0x4
+0001c62f 3792ef bne a2,a3,0x0001c622
+0001c632 c02000 memw
+0001c635 626442 s32i a6,a4,0x108
+0001c638 a1d8ea l32r a10,0x00017198
+0001c63b 25cee5 call8 0x0000231c
+0001c63e 06ffff j 0x0001c63e
+0001c641 a1d5ea l32r a10,0x00017198
+0001c644 65cae5 call8 0x000022ec
+0001c647 e2a0fe movi a14,0xfe
+0001c64a e0eac0 sub a14,a10,a14
+0001c64d 560edd bnez a14,0x0001c421
+0001c650 0c03 movi.n a3,0x0
+0001c652 0c1a movi.n a10,0x1
+0001c654 65e1e5 call8 0x0000246c
+0001c657 a1d0ea l32r a10,0x00017198
+0001c65a 25c9e5 call8 0x000022ec
+0001c65d 1b33 addi.n a3,a3,0x1
+0001c65f 164adc beqz a10,0x0001c427
+0001c662 b633ec bltui a3,0x3,0x0001c652
+0001c665 866fff j 0x0001c427
+===== 00020790 FUN_00020790 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00020790(void)
+
+{
+  int iVar1;
+  
+  iVar1 = func_0x0001dd34(0);
+  if (iVar1 != 0) {
+    func_0x00002268(_DAT_00017480);
+    func_0x00021dd4();
+    func_0x000207c8();
+    if (*(char *)(_DAT_0001714c + 3) == '\0') {
+      func_0x00020b04();
+    }
+    if (*(char *)(_DAT_000175ec + 0x7f) != '\0') {
+      func_0x000024f0(4);
+    }
+    func_0x0000231c(_DAT_00017480);
+  }
+  return;
+}
+
+
+00020790 364100 entry a1,0x20
+00020793 0c0a movi.n a10,0x0
+00020795 e559fd call8 0x0001dd34
+00020798 ac8a beqz.n a10,0x000207c4
+0002079a a139db l32r a10,0x00017480
+0002079d a5ace1 call8 0x00002268
+000207a0 256301 call8 0x00021dd4
+000207a3 650200 call8 0x000207c8
+000207a6 8169da l32r a8,0x0001714c
+000207a9 820803 l8ui a8,a8,0x3
+000207ac cc18 bnez.n a8,0x000207b1
+000207ae 653500 call8 0x00020b04
+000207b1 918edb l32r a9,0x000175ec
+000207b4 92097f l8ui a9,a9,0x7f
+000207b7 8c39 beqz.n a9,0x000207be
+000207b9 0c4a movi.n a10,0x4
+000207bb 65d3e1 call8 0x000024f0
+000207be a130db l32r a10,0x00017480
+000207c1 a5b5e1 call8 0x0000231c
+000207c4 1df0 retw.n
+===== 00021a08 FUN_00021a08 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00021a08(void)
+
+{
+  ulonglong uVar1;
+  bool bVar2;
+  uint uVar3;
+  float fVar4;
+  uint uVar5;
+  undefined4 *puVar6;
+  undefined4 uVar7;
+  float *pfVar8;
+  float *pfVar9;
+  int iVar10;
+  undefined4 *puVar11;
+  int iVar12;
+  int iVar13;
+  float *pfVar14;
+  undefined4 *puVar15;
+  float fVar16;
+  undefined4 *puStack_58;
+  int iStack_54;
+  undefined4 *puStack_50;
+  int iStack_4c;
+  int iStack_48;
+  uint uStack_44;
+  int iStack_40;
+  undefined4 *puStack_3c;
+  int iStack_38;
+  float *pfStack_34;
+  int iStack_30;
+  int iStack_2c;
+  
+  pfVar9 = _DAT_000176e0;
+  iVar13 = _DAT_0001767c;
+  uVar3 = _DAT_000172d0;
+  if (*(char *)(_DAT_00017738 + 0x80) != '\0') {
+    iStack_40 = _DAT_000171b4;
+    iStack_48 = _DAT_000171b4 + 0x12;
+    iStack_4c = _DAT_00017124;
+    uStack_44 = 0;
+    do {
+      fVar4 = (float)func_0x00001828(*(undefined1 *)(iStack_4c + 0x71));
+      iStack_30 = iStack_48;
+      iStack_2c = iStack_40;
+      pfStack_34 = pfVar9;
+      iStack_38 = 0;
+      pfVar8 = _DAT_0001773c;
+      iVar12 = iStack_40;
+      pfVar14 = pfVar9;
+      iVar10 = iVar13;
+      do {
+        do {
+          fVar16 = pfVar14[0xf];
+          uVar1 = (ulonglong)(fVar16 * 1.0);
+          bVar2 = uVar1 >> 0x10 != 0;
+          *(ushort *)(iVar12 + 0x40) =
+               (ushort)((!NAN(fVar16) && !bVar2) && -1 < (longlong)uVar1) * (short)uVar1 -
+               (ushort)(NAN(fVar16) || bVar2);
+          fVar16 = *pfVar14;
+          uVar1 = (ulonglong)(fVar16 * 1.0);
+          bVar2 = uVar1 >> 0x10 != 0;
+          for (uVar5 = ((uint)((longlong)uVar1 < 0) * -0x80000000 - (uint)(NAN(fVar16) || bVar2)) +
+                       (uint)((!NAN(fVar16) && !bVar2) && (longlong)uVar1 >= 0) * (int)uVar1;
+              uVar5 <= uVar3; uVar5 = uVar5 + 1) {
+            fVar16 = (float)func_0x0001d304(iVar10,*pfVar8,(float)uVar5 / 1.0);
+            if (fVar4 < fVar16) {
+              *(short *)(iVar12 + 0x40) = (short)uVar5;
+              break;
+            }
+          }
+          iVar12 = iVar12 + 6;
+          pfVar8 = pfVar8 + 1;
+          pfVar14 = pfVar14 + 0x10;
+        } while (iVar12 != iStack_30);
+        iVar10 = iVar10 + 0x3c4;
+        iStack_30 = iStack_30 + 0x3c4;
+        iStack_38 = iStack_38 + 1;
+        pfVar14 = pfStack_34 + 0xf1;
+        iVar12 = iStack_2c + 0x3c4;
+        pfVar8 = _DAT_0001773c;
+        iStack_2c = iVar12;
+        pfStack_34 = pfVar14;
+      } while (iStack_38 != 8);
+      uStack_44 = uStack_44 + 1;
+      iStack_4c = iStack_4c + 1;
+      iStack_48 = iStack_48 + 2;
+      iStack_40 = iStack_40 + 2;
+    } while (uStack_44 < *(byte *)(_DAT_00017738 + 0x80));
+    if (*(byte *)(_DAT_00017738 + 0x80) != 0) {
+      iStack_40 = _DAT_000171b4;
+      uStack_44 = 0;
+      puStack_58 = (undefined4 *)(_DAT_000171b4 + 0x68);
+      iStack_54 = _DAT_000171b4 + 0xc;
+      puStack_3c = (undefined4 *)(_DAT_000175fc + 0x68);
+      puStack_50 = (undefined4 *)(_DAT_000171b4 + 0x5c);
+      do {
+        iStack_2c = iStack_40;
+        puVar6 = puStack_50;
+        pfVar9 = _DAT_0001773c;
+        iVar13 = iStack_40;
+        puVar15 = puStack_58;
+        puVar11 = puStack_50;
+        iVar12 = iStack_54;
+        do {
+          do {
+            uVar7 = func_0x0003acf8((float)(int)((uint)*(ushort *)(iVar13 + 0x46) -
+                                                (uint)*(ushort *)(iVar13 + 0x40)) / 1.0,
+                                    pfVar9[1] - *pfVar9);
+            iVar13 = iVar13 + 6;
+            *puVar6 = uVar7;
+            puVar6 = puVar6 + 3;
+            pfVar9 = pfVar9 + 1;
+          } while (iVar13 != iVar12);
+          puVar6 = puVar11 + 0xf1;
+          puVar15[3] = *puVar15;
+          iVar12 = iVar12 + 0x3c4;
+          puVar15 = puVar15 + 0xf1;
+          iVar13 = iStack_2c + 0x3c4;
+          pfVar9 = _DAT_0001773c;
+          iStack_2c = iVar13;
+          puVar11 = puVar6;
+        } while (puVar15 != puStack_3c);
+        uStack_44 = uStack_44 + 1;
+        iStack_54 = iStack_54 + 2;
+        iStack_40 = iStack_40 + 2;
+        puStack_3c = puStack_3c + 1;
+        puStack_50 = puStack_50 + 1;
+        puStack_58 = puStack_58 + 1;
+      } while (uStack_44 < *(byte *)(_DAT_00017738 + 0x80));
+    }
+  }
+  return;
+}
+
+
+00021a08 36c100 entry a1,0x60
+00021a0b 814bd7 l32r a8,0x00017738
+00021a0e 820880 l8ui a8,a8,0x80
+00021a11 91e8d5 l32r a9,0x000171b4
+00021a14 166818 beqz a8,0x00021b9e
+00021a17 9981 s32i.n a9,a1,0x20
+00021a19 312dd6 l32r a3,0x000172d0
+00021a1c 0c0a movi.n a10,0x0
+00021a1e c130d7 l32r a12,0x000176e0
+00021a21 d116d7 l32r a13,0x0001767c
+00021a24 e1c0d5 l32r a14,0x00017124
+00021a27 b2c912 addi a11,a9,0x12
+00021a2a e951 s32i.n a14,a1,0x14
+00021a2c d901 s32i.n a13,a1,0x0
+00021a2e c911 s32i.n a12,a1,0x4
+00021a30 a971 s32i.n a10,a1,0x1c
+00021a32 b961 s32i.n a11,a1,0x18
+00021a34 a851 l32i.n a10,a1,0x14
+00021a36 a20a71 l8ui a10,a10,0x71
+00021a39 e5dedf call8 0x00001828
+00021a3c 5801 l32i.n a5,a1,0x0
+00021a3e 0c0b movi.n a11,0x0
+00021a40 c811 l32i.n a12,a1,0x4
+00021a42 d881 l32i.n a13,a1,0x20
+00021a44 e861 l32i.n a14,a1,0x18
+00021a46 500afa wfr f0,a10
+00021a49 e9c1 s32i.n a14,a1,0x30
+00021a4b d9d1 s32i.n a13,a1,0x34
+00021a4d c9b1 s32i.n a12,a1,0x2c
+00021a4f b9a1 s32i.n a11,a1,0x28
+00021a51 03410e ssi f0,a1,0x38
+00021a54 68d1 l32i.n a6,a1,0x34
+00021a56 78b1 l32i.n a7,a1,0x2c
+00021a58 4139d7 l32r a4,0x0001773c
+00021a5b 23070f lsi f2,a7,0x3c
+00021a5e 00f2ea utrunc.s a15,f2,0x0
+00021a61 f25620 s16i a15,a6,0x40
+00021a64 130700 lsi f1,a7,0x0
+00021a67 0021ea utrunc.s a2,f1,0x0
+00021a6a 273320 bltu a3,a2,0x00021a8e
+00021a6d ad05 mov.n a10,a5
+00021a6f 0032da ufloat.s f3,a2,0x0
+00021a72 b804 l32i.n a11,a4,0x0
+00021a74 40c3fa rfr a12,f3
+00021a77 e588fb call8 0x0001d304
+00021a7a 505afa wfr f5,a10
+00021a7d 43010e lsi f4,a1,0x38
+00021a80 50044b olt.s b0,f4,f5
+00021a83 760002 bf b0,0x00021a89
+00021a86 864500 j 0x00021ba0
+00021a89 1b22 addi.n a2,a2,0x1
+00021a8b 27b3de bgeu a3,a2,0x00021a6d
+00021a8e 72c740 addi a7,a7,0x40
+00021a91 88c1 l32i.n a8,a1,0x30
+00021a93 4b44 addi.n a4,a4,0x4
+00021a95 6b66 addi.n a6,a6,0x6
+00021a97 8796c0 bne a6,a8,0x00021a5b
+00021a9a 98a1 l32i.n a9,a1,0x28
+00021a9c b8b1 l32i.n a11,a1,0x2c
+00021a9e c8d1 l32i.n a12,a1,0x34
+00021aa0 d2d804 addmi a13,a8,0x400
+00021aa3 52d504 addmi a5,a5,0x400
+00021aa6 52c5c4 addi a5,a5,-0x3c
+00021aa9 d2cdc4 addi a13,a13,-0x3c
+00021aac d9c1 s32i.n a13,a1,0x30
+00021aae c2dc04 addmi a12,a12,0x400
+00021ab1 b2db04 addmi a11,a11,0x400
+00021ab4 1b99 addi.n a9,a9,0x1
+00021ab6 99a1 s32i.n a9,a1,0x28
+00021ab8 b2cbc4 addi a11,a11,-0x3c
+00021abb c2ccc4 addi a12,a12,-0x3c
+00021abe c9d1 s32i.n a12,a1,0x34
+00021ac0 b9b1 s32i.n a11,a1,0x2c
+00021ac2 66898e bnei a9,0x8,0x00021a54
+00021ac5 c881 l32i.n a12,a1,0x20
+00021ac7 b861 l32i.n a11,a1,0x18
+00021ac9 a11bd7 l32r a10,0x00017738
+00021acc e871 l32i.n a14,a1,0x1c
+00021ace f851 l32i.n a15,a1,0x14
+00021ad0 a20a80 l8ui a10,a10,0x80
+00021ad3 1bee addi.n a14,a14,0x1
+00021ad5 1bff addi.n a15,a15,0x1
+00021ad7 2bbb addi.n a11,a11,0x2
+00021ad9 2bcc addi.n a12,a12,0x2
+00021adb c981 s32i.n a12,a1,0x20
+00021add b961 s32i.n a11,a1,0x18
+00021adf f951 s32i.n a15,a1,0x14
+00021ae1 e971 s32i.n a14,a1,0x1c
+00021ae3 a7be02 bgeu a14,a10,0x00021ae9
+00021ae6 86d2ff j 0x00021a34
+00021ae9 161a0b beqz a10,0x00021b9e
+00021aec 81c4d6 l32r a8,0x000175fc
+00021aef 0c0f movi.n a15,0x0
+00021af1 91b0d5 l32r a9,0x000171b4
+00021af4 9981 s32i.n a9,a1,0x20
+00021af6 f971 s32i.n a15,a1,0x1c
+00021af8 d2c968 addi a13,a9,0x68
+00021afb cbe9 addi.n a14,a9,0xc
+00021afd 82c868 addi a8,a8,0x68
+00021b00 8991 s32i.n a8,a1,0x24
+00021b02 e931 s32i.n a14,a1,0xc
+00021b04 d921 s32i.n a13,a1,0x8
+00021b06 d2c95c addi a13,a9,0x5c
+00021b09 d941 s32i.n a13,a1,0x10
+00021b0b 5841 l32i.n a5,a1,0x10
+00021b0d 3831 l32i.n a3,a1,0xc
+00021b0f 7821 l32i.n a7,a1,0x8
+00021b11 a881 l32i.n a10,a1,0x20
+00021b13 a9d1 s32i.n a10,a1,0x34
+00021b15 2d05 mov.n a2,a5
+00021b17 68d1 l32i.n a6,a1,0x34
+00021b19 4108d7 l32r a4,0x0001773c
+00021b1c c21620 l16ui a12,a6,0x40
+00021b1f b21623 l16ui a11,a6,0x46
+00021b22 930400 lsi f9,a4,0x0
+00021b25 830401 lsi f8,a4,0x4
+00021b28 90781a sub.s f7,f8,f9
+00021b2b c0bbc0 sub a11,a11,a12
+00021b2e 006bca float.s f6,a11,0x0
+00021b31 40b7fa rfr a11,f7
+00021b34 40a6fa rfr a10,f6
+00021b37 251c19 call8 0x0003acf8
+00021b3a 4b44 addi.n a4,a4,0x4
+00021b3c 6b66 addi.n a6,a6,0x6
+00021b3e 50aafa wfr f10,a10
+00021b41 a3c203 ssip f10,a2,0xc
+00021b44 3796d4 bne a6,a3,0x00021b1c
+00021b47 d891 l32i.n a13,a1,0x24
+00021b49 f8d1 l32i.n a15,a1,0x34
+00021b4b 32d304 addmi a3,a3,0x400
+00021b4e b30700 lsi f11,a7,0x0
+00021b51 52d504 addmi a5,a5,0x400
+00021b54 52c5c4 addi a5,a5,-0x3c
+00021b57 b34703 ssi f11,a7,0xc
+00021b5a 32c3c4 addi a3,a3,-0x3c
+00021b5d 72d704 addmi a7,a7,0x400
+00021b60 72c7c4 addi a7,a7,-0x3c
+00021b63 f2df04 addmi a15,a15,0x400
+00021b66 f2cfc4 addi a15,a15,-0x3c
+00021b69 f9d1 s32i.n a15,a1,0x34
+00021b6b d797a6 bne a7,a13,0x00021b15
+00021b6e d841 l32i.n a13,a1,0x10
+00021b70 a891 l32i.n a10,a1,0x24
+00021b72 c881 l32i.n a12,a1,0x20
+00021b74 91f1d6 l32r a9,0x00017738
+00021b77 8871 l32i.n a8,a1,0x1c
+00021b79 b831 l32i.n a11,a1,0xc
+00021b7b 920980 l8ui a9,a9,0x80
+00021b7e 1b88 addi.n a8,a8,0x1
+00021b80 2bbb addi.n a11,a11,0x2
+00021b82 2bcc addi.n a12,a12,0x2
+00021b84 4baa addi.n a10,a10,0x4
+00021b86 4bdd addi.n a13,a13,0x4
+00021b88 d941 s32i.n a13,a1,0x10
+00021b8a a991 s32i.n a10,a1,0x24
+00021b8c c981 s32i.n a12,a1,0x20
+00021b8e a821 l32i.n a10,a1,0x8
+00021b90 b931 s32i.n a11,a1,0xc
+00021b92 8971 s32i.n a8,a1,0x1c
+00021b94 4baa addi.n a10,a10,0x4
+00021b96 a921 s32i.n a10,a1,0x8
+00021b98 97b802 bgeu a8,a9,0x00021b9e
+00021b9b 06dbff j 0x00021b0b
+00021b9e 1df0 retw.n
+00021ba0 225620 s16i a2,a6,0x40
+00021ba3 c6b9ff j 0x00021a8e
+===== 00025660 FUN_00025660 =====
+
+/* WARNING: Removing unreachable block (ram,0x0002567d) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00025660(void)
+
+{
+  char cVar1;
+  int iVar2;
+  int iVar3;
+  float *pfVar4;
+  int iVar5;
+  float *pfVar6;
+  float fVar7;
+  float fVar8;
+  float fVar9;
+  float fVar10;
+  float fVar11;
+  float fVar12;
+  float fVar13;
+  float fVar14;
+  float fVar15;
+  float fVar16;
+  float fVar17;
+  float fVar18;
+  float fVar19;
+  float fVar20;
+  int iVar21;
+  int iVar22;
+  
+  iVar5 = _DAT_00017aa4;
+  iVar3 = _DAT_00017aa0;
+  iVar2 = _DAT_00017a9c;
+  fVar18 = *(float *)(_DAT_00017a9c + 0x31c);
+  cVar1 = *(char *)(_DAT_00017aa0 + 0x7d);
+  iVar21 = 7;
+  pfVar4 = _DAT_00017a98;
+  fVar12 = 0.0;
+  while( true ) {
+    pfVar4 = pfVar4 + 0x5e;
+    fVar7 = *pfVar4;
+    if (*pfVar4 <= fVar12) {
+      fVar7 = fVar12;
+    }
+    if (iVar21 == 0) break;
+    iVar21 = iVar21 + -1;
+    fVar12 = fVar7;
+  }
+  *(float *)(_DAT_00017a9c + 0x310) = fVar7;
+  pfVar4 = _DAT_00017124;
+  if (cVar1 == '\0') {
+    iVar21 = 1;
+    fVar12 = *(float *)(_DAT_00017aa8 + 0x70);
+  }
+  else {
+    iVar21 = 6;
+    fVar12 = *(float *)(iVar5 + 0x33c);
+    if (*(float *)(_DAT_00017aac + 0x4c) < *(float *)(iVar5 + 0x33c)) {
+      fVar12 = *(float *)(_DAT_00017aac + 0x4c);
+    }
+  }
+  if (iVar21 == 0) {
+    fVar8 = 0.0;
+    fVar9 = 0.0;
+  }
+  else {
+    fVar9 = 0.0;
+    fVar19 = _DAT_00017124[4];
+    fVar20 = _DAT_00017124[5];
+    fVar16 = _DAT_00017124[2];
+    fVar13 = _DAT_00017124[0x15];
+    fVar11 = fVar18 * *(float *)(iVar5 + 0x33c);
+    fVar8 = 0.0;
+    iVar22 = iVar21 + -1;
+    pfVar6 = _DAT_00017ab0;
+    fVar10 = fVar9;
+    if (iVar21 != 0) goto code_r0x000256dc;
+    while (iVar22 != 0) {
+      iVar22 = iVar22 + -1;
+      fVar10 = fVar9;
+code_r0x000256dc:
+      fVar9 = *(float *)(iVar5 + 0x208);
+      if (*(char *)(iVar3 + 0x7d) == '\0') {
+        fVar14 = 0.0;
+        fVar15 = *(float *)(iVar5 + 0x1d8);
+        fVar17 = fVar9;
+        fVar9 = *(float *)(iVar5 + 0x1f0);
+      }
+      else {
+        fVar17 = *(float *)(iVar5 + 0x220);
+        fVar14 = *(float *)(iVar5 + 0x1d8);
+        fVar15 = *(float *)(iVar5 + 0x1f0);
+      }
+      fVar9 = fVar13 * fVar12 * fVar16 +
+              fVar17 + (fVar9 + (fVar15 + fVar14 * fVar7) * fVar7) * fVar7 + fVar19 + fVar20;
+      *pfVar6 = fVar9 - fVar11;
+      pfVar6 = pfVar6 + 1;
+      fVar11 = fVar18 * *(float *)(iVar2 + 0xe4);
+      if (fVar9 < fVar8) {
+        fVar9 = fVar8;
+      }
+      fVar8 = fVar9;
+      iVar5 = iVar5 + 4;
+      fVar9 = fVar8 - fVar11;
+      if (fVar8 - fVar11 < fVar10) {
+        fVar9 = fVar10;
+      }
+    }
+  }
+  fVar12 = *pfVar4;
+  *(float *)(iVar2 + 0x30c) = fVar8;
+  *(float *)(iVar2 + 0x308) = fVar9;
+  *(float *)(iVar2 + 0x304) = fVar12 - fVar18 * *(float *)(iVar2 + 0xe0);
+  return;
+}
+
+
+00025660 364100 entry a1,0x20
+00025663 310dc9 l32r a3,0x00017a98
+00025666 42a178 movi a4,0x178
+00025669 0c82 movi.n a2,0x8
+0002566b 610dc9 l32r a6,0x00017aa0
+0002566e 510bc9 l32r a5,0x00017a9c
+00025671 30d0fa const.sf f13,0x0
+00025674 008dfa mov.s f8,f13
+00025677 9305c7 lsi f9,a5,0x31c
+0002567a 82067d l8ui a8,a6,0x7d
+0002567d 76a20b loopgtz a2,0x0002568c
+00025680 400318 lsxu f0,a3,a4
+00025683 00084b olt.s b0,f8,f0
+00025686 0008cb movf.s f0,f8,b0
+00025689 0080fa mov.s f8,f0
+0002568c 3106c9 l32r a3,0x00017aa4
+0002568f 8345c4 ssi f8,a5,0x310
+00025692 ccb8 bnez.n a8,0x000256a1
+00025694 9105c9 l32r a9,0x00017aa8
+00025697 0c17 movi.n a7,0x1
+00025699 03091c lsi f0,a9,0x70
+0002569c 860400 j 0x000256b2
+000256a1 a102c9 l32r a10,0x00017aac
+000256a4 0c67 movi.n a7,0x6
+000256a6 0303cf lsi f0,a3,0x33c
+000256a9 130a13 lsi f1,a10,0x4c
+000256ac 00114b olt.s b1,f1,f0
+000256af 1001db movt.s f0,f1,b1
+000256b2 819cc6 l32r a8,0x00017124
+000256b5 16d708 beqz a7,0x00025746
+000256b8 001dfa mov.s f1,f13
+000256bb 41fdc8 l32r a4,0x00017ab0
+000256be 5303cf lsi f5,a3,0x33c
+000256c1 a30804 lsi f10,a8,0x10
+000256c4 b30805 lsi f11,a8,0x14
+000256c7 630802 lsi f6,a8,0x8
+000256ca 60402a mul.s f4,f0,f6
+000256cd 330815 lsi f3,a8,0x54
+000256d0 50292a mul.s f2,f9,f5
+000256d3 000dfa mov.s f0,f13
+000256d6 40c32a mul.s f12,f3,f4
+000256d9 769766 loopnez a7,0x00025743
+000256dc 530376 lsi f5,a3,0x1d8
+000256df b2067d l8ui a11,a6,0x7d
+000256e2 43037c lsi f4,a3,0x1f0
+000256e5 330382 lsi f3,a3,0x208
+000256e8 ccdb bnez.n a11,0x000256f9
+000256ea 0063fa mov.s f6,f3
+000256ed 0074fa mov.s f7,f4
+000256f0 003dfa mov.s f3,f13
+000256f3 0045fa mov.s f4,f5
+000256f6 060200 j 0x00025702
+000256f9 630388 lsi f6,a3,0x220
+000256fc 0073fa mov.s f7,f3
+000256ff 0035fa mov.s f3,f5
+00025702 80e32a mul.s f14,f3,f8
+00025705 e0540a add.s f5,f4,f14
+00025708 80f52a mul.s f15,f5,f8
+0002570b f0e70a add.s f14,f7,f15
+0002570e 805e2a mul.s f5,f14,f8
+00025711 50f60a add.s f15,f6,f5
+00025714 a0ef0a add.s f14,f15,f10
+00025717 e05c0a add.s f5,f12,f14
+0002571a b0550a add.s f5,f5,f11
+0002571d 20f51a sub.s f15,f5,f2
+00025720 f3c401 ssip f15,a4,0x4
+00025723 e30539 lsi f14,a5,0xe4
+00025726 e0292a mul.s f2,f9,f14
+00025729 00354b olt.s b3,f5,f0
+0002572c 3050db movt.s f5,f0,b3
+0002572f 20f51a sub.s f15,f5,f2
+00025732 4b33 addi.n a3,a3,0x4
+00025734 0005fa mov.s f0,f5
+00025737 00e1fa mov.s f14,f1
+0002573a 102f4b olt.s b2,f15,f1
+0002573d 001ffa mov.s f1,f15
+00025740 201edb movt.s f1,f14,b2
+00025743 460100 j 0x0002574c
+00025746 000dfa mov.s f0,f13
+00025749 001dfa mov.s f1,f13
+0002574c 430538 lsi f4,a5,0xe0
+0002574f 40392a mul.s f3,f9,f4
+00025752 230800 lsi f2,a8,0x0
+00025755 30f21a sub.s f15,f2,f3
+00025758 0345c3 ssi f0,a5,0x30c
+0002575b 1345c2 ssi f1,a5,0x308
+0002575e f345c1 ssi f15,a5,0x304
+00025761 1df0 retw.n
+===== 00025f2c FUN_00025f2c =====
+
+/* WARNING: Removing unreachable block (ram,0x00026071) */
+/* WARNING: Removing unreachable block (ram,0x00026111) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00025f2c(void)
+
+{
+  char cVar1;
+  int iVar2;
+  int iVar3;
+  float fVar4;
+  float *pfVar5;
+  int iVar6;
+  float *pfVar7;
+  int iVar8;
+  int iVar9;
+  uint uVar10;
+  undefined4 uVar11;
+  float fVar12;
+  float fVar13;
+  float fVar14;
+  float fVar15;
+  int iVar16;
+  int iVar17;
+  undefined1 uVar18;
+  
+  uVar18 = 0;
+  func_0x00002268(_DAT_000171e0);
+  iVar3 = func_0x0002aa00();
+  iVar16 = _DAT_00017b9c;
+  iVar17 = _DAT_00017b98;
+  iVar2 = _DAT_00017b94;
+  iVar8 = _DAT_000170a4;
+  if (iVar3 == 0) {
+    uVar11 = rsil(2);
+    memw();
+    iVar8 = *(int *)(_DAT_000170a4 + 0x3f0);
+    memw();
+    uVar10 = *(uint *)(_DAT_00017564 + 0x3d8);
+    if (*(short *)(_DAT_00017ba0 + 0xfe) == 0) {
+      memw();
+      *(undefined4 *)(_DAT_00017b9c + 0x20) = 1;
+    }
+    wsr(uVar18,uVar11);
+    fVar12 = (float)(uint)(iVar8 - *(int *)(iVar2 + 0x1b0)) / 1.0;
+    uVar11 = func_0x0003acf8(((float)uVar10 / 1.0) * _DAT_00017668,fVar12);
+    *(undefined4 *)(iVar2 + 0x1ac) = uVar11;
+    fVar4 = (float)func_0x0003acf8(_DAT_00017ba4,fVar12);
+    *(int *)(iVar2 + 0x1b0) = iVar8;
+    fVar12 = (float)*(uint *)(iVar2 + 600) / 1.0;
+    *(float *)(iVar2 + 0x280) = fVar12;
+    func_0x00026200();
+    uVar10 = func_0x0001cb7c(*(undefined4 *)(iVar2 + 0x2ac),iVar8);
+    uVar11 = func_0x0003acf8(fVar12 * *_DAT_00017b3c,(float)uVar10 / 1.0);
+    fVar12 = _DAT_000173d8;
+    *(undefined4 *)(iVar2 + 0x288) = uVar11;
+    memw();
+    memw();
+    *(float *)(iVar2 + 0x198) =
+         ((float)*(uint *)(iVar16 + 0x18) / 1.0 + ((float)*(uint *)(iVar16 + 0x1c) / 1.0) * fVar12)
+         * *(float *)(iVar2 + 0x19c) * fVar4 +
+         *(float *)(iVar17 + 0x388) * *(float *)(iVar2 + 0x1ac);
+  }
+  else {
+    *(undefined4 *)(_DAT_00017b94 + 0x1ac) = 0;
+    memw();
+    *(undefined4 *)(iVar2 + 0x1b0) = *(undefined4 *)(iVar8 + 0x3f0);
+    *(undefined4 *)(iVar2 + 0x198) = 0;
+    *(undefined4 *)(iVar2 + 0x288) = 0;
+    *(undefined4 *)(iVar2 + 0x28c) = 0;
+  }
+  iVar8 = _DAT_00017bac;
+  pfVar7 = _DAT_00017ba8;
+  fVar12 = _DAT_00017ba8[0xb8];
+  fVar13 = ((float)(int)((uint)*(byte *)(_DAT_00017124 + 0x24) - *(int *)(_DAT_00017124 + 0x50)) /
+           1.0) * _DAT_00017338 + _DAT_00017278;
+  pfVar5 = (float *)(_DAT_00017bac + 0x1d8);
+  fVar4 = *(float *)(iVar2 + 0x1a4);
+  *(float *)(iVar2 + 0x1c8) = fVar13;
+  *(float *)(iVar2 + 0x1cc) = fVar13 - *(float *)(iVar2 + 0x1d0) * fVar12;
+  iVar16 = 5;
+  while( true ) {
+    *pfVar5 = pfVar7[0xc] + fVar4 * (pfVar7[6] + pfVar7[1] * fVar4);
+    pfVar5 = pfVar5 + 1;
+    if (iVar16 == 0) break;
+    iVar16 = iVar16 + -1;
+    pfVar7 = pfVar7 + 1;
+  }
+  uVar11 = func_0x00026f70(_DAT_00017bb0,*(undefined4 *)(iVar2 + 0x1cc),
+                           *(undefined4 *)(iVar2 + 0x1c4),0x3f800000);
+  iVar3 = _DAT_00017bb8;
+  iVar16 = _DAT_00017bb4;
+  *(undefined4 *)(iVar2 + 0x1d8) = uVar11;
+  iVar6 = iVar8;
+  do {
+    uVar11 = func_0x00026f70(iVar3,*(undefined4 *)(iVar6 + 0x1d8),*(undefined4 *)(iVar2 + 0x1dc),
+                             *_DAT_00017b7c);
+    iVar3 = iVar3 + 0x14;
+    *(undefined4 *)(iVar6 + 0x220) = uVar11;
+    iVar9 = _DAT_00017bbc;
+    iVar6 = iVar6 + 4;
+  } while (iVar6 != iVar16);
+  fVar4 = *(float *)(iVar2 + 0x1cc);
+  fVar15 = *(float *)(iVar2 + 0x1d8) +
+           *(float *)(iVar2 + 0x198) *
+           (*(float *)(_DAT_00017bbc + 0x1f8) + *(float *)(_DAT_00017bbc + 500) * fVar4) * fVar4;
+  fVar12 = *_DAT_00017b3c;
+  fVar13 = *(float *)(iVar17 + 900);
+  *(float *)(iVar2 + 0x1d0) = fVar15;
+  *(float *)(iVar2 + 0x1d4) = fVar15 * fVar4;
+  iVar17 = 5;
+  pfVar7 = (float *)(iVar8 + 0x1d8);
+  fVar4 = fVar12;
+  while( true ) {
+    fVar15 = pfVar7[1];
+    fVar14 = pfVar7[0x12] +
+             fVar13 * fVar15 * *(float *)(iVar2 + 0x198) *
+                               (*(float *)(iVar9 + 0x200) + *(float *)(iVar9 + 0x1fc) * fVar15);
+    iVar9 = iVar9 + 8;
+    fVar15 = *(float *)(iVar2 + 0x250) + fVar14 * fVar15;
+    pfVar7[6] = fVar14;
+    if (fVar4 < fVar14) {
+      fVar4 = fVar14;
+    }
+    pfVar7[0xc] = fVar15;
+    if (fVar12 < fVar15) {
+      fVar12 = fVar15;
+    }
+    if (iVar17 == 0) break;
+    iVar17 = iVar17 + -1;
+    pfVar7 = pfVar7 + 1;
+  }
+  cVar1 = *(char *)(_DAT_00017bc0 + 0xe4);
+  *(float *)(iVar2 + 0x240) = fVar4;
+  *(float *)(iVar2 + 0x244) = fVar12;
+  if ((cVar1 == '\0') || (iVar8 = func_0x0002c5e4(), iVar8 == 0)) {
+    *(float *)(iVar2 + 0x1a8) = *_DAT_00017b3c;
+  }
+  else {
+    fVar12 = (float)func_0x0002c7d0(*(undefined4 *)(_DAT_0001711c + 0x3d0));
+    *(float *)(iVar2 + 0x1a8) = fVar12 * _DAT_000170ac;
+  }
+  func_0x0000231c(_DAT_000171e0);
+  return;
+}
+
+
+00025f2c 366100 entry a1,0x30
+00025f2f a1acc4 l32r a10,0x000171e0
+00025f32 6533dc call8 0x00002268
+00025f35 a5ac04 call8 0x0002aa00
+00025f38 915bc4 l32r a9,0x000170a4
+00025f3b 3000fa const.sf f0,0x0
+00025f3e 7116c7 l32r a7,0x00017b98
+00025f41 3114c7 l32r a3,0x00017b94
+00025f44 561a0d bnez a10,0x00026019
+00025f47 2115c7 l32r a2,0x00017b9c
+00025f4a b06200 rsil a11,0x2
+00025f4d c02000 memw
+00025f50 a185c5 l32r a10,0x00017564
+00025f53 4229fc l32i a4,a9,0x3f0
+00025f56 c02000 memw
+00025f59 8111c7 l32r a8,0x00017ba0
+00025f5c 82187f l16ui a8,a8,0xfe
+00025f5f a22af6 l32i a10,a10,0x3d8
+00025f62 cc58 bnez.n a8,0x00025f6b
+00025f64 0c19 movi.n a9,0x1
+00025f66 c02000 memw
+00025f69 9982 s32i.n a9,a2,0x20
+00025f6b b0e613 wsr a11,PS
+00025f6e b1bec5 l32r a11,0x00017668
+00025f71 002ada ufloat.s f2,a10,0x0
+00025f74 a2236c l32i a10,a3,0x1b0
+00025f77 503bfa wfr f3,a11
+00025f7a 30122a mul.s f1,f2,f3
+00025f7d a0a4c0 sub a10,a4,a10
+00025f80 000ada ufloat.s f0,a10,0x0
+00025f83 034100 ssi f0,a1,0x0
+00025f86 40b0fa rfr a11,f0
+00025f89 40a1fa rfr a10,f1
+00025f8c a5d614 call8 0x0003acf8
+00025f8f 430100 lsi f4,a1,0x0
+00025f92 505afa wfr f5,a10
+00025f95 40b4fa rfr a11,f4
+00025f98 53436b ssi f5,a3,0x1ac
+00025f9b a102c7 l32r a10,0x00017ba4
+00025f9e a5d514 call8 0x0003acf8
+00025fa1 c22396 l32i a12,a3,0x258
+00025fa4 42636c s32i a4,a3,0x1b0
+00025fa7 507afa wfr f7,a10
+00025faa 006cda ufloat.s f6,a12,0x0
+00025fad 734101 ssi f7,a1,0x4
+00025fb0 634102 ssi f6,a1,0x8
+00025fb3 6343a0 ssi f6,a3,0x280
+00025fb6 a52400 call8 0x00026200
+00025fb9 bd04 mov.n a11,a4
+00025fbb a223ab l32i a10,a3,0x2ac
+00025fbe e5bbf6 call8 0x0001cb7c
+00025fc1 d1dec6 l32r a13,0x00017b3c
+00025fc4 a30102 lsi f10,a1,0x8
+00025fc7 b30d00 lsi f11,a13,0x0
+00025fca b08a2a mul.s f8,f10,f11
+00025fcd 009ada ufloat.s f9,a10,0x0
+00025fd0 40b9fa rfr a11,f9
+00025fd3 40a8fa rfr a10,f8
+00025fd6 25d214 call8 0x0003acf8
+00025fd9 230367 lsi f2,a3,0x19c
+00025fdc 81ffc4 l32r a8,0x000173d8
+00025fdf 509afa wfr f9,a10
+00025fe2 9343a2 ssi f9,a3,0x288
+00025fe5 83036b lsi f8,a3,0x1ac
+00025fe8 7307e2 lsi f7,a7,0x388
+00025feb 80e72a mul.s f14,f7,f8
+00025fee 5068fa wfr f6,a8
+00025ff1 c02000 memw
+00025ff4 f872 l32i.n a15,a2,0x1c
+00025ff6 005fda ufloat.s f5,a15,0x0
+00025ff9 60452a mul.s f4,f5,f6
+00025ffc c02000 memw
+00025fff e862 l32i.n a14,a2,0x18
+00026001 003eda ufloat.s f3,a14,0x0
+00026004 40130a add.s f1,f3,f4
+00026007 20f12a mul.s f15,f1,f2
+0002600a 030101 lsi f0,a1,0x4
+0002600d 00df2a mul.s f13,f15,f0
+00026010 e0cd0a add.s f12,f13,f14
+00026013 c34366 ssi f12,a3,0x198
+00026016 060500 j 0x0002602e
+00026019 03436b ssi f0,a3,0x1ac
+0002601c c02000 memw
+0002601f a229fc l32i a10,a9,0x3f0
+00026022 a2636c s32i a10,a3,0x1b0
+00026025 034366 ssi f0,a3,0x198
+00026028 0343a2 ssi f0,a3,0x288
+0002602b 0343a3 ssi f0,a3,0x28c
+0002602e f30374 lsi f15,a3,0x1d0
+00026031 a13cc4 l32r a10,0x00017124
+00026034 91ddc6 l32r a9,0x00017ba8
+00026037 6190c4 l32r a6,0x00017278
+0002603a b22a14 l32i a11,a10,0x50
+0002603d a20a24 l8ui a10,a10,0x24
+00026040 81bec4 l32r a8,0x00017338
+00026043 50e6fa wfr f14,a6
+00026046 b0aac0 sub a10,a10,a11
+00026049 001aca float.s f1,a10,0x0
+0002604c 5028fa wfr f2,a8
+0002604f 20d12a mul.s f13,f1,f2
+00026052 0309b8 lsi f0,a9,0x2e0
+00026055 00cf2a mul.s f12,f15,f0
+00026058 61d5c6 l32r a6,0x00017bac
+0002605b e0bd0a add.s f11,f13,f14
+0002605e 22a1d8 movi a2,0x1d8
+00026061 2a26 add.n a2,a6,a2
+00026063 c0ab1a sub.s f10,f11,f12
+00026066 0c6b movi.n a11,0x6
+00026068 230369 lsi f2,a3,0x1a4
+0002606b b34372 ssi f11,a3,0x1c8
+0002606e a34373 ssi f10,a3,0x1cc
+00026071 76ab17 loopgtz a11,0x0002608c
+00026074 938901 lsiu f9,a9,0x4
+00026077 20892a mul.s f8,f9,f2
+0002607a 730905 lsi f7,a9,0x14
+0002607d 80670a add.s f6,f7,f8
+00026080 60522a mul.s f5,f2,f6
+00026083 43090b lsi f4,a9,0x2c
+00026086 50340a add.s f3,f4,f5
+00026089 33c201 ssip f3,a2,0x4
+0002608c a1c9c6 l32r a10,0x00017bb0
+0002608f b22373 l32i a11,a3,0x1cc
+00026092 c22371 l32i a12,a3,0x1c4
+00026095 30a1fa const.sf f10,0x3f800000
+00026098 40dafa rfr a13,f10
+0002609b 65ed00 call8 0x00026f70
+0002609e 2d06 mov.n a2,a6
+000260a0 51c5c6 l32r a5,0x00017bb4
+000260a3 41c5c6 l32r a4,0x00017bb8
+000260a6 50bafa wfr f11,a10
+000260a9 b34376 ssi f11,a3,0x1d8
+000260ac ad04 mov.n a10,a4
+000260ae d1b3c6 l32r a13,0x00017b7c
+000260b1 b22276 l32i a11,a2,0x1d8
+000260b4 c22377 l32i a12,a3,0x1dc
+000260b7 c30d00 lsi f12,a13,0x0
+000260ba 40dcfa rfr a13,f12
+000260bd 25eb00 call8 0x00026f70
+000260c0 42c414 addi a4,a4,0x14
+000260c3 50dafa wfr f13,a10
+000260c6 d34288 ssi f13,a2,0x220
+000260c9 22c204 addi a2,a2,0x4
+000260cc 5792dc bne a2,a5,0x000260ac
+000260cf 91bbc6 l32r a9,0x00017bbc
+000260d2 130373 lsi f1,a3,0x1cc
+000260d5 93097d lsi f9,a9,0x1f4
+000260d8 10892a mul.s f8,f9,f1
+000260db 73097e lsi f7,a9,0x1f8
+000260de 80670a add.s f6,f7,f8
+000260e1 530366 lsi f5,a3,0x198
+000260e4 60452a mul.s f4,f5,f6
+000260e7 e2a006 movi a14,0x6
+000260ea 10342a mul.s f3,f4,f1
+000260ed 8193c6 l32r a8,0x00017b3c
+000260f0 22d602 addmi a2,a6,0x200
+000260f3 230376 lsi f2,a3,0x1d8
+000260f6 30f20a add.s f15,f2,f3
+000260f9 22c2d8 addi a2,a2,-0x28
+000260fc 030800 lsi f0,a8,0x0
+000260ff 6307e1 lsi f6,a7,0x384
+00026102 10ef2a mul.s f14,f15,f1
+00026105 0020fa mov.s f2,f0
+00026108 f34374 ssi f15,a3,0x1d0
+0002610b 0010fa mov.s f1,f0
+0002610e e34375 ssi f14,a3,0x1d4
+00026111 76ae3d loopgtz a14,0x00026152
+00026114 e38201 lsiu f14,a2,0x4
+00026117 b3097f lsi f11,a9,0x1fc
+0002611a e0ab2a mul.s f10,f11,f14
+0002611d 930980 lsi f9,a9,0x200
+00026120 a0890a add.s f8,f9,f10
+00026123 730366 lsi f7,a3,0x198
+00026126 80572a mul.s f5,f7,f8
+00026129 504e2a mul.s f4,f14,f5
+0002612c 40362a mul.s f3,f6,f4
+0002612f f30211 lsi f15,a2,0x44
+00026132 30bf0a add.s f11,f15,f3
+00026135 e0db2a mul.s f13,f11,f14
+00026138 c30394 lsi f12,a3,0x250
+0002613b 8b99 addi.n a9,a9,0x8
+0002613d d0ac0a add.s f10,f12,f13
+00026140 b34205 ssi f11,a2,0x14
+00026143 b0124b olt.s b1,f2,f11
+00026146 102bdb movt.s f2,f11,b1
+00026149 a3420b ssi f10,a2,0x2c
+0002614c a0014b olt.s b0,f1,f10
+0002614f 001adb movt.s f1,f10,b0
+00026152 919bc6 l32r a9,0x00017bc0
+00026155 9209e4 l8ui a9,a9,0xe4
+00026158 234390 ssi f2,a3,0x240
+0002615b 134391 ssi f1,a3,0x244
+0002615e 9ce9 beqz.n a9,0x00026180
+00026160 254806 call8 0x0002c5e4
+00026163 9c9a beqz.n a10,0x00026180
+00026165 a1edc3 l32r a10,0x0001711c
+00026168 a22af4 l32i a10,a10,0x3d0
+0002616b 656606 call8 0x0002c7d0
+0002616e b1cfc3 l32r a11,0x000170ac
+00026171 50dafa wfr f13,a10
+00026174 50ebfa wfr f14,a11
+00026177 e0cd2a mul.s f12,f13,f14
+0002617a c3436a ssi f12,a3,0x1a8
+0002617d 060200 j 0x00026189
+00026180 c16fc6 l32r a12,0x00017b3c
+00026183 f30c00 lsi f15,a12,0x0
+00026186 f3436a ssi f15,a3,0x1a8
+00026189 a115c4 l32r a10,0x000171e0
+0002618c e518dc call8 0x0000231c
+0002618f 1df0 retw.n
+===== 00026304 FUN_00026304 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00026304(void)
+
+{
+  float *pfVar1;
+  float *pfVar2;
+  uint uVar3;
+  int iVar4;
+  uint uVar5;
+  int iVar6;
+  undefined4 uVar7;
+  uint uVar8;
+  undefined4 *puVar9;
+  undefined4 uVar10;
+  undefined4 uVar11;
+  float fVar12;
+  float fVar13;
+  undefined8 uVar14;
+  
+  uVar5 = _DAT_00017c20;
+  uVar11 = _DAT_00017c1c;
+  uVar10 = _DAT_00017c18;
+  iVar4 = _DAT_00017154;
+  uVar3 = _DAT_00017134;
+  uVar8 = _DAT_00017c10;
+  puVar9 = _DAT_00017c14;
+  do {
+    memw();
+    uVar14 = func_0x0003a978((float)*(uint *)((uVar8 & uVar3) + iVar4 + 0x200) / 1.0);
+    func_0x0003a54c((int)uVar14,(int)((ulonglong)uVar14 >> 0x20),uVar11,uVar10);
+    uVar7 = func_0x0003a8d0();
+    uVar8 = uVar8 + 4;
+    *puVar9 = uVar7;
+    iVar6 = _DAT_00017c24;
+    uVar7 = _DAT_00017b1c;
+    puVar9 = puVar9 + 1;
+  } while (uVar8 != uVar5);
+  uVar10 = *_DAT_00017124;
+  fVar13 = *(float *)(_DAT_00017c24 + 0x74);
+  fVar12 = *(float *)(_DAT_00017c24 + 0x70);
+  pfVar1 = (float *)(_DAT_00017c24 + 0x6c);
+  pfVar2 = (float *)(_DAT_00017c24 + 0x68);
+  uVar11 = *(undefined4 *)(_DAT_00017c24 + 0x34);
+  *(float *)(_DAT_00017c24 + 0x58) = *(float *)(_DAT_00017c24 + 0x58) * 0.5;
+  *(float *)(iVar6 + 0x7c) = *pfVar2 + *pfVar1;
+  *(float *)(iVar6 + 0x80) = fVar12 + fVar13;
+  fVar12 = (float)func_0x00026fb8(uVar7,uVar10,uVar11);
+  *(float *)(iVar6 + 0x88) = fVar12;
+  *(float *)(iVar6 + 0xf8) =
+       fVar12 + *(float *)(iVar6 + 0x84) * (*(float *)(iVar6 + 0x7c) + *(float *)(iVar6 + 0x80));
+  return;
+}
+
+
+00026304 366100 entry a1,0x30
+00026307 2142c6 l32r a2,0x00017c10
+0002630a 3142c6 l32r a3,0x00017c14
+0002630d 7143c6 l32r a7,0x00017c1c
+00026310 5189c3 l32r a5,0x00017134
+00026313 4141c6 l32r a4,0x00017c18
+00026316 4901 s32i.n a4,a1,0x0
+00026318 418fc3 l32r a4,0x00017154
+0002631b 6141c6 l32r a6,0x00017c20
+0002631e 508210 and a8,a2,a5
+00026321 4a88 add.n a8,a8,a4
+00026323 c02000 memw
+00026326 822880 l32i a8,a8,0x200
+00026329 0008da ufloat.s f0,a8,0x0
+0002632c 40a0fa rfr a10,f0
+0002632f a56414 call8 0x0003a978
+00026332 cd07 mov.n a12,a7
+00026334 d801 l32i.n a13,a1,0x0
+00026336 652114 call8 0x0003a54c
+00026339 655914 call8 0x0003a8d0
+0002633c 4b22 addi.n a2,a2,0x4
+0002633e 501afa wfr f1,a10
+00026341 13c301 ssip f1,a3,0x4
+00026344 6792d6 bne a2,a6,0x0002631e
+00026347 a1f5c5 l32r a10,0x00017b1c
+0002634a b176c3 l32r a11,0x00017124
+0002634d 2135c6 l32r a2,0x00017c24
+00026350 30a3fa const.sf f10,0x3f000000
+00026353 b80b l32i.n a11,a11,0x0
+00026355 63021d lsi f6,a2,0x74
+00026358 53021c lsi f5,a2,0x70
+0002635b 83021b lsi f8,a2,0x6c
+0002635e 73021a lsi f7,a2,0x68
+00026361 930216 lsi f9,a2,0x58
+00026364 a0492a mul.s f4,f9,f10
+00026367 80370a add.s f3,f7,f8
+0002636a 60250a add.s f2,f5,f6
+0002636d c8d2 l32i.n a12,a2,0x34
+0002636f 434216 ssi f4,a2,0x58
+00026372 33421f ssi f3,a2,0x7c
+00026375 234220 ssi f2,a2,0x80
+00026378 e5c300 call8 0x00026fb8
+0002637b 130220 lsi f1,a2,0x80
+0002637e 03021f lsi f0,a2,0x7c
+00026381 10f00a add.s f15,f0,f1
+00026384 e30221 lsi f14,a2,0x84
+00026387 f0de2a mul.s f13,f14,f15
+0002638a 50cafa wfr f12,a10
+0002638d d0bc0a add.s f11,f12,f13
+00026390 c34222 ssi f12,a2,0x88
+00026393 b3423e ssi f11,a2,0xf8
+00026396 1df0 retw.n
+===== 00028184 FUN_00028184 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00028184(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  undefined4 uVar3;
+  undefined8 uVar4;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  uVar4 = func_0x0003a978(uVar1);
+  uVar3 = (undefined4)((ulonglong)uVar4 >> 0x20);
+  iVar2 = func_0x0003a7b8((int)uVar4,uVar3,_DAT_00017e78,_DAT_00017e74);
+  if ((-1 < iVar2) &&
+     (iVar2 = func_0x0003a754((int)uVar4,uVar3,_DAT_00017e78,_DAT_00017e7c), iVar2 < 1)) {
+    *(undefined4 *)(_DAT_00017124 + 0x14) = uVar1;
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+
+00028184 366100 entry a1,0x30
+00028187 ad02 mov.n a10,a2
+00028189 25e7d8 call8 0x00000ffc
+0002818c a901 s32i.n a10,a1,0x0
+0002818e 030100 lsi f0,a1,0x0
+00028191 40a0fa rfr a10,f0
+00028194 257e12 call8 0x0003a978
+00028197 3d0a mov.n a3,a10
+00028199 4d0b mov.n a4,a11
+0002819b d136bf l32r a13,0x00017e74
+0002819e c136bf l32r a12,0x00017e78
+000281a1 656112 call8 0x0003a7b8
+000281a4 961a02 bltz a10,0x000281c9
+000281a7 ad03 mov.n a10,a3
+000281a9 bd04 mov.n a11,a4
+000281ab d134bf l32r a13,0x00017e7c
+000281ae c132bf l32r a12,0x00017e78
+000281b1 255a12 call8 0x0003a754
+000281b4 e61a11 bgei a10,0x1,0x000281c9
+000281b7 ad02 mov.n a10,a2
+000281b9 81dabb l32r a8,0x00017124
+000281bc 0c1b movi.n a11,0x1
+000281be 130100 lsi f1,a1,0x0
+000281c1 134805 ssi f1,a8,0x14
+000281c4 25ded8 call8 0x00000fa8
+000281c7 1df0 retw.n
+000281c9 ad02 mov.n a10,a2
+000281cb b2a0ff movi a11,0xff
+000281ce a5ddd8 call8 0x00000fa8
+000281d1 1df0 retw.n
+===== 000281d4 FUN_000281d4 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_000281d4(undefined4 param_1)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  undefined4 uVar3;
+  undefined8 uVar4;
+  
+  uVar1 = func_0x00000ffc(param_1);
+  uVar4 = func_0x0003a978(uVar1);
+  uVar3 = (undefined4)((ulonglong)uVar4 >> 0x20);
+  iVar2 = func_0x0003a7b8((int)uVar4,uVar3,_DAT_00017e78,_DAT_00017e74);
+  if ((-1 < iVar2) &&
+     (iVar2 = func_0x0003a754((int)uVar4,uVar3,_DAT_00017e78,_DAT_00017e7c), iVar2 < 1)) {
+    *(undefined4 *)(_DAT_00017124 + 0x30) = uVar1;
+    func_0x00000fa8(param_1,1);
+    return;
+  }
+  func_0x00000fa8(param_1,0xff);
+  return;
+}
+
+
+000281d4 366100 entry a1,0x30
+000281d7 ad02 mov.n a10,a2
+000281d9 25e2d8 call8 0x00000ffc
+000281dc a901 s32i.n a10,a1,0x0
+000281de 030100 lsi f0,a1,0x0
+000281e1 40a0fa rfr a10,f0
+000281e4 257912 call8 0x0003a978
+000281e7 3d0a mov.n a3,a10
+000281e9 4d0b mov.n a4,a11
+000281eb d122bf l32r a13,0x00017e74
+000281ee c122bf l32r a12,0x00017e78
+000281f1 655c12 call8 0x0003a7b8
+000281f4 961a02 bltz a10,0x00028219
+000281f7 ad03 mov.n a10,a3
+000281f9 bd04 mov.n a11,a4
+000281fb d120bf l32r a13,0x00017e7c
+000281fe c11ebf l32r a12,0x00017e78
+00028201 255512 call8 0x0003a754
+00028204 e61a11 bgei a10,0x1,0x00028219
+00028207 ad02 mov.n a10,a2
+00028209 81c6bb l32r a8,0x00017124
+0002820c 0c1b movi.n a11,0x1
+0002820e 130100 lsi f1,a1,0x0
+00028211 13480c ssi f1,a8,0x30
+00028214 25d9d8 call8 0x00000fa8
+00028217 1df0 retw.n
+00028219 ad02 mov.n a10,a2
+0002821b b2a0ff movi a11,0xff
+0002821e a5d8d8 call8 0x00000fa8
+00028221 1df0 retw.n
+===== 00029134 FUN_00029134 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00029134(void)
+
+{
+  ushort uVar1;
+  ushort uVar2;
+  int iVar3;
+  float *pfVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  undefined4 uVar8;
+  undefined4 uVar9;
+  float fVar10;
+  float fVar11;
+  float fVar12;
+  float fVar13;
+  float fVar14;
+  
+  func_0x00002268(_DAT_00017818);
+  iVar7 = 8;
+  iVar3 = _DAT_00017f0c;
+  iVar5 = _DAT_00017604;
+  iVar6 = _DAT_000171b4;
+  do {
+    uVar1 = *(ushort *)(iVar5 + 0x15a);
+    uVar2 = *(ushort *)(iVar6 + 2);
+    uVar8 = *(undefined4 *)(iVar5 + 0x1c);
+    *(float *)(iVar3 + 0x24) = (float)*(ushort *)(iVar5 + 0x158) / 1.0 + *(float *)(iVar3 + 0x24);
+    *(float *)(iVar3 + 0x168) = (float)uVar2 / 1.0 + *(float *)(iVar3 + 0x168);
+    *(float *)(iVar3 + 100) = (float)uVar1 / 1.0 + *(float *)(iVar3 + 100);
+    uVar8 = func_0x0001cabc(*(undefined4 *)(iVar3 + 0x84),uVar8);
+    uVar9 = *(undefined4 *)(iVar5 + 0x1c);
+    *(undefined4 *)(iVar3 + 0x84) = uVar8;
+    uVar8 = func_0x0001caa8(*(undefined4 *)(iVar3 + 0xa4),uVar9);
+    uVar9 = *(undefined4 *)(iVar5 + 0x140);
+    fVar12 = *(float *)(iVar5 + 0x1c);
+    *(undefined4 *)(iVar3 + 0xa4) = uVar8;
+    *(float *)(iVar3 + 0xc4) = fVar12 + *(float *)(iVar3 + 0xc4);
+    uVar8 = func_0x0001cabc(*(undefined4 *)(iVar3 + 0xfc),uVar9);
+    uVar9 = *(undefined4 *)(iVar5 + 0x140);
+    *(undefined4 *)(iVar3 + 0xfc) = uVar8;
+    uVar8 = func_0x0001caa8(*(undefined4 *)(iVar3 + 0x11c),uVar9);
+    iVar6 = iVar6 + 0x3c4;
+    iVar7 = iVar7 + -1;
+    fVar12 = *(float *)(iVar5 + 0x148);
+    fVar11 = *(float *)(iVar5 + 0x140);
+    iVar5 = iVar5 + 0x178;
+    *(undefined4 *)(iVar3 + 0x11c) = uVar8;
+    *(float *)(iVar3 + 0x13c) = *(float *)(iVar3 + 0x13c) + fVar11;
+    *(float *)(iVar3 + 0x188) = fVar12 + *(float *)(iVar3 + 0x188);
+    iVar3 = iVar3 + 4;
+  } while (iVar7 != 0);
+  iVar5 = _DAT_00017f0c + 8;
+  pfVar4 = _DAT_00017acc;
+  iVar3 = _DAT_00017f0c;
+  do {
+    uVar8 = func_0x0001cabc(*(undefined4 *)(iVar3 + 0xe4),*pfVar4);
+    fVar12 = *pfVar4;
+    *(undefined4 *)(iVar3 + 0xe4) = uVar8;
+    uVar8 = func_0x0001caa8(*(undefined4 *)(iVar3 + 0xec),fVar12);
+    pfVar4 = pfVar4 + 0x37;
+    fVar12 = *pfVar4;
+    iVar7 = iVar3 + 4;
+    *(undefined4 *)(iVar3 + 0xec) = uVar8;
+    *(float *)(iVar3 + 0xf4) = fVar12 + *(float *)(iVar3 + 0xf4);
+    iVar6 = _DAT_00017f10;
+    uVar8 = _DAT_00017818;
+    iVar3 = iVar7;
+  } while (iVar7 != iVar5);
+  fVar14 = *(float *)(_DAT_000178a8 + 0x250);
+  fVar13 = *(float *)(_DAT_00017f10 + 0x1a0);
+  pfVar4 = (float *)(_DAT_00017f10 + 0x19c);
+  fVar12 = *_DAT_00017124;
+  fVar10 = *(float *)(_DAT_00017f10 + 0x1a4);
+  fVar11 = *(float *)(_DAT_00017aa8 + 0x88);
+  *(int *)(_DAT_00017f10 + 0x40) = *(int *)(_DAT_00017f10 + 0x40) + 1;
+  *(float *)(iVar6 + 0x19c) = fVar12 + *pfVar4;
+  *(float *)(iVar6 + 0x1a0) = fVar13 + fVar14;
+  *(float *)(iVar6 + 0x1a4) = fVar11 + fVar10;
+  func_0x0000231c(uVar8);
+  return;
+}
+
+
+00029134 364100 entry a1,0x20
+00029137 a1b8b9 l32r a10,0x00017818
+0002913a e512d9 call8 0x00002268
+0002913d 3131b9 l32r a3,0x00017604
+00029140 411db8 l32r a4,0x000171b4
+00029143 72a178 movi a7,0x178
+00029146 62a3c4 movi a6,0x3c4
+00029149 2170bb l32r a2,0x00017f0c
+0002914c 0c85 movi.n a5,0x8
+0002914e a22221 l32i a10,a2,0x84
+00029151 430219 lsi f4,a2,0x64
+00029154 63025a lsi f6,a2,0x168
+00029157 830209 lsi f8,a2,0x24
+0002915a b213ad l16ui a11,a3,0x15a
+0002915d 9213ac l16ui a9,a3,0x158
+00029160 821401 l16ui a8,a4,0x2
+00029163 003bca float.s f3,a11,0x0
+00029166 0079ca float.s f7,a9,0x0
+00029169 0058ca float.s f5,a8,0x0
+0002916c 80270a add.s f2,f7,f8
+0002916f 60150a add.s f1,f5,f6
+00029172 40030a add.s f0,f3,f4
+00029175 b873 l32i.n a11,a3,0x1c
+00029177 234209 ssi f2,a2,0x24
+0002917a 13425a ssi f1,a2,0x168
+0002917d 034219 ssi f0,a2,0x64
+00029180 a593f3 call8 0x0001cabc
+00029183 b873 l32i.n a11,a3,0x1c
+00029185 509afa wfr f9,a10
+00029188 934221 ssi f9,a2,0x84
+0002918b a22229 l32i a10,a2,0xa4
+0002918e a591f3 call8 0x0001caa8
+00029191 b22350 l32i a11,a3,0x140
+00029194 d30231 lsi f13,a2,0xc4
+00029197 c30307 lsi f12,a3,0x1c
+0002919a d0ac0a add.s f10,f12,f13
+0002919d 50bafa wfr f11,a10
+000291a0 b34229 ssi f11,a2,0xa4
+000291a3 a2223f l32i a10,a2,0xfc
+000291a6 a34231 ssi f10,a2,0xc4
+000291a9 2591f3 call8 0x0001cabc
+000291ac b22350 l32i a11,a3,0x140
+000291af 50eafa wfr f14,a10
+000291b2 e3423f ssi f14,a2,0xfc
+000291b5 a22247 l32i a10,a2,0x11c
+000291b8 e58ef3 call8 0x0001caa8
+000291bb 6a44 add.n a4,a4,a6
+000291bd 0b55 addi.n a5,a5,-0x1
+000291bf 330262 lsi f3,a2,0x188
+000291c2 230352 lsi f2,a3,0x148
+000291c5 530350 lsi f5,a3,0x140
+000291c8 43024f lsi f4,a2,0x13c
+000291cb 501afa wfr f1,a10
+000291ce 50040a add.s f0,f4,f5
+000291d1 30f20a add.s f15,f2,f3
+000291d4 7a33 add.n a3,a3,a7
+000291d6 134247 ssi f1,a2,0x11c
+000291d9 03424f ssi f0,a2,0x13c
+000291dc f34262 ssi f15,a2,0x188
+000291df 4b22 addi.n a2,a2,0x4
+000291e1 5695f6 bnez a5,0x0002914e
+000291e4 314abb l32r a3,0x00017f0c
+000291e7 52a0dc movi a5,0xdc
+000291ea 2138ba l32r a2,0x00017acc
+000291ed 8b43 addi.n a4,a3,0x8
+000291ef a22339 l32i a10,a3,0xe4
+000291f2 b802 l32i.n a11,a2,0x0
+000291f4 658cf3 call8 0x0001cabc
+000291f7 b802 l32i.n a11,a2,0x0
+000291f9 506afa wfr f6,a10
+000291fc 634339 ssi f6,a3,0xe4
+000291ff a2233b l32i a10,a3,0xec
+00029202 658af3 call8 0x0001caa8
+00029205 a3033d lsi f10,a3,0xf4
+00029208 509218 lsxu f9,a2,a5
+0002920b a0790a add.s f7,f9,f10
+0002920e 508afa wfr f8,a10
+00029211 4b33 addi.n a3,a3,0x4
+00029213 83433a ssi f8,a3,0xe8
+00029216 73433c ssi f7,a3,0xf0
+00029219 4793d2 bne a3,a4,0x000291ef
+0002921c a17fb9 l32r a10,0x00017818
+0002921f e122ba l32r a14,0x00017aa8
+00029222 c13bbb l32r a12,0x00017f10
+00029225 81a0b9 l32r a8,0x000178a8
+00029228 f1bfb7 l32r a15,0x00017124
+0002922b d22c10 l32i a13,a12,0x40
+0002922e f30894 lsi f15,a8,0x250
+00029231 e30c68 lsi f14,a12,0x1a0
+00029234 130c67 lsi f1,a12,0x19c
+00029237 030f00 lsi f0,a15,0x0
+0002923a 330c69 lsi f3,a12,0x1a4
+0002923d 230e22 lsi f2,a14,0x88
+00029240 30b20a add.s f11,f2,f3
+00029243 10d00a add.s f13,f0,f1
+00029246 f0ce0a add.s f12,f14,f15
+00029249 1bdd addi.n a13,a13,0x1
+0002924b d26c10 s32i a13,a12,0x40
+0002924e d34c67 ssi f13,a12,0x19c
+00029251 c34c68 ssi f12,a12,0x1a0
+00029254 b34c69 ssi f11,a12,0x1a4
+00029257 650cd9 call8 0x0000231c
+0002925a 1df0 retw.n
+===== 000294e4 FUN_000294e4 =====
+
+/* WARNING: Removing unreachable block (ram,0x000296d9) */
+/* WARNING: Removing unreachable block (ram,0x00029635) */
+/* WARNING: Removing unreachable block (ram,0x000295da) */
+/* WARNING: Removing unreachable block (ram,0x00029515) */
+/* WARNING: Removing unreachable block (ram,0x0002959d) */
+/* WARNING: Removing unreachable block (ram,0x000295fd) */
+/* WARNING: Removing unreachable block (ram,0x000296ca) */
+/* WARNING: Removing unreachable block (ram,0x0002970d) */
+/* WARNING: Removing unreachable block (ram,0x00029755) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_000294e4(void)
+
+{
+  byte bVar1;
+  char cVar2;
+  undefined1 uVar3;
+  ulonglong uVar4;
+  ulonglong uVar5;
+  bool bVar6;
+  int iVar7;
+  int iVar8;
+  int iVar9;
+  float *pfVar10;
+  float *pfVar11;
+  float *pfVar12;
+  int iVar13;
+  undefined1 uVar14;
+  int iVar15;
+  int iVar16;
+  uint uVar17;
+  int iVar18;
+  undefined4 uVar19;
+  int iVar20;
+  float *pfVar21;
+  bool bVar22;
+  undefined2 uVar23;
+  undefined2 uVar24;
+  float fVar25;
+  float fVar26;
+  float fVar27;
+  undefined4 uVar28;
+  float fVar29;
+  float fVar30;
+  float fVar31;
+  int iVar32;
+  int iVar33;
+  int iVar34;
+  undefined8 uVar35;
+  undefined1 auStack_40 [12];
+  undefined1 uStack_34;
+  float *pfStack_30;
+  float fStack_2c;
+  uint uStack_28;
+  int iStack_24;
+  
+  iVar34 = _DAT_00017f34;
+  iVar15 = _DAT_00017f30;
+  uVar17 = 0;
+  bVar1 = *(byte *)(_DAT_00017f2c + 0xbe);
+  uVar19 = *(undefined4 *)(_DAT_00017f30 + 0x274);
+  *(undefined4 *)(_DAT_00017f34 + 0x1c) = *(undefined4 *)(_DAT_00017f30 + 0x278);
+  *(undefined4 *)(iVar34 + 0x18) = uVar19;
+  iVar16 = _DAT_00017ac4;
+  *(undefined4 *)(iVar34 + 0x20) = *(undefined4 *)(iVar15 + (short)(ushort)bVar1 * 0x178 + -0x14c0);
+  iVar32 = 7;
+  while( true ) {
+    if (uVar17 == bVar1) {
+      uVar17 = uVar17 + 1;
+    }
+    else {
+      *(undefined4 *)(iVar34 + 0x24) = *(undefined4 *)(iVar16 + uVar17 * 0x178 + 100);
+    }
+    fVar25 = _DAT_00017f40;
+    fVar26 = _DAT_00017f3c;
+    iVar13 = _DAT_00017f38;
+    if (iVar32 == 0) break;
+    iVar32 = iVar32 + -1;
+  }
+  fVar27 = *(float *)(iVar15 + 0x214);
+  fVar29 = *(float *)(iVar15 + 0x210);
+  fVar31 = *(float *)(iVar15 + 0x20c);
+  fVar30 = *(float *)(iVar15 + 0x208);
+  fStack_2c = *(float *)(iVar15 + 0x284);
+  uVar28 = *(undefined4 *)(_DAT_00017e90 + 0x3ac);
+  uVar19 = *(undefined4 *)(_DAT_00017e90 + 0x3a8);
+  cVar2 = *(char *)(_DAT_00017be0 + 0x11);
+  *(undefined4 *)(iVar34 + 0x2c) = *(undefined4 *)(_DAT_00017e90 + 0x3a0);
+  fVar30 = fVar30 * fVar26;
+  fVar31 = fVar31 * fVar26;
+  if (cVar2 != '\0') {
+    uVar19 = uVar28;
+  }
+  *(undefined4 *)(iVar34 + 0x28) = uVar19;
+  uVar4 = (ulonglong)(fVar31 * 1.0);
+  bVar22 = uVar4 >> 0x10 != 0;
+  uVar5 = (ulonglong)(fVar30 * 1.0);
+  bVar6 = uVar5 >> 0x10 != 0;
+  *(ushort *)(iVar34 + 0x3e) =
+       (ushort)((!NAN(fVar31) && !bVar22) && -1 < (longlong)uVar4) * (short)uVar4 -
+       (ushort)(NAN(fVar31) || bVar22);
+  *(ushort *)(iVar34 + 0x3c) =
+       (ushort)((!NAN(fVar30) && !bVar6) && -1 < (longlong)uVar5) * (short)uVar5 -
+       (ushort)(NAN(fVar30) || bVar6);
+  uVar19 = func_0x0003acf8(fStack_2c,fVar27 + fVar29 * fVar25);
+  iVar15 = _DAT_00017f30;
+  iVar16 = _DAT_00017ac4;
+  *(undefined4 *)(iVar34 + 0x40) = uVar19;
+  *(undefined4 *)(iVar34 + 0x44) = *(undefined4 *)(iVar15 + 0x288);
+  iVar33 = 7;
+  iVar32 = iVar16;
+  iVar20 = iVar13;
+  while( true ) {
+    uVar3 = *(undefined1 *)(iVar32 + 0x99);
+    *(undefined1 *)(iVar20 + 0x30) = *(undefined1 *)(iVar32 + 0x98);
+    *(undefined1 *)(iVar20 + 0x38) = uVar3;
+    iVar8 = _DAT_00017ed0;
+    iVar18 = _DAT_00017ac8;
+    fVar26 = _DAT_00017928;
+    iVar32 = iVar32 + 0x178;
+    iVar20 = iVar20 + 1;
+    if (iVar33 == 0) break;
+    iVar33 = iVar33 + -1;
+  }
+  fVar25 = *(float *)(iVar15 + 0x1c0) * _DAT_00017928;
+  uVar19 = *(undefined4 *)(_DAT_00017ed0 + 0x180);
+  *(undefined4 *)(iVar34 + 0x58) = *(undefined4 *)(_DAT_00017ed0 + 0x138);
+  if (NAN(fVar25 * 1.0)) {
+    uVar23 = 0;
+    if (0.0 <= fVar25) {
+      uVar23 = 0xffff;
+    }
+  }
+  else {
+    uVar23 = (undefined2)(int)(fVar25 * 1.4013e-45);
+  }
+  *(undefined4 *)(iVar34 + 0x5c) = uVar19;
+  *(undefined2 *)(iVar34 + 0x62) = uVar23;
+  iVar20 = 7;
+  iVar15 = iVar16;
+  iVar32 = iVar13;
+  while( true ) {
+    fVar25 = *(float *)((uint)*(byte *)(iVar15 + 0x80) * 4 + iVar18 + 0x1fc) * fVar26;
+    if (NAN(fVar25 * 1.0)) {
+      uVar23 = 0;
+      if (0.0 <= fVar25) {
+        uVar23 = 0xffff;
+      }
+    }
+    else {
+      uVar23 = (undefined2)(int)(fVar25 * 1.4013e-45);
+    }
+    iVar15 = iVar15 + 0x178;
+    *(undefined2 *)(iVar32 + 0x4c) = uVar23;
+    if (iVar20 == 0) break;
+    iVar20 = iVar20 + -1;
+    iVar32 = iVar32 + 2;
+  }
+  iVar20 = 1;
+  iVar15 = iVar13;
+  iVar32 = _DAT_00017b60;
+  while( true ) {
+    fVar31 = *(float *)((uint)*(byte *)(iVar32 + 0x7c) * 4 + iVar18 + 0x1fc) * fVar26;
+    fVar25 = *(float *)((uint)*(byte *)(iVar32 + 0x7d) * 4 + iVar18 + 0x1fc) * fVar26;
+    iVar32 = iVar32 + 0xdc;
+    if (NAN(fVar31 * 1.0)) {
+      uVar23 = 0;
+      if (0.0 <= fVar31) {
+        uVar23 = 0xffff;
+      }
+    }
+    else {
+      uVar23 = (undefined2)(int)(fVar31 * 1.4013e-45);
+    }
+    if (NAN(fVar25 * 1.0)) {
+      uVar24 = 0;
+      if (0.0 <= fVar25) {
+        uVar24 = 0xffff;
+      }
+    }
+    else {
+      uVar24 = (undefined2)(int)(fVar25 * 1.4013e-45);
+    }
+    *(undefined2 *)(iVar15 + 0x5c) = uVar23;
+    *(undefined2 *)(iVar15 + 0x5e) = uVar24;
+    iVar33 = _DAT_00017e90;
+    if (iVar20 == 0) break;
+    iVar20 = iVar20 + -1;
+    iVar15 = iVar15 + 4;
+  }
+  iVar20 = 0x1f;
+  iVar15 = iVar13;
+  iVar32 = _DAT_00017ad0;
+  while( true ) {
+    fVar25 = *(float *)((uint)*(byte *)(iVar32 + 0x80) * 4 + iVar18 + 0x1fc) * fVar26;
+    if (NAN(fVar25 * 1.0)) {
+      uVar23 = 0;
+      if (0.0 <= fVar25) {
+        uVar23 = 0xffff;
+      }
+    }
+    else {
+      uVar23 = (undefined2)(int)(fVar25 * 1.4013e-45);
+    }
+    iVar32 = iVar32 + 1;
+    *(undefined2 *)(iVar15 + 100) = uVar23;
+    iVar9 = _DAT_00017f44;
+    iVar7 = _DAT_00017e20;
+    if (iVar20 == 0) break;
+    iVar20 = iVar20 + -1;
+    iVar15 = iVar15 + 2;
+  }
+  uVar19 = *(undefined4 *)(iVar8 + 0x13c);
+  uVar28 = *(undefined4 *)(iVar8 + 0x4c);
+  *(undefined4 *)(iVar34 + 0xc4) = *(undefined4 *)(iVar8 + 0x184);
+  *(undefined4 *)(iVar34 + 0xe0) = uVar28;
+  *(undefined4 *)(iVar34 + 0xc0) = uVar19;
+  uVar3 = *(undefined1 *)(iVar7 + 0xe);
+  uVar14 = *(undefined1 *)(iVar7 + 0xf);
+  uVar19 = *(undefined4 *)(iVar9 + 0x14);
+  uVar28 = *(undefined4 *)(iVar9 + 4);
+  *(undefined1 *)(iVar34 + 0xbc) = *(undefined1 *)(iVar7 + 0xc);
+  *(undefined4 *)(iVar34 + 0xcc) = uVar28;
+  *(undefined4 *)(iVar34 + 0xd0) = uVar19;
+  *(undefined1 *)(iVar34 + 0xbf) = uVar14;
+  *(undefined1 *)(iVar34 + 0xbd) = uVar3;
+  iVar20 = _DAT_00017f48;
+  iVar32 = _DAT_00017320;
+  iVar15 = _DAT_00017124;
+  *(undefined4 *)(iVar34 + 0xd4) = *(undefined4 *)(iVar9 + 0x1c);
+  uVar3 = *(undefined1 *)(iVar7 + 0xd);
+  iVar18 = *(int *)(iVar32 + 0x174);
+  *(undefined1 *)(iVar34 + 200) = *(undefined1 *)(iVar15 + 4);
+  iVar32 = _DAT_00017f4c;
+  fVar26 = *(float *)(iVar20 + 0x3a4);
+  uVar14 = *(undefined1 *)(iVar15 + 0x24);
+  if (iVar18 != 0) {
+    uVar14 = (char)*(undefined4 *)(iVar33 + 0x3c0);
+  }
+  *(undefined1 *)(iVar34 + 0xbe) = uVar3;
+  *(float *)(iVar34 + 0xe4) = fVar26 + fStack_2c;
+  iVar15 = *(int *)(iVar32 + 0x40);
+  *(undefined1 *)(iVar34 + 0xc9) = uVar14;
+  pfVar10 = _DAT_00017f50;
+  if (iVar15 == 3) {
+    iVar34 = 0x14;
+    pfVar11 = _DAT_00017f50;
+    while( true ) {
+      *pfVar11 = 0.0;
+      pfVar11 = pfVar11 + 1;
+      if (iVar34 == 0) break;
+      iVar34 = iVar34 + -1;
+    }
+    pfVar10 = pfVar10 + 0x15;
+    iVar34 = 9;
+    while( true ) {
+      *pfVar10 = 0.0;
+      pfVar10 = pfVar10 + 1;
+      if (iVar34 == 0) break;
+      iVar34 = iVar34 + -1;
+    }
+    iVar34 = 0;
+    pfStack_30 = _DAT_00017adc;
+    iStack_24 = iVar15;
+    do {
+      pfVar10 = pfStack_30;
+      pfVar11 = _DAT_00017f50;
+      fVar26 = (float)func_0x0003acf8(*_DAT_00017eb4,(float)*(uint *)(iVar16 + 0x84) / 1.0);
+      iVar16 = iVar16 + 0x178;
+      iVar34 = iVar34 + 1;
+      iVar15 = 0x14;
+      while( true ) {
+        pfVar10 = pfVar10 + 1;
+        *pfVar11 = *pfVar11 + *pfVar10 * fVar26;
+        pfVar11 = pfVar11 + 1;
+        if (iVar15 == 0) break;
+        iVar15 = iVar15 + -1;
+      }
+      pfStack_30 = pfStack_30 + 0x5e;
+    } while (iVar34 != 8);
+    fVar26 = (float)func_0x0003acf8(*_DAT_00017eb4,(float)*(uint *)(_DAT_00017f30 + 0x26c) / 1.0);
+    pfVar10 = _DAT_00017f50;
+    iVar13 = _DAT_00017f38;
+    iVar16 = 0;
+    pfVar11 = _DAT_00017b4c;
+    do {
+      iVar15 = 9;
+      pfVar12 = pfVar10;
+      pfVar21 = pfVar11;
+      while( true ) {
+        pfVar21 = pfVar21 + 1;
+        pfVar12[0x15] = pfVar12[0x15] + *pfVar21 * fVar26;
+        if (iVar15 == 0) break;
+        iVar15 = iVar15 + -1;
+        pfVar12 = pfVar12 + 1;
+      }
+      iVar16 = iVar16 + 1;
+      pfVar11 = pfVar11 + 0x37;
+      iVar15 = iStack_24;
+    } while (iVar16 != 2);
+  }
+  iVar34 = _DAT_00017f34;
+  iVar16 = _DAT_00017ed0;
+  if (iVar15 == 4) {
+    *(undefined4 *)(_DAT_00017f34 + 0x174) = *(undefined4 *)(_DAT_00017ed0 + 0x44);
+    *(undefined4 *)(iVar34 + 0x178) = *(undefined4 *)(iVar16 + -0x2c);
+  }
+  func_0x00002268(_DAT_00017818);
+  iVar15 = *(int *)(iVar32 + 0x28);
+  uStack_28 = (uint)*(ushort *)(iVar32 + 0x20);
+  uVar17 = *(uint *)(iVar32 + 0x24);
+  iVar16 = *(int *)(iVar32 + 0x1c);
+  uVar35 = func_0x0003a9e0(uStack_28,0,uVar17 + 1,uVar17 + 1 < uVar17);
+  bVar22 = false;
+  if (((int)((ulonglong)uVar35 >> 0x20) != 0) || ((uint)(iVar16 - iVar15) < (uint)uVar35)) {
+    bVar22 = true;
+  }
+  if (bVar22) {
+    uVar17 = 0;
+    *(undefined4 *)(iVar32 + 0x24) = 0;
+  }
+  uVar19 = _DAT_00017f54;
+  func_0x00039c50(_DAT_00017f54,auStack_40,uVar17 * uStack_28);
+  uStack_34 = *(undefined1 *)(iVar32 + 8);
+  func_0x0003ab90(auStack_40,iVar13,*(undefined4 *)(iVar32 + 0x2c));
+  uVar28 = _DAT_00017f58;
+  iVar16 = *(int *)(iVar32 + 0x40);
+  if (iVar16 == 2) {
+    func_0x00039c50(uVar19,auStack_40,
+                    *(int *)(iVar32 + 0x2c) * (*(int *)(iVar32 + 0x24) + 1) +
+                    *(int *)(iVar32 + 0x30) * *(int *)(iVar32 + 0x24));
+    uStack_34 = *(undefined1 *)(iVar32 + 8);
+    func_0x0003ab90(auStack_40,uVar28,*(undefined4 *)(iVar32 + 0x30));
+  }
+  else if (iVar16 == 3) {
+    func_0x00039c50(uVar19,auStack_40,
+                    *(int *)(iVar32 + 0x2c) * (*(int *)(iVar32 + 0x24) + 1) +
+                    *(int *)(iVar32 + 0x24) * (*(int *)(iVar32 + 0x30) + *(int *)(iVar32 + 0x38)));
+    uStack_34 = *(undefined1 *)(iVar32 + 8);
+    func_0x0003ab90(auStack_40,uVar28,*(undefined4 *)(iVar32 + 0x30));
+    iVar16 = *(int *)(iVar32 + 0x24) + 1;
+    func_0x00039c50(uVar19,auStack_40,
+                    *(int *)(iVar32 + 0x30) * iVar16 +
+                    *(int *)(iVar32 + 0x38) * *(int *)(iVar32 + 0x24) +
+                    *(int *)(iVar32 + 0x2c) * iVar16);
+    uStack_34 = *(undefined1 *)(iVar32 + 8);
+    func_0x0003ab90(auStack_40,pfVar10,*(undefined4 *)(iVar32 + 0x38));
+  }
+  else if (iVar16 == 4) {
+    func_0x00039c50(uVar19,auStack_40,
+                    *(int *)(iVar32 + 0x2c) * (*(int *)(iVar32 + 0x24) + 1) +
+                    *(int *)(iVar32 + 0x24) * (*(int *)(iVar32 + 0x30) + *(int *)(iVar32 + 0x3c)));
+    uStack_34 = *(undefined1 *)(iVar32 + 8);
+    func_0x0003ab90(auStack_40,uVar28,*(undefined4 *)(iVar32 + 0x30));
+    iVar16 = *(int *)(iVar32 + 0x24) + 1;
+    func_0x00039c50(uVar19,auStack_40,
+                    *(int *)(iVar32 + 0x30) * iVar16 +
+                    *(int *)(iVar32 + 0x3c) * *(int *)(iVar32 + 0x24) +
+                    *(int *)(iVar32 + 0x2c) * iVar16);
+    uStack_34 = *(undefined1 *)(iVar32 + 8);
+    func_0x0003ab90(auStack_40,_DAT_00017f5c,*(undefined4 *)(iVar32 + 0x3c));
+  }
+  iVar16 = _DAT_00017f60;
+  iVar34 = *(int *)(iVar32 + 0x24);
+  iVar15 = _DAT_00017f60 + 0x48;
+  *(int *)(iVar32 + 0x24) = iVar34 + 1;
+  *(int *)(iVar32 + 0x50) = *(int *)(iVar32 + 0x50) + 1;
+  *(uint *)(iVar32 + 0x5c) = iVar34 * (uint)*(ushort *)(iVar32 + 0x20);
+  func_0x0003ab90(iVar16,iVar15,*(undefined4 *)(iVar32 + 0x28));
+  func_0x0000231c(_DAT_00017818);
+  if ((*(uint *)(iVar32 + 0x4c) != 0) && (*(uint *)(iVar32 + 0x50) % *(uint *)(iVar32 + 0x4c) == 0))
+  {
+    func_0x00025264(0,*(undefined4 *)(iVar32 + 0x44),*(undefined4 *)(iVar32 + 0x48));
+  }
+  return;
+}
+
+
+000294e4 368100 entry a1,0x40
+000294e7 0c05 movi.n a5,0x0
+000294e9 0c88 movi.n a8,0x8
+000294eb b2a178 movi a11,0x178
+000294ee 918fba l32r a9,0x00017f2c
+000294f1 d18fba l32r a13,0x00017f30
+000294f4 2190ba l32r a2,0x00017f34
+000294f7 9209be l8ui a9,a9,0xbe
+000294fa a22d9d l32i a10,a13,0x274
+000294fd c22d9e l32i a12,a13,0x278
+00029500 c972 s32i.n a12,a2,0x1c
+00029502 a962 s32i.n a10,a2,0x18
+00029504 c170b9 l32r a12,0x00017ac4
+00029507 b0b9d1 mul16s a11,a9,a11
+0002950a a2ddea addmi a10,a13,-0x1600
+0002950d baaa add.n a10,a10,a11
+0002950f 030a50 lsi f0,a10,0x140
+00029512 034208 ssi f0,a2,0x20
+00029515 76a807 loopgtz a8,0x00029520
+00029518 90b5c0 sub a11,a5,a9
+0002951b 564b3f bnez a11,0x00029913
+0002951e 1b55 addi.n a5,a5,0x1
+00029520 3186ba l32r a3,0x00017f38
+00029523 430d85 lsi f4,a13,0x214
+00029526 0c1f movi.n a15,0x1
+00029528 830d84 lsi f8,a13,0x210
+0002952b c30d83 lsi f12,a13,0x20c
+0002952e a30d82 lsi f10,a13,0x208
+00029531 9182ba l32r a9,0x00017f3c
+00029534 b183ba l32r a11,0x00017f40
+00029537 e1aab9 l32r a14,0x00017be0
+0002953a 8155ba l32r a8,0x00017e90
+0002953d e30da1 lsi f14,a13,0x284
+00029540 e34105 ssi f14,a1,0x14
+00029543 40aefa rfr a10,f14
+00029546 7308eb lsi f7,a8,0x3ac
+00029549 6308ea lsi f6,a8,0x3a8
+0002954c e20e11 l8ui a14,a14,0x11
+0002954f 509bfa wfr f9,a11
+00029552 50b9fa wfr f11,a9
+00029555 d308e8 lsi f13,a8,0x3a0
+00029558 d3420b ssi f13,a2,0x2c
+0002955b b03a2a mul.s f3,f10,f11
+0002955e b02c2a mul.s f2,f12,f11
+00029561 90582a mul.s f5,f8,f9
+00029564 e0ef93 movnez a14,a15,a14
+00029567 e0679b movnez.s f6,f7,a14
+0002956a 63420a ssi f6,a2,0x28
+0002956d 50140a add.s f1,f4,f5
+00029570 00c2ea utrunc.s a12,f2,0x0
+00029573 00d3ea utrunc.s a13,f3,0x0
+00029576 c2521f s16i a12,a2,0x3e
+00029579 d2521e s16i a13,a2,0x3c
+0002957c 40b1fa rfr a11,f1
+0002957f a57711 call8 0x0003acf8
+00029582 62a178 movi a6,0x178
+00029585 0c8f movi.n a15,0x8
+00029587 916aba l32r a9,0x00017f30
+0002958a b14eb9 l32r a11,0x00017ac4
+0002958d 500afa wfr f0,a10
+00029590 034210 ssi f0,a2,0x40
+00029593 ad03 mov.n a10,a3
+00029595 4d0b mov.n a4,a11
+00029597 f309a2 lsi f15,a9,0x288
+0002959a f34211 ssi f15,a2,0x44
+0002959d 76af0f loopgtz a15,0x000295b0
+000295a0 820499 l8ui a8,a4,0x99
+000295a3 c20498 l8ui a12,a4,0x98
+000295a6 c24a30 s8i a12,a10,0x30
+000295a9 824a38 s8i a8,a10,0x38
+000295ac 6a44 add.n a4,a4,a6
+000295ae 1baa addi.n a10,a10,0x1
+000295b0 4d0b mov.n a4,a11
+000295b2 cd03 mov.n a12,a3
+000295b4 f145b9 l32r a15,0x00017ac8
+000295b7 0c8d movi.n a13,0x8
+000295b9 81dbb8 l32r a8,0x00017928
+000295bc a145ba l32r a10,0x00017ed0
+000295bf 530970 lsi f5,a9,0x1c0
+000295c2 5018fa wfr f1,a8
+000295c5 10352a mul.s f3,f5,f1
+000295c8 230a60 lsi f2,a10,0x180
+000295cb 430a4e lsi f4,a10,0x138
+000295ce 434216 ssi f4,a2,0x58
+000295d1 00e39a trunc.s a14,f3,0x0
+000295d4 234217 ssi f2,a2,0x5c
+000295d7 e25231 s16i a14,a2,0x62
+000295da 76ad15 loopgtz a13,0x000295f3
+000295dd e20480 l8ui a14,a4,0x80
+000295e0 f0eea0 addx4 a14,a14,a15
+000295e3 730e7f lsi f7,a14,0x1fc
+000295e6 10672a mul.s f6,f7,f1
+000295e9 2bcc addi.n a12,a12,0x2
+000295eb 00d69a trunc.s a13,f6,0x0
+000295ee 6a44 add.n a4,a4,a6
+000295f0 d25c25 s16i a13,a12,0x4a
+000295f3 cd03 mov.n a12,a3
+000295f5 d15ab9 l32r a13,0x00017b60
+000295f8 92a0dc movi a9,0xdc
+000295fb 0c28 movi.n a8,0x2
+000295fd 76a827 loopgtz a8,0x00029628
+00029600 e20d7c l8ui a14,a13,0x7c
+00029603 820d7d l8ui a8,a13,0x7d
+00029606 f0eea0 addx4 a14,a14,a15
+00029609 f088a0 addx4 a8,a8,a15
+0002960c a3087f lsi f10,a8,0x1fc
+0002960f b30e7f lsi f11,a14,0x1fc
+00029612 109b2a mul.s f9,f11,f1
+00029615 108a2a mul.s f8,f10,f1
+00029618 4bcc addi.n a12,a12,0x4
+0002961a 9add add.n a13,a13,a9
+0002961c 00899a trunc.s a8,f9,0x0
+0002961f 00e89a trunc.s a14,f8,0x0
+00029622 825c2c s16i a8,a12,0x58
+00029625 e25c2d s16i a14,a12,0x5a
+00029628 030105 lsi f0,a1,0x14
+0002962b c119ba l32r a12,0x00017e90
+0002962e dd03 mov.n a13,a3
+00029630 e128b9 l32r a14,0x00017ad0
+00029633 2c08 movi.n a8,0x20
+00029635 76a815 loopgtz a8,0x0002964e
+00029638 820e80 l8ui a8,a14,0x80
+0002963b f088a0 addx4 a8,a8,a15
+0002963e d3087f lsi f13,a8,0x1fc
+00029641 10cd2a mul.s f12,f13,f1
+00029644 2bdd addi.n a13,a13,0x2
+00029646 008c9a trunc.s a8,f12,0x0
+00029649 1bee addi.n a14,a14,0x1
+0002964b 825d31 s16i a8,a13,0x62
+0002964e 813dba l32r a8,0x00017f44
+00029651 d1f3b9 l32r a13,0x00017e20
+00029654 230a4f lsi f2,a10,0x13c
+00029657 430a13 lsi f4,a10,0x4c
+0002965a 530a61 lsi f5,a10,0x184
+0002965d 534231 ssi f5,a2,0xc4
+00029660 434238 ssi f4,a2,0xe0
+00029663 234230 ssi f2,a2,0xc0
+00029666 420d0e l8ui a4,a13,0xe
+00029669 f20d0f l8ui a15,a13,0xf
+0002966c 7858 l32i.n a7,a8,0x14
+0002966e 9818 l32i.n a9,a8,0x4
+00029670 e20d0c l8ui a14,a13,0xc
+00029673 e242bc s8i a14,a2,0xbc
+00029676 926233 s32i a9,a2,0xcc
+00029679 726234 s32i a7,a2,0xd0
+0002967c f242bf s8i a15,a2,0xbf
+0002967f 4242bd s8i a4,a2,0xbd
+00029682 f131ba l32r a15,0x00017f48
+00029685 41a7b6 l32r a4,0x00017124
+00029688 7126b7 l32r a7,0x00017320
+0002968b 8878 l32i.n a8,a8,0x1c
+0002968d 826235 s32i a8,a2,0xd4
+00029690 d20d0d l8ui a13,a13,0xd
+00029693 72275d l32i a7,a7,0x174
+00029696 520404 l8ui a5,a4,0x4
+00029699 5242c8 s8i a5,a2,0xc8
+0002969c 420424 l8ui a4,a4,0x24
+0002969f 522cf0 l32i a5,a12,0x3c0
+000296a2 330fe9 lsi f3,a15,0x3a4
+000296a5 00130a add.s f1,f3,f0
+000296a8 704593 movnez a4,a5,a7
+000296ab 7128ba l32r a7,0x00017f4c
+000296ae d242be s8i a13,a2,0xbe
+000296b1 134239 ssi f1,a2,0xe4
+000296b4 922710 l32i a9,a7,0x40
+000296b7 4242c9 s8i a4,a2,0xc9
+000296ba 5125ba l32r a5,0x00017f50
+000296bd e2c9fd addi a14,a9,-0x3
+000296c0 564e0b bnez a14,0x00029778
+000296c3 2d05 mov.n a2,a5
+000296c5 3000fa const.sf f0,0x0
+000296c8 1c58 movi.n a8,0x15
+000296ca 76a802 loopgtz a8,0x000296d0
+000296cd 03c201 ssip f0,a2,0x4
+000296d0 b04b20 mov a4,a11
+000296d3 22c554 addi a2,a5,0x54
+000296d6 a2a00a movi a10,0xa
+000296d9 76aa02 loopgtz a10,0x000296df
+000296dc 03c201 ssip f0,a2,0x4
+000296df 0c05 movi.n a5,0x0
+000296e1 9971 s32i.n a9,a1,0x1c
+000296e3 c1feb8 l32r a12,0x00017adc
+000296e6 c941 s32i.n a12,a1,0x10
+000296e8 3841 l32i.n a3,a1,0x10
+000296ea e22421 l32i a14,a4,0x84
+000296ed d1f1b9 l32r a13,0x00017eb4
+000296f0 2118ba l32r a2,0x00017f50
+000296f3 007eda ufloat.s f7,a14,0x0
+000296f6 830d00 lsi f8,a13,0x0
+000296f9 40a8fa rfr a10,f8
+000296fc 40b7fa rfr a11,f7
+000296ff a55f11 call8 0x0003acf8
+00029702 502afa wfr f2,a10
+00029705 6a44 add.n a4,a4,a6
+00029707 9841 l32i.n a9,a1,0x10
+00029709 1b55 addi.n a5,a5,0x1
+0002970b 1c5f movi.n a15,0x15
+0002970d 76af0e loopgtz a15,0x0002971f
+00029710 c38301 lsiu f12,a3,0x4
+00029713 20bc2a mul.s f11,f12,f2
+00029716 a30200 lsi f10,a2,0x0
+00029719 b09a0a add.s f9,f10,f11
+0002971c 93c201 ssip f9,a2,0x4
+0002971f 6a99 add.n a9,a9,a6
+00029721 9941 s32i.n a9,a1,0x10
+00029723 6685c1 bnei a5,0x8,0x000296e8
+00029726 9102ba l32r a9,0x00017f30
+00029729 81e2b9 l32r a8,0x00017eb4
+0002972c 92299b l32i a9,a9,0x26c
+0002972f e30800 lsi f14,a8,0x0
+00029732 00d9da ufloat.s f13,a9,0x0
+00029735 40aefa rfr a10,f14
+00029738 40bdfa rfr a11,f13
+0002973b e55b11 call8 0x0003acf8
+0002973e 31feb9 l32r a3,0x00017f38
+00029741 9871 l32i.n a9,a1,0x1c
+00029743 0c0c movi.n a12,0x0
+00029745 5102ba l32r a5,0x00017f50
+00029748 b101b9 l32r a11,0x00017b4c
+0002974b 502afa wfr f2,a10
+0002974e 2d05 mov.n a2,a5
+00029750 b0ab20 mov a10,a11
+00029753 0cad movi.n a13,0xa
+00029755 76ad10 loopgtz a13,0x00029769
+00029758 338a01 lsiu f3,a10,0x4
+0002975b 20132a mul.s f1,f3,f2
+0002975e 030215 lsi f0,a2,0x54
+00029761 10f00a add.s f15,f0,f1
+00029764 4b22 addi.n a2,a2,0x4
+00029766 f34214 ssi f15,a2,0x50
+00029769 2d05 mov.n a2,a5
+0002976b 1bcc addi.n a12,a12,0x1
+0002976d b2db01 addmi a11,a11,0x100
+00029770 b2cbdc addi a11,a11,-0x24
+00029773 ad0b mov.n a10,a11
+00029775 662cda bnei a12,0x2,0x00029753
+00029778 21efb9 l32r a2,0x00017f34
+0002977b 664911 bnei a9,0x4,0x00029790
+0002977e 81d4b9 l32r a8,0x00017ed0
+00029781 f2d8fc addmi a15,a8,-0x400
+00029784 530811 lsi f5,a8,0x44
+00029787 53425d ssi f5,a2,0x174
+0002978a 430ff5 lsi f4,a15,0x3d4
+0002978d 43425e ssi f4,a2,0x178
+00029790 a122b8 l32r a10,0x00017818
+00029793 65add8 call8 0x00002268
+00029796 0c04 movi.n a4,0x0
+00029798 0c0b movi.n a11,0x0
+0002979a 0c0d movi.n a13,0x0
+0002979c 88a7 l32i.n a8,a7,0x28
+0002979e e21710 l16ui a14,a7,0x20
+000297a1 2897 l32i.n a2,a7,0x24
+000297a3 6877 l32i.n a6,a7,0x1c
+000297a5 ad0e mov.n a10,a14
+000297a7 1bc2 addi.n a12,a2,0x1
+000297a9 8066c0 sub a6,a6,a8
+000297ac 27bc01 bgeu a12,a2,0x000297b1
+000297af 0c1d movi.n a13,0x1
+000297b1 e961 s32i.n a14,a1,0x18
+000297b3 e52211 call8 0x0003a9e0
+000297b6 c861 l32i.n a12,a1,0x18
+000297b8 0c0d movi.n a13,0x0
+000297ba 473b07 bltu a11,a4,0x000297c5
+000297bd b79402 bne a4,a11,0x000297c3
+000297c0 a7b601 bgeu a6,a10,0x000297c5
+000297c3 0c1d movi.n a13,0x1
+000297c5 8c2d beqz.n a13,0x000297cb
+000297c7 0c02 movi.n a2,0x0
+000297c9 2997 s32i.n a2,a7,0x24
+000297cb c0c282 mull a12,a2,a12
+000297ce 21e1b9 l32r a2,0x00017f54
+000297d1 bd01 mov.n a11,a1
+000297d3 ad02 mov.n a10,a2
+000297d5 a54710 call8 0x00039c50
+000297d8 bd03 mov.n a11,a3
+000297da ad01 mov.n a10,a1
+000297dc c8b7 l32i.n a12,a7,0x2c
+000297de 920708 l8ui a9,a7,0x8
+000297e1 92410c s8i a9,a1,0xc
+000297e4 a53a11 call8 0x0003ab90
+000297e7 922710 l32i a9,a7,0x40
+000297ea 31dbb9 l32r a3,0x00017f58
+000297ed 662928 bnei a9,0x2,0x00029819
+000297f0 ad02 mov.n a10,a2
+000297f2 f897 l32i.n a15,a7,0x24
+000297f4 d8c7 l32i.n a13,a7,0x30
+000297f6 c8b7 l32i.n a12,a7,0x2c
+000297f8 1bef addi.n a14,a15,0x1
+000297fa f0dd82 mull a13,a13,a15
+000297fd e0cc82 mull a12,a12,a14
+00029800 bd01 mov.n a11,a1
+00029802 dacc add.n a12,a12,a13
+00029804 a54410 call8 0x00039c50
+00029807 bd03 mov.n a11,a3
+00029809 ad01 mov.n a10,a1
+0002980b c8c7 l32i.n a12,a7,0x30
+0002980d 820708 l8ui a8,a7,0x8
+00029810 82410c s8i a8,a1,0xc
+00029813 e53711 call8 0x0003ab90
+00029816 c62d00 j 0x000298d1
+00029819 663959 bnei a9,0x3,0x00029876
+0002981c ad02 mov.n a10,a2
+0002981e f8e7 l32i.n a15,a7,0x38
+00029820 d897 l32i.n a13,a7,0x24
+00029822 c8b7 l32i.n a12,a7,0x2c
+00029824 e8c7 l32i.n a14,a7,0x30
+00029826 1b8d addi.n a8,a13,0x1
+00029828 80cc82 mull a12,a12,a8
+0002982b faee add.n a14,a14,a15
+0002982d e0dd82 mull a13,a13,a14
+00029830 bd01 mov.n a11,a1
+00029832 dacc add.n a12,a12,a13
+00029834 a54110 call8 0x00039c50
+00029837 bd03 mov.n a11,a3
+00029839 ad01 mov.n a10,a1
+0002983b c8c7 l32i.n a12,a7,0x30
+0002983d 920708 l8ui a9,a7,0x8
+00029840 92410c s8i a9,a1,0xc
+00029843 e53411 call8 0x0003ab90
+00029846 ad02 mov.n a10,a2
+00029848 bd01 mov.n a11,a1
+0002984a d8b7 l32i.n a13,a7,0x2c
+0002984c 8897 l32i.n a8,a7,0x24
+0002984e e8e7 l32i.n a14,a7,0x38
+00029850 c8c7 l32i.n a12,a7,0x30
+00029852 1bf8 addi.n a15,a8,0x1
+00029854 80ee82 mull a14,a14,a8
+00029857 f0cc82 mull a12,a12,a15
+0002985a f0dd82 mull a13,a13,a15
+0002985d eacc add.n a12,a12,a14
+0002985f dacc add.n a12,a12,a13
+00029861 e53e10 call8 0x00039c50
+00029864 bd05 mov.n a11,a5
+00029866 ad01 mov.n a10,a1
+00029868 c8e7 l32i.n a12,a7,0x38
+0002986a 920708 l8ui a9,a7,0x8
+0002986d 92410c s8i a9,a1,0xc
+00029870 e53111 call8 0x0003ab90
+00029873 861600 j 0x000298d1
+00029876 664957 bnei a9,0x4,0x000298d1
+00029879 ad02 mov.n a10,a2
+0002987b f8f7 l32i.n a15,a7,0x3c
+0002987d d897 l32i.n a13,a7,0x24
+0002987f c8b7 l32i.n a12,a7,0x2c
+00029881 e8c7 l32i.n a14,a7,0x30
+00029883 1b8d addi.n a8,a13,0x1
+00029885 80cc82 mull a12,a12,a8
+00029888 faee add.n a14,a14,a15
+0002988a e0dd82 mull a13,a13,a14
+0002988d bd01 mov.n a11,a1
+0002988f dacc add.n a12,a12,a13
+00029891 e53b10 call8 0x00039c50
+00029894 bd03 mov.n a11,a3
+00029896 ad01 mov.n a10,a1
+00029898 c8c7 l32i.n a12,a7,0x30
+0002989a 920708 l8ui a9,a7,0x8
+0002989d 92410c s8i a9,a1,0xc
+000298a0 e52e11 call8 0x0003ab90
+000298a3 ad02 mov.n a10,a2
+000298a5 bd01 mov.n a11,a1
+000298a7 d8b7 l32i.n a13,a7,0x2c
+000298a9 8897 l32i.n a8,a7,0x24
+000298ab e8f7 l32i.n a14,a7,0x3c
+000298ad c8c7 l32i.n a12,a7,0x30
+000298af 1bf8 addi.n a15,a8,0x1
+000298b1 80ee82 mull a14,a14,a8
+000298b4 f0cc82 mull a12,a12,a15
+000298b7 f0dd82 mull a13,a13,a15
+000298ba eacc add.n a12,a12,a14
+000298bc dacc add.n a12,a12,a13
+000298be 253910 call8 0x00039c50
+000298c1 ad01 mov.n a10,a1
+000298c3 b1a6b9 l32r a11,0x00017f5c
+000298c6 c8f7 l32i.n a12,a7,0x3c
+000298c8 920708 l8ui a9,a7,0x8
+000298cb 92410c s8i a9,a1,0xc
+000298ce 252c11 call8 0x0003ab90
+000298d1 c8a7 l32i.n a12,a7,0x28
+000298d3 e21710 l16ui a14,a7,0x20
+000298d6 a1a2b9 l32r a10,0x00017f60
+000298d9 822714 l32i a8,a7,0x50
+000298dc d897 l32i.n a13,a7,0x24
+000298de b2ca48 addi a11,a10,0x48
+000298e1 1b88 addi.n a8,a8,0x1
+000298e3 1bfd addi.n a15,a13,0x1
+000298e5 f997 s32i.n a15,a7,0x24
+000298e7 826714 s32i a8,a7,0x50
+000298ea e0dd82 mull a13,a13,a14
+000298ed d26717 s32i a13,a7,0x5c
+000298f0 e52911 call8 0x0003ab90
+000298f3 a1c9b7 l32r a10,0x00017818
+000298f6 65a2d8 call8 0x0000231c
+000298f9 922713 l32i a9,a7,0x4c
+000298fc 9c19 beqz.n a9,0x00029911
+000298fe a22714 l32i a10,a7,0x50
+00029901 90aae2 remu a10,a10,a9,
+00029904 cc9a bnez.n a10,0x00029911
+00029906 b22711 l32i a11,a7,0x44
+00029909 c22712 l32i a12,a7,0x48
+0002990c 0c0a movi.n a10,0x0
+0002990e 6595fb call8 0x00025264
+00029911 1df0 retw.n
+00029913 b2a178 movi a11,0x178
+00029916 b0b582 mull a11,a5,a11
+00029919 babc add.n a11,a12,a11
+0002991b 630b19 lsi f6,a11,0x64
+0002991e 634209 ssi f6,a2,0x24
+00029921 c6fefe j 0x00029520
+===== 0002a184 FUN_0002a184 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0002a184(void)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  undefined4 uVar5;
+  undefined4 uVar6;
+  undefined4 uStack_30;
+  undefined4 uStack_2c;
+  
+  uVar5 = _DAT_000173c8;
+  iVar3 = _DAT_000171dc;
+  iVar1 = _DAT_000170a4;
+  uStack_2c = 0;
+  uStack_30 = 0;
+  memw();
+  uVar6 = *(undefined4 *)(_DAT_000170a4 + 0x3f0);
+  *(int *)(_DAT_000171dc + 0x28) = *(int *)(_DAT_000171dc + 0x28) + 1;
+  func_0x00002268(uVar5);
+  if (*(char *)(iVar3 + 2) == '\x02') {
+    func_0x0000231c(_DAT_000173c8);
+    return;
+  }
+  func_0x0002a038(1);
+  iVar2 = _DAT_00017124;
+  memw();
+  memw();
+  *(uint *)(_DAT_00017960 + 0x200) = *(uint *)(_DAT_00017960 + 0x200) & 0xfffffffb;
+  func_0x0002bf1c(*(undefined1 *)(iVar2 + 0x27));
+  iVar2 = _DAT_0001719c;
+  memw();
+  memw();
+  *(uint *)(_DAT_0001719c + 0x120) = *(uint *)(_DAT_0001719c + 0x120) & 0xfffffffd;
+  memw();
+  memw();
+  *(uint *)(iVar2 + 0x134) = *(uint *)(iVar2 + 0x134) | 0x30;
+  memw();
+  memw();
+  *(uint *)(iVar2 + 0x130) = *(uint *)(iVar2 + 0x130) & 0xfffffff1 | 1;
+  func_0x00002b2c(10);
+  iVar4 = _DAT_00017fa0;
+  memw();
+  memw();
+  *(uint *)(iVar2 + 300) = *(uint *)(iVar2 + 300) & 0xfffffff7 | 0x17;
+  memw();
+  memw();
+  *(uint *)(iVar4 + 0x214) = *(uint *)(iVar4 + 0x214) | 2;
+  func_0x00002268(_DAT_000171cc);
+  func_0x0001b488(9,&uStack_30);
+  func_0x0001b4c0(&uStack_30);
+  func_0x0000231c(_DAT_000171cc);
+  func_0x00024594();
+  func_0x00024878();
+  func_0x00023a64(0x19,*(undefined4 *)(_DAT_00017e90 + 0x3a0));
+  func_0x0002a2f4();
+  iVar4 = _DAT_00017564;
+  memw();
+  *(undefined4 *)(_DAT_00017564 + 0x204) = 1;
+  memw();
+  *(undefined4 *)(iVar4 + 0x208) = 1;
+  memw();
+  *(undefined4 *)(_DAT_00017fa8 + 0xe0) = 0xf;
+  func_0x0001f678(1,0);
+  memw();
+  if ((*(uint *)(iVar2 + 0x138) & 1) == 0) {
+    memw();
+    *(uint *)(iVar2 + 0x138) = *(uint *)(iVar2 + 0x138) | 1;
+  }
+  func_0x0002a9d4();
+  func_0x0002a344();
+  func_0x0002a038(2);
+  func_0x0000231c(_DAT_000173c8);
+  func_0x0002cef4(0);
+  func_0x0002b0f4();
+  func_0x00001c20(_DAT_00017fa4);
+  memw();
+  uVar5 = func_0x0001cb7c(uVar6,*(undefined4 *)(iVar1 + 0x3f0));
+  *(undefined4 *)(iVar3 + 0x34) = uVar5;
+  uVar5 = func_0x0001ca88(uVar5,*(undefined4 *)(iVar3 + 0x38));
+  *(undefined4 *)(iVar3 + 0x38) = uVar5;
+  return;
+}
+
+
+0002a184 366100 entry a1,0x30
+0002a187 0c09 movi.n a9,0x0
+0002a189 9911 s32i.n a9,a1,0x4
+0002a18b 9901 s32i.n a9,a1,0x0
+0002a18d 3113b4 l32r a3,0x000171dc
+0002a190 51c5b3 l32r a5,0x000170a4
+0002a193 c02000 memw
+0002a196 88a3 l32i.n a8,a3,0x28
+0002a198 a18cb4 l32r a10,0x000173c8
+0002a19b 4225fc l32i a4,a5,0x3f0
+0002a19e 1b88 addi.n a8,a8,0x1
+0002a1a0 89a3 s32i.n a8,a3,0x28
+0002a1a2 650cd8 call8 0x00002268
+0002a1a5 a20302 l8ui a10,a3,0x2
+0002a1a8 662a07 bnei a10,0x2,0x0002a1b3
+0002a1ab a187b4 l32r a10,0x000173c8
+0002a1ae e516d8 call8 0x0000231c
+0002a1b1 1df0 retw.n
+0002a1b3 0c1a movi.n a10,0x1
+0002a1b5 25e8ff call8 0x0002a038
+0002a1b8 c1eab5 l32r a12,0x00017960
+0002a1bb 7cbd movi.n a13,0xfb
+0002a1bd c02000 memw
+0002a1c0 b22c80 l32i a11,a12,0x200
+0002a1c3 d0bb10 and a11,a11,a13
+0002a1c6 c02000 memw
+0002a1c9 a1d6b3 l32r a10,0x00017124
+0002a1cc b26c80 s32i a11,a12,0x200
+0002a1cf a20a27 l8ui a10,a10,0x27
+0002a1d2 a5d401 call8 0x0002bf1c
+0002a1d5 0c16 movi.n a6,0x1
+0002a1d7 21f1b3 l32r a2,0x0001719c
+0002a1da 7cda movi.n a10,0xfd
+0002a1dc c02000 memw
+0002a1df 922248 l32i a9,a2,0x120
+0002a1e2 a09910 and a9,a9,a10
+0002a1e5 c02000 memw
+0002a1e8 926248 s32i a9,a2,0x120
+0002a1eb c02000 memw
+0002a1ee f2224d l32i a15,a2,0x134
+0002a1f1 3c08 movi.n a8,0x30
+0002a1f3 80ff20 or a15,a15,a8
+0002a1f6 c02000 memw
+0002a1f9 f2624d s32i a15,a2,0x134
+0002a1fc c02000 memw
+0002a1ff e2224c l32i a14,a2,0x130
+0002a202 7c1f movi.n a15,0xf1
+0002a204 60ee20 or a14,a14,a6
+0002a207 f0ee10 and a14,a14,a15
+0002a20a c02000 memw
+0002a20d e2624c s32i a14,a2,0x130
+0002a210 0caa movi.n a10,0xa
+0002a212 a591d8 call8 0x00002b2c
+0002a215 c162b7 l32r a12,0x00017fa0
+0002a218 c02000 memw
+0002a21b e2224b l32i a14,a2,0x12c
+0002a21e 1c78 movi.n a8,0x17
+0002a220 7c7f movi.n a15,0xf7
+0002a222 80ee20 or a14,a14,a8
+0002a225 f0ee10 and a14,a14,a15
+0002a228 c02000 memw
+0002a22b e2624b s32i a14,a2,0x12c
+0002a22e 0c2d movi.n a13,0x2
+0002a230 c02000 memw
+0002a233 b22c85 l32i a11,a12,0x214
+0002a236 d0bb20 or a11,a11,a13
+0002a239 c02000 memw
+0002a23c b26c85 s32i a11,a12,0x214
+0002a23f a1e3b3 l32r a10,0x000171cc
+0002a242 6502d8 call8 0x00002268
+0002a245 0c9a movi.n a10,0x9
+0002a247 bd01 mov.n a11,a1
+0002a249 e523f1 call8 0x0001b488
+0002a24c ad01 mov.n a10,a1
+0002a24e 2527f1 call8 0x0001b4c0
+0002a251 a1deb3 l32r a10,0x000171cc
+0002a254 650cd8 call8 0x0000231c
+0002a257 e533fa call8 0x00024594
+0002a25a e561fa call8 0x00024878
+0002a25d b10cb7 l32r a11,0x00017e90
+0002a260 1c9a movi.n a10,0x19
+0002a262 b22be8 l32i a11,a11,0x3a0
+0002a265 e57ff9 call8 0x00023a64
+0002a268 a50800 call8 0x0002a2f4
+0002a26b e1beb4 l32r a14,0x00017564
+0002a26e c02000 memw
+0002a271 626e81 s32i a6,a14,0x204
+0002a274 c02000 memw
+0002a277 626e82 s32i a6,a14,0x208
+0002a27a d14bb7 l32r a13,0x00017fa8
+0002a27d 0cfc movi.n a12,0xf
+0002a27f c02000 memw
+0002a282 c26d38 s32i a12,a13,0xe0
+0002a285 0c1a movi.n a10,0x1
+0002a287 0c0b movi.n a11,0x0
+0002a289 e53ef5 call8 0x0001f678
+0002a28c c02000 memw
+0002a28f 92224e l32i a9,a2,0x138
+0002a292 07e908 bbsi a9,0x0,0x0002a29e
+0002a295 60f920 or a15,a9,a6
+0002a298 c02000 memw
+0002a29b f2624e s32i a15,a2,0x138
+0002a29e 657300 call8 0x0002a9d4
+0002a2a1 250a00 call8 0x0002a344
+0002a2a4 0c2a movi.n a10,0x2
+0002a2a6 25d9ff call8 0x0002a038
+0002a2a9 a147b4 l32r a10,0x000173c8
+0002a2ac e506d8 call8 0x0000231c
+0002a2af 0c0a movi.n a10,0x0
+0002a2b1 25c402 call8 0x0002cef4
+0002a2b4 e5e300 call8 0x0002b0f4
+0002a2b7 a13bb7 l32r a10,0x00017fa4
+0002a2ba 6596d7 call8 0x00001c20
+0002a2bd ad04 mov.n a10,a4
+0002a2bf c02000 memw
+0002a2c2 b225fc l32i a11,a5,0x3f0
+0002a2c5 658bf2 call8 0x0001cb7c
+0002a2c8 a9d3 s32i.n a10,a3,0x34
+0002a2ca b8e3 l32i.n a11,a3,0x38
+0002a2cc a57bf2 call8 0x0001ca88
+0002a2cf a9e3 s32i.n a10,a3,0x38
+0002a2d1 1df0 retw.n
+===== 000223b8 FUN_000223b8 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int FUN_000223b8(float param_1)
+
+{
+  uint uVar1;
+  float *pfVar2;
+  int iVar3;
+  float fVar4;
+  int iVar5;
+  
+  iVar3 = 0;
+  uVar1 = (uint)*(byte *)(_DAT_000177bc + 0x50);
+  pfVar2 = (float *)(_DAT_000177bc + 0x30);
+  iVar5 = uVar1 - 1;
+  if (uVar1 != 0) goto code_r0x000223d0;
+  while( true ) {
+    if (iVar5 == 0) {
+      return uVar1 - 1;
+    }
+    iVar5 = iVar5 + -1;
+code_r0x000223d0:
+    fVar4 = *pfVar2;
+    pfVar2 = pfVar2 + 1;
+    if (fVar4 <= param_1) break;
+    iVar3 = iVar3 + 1;
+  }
+  return iVar3;
+}
+
+
+000223b8 364100 entry a1,0x20
+000223bb 4100d5 l32r a4,0x000177bc
+000223be 52a000 movi a5,0x0
+000223c1 320450 l8ui a3,a4,0x50
+000223c4 5012fa wfr f1,a2
+000223c7 42c430 addi a4,a4,0x30
+000223ca 22c3ff addi a2,a3,-0x1
+000223cd 76930c loopnez a3,0x000223dd
+000223d0 030400 lsi f0,a4,0x0
+000223d3 10006b ole.s b0,f0,f1
+000223d6 4b44 addi.n a4,a4,0x4
+000223d8 761003 bt b0,0x000223df
+000223db 1b55 addi.n a5,a5,0x1
+000223dd 1df0 retw.n
+000223df 2d05 mov.n a2,a5
+000223e1 1df0 retw.n
+===== 0001cbfc FUN_0001cbfc =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+float FUN_0001cbfc(int param_1,uint param_2)
+
+{
+  if (param_2 != 0) {
+    return ((float)((uint)(param_1 * _DAT_00017290) / param_2) / 1.0) * _DAT_00017294;
+  }
+  return 0.0;
+}
+
+
+0001cbfc 364100 entry a1,0x20
+0001cbff 9c83 beqz.n a3,0x0001cc1b
+0001cc01 41a3e9 l32r a4,0x00017290
+0001cc04 404282 mull a4,a2,a4
+0001cc07 21a3e9 l32r a2,0x00017294
+0001cc0a 3044c2 quou a4,a4,a3
+0001cc0d 0014da ufloat.s f1,a4,0x0
+0001cc10 5022fa wfr f2,a2
+0001cc13 20012a mul.s f0,f1,f2
+0001cc16 4020fa rfr a2,f0
+0001cc19 1df0 retw.n
+0001cc1b 0c02 movi.n a2,0x0
+0001cc1d 1df0 retw.n
+===== 0001cd80 FUN_0001cd80 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+uint FUN_0001cd80(uint param_1,int param_2)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  undefined4 uVar4;
+  undefined4 uVar5;
+  uint uVar6;
+  
+  uVar6 = param_1 >> 3 & 0xfffffffc;
+  memw();
+  uVar5 = *(undefined4 *)(uVar6 + _DAT_000172ac);
+  memw();
+  uVar4 = *(undefined4 *)(uVar6 + _DAT_000172b0);
+  if (param_2 == 0) {
+    uVar1 = 0;
+  }
+  else {
+    uVar1 = 0;
+    iVar2 = 0;
+    iVar3 = param_1 + uVar6 * -8;
+    do {
+      uVar6 = func_0x0003ace0(uVar4,uVar5,iVar3);
+      uVar6 = func_0x0003acc8(uVar6 & 1,0,iVar2);
+      uVar1 = uVar1 | uVar6;
+      iVar3 = iVar3 + 1;
+      iVar2 = iVar2 + 1;
+    } while (param_2 != iVar2);
+  }
+  return uVar1;
+}
+
+
+0001cd80 364100 entry a1,0x20
+0001cd83 714ae9 l32r a7,0x000172ac
+0001cd86 7ccb movi.n a11,0xfc
+0001cd88 20a341 srli a10,a2,0x3
+0001cd8b 9d02 mov.n a9,a2
+0001cd8d b0aa10 and a10,a10,a11
+0001cd90 7a7a add.n a7,a10,a7
+0001cd92 c02000 memw
+0001cd95 6146e9 l32r a6,0x000172b0
+0001cd98 7807 l32i.n a7,a7,0x0
+0001cd9a 6a6a add.n a6,a10,a6
+0001cd9c c02000 memw
+0001cd9f 6806 l32i.n a6,a6,0x0
+0001cda1 ac83 beqz.n a3,0x0001cdcd
+0001cda3 0c02 movi.n a2,0x0
+0001cda5 0c04 movi.n a4,0x0
+0001cda7 d05a11 slli a5,a10,0x3
+0001cdaa 5059c0 sub a5,a9,a5
+0001cdad ad06 mov.n a10,a6
+0001cdaf bd07 mov.n a11,a7
+0001cdb1 cd05 mov.n a12,a5
+0001cdb3 e5f21d call8 0x0003ace0
+0001cdb6 0c0b movi.n a11,0x0
+0001cdb8 a0a004 extui a10,a10,0x0,0x1
+0001cdbb cd04 mov.n a12,a4
+0001cdbd a5f01d call8 0x0003acc8
+0001cdc0 a02220 or a2,a2,a10
+0001cdc3 1b55 addi.n a5,a5,0x1
+0001cdc5 1b44 addi.n a4,a4,0x1
+0001cdc7 4793e2 bne a3,a4,0x0001cdad
+0001cdca 460000 j 0x0001cdcf
+0001cdcd 0c02 movi.n a2,0x0
+0001cdcf 1df0 retw.n

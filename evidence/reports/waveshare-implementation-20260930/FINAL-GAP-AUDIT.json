@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "objective": "исполни план до конца",
+  "hardware_acceptance": false,
+  "final_image_authorized": false,
+  "upload_performed": false,
+  "current_build": "4a057d873ab5",
+  "verified_offline": [
+    "DS5Dongle-adapted controller source",
+    "WiFi/HTTP/MQTT source fixtures",
+    "Linux nct6686 metrics collector and fan1/fan2 forwarding",
+    "UART RX-only GP9 source",
+    "diagnostic mode isolation",
+    "finite PIO waveform observer",
+    "conventional NOR protocol/engine/transport/authority/service source",
+    "CDC framed emulator erase/program/readback",
+    "PSP conservative preservation preflight",
+    "offline color connection site"
+  ],
+  "pending_hardware": [
+    "Waveshare board discovery and live firmware version",
+    "DualSense end-to-end input/audio/haptics/reconnect",
+    "UART real capture on BC250 J5.4->Waveshare GP9",
+    "SPI electrical isolation and JEDEC read",
+    "full BIOS double hardware readback",
+    "cold boot and recovery upload",
+    "Decky/live network/HA acceptance",
+    "LPC/TPMS1 capture",
+    "SMBus/I2C acceptance",
+    "J2 JTAG compatibility",
+    "24-hour observation"
+  ],
+  "pending_product": [
+    "final image designation and approval",
+    "exact physical wiring acceptance",
+    "safe physical flash and post-flash readback"
+  ],
+  "security_boundaries": [
+    "no PSP signature replacement",
+    "no TOCTOU injection",
+    "no generic raw opcode endpoint",
+    "no physical write performed"
+  ]
+}

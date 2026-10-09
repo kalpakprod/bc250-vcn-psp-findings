@@ -1,0 +1,20 @@
+ROM SHA-256: ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8 size: 16777216
+SMU SHA-256: cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37 size: 262400
+SMU slice == donor[0x8FEF00:0x8FEF00+size]: True
+raw table Q4 msg7 @ 0x79e8: 0600000020e70100
+handler pointer at 0x79ec @ 0x79ec: 20e7010006000000
+raw table Q5 start @ 0x7a60: 00000000a8b30100
+Q4 msg7 handler u32le: 0x1e720
+Raw local table lines:
+  Start of Queue 4
+   0x07  0x000079E8  0x0001E720  FUN_0001e720
+  Start of Queue 5
+Queue API DEFAULT_QUEUE_ADDRS:
+      0: (0x03B10A08, 0x03B10A68, 0x03B10A48),
+      1: (0x03B10A00, 0x03B10A60, 0x03B10A40),
+      2: (0x03B10528, 0x03B10564, 0x03B10998),
+      3: (0x03B10A20, 0x03B10A80, 0x03B10A88),
+      4: (0x03B10A24, 0x03B10A84, 0x03B10A8C),
+Queue4Mixin Q5-named helper:
+      def _q5_0x07(self) -> int | None:
+          return self.send_message(4, 0x07)

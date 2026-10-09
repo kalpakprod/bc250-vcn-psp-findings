@@ -1,0 +1,186 @@
+Verified transaction: correction review copy for the APOB/ABL1 handoff scope.
+
+Role paths (absolute)
+- TARGET baseline source: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review.md
+- MODIFIED_FILE: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2.md
+- DIFF_FILE: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2.diff
+- VERIFICATION.txt: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2-VERIFICATION.txt
+- executable ROLLBACK.sh: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2-ROLLBACK.sh
+- baseline copy used by rollback: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-handoff-scope-correction-review/baseline.md
+- rollback test copy: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-handoff-scope-correction-review/rollback-test.md
+
+Bound inputs
+- Objective: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clv-offline-target-decision.md; SHA-256 b3cf42a06c5292ac13ef96eccdb3ad219a9002861091bad8a49e1bb3c4b205e2
+- Exact CLV ROM: /home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin; 16777216 bytes; SHA-256 ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8
+- Memory-clock report: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-memory-clock-units-next.md; SHA-256 4e318813e16035216aa48303d292422ca43d113ee91807fc97b8a61ee0ced33b
+- Memory-clock result: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-memory-clock-units-next/memory-clock-units-next-result.json; SHA-256 7201a262fa4a97c9e5803e88682c4065fa7ecba647290f4628e586daf15d2a48
+- APOB/ABL report: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-apob-abl-handoff-next.md; SHA-256 f8c8d1610ae89a933b3060b3917ec57a2b1f69d7c6fd4f3620baec2de6f991db
+- APOB/ABL result: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-handoff/apob-abl-handoff-result.json; SHA-256 36abcbcb636b330457c00ab59e74a17b8ae5976c774b80f9c29f3912918da2a6
+- AmdMemAm4Pei source body: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdMemAm4Pei-1ef4e7b94467.bin; SHA-256 1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8
+
+Changed claim/symbol
+- Only the review-copy claim/wording changes: a byte-backed `$INV 0x11ED` -> APOB/PPI/ABL1 join is NOT established. The exact service pointer is `0x09E3B14C`; root's `0x9E3B14` spelling omits the final C.
+- No firmware field, ROM byte, NVRAM value, register, board state, or guide was modified.
+
+Decisive byte/source check
+Command:
+```text
+python3 -B - <<'PY' > evidence/firmware-audit/20260921-apob-abl-handoff-scope-correction-review/pointer-check.stdout 2> evidence/firmware-audit/20260921-apob-abl-handoff-scope-correction-review/pointer-check.stderr
+from pathlib import Path
+import hashlib, json, struct
+root=Path('/home/OWNER/orca/projects/bc250')
+rom=root/'evidence/donor/retroweb-20260916/BC250_5.00_clv.bin'
+census=json.loads((root/'evidence/firmware-audit/20260919-inv-token-consumers/census.json').read_text())
+row=next(x for x in census['records'] if x.get('ui')=='AmdMemAm4Pei')
+body=root/'evidence/firmware-audit/20260919-inv-token-consumers'/(row['stem']+'.bin')
+blob=body.read_bytes(); rva=0x08A0
+sec=next(s for s in row['sections'] if s['rva']<=rva<s['rva']+s['size'])
+raw=rva-sec['rva']+sec['raw']; insn=blob[raw:raw+5]; imm=struct.unpack_from('<I',insn,1)[0]
+result={'rom_sha256':hashlib.sha256(rom.read_bytes()).hexdigest(),'module':str(body),'module_sha256':hashlib.sha256(blob).hexdigest(),'imagebase':hex(row['imagebase']),'module_rva':hex(rva),'raw_offset':hex(raw),'bytes':insn.hex(),'decoded':'push imm32 '+f'0x{imm:08X}','expected_full_pointer':'0x09E3B14C','root_truncated_spelling':'0x9E3B14','matches_full_pointer':imm==0x09E3B14C,'status':'PASS' if insn[0]==0x68 and imm==0x09E3B14C else 'FAIL'}
+print(json.dumps(result,indent=2))
+if result['status']!='PASS': raise SystemExit(1)
+PY
+status=$?; printf '%s\n' "$status" > evidence/firmware-audit/20260921-apob-abl-handoff-scope-correction-review/pointer-check.exit
+```
+Observed literal stdout:
+```json
+{
+  "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+  "module": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260919-inv-token-consumers/AmdMemAm4Pei-1ef4e7b94467.bin",
+  "module_sha256": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8",
+  "imagebase": "0x9e39e20",
+  "module_rva": "0x8a0",
+  "raw_offset": "0x708",
+  "bytes": "684cb1e309",
+  "decoded": "push imm32 0x09E3B14C",
+  "expected_full_pointer": "0x09E3B14C",
+  "root_truncated_spelling": "0x9E3B14",
+  "matches_full_pointer": true,
+  "status": "PASS"
+}
+```
+Stderr: empty (`e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`); exit: `0`. Pointer-check stdout SHA-256 `d20e01ae6e456e1a45f71384c6d18f59fbb45e09c4fe0308e615479954cebf40`.
+
+BASELINE / MODIFIED / ROLLBACK behavior
+The matching read-only predicate is:
+```text
+python3 -B -c 'import pathlib,sys; s=pathlib.Path(sys.argv[1]).read_text(); ok="service-pointer-immediate=0x09E3B14C" in s; print("service-pointer-immediate="+("0x09E3B14C" if ok else "NOT_PRESENT")); sys.exit(0 if ok else 1)' FILE
+```
+- BASELINE input `docs/research/2026-09-21-clock-independent-review.md` SHA-256 `a4401efe792349a802d01c92d697e1709a0a7f64a10e95cfbb99c0d4241bec4b`; literal stdout `service-pointer-immediate=NOT_PRESENT`; stderr empty; exit `1` (expected absent marker in older review).
+- MODIFIED_FILE input SHA-256 `aa5d694468f684e8c608fdfe506fc0608a6b9e300f10295eababc54ab1d6e839`; literal stdout `service-pointer-immediate=0x09E3B14C`; stderr empty; exit `0`.
+- ROLLBACK command: `docs/research/2026-09-21-clock-independent-review-v2-ROLLBACK.sh evidence/firmware-audit/20260921-apob-abl-handoff-scope-correction-review/rollback-test.md`; stdout empty; stderr empty; exit `0`.
+- ROLLBACK restored copy SHA-256 equals original baseline: `a4401efe792349a802d01c92d697e1709a0a7f64a10e95cfbb99c0d4241bec4b`; `cmp -s baseline.md rollback-test.md` exit `0`.
+- Same predicate on restored copy: literal stdout `service-pointer-immediate=NOT_PRESENT`; stderr empty; exit `1`.
+- Reapplied GOAL to MODIFIED_FILE from the preserved modified copy after rollback test; literal stdout `reapplied_modified_file=GOAL_PRESENT`; stderr empty; exit `0`; final MODIFIED_FILE remains SHA-256 `aa5d694468f684e8c608fdfe506fc0608a6b9e300f10295eababc54ab1d6e839`.
+
+DIFF reconstruction
+- `diff -u --label baseline.md --label baseline.md baseline.md MODIFIED_FILE > DIFF_FILE` returned `1` because differences exist; that exit is expected.
+- Applied DIFF_FILE with `patch -p0` to a disposable baseline copy; `patch` exit `0`, `cmp` against MODIFIED_FILE exit `0`; reconstructed copy and MODIFIED_FILE both SHA-256 `aa5d694468f684e8c608fdfe506fc0608a6b9e300f10295eababc54ab1d6e839`.
+
+Current final hashes
+- MODIFIED_FILE: `aa5d694468f684e8c608fdfe506fc0608a6b9e300f10295eababc54ab1d6e839`
+- DIFF_FILE: `4ee52fbce2ff066eef4bcdf589ab6a94ff5fe5a75908d9ba755362ecff5657ee`
+- ROLLBACK.sh: `9bd918d428a7ab7bf6dfb56c8d0d5f10927b91021ab48a1dbcbd52265ac89668`
+- Baseline copy: `a4401efe792349a802d01c92d697e1709a0a7f64a10e95cfbb99c0d4241bec4b`
+
+Evidence class: observed-bytes + static-analysis. No APOB, PPI, ABL1, SMU, firmware, or hardware execution was performed. No physical clock or training conclusion follows.
+
+Follow-up transaction — conditional ABL1 stack/helper correction
+
+Exact source and fresh tool outputs:
+- ABL1 raw input: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin`, size 94,624, SHA-256 `af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a`.
+- Fresh ABL1 ELF object: `evidence/firmware-audit/20260921-apob-abl-stack-independent-review/ABL1-exact.o`, SHA-256 `adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6`; LLVM objcopy/objdump version 22.1.8; objcopy exit 0, every selected objdump window exit 0, all stderr files empty.
+- Fresh windows: `selector-463c-4670.stdout`, `reader-1fb4-2040.stdout`, `provider-4800-482c.stdout`, `service-49cc-4b60.stdout`, `helper-6238-6376.stdout`, `loops-6b68-6b84.stdout`, `caller-0834-087e.stdout` under `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-apob-abl-stack-independent-review/`.
+- Machine check command: `python3 -B evidence/firmware-audit/20260921-apob-abl-stack-independent-review/verify_stack_path.py > evidence/firmware-audit/20260921-apob-abl-stack-independent-review/verifier.stdout 2> evidence/firmware-audit/20260921-apob-abl-stack-independent-review/verifier.stderr`.
+- Final command exit: `0`; stdout: `{"status": "PASS", "checks": 43, "passed": 43, "failed": 0, "stack_entry_plus4_value": 0, "fill_loop": "STRB r1,[r0],#1", "separate_0x862_input": "local descriptor + caller r4"}`; stderr empty. Result JSON SHA-256 `701f33db3d14a5451ad1e335f807c710f42284a0b5a00980deab5081fe67820b`; verifier SHA-256 `864f97f8292333d08d702efd599b0a25f5e1f3f0f199a9f81839dd77cf996cd5`; stdout SHA-256 `97f1bb4329c6370b0c572c9e922f7f92cfd433d859abca2f3f24d9dcf4aaec0e`.
+- Failed byte-transcription attempts were preserved under `verifier-attempt1.*` and `verifier-attempt2.*`; both exits `1` are assertion-format/Thumb raw-byte mistakes (not input or disassembly failure). Attempt 1 mis-entered the BL encoding at `0x1FE0` (`02 f0 0e fc`); attempt 2 mis-entered the conditional branch at `0x6B80` (`fb d2`). The final check passes against bytes and fresh instruction listings.
+
+Accepted observed/static facts from those bytes:
+- The `r1==0x0F` branch at `0x463C..0x466A` sets both caller stack words to zero before calling `0x1FB4`; this is conditional and selector meaning is unknown.
+- `0x1FB4` saves 12 words (`0x30`); `[SP+0x30]` retrieves entry `SP+0` and `SP+4`. `R9` carries the second incoming zero and is forwarded to the `0x4800` wrapper.
+- `0x4800` saves six words (`0x18`), loads entry `SP+0` at `[SP+0x18]`, and forwards zero as the second stack argument to `0x49CC`.
+- `0x49CC` saves 13 words (`0x34`) plus locals `0x6C`, total `0xA0`; its load `[SP+0xA4]` at `0x4B54` is entry `SP+4`, zero in this branch. The `0x4B5C` call to `0x6238` passes a caller-local descriptor pointer in R0 and this zero in R1.
+- `0x6238`'s observed ABI use is R0 -> R4 and R1 -> R10; complete semantic C prototype is not established. It explicitly sets R1=0 before its `0x6B78` call. `0x6B78` stores R1 bytewise; the adjacent `0x6B6A` routine loads from `[R1]` before storing and is a distinct copy loop.
+- The `0x0862` caller builds a separate local descriptor (`0x218`, `0xA045`, type 2) and passes caller R4; common helper address alone does not make it the source for the `0x4B54` zero stack value.
+
+Current BASELINE / MODIFIED_FILE / ROLLBACK behavior after reusing the same four-role set:
+- Follow-up BASELINE: `/home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2-pristine.md`, SHA-256 `aa5d694468f684e8c608fdfe506fc0608a6b9e300f10295eababc54ab1d6e839`; same predicate stdout `ABL1_stack_correction=NOT_PRESENT`, stderr empty, exit `1`.
+- Follow-up MODIFIED_FILE: `/home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2.md`, SHA-256 `ff3626e35951b556a1af6a8db086cd5c94a462c870f3dcc3fc3d68b3f965409d`; same predicate stdout `ABL1_stack_correction=PRESENT`, stderr empty, exit `0`.
+- Follow-up ROLLBACK.sh: `/home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2-ROLLBACK.sh` targets the sibling pristine v2 baseline. Executed on separate `rollback-test-v2.md`, stdout/stderr empty, exit `0`; restored hash equals the baseline. Same predicate on restored copy prints `ABL1_stack_correction=NOT_PRESENT`, exit `1`.
+- Reapply: copied preserved modified report back to MODIFIED_FILE after rollback; predicate stdout `reapplied_MODIFIED_FILE=GOAL_PRESENT`, exit `0`.
+- Follow-up DIFF_FILE: `/home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2.diff`, SHA-256 `eb2a93d0b81b3a3072dc5c647b21e589caeb38e01c7c33c213d3e8bbdc980360`. Unified-diff generation exit `1` (expected differences); `patch -p0` reconstruction exit `0`; `cmp` against MODIFIED_FILE exit `0`; reconstructed SHA-256 equals MODIFIED_FILE.
+
+No guide or worker-owned file was edited. The stack result does not prove that item `0x17`'s conditional mapping loads 1800, that the branch runs at boot, or that any setting reaches MCLK/UCLK/FCLK hardware.
+
+
+
+Follow-up transaction — item-17 conditional reachability boundary
+
+Four role paths (absolute; reopened after this transaction)
+- MODIFIED_FILE: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2.md
+- DIFF_FILE: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2.diff
+- VERIFICATION.txt: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2-VERIFICATION.txt
+- executable ROLLBACK.sh: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2-ROLLBACK.sh
+- immutable transaction baseline: /home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2-pristine.md
+- separate rollback-test copy: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/rollback-test-v2-item17.md
+- reconstructed copy from DIFF_FILE: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/transaction-v2-item17/reconstructed-v2-item17.md
+
+Changed claim/symbol
+- Report marker: `item17-reachability-verifier: PASS (83/83)`.
+- Verifier mnemonic expectation at `0x6D20`: LLVM listing prints `pop`, not `pop.w`; corrected that one expectation.
+- Verifier output directory: result write used undefined `OUT`; bound explicitly as `OUT=BASE`, then ran verifier directly.
+- No ROM/image/APCB/UEFI payload bytes, NVRAM, register, board state, or guide was modified.
+
+Pinned inputs and result
+- ROM: `/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin`; SHA-256 `ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8`.
+- ABL1 raw payload: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin`; size 94624; SHA-256 `af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a`.
+- ABL1 ELF object: `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o`; SHA-256 `adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6`.
+- Listing inputs: /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/reachability/bypass-9740-9860.objdump, /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/reachability/reachable-config-dispatch-130c-1420.objdump, /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/reachability/reachable-single-state-984e-98b0.objdump, /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/reachability/helper-6c20-6d24.objdump, /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/reachability/svc-alternatives-9770-9820.objdump, /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/reachability/callback-95fc-9658.objdump.
+- Listing verifier `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/reachability/verify_item17_gate_listing.py` SHA-256 `be4f5e6d30d63c83a2fc5a56c0bd0d6d8007580c1f0e9e0d5505a4d7f043a71c`; result `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/reachability/reachable-config-result.json` SHA-256 `d1f119e6d84f19291c6e13c31d5bfd1a22c27c8ddda2aef4b49b7bcf2197458b`.
+- Status `PASS`; checks 83/83; direct callsites `BYPASSED_ON_SELECTED_STATIC_BRANCH`; next edge `0x130C -> 0x1354 -> dynamic BLX table`; global SVC #6 reachability `UNRESOLVED`.
+
+Verifier command and literal evidence
+Command: `/usr/bin/python3 -B /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/reachability/verify_item17_gate_listing.py`
+Exit status `0`; stderr empty. Literal stdout:
+```json
+{
+  "status": "PASS",
+  "checks": 83,
+  "passed": 83,
+  "failed": 0,
+  "direct_svc_callsites": "BYPASSED_ON_SELECTED_STATIC_BRANCH",
+  "next_local_edge": "0x130C -> 0x1354 -> dynamic BLX table",
+  "global_svc6_reachability": "UNRESOLVED"
+}
+```
+- Stdout file `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/reachability/gate-verifier-direct-run.stdout` SHA-256 `fbbb48554e7a9b3dfefd0601cf3c10d707c77dba132f1b5b41ae69c34f12cadd`; stderr file `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/reachability/gate-verifier-direct-run.stderr` SHA-256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`.
+
+Preserved failed attempts/corrections
+- Dispatcher used case-sensitive uppercase `0x6D20`, found no candidate, exit 1, no write; source uses lowercase `0x6d20`.
+- Original gate-verifier failure retained at `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/reachability/gate-verifier.stderr`; exit 1; observed `pop`, expected `pop.w`.
+- Corrected-predicate direct invocation retained at `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/reachability/gate-verifier-rerun.stderr`; exit 1; `NameError: OUT is not defined`.
+- Injected launcher failure retained at `/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/reachability/gate-verifier-corrected-run.stderr`; exit 1; `NameError: sys is not defined`.
+- A transaction preflight exited 1 with `KeyError: 'direct_svc_callsites'` before any write; the key is in summary stdout, not result JSON.
+- A second transaction harness failed to parse (`SyntaxError: invalid syntax`, exit 1) before executing; the corrected method used a standalone temporary script.
+- Final direct run passed. No item-17 table mapping was repeated and no raw-byte verifier was retried.
+
+Selected path and limits
+- The prior conditional base `0x57100` and mapping are reused, not rechecked. Selected `0x6D10==1`: `0x95FC` loads `[SP+0x164]`; `0x9646 -> 0x9744 -> 0x984E`.
+- The direct callsites `0x9780 -> 0x0DD4`, `0x97E4 -> 0x118C`, and `0x9800 -> 0x10C0` are bypassed on this selected branch.
+- `0x984E` supplies `r0=4,r1=0` to `0x130C`, reaching `0x1354 -> 0x1332 -> data-dependent BLX R0`; table pointer/object initialization and targets unresolved.
+- No global SVC #6 reachability conclusion, SVC #6 actuator/handler semantics, clock-register write, physical clock, or applied-1800 conclusion. Hardware/training/board checks UNRUN.
+
+BASELINE / MODIFIED / ROLLBACK behavior — same predicate and input form
+Command: `/usr/bin/python3 -B -c 'import pathlib,sys; s=pathlib.Path(sys.argv[1]).read_text(); ok="item17-reachability-verifier: PASS (83/83)" in s; print("item17-reachability="+("PASS_83_83_UNRESOLVED" if ok else "ABSENT")); sys.exit(0 if ok else 1)' FILE`
+- BASELINE `/home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2-pristine.md` SHA-256 `aa5d694468f684e8c608fdfe506fc0608a6b9e300f10295eababc54ab1d6e839`: stdout `item17-reachability=ABSENT`; stderr empty; exit 1 (expected absence).
+- MODIFIED_FILE `/home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2.md` SHA-256 `4a073cee986a18c456442abbab477e81d51fb09d35003c1fefc1aa1b818c81d1`: stdout `item17-reachability=PASS_83_83_UNRESOLVED`; stderr empty; exit 0.
+- ROLLBACK command `/home/OWNER/orca/projects/bc250/docs/research/2026-09-21-clock-independent-review-v2-ROLLBACK.sh /home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/rollback-test-v2-item17.md`: stdout `''`; stderr `''`; exit 0. Restored hash `aa5d694468f684e8c608fdfe506fc0608a6b9e300f10295eababc54ab1d6e839` equals baseline.
+- Same predicate on restored copy: stdout `item17-reachability=ABSENT`; stderr empty; exit 1.
+- Reapplied GOAL to MODIFIED_FILE after rollback test; stdout `item17-reachability=PASS_83_83_UNRESOLVED`; stderr empty; exit 0; final MODIFIED_FILE SHA-256 `4a073cee986a18c456442abbab477e81d51fb09d35003c1fefc1aa1b818c81d1`.
+
+DIFF reconstruction
+- `diff -u --label baseline.md --label baseline.md BASELINE MODIFIED_FILE > DIFF_FILE`: exit 1 (1 expected for differences); stderr empty.
+- `patch -p0 -i DIFF_FILE`: exit 0; stdout `patching file baseline.md`; stderr ``.
+- Reconstructed SHA-256 `4a073cee986a18c456442abbab477e81d51fb09d35003c1fefc1aa1b818c81d1` equals MODIFIED_FILE; byte equality passed.
+
+Final role paths remain the same; current hashes appear in the action log. Evidence class: observed-bytes + static-analysis.

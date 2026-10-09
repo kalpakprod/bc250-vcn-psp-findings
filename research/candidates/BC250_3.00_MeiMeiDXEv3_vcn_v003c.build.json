@@ -1,0 +1,38 @@
+{
+  "variant": "v003c",
+  "fix": "driver inserted BEFORE Bds.ffs (v003b placed it after the 0xFF free tail at 0x432000 where DxeCore's FV walk stops: never dispatched)",
+  "base": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/donor/fd-v22-20260923/BC250_3.00_MeiMeiDXEv3",
+    "sha256": "606a7a7f9ef8fb1c445d8ccfa9640de0339bfec5ab52969135a9e87d62028182"
+  },
+  "blob": {
+    "path": "/home/OWNER/orca/projects/bc250/candidates/vcn-unlock-driver-v000-DRAFT/bin/Bc250VcnUnlockDxe.ffs",
+    "sha256": "e8b2a62c15688191cb9e8e9271aef18ac1b5fc2bd727adea3eb569639ddbbcb0",
+    "in_image_sha256": "6c34627d26ed83c5b35bf1d2024cee0fb46338ced2c11508f7c764c225d28dfe"
+  },
+  "output_sha256": "dafb323a5d701f29b9c1b74f0a6bc728572590ced54a8389c01b20c0a4f828b0",
+  "inner_fv": {
+    "old_len": "0x432000",
+    "new_len": "0x436000",
+    "old_files": 193,
+    "new_files": 194
+  },
+  "injected": {
+    "guid": "B6250780-7E00-4203-900C-23443B1413FE",
+    "name": "Bc250VcnUnlockDxe",
+    "fv_off": "0x12940",
+    "size": "0x301c",
+    "placement": "before Bds.ffs, contiguous, 8-aligned"
+  },
+  "bds_shifted_to": "0x15960",
+  "changed_range": {
+    "first": "0xae0088",
+    "last": "0xc2654b",
+    "ndiff": 1331254
+  },
+  "capsule": {
+    "old_csz": "0x1464d4",
+    "new_csz": "0x145d75"
+  },
+  "hardware_written": false
+}

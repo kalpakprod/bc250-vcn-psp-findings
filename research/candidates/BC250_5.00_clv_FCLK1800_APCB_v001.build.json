@@ -1,0 +1,45 @@
+{
+  "candidate": "candidates/BC250_5.00_clv_FCLK1800_APCB_v001.bin",
+  "base": {
+    "path": "evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+  },
+  "patch": {
+    "kind": "APCB FCLK override record (token 0x0160 value, gate 0x015F untouched)",
+    "gate_offset": "0xAB1B99",
+    "value_offset": "0xAB1B9A",
+    "old_value": 1420,
+    "new_value": 1800,
+    "checksum_offset": "0xAB1010",
+    "old_checksum": 192,
+    "new_checksum": 66
+  },
+  "changed_bytes": [
+    "0xab1010",
+    "0xab1b9a",
+    "0xab1b9b"
+  ],
+  "output_sha256": "3d6348c65a0c2ee500e13f3b1a5c9e9c64c57e36b570fbd1e85a19b9713871f8",
+  "evidence": [
+    ".procoder/plans/clv500-overclock-result.md (A3 emulator checkpoints, lines 104/108)",
+    "docs/research/2026-09-23-abl-pll-service-boundary.md",
+    "docs/guides/bc250-clv500-memory-1-1-1-instruction.md"
+  ],
+  "emulator_validation": {
+    "date": "2026-09-24",
+    "harness": "evidence/firmware-audit/20260923-abl95fc-next/emulate_pll_apcb_v001.py",
+    "result": "evidence/firmware-audit/20260923-abl95fc-next/emulation-apcb-v001-result.json",
+    "engine": "Unicorn 2.1.4 (tools/abl-emulator-venv), native ABL1 sha af8cf562...",
+    "cases": [
+      {"case": "control_clean", "apcb": "clean base as-is", "fclk_service_arg": 1420},
+      {"case": "candidate_v001", "apcb": "this candidate's bytes as-is", "fclk_service_arg": 1800},
+      {"case": "cand_gate_off", "apcb": "candidate with gate forced 0", "fclk_service_arg": 1200, "token_0160_queried": false}
+    ],
+    "verdict": "the shipped candidate bytes drive the native ABL1 builder to FCLK service argument 1800; gate still governs"
+  },
+  "open": [
+    "no hardware test; physical FCLK effect unproven",
+    "SVC28 transport semantics (selector 0x0E to physical FCLK) not proven; loader copy of APCB to runtime 0x7B000 is modeled (ABL0 SVC2D evidence), not executed end-to-end"
+  ],
+  "flashed": false
+}

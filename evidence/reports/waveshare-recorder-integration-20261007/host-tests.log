@@ -1,0 +1,15 @@
+...............................................................................E...........
+======================================================================
+ERROR: test_confirmation_and_diagnostic_before_any_resources (test_waveshare_spi_capture.TestPassiveCapture.test_confirmation_and_diagnostic_before_any_resources)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/OWNER/orca/projects/bc250/tests/test_waveshare_spi_capture.py", line 158, in test_confirmation_and_diagnostic_before_any_resources
+    gate = text.index(
+        "if(!verified || scratch_leased || mode_load()!=MODE_DIAGNOSTIC)return false;"
+    )
+ValueError: substring not found
+
+----------------------------------------------------------------------
+Ran 91 tests in 2.325s
+
+FAILED (errors=1)

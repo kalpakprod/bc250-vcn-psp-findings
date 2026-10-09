@@ -1,0 +1,138 @@
+        Type         |        Subtype        |   Base   |   Size   |  CRC32   |   Name 
+ Image               | UEFI                  | 00000000 | 000C0000 | 8EFABBDF |  UEFI image
+ Volume              | FFSv2                 | 00000000 | 000C0000 | 8EFABBDF | - 87C50B02-8BA6-4BDE-B680-DCA1FC066E8A
+ File                | Raw                   | 00000078 | 0000015C | 980661C9 | -- 912740BE-2284-4734-B971-84B027353F0C
+ Section             | Raw                   | 00000090 | 00000144 | A586CA4D | --- Raw section
+ File                | SEC core              | 000001D8 | 000008D0 | CA30EAFF | -- C2F9AE46-3437-4FEF-9CB1-9A568B282FEE
+ Section             | Raw                   | 000001F0 | 00000004 | CA4DE08B | --- Raw section
+ Section             | TE image              | 000001F4 | 000008B4 | D6CEBECC | --- TE image section
+ File                | PEI core              | 00000AA8 | 0000622E | 0D7343EA | -- 52C05B14-0B98-496C-BC3B-04B50211D680 | PeiCore
+ Section             | TE image              | 00000AC0 | 000061F4 | B006B40A | --- TE image section
+ Section             | UI                    | 00006CB4 | 00000014 | 018974F6 | --- UI section
+ Section             | Version               | 00006CC8 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 00006CD8 | 0000275A | 785E5646 | -- 9B3ADA4F-AE56-4C24-8DEA-F03B7558AE50 | PcdPeim
+ Section             | Raw                   | 00006CF0 | 00000CE4 | B4A8CD87 | --- Raw section
+ Section             | PEI dependency        | 000079D4 | 00000006 | 2F69219B | --- PEI dependency section
+ Section             | TE image              | 000079DC | 00001A34 | 279229F2 | --- TE image section
+ Section             | UI                    | 00009410 | 00000014 | 9618C23A | --- UI section
+ Section             | Version               | 00009424 | 0000000E | C8055A6E | --- Version section
+ File                | PEI module            | 00009438 | 00000A0A | 5CCC5A4F | -- AE265864-CF5D-41A8-913D-71C155E76442 | CpuIoPei
+ Section             | PEI dependency        | 00009450 | 00000016 | 99E93E7C | --- PEI dependency section
+ Section             | TE image              | 00009468 | 000009B4 | 85845939 | --- TE image section
+ Section             | UI                    | 00009E1C | 00000016 | 7951D398 | --- UI section
+ Section             | Version               | 00009E34 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 00009E48 | 00000AD2 | DB8BBD32 | -- 285B55EF-89FB-4358-A2E7-284B642DBDC8 | ParseUpdPeim
+ Section             | PEI dependency        | 00009E60 | 00000016 | 99E93E7C | --- PEI dependency section
+ Section             | TE image              | 00009E78 | 00000A74 | 5FF5997C | --- TE image section
+ Section             | UI                    | 0000A8EC | 0000001E | B57DF57F | --- UI section
+ Section             | Version               | 0000A90C | 0000000E | F4F333F1 | --- Version section
+ File                | PEI module            | 0000A920 | 000003A2 | 9A5396AC | -- AD119D0C-7F05-46C3-BA42-BE9A7C4F07AA | FspResetPeim
+ Section             | PEI dependency        | 0000A938 | 00000028 | 3892B595 | --- PEI dependency section
+ Section             | TE image              | 0000A960 | 00000334 | 9DB2E2E2 | --- TE image section
+ Section             | UI                    | 0000AC94 | 0000001E | 7DCDCF2D | --- UI section
+ Section             | Version               | 0000ACB4 | 0000000E | F4F333F1 | --- Version section
+ File                | PEI module            | 0000ACC8 | 00001C9A | 3E6A95F1 | -- F0CE95F1-6297-4F2D-8C52-892970916095 | PlatformHooksPeim
+ Section             | PEI dependency        | 0000ACE0 | 00000016 | 99E93E7C | --- PEI dependency section
+ Section             | TE image              | 0000ACF8 | 00001C34 | 4677B2A2 | --- TE image section
+ Section             | UI                    | 0000C92C | 00000028 | 86C176B5 | --- UI section
+ Section             | Version               | 0000C954 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 0000C968 | 000044A6 | 446697AA | -- 482D38C8-4A36-4242-4F03-7EAEC04B76EB | AmdSocFp6RnPei
+ Section             | PEI dependency        | 0000C980 | 00000028 | B1077547 | --- PEI dependency section
+ Section             | TE image              | 0000C9A8 | 00004434 | 8B23310E | --- TE image section
+ Section             | UI                    | 00010DDC | 00000022 | FFBB07D2 | --- UI section
+ Section             | Version               | 00010E00 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 00010E10 | 00004836 | 103A93AF | -- 57A2146B-2F5F-4BFE-86B6-303471F2F47C | FchShastaPei
+ Section             | PEI dependency        | 00010E28 | 0000003A | 1CC0EC80 | --- PEI dependency section
+ Section             | TE image              | 00010E64 | 000047B4 | 456F2C50 | --- TE image section
+ Section             | UI                    | 00015618 | 0000001E | C995A7E8 | --- UI section
+ Section             | Version               | 00015638 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 00015648 | 0000463E | 0009DA5B | -- 5F0FBE1B-1673-4FD2-9BDD-31D7909D5161 | AmdNbioBaseRnPei
+ Section             | PEI dependency        | 00015660 | 0000003A | 4155FDBA | --- PEI dependency section
+ Section             | TE image              | 0001569C | 000045B4 | 3A2586C5 | --- TE image section
+ Section             | UI                    | 00019C50 | 00000026 | 5EF0A1C9 | --- UI section
+ Section             | Version               | 00019C78 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 00019C88 | 0000032A | 8E72E4EA | -- 4B6E1294-08D2-4131-83E4-14BE9FCD42C1 | AmdMemRestorePei
+ Section             | PEI dependency        | 00019CA0 | 00000028 | 88D2881E | --- PEI dependency section
+ Section             | TE image              | 00019CC8 | 000002B4 | 8A6EF53E | --- TE image section
+ Section             | UI                    | 00019F7C | 00000026 | 21998937 | --- UI section
+ Section             | Version               | 00019FA4 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 00019FB8 | 000025AE | 862F22F7 | -- 9CFCACBF-3071-4533-944E-40EAE56AAE9E | ApobRnPei
+ Section             | PEI dependency        | 00019FD0 | 0000003A | 2453485A | --- PEI dependency section
+ Section             | TE image              | 0001A00C | 00002534 | 2F80DC7C | --- TE image section
+ Section             | UI                    | 0001C540 | 00000018 | DFD097BD | --- UI section
+ Section             | Version               | 0001C558 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 0001C568 | 00003F0A | 045B9C6F | -- C5FB3DBD-8A3B-4C12-AE63-118DA72FEE83 | AmdFabricRnPei
+ Section             | PEI dependency        | 0001C580 | 0000004C | 3D9BBB3E | --- PEI dependency section
+ Section             | TE image              | 0001C5CC | 00003E74 | 1D05C3F5 | --- TE image section
+ Section             | UI                    | 00020440 | 00000022 | 269F62CF | --- UI section
+ Section             | Version               | 00020464 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 00020478 | 000095AE | 24AD00A1 | -- 25BFEBA1-A3BA-4BE2-9248-886392F7B008 | AmdNbioPciePei
+ Section             | PEI dependency        | 00020490 | 00000070 | 25846FDE | --- PEI dependency section
+ Section             | TE image              | 00020500 | 000094F4 | E4C78081 | --- TE image section
+ Section             | UI                    | 000299F4 | 00000022 | 93A8D97A | --- UI section
+ Section             | Version               | 00029A18 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 00029A28 | 00003B52 | CC658E91 | -- E15696EF-0671-4822-AF07-FFD99A4783CC | SmuV12Pei
+ Section             | PEI dependency        | 00029A40 | 0000005E | 8AC5B2A8 | --- PEI dependency section
+ Section             | TE image              | 00029AA0 | 00003AB4 | 65C14E5A | --- TE image section
+ Section             | UI                    | 0002D554 | 00000018 | 74DA4EC4 | --- UI section
+ Section             | Version               | 0002D56C | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 0002D580 | 00003096 | 04781E81 | -- 0C556BFF-B16A-439D-A3EC-1164378E2C2A | AmdPspPeiV2
+ Section             | PEI dependency        | 0002D598 | 0000005E | 0D7CA898 | --- PEI dependency section
+ Section             | TE image              | 0002D5F8 | 00002FF4 | FEF667E7 | --- TE image section
+ Section             | UI                    | 000305EC | 0000001C | 2C76CE92 | --- UI section
+ Section             | Version               | 00030608 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 00030618 | 00000976 | 6E1404DE | -- 2FC61DE6-1791-479C-8A32-7ABB69A4D8D0 | AmdPspFtpmPei
+ Section             | PEI dependency        | 00030630 | 0000003A | C3418F83 | --- PEI dependency section
+ Section             | TE image              | 0003066C | 000008F4 | 94796C23 | --- TE image section
+ Section             | UI                    | 00030F60 | 00000020 | 9084C7CB | --- UI section
+ Section             | Version               | 00030F80 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 00030F90 | 0000714E | D39CAD6A | -- 45177528-7C6A-4B5C-9C56-1A65BB5FC434 | AmdCcxVhRnPei
+ Section             | PEI dependency        | 00030FA8 | 00000094 | 85444233 | --- PEI dependency section
+ Section             | TE image              | 0003103C | 00007074 | AD421CED | --- TE image section
+ Section             | UI                    | 000380B0 | 00000020 | 42C14858 | --- UI section
+ Section             | Version               | 000380D0 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 000380E0 | 0000291E | 5ECB5D56 | -- 6D6D9E06-7122-4587-88C5-BD3D13C7E8C4 | AmdMemAm4RnPei
+ Section             | PEI dependency        | 000380F8 | 0000005E | 349D31FC | --- PEI dependency section
+ Section             | TE image              | 00038158 | 00002874 | 0C7BF37B | --- TE image section
+ Section             | UI                    | 0003A9CC | 00000022 | 832600E8 | --- UI section
+ Section             | Version               | 0003A9F0 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 0003AA00 | 00000A06 | 47F10800 | -- FAD8842C-7DC7-472F-A6A7-1CA1F073644F | AmdMemoryHobInfoPeim
+ Section             | PEI dependency        | 0003AA18 | 0000003A | C899EA65 | --- PEI dependency section
+ Section             | TE image              | 0003AA54 | 00000974 | 34DBB7FD | --- TE image section
+ Section             | UI                    | 0003B3C8 | 0000002E | 5CF7E967 | --- UI section
+ Section             | Version               | 0003B3F8 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 0003B408 | 0000119E | 878AE179 | -- D6929F21-40D8-476A-BD7D-1D8E045E1D27 | FspHobPeim
+ Section             | PEI dependency        | 0003B420 | 00000028 | 1AD68D75 | --- PEI dependency section
+ Section             | TE image              | 0003B448 | 00001134 | 08D3678D | --- TE image section
+ Section             | UI                    | 0003C57C | 0000001A | 4AD94C49 | --- UI section
+ Section             | Version               | 0003C598 | 0000000E | F4F333F1 | --- Version section
+ File                | PEI module            | 0003C5A8 | 00000336 | 695BF813 | -- 03A8E402-2AB7-46B3-B591-740383796B82 | AmdMemChanXLatDummyPei
+ Section             | PEI dependency        | 0003C5C0 | 00000028 | 1D9DD425 | --- PEI dependency section
+ Section             | TE image              | 0003C5E8 | 000002B4 | BCCBABA4 | --- TE image section
+ Section             | UI                    | 0003C89C | 00000032 | BA9EFFC5 | --- UI section
+ Section             | Version               | 0003C8D0 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 0003C8E0 | 00002E92 | E1877FB0 | -- 08226C3F-BBF8-431B-875E-7361444A23F9 | AmdMemSmbiosV2RnPei
+ Section             | PEI dependency        | 0003C8F8 | 0000004C | 8165F907 | --- PEI dependency section
+ Section             | TE image              | 0003C944 | 00002DF4 | F6759ABC | --- TE image section
+ Section             | UI                    | 0003F738 | 0000002C | 516E3F23 | --- UI section
+ Section             | Version               | 0003F764 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 0003F778 | 0000102E | 33E2DDB5 | -- B380E816-8EFF-4039-AC53-332E5D57AD23 | FspExitReentryPeim
+ Section             | PEI dependency        | 0003F790 | 00000028 | C05D1940 | --- PEI dependency section
+ Section             | TE image              | 0003F7B8 | 00000FB4 | 2FF6CC31 | --- TE image section
+ Section             | UI                    | 0004076C | 0000002A | 6CCBE435 | --- UI section
+ Section             | Version               | 00040798 | 0000000E | F4F333F1 | --- Version section
+ File                | PEI module            | 000407A8 | 0000310A | 8353D002 | -- 3F2BCF3A-7876-475B-B97D-EFAE8BEF75FC | AmdNbioGfxRNPei
+ Section             | PEI dependency        | 000407C0 | 0000004C | 18E0A447 | --- PEI dependency section
+ Section             | TE image              | 0004080C | 00003074 | 6B1157C6 | --- TE image section
+ Section             | UI                    | 00043880 | 00000024 | 49B890EC | --- UI section
+ Section             | Version               | 000438A4 | 0000000E | 80E5540A | --- Version section
+ File                | PEI module            | 000438B8 | 000031E2 | 7FAE08B0 | -- E9B69E14-AE08-4459-8CF6-6EDD19A39DD5 | AmdNbioIOMMURNPei
+ Section             | PEI dependency        | 000438D0 | 0000005E | 2D404F68 | --- PEI dependency section
+ Section             | TE image              | 00043930 | 00003134 | 2904763E | --- TE image section
+ Section             | UI                    | 00046A64 | 00000028 | E9A994D3 | --- UI section
+ Section             | Version               | 00046A8C | 0000000E | 80E5540A | --- Version section
+ File                | Raw                   | 00046AA0 | 00000049 | 3A693FE9 | -- D9093578-08EB-44DF-B9D8-D0C1D3D55D96
+ Section             | Raw                   | 00046AB8 | 00000031 | 445DD2AA | --- Raw section
+ File                | Raw                   | 00046AF0 | 0000061E | EF3D4F96 | -- D5B86AEA-6AF7-40D4-8014-982301BC3D89
+ Section             | Raw                   | 00046B08 | 00000606 | 1F9A457F | --- Raw section
+ Free space          |                       | 00047110 | 00078EF0 | 67CC1089 | -- Volume free space

@@ -1,0 +1,8 @@
+0x23744: entry      a1, 0x20
+0x23747: l32r       a12, 0x4000178b4
+0x2374a: mov.n      a10, a2
+0x2374c: subx8      a11, a2, a2
+0x2374f: addx4      a11, a11, a12
+0x23752: l8ui       a11, a11, 0x7e
+0x23755: call8      0x2362c
+0x23758: retw.n     

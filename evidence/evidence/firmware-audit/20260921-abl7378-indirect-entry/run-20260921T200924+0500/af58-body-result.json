@@ -1,0 +1,189 @@
+{
+  "status": "PASS",
+  "checks": {
+    "passed": 23,
+    "failed": 0,
+    "total": 23
+  },
+  "inputs": {
+    "raw": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+    "raw_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+    "elf": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260921-abl-item17-svc6-independent-review/ABL1-exact.o",
+    "elf_sha256": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6"
+  },
+  "target": {
+    "callback_pointer": "0x62059",
+    "conditional_base": "0x57100 (unproven)",
+    "conditional_rva": "0xaf58",
+    "direct_calls": [
+      "0x64c8 (null-R0 only)",
+      "0x5cbe (R0=SP, R1=saved incoming R0)",
+      "0xfe60 (R0=SP)"
+    ],
+    "memory_writes": [
+      "[R4+0x28]+0x739",
+      "[R4+0x28]+0x75f",
+      "[R4+0x28]+0x760"
+    ],
+    "return": "0xaf8a pop {r3,r4,r5,pc}",
+    "direct_link_to_7378": false,
+    "direct_link_to_AF90": false,
+    "opaque_boundaries": [
+      "0x5cbe",
+      "0xfe60"
+    ]
+  },
+  "table_termination": {
+    "count_pointer": "0x6e200 -> conditional RVA 0x17100",
+    "count_byte": 2,
+    "record_stride": "0x24",
+    "record0_plus8": "0x62059",
+    "record1_plus8": "0x0",
+    "later_records_interpreted": false
+  },
+  "limits": [
+    "No runtime execution or indirect callee semantics; 0x5cbe and 0xfe60 were not followed in this bounded task.",
+    "No clock-policy identity inferred from context-relative byte offsets.",
+    "Conditional base 0x57100 remains unproven."
+  ],
+  "checks_detail": [
+    {
+      "name": "raw_sha256",
+      "passed": true,
+      "observed": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a"
+    },
+    {
+      "name": "raw_size",
+      "passed": true,
+      "observed": 94624,
+      "expected": 94624
+    },
+    {
+      "name": "ELF_sha256",
+      "passed": true,
+      "observed": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6",
+      "expected": "adf12203668ce58ee67ae7cd739e373ac8fcf32901483703a6b67f5b000df2f6"
+    },
+    {
+      "name": "AF58_objdump_exit",
+      "passed": true,
+      "observed": "0",
+      "expected": "0"
+    },
+    {
+      "name": "AF58_objdump_stderr_empty",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "af58_push",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "save_incoming_r0",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "null_branch",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "null_helper_call",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "forward_saved_r0_as_r1",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "pass_stack_as_r0",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "opaque_call_5cbe",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "opaque_call_fe60",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "result_compare",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "write_739",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "write_75f",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "write_760",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "return",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "no_direct_BL_7378",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "no_direct_BL_AF90",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "table_count_byte_RVA_17100",
+      "passed": true,
+      "observed": 2,
+      "expected": 2
+    },
+    {
+      "name": "record0_callback_field_RVA_170D0",
+      "passed": true,
+      "observed": 401497,
+      "expected": 401497
+    },
+    {
+      "name": "record1_callback_field_RVA_170F4",
+      "passed": true,
+      "observed": 0,
+      "expected": 0
+    }
+  ]
+}

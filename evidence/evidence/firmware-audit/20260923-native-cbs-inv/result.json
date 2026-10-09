@@ -1,0 +1,382 @@
+{
+  "status": "PASS_NATIVE_ACQUISITION_TO_INV",
+  "required_capacity": 5637,
+  "written_length": 5628,
+  "records": 1122,
+  "cases": [
+    {
+      "mode": 0,
+      "words": [
+        0,
+        5637,
+        1,
+        1447971108,
+        1,
+        0,
+        35,
+        1,
+        0,
+        1,
+        80,
+        1,
+        1750,
+        1122,
+        127,
+        5628
+      ],
+      "tokens": {
+        "11ED": 35,
+        "1204": 1,
+        "1331": 0,
+        "1363": 1,
+        "1364": 80,
+        "1373": 1,
+        "1374": 1750
+      },
+      "commands": [
+        {
+          "command": [
+            "as",
+            "--32",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/0/test.s",
+            "-o",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/0/test.o"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "ld",
+            "-m",
+            "elf_i386",
+            "--section-start=.nvram=0x09ed7764",
+            "--section-start=.cbs=0x09eba21c",
+            "-o",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/0/test.elf",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/0/test.o"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "objcopy",
+            "--dump-section",
+            ".nvram=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/0/nvram.bin",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/0/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "objcopy",
+            "--dump-section",
+            ".cbs=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/0/cbs.bin",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/0/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "timeout",
+            "3",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/0/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "00000000051600000100000024494e560100000000000000230000000100000000000000010000005000000001000000d6060000620400007f000000fc150000",
+          "stderr": ""
+        }
+      ],
+      "module_sections_exact": true
+    },
+    {
+      "mode": 1,
+      "words": [
+        0,
+        5637,
+        1,
+        1447971108,
+        1,
+        0,
+        255,
+        255,
+        15,
+        0,
+        0,
+        255,
+        1000,
+        1122,
+        127,
+        5628
+      ],
+      "tokens": {
+        "11ED": 255,
+        "1204": 255,
+        "1331": 15,
+        "1363": 0,
+        "1364": 0,
+        "1373": 255,
+        "1374": 1000
+      },
+      "commands": [
+        {
+          "command": [
+            "as",
+            "--32",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/1/test.s",
+            "-o",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/1/test.o"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "ld",
+            "-m",
+            "elf_i386",
+            "--section-start=.nvram=0x09ed7764",
+            "--section-start=.cbs=0x09eba21c",
+            "-o",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/1/test.elf",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/1/test.o"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "objcopy",
+            "--dump-section",
+            ".nvram=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/1/nvram.bin",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/1/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "objcopy",
+            "--dump-section",
+            ".cbs=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/1/cbs.bin",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/1/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "timeout",
+            "3",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/1/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "00000000051600000100000024494e560100000000000000ff000000ff0000000f0000000000000000000000ff000000e8030000620400007f000000fc150000",
+          "stderr": ""
+        }
+      ],
+      "module_sections_exact": true
+    },
+    {
+      "mode": 2,
+      "words": [
+        0,
+        5637,
+        1,
+        1447971108,
+        1,
+        0,
+        255,
+        255,
+        15,
+        0,
+        0,
+        255,
+        1000,
+        1122,
+        127,
+        5628
+      ],
+      "tokens": {
+        "11ED": 255,
+        "1204": 255,
+        "1331": 15,
+        "1363": 0,
+        "1364": 0,
+        "1373": 255,
+        "1374": 1000
+      },
+      "commands": [
+        {
+          "command": [
+            "as",
+            "--32",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/2/test.s",
+            "-o",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/2/test.o"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "ld",
+            "-m",
+            "elf_i386",
+            "--section-start=.nvram=0x09ed7764",
+            "--section-start=.cbs=0x09eba21c",
+            "-o",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/2/test.elf",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/2/test.o"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "objcopy",
+            "--dump-section",
+            ".nvram=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/2/nvram.bin",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/2/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "objcopy",
+            "--dump-section",
+            ".cbs=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/2/cbs.bin",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/2/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "timeout",
+            "3",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/2/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "00000000051600000100000024494e560100000000000000ff000000ff0000000f0000000000000000000000ff000000e8030000620400007f000000fc150000",
+          "stderr": ""
+        }
+      ],
+      "module_sections_exact": true
+    },
+    {
+      "mode": 3,
+      "words": [
+        0,
+        5637,
+        1,
+        1447971108,
+        1,
+        0,
+        255,
+        255,
+        15,
+        0,
+        0,
+        255,
+        1000,
+        1122,
+        127,
+        5628
+      ],
+      "tokens": {
+        "11ED": 255,
+        "1204": 255,
+        "1331": 15,
+        "1363": 0,
+        "1364": 0,
+        "1373": 255,
+        "1374": 1000
+      },
+      "commands": [
+        {
+          "command": [
+            "as",
+            "--32",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/3/test.s",
+            "-o",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/3/test.o"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "ld",
+            "-m",
+            "elf_i386",
+            "--section-start=.nvram=0x09ed7764",
+            "--section-start=.cbs=0x09eba21c",
+            "-o",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/3/test.elf",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/3/test.o"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "objcopy",
+            "--dump-section",
+            ".nvram=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/3/nvram.bin",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/3/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "objcopy",
+            "--dump-section",
+            ".cbs=/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/3/cbs.bin",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/3/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "timeout",
+            "3",
+            "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260923-native-cbs-inv/3/test.elf"
+          ],
+          "exit": 0,
+          "stdout_hex": "00000000051600000100000024494e560100000000000000ff000000ff0000000f0000000000000000000000ff000000e8030000620400007f000000fc150000",
+          "stderr": ""
+        }
+      ],
+      "module_sections_exact": true
+    }
+  ],
+  "limits": [
+    "Native instructions in user-process harness, not BC250 boot",
+    "PEI services and statuses controlled by test",
+    "Acquired buffer copied; serializer invoked directly, not through platform callback dispatch",
+    "No downstream voltage/clock actuator tested"
+  ]
+}

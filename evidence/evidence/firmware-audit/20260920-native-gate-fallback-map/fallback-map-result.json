@@ -1,0 +1,395 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 57,
+    "total": 57
+  },
+  "checks_detail": [
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:ABL1-clv-decompressed.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:abl1-full-thumb-llvm.txt",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:descriptor-join-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:map-candidate-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:2026-09-20-oc-df-init-route.md",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:token-matrix-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exists:consumer-boundary-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "got": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+      "name": "hash:ABL1-clv-decompressed.bin",
+      "status": "PASS"
+    },
+    {
+      "expected": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "got": "b5b10b95c1777b96ef03ac79f819ece4257c87c58a26e43cffeed3b9019e8b65",
+      "name": "hash:abl1-full-thumb-llvm.txt",
+      "status": "PASS"
+    },
+    {
+      "expected": "31e2c2952d6d4074ddaf52fea5bed68f7656ec6a0867e225e06aab7b432f6a5c",
+      "got": "31e2c2952d6d4074ddaf52fea5bed68f7656ec6a0867e225e06aab7b432f6a5c",
+      "name": "hash:descriptor-join-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "f9fccfdcef1258fa5e8eb1758f02d9bb6eb8a0e04822a4751e1d8a7b9a3ad5eb",
+      "got": "f9fccfdcef1258fa5e8eb1758f02d9bb6eb8a0e04822a4751e1d8a7b9a3ad5eb",
+      "name": "hash:map-candidate-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "3122a0dce28bc61942a22d567acdc29e318a714097b48877eb0391094a7d0e43",
+      "got": "3122a0dce28bc61942a22d567acdc29e318a714097b48877eb0391094a7d0e43",
+      "name": "hash:2026-09-20-oc-df-init-route.md",
+      "status": "PASS"
+    },
+    {
+      "expected": "d33120e48e2c71fb0ab7e2df3a24f1dd91c1e85b0b3639022155444bc0d5765a",
+      "got": "d33120e48e2c71fb0ab7e2df3a24f1dd91c1e85b0b3639022155444bc0d5765a",
+      "name": "hash:token-matrix-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "e7b1f6f66ed066029a93cf88ea7fb5cb8049df39570af9f3a1b86645882e10d1",
+      "got": "e7b1f6f66ed066029a93cf88ea7fb5cb8049df39570af9f3a1b86645882e10d1",
+      "name": "hash:consumer-boundary-result.json",
+      "status": "PASS"
+    },
+    {
+      "expected": "41f60800",
+      "got": "41f60800",
+      "name": "fallback computes +0x1808",
+      "status": "PASS"
+    },
+    {
+      "expected": "0844",
+      "got": "0844",
+      "name": "fallback adds TABLE+0x70",
+      "status": "PASS"
+    },
+    {
+      "expected": "0260",
+      "got": "0260",
+      "name": "fallback stores table[0x61E]",
+      "status": "PASS"
+    },
+    {
+      "expected": "41f6b822",
+      "got": "41f6b822",
+      "name": "fallback computes +0x1AB8",
+      "status": "PASS"
+    },
+    {
+      "expected": "8850",
+      "got": "8850",
+      "name": "fallback stores table[0x6CA]",
+      "status": "PASS"
+    },
+    {
+      "expected": 7120832,
+      "got": 7120832,
+      "name": "fallback pool table[0x61E]",
+      "status": "PASS"
+    },
+    {
+      "expected": 7292864,
+      "got": 7292864,
+      "name": "fallback pool table[0x6CA]",
+      "status": "PASS"
+    },
+    {
+      "expected": 1738,
+      "got": 1738,
+      "name": "nested index arithmetic",
+      "status": "PASS"
+    },
+    {
+      "expected": 1984,
+      "got": 1984,
+      "name": "raw descriptor low12",
+      "status": "PASS"
+    },
+    {
+      "expected": 0,
+      "got": 0,
+      "name": "raw descriptor bits0..5",
+      "status": "PASS"
+    },
+    {
+      "expected": 31,
+      "got": 31,
+      "name": "raw descriptor bits6..11",
+      "status": "PASS"
+    },
+    {
+      "expected": 0,
+      "got": 0,
+      "name": "raw descriptor raw kind bits27..29",
+      "status": "PASS"
+    },
+    {
+      "expected": 0,
+      "got": 0,
+      "name": "raw descriptor bit30",
+      "status": "PASS"
+    },
+    {
+      "expected": "686c",
+      "got": "686c",
+      "name": "callback loads context+0x44 table pointer",
+      "status": "PASS"
+    },
+    {
+      "expected": "50f82160",
+      "got": "50f82160",
+      "name": "callback loads table[index]",
+      "status": "PASS"
+    },
+    {
+      "expected": "c6f30b31",
+      "got": "c6f30b31",
+      "name": "callback extracts nested index",
+      "status": "PASS"
+    },
+    {
+      "expected": "50f82160",
+      "got": "50f82160",
+      "name": "callback loads nested descriptor",
+      "status": "PASS"
+    },
+    {
+      "expected": "2146fdf7bbf8",
+      "got": "2146fdf7bbf8",
+      "name": "callback passes R1=R4 to SVC4 read",
+      "status": "PASS"
+    },
+    {
+      "expected": "2146fdf76bf8",
+      "got": "2146fdf76bf8",
+      "name": "callback passes R1=R4 to SVC4 write",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exact map report contains 0x5027C",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "exact map report contains 0x5227C",
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        60
+      ],
+      "got": [
+        60
+      ],
+      "name": "known map low6",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "fallback raw low6 differs from known map",
+      "status": "PASS"
+    },
+    {
+      "expected": 329664,
+      "got": 329664,
+      "name": "kind1 byte49=0 output",
+      "status": "PASS"
+    },
+    {
+      "expected": 337856,
+      "got": 337856,
+      "name": "kind1 byte49=1 output",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "kind1 all byte49 values never equal known map",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "known map low6 mismatch is invariant for kind1",
+      "status": "PASS"
+    },
+    {
+      "expected": "95f8491044f4a020",
+      "got": "95f8491044f4a020",
+      "name": "kind1 construction window",
+      "status": "PASS"
+    },
+    {
+      "expected": "95f8491044f4a020",
+      "got": "95f8491044f4a020",
+      "name": "kind2 construction window",
+      "status": "PASS"
+    },
+    {
+      "expected": "95f8491044f4a620",
+      "got": "95f8491044f4a620",
+      "name": "kind3 construction window",
+      "status": "PASS"
+    },
+    {
+      "expected": "44f4e034a4e7",
+      "got": "44f4e034a4e7",
+      "name": "kind4 low-field branch",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "construction kind paths preserve descriptor low6 in known map comparison",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x1373",
+      "got": "0x1373",
+      "name": "native +0x703 serializer record",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x1374",
+      "got": "0x1374",
+      "name": "native +0x704 serializer record",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "native direct reader boundary excludes 0x1373/0x1374",
+      "status": "PASS"
+    },
+    {
+      "expected": 1,
+      "got": 1,
+      "name": "ABL1 local #0x703 call count",
+      "status": "PASS"
+    },
+    {
+      "expected": "a57e",
+      "got": "a57e",
+      "name": "ABL1 local #0x703 site",
+      "status": "PASS"
+    },
+    {
+      "expected": 0,
+      "got": 0,
+      "name": "ABL1 local #0x704 MOVW token count",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "ABL1 native token 0x1373 immediate absent",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "ABL1 native token 0x1374 immediate absent",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "ABL1 #0x703 site calls helper 0x4830",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "name": "helper 0x4830 bounded body has no direct BL 0x10958",
+      "status": "PASS"
+    },
+    {
+      "expected": "d4e9b002",
+      "got": "d4e9b002",
+      "name": "ABL1 apparent #704 uses raw LDRD +0x2C0",
+      "status": "PASS"
+    }
+  ],
+  "decision": "DO_NOT_TREAT_FALLBACK_DESCRIPTOR_AS_CLOCK_TARGET_OR_703_704_PATH",
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "fallback_descriptor": {
+    "bits0_5": 0,
+    "bits6_11": 31,
+    "low12": "0x7C0",
+    "nested_descriptor": "0x006F47C0",
+    "nested_index": "0x6CA",
+    "raw_bit30": 0,
+    "raw_kind_bits27_29": 0,
+    "table_0x61e": "0x006CA7C0"
+  },
+  "limitations": [
+    "No physical register, clock, or hardware claim.",
+    "Runtime HEAP/fallback selection and context+0x40 high-field merge remain unresolved.",
+    "Native UEFI serializer records and ABL1 local IDs are not equated without a byte-backed bridge."
+  ],
+  "map_relation": {
+    "fallback_low6": "0x00",
+    "kind1_byte49_one": "0x527C0",
+    "kind1_byte49_zero": "0x507C0",
+    "known_exact_map_bases": [
+      "0x5027C",
+      "0x5227C"
+    ],
+    "known_map_low6": "0x3C",
+    "result": "No exact known-map equality; raw low-six field mismatch remains invariant for the checked kind-1 construction. Other kind/high-field merges are not promoted to a physical map."
+  },
+  "native_reach": {
+    "abl1_704": "no MOVW #0x704 native-token site; apparent #704 at 0x83F4 is raw displacement 0x2C0",
+    "abl1_local_703": "MOVW #0x703 at 0xA57E -> local helper 0x4830",
+    "abl1_native_inv_tokens": "no decoded #0x1373/#0x1374 immediate",
+    "descriptor_entry": "FCLK descriptor path enters with token/index 0x61E at 0x107E8 and dynamic +0x44 table; no direct edge from 0xA57E helper body to BL 0x10958",
+    "native_fields": "+0x703 -> INV 0x1373; +0x704 -> INV 0x1374",
+    "result": "No byte-backed route from native +0x703/+0x704 to fallback table[0x61E]/nested descriptor is established."
+  },
+  "status": "BLOCKED_NO_MAP_OR_NATIVE_REACH"
+}

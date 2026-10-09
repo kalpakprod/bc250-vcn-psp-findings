@@ -1,0 +1,1056 @@
+{
+  "generated_at": "2026-09-11T06:49:51.332999+00:00",
+  "title": "AMD BC-250 VCN evidence map",
+  "scope": "Current matching SPI read baseline and immutable extracted firmware; static/source evidence only unless explicitly marked hardware-verified.",
+  "baseline": {
+    "read_manifest": {
+      "path": "evidence/programmer/reads/20260911/manifest.json",
+      "sha256": "80b34cb2be1706abeac499d95cc4ae1d0c55b05183add75b015ad85780cccb60",
+      "role": "two matching CH347T full reads"
+    },
+    "image_sha256": "83c4e4205eec3ddaed5c284c62a73658cdd68a834b521820a96ef622288f8ee0",
+    "size": 16777216,
+    "fresh_reads_byte_identical": true
+  },
+  "artifacts": {
+    "fresh_read_manifest": {
+      "path": "evidence/programmer/reads/20260911/manifest.json",
+      "sha256": "80b34cb2be1706abeac499d95cc4ae1d0c55b05183add75b015ad85780cccb60",
+      "role": "evidence"
+    },
+    "fresh_inventory": {
+      "path": "evidence/programmer/reads/20260911/firmware-audit/inventory.json",
+      "sha256": "e982f755981cac0231c52074872f6478005f9e4826e6063512c6664a963c76b4",
+      "role": "evidence"
+    },
+    "fresh_ip_raw": {
+      "path": "evidence/firmware-audit/ip-discovery/read-a-hardware-ip-config.bin",
+      "sha256": "1b5b798a93abac86f0f25ef188627ee9a86fcfc27d68af0a444bc8cfdc896bc5",
+      "role": "evidence"
+    },
+    "fresh_ip_report": {
+      "path": "evidence/firmware-audit/ip-discovery/read-a-hardware-ip-config.json",
+      "sha256": "c327fb0ae3dbe276329e76a8b296c05c59449338361afef8e6491ac4fa516ecc",
+      "role": "evidence"
+    },
+    "psp_inventory": {
+      "path": "evidence/firmware-audit/dump-2-inventory.json",
+      "sha256": "151489eccfa56bfdc89a7f7fab10b8ccc6f2d3ffacb486fec8d0ef4192545b8a",
+      "role": "evidence"
+    },
+    "ps1_summary": {
+      "path": "evidence/firmware-audit/ps1/sec-gasket-summary.json",
+      "sha256": "4f65e194236728476789f7b9dc438ca0eed2825a01c28f67586a072da210235d",
+      "role": "evidence"
+    },
+    "ps1_payload_report": {
+      "path": "evidence/firmware-audit/ps1/dump-2-sec-gasket-payload.json",
+      "sha256": "104235586745ee7adaf63f2dfbcfd036671cec05b7ed41386a7d23233a5c2ac1",
+      "role": "evidence"
+    },
+    "apcb_detail": {
+      "path": "evidence/firmware-audit/apcb-detail.json",
+      "sha256": "d77ed671b723100c25ccf1e3265362ade799b00904bed621dc9bca9bf0336666",
+      "role": "evidence"
+    },
+    "rizin_scan": {
+      "path": "evidence/firmware-audit/rizin/vcn-apcb-static-constant-scan.json",
+      "sha256": "066bf18889edef6df8f8daad91721101b62e0f92da863e2168f0ee8868c1fef9",
+      "role": "evidence"
+    },
+    "rizin_triage": {
+      "path": "evidence/firmware-audit/rizin/module-triage.json",
+      "sha256": "6b43307c93b02b7bfd35b69a31900bda16e941088a2e0481a924a906824ac120",
+      "role": "evidence"
+    },
+    "core_summary": {
+      "path": "evidence/firmware-audit/rizin/Bc250CoreUnlockDxe.corrected-summary.json",
+      "sha256": "446d6b0df325781e7692cfdc545c8633a6ee918ef7ca35278dd714b313662760",
+      "role": "evidence"
+    },
+    "mcp_core_manifest": {
+      "path": "evidence/firmware-audit/mcp/Bc250CoreUnlockDxe-20260911/manifest.json",
+      "sha256": "3df026be426c0fda0ebdf6a80ae041f4846f788ee5def841268969cc0d6f3e0a",
+      "role": "evidence"
+    },
+    "candidate_manifest": {
+      "path": "evidence/candidates/BC250_APCB_DFG_only_v001/build-manifest.json",
+      "sha256": "8aa0e639d91e2e937c1c561f9a0c205552a68801725d7c545ffa7d7c2bfacda3",
+      "role": "evidence"
+    },
+    "candidate": {
+      "path": "candidates/BC250_APCB_DFG_only_v001_from_read-a.bin",
+      "sha256": "6b1fe8ef504142d5d5273a85b6c9febdf0b1fb8fc08ebab2593281c320cb9d70",
+      "role": "evidence"
+    },
+    "driver_discovery": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/vcn-source-context/drivers/gpu/drm/amd/amdgpu/amdgpu_discovery.c",
+      "sha256": "18920f314d4e273d32400ef1295179264999b4aa400f402fefa149212380a940",
+      "role": "evidence"
+    },
+    "driver_module": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/vcn-source-context/drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c",
+      "sha256": "67a897d10d2eb38b7c38e6238d1bbdbde9cc1e660ac63c406a96c3ff8bfb69f3",
+      "role": "evidence"
+    },
+    "parse_ip_script": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/parse_hw_ip_config.py",
+      "sha256": "58967657af821ec718191dfac5013bbfe6bf0845f7ab03c2b07a0ddedfb3ff2b",
+      "role": "evidence"
+    },
+    "ip_reference": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/robin3_hw_ip_config_parsed.json",
+      "sha256": "b314a8e3c7d1a7036bfc0837b97200bea6c276fa0492a2de881c9bb626a02cb5",
+      "role": "evidence"
+    },
+    "historical_vcn_mode0": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/vcn-probe-mode0_2026-08-26.out",
+      "sha256": "0b7c04d489bf0efb1d0105d542da1a0cf3c370f5502d6aaefe40e1db344e6732",
+      "role": "historical runtime log"
+    },
+    "historical_vcn_mode1": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/vcn-probe-mode1_2026-08-26.out",
+      "sha256": "920d82c67ddd3b937fba8f5fabc04ec532f0be10e42a9647baac3cca48fc970a",
+      "role": "historical runtime log"
+    },
+    "historical_vcn_readonly": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/a1_vcn_readonly.out",
+      "sha256": "8b19714f00000ceb12f3f240165944160f3462c84d95dd2e4c909b2cb4f0e062",
+      "role": "historical read-only host log"
+    },
+    "smu_host_source": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/cyan_skillfish_ppt.c",
+      "sha256": "9259ad3ff6f660fe97ca7ea68f9b7e5f5d185982f0d3341180bd880442f030f1",
+      "role": "imported host source"
+    },
+    "pmfw_header_source": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/smu_v11_8_pmfw.h",
+      "sha256": "8893329478e28c2f36b0298b2aeb0fc4b5902a77e76e82db57e2884fe0a82966",
+      "role": "imported public/source header"
+    },
+    "feature_callbacks_source": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/recon/feature_callbacks_2026-08-25.txt",
+      "sha256": "fab4157a57a1d73ae35402d1d35c06adc7bf64a509c108a2eb32f63cc5e499d4",
+      "role": "historical PMFW feature callback map"
+    },
+    "dxe_static_manifest": {
+      "path": "evidence/firmware-audit/rizin/dxe/manifest.json",
+      "sha256": "58a4f7bf9aefa04e1f7300ddbb26d104cfc5e424fa3dde09f4afbbf72f5fcebe",
+      "role": "imported VCN DXE/probe Rizin static-analysis manifest"
+    },
+    "smu_api_core": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/bc250_smu/bc250_smu/api.py",
+      "sha256": "584b135de0796e2b1e5d593b316457f18b5e5120bb3f8b5307acb551c2721185",
+      "role": "imported SMU API; write-capable"
+    },
+    "smu_transport": {
+      "path": "import/from-windows/Users/kukuruza/tmp_bc250/bc250_smu/bc250_smu/transport.py",
+      "sha256": "4ec3ba8cc13ff4af8ab2e2e525edd145bb23ffe3c59098231ada36f45b6685a6",
+      "role": "imported PCI transport; write-capable"
+    },
+    "apcb_obr_dfg_context": {
+      "path": "evidence/firmware-audit/rizin/AmdApcbObrDxe.dfg-context.txt",
+      "sha256": "fcb666f776d700933878024166c39929147cf06210d85fd9ffbeceac72241201",
+      "role": "direct Rizin DFG wildcard context"
+    },
+    "gfx_pei_df_context": {
+      "path": "evidence/firmware-audit/rizin/AmdNbioGfxARIPei.df-window-context.txt",
+      "sha256": "95ce1c7917dd12789e6af168dbbdfa046d0003ec653116e3f276da6ea74b8c68",
+      "role": "direct forced-little-endian TE Rizin DF access context"
+    }
+  },
+  "edges": [
+    {
+      "id": "VCN-E1",
+      "stage": "SPI baseline -> current image",
+      "status": "observed and independently matched",
+      "observation": "Two full CH347T reads at 1.875M both identify Winbond W25Q128.V, are 16 MiB, and match dump/2.bin byte-for-byte.",
+      "evidence_class": "hardware-verified (readback) + observed-bytes",
+      "sources": [
+        "fresh_read_manifest",
+        "fresh_inventory"
+      ],
+      "claim_limit": "This verifies the captured image, not any boot or runtime behavior."
+    },
+    {
+      "id": "VCN-E2",
+      "stage": "IP discovery descriptor",
+      "status": "observed and parsed",
+      "observation": "At SPI 0x981A00, binary header declares 0x44C bytes; IPDS v2 has one die and 38 IP records. VCN is HWID 12, instance 0, v2.0.3, harvest 0, bases 0x7800/0x7E00/0x02403000.",
+      "evidence_class": "hardware-verified (readback) + static-analysis",
+      "sources": [
+        "fresh_ip_raw",
+        "fresh_ip_report",
+        "parse_ip_script",
+        "ip_reference"
+      ],
+      "claim_limit": "Descriptor presence and harvest bit do not prove VCN power, PMFW loading, register initialization, rings, or codec. Table additive checksums also pass independently; the binary header checksum field was not independently interpreted.",
+      "next_test": "On a stock boot, collect driver IP-discovery, firmware-load, VCN/JPEG, and codec logs without writes; correlate with the exact descriptor.",
+      "table_checksums": [
+        {
+          "index": 0,
+          "offset": "0x3c",
+          "size": "0x324",
+          "stored": "0x48dc",
+          "calculated_sum16": "0x48dc",
+          "match": true
+        },
+        {
+          "index": 1,
+          "offset": "0x360",
+          "size": "0x64",
+          "stored": "0x23f",
+          "calculated_sum16": "0x23f",
+          "match": true
+        },
+        {
+          "index": 2,
+          "offset": "0x3c4",
+          "size": "0x88",
+          "stored": "0x131",
+          "calculated_sum16": "0x131",
+          "match": true
+        }
+      ],
+      "checksum_method": "sum of each table bytes modulo 2^16, matching the imported amdgpu_discovery.c verification pattern"
+    },
+    {
+      "id": "VCN-E3",
+      "stage": "PSP directory / PMFW",
+      "status": "observed",
+      "observation": "The 19-entry PSP directory has no dedicated VCN entry. Type 8 PMFW is at SPI 0x8FF000, size 0x40200; its body hash is 6a3da1ef6024c3143283fb92468fd71d628e9402a751c4a9799a20f473549ad9.",
+      "evidence_class": "observed-bytes + static-analysis",
+      "sources": [
+        "psp_inventory"
+      ],
+      "claim_limit": "The type-8 body is identified as PMFW by directory type; internal VCN task/clock semantics and signature acceptance remain unresolved.",
+      "next_test": "Map PMFW strings/control structures and, only in an authorized powered stock session, observe firmware-load/mailbox status."
+    },
+    {
+      "id": "VCN-E4",
+      "stage": "$PS1 SEC_GASKET / policy",
+      "status": "observed",
+      "observation": "Current type-36 wrapper is at 0x982000/0x2E50; payload begins +0x100 and is 0x2C50. Groups are 0x201/1230, 0x203/31, 0x210/13, 0x280/100, 0x281/31. Current payload has no HWID-12 0x0900Cxxx range writes and 0x03E810=0; payload matches Robin3.",
+      "evidence_class": "observed-bytes + static-analysis",
+      "sources": [
+        "ps1_summary",
+        "ps1_payload_report"
+      ],
+      "claim_limit": "No current payload write is evidence that VCN is disabled at runtime; rejected unsigned artifact is not a valid source.",
+      "next_test": "Resolve signed TOS/policy interpretation and compare stock boot behavior before any policy mutation."
+    },
+    {
+      "id": "VCN-E5",
+      "stage": "APCB DFG policy",
+      "status": "candidate hypothesis only",
+      "observation": "Current APCB DFG words at relative +0x130/+0x16C are 0x001FFF00. Candidate v001 widens them to 0x007FFF00 and recalculates only APCB checksum F2->32.",
+      "evidence_class": "observed-bytes + static-analysis",
+      "sources": [
+        "apcb_detail",
+        "candidate_manifest",
+        "candidate"
+      ],
+      "claim_limit": "Parser/checksum success does not prove PSP acceptance or VCN unlock.",
+      "next_test": "Independent review first; then, only with exact per-image/per-board approval and recovery gates, a staged hardware test with post-write readback."
+    },
+    {
+      "id": "VCN-E6",
+      "stage": "UEFI APCB/DF/VCN preparation",
+      "status": "static literal evidence",
+      "observation": "AmdApcbObrDxe contains APCB group IDs 0x1701/0x1703/0x1704/0x1706/0x1707, DFG wildcard 0x001FFF00, and DF indirect window 0xE0000000. AmdFabricAriDxe and NBIO PEI modules contain DF window/control literals 0xE0000000/0x405C/0x4098. Gfx/PCIe/Base/CBS modules also contain repeated Setup field constants.",
+      "evidence_class": "static-analysis",
+      "sources": [
+        "rizin_scan",
+        "rizin_triage"
+      ],
+      "claim_limit": "Scalar literal hits alone do not identify read/write direction, callers, or a VCN-specific policy edge; TE outputs carry an endian metadata caveat.",
+      "next_test": "Use read-only CutterMCP function context for each literal and reconcile with independent Rizin instruction context."
+    },
+    {
+      "id": "VCN-E7",
+      "stage": "SMU / mailbox",
+      "status": "static path partly mapped",
+      "observation": "AmdNbioSmuV10Dxe contains Q2 literals CMD 0x03B10528, RSP 0x03B10564, ARG 0x03B10998 and DF window constants. Current CoreUnlock body statically performs Q3 CMD 0x98 with RSP 0x03B10A80, ARG 0x03B10A88 and SMN address 0x0115A870, then rereads the mask and calls a warm reset.",
+      "evidence_class": "static-analysis",
+      "sources": [
+        "rizin_scan",
+        "core_summary",
+        "mcp_core_manifest"
+      ],
+      "claim_limit": "CoreUnlock execution and Q3 acceptance are unverified; Q2 literals in SMU DXE are not yet proven as VCN operations.",
+      "next_test": "Read-only MCP/Rizin caller context, then stock-boot mailbox/driver observations; no register writes."
+    },
+    {
+      "id": "VCN-E8",
+      "stage": "Host driver / NBIF / codec",
+      "status": "source trace, runtime unknown",
+      "observation": "Imported amdgpu source validates IPDS table signatures/checksums, walks die/IP records and harvest bits, initializes IP base addresses, and separately consumes VCN_INFO when present. The current parsed table list has no nonzero VCN_INFO table entry in the local parser output.",
+      "evidence_class": "static-analysis (source)",
+      "sources": [
+        "driver_discovery",
+        "driver_module",
+        "fresh_ip_report"
+      ],
+      "source_lines": [
+        "amdgpu_discovery.c:580-650",
+        "amdgpu_discovery.c:755-805",
+        "amdgpu_discovery.c:1504-1679",
+        "amdgpu_discovery.c:1935-1958"
+      ],
+      "claim_limit": "Imported source is not proof of the running kernel version or current board behavior; no live codec test is available while board is unpowered.",
+      "next_test": "Stock boot and read-only sysfs/debugfs/driver logs, followed by controlled codec smoke test with no firmware mutation."
+    },
+    {
+      "id": "VCN-E9",
+      "stage": "historical host driver/ring path",
+      "status": "historical observation; not current proof",
+      "observation": "An imported 2026-08-26 mode-1 log from kernel 7.2.0-1.91-cachyos-vcn-bc250 on BIOS P3.00 reports VCN firmware discovery (ENC 1.24/DEC 8/VEP 0/rev 9), VCN probe fw_version 0x08118009/size 404544, and creation of vcn_dec/vcn_enc0/vcn_enc1 rings; all three IB ring tests timed out with -110. Mode 0 booted with VCN mode off. A separate historical read-only collection reports missing firmware_info/ip_discovery/ip_blocks files.",
+      "evidence_class": "historical hardware observation + static/source context",
+      "sources": [
+        "historical_vcn_mode0",
+        "historical_vcn_mode1",
+        "historical_vcn_readonly",
+        "driver_discovery"
+      ],
+      "claim_limit": "The log is imported historical evidence with no fresh target identity/readback correlation in this session. It shows a driver-stage failure/timeout, not codec success or a cause.",
+      "next_test": "After restoring normal board power, collect a fresh stock boot baseline and exact kernel/driver/firmware logs before testing any candidate."
+    },
+    {
+      "id": "VCN-E10",
+      "stage": "SMU metrics / host observability",
+      "status": "static source trace with historical context",
+      "observation": "Imported Cyan Skillfish SMU source reads Current.MemclkFrequency for current UCLK and FCLK metrics, Current.SocclkFrequency for SOCCLK, and Current.Voltage[0]/[1] for VDD SOC/GFX; it exposes metric values through host sensor paths. Imported PMFW definitions assign FCLK_DPM bit 5, SOC_DPM bit 13, UMC_THROTTLE bit 23, and DF_THROTTLE bit 24.",
+      "evidence_class": "static-analysis (imported source)",
+      "sources": [
+        "smu_host_source",
+        "pmfw_header_source"
+      ],
+      "source_lines": [
+        "cyan_skillfish_ppt.c:132-180",
+        "cyan_skillfish_ppt.c:385-437",
+        "smu_v11_8_pmfw.h:30-75"
+      ],
+      "claim_limit": "This gives host metric units/field names in an imported source context, not proof that AmdSetup+0x6E6 uses mV or that current UCLK/FCLK values are independently sampled; the source maps both UCLK and FCLK to MemclkFrequency. The imported bc250_smu helper is not read-only: its transport opens O_RDWR and writes selectors/mailbox state; it must not be executed in the read-only gate.",
+      "next_test": "Fresh stock boot with exact kernel/driver source revision; capture metrics and correlate with NVRAM settings without changing firmware."
+    },
+    {
+      "id": "VCN-E11",
+      "stage": "candidate DXE/probe behavior",
+      "status": "static write-capable reference; rejected as read-only probe",
+      "observation": "Imported Bc250VcnUnlockDxe.efi and Bc250VcnProbeApp.efi were disassembled read-only. Their source/binaries include Q2/Q3, SMU SRAM, privileged SMN gasket/DF, VCN power/clock, and PCI writes; the probe app can chainload a bootloader.",
+      "evidence_class": "static-analysis",
+      "sources": [
+        "dxe_static_manifest"
+      ],
+      "claim_limit": "Presence of writes is not proof of execution and these binaries must not be run as read-only probes on the board.",
+      "next_test": "Use stock OS read-only telemetry or a newly reviewed read-only UEFI probe that contains no write path; no current probe is approved."
+    },
+    {
+      "id": "VCN-E12",
+      "stage": "APCB DFG wildcard consumer",
+      "status": "static semantic support",
+      "observation": "AmdApcbObrDxe function 0x119DC reads APCB token words and applies mask 0x001FFF00; context at 0x11BD1/0x11BE9 and loop at 0x11C11/0x11C2A compare the masked marker. The candidate 0x007FFF00 retains the marker under this mask while setting additional upper bits.",
+      "evidence_class": "static-analysis",
+      "sources": [
+        "apcb_obr_dfg_context",
+        "rizin_scan",
+        "candidate_manifest"
+      ],
+      "claim_limit": "This supports how the DFG wildcard is consumed but does not establish which hardware masters the extra bits grant, PSP signature acceptance, or VCN runtime behavior.",
+      "next_test": "Independent APCB policy interpretation and, only after explicit approval/recovery gates, a staged candidate hardware test."
+    },
+    {
+      "id": "VCN-E13",
+      "stage": "NBIO PEI DF indirect access",
+      "status": "static write-capable path",
+      "observation": "AmdNbioGfxARIPei functions 0x14A35/0x14B1F/0x14C0C form DF indirect addresses with target control 0x405C and window 0x4098, expose read and write helpers, and perform read-modify-write operations.",
+      "evidence_class": "static-analysis",
+      "sources": [
+        "gfx_pei_df_context",
+        "rizin_scan"
+      ],
+      "claim_limit": "This maps a generic DF register path, not a VCN-specific or AmdSetup+0x6E6 data flow; Rizin TE interpretation required forced little-endian. No register write was executed.",
+      "next_test": "Reconcile caller/data flow in other NBIO modules with a read-only Cutter/Rizin session; no runtime write probe."
+    },
+    {
+      "id": "VCN-E14",
+      "stage": "CoreUnlock Setup gate correlation",
+      "status": "observed numeric coincidence; semantics unresolved",
+      "observation": "CoreUnlock compares the generic Setup NVAR field at +0x1C4 with 0x000157C0 (88000). Fresh Setup body is 0x00011940 (72000), so the equality is false. Separately, fresh AmdSetup+0x70C FAST_PPT_LIMIT is 0x000157C0 (88000). The variables and offsets are distinct.",
+      "evidence_class": "observed-bytes + static-analysis",
+      "sources": [
+        "core_summary",
+        "fresh_nvar_report",
+        "cbs_base_setup_context"
+      ],
+      "claim_limit": "The equal numeric value may indicate a power/profile relation, but no data-flow or label proof links the CoreUnlock Setup gate to AmdSetup FAST_PPT; do not use this coincidence as a VCN or voltage conclusion.",
+      "next_test": "Inspect Setup IFR labels and any code reading both variables; use only static/read-only context."
+    }
+  ],
+  "rizin_module_literal_scan": [
+    {
+      "module": "AmdApcbObrDxe",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0033_AmdApcbObrDxe_pe32.bin",
+      "sha256": "e0bc6cb786469818ac6af66d7c2d06ffd5d9026ad550b651911e45334746604c",
+      "size": 19328,
+      "rizin_function_count": 50,
+      "rizin_analysis_report": "evidence/firmware-audit/rizin/AmdApcbObrDxe.analysis.txt",
+      "rizin_analysis_report_sha256": "d984e87aeab3caa32d9576742f29c6685f93a9dc45546ca39d48d4d9967efa5f",
+      "literal_hits": {
+        "APCB_PSPG_gid": {
+          "value": "0x00001701",
+          "offsets": [
+            "0x1B0E"
+          ]
+        },
+        "APCB_DFG_gid": {
+          "value": "0x00001703",
+          "offsets": [
+            "0x1AE4"
+          ]
+        },
+        "APCB_MEMG_gid": {
+          "value": "0x00001704",
+          "offsets": [
+            "0x1ACB"
+          ]
+        },
+        "APCB_FCHG_gid": {
+          "value": "0x00001706",
+          "offsets": [
+            "0x1B7A"
+          ]
+        },
+        "APCB_CBSG_gid": {
+          "value": "0x00001707",
+          "offsets": [
+            "0x5ED",
+            "0x1B55",
+            "0x1B65"
+          ]
+        },
+        "DFG_wildcard": {
+          "value": "0x001FFF00",
+          "offsets": [
+            "0x1BD2",
+            "0x1C12",
+            "0x202D"
+          ]
+        },
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x4B45"
+          ]
+        }
+      },
+      "interpretation": "literal scan only; addresses are not a proven semantic access without instruction/caller context",
+      "te_endian_caveat": false
+    },
+    {
+      "module": "AmdFabricAriDxe",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0021_AmdFabricAriDxe_pe32.bin",
+      "sha256": "b9702a29ed28cdd253b82a7a4b1ccd62ec318705b105b9d9939b212360bec929",
+      "size": 28320,
+      "rizin_function_count": 81,
+      "rizin_analysis_report": "evidence/firmware-audit/rizin/AmdFabricAriDxe.analysis.txt",
+      "rizin_analysis_report_sha256": "a590895233d4adf54c42efaddb4c453023bf0b61927e1046ba97292c2b766395",
+      "literal_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x17D",
+            "0x281",
+            "0x289",
+            "0x310C",
+            "0x3243",
+            "0x3B9C",
+            "0x3BE7",
+            "0x3CED",
+            "0x5AED",
+            "0x6555",
+            "0x65BD"
+          ]
+        },
+        "DF_target_control": {
+          "value": "0x0000405C",
+          "offsets": [
+            "0x3156"
+          ]
+        },
+        "DF_target_window": {
+          "value": "0x00004098",
+          "offsets": [
+            "0x317D"
+          ]
+        }
+      },
+      "interpretation": "literal scan only; addresses are not a proven semantic access without instruction/caller context",
+      "te_endian_caveat": false
+    },
+    {
+      "module": "AmdNbioBaseARIPei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0196_AmdNbioBaseARIPei_te.bin",
+      "sha256": "51d96c1e5a5e2c39f04fb962b0b5be686dea0a05eecbde829a4595fe3356884f",
+      "size": 105264,
+      "rizin_function_count": 117,
+      "rizin_analysis_report": "evidence/firmware-audit/rizin/AmdNbioBaseARIPei.analysis.txt",
+      "rizin_analysis_report_sha256": "fa91aba04ce80010702542cfbd9e93fa030b220a4989d46ff18abff9373e0e8a",
+      "literal_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x1449",
+            "0x1455",
+            "0x145F",
+            "0x148B",
+            "0x1496",
+            "0x14A1",
+            "0x14AB",
+            "0x14B2",
+            "0x14B9",
+            "0x22B0",
+            "0x2339",
+            "0x2435",
+            "0x3CD8",
+            "0x3D98",
+            "0x3DC1",
+            "0x3DD4",
+            "0x179B1",
+            "0x185C4",
+            "0x18800",
+            "0x18B1C",
+            "0x18B20"
+          ]
+        },
+        "DF_target_control": {
+          "value": "0x0000405C",
+          "offsets": [
+            "0x3CCD",
+            "0x3DB8"
+          ]
+        },
+        "DF_target_window": {
+          "value": "0x00004098",
+          "offsets": [
+            "0x3CE2",
+            "0x3DCE"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x6E5A"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x4526",
+            "0x5C3D",
+            "0xDA39"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0xE23",
+            "0x6B3D",
+            "0x11BE2"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x6D55",
+            "0x125FB"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x6E11",
+            "0x1293E"
+          ]
+        }
+      },
+      "interpretation": "literal scan only; addresses are not a proven semantic access without instruction/caller context",
+      "te_endian_caveat": true
+    },
+    {
+      "module": "AmdNbioGfxARIDxe",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0025_AmdNbioGfxARIDxe_pe32.bin",
+      "sha256": "a1b5855a339875f09cfaec8a1c17abf54251bab2c43ff577bc3cdf8711e2f61c",
+      "size": 13376,
+      "rizin_function_count": 58,
+      "rizin_analysis_report": "evidence/firmware-audit/rizin/AmdNbioGfxARIDxe.analysis.txt",
+      "rizin_analysis_report_sha256": "86ae8e28ab8833ea25db14bef5fbae3536d7b1c9109f79a89736556d7a55bab7",
+      "literal_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x29A5"
+          ]
+        }
+      },
+      "interpretation": "literal scan only; addresses are not a proven semantic access without instruction/caller context",
+      "te_endian_caveat": false
+    },
+    {
+      "module": "AmdNbioGfxARIPei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0193_AmdNbioGfxARIPei_te.bin",
+      "sha256": "63413be2ac290e584bbbeeba5eb573a94b66b9624c4e0ecbea145ded655245b8",
+      "size": 87048,
+      "rizin_function_count": 78,
+      "rizin_analysis_report": "evidence/firmware-audit/rizin/AmdNbioGfxARIPei.analysis.txt",
+      "rizin_analysis_report_sha256": "721911fdde66d0e7796cff4c215fb371380538812a4361964ed51386343cf47b",
+      "literal_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x14AF",
+            "0x14BA",
+            "0x14C3",
+            "0x14EC",
+            "0x14F7",
+            "0x1502",
+            "0x150C",
+            "0x1513",
+            "0x151A",
+            "0x14B06",
+            "0x14BC5",
+            "0x14BF1",
+            "0x14C04",
+            "0x15039"
+          ]
+        },
+        "DF_target_control": {
+          "value": "0x0000405C",
+          "offsets": [
+            "0x14AFB",
+            "0x14BE8"
+          ]
+        },
+        "DF_target_window": {
+          "value": "0x00004098",
+          "offsets": [
+            "0x14B10",
+            "0x14BFE"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x4212"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x18DE",
+            "0x2FF5",
+            "0xADF1"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0x3EF5",
+            "0xEF9A"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x410D",
+            "0xF9B3"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x41C9",
+            "0xFCF6"
+          ]
+        }
+      },
+      "interpretation": "literal scan only; addresses are not a proven semantic access without instruction/caller context",
+      "te_endian_caveat": true
+    },
+    {
+      "module": "AmdNbioPcieARIPei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0197_AmdNbioPcieARIPei_te.bin",
+      "sha256": "62b1398c4ba9b5a03ea533306cd8200257fac323c8fa688caa057667a5871312",
+      "size": 108776,
+      "rizin_function_count": 121,
+      "rizin_analysis_report": "evidence/firmware-audit/rizin/AmdNbioPcieARIPei.analysis.txt",
+      "rizin_analysis_report_sha256": "0db5832885ab4ad3d11cb6b68329e96fa1aa2de0ee2dc0b5081cda6e36b571b3",
+      "literal_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x55",
+            "0x6C9",
+            "0x1D62",
+            "0x1D6D",
+            "0x1D76",
+            "0x1D9F",
+            "0x1DAA",
+            "0x1DB5",
+            "0x1DBF",
+            "0x1DC6",
+            "0x1DCD",
+            "0x43E7",
+            "0x4440",
+            "0x444F",
+            "0x447E",
+            "0x4A32",
+            "0x4A41",
+            "0x4B80",
+            "0x18256",
+            "0x18315",
+            "0x18341",
+            "0x18354"
+          ]
+        },
+        "DF_target_control": {
+          "value": "0x0000405C",
+          "offsets": [
+            "0x1824B",
+            "0x18338"
+          ]
+        },
+        "DF_target_window": {
+          "value": "0x00004098",
+          "offsets": [
+            "0x18260",
+            "0x1834E"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x7952"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x501E",
+            "0x6735",
+            "0xE541"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0x7635",
+            "0x126EA"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x784D",
+            "0x13103"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x7909",
+            "0x13446"
+          ]
+        }
+      },
+      "interpretation": "literal scan only; addresses are not a proven semantic access without instruction/caller context",
+      "te_endian_caveat": true
+    },
+    {
+      "module": "AmdNbioSmuV10Dxe",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0031_AmdNbioSmuV10Dxe_pe32.bin",
+      "sha256": "546a0689e607a3a87b8c437c7fe7191e55757f56b35792fb8d84f539844b500e",
+      "size": 33024,
+      "rizin_function_count": 86,
+      "rizin_analysis_report": "evidence/firmware-audit/rizin/AmdNbioSmuV10Dxe.analysis.txt",
+      "rizin_analysis_report_sha256": "80096cd54a67ca6d8af32ec30ee8dfa02e75a5ba6d193b19495704037db27e6c",
+      "literal_hits": {
+        "APCB_FCHG_gid": {
+          "value": "0x00001706",
+          "offsets": [
+            "0x17CE",
+            "0x1E26"
+          ]
+        },
+        "SMU_Q2_CMD": {
+          "value": "0x03B10528",
+          "offsets": [
+            "0x30B0"
+          ]
+        },
+        "SMU_Q2_RSP": {
+          "value": "0x03B10564",
+          "offsets": [
+            "0x3006",
+            "0x3024",
+            "0x30EC",
+            "0x31EB"
+          ]
+        },
+        "SMU_Q2_ARG": {
+          "value": "0x03B10998",
+          "offsets": [
+            "0x303D",
+            "0x32B3"
+          ]
+        },
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x51C9",
+            "0x51D6",
+            "0x51E3",
+            "0x522D",
+            "0x523C",
+            "0x524D",
+            "0x5F49",
+            "0x600D",
+            "0x638D"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x5FC0"
+          ]
+        }
+      },
+      "interpretation": "literal scan only; addresses are not a proven semantic access without instruction/caller context",
+      "te_endian_caveat": false
+    },
+    {
+      "module": "AmdPspDxeV2",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0032_AmdPspDxeV2_pe32.bin",
+      "sha256": "554e1b4bc50d38578b09d58cc2fcdb0f460ad3c164eab9009be706a551dc1c92",
+      "size": 14368,
+      "rizin_function_count": 42,
+      "rizin_analysis_report": "evidence/firmware-audit/rizin/AmdPspDxeV2.analysis.txt",
+      "rizin_analysis_report_sha256": "5027c49babc09944352d2517c501c346cdb2fb68309ce9895d5ffd17a3c9e72f",
+      "literal_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x225",
+            "0x2B71"
+          ]
+        }
+      },
+      "interpretation": "literal scan only; addresses are not a proven semantic access without instruction/caller context",
+      "te_endian_caveat": false
+    },
+    {
+      "module": "AmdPspPeiV2",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0199_AmdPspPeiV2_te.bin",
+      "sha256": "1158720bbf95af537f3337ce8572359df84968ee465f5fabcbb036a839460d0e",
+      "size": 11264,
+      "rizin_function_count": 60,
+      "rizin_analysis_report": "evidence/firmware-audit/rizin/AmdPspPeiV2.analysis.txt",
+      "rizin_analysis_report_sha256": "63821a1c2915507e8362eb49c70cf344790d8152be593b548a1b74b1352467fa",
+      "literal_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x16A1",
+            "0x172A",
+            "0x1826",
+            "0x201E"
+          ]
+        }
+      },
+      "interpretation": "literal scan only; addresses are not a proven semantic access without instruction/caller context",
+      "te_endian_caveat": true
+    },
+    {
+      "module": "AmiApcbLibInterface",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0039_AmiApcbLibInterface_pe32.bin",
+      "sha256": "4d65e6dc2ca83c8d7bed8812275b78e9821fd126cba413f94ba9390e91a56336",
+      "size": 9408,
+      "rizin_function_count": 31,
+      "rizin_analysis_report": "evidence/firmware-audit/rizin/AmiApcbLibInterface.analysis.txt",
+      "rizin_analysis_report_sha256": "cf31336645eeda225a0c298ce1eb0c9094a7fa3d54529f34fe51c834c7f799dc",
+      "literal_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x1D79"
+          ]
+        }
+      },
+      "interpretation": "literal scan only; addresses are not a proven semantic access without instruction/caller context",
+      "te_endian_caveat": false
+    },
+    {
+      "module": "CbsBasePei",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0204_CbsBasePei_te.bin",
+      "sha256": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "size": 81520,
+      "rizin_function_count": 39,
+      "rizin_analysis_report": "evidence/firmware-audit/rizin/CbsBasePei.analysis.txt",
+      "rizin_analysis_report_sha256": "0f22db632806b7364d21d71b32c99f4d2e01a086817499d8bc2e7413f10dd548",
+      "literal_hits": {
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x1333F",
+            "0x13346",
+            "0x1334D",
+            "0x135CC",
+            "0x1368B",
+            "0x136B7",
+            "0x136CA"
+          ]
+        },
+        "DF_target_control": {
+          "value": "0x0000405C",
+          "offsets": [
+            "0x135C1",
+            "0x136AE"
+          ]
+        },
+        "DF_target_window": {
+          "value": "0x00004098",
+          "offsets": [
+            "0x135D6",
+            "0x136C4"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x2ADA"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x18BD",
+            "0x96C9"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0x27BD",
+            "0xD872"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x29D5",
+            "0xE28B"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x2A91",
+            "0xE5CE"
+          ]
+        }
+      },
+      "interpretation": "literal scan only; addresses are not a proven semantic access without instruction/caller context",
+      "te_endian_caveat": true
+    },
+    {
+      "module": "CbsSetupDxe",
+      "path": "evidence/firmware-audit/dump-2-extract/modules/0040_CbsSetupDxe_pe32.bin",
+      "sha256": "9fae1341693fe1b89e6f070f8740c94228f5161cca701ac31425bc5d438533b3",
+      "size": 264160,
+      "rizin_function_count": 63,
+      "rizin_analysis_report": "evidence/firmware-audit/rizin/CbsSetupDxe.analysis.txt",
+      "rizin_analysis_report_sha256": "b80dcc8a717b3c5c803c146acc5cbba14aaf25fd2fbf07efce62dd4dfc4d2e69",
+      "literal_hits": {
+        "DFG_wildcard": {
+          "value": "0x001FFF00",
+          "offsets": [
+            "0x5FD9",
+            "0x8A23"
+          ]
+        },
+        "DF_indirect_window": {
+          "value": "0xE0000000",
+          "offsets": [
+            "0x10D",
+            "0x3F6BD",
+            "0x3F7AD"
+          ]
+        },
+        "Setup_fast_ppt_value": {
+          "value": "0x000157C0",
+          "offsets": [
+            "0x4784",
+            "0x16763"
+          ]
+        },
+        "AmdSetup_MCLK_offset": {
+          "value": "0x00000316",
+          "offsets": [
+            "0x3C82",
+            "0x5CC1",
+            "0x60B3"
+          ]
+        },
+        "AmdSetup_FCLK_DPM_offset": {
+          "value": "0x000006A3",
+          "offsets": [
+            "0x4563"
+          ]
+        },
+        "AmdSetup_VDD_offset": {
+          "value": "0x000006E6",
+          "offsets": [
+            "0x46D7"
+          ]
+        },
+        "AmdSetup_DF_offset": {
+          "value": "0x00000704",
+          "offsets": [
+            "0x4750",
+            "0xA684"
+          ]
+        }
+      },
+      "interpretation": "literal scan only; addresses are not a proven semantic access without instruction/caller context",
+      "te_endian_caveat": false
+    }
+  ],
+  "current_candidate": {
+    "path": "candidates/BC250_APCB_DFG_only_v001_from_read-a.bin",
+    "sha256": "6b1fe8ef504142d5d5273a85b6c9febdf0b1fb8fc08ebab2593281c320cb9d70",
+    "status": "statically-verified-offline-candidate",
+    "hardware_written": false,
+    "independent_review": {
+      "path": "evidence/candidates/BC250_APCB_DFG_only_v001/independent-review-gemini.md",
+      "sha256": "90e15006a3093c8ba484fa702d4dab12225d522878892e6bba01d39666db7905",
+      "status": "PASS root recheck"
+    }
+  },
+  "conclusion": {
+    "what_is_proven": "The exact captured BIOS contains a valid IPDS descriptor for VCN HWID 12 and has a reproducible, parser-valid APCB-only DFG candidate.",
+    "what_is_not_proven": "VCN power/clock enablement, PMFW acceptance, NBIF aperture, UEFI dispatch, MC/coherency/rings, codec functionality, or modified-image boot.",
+    "evidence_class_max": "hardware-verified readback + static-analysis",
+    "historical_context": "Imported mode-1 logs reached VCN firmware/ring setup but timed out at ring tests (-110); this remains historical and does not prove current hardware behavior.",
+    "apcb_semantics": "Direct AmdApcbObrDxe disassembly confirms masked DFG wildcard handling; the candidate preserves the masked marker and changes only upper range bits, but policy meaning and runtime effect remain unverified.",
+    "setup_gate": "CoreUnlock has a distinct Setup+0x1C4 gate; its numeric value coincides with AmdSetup FAST_PPT default but the semantic link is unproven."
+  },
+  "gaps": [
+    "Native MCP context for all pending modules is not yet collected; current MCP transcript covers CoreUnlock only.",
+    "Closed PSP/TOS/PMFW signature and runtime semantics are unresolved.",
+    "No stock-boot live logs or codec test in this session.",
+    "No independent candidate review yet.",
+    "A write-free UEFI/JTAG probe for VCN runtime state has not been built and validated.",
+    "Imported bc250_smu query helper is write-capable; no proven read-only SMU/SMN transport.",
+    "NBIO PEI DF access path is static and write-capable; link to Setup/VCN semantics remains unresolved."
+  ]
+}

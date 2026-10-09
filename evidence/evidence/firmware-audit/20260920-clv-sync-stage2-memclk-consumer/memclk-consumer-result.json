@@ -1,0 +1,125 @@
+{
+  "checks": {
+    "failed": 0,
+    "passed": 12,
+    "total": 12
+  },
+  "checks_detail": [
+    {
+      "details": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "label": "clv-hash",
+      "status": "PASS"
+    },
+    {
+      "details": "6ff112922ad824645f1e3171d18c79327cbbefe8b2af67cd74a108c7334ced77",
+      "label": "cbs-hash",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "absolute": "0x7e5",
+        "raw": 36
+      },
+      "label": "clv-memoryclock-byte",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "baed110000",
+        "observed": {
+          "bytes": "baed110000",
+          "mnemonic": "mov",
+          "operands": "edx,0x11ed",
+          "rva": 38967
+        }
+      },
+      "label": "cbs-memclk-serializer:0x9837",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "8a8216030000",
+        "observed": {
+          "bytes": "8a8216030000",
+          "mnemonic": "mov",
+          "operands": "al,BYTE PTR [edx+0x316]",
+          "rva": 38999
+        }
+      },
+      "label": "cbs-memclk-serializer:0x9857",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "884103",
+        "observed": {
+          "bytes": "884103",
+          "mnemonic": "mov",
+          "operands": "BYTE PTR [ecx+0x3],al",
+          "rva": 39005
+        }
+      },
+      "label": "cbs-memclk-serializer:0x985d",
+      "status": "PASS"
+    },
+    {
+      "details": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8",
+      "label": "AmdMemAm4Pei-hash",
+      "status": "PASS"
+    },
+    {
+      "details": [],
+      "label": "AmdMemAm4Pei-no-direct-11ed-or-setup316",
+      "status": "PASS"
+    },
+    {
+      "details": "6a1ab7fe72ad3ee0e8f9238e2ba2d166c97e44812761e6d16a725525e1817085",
+      "label": "PlatformMemoryConfigurationPei-hash",
+      "status": "PASS"
+    },
+    {
+      "details": [],
+      "label": "PlatformMemoryConfigurationPei-no-direct-11ed-or-setup316",
+      "status": "PASS"
+    },
+    {
+      "details": "aad3f828ccef4cf8878cad8c9ee1e47743748f652a1ef54af04de759983b4619",
+      "label": "AmdMemoryHobInfoPeim-hash",
+      "status": "PASS"
+    },
+    {
+      "details": [],
+      "label": "AmdMemoryHobInfoPeim-no-direct-11ed-or-setup316",
+      "status": "PASS"
+    }
+  ],
+  "conclusion": "The exact native memory-init modules in this bounded set contain no direct 0x11ED literal or Setup+0x316 source load. Existing evidence therefore ends at the CBS INV serializer; the missing edge is the AGESA/PSP/APOB memory-init consumer or a HOB/config structure populated after INV handoff. No MHz decode or accepted-range claim is established.",
+  "exact_clv_serializer": {
+    "field": "AmdSetup+0x316",
+    "record": "0x11ED",
+    "source_rva": "0x9857",
+    "store_rva": "0x985D"
+  },
+  "limitations": [
+    "No firmware execution or training/hardware result.",
+    "A no-hit in selected memory-init module bodies does not exclude indirect protocol/HOB consumers or closed PSP/AGESA code."
+  ],
+  "memory_init_modules": {
+    "AmdMemAm4Pei": {
+      "direct_11ed_or_setup316_hits": [],
+      "instruction_count": 1510,
+      "sha256": "1ef4e7b944672a9a48b6fcb16c4d35cb6d23bb8306429dc3eb10ee1d0c7bb5f8"
+    },
+    "AmdMemoryHobInfoPeim": {
+      "direct_11ed_or_setup316_hits": [],
+      "instruction_count": 1885,
+      "sha256": "aad3f828ccef4cf8878cad8c9ee1e47743748f652a1ef54af04de759983b4619"
+    },
+    "PlatformMemoryConfigurationPei": {
+      "direct_11ed_or_setup316_hits": [],
+      "instruction_count": 17,
+      "sha256": "6a1ab7fe72ad3ee0e8f9238e2ba2d166c97e44812761e6d16a725525e1817085"
+    }
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,133 @@
+=== PART4 kernel source + smu package ===
+KSRC=/home/OWNER/linux-cachyos-bc250
+--- soc15 cyan/vcn ---
+--- cyan refs in amdgpu ---
+--- dpm/vcn power ---
+--- VCN ip block type ---
+--- pipx bc250_smu py files ---
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_apply.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_limits.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/stress_helper.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/__init__.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q1.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q2.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q3.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q4.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/codec.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/mailbox.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/transport.py
+--- VCN-ish symbols in package ---
+--- msg map head ---
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_apply.py:75:    smu.q3_0x8b_set_cpu_max_temperature(max_temp)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_apply.py:76:    smu.q3_0x8c_set_gpu_max_temperature(max_temp)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_apply.py:80:    smu.q3_0x50_scale_f_vid_curve(scale)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_apply.py:81:    smu.q3_0x8f_set_max_cpu_boost_clk(frequency)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:35:    smu.q3_0x50_scale_f_vid_curve(scale)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:36:    smu.q3_0x8f_set_max_cpu_boost_clk(clock)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:49:        clk = smu.q3_0x43_get_core_freq(i)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:64:        clk = smu.q3_0x43_get_core_freq(i)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:83:    smu.q3_0x8f_set_max_cpu_boost_clk(3500)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:84:    smu.q3_0x50_scale_f_vid_curve(0)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:86:    smu.q3_0x8b_set_cpu_max_temperature(100)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:87:    smu.q3_0x8c_set_gpu_max_temperature(100)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:106:    smu.q3_0x8b_set_cpu_max_temperature(t_max)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:107:    smu.q3_0x8c_set_gpu_max_temperature(t_max)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:122:        v_meas = smu.q3_0x36_get_current_cpu_voltage()
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:14:    0: (0x03B10A08, 0x03B10A68, 0x03B10A48),
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:15:    1: (0x03B10A00, 0x03B10A60, 0x03B10A40),
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:16:    2: (0x03B10528, 0x03B10564, 0x03B10998),
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:17:    3: (0x03B10A20, 0x03B10A80, 0x03B10A88),
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:18:    4: (0x03B10A24, 0x03B10A84, 0x03B10A8C),
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:45:    def raw_send(self, queue: int, msg_id: int, arg: int = 0, arg_high: Optional[int] = None) -> int:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:47:        return self._get_queue(queue).send(msg_id, arg=arg, arg_high=arg_high)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:60:        msg_id: int,
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:68:        status = self.raw_send(queue_id, msg_id, arg=packed, arg_high=arg_high)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:70:            raise RuntimeError(f"smu returned status 0x{status:02X} for queue {queue_id} msg 0x{msg_id:02X}")
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:79:            0x01,
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:6:        return self.send_message(0, 0x02, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:9:        return self.send_message(0, 0x03, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:12:        self.send_message(0, 0x04, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:15:        self.send_message(0, 0x05, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:18:        self.send_message(0, 0x06)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:21:        self.send_message(0, 0x07)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:25:        param = ((pstate & 0xF) << 16) | (core_mask & 0xFF)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:26:        self.send_message(0, 0x0B, arg=param, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:29:        """Return the current core P-state (status 0xFF if core_id > 7)."""
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:32:            0x0C,
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:40:        self.send_message(0, 0x0E)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:44:        return self.send_message(0, 0x0F, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:48:        param = (index & 0xFFFF) << 16
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:49:        return self.send_message(0, 0x11, arg=param, pack=pack_u32, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:52:        return self.send_message(0, 0x13, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:55:        self.send_message(0, 0x16, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:58:        self.send_message(0, 0x17, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:61:        self.send_message(0, 0x18)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:64:        self.send_message(0, 0x19, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:67:        self.send_message(0, 0x1A, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:70:        self.send_message(0, 0x1B, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:73:        self.send_message(0, 0x1C)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:76:        self.send_message(0, 0x1D)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:80:        return self.send_message(0, 0x1E, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:84:        return self.send_message(0, 0x37, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:88:        vid = self.send_message(0, 0x38, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:93:        self.send_message(0, 0x39, arg=freq_mhz, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:97:        self.send_message(0, 0x3A)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:102:        self.send_message(0, 0x3B, arg=vid, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:106:        self.send_message(0, 0x3C, check_status=False)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:110:        return self.send_message(0, 0x3D, decode=decode_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:114:        self.send_message(0, 0x2C, arg=mask & 0xFF, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:120:        self.send_message(0, 0x2F, arg=value, pack=pack_u32)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:126:        self.send_message(0, 0x30, arg=value, pack=pack_u32)
+--- mesa path ---
+итого 0
+drwxr-xr-x 1 root root  12 Там 25 02:25 .
+drwxr-xr-x 1 root root 190 Там 25 02:25 ..
+drwxr-xr-x 1 root root  16 Там 25 02:25 v3.3.0
+VK_DRIVER_FILES=
+VK_ICD_FILENAMES=
+'DISPLAY' environment variable not set... skipping surface info
+--- journal amdgpu (may be empty loglevel=0) ---
+Там 25 18:36:23 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:36:23 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:36:27 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:36:27 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:36:31 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:36:31 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:36:36 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:36:36 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:36:40 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:36:40 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:36:44 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:36:44 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:36:48 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:36:48 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:36:53 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:36:53 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:36:57 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:36:57 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:37:01 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:37:01 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:37:05 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:37:05 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:37:10 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:37:10 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:37:15 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:37:15 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:37:19 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:37:19 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:37:24 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:37:24 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:37:28 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:37:28 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:37:32 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:37:32 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:37:36 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:37:36 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:37:41 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:37:41 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+Там 25 18:37:45 cachyos kernel: amdgpu 0000:01:00.0: SMU: No response msg_reg: 2c resp_reg: 0
+Там 25 18:37:45 cachyos kernel: amdgpu 0000:01:00.0: Failed to export SMU metrics table!
+=== PART4 DONE ===

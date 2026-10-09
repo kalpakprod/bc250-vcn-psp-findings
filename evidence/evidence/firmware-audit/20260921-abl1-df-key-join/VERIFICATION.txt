@@ -1,0 +1,34 @@
+ABL1 FCLK selector-to-provider key join verification — 2026-09-21
+
+TARGET
+  /home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin
+  size=16777216
+  sha256=ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8
+
+COMMAND
+  python3 -B evidence/firmware-audit/20260921-abl1-df-key-join/verify_abl1_df_key_join.py
+
+FINAL OBSERVED RESULT
+  stdout: {"status":"PASS","checks_passed":66,"checks_failed":0,"new_edge":"caller 0x5FAE R1=0x0F -> reader 0x1FB4 -> helper 0x4800 R2=0x0F -> provider case 0x0F -> fixed HEAP key 0xA04E; APCB literal correspondence 0x1707 observed","first_unresolved":"HEAP 0xA04E producer and INV 0x1373/0x1374 bridge"}
+  exit_status=0
+  stderr=empty
+
+NEW DATAFLOW EDGE
+  0x5FAA R1=0x0F -> 0x463C -> 0x1FB4 R8 -> 0x4800 R2=0x0F.
+  The current FCLK token (0x015F or 0x0160) reaches 0x4800/provider R1.
+  Provider case selector 0x0F overwrites that token-derived path with literal 0x1707 and fixed HEAP lookup key 0xA04E at 0x4B1A, then calls 0x6374.
+  0x6374 compares descriptor key [R0] against HEAP node key and returns payload pointer/length through descriptor +8/+4.
+  Provider writes returned type/width byte via stack arg0 at 0x4BF0..0x4BFA.
+
+APCB CORRESPONDENCE
+  Parsed exact APCB CBSG gid=0x1707, subgroup instances 13 and 15.
+  Instance 15 body offset 0x160: u8_0=1, u8_1=189, u16_le=96.
+  Numeric correspondence only; no schema/runtime join is claimed.
+
+LIMIT
+  First unresolved boundary: producer/populator of HEAP node 0xA04E and any bridge from native INV 0x1373/0x1374. No frequency/unit/divider/PLL/hardware claim.
+
+INITIAL TEST-ORACLE ERRORS (PRESERVED IN ACTION LOG)
+  Run 1 exited 1: entered Thumb display bytes in raw order for 0x5FA4.
+  Run 2 exited 1: same byte-order mistake at 0x5FA8.
+  Method pivot: fresh llvm-objdump output is now parsed in display order and reconciled against raw little-endian ABL1 bytes; final run passes 66/66.

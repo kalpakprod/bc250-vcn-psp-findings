@@ -1,0 +1,71 @@
+[*] C:\Users\OWNER\tmp_bc250\recon\smu_sram_2026-08-25.bin: 262144 bytes
+[*] handler table @0x746c: 147 entries, msg 0x01 == TestMessage (0x1b3a8) -- table OK
+[*] decode noise expectation: ~0.05 false hit(s) per target in this image size -- a 0 IS a real zero
+
+== CALIBRATION (controls) -- run before trusting anything ==
+0x00fe4 fn_fe4 (set mailbox response): 80 call site(s)   [expect 500+ (project notes: fe4/fa8 idiom at 500+ sites)]
+0x00fa8 fn_fa8 (mark message complete): 382 call site(s)   [expect 500+ (project notes)]
+0x235c8 FUN_000235c8 (fw window store): 0 call site(s)   [project notes claim 30+ (from the robin_5 analysis)]
+0x23744 FUN_00023744 (slot-clock program -- the fire's fn): 0 call site(s)   [the fire's fn -- the fw's own teardown calls it]
+-> VALIDATED: direct calls exist (80+382 fe4/fa8 sites) -- direct-call negatives below are meaningful.
+
+== THE HUNT: direct callers of FUN_00023b14 (domain power-up) ==
+
+0x23b14 FUN_00023b14 (DOMAIN POWER-UP sequencer): 6 call site(s)
+    call8 @0x23652 ctx[2595cc380c1b254c008204988cd8ad]  -- inside soc_clk_program_slot 0x2362c (+0x26)
+    call8 @0x23c10 ctx[cc58ad020c0b25f0ff1b2220207466]  -- inside FUN_00023b14 (DOMAIN POWER-UP sequencer) 0x23b14 (+0xfc)
+    call8 @0x246c3 ctx[6abd0c1b0c7a2545ff1df036410081]  -- UNKNOWN fn past FUN_00023b14 (DOMAIN POWER-UP sequencer) (+0xbaf -- separate function, entry not in our tables)
+    call8 @0x246ee ctx[00b269c90c7a6542ff1df000364100]  -- UNKNOWN fn past FUN_00023b14 (DOMAIN POWER-UP sequencer) (+0xbda -- separate function, entry not in our tables)
+    call8 @0x2475e ctx[f9ff0c5a0c0b653bff1df000364100]  -- UNKNOWN fn past FUN_00023b14 (DOMAIN POWER-UP sequencer) (+0xc4a -- separate function, entry not in our tables)
+    call8 @0x2477a ctx[f8ff0c6a0c0ba539ff1df000366100]  -- UNKNOWN fn past FUN_00023b14 (DOMAIN POWER-UP sequencer) (+0xc66 -- separate function, entry not in our tables)
+    -> 4 hit(s) cluster in 0x246c3-0x2477a: one UNKNOWN function -- the internal power-up wrapper (entry not in any table).
+    ==> NO message handler calls it directly (internal-only callers).
+
+== WRAPPER CALLERS: direct calls INTO 0x24600..0x24800 ==
+    (the internal power-up wrapper lives here -- entry address unknown; whoever calls into this region reaches it)
+    call8 @0x1e1c7 -> 0x2461c  -- UNKNOWN fn past msg 0x35 handler (+0x6b3 -- separate function, entry not in our tables)
+    call4 @0x22110 -> 0x24620  -- UNKNOWN fn past msg 0x8d handler (+0x2c94 -- separate function, entry not in our tables)
+    call8 @0x23735 -> 0x246f4  -- inside soc_clk_program_slot 0x2362c (+0x109)
+    call8 @0x23f82 -> 0x24774  -- inside FUN_00023b14 (DOMAIN POWER-UP sequencer) 0x23b14 (+0x46e)
+    call8 @0x2474d -> 0x246f4  -- UNKNOWN fn past FUN_00023b14 (DOMAIN POWER-UP sequencer) (+0xc39 -- separate function, entry not in our tables)
+    call8 @0x24752 -> 0x246f4  -- UNKNOWN fn past FUN_00023b14 (DOMAIN POWER-UP sequencer) (+0xc3e -- separate function, entry not in our tables)
+    call8 @0x24757 -> 0x246f4  -- UNKNOWN fn past FUN_00023b14 (DOMAIN POWER-UP sequencer) (+0xc43 -- separate function, entry not in our tables)
+    call8 @0x24769 -> 0x246f4  -- UNKNOWN fn past FUN_00023b14 (DOMAIN POWER-UP sequencer) (+0xc55 -- separate function, entry not in our tables)
+    call8 @0x2476e -> 0x246f4  -- UNKNOWN fn past FUN_00023b14 (DOMAIN POWER-UP sequencer) (+0xc5a -- separate function, entry not in our tables)
+    call8 @0x24773 -> 0x246f4  -- UNKNOWN fn past FUN_00023b14 (DOMAIN POWER-UP sequencer) (+0xc5f -- separate function, entry not in our tables)
+    call8 @0x29f1a -> 0x24614  -- UNKNOWN fn past msg 0x87 handler (+0xe6e -- separate function, entry not in our tables)
+    call8 @0x2abcb -> 0x247e8  -- inside msg 0x1a handler 0x2a628 (+0x5a3)
+    call8 @0x2ad27 -> 0x247e8  -- UNKNOWN fn past msg 0x1a handler (+0x6ff -- separate function, entry not in our tables)
+    call8 @0x2b064 -> 0x246c8  -- UNKNOWN fn past msg 0x1a handler (+0xa3c -- separate function, entry not in our tables)
+    call8 @0x2c25f -> 0x246c8  -- inside msg 0x9a handler 0x2bfd0 (+0x28f)
+    call8 @0x2e424 -> 0x247e8  -- inside msg 0x60 handler 0x2e0e8 (+0x33c)
+    call8 @0x2e42c -> 0x247e8  -- inside msg 0x60 handler 0x2e0e8 (+0x344)
+    call8 @0x2e434 -> 0x247e8  -- inside msg 0x60 handler 0x2e0e8 (+0x34c)
+    call8 @0x2e8b7 -> 0x247e8  -- inside msg 0x42 handler 0x2e7d4 (+0xe3)
+    ==> SENDABLE: msg 0x1a, 0x42, 0x60, 0x9a handler(s) call INTO the wrapper region -- prime vehicle candidates (decode those handlers first).
+
+== LITERAL xrefs (l32r pools / pointer tables) ==
+
+0x0116d054: 0 dword reference(s)
+
+0x0116d0f8: 0 dword reference(s)
+
+0x0116d17c: 0 dword reference(s)
+
+0x0116d184: 1 dword reference(s)
+    dword @0x08b08  -- UNKNOWN fn past fn_fe4 (set mailbox response) (+0x7b24 -- separate function, entry not in our tables)
+
+0x0116d190: 0 dword reference(s)
+
+0x010ffe00: 1 dword reference(s)
+    dword @0x17148  -- UNKNOWN fn past fn_fe4 (set mailbox response) (+0x16164 -- separate function, entry not in our tables)
+
+0x000246c3: 0 dword reference(s)
+
+0x00023b14: 0 dword reference(s)
+
+pointers into the wrapper region 0x24600..0x24800:
+    dword @0x323cc = 0x246f4  -- UNKNOWN fn past msg 0xb9 handler (+0x2658 -- separate function, entry not in our tables)   (candidate wrapper entry + its referencer)
+    dword @0x359e4 = 0x246f4  -- UNKNOWN fn past msg 0xb9 handler (+0x5c70 -- separate function, entry not in our tables)   (candidate wrapper entry + its referencer)
+    dword @0x35a40 = 0x246f4  -- UNKNOWN fn past msg 0xb9 handler (+0x5ccc -- separate function, entry not in our tables)   (candidate wrapper entry + its referencer)
+    dword @0x38ba8 = 0x246f4  -- UNKNOWN fn past msg 0xb9 handler (+0x8e34 -- separate function, entry not in our tables)   (candidate wrapper entry + its referencer)

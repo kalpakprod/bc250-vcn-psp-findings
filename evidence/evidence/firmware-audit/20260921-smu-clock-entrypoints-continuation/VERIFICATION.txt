@@ -1,0 +1,25 @@
+SMU clock entrypoint continuation verification
+
+Inputs:
+- evidence/donor/retroweb-20260916/BC250_5.00_clv.bin
+- import/from-windows/Users/kukuruza/tmp_bc250/upstream/amd_smu_reverse_engineering/smu_fw/smu_fw_robin_5
+- prior static byte/disassembly evidence under evidence/firmware-audit/20260919-oc-clock-provenance/
+
+Command:
+PYTHONDONTWRITEBYTECODE=1 python3 -B evidence/firmware-audit/20260921-smu-clock-entrypoints-continuation/trace_clock_sources.py
+
+Final result: exit 0, stderr empty, result status PASS, checks 25.
+
+Observed source/consumer edges:
+- Queue ID 3 message 0x1D / 0x2EA08: low16 mailbox request -> ufloat.s -> target array 0x1402C+index*12 -> 0x2E788 -> 0x23890 -> 0x235C8.
+- Bulk target source 0x2E9DC: 0x7B5C+pstate*100+0x48 -> target array 0x14038.
+- Raw Queue ID 4 message 0x07 / 0x79E8: high-byte mode 0x01 + low-byte P-state selector -> 0x1E720 -> 0x1E448 -> static table 0xCF0C -> 0x23B7C/0x23BA8/0x23BF4 -> 0x23F18.
+- P-state row 0xCF84 stores 1200.0, 875.0, 109.375 and row+0x18 1750.0. Fixed-point/DID arithmetic reproduces the first three numeric values; physical units/domain identity remain unresolved.
+- CLV AmdSetup+0x316 remains byte 0x24 at ROM 0x7E5 (1800MHz-labelled stored request).
+
+Failures retained in action log:
+1. First run: malformed fromhex verifier literal for 0x2EA08 target window.
+2. Second run: arithmetic verifier passed a 32-bit row word where the decoder consumes row byte fields.
+Both were changed-method verifier corrections; no source/input bytes changed.
+
+Unrun: hardware, registers, NVRAM, board, network, ROM/candidate writes, physical clock measurement, training, and provider join to AmdSetup/ABL1/APOB.

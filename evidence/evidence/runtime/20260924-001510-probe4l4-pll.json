@@ -1,0 +1,75 @@
+{
+  "experiment": "probe4l4-pll-windows",
+  "ts": "2026-09-24T00:15:10+0500",
+  "lib": "/home/OWNER/vcn_unlock/bc250-smu-unlock",
+  "alive_before": true,
+  "secure_before": true,
+  "reads": {
+    "sanity_5a870": {
+      "addr": "0x0005a870",
+      "status": "0x1",
+      "value": "0x000000ff"
+    },
+    "fclk_prog_c0fc": {
+      "addr": "0x0115c0fc",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "fclk_poll_c120": {
+      "addr": "0x0115c120",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "uclk_prog_c8fc": {
+      "addr": "0x0115c8fc",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "uclk_poll_c920": {
+      "addr": "0x0115c920",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "uclkdiv_prog_c924": {
+      "addr": "0x0115c924",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "uclkdiv_poll_c948": {
+      "addr": "0x0115c948",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "uclkm_prog_6c0fc": {
+      "addr": "0x0116c0fc",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "uclkm_poll_6c120": {
+      "addr": "0x0116c120",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "uclkmdiv_prog_6c124": {
+      "addr": "0x0116c124",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "uclkmdiv_poll_6c148": {
+      "addr": "0x0116c148",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "sel11_prog_6d150": {
+      "addr": "0x0116d150",
+      "status": "0x1",
+      "value": "0x00000000"
+    },
+    "sel11_poll_6d174": {
+      "addr": "0x0116d174",
+      "status": "0x1",
+      "value": "0x00000000"
+    }
+  },
+  "alive_after": true
+}

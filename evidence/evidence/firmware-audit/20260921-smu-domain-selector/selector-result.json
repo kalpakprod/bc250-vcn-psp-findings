@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "checks": 35,
+  "ghidra_byte_matched_instructions": 301,
+  "queue3_0x1d": {
+    "selector_rule": "high16 index 1..20; zero/>20 status 0xFF",
+    "deny_ids": [
+      "0x13",
+      "0x14"
+    ],
+    "denied_status": "status 1 with return data 0xFFFFFFFF",
+    "accepted_example": {
+      "selector_index": 11,
+      "array_entry": 10,
+      "target_slot": "0x140b0",
+      "domain_id": "0x18",
+      "internal_group": 6,
+      "raw_program_offset": "0x6d150",
+      "smu_window_program": "0x116d150",
+      "smu_window_poll": "0x116d174",
+      "status": 1
+    },
+    "neighbor_selectors": {
+      "12": {
+        "domain": "0x13",
+        "rejected": true
+      },
+      "13": {
+        "domain": "0x14",
+        "rejected": true
+      },
+      "14": {
+        "domain": "0x15",
+        "rejected": false
+      }
+    },
+    "scaling": {
+      "low16": "integer -> ufloat.s",
+      "target_scale": "*0.001f",
+      "group_base": "U9.16 -> float",
+      "vco_factor": "*0.1f*256",
+      "ratio_helper": "0x3ACF8 software float divide",
+      "encoder": "truncate + 0x3F -> 0x23ECC divider code",
+      "unit_label": "not encoded/proven; no MHz claim"
+    },
+    "df_descriptors_directly_selected": false
+  },
+  "hardware_name_search": {
+    "result": "historical slot/domain labels only; no physical clock name found in the selected local symbol/source corpus",
+    "same_address_old_map": "slot 24 / internal domain_index 6 / semantic_name=null (Robin3 map; corroboration only)"
+  },
+  "remaining_boundary": "which physical clock the Group6 domain-0x18 register controls; caller/provider source and runtime value of the Group6 U9.16 base; external unit/MCLK-UCLK-FCLK identity",
+  "baseline": {
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "smu_sha256": "cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37",
+    "AmdSetup+0x316": "0x24 at ROM 0x7E5"
+  }
+}

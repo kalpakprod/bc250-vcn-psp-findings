@@ -1,0 +1,311 @@
+############ KERNEL ############
+Linux cachyos 7.2.0-1.1-cachyos-bc250 #1 SMP PREEMPT_DYNAMIC Fri, 21 Aug 2026 04:13:07 +0000 x86_64 GNU/Linux
+--- cmdline ---
+quiet nowatchdog splash rw rootflags=subvol=/@ root=UUID=14fe5cec-acf0-4986-8103-251a5706bbac video=DP-1:1920x1080@60 amdgpu.sg_display=0 ttm.pages_limit=1048576 systemd.zram=0 loglevel=0 mitigations=off acpi_enforce_resources=lax
+
+############ GPU PCI ############
+01:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Cyan Skillfish [BC-250] [1002:13fe]
+--- 0x13fe detail ---
+	Kernel driver in use: amdgpu
+
+############ amdgpu driver bound ############
+итого 0
+lrwxrwxrwx 1 root root    0 Там 25 18:04 0000:01:00.0 -> ../../../../devices/pci0000:00/0000:00:08.1/0000:01:00.0
+--w------- 1 root root 4096 Там 25 18:04 bind
+lrwxrwxrwx 1 root root    0 Там 25 18:04 module -> ../../../../module/amdgpu
+--w------- 1 root root 4096 Там 25 18:04 new_id
+--w------- 1 root root 4096 Там 25 18:04 remove_id
+--w------- 1 root root 4096 Там 25 18:04 uevent
+--w------- 1 root root 4096 Там 25 18:04 unbind
+
+############ VCN firmware blobs ############
+--- /lib/firmware/amdgpu (vcn/psp/skillfish/me) ---
+-rw-r--r-- 1 root root    9585 Там 15 21:39 aldebaran_sdma.bin.zst
+-rw-r--r-- 1 root root  281855 Там 15 21:39 aldebaran_vcn.bin.zst
+-rw-r--r-- 1 root root    8667 Там 15 21:39 arcturus_sdma.bin.zst
+-rw-r--r-- 1 root root  281318 Там 15 21:39 arcturus_vcn.bin.zst
+-rw-r--r-- 1 root root   11644 Там 15 21:39 beige_goby_sdma.bin.zst
+-rw-r--r-- 1 root root  395575 Там 15 21:39 beige_goby_vcn.bin.zst
+-rw-r--r-- 1 root root    2111 Там 15 21:39 bonaire_sdma1.bin.zst
+-rw-r--r-- 1 root root    2113 Там 15 21:39 bonaire_sdma.bin.zst
+lrwxrwxrwx 1 root root      20 Там 15 21:39 carrizo_sdma1.bin.zst -> carrizo_sdma.bin.zst
+-rw-r--r-- 1 root root    3950 Там 15 21:39 carrizo_sdma.bin.zst
+-rw-r--r-- 1 root root    3786 Там 15 21:39 cyan_skillfish2_ce.bin.zst
+-rw-r--r-- 1 root root    8090 Там 15 21:39 cyan_skillfish2_me.bin.zst
+lrwxrwxrwx 1 root root      27 Там 15 21:39 cyan_skillfish2_mec2.bin.zst -> cyan_skillfish2_mec.bin.zst
+-rw-r--r-- 1 root root   32753 Там 15 21:39 cyan_skillfish2_mec.bin.zst
+-rw-r--r-- 1 root root   13895 Там 15 21:39 cyan_skillfish2_pfp.bin.zst
+-rw-r--r-- 1 root root    8837 Там 15 21:39 cyan_skillfish2_rlc.bin.zst
+-rw-r--r-- 1 root root    9960 Там 15 21:39 cyan_skillfish2_sdma1.bin.zst
+-rw-r--r-- 1 root root    9959 Там 15 21:39 cyan_skillfish2_sdma.bin.zst
+-rw-r--r-- 1 root root   11574 Там 15 21:39 dimgrey_cavefish_sdma.bin.zst
+lrwxrwxrwx 1 root root      22 Там 15 21:39 dimgrey_cavefish_vcn.bin.zst -> beige_goby_vcn.bin.zst
+-rw-r--r-- 1 root root    3918 Там 15 21:39 fiji_sdma1.bin.zst
+-rw-r--r-- 1 root root    3914 Там 15 21:39 fiji_sdma.bin.zst
+-rw-r--r-- 1 root root    8154 Там 15 21:39 green_sardine_sdma.bin.zst
+-rw-r--r-- 1 root root  274534 Там 15 21:39 green_sardine_vcn.bin.zst
+lrwxrwxrwx 1 root root      21 Там 15 21:39 hawaii_sdma1.bin.zst -> bonaire_sdma1.bin.zst
+lrwxrwxrwx 1 root root      20 Там 15 21:39 hawaii_sdma.bin.zst -> bonaire_sdma.bin.zst
+lrwxrwxrwx 1 root root      21 Там 15 21:39 kabini_sdma1.bin.zst -> bonaire_sdma1.bin.zst
+lrwxrwxrwx 1 root root      20 Там 15 21:39 kabini_sdma.bin.zst -> bonaire_sdma.bin.zst
+lrwxrwxrwx 1 root root      21 Там 15 21:39 kaveri_sdma1.bin.zst -> bonaire_sdma1.bin.zst
+lrwxrwxrwx 1 root root      20 Там 15 21:39 kaveri_sdma.bin.zst -> bonaire_sdma.bin.zst
+lrwxrwxrwx 1 root root      21 Там 15 21:39 mullins_sdma1.bin.zst -> bonaire_sdma1.bin.zst
+lrwxrwxrwx 1 root root      20 Там 15 21:39 mullins_sdma.bin.zst -> bonaire_sdma.bin.zst
+-rw-r--r-- 1 root root    9743 Там 15 21:39 navi10_sdma1.bin.zst
+-rw-r--r-- 1 root root    9746 Там 15 21:39 navi10_sdma.bin.zst
+-rw-r--r-- 1 root root  274506 Там 15 21:39 navi10_vcn.bin.zst
+-rw-r--r-- 1 root root    9801 Там 15 21:39 navi12_sdma1.bin.zst
+-rw-r--r-- 1 root root    9801 Там 15 21:39 navi12_sdma.bin.zst
+lrwxrwxrwx 1 root root      18 Там 15 21:39 navi12_vcn.bin.zst -> navi10_vcn.bin.zst
+-rw-r--r-- 1 root root    8252 Там 15 21:39 navi14_me_wks.bin.zst
+-rw-r--r-- 1 root root    9714 Там 15 21:39 navi14_sdma1.bin.zst
+-rw-r--r-- 1 root root    9711 Там 15 21:39 navi14_sdma.bin.zst
+lrwxrwxrwx 1 root root      18 Там 15 21:39 navi14_vcn.bin.zst -> navi10_vcn.bin.zst
+-rw-r--r-- 1 root root   11575 Там 15 21:39 navy_flounder_sdma.bin.zst
+lrwxrwxrwx 1 root root      22 Там 15 21:39 navy_flounder_vcn.bin.zst -> beige_goby_vcn.bin.zst
+-rw-r--r-- 1 root root    7952 Там 15 21:39 picasso_sdma.bin.zst
+-rw-r--r-- 1 root root  245470 Там 15 21:39 picasso_vcn.bin.zst
+-rw-r--r-- 1 root root    6044 Там 15 21:39 polaris10_me_2.bin.zst
+-rw-r--r-- 1 root root    4707 Там 15 21:39 polaris10_sdma1.bin.zst
+-rw-r--r-- 1 root root    4712 Там 15 21:39 polaris10_sdma.bin.zst
+-rw-r--r-- 1 root root    6032 Там 15 21:39 polaris11_me_2.bin.zst
+lrwxrwxrwx 1 root root      23 Там 15 21:39 polaris11_sdma1.bin.zst -> polaris10_sdma1.bin.zst
+lrwxrwxrwx 1 root root      22 Там 15 21:39 polaris11_sdma.bin.zst -> polaris10_sdma.bin.zst
+-rw-r--r-- 1 root root    6032 Там 15 21:39 polaris12_me_2.bin.zst
+lrwxrwxrwx 1 root root      23 Там 15 21:39 polaris12_sdma1.bin.zst -> polaris10_sdma1.bin.zst
+lrwxrwxrwx 1 root root      22 Там 15 21:39 polaris12_sdma.bin.zst -> polaris10_sdma.bin.zst
+-rw-r--r-- 1 root root  148131 Там 15 21:39 psp_13_0_0_sos.bin.zst
+-rw-r--r-- 1 root root  148684 Там 15 21:39 psp_13_0_0_sos_kicker.bin.zst
+-rw-r--r-- 1 root root   81338 Там 15 21:39 psp_13_0_0_ta.bin.zst
+-rw-r--r-- 1 root root   76998 Там 15 21:39 psp_13_0_0_ta_kicker.bin.zst
+-rw-r--r-- 1 root root  166781 Там 15 21:39 psp_13_0_10_sos.bin.zst
+-rw-r--r-- 1 root root   81678 Там 15 21:39 psp_13_0_10_ta.bin.zst
+-rw-r--r-- 1 root root   77601 Там 15 21:39 psp_13_0_11_ta.bin.zst
+-rw-r--r-- 1 root root     856 Там 15 21:39 psp_13_0_11_toc.bin.zst
+-rw-r--r-- 1 root root  454369 Там 15 21:39 psp_13_0_12_sos.bin.zst
+-rw-r--r-- 1 root root   70646 Там 15 21:39 psp_13_0_12_ta.bin.zst
+-rw-r--r-- 1 root root  405769 Там 15 21:39 psp_13_0_14_sos.bin.zst
+-rw-r--r-- 1 root root   67579 Там 15 21:39 psp_13_0_14_ta.bin.zst
+-rw-r--r-- 1 root root  437711 Там 15 21:39 psp_13_0_15_sos.bin.zst
+-rw-r--r-- 1 root root   49662 Там 15 21:39 psp_13_0_15_ta.bin.zst
+lrwxrwxrwx 1 root root      22 Там 15 21:39 psp_13_0_4_ta.bin.zst -> psp_13_0_11_ta.bin.zst
+lrwxrwxrwx 1 root root      23 Там 15 21:39 psp_13_0_4_toc.bin.zst -> psp_13_0_11_toc.bin.zst
+-rw-r--r-- 1 root root   59106 Там 15 21:39 psp_13_0_5_asd.bin.zst
+-rw-r--r-- 1 root root   71530 Там 15 21:39 psp_13_0_5_ta.bin.zst
+-rw-r--r-- 1 root root     916 Там 15 21:39 psp_13_0_5_toc.bin.zst
+-rw-r--r-- 1 root root  776227 Там 15 21:39 psp_13_0_6_sos.bin.zst
+-rw-r--r-- 1 root root   88523 Там 15 21:39 psp_13_0_6_ta.bin.zst
+-rw-r--r-- 1 root root  135593 Там 15 21:39 psp_13_0_7_sos.bin.zst
+lrwxrwxrwx 1 root root      21 Там 15 21:39 psp_13_0_7_ta.bin.zst -> psp_13_0_5_ta.bin.zst
+-rw-r--r-- 1 root root   40501 Там 15 21:39 psp_13_0_8_asd.bin.zst
+-rw-r--r-- 1 root root   66914 Там 15 21:39 psp_13_0_8_ta.bin.zst
+-rw-r--r-- 1 root root     918 Там 15 21:39 psp_13_0_8_toc.bin.zst
+lrwxrwxrwx 1 root root      22 Там 15 21:39 psp_14_0_0_ta.bin.zst -> psp_13_0_11_ta.bin.zst
+-rw-r--r-- 1 root root    1165 Там 15 21:39 psp_14_0_0_toc.bin.zst
+lrwxrwxrwx 1 root root      22 Там 15 21:39 psp_14_0_1_ta.bin.zst -> psp_13_0_11_ta.bin.zst
+-rw-r--r-- 1 root root    1171 Там 15 21:39 psp_14_0_1_toc.bin.zst
+-rw-r--r-- 1 root root  185192 Там 15 21:39 psp_14_0_2_sos.bin.zst
+-rw-r--r-- 1 root root   88337 Там 15 21:39 psp_14_0_2_ta.bin.zst
+-rw-r--r-- 1 root root  191208 Там 15 21:39 psp_14_0_3_sos.bin.zst
+-rw-r--r-- 1 root root  191453 Там 15 21:39 psp_14_0_3_sos_kicker.bin.zst
+-rw-r--r-- 1 root root   91269 Там 15 21:39 psp_14_0_3_ta.bin.zst
+-rw-r--r-- 1 root root   83418 Там 15 21:39 psp_14_0_3_ta_kicker.bin.zst
+lrwxrwxrwx 1 root root      22 Там 15 21:39 psp_14_0_4_ta.bin.zst -> psp_13_0_11_ta.bin.zst
+-rw-r--r-- 1 root root    1168 Там 15 21:39 psp_14_0_4_toc.bin.zst
+lrwxrwxrwx 1 root root      22 Там 15 21:39 psp_14_0_5_ta.bin.zst -> psp_13_0_11_ta.bin.zst
+-rw-r--r-- 1 root root    1167 Там 15 21:39 psp_14_0_5_toc.bin.zst
+-rw-r--r-- 1 root root    7953 Там 15 21:39 raven2_sdma.bin.zst
+lrwxrwxrwx 1 root root      19 Там 15 21:39 raven2_vcn.bin.zst -> picasso_vcn.bin.zst
+lrwxrwxrwx 1 root root      20 Там 15 21:39 raven_sdma.bin.zst -> picasso_sdma.bin.zst
+lrwxrwxrwx 1 root root      19 Там 15 21:39 raven_vcn.bin.zst -> picasso_vcn.bin.zst
+lrwxrwxrwx 1 root root      26 Там 15 21:39 renoir_sdma.bin.zst -> green_sardine_sdma.bin.zst
+lrwxrwxrwx 1 root root      25 Там 15 21:39 renoir_vcn.bin.zst -> green_sardine_vcn.bin.zst
+-rw-r--r-- 1 root root   11052 Там 15 21:39 sdma_4_4_2.bin.zst
+-rw-r--r-- 1 root root   11111 Там 15 21:39 sdma_4_4_4.bin.zst
+-rw-r--r-- 1 root root   11055 Там 15 21:39 sdma_4_4_5.bin.zst
+-rw-r--r-- 1 root root   11195 Там 15 21:39 sdma_5_2_6.bin.zst
+-rw-r--r-- 1 root root   11197 Там 15 21:39 sdma_5_2_7.bin.zst
+-rw-r--r-- 1 root root   12269 Там 15 21:39 sdma_6_0_0.bin.zst
+-rw-r--r-- 1 root root   12163 Там 15 21:39 sdma_6_0_1.bin.zst
+-rw-r--r-- 1 root root   12271 Там 15 21:39 sdma_6_0_2.bin.zst
+-rw-r--r-- 1 root root   12406 Там 15 21:39 sdma_6_0_3.bin.zst
+-rw-r--r-- 1 root root   12279 Там 15 21:39 sdma_6_1_0.bin.zst
+-rw-r--r-- 1 root root   12281 Там 15 21:39 sdma_6_1_1.bin.zst
+-rw-r--r-- 1 root root   12270 Там 15 21:39 sdma_6_1_2.bin.zst
+-rw-r--r-- 1 root root   12284 Там 15 21:39 sdma_6_1_3.bin.zst
+-rw-r--r-- 1 root root   18188 Там 15 21:39 sdma_7_0_0.bin.zst
+-rw-r--r-- 1 root root   17679 Там 15 21:39 sdma_7_0_1.bin.zst
+-rw-r--r-- 1 root root   11677 Там 15 21:39 sienna_cichlid_sdma.bin.zst
+lrwxrwxrwx 1 root root      22 Там 15 21:39 sienna_cichlid_vcn.bin.zst -> beige_goby_vcn.bin.zst
+-rw-r--r-- 1 root root    4129 Там 15 21:39 stoney_sdma.bin.zst
+-rw-r--r-- 1 root root    3798 Там 15 21:39 tonga_sdma1.bin.zst
+-rw-r--r-- 1 root root    3795 Там 15 21:39 tonga_sdma.bin.zst
+-rw-r--r-- 1 root root    2627 Там 15 21:39 topaz_sdma1.bin.zst
+-rw-r--r-- 1 root root    2631 Там 15 21:39 topaz_sdma.bin.zst
+-rw-r--r-- 1 root root   11810 Там 15 21:39 vangogh_sdma.bin.zst
+-rw-r--r-- 1 root root  389668 Там 15 21:39 vangogh_vcn.bin.zst
+-rw-r--r-- 1 root root  389798 Там 15 21:39 vcn_3_1_2.bin.zst
+-rw-r--r-- 1 root root  282033 Там 15 21:39 vcn_4_0_0.bin.zst
+lrwxrwxrwx 1 root root      17 Там 15 21:39 vcn_4_0_2.bin.zst -> vcn_4_0_0.bin.zst
+-rw-r--r-- 1 root root  252119 Там 15 21:39 vcn_4_0_3.bin.zst
+lrwxrwxrwx 1 root root      17 Там 15 21:39 vcn_4_0_4.bin.zst -> vcn_4_0_0.bin.zst
+-rw-r--r-- 1 root root  281207 Там 15 21:39 vcn_4_0_5.bin.zst
+-rw-r--r-- 1 root root  281205 Там 15 21:39 vcn_4_0_6_1.bin.zst
+lrwxrwxrwx 1 root root      17 Там 15 21:39 vcn_4_0_6.bin.zst -> vcn_4_0_5.bin.zst
+-rw-r--r-- 1 root root  302266 Там 15 21:39 vcn_5_0_0.bin.zst
+-rw-r--r-- 1 root root  156365 Там 15 21:39 vcn_5_0_1.bin.zst
+-rw-r--r-- 1 root root    8058 Там 15 21:39 vega10_sdma1.bin.zst
+-rw-r--r-- 1 root root    8053 Там 15 21:39 vega10_sdma.bin.zst
+-rw-r--r-- 1 root root    8034 Там 15 21:39 vega12_sdma1.bin.zst
+-rw-r--r-- 1 root root    8034 Там 15 21:39 vega12_sdma.bin.zst
+-rw-r--r-- 1 root root    8296 Там 15 21:39 vega20_sdma1.bin.zst
+-rw-r--r-- 1 root root    8291 Там 15 21:39 vega20_sdma.bin.zst
+-rw-r--r-- 1 root root    4401 Там 15 21:39 vegam_sdma1.bin.zst
+-rw-r--r-- 1 root root    4400 Там 15 21:39 vegam_sdma.bin.zst
+lrwxrwxrwx 1 root root      22 Там 15 21:39 yellow_carp_asd.bin.zst -> psp_13_0_8_asd.bin.zst
+-rw-r--r-- 1 root root   11137 Там 15 21:39 yellow_carp_sdma.bin.zst
+lrwxrwxrwx 1 root root      21 Там 15 21:39 yellow_carp_ta.bin.zst -> psp_13_0_5_ta.bin.zst
+-rw-r--r-- 1 root root  389673 Там 15 21:39 yellow_carp_vcn.bin.zst
+--- full amdgpu dir (first 60) ---
+итого 29316
+drwxr-xr-x 1 root root   27668 Там 16 15:59 .
+drwxr-xr-x 1 root root   31012 Там 17 22:15 ..
+-rw-r--r-- 1 root root     324 Там 15 21:39 aldebaran_ip_discovery.bin.zst
+lrwxrwxrwx 1 root root      21 Там 15 21:39 aldebaran_mec2.bin.zst -> aldebaran_mec.bin.zst
+-rw-r--r-- 1 root root   32271 Там 15 21:39 aldebaran_mec.bin.zst
+-rw-r--r-- 1 root root   12369 Там 15 21:39 aldebaran_rlc.bin.zst
+-rw-r--r-- 1 root root    9585 Там 15 21:39 aldebaran_sdma.bin.zst
+lrwxrwxrwx 1 root root      25 Там 15 21:39 aldebaran_sjt_mec2.bin.zst -> aldebaran_sjt_mec.bin.zst
+-rw-r--r-- 1 root root   32488 Там 15 21:39 aldebaran_sjt_mec.bin.zst
+-rw-r--r-- 1 root root   66968 Там 15 21:39 aldebaran_smc.bin.zst
+-rw-r--r-- 1 root root  163164 Там 15 21:39 aldebaran_sos.bin.zst
+-rw-r--r-- 1 root root   36113 Там 15 21:39 aldebaran_ta.bin.zst
+-rw-r--r-- 1 root root  281855 Там 15 21:39 aldebaran_vcn.bin.zst
+-rw-r--r-- 1 root root   40352 Там 15 21:39 arcturus_asd.bin.zst
+-rw-r--r-- 1 root root      67 Там 15 21:39 arcturus_gpu_info.bin.zst
+-rw-r--r-- 1 root root     401 Там 15 21:39 arcturus_ip_discovery.bin.zst
+lrwxrwxrwx 1 root root      20 Там 15 21:39 arcturus_mec2.bin.zst -> arcturus_mec.bin.zst
+-rw-r--r-- 1 root root   31363 Там 15 21:39 arcturus_mec.bin.zst
+-rw-r--r-- 1 root root   11280 Там 15 21:39 arcturus_rlc.bin.zst
+-rw-r--r-- 1 root root    8667 Там 15 21:39 arcturus_sdma.bin.zst
+-rw-r--r-- 1 root root   75816 Там 15 21:39 arcturus_smc.bin.zst
+-rw-r--r-- 1 root root  105929 Там 15 21:39 arcturus_sos.bin.zst
+-rw-r--r-- 1 root root   34433 Там 15 21:39 arcturus_ta.bin.zst
+-rw-r--r-- 1 root root  281318 Там 15 21:39 arcturus_vcn.bin.zst
+-rw-r--r-- 1 root root   25240 Там 15 21:39 banks_k_2_smc.bin.zst
+-rw-r--r-- 1 root root    4416 Там 15 21:39 beige_goby_ce.bin.zst
+-rw-r--r-- 1 root root   74483 Там 15 21:39 beige_goby_dmcub.bin.zst
+-rw-r--r-- 1 root root    8341 Там 15 21:39 beige_goby_me.bin.zst
+lrwxrwxrwx 1 root root      22 Там 15 21:39 beige_goby_mec2.bin.zst -> beige_goby_mec.bin.zst
+-rw-r--r-- 1 root root   38312 Там 15 21:39 beige_goby_mec.bin.zst
+-rw-r--r-- 1 root root   15016 Там 15 21:39 beige_goby_pfp.bin.zst
+-rw-r--r-- 1 root root   42618 Там 15 21:39 beige_goby_rlc.bin.zst
+-rw-r--r-- 1 root root   11644 Там 15 21:39 beige_goby_sdma.bin.zst
+-rw-r--r-- 1 root root  106973 Там 15 21:39 beige_goby_smc.bin.zst
+-rw-r--r-- 1 root root  110592 Там 15 21:39 beige_goby_sos.bin.zst
+-rw-r--r-- 1 root root   73469 Там 15 21:39 beige_goby_ta.bin.zst
+-rw-r--r-- 1 root root  395575 Там 15 21:39 beige_goby_vcn.bin.zst
+-rw-r--r-- 1 root root    1414 Там 15 21:39 bonaire_ce.bin.zst
+-rw-r--r-- 1 root root   40633 Там 15 21:39 bonaire_k_smc.bin.zst
+-rw-r--r-- 1 root root   12256 Там 15 21:39 bonaire_mc.bin.zst
+-rw-r--r-- 1 root root    3923 Там 15 21:39 bonaire_me.bin.zst
+-rw-r--r-- 1 root root    8619 Там 15 21:39 bonaire_mec.bin.zst
+-rw-r--r-- 1 root root    3611 Там 15 21:39 bonaire_pfp.bin.zst
+-rw-r--r-- 1 root root    2412 Там 15 21:39 bonaire_rlc.bin.zst
+-rw-r--r-- 1 root root    2111 Там 15 21:39 bonaire_sdma1.bin.zst
+-rw-r--r-- 1 root root    2113 Там 15 21:39 bonaire_sdma.bin.zst
+-rw-r--r-- 1 root root   40195 Там 15 21:39 bonaire_smc.bin.zst
+-rw-r--r-- 1 root root  151591 Там 15 21:39 bonaire_uvd.bin.zst
+-rw-r--r-- 1 root root   62835 Там 15 21:39 bonaire_vce.bin.zst
+-rw-r--r-- 1 root root    2314 Там 15 21:39 carrizo_ce.bin.zst
+-rw-r--r-- 1 root root    5880 Там 15 21:39 carrizo_me.bin.zst
+lrwxrwxrwx 1 root root      19 Там 15 21:39 carrizo_mec2.bin.zst -> carrizo_mec.bin.zst
+-rw-r--r-- 1 root root   24211 Там 15 21:39 carrizo_mec.bin.zst
+-rw-r--r-- 1 root root    6916 Там 15 21:39 carrizo_pfp.bin.zst
+-rw-r--r-- 1 root root    7327 Там 15 21:39 carrizo_rlc.bin.zst
+lrwxrwxrwx 1 root root      20 Там 15 21:39 carrizo_sdma1.bin.zst -> carrizo_sdma.bin.zst
+-rw-r--r-- 1 root root    3950 Там 15 21:39 carrizo_sdma.bin.zst
+-rw-r--r-- 1 root root  158316 Там 15 21:39 carrizo_uvd.bin.zst
+-rw-r--r-- 1 root root  102522 Там 15 21:39 carrizo_vce.bin.zst
+
+############ dmesg: amdgpu / vcn / psp / smu ############
+(dmesg empty)
+
+############ bc250-smu-oc / governor ############
+--- pipx list bc250 ---
+   package bc250-smu-oc 0.1.0, installed using Python 3.14.7
+    - bc250-apply
+    - bc250-detect
+--- which ---
+(no bc250 bin on PATH)
+--- services ---
+  bc250-boot-forensics.service                          loaded active exited  BC-250 post-mortem of the previous boot
+  bc250-cpu-oc.service                                  loaded active exited  BC-250 CPU overclock (validated point, extra voltage kept enabled)
+  bc250-cpu-performance.service                         loaded active exited  Pin CPU governor to performance (BC-250 console)
+  bc250-cu-layout.service                               loaded active exited  BC-250 stable 38-CU dispatch layout
+  bc250-cu-live-manager.service                         loaded active exited  BC-250 CU saved enumeration and dispatch
+  bc250-dpwatch.service                                 loaded active running BC-250 fast DP link watcher (200 ms)
+  bc250-fan.service                                     loaded active running BC-250 blower fan curve (nct6687 pwm2 <- amdgpu edge temp)
+  bc250-gpu-fixed.service                               loaded active exited  BC-250 fixed GPU frequency and voltage
+  bc250-gpu-watchdog.service                            loaded active running BC-250 GPU thermal rollback watchdog
+  bc250-metrics.service                                 loaded active running BC-250 SMU metrics sampler (CPU/GPU power split, throttle status)
+  bc250-netconsole.service                              loaded active exited  BC-250 netconsole target (kernel log -> UDP off-box)
+  bc250-pwrwatch.service                                loaded active running BC-250 200 ms power peak sampler
+  bc250-telemetry.service                               loaded active running BC-250 lightweight telemetry logger (GPU/CPU temp, voltage, power, clocks)
+  bc250-userlog.service                                 loaded active running BC-250 userspace journal shipping to UDP 6667
+  bc250-watchdog-load.service                           loaded active exited  BC-250 load sp5100_tco (denylisted by nowatchdog; tuner needs /dev/watchdog)
+  bc250-zram.service                                    loaded active exited  BC-250 zram swap (8G, lz4) instead of zswap
+
+############ kernel source ############
+/home/OWNER/linux-cachyos-bc250
+KSRC=/home/OWNER/linux-cachyos-bc250
+--- soc15.c: Cyan Skillfish / VCN ip_blocks ---
+(no VCN refs in soc15.c)
+--- 40CU / extra core unlock mechanism (grep) ---
+(no 40CU unlock refs in kernel)
+--- SMU VcnPowerUp / Vcn messages ---
+(no VcnPowerUp in smu)
+
+############ bc250-smu-oc package internals (how unlock works) ############
+SP=/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc
+--- package tree ---
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_apply.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_limits.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/stress_helper.py
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/pyvenv.cfg
+--- grep unlock/feature in package ---
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_apply.py:98:    print(f"\nenable using: systemctl enable bc250-smu-oc")
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:38:# Detect active cores by determining if their frequency is managed by the smu
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:39:def detect_active_cores():
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:40:    cores = []
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:49:        clk = smu.q3_0x43_get_core_freq(i)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:52:            cores.append(True)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:55:            cores.append(False)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:60:    return cores
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:62:def check_throttling(threshold, cores):
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:64:        clk = smu.q3_0x43_get_core_freq(i)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:65:        if cores[i] == True and clk < threshold:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:111:    # Detect active cores for throttling detection
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:112:    cores = detect_active_cores()
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_detect.py:131:        if(check_throttling(f_test - f_throttling_threshold, cores)):
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api.py:98:            raise PermissionError("queue 0 access disabled; pass allow_queue0=True to enable")
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:23:    def request_core_pstate(self, pstate: int, core_mask: int) -> None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:24:        """Request a CPU P-state for cores specified in the mask."""
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:25:        param = ((pstate & 0xF) << 16) | (core_mask & 0xFF)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:28:    def query_core_pstate(self, core_id: int) -> int:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:29:        """Return the current core P-state (status 0xFF if core_id > 7)."""
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:33:            arg=core_id,
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:108:    def get_enabled_smu_features(self) -> int:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:109:        """Return the enabled SMU feature bitmask."""
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:112:    def set_core_enable_mask(self, mask: int) -> None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:113:        """Set the CPU core enable mask (lower 8 bits)."""
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:128:    def _pack_core_cac_weight(self, value: int) -> None:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:137:    def set_soft_min_cclk(self, core_id: int, freq_mhz: int) -> int:
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:138:        """Set soft min CCLK for a core; returns the clamped frequency in MHz."""
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:139:        param = ((core_id & 0xFF) << 20) | (freq_mhz & 0xFFFF)
+/home/OWNER/.local/share/pipx/venvs/bc250-smu-oc/lib/python3.14/site-packages/bc250_smu/api_q0.py:142:    def set_soft_max_cclk(self, core_id: int, freq_mhz: int) -> int:
+(no unlock refs)
+
+############ done ############

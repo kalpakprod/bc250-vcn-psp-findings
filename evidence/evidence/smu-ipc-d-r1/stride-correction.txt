@@ -1,0 +1,20 @@
+body_path=/home/OWNER/orca/projects/bc250/import/from-windows/Users/kukuruza/tmp_bc250/recon/robin3_psp_bodies/SMU_OFFCHIP_FW~0x8_0.58.6.0.body
+body_size=262144 body_sha256=5c805026581ace101ba43ef4d0f6b34354f4a61461a1c78d2fa6a335a53d9936
+pcode_stride_246f4=((d<<3)-d)<<2=28*d
+pcode_stride_2362c=((d<<3)-d)<<2=28*d
+table_bases=record:0xf710 slot:0xf550
+forwarding=0x5b000..0x5b7ff lower_exclusive=0x5afff
+246f4_row d=19 record=0xf924 slot=5 shift=0 slot_record=0xf6b8 target=0x0006c8f8 branch=local in_forward=False
+246f4_row d=20 record=0xf940 slot=5 shift=1 slot_record=0xf6b8 target=0x0006c8f8 branch=local in_forward=False
+246f4_row d=21 record=0xf95c slot=5 shift=2 slot_record=0xf6b8 target=0x0006c8f8 branch=local in_forward=False
+246f4_row d=22 record=0xf978 slot=6 shift=0 slot_record=0xf700 target=0x0006d0f8 branch=local in_forward=False
+246f4_row d=23 record=0xf994 slot=6 shift=1 slot_record=0xf700 target=0x0006d0f8 branch=local in_forward=False
+246f4_row d=24 record=0xf9b0 slot=6 shift=2 slot_record=0xf700 target=0x0006d0f8 branch=local in_forward=False
+2362c_target d=14 field=0xf92c target=0x0005c0fc in_forward=False
+2362c_target d=15 field=0xf948 target=0x0005c8fc in_forward=False
+2362c_target d=16 field=0xf964 target=0x0005c924 in_forward=False
+2362c_target d=17 field=0xf980 target=0x0006c0fc in_forward=False
+2362c_target d=18 field=0xf99c target=0x0006c124 in_forward=False
+q3_basis=body_offset_0x746c; inner_dump_coordinate=0x8ff200+0x736c; same_spi=0x90656c
+q3_chain=msg_0x1d@0x754c->handler_0x2e6c8->call_0x2e701->0x2e448->call_0x2e481->0x23730->call_0x23735->0x246f4
+scanner=every-byte direct-instruction candidates; scope=0x0..0x3a000; omitted=0x3a000..0x40000; indirect_edges=unresolved

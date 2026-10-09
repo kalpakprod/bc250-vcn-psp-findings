@@ -1,0 +1,202 @@
+
+/home/OWNER/orca/projects/bc250/evidence/firmware-audit/dump-2-extract/modules/0000_Bc250CoreUnlockDxe_pe32.bin:	file format coff-x86-64
+
+Disassembly of section .text:
+
+0000000000001000 <.text>:
+    1000: 41 89 d0                     	mov	r8d, edx
+    1003: 9c                           	pushfq
+    1004: 41 5a                        	pop	r10
+    1006: fa                           	cli
+    1007: 66 ba f8 0c                  	mov	dx, 0xcf8
+    100b: ed                           	in	eax, dx
+    100c: 41 89 c1                     	mov	r9d, eax
+    100f: 81 e1 fc 00 00 00            	and	ecx, 0xfc
+    1015: 8d 81 00 00 00 80            	lea	eax, [rcx - 0x80000000]
+    101b: ef                           	out	dx, eax
+    101c: 44 89 c0                     	mov	eax, r8d
+    101f: 66 ba fc 0c                  	mov	dx, 0xcfc
+    1023: ef                           	out	dx, eax
+    1024: 44 89 c8                     	mov	eax, r9d
+    1027: 66 ba f8 0c                  	mov	dx, 0xcf8
+    102b: ef                           	out	dx, eax
+    102c: 41 0f ba e2 09               	bt	r10d, 0x9
+    1031: 72 02                        	jb	0x1035 <.text+0x35>
+    1033: fa                           	cli
+    1034: c3                           	ret
+    1035: fb                           	sti
+    1036: c3                           	ret
+    1037: 41 56                        	push	r14
+    1039: 56                           	push	rsi
+    103a: 57                           	push	rdi
+    103b: 53                           	push	rbx
+    103c: 48 81 ec f8 00 00 00         	sub	rsp, 0xf8
+    1043: 44 0f 29 bc 24 e0 00 00 00   	movaps	xmmword ptr [rsp + 0xe0], xmm15
+    104c: 44 0f 29 b4 24 d0 00 00 00   	movaps	xmmword ptr [rsp + 0xd0], xmm14
+    1055: 44 0f 29 ac 24 c0 00 00 00   	movaps	xmmword ptr [rsp + 0xc0], xmm13
+    105e: 44 0f 29 a4 24 b0 00 00 00   	movaps	xmmword ptr [rsp + 0xb0], xmm12
+    1067: 44 0f 29 9c 24 a0 00 00 00   	movaps	xmmword ptr [rsp + 0xa0], xmm11
+    1070: 44 0f 29 94 24 90 00 00 00   	movaps	xmmword ptr [rsp + 0x90], xmm10
+    1079: 44 0f 29 8c 24 80 00 00 00   	movaps	xmmword ptr [rsp + 0x80], xmm9
+    1082: 44 0f 29 44 24 70            	movaps	xmmword ptr [rsp + 0x70], xmm8
+    1088: 0f 29 7c 24 60               	movaps	xmmword ptr [rsp + 0x60], xmm7
+    108d: 0f 29 74 24 50               	movaps	xmmword ptr [rsp + 0x50], xmm6
+    1092: 48 8b 42 60                  	mov	rax, qword ptr [rdx + 0x60]
+    1096: 48 89 05 6b 0f 00 00         	mov	qword ptr [rip + 0xf6b], rax # 0x2008
+    109d: 48 8b 42 58                  	mov	rax, qword ptr [rdx + 0x58]
+    10a1: 48 83 64 24 28 00            	and	qword ptr [rsp + 0x28], 0x0
+    10a7: 48 89 05 52 0f 00 00         	mov	qword ptr [rip + 0xf52], rax # 0x2000
+    10ae: 48 83 64 24 30 00            	and	qword ptr [rsp + 0x30], 0x0
+    10b4: 48 b8 a1 e5 3f 3e 36 b2 0d a9	movabs	rax, -0x56f24dc9c1c01a5f
+    10be: 48 89 44 24 40               	mov	qword ptr [rsp + 0x40], rax
+    10c3: 48 b8 43 d6 87 ec a4 eb b5 4b	movabs	rax, 0x4bb5eba4ec87d643
+    10cd: 48 89 44 24 38               	mov	qword ptr [rsp + 0x38], rax
+    10d2: bf 70 a8 15 01               	mov	edi, 0x115a870
+    10d7: e8 96 01 00 00               	call	0x1272 <.text+0x272>
+    10dc: 3c ff                        	cmp	al, -0x1
+    10de: 0f 84 2d 01 00 00            	je	0x1211 <.text+0x211>
+    10e4: 48 bb 05 00 00 00 00 00 00 80	movabs	rbx, -0x7ffffffffffffffb
+    10ee: 48 8b 05 0b 0f 00 00         	mov	rax, qword ptr [rip + 0xf0b] # 0x2000
+    10f5: 48 83 64 24 20 00            	and	qword ptr [rsp + 0x20], 0x0
+    10fb: 48 8d 0d f2 01 00 00         	lea	rcx, [rip + 0x1f2]      # 0x12f4 <.text+0x2f4>
+    1102: 31 f6                        	xor	esi, esi
+    1104: 48 8d 54 24 38               	lea	rdx, [rsp + 0x38]
+    1109: 4c 8d 4c 24 28               	lea	r9, [rsp + 0x28]
+    110e: 45 31 c0                     	xor	r8d, r8d
+    1111: ff 50 48                     	call	qword ptr [rax + 0x48]
+    1114: 48 39 d8                     	cmp	rax, rbx
+    1117: 75 6d                        	jne	0x1186 <.text+0x186>
+    1119: 48 8b 05 e8 0e 00 00         	mov	rax, qword ptr [rip + 0xee8] # 0x2008
+    1120: 48 8b 54 24 28               	mov	rdx, qword ptr [rsp + 0x28]
+    1125: 6a 04                        	push	0x4
+    1127: 59                           	pop	rcx
+    1128: 48 8d 74 24 30               	lea	rsi, [rsp + 0x30]
+    112d: 49 89 f0                     	mov	r8, rsi
+    1130: ff 50 40                     	call	qword ptr [rax + 0x40]
+    1133: 48 8b 36                     	mov	rsi, qword ptr [rsi]
+    1136: 48 85 c0                     	test	rax, rax
+    1139: 78 4b                        	js	0x1186 <.text+0x186>
+    113b: 48 8b 05 be 0e 00 00         	mov	rax, qword ptr [rip + 0xebe] # 0x2000
+    1142: 48 89 74 24 20               	mov	qword ptr [rsp + 0x20], rsi
+    1147: 48 8d 0d a6 01 00 00         	lea	rcx, [rip + 0x1a6]      # 0x12f4 <.text+0x2f4>
+    114e: 48 8d 54 24 38               	lea	rdx, [rsp + 0x38]
+    1153: 4c 8d 4c 24 28               	lea	r9, [rsp + 0x28]
+    1158: 45 31 c0                     	xor	r8d, r8d
+    115b: ff 50 48                     	call	qword ptr [rax + 0x48]
+    115e: 48 8b 74 24 30               	mov	rsi, qword ptr [rsp + 0x30]
+    1163: 48 85 c0                     	test	rax, rax
+    1166: 78 1e                        	js	0x1186 <.text+0x186>
+    1168: 81 be c4 01 00 00 c0 57 01 00	cmp	dword ptr [rsi + 0x1c4], 0x157c0
+    1172: 75 12                        	jne	0x1186 <.text+0x186>
+    1174: 48 8b 05 8d 0e 00 00         	mov	rax, qword ptr [rip + 0xe8d] # 0x2008
+    117b: 48 89 f1                     	mov	rcx, rsi
+    117e: ff 50 48                     	call	qword ptr [rax + 0x48]
+    1181: e9 8b 00 00 00               	jmp	0x1211 <.text+0x211>
+    1186: 48 8b 05 7b 0e 00 00         	mov	rax, qword ptr [rip + 0xe7b] # 0x2008
+    118d: 48 89 f1                     	mov	rcx, rsi
+    1190: ff 50 48                     	call	qword ptr [rax + 0x48]
+    1193: 4c 8d 74 24 4c               	lea	r14, [rsp + 0x4c]
+    1198: 41 83 26 00                  	and	dword ptr [r14], 0x0
+    119c: 4c 89 f7                     	mov	rdi, r14
+    119f: e8 0d 01 00 00               	call	0x12b1 <.text+0x2b1>
+    11a4: bf 80 0a b1 03               	mov	edi, 0x3b10a80
+    11a9: 31 f6                        	xor	esi, esi
+    11ab: e8 23 01 00 00               	call	0x12d3 <.text+0x2d3>
+    11b0: bf 88 0a b1 03               	mov	edi, 0x3b10a88
+    11b5: be 70 a8 15 01               	mov	esi, 0x115a870
+    11ba: e8 14 01 00 00               	call	0x12d3 <.text+0x2d3>
+    11bf: bf 8c 0a b1 03               	mov	edi, 0x3b10a8c
+    11c4: 31 f6                        	xor	esi, esi
+    11c6: e8 08 01 00 00               	call	0x12d3 <.text+0x2d3>
+    11cb: bf 20 0a b1 03               	mov	edi, 0x3b10a20
+    11d0: be 98 00 00 00               	mov	esi, 0x98
+    11d5: e8 f9 00 00 00               	call	0x12d3 <.text+0x2d3>
+    11da: 4c 89 f7                     	mov	rdi, r14
+    11dd: e8 cf 00 00 00               	call	0x12b1 <.text+0x2b1>
+    11e2: 41 83 3e 01                  	cmp	dword ptr [r14], 0x1
+    11e6: 75 29                        	jne	0x1211 <.text+0x211>
+    11e8: bf 70 a8 15 01               	mov	edi, 0x115a870
+    11ed: e8 80 00 00 00               	call	0x1272 <.text+0x272>
+    11f2: 3c ff                        	cmp	al, -0x1
+    11f4: 75 1b                        	jne	0x1211 <.text+0x211>
+    11f6: 48 8b 05 03 0e 00 00         	mov	rax, qword ptr [rip + 0xe03] # 0x2000
+    11fd: 6a 01                        	push	0x1
+    11ff: 59                           	pop	rcx
+    1200: 31 d2                        	xor	edx, edx
+    1202: 45 31 c0                     	xor	r8d, r8d
+    1205: 45 31 c9                     	xor	r9d, r9d
+    1208: ff 50 68                     	call	qword ptr [rax + 0x68]
+    120b: 48 83 c3 02                  	add	rbx, 0x2
+    120f: eb 02                        	jmp	0x1213 <.text+0x213>
+    1211: 31 db                        	xor	ebx, ebx
+    1213: 48 89 d8                     	mov	rax, rbx
+    1216: 0f 28 74 24 50               	movaps	xmm6, xmmword ptr [rsp + 0x50]
+    121b: 0f 28 7c 24 60               	movaps	xmm7, xmmword ptr [rsp + 0x60]
+    1220: 44 0f 28 44 24 70            	movaps	xmm8, xmmword ptr [rsp + 0x70]
+    1226: 44 0f 28 8c 24 80 00 00 00   	movaps	xmm9, xmmword ptr [rsp + 0x80]
+    122f: 44 0f 28 94 24 90 00 00 00   	movaps	xmm10, xmmword ptr [rsp + 0x90]
+    1238: 44 0f 28 9c 24 a0 00 00 00   	movaps	xmm11, xmmword ptr [rsp + 0xa0]
+    1241: 44 0f 28 a4 24 b0 00 00 00   	movaps	xmm12, xmmword ptr [rsp + 0xb0]
+    124a: 44 0f 28 ac 24 c0 00 00 00   	movaps	xmm13, xmmword ptr [rsp + 0xc0]
+    1253: 44 0f 28 b4 24 d0 00 00 00   	movaps	xmm14, xmmword ptr [rsp + 0xd0]
+    125c: 44 0f 28 bc 24 e0 00 00 00   	movaps	xmm15, xmmword ptr [rsp + 0xe0]
+    1265: 48 81 c4 f8 00 00 00         	add	rsp, 0xf8
+    126c: 5b                           	pop	rbx
+    126d: 5f                           	pop	rdi
+    126e: 5e                           	pop	rsi
+    126f: 41 5e                        	pop	r14
+    1271: c3                           	ret
+    1272: 48 83 ec 28                  	sub	rsp, 0x28
+    1276: b9 b8 00 00 00               	mov	ecx, 0xb8
+    127b: 89 fa                        	mov	edx, edi
+    127d: e8 7e fd ff ff               	call	0x1000 <.text>
+    1282: 9c                           	pushfq
+    1283: 5f                           	pop	rdi
+    1284: fa                           	cli
+    1285: 66 ba f8 0c                  	mov	dx, 0xcf8
+    1289: ed                           	in	eax, dx
+    128a: 89 c6                        	mov	esi, eax
+    128c: b8 bc 00 00 80               	mov	eax, 0x800000bc
+    1291: ef                           	out	dx, eax
+    1292: 66 ba fc 0c                  	mov	dx, 0xcfc
+    1296: ed                           	in	eax, dx
+    1297: 89 c1                        	mov	ecx, eax
+    1299: 89 f0                        	mov	eax, esi
+    129b: 66 ba f8 0c                  	mov	dx, 0xcf8
+    129f: ef                           	out	dx, eax
+    12a0: 0f ba e7 09                  	bt	edi, 0x9
+    12a4: 72 03                        	jb	0x12a9 <.text+0x2a9>
+    12a6: fa                           	cli
+    12a7: eb 01                        	jmp	0x12aa <.text+0x2aa>
+    12a9: fb                           	sti
+    12aa: 89 c8                        	mov	eax, ecx
+    12ac: 48 83 c4 28                  	add	rsp, 0x28
+    12b0: c3                           	ret
+    12b1: 53                           	push	rbx
+    12b2: 48 89 fb                     	mov	rbx, rdi
+    12b5: bf 80 0a b1 03               	mov	edi, 0x3b10a80
+    12ba: e8 b3 ff ff ff               	call	0x1272 <.text+0x272>
+    12bf: 8d 88 04 ff ff ff            	lea	ecx, [rax - 0xfc]
+    12c5: 83 f9 04                     	cmp	ecx, 0x4
+    12c8: 72 05                        	jb	0x12cf <.text+0x2cf>
+    12ca: 83 f8 01                     	cmp	eax, 0x1
+    12cd: 75 e6                        	jne	0x12b5 <.text+0x2b5>
+    12cf: 89 03                        	mov	dword ptr [rbx], eax
+    12d1: 5b                           	pop	rbx
+    12d2: c3                           	ret
+    12d3: 48 83 ec 28                  	sub	rsp, 0x28
+    12d7: b9 b8 00 00 00               	mov	ecx, 0xb8
+    12dc: 89 fa                        	mov	edx, edi
+    12de: e8 1d fd ff ff               	call	0x1000 <.text>
+    12e3: b9 bc 00 00 00               	mov	ecx, 0xbc
+    12e8: 89 f2                        	mov	edx, esi
+    12ea: e8 11 fd ff ff               	call	0x1000 <.text>
+    12ef: 48 83 c4 28                  	add	rsp, 0x28
+    12f3: c3                           	ret
+    12f4: 53                           	push	rbx
+    12f5: 00 65 00                     	add	byte ptr [rbp], ah
+    12f8: 74 00                        	je	0x12fa <.text+0x2fa>
+    12fa: 75 00                        	jne	0x12fc <.text+0x2fc>
+    12fc: 70 00                        	jo	0x12fe <.text+0x2fe>
+		...
+    1ffe: 00 00                        	add	byte ptr [rax], al

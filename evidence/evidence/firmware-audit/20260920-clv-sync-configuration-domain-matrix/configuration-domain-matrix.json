@@ -1,0 +1,1592 @@
+{
+  "all_fields_lifetime": {
+    "checks": 29,
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-record-lifetime-all-fields/all-fields-result.json",
+    "sha256": "7f865e2a018c9be7f665e01286473593582967808963d8bb29c112514840fbbf",
+    "status": "PASS"
+  },
+  "checks": {
+    "failed": 0,
+    "passed": 44,
+    "total": 44
+  },
+  "checks_detail": [
+    {
+      "details": {
+        "expected": "237546fe5cc4edf44659dab93ce2ccd13ecbd817a6808ef18fa599b1da0b87c7",
+        "observed": "237546fe5cc4edf44659dab93ce2ccd13ecbd817a6808ef18fa599b1da0b87c7"
+      },
+      "label": "memory-pstate-result-sha256",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "checks": {
+          "failed": 0,
+          "passed": 9864,
+          "total": 9864
+        },
+        "status": "PASS"
+      },
+      "label": "memory-pstate-result-pass",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "5f19242d614102ff92391753a3459ff7a57357adbc95c19cec8b05e7057f4eb9",
+        "observed": "5f19242d614102ff92391753a3459ff7a57357adbc95c19cec8b05e7057f4eb9"
+      },
+      "label": "discrimination-result-sha256",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "checks": {
+          "failed": 0,
+          "passed": 19,
+          "total": 19
+        },
+        "status": "PASS"
+      },
+      "label": "discrimination-result-pass",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "cab9dd7e18defabe1459537fe870a520c24602f1641bd44af5e78ad3e2b2aaf3",
+        "observed": "cab9dd7e18defabe1459537fe870a520c24602f1641bd44af5e78ad3e2b2aaf3"
+      },
+      "label": "ownership-result-sha256",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "checks": {
+          "failed": 0,
+          "passed": 12,
+          "total": 12
+        },
+        "status": "PASS"
+      },
+      "label": "ownership-result-pass",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "7f865e2a018c9be7f665e01286473593582967808963d8bb29c112514840fbbf",
+        "observed": "7f865e2a018c9be7f665e01286473593582967808963d8bb29c112514840fbbf"
+      },
+      "label": "all-fields-result-sha256",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "checks": 29,
+        "status": "PASS"
+      },
+      "label": "all-fields-result-pass",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "17cba83251f50a108341aa40bbe0d48aa758ff008000436570975428bbdb5059",
+        "observed": "17cba83251f50a108341aa40bbe0d48aa758ff008000436570975428bbdb5059"
+      },
+      "label": "uclk-result-sha256",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "checks": {
+          "failed": 0,
+          "passed": 31,
+          "total": 31
+        },
+        "status": "PASS"
+      },
+      "label": "uclk-result-pass",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": 16777216,
+        "observed": 16777216
+      },
+      "label": "rom-size",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+      },
+      "label": "rom-sha256",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+        "observed": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8"
+      },
+      "label": "menu-rom-pinning",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": 36,
+        "observed": 36,
+        "raw": "24"
+      },
+      "label": "persisted-byte:0x316",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "Memory Clock Speed",
+        "observed": "Memory Clock Speed",
+        "source": "exact-menu-result"
+      },
+      "label": "ifr-question:0x316",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": [
+          [
+            "Auto",
+            255,
+            true
+          ],
+          [
+            "125MHz",
+            2,
+            false
+          ],
+          [
+            "225MHz",
+            4,
+            false
+          ],
+          [
+            "250MHz",
+            5,
+            false
+          ],
+          [
+            "400MHz",
+            8,
+            false
+          ],
+          [
+            "450MHz",
+            9,
+            false
+          ],
+          [
+            "500MHz",
+            10,
+            false
+          ],
+          [
+            "750MHz",
+            15,
+            false
+          ],
+          [
+            "850MHz",
+            17,
+            false
+          ],
+          [
+            "1000MHz",
+            20,
+            false
+          ],
+          [
+            "1250MHz",
+            25,
+            false
+          ],
+          [
+            "1330MHz",
+            26,
+            false
+          ],
+          [
+            "1375MHz",
+            27,
+            false
+          ],
+          [
+            "1500MHz",
+            30,
+            false
+          ],
+          [
+            "1600MHz",
+            32,
+            false
+          ],
+          [
+            "1650MHz",
+            33,
+            false
+          ],
+          [
+            "1700MHz",
+            34,
+            false
+          ],
+          [
+            "1750MHz",
+            35,
+            false
+          ],
+          [
+            "1800MHz",
+            36,
+            false
+          ],
+          [
+            "1850MHz",
+            37,
+            false
+          ],
+          [
+            "1900MHz",
+            38,
+            false
+          ],
+          [
+            "1950MHz",
+            39,
+            false
+          ],
+          [
+            "2000MHz",
+            40,
+            false
+          ]
+        ],
+        "observed": [
+          [
+            "Auto",
+            255,
+            true
+          ],
+          [
+            "125MHz",
+            2,
+            false
+          ],
+          [
+            "225MHz",
+            4,
+            false
+          ],
+          [
+            "250MHz",
+            5,
+            false
+          ],
+          [
+            "400MHz",
+            8,
+            false
+          ],
+          [
+            "450MHz",
+            9,
+            false
+          ],
+          [
+            "500MHz",
+            10,
+            false
+          ],
+          [
+            "750MHz",
+            15,
+            false
+          ],
+          [
+            "850MHz",
+            17,
+            false
+          ],
+          [
+            "1000MHz",
+            20,
+            false
+          ],
+          [
+            "1250MHz",
+            25,
+            false
+          ],
+          [
+            "1330MHz",
+            26,
+            false
+          ],
+          [
+            "1375MHz",
+            27,
+            false
+          ],
+          [
+            "1500MHz",
+            30,
+            false
+          ],
+          [
+            "1600MHz",
+            32,
+            false
+          ],
+          [
+            "1650MHz",
+            33,
+            false
+          ],
+          [
+            "1700MHz",
+            34,
+            false
+          ],
+          [
+            "1750MHz",
+            35,
+            false
+          ],
+          [
+            "1800MHz",
+            36,
+            false
+          ],
+          [
+            "1850MHz",
+            37,
+            false
+          ],
+          [
+            "1900MHz",
+            38,
+            false
+          ],
+          [
+            "1950MHz",
+            39,
+            false
+          ],
+          [
+            "2000MHz",
+            40,
+            false
+          ]
+        ]
+      },
+      "label": "ifr-options:0x316",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": 255,
+        "observed": 255,
+        "raw": "ff"
+      },
+      "label": "persisted-byte:0x368",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "Phy Power Saving",
+        "observed": "Phy Power Saving",
+        "source": "supplemental-discrimination-result"
+      },
+      "label": "ifr-question:0x368",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": [
+          [
+            "Auto",
+            255,
+            true
+          ],
+          [
+            "Enabled",
+            1,
+            false
+          ],
+          [
+            "Disabled",
+            0,
+            false
+          ]
+        ],
+        "observed": [
+          [
+            "Auto",
+            255,
+            true
+          ],
+          [
+            "Enabled",
+            1,
+            false
+          ],
+          [
+            "Disabled",
+            0,
+            false
+          ]
+        ]
+      },
+      "label": "ifr-options:0x368",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected_record": "0x1237",
+        "matches": [
+          {
+            "chronology": [
+              "0A6CC 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "0A6CF 668910 mov WORD PTR [eax],dx",
+              "0A6D2 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "0A6E7 8a8268030000 mov al,BYTE PTR [edx+0x368]",
+              "0A6ED 884103 mov BYTE PTR [ecx+0x3],al",
+              "0A6F3 83c104 add ecx,0x4",
+              "0A6F6 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ],
+            "cursor_add": "0A6F3 83c104 add ecx,0x4",
+            "cursor_ptr": "0A6D2 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "cursor_store": "0A6F6 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "field": "0x368",
+            "source": "0A6E7 8a8268030000 mov al,BYTE PTR [edx+0x368]",
+            "source_before_value": true,
+            "source_rva": "0xa6e7",
+            "token": "0x1237",
+            "token_ptr": "0A6CC 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_rva": "0xa6c7",
+            "token_store": "0A6CF 668910 mov WORD PTR [eax],dx",
+            "value_before_advance": true,
+            "value_store": "0A6ED 884103 mov BYTE PTR [ecx+0x3],al",
+            "value_store_rva": "0xa6ed",
+            "value_width": "u8"
+          },
+          {
+            "chronology": [
+              "0C74C 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "0C74F 668910 mov WORD PTR [eax],dx",
+              "0C752 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "0C767 8a8268030000 mov al,BYTE PTR [edx+0x368]",
+              "0C76D 884103 mov BYTE PTR [ecx+0x3],al",
+              "0C773 83c104 add ecx,0x4",
+              "0C776 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ],
+            "cursor_add": "0C773 83c104 add ecx,0x4",
+            "cursor_ptr": "0C752 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "cursor_store": "0C776 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "field": "0x368",
+            "source": "0C767 8a8268030000 mov al,BYTE PTR [edx+0x368]",
+            "source_before_value": true,
+            "source_rva": "0xc767",
+            "token": "0x1237",
+            "token_ptr": "0C74C 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_rva": "0xc747",
+            "token_store": "0C74F 668910 mov WORD PTR [eax],dx",
+            "value_before_advance": true,
+            "value_store": "0C76D 884103 mov BYTE PTR [ecx+0x3],al",
+            "value_store_rva": "0xc76d",
+            "value_width": "u8"
+          }
+        ]
+      },
+      "label": "serializer-record:0x368-lifetime",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": 1,
+        "observed": 1,
+        "raw": "01"
+      },
+      "label": "persisted-byte:0x330",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "UclkDiv1M0",
+        "observed": "UclkDiv1M0",
+        "source": "exact-menu-result"
+      },
+      "label": "ifr-question:0x330",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": [
+          [
+            "Auto",
+            255,
+            true
+          ],
+          [
+            "Enabled",
+            1,
+            false
+          ]
+        ],
+        "observed": [
+          [
+            "Auto",
+            255,
+            true
+          ],
+          [
+            "Enabled",
+            1,
+            false
+          ]
+        ]
+      },
+      "label": "ifr-options:0x330",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": 15,
+        "observed": 15,
+        "raw": "0f"
+      },
+      "label": "persisted-byte:0x6a3",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "FCLK_DPM",
+        "observed": "FCLK_DPM",
+        "source": "exact-menu-result"
+      },
+      "label": "ifr-question:0x6a3",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": [
+          [
+            "Disabled",
+            0,
+            false
+          ],
+          [
+            "Enabled",
+            1,
+            false
+          ],
+          [
+            "Auto",
+            15,
+            true
+          ]
+        ],
+        "observed": [
+          [
+            "Disabled",
+            0,
+            false
+          ],
+          [
+            "Enabled",
+            1,
+            false
+          ],
+          [
+            "Auto",
+            15,
+            true
+          ]
+        ]
+      },
+      "label": "ifr-options:0x6a3",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected_record": "0x1331",
+        "matches": [
+          {
+            "header_rva": "0xfa60",
+            "increment_rva": "0xfa8c",
+            "ownership_basis": "same destination pointer [ebp-0x8] is used for header, flags, source+3 store; +4 increment follows store",
+            "source_rva": "0xfa80",
+            "source_setup_offset": "0x6a3",
+            "store_rva": "0xfa86",
+            "token": "0x1331"
+          },
+          {
+            "header_rva": "0xd9e0",
+            "increment_rva": "0xda0c",
+            "ownership_basis": "same destination pointer [ebp-0x8] is used for header, flags, source+3 store; +4 increment follows store",
+            "source_rva": "0xda00",
+            "source_setup_offset": "0x6a3",
+            "store_rva": "0xda06",
+            "token": "0x1331"
+          }
+        ]
+      },
+      "label": "serializer-record:0x6a3-destination-trace",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": 1,
+        "observed": 1,
+        "raw": "01"
+      },
+      "label": "persisted-byte:0x703",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "DF Clock Override Control",
+        "observed": "DF Clock Override Control",
+        "source": "exact-menu-result"
+      },
+      "label": "ifr-question:0x703",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": [
+          [
+            "Auto",
+            255,
+            true
+          ],
+          [
+            "Manual",
+            1,
+            false
+          ]
+        ],
+        "observed": [
+          [
+            "Auto",
+            255,
+            true
+          ],
+          [
+            "Manual",
+            1,
+            false
+          ]
+        ]
+      },
+      "label": "ifr-options:0x703",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": 1420,
+        "observed": 1420,
+        "raw": "8c05"
+      },
+      "label": "persisted-byte:0x704",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "DF Clock Override",
+        "observed": "DF Clock Override",
+        "source": "exact-menu-result"
+      },
+      "label": "ifr-question:0x704",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": [],
+        "observed": []
+      },
+      "label": "ifr-options:0x704",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": [
+          0,
+          2000,
+          0
+        ],
+        "observed": [
+          0,
+          2000,
+          0
+        ]
+      },
+      "label": "ifr-bounds:0x704",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": 255,
+        "observed": 255,
+        "raw": "ff"
+      },
+      "label": "persisted-byte:0x36d",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": "Memory P-state",
+        "observed": "Memory P-state",
+        "source": "supplemental-exact-clv-memory-pstate-result"
+      },
+      "label": "ifr-question:0x36d",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected": [
+          [
+            "Auto",
+            255,
+            true
+          ],
+          [
+            "Enabled",
+            1,
+            false
+          ],
+          [
+            "Disabled",
+            0,
+            false
+          ]
+        ],
+        "observed": [
+          [
+            "Auto",
+            255,
+            true
+          ],
+          [
+            "Enabled",
+            1,
+            false
+          ],
+          [
+            "Disabled",
+            0,
+            false
+          ]
+        ]
+      },
+      "label": "ifr-options:0x36d",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        "0x7000",
+        "0x7008",
+        "0x702e",
+        "0x7030",
+        "0x7032"
+      ],
+      "label": "memory-pstate-path",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "bytes_checked": {
+          "0xa7c1": "ba3c120000",
+          "0xa7e1": "8a826d030000",
+          "0xa7e7": "884103",
+          "0xa7f3": "ba3d120000",
+          "0xa7fb": "668910"
+        },
+        "module": "CbsBasePei",
+        "record_id": "0x123d",
+        "source": "AmdSetup+0x36d"
+      },
+      "label": "memory-pstate-serializer-token",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "expected_record": "0x123c",
+        "matches": [
+          {
+            "chronology": [
+              "0A7C6 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "0A7C9 668910 mov WORD PTR [eax],dx",
+              "0A7CC 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "0A7E1 8a826d030000 mov al,BYTE PTR [edx+0x36d]",
+              "0A7E7 884103 mov BYTE PTR [ecx+0x3],al",
+              "0A7ED 83c104 add ecx,0x4",
+              "0A7F0 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ],
+            "cursor_add": "0A7ED 83c104 add ecx,0x4",
+            "cursor_ptr": "0A7CC 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "cursor_store": "0A7F0 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "field": "0x36d",
+            "source": "0A7E1 8a826d030000 mov al,BYTE PTR [edx+0x36d]",
+            "source_before_value": true,
+            "source_rva": "0xa7e1",
+            "token": "0x123c",
+            "token_ptr": "0A7C6 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_rva": "0xa7c1",
+            "token_store": "0A7C9 668910 mov WORD PTR [eax],dx",
+            "value_before_advance": true,
+            "value_store": "0A7E7 884103 mov BYTE PTR [ecx+0x3],al",
+            "value_store_rva": "0xa7e7",
+            "value_width": "u8"
+          },
+          {
+            "chronology": [
+              "0C846 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+              "0C849 668910 mov WORD PTR [eax],dx",
+              "0C84C 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+              "0C861 8a826d030000 mov al,BYTE PTR [edx+0x36d]",
+              "0C867 884103 mov BYTE PTR [ecx+0x3],al",
+              "0C86D 83c104 add ecx,0x4",
+              "0C870 894df8 mov DWORD PTR [ebp-0x8],ecx"
+            ],
+            "cursor_add": "0C86D 83c104 add ecx,0x4",
+            "cursor_ptr": "0C84C 8b4df8 mov ecx,DWORD PTR [ebp-0x8]",
+            "cursor_store": "0C870 894df8 mov DWORD PTR [ebp-0x8],ecx",
+            "field": "0x36d",
+            "source": "0C861 8a826d030000 mov al,BYTE PTR [edx+0x36d]",
+            "source_before_value": true,
+            "source_rva": "0xc861",
+            "token": "0x123c",
+            "token_ptr": "0C846 8b45f8 mov eax,DWORD PTR [ebp-0x8]",
+            "token_rva": "0xc841",
+            "token_store": "0C849 668910 mov WORD PTR [eax],dx",
+            "value_before_advance": true,
+            "value_store": "0C867 884103 mov BYTE PTR [ecx+0x3],al",
+            "value_store_rva": "0xc867",
+            "value_width": "u8"
+          }
+        ]
+      },
+      "label": "serializer-record:0x36d-lifetime",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "df_bounds": [
+          0,
+          2000,
+          0
+        ],
+        "memory_enum_codes": [
+          2,
+          4,
+          5,
+          8,
+          9,
+          10,
+          15,
+          17,
+          20,
+          25,
+          26,
+          27,
+          30,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "memory_labels_mhz": [
+          125,
+          225,
+          250,
+          400,
+          450,
+          500,
+          750,
+          850,
+          1000,
+          1250,
+          1330,
+          1375,
+          1500,
+          1600,
+          1650,
+          1700,
+          1750,
+          1800,
+          1850,
+          1900,
+          1950,
+          2000
+        ]
+      },
+      "label": "ui-memory-df-numeric-overlap-only",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "uclk_non_auto_values": [
+          1
+        ]
+      },
+      "label": "uclk-has-no-numeric-ratio-option",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "options": []
+      },
+      "label": "numeric-df-has-no-enumerated-options",
+      "status": "PASS"
+    },
+    {
+      "details": "This verifier makes no training/frequency/domain claim.",
+      "label": "no-training-claim",
+      "status": "PASS"
+    }
+  ],
+  "cross_field_summary": {
+    "advertised_numeric_overlap": true,
+    "advertised_overlap_interpretation": "The labels/range overlap numerically only. No shared unit, clock-domain identity, rate conversion, training range, or synchronous-crossing selection is proven.",
+    "df_override_bounds": [
+      0,
+      2000,
+      0
+    ],
+    "fclk_dpm_serializer_record": "0x1331",
+    "memory_clock_speed_enum_codes": [
+      2,
+      4,
+      5,
+      8,
+      9,
+      10,
+      15,
+      17,
+      20,
+      25,
+      26,
+      27,
+      30,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "memory_clock_speed_labels_mhz": [
+      125,
+      225,
+      250,
+      400,
+      450,
+      500,
+      750,
+      850,
+      1000,
+      1250,
+      1330,
+      1375,
+      1500,
+      1600,
+      1650,
+      1700,
+      1750,
+      1800,
+      1850,
+      1900,
+      1950,
+      2000
+    ],
+    "memory_pstate_gate": {
+      "absolute_rom_offset": "0x83C",
+      "baseline": 255,
+      "body_offset": "0x36D",
+      "downstream_training_semantics": "UNKNOWN/UNRUN",
+      "options": {
+        "Auto": 255,
+        "Disabled": 0,
+        "Enabled": 1
+      },
+      "package_path": [
+        "0x7000",
+        "0x7008",
+        "0x702E",
+        "0x7030",
+        "0x7032"
+      ],
+      "qid": "0x25E",
+      "reason": "Native control and serializer edge are mapped; DF override consumer and training effect are not.",
+      "serializer_record": "0x123C"
+    },
+    "phy_power_saving_context": {
+      "baseline": 255,
+      "body_offset": "0x368",
+      "serializer_record": "0x1237",
+      "training_semantics": "UNKNOWN/UNRUN"
+    },
+    "uclk_divider_enum": {
+      "interpretation": "Enabled is an enum value; no divider ratio or MCLK/UCLK relation is proven.",
+      "non_auto_values": [
+        1
+      ]
+    }
+  },
+  "evidence_class": [
+    "observed-bytes",
+    "static-analysis"
+  ],
+  "limits": [
+    "No firmware execution, training, hardware clock observation, voltage measurement, live NVRAM action, or telemetry was run.",
+    "IFR MHz labels and numeric bounds are advertised UI encodings; they do not establish physical units, domains, or safe frequencies.",
+    "No frequency, voltage, or 1:1 implication is inferred from numerical overlap."
+  ],
+  "matrix": [
+    {
+      "absolute_rom_offset": "0x7e5",
+      "actual_supported_mapping": {
+        "evidence_boundary": "Exact-clv IFR/menu bytes and persisted request only; no consumer/actuator proof in this matrix.",
+        "frequency_units_conversion": "UNKNOWN/UNRUN",
+        "physical_domain": "UNKNOWN/UNRUN",
+        "synchronous_crossing": "UNKNOWN/UNRUN",
+        "training_support": "UNKNOWN/UNRUN"
+      },
+      "advertised_ui_intersection": {
+        "all_memory_labels_within_df_bounds": true,
+        "df_override_numeric_bounds": [
+          0,
+          2000,
+          0
+        ],
+        "meaning": "UI numeric overlap only; common units/domain, training support, and synchronous crossing are not established.",
+        "memory_clock_enum_codes": [
+          2,
+          4,
+          5,
+          8,
+          9,
+          10,
+          15,
+          17,
+          20,
+          25,
+          26,
+          27,
+          30,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "memory_clock_labels_mhz": [
+          125,
+          225,
+          250,
+          400,
+          450,
+          500,
+          750,
+          850,
+          1000,
+          1250,
+          1330,
+          1375,
+          1500,
+          1600,
+          1650,
+          1700,
+          1750,
+          1800,
+          1850,
+          1900,
+          1950,
+          2000
+        ]
+      },
+      "body_offset": "0x316",
+      "evidence_source": "exact-menu-result",
+      "exact_clv_ifr": {
+        "bounds": null,
+        "callback": false,
+        "flags": "0x10",
+        "help": "Set the memory clock frequency.",
+        "label": "Memory Clock Speed",
+        "options": [
+          {
+            "default": true,
+            "label": "Auto",
+            "value": 255
+          },
+          {
+            "default": false,
+            "label": "125MHz",
+            "value": 2
+          },
+          {
+            "default": false,
+            "label": "225MHz",
+            "value": 4
+          },
+          {
+            "default": false,
+            "label": "250MHz",
+            "value": 5
+          },
+          {
+            "default": false,
+            "label": "400MHz",
+            "value": 8
+          },
+          {
+            "default": false,
+            "label": "450MHz",
+            "value": 9
+          },
+          {
+            "default": false,
+            "label": "500MHz",
+            "value": 10
+          },
+          {
+            "default": false,
+            "label": "750MHz",
+            "value": 15
+          },
+          {
+            "default": false,
+            "label": "850MHz",
+            "value": 17
+          },
+          {
+            "default": false,
+            "label": "1000MHz",
+            "value": 20
+          },
+          {
+            "default": false,
+            "label": "1250MHz",
+            "value": 25
+          },
+          {
+            "default": false,
+            "label": "1330MHz",
+            "value": 26
+          },
+          {
+            "default": false,
+            "label": "1375MHz",
+            "value": 27
+          },
+          {
+            "default": false,
+            "label": "1500MHz",
+            "value": 30
+          },
+          {
+            "default": false,
+            "label": "1600MHz",
+            "value": 32
+          },
+          {
+            "default": false,
+            "label": "1650MHz",
+            "value": 33
+          },
+          {
+            "default": false,
+            "label": "1700MHz",
+            "value": 34
+          },
+          {
+            "default": false,
+            "label": "1750MHz",
+            "value": 35
+          },
+          {
+            "default": false,
+            "label": "1800MHz",
+            "value": 36
+          },
+          {
+            "default": false,
+            "label": "1850MHz",
+            "value": 37
+          },
+          {
+            "default": false,
+            "label": "1900MHz",
+            "value": 38
+          },
+          {
+            "default": false,
+            "label": "1950MHz",
+            "value": 39
+          },
+          {
+            "default": false,
+            "label": "2000MHz",
+            "value": 40
+          }
+        ],
+        "question_id": "0x20f",
+        "read_only": false,
+        "reset_required": true
+      },
+      "field": "MemoryClockSpeed",
+      "persisted": {
+        "ifr_label_for_value": "1800MHz",
+        "interpretation": "ROM-stored AmdSetup request, not applied hardware state",
+        "raw_little_endian": "24",
+        "value": 36
+      }
+    },
+    {
+      "absolute_rom_offset": "0x837",
+      "actual_supported_mapping": {
+        "evidence_boundary": "Exact-clv IFR/menu bytes and persisted request only; no consumer/actuator proof in this matrix.",
+        "frequency_units_conversion": "UNKNOWN/UNRUN",
+        "physical_domain": "UNKNOWN/UNRUN",
+        "synchronous_crossing": "UNKNOWN/UNRUN",
+        "training_support": "UNKNOWN/UNRUN"
+      },
+      "advertised_ui_intersection": null,
+      "body_offset": "0x368",
+      "evidence_source": "supplemental-discrimination-result",
+      "exact_clv_ifr": {
+        "bounds": null,
+        "callback": false,
+        "flags": "0x10",
+        "help": "",
+        "label": "Phy Power Saving",
+        "options": [
+          {
+            "default": true,
+            "label": "Auto",
+            "value": 255
+          },
+          {
+            "default": false,
+            "label": "Enabled",
+            "value": 1
+          },
+          {
+            "default": false,
+            "label": "Disabled",
+            "value": 0
+          }
+        ],
+        "question_id": "0x259",
+        "read_only": false,
+        "reset_required": true
+      },
+      "field": "PhyPowerSaving",
+      "persisted": {
+        "ifr_label_for_value": "Auto",
+        "interpretation": "ROM-stored AmdSetup request, not applied hardware state",
+        "raw_little_endian": "ff",
+        "value": 255
+      }
+    },
+    {
+      "absolute_rom_offset": "0x7ff",
+      "actual_supported_mapping": {
+        "evidence_boundary": "Exact-clv IFR/menu bytes and persisted request only; no consumer/actuator proof in this matrix.",
+        "frequency_units_conversion": "UNKNOWN/UNRUN",
+        "physical_domain": "UNKNOWN/UNRUN",
+        "synchronous_crossing": "UNKNOWN/UNRUN",
+        "training_support": "UNKNOWN/UNRUN"
+      },
+      "advertised_ui_intersection": null,
+      "body_offset": "0x330",
+      "evidence_source": "exact-menu-result",
+      "exact_clv_ifr": {
+        "bounds": null,
+        "callback": false,
+        "flags": "0x10",
+        "help": "UclkDiv1 option, relative to FCLK.",
+        "label": "UclkDiv1M0",
+        "options": [
+          {
+            "default": true,
+            "label": "Auto",
+            "value": 255
+          },
+          {
+            "default": false,
+            "label": "Enabled",
+            "value": 1
+          }
+        ],
+        "question_id": "0x229",
+        "read_only": false,
+        "reset_required": true
+      },
+      "field": "UclkDiv1M0",
+      "persisted": {
+        "ifr_label_for_value": "Enabled",
+        "interpretation": "ROM-stored AmdSetup request, not applied hardware state",
+        "raw_little_endian": "01",
+        "value": 1
+      }
+    },
+    {
+      "absolute_rom_offset": "0xb72",
+      "actual_supported_mapping": {
+        "evidence_boundary": "Exact-clv IFR/menu bytes and persisted request only; no consumer/actuator proof in this matrix.",
+        "frequency_units_conversion": "UNKNOWN/UNRUN",
+        "physical_domain": "UNKNOWN/UNRUN",
+        "synchronous_crossing": "UNKNOWN/UNRUN",
+        "training_support": "UNKNOWN/UNRUN"
+      },
+      "advertised_ui_intersection": null,
+      "body_offset": "0x6a3",
+      "evidence_source": "exact-menu-result",
+      "exact_clv_ifr": {
+        "bounds": null,
+        "callback": true,
+        "flags": "0x14",
+        "help": "FEATURE_FCLK_DPM_MASK",
+        "label": "FCLK_DPM",
+        "options": [
+          {
+            "default": false,
+            "label": "Disabled",
+            "value": 0
+          },
+          {
+            "default": false,
+            "label": "Enabled",
+            "value": 1
+          },
+          {
+            "default": true,
+            "label": "Auto",
+            "value": 15
+          }
+        ],
+        "question_id": "0x7045",
+        "read_only": false,
+        "reset_required": true
+      },
+      "field": "FclkDpm",
+      "persisted": {
+        "ifr_label_for_value": "Auto",
+        "interpretation": "ROM-stored AmdSetup request, not applied hardware state",
+        "raw_little_endian": "0f",
+        "value": 15
+      }
+    },
+    {
+      "absolute_rom_offset": "0xbd2",
+      "actual_supported_mapping": {
+        "evidence_boundary": "Exact-clv IFR/menu bytes and persisted request only; no consumer/actuator proof in this matrix.",
+        "frequency_units_conversion": "UNKNOWN/UNRUN",
+        "physical_domain": "UNKNOWN/UNRUN",
+        "synchronous_crossing": "UNKNOWN/UNRUN",
+        "training_support": "UNKNOWN/UNRUN"
+      },
+      "advertised_ui_intersection": null,
+      "body_offset": "0x703",
+      "evidence_source": "exact-menu-result",
+      "exact_clv_ifr": {
+        "bounds": null,
+        "callback": false,
+        "flags": "0x10",
+        "help": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+        "label": "DF Clock Override Control",
+        "options": [
+          {
+            "default": true,
+            "label": "Auto",
+            "value": 255
+          },
+          {
+            "default": false,
+            "label": "Manual",
+            "value": 1
+          }
+        ],
+        "question_id": "0x37d",
+        "read_only": false,
+        "reset_required": true
+      },
+      "field": "DfClockOverrideControl",
+      "persisted": {
+        "ifr_label_for_value": "Manual",
+        "interpretation": "ROM-stored AmdSetup request, not applied hardware state",
+        "raw_little_endian": "01",
+        "value": 1
+      }
+    },
+    {
+      "absolute_rom_offset": "0xbd3",
+      "actual_supported_mapping": {
+        "evidence_boundary": "Exact-clv IFR/menu bytes and persisted request only; no consumer/actuator proof in this matrix.",
+        "frequency_units_conversion": "UNKNOWN/UNRUN",
+        "physical_domain": "UNKNOWN/UNRUN",
+        "synchronous_crossing": "UNKNOWN/UNRUN",
+        "training_support": "UNKNOWN/UNRUN"
+      },
+      "advertised_ui_intersection": null,
+      "body_offset": "0x704",
+      "evidence_source": "exact-menu-result",
+      "exact_clv_ifr": {
+        "bounds": [
+          0,
+          2000,
+          0
+        ],
+        "callback": false,
+        "flags": "0x10",
+        "help": "When you try to override FCLK, please make sure FCLK > UCLK and Memory P-state is disabled.",
+        "label": "DF Clock Override",
+        "options": [],
+        "question_id": "0x37e",
+        "read_only": false,
+        "reset_required": true
+      },
+      "field": "DfClockOvrd",
+      "persisted": {
+        "ifr_label_for_value": null,
+        "interpretation": "ROM-stored AmdSetup request, not applied hardware state",
+        "raw_little_endian": "8c05",
+        "value": 1420
+      }
+    },
+    {
+      "absolute_rom_offset": "0x83c",
+      "actual_supported_mapping": {
+        "evidence_boundary": "Exact-clv IFR/menu bytes and persisted request only; no consumer/actuator proof in this matrix.",
+        "frequency_units_conversion": "UNKNOWN/UNRUN",
+        "physical_domain": "UNKNOWN/UNRUN",
+        "synchronous_crossing": "UNKNOWN/UNRUN",
+        "training_support": "UNKNOWN/UNRUN"
+      },
+      "advertised_ui_intersection": null,
+      "body_offset": "0x36d",
+      "evidence_source": "supplemental-exact-clv-memory-pstate-result",
+      "exact_clv_ifr": {
+        "bounds": null,
+        "callback": null,
+        "flags": "0x10",
+        "help": null,
+        "label": "Memory P-state",
+        "options": [
+          {
+            "default": true,
+            "label": "Auto",
+            "value": 255
+          },
+          {
+            "default": false,
+            "label": "Enabled",
+            "value": 1
+          },
+          {
+            "default": false,
+            "label": "Disabled",
+            "value": 0
+          }
+        ],
+        "question_id": "0x25e",
+        "read_only": null,
+        "reset_required": null
+      },
+      "field": "MemoryPstate",
+      "persisted": {
+        "ifr_label_for_value": "Auto",
+        "interpretation": "ROM-stored AmdSetup request, not applied hardware state",
+        "raw_little_endian": "ff",
+        "value": 255
+      }
+    }
+  ],
+  "menu": {
+    "module_sha256": "7ff717d51c9a447c6954c63b633cf836f1e4396c2b01f4bf590268a60ac1d0d8",
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-df-init-route/menu-result.json",
+    "rom_sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "sha256": "6e2d1978f7dcfdb4e780b220503d1a14401cb34c9d65104ca98840a47e2af14a"
+  },
+  "minimum_offline_semantic_gate": {
+    "blocking_claim": "Until this gate closes, only a request/advertised-UI profile may be described; no truthful applied default or 1:1:1 profile can be named.",
+    "not_required_for_offline_generation": "Live telemetry or board execution; these remain hardware-acceptance evidence, not an offline prerequisite.",
+    "required": [
+      "Byte-backed consumer/actuator mapping for MemoryClockSpeed, UclkDiv1M0, FclkDpm, DfClockOverrideControl, DfClockOvrd, and the Memory P-state gate (+0x36D -> token 0x123D).",
+      "Resolve units/rate conversion and UclkDiv1M0 semantics, including whether any setting selects a synchronous crossing rather than merely storing equal-looking values.",
+      "Establish a defensible supported-range/training hypothesis without calling it hardware-supported; keep voltage and unrelated settings unchanged.",
+      "Combine with explicit existing-NVRAM/default precedence and migration behavior before an experimental default profile is described."
+    ],
+    "status": "OPEN"
+  },
+  "ownership_correction": {
+    "checks": {
+      "failed": 0,
+      "passed": 12,
+      "total": 12
+    },
+    "corrected_fclk_record": "0x1331",
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-record-ownership-correction/record-ownership-result.json",
+    "sha256": "cab9dd7e18defabe1459537fe870a520c24602f1641bd44af5e78ad3e2b2aaf3",
+    "status": "PASS"
+  },
+  "rom": {
+    "amdsetup_body_base": "0x4cf",
+    "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "size": 16777216
+  },
+  "scope": "exact-clv IFR/UI configuration-domain matrix; advertised numerical overlap versus actual mapping/training unknowns",
+  "status": "PASS",
+  "supplemental_discrimination": {
+    "checks": {
+      "failed": 0,
+      "passed": 19,
+      "total": 19
+    },
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-memory-pstate-discrimination/discrimination-result.json",
+    "sha256": "5f19242d614102ff92391753a3459ff7a57357adbc95c19cec8b05e7057f4eb9",
+    "status": "PASS"
+  },
+  "supplemental_memory_pstate": {
+    "checks": {
+      "failed": 0,
+      "passed": 9864,
+      "total": 9864
+    },
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-memory-pstate/memory-pstate-result.json",
+    "sha256": "237546fe5cc4edf44659dab93ce2ccd13ecbd817a6808ef18fa599b1da0b87c7",
+    "status": "PASS"
+  },
+  "uclk_semantics": {
+    "checks": {
+      "failed": 0,
+      "passed": 31,
+      "total": 31
+    },
+    "path": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-sync-stage2-uclk-semantics/uclk-semantics-result.json",
+    "sha256": "17cba83251f50a108341aa40bbe0d48aa758ff008000436570975428bbdb5059",
+    "status": "PASS"
+  }
+}

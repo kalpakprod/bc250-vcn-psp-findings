@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "scope": "bounded static analysis; no execution of firmware",
+  "smu_instruction_records_verified": 2532,
+  "l32r_raw_leads": 51,
+  "decoded_literal_refs": 50,
+  "unaligned_false_positive": "0x2935D inside MOVI at0x2935C",
+  "offset12_accesses": [
+    {
+      "pc": "0x1e041",
+      "instruction": "s8i a3,a4,0x12"
+    }
+  ],
+  "queue_argument_response_message_ports": {
+    "2": [
+      "0x3010998",
+      "0x3010564",
+      "0x3010528"
+    ],
+    "5": [
+      "0x3010700",
+      "0x3010704",
+      "0x3010718"
+    ]
+  },
+  "bios_modules_hashed": 233,
+  "bios_instruction_records_verified": 1125281,
+  "queue5_literal_raw_hits": [],
+  "queue5_literal_decoded_hits": [],
+  "bios_message9_candidate": {
+    "module": "AmdNbioSmuV10Dxe-b158f039f48d",
+    "call_site": "0x2D48",
+    "callee": "0x3120",
+    "argument0_register": "0x03B10998",
+    "message_register": "0x03B10528",
+    "conclusion": "Q2-like port tuple, not the Q5 init port tuple; address-alias interpretation is static inference."
+  },
+  "limits": [
+    "No global absence-of-reader proof: computed/interior aliases, wider loads, indirect calls and DMA not exhaustively resolved.",
+    "No BIOS sender of Q5 init established; no host-reachability proof.",
+    "UEFI executable census excludes closed PSP/ABL code and compressed unextracted content.",
+    "Disassembler semantics and runtime state are not validated by byte equality alone."
+  ]
+}

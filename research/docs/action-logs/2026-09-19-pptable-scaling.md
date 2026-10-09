@@ -1,0 +1,17 @@
+# PPTable scaling continuation — 2026-09-19
+
+## Intent (recorded before analysis-output writes)
+
+Continue only the exact clv PPTable path: verify clv SHA-256 ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8 and SMU body cae8617c572613b610d24845cdb791fc66e8604e3ab1195d0ac3268b39e59f37; dump literals 0x170AC/0x17118/0x1711C/0x17120/0x17124, establish pointer aliases and the source of +0x80/+0x84, inspect exact DXE writers and consumers of output +0x14/+0x30. Reuse OCConsumer project, OcConsumerRead.java and existing invocation with separate outputs and -readOnly -noanalysis. No serializer repetition, hardware/network/key reads, input/builder/candidate changes, or broad firmware scans. Writes confined to this action log, the requested research report, and new scaling-prefixed evidence in the existing final-consumer directory. Preserve existing outputs; rollback removes only new artifacts.
+
+Read memory/INDEX.md, memory/oc-recheck.md, memory/tools.md, relevant firmware memory context, available project skill, extract.py, WORKLOG.md and prior callback/apply evidence. Memory service is unavailable (AI_NoSuchToolError); repository memory was used instead. Requested OpenAI Codex high delegation cannot be initiated with the exposed tools: no dispatch/model-selection tool and no worker in check_peers/link list. Do not represent local work as a completed delegation. Proceed with bounded offline evidence checks; record this procedural limitation in the report.
+
+Acceptance: a byte-backed semantic chain or precise next missing link, with literal interpretations distinguished from rail/clock/power semantics. No safety claim.
+
+## Result and procedural record
+
+Created docs/research/2026-09-19-pptable-scaling.md and separate scaling-* evidence. Exact three input hashes passed; full raw SMU equals ROM+0x8FEF00 and loaded project base-zero memory. Five requested literals dumped as bytes/u32/f32. Subtable base 0x7EDC is committed PPTable+0x380, so +0x80/+0x84 map to full-table +0x400/+0x404. DXE names these VddcrVddVoltageMargin/VddcrGfxVoltageMargin and initializes both to zero in its template; no direct PCD store to those offsets was established. Upstream next link is protocol 0ecad4a0-75e9-46d7-a3a6-81fe173f2eca, method zero, hook 0xB000000A. Downstream +0x14 is additive in 0x25660/0x207C8; +0x30 reader and final actuator remain unresolved. 0x21E8C consumes different table fields and a different +0x30 structure, not the scaled outputs.
+
+Reused original OCConsumer project/OcConsumerRead.java with -readOnly -noanalysis and new logs; original source files/listings were not edited. First bounded entry heuristic missed 0x207C8's larger frame encoding; separate follow-up resolves it without overwriting the first output. 2084 SMU instruction-byte comparisons and 251 DXE lines passed; all eleven artifact checksums passed. Original extract.py is UEFI module provenance, not SMU extraction; direct whole-body ROM equality supplies the mapping check. No physical units/SoC setpoint/safety conclusion.
+
+Repository-specific RE/forensics/provenance skills were read later than intended, after initial evidence writes; initial prewrite skill read was generic. This ordering deviation is recorded rather than claiming full compliance. Requested model delegation remains unavailable/not performed. No board/network/key-material inspection or builder/candidate/source-image modification. Reproduction commands and all unresolved boundaries are in the report; scaling-SHA256SUMS preserves generated artifact identities.

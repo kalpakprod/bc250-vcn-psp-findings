@@ -1,0 +1,20 @@
+{
+ "argv": [
+  "smn_lock_probe.py"
+ ],
+ "bdf": "0000:00:00.0",
+ "started": "2026-09-03 12:04:36",
+ "phase_a": [
+  {
+   "addr": "0x0900c234",
+   "label": "bank12 enable/commit",
+   "expect_robin": "0 (не программился) / 1 (осталось с 26.08)",
+   "expect_donor": "1",
+   "note": "234: 0=program 1=commit",
+   "error": "TIMEOUT/SMU-WEDGED"
+  }
+ ],
+ "phase_b": null,
+ "verdict": "WEDGED (Phase A read) — холодный цикл питания; записи не выполнялись",
+ "finished": "2026-09-03 12:04:41"
+}

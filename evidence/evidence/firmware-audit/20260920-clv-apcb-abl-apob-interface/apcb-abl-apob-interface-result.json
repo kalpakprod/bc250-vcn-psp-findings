@@ -1,0 +1,272 @@
+{
+  "apcb": {
+    "checksum": "C0",
+    "detail_report": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-apcb-abl-apob-interface/apcb-detail.json",
+    "dfg_words": {
+      "0x130": "0x001FFF00",
+      "0x16C": "0x001FFF00"
+    },
+    "offset": "0xAB1000",
+    "parser_report": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-apcb-abl-apob-interface/firmware-audit.json",
+    "size": 2972
+  },
+  "bhd_boundary": {
+    "type_0x61_apob_size": 0,
+    "type_0x63_apob_nv_copy_size": 8192,
+    "type_0x63_spi_offset": "0xAB3000"
+  },
+  "checks": {
+    "failed": 0,
+    "passed": 32,
+    "total": 32
+  },
+  "checks_detail": [
+    {
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "label": "clv-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": 16777216,
+      "got": 16777216,
+      "label": "clv-size",
+      "status": "PASS"
+    },
+    {
+      "expected": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "got": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+      "label": "firmware-parser-input-hash",
+      "status": "PASS"
+    },
+    {
+      "expected": 11210752,
+      "got": 11210752,
+      "label": "APCB-offset",
+      "status": "PASS"
+    },
+    {
+      "expected": 2972,
+      "got": 2972,
+      "label": "APCB-size",
+      "status": "PASS"
+    },
+    {
+      "expected": true,
+      "got": true,
+      "label": "APCB-checksum",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x001FFF00",
+      "got": "0x001FFF00",
+      "label": "APCB-DFG+130",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x001FFF00",
+      "got": "0x001FFF00",
+      "label": "APCB-DFG+16C",
+      "status": "PASS"
+    },
+    {
+      "expected": 0,
+      "got": 0,
+      "label": "BHD-APOB-type61-size",
+      "status": "PASS"
+    },
+    {
+      "expected": 8192,
+      "got": 8192,
+      "label": "BHD-APOB_NV_COPY-type63-size",
+      "status": "PASS"
+    },
+    {
+      "expected": 11218944,
+      "got": 11218944,
+      "label": "BHD-APOB_NV_COPY-spi",
+      "status": "PASS"
+    },
+    {
+      "expected": "edx,0x11ed",
+      "got": "edx,0x11ed",
+      "label": "Cbs INV header 0x11ED",
+      "status": "PASS"
+    },
+    {
+      "expected": "al,BYTE PTR [edx+0x316]",
+      "got": "al,BYTE PTR [edx+0x316]",
+      "label": "Cbs Setup+316 load",
+      "status": "PASS"
+    },
+    {
+      "expected": "BYTE PTR [ecx+0x3],al",
+      "got": "BYTE PTR [ecx+0x3],al",
+      "label": "Cbs INV store",
+      "status": "PASS"
+    },
+    {
+      "expected": "684cb1e309",
+      "got": "684cb1e309",
+      "label": "AmdMem:0x8a0-bytes",
+      "status": "PASS"
+    },
+    {
+      "expected": "68ff000000",
+      "got": "68ff000000",
+      "label": "AmdMem:0x8ca-bytes",
+      "status": "PASS"
+    },
+    {
+      "expected": "6a61",
+      "got": "6a61",
+      "label": "AmdMem:0x8cf-bytes",
+      "status": "PASS"
+    },
+    {
+      "expected": "e803040000",
+      "got": "e803040000",
+      "label": "AmdMem:0x8d1-bytes",
+      "status": "PASS"
+    },
+    {
+      "expected": "813b41504f42",
+      "got": "813b41504f42",
+      "label": "AmdMem:0x8fc-bytes",
+      "status": "PASS"
+    },
+    {
+      "expected": "813e24505350",
+      "got": "813e24505350",
+      "label": "AmdMem:0xc73-bytes",
+      "status": "PASS"
+    },
+    {
+      "expected": "813f24424844",
+      "got": "813f24424844",
+      "label": "AmdMem:0xc96-bytes",
+      "status": "PASS"
+    },
+    {
+      "expected": 0,
+      "got": 0,
+      "label": "AmdMem-no-direct-INV-or-Setup316",
+      "status": "PASS"
+    },
+    {
+      "expected": "DWORD PTR [eax+0x20]",
+      "got": "DWORD PTR [eax+0x20]",
+      "label": "AmdMemoryHob LocatePpi slot",
+      "status": "PASS"
+    },
+    {
+      "expected": "ecx,DWORD PTR [eax+0x28]",
+      "got": "ecx,DWORD PTR [eax+0x28]",
+      "label": "AmdMemoryHob PPI field+28",
+      "status": "PASS"
+    },
+    {
+      "expected": "cx,WORD PTR [eax+0x2c]",
+      "got": "cx,WORD PTR [eax+0x2c]",
+      "label": "AmdMemoryHob PPI field+2c",
+      "status": "PASS"
+    },
+    {
+      "expected": "cl,BYTE PTR [eax+0x30]",
+      "got": "cl,BYTE PTR [eax+0x30]",
+      "label": "AmdMemoryHob PPI field+30",
+      "status": "PASS"
+    },
+    {
+      "expected": "cl,BYTE PTR [eax+0x31]",
+      "got": "cl,BYTE PTR [eax+0x31]",
+      "label": "AmdMemoryHob PPI field+31",
+      "status": "PASS"
+    },
+    {
+      "expected": "eax,DWORD PTR [eax+0x40]",
+      "got": "eax,DWORD PTR [eax+0x40]",
+      "label": "AmdMemoryHob PPI field+40",
+      "status": "PASS"
+    },
+    {
+      "expected": "DWORD PTR [eax+0x44]",
+      "got": "DWORD PTR [eax+0x44]",
+      "label": "AmdMemoryHob InstallPeiMemory slot",
+      "status": "PASS"
+    },
+    {
+      "expected": 0,
+      "got": 0,
+      "label": "AmdMemoryHob-no-direct-INV-or-Setup316",
+      "status": "PASS"
+    },
+    {
+      "expected": "0x66",
+      "got": "0x66",
+      "label": "AmdPspPei C2P/status message 0x66",
+      "status": "PASS"
+    },
+    {
+      "expected": "DWORD PTR [ecx+0x18]",
+      "got": "DWORD PTR [ecx+0x18]",
+      "label": "AmdPspPei InstallPpi slot",
+      "status": "PASS"
+    }
+  ],
+  "conclusion": "The bounded exact-byte path separates sources: clv APCB/DFG is a parsed flash policy surface; CbsBasePei serializes persisted AmdSetup into $INV token 0x11ED; AmdMemAm4Pei requests a runtime APOB service and validates APOB/$PSP/$BHD; AmdMemoryHobInfoPeim consumes a PPI structure and calls InstallPeiMemory. No direct Setup/$INV read is present in AmdMemoryHobInfoPeim. This qualifies a source/provenance boundary relevant to persisted settings being ignored, but does not prove that INV never feeds the APOB service indirectly or establish runtime precedence/training.",
+  "edges": {
+    "apob_service_to_ppi": {
+      "interpretation": "service request (literal 0x9E3B14C, message 0x61, arg 0xFF) and returned APOB/$PSP/$BHD validation",
+      "module": "AmdMemAm4Pei",
+      "rvas": [
+        "0x8A0",
+        "0x8CA",
+        "0x8CF",
+        "0x8D1",
+        "0x8FC",
+        "0xC73",
+        "0xC96"
+      ]
+    },
+    "persisted_setup_to_inv": {
+      "field": "Setup+0x316",
+      "module": "CbsBasePei",
+      "rvas": [
+        "0x9837",
+        "0x9857",
+        "0x985D"
+      ],
+      "token": "0x11ED"
+    },
+    "ppi_to_memory_output": {
+      "input_fields": [
+        "+0x28",
+        "+0x2C",
+        "+0x30",
+        "+0x31",
+        "+0x40"
+      ],
+      "install_pei_memory_rva": "0x299",
+      "locate_ppi_rva": "0xAC3",
+      "module": "AmdMemoryHobInfoPeim"
+    },
+    "psp_pei_common_ppi": {
+      "install_ppi_rva": "0x2B9",
+      "message_literal": "0x66",
+      "module": "AmdPspPeiV2",
+      "note": "bounded PSP/PEI infrastructure only"
+    }
+  },
+  "input": {
+    "path": "/home/OWNER/orca/projects/bc250/evidence/donor/retroweb-20260916/BC250_5.00_clv.bin",
+    "sha256": "ea5781049160ab3343fd8839bf0b745e9948e80dff9db96dca5438c268ca4cb8",
+    "size": 16777216
+  },
+  "limitations": [
+    "Static byte analysis and parser output only; no firmware execution or training.",
+    "No direct APCB-to-APOB merge call was recovered in this bounded scope.",
+    "AmdMem service/message semantics and PPI GUID identity remain partly closed."
+  ],
+  "status": "PASS"
+}

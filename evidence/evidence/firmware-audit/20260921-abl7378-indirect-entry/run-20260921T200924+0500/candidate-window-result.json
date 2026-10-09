@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "input": "/home/OWNER/orca/projects/bc250/evidence/firmware-audit/20260920-clv-abl-memory-review/ABL1-clv-decompressed.bin",
+  "input_sha256": "af8cf5626a113afe72bc0687ca6f1a3b44fd6d46ca4f0119df3be2356a74203a",
+  "candidate_pointer_offset": "0x170cc",
+  "candidate_pointer_value": "0x0005e479",
+  "conditional_base": "0x57100",
+  "bounded_window": [
+    "0x170b0",
+    "0x170f0"
+  ],
+  "window_dwords": {
+    "0x170b0": "0x0005e615",
+    "0x170b4": "0x0005e615",
+    "0x170b8": "0x0005e615",
+    "0x170bc": "0x0005e615",
+    "0x170c0": "0x0005e615",
+    "0x170c4": "0x00000000",
+    "0x170c8": "0x00000001",
+    "0x170cc": "0x0005e479",
+    "0x170d0": "0x00062059",
+    "0x170d4": "0x0006e154",
+    "0x170d8": "0x0005e619",
+    "0x170dc": "0x00062055",
+    "0x170e0": "0x00067b71",
+    "0x170e4": "0x00000001",
+    "0x170e8": "0x00000000",
+    "0x170ec": "0x00000000"
+  },
+  "candidate_location_refs": {
+    "candidate_location_RVA_0x170c0": {
+      "va": "0x6e1c0",
+      "raw_offsets": []
+    },
+    "candidate_location_RVA_0x170c4": {
+      "va": "0x6e1c4",
+      "raw_offsets": [
+        "0x1bb4"
+      ]
+    },
+    "candidate_location_RVA_0x170c8": {
+      "va": "0x6e1c8",
+      "raw_offsets": [
+        "0x1b1c",
+        "0x1bac"
+      ]
+    },
+    "candidate_location_RVA_0x170cc": {
+      "va": "0x6e1cc",
+      "raw_offsets": []
+    },
+    "candidate_location_RVA_0x170d0": {
+      "va": "0x6e1d0",
+      "raw_offsets": []
+    }
+  }
+}
